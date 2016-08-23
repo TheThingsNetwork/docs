@@ -8,7 +8,7 @@ This is a [Jekyll](https://jekyllrb.com) site configured to be build and served 
 Because we let GitHub Pages do the Jekyll builds the website will be updated automatically after pushing commits or merging pull requests.
 
 - The homepage for the site is [index.html](index.html).
-- The guides are Jekyll pages grouped under the [pages](pages) folder.
+- The guides are Jekyll pages grouped under the [guides](guides) folder.
 - The guides use sections to include the actual content from the [_includes](_includes) folders. This allows for re-use of content throughout different guides.
 
 ## Run locally

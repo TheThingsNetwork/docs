@@ -6,36 +6,112 @@ layout: default
 
   <div class="container">
 
-    <div class="card-deck-wrapper">
-      <div class="card-deck">
+    <div class="jumbotron">
+      <h1 class="display-3">Documentation</h1>
+      <p class="lead">Let's grow the <em>Network</em> and connect all <em>Things</em>!</p>
+      <p>
+        <a class="btn btn-primary btn-lg" href="{{ site.github.repository_url }}" target="_blank" role="button">Contribute</a>
+      </p>
+    </div>
 
-        <div class="card">
-          <h3 class="card-header">The Things Uno <span class="tag tag-warning">beta</span></h3>
-          <div class="card-block">
-            <p class="card-text">An Arduino Uno with LoRa on board to prototype your ideas.</p>
-            <a href="{{ site.baseurl }}/uno" class="card-link">Guide</a>
-            <a href="https://github.com/TheThingsNetwork/arduino-library/releases" class="card-link">Arduino Library</a></p>
-          </div>
+    <div class="card-columns">
+
+      <div class="card">
+        <div class="card-block">
+          <h4 class="card-title">The Things Uno <span class="tag tag-warning">beta</span></h4>
+          <p class="card-text">An Arduino Uno with LoRa on board to prototype your ideas.</p>
         </div>
-
-        <div class="card">
-          <h3 class="card-header">The Things Node</h3>
-          <div class="card-block">
-            <p class="card-text">Bla.</p>
-            <a href="#" class="card-link">Guide</a>
-            <a href="https://github.com/TheThingsNetwork/arduino-library/releases" class="card-link">Arduino Library</a></p>
-          </div>
+        <div class="card-footer">
+          <ul class="nav nav-pills card-header-pills pull-xs-left">
+            <li class="nav-item">
+              <a class="nav-link active" href="{{ site.baseurl }}/uno">Guide</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://github.com/TheThingsNetwork/arduino-library/releases" target="_blank">Latest Downloads</a>
+            </li>
+          </ul>
         </div>
-
-        <div class="card">
-          <h3 class="card-header">The Things Gateway</h3>
-          <div class="card-block">
-            <p class="card-text">Grow the Network and setup your own Gateway for The Things Uno, Node and other devices.</p>
-            <a href="#" class="card-link">Guide</a>
-          </div>
-        </div>
-
       </div>
+
+      <div class="card">
+        <div class="card-block">
+          <h4 class="card-title">The Things Node</h4>
+          <p class="card-text">An small, waterproof Arduino with LoRa and a bunch of sensors on board to prototype in minutes!</p>
+        </div>
+        <div class="card-footer">
+          <ul class="nav nav-pills card-header-pills pull-xs-left">
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">Guide</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://github.com/TheThingsNetwork/arduino-library/releases" target="_blank">Latest Downloads</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-block">
+          <h4 class="card-title">The Things Gateway</h4>
+          <p class="card-text">Grow the Network and setup your own Gateway for The Things Uno, Node and other devices.</p>
+        </div>
+        <div class="card-footer">
+          <ul class="nav nav-pills card-header-pills pull-xs-left">
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">Guide</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-block">
+          <h4 class="card-title">The Things Dashboard</h4>
+          <p class="card-text">Manage application and devices.</p>
+        </div>
+        <div class="card-footer">
+          <ul class="nav nav-pills card-header-pills pull-xs-left">
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">Guide</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-block">
+          <h4 class="card-title">Node-RED</h4>
+          <p class="card-text">The Things Network node to wire device activations and application messages.</p>
+        </div>
+        <div class="card-footer">
+          <ul class="nav nav-pills card-header-pills pull-xs-left">
+            <li class="nav-item">
+              <a class="nav-link active" href="{{ site.baseurl }}/node-red">Guide</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.npmjs.com/package/node-red-contrib-ttn" target="_blank">Latest Downloads</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-block">
+          <h4 class="card-title">Node.js</h4>
+          <p class="card-text">Get notified of device activations and send and receive application messages.</p>
+        </div>
+        <div class="card-footer">
+          <ul class="nav nav-pills card-header-pills pull-xs-left">
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">Guide</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.npmjs.com/package/ttn" target="_blank">Latest Downloads</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
     </div>
 
   </div>
