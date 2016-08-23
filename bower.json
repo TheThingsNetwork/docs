@@ -1,0 +1,6 @@
+{
+  "name": "The Things Network",
+  "dependencies": {
+    "bootstrap": "v4.0.0-alpha.3"
+  }
+}

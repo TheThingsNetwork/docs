@@ -19,3 +19,15 @@ github_username:  jekyll
 
 # Build settings
 markdown: kramdown
+exclude: [ Gemfile, Gemfile.lock ]
+
+# Use GitHub.io overrides local as well
+lsi: false
+safe: true
+source: .
+incremental: false
+highlighter: rouge
+gist:
+  noscript: false
+kramdown:
+  math_engine: mathjax
