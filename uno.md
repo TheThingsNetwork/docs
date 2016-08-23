@@ -5,4 +5,5 @@ permalink: /uno/
 
 sections:
 - "uno/index.md"
+- "uno/hardware.md"
 ---

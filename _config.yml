@@ -16,6 +16,7 @@ baseurl: "/docs" # the subpath of your site, e.g. /blog
 url: "https://fokkezb.github.io" # the base hostname & protocol for your site
 twitter_username: jekyllrb
 github_username:  jekyll
+repository: fokkezb/docs
 
 # Build settings
 markdown: kramdown

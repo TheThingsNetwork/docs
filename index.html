@@ -2,10 +2,45 @@
 layout: default
 ---
 
-<div class="home">
+<body class="home">
 
-  <h1 class="page-heading">Posts</h1>
+  <div class="container">
 
+    <div class="card-deck-wrapper">
+      <div class="card-deck">
+
+        <div class="card">
+          <h3 class="card-header">The Things Uno</h3>
+          <div class="card-block">
+            <p class="card-text">An Arduino Uno with LoRa on board to prototype your ideas.</p>
+            <a href="{{ site.baseurl }}/uno" class="card-link">Guide</a>
+            <a href="https://github.com/TheThingsNetwork/arduino-library/releases" class="card-link">Arduino Library</a></p>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 class="card-header">The Things Node</h3>
+          <div class="card-block">
+            <p class="card-text">Bla.</p>
+            <a href="#" class="card-link">Guide</a>
+            <a href="https://github.com/TheThingsNetwork/arduino-library/releases" class="card-link">Arduino Library</a></p>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 class="card-header">The Things Gateway</h3>
+          <div class="card-block">
+            <p class="card-text">Grow the Network and setup your own Gateway for The Things Uno, Node and other devices.</p>
+            <a href="#" class="card-link">Guide</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!--
   <ul class="post-list">
     {% for post in site.posts %}
       <li>
@@ -17,7 +52,8 @@ layout: default
       </li>
     {% endfor %}
   </ul>
+  -->
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+  <!-- <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p> -->
 
-</div>
+</body>
