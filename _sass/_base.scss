@@ -39,3 +39,13 @@ body {
     }
   }
 }
+
+/* footer */
+
+.footer {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  color: $text-muted;
+  border-top: .05rem solid $gray-light;
+}
