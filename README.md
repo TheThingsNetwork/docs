@@ -14,13 +14,13 @@ Because we let GitHub Pages do the Jekyll builds the website will be updated aut
 ## Run locally
 
 1. [Install Ruby 2.0.0 or higher](https://www.ruby-lang.org/en/downloads/)
-2. Install Bundler:
+2. Install [Bundler](http://bundler.io/):
 	
 	```bash
-	$ gem install bundler`
+	$ gem install bundler
 	```
 
-3. Install Jekyll using Bundler:
+3. Install [Jekyll](https://jekyllrb.com/) using Bundler:
 
 	```bash
 	$ bundle install
@@ -36,7 +36,7 @@ Because we let GitHub Pages do the Jekyll builds the website will be updated aut
 
 ## Update Bootstrap
 
-Bootstrap 4.0.0-alpha.3 [has been installed](bower.json) via [Bower](https://bower.io) and is included in the GitHub repository so that GitHub Pages can use it when building the Jekyll site.
+Bootstrap 4.0.0-alpha.3 [has been installed](bower.json) via [Bower](https://bower.io) and [bower_components](bower_components) is included in the GitHub repository so that GitHub Pages can use it when building the Jekyll site.
 
 To update to a newer Bootstrap version or add other front-end dependencies and save them to [bower.json](bower.json):
 
