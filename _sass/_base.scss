@@ -1,3 +1,40 @@
 body {
     padding-top: 6rem;
 }
+
+/* navbar */
+
+.navbar {
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+
+  .navbar-brand {
+    line-height: 65px;
+
+    img {
+      height: 50px;
+      line-height: 65px;
+    }
+  }
+
+  .nav-item {
+
+    & + .nav-item {
+      margin-left: 0;
+    }
+
+    .nav-link {
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      text-transform: uppercase;
+      display: block;
+      line-height: 65px;
+      padding: 0 20px;
+      color: #0d83d0;
+    }
+
+    &.active .nav-link,
+    .nav-link:hover {
+      background: #dfdfdf;
+    }
+  }
+}

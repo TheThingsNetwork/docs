@@ -38,10 +38,8 @@ The `DevEUI` can be retrieved from the node with the `Get-Device-Info` sketch.
 2. Click **Sketch > Upload (Arduino says Done uploading)**
 3. The Arduino IDE will give feedback when you verify or upload the code to a board. It should look similar to this:
 
-    ```
         Sketch uses 9,656 bytes (33%) of program storage space. Maximum is 28,672 bytes.
         Global variables use 1,253 bytes (48%) of dynamic memory, leaving 1,307 bytes for local variables. Maximum is 2,560 bytes.
-    ```
 
 <aside class = 'success'>
     Congratulations, you have successfully configured your first Things Uno.
@@ -60,7 +58,6 @@ Using the `Serial monitor` makes it possible to monitor the proceedings of the T
 
 4. Receiving data on the Serial Monitor
 
-        ```
         Device Information
 
         EUI: 0004A30B001B672E
@@ -73,7 +70,7 @@ Using the `Serial monitor` makes it possible to monitor the proceedings of the T
         RX Delay 2: 2000
 
         use the device `EUI` to register the device for OTAA
-        ```
+
 5. Save the `EUI: 0004A30B001B672E` (`DevEUI`) for later.    
 
 
@@ -362,7 +359,7 @@ It is free and comes with lots of pre made plugins like API’s, online services
 
 Navigate to your browser and enter the url (http://127.0.0.1:1880/) that is given by the Node-RED application. You should see the following web page:
 
-<img style='display:inline;' src="images/node-red.png">
+![]({{ site.baseurl }}/assets/node-red.png)
 
 ## Building the data flow
 
@@ -370,49 +367,49 @@ Navigate to your browser and enter the url (http://127.0.0.1:1880/) that is give
 2. Now build the flow by placing the following block from the left component window in your sketch:
   1. Get the mqtt component:         **input > 'mqtt'**.
 
-        <img style='display:inline;' src="images/mqtt-comp.png">       
+        ![]({{ site.baseurl }}/assets/mqtt-comp.png)       
 
   2. Get your json component:      **function > 'Json'**.
 
-        <img style='display:inline;' src="images/json-comp.png">
+        ![]({{ site.baseurl }}/assets/json-comp.png)
 
   3. Get your function component:   **function > 'function'**
 
-        <img style='display:inline;' src="images/function-comp.png">
+        ![]({{ site.baseurl }}/assets/function-comp.png)
 
   4. Get your Debug component:      **output > 'Debug'**
 
-        <img style='display:inline;' src="images/debug-comp.png">
+        ![]({{ site.baseurl }}/assets/debug-comp.png)
 
 4. Now connect all the components together as listed above.
 
-     <img style='display:inline;' src="images/flow.png">
+     ![]({{ site.baseurl }}/assets/flow.png)
 
 5. Configure the `mqtt component`:
     1. Double-click the `mqtt component`
     2. Click on the pencil icon
     3. **under connection:***   Enter for server:   `staging.thethingsnetwork.org`
 
-         <img style='display:inline;' src="images/connection.png">
+         ![]({{ site.baseurl }}/assets/connection.png)
 
     4. **under security:**      Enter for Username: `your AppEui`
     5. **under security:**      Enter for password: `the corresponding Access Key`
 
         The `AppEui` and `Access key` can be looked up in the [ttnctl tool](http://gruifin.github.io/cookbook/the-things-uno/# create-application).
 
-        <img style='display:inline;' src="images/security.png">
+        ![]({{ site.baseurl }}/assets/security.png)
 
     6. Click the **update** button
     7. Enter for Topic: `+/devices/+/up`
 
-        <img style='display:inline;' src="images/mqtt.png">
+        ![]({{ site.baseurl }}/assets/mqtt.png)
 
 6. Configure the `function component`
     1. Double-click the `function component`
     2. add the following code to your function
     3. Click the Ok button
 
-        <img style='display:inline;' src="images/function-ex.png">
+        ![]({{ site.baseurl }}/assets/function-ex.png)
 
     ```
     var text = new Buffer(msg.payload.payload, 'base64').toString();
@@ -423,11 +420,11 @@ Navigate to your browser and enter the url (http://127.0.0.1:1880/) that is give
 
 7. Click the **Deploy** button at the right top of your window. Your data flow should look
 
-     <img style='display:inline;' src="images/deploy.png">
+     ![]({{ site.baseurl }}/assets/deploy.png)
 
 8. You should get a message that the sketch is successfully deployed.
 
-     <img style='display:inline;' src="images/deploy-ok.png">
+     ![]({{ site.baseurl }}/assets/deploy-ok.png)
 
 <aside class = 'success'>
     Congratulations, you have successfully build your first Node-RED flow.    
@@ -439,19 +436,19 @@ Now that the Things Uno is sending data it'll be received in the Node-RED data f
 
 1. Make sure that the green checkbox on the `Debug` block is checked.
 
-    <img style='display:inline;' src="images/debug-check.png">
+    ![]({{ site.baseurl }}/assets/debug-check.png)
 
 2. Make sure that the mqtt input block reports: `connected`.
 
-    <img style='display:inline;' src="images/mqtt-cnnt.png">
+    ![]({{ site.baseurl }}/assets/mqtt-cnnt.png)
 
 3. Navigate to the right side of the Node-RED page and open the `Debug` tab.
 
-    <img style='display:inline;' src="images/debug-tab.png">
+    ![]({{ site.baseurl }}/assets/debug-tab.png)
 
 4. Now you should see the messages that the node transmits.
 
-    <img style='display:inline;' src="images/message.png">
+    ![]({{ site.baseurl }}/assets/message.png)
 
 <aside class = 'success'>
     Congratulations, you have successfully received your first data over The Things Network

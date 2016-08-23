@@ -3,11 +3,29 @@ layout: default
 ---
 
 <div class="container">
+
+  <nav class="breadcrumb">
+    <a class="breadcrumb-item" href="{{ site.baseurl }}/">Docs</a>
+    <span class="breadcrumb-item active">{{page.title}}</span>
+    <a class="pull-sm-right" href="{{ site.github.repository_url }}/blob/master/{{ page.path | downcase }}">Edit</a>
+  </nav>
+
   <div class="row">
 
     <div class="col-sm-3">
 
-      <div id="toc"></div>
+      <div id="toc">
+        
+        <div class="dropdown">
+          <button class="btn btn-outline-primary btn-block dropdown-toggle text-xs-left" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{page.title}}</button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item active" href="#">The Things Uno</a>
+            <a class="dropdown-item" href="#">The Things Node</a>
+            <a class="dropdown-item" href="#">The Things Gateway</a>
+          </div>
+        </div>
+
+      </div>
 
     </div>
 
