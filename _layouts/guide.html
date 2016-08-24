@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<div id="content" class="container">
+<div class="container">
 
   <ol class="breadcrumb">
     <li><a href="{{ site.baseurl }}/">Docs</a></li>
@@ -12,15 +12,13 @@ layout: default
 
   <div class="row">
 
-    <div class="col-sm-9 js-toc-content" role="main">
+    <div class="col-sm-9 js-toc-content content-body" role="main">
 
-      <h1 class="display-4">{{page.title}}</h1>
-
-      <div class="lead">
-        {{ content }}
+      <div class="page-header">
+        <h1>{{page.title}}</h1>
       </div>
 
-      <hr />
+      {{ content }}
 
       {% for section in page.sections %}
         {% capture section_include %}{% include {{ section }} %}{% endcapture %}
@@ -37,9 +35,13 @@ layout: default
           <button class="btn btn-primary btn-block" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{page.title}} <span class="caret"></span></button>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <li class="dropdown-header">Guides</li>
-            <li class="active"><a href="#">The Things Uno</a></li>
-            <li><a href="#">The Things Node</a></li>
-            <li><a href="#">The Things Gateway</a></li>
+            {% for path in site.data.guides %}
+              {% for guide in site.pages %}
+                {% if guide.path == path %}
+                <li{% if guide.path == page.path %} class="active"{% endif %}><a href="{{ site.baseurl }}{{ guide.url}}">{{ guide.title }}</a></li>  
+                {% endif %}
+              {% endfor %}
+            {% endfor %}
           </ul>
         </div>
 

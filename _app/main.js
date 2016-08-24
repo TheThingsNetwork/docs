@@ -1,5 +1,6 @@
 require('tocbot');
 require('bootstrap-sass');
+require('anchor-js');
 
 $(function() {
 
@@ -8,6 +9,7 @@ $(function() {
     activeLinkClass: 'active',
     extraListClasses: 'nav',
     headingsOffset: $('.navbar').outerHeight(),
+    includeHtml: true,
     smoothScrollOptions: {
       easing: 'easeInOutCubic',
       offset: $('#content').offset().top,
@@ -26,5 +28,7 @@ $(function() {
       }
     }
   });
+
+  anchors.add('.js-toc-content h1, .js-toc-content h2');
   
 });

@@ -2,6 +2,14 @@
   margin-top: ($padding-base-vertical * 4);
 }
 
+.content-body {
+  
+  img {
+    max-width: 100%;
+  }
+
+}
+
 /*
  * Side navigation taken from http://getbootstrap.com/
  */

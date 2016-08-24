@@ -18,6 +18,8 @@ repository: fokkezb/docs
 # Build settings
 markdown: kramdown
 exclude: [ node_modules, Gemfile, Gemfile.lock, package.json, README.md, webpack.config.js ]
+gems:
+  - jemoji
 
 # Use GitHub.io overrides local as well
 lsi: false

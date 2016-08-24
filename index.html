@@ -2,130 +2,124 @@
 layout: default
 ---
 
-<body class="home">
+<div class="container">
 
-  <div class="container">
+  <div class="jumbotron">
+    <h1>Documentation</h1>
+    <p class="lead">Let's grow the <em>Network</em> and connect all <em>Things</em>!</p>
+    <p><a class="btn btn-primary btn-lg" href="{{ site.github.repository_url }}" target="_blank" role="button">Contribute</a></p>
+  </div>
 
-    <div class="jumbotron">
-      <h1 class="display-3">Documentation</h1>
-      <p class="lead">Let's grow the <em>Network</em> and connect all <em>Things</em>!</p>
-      <p>
-        <a class="btn btn-primary btn-lg" href="{{ site.github.repository_url }}" target="_blank" role="button">Contribute</a>
-      </p>
+  <h3 class="text-center">Connect all Things</h2>
+
+  <div class="row">
+
+    <div class="col-sm-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">The Things Uno <span class="label label-warning">beta</span></h3>
+        </div>
+        <div class="panel-body">
+          An Arduino Uno with LoRa on board to prototype your ideas.
+        </div>
+        <ul class="list-group">
+          <li class="list-group-item"><a href="{{ site.baseurl }}/uno">Guide</a></li>
+          <li class="list-group-item"><a href="https://github.com/TheThingsNetwork/arduino-library/releases" target="_blank">Latest Downloads</a></li>
+        </ul>
+      </div>
     </div>
 
-    <h3 class="text-center">Connect all Things</h2>
-
-    <div class="row">
-
-      <div class="col-sm-4">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title">The Things Uno <span class="tag tag-warning">beta</span></h3>
-          </div>
-          <div class="panel-body">
-            An Arduino Uno with LoRa on board to prototype your ideas.
-          </div>
-          <ul class="list-group">
-            <li class="list-group-item"><a href="{{ site.baseurl }}/uno">Guide</a></li>
-            <li class="list-group-item"><a href="https://github.com/TheThingsNetwork/arduino-library/releases" target="_blank">Latest Downloads</a></li>
-          </ul>
+    <div class="col-sm-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">The Things Node</h3>
         </div>
-      </div>
-
-      <div class="col-sm-4">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title">The Things Node</h3>
-          </div>
-          <div class="panel-body">
-            An small, waterproof Arduino with LoRa and a bunch of sensors on board to prototype in minutes!
-          </div>
-          <ul class="list-group">
-            <li class="list-group-item"><a href="#">Guide</a></li>
-            <li class="list-group-item"><a href="https://github.com/TheThingsNetwork/arduino-library/releases" target="_blank">Latest Downloads</a></li>
-          </ul>
+        <div class="panel-body">
+          An small, waterproof Arduino with LoRa and a bunch of sensors on board to prototype in minutes!
         </div>
+        <ul class="list-group">
+          <li class="list-group-item"><a href="#">Guide</a></li>
+          <li class="list-group-item"><a href="https://github.com/TheThingsNetwork/arduino-library/releases" target="_blank">Latest Downloads</a></li>
+        </ul>
       </div>
-
-    </div>
-
-    <h3 class="text-center">Grow the Network</h2>
-
-    <div class="row">
-
-      <div class="col-sm-4">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title">The Things Gateway</h3>
-          </div>
-          <div class="panel-body">
-            Grow the Network and setup your own Gateway for The Things Uno, Node and other devices.
-          </div>
-          <ul class="list-group">
-            <li class="list-group-item"><a href="#">Guide</a></li>
-          </ul>
-        </div>
-      </div>
-
-    </div>
-
-    <h3 class="text-center">Back-end</h2>
-
-    <div class="row">
-
-      <div class="col-sm-4">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title">The Things Dashboard</h3>
-          </div>
-          <div class="panel-body">
-            Manage application and devices.
-          </div>
-          <ul class="list-group">
-            <li class="list-group-item"><a href="#">Guide</a></li>
-          </ul>
-        </div>
-      </div>
-
-    </div>
-
-    <h3 class="text-center">Integrations</h2>
-
-    <div class="row">
-
-      <div class="col-sm-4">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title">Node-RED</h3>
-          </div>
-          <div class="panel-body">
-            The Things Network node to wire device activations and application messages.
-          </div>
-          <ul class="list-group">
-            <li class="list-group-item"><a href="{{ site.baseurl }}/node-red">Guide</a></li>
-            <li class="list-group-item"><a href="https://www.npmjs.com/package/node-red-contrib-ttn" target="_blank">Latest Downloads</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="col-sm-4">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title">Node.js</h3>
-          </div>
-          <div class="panel-body">
-            Get notified of device activations and send and receive application messages.
-          </div>
-          <ul class="list-group">
-            <li class="list-group-item"><a href="#">Guide</a></li>
-            <li class="list-group-item"><a href="https://www.npmjs.com/package/ttn" target="_blank">Latest Downloads</a></li>
-          </ul>
-        </div>
-      </div>
-
     </div>
 
   </div>
 
-</body>
+  <h3 class="text-center">Grow the Network</h2>
+
+  <div class="row">
+
+    <div class="col-sm-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">The Things Gateway</h3>
+        </div>
+        <div class="panel-body">
+          Grow the Network and setup your own Gateway for The Things Uno, Node and other devices.
+        </div>
+        <ul class="list-group">
+          <li class="list-group-item"><a href="#">Guide</a></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <h3 class="text-center">Back-end</h2>
+
+  <div class="row">
+
+    <div class="col-sm-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">The Things Dashboard</h3>
+        </div>
+        <div class="panel-body">
+          Manage application and devices.
+        </div>
+        <ul class="list-group">
+          <li class="list-group-item"><a href="#">Guide</a></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <h3 class="text-center">Integrations</h2>
+
+  <div class="row">
+
+    <div class="col-sm-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Node-RED</h3>
+        </div>
+        <div class="panel-body">
+          The Things Network node to wire device activations and application messages.
+        </div>
+        <ul class="list-group">
+          <li class="list-group-item"><a href="{{ site.baseurl }}/node-red">Guide</a></li>
+          <li class="list-group-item"><a href="https://www.npmjs.com/package/node-red-contrib-ttn" target="_blank">Latest Downloads</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-sm-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Node.js</h3>
+        </div>
+        <div class="panel-body">
+          Get notified of device activations and send and receive application messages.
+        </div>
+        <ul class="list-group">
+          <li class="list-group-item"><a href="#">Guide</a></li>
+          <li class="list-group-item"><a href="https://www.npmjs.com/package/ttn" target="_blank">Latest Downloads</a></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+</div>
