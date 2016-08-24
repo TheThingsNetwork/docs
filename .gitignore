@@ -9,8 +9,9 @@ npm-debug.log*
 # Dependencies
 /node_modules/*
 
-# Do include Bootstrap since GitHub Pages needs it to build the Jekyll site
+# Do include Sass since GitHub Pages needs it to build the Jekyll site
 !/node_modules/bootstrap-sass
+!/node_modules/tocbot
 
 # Cache
 .npm

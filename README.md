@@ -7,11 +7,15 @@ This is a [Jekyll](https://jekyllrb.com) site configured to be build and served 
 
 Because we let GitHub Pages do the Jekyll builds the website will be updated automatically after pushing commits or merging pull requests.
 
-- The homepage for the site is [index.html](index.html).
-- The guides are Jekyll pages grouped under the [guides](guides) folder.
-- The guides use sections to include the actual content from the [_includes](_includes) folders. This allows for re-use of content throughout different guides.
+### Guidance
 
-## Update design
+* The homepage for the site is [index.html](index.html).
+* The guides are Jekyll pages grouped under the [guides](guides) folder.
+* The guides use sections to include the actual content from the [_includes](_includes) folders. This allows for re-use of content throughout different guides.
+* Store images and other assets in the [assets](assets) folder.
+* If you do a lot of edits please use a local build to preview.
+
+## Build local for preview and design
 
 1. [Install Ruby 2.0.0 or higher](https://www.ruby-lang.org/en/downloads/)
 2. Install [Bundler](http://bundler.io/):
@@ -39,3 +43,13 @@ Because we let GitHub Pages do the Jekyll builds the website will be updated aut
 	```bash
 	$ npm run dev
 	```
+	
+### Guidance
+
+* Require and use any JS libraries you need in [_app/main.js](_app/main.js).
+* Import any Sass files you need in [css/main.scss](css/main.scss).
+* Override Bootstrap variables in [_sass/_variables.scss](_sass/_variables.scss).
+* Edit styles in [_sass/_base.scss](_sass/_base.scss) or break out to additional Sass files to keep it organized.
+* Store images and other assets in the [assets](assets) folder.
+* Edit layouts in the [_layouts](_layouts) folder.
+* All layouts should inherit the [default](_layouts/default.html) layout.
