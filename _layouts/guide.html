@@ -2,34 +2,17 @@
 layout: default
 ---
 
-<div class="container">
+<div id="content" class="container">
 
-  <nav class="breadcrumb">
-    <a class="breadcrumb-item" href="{{ site.baseurl }}/">Docs</a>
-    <span class="breadcrumb-item active">{{page.title}}</span>
-    <a class="pull-sm-right" href="{{ site.github.repository_url }}/blob/master/{{ page.path | downcase }}">Edit</a>
-  </nav>
+  <ol class="breadcrumb">
+    <li><a href="{{ site.baseurl }}/">Docs</a></li>
+    <li class="active">{{page.title}}</li>
+    <a class="pull-right" href="{{ site.github.repository_url }}/blob/master/{{ page.path | downcase }}">Edit</a>
+  </ol>
 
   <div class="row">
 
-    <div class="col-sm-3">
-
-      <div id="toc">
-        
-        <div class="dropdown">
-          <button class="btn btn-outline-primary btn-block dropdown-toggle text-xs-left" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{page.title}}</button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item active" href="#">The Things Uno</a>
-            <a class="dropdown-item" href="#">The Things Node</a>
-            <a class="dropdown-item" href="#">The Things Gateway</a>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-
-    <div id="content" class="col-sm-9">
+    <div class="col-sm-9 js-toc-content" role="main">
 
       <h1 class="display-4">{{page.title}}</h1>
 
@@ -43,6 +26,26 @@ layout: default
         {% capture section_include %}{% include {{ section }} %}{% endcapture %}
         {{ section_include | markdownify }}
       {% endfor %}
+
+    </div>
+
+    <div class="col-sm-3" role="complementary">
+
+      <div class="guides-sidebar">
+        
+        <div class="dropdown">
+          <button class="btn btn-primary btn-block" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{page.title}} <span class="caret"></span></button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <li class="dropdown-header">Guides</li>
+            <li class="active"><a href="#">The Things Uno</a></li>
+            <li><a href="#">The Things Node</a></li>
+            <li><a href="#">The Things Gateway</a></li>
+          </ul>
+        </div>
+
+        <div class="js-toc"></div>
+
+      </div>
 
     </div>
 

@@ -1,5 +1,5 @@
 body {
-    padding-top: 6rem;
+    padding-top: $navbar-height;
 }
 
 /* navbar */
@@ -9,33 +9,32 @@ body {
   background: white;
 
   .navbar-brand {
-    line-height: 65px;
+    line-height: $navbar-height;
+    padding-top: 0;
+    padding-bottom: 0;
 
     img {
+      display: inline-block;
       height: 50px;
-      line-height: 65px;
     }
   }
 
-  .nav-item {
+  .navbar-nav > li {
 
-    & + .nav-item {
-      margin-left: 0;
-    }
-
-    .nav-link {
+    > a {
       font-family: 'Lato', sans-serif;
       font-size: 14px;
       text-transform: uppercase;
       display: block;
-      line-height: 65px;
+      line-height: $navbar-height;
       padding: 0 20px;
-      color: #0d83d0;
+      color: $brand-primary;
     }
 
-    &.active .nav-link,
-    .nav-link:hover {
+    &.active > a,
+    > a:hover {
       background: #dfdfdf;
+      color: $brand-primary;
     }
   }
 }

@@ -56,10 +56,27 @@
 	$(function () {
 
 	  tocbot.init({
-	    tocSelector: '#toc',
-	    contentSelector: '#content',
 	    headingSelector: 'h1, h2',
-	    headingsOffset: $("#toc").offset().top
+	    activeLinkClass: 'active',
+	    extraListClasses: 'nav',
+	    headingsOffset: $('.navbar').outerHeight(),
+	    smoothScrollOptions: {
+	      easing: 'easeInOutCubic',
+	      offset: $('#content').offset().top,
+	      speed: 300,
+	      updateURL: true
+	    }
+	  });
+
+	  $('.guides-sidebar').affix({
+	    offset: {
+	      top: function top() {
+	        return this.top = $('#content').offset().top;
+	      },
+	      bottom: function bottom() {
+	        return this.bottom = $('.footer').outerHeight(true);
+	      }
+	    }
 	  });
 	});
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
