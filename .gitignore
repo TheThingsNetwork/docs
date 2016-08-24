@@ -1,3 +1,18 @@
+# Generated site
 _site
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Dependencies
+node_modules
+
+# Cache
+.npm
 .sass-cache
 .jekyll-metadata
+
+# OS X
+.DS_Store

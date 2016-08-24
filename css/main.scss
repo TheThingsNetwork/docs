@@ -6,9 +6,11 @@
 
 $navbar-padding-y: 0;
 
-@import
-  "jquery.tocify.css",
-  "../bower_components/bootstrap/scss/bootstrap",
-  "syntax-highlighting",
-  "base"
-;
+@import '../node_modules/bootstrap/scss/bootstrap';
+
+@import '../node_modules/tocbot/src/scss/tocbot-core';
+@import '../node_modules/tocbot/src/scss/tocbot-default-theme';
+
+@import 'syntax-highlighting';
+
+@import 'base';

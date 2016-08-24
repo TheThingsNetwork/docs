@@ -2,7 +2,7 @@
 
 | The Things Uno |
 | -------------- |
-| <img style='max-width: 250px;' src="images/things-uno.jpg"> |
+| <img style='max-width: 250px;' src="{{site.baseurl}}/assets/things-uno.jpg"> |
 | [preorder now](https://www.shop.thethingsnetwork.com) |
 
 

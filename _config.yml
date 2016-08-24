@@ -7,18 +7,17 @@
 
 # Site settings
 title: The Things Network
-email: your-email@domain.com
+email: wienke@thethingsnetwork.org
 description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  We are building a global open free crowdsourced long range low battery IoT
+  data network.
 baseurl: "/docs" # the subpath of your site, e.g. /blog
 url: "https://fokkezb.github.io" # the base hostname & protocol for your site
 repository: fokkezb/docs
 
 # Build settings
 markdown: kramdown
-exclude: [ bower.json, Gemfile, Gemfile.lock, README.md ]
+exclude: [ node_modules, Gemfile, Gemfile.lock, package.json, README.md, webpack.config.js ]
 
 # Use GitHub.io overrides local as well
 lsi: false
