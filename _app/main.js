@@ -1,4 +1,5 @@
 require('tocbot');
+require('bootstrap-sass');
 
 $(function() {
 

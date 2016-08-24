@@ -7,7 +7,10 @@ logs
 npm-debug.log*
 
 # Dependencies
-node_modules
+/node_modules/*
+
+# Do include Bootstrap since GitHub Pages needs it to build the Jekyll site
+!/node_modules/bootstrap-sass
 
 # Cache
 .npm

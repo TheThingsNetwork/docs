@@ -4,13 +4,13 @@
 
 @import 'https://fonts.googleapis.com/css?family=Lato';
 
-$navbar-padding-y: 0;
+@import 'variables';
 
-@import '../node_modules/bootstrap/scss/bootstrap';
+@import "../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
 @import '../node_modules/tocbot/src/scss/tocbot-core';
 @import '../node_modules/tocbot/src/scss/tocbot-default-theme';
 
-@import 'syntax-highlighting';
+@import 'rouge';
 
 @import 'base';
