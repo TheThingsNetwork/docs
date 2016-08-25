@@ -39,6 +39,13 @@ body {
   }
 }
 
+/* anchor-js */
+
+.anchorjs-link:hover,
+.anchorjs-link:active {
+  text-decoration: none;
+}
+
 /* footer */
 
 .footer {

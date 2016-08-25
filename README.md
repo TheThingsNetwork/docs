@@ -11,7 +11,7 @@ Because we let GitHub Pages do the Jekyll builds the website will be updated aut
 
 * The homepage for the site is [index.html](index.html).
 * The guides are Jekyll pages grouped under the [guides](guides) folder.
-* The guides use sections to include the actual content from the [_includes](_includes) folders. This allows for re-use of content throughout different guides.
+* Most guides use `sections` front matter or `include` to pull content from the [_includes](_includes) folders. This allows for re-use of content throughout different guides.
 * Store images and other assets in the [assets](assets) folder.
 * If you do a lot of edits please use a local build to preview.
 
@@ -43,6 +43,8 @@ Because we let GitHub Pages do the Jekyll builds the website will be updated aut
 	```bash
 	$ npm run dev
 	```
+
+> *NOTE:* Running `npm install` will overwrite the git pre-commit hook to execute [npm run webpack](package.json#L11) and append the production version of [js/bundle.js](js/bundle.js) it produces.
 	
 ### Guidance
 
@@ -53,3 +55,4 @@ Because we let GitHub Pages do the Jekyll builds the website will be updated aut
 * Store images and other assets in the [assets](assets) folder.
 * Edit layouts in the [_layouts](_layouts) folder.
 * All layouts should inherit the [default](_layouts/default.html) layout.
+* Any meta data should be stored in the [_data](_data) folder, not [_config.yml](_config.yml).

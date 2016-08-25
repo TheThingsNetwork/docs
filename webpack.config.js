@@ -21,15 +21,14 @@ module.exports = {
   resolve: {
     extensions: ['', '.js', '.json'],
     alias: {
-        jquery: "jquery/src/jquery"
+        jquery: 'jquery/src/jquery'
     }
   },
 
   plugins: [
-    new webpack.BannerPlugin("---\n---\n\n", { raw: true }),
     new webpack.ProvidePlugin({
-      $: "jquery",
-      jQuery: "jquery"
+      $: 'jquery',
+      jQuery: 'jquery'
     })
   ]
 };

@@ -1,6 +1,6 @@
 require('tocbot');
 require('bootstrap-sass');
-require('anchor-js');
+var AnchorJS = require('anchor-js');
 
 $(function() {
 
@@ -29,6 +29,10 @@ $(function() {
     }
   });
 
+  var anchors = new AnchorJS();
   anchors.add('.js-toc-content h1, .js-toc-content h2');
+
+  // enable smooth scroll, including the offset set through tocbot
+  $('.anchorjs-link').attr('data-scroll', 'data-scroll');
   
 });
