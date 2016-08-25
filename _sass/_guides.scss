@@ -11,6 +11,44 @@
 }
 
 /*
+ * ZeroClipboard styles
+ */
+
+.zero-clipboard {
+  position: relative;
+  display: none;
+}
+.btn-clipboard {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  display: block;
+  padding: 5px 8px;
+  font-size: 12px;
+  color: #767676;
+  cursor: pointer;
+  background-color: #fff;
+  border: 1px solid #e1e1e8;
+  border-radius: 0 4px 0 4px;
+}
+.btn-clipboard-hover {
+  color: #fff;
+  background-color: $brand-primary;
+  border-color: $brand-primary;
+}
+
+@media (min-width: 768px) {
+  .zero-clipboard {
+    display: block;
+  }
+  .bs-example + .zero-clipboard .btn-clipboard {
+    top: -16px;
+    border-top-right-radius: 0;
+  }
+}
+
+/*
  * Side navigation taken from http://getbootstrap.com/
  */
 
@@ -94,7 +132,7 @@
   }
   .guides-sidebar.affix {
     position: fixed; /* Undo the static from mobile first approach */
-    top: ($navbar-height + ($padding-base-vertical * 4));
+    top: ($navbar-height + 1 + ($padding-base-vertical * 4));
   }
   .guides-sidebar.affix-bottom {
     position: absolute; /* Undo the static from mobile first approach */
