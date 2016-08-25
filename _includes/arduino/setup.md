@@ -5,4 +5,4 @@
 
   ![]({{ site.baseurl }}/assets/arduino_library.png)
 
-The Arduino IDE will notify you of updates for the IDE and our library automagically.
+The Arduino IDE will notify you of updates for the IDE and our library automagically. :open_mouth:

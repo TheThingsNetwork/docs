@@ -1,8 +1,8 @@
 The *DevEUI* is an unique address hard coded into the LoRa module. We use this address to register a device with The Things Network via the Dashboard or CLI.
 
-The DevEUI can often be found on the device or packaging, but can also be retrieved with The Things Network example sketch *DeviceInfo*.
+The DevEUI can often be found on the device or packaging, but can also be retrieved with The Things Network example sketch [DeviceInfo](https://github.com/TheThingsNetwork/arduino-library/blob/master/examples/DeviceInfo/DeviceInfo.ino).
 
-1. In Arduino IDE open **File > Examples > TheThingsNetwork > DeviceInfo**.
+1. In Arduino IDE open **File > Examples > TheThingsNetwork > [DeviceInfo](https://github.com/TheThingsNetwork/arduino-library/blob/master/examples/DeviceInfo/DeviceInfo.ino)**.
 2. Upload the sketch without modification.
 3. Open the Serial Monitor.
 4. Soon, it should print a list of *Device Information*, including the *EUI*:

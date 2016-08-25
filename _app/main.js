@@ -82,4 +82,10 @@ $(function() {
     ZeroClipboard.destroy();
   });
 
+  /**
+   * Tooltips
+   */
+  
+  $('[data-toggle="tooltip"]').tooltip();
+
 });
