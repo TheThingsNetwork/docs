@@ -1,8 +1,8 @@
-# Work with Arduino IDE
+# Setup Arduino IDE
 
 To read debug logs and upload new programs (sketches) to The Things Uno we'll use the Arduino IDE.
 
-## Setup and install our Library
+## Install the IDE and The Things Network Library
 
 {% include arduino/setup.md %}
 

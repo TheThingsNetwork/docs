@@ -1,13 +1,20 @@
 require('tocbot');
 require('bootstrap-sass');
-var ZeroClipboard = require('zeroclipboard');
 
 var AnchorJS = require('anchor-js');
 
 $(function() {
+  var contentOffset = 100;
+
+  var smoothScrollOptions = {
+    selector: 'a',
+    easing: 'easeInOutCubic',
+    offset: contentOffset,
+    speed: 300,
+    updateURL: true
+  };
 
   if ($('.layout-guide').length) {
-    var contentOffset = 100;
 
     /**
      * TocBot Sidebar
@@ -19,12 +26,7 @@ $(function() {
       extraListClasses: 'nav',
       headingsOffset: contentOffset,
       includeHtml: true,
-      smoothScrollOptions: {
-        easing: 'easeInOutCubic',
-        offset: contentOffset,
-        speed: 300,
-        updateURL: true
-      }
+      smoothScrollOptions: smoothScrollOptions
     });
 
     $('.guide-sidebar').affix({
@@ -46,6 +48,8 @@ $(function() {
     /**
      * ZeroClipboard
      */
+
+    var ZeroClipboard = require('zeroclipboard');
 
     ZeroClipboard.config({
       swfPath: site.baseurl + '/assets/flash/ZeroClipboard.swf',
@@ -80,6 +84,11 @@ $(function() {
       ZeroClipboard.destroy();
     });
     
+  } else {
+
+    // so that front-page content scroll to below navbar as well
+    var smoothScroll = require('tocbot/node_modules/smooth-scroll');
+    smoothScroll.init(smoothScrollOptions);
   }
 
   /**

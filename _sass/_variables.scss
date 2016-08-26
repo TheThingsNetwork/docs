@@ -1,8 +1,16 @@
 $navbar-height: 65px;
 
 /**
+ * Font Awesome
+ */
+
+$fa-font-path: $baseurl + '/assets/fonts/fontawesome';
+
+/**
  * Bootstrap
  */
+
+$icon-font-path: $baseurl + '/assets/fonts/bootstrap/';
 
 $brand-primary: #2386CC;
 $brand-primary-dark: #4D7E9E;
@@ -43,3 +51,6 @@ $breadcrumb-separator: '//';
 $breadcrumb-active-color: #2B4C62;
 
 $hr-border: $gray-light;
+
+$code-bg: #D5EAFB;
+$code-color: $brand-primary;

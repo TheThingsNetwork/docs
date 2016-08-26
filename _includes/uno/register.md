@@ -1,12 +1,12 @@
 # Register with The Things Network
 
-Your applications and devices can be managed by [The Things Network Dashboard][dashboard].
+Your applications and devices can be managed by [The Things Network Dashboard][https://staging.thethingsnetwork.org].
 
 ## Create an Account
 
-To use the dashboard, you need a The Things Network account. You can [create an account here][accounts].
+To use the dashboard, you need a The Things Network account. You can [create an account here][https://account.thethingsnetwork.org/register].
 
-After registering and validating your e-mail address, you will be able to log in to [The Things Network Dashboard][dashboard].
+After registering and validating your e-mail address, you will be able to log in to [The Things Network Dashboard][https://staging.thethingsnetwork.org].
 
 ## Create an Application
 

@@ -1,12 +1,19 @@
 .layout-guide {
   padding-top: 35px;
 
+  .dropdown .btn {
+    text-align: left;
+  }
+
   .panel {
     padding: 30px;
     margin-bottom: 100px;
-  
-    img {
-      max-width: 100%;
+
+    blockquote {
+      border: 1px solid $gray-light;
+      border-left: 5px solid $brand-primary;
+      border-radius: 3px 0 0 3px;
+      font-size: inherit;
     }
   }
 

@@ -1,4 +1,4 @@
-The *DevEUI* is an unique address hard coded into the LoRa module. We use this address to register a device with The Things Network via the Dashboard or CLI.
+The *DevEUI* is an unique address hard coded into the LoRa module. We use this address to register a device for OTAA with The Things Network via the Dashboard or CLI.
 
 The DevEUI can often be found on the device or packaging, but can also be retrieved with The Things Network example sketch [DeviceInfo](https://github.com/TheThingsNetwork/arduino-library/blob/master/examples/DeviceInfo/DeviceInfo.ino).
 

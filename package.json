@@ -39,6 +39,7 @@
   "dependencies": {
     "anchor-js": "^3.2.1",
     "bootstrap-sass": "^3.3.7",
+    "font-awesome": "^4.6.3",
     "jquery": "^2.2.4",
     "tocbot": "^2.1.4",
     "zeroclipboard": "^2.2.0"

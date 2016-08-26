@@ -3,6 +3,10 @@ body {
   background-color: $gray-lighter;
 }
 
+img {
+  max-width: 100%; // never exceed parent width
+}
+
 /* navbar */
 
 .navbar {
@@ -30,6 +34,7 @@ body {
       line-height: $navbar-height;
       padding: 0 20px;
       color: $brand-primary;
+      font-weight: normal;
     }
 
     &.active > a,

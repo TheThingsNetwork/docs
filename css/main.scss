@@ -2,20 +2,30 @@
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
 
+// Other files will not be pre-processed by Jekyll, so define baseurl to use here
 $baseurl: {{ site.baseurl }};
 
+// Fonts
 @import 'https://fonts.googleapis.com/css?family=Lato:300,400,700';
 @import '../assets/fonts/leaguespartan/stylesheet.css';
+
+// Include Bootstrap variables first so that we can use them in our overrides
+@import '../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/variables';
 
 @import 'variables';
 
 @import '../node_modules/bootstrap-sass/assets/stylesheets/bootstrap';
 
+// Include overrides for bootstrap styles
 @import 'bootstrap';
 
+// Other libs
+@import '../node_modules/font-awesome/scss/font-awesome';
 @import 'rouge';
 
+// Main styles
 @import 'base';
 
+// Specifics
 @import 'index';
 @import 'guides';
