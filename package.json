@@ -11,10 +11,12 @@
     "webpack": "webpack -p",
     "dev": "npm run dev-webpack & npm run jekyll",
     "prod": "npm run webpack & npm run jekyll",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "add": "git add ."
   },
   "pre-commit": [
-    "webpack"
+    "webpack",
+    "add"
   ],
   "repository": {
     "type": "git",

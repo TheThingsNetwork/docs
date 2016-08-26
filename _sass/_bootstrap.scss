@@ -1,0 +1,50 @@
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+h2,
+.h2 {
+  color: #4D7E9E;
+}
+
+h3,
+.h3 {
+  color: $gray-dark;
+  font-family: $font-family-sans-serif;
+  font-weight: normal;
+  letter-spacing: 1px;
+}
+
+p, li {
+  letter-spacing: 1px;
+  font-weight: lighter;
+}
+
+.btn-default {
+  &:focus,
+  &.focus,
+  &:active,
+  &.active,
+  &:hover {
+    color: white;
+    background-color: $brand-primary
+  }
+
+  border-width: 2px;
+}
+
+.breadcrumb {
+  border: 1px solid $gray-light;
+  border-radius: 0;
+  font-size: 1.1em;
+
+  a {
+    color: $breadcrumb-color;
+  }
+
+  @media (min-width: $screen-sm-min) {
+    display: inline-block;
+  }
+}

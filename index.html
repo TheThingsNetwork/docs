@@ -2,122 +2,141 @@
 layout: default
 ---
 
-<div class="container">
+<div class="layout-index">
 
-  <div class="jumbotron">
-    <h1>Documentation</h1>
-    <p class="lead">Let's grow the <em>Network</em> and connect all <em>Things</em>!</p>
-    <p><a class="btn btn-primary btn-lg" href="{{ site.github.repository_url }}" target="_blank" role="button">Contribute</a></p>
+  <div class="index-header">
+    <div class="container">
+
+      <img src="{{ site.baseurl }}/assets/layout/the-things-white.png" alt="⛅ The Things Network" />
+
+      <h1 class="title">Documentation</h1>
+
+      <p>Let's grow the <em><strong>Network</strong></em> and connect all <em><strong>Things!</strong></em></p>
+    </div>
   </div>
 
-  <h3 class="text-center">Connect all Things</h2>
+  <div class="container">
 
-  <div class="row">
+    <div class="index-intro panel">
 
-    <div class="col-sm-6">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">The Things Uno <span class="label label-warning">beta</span></h3>
-        </div>
-        <div class="panel-body">
-          An Arduino Uno with LoRa on board to prototype your ideas.
-        </div>
-        <ul class="list-group">
-          <li class="list-group-item"><a href="{{ site.baseurl }}/uno">Guide</a></li>
-          <li class="list-group-item"><a href="https://github.com/TheThingsNetwork/arduino-library/releases" target="_blank">Latest Downloads</a></li>
-        </ul>
-      </div>
+      <h1>From developers, for developers</h1>
+
+      <p>
+        Want to do more with our platform and tools?<br />
+        Learn everything about IoT prototyping and The Things Network right here.<br />
+        Get started with the beginners manual or contribute to our documentation.
+      </p>
+
+      <a href="#" class="btn btn-success btn-lg">Getting Started</a>
+      <a href="{{ site.github.repository_url }}" class="btn btn-default btn-lg">Contribute</a>
+
     </div>
 
-    <div class="col-sm-6">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">The Things Node</h3>
+    <h1 class="index-group">Connect all Things</h1>
+
+    <div class="row">
+
+      <div class="col-sm-6">
+        <div class="panel index-topic">
+          <div class="panel-body">
+            <img src="{{ site.baseurl }}/assets/layout/things-icon.png" />
+            <h2 class="title">The Things Uno <span class="badge">beta</span></h2>
+            <p>An Arduino with LoRaWAN on board to prototype wireless IoT.</p>
+          </div>
+          <hr />
+          <div class="panel-body">
+            <a href="{{ site.baseurl }}/uno" class="btn btn-primary">Guide</a>
+            <a href="https://github.com/TheThingsNetwork/arduino-library/releases" target="_blank" class="btn btn-link">Latest Downloads</a>
+          </div>
         </div>
-        <div class="panel-body">
-          An small, waterproof Arduino with LoRa and a bunch of sensors on board to prototype in minutes!
-        </div>
-        <ul class="list-group">
-          <li class="list-group-item"><a href="#">Guide</a></li>
-          <li class="list-group-item"><a href="https://github.com/TheThingsNetwork/arduino-library/releases" target="_blank">Latest Downloads</a></li>
-        </ul>
       </div>
+
+      <div class="col-sm-6">
+        <div class="panel index-topic">
+          <div class="panel-body">
+            <h2 class="title">The Things Node</h2>
+            <p>An small, waterproof Arduino with LoRa and a bunch of sensors on board to prototype in minutes!</p>
+          </div>
+          <hr />
+          <div class="panel-body">
+            <a href="{{ site.baseurl }}/node" class="btn btn-primary">Guide</a>
+            <a href="https://github.com/TheThingsNetwork/arduino-library/releases" target="_blank" class="btn btn-link">Latest Downloads</a>
+          </div>
+        </div>
+      </div>
+
     </div>
 
-  </div>
+    <h1 class="index-group">Grow the Network</h1>
 
-  <h3 class="text-center">Grow the Network</h2>
+    <div class="row">
 
-  <div class="row">
-
-    <div class="col-sm-6">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">The Things Gateway</h3>
+      <div class="col-sm-6">
+        <div class="panel index-topic">
+          <div class="panel-body">
+            <img src="{{ site.baseurl }}/assets/layout/physical-icon.png" />
+            <h2 class="title">The Things Gateway</h3>
+            <p>Grow the Network and setup your own Gateway for The Things Uno, Node and other devices.</p>
+          </div>
+          <hr />
+          <div class="panel-body">
+            <a href="{{ site.baseurl }}/gateway" class="btn btn-primary">Guide</a>
+          </div>
         </div>
-        <div class="panel-body">
-          Grow the Network and setup your own Gateway for The Things Uno, Node and other devices.
-        </div>
-        <ul class="list-group">
-          <li class="list-group-item"><a href="#">Guide</a></li>
-        </ul>
       </div>
+
     </div>
 
-  </div>
+    <h1 class="index-group">Back-end</h1>
 
-  <h3 class="text-center">Back-end</h2>
+    <div class="row">
 
-  <div class="row">
-
-    <div class="col-sm-6">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">The Things Dashboard</h3>
+      <div class="col-sm-6">
+        <div class="panel index-topic">
+          <div class="panel-body">
+            <h2 class="title">The Things Dashboard</h2>
+            <p>Manage application and devices.</p>
+          </div>
+          <hr />
+          <div class="panel-body">
+            <a href="{{ site.baseurl }}/dashboard" class="btn btn-primary">Guide</a>
+          </div>
         </div>
-        <div class="panel-body">
-          Manage application and devices.
-        </div>
-        <ul class="list-group">
-          <li class="list-group-item"><a href="#">Guide</a></li>
-        </ul>
       </div>
+
     </div>
 
-  </div>
+    <h1 class="index-group">Integrations</h1>
 
-  <h3 class="text-center">Integrations</h2>
+    <div class="row">
 
-  <div class="row">
-
-    <div class="col-sm-6">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">Node-RED</h3>
+      <div class="col-sm-6">
+        <div class="panel index-topic">
+          <div class="panel-body">
+            <h2 class="title">Node-RED</h2>
+            <p>The Things Network node to wire device activations and application messages.</p>
+          </div>
+          <hr />
+          <div class="panel-body">
+            <a href="{{ site.baseurl }}/node-red" class="btn btn-primary">Guide</a>
+          </div>
         </div>
-        <div class="panel-body">
-          The Things Network node to wire device activations and application messages.
-        </div>
-        <ul class="list-group">
-          <li class="list-group-item"><a href="{{ site.baseurl }}/node-red">Guide</a></li>
-          <li class="list-group-item"><a href="https://www.npmjs.com/package/node-red-contrib-ttn" target="_blank">Latest Downloads</a></li>
-        </ul>
       </div>
-    </div>
 
-    <div class="col-sm-6">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">Node.js</h3>
+      <div class="col-sm-6">
+        <div class="panel index-topic">
+          <div class="panel-body">
+            <h2 class="title">Node.js</h2>
+            <p>Get notified of device activations and send and receive application messages.</p>
+          </div>
+          <hr />
+          <div class="panel-body">
+            <a href="{{ site.baseurl }}/node-js" class="btn btn-primary">Guide</a>
+            <a href="https://www.npmjs.com/package/ttn" target="_blank" class="btn btn-link">Latest Downloads</a>
+          </div>
         </div>
-        <div class="panel-body">
-          Get notified of device activations and send and receive application messages.
-        </div>
-        <ul class="list-group">
-          <li class="list-group-item"><a href="#">Guide</a></li>
-          <li class="list-group-item"><a href="https://www.npmjs.com/package/ttn" target="_blank">Latest Downloads</a></li>
-        </ul>
       </div>
+
     </div>
 
   </div>

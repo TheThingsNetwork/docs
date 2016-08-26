@@ -4,6 +4,42 @@ $navbar-height: 65px;
  * Bootstrap
  */
 
-$brand-primary: #0d83d0;
+$brand-primary: #2386CC;
+$brand-primary-dark: #4D7E9E;
+$brand-success: #63E2C3;
+
+$gray-lighter: #F7F7F7;
+$gray-light: #DCDCDC;
+$gray: #9c9999;
+$gray-dark: #4a4a4a;
+
+$headings-color: $brand-primary;
+
+$font-size-base: 15px;
 $font-family-sans-serif:  Lato, "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $headings-font-family: 'League Spartan', $font-family-sans-serif;
+
+$font-size-h1: 25px;
+$font-size-h2: floor($font-size-h1 * 0.8);
+$font-size-h3: floor($font-size-h1 * 0.65);
+
+$font-size-large: ceil($font-size-base * 1.20);
+
+$btn-font-weight: lighter;
+$btn-border-radius-base: 1000px; // makes left and right side rounded
+$btn-border-radius-large: $btn-border-radius-base;
+$btn-default-border: $brand-primary;
+$btn-default-color: $brand-primary;
+$btn-default-bg: transparent;
+$btn-primary-bg: $brand-primary-dark;
+
+$padding-base-horizontal: 14px;
+$padding-large-horizontal: 20px;
+
+$panel-border-radius: none;
+
+$breadcrumb-bg: white;
+$breadcrumb-separator: '//';
+$breadcrumb-active-color: #2B4C62;
+
+$hr-border: $gray-light;

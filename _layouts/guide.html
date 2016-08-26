@@ -2,42 +2,29 @@
 layout: default
 ---
 
-<div class="container">
+<div class="layout-guide container">
 
-  <ol class="breadcrumb">
-    <li><a href="{{ site.baseurl }}/">Docs</a></li>
-    <li class="active">{{page.title}}</li>
-    <a class="pull-right" href="{{ site.github.repository_url }}/blob/master/{{ page.path | downcase }}">Edit</a>
-  </ol>
+  <div class="row">
+    <div class="col-sm-10">
+      <ol class="breadcrumb">
+        <li><a href="{{ site.baseurl }}/">Docs</a></li>
+        <li class="active">{{page.title}}</li>
+      </ol>
+    </div>
+    <div class="col-sm-2 text-right">
+      <a class="btn btn-default" href="{{ site.github.repository_url }}/blob/master/{{ page.path | downcase }}">Edit</a>
+    </div>
+  </div>
 
   <div class="row">
 
-    <div class="col-sm-9 js-toc-content content-body" role="main">
-
-      <div class="page-header">
-        <h1>{{page.title}}</h1>
-      </div>
-
-      <div class="lead clearfix">
-        {{ content }}
-      </div>
-
-      {% for section in page.sections %}
-        <hr />
-        {% capture section_include %}{% include {{ section }} %}{% endcapture %}
-        {{ section_include | markdownify }}
-      {% endfor %}
-
-    </div>
-
     <div class="col-sm-3" role="complementary">
 
-      <div class="guides-sidebar">
+      <div class="guide-sidebar">
         
         <div class="dropdown">
-          <button class="btn btn-primary btn-block" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{page.title}} <span class="caret"></span></button>
+          <button class="btn btn-primary btn-block" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Guides <span class="caret"></span></button>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <li class="dropdown-header">Guides</li>
             {% for path in site.data.guides %}
               {% for guide in site.pages %}
                 {% if guide.path == path %}
@@ -48,9 +35,34 @@ layout: default
           </ul>
         </div>
 
+        <hr />
+
         <div class="js-toc"></div>
 
       </div>
+
+    </div>
+
+    <div class="col-sm-9 js-toc-content content-body" role="main">
+
+      <section class="panel">
+        <div class="panel-body">
+          <h1 id="top">{{page.title}}</h1>
+          {{ content }}
+        </div>
+      </section>
+
+      {% for section in page.sections %}
+        {% capture section_include %}{% include {{ section }} %}{% endcapture %}
+        {% if section_include != "" %}
+          <section class="panel">
+            <div class="panel-body">
+              
+              {{ section_include | markdownify }}
+            </div>
+          </section>
+        {% else %}<!-- INCLUDE MISSING: {{section}} -->{% endif %}
+      {% endfor %}
 
     </div>
 
