@@ -21,9 +21,13 @@
     .title {
       margin: 0;
       text-transform: uppercase;
-      font-size: 50px;
+      font-size: 20px;
       letter-spacing: 9px;
       color: white;
+
+      @media (min-width: $screen-sm-min) {
+        font-size: 50px;
+      }
     }
 
     p {

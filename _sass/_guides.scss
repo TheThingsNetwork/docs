@@ -58,9 +58,6 @@
    */
 
   /* By default it's not affixed in mobile views, so undo that */
-  .js-toc.affix {
-    position: static;
-  }
   @media (min-width: 768px) {
     .js-toc {
       padding-left: 20px;
@@ -122,33 +119,15 @@
     font-weight: 500;
   }
 
-  /* Show and affix the side nav when space allows it */
-  @media (min-width: 992px) {
-    .guide-sidebar .nav > .nav {
-      display: block;
+  .affix {
+    top: 100px;
+    width: 213px;
+
+    @media (max-width: $screen-sm-max) {
+      position: static;
     }
-    /* Widen the fixed sidebar */
-    .guide-sidebar.affix,
-    .guide-sidebar.affix-bottom {
-      width: 213px;
-    }
-    .guide-sidebar.affix {
-      position: fixed; /* Undo the static from mobile first approach */
-      top: 100px;
-    }
-    .guide-sidebar.affix-bottom {
-      position: absolute; /* Undo the static from mobile first approach */
-    }
-    .guide-sidebar.affix-bottom > ul,
-    .guide-sidebar.affix > ul {
-      margin-top: 0;
-      margin-bottom: 0;
-    }
-  }
-  @media (min-width: 1200px) {
-    /* Widen the fixed sidebar again */
-    .guide-sidebar.affix-bottom,
-    .guide-sidebar.affix {
+
+    @media (min-width: $screen-lg-min) {
       width: 263px;
     }
   }
