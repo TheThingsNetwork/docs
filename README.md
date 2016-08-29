@@ -13,7 +13,8 @@ Because we let GitHub Pages do the Jekyll builds the website will be updated aut
 * The guides are Jekyll pages grouped under the [guides](guides) folder.
 * Use the main file of each guide for the intro, which will be wrapped as lead.
 * Use the `sections` front matter to include additional content from the [_includes](_includes) folder.
-* Use `{% include [path] %} to re-use content between guides as much as you can.
+* Use `{% include [path] %}` to re-use content between guides as much as you can.
+* Use blockquotes (`>`) to create callouts for important notes.
 * Store images and other assets in the [assets](assets) folder.
 * If you do a lot of edits please use a local build to preview.
 
