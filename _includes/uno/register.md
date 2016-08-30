@@ -14,11 +14,11 @@ Create your first The Things Network application by clicking
 [create application](https://staging.thethingsnetwork.org/applications/create).
 Fill in the desired application name (e.g. `Hello world`) and click **Create application**.
 
-![create application]({{ site.baseurl }}/assets/create-application.png)
+![create application](/assets/create-application.png)
 
 You will be redirected to the newly created Application page.
 
-![application info]({{ site.baseurl }}/assets/app-info.png)
+![application info](/assets/app-info.png)
 
 *Note: in every component on the dashboard there is a small help icon.
 This opens a help message with details about that components.*
@@ -38,7 +38,7 @@ registration page.
 Select **ABP**. We will let both session keys to be randomly generated. To continue,
 click **Register**.
 
-![register-device]({{ site.baseurl }}/assets/register-device-abp.png)
+![register-device](/assets/register-device-abp.png)
 
 You will be redirected to the device info page. Here you can view all
 information about your device, send messages to the device and view messages
@@ -50,4 +50,4 @@ that were sent by the device.
 without the routing services keeping track of the frame counter. Disabling this feature enables replay attacks, e.g.
 sending messages with a frame counter equal or lower than the latest received, so please do not enable relax frame count in production.
 
-![device-info]({{ site.baseurl }}/assets/device-info-abp.png)
+![device-info](/assets/device-info-abp.png)

@@ -27,7 +27,7 @@ To get started we need to install Node-RED and add the TTN node, both via [NPM](
 
     You should see something like:
 
-    ![]({{ site.baseurl }}/assets/node-red.png)
+    ![](/assets/node-red.png)
 
 ## The Things Network node
     
@@ -44,4 +44,4 @@ To get started we need to install Node-RED and add the TTN node, both via [NPM](
 
     You should now see the **ttn** node in the sidebar:
 
-    ![]({{ site.baseurl }}/assets/node-red-ttn.png)
+    ![](/assets/node-red-ttn.png)

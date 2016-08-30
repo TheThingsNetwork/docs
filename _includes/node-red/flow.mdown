@@ -4,49 +4,49 @@
 2. Now build the flow by placing the following block from the left component window in your sketch:
   1. Get the mqtt component:         **input > 'mqtt'**.
 
-        ![]({{ site.baseurl }}/assets/mqtt-comp.png)       
+        ![](/assets/mqtt-comp.png)       
 
   2. Get your json component:      **function > 'Json'**.
 
-        ![]({{ site.baseurl }}/assets/json-comp.png)
+        ![](/assets/json-comp.png)
 
   3. Get your function component:   **function > 'function'**
 
-        ![]({{ site.baseurl }}/assets/function-comp.png)
+        ![](/assets/function-comp.png)
 
   4. Get your Debug component:      **output > 'Debug'**
 
-        ![]({{ site.baseurl }}/assets/debug-comp.png)
+        ![](/assets/debug-comp.png)
 
 4. Now connect all the components together as listed above.
 
-     ![]({{ site.baseurl }}/assets/flow.png)
+     ![](/assets/flow.png)
 
 5. Configure the `mqtt component`:
     1. Double-click the `mqtt component`
     2. Click on the pencil icon
     3. **under connection:***   Enter for server:   `staging.thethingsnetwork.org`
 
-         ![]({{ site.baseurl }}/assets/connection.png)
+         ![](/assets/connection.png)
 
     4. **under security:**      Enter for Username: `your AppEui`
     5. **under security:**      Enter for password: `the corresponding Access Key`
 
         The `AppEui` and `Access key` can be looked up in the [ttnctl tool](http://gruifin.github.io/cookbook/the-things-uno/# create-application).
 
-        ![]({{ site.baseurl }}/assets/security.png)
+        ![](/assets/security.png)
 
     6. Click the **update** button
     7. Enter for Topic: `+/devices/+/up`
 
-        ![]({{ site.baseurl }}/assets/mqtt.png)
+        ![](/assets/mqtt.png)
 
 6. Configure the `function component`
     1. Double-click the `function component`
     2. add the following code to your function
     3. Click the Ok button
 
-        ![]({{ site.baseurl }}/assets/function-ex.png)
+        ![](/assets/function-ex.png)
 
     ```
     var text = new Buffer(msg.payload.payload, 'base64').toString();
@@ -57,11 +57,11 @@
 
 7. Click the **Deploy** button at the right top of your window. Your data flow should look
 
-     ![]({{ site.baseurl }}/assets/deploy.png)
+     ![](/assets/deploy.png)
 
 8. You should get a message that the sketch is successfully deployed.
 
-     ![]({{ site.baseurl }}/assets/deploy-ok.png)
+     ![](/assets/deploy-ok.png)
 
 <aside class = 'success'>
     Congratulations, you have successfully build your first Node-RED flow.    

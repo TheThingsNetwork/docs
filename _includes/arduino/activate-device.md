@@ -55,7 +55,7 @@ const byte appKey[16] = {0x73, 0x6D, 0x24, 0xD2, 0x69, 0xBE, 0xE3, 0xAE, 0x0E, 0
 
 > Use <code><i class="fa fa-eye"></i></code> to show obfuscated keys and <code><i class="fa fa-code"></i></code> to toggle to **msb**. Then use <code><i class="fa fa-clipboard"></i></code> to copy the C-style MSB App Key and paste it in your sketch.
 >
-> ![App Key]({{ site.baseurl }}/assets/app-key.png)
+> ![App Key](/assets/app-key.png)
 
 Replace `// TODO: Activate` with:
 

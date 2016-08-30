@@ -14,11 +14,11 @@ To use the TTN node you need to configure it for your The Things Network Applica
 2. Double click the node to edit it.
 3. Paste the **App EUI** and **Access Key** and click **Done**:
 
-    ![]({{ site.baseurl }}/assets/node-red-ttn-edit.png)
+    ![](/assets/node-red-ttn-edit.png)
 
 4. Click **Deploy** on the top right. The node should say it's connected:
 
-    ![]({{ site.baseurl }}/assets/node-red-ttn-connected.png)
+    ![](/assets/node-red-ttn-connected.png)
 
     In the terminal you should see something like:
 

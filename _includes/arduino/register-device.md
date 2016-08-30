@@ -27,21 +27,21 @@ We'll let the App Key randomly generated. To continue, click **Register**.
 To register for OTAA you'll need to <a href="#get-the-things-uno-deveui">get
 the **DevEUI** of your device</a>.
 
-![Register Device (OTAA)]({{ site.baseurl }}/assets/register-device-otaa.png)
+![Register Device (OTAA)](/assets/register-device-otaa.png)
 
 You will be redirected to the **Device info** page. Here you can view all
 information about your device, including the keys you'll need to active.
 You can also send messages to the device (downlink) and monitor messages
 sent by the device (uplink):
 
-![Device info (ABP)]({{ site.baseurl }}/assets/device-info-abp.png)
+![Device info (ABP)](/assets/device-info-abp.png)
 
 ## Register for Activation By Personalization (ABP)
 
 Select **ABP**. We will let both session keys to be randomly generated.
 To continue, click **Register**.
 
-![Register Device (ABP)]({{ site.baseurl }}/assets/register-device-abp.png)
+![Register Device (ABP)](/assets/register-device-abp.png)
 
 As with OTAA, you'll be redirected to the **Device info** page.
 
@@ -53,4 +53,4 @@ While developing, you'll probably want to enable **Relax Frame Count**.
 
 > **WARNING:** Do not leave **Relax Frame Count** enabled in production as it will allow replay attacks, e.g. sending messages with a frame counter equal or lower than the latest received.
 
-![Device info (ABP)]({{ site.baseurl }}/assets/device-info-abp.png)
+![Device info (ABP)](/assets/device-info-abp.png)

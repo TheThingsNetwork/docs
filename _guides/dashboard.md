@@ -1,7 +1,7 @@
 ---
 layout: guide
 title: The Things Dashboard
-permalink: /dashboard/
+zindex: 799
 sections:
 - "dashboard/create-account.md"
 - "dashboard/create-application.md"

@@ -40,7 +40,7 @@ A common use case is to invoke a HTTP request to an external web service of your
 
     This should look something like:
 
-    ![]({{ site.baseurl }}/assets/node-red-ifttt-function.png)
+    ![](/assets/node-red-ifttt-function.png)
 
 6.  Drag a **http request** node from the same **function** category.
 7.  Drag a wire from the output of the **create request** node to the input of the **http request** node.
@@ -52,6 +52,6 @@ A common use case is to invoke a HTTP request to an external web service of your
 11. Click **Done** and then **Deploy**.
 12. Soon, you should receive an email like:
 
-    ![]({{ site.baseurl }}/assets/node-red-ifttt-email.png).
+    ![](/assets/node-red-ifttt-email.png).
 
     You probably want to turn off the IFTTT recipe now, unless you like to be spammed.

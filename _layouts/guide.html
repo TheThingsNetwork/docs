@@ -25,12 +25,9 @@ layout: default
         <div class="dropdown">
           <button class="btn btn-primary btn-block" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Guides <span class="caret"></span></button>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            {% for path in site.data.guides %}
-              {% for guide in site.pages %}
-                {% if guide.path == path %}
-                <li{% if guide.path == page.path %} class="active"{% endif %}><a href="{{ site.baseurl }}{{ guide.url}}">{{ guide.title }}</a></li>  
-                {% endif %}
-              {% endfor %}
+            {% assign sorted = site.guides | sort:"zindex" | reverse %}
+            {% for guide in sorted %}
+              <li{% if guide.path == page.path %} class="active"{% endif %}><a href="{{ site.baseurl }}{{ guide.url}}">{{ guide.title }}</a></li>
             {% endfor %}
           </ul>
         </div>
@@ -45,10 +42,13 @@ layout: default
 
     <div class="col-md-9 js-toc-content content-body" role="main">
 
+      {% assign replace_a_with = '<a href="' | append: site.baseurl | append: '/' %}
+      {% assign replace_img_with = '<img src="' | append: site.baseurl | append: '/' %}
+
       <section class="panel">
         <div class="panel-body">
           <h1 id="top">{{page.title}}</h1>
-          {{ content }}
+          {{ content | replace: '<a href="/', replace_a_with | replace: '<img src="/', replace_img_with }}
         </div>
       </section>
 
@@ -57,8 +57,7 @@ layout: default
         {% if section_include != "" %}
           <section class="panel">
             <div class="panel-body">
-              
-              {{ section_include | markdownify }}
+              {{ section_include | markdownify | replace: '<a href="/', replace_a_with | replace: '<img src="/', replace_img_with }}
             </div>
           </section>
         {% else %}<!-- INCLUDE MISSING: {{section}} -->{% endif %}

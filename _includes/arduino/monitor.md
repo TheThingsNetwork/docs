@@ -1,3 +1,5 @@
+# Serial Monitor
+
 Many sketches write debug logs to the device Serial Port. You can read these logs via the Arduino IDE. Simply go to **Tools > Serial Monitor** `Ctrl/⌘ + Shift + M`.
 
 > Uploads will fail if you have the Serial Monitor open. Close it before each upload and learn the shortcut. :wink:
