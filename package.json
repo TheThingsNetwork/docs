@@ -7,9 +7,10 @@
   "scripts": {
     "start": "npm run dev",
     "jekyll": "bundle exec jekyll serve",
+    "dev-jekyll": "bundle exec jekyll serve --incremental",
     "dev-webpack": "webpack --watch",
     "webpack": "webpack -p",
-    "dev": "npm run dev-webpack & npm run jekyll",
+    "dev": "npm run dev-webpack & npm run dev-jekyll",
     "prod": "npm run webpack & npm run jekyll",
     "test": "echo \"Error: no test specified\" && exit 1",
     "add": "git add ."

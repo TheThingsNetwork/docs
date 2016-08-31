@@ -1,4 +1,4 @@
-# Setup Arduino IDE
+#{{ include.bump }} Setup Arduino IDE
 
 1. [Download](https://www.arduino.cc/en/Main/Software) and install the latest Arduino Software (IDE).
 2. Navigate to **Sketch > Include Library > Manage Libraries...**.

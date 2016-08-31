@@ -1,4 +1,4 @@
-# Register a Device
+# Register Device
 
 To communicate with the Application you registered via The Things Dashboard, we
 first need to do the same for your Device and activate it via our sketch.

@@ -14,9 +14,21 @@
   <![endif]-->
 
   <script>
+
+  var canonical = '{{ page.url | prepend: site.baseurl | prepend: site.url | replace:"/index.html", "/" }}';
+
+  if (document.location.href !== canonical) {
+    if (!document.location.port) {
+      window.location.replace(canonical);
+    } else {
+      console.log('Canonical', canonical);
+    }
+  }
+
   var site = {
     baseurl: '{{ site.baseurl }}'
   };
+
   </script>
 
   {% seo %}

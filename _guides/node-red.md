@@ -1,12 +1,11 @@
 ---
 layout: guide
 title: Node-RED
-
 sections:
-- "node-red/setup.md"
-- "node-red/configure.md"
-- "node-red/test.md"
-- "node-red/build.md"
+ - node-red/setup.md
+ - node-red/configure.md
+ - node-red/test.md
+ - node-red/build.md
 ---
 
 [Node-RED](http://nodered.org/) is a free, JavaScript-based server and web GUI
