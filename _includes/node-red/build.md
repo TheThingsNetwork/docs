@@ -52,6 +52,6 @@ A common use case is to invoke a HTTP request to an external web service of your
 11. Click **Done** and then **Deploy**.
 12. Soon, you should receive an email like:
 
-    ![](/assets/node-red-ifttt-email.png).
+    ![](/assets/node-red-ifttt-email.png)
 
     You probably want to turn off the IFTTT recipe now, unless you like to be spammed.
