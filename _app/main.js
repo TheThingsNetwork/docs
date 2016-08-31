@@ -56,10 +56,7 @@ $(function() {
       hoverClass: 'btn-clipboard-hover'
     });
 
-    $('.highlight').each(function() {
-      var copyBtn = '<div class="zero-clipboard"><span class="btn-clipboard">Copy</span></div>';
-      $(this).before(copyBtn);
-    });
+    $('.highlight').before('<div class="zero-clipboard"><span class="btn-clipboard">Copy</span></div>');
 
     var client = new ZeroClipboard($('.btn-clipboard'));
 

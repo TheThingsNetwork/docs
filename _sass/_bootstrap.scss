@@ -13,17 +13,6 @@ h3,
 .h3 {
   color: $gray-dark;
   font-family: $font-family-sans-serif;
-  font-weight: normal;
-  letter-spacing: 1px;
-}
-
-p, li {
-  letter-spacing: 1px;
-  font-weight: lighter;
-
-  a {
-    font-weight: normal;
-  }
 }
 
 .btn-default {

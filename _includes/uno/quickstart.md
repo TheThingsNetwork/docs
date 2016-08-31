@@ -38,40 +38,116 @@ Devices need to be registered with an application in order to send and receive m
 ## Activate Device
 Now that you have registered the device you need to activate it from the device itself.
 
-1.  In Arduino IDE, select **File > Examples > TheThingsNetwork > [SendOTAA](https://github.com/TheThingsNetwork/arduino-library/blob/master/examples/SendOTAA/SendOTAA.ino)**.
+1.  In Arduino IDE, select **File > Examples > TheThingsNetwork > [QuickStart](https://github.com/TheThingsNetwork/arduino-library/blob/master/examples/QuickStart/QuickStart.ino)**.
 2.  Copy the **App EUI** and **App Key** from the device page to the example.
 
     > Use <code><i class="fa fa-eye"></i></code> to show obfuscated keys and <code><i class="fa fa-code"></i></code> to toggle to **msb**. Then use <code><i class="fa fa-clipboard"></i></code> to copy.
     >
     > ![App Key](/assets/app-key.png)
 
-    The first lines of the sketch should now look like:
+    For OTAA, the example calls `ttn.join()` with the `appEui` and `appKey` you declared.
 
     ```c
-    #include <TheThingsNetwork.h>
+    // ..
 
-    // Set your AppEUI and AppKey
-    const byte appEui[8] = { 0x70, 0xB3, 0xD5, 0x7E, 0xD0, 0x00, 0x0A, 0xFB };
-    const byte appKey[16] = { 0x9D, 0x5B, 0x5E, 0x5E, 0xAF, 0x1D, 0x20, 0x04, 0xDB, 0x79, 0xFA, 0xDB, 0x06, 0x3E, 0xD1, 0xA1 };
+    // Runs once
+    void setup() {
+
+      // ..
+
+      // Try OTAA with pauses of 6 seconds
+      while(!ttn.join(appEui, appKey)){
+        delay(6000);
+      }
+    }
     ```
 
 3.  Select **Sketch > Upload** `Ctrl/⌘ + U` to upload the sketch.
 
-The example takes care of initializing The Things Network library by calling `ttn.init(loraSerial, debugSerial)` and activating the device by calling `ttn.join(appEui, appKey)`.
+    > Uploads might fail if you still have the Serial Monitor open.
 
-## Send Message
-The example you uploaded calls `ttn.sendString(message)` with `message` defined as `Hello world`. You can find this code in [`loop()`](https://www.arduino.cc/en/Reference/Loop) with means it will execute continuously after sleeping for 20 seconds, thanks to `delay(20000)`.
+## Send Message (uplink)
+The example you uploaded calls `ttn.sendBytes()` to send an uplink message from the device to your application on The Things Network.
 
-Still on the dashboard's device page, you should see the messages coming in under the **Messages** section. As you can see the payload isn't `Hello world` as we expected:
+Messages are arrays of bytes so you need to encode any (sensor) data you'd like to send as bytes.
+
+```c
+// Runs continuously with pauses of 20 seconds
+void loop() {
+
+  // Declare and send an array of bytes
+  byte payload[] = { 0x48, 0x65, 0x6C, 0x6C, 0x6F };
+  ttn.sendBytes(payload, sizeof(payload));
+
+  delay(20000);
+}
+```
+
+## Decode Message
+Still on the dashboard's device page, you should see the messages coming in under the **Messages** section:
 
 ![](/assets/dashboard-device-messages-payload.png)
 
-This is because `sendString()` encodes the string as bytes (which is `48 65 6C 6C 6F 20 77 6F 72 6C 64`) and by default decoded using base64 as `SGVsbG8gd29ybGQ=`. To decode it we'll use:
+You could now use MQTT or the [TTN Node for Node-RED](/node-red/) to process the payload as it is, but we can also decode it first.
 
-```js
-function (bytes) {
-  return {
-    payload: String.fromCharCode.apply(null, bytes)
-  };
-}
-```
+1.  Go back to the application page and click the **<i class="fa fa-pencil"></i> edit** link in the **Application Info** box.
+2.  Leave **decoder** selected, paste the following JavaScript code and click **Save**.
+
+    ```js
+    function (bytes) {
+      return {
+        message: String.fromCharCode.apply(null, bytes)
+      };
+    }
+    ```
+
+3.  Go back to the application page and the next message should be decoded:
+
+    ![](/assets/dashboard-device-messages-payload-decoded.png)
+
+## Receive Message (downlink)
+Now let's send a message back to the device. Devices can only receive the last message sent to them in response to a message they send themselves. This means that you need to poll The Things Network frequently to not miss any downlink messages.
+
+1.  In the Arduino IDE, replace the call to `ttn.sendBytes()` with the following:
+
+    ```c
+    int downlinkBytes = ttn.sendBytes(payload, sizeof(payload));
+
+    if (downlinkBytes > 0) {
+      debugSerial.print("Received ");
+      
+      for (int i = 0; i < downlinkBytes; i++) {
+        debugSerial.print((char) ttn.downlink[i]);
+      }
+      
+      debugSerial.println();
+    }
+    ```
+
+2.  Select **Sketch > Upload** `Ctrl/⌘ + U` to upload the sketch.
+3.  Select **Tools > Serial Monitor** `Ctrl/⌘ + M` to open the Serial Monitor.
+4.  On the dashboard, go to the application page.
+5.  In the **Devices** box click on the **Dev EUI** of your device to go to its page.
+6.  In the **Downlink** box, paste the following hex-encoded list of bytes and click **Send**.
+
+    ```
+    48 69
+    ```
+
+7.  In the Arduino IDE, you should see the next succesful transmission followed up with the response:
+
+    ```
+    Sending: mac tx uncnf 1 with 5 bytes
+    Successful transmission. Received 2 bytes
+    Received Hi
+    ```
+
+## Next
+You have now send and received messages on your device via The Things Network.
+
+What's next?
+
+- [Learn Arduino](https://www.arduino.cc/en/Guide/HomePage).
+- Learn more about [The Things Network Arduino Library](/arduino/).
+- Learn how receive and send messages from the internet to your device.
+- Get your hands on some sensors and actuators and start prototyping.

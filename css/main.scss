@@ -6,7 +6,7 @@
 $baseurl: {{ site.baseurl }};
 
 // Fonts
-@import 'https://fonts.googleapis.com/css?family=Lato:300,400,700';
+@import 'https://fonts.googleapis.com/css?family=Lato';
 @import '../assets/fonts/leaguespartan/stylesheet.css';
 
 // Include Bootstrap variables first so that we can use them in our overrides

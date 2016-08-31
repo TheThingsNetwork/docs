@@ -75,7 +75,7 @@
     display: block;
     padding: 6px 20px;
     font-size: 15px;
-    font-weight: 500;
+    font-weight: bold;
     color: $gray;
   }
   .js-toc .nav > li > a:hover,
@@ -116,7 +116,7 @@
   .js-toc .nav .nav > li:hover > a.active,
   .js-toc .nav .nav > li:focus > a.active {
     padding-left: 28px;
-    font-weight: 500;
+    font-weight: bold;
   }
 
   .affix {

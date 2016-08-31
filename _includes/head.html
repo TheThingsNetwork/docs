@@ -15,15 +15,11 @@
 
   <script>
 
-  var canonical = '{{ page.url | prepend: site.baseurl | prepend: site.url | replace:"/index.html", "/" }}';
-
-  if (document.location.href !== canonical) {
-    if (!document.location.port) {
+  (function(canonical) {
+    if (!document.location.port && document.location.href !== canonical) {
       window.location.replace(canonical);
-    } else {
-      console.log('Canonical', canonical);
     }
-  }
+  })('{{ page.url | prepend: site.baseurl | prepend: site.url | replace:"/index.html", "/" }}');
 
   var site = {
     baseurl: '{{ site.baseurl }}'
