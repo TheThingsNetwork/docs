@@ -57,6 +57,10 @@
     margin-top: 50px;
     margin-bottom: 50px;
 
+    &.disabled {
+      opacity: 0.5;
+    }
+
     img {
       width: 200px;
       display: block;
