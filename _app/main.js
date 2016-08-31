@@ -94,4 +94,9 @@ $(function() {
   
   $('[data-toggle="tooltip"]').tooltip();
 
+  /** 
+   * Disabled links
+   */
+  $('a[disabled][href]').attr('href', 'javascript:void(0)');
+
 });
