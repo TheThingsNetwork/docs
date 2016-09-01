@@ -108,7 +108,7 @@ client.downlink(devEUI, payload, [ttl], [port]);
 
 See the [Node.js Buffer reference](https://nodejs.org/api/buffer.html#buffer_class_buffer) for different ways to create a buffer. The client will call [`Buffer.toString('base64')`](https://nodejs.org/api/buffer.html#buffer_buf_tostring_encoding_start_end) before publishing the message to The Things Network's MQTT broker.
 
-All these examples result in the same payload being send:
+All these examples result in the same base64 payload `'SGk='` sent to the network:
 
 ```js
 // Create buffer from a hex string

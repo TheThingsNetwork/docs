@@ -132,7 +132,7 @@ I use the same script as [The Things Uno Quick Start](/uno/#quick-start), which 
 
     ```js
     client.on('uplink', function (msg) {
-      console.info('[INFO] ', 'Message: ' + JSON.stringify(msg, null, 2));
+      console.info('[INFO] ', 'Uplink: ' + JSON.stringify(msg, null, 2));
     });
     ```
 
@@ -146,7 +146,7 @@ I use the same script as [The Things Uno Quick Start](/uno/#quick-start), which 
 
     ```bash
     [DEBUG] Connected
-    [INFO]  Message: {
+    [INFO]  Uplink: {
       "devEUI": "0004A30B001B7AD2",
       "fields": {
         "message": "Hello"
@@ -187,8 +187,10 @@ Again, I use the same script as [The Things Uno Quick Start](/uno/#quick-start) 
 
     ```js
     client.on('uplink', function(msg) {
+
       if (msg.counter % 3 === 0) {
-        console.log('[DEBUG]', 'Response');
+        console.log('[DEBUG]', 'Downlink');
+
         var payload = new Buffer('4869', 'hex');
         client.downlink(msg.devEUI, payload);
       }
@@ -204,7 +206,7 @@ Again, I use the same script as [The Things Uno Quick Start](/uno/#quick-start) 
     After each 3rd message the script should output:
 
     ```
-    [DEBUG] Response
+    [DEBUG] Downlink
     ```
 
     In the Serial Montor you should see something like this if you uploaded the Quick Start sketch:
