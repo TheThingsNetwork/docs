@@ -7,6 +7,8 @@ You can find a lot of example flows and additional nodes in the [Node-RED Librar
 ## Example: IFTTT
 A common use case is to invoke a HTTP request to an external web service of your application. Here's an example of how to forward the data to If This Then That (IFTTT) where we can link up other APIs.
 
+> You can find this full example in the [Node-RED Library](http://flows.nodered.org/flow/2d475e136cda21c3d642b0da66e565fe).
+
 ### Create a Recipe at IFTTT
 
 1.  Go to [IFTTT](https://ifttt.com) and create an account or login.
@@ -49,8 +51,11 @@ A common use case is to invoke a HTTP request to an external web service of your
 10. For **URL** enter `https://maker.ifttt.com/trigger/{event}/with/key/{key}`.
     * Replace `{event}` with the **Event Name** `message` or what you decided to use in step 7 of setting up IFTTT.
     * Replace `{key}` with the key you found at the [Maker Channel](https://ifttt.com/maker) in step 12.
-11. Click **Done** and then **Deploy**.
-12. Soon, you should receive an email like:
+11. Click **Done** and you should now have something like:
+
+    ![](/assets/node-red-ifttt-flow.png)
+
+12. Click **Deploy** and soon you should receive an email like:
 
     ![](/assets/node-red-ifttt-email.png)
 
