@@ -9,6 +9,8 @@ $baseurl: {{ site.baseurl }};
 @import 'https://fonts.googleapis.com/css?family=Lato';
 @import '../assets/fonts/leaguespartan/stylesheet.css';
 
+@import '../node_modules/ttn-stylebook/dist/sass/variables';
+
 // Include Bootstrap variables first so that we can use them in our overrides
 @import '../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/variables';
 

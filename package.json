@@ -43,6 +43,7 @@
     "font-awesome": "^4.6.3",
     "jquery": "^2.2.4",
     "tocbot": "^2.1.4",
+    "ttn-stylebook": "github:fokkezb/ttn-stylebook",
     "zeroclipboard": "^2.2.0"
   }
 }

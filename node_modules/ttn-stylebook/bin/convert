@@ -1,0 +1,114 @@
+#!/usr/bin/env node
+
+var child_process = require('child_process');
+var path = require('path');
+
+var async = require('async');
+var del = require('del');
+var fs = require('fs-extra');
+var read = require('fs-readdir-recursive');
+
+var SRC = path.join(__dirname, '..', 'src');
+var DIST = path.join(__dirname, '..', 'dist');
+
+var files = read(SRC);
+
+async.series([
+	clean,
+	srcToLess,
+	lessToScss,
+	scssToSass,
+	scssToCss,
+	lessToStyl
+
+], function(err, results) {
+
+	if (err) {
+		return console.error(err);
+	}
+});
+
+function clean(next) {
+	del(DIST).then(function() {
+		return next();
+	});
+}
+
+function srcToLess(next) {
+	fs.copy(SRC, path.join(DIST, 'less'), next);
+}
+
+function lessToScss(next) {
+
+	fs.copy(path.join(DIST, 'less'), path.join(DIST, 'scss'), function(err) {
+
+		if (err) {
+			return next(err);
+		}
+
+		async.each(files, function(file, callback) {
+			child_process.execFile('less2sass', [path.join(DIST, 'scss', file), '-d'], callback);
+		}, next);
+	});
+}
+
+function scssToSass(next) {
+
+	fs.copy(path.join(DIST, 'scss'), path.join(DIST, 'sass'), function(err) {
+
+		if (err) {
+			return next(err);
+		}
+
+		child_process.execFile('sass-convert', [path.join(DIST, 'sass'), '--recursive', '--from', 'scss', '--to', 'sass'], function(err) {
+
+			if (err) {
+				return next(err);
+			}
+
+			del([path.join(DIST, 'sass', '**/*.scss')]).then(function() {
+				return next();
+			});
+		});
+
+	});
+}
+
+function scssToCss(next) {
+
+	fs.ensureDir(path.join(DIST, 'css'), function(err) {
+
+		if (err) {
+			return next(err);
+		}
+
+		child_process.execFile('sass', ['--update', path.join(DIST, 'scss') + ':' + path.join(DIST, 'css')], next);
+	});
+}
+
+function lessToStyl(next) {
+
+	fs.ensureDir(path.join(DIST, 'styl'), function(err) {
+
+		if (err) {
+			return next(err);
+		}
+
+		async.each(files, function(file, callback) {
+			var target = fs.createWriteStream(path.join(DIST, 'styl', file.substr(0, file.lastIndexOf('.')) + '.styl'), {flags: 'a'});
+			var cmd = child_process.spawn('less2stylus', [path.join(SRC, file)]);
+
+			cmd.stdout.pipe(target);
+
+			cmd.on('close', function (code) {
+
+				if (code !== 0) {
+					return callback(new Error('child process exited with code ' + code));
+				}
+
+				callback();
+			});
+
+		}, next);
+	});
+}
