@@ -3,6 +3,8 @@ layout: guide
 title: Node.js
 sections:
  - node-js/quick-start.md
+ - node-js/live.md
+ - node-js/api.md
 ---
 
 [Node.js](https://nodejs.org/) is a JavaScript runtime built on Chrome's V8 JavaScript engine.

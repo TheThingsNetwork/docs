@@ -1,6 +1,8 @@
 # Quick Start
 This guide will walk you through setting up a Node.js project that listens to device activations and messages and responds to every 3rd message.
 
+> In a hurry? Skip to [Connect](#connect) to get your application **App EUI** and **Access Keys** and then jump to the [Live Example](#live-example) to run the script we'll write here directly in your browser!
+
 ## Setup
 Let's install Node.js, create a Node.js project and install the TTN Client.
 
@@ -213,4 +215,4 @@ Again, I use the same script as [The Things Uno Quick Start](/uno/#quick-start) 
     Received Hi
     ```
 
-Congratulations!
+Congratulations! Now you know how to send and receive messages from a Node.js script.
