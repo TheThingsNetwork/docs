@@ -21,14 +21,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FokkeZB/docs.git"
+    "url": "git+https://github.com/thethingsnetwork/docs.git"
   },
   "author": "The Things Network",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/FokkeZB/docs/issues"
+    "url": "https://github.com/thethingsnetwork/docs/issues"
   },
-  "homepage": "https://github.com/FokkeZB/docs#readme",
+  "homepage": "https://github.com/thethingsnetwork/docs#readme",
   "devDependencies": {
     "babel-core": "^6.9.0",
     "babel-loader": "^6.2.4",
@@ -43,7 +43,7 @@
     "font-awesome": "^4.6.3",
     "jquery": "^2.2.4",
     "tocbot": "^2.1.4",
-    "ttn-stylebook": "github:fokkezb/ttn-stylebook",
+    "ttn-stylebook": "github:thethingsnetwork/ttn-stylebook",
     "zeroclipboard": "^2.2.0"
   }
 }
