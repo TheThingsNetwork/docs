@@ -31,11 +31,14 @@ The [docs](docs) folder uses [dist/scss](dist/scss) to demonstrate the styles an
 	> This example assumes you run Sass with `--load-path node_modules/ttn-stylebook/dist/scss` to not have to give the full path on every import.
 	
 ### Stylesheets
-At the moment there's three stylesheets you can import:
+There are different strategies for using the stylesheets:
 
-* `ttn/variables`: Just variables for our colors etc.
-* `ttn/ttn`: The above plus custom styles.
-* `ttn/bootstrap`: The above plus customized Bootstrap.
+* [dist/*/ttn/variables](dist/less/ttn/variables.less): Just our variables for colors etc. For projects where you want to have full control over the actual styles.
+* [dist/*/ttn/ttn](dist/less/ttn/ttn.less): The above plus styles for custom components.
+* [dist/*/ttn/bootstrap-variables.less](dist/less/ttn/bootstrap-variables.less): Our variables plus those of Bootstrap, customised. For projects where you want to make further modifications to the Bootstrap variables before importing (maybe just parts of) Bootstrap.
+	* You can import parts of Bootstrap from [dist/*/bootstrap](dist/less/bootstrap). Be aware that the Sass version has components wrapped in another [bootstrap folder](dist/scss/bootstrap/bootstrap).
+* [dist/*/ttn/bootstrap.less](dist/less/ttn/bootstrap.less): All of the above plus all of Bootstrap, customised.
+	* This also imports [dist/*/ttn/bootstrap-overrides](dist/less/ttn/bootstrap-overrides.less) for customisations of Bootstrap that cannot be done via variables.
 
 ## Development
 

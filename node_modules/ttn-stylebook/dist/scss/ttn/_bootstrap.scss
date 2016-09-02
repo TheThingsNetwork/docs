@@ -1,28 +1,11 @@
 /**
- * Import this file if you want our customized version of Bootstrap
+ * Import this file for a customized version of Bootstrap plus our custom styles.
  */
 
-// Import TTN variables only
-@import 'variables';
+@import 'bootstrap-variables';
 
-// Import Bootstrap variables only so we can use them in overrides
-@import '../bootstrap/bootstrap/variables';
-
-/***********************************
- * OVERRIDE BOOTSTRAP VARIABLES HERE
- */
-
-$brand-primary: $ttn-color-brand;
-$gray-lighter: $ttn-color-gray-lighter;
-
-$body-bg: $gray-lighter;
-$headings-color: $brand-primary;
-$page-header-border-color: $ttn-color-brand-light;
-
-/**********************************/
-
-// Import Bootstrap in full so it uses our overrides
 @import '../bootstrap/bootstrap';
 
-// Import TTN in full so it always has the last word
+@import 'bootstrap-overrides';
+
 @import 'ttn';

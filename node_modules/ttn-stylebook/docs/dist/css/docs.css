@@ -5,15 +5,18 @@
  * Run Sass with `--load-path ttn-stylebook/dist/scss` to import directly from that folder.
  */
 /**
- * Import this file if you want our customized version of Bootstrap
+ * Import this file for a customized version of Bootstrap plus our custom styles.
+ */
+/**
+ * Import this file before you import parts of
+ * bootstrap to override its default variables.
  */
 /**
  * Import this file if you only want our variables
  */
-/***********************************
- * OVERRIDE BOOTSTRAP VARIABLES HERE
+/*******************************************
+ * OVERRIDE BOOTSTRAP VARIABLES FROM HERE ON
  */
-/**********************************/
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
  * Copyright 2011-2016 Twitter, Inc.
@@ -5822,7 +5825,11 @@ button.close {
   .hidden-print {
     display: none !important; } }
 /**
- * Import this file if you want our custom components without Bootstrap
+ * Import this file to override Bootstrap styles
+ * that cannot be customized via variables.
+ */
+/**
+ * Import this file for our variables and custom styles only.
  */
 /**
  * Import this file if you only want our variables

@@ -51,7 +51,7 @@ module.exports.lessToScss = function(next) {
 				replacement: '$1bootstrap/$2',
 				paths: [path.join(DIST, 'scss')],
 				recursive: true,
-				silent: false,
+				silent: true,
 			});
 
 			next();
