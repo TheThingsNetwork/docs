@@ -9,14 +9,14 @@ $baseurl: {{ site.baseurl }};
 @import 'https://fonts.googleapis.com/css?family=Lato';
 @import '../assets/fonts/leaguespartan/stylesheet.css';
 
-@import '../node_modules/ttn-stylebook/dist/sass/variables';
+@import '../node_modules/ttn-stylebook/dist/scss/ttn/variables';
 
 // Include Bootstrap variables first so that we can use them in our overrides
-@import '../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/variables';
+@import '../node_modules/ttn-stylebook/dist/scss/bootstrap/bootstrap/variables';
 
 @import 'variables';
 
-@import '../node_modules/bootstrap-sass/assets/stylesheets/bootstrap';
+@import '../node_modules/ttn-stylebook/dist/scss/bootstrap/bootstrap';
 
 // Include overrides for bootstrap styles
 @import 'bootstrap';

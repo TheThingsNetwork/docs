@@ -1,0 +1,10 @@
+/**
+ * Import this file if you want our custom components without Bootstrap
+ */
+
+@import 'variables';
+
+// just for testing
+.ttn-brand-bg {
+	background-color: $ttn-color-brand;
+}

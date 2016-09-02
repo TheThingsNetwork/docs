@@ -1,0 +1,18 @@
+lesscss-percentage(n)
+  (n * 100)%
+/**
+ * Import this file if you want our customized version of Bootstrap
+ */
+@import 'variables'
+@import '../bootstrap/variables'
+/***********************************
+ * OVERRIDE BOOTSTRAP VARIABLES HERE
+ */
+brand-primary = ttn-color-brand
+gray-lighter = ttn-color-gray-lighter
+body-bg = gray-lighter
+headings-color = brand-primary
+page-header-border-color = ttn-color-brand-light
+/**********************************/
+@import '../bootstrap/bootstrap'
+@import 'ttn'
