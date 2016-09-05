@@ -27,7 +27,9 @@ layout: default
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             {% assign sorted = site.guides | sort:"zindex" | reverse %}
             {% for guide in sorted %}
-              <li{% if guide.path == page.path %} class="active"{% endif %}><a href="{{ site.baseurl }}{{ guide.url}}">{{ guide.title }}</a></li>
+              {% unless guide.hidden %}
+                <li{% if guide.path == page.path %} class="active"{% endif %}><a href="{{ site.baseurl }}{{ guide.url}}">{{ guide.title }}</a></li>
+              {% endunless %}
             {% endfor %}
           </ul>
         </div>
