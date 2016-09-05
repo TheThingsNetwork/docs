@@ -1,0 +1,94 @@
+.button-circle {
+    width: 130px;
+    padding-top: 11px !important;
+    height: 46px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 25px;
+    border: 2px solid $ttn-color-brand-light;
+    background-color: transparent;
+    color: $ttn-color-brand-light;
+    cursor: pointer;
+    letter-spacing: 0.6px;
+
+    &:hover {
+        color: white;
+        background-color: $ttn-color-brand-light;
+    }
+}
+
+.button-circle.button-filled {
+    background-color: $ttn-color-brand-light !important;
+    color: white !important;
+}
+
+.action-buttons-title {
+    float: right;
+}
+
+.button_ttn {
+    display: block;
+    width: 220px;
+    height: 50px;
+    border: none;
+    background: $ttn-color-brand-light;
+    color: white;
+    border-radius: 3px;
+    border-bottom: 4px solid #152632;
+    text-align: center;
+    padding: 0 !important;
+    margin: auto;
+    margin-top: 3em;
+    text-transform: uppercase;
+    letter-spacing: .2px;
+    line-height: 3.6em;
+}
+
+.button-green {
+    height: 39px;
+    padding: 0 40px !important;
+    background-color: #71d7c3;
+    color: white;
+    border-radius: 99rem;
+    border-bottom: 0;
+    outline: 0;
+    border: 0;
+}
+
+.button-red-text-no-background {
+    height: 39px;
+    padding: 0 40px !important;
+    background-color: transparent !important;
+    color: red;
+    border-radius: 99rem;
+    border-bottom: 0;
+    outline: 0;
+    border: 0;
+}
+
+.button_ttn:hover {
+    background: #1F94F1;
+}
+
+.button-centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-centered > * {
+    margin: 0 20px;
+}
+
+.button-with-icon {
+    background-color: transparent !important;
+    border: 0 !important;
+    outline: 0 !important;
+}
+
+.minimal-button {
+    background-color: transparent !important;
+    border: 0 !important;
+    outline: 0 !important;
+    color: grey;
+}

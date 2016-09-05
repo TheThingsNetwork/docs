@@ -26,10 +26,13 @@ module.exports.clean = function(next) {
 	], next);
 };
 
-module.exports.srcToLess = function(next) {
-	console.log('Copy src/ to dist/less/');
+module.exports.srcCopy = function(next) {
+	console.log('Copy src/less and src/fonts to dist/*/');
 
-	fs.copy(path.join(SRC, 'less'), path.join(DIST, 'less'), next);
+	async.series([
+		fs.copy.bind(undefined, path.join(SRC, 'less'), path.join(DIST, 'less')),
+		fs.copy.bind(undefined, path.join(SRC, 'fonts'), path.join(DIST, 'fonts'))
+	], next);
 };
 
 module.exports.lessToScss = function(next) {
@@ -49,6 +52,21 @@ module.exports.lessToScss = function(next) {
 			replace({
 				regex: /^(@import '\.\.\/bootstrap\/)(((?!(bootstrap)).)*';)$/gm,
 				replacement: '$1bootstrap/$2',
+				paths: [path.join(DIST, 'scss')],
+				recursive: true,
+				silent: true,
+			});
+
+			// less2sass doesn't convert variable interpolation well
+			// FIXME: https://github.com/brauliobo/less2sass/issues/10
+			replace({
+
+				// ${ttn-font-path}
+				regex: /(\$)\{([^}]+)\}/g,
+
+				// #{$icon-font-path}
+				replacement: '#{$1$2}',
+
 				paths: [path.join(DIST, 'scss')],
 				recursive: true,
 				silent: true,
@@ -199,7 +217,7 @@ if (!module.parent) {
 		async.series([
 			module.exports.clean,
 
-			module.exports.srcToLess,
+			module.exports.srcCopy,
 			module.exports.lessToScss,
 
 			// we don't really need a Sass version (also had some issues)
