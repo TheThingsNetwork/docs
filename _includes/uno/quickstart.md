@@ -38,7 +38,7 @@ Devices need to be registered with an application in order to send and receive m
 ## Activate Device
 Now that you have registered the device you need to activate it from the device itself.
 
-1.  In Arduino IDE, select **File > Examples > TheThingsNetwork > [QuickStart](https://github.com/TheThingsNetwork/arduino-library/blob/master/examples/QuickStart/QuickStart.ino)**.
+1.  In Arduino IDE, select **File > Examples > TheThingsNetwork > [SendOTAA](https://github.com/TheThingsNetwork/arduino-library/blob/master/examples/SendOTAA/SendOTAA.ino)**.
 2.  Copy the **App EUI** and **App Key** from the device page to the example.
 
     > Use <code><i class="fa fa-eye"></i></code> to show obfuscated keys and <code><i class="fa fa-code"></i></code> to toggle to **msb**. Then use <code><i class="fa fa-clipboard"></i></code> to copy.
@@ -72,14 +72,14 @@ The example you uploaded calls `ttn.sendBytes()` to send an uplink message from 
 Messages are arrays of bytes so you need to encode any (sensor) data you'd like to send as bytes.
 
 ```c
-// Runs continuously with pauses of 20 seconds
+// Runs continuously with pauses of 10 seconds
 void loop() {
 
   // Declare and send an array of bytes
   byte payload[] = { 0x48, 0x65, 0x6C, 0x6C, 0x6F };
   ttn.sendBytes(payload, sizeof(payload));
 
-  delay(20000);
+  delay(10000);
 }
 ```
 
@@ -114,7 +114,7 @@ Now let's send a message back to the device. Devices can only receive the last m
     int downlinkBytes = ttn.sendBytes(payload, sizeof(payload));
 
     if (downlinkBytes > 0) {
-      debugSerial.print("Received ");
+      debugSerial.print("Received: ");
       
       for (int i = 0; i < downlinkBytes; i++) {
         debugSerial.print((char) ttn.downlink[i]);
@@ -139,15 +139,5 @@ Now let's send a message back to the device. Devices can only receive the last m
     ```
     Sending: mac tx uncnf 1 with 5 bytes
     Successful transmission. Received 2 bytes
-    Received Hi
+    Received: Hi
     ```
-
-## Next
-You have now send and received messages on your device via The Things Network.
-
-What's next?
-
-- [Learn Arduino](https://www.arduino.cc/en/Guide/HomePage).
-- Learn more about [The Things Network Arduino Library](/arduino/).
-- Learn how receive and send messages from the internet to your device.
-- Get your hands on some sensors and actuators and start prototyping.
