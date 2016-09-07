@@ -1,12 +1,13 @@
 ---
 layout: guide
 title: Arduino
+zindex: 998
 sections:
- - arduino/setup.md
- - arduino/monitor.md
- - arduino/send.md
- - arduino/receive.md
- - arduino/resources.md
+ - _arduino/setup.md
+ - _arduino/monitor.md
+ - _arduino/send.md
+ - _arduino/receive.md
+ - _arduino/resources.md
 ---
 
 [Arduino](https://www.arduino.cc/en/Guide/Introduction) is an open-source electronics platform based on easy-to-use hardware and software. It's intended for anyone making interactive projects.

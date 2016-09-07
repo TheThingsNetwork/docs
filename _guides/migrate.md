@@ -4,9 +4,9 @@ title: Migrate to Production
 zindex: 798
 hidden: true
 sections:
- - migrate/login.md
- - migrate/applications.md
- - migrate/devices.md
+ - _migrate/login.md
+ - _migrate/applications.md
+ - _migrate/devices.md
 ---
 
 This guide will walk you through migrating applications and devices from [staging.thethingsnetwork.org](https://staging.thethingsnetwork.org/) to [preview.dashboard.thethingsnetwork.org](https://preview.dashboard.thethingsnetwork.org/) which will eventually be `dashboard.thethingsnetwork.org`.

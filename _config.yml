@@ -20,11 +20,15 @@ collections:
   guides:
     output: true
     permalink: /:path/
+  archives:
+    output: true
+    permalink: /:path/
 markdown: kramdown
 exclude: [ node_modules, Gemfile, Gemfile.lock, package.json, README.md, webpack.config.js ]
 gems:
   - jemoji
   - jekyll-seo-tag
+  - jekyll-redirect-from
 
 # Use GitHub.io overrides local as well
 lsi: false

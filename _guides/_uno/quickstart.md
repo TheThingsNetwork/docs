@@ -2,7 +2,16 @@
 
 This guide will walk you through programming The Things Uno to send and receive your first message via The Things Network.
 
-{% include arduino/setup.md bump="#" %}
+## Setup Arduino IDE
+
+1. [Download](https://www.arduino.cc/en/Main/Software) and install the latest Arduino Software (IDE).
+2. Navigate to **Sketch > Include Library > Manage Libraries...**.
+3. Search for **TheThingsNetwork** and click the result to select it.
+4. Click the **Install** button which should appear:
+
+  ![](/assets/arduino_library.png)
+
+The Arduino IDE will notify you of updates for the IDE and library automagically. :open_mouth:
 
 > See the [Arduino Guide](/arduino/) for more details.
 
@@ -14,9 +23,42 @@ This guide will walk you through programming The Things Uno to send and receive 
 
 If you don't see a port that identifies as **Arduino Leonardo** make sure The Things Uno's power LED is on and check the cable and USB port you have used. See [Arduino Troubleshooting](https://www.arduino.cc/en/Guide/Troubleshooting#toc16) for more suggestions.
 
-{% include lora/deveui.md bump="#" %}
+## Get your Dev EUI
 
-{% include dashboard/create-application.md bump="#" %}
+The *DevEUI* is an unique address hard coded into the LoRa module. We use this address to register a device for OTAA with The Things Network.
+
+1.  In the Arduino IDE open **File > Examples > TheThingsNetwork > [DeviceInfo](https://github.com/TheThingsNetwork/arduino-library/blob/master/examples/DeviceInfo/DeviceInfo.ino)**.
+2.  Select **Sketch > Upload** `Ctrl/⌘ + U` to upload the sketch.
+3.  Select **Tools > Serial Monitor** `Ctrl/⌘ + Shift + M` to open the [Serial Monitor](/arduino/#serial-monitor).
+4.  Soon, it should print a list with **Device Information**, including the **DevEUI**:
+
+    ```
+    Device Information
+
+    EUI: 0004A30B001B672E
+    Battery: 3304
+    AppEUI: 0000000000000000
+    DevEUI: 0004A30B001B672E
+    DevAddr: 00000000
+    Data Rate: 5
+    RX Delay 1: 1000
+    RX Delay 2: 2000
+
+    use the device `EUI` to register the device for OTAA
+    ```
+
+## Create Application
+Messages to and from devices are routed via applications.
+
+1. On the dashboard, click [create application](https://staging.thethingsnetwork.org/applications/create).
+2. Enter an **Application name**.
+3. Click **Create application**.
+
+![create application](/assets/create-application.png)
+
+You will be redirected to the newly created Application page where you find the App EUI and can proceed to register devices.
+
+![application info](/assets/app-info.png)
 
 ## Register Device
 Devices need to be registered with an application in order to send and receive messages via it.
