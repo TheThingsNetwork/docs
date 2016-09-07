@@ -1,4 +1,9 @@
-.sass-cache
-
-/src
+/.sass-cache
+/node_modules
 /docs/src
+/src
+/tmp
+/.gitignore
+/Gemfile
+/Gemfile.lock
+/Gruntfile.js

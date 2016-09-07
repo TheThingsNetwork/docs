@@ -126,9 +126,5 @@
     @media (max-width: $screen-sm-max) {
       position: static;
     }
-
-    @media (min-width: $screen-lg-min) {
-      width: 263px;
-    }
   }
 }

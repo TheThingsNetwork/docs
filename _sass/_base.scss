@@ -1,6 +1,5 @@
 body {
-  padding-top: $navbar-height;
-  background-color: $gray-lighter;
+  padding-top: $ttn-navbar-height;
 }
 
 img {
@@ -9,43 +8,6 @@ img {
 
 #content {
   overflow-x: hidden;
-}
-
-/* navbar */
-
-.navbar {
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
-  background: white;
-
-  .navbar-brand {
-    line-height: $navbar-height;
-    padding-top: 0;
-    padding-bottom: 0;
-
-    img {
-      display: inline-block;
-      height: 50px;
-    }
-  }
-
-  .navbar-nav > li {
-
-    > a {
-      font-family: 'Lato', sans-serif;
-      font-size: 14px;
-      text-transform: uppercase;
-      display: block;
-      line-height: $navbar-height;
-      padding: 0 20px;
-      color: $brand-primary;
-    }
-
-    &.active > a,
-    > a:hover {
-      background: #dfdfdf;
-      color: $brand-primary;
-    }
-  }
 }
 
 /* anchor-js */
