@@ -11,12 +11,13 @@ Because we let GitHub Pages do the Jekyll builds the website will be updated aut
 
 * The homepage for the site is [index.html](index.html).
 * The guides are a Jekyll collection in the [_guides](_guides) folder.
+* To archive (or draft) a guide move it to [_archives/*/](_archives/refactor).
 * Use the main file of each guide for the intro.
-* Use the `sections` front matter to include additional content relative to the guide, mostly found in underscored folders.
+* Use the `sections` front matter to include additional content from files relative to the guide, preferably in a subfolder with the same name.
 * Start links to other guides with `/` and the `/docs` baseurl will be prepended for you.
 * Start links to assets with `/assets` and the `/docs` baseurl will be prepended for you.
 * Use blockquotes (`>`) to create callouts for important notes.
-* Store images and other assets in the [assets](assets) folder.
+* Store images and other assets in the same folder as the markdown you need it in. You can also use relative paths to re-use images from other guides.
 * If you do a lot of edits please use a local build to preview.
 
 ## Build local for preview and design
@@ -56,7 +57,7 @@ Because we let GitHub Pages do the Jekyll builds the website will be updated aut
 * Import any Sass files you need in [css/main.scss](css/main.scss).
 * Override Bootstrap variables in [_sass/_variables.scss](_sass/_variables.scss).
 * Edit styles in [_sass/_base.scss](_sass/_base.scss) or break out to additional Sass files to keep it organized.
-* Store images and other assets in the [assets](assets) folder.
+* Store layout assets in [assets](assets) folder.
 * Edit layouts in the [_layouts](_layouts) folder.
 * All layouts should inherit the [default](_layouts/default.html) layout.
 * Any meta data should be stored in the [_data](_data) folder, not [_config.yml](_config.yml).

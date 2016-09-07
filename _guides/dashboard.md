@@ -3,9 +3,9 @@ layout: guide
 title: The Things Dashboard
 zindex: 799
 sections:
- - _dashboard/create-account.md
- - _dashboard/create-application.md
- - _dashboard/register-device.md
+ - dashboard/_create-account.md
+ - dashboard/_create-application.md
+ - dashboard/_register-device.md
 ---
 Your Applications and Devices can be managed via [The Things Network Dashboard](https://staging.thethingsnetwork.org).
 
