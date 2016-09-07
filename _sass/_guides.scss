@@ -57,13 +57,6 @@
    * Side navigation taken from http://getbootstrap.com/
    */
 
-  /* By default it's not affixed in mobile views, so undo that */
-  @media (min-width: 768px) {
-    .js-toc {
-      padding-left: 20px;
-    }
-  }
-
   /* First level of nav */
   .js-toc > .nav {
     margin-top: 20px;
@@ -73,10 +66,11 @@
   /* All levels of nav */
   .js-toc .nav > li > a {
     display: block;
-    padding: 6px 20px;
+    padding: 6px 12px;
     font-size: 15px;
     font-weight: bold;
     color: $gray;
+    border-left: 2px solid transparent;
   }
   .js-toc .nav > li > a:hover,
   .js-toc .nav > li > a:focus {
@@ -86,11 +80,10 @@
   }
   .js-toc .nav > li > a.active,
   .js-toc .nav > li:hover > a.active {
-    padding-left: 18px;
     font-weight: bold;
     color: $link-color;
     background-color: transparent;
-    border-left: 2px solid $link-color;;
+    border-left-color: $link-color;
   }
 
   /* Nav: second level */
@@ -104,19 +97,9 @@
   .js-toc .nav .nav > li > a {
     padding-top: 4px;
     padding-bottom: 4px;
-    padding-left: 30px;
+    padding-left: 24px;
     font-size: 14px;
     font-weight: normal;
-  }
-  .js-toc .nav .nav > li > a:hover,
-  .js-toc .nav .nav > li > a:focus {
-    padding-left: 29px;
-  }
-  .js-toc .nav .nav > li > a.active,
-  .js-toc .nav .nav > li:hover > a.active,
-  .js-toc .nav .nav > li:focus > a.active {
-    padding-left: 28px;
-    font-weight: bold;
   }
 
   .affix {
