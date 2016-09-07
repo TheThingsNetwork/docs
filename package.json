@@ -42,5 +42,8 @@
     "tocbot": "^2.1.4",
     "ttn-stylebook": "github:thethingsnetwork/ttn-stylebook",
     "zeroclipboard": "^2.2.0"
+  },
+  "dependencies": {
+    "ttn-stylebook": "github:thethingsnetwork/ttn-stylebook"
   }
 }

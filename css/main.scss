@@ -7,14 +7,12 @@ $baseurl: {{ site.baseurl }};
 
 // Fonts
 @import 'https://fonts.googleapis.com/css?family=Lato';
-@import '../assets/fonts/leaguespartan/stylesheet.css';
 
-@import '../node_modules/ttn-stylebook/dist/scss/ttn/bootstrap-variables';
+@import '../node_modules/ttn-stylebook/dist/scss/ttn/variables';
 
 @import 'variables';
 
-@import '../node_modules/ttn-stylebook/dist/scss/bootstrap/bootstrap';
-@import '../node_modules/ttn-stylebook/dist/scss/ttn/bootstrap-overrides';
+@import '../node_modules/ttn-stylebook/dist/scss/ttn/bootstrap';
 
 // Include overrides for bootstrap styles
 @import 'bootstrap';
