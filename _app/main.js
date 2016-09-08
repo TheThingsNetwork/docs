@@ -99,4 +99,12 @@ $(function() {
    */
   $('a[disabled][href]').attr('href', 'javascript:void(0)');
 
+  /**
+   * External links (http://stackoverflow.com/a/13147238)
+   */
+  for(var c = document.getElementsByTagName('a'), a = 0;a < c.length;a++) {
+    var b = c[a];
+    b.getAttribute('href') && b.hostname !== location.hostname && (b.target = '_blank');
+  }
+
 });

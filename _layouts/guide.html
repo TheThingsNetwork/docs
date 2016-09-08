@@ -70,14 +70,14 @@ layout: default
 
       <section class="panel">
         <div class="panel-body">
-          {% if archive %} <span class="label label-info pull-right">{{ archive | upcase }}</span>{% endif %}
+          {% if archive %} <span class="label label-success pull-right">{{ archive | upcase }}</span>{% endif %}
           <h1 id="top">{{page.title}}</h1>
           {{ content | replace: '<a href="/', replace_a_with | replace: '<img src="/', replace_img_with }}
         </div>
         {% if archives %}
           <div class="panel-footer">
-            Versions:&nbsp;&nbsp;&nbsp; <a href="{{ site.baseurl | append: current }}" class="label label-success">CURRENT</a> {% for archive in archives %}
-              <a href="{{ site.baseurl | append: archive.url }}" class="label label-{% if page.url == archive.url %}info{% else %}default{% endif %}">{{ archive.url | split: '/' | slice: 1 | first | upcase }}</a>
+            Versions:&nbsp;&nbsp;&nbsp; <a href="{{ site.baseurl | append: current }}" class="label label-{% if page.url == current %}success{% else %}default{% endif %}">CURRENT</a> {% for archive in archives %}
+              <a href="{{ site.baseurl | append: archive.url }}" class="label label-{% if page.url == archive.url %}success{% else %}default{% endif %}">{{ archive.url | split: '/' | slice: 1 | first | upcase }}</a>
             {% endfor %}
           </div>
         {% endif %}

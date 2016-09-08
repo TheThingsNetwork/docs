@@ -25,9 +25,9 @@ Messages sent by devices on the application can be received via the upper output
     
 6.  Double click the **debug** node to edit it.
 7.  Click the gray part of the **Output** value, select **complete msg object** and click **Done**:
-
-  ![Output complete msg object](node-red-debug-edit.png)
-  
+    
+    ![Output complete msg object](node-red-debug-edit.png)
+    
 8.  Click **Deploy** to see the next message in full, e.g.:
 
     ```json
@@ -63,8 +63,8 @@ Messages sent by devices on the application can be received via the upper output
 ## Activations
 Device activations are sent from the lower node output.
 
-1.  Drag the lower output to the input same debug node.
-2.  Restart a device by briefly disconnecting it from power or uploading a new Sketch.
+1.  Drag the lower output to the input same **debug** node.
+2.  Restart a device by briefly disconnecting power or upload a sketch.
 3.  Soon, you should see the the activation message coming in like:
 
     ```json
