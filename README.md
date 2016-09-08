@@ -13,11 +13,11 @@ Because we let GitHub Pages do the Jekyll builds the website will be updated aut
 * The guides are a Jekyll collection in the [_guides](_guides) folder.
 * To archive (or draft) a guide move it to [_archives/*/](_archives/refactor).
 * Use the main file of each guide for the intro.
-* Use the `sections` front matter to include additional content from files relative to the guide, preferably in a subfolder with the same name.
+* Use the `sections` front matter to include additional content from files relative to the guide, preferably in a subfolder with the same name. Make sure to start these files with `_` to prevent Jekyll for outputting them as stand-alone pages.
+* Store guide assets in the same folder as the markdown you need it in and include them by their filename. You can also use relative paths to re-use images from other guides.
 * Start links to other guides with `/` and the `/docs` baseurl will be prepended for you.
-* Start links to assets with `/assets` and the `/docs` baseurl will be prepended for you.
+* Start links to site assets with `/assets` and the `/docs` baseurl will be prepended for you.
 * Use blockquotes (`>`) to create callouts for important notes.
-* Store images and other assets in the same folder as the markdown you need it in. You can also use relative paths to re-use images from other guides.
 * If you do a lot of edits please use a local build to preview.
 
 ## Build local for preview and design

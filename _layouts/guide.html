@@ -6,14 +6,16 @@ layout: default
   {% capture archive %}{{ page.url | split: '/' | slice: 1 }}{% endcapture %}
   {% capture current %}{{ page.url | split: '/' | slice: 2,10 | join: '/' | prepend: '/' | append: '/' }}{% endcapture %}
 {% else %}
-  {% for archive in site.archives %}
-    {% capture archive_for %}{{ archive.url | split: '/' | slice: 2,10 | join: '/' | prepend: '/' | append: '/' }}{% endcapture %}
-    {% if archive_for == page.url %}
-      {% unless achives %}{% assign archives = '' | split: '|' %}{% endunless %}
-      {% assign archives = archives | push: archive %}
-    {% endif %}
-  {% endfor %}
+  {% assign current = page.url %}
 {% endif %}
+
+{% for archive in site.archives %}
+  {% capture archive_for %}{{ archive.url | split: '/' | slice: 2,10 | join: '/' | prepend: '/' | append: '/' }}{% endcapture %}
+  {% if archive_for == current %}
+    {% unless achives %}{% assign archives = '' | split: '|' %}{% endunless %}
+    {% assign archives = archives | push: archive %}
+  {% endif %}
+{% endfor %}
 
 <div class="layout-guide container">
 
@@ -21,12 +23,12 @@ layout: default
     <div class="col-sm-9">
       <ol class="breadcrumb">
         <li><a href="{{ site.baseurl }}/">Docs</a></li>
-        <li class="active">{{page.title}}{% if archive %} <span class="label label-info">{{ archive }}</span>{% endif %}</li>
+        <li class="active">{{page.title}}</li>
       </ol>
     </div>
     {% unless archive %}
       <div class="col-sm-3 text-right">
-        <a class="btn btn-default hidden-xs" href="{{ site.github.repository_url }}/edit/master/{{ page.path | downcase }}"><i class="fa fa-pencil"></i> Improve this guide</a>
+        <a class="btn btn-default hidden-xs" href="{{ site.github.repository_url }}/edit/master/{{ page.path | downcase }}" target="_blank"><i class="fa fa-pencil"></i> Improve this guide</a>
       </div>
     {% endunless %}
   </div>
@@ -60,7 +62,7 @@ layout: default
     <div class="col-md-9 js-toc-content content-body" role="main">
 
       {% if archive %}
-        <div class="alert alert-warning"><strong>Attention:</strong> This guide is for <em>{{ archive }}</em>. Use the dropdown to browse current versions.</div>
+        <div class="alert alert-warning"><strong>Attention:</strong> This guide is the <em>{{ archive }}</em> version, not the <a href="{{ site.baseurl }}{{current}}">current</a> one.</div>
       {% endif %}
 
       {% assign replace_a_with = '<a href="' | append: site.baseurl | append: '/' %}
@@ -68,15 +70,15 @@ layout: default
 
       <section class="panel">
         <div class="panel-body">
-          {% if archive %} <span class="label label-info pull-right">{{ archive }}</span>{% endif %}
+          {% if archive %} <span class="label label-info pull-right">{{ archive | upcase }}</span>{% endif %}
           <h1 id="top">{{page.title}}</h1>
           {{ content | replace: '<a href="/', replace_a_with | replace: '<img src="/', replace_img_with }}
         </div>
         {% if archives %}
           <div class="panel-footer">
-            <small>Other versions: {% for archive in archives %}
-              <a href="{{ site.baseurl | append: archive.url }}">{{ archive.url | split: '/' | slice: 1 }}</a>
-            {% endfor %}</small>
+            Versions:&nbsp;&nbsp;&nbsp; <a href="{{ site.baseurl | append: current }}" class="label label-success">CURRENT</a> {% for archive in archives %}
+              <a href="{{ site.baseurl | append: archive.url }}" class="label label-{% if page.url == archive.url %}info{% else %}default{% endif %}">{{ archive.url | split: '/' | slice: 1 | first | upcase }}</a>
+            {% endfor %}
           </div>
         {% endif %}
       </section>
