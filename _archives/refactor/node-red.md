@@ -12,7 +12,7 @@ sections:
 
 With the [Node-RED node for TTN](http://flows.nodered.org/node/node-red-contrib-ttn) it is very easy to process device messages and activations with pretty much no code.
 
-> This guide has been updated for the upcoming version 1.0.0 of the Node.js client and the production backend, which are currently in preview. Get 1.0.0 via the refactor tag:
+> This guide has been updated for the upcoming version 1.0.0 of the TTN node and the production backend, which are currently both in preview. Get 1.0.0 via the refactor tag:
 >
 > ```bash
 > npm install node-red-contrib-ttn@refactor

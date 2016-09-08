@@ -35,7 +35,7 @@ A common use case is to invoke a HTTP request to an external web service of your
     ```javascript
     return {
         payload: {
-            value1: msg.payload_raw
+            value1: msg.payload.message
         }
     };
     ```

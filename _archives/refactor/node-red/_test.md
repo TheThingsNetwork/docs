@@ -11,7 +11,7 @@ Messages sent by devices on the application can be received via the upper output
 
 3.  Click **Deploy**.
 4.  In the right sidebar select the **debug** tab.
-5.  Soon after a device activates or sends a message to your application you should see it come in like this:
+5.  Soon after a device sends a message to your application you should see it come in like this:
     
     ![](node-red-debug-message.png)
 
@@ -24,69 +24,75 @@ Messages sent by devices on the application can be received via the upper output
     ```
     
 6.  Double click the **debug** node to edit it.
-7.  Click the gray part of the **Output** value, select **complete msg object** and click **Done**.
-8.  For the next message you should now see it in full, e.g.:
+7.  Click the gray part of the **Output** value, select **complete msg object** and click **Done**:
+
+  ![Output complete msg object](node-red-debug-edit.png)
+  
+8.  Click **Deploy** to see the next message in full, e.g.:
 
     ```json
     {
-      "app_id": "hello-world",
       "dev_id": "my-uno",
+      "app_id": "hello-world",
       "port": 1,
-      "counter": 63,
+      "counter": 19,
       "payload_raw": "SGVsbG8=",
       "payload_fields": {
         "message": "Hello"
       },
-      "payload": {
-        "message": "Hello"
-      },
       "metadata": {
-        "time": "2016-09-06T13:39:51.11186125Z",
-        "frequency": 868.1,
+        "time": "2016-09-08T13:52:35.929159899Z",
+        "frequency": 867.3,
         "modulation": "LORA",
         "data_rate": "SF7BW125",
         "coding_rate": "4/5",
-        "gateways": [
-          {
-            "eui": "B827EBFGFE87BD21",
-            "timestamp": 3746387779,
-            "time": "2016-09-06T13:39:51.077691Z",
-            "rssi": -76,
-            "snr": 7.2,
-            "rf_chain": 1
-          }
-        ]
-      }
+        "gateways": [{
+          "eui": "B827EBFFFE87BD22",
+          "timestamp": 792136819,
+          "time": "2016-09-08T13:52:35.912385Z",
+          "channel": 4,
+          "rssi": -55,
+          "snr": 10.2
+        }]
+      },
+      "payload": "[circular]",
+      "_msgid": "f4fb1670.0b04e8"
     }
     ```
 
-## Device activation events
-Device activation events are sent from the lower node output.
+## Activations
+Device activations are sent from the lower node output.
 
-Follow the same steps as for **Messages** to verify that `msg.payload` will get you just the Device ID. If you let the debugger show the full message it should look like:
+1.  Drag the lower output to the input same debug node.
+2.  Restart a device by briefly disconnecting it from power or uploading a new Sketch.
+3.  Soon, you should see the the activation message coming in like:
 
-```json
-{
-  "app_id": "hello-world",
-  "app_eui": "70B3D57ED0000AFB",
-  "dev_id": "my-uno",
-  "dev_eui": "0004A30B001B7AD2",
-  "dev_addr": "260023BB",
-  "metadata": {
-    "time": "2016-09-07T12:43:17.97454032Z",
-    "frequency": 867.1,
-    "modulation": "LORA",
-    "data_rate": "SF7BW125",
-    "coding_rate": "4/5",
-    "gateways": [{
-      "eui": "0000024B08060112",
-      "timestamp": 3546311603,
-      "time": "2016-09-07T12:43:17.938537Z",
-      "channel": 2,
-      "rssi": -107,
-      "snr": 1.2
-    }]
-  }
-}
-```
-
+    ```json
+    {
+      "dev_id": "my-uno",
+      "app_id": "hello-world",
+      "app_eui": "70B3D57EF000001C",
+      "dev_eui": "0004A30B001B7AD2",
+      "dev_addr": "26012084",
+      "metadata": {
+        "time": "2016-09-08T14:04:52.755064047Z",
+        "frequency": 868.5,
+        "modulation": "LORA",
+        "data_rate": "SF7BW125",
+        "coding_rate": "4/5",
+        "gateways": [{
+          "eui": "B827EBFFFE87BD22",
+          "timestamp": 1528942955,
+          "time": "2016-09-08T14:04:52.716713Z",
+          "channel": 2,
+          "rssi": -57,
+          "snr": 7.5,
+          "rf_chain": 1
+        }]
+      },
+      "payload": "my-uno",
+      "_msgid": "10d6a2ba.ef295d"
+    }
+    ```
+  
+    The default `msg.payload` field has the ID of the activated device.

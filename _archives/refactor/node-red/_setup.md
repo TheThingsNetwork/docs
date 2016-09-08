@@ -1,5 +1,5 @@
 # Setup
-To get started we need to install Node-RED and add the TTN node, both via [NPM](https://www.npmjs.com/).
+To get started you need to install Node-RED and add the TTN node, both via [NPM](https://www.npmjs.com/).
 
 ## Node-RED
 
@@ -40,7 +40,7 @@ To get started we need to install Node-RED and add the TTN node, both via [NPM](
         
     See Node-RED's [Getting Started / Adding Nodes](http://nodered.org/docs/getting-started/adding-nodes) for details.
     
-2.  Restart (`Ctrl+C` to stop) and re-open Node-RED in your browser.
+2.  Restart (`Ctrl+C` to stop) Node-RED and refresh your browser.
 
     You should now see the **ttn** node in the sidebar:
 
