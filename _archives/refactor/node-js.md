@@ -11,7 +11,7 @@ sections:
 
 With the [TTN Client](https://www.npmjs.com/package/ttn) you can receive activations and uplink messages from devices via The Things Network as well as respond with downlink messages.
 
-> This guide has been updated for the upcoming version 2.0.0 of the Node.js client and the production backend, which are currently in preview. Get 2.0.0 via the refactor tag:
+> This guide has been updated for the upcoming version 2.0.0 of the Node.js client and the production backend, which are both currently in preview. Get 2.0.0 via the refactor tag:
 >
 > ```bash
 > npm install --save ttn@refactor

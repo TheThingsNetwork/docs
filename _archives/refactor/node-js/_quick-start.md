@@ -18,10 +18,10 @@ Let's install Node.js, create a Node.js project and install the TTN Client.
 
     > Just press return to accept the default answer to any question asked.
 
-3.  Install and save the [TTN Client](http://flows.nodered.org/node/node-red-contrib-ttn) as dependency:
+3.  Install and save the [TTN Client](https://www.npmjs.com/package/ttn) as dependency using the refactor tag:
 
     ```bash
-    npm install --save ttn
+    npm install --save ttn@refactor
     ```
 
 ## Connect
@@ -46,28 +46,28 @@ Next, we will write the script that requires the TTN Client module and uses it t
 
     ```js 
     var region = 'eu';
-    var appId = 'HELLO-WORLD';
+    var appId = 'hello-world';
     var accessKey = '2Z+MU0T5xZCaqsD0bPqOhzA6iygGFoi4FAgMFgBfXSo=';
     
     var client = new ttn.Client(region, appId, accessKey);
     ```
 
-	Here's where you can find the values in the dashboard:
-	
-	* For `region`, copy the part following `ttn-handler-` for **Handler Status** in the **Application Overview** box.
-	* For `appId`, copy the value for **Application ID** in the **Application Overview** box.
-	* For `accessKey`, scroll down and then show and copy the value for **default key** in the **Access Key** box.
+    Here's where you can find the values in the dashboard:
+    
+    * For `region`, copy the part following `ttn-handler-` for **Handler Status** in the **Application Overview** box.
+    * For `appId`, copy the value for **Application ID** in the **Application Overview** box.
+    * For `accessKey`, scroll down and then show and copy the value for **default key** in the **Access Key** box.
 
 6.  Add a listener for the `connect` and `error` events to test the connection:
 
     ```js 
-	client.on('connect', function(connack) {
-		console.log('[DEBUG]', 'Connect:', connack);
-	});
-	
-	client.on('error', function(err) {
-		console.error('[ERROR]', err.message);
-	});
+    client.on('connect', function(connack) {
+        console.log('[DEBUG]', 'Connect:', connack);
+    });
+    
+    client.on('error', function(err) {
+        console.error('[ERROR]', err.message);
+    });
     ```
  
 7.  Run the script to test the connection:
@@ -79,20 +79,16 @@ Next, we will write the script that requires the TTN Client module and uses it t
     You should see something like:
 
     ```bash
-	[DEBUG] Region: eu
-	[DEBUG] Application ID: HELLO-WORLD
-	[DEBUG] Application Access Key: 2Z+MU0T5xZCaqsD0bPqOhzA6iygGFoi4FAgMFgBfXSo=
-	[DEBUG] Connect: Packet {
-	  cmd: 'connack',
-	  retain: false,
-	  qos: 0,
-	  dup: false,
-	  length: 2,
-	  topic: null,
-	  payload: null,
-	  sessionPresent: false,
-	  returnCode: 0 }
-
+    [DEBUG] Connect: Packet {
+      cmd: 'connack',
+      retain: false,
+      qos: 0,
+      dup: false,
+      length: 2,
+      topic: null,
+      payload: null,
+      sessionPresent: false,
+      returnCode: 0 }
     ```
 
     Use `Ctrl + C` to terminate the script.
@@ -113,9 +109,9 @@ Now that we are connected, let's listen for new device activations.
 1.  Add a listener for the `activation` event:
 
     ```js
-	client.on('activation', function(data) {
-		console.log('[INFO] ', 'Activation:', data);
-	});
+    client.on('activation', function(data) {
+        console.log('[INFO] ', 'Activation:', data);
+    });
     ```
 
 2.  Run the script again:
@@ -127,28 +123,18 @@ Now that we are connected, let's listen for new device activations.
 3.  Power up, reset or upload a new sketch to a device to force it to activate and you should see something like:
 
     ```bash
-    [INFO]  Activated: {
-		"app_id": "HELLO-WORLD",
-		"app_eui": "70B3D57ED0000AFB",
-		"dev_id": "MY-UNO",
-		"dev_eui": "0004A30B001B7AD2",
-		"dev_addr": "260023BB",
-		"metadata": {
-			"time": "2016-09-07T12:43:17.97454032Z",
-			"frequency": 867.1,
-			"modulation": "LORA",
-			"data_rate": "SF7BW125",
-			"coding_rate": "4/5",
-			"gateways": [{
-				"eui": "0000024B08060112",
-				"timestamp": 3546311603,
-				"time": "2016-09-07T12:43:17.938537Z",
-				"channel": 2,
-				"rssi": -107,
-				"snr": 1.2
-			}]
-		}
-    }
+    [INFO]  Activation: { dev_id: 'my-uno',
+      app_id: 'hello-world',
+      app_eui: '70B3D57EF000001C',
+      dev_eui: '0004A30B001B7AD2',
+      dev_addr: '2601205D',
+      metadata:
+       { time: '2016-09-08T13:57:03.415027706Z',
+         frequency: 868.1,
+         modulation: 'LORA',
+         data_rate: 'SF7BW125',
+         coding_rate: '4/5',
+         gateways: [ [Object] ] } }
     ```
 
     Use `Ctrl + C` to terminate the script.    
@@ -161,9 +147,9 @@ I use the same script as [The Things Uno Quick Start](/uno/#quick-start), which 
 1.  Add a listener for the `message ` event:
 
     ```js
-	client.on('message', function(data) {
-		console.info('[INFO] ', 'Message:', JSON.stringify(data, null, 2));
-	});
+    client.on('message', function(data) {
+        console.info('[INFO] ', 'Message:', JSON.stringify(data, null, 2));
+    });
     ```
 
 2.  Run the script again:
@@ -176,31 +162,31 @@ I use the same script as [The Things Uno Quick Start](/uno/#quick-start), which 
 
     ```bash
     [INFO]  Message: {
-      "app_id": "HELLO-WORLD",
-      "dev_id": "MY-UNO",
+      "dev_id": "my-uno",
+      "app_id": "hello-world",
+      "port": 1,
+      "counter": 0,
+      "payload_raw": "SGVsbG8=",
       "payload_fields": {
         "message": "Hello"
       },
-      "payload_raw": "SGVsbG8=",
-      "counter": 29,
-      "port": 1,
       "metadata": {
-        "frequency": 868.5,
-        "datarate": "SF7BW125",
-        "codingrate": "4/5",
-        "gateway_timestamp": 326035051,
-        "gateway_time": "2016-08-31T13:33:47.369434Z",
-        "channel": 2,
-        "server_time": "2016-08-31T13:33:47.384994459Z",
-        "rssi": -71,
-        "lsnr": 7.5,
-        "rfchain": 1,
-        "crc": 1,
+        "time": "2016-09-08T13:57:08.685529132Z",
+        "frequency": 868.3,
         "modulation": "LORA",
-        "gateway_eui": "B827EBFFFE87BD22",
-        "altitude": 10,
-        "longitude": 5.90418,
-        "latitude": 52.95904
+        "data_rate": "SF7BW125",
+        "coding_rate": "4/5",
+        "gateways": [
+          {
+            "eui": "B827EBFFFE87BD22",
+            "timestamp": 1064899219,
+            "time": "2016-09-08T13:57:08.673927Z",
+            "channel": 1,
+            "rssi": -54,
+            "snr": 8.2,
+            "rf_chain": 1
+          }
+        ]
       }
     }
     ```
@@ -217,16 +203,16 @@ Again, I use the same script as [The Things Uno Quick Start](/uno/#quick-start) 
 3.  In the editor for the script, add another listener for the `uplink` event that responds to every 3rd message:
 
     ```js
-	client.on('message', function(data) {
-	
-		// respond to every third message
-		if (data.counter % 3 === 0) {
-			console.log('[DEBUG]', 'Sending');
-	
-			var payload = new Buffer('4869', 'hex');
-			client.send(data.dev_id, payload, data.port);
-		}
-	});
+    client.on('message', function(data) {
+    
+        // respond to every third message
+        if (data.counter % 3 === 0) {
+            console.log('[DEBUG]', 'Sending');
+
+            var payload = new Buffer('4869', 'hex');
+            client.send(data.dev_id, payload, data.port);
+        }
+    });
     ```
 
 4.  Run the script again:
@@ -249,4 +235,4 @@ Again, I use the same script as [The Things Uno Quick Start](/uno/#quick-start) 
     Received Hi
     ```
 
-Congratulations! Now you know how to send and receive messages from a Node.js script.	
+Congratulations! Now you know how to send and receive messages from a Node.js script.   

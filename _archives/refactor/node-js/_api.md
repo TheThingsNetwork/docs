@@ -52,9 +52,9 @@ client.on('activation', function(data)) {});
 
 	```json
 	{
-		"app_id": "HELLO-WORLD",
+		"dev_id": "my-uno",
+		"app_id": "hello-world",
 		"app_eui": "70B3D57ED0000AFB",
-		"dev_id": "MY-UNO",
 		"dev_eui": "0004A30B001B7AD2",
 		"dev_addr": "260023BB",
 		"metadata": {
@@ -87,8 +87,8 @@ client.on('message', function(data) {});
 
 	```json
 	{
-		"app_id": "HELLO-WORLD",
-		"dev_id": "MY-UNO",
+		"dev_id": "my-uno",
+		"app_id": "hello-world",
 		"port": 1,
 		"counter": 10,
 		"payload_raw": "SGVsbG8=",

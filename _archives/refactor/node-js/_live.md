@@ -7,7 +7,7 @@ Try the Quick Start script right from your browser! Simply replace the `appEUI` 
 <div id="live-code"><pre class="highlight"><code>var ttn = require('ttn@2.0.0-1');
 
 var region = 'eu';
-var appId = 'HELLO-WORLD';
+var appId = 'hello-world';
 var accessKey = '2Z+MU0T5xZCaqsD0bPqOhzA6iygGFoi4FAgMFgBfXSo=';
 
 var client = new ttn.Client(region, appId, accessKey);
