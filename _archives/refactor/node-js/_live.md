@@ -4,7 +4,7 @@ Try the Quick Start script right from your browser! Simply replace the `appEUI` 
 
 <script src="https://embed.tonicdev.com" data-element-id="live-code"></script>
 
-<div id="live-code"><pre class="highlight"><code>var ttn = require('ttn@2.0.0-0');
+<div id="live-code"><pre class="highlight"><code>var ttn = require('ttn@2.0.0-1');
 
 var region = 'eu';
 var appId = 'HELLO-WORLD';
