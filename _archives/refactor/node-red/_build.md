@@ -7,7 +7,7 @@ You can find a lot of example flows and additional nodes in the [Node-RED Librar
 ## Example: IFTTT
 A common use case is to invoke a HTTP request to an external web service of your application. Here's an example of how to forward the data to If This Then That (IFTTT) where we can link up other APIs.
 
-> You can find this full example in the [Node-RED Library](http://flows.nodered.org/flow/2d475e136cda21c3d642b0da66e565fe).
+> You can find this full example in the [Node-RED Library](http://flows.nodered.org/flow/a14cfb633c0bd093d52cab3c12297ee9).
 
 ### Create a Recipe at IFTTT
 
