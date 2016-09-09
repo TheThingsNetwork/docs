@@ -3,10 +3,10 @@ layout: guide
 title: Arduino
 zindex: 998
 sections:
- - arduino/_setup.md
- - arduino/_monitor.md
- - arduino/_send.md
- - arduino/_receive.md
+ - arduino/_ide.md
+ - arduino/_usage.md
+ - arduino/_api.md
+ - arduino/_examples.md
  - arduino/_resources.md
 ---
 

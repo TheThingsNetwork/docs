@@ -1,5 +1,5 @@
 # Resources
-We highly recommend:
+To learn more about Arduino and start prototyping with it we recommend:
 
 ## Learn
 
