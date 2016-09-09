@@ -1,18 +1,8 @@
 # Migration Guide
 
-This guide will walk you through migrating applications and devices from [staging.thethingsnetwork.org](https://staging.thethingsnetwork.org/) to [preview.dashboard.thethingsnetwork.org](https://preview.dashboard.thethingsnetwork.org/) which will eventually be `dashboard.thethingsnetwork.org`.
+This guide will walk you through migrating applications and devices from [staging.thethingsnetwork.org](https://staging.thethingsnetwork.org/) to [preview.dashboard.thethingsnetwork.org](https://preview.dashboard.thethingsnetwork.org/).
 
 > The migration does not require any immediate change on nodes since the staging router forwards data to both the staging and (preview) production.
-
-## Log in and select region
-
-1.  Log in to [preview](https://preview.dashboard.thethingsnetwork.org/)
-
-    > **INTERNAL NOTE:** At the moment you'll have to create a new account and log in via [staging.account.thethingsnetwork.org](https://staging.account.thethingsnetwork.org) but once the preview is public it will use [account.thethingsnetwork.org](https://account.thethingsnetwork.org).
-
-2.  On the top left, click `ttn-handler-eu` to switch to the region where you will be deploying devices:
-
-    ![Switch Region](dashboard-region.png)
 
 ## Applications
 
@@ -20,10 +10,10 @@ For each application you'd like to migrate:
 
 1.  On [staging](https://staging.thethingsnetwork.org/applications/), click the application you'd like to migrate to see the **Application Info** box.
 2.  In [preview](https://preview.dashboard.thethingsnetwork.org/applications/), go to [create application](https://preview.dashboard.thethingsnetwork.org/applications/create).
-    - For **Application ID**, use anything you like as long as it is unique and only uses alphanumeric charachters and nonconsecutive `-` and `_`.
+    - For **Application ID**, use anything you like as long as it is unique and only uses low case alphanumeric charachters and nonconsecutive `-` and `_`.
     - For **Application Description**, copy the **Application name** from staging.
 
-    ![Create Application](dashboard-application-create.png)
+    ![Create Application](create-application.png)
 
 3.  From the **Application Overview** page of the newly created application, click **Settings** on the top right.
 4.  In the box **EUI**, click **remove** right of the **App EUI** that was generated for you.
@@ -40,6 +30,8 @@ If you have customized the payload functions you'll need to migrate those as wel
 2.  In preview, click **Payload Functions** on the top right.
 3.  For each of the Payload Functions you have customized, copy-paste the function body from staging to preview and click **Save**.
 
+    > You might notice the default payload functions are no longer anonymous, but you can just paste the anonymous functions from staging.
+
 ## Devices
 
 For each device you'd like to migrate:
@@ -55,5 +47,9 @@ For each device you'd like to migrate:
     - For **App EUI**, click to select the **App EUI** from staging which you added when you [migrated the application](#migrate-applications).
 
     ![Migrate Device](dashboard-migrate-device.png)
+
+### Devices registered for ABP
+
+If you had your device registered for ABP, follow [Register for Activation By Personalization (ABP)](#register-for-activation-by-personalization-abp) and use the same **App Session Key** and **Network Session Key** as on staging.
 
 > Made a mistake? You can always come back to the devices and click **Settings** on the top right to change all of the above settings, except the **Device ID**.

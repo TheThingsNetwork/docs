@@ -1,12 +1,14 @@
-#{{ include.bump }} Create Application
+# Create Application
 Messages to and from devices are routed via applications.
 
-1. On the dashboard, click [create application](https://staging.thethingsnetwork.org/applications/create).
-2. Enter an **Application name**.
-3. Click **Create application**.
+1.  On the dashboard, click [create application](https://preview.dashboard.thethingsnetwork.org/applications/create).
 
-![create application](create-application.png)
+	* For **Application ID**, choose a unique ID of lower case, alphanumeric characters and nonconsecutive `-` and `_`.
+	* For **Application Description**, enter anything you like.
+	* Leave the checkbox enabled to automatically register the application to your default region.
 
-You will be redirected to the newly created Application page where you find the App EUI and can proceed to register devices.
+	![create application](create-application.png)
 
-![application info](app-info.png)
+2.  Click **Create application** to finish.
+
+    You will be redirected to the newly created Application page where you can find the generated **App EUI** and **Access Keys**.

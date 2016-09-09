@@ -34,7 +34,7 @@ information about your device, including the keys you'll need to active.
 You can also send messages to the device (downlink) and monitor messages
 sent by the device (uplink):
 
-![Device info (ABP)](device-info-abp.png)
+![Device info (ABP)](device-info-otaa.png)
 
 ## Register for Activation By Personalization (ABP)
 

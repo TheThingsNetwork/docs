@@ -11,4 +11,11 @@ sections:
 
 It's the perfect board to start prototyping your IoT ideas or make an existing project wireless with up to 10km range by simply swapping boards.
 
-> **NOTE:** This guide is for The Things Uno Beta Board, the [Staging Dashboard](https://staging.thethingsnetwork.org/) and versions 0.x of the [Arduino Library](https://github.com/thethingsnetwork/arduino-library). The Beta Boards do not come with an UFL connector and external antenna.
+## Prerequisites
+
+* Access to [staging.thethingsnetwork.org](https://staging.thethingsnetwork.org/).
+* The Things Uno beta board.
+	
+	> The Beta Boards do not come with an UFL connector and external antenna.
+	
+* Version 0.x of the [The Things Network Arduino Library](https://github.com/thethingsnetwork/arduino-library).

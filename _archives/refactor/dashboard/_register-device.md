@@ -1,56 +1,45 @@
 # Register Device
 
-To communicate with the Application you registered via The Things Dashboard, we
-first need to do the same for your Device and activate it via our sketch.
+To communicate with the Application you registered via The Things Dashboard, we first need to do the same for your Device and activate it via our sketch.
 
-The Things Network supports two mechanisms to register devices: Over The Air 
-Activation (OTAA) and Activation By Personalization (ABP).
+The Things Network supports two mechanisms to register devices: Over The Air Activation (OTAA) and Activation By Personalization (ABP). Every device is initially registered for OTAA after which you can switch to ABP if you prefer that instead.
 
-> In production, you'll want to use OTAA. This is more reliable because the
-activation will be confirmed and more secure because the session keys will
-be negotiated with every activation.
+> In production, you'll want to use OTAA. This is more reliable because the activation will be confirmed and more secure because the session keys will be negotiated with every activation.
 > 
-> ABP is useful for workshops because you
-don't have to wait for a downlink window to become available to confirm the
-activation.
-
-To register your device, go back to your application's page on the dashboard
-and click **Register Device**.
+> ABP is useful for workshops because you don't have to wait for a downlink window to become available to confirm the activation.
 
 ## Register for Over The Air Activation (OTAA)
 
-On the **Register Device** screen select **OTAA**. Paste your **Device EUI**.
-If the format is correct, the **Register** button should become enabled.
+To register for OTAA you'll need to <a href="/docs/uno/#get-your-dev-eui">get the **Dev EUI** of your device</a> first. If you already know you will switch to ABP, you can do without.
 
-We'll let the App Key randomly generated. To continue, click **Register**.
+1.  Form the application page, select **Devices** from the top right menu.
+2.  In the **Devices** box, click **register device**.
+3.  On the **Register Device** screen leave **OTAA** selected.
 
-To register for OTAA you'll need to <a href="#get-the-things-uno-deveui">get
-the **DevEUI** of your device</a>.
+    * For **Device ID**, choose a unique ID of lower case, alphanumeric characters and nonconsecutive `-` and `_`.
+    * For **Device EUI**, click **customize it** and copy-paste the **DevEUI** you retrieved from your device.
 
-![Register Device (OTAA)](register-device-otaa.png)
+    	> If you plan to switch to ABP anyway, just leave it to be generated.
+    
+    * Leave the **App Key** to be randomly generated.
+    * For **App EUI**, select the generated EUI from the list.
 
-You will be redirected to the **Device info** page. Here you can view all
-information about your device, including the keys you'll need to active.
-You can also send messages to the device (downlink) and monitor messages
-sent by the device (uplink):
+    ![Register Device (OTAA)](register-device.png)
 
-![Device info (ABP)](device-info-abp.png)
+4.  Click **Register** to finish.
+
+    You will be redirected to the newly created device page where you can find the generated **App Key**.
 
 ## Register for Activation By Personalization (ABP)
 
-Select **ABP**. We will let both session keys to be randomly generated.
-To continue, click **Register**.
+You can switch a device to ABP (personalize) after first registering it for OTAA.
 
-![Register Device (ABP)](register-device-abp.png)
+1.  In the dashboard, go to the device you'd like to switch to ABP.
+2.  From the top right menu, select **Settings**.
+3.  Click on **personalize device**, just right of the **Device Settings** header.
 
-As with OTAA, you'll be redirected to the **Device info** page.
+    * Let the **Network Session Key** and **App Session Key** be generated for you or click **customize it** if you'd like to set them yourself.
 
-With ABP the frame count will reset with every reset of your device. This means
-you either have to use the **reset** link on the above screen every time this
-happens to also reset the tracked frame counter.
-
-While developing, you'll probably want to enable **Relax Frame Count**.
-
-> **WARNING:** Do not leave **Relax Frame Count** enabled in production as it will allow replay attacks, e.g. sending messages with a frame counter equal or lower than the latest received.
-
-![Device info (ABP)](device-info-abp.png)
+    ![Personalize Device](personalize-device.png)
+    
+5.  Click **Personalize** to finish.

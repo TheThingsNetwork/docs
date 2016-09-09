@@ -16,8 +16,6 @@ With [The Things Network Library](https://github.com/thethingsnetwork/arduino-li
 
 ## Prerequisites
 
-* Access to [staging.thethingsnetwork.org](https://staging.thethingsnetwork.org/).
+* Access to [preview.dashboard.thethingsnetwork.org](https://preview.dashboard.thethingsnetwork.org/).
 * Arduino board with [Microchip RN2xx3 module](http://www.microchip.com/design-centers/wireless-connectivity/embedded-wireless/lora-technology) for LoRaWAN.
 * Version 0.x of the [The Things Network Arduino Library](https://github.com/thethingsnetwork/arduino-library).
-
-> Since version 0.17, the library now has its [own repository](https://github.com/thethingsnetwork/arduino-library), can be installed via the [Library Manager](https://www.arduino.cc/en/Guide/Libraries#toc3) and has been renamed from `TheThingsUno` to `TheThingsNetwork`. I guess it should have been bumped to 1.x - oops! 😝

@@ -66,8 +66,8 @@ For OTAA you will use the `join()` method with the **App EUI** and **App Key** c
     const byte appKey[16] = {0x73, 0x6D, 0x24, 0xD2, 0x69, 0xBE, 0xE3, 0xAE, 0x0E, 0xCE, 0xF0, 0xBB, 0x6C, 0xA4, 0xBA, 0xFE};
     ```
 
-    * For `appEui` use the **App EUI** found on the application's page on the dashboard. Click `<>` to toggle to the **msb** format and then `📋` to copy.
-    * For `appKey` use the **App Key** found on the device's page under the application. Click `<>` to toggle to the **msb** format. You'll have to click `👁` to show the key before you can copy it.
+    * For `appEui` use the **Application EUI** found on the device's page on the dashboard. Click `<>` to toggle to the **msb** format and then `📋` to copy.
+    * For `appKey` use the **App Key** found on the device page. Click `<>` to toggle to the **msb** format. You'll have to click `👁` to show the key before you can copy it.
 
 2.  In your `setup()` function, right after you have called `ttn.init()` and `ttn.reset()` call `ttn.join()` with the constants you just created:
 
@@ -91,7 +91,7 @@ For ABP you will use the `personalize()` method with the device's **Dev EUI**, *
     const byte appSKey[16] = {0x2B, 0x7E, 0x15, 0x16, 0x28, 0xAE, 0xD2, 0xA6, 0xAB, 0xF7, 0x15, 0x88, 0x09, 0xCF, 0x4F, 0x3C};
     ```
 
-    * For `devAddr ` use the **Dev Address** found on the device's page on the dashboard. Click `<>` to toggle to the **msb** format and then `📋` to copy.
+    * For `devAddr ` use the **Device Address** found on the device's page on the dashboard. Click `<>` to toggle to the **msb** format and then `📋` to copy.
     * For `nwkSKey ` use the **Network Session Key**. Click `<>` to toggle to the **msb** format. You'll have to click `👁` to show the key before you can copy it.
     * For `appSKey` use **App Session Key**.
 

@@ -8,12 +8,13 @@ sections:
  - node-red/_build.md
 ---
 
-[Node-RED](http://nodered.org/) is a free, JavaScript-based server and web GUI
-for wiring together hardware devices, APIs and online services.
+[Node-RED](http://nodered.org/) is a free, JavaScript-based server and web GUI for wiring together hardware devices, APIs and online services.
 
-With the [Node-RED node for TTN](http://flows.nodered.org/node/node-red-contrib-ttn)
-it is very easy to process device messages and activations with pretty much no code.
+With the [Node-RED node for TTN](http://flows.nodered.org/node/node-red-contrib-ttn) it is very easy to process device messages and activations with pretty much no code.
 
-> With version 0.0.4 of the Node-RED node it now has its [own repository](https://github.com/thethingsnetwork/node-red-contrib-ttn).
+## Prerequisites
 
-<a href="http://flows.nodered.org/node/node-red-contrib-ttn" target="_blank" class="btn btn-primary">TTN Node</a>
+* Access to [staging.thethingsnetwork.org](https://staging.thethingsnetwork.org/).
+* Access to an application with registered device on TTN.
+* A Node-RED instance or server/computer to install it on.
+* Version 0.x of the [Node-RED node for TTN](http://flows.nodered.org/node/node-red-contrib-ttn).

@@ -12,10 +12,15 @@ sections:
 
 With the [Node-RED node for TTN](http://flows.nodered.org/node/node-red-contrib-ttn) it is very easy to process device messages and activations with pretty much no code.
 
-> This guide has been updated for the upcoming version 1.0.0 of the TTN node and the production backend, which are currently both in preview. Get 1.0.0 via the refactor tag:
->
-> ```bash
-> npm install node-red-contrib-ttn@refactor
-> ```
+## Prerequisites
 
-<a href="http://flows.nodered.org/node/node-red-contrib-ttn" target="_blank" class="btn btn-primary">TTN Node</a>
+* Access to [preview.dashboard.thethingsnetwork.org](https://preview.dashboard.thethingsnetwork.org/).
+* Access to an application with registered device on TTN.
+* A Node-RED instance or server/computer to install it on.
+* Version 1.x of the [Node-RED node for TTN](http://flows.nodered.org/node/node-red-contrib-ttn).
+
+	> You can get version 1.x via the refactor tag:
+	> 
+	> ```bash
+	> npm install node-red-contrib-ttn@refactor
+	> ```

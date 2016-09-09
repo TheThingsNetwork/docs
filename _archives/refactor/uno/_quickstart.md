@@ -76,7 +76,7 @@ Devices need to be registered with an application in order to send and receive m
 
     ![Register Device (OTAA)](register-device.png)
 
-5.  Click **Register** to finish.
+4.  Click **Register** to finish.
 
     You will be redirected to the newly created device page where you can find the generated **App Key**.
 

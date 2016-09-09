@@ -11,6 +11,9 @@ sections:
 
 With the [TTN Client](https://www.npmjs.com/package/ttn) you can receive activations and uplink messages from devices via The Things Network as well as respond with downlink messages.
 
-> With version 1.3.2 of the Node.js client it now has its [own repository](https://github.com/thethingsnetwork/node-ttn).
+## Prerequisites
 
-<a href="https://www.npmjs.com/package/ttn" target="_blank" class="btn btn-primary">TTN Client</a>
+* Access to [staging.thethingsnetwork.org](https://staging.thethingsnetwork.org/).
+* Access to an application with registered device on TTN.
+* A server/computer to run Node.js on.
+* Version 1.x of the [TTN Node.js client](https://github.com/thethingsnetwork/node-ttn).
