@@ -69,7 +69,7 @@ Devices need to be registered with an application in order to send and receive m
 2.  In the **Devices** box, click **register device**.
 3.  On the **Register Device** screen leave **OTAA** selected.
 
-    * For **Device ID**, choose a unique ID of lower case, alphanumeric characters and nonconsecutive `-` and `_`.
+    * For **Device ID**, choose a - for this application - unique ID of lower case, alphanumeric characters and nonconsecutive `-` and `_`.
     * For **Device EUI**, click **customize it** and copy-paste the **DevEUI** you retrieved from your device.
     * Leave the **App Key** to be randomly generated.
     * For **App EUI**, select the generated EUI from the list.

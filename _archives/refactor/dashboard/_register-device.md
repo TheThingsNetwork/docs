@@ -16,7 +16,7 @@ To register for OTAA you'll need to <a href="/docs/uno/#get-your-dev-eui">get th
 2.  In the **Devices** box, click **register device**.
 3.  On the **Register Device** screen leave **OTAA** selected.
 
-    * For **Device ID**, choose a unique ID of lower case, alphanumeric characters and nonconsecutive `-` and `_`.
+    * For **Device ID**, choose a - for this application - unique ID of lower case, alphanumeric characters and nonconsecutive `-` and `_`.
     * For **Device EUI**, click **customize it** and copy-paste the **DevEUI** you retrieved from your device.
 
     	> If you plan to switch to ABP anyway, just leave it to be generated.

@@ -24,3 +24,5 @@ With the [Node-RED node for TTN](http://flows.nodered.org/node/node-red-contrib-
 	> ```bash
 	> npm install node-red-contrib-ttn@refactor
 	> ```
+
+<div class="alert alert-danger"><strong>Warning:</strong> The APIs for these versions of the library and backend might still change and the database (registered application and devices) reset. Do not use in production!</div>
