@@ -3,7 +3,9 @@ layout: guide
 title: MQTT
 sections:
  - mqtt/_clients.md
+ - mqtt/_quick-start.md
  - mqtt/_api.md
+ - mqtt/_migrate.md
 ---
 
 [MQTT](http://mqtt.org) is a machine-to-machine (M2M)/"Internet of Things" connectivity protocol. It was designed as an extremely lightweight publish/subscribe messaging transport.
