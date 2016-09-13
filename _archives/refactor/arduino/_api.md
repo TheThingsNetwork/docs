@@ -54,7 +54,7 @@ use the device `EUI` to register the device for OTAA
 ```
 
 ## Method: join
-Activate the device via OTAA.
+Activate the device via OTAA (default).
 
 ```c
 bool join(const byte appEui[8], const byte appKey[16]);

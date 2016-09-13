@@ -2,15 +2,7 @@
 
 To communicate with the Application you registered via The Things Dashboard, we first need to do the same for your Device and activate it via our sketch.
 
-The Things Network supports two mechanisms to register devices: Over The Air Activation (OTAA) and Activation By Personalization (ABP). Every device is initially registered for OTAA after which you can switch to ABP if you prefer that instead.
-
-> In production, you'll want to use OTAA. This is more reliable because the activation will be confirmed and more secure because the session keys will be negotiated with every activation.
-> 
-> ABP is useful for workshops because you don't have to wait for a downlink window to become available to confirm the activation.
-
-## Register for Over The Air Activation (OTAA)
-
-To register for OTAA you'll need to <a href="/docs/uno/#get-your-dev-eui">get the **Dev EUI** of your device</a> first. If you already know you will switch to ABP, you can do without.
+> To register you'll need to <a href="/docs/uno/#get-your-dev-eui">get the **Dev EUI** of your device</a> first.
 
 1.  Form the application page, select **Devices** from the top right menu.
 2.  In the **Devices** box, click **register device**.
@@ -28,18 +20,22 @@ To register for OTAA you'll need to <a href="/docs/uno/#get-your-dev-eui">get th
 
 4.  Click **Register** to finish.
 
-    You will be redirected to the newly created device page where you can find the generated **App Key**.
+    You will be redirected to the newly registered device where you can find the generated **App Key** needed to activate the device.
 
-## Register for Activation By Personalization (ABP)
+## Personalise device for ABP
 
-You can switch a device to ABP (personalize) after first registering it for OTAA.
+Normally, you'd use Over The Air Activation (OTAA) to negotiate session keys for further communication. You have the option to personalise a device, which means you will generate or assign session keys manually and use hard code them on the device.
 
-1.  In the dashboard, go to the device you'd like to switch to ABP.
+> In production, you'll want to use OTAA. This is more reliable because the activation will be confirmed and more secure because the session keys will be negotiated with every activation. ABP is useful for workshops because you don't have to wait for a downlink window to become available to confirm the activation.
+
+1.  In the dashboard, go to the device you'd like to personalise.
 2.  From the top right menu, select **Settings**.
 3.  Click on **personalize device**, just right of the **Device Settings** header.
 
-    * Let the **Network Session Key** and **App Session Key** be generated for you or click **customize it** if you'd like to set them yourself.
+    * Leave the **Network Session Key** and **App Session Key** to be generated for you or click **customize it** if you'd like to set them yourself.
 
     ![Personalize Device](personalize-device.png)
     
 5.  Click **Personalize** to finish.
+
+    You will be redirected back to the device, where you will find the **Device Address** and session keys needed to activate the device.

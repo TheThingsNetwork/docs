@@ -25,9 +25,9 @@ If you don't see a port that identifies as **Arduino Leonardo** make sure The Th
 
 ## Get your DevEUI
 
-The *DevEUI* is an unique address hard coded into the LoRa module. We need this address to register a device for OTAA with The Things Network.
+The *DevEUI* is an unique address hard coded into the LoRa module. We need this address to register a device with The Things Network.
 
-1.  In the Arduino IDE open **File > Examples > TheThingsNetwork > [DeviceInfo](https://github.com/TheThingsNetwork/arduino-library/blob/master/examples/DeviceInfo/DeviceInfo.ino)**.
+1.  In the Arduino IDE open **File > Examples > TheThingsNetwork > [DeviceInfo](https://github.com/TheThingsNetwork/arduino-device-library/blob/master/examples/DeviceInfo/DeviceInfo.ino)**.
 2.  Select **Sketch > Upload** `Ctrl/⌘ + U` to upload the sketch.
 3.  Select **Tools > Serial Monitor** `Ctrl/⌘ + Shift + M` to open the [Serial Monitor](/arduino/#serial-monitor).
 4.  Soon, it should print a list with **Device Information**, including the **DevEUI**:
@@ -67,7 +67,6 @@ Devices need to be registered with an application in order to send and receive m
 
 1.  Form the application page, select **Devices** from the top right menu.
 2.  In the **Devices** box, click **register device**.
-3.  On the **Register Device** screen leave **OTAA** selected.
 
     * For **Device ID**, choose a - for this application - unique ID of lower case, alphanumeric characters and nonconsecutive `-` and `_`.
     * For **Device EUI**, click **customize it** and copy-paste the **DevEUI** you retrieved from your device.
@@ -83,12 +82,12 @@ Devices need to be registered with an application in order to send and receive m
 ## Activate Device
 Now that you have registered the device you need to activate it from the device itself.
 
-1.  In Arduino IDE, select **File > Examples > TheThingsNetwork > [SendOTAA](https://github.com/TheThingsNetwork/arduino-library/blob/master/examples/SendOTAA/SendOTAA.ino)**.
+1.  In Arduino IDE, select **File > Examples > TheThingsNetwork > [SendOTAA](https://github.com/TheThingsNetwork/arduino-device-library/blob/master/examples/SendOTAA/SendOTAA.ino)**.
 2.  Copy the **Application EUI** and **App Key** from the **Device Overview** box on the device page of the dashboard.
 
     > Use `👁` to show obfuscated keys and then use `📋` to copy. For the Arduino library we'll need the values in msb format. Toggle the format with `<>`.
 
-    For OTAA, the example calls `ttn.join()` with the `appEui` and `appKey` you declared.
+    The example continues to call `ttn.join()` with the `appEui` and `appKey` you declared until the activation is confirmed.
 
     ```c
     // ..

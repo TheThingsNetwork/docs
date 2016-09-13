@@ -53,7 +53,7 @@ The actual streams you'd pass to `ttn.init()` depend on the board you use and th
 
 In the [`setup()`](https://www.arduino.cc/en/Reference/setup) function, after initialising the library, we have to activate the device.
 
-There are two ways to activate your device.
+There are two ways to activate your device. By default your device is registered to use OTAA. You can personalise a device to use ABP.
 
 ### Over The Air Activation (OTAA)
 

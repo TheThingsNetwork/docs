@@ -2,7 +2,11 @@
 
 This guide will walk you through migrating applications and devices from [staging.thethingsnetwork.org](https://staging.thethingsnetwork.org/) to [preview.dashboard.thethingsnetwork.org](https://preview.dashboard.thethingsnetwork.org/).
 
-> The migration does not require any immediate change on nodes since the staging router forwards data to both the staging and (preview) production.
+> The migration does not require any changes to devices that use OTAA (the default). Devices that use ABP will need their sketch to be updated with a new Device Address.
+
+<div class="alert alert-danger"><strong>Warning:</strong> This version of the backend is in preview. The database with registered application and devices might be reset before it goes in production.</div>
+
+<div class="alert alert-danger"><strong>Warning:</strong> Messages will be routed to the new backend automatically once you have migrated a device and will no longer be delivered to staging. You will have to delete a migrated device to use staging again.</div>
 
 ## Applications
 
@@ -46,10 +50,24 @@ For each device you'd like to migrate:
     - For **App Key**, click **customize it** and copy-paste the **App Key** from staging.
     - For **App EUI**, click to select the **App EUI** from staging which you added when you [migrated the application](#migrate-applications).
 
-    ![Migrate Device](dashboard-migrate-device.png)
+    ![](register-device.png)
+
+> Made a mistake? You can always come back to the devices and click **Settings** on the top right to change all of the above settings, except the **Device ID**.
 
 ### Devices registered for ABP
 
-If you had your device registered for ABP, follow [Register for Activation By Personalization (ABP)](#register-for-activation-by-personalization-abp) and use the same **App Session Key** and **Network Session Key** as on staging.
+If you had your device registered for ABP, follow these additional steps:
 
-> Made a mistake? You can always come back to the devices and click **Settings** on the top right to change all of the above settings, except the **Device ID**.
+1.  Navigate to the registered device if you're not there already after registering it.
+2.  Select **Settings** from the top right menu.
+3.  Click the **personalize device** link aligned right of the **Device Settings** header.
+    - For **Network Session Key**, click **customize it** and copy-paste the **Network Session Key** from staging.
+    - For **App Session Key**, click **customize it** and copy-paste the **App Session Key** from staging.
+4.  Connect the device.
+5.  Update the following line of your sketch with the generated **Device EUI** (msb):
+
+    ```c
+    const byte devAddr[4] = {0x02, 0xDE, 0xAE, 0x00};
+    ```
+    
+    > Use `<>` to toggle to **msb** and then copy with `📋`.

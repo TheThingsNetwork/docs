@@ -16,4 +16,4 @@ With the [TTN Client](https://www.npmjs.com/package/ttn) you can receive activat
 * Access to [staging.thethingsnetwork.org](https://staging.thethingsnetwork.org/).
 * Access to an application with registered device on TTN.
 * A server/computer to run Node.js on.
-* Version 1.x of the [TTN Node.js client](https://github.com/thethingsnetwork/node-ttn).
+* Version 1.x of the [TTN Node.js client](https://github.com/TheThingsNetwork/node-app-lib).

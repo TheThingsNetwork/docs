@@ -14,4 +14,4 @@ Your Applications and Devices can be managed via [The Things Network Dashboard](
 
 > Every component on the dashboard has a small <i class="fa fa-question-circle"></i> icon. Click the icon for more information.
 
-<div class="alert alert-danger"><strong>Warning:</strong> The APIs for these versions of the library and backend might still change and the database (registered application and devices) reset. Do not use in production!</div>
+<div class="alert alert-danger"><strong>Warning:</strong> This version of the backend is in preview. The database with registered application and devices might be reset before it goes in production!</div>
