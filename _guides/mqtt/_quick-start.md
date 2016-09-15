@@ -42,7 +42,7 @@ Let's listen for new device activations first.
   0B3D57ED0000DA9/devices/0004A30B001B7AD2/activations {"metadata":[{"frequency":868.1,"datarate":"SF7BW125","codingrate":"4/5","gateway_timestamp":3475324075,"channel":0,"server_time":"2016-09-12T14:00:16.614852216Z","rssi":-42,"lsnr":9.2,"rfchain":1,"crc":1,"modulation":"LORA","gateway_eui":"B827EBFFFE87BD22","altitude":10,"longitude":5.90418,"latitude":52.95904}]}
     ```
 
-    Use `Ctrl + C` to exit.  
+    Use `Ctrl C` to exit.  
 
 ## Receive Messages (up)
 Now let's listen for actual messages coming in from devices.
@@ -55,7 +55,7 @@ Now let's listen for actual messages coming in from devices.
 
     > Don't forget to replace `<AppEUI>` and `<AppKey>` and append the options for TLS if you used that.
 
-    Alternatively, you could also exit the process (`Ctrl + C`) and subscribe to all topics using `-t '#'` instead.
+    Alternatively, you could also exit the process (`Ctrl C`) and subscribe to all topics using `-t '#'` instead.
 
 2.  If you uploaded the [The Things Uno / Quick Start](/uno/#quick-start) sketch you should see something like:
 

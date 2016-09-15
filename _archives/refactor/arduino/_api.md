@@ -39,18 +39,15 @@ void showStatus();
 Will write something like:
 
 ```bash
-Device Information
-
-EUI: 0004A30B001B672E
-Battery: 3304
-AppEUI: 0000000000000000
-DevEUI: 0004A30B001B672E
-DevAddr: 00000000
+EUI: 0004A30B001B7AD2
+Battery: 3223
+AppEUI: 70B3D57EF000001C
+DevEUI: 0004A30B001B7AD2
+DevAddr: 26012416
+Band: 868
 Data Rate: 5
 RX Delay 1: 1000
 RX Delay 2: 2000
-
-use the device `EUI` to register the device for OTAA
 ```
 
 ## Method: join

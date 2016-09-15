@@ -169,4 +169,4 @@ The JSON encoded payload to send a message has also changed. Update the code whe
 }
 ```
 
-> Note that `payload` has been renamed to `payload_raw` and `ttl` is no longer included.
+> Note that `payload` has been renamed to `payload_raw` and `ttl` is no longer included. Also consider to use the new [`payload_fields`](#topic-downlink-messages).

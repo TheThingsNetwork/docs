@@ -27,9 +27,9 @@ If you don't see a port that identifies as **Arduino Leonardo** make sure The Th
 
 The *DevEUI* is an unique address hard coded into the LoRa module. We use this address to register a device for OTAA with The Things Network.
 
-1.  In the Arduino IDE open **File > Examples > TheThingsNetwork > [DeviceInfo](https://github.com/TheThingsNetwork/arduino-device-library/blob/master/examples/DeviceInfo/DeviceInfo.ino)**.
-2.  Select **Sketch > Upload** `Ctrl/⌘ + U` to upload the sketch.
-3.  Select **Tools > Serial Monitor** `Ctrl/⌘ + Shift + M` to open the [Serial Monitor](/arduino/#serial-monitor).
+1.  In the Arduino IDE open **File > Examples > TheThingsNetwork > [DeviceInfo](https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/DeviceInfo/DeviceInfo.ino)**.
+2.  Select **Sketch > Upload** `Ctrl/⌘ U` to upload the sketch.
+3.  Select **Tools > Serial Monitor** `Ctrl/⌘ Shift M` to open the [Serial Monitor](/arduino/#serial-monitor).
 4.  Soon, it should print a list with **Device Information**, including the **DevEUI**:
 
     ```
@@ -80,7 +80,7 @@ Devices need to be registered with an application in order to send and receive m
 ## Activate Device
 Now that you have registered the device you need to activate it from the device itself.
 
-1.  In Arduino IDE, select **File > Examples > TheThingsNetwork > [SendOTAA](https://github.com/TheThingsNetwork/arduino-device-library/blob/master/examples/SendOTAA/SendOTAA.ino)**.
+1.  In Arduino IDE, select **File > Examples > TheThingsNetwork > [SendOTAA](https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/SendOTAA/SendOTAA.ino)**.
 2.  Copy the **App EUI** and **App Key** from the device page to the example.
 
     > Use <code><i class="fa fa-eye"></i></code> to show obfuscated keys and <code><i class="fa fa-code"></i></code> to toggle to **msb**. Then use <code><i class="fa fa-clipboard"></i></code> to copy.
@@ -104,7 +104,7 @@ Now that you have registered the device you need to activate it from the device 
     }
     ```
 
-3.  Select **Sketch > Upload** `Ctrl/⌘ + U` to upload the sketch.
+3.  Select **Sketch > Upload** `Ctrl/⌘ U` to upload the sketch.
 
     > Uploads might fail if you still have the Serial Monitor open.
 
@@ -166,8 +166,8 @@ Now let's send a message back to the device. Devices can only receive the last m
     }
     ```
 
-2.  Select **Sketch > Upload** `Ctrl/⌘ + U` to upload the sketch.
-3.  Select **Tools > Serial Monitor** `Ctrl/⌘ + M` to open the Serial Monitor.
+2.  Select **Sketch > Upload** `Ctrl/⌘ U` to upload the sketch.
+3.  Select **Tools > Serial Monitor** `Ctrl/⌘ M` to open the Serial Monitor.
 4.  On the dashboard, go to the application page.
 5.  In the **Devices** box click on the **Dev EUI** of your device to go to its page.
 6.  In the **Downlink** box, paste the following hex-encoded list of bytes and click **Send**.

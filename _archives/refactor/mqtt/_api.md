@@ -89,7 +89,7 @@ hello-world/devices/my-uno/activations
 
 > As you can see the ID of the activated device is not part of the payload, but must be filtered from the returned topic.
 
-## Topic: Up (Receive)
+## Topic: Uplink Messages
 
 To receive messages from all devices registered to the application, subscribe to:
 
@@ -150,15 +150,64 @@ hello-world/devices/my-uno/up
 
 > As you can see the ID of the device is not part of the payload, but must be filtered from the returned topic.
 
-## Topic: Down (Send)
+> To send `payload_fields`, the application must be configured with a Payload Function to decode it to `payload_raw`.
+
+## Topic: Uplink Fields
+
+To receive only a specific field from all devices registered to the application, subscribe to:
+
+```
+<AppID>/devices/+/up/<FieldPath>
+```
+
+Or, since the authentication already limits you to an Application:
+
+```
++/devices/+/up/<FieldPath>
+```
+
+To get a field for a specific device subscribe to:
+
+```
++/devices/<AppID>/up/<FieldPath>
+```
+
+Or if you like to be verbose:
+
+```
+<AppID>/devices/<DeviceID>/up/<FieldPath>
+```
+
+### Message format
+
+If your fields look like the following:
+
+```json
+{
+  "water": true,
+  "analog": [0, 255, 500, 1000],
+  "gps": {
+    "lat": 52.3736735,
+    "lon": 4.886663
+  },
+  "text": "why are you using text?"
+}
+```
+
+Then here are the field topics you could subscribe to and the messages they will get you:
+
+```bash
++/devices/+/up/water true
++/devices/+/up/analog [0, 255, 500, 1000]
++/devices/+/up/gps { "lat": 52.3736735, "lon": 4.886663 }
++/devices/+/up/gps/lat 52.3736735
++/devices/+/up/gps/lon 4.886663
++/devices/+/up/text "why are you using text?"
+```
+
+## Topic: Downlink Messages
 
 To send a message to a specific device registered to the application, publish to:
-
-```
-+/devices/<DeviceID>/down
-```
-
-Or, in this case maybe more clear:
 
 ```
 <AppID>/devices/<DeviceID>/down
@@ -177,3 +226,18 @@ Encoded as JSON string, format your message as:
 
 * `payload_raw [string]`: Payload as a base64 encoded array of bytes.
 * `ttl [string]`: Time-to-live. How long the message should remained queued until it can be delivered to the device.
+
+#### Sending fields
+
+Instead of `payload_raw` you can also use `payload_fields`, which takes a object with fields:
+
+```json
+{
+  "payload_fields": {
+    "led": true
+  },
+  "port": 1
+}
+```
+
+> To accept `payload_fields`, the application must be configured with an Payload Function to encode it to `payload_raw`.

@@ -83,7 +83,7 @@ Next, we will write the script that requires the TTN Client module and uses it t
     [DEBUG] Connected
     ```
 
-    Use `Ctrl + C` to terminate the script.
+    Use `Ctrl C` to terminate the script.
 
     If you get an error it should say what is wrong:
 
@@ -121,7 +121,7 @@ Now that we are connected, let's listen for new device activations.
     [INFO]  Activated:  0004A30B001B7AD2
     ```
 
-    Use `Ctrl + C` to terminate the script.    
+    Use `Ctrl C` to terminate the script.    
 
 ## Receive Messages (uplink)
 Now let's listen for actual messages coming in from devices.
@@ -181,7 +181,7 @@ Again, I use the same script as [The Things Uno Quick Start](/uno/#quick-start) 
 
 1.  Follow the [The Things Uno Quick Start](/uno/#quick-start) or upload another sketch to your device which sends messages every few seconds and listens for a response it will then print to `Serial`.
 
-2.  In the Arduino IDE, select **Tools > Serial Monitor** `Ctrl/⌘ + Shift + M` to open the [Serial Monitor](/arduino/#serial-monitor).
+2.  In the Arduino IDE, select **Tools > Serial Monitor** `Ctrl/⌘ Shift M` to open the [Serial Monitor](/arduino/#serial-monitor).
 
 3.  In the editor for the script, add another listener for the `uplink` event that responds to every 3rd message:
 

@@ -16,7 +16,7 @@ To use the library:
 
 ## Initialise
 
-Your sketch will have the following template:
+A typical sketch has the following structure:
 
 ```c
 #include <TheThingsNetwork.h>
@@ -47,7 +47,7 @@ void loop() {
 }
 ```
 
-The actual streams you'd pass to `ttn.init()` depend on the board you use and the Serial Port you connected a LoRaWAN module to. For The Things Uno and Node use the Serial Ports and baud rates from the template.
+The actual streams you'd pass to `ttn.init()` depend on the board you use and the Serial Port you connected a LoRaWAN module to. For The Things Uno and Node use the Serial Ports and baud rates shown here.
 
 ## Activate
 
@@ -62,8 +62,8 @@ For OTAA you will use the `join()` method with the **App EUI** and **App Key** c
 1.  Right after the include for the library create constants to hold the keys:
 
     ```c
-    const byte appEui[8] = {0x70, 0xB3, 0xD5, 0x7E, 0xE0, 0xE0, 0x01, 0x4A1};
-    const byte appKey[16] = {0x73, 0x6D, 0x24, 0xD2, 0x69, 0xBE, 0xE3, 0xAE, 0x0E, 0xCE, 0xF0, 0xBB, 0x6C, 0xA4, 0xBA, 0xFE};
+    const byte appEui[8] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
+    const byte appKey[16] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
     ```
 
     * For `appEui` use the **Application EUI** found on the device's page on the dashboard. Click `<>` to toggle to the **msb** format and then `📋` to copy.
@@ -86,9 +86,9 @@ For ABP you will use the `personalize()` method with the device's **Dev EUI**, *
 1.  Right after the include for the library create constants to hold the keys:
 
     ```c
-    const byte devAddr[4] = {0x02, 0xDE, 0xAE, 0x00};
-    const byte nwkSKey[16] = {0x2B, 0x7E, 0x15, 0x16, 0x28, 0xAE, 0xD2, 0xA6, 0xAB, 0xF7, 0x15, 0x88, 0x09, 0xCF, 0x4F, 0x3C};
-    const byte appSKey[16] = {0x2B, 0x7E, 0x15, 0x16, 0x28, 0xAE, 0xD2, 0xA6, 0xAB, 0xF7, 0x15, 0x88, 0x09, 0xCF, 0x4F, 0x3C};
+    const byte devAddr[4] = {0x00, 0x00, 0x00, 0x00};
+    const byte nwkSKey[16] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
+    const byte appSKey[16] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
     ```
 
     * For `devAddr ` use the **Device Address** found on the device's page on the dashboard. Click `<>` to toggle to the **msb** format and then `📋` to copy.
@@ -105,14 +105,19 @@ Your device will now report to the network using these keys.
 
 ## Send
 
-To send messages call `ttn.sendBytes()` with an array of bytes and the size:
+To send messages call `ttn.sendBytes()` with an array of bytes and its size. Here's an example that sends the current state of [`LED_BUILTIN`](https://www.arduino.cc/en/Reference/Constants) every 10 seconds:
 
 ```c
-byte data[3] = { 0x01, 0x02, 0x03 };
-ttn.sendBytes(data, sizeof(data));
+void loop() {
+  byte bytes[1];
+  bytes[0] = (byte) digitalRead(LED_BUILTIN);
+  ttn.sendBytes(bytes, sizeof(bytes));
+  
+  delay(10000);
+}
 ```
 
-To minimise your use of the limited daily airtime try to use as little bytes as possible. See the Arduino [Array guide](https://www.arduino.cc/en/Reference/Array) and [Bit Math Tutorial](http://playground.arduino.cc/Code/BitMath#binary) to learn more.
+To minimise your use of the limited daily airtime try to use as little bytes as possible. See the Arduino [Array guide](https://www.arduino.cc/en/Reference/Array) and [Bit Math Tutorial](http://playground.arduino.cc/Code/BitMath#binary) to learn how.
 
 ## Receive
 
@@ -122,21 +127,20 @@ You can only receive messages in response to a message you send, even if it is j
 * Get the actual bytes via `ttn.downlink`.
 * The port the response addresses can be read from `ttn.downlinkPort`.
 
-Your `loop()` function might look like:
+Here's the above example with added support to turn the LED on or off by sending a downlink message via port 1:
 
 ```c
 void loop() {
-  byte send[1] = { 0x01 };
-  int downlinkBytes = ttn.sendBytes(send, sizeof(send));
+  byte bytes[1];
+  bytes[0] = (byte) digitalRead(LED_BUILTIN);
+  int downlinkSize = ttn.sendBytes(bytes, sizeof(bytes));
 
-  if (downlinkBytes > 0) {
-    debugSerial.print("Received " + String(downlinkBytes) + " bytes via " + String(ttn.downlinkPort) + ": ")
-
-    for (int i = 0; i < downlinkBytes; i++) {
-      debugSerial.print(String(ttn.downlink[i]) + " ");
+  if (downlinkSize == 1 && ttn.downlinkPort == 1) {
+    if (ttn.downlink[0] == 0x00) {
+    	digitalWrite(LED_BUILTIN, LOW);
+    } else if (ttn.downlink[0] == 0x01) {
+    	digitalWrite(LED_BUILTIN, HIGH);
     }
-
-    debugSerial.println();
   }
   
   delay(10000);

@@ -67,7 +67,7 @@ If you had your device registered for ABP, follow these additional steps:
 5.  Update the following line of your sketch with the generated **Device EUI** (msb):
 
     ```c
-    const byte devAddr[4] = {0x02, 0xDE, 0xAE, 0x00};
+    const byte devAddr[4] = {0x00, 0x00, 0x00, 0x00};
     ```
     
     > Use `<>` to toggle to **msb** and then copy with `📋`.

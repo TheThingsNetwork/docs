@@ -31,7 +31,7 @@ Let's listen for new device activations first.
     hello-world/devices/my-uno/activations {"app_eui":"70B3D57EF000001C","dev_eui":"0004A30B001B7AD2","dev_addr":"26012723","metadata":{"time":"2016-09-13T09:59:02.90329585Z","frequency":868.5,"modulation":"LORA","data_rate":"SF7BW125","coding_rate":"4/5","gateways":[{"eui":"B827EBFFFE87BD22","timestamp":1484146403,"time":"2016-09-13T09:59:02.867283Z","channel":2,"rssi":-49,"snr":7,"rf_chain":1}]}}
     ```
 
-    Use `Ctrl + C` to exit.  
+    Use `Ctrl C` to exit.  
 
 ## Receive Messages (up)
 Now let's listen for actual messages coming in from devices.
@@ -44,26 +44,46 @@ Now let's listen for actual messages coming in from devices.
 
     > Don't forget to replace `<Region>`, `<AppID>` and `<AppKey>`.
 
-    Alternatively, you could also exit the process (`Ctrl + C`) and subscribe to all topics using `-t '#'` instead.
-
 2.  If you uploaded the [The Things Uno / Quick Start](/uno/#quick-start) sketch you should see something like:
 
     ```bash
-    hello-world/devices/my-uno/up {"port":1,"counter":0,"payload_raw":"SGVsbG8=","payload_fields":{"message":"Hello"},"metadata":{"time":"2016-09-13T09:59:08.179119279Z","frequency":868.3,"modulation":"LORA","data_rate":"SF7BW125","coding_rate":"4/5","gateways":[{"eui":"B827EBFFFE87BD22","timestamp":1489443003,"time":"2016-09-13T09:59:08.167028Z","channel":1,"rssi":-49,"snr":8,"rf_chain":1}]}}
+    hello-world/devices/my-uno/up {"port":1,"counter":5,"payload_raw":"AAABCOs=","payload_fields":{"led":false,"uptime":{"ms":67819,"s":67.819}},"metadata":{"time":"2016-09-14T14:19:20.272552952Z","frequency":868.1,"modulation":"LORA","data_rate":"SF7BW125","coding_rate":"4/5","gateways":[{"eui":"B827EBFFFE87BD22","timestamp":1960494347,"time":"2016-09-14T14:19:20.258723Z","rssi":-49,"snr":9.5,"rf_chain":1}]}}
     ```
+    
+### Subscribe to a specific field
 
-## Send Messages (down)
-To send a message you will have to address a specific device by its **Dev EUI**. Let's send the same message as in the [The Things Uno / Quick Start](/docs/uno/#receive-message-downlink):
+You can also subscribe to a specific field. If you followed [The Things Uno / Quick Start](/uno/#quick-start) you could subscribe to get just the uptime via:
 
 ```bash
-Hi
+mosquitto_sub -h <Region>.thethings.network -t '+/devices/+/up/uptime' -u '<AppID>' -P '<AppKey>' -v
+
+hello-world/devices/my-uno/up/uptime {"ms":2.702987e+06,"s":2702.987}
 ```
 
-As explained in the API reference for the [+/devices/+/down](#topic-down-send) topic, we'll have to publish this as part of a JSON encoded object, with the payload itself base64 encoded:
+You can even subscribe to nested fields like:
+
+```bash
+mosquitto_sub -h <Region>.thethings.network -t '+/devices/+/up/uptime/s' -u '<AppID>' -P '<AppKey>' -v
+
+hello-world/devices/my-uno/up/uptime/s 2702.987
+```
+
+## Send Messages (down)
+To send a message you will have to address a specific device by its **Device ID**. Let's send the same message used in the [The Things Uno / Quick Start](/docs/uno/#receive-message-downlink):
+
+```bash
+{
+  "led": true
+}
+```
+
+If you have configured the encoder payload function according to the [The Things Uno / Quick Start](/docs/uno/#receive-message-downlink) you can send this as is using the `payload_fields` key:
 
 ```json
 {
-  "payload_raw": "SGk=",
+  "payload_fields": {
+    "led": true
+  },
   "port": 1
 }
 ```
@@ -71,15 +91,16 @@ As explained in the API reference for the [+/devices/+/down](#topic-down-send) t
 1.  Open another terminal window and execute the following command:
 
     ```bash
-    mosquitto_pub -h <Region>.thethings.network -t '<AppID>/devices/<DevID>/down' -u '<AppID>' -P '<AppKey>' -m '{ "payload_raw":"SGk=","port":1}'
+    mosquitto_pub -h <Region>.thethings.network -t '<AppID>/devices/<DevID>/down' -u '<AppID>' -P '<AppKey>' -m '{"payload_fields":{"led":true},"port":1}'
     ```
 
 2.  If you uploaded the [The Things Uno / Quick Start](/uno/#quick-start) sketch you should see something like:
 
     ```
-    Sending: mac tx uncnf 1 with 5 bytes
-    Successful transmission. Received 2 bytes
-    Received Hi
+	Successful transmission. Received 1 bytes
+	Downlink (bytes in hex): 01
+	Port: 1
+	New LED: on
     ```
 
 Congratulations! Now you know how to send and receive messages via MQTT.
