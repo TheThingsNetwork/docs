@@ -3,12 +3,11 @@ layout: guide
 title: Node-RED
 sections:
  - node-red/_setup.md
- - node-red/_configure.md
- - node-red/_test.md
- - node-red/_build.md
+ - node-red/_usage.md
+ - node-red/_quickstart.md
 ---
 
-[Node-RED](http://nodered.org/) is a free, JavaScript-based server and web GUI for wiring together hardware devices, APIs and online services.
+[Node-RED](http://nodered.org/) is a free, JavaScript-based server and web GUI for wiring together hardware devices, APIs and online services. You can find a lot of example flows and additional nodes in the [Node-RED Library](http://flows.nodered.org/).
 
 With the [Node-RED node for TTN](http://flows.nodered.org/node/node-red-contrib-ttn) it is very easy to process device messages and activations with pretty much no code.
 

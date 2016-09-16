@@ -1,7 +1,9 @@
 # Quick Start
 This guide will walk you through setting up a Node.js project that listens to device activations and messages and responds to every 3rd message.
 
-> In a hurry? Skip to [Connect](#connect) to get your application **region**, **Application ID** and **Access Key** and then jump to the [Live Example](#live-example) to run the script we'll write here directly in your browser!
+> This guide assumes the sketch and payload functions of [The Things Uno / Quick Start](/uno/#quick-start), but can be easily applied to any other.
+
+The full script that we will build is also included as [example](https://github.com/TheThingsNetwork/node-app-lib/blob/master/src/example.js) in the Node.js library. You can even modify and run it directly in your browser via the [Live Example](#live-example).
 
 ## Setup
 Let's install Node.js, create a Node.js project and install the TTN Client.
@@ -142,8 +144,6 @@ Now that we are connected, let's listen for new device activations.
 ## Receive Messages
 Now let's listen for actual messages coming in from devices.
 
-I use the same script as [The Things Uno Quick Start](/uno/#quick-start), which both sends and receives messages.
-
 1.  Add a listener for the `message ` event:
 
     ```js
@@ -158,7 +158,7 @@ I use the same script as [The Things Uno Quick Start](/uno/#quick-start), which 
     node .
     ```
 
-    If you uploaded the Quick Start sketch you should see something like:
+    You should see messages come in like:
 
     ```bash
     [INFO]  Message: {
@@ -166,9 +166,9 @@ I use the same script as [The Things Uno Quick Start](/uno/#quick-start), which 
       "app_id": "hello-world",
       "port": 1,
       "counter": 0,
-      "payload_raw": "SGVsbG8=",
+      "payload_raw": "AQ==",
       "payload_fields": {
-        "message": "Hello"
+        "led": true
       },
       "metadata": {
         "time": "2016-09-08T13:57:08.685529132Z",
@@ -194,24 +194,27 @@ I use the same script as [The Things Uno Quick Start](/uno/#quick-start), which 
 ## Send Messages
 To send a message you will have to address a specific device by its **Device ID**. Devices will only receive the last (downlink) message send to them in response to the next (uplink) message they send themselves. So let's send a (downlink) message in response to each 3rd (uplink) message we receive from a device.
 
-Again, I use the same script as [The Things Uno Quick Start](/uno/#quick-start) as it is set up to both send and receives messages.
+1.  In the Arduino IDE, select **Tools > Serial Monitor** `Ctrl/⌘ Shift M`.
 
-1.  Follow the [The Things Uno Quick Start](/uno/#quick-start) or upload another sketch to your device which sends messages every few seconds and listens for a response it will then print to `Serial`.
-
-2.  In the Arduino IDE, select **Tools > Serial Monitor** `Ctrl/⌘ Shift M` to open the [Serial Monitor](/arduino/#serial-monitor).
-
-3.  In the editor for the script, add another listener for the `uplink` event that responds to every 3rd message:
+2.  In the editor for the script, add another listener for the `uplink` event that responds to every 3rd message:
 
     ```js
     client.on('message', function(data) {
     
-        // respond to every third message
-        if (data.counter % 3 === 0) {
-            console.log('[DEBUG]', 'Sending');
+      // Respond to every third message
+      if (data.counter % 3 === 0) {
 
-            var payload = new Buffer('4869', 'hex');
-            client.send(data.dev_id, payload, data.port);
-        }
+        // Toggle the LED
+        var payload = {
+          led: !!message.led
+        };
+        
+        // If you don't have an encoder payload function:
+        // var payload = new Buffer([message.led ? 0 : 1]);
+
+        console.log('[DEBUG]', 'Sending:', JSON.stringify(payload));
+        client.send(data.dev_id, payload, data.port);
+      }
     });
     ```
 
@@ -224,15 +227,16 @@ Again, I use the same script as [The Things Uno Quick Start](/uno/#quick-start) 
     After each 3rd message the script should output:
 
     ```
-    [DEBUG] Sending
+    [DEBUG] Sending: {"led":true}
     ```
 
-    In the Serial Montor you should see something like this if you uploaded the Quick Start sketch:
+    Via the Serial Monitor you should see the message coming in:
 
     ```
-    Sending: mac tx uncnf 1 with 5 bytes
-    Successful transmission. Received 2 bytes
-    Received Hi
+    -- LOOP
+    Sending: mac tx uncnf 1 with 1 bytes
+    Successful transmission. Received 1 bytes
+    LED: on
     ```
 
-Congratulations! Now you know how to send and receive messages from a Node.js script.   
+🎉 Congratulations! Now you know how to process and send messages from a Node.js script. Go build something!

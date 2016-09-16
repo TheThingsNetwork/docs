@@ -109,9 +109,10 @@ To send messages call `ttn.sendBytes()` with an array of bytes and its size. Her
 
 ```c
 void loop() {
-  byte bytes[1];
-  bytes[0] = (byte) digitalRead(LED_BUILTIN);
-  ttn.sendBytes(bytes, sizeof(bytes));
+  byte data[1];
+  data[0] = (digitalRead(LED_BUILTIN) == HIGH) ? 1 : 0;
+    
+  ttn.sendBytes(data, sizeof(data));
   
   delay(10000);
 }
@@ -131,14 +132,17 @@ Here's the above example with added support to turn the LED on or off by sending
 
 ```c
 void loop() {
-  byte bytes[1];
-  bytes[0] = (byte) digitalRead(LED_BUILTIN);
-  int downlinkSize = ttn.sendBytes(bytes, sizeof(bytes));
+  byte data[1];
+  data[0] = (digitalRead(LED_BUILTIN) == HIGH) ? 1 : 0;
+    
+  int downlinkSize = ttn.sendBytes(data, sizeof(data));
 
   if (downlinkSize == 1 && ttn.downlinkPort == 1) {
-    if (ttn.downlink[0] == 0x00) {
+  
+    if (ttn.downlink[0] == 0) {
     	digitalWrite(LED_BUILTIN, LOW);
-    } else if (ttn.downlink[0] == 0x01) {
+    	
+    } else if (ttn.downlink[0] == 1) {
     	digitalWrite(LED_BUILTIN, HIGH);
     }
   }

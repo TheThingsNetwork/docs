@@ -88,9 +88,9 @@ The JSON encoded payload has changed on several points. Update the code where yo
 
 ```json
 {
-  "payload": "SGVsbG8=",
+  "payload": "AQ==",
   "fields": {
-    "myField": 5
+    "led": true
   },
   "port": 1,
   "counter": 15,
@@ -121,9 +121,9 @@ The JSON encoded payload has changed on several points. Update the code where yo
 {
   "port": 1,
   "counter": 0,
-  "payload_raw": "SGVsbG8=",
+  "payload_raw": "AQ==",
   "payload_fields": {
-    "message": "Hello"
+    "led": true
   },
   "metadata": {
     "time": "2016-09-13T09:59:08.179119279Z",
@@ -154,7 +154,7 @@ The JSON encoded payload to send a message has also changed. Update the code whe
 
 ```json
 {
-  "payload": "SGVsbG8gd29ybGQK=",
+  "payload": "AQ==",
   "port": 1,
   "ttl": "1h"
 }
@@ -164,7 +164,7 @@ The JSON encoded payload to send a message has also changed. Update the code whe
 
 ```
 {
-  "payload_raw": "SGVsbG8gd29ybGQK=",
+  "payload_raw": "AQ==",
   "port": 1
 }
 ```

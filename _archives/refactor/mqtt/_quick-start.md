@@ -1,10 +1,11 @@
 # Quick Start
 This guide will walk you through subscribing to an application's activations and messages as well as send a response to a specific device, using [Eclipse Mosquitto](https://mosquitto.org)'s CLIs to [subscribe](https://mosquitto.org/man/mosquitto_sub-1.html) and to [publish](https://mosquitto.org/man/mosquitto_pub-1.html) messages.
 
+> This guide assumes the sketch and payload functions of [The Things Uno / Quick Start](/uno/#quick-start), but can be easily applied to any other.
+
 ## Setup
 
-* [Download](https://mosquitto.org/download/) Mosquitto.
-* Download and save the [PEM encoded CA certificate](http://<Region>.thethings.network/mqtt-ca.pem) if you'd like to use TLS.
+[Download](https://mosquitto.org/download/) and install Mosquitto.
 
 ## Credentials
 
@@ -47,25 +48,17 @@ Now let's listen for actual messages coming in from devices.
 2.  If you uploaded the [The Things Uno / Quick Start](/uno/#quick-start) sketch you should see something like:
 
     ```bash
-    hello-world/devices/my-uno/up {"port":1,"counter":5,"payload_raw":"AAABCOs=","payload_fields":{"led":false,"uptime":{"ms":67819,"s":67.819}},"metadata":{"time":"2016-09-14T14:19:20.272552952Z","frequency":868.1,"modulation":"LORA","data_rate":"SF7BW125","coding_rate":"4/5","gateways":[{"eui":"B827EBFFFE87BD22","timestamp":1960494347,"time":"2016-09-14T14:19:20.258723Z","rssi":-49,"snr":9.5,"rf_chain":1}]}}
+    hello-world/devices/my-uno/up {"port":1,"counter":5,"payload_raw":"AQ==","payload_fields":{"led":true},"metadata":{"time":"2016-09-14T14:19:20.272552952Z","frequency":868.1,"modulation":"LORA","data_rate":"SF7BW125","coding_rate":"4/5","gateways":[{"eui":"B827EBFFFE87BD22","timestamp":1960494347,"time":"2016-09-14T14:19:20.258723Z","rssi":-49,"snr":9.5,"rf_chain":1}]}}
     ```
     
 ### Subscribe to a specific field
 
-You can also subscribe to a specific field. If you followed [The Things Uno / Quick Start](/uno/#quick-start) you could subscribe to get just the uptime via:
+You can also subscribe to a specific field. Building on [The Things Uno / Quick Start](/uno/#quick-start) you could subscribe to get just the `led` field:
 
 ```bash
-mosquitto_sub -h <Region>.thethings.network -t '+/devices/+/up/uptime' -u '<AppID>' -P '<AppKey>' -v
+mosquitto_sub -h <Region>.thethings.network -t '+/devices/+/up/led' -u '<AppID>' -P '<AppKey>' -v
 
-hello-world/devices/my-uno/up/uptime {"ms":2.702987e+06,"s":2702.987}
-```
-
-You can even subscribe to nested fields like:
-
-```bash
-mosquitto_sub -h <Region>.thethings.network -t '+/devices/+/up/uptime/s' -u '<AppID>' -P '<AppKey>' -v
-
-hello-world/devices/my-uno/up/uptime/s 2702.987
+hello-world/devices/my-uno/up/led true
 ```
 
 ## Send Messages (down)
@@ -77,30 +70,37 @@ To send a message you will have to address a specific device by its **Device ID*
 }
 ```
 
-If you have configured the encoder payload function according to the [The Things Uno / Quick Start](/docs/uno/#receive-message-downlink) you can send this as is using the `payload_fields` key:
+If you have followed [The Things Uno / Quick Start / Encode Messages](/uno/#encode-messages) you can send this as is using the `payload_fields` key:
 
 ```json
 {
   "payload_fields": {
     "led": true
-  },
-  "port": 1
+  }
+}
+```
+
+Otherwise, you'll have to use `payload_raw` and send a base64 encoded array of bytes, e.g.:
+
+```json
+{
+  "payload_raw": "AQ=="
 }
 ```
 
 1.  Open another terminal window and execute the following command:
 
     ```bash
-    mosquitto_pub -h <Region>.thethings.network -t '<AppID>/devices/<DevID>/down' -u '<AppID>' -P '<AppKey>' -m '{"payload_fields":{"led":true},"port":1}'
+    mosquitto_pub -h <Region>.thethings.network -t '<AppID>/devices/<DevID>/down' -u '<AppID>' -P '<AppKey>' -m '{"payload_fields":{"led":true}}'
     ```
 
-2.  If you uploaded the [The Things Uno / Quick Start](/uno/#quick-start) sketch you should see something like:
+2.  If you are running [The Things Uno / Quick Start](/uno/#quick-start) sketch you should see something like:
 
     ```
-	Successful transmission. Received 1 bytes
-	Downlink (bytes in hex): 01
-	Port: 1
-	New LED: on
+    -- LOOP
+    Sending: mac tx uncnf 1 with 1 bytes
+    Successful transmission. Received 1 bytes
+    LED: on
     ```
 
-Congratulations! Now you know how to send and receive messages via MQTT.
+🎉 Congratulations! Now you know how to monitor and send messages via MQTT. Go build something awesome!

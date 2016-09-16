@@ -125,9 +125,9 @@ hello-world/devices/my-uno/up
 {
   "port": 1,
   "counter": 0,
-  "payload_raw": "SGVsbG8=",
+  "payload_raw": "AQ==",
   "payload_fields": {
-    "message": "Hello"
+    "led": true
   },
   "metadata": {
     "time": "2016-09-13T09:59:08.179119279Z",
@@ -219,7 +219,7 @@ Encoded as JSON string, format your message as:
 
 ```json
 {
-  "payload_raw": "SGVsbG8gd29ybGQK=",
+  "payload_raw": "AQ==",
   "port": 1
 }
 ```
@@ -240,4 +240,4 @@ Instead of `payload_raw` you can also use `payload_fields`, which takes a object
 }
 ```
 
-> To accept `payload_fields`, the application must be configured with an Payload Function to encode it to `payload_raw`.
+> To accept `payload_fields`, the application must be configured with an encoder payload function to convert it to bytes.

@@ -34,8 +34,7 @@ void setup()
   debugSerial.begin(9600);
   
   // Wait a maximum of 10s for Serial Monitor
-  uint32_t timeout = millis() + 10000;
-  while (!debugSerial && millis() < timeout);
+  while (!debugSerial && millis() < 10000);
   
   // Your setup
 }
@@ -47,9 +46,9 @@ void setup()
 
 When you upload a sketch to your Arduino it will first compile and fail if your sketch has errors. If there are no errors it will continue to upload.
 
-1. Make sure **Tools > Port > ... (Arduino ..)** is selected.
-2. Select **Sketch > Upload** `Ctrl/⌘ U` to compile and upload your sketch.
-3. The Arduino IDE will give feedback which should look like:
+1.  Make sure **Tools > Port > ... (Arduino ..)** is selected.
+2.  Select **Sketch > Upload** `Ctrl/⌘ U` to compile and upload your sketch.
+3.  The Arduino IDE will give feedback which should look like:
 
         Sketch uses 9,656 bytes (33%) of program storage space. Maximum is 28,672 bytes.
         Global variables use 1,253 bytes (48%) of dynamic memory, leaving 1,307 bytes for local variables. Maximum is 2,560 bytes.

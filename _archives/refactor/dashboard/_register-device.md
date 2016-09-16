@@ -2,11 +2,10 @@
 
 To communicate with the Application you registered via The Things Dashboard, we first need to do the same for your Device and activate it via our sketch.
 
-> To register you'll need to <a href="/docs/uno/#get-your-dev-eui">get the **Dev EUI** of your device</a> first.
+> To register you'll need to [get the **Dev EUI** of your device](/uno/#get-your-dev-eui) first.
 
 1.  Form the application page, select **Devices** from the top right menu.
 2.  In the **Devices** box, click **register device**.
-3.  On the **Register Device** screen leave **OTAA** selected.
 
     * For **Device ID**, choose a - for this application - unique ID of lower case, alphanumeric characters and nonconsecutive `-` and `_`.
     * For **Device EUI**, click **customize it** and copy-paste the **DevEUI** you retrieved from your device.

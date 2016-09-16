@@ -1,7 +1,36 @@
-# Test
-Let's verify if Node-RED receives your application messages.
+# Usage
+Here's how you can use the TTN node to receive messages and activations.
 
-## Messages
+## Configure
+To use the TTN node you need to configure it for your The Things Network Application.
+
+### Lookup your application info
+
+1.  Open [The Things Network Dashboard](https://preview.dashboard.thethingsnetwork.org/) a new window.
+2.  Select the application you'd like to connect to.
+
+### Edit the TTN node
+
+1.  In Node-RED, drag a **ttn** node from the input category in the toolbox on the left to your workflow.
+2.  Double click the node to edit it.
+
+    Copy-paste the following information from the dashboard:
+
+    * For **App ID**, copy **Application ID** from the **Application Overview** box.
+    * For **Access Key**, scroll down to the **Access Keys**. For the key you'd like to use, click `👁` to show the key and then `📋` to copy it.
+    * For **Region or Broker**, scroll back again to use **Handler Status** from the **Application Overview** box. Only copy the last bit following `ttn-handler-`.
+
+    ![](node-red-ttn-edit.png)
+
+4.  Click **Deploy** on the top right. The node should say it's connected:
+
+    ![](node-red-ttn-connected.png)
+
+    In the terminal you should see something like:
+
+        8 Sep 11:53:41 - [info] [ttn:f2d6214.9aaa5e] Connected to TTN application hello-world
+
+## Receive Messages
 Messages sent by devices on the application can be received via the upper output of the **ttn** node.
 
 1.  Drag a **debug** node from the output category of the toolbox.
@@ -19,7 +48,7 @@ Messages sent by devices on the application can be received via the upper output
 
     ```json
     { 
-      "message": "Hello"
+      "led": true
     }
     ```
     
@@ -36,9 +65,9 @@ Messages sent by devices on the application can be received via the upper output
       "app_id": "hello-world",
       "port": 1,
       "counter": 19,
-      "payload_raw": "SGVsbG8=",
+      "payload_raw": "AQ==",
       "payload_fields": {
-        "message": "Hello"
+        "led": true
       },
       "metadata": {
         "time": "2016-09-08T13:52:35.929159899Z",
@@ -60,7 +89,7 @@ Messages sent by devices on the application can be received via the upper output
     }
     ```
 
-## Activations
+## Receive Activations
 Device activations are sent from the lower node output.
 
 1.  Drag the lower output to the input same **debug** node.
@@ -95,4 +124,4 @@ Device activations are sent from the lower node output.
     }
     ```
   
-    The default `msg.payload` field has the ID of the activated device.
+    Ask you can see the default `msg.payload` field is mapped to `msg.dev_id` which gives you the ID of the activated device.

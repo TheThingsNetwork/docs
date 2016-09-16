@@ -235,7 +235,7 @@ Let's say hello! Most Arduino boards have an on-board LED and the constant [`LED
     
       // Prepare array of 1 byte to indicate LED status
       byte data[1];
-      data[0] = ((digitalRead(LED_BUILTIN) == HIGH) ? 1 : 0);
+      data[0] = (digitalRead(LED_BUILTIN) == HIGH) ? 1 : 0;
     
       // Send it off
       ttn.sendBytes(data, sizeof(data));
@@ -431,7 +431,7 @@ What would be cooler than turning a LED on by sending `00`? Sending `{ "led": tr
 
     * `{ "led": false }` becomes `00`
     * `{ "led": true }` becomes `01`
-    * `{ "foo": "bar" }` becomes ``
+    * `{ "foo": "bar" }` becomes ` ` (nothing)
 
     > There is no separate converter and validator function for this direction. Return an empty array to drop the message.
     
@@ -447,7 +447,7 @@ What would be cooler than turning a LED on by sending `00`? Sending `{ "led": tr
 
 Next, you'll want to:
 
-1.  Learn how to receive and send messages from anywhere using [MQTT](/mqtt).
+1.  Learn how to receive and send messages from anywhere using [MQTT](/mqtt) or our [Node-RED](/node-red/#quick-start) or [Node.js](/node-js/#quick-start) library.
 2.  Learn how to add sensors and actuators to your device to harvest data and trigger actions anywhere, thanks to the long range, low power The Things Network.
 
     Let [The Things Lab](https://www.thethingsnetwork.org/labs/stories?search=&c2=on&c3=on&c4=on&c5=on) inspire you!

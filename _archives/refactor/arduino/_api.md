@@ -99,23 +99,6 @@ int sendBytes(const byte* buffer, int length, int port = 1, bool confirm = false
 
 Returns the size of the message received in response, if any. Use `downlink` for the actual bytes received.
 
-## Method: sendString
-Send a message to the application using a string, which the library will encode as bytes for you.
-
-> To minimise air time we advise not to use this method and try to use a minimal amount of bytes to communicate your message.
-
-```c
-int sendString(String message, int port = 1, bool confirm = false);
-```
-
-- `String message`: String to encode and send.
-- `int port = 1`: The port to address. Defaults to `1`.
-- `bool confirm = false`: Whether to ask for confirmation.
-
-	- **TODO:** How does one check the result?
-
-Returns the size of the message received in response, if any. Use `downlink` for the actual bytes received.
-
 ## Property: downlinkPort
 The port the last message received was addressed to.
 
