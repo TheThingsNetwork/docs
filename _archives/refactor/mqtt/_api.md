@@ -1,188 +1,74 @@
 # API Reference
 
-As MQTT broker use:
-
 * Host: `<Region>.thethings.network`
 * Port: `1883`
+* TLS: Not yet available
+* Username: Application ID
+* Password: Application Access Key
 
-> TLS is not yet supported in this version.
+## Uplink Messages
 
-## Region
+**Topic:** `<AppID>/devices/<DevID>/up`
 
-Each application is registered to one or more regions. This determines the host of the MQTT broker you will use.
+**Message:**
 
-Currently we have:
-
-* `eu`
-* `us-west`
-* `brazil`
-* `se-asia`
-
-> On [preview.dashboard.thethingsnetwork.org](https://preview.dashboard.thethingsnetwork.org/), go to your application. Under **Handler Status** you will also find the region the application is registered to. You will need the part that follows `ttn-handler-`, e.g. `eu`.
-
-<div class="alert alert-danger"><strong>Warning:</strong> The names of the current regions might still change until this version goes into production.</div>
-
-## Authentication
-
-For authentication use:
-
-* Username: Application ID (string).
-* Password: Application Access Key (base64).
-
-> On [preview.dashboard.thethingsnetwork.org](https://preview.dashboard.thethingsnetwork.org/), go to your application to find the **Application ID** and **Access Keys** you can use.
-
-## Topic: Activations
-
-To get activations for all devices registered to the application you have authenticated against, subscribe to:
-
-```
-<AppID>/devices/+/activations
-```
-
-Or, since the authentication already limits you to an Application:
-
-```
-+/devices/+/activations
-```
-
-To get activations for a specific device subscribe to:
-
-```
-+/devices/<DeviceID>/activations
-```
-
-Or if you like to be verbose:
-
-```
-<AppID>/devices/<DeviceID>/activations
-```
-
-### Message format
-
-A published topic and JSON encoded payload could look like:
-
-```bash
-hello-world/devices/my-uno/activations
-
+```js
 {
-  "app_eui": "70B3D57EF000001C",
-  "dev_eui": "0004A30B001B7AD2",
-  "dev_addr": "26012723",
+  "port": 1,                          // LoRaWAN FPort
+  "counter": 2,                       // LoRaWAN frame counter
+  "payload_raw": "AQIDBA==",          // Base64 encoded payload: [0x01, 0x02, 0x03, 0x04]
+  "payload_fields": {},               // Object containing the results from the payload functions - left out when empty
   "metadata": {
-    "time": "2016-09-13T09:59:02.90329585Z",
-    "frequency": 868.5,
-    "modulation": "LORA",
-    "data_rate": "SF7BW125",
-    "coding_rate": "4/5",
-    "gateways": [{
-      "eui": "B827EBFFFE87BD22",
-      "timestamp": 1484146403,
-      "time": "2016-09-13T09:59:02.867283Z",
-      "channel": 2,
-      "rssi": -49,
-      "snr": 7,
-      "rf_chain": 1
-    }]
+    "time": "1970-01-01T00:00:00Z",   // Time when the server received the message
+    "frequency": 868.1,               // Frequency at which the message was sent
+    "modulation": "LORA",             // Modulation that was used - currently only LORA. In the future we will support FSK as well
+    "data_rate": "SF7BW125",          // Data rate that was used - if LORA modulation
+    "bit_rate": 50000,                // Bit rate that was used - if FSK modulation
+    "coding_rate": "4/5",             // Coding rate that was used
+    "gateways": [
+      {
+        "id": "ttn-herengracht-ams",    // EUI of the gateway
+        "timestamp": 12345,             // Timestamp when the gateway received the message
+        "time": "1970-01-01T00:00:00Z", // Time when the gateway received the message - left out when gateway does not have synchronized time 
+        "channel": 0,                   // Channel where the gateway received the message
+        "rssi": -25,                    // Signal strength of the received message
+        "snr": 5,                       // Signal to noise ratio of the received message
+        "rf_chain": 0,                  // RF chain where the gateway received the message
+      },
+      //...more if received by more gateways...
+    ]
   }
 }
 ```
 
-> As you can see the ID of the activated device is not part of the payload, but must be filtered from the returned topic.
+Note: Some values may be omitted if they are `null`, `""` or `0`.
 
-## Topic: Uplink Messages
+**Usage (Mosquitto):** `mosquitto_sub -h <Region>.thethings.network:1883 -d -t 'my-app-id/devices/my-dev-id/up'`
 
-To receive messages from all devices registered to the application, subscribe to:
+**Usage (Go client):**
 
-```
-<AppID>/devices/+/up
-```
-
-Or, since the authentication already limits you to an Application:
-
-```
-+/devices/+/up
-```
-
-To get messages for a specific device subscribe to:
-
-```
-+/devices/<AppID>/up
-```
-
-Or if you like to be verbose:
-
-```
-<AppID>/devices/<DeviceID>/up
-```
-
-### Message format
-
-A published topic and JSON encoded payload could look like:
-
-```bash
-hello-world/devices/my-uno/up
-
-{
-  "port": 1,
-  "counter": 0,
-  "payload_raw": "AQ==",
-  "payload_fields": {
-    "led": true
-  },
-  "metadata": {
-    "time": "2016-09-13T09:59:08.179119279Z",
-    "frequency": 868.3,
-    "modulation": "LORA",
-    "data_rate": "SF7BW125",
-    "coding_rate": "4/5",
-    "gateways": [{
-      "eui": "B827EBFFFE87BD22",
-      "timestamp": 1489443003,
-      "time": "2016-09-13T09:59:08.167028Z",
-      "channel": 1,
-      "rssi": -49,
-      "snr": 8,
-      "rf_chain": 1
-    }]
-  }
+```go
+ctx := log.WithField("Example", "Go Client")
+client := NewClient(ctx, "ttnctl", "my-app-id", "my-access-key", "<Region>.thethings.network:1883")
+if err := client.Connect(); err != nil {
+  ctx.WithError(err).Fatal("Could not connect")
+}
+token := client.SubscribeDeviceUplink("my-app-id", "my-dev-id", func(client Client, appID string, devID string, req UplinkMessage) {
+  // Do something with the uplink message
+})
+token.Wait()
+if err := token.Error(); err != nil {
+  ctx.WithError(err).Fatal("Could not subscribe")
 }
 ```
 
-> As you can see the ID of the device is not part of the payload, but must be filtered from the returned topic.
+### Uplink Fields
 
-> To send `payload_fields`, the application must be configured with a Payload Function to decode it to `payload_raw`.
-
-## Topic: Uplink Fields
-
-To receive only a specific field from all devices registered to the application, subscribe to:
-
-```
-<AppID>/devices/+/up/<FieldPath>
-```
-
-Or, since the authentication already limits you to an Application:
-
-```
-+/devices/+/up/<FieldPath>
-```
-
-To get a field for a specific device subscribe to:
-
-```
-+/devices/<AppID>/up/<FieldPath>
-```
-
-Or if you like to be verbose:
-
-```
-<AppID>/devices/<DeviceID>/up/<FieldPath>
-```
-
-### Message format
+Each uplink field will be published to its own topic `my-app-id/devices/my-dev-id/up/<field>`. The payload will be a string with the value in a JSON-style encoding. 
 
 If your fields look like the following:
 
-```json
+```js
 {
   "water": true,
   "analog": [0, 255, 500, 1000],
@@ -194,50 +80,121 @@ If your fields look like the following:
 }
 ```
 
-Then here are the field topics you could subscribe to and the messages they will get you:
+you will see this on MQTT:
 
-```bash
-+/devices/+/up/water true
-+/devices/+/up/analog [0, 255, 500, 1000]
-+/devices/+/up/gps { "lat": 52.3736735, "lon": 4.886663 }
-+/devices/+/up/gps/lat 52.3736735
-+/devices/+/up/gps/lon 4.886663
-+/devices/+/up/text "why are you using text?"
-```
+* `my-app-id/devices/my-dev-id/up/water`: `true`
+* `my-app-id/devices/my-dev-id/up/analog`: `[0, 255, 500, 1000]`
+* `my-app-id/devices/my-dev-id/up/gps`: `{"lat":52.3736735,"lon":4.886663}`
+* `my-app-id/devices/my-dev-id/up/gps/lat`: `52.3736735`
+* `my-app-id/devices/my-dev-id/up/gps/lon`: `4.886663`
+* `my-app-id/devices/my-dev-id/up/text`: `"why are you using text?"`
 
-## Topic: Downlink Messages
+## Downlink Messages
 
-To send a message to a specific device registered to the application, publish to:
+**Topic:** `<AppID>/devices/<DevID>/down`
 
-```
-<AppID>/devices/<DeviceID>/down
-```
+**Message:**
 
-### Message format
-
-Encoded as JSON string, format your message as:
-
-```json
+```js
 {
-  "payload_raw": "AQ==",
-  "port": 1
+  "port": 1,                 // LoRaWAN FPort
+  "payload_raw": "AQIDBA==", // Base64 encoded payload: [0x01, 0x02, 0x03, 0x04]
 }
 ```
 
-* `payload_raw [string]`: Payload as a base64 encoded array of bytes.
-* `ttl [string]`: Time-to-live. How long the message should remained queued until it can be delivered to the device.
+**Usage (Mosquitto):** `mosquitto_pub -h <Region>.thethings.network:1883 -d -t 'my-app-id/devices/my-dev-id/down' -m '{"port":1,"payload_raw":"AQIDBA=="}'`
 
-#### Sending fields
+**Usage (Go client):**
 
-Instead of `payload_raw` you can also use `payload_fields`, which takes a object with fields:
+```go
+ctx := log.WithField("Example", "Go Client")
+client := NewClient(ctx, "ttnctl", "my-app-id", "my-access-key", "<Region>.thethings.network:1883")
+if err := client.Connect(); err != nil {
+  ctx.WithError(err).Fatal("Could not connect")
+}
+token := client.PublishDownlink(DownlinkMessage{
+  AppID:   "my-app-id",
+  DevID:   "my-dev-id",
+  FPort:   1,
+  Payload: []byte{0x01, 0x02, 0x03, 0x04},
+})
+token.Wait()
+if err := token.Error(); err != nil {
+  ctx.WithError(err).Fatal("Could not publish")
+}
+```
 
-```json
+### Downlink Fields
+
+Instead of `payload_raw` you can also use `payload_fields` with an object of fields. This requires the application to be configured with an Encoder Payload Function which encodes the fields into a Buffer.
+
+**Message:**
+
+```js
 {
+  "port": 1,                 // LoRaWAN FPort
   "payload_fields": {
     "led": true
-  },
-  "port": 1
+  }
 }
 ```
 
-> To accept `payload_fields`, the application must be configured with an encoder payload function to convert it to bytes.
+**Usage (Mosquitto):** `mosquitto_pub -h <Region>.thethings.network:1883 -d -t 'my-app-id/devices/my-dev-id/down' -m '{"port":1,"payload_fields":{"led":true}}'`
+
+**Usage (Go client):**
+
+```go
+ctx := log.WithField("Example", "Go Client")
+client := NewClient(ctx, "ttnctl", "my-app-id", "my-access-key", "<Region>.thethings.network:1883")
+if err := client.Connect(); err != nil {
+  ctx.WithError(err).Fatal("Could not connect")
+}
+token := client.PublishDownlink(DownlinkMessage{
+  AppID:   "my-app-id",
+  DevID:   "my-dev-id",
+  FPort:   1,
+  Fields: map[string]interface{}{
+    "led": true,
+  },
+})
+token.Wait()
+if err := token.Error(); err != nil {
+  ctx.WithError(err).Fatal("Could not publish")
+}
+```
+
+## Device Activations
+
+**Topic:** `<AppID>/devices/<DevID>/activations`
+
+**Message:**
+
+```js
+{
+  "app_eui": "0102030405060708", // EUI of the application
+  "dev_eui": "0102030405060708", // EUI of the device
+  "dev_addr": "26001716",        // Assigned address of the device
+  "metadata": {
+    // Same as with Uplink Message
+  }
+}
+```
+
+**Usage (Mosquitto):** `mosquitto_sub -h <Region>.thethings.network:1883 -d -t 'my-app-id/devices/my-dev-id/activations'`
+
+**Usage (Go client):**
+
+```go
+ctx := log.WithField("Example", "Go Client")
+client := NewClient(ctx, "ttnctl", "my-app-id", "my-access-key", "<Region>.thethings.network:1883")
+if err := client.Connect(); err != nil {
+  ctx.WithError(err).Fatal("Could not connect")
+}
+token := client.SubscribeDeviceActivations("my-app-id", "my-dev-id", func(client Client, appID string, devID string, req Activation) {
+  // Do something with the activation
+})
+token.Wait()
+if err := token.Error(); err != nil {
+  ctx.WithError(err).Fatal("Could not subscribe")
+}
+```
