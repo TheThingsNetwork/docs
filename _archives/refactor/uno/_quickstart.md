@@ -149,7 +149,7 @@ With our application created, let's register your device.
 2.  In the **Devices** box, click **register device**.
 
     * For **Device ID**, choose a - for this application - unique ID of lower case, alphanumeric characters and nonconsecutive `-` and `_`.
-    * For **Device EUI**, click **customize it** and copy-paste the **DevEUI** [you retrieved from your device](#get-your-device-eui).
+    * For **Device EUI**, copy-paste the **DevEUI** [you retrieved from your device](#get-your-device-eui).
     * Leave the **App Key** to be randomly generated.
     * For **App EUI**, select the generated EUI of our application from the list.
 

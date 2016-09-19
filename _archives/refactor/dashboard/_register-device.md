@@ -8,7 +8,7 @@ To communicate with the Application you registered via The Things Dashboard, we 
 2.  In the **Devices** box, click **register device**.
 
     * For **Device ID**, choose a - for this application - unique ID of lower case, alphanumeric characters and nonconsecutive `-` and `_`.
-    * For **Device EUI**, click **customize it** and copy-paste the **DevEUI** you retrieved from your device.
+    * For **Device EUI**, copy-paste the **DevEUI** you retrieved from your device.
 
     	> If you plan to switch to ABP anyway, just leave it to be generated.
     
