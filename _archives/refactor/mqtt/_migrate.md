@@ -44,7 +44,7 @@ The JSON encoded payload has changed on several points. Update the code where yo
     "rfchain": 1,
     "crc": 1,
     "modulation": "LORA",
-    "gateway_eui": "B827EBFFFE87BD22",
+    "gtw_id": "B827EBFFFE87BD22",
     "altitude": 10,
     "longitude": 5.90418,
     "latitude": 52.95904
@@ -107,7 +107,7 @@ The JSON encoded payload has changed on several points. Update the code where yo
     "rfchain": 0,
     "crc": 1,
     "modulation": "LORA",
-    "gateway_eui": "B827EBFFFE87BD22",
+    "gtw_id": "B827EBFFFE87BD22",
     "altitude": 10,
     "longitude": 5.90418,
     "latitude": 52.95904
