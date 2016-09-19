@@ -20,7 +20,7 @@ The Arduino IDE will notify you of updates for the IDE and library automagically
 ## Connect your Device
 Next, connect your device to the IDE over USB.
 
-1. Use the included Micro-USB cable to connect The Things Uno to an USB power of your computer.
+1. Use the included Micro-USB cable to connect The Things Uno to an USB port of your computer.
 2. In Arduino IDE select **Tools > Board > Arduino Leonardo**.
 3. Navigate to **Tools > Port** and select the port that identifies as **Arduino Leonardo**.
 
@@ -84,7 +84,7 @@ Let's program your device with a so-called sketch.
     3.  Call [`begin()`](https://www.arduino.cc/en/Serial/Begin) to set the data rate for both serial ports.
     4.  Wait for the Arduino IDE's Serial Monitor to open communication via USB, but no longer than 10 seconds (10.000ms).
 
-        > This trick works because `debugSerial` will be truthy when communication is open and [`millis()`](https://www.arduino.cc/en/Reference/Millis) will give us the time since `setup()` was called.
+        > This trick works because `debugSerial` will be true when communication is open and [`millis()`](https://www.arduino.cc/en/Reference/Millis) will give us the time since `setup()` was called.
         
     5.  Call `ttn.init()` to pass the serial ports it needs.
     6.  Use [`println()`](https://www.arduino.cc/en/Serial/Println) to log to the Serial Monitor and call `ttn.showStatus()` to do the same, which will give us the information we need for our next step.
@@ -128,7 +128,7 @@ To register your device you'll need a The Things Network account.
 4.  From the top right menu, select [Settings](https://preview.dashboard.thethingsnetwork.org/settings) and change the default (handler) region if the one currently selected is not near where you'll be deploying your devices.
 
 ## Create an Application
-Messages to and from devices are routed via applications. Devices need to be registered with an application to so. Let's create one.
+Messages to and from devices are routed via applications. Devices need to be registered with an application to do so. Let's create one.
 
 1.  On [preview.dashboard.thethingsnetwork.org](https://preview.dashboard.thethingsnetwork.org/), click [create application](https://preview.dashboard.thethingsnetwork.org/applications/create).
 
@@ -335,7 +335,7 @@ Let's see the messages come in.
     }
     ```
     
-8.  Run another round of tests to verify that all payloads that don't convert to have a boolean `led` property are marked as invalid:
+8.  Run another round of tests to verify all payloads that don't convert to have a boolean `led` property are marked invalid:
 
     ![](dashboard-validator.png)
     
@@ -396,7 +396,8 @@ We'll prepare your device to receive a message in response.
     -- LOOP
     Sending: mac tx uncnf 1 with 1 bytes
     Successful transmission. Received 1 bytes
-    LED: on    ```
+    LED: on
+    ```
     
     And... there was light! 💡
     
