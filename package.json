@@ -30,17 +30,19 @@
   },
   "homepage": "https://github.com/thethingsnetwork/docs#readme",
   "devDependencies": {
+    "anchor-js": "^3.2.1",
     "babel-core": "^6.9.0",
     "babel-loader": "^6.2.4",
     "babel-preset-es2015": "^6.9.0",
     "babel-preset-react": "^6.5.0",
-    "pre-commit": "^1.1.3",
-    "webpack": "^1.13.1",
-    "anchor-js": "^3.2.1",
     "font-awesome": "^4.6.3",
+    "gulp": "^3.9.1",
+    "gulp-download-stream": "0.0.13",
     "jquery": "^2.2.4",
+    "pre-commit": "^1.1.3",
     "tocbot": "^2.1.4",
     "ttn-stylebook": "github:thethingsnetwork/stylebook",
+    "webpack": "^1.13.1",
     "zeroclipboard": "^2.2.0"
   }
 }

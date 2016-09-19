@@ -61,3 +61,27 @@ Because we let GitHub Pages do the Jekyll builds the website will be updated aut
 * Edit layouts in the [_layouts](_layouts) folder.
 * All layouts should inherit the [default](_layouts/default.html) layout.
 * Any meta data should be stored in the [_data](_data) folder, not [_config.yml](_config.yml).
+
+
+## Automatic updates
+Some content we source directly from elsewhere, e.g. the [MQTT API Reference](https://github.com/TheThingsNetwork/ttn/blob/refactor/mqtt/README.md).
+
+### Update
+
+1.  Follow the previous section to install NPM and dependencies.
+
+2.  [Install Gulp](http://gulpjs.com):
+
+    ```bash
+    sudo npm i --global gulp
+    ```
+    
+3.  Run the `pull` task:
+
+    ```bash
+    gulp pull
+    ```
+    
+### Source
+
+To source more content from elsewhere edit [gulpfile.js](gulpfile.js#L7).
