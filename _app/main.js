@@ -17,6 +17,13 @@ $(function() {
   if ($('.layout-guide').length) {
 
     /**
+     * Anchor-JS
+     */
+
+    var anchors = new AnchorJS();
+    anchors.add('.js-toc-content h1, .js-toc-content h2');
+
+    /**
      * TocBot Sidebar
      */
 
@@ -34,13 +41,6 @@ $(function() {
         top: contentOffset
       }
     });
-
-    /**
-     * Anchor-JS
-     */
-
-    var anchors = new AnchorJS();
-    anchors.add('.js-toc-content h1, .js-toc-content h2');
 
     // enable smooth scroll, including the offset set through tocbot
     $('.anchorjs-link').attr('data-scroll', 'data-scroll');
