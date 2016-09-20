@@ -127,23 +127,23 @@ To register your device you'll need a The Things Network account.
 3.  Go to [preview.dashboard.thethingsnetwork.org](http://preview.dashboard.thethingsnetwork.org) and log in.
 4.  From the top right menu, select [Settings](https://preview.dashboard.thethingsnetwork.org/settings) and change the default (handler) region if the one currently selected is not near where you'll be deploying your devices.
 
-## Create an Application
-Messages to and from devices are routed via applications. Devices need to be registered with an application to do so. Let's create one.
+## Add an Application
+Devices need to be registered with an application to communicate with. Let's add one.
 
-1.  On [preview.dashboard.thethingsnetwork.org](https://preview.dashboard.thethingsnetwork.org/), click [create application](https://preview.dashboard.thethingsnetwork.org/applications/create).
+1.  On [preview.dashboard.thethingsnetwork.org](https://preview.dashboard.thethingsnetwork.org/), click [add application](https://preview.dashboard.thethingsnetwork.org/applications/add).
 
 	* For **Application ID**, choose a unique ID of lower case, alphanumeric characters and nonconsecutive `-` and `_`.
 	* For **Application Description**, enter anything you like.
 	* Leave the checkbox enabled to automatically register the application to your default region.
 
-	![create application](create-application.png)
+	![](add-application.png)
 
-2.  Click **Create application** to finish.
+2.  Click **Add Application** to finish.
 
-    You will be redirected to the newly created application.
+    You will be redirected to the newly added application.
 
 ## Register your Device
-With our application created, let's register your device.
+You are now ready to register your device to the application.
 
 1.  On the application screen, select **Devices** from the top right menu.
 2.  In the **Devices** box, click **register device**.
@@ -157,7 +157,7 @@ With our application created, let's register your device.
 
 4.  Click **Register** to finish.
 
-    You will be redirected to the newly created device, where you can find the generated **App Key** which we'll need next.
+    You will be redirected to the newly registered device, where you can find the generated **App Key** which we'll need next.
 
 ## Activate your Device
 Now that we have registered the device, we can activate the connection from our device itself.

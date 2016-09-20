@@ -4,7 +4,7 @@ title: The Things Network Dashboard
 zindex: 799
 sections:
  - dashboard/_create-account.md
- - dashboard/_create-application.md
+ - dashboard/_add-application.md
  - dashboard/_register-device.md
  - dashboard/_migrate.md
 ---

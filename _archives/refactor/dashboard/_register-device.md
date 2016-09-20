@@ -1,6 +1,6 @@
 # Register Device
 
-To communicate with the Application you registered via The Things Dashboard, we first need to do the same for your Device and activate it via our sketch.
+To communicate with an application added via the dashboard, you will first need to register the device to the application.
 
 > To register you'll need to [get the **Dev EUI** of your device](/uno/#get-your-dev-eui) first.
 
