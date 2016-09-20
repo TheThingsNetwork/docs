@@ -18,7 +18,7 @@ FF F0 0F 11
 
 Wasn't a byte a group of 8 `0`s and `1`s? 🤔 You're totally right, but just like we already saw `11111111` translates to `255` in the good old decimal system, we can also translate it to `FF` in the [hexadecimal system](https://simple.wikipedia.org/wiki/Hexadecimal_numeral_system) where each position has 16 (0-9, A-F) possible values. The advantage is simply that it is shorter.
 
-The above example translated to the decimal system and padded for readability would be:
+The above example [translated](https://www.mathsisfun.com/binary-decimal-hexadecimal-converter.html) to the decimal system and padded for readability would be:
 
 ```
 255 240 015 017
@@ -81,7 +81,7 @@ int myBase = 3400;
 int myVal = ttn.downlink[0] + myBase;
 ```
 
-As you can see as long as the minimum value is known and the range of our value is 256 or less, we can still use a single byte.
+As you can see as long as the minimum value is known and the range of our value is 256 or less, we can still use a single byte without breaking a sweat. 😅
 
 ### Split into multiple bytes
 If the range of expected values is bigger than 256, we'll need to use multiple bytes to encode it.
@@ -90,7 +90,25 @@ This is actually not very different than the need to use multiple bits for range
 
 Let's say we need to be able to encode all [True Color](https://en.wikipedia.org/wiki/Color_depth#True_color_.2824-bit.29) variations. Also known as 24-bit color, it will take 3 (`24/8`) bytes for all 16.777.216 possibilities.
 
-**TODO**
+Let's encode the 4132611th color variation. How do we get this into an array of 3 bytes?
+
+```c
+int myColor = 4132611;
+byte data[3];
+// now what?!
+```
+
+Let's [see](https://www.mathsisfun.com/binary-decimal-hexadecimal-converter.html) what 4.132.611 looks like in bits, group per byte:
+
+```
+00111111 00001111 00000011
+```
+
+So what we are going is cut these into 3 bytes
+
+```
+63 15 3
+```
 
 ## How to send negative numbers?
 If you know the minimum possible value, simply index the value as we did above. For example, if you expect values between -100 and 100, the above examples still work if you use `-100` for `myBase`.

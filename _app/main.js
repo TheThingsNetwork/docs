@@ -32,7 +32,6 @@ $(function() {
       activeLinkClass: 'active',
       extraListClasses: 'nav',
       headingsOffset: contentOffset,
-      includeHtml: true,
       smoothScrollOptions: smoothScrollOptions
     });
 
