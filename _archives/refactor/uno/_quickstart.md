@@ -84,7 +84,7 @@ Let's program your device with a so-called sketch.
     3.  Call [`begin()`](https://www.arduino.cc/en/Serial/Begin) to set the data rate for both serial ports.
     4.  Wait for the Arduino IDE's Serial Monitor to open communication via USB, but no longer than 10 seconds (10.000ms).
 
-        > This trick works because `debugSerial` will be true when communication is open and [`millis()`](https://www.arduino.cc/en/Reference/Millis) will give us the time since `setup()` was called.
+        > This trick works because [`if(Serial)` will return `true`](https://www.arduino.cc/en/Serial/IfSerial) when communication is open and [`millis()`](https://www.arduino.cc/en/Reference/Millis) will give us the time since `setup()` was called.
         
     5.  Call `ttn.init()` to pass the serial ports it needs.
     6.  Use [`println()`](https://www.arduino.cc/en/Serial/Println) to log to the Serial Monitor and call `ttn.showStatus()` to do the same, which will give us the information we need for our next step.
