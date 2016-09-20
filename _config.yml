@@ -40,3 +40,4 @@ gist:
   noscript: false
 kramdown:
   math_engine: mathjax
+  auto_ids: false

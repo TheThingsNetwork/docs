@@ -1,6 +1,6 @@
 ---
 layout: guide
-title: The Things Dashboard
+title: The Things Network Dashboard
 zindex: 799
 sections:
  - dashboard/_create-account.md
