@@ -45,74 +45,97 @@ client.on('error', function(err) {});
 Emitted when a device registered to the application activates.
 
 ```js
-client.on('activation', function(data)) {});
+client.on('activation', devId, function(data)) {});
 ```
 
-*  `data [object]`: Activation data, e.g.:
+* `devId [string]`: Device ID, e.g.: `my-uno`.
+* `data [object]`: Activation data, e.g.:
 
-	```json
-	{
-		"dev_id": "my-uno",
-		"app_id": "hello-world",
-		"app_eui": "70B3D57ED0000AFB",
-		"dev_eui": "0004A30B001B7AD2",
-		"dev_addr": "260023BB",
-		"metadata": {
-			"time": "2016-09-07T12:43:17.97454032Z",
-			"frequency": 867.1,
-			"modulation": "LORA",
-			"data_rate": "SF7BW125",
-			"coding_rate": "4/5",
-			"gateways": [{
-				"eui": "0000024B08060112",
-				"timestamp": 3546311603,
-				"time": "2016-09-07T12:43:17.938537Z",
-				"channel": 2,
-				"rssi": -107,
-				"snr": 1.2
-			}]
-		}
-	}
-	```
+  ```json
+  {
+    "dev_id": "my-uno",
+    "app_id": "hello-world",
+    "app_eui": "70B3D57ED0000AFB",
+    "dev_eui": "0004A30B001B7AD2",
+    "dev_addr": "260023BB",
+    "metadata": {
+      "time": "2016-09-07T12:43:17.97454032Z",
+      "frequency": 867.1,
+      "modulation": "LORA",
+      "data_rate": "SF7BW125",
+      "coding_rate": "4/5",
+      "gateways": [{
+        "eui": "0000024B08060112",
+        "timestamp": 3546311603,
+        "time": "2016-09-07T12:43:17.938537Z",
+        "channel": 2,
+        "rssi": -107,
+        "snr": 1.2
+      }]
+    }
+  }
+  ```
+
+### Listen for a specific device
+
+```js
+client.on('activation', 'my-uno', function(devId, data) {});
+```
 
 ## Event: message
 
 Emitted when TTN forwards a message addressed to your application.
 
 ```js
-client.on('message', function(data) {});
+client.on('message', function(devId, data) {});
 ```
 
-*  `data [object]`: Message data, e.g.:
+* `devId [string]`: Device ID, e.g.: `my-uno`.
+* `data [object]`: Message data, e.g.:
 
-	```json
-	{
-		"dev_id": "my-uno",
-		"app_id": "hello-world",
-		"port": 1,
-		"counter": 10,
-		"payload_raw": "SGVsbG8=",
-		"payload_fields": {
-			"message": "Hello"
-		},
-		"metadata": {
-			"time": "2016-09-07T12:50:07.068771281Z",
-			"frequency": 868.1,
-			"modulation": "LORA",
-			"data_rate": "SF7BW125",
-			"coding_rate": "4/5",
-			"gateways": [{
-				"eui": "0000024B08060112",
-				"timestamp": 3955426155,
-				"time": "2016-09-07T12:50:07.053048Z",
-				"channel": 4,
-				"rssi": -109,
-				"snr": 5.8,
-				"rf_chain": 1
-			}]
-		}
-	}
-	```
+  ```json
+  {
+    "dev_id": "my-uno",
+    "app_id": "hello-world",
+    "port": 1,
+    "counter": 10,
+    "payload_raw": "AQ==",
+    "payload_fields": {
+      "led": true
+    },
+    "metadata": {
+      "time": "2016-09-07T12:50:07.068771281Z",
+      "frequency": 868.1,
+      "modulation": "LORA",
+      "data_rate": "SF7BW125",
+      "coding_rate": "4/5",
+      "gateways": [{
+        "eui": "0000024B08060112",
+        "timestamp": 3955426155,
+        "time": "2016-09-07T12:50:07.053048Z",
+        "channel": 4,
+        "rssi": -109,
+        "snr": 5.8,
+        "rf_chain": 1
+      }]
+    }
+  }
+  ```
+
+### Listen for a specific device
+
+```js
+client.on('message', 'my-uno', function(devId, data) {});
+```
+
+### Listen for a specific field (and device)
+
+```js
+client.on('message', null, 'led', function(devId, data) {});
+```
+
+*  `devId [string]`: Device ID, e.g. `my-uno`
+*  `data [mixed]`: Message data, e.g. `true`
 
 ## Method: send
 
@@ -122,24 +145,17 @@ Send a message to a specific device.
 client.send(devId, payload, [port]);
 ```
 
-* `devId [string]`: The ID of the device to address, e.g. `MY-UNO`.
-* `payload [Buffer]`: Message to send, as [Buffer](https://nodejs.org/api/buffer.html).
-* `port [number]`: Port to send via. Default: `1`.
+*  `devId [string]`: The ID of the device to address, e.g. `MY-UNO`
+*  `payload [mixed]`: Message to send, either:
+    *  Array, e.g. `[1]`
+    *  [Buffer](https://nodejs.org/api/buffer.html), e.g. `new Buffer([0x01])`
+    *  Object, e.g. `{ led: true }`
+    
+        > This requires your application to be configured with an encoder payload function to encode the object in bytes.
+        
+*  `port [number]`: Port to send via. Default: `1`.
 
-See the [Node.js Buffer reference](https://nodejs.org/api/buffer.html#buffer_class_buffer) for different ways to create a buffer. The client will call [`Buffer.toString('base64')`](https://nodejs.org/api/buffer.html#buffer_buf_tostring_encoding_start_end) before publishing the message to The Things Network's MQTT broker.
-
-All these examples result in the same base64 payload `'SGk='` sent to the network:
-
-```js
-// Create buffer from a hex string
-var payload = Buffer.from('4869', 'hex');
-
-// Create buffer from a utf8 string
-var payload = Buffer.from('Hi');
-
-// Create buffer from array of octets
-var payload = Buffer.from([0x48, 0x69]);
-```
+> See the [Node.js Buffer reference](https://nodejs.org/api/buffer.html#buffer_class_buffer) for different ways to create a buffer. The client will call [`Buffer.toString('base64')`](https://nodejs.org/api/buffer.html#buffer_buf_tostring_encoding_start_end) before publishing the message to The Things Network's MQTT broker.
 
 ## Method: end
 
