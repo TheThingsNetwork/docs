@@ -45,41 +45,36 @@ $(function() {
     $('.anchorjs-link').attr('data-scroll', 'data-scroll');
 
     /**
-     * ZeroClipboard
+     * ClipboardJS
      */
 
-    var ZeroClipboard = require('zeroclipboard');
+    $('.highlighter-rouge .highlight').before('<span class="btn-clipboard">Copy</span>');
 
-    ZeroClipboard.config({
-      swfPath: site.baseurl + '/assets/flash/ZeroClipboard.swf',
-      hoverClass: 'btn-clipboard-hover'
+    var Clipboard = require('clipboard');
+
+    var clipboard = new Clipboard('.btn-clipboard', {
+      target: function(trigger) {
+        return trigger.nextElementSibling;
+      }
     });
 
-    $('.highlighter-rouge .highlight').before('<div class="zero-clipboard"><span class="btn-clipboard">Copy</span></div>');
-
-    var client = new ZeroClipboard($('.btn-clipboard'));
-
-    var bridge = $('#global-zeroclipboard-html-bridge');
-
-    client.on('ready', function(event) {
-
-      bridge.data('placement', 'top').attr('title', 'Copy to clipboard').tooltip();
-
-      client.on('copy', function(event) {
-        var code = $(event.target).parent().nextAll('.highlight').first().text();
-        event.clipboardData.setData('text/plain', code);
+    clipboard.on('success', function(e) {
+      $(e.trigger).attr('title', 'Copied!').tooltip('show').on('shown.bs.tooltip', function() {
+        setTimeout(function() {
+          $(e.trigger).removeAttr('title').tooltip('destroy');
+        }, 500);
       });
+      e.clearSelection();
+    });
 
-      client.on('aftercopy', function(event) {
-        bridge.attr('title', 'Copied!').tooltip('fixTitle').tooltip('show').attr('title', 'Copy to clipboard').tooltip('fixTitle');
+    clipboard.on('error', function(e) {
+      $(e.trigger).attr('title', 'Press Ctrl/⌘ + C to copy!').tooltip('show').on('shown.bs.tooltip', function() {
+        setTimeout(function() {
+          $(e.trigger).removeAttr('title').tooltip('destroy');
+        }, 500);
       });
     });
 
-    client.on('error', function(event) {
-      $('.zero-clipboard').remove();
-      ZeroClipboard.destroy();
-    });
-    
   } else {
 
     // so that front-page content scroll to below navbar as well
@@ -90,7 +85,7 @@ $(function() {
   /**
    * Tooltips
    */
-  
+
   $('[data-toggle="tooltip"]').tooltip();
 
   /** 
@@ -101,7 +96,7 @@ $(function() {
   /**
    * External links (http://stackoverflow.com/a/13147238)
    */
-  for(var c = document.getElementsByTagName('a'), a = 0;a < c.length;a++) {
+  for (var c = document.getElementsByTagName('a'), a = 0; a < c.length; a++) {
     var b = c[a];
     b.getAttribute('href') && b.hostname !== location.hostname && (b.target = '_blank');
   }
