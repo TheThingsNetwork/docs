@@ -40,8 +40,6 @@ void setup()
 }
 ```
 
-> If you use `while()` to wait for the monitor with no timeout, `setup()` will never complete if you don't connect you device and open the IDE's Serial Monitor.
-
 ## Verify & Upload sketches
 
 When you upload a sketch to your Arduino it will first compile and fail if your sketch has errors. If there are no errors it will continue to upload.

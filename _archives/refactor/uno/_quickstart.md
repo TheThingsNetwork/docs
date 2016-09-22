@@ -58,14 +58,14 @@ Let's program your device with a so-called sketch.
     ```c
     #include <TheThingsNetwork.h>
     
-    #define debugSerial Serial
     #define loraSerial Serial1
+    #define debugSerial Serial
     
     TheThingsNetwork ttn;
     
     void setup() {
-      debugSerial.begin(9600);
       loraSerial.begin(57600);
+      debugSerial.begin(9600);
     
       // Wait a maximum of 10s for Serial Monitor
       while (!debugSerial && millis() < 10000);
@@ -79,7 +79,7 @@ Let's program your device with a so-called sketch.
     
     This will do a few things:
     
-    1.  Use [`#define`](https://www.arduino.cc/en/Reference/Define) to create more meaningful aliases for the [`Serial`](https://www.arduino.cc/en/Reference/Serial) ports that connect the USB and LoRa modem.
+    1.  Use [`#define`](https://www.arduino.cc/en/Reference/Define) to create more meaningful aliases for the [`Serial`](https://www.arduino.cc/en/Reference/Serial) ports that connect the LoRa modem and USB.
     2.  Create an instance of TheThingsNetwork library, called `ttn`.
     3.  Call [`begin()`](https://www.arduino.cc/en/Serial/Begin) to set the data rate for both serial ports.
     4.  Wait for the Arduino IDE's Serial Monitor to open communication via USB, but no longer than 10 seconds (10.000ms).
@@ -180,22 +180,9 @@ Now that we have registered the device, we can activate the connection from our 
 3.  In the `setup()` function, copy the following code just after `ttn.showStatus()`:
     
     ```c
-    debugSerial.println("-- RESET");
-    ttn.reset();
-    
-    // Wait 10s between each attempt to get a confirmed activation
     debugSerial.println("-- JOIN");
-    while(!ttn.join(appEui, appKey)){
-      delay(10000);
-    }
+    ttn.join(appEui, appKey);
     ```
-    
-    This will do a few things:
-    
-    1.  Reset the LoRa modem to flush out any previous settings that might linger around.
-    2.  Call `ttn.join()` with the `appEui` and `appKey` [constants](https://www.arduino.cc/en/Reference/Const) you defined to activate.
-    
-        > `ttn.join()` will return `true` if a the activation was confirmed successful. If there's little downlink available the device might not receive confirmation even though the keys are correct. This is why we keep trying using `while()`, with a 10 second [delay](https://www.arduino.cc/en/Reference/Delay).
 
 4.  Select **Sketch > Upload** `Ctrl/⌘ U` to upload the sketch and then **Tools > Serial Monitor** `Ctrl/⌘ Shift M` to open the Serial Monitor.
 
@@ -211,12 +198,11 @@ Now that we have registered the device, we can activate the connection from our 
     Data Rate: 5
     RX Delay 1: 1000
     RX Delay 2: 2000
-    -- RESET
+    -- JOIN
     Version is RN2483 1.0.1 Dec 15 2015 09:38:09, model is RN2483
     Sending: mac set adr off
     Sending: mac set pwridx 1
     Sending: mac set dr 5
-    -- JOIN
     Sending: mac set appeui with 8 bytes
     Sending: mac set deveui 0004A30B001B7AD2
     Sending: mac set appkey with 16 bytes
@@ -362,35 +348,40 @@ Now let's send a message to your device in return.
 
 We'll prepare your device to receive a message in response.
 
-1.  In the Arduino IDE, go back to your sketch and replace the line where we call `ttn.sendBytes()` with:
+1.  In the Arduino IDE, add the following line just after `ttn.init()` in the `setup()` function to let it know what function to call when a message comes in:
 
-    ```c 
-    // Send it off and see if we get bytes in response
-    int downlinkSize = ttn.sendBytes(data, sizeof(data));
+    ```c
+    // Set callback for incoming messages
+    ttn.onMessage(message);
+    ```
+
+2.  Then copy paste the actual function to the end of the sketch:
+
+    ```c
+    void message(const byte* payload, int length, int port) {
+      debugSerial.println("-- MESSAGE");
     
-    // Only handle messages of a single byte
-    if (downlinkSize == 1) {
+      // Only handle messages of a single byte
+      if (length != 1) {
+        return;
+      }
     
-      if (ttn.downlink[0] == 0) {
+      if (payload[0] == 0) {
         debugSerial.println("LED: off");
         digitalWrite(LED_BUILTIN, LOW);
           
-      } else if (ttn.downlink[0] == 1) {
+      } else if (payload[0] == 1) {
         debugSerial.println("LED: on");
         digitalWrite(LED_BUILTIN, HIGH);
       }
     }
     ```
     
-    This is what will happen:
-    
-    1.  `sendBytes()` returns the number of bytes it receives in return, if any.
-    2.  Read the actual bytes of the last received message from the `ttn.downlink` array.
-    3.  Use [`digitalWrite()`](https://www.arduino.cc/en/Reference/DigitalWrite) to turn the LED on or off.
+    The function will use [`digitalWrite()`](https://www.arduino.cc/en/Reference/DigitalWrite) to turn the LED on or off, based on the single byte message we receive.
 
-2.  Select **Sketch > Upload** `Ctrl/⌘ U` to upload the sketch and then **Tools > Serial Monitor** `Ctrl/⌘ Shift M` to open the serial monitor.
-3.  On the dashboard, navigate to your application, **Devices** and select your device.
-4.  With the serial monitor still open, enter `01` in the input field of the **Downlink** box and click **Send**.
+3.  Select **Sketch > Upload** `Ctrl/⌘ U` to upload the sketch and then **Tools > Serial Monitor** `Ctrl/⌘ Shift M` to open the serial monitor.
+4.  On the dashboard, navigate to your application, **Devices** and select your device.
+5.  With the serial monitor still open, enter `01` in the input field of the **Downlink** box and click **Send**.
 
     The next time your device sends a message it should display something like:
     

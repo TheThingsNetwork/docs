@@ -30,11 +30,10 @@ A typical sketch has the following structure:
 TheThingsNetwork ttn;
 
 void setup() {
-  debugSerial.begin(9600);
   loraSerial.begin(57600);
+  debugSerial.begin(9600);
 
   ttn.init(loraSerial, debugSerial);
-  ttn.reset();
 
   // OTAA or ABP activation
   // ..
@@ -69,15 +68,13 @@ For OTAA you will use the `join()` method with the **App EUI** and **App Key** c
     * For `appEui` use the **Application EUI** found on the device's page on the dashboard. Click `<>` to toggle to the **msb** format and then `📋` to copy.
     * For `appKey` use the **App Key** found on the device page. Click `<>` to toggle to the **msb** format. You'll have to click `👁` to show the key before you can copy it.
 
-2.  In your `setup()` function, right after you have called `ttn.init()` and `ttn.reset()` call `ttn.join()` with the constants you just created:
+2.  In your `setup()` function, right after `ttn.init()` call `ttn.join()` with the constants you just created:
 
     ```c
-    while (!ttn.join(appEui, appKey)) {
-      delay(10000);
-    }
+    ttn.join(appEui, appKey);
     ```
 
-Your device will now try to activate via OTAA every 10 seconds until it succeeds.
+Your device will now try to get a confirmed activation via OTAA every 10 seconds until it succeeds.
 
 ### Activation By Personalization (ABP)
 
@@ -101,11 +98,13 @@ For ABP you will use the `personalize()` method with the device's **Dev EUI**, *
     ttn.personalize(devAddr, nwkSKey, appSKey);
     ```
 
-Your device will now report to the network using these keys.
+Your device will now communicate with the network using these keys.
+
+See the [ABP](https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/ABP/ABP.ino) example.
 
 ## Send
 
-To send messages call `ttn.sendBytes()` with an array of bytes and its size. Here's an example that sends the current state of [`LED_BUILTIN`](https://www.arduino.cc/en/Reference/Constants) every 10 seconds:
+To send messages call `ttn.sendBytes()` with an array of bytes and its size. Here's an example of a `loop()` function that sends the current state of [`LED_BUILTIN`](https://www.arduino.cc/en/Reference/Constants) every 10 seconds:
 
 ```c
 void loop() {
@@ -120,33 +119,35 @@ void loop() {
 
 To minimise your use of the limited daily airtime try to use as little bytes as possible. See the Arduino [Array guide](https://www.arduino.cc/en/Reference/Array) and [Bit Math Tutorial](http://playground.arduino.cc/Code/BitMath#binary) to learn how.
 
+See the [Send](https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/Send/Send.ino) example.
+
 ## Receive
 
-You can only receive messages in response to a message you send, even if it is just a single byte.
+With the most common [Class A](https://www.lora-alliance.org/What-Is-LoRa/Technology) LoRaWAN devices, including The Things Node and Uno you can only receive the last scheduled message in response to a message you send.
 
-* The `ttn.sendBytes()` method will return the number of bytes received, if any.
-* Get the actual bytes via `ttn.downlink`.
-* The port the response addresses can be read from `ttn.downlinkPort`.
+> For your convenience, the library has a `ttn.poll()` method which sends a single byte to poll for incoming messages if you don't have anything particular to send.
 
-Here's the above example with added support to turn the LED on or off by sending a downlink message via port 1:
+To receive message you have to define a function and pass it to the library.
 
-```c
-void loop() {
-  byte data[1];
-  data[0] = (digitalRead(LED_BUILTIN) == HIGH) ? 1 : 0;
+1.  Add the following function to your sketch:
+
+    ```c
+    void message(const byte* payload, int length, int port) {
+      debugSerial.println("-- MESSAGE");
+      debugSerial.print("Received " + String(length) + " bytes on port " + String(port) + ":");
     
-  int downlinkSize = ttn.sendBytes(data, sizeof(data));
-
-  if (downlinkSize == 1 && ttn.downlinkPort == 1) {
-  
-    if (ttn.downlink[0] == 0) {
-    	digitalWrite(LED_BUILTIN, LOW);
-    	
-    } else if (ttn.downlink[0] == 1) {
-    	digitalWrite(LED_BUILTIN, HIGH);
+      for (int i = 0; i < length; i++) {
+        debugSerial.print(" " + String(payload[i]));
+      }
+    
+      debugSerial.println();
     }
-  }
-  
-  delay(10000);
-}
-```
+    ```
+
+2.  Register the function in your `setup()` function:
+
+    ```c
+    ttn.onMessage(message);
+    ```
+
+See the [Receive](https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/Receive/Receive.ino) example.

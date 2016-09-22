@@ -4,7 +4,7 @@ To send data back and forth over The Things Network you'll need to use bytes.
 ## What is a byte?
 A [byte](https://simple.wikipedia.org/wiki/Byte) is a group of 8 bits. A bit is the most basic unit and can be either `1` or `0`. A byte is not just 8 values between 0 and 1, but 256 (`2^8`) different combinations ranging from `00000000` via e.g. `01010101` to `11111111`. Thus, one byte can represent a [decimal](https://simple.wikipedia.org/wiki/Decimal) number between 0 and 255.
 
-If bits & bytes are new to you, read [How Stuff Works: How Bits and Bytes Work](http://computer.howstuffworks.com/bytes.htm).
+If bits & bytes are new to you, read [How Stuff Works: How Bits and Bytes Work](http://computer.howstuffworks.com/bytes.htm) and the [Arduino Bit Math Tutorial](http://playground.arduino.cc/Code/BitMath).
 
 ## What is a buffer of bytes?
 Think of *buffer* as just another word for an *array*, *list*, whatever resonates with your programming experience. Like a byte is a group of 8 bits, a [buffer](https://en.wikipedia.org/wiki/Data_buffer) is a group of a pre-defined number of bytes. If we have a group of 3 bytes, this could either represent 3 values between 0 and 255, but also one single value between 0 and 16.777.216 (`256^3`) for all combined unique combinations.
