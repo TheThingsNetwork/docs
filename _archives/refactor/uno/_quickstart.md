@@ -98,7 +98,7 @@ To communicate via The Things Network, you need to register your device. For thi
 
 2.  Within 10 seconds, select **Tools > Serial Monitor** `Ctrl/⌘ Shift M` to open the [Serial Monitor](https://www.arduino.cc/en/Guide/Environment#toc12).
 
-    Soon, it should print a list of information, including your **DevEUI**:
+    Soon, it should print a list of information:
 
     ```
     -- STATUS
@@ -111,6 +111,8 @@ To communicate via The Things Network, you need to register your device. For thi
     RX Delay 1: 1000
     RX Delay 2: 2000
     ```
+    
+    Use the first `EUI` value to register your device.
 
 > Next time you need the Device EUI of a device, simply select **File > Examples > TheThingsNetwork > [DeviceInfo](https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/DeviceInfo/DeviceInfo.ino)** and upload this sketch that will call `ttn.showStatus()` every 10 seconds from `loop()`.
 

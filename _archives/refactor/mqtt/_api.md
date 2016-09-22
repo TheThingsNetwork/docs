@@ -165,7 +165,7 @@ if err := token.Error(); err != nil {
 
 ## Device Activations
 
-**Topic:** `<AppID>/devices/<DevID>/activations`
+**Topic:** `<AppID>/devices/<DevID>/events/activations`
 
 **Message:**
 
@@ -180,7 +180,7 @@ if err := token.Error(); err != nil {
 }
 ```
 
-**Usage (Mosquitto):** `mosquitto_sub -h <Region>.thethings.network:1883 -d -t 'my-app-id/devices/my-dev-id/activations'`
+**Usage (Mosquitto):** `mosquitto_sub -h <Region>.thethings.network:1883 -d -t 'my-app-id/devices/my-dev-id/events/activations'`
 
 **Usage (Go client):**
 
@@ -198,3 +198,21 @@ if err := token.Error(); err != nil {
   ctx.WithError(err).Fatal("Could not subscribe")
 }
 ```
+
+## Device Events
+
+### Downlink Events
+
+* Downlink Scheduled: `<AppID>/devices/<DevID>/events/down/scheduled` (payload: the message - see **Downlink Messages**)
+* Downlink Sent: `<AppID>/devices/<DevID>/events/down/sent` (payload: the message - see **Downlink Messages**)
+* Acknowledgements: `<AppID>/devices/<DevID>/events/ack` (payload: `{}`)
+
+### Error Events
+
+The payload of error events is a JSON object with the error's description.
+
+* Uplink Errors: `<AppID>/devices/<DevID>/events/up/errors`
+* Downlink Errors: `<AppID>/devices/<DevID>/events/down/errors`
+* Activation Errors: `<AppID>/devices/<DevID>/events/activations/errors`
+
+Example: `{"error":"Activation DevNonce not valid: already used"}`
