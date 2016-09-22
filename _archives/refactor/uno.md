@@ -4,7 +4,6 @@ title: The Things Uno
 zindex: 999
 sections:
  - uno/_quickstart.md
- - uno/_bytes.md
 ---
 
 <a href="https://shop.thethingsnetwork.com/index.php/product/the-things-uno/" target="_blank">The Things Uno</a> is based off the [Arduino Leonardo](https://www.arduino.cc/en/Guide/ArduinoLeonardoMicro) ([not the Arduino Uno](https://www.arduino.cc/en/Guide/ArduinoLeonardoMicro#toc9)) with added [Microchip LoRaWAN module](http://www.microchip.com/design-centers/wireless-connectivity/embedded-wireless/lora-technology) and UFL connector for the included external antenna. It is fully compatible with the [Arduino IDE](https://www.arduino.cc/en/Main/Software) and [existing shields](http://shieldlist.org/).
