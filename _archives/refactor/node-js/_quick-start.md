@@ -111,8 +111,8 @@ Now that we are connected, let's listen for new device activations.
 1.  Add a listener for the `activation` event:
 
     ```js
-    client.on('activation', function(devId, data) {
-        console.log('[INFO] ', 'Activation:', devId, data);
+    client.on('activation', function(deviceId, data) {
+        console.log('[INFO] ', 'Activation:', deviceId, data);
     });
     ```
 
@@ -125,8 +125,7 @@ Now that we are connected, let's listen for new device activations.
 3.  Power up, reset or upload a new sketch to a device to force it to activate and you should see something like:
 
     ```bash
-    [INFO]  Activation: my-uno { dev_id: 'my-uno',
-      app_id: 'hello-world',
+    [INFO]  Activation: my-uno {
       app_eui: '70B3D57EF000001C',
       dev_eui: '0004A30B001B7AD2',
       dev_addr: '2601205D',
@@ -144,11 +143,11 @@ Now that we are connected, let's listen for new device activations.
 ## Receive Messages
 Now let's listen for actual messages coming in from devices.
 
-1.  Add a listener for the `message ` event:
+1.  Add a listener for the `message` event:
 
     ```js
-    client.on('message', function(devId, data) {
-        console.info('[INFO] ', 'Message:', devId, JSON.stringify(data, null, 2));
+    client.on('message', function(deviceId, data) {
+        console.info('[INFO] ', 'Message:', deviceId, JSON.stringify(data, null, 2));
     });
     ```
 
@@ -162,8 +161,6 @@ Now let's listen for actual messages coming in from devices.
 
     ```bash
     [INFO]  Message: my-uno {
-      "dev_id": "my-uno",
-      "app_id": "hello-world",
       "port": 1,
       "counter": 0,
       "payload_raw": "AQ==",
@@ -192,31 +189,33 @@ Now let's listen for actual messages coming in from devices.
     ```
 
 ## Send Messages
-To send a message you will have to address a specific device by its **Device ID**. Devices will only receive the last (downlink) message send to them in response to the next (uplink) message they send themselves. So let's send a (downlink) message in response to each 3rd (uplink) message we receive from a device.
+The most common [Class A](https://www.lora-alliance.org/What-Is-LoRa/Technology) LoRaWAN devices - including The Things Node and Uno - can only receive the last scheduled message in response to a message they send.
 
 1.  In the Arduino IDE, select **Tools > Serial Monitor** `Ctrl/⌘ Shift M`.
 
-2.  In the editor for the script, add another listener for the `uplink` event that responds to every 3rd message:
+2.  In the editor for the script, add another listener for the `message` event:
 
     ```js
-    client.on('message', function(devId, data) {
+    client.on('message', null, 'led', function(deviceId, led) {
     
-      // Respond to every third message
-      if (data.counter % 3 === 0) {
-
-        // Toggle the LED
-        var payload = {
-          led: !message.led
-        };
-        
-        // If you don't have an encoder payload function:
-        // var payload = [message.led ? 0 : 1];
-
-        console.log('[DEBUG]', 'Sending:', JSON.stringify(payload));
-        client.send(data.dev_id, payload, data.port);
-      }
+      // Toggle the LED
+      var payload = {
+        led: !led
+      };
+    
+      // If you don't have an encoder payload function:
+      // var payload = [led ? 0 : 1];
+    
+      console.log('[DEBUG]', 'Sending:', JSON.stringify(payload));
+      client.send(deviceId, payload);
     });
     ```
+    
+    This is what it will do:
+    
+    * Subscribe to any (`null`) device, but only the `led` field.
+    * Create a new payload to toggle the current `led` value.
+    * Send it off to the device we received the message of.
 
 4.  Run the script again:
 
@@ -224,7 +223,7 @@ To send a message you will have to address a specific device by its **Device ID*
     node .
     ```
 
-    After each 3rd message the script should output:
+    After every message the script should output:
 
     ```
     [DEBUG] Sending: {"led":true}

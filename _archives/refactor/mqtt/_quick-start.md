@@ -17,7 +17,7 @@ Let's listen for new device activations first.
 1.  Open a terminal window and execute the following command:
 
     ```bash
-    mosquitto_sub -h <Region>.thethings.network -t '+/devices/+/activations' -u '<AppID>' -P '<AppKey>' -v
+    mosquitto_sub -h <Region>.thethings.network -t '+/devices/+/events/activations' -u '<AppID>' -P '<AppKey>' -v
     ```
   
     * Replace `<Region>` with the region you looked up.
@@ -29,7 +29,7 @@ Let's listen for new device activations first.
 2.  Power up, reset or upload a new sketch to a device to force it to activate and you should see something like:
 
     ```bash
-    hello-world/devices/my-uno/activations {"app_eui":"70B3D57EF000001C","dev_eui":"0004A30B001B7AD2","dev_addr":"26012723","metadata":{"time":"2016-09-13T09:59:02.90329585Z","frequency":868.5,"modulation":"LORA","data_rate":"SF7BW125","coding_rate":"4/5","gateways":[{"eui":"B827EBFFFE87BD22","timestamp":1484146403,"time":"2016-09-13T09:59:02.867283Z","channel":2,"rssi":-49,"snr":7,"rf_chain":1}]}}
+    hello-world/devices/my-uno/events/activations {"app_eui":"70B3D57EF000001C","dev_eui":"0004A30B001B7AD2","dev_addr":"26012723","metadata":{"time":"2016-09-13T09:59:02.90329585Z","frequency":868.5,"modulation":"LORA","data_rate":"SF7BW125","coding_rate":"4/5","gateways":[{"eui":"B827EBFFFE87BD22","timestamp":1484146403,"time":"2016-09-13T09:59:02.867283Z","channel":2,"rssi":-49,"snr":7,"rf_chain":1}]}}
     ```
 
     Use `Ctrl C` to exit.  

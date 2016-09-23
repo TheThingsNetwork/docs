@@ -45,16 +45,14 @@ client.on('error', function(err) {});
 Emitted when a device registered to the application activates.
 
 ```js
-client.on('activation', devId, function(data)) {});
+client.on('activation', deviceId, function(data)) {});
 ```
 
-* `devId [string]`: Device ID, e.g.: `my-uno`.
+* `deviceId [string]`: Device ID, e.g.: `my-uno`.
 * `data [object]`: Activation data, e.g.:
 
   ```json
   {
-    "dev_id": "my-uno",
-    "app_id": "hello-world",
     "app_eui": "70B3D57ED0000AFB",
     "dev_eui": "0004A30B001B7AD2",
     "dev_addr": "260023BB",
@@ -79,7 +77,7 @@ client.on('activation', devId, function(data)) {});
 ### Listen for a specific device
 
 ```js
-client.on('activation', 'my-uno', function(devId, data) {});
+client.on('activation', 'my-uno', function(deviceId, data) {});
 ```
 
 ## Event: message
@@ -87,16 +85,14 @@ client.on('activation', 'my-uno', function(devId, data) {});
 Emitted when TTN forwards a message addressed to your application.
 
 ```js
-client.on('message', function(devId, data) {});
+client.on('message', function(deviceId, data) {});
 ```
 
-* `devId [string]`: Device ID, e.g.: `my-uno`.
+* `deviceId [string]`: Device ID, e.g.: `my-uno`.
 * `data [object]`: Message data, e.g.:
 
   ```json
   {
-    "dev_id": "my-uno",
-    "app_id": "hello-world",
     "port": 1,
     "counter": 10,
     "payload_raw": "AQ==",
@@ -125,16 +121,16 @@ client.on('message', function(devId, data) {});
 ### Listen for a specific device
 
 ```js
-client.on('message', 'my-uno', function(devId, data) {});
+client.on('message', 'my-uno', function(deviceId, data) {});
 ```
 
 ### Listen for a specific field (and device)
 
 ```js
-client.on('message', null, 'led', function(devId, data) {});
+client.on('message', null, 'led', function(deviceId, data) {});
 ```
 
-*  `devId [string]`: Device ID, e.g. `my-uno`
+*  `deviceId [string]`: Device ID, e.g. `my-uno`
 *  `data [mixed]`: Message data, e.g. `true`
 
 ## Method: send
@@ -142,10 +138,10 @@ client.on('message', null, 'led', function(devId, data) {});
 Send a message to a specific device.
 
 ```js
-client.send(devId, payload, [port]);
+client.send(deviceId, payload, [port]);
 ```
 
-*  `devId [string]`: The ID of the device to address, e.g. `MY-UNO`
+*  `deviceId [string]`: The ID of the device to address, e.g. `MY-UNO`
 *  `payload [mixed]`: Message to send, either:
     *  Array, e.g. `[1]`
     *  [Buffer](https://nodejs.org/api/buffer.html), e.g. `new Buffer([0x01])`

@@ -123,7 +123,7 @@ See the [Send](https://github.com/TheThingsNetwork/arduino-device-lib/blob/maste
 
 ## Receive
 
-With the most common [Class A](https://www.lora-alliance.org/What-Is-LoRa/Technology) LoRaWAN devices, including The Things Node and Uno you can only receive the last scheduled message in response to a message you send.
+The most common [Class A](https://www.lora-alliance.org/What-Is-LoRa/Technology) LoRaWAN devices - including The Things Node and Uno - can only receive the last scheduled message in response to a message they send.
 
 > For your convenience, the library has a `ttn.poll()` method which sends a single byte to poll for incoming messages if you don't have anything particular to send.
 

@@ -106,7 +106,6 @@ To communicate via The Things Network, you need to register your device. For thi
     Battery: 3223
     AppEUI: 70B3D57EF000001C
     DevEUI: 0004A30B001B7AD2
-    DevAddr: 26012E93
     Data Rate: 5
     RX Delay 1: 1000
     RX Delay 2: 2000
@@ -208,6 +207,7 @@ Now that we have registered the device, we can activate the connection from our 
     Sending: mac set appkey with 16 bytes
     Sending: mac join otaa
     Join accepted. Status: 00000401
+    DevAddr: 26012E93
     ```
 
 🎉 Your device is now activated and connected to The Things Network!

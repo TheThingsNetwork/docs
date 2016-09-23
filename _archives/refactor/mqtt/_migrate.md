@@ -24,9 +24,11 @@ mosquitto_sub -h staging.thethingsnetwork.org -t '#' -u <AppEUI -P '<AppKey>' -v
 mosquitto_sub -h <Region>.thethings.network -t '#' -u '<AppID>' -P '<AppKey>' -v
 ```
 
-## Activation payload
+## Activations
 
-The JSON encoded payload has changed on several points. Update the code where you process it.
+The topic has changed to `<AppId>/devices/<DevId>/events/activations`.
+
+The JSON encoded payload has also changed on several points. Update the code where you process it.
 
 ### Staging
 
