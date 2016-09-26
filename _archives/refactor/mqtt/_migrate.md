@@ -6,7 +6,7 @@ This guide will walk you through migrating connections via MQTT from `staging.th
 
 ## Region-specific hostname
 
-In staging you connected to `staging.thethingsnetwork.org`. Replace this with `<Region>.thethings.network`. See [API Reference / Authentication](#authentication) to learn what region to use. See the next section for a before/after example.
+In staging you connected to `staging.thethingsnetwork.org`. Replace this with `<Region>.thethings.network`. See [Quick Start / Credentials](#credentials) to learn what region to use. See the next section for a before/after example.
 
 ## Application EUI becomes ID
 
@@ -171,4 +171,4 @@ The JSON encoded payload to send a message has also changed. Update the code whe
 }
 ```
 
-> Note that `payload` has been renamed to `payload_raw` and `ttl` is no longer included. Also consider to use the new [`payload_fields`](#topic-downlink-messages).
+> Note that `payload` has been renamed to `payload_raw` and `ttl` is no longer included. Also consider to use the new [`payload_fields`](#downlink-fields).

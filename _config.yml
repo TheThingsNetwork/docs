@@ -24,7 +24,8 @@ collections:
     output: true
     permalink: /:path/
 markdown: kramdown
-exclude: [ node_modules, Gemfile, Gemfile.lock, gulpfile.js, package.json, README.md, webpack.config.js ]
+# Exclude vendor which Travis will add
+exclude: [ node_modules, vendor, Gemfile, Gemfile.lock, gulpfile.js, package.json, README.md, test, webpack.config.js ]
 gems:
   - jekyll-sitemap
   - jemoji
@@ -41,4 +42,3 @@ gist:
   noscript: false
 kramdown:
   math_engine: mathjax
-  auto_ids: false

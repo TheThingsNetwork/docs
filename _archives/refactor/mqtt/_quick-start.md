@@ -62,7 +62,7 @@ hello-world/devices/my-uno/up/led true
 ```
 
 ## Send Messages (down)
-To send a message you will have to address a specific device by its **Device ID**. Let's send the same message used in the [The Things Uno / Quick Start](/docs/uno/#receive-message-downlink):
+To send a message you will have to address a specific device by its **Device ID**. Let's send the same message used in the [The Things Uno / Quick Start](/uno/#receive-message-downlink):
 
 ```bash
 {
@@ -70,7 +70,7 @@ To send a message you will have to address a specific device by its **Device ID*
 }
 ```
 
-If you have followed [The Things Uno / Quick Start / Encode Messages](/uno/#encode-messages) you can send this as is using the `payload_fields` key:
+If you have followed [The Things Uno / Quick Start / Encode Messages](../uno/#encode-messages) you can send this as is using the `payload_fields` key:
 
 ```json
 {

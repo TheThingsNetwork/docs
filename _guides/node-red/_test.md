@@ -9,13 +9,13 @@ Messages sent by devices on the application can be received via the upper output
 3.  Double click the **debug** node to edit it.
 4.  Click the gray part of the **Output** value, select **complete msg object** and click **Done**:
 
-    ![](node-red-debug.png)
+    ![Debug sidebar](node-red-debug.png)
 
 5.  Click **Deploy**.
 6.  In the right sidebar select the **debug** tab.
 7.  Soon after a device sends a message to your application you should see it come in like this:
 
-    ![](node-red-debug-message.png)
+    ![Debug message](node-red-debug-message.png)
 
     The output has the following format:
 

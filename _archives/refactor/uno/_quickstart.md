@@ -11,7 +11,7 @@ Let's start by setting up the software we'll need to program your device.
 3. Search for **TheThingsNetwork** and click the result to select it.
 4. Click the **Install** button which should appear:
 
-  ![](arduino_library.png)
+  ![Library Manager](arduino_library.png)
 
 The Arduino IDE will notify you of updates for the IDE and library automagically. :open_mouth:
 
@@ -137,7 +137,7 @@ Devices need to be registered with an application to communicate with. Let's add
 	* For **Application Description**, enter anything you like.
 	* Leave the checkbox enabled to automatically register the application to your default region.
 
-	![](add-application.png)
+	![Add Application](add-application.png)
 
 2.  Click **Add Application** to finish.
 
@@ -163,7 +163,7 @@ You are now ready to register your device to the application.
 ## Activate your Device
 Now that we have registered the device, we can activate the connection from our device itself.
 
-> Activation means that the device will use the generated App Key to negotiate session keys for further communication. This is also known as Over The Air Activation or OTAA. There's also [Activation By Personalisation](/dashboard/#personalise-device-for-abp) (ABP) where you set or generate the session keys via the dashboard and hard-code them on your device.
+> Activation means that the device will use the generated App Key to negotiate session keys for further communication. This is also known as Over The Air Activation or OTAA. There's also [Activation By Personalisation](../dashboard/#personalise-device-for-abp) (ABP) where you set or generate the session keys via the dashboard and hard-code them on your device.
 
 1.  In the Arduino IDE, go back to your sketch and copy-paste the following lines just after the `#include`:
 
@@ -263,7 +263,7 @@ Let's see the messages come in.
 
     You should now see the messages come in:
 
-    ![](dashboard-data.png)
+    ![Application Data](dashboard-data.png)
 
     What you see is the raw payload in hex-formatted, space-separated bytes. Let's decode that to meaningful fields.
 
@@ -325,7 +325,7 @@ Let's see the messages come in.
     
 8.  Run another round of tests to verify all payloads that don't convert to have a boolean `led` property are marked invalid:
 
-    ![](dashboard-validator.png)
+    ![Validator](dashboard-validator.png)
     
     Invalid messages will be dropped and not published to services that have subscribed to this application's messages.
     
@@ -335,7 +335,7 @@ Let's see the messages come in.
 
 11. If your device is still sending data any (valid) new messages should now show their decoded and converted payload in the **fields** column:
 
-    ![](dashboard-data-decoded.png)
+    ![Decoded](dashboard-data-decoded.png)
     
 🎉 You can now decode cryptic byte messages to meaningful payloads!    
 
@@ -394,11 +394,11 @@ We'll prepare your device to receive a message in response.
     
     And... there was light! 💡
     
-    ![](led_on.jpg)
+    ![The Things Uno with LED on](led_on.jpg)
     
 5.  From the device screen, select **Data** from the top right menu and you should see that the next message the device sends indeed confirms the LED is now on:
 
-    ![](dashboard-data-on.png)
+    ![Message led:true](dashboard-data-on.png)
     
 6.  As a bonus, try sending `00` to turn of the LED and verify that the next message confirms it.
 
@@ -441,7 +441,7 @@ What would be cooler than turning a LED on by sending `00`? Sending `{ "led": tr
 
 Next, you'll want to:
 
-1.  Learn how to receive and send messages from anywhere using [MQTT](/mqtt) or our [Node-RED](/node-red/#quick-start) or [Node.js](/node-js/#quick-start) library.
+1.  Learn how to receive and send messages from anywhere using [MQTT](/mqtt) or our [Node-RED](../node-red/#quick-start) or [Node.js](/node-js/#quick-start) library.
 2.  Learn how to add sensors and actuators to your device to harvest data and trigger actions anywhere, thanks to the long range, low power The Things Network.
 
     Let [The Things Lab](https://www.thethingsnetwork.org/labs/stories?search=&c2=on&c3=on&c4=on&c5=on) inspire you!

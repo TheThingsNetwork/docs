@@ -10,11 +10,11 @@ This guide will walk you through subscribing to an application's activations and
 
 1.  In the [dashboard](https://staging.thethingsnetwork.org/applications), navigate to the application you'd like to use and follow the link *learn how to get data from this app* in the **Application Info** box.
 
-    ![](dashboard-application-info.png)
+    ![Application Info](dashboard-application-info.png)
 
 2.  Make note of the **App EUI** (hex) and **Access Keys** (base64)
 
-    ![](dashboard-application-credentials.png)
+    ![Application Credentials](dashboard-application-credentials.png)
     
 ## Receive Activations
 Let's listen for new device activations first.
@@ -64,7 +64,7 @@ Now let's listen for actual messages coming in from devices.
     ```
 
 ## Send Messages (down)
-To send a message you will have to address a specific device by its **Dev EUI**. Let's send the same message as in the [The Things Uno / Quick Start](/docs/uno/#receive-message-downlink):
+To send a message you will have to address a specific device by its **Dev EUI**. Let's send the same message as in the [The Things Uno / Quick Start](/uno/#receive-message-downlink):
 
 ```bash
 Hi

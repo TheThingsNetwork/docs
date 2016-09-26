@@ -7,7 +7,7 @@ Devices can communicate with applications that they've been registered to. To re
 	* For **Application Description**, enter anything you like.
 	* Leave the checkbox enabled to automatically register the application to your default region.
 
-	![](add-application.png)
+	![Add Application](add-application.png)
 
 2.  Click **Add Application** to finish.
 

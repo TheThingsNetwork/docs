@@ -19,7 +19,7 @@ We often update `ttnctl`, so re-download it once in a while.
 
 ## Configuration
 
-If you don't like the default configuration options of `ttnctl`, you can configure them with environment variables or with a [configuration file](#configuration-1). In most cases the default options should be fine. Later in this guide we'll add our application ID to the config file to save us some typing.
+If you don't like the default configuration options of `ttnctl`, you can configure them with environment variables or with a [configuration file](#configuration-file). In most cases the default options should be fine. Later in this guide we'll add our application ID to the config file to save us some typing.
 
 ## Register and Login
 

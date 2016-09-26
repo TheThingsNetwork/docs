@@ -24,7 +24,7 @@ If the format is correct, the **Register** button should become enabled.
 
 We'll let the App Key randomly generated. To continue, click **Register**.
 
-To register for OTAA you'll need to <a href="#get-the-things-uno-deveui">get
+To register for OTAA you'll need to <a href="/uno/#get-your-dev-eui">get
 the **DevEUI** of your device</a>.
 
 ![Register Device (OTAA)](register-device-otaa.png)

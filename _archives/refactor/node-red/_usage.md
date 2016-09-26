@@ -20,11 +20,11 @@ To use the TTN node you need to configure it for your The Things Network Applica
     * For **Access Key**, scroll down to the **Access Keys**. For the key you'd like to use, click `👁` to show the key and then `📋` to copy it.
     * For **Region or Broker**, scroll back again to use **Handler Status** from the **Application Overview** box. Only copy the last bit following `ttn-handler-`.
 
-    ![](node-red-ttn-edit.png)
+    ![Edit ttn node](node-red-ttn-edit.png)
 
 4.  Click **Deploy** on the top right. The node should say it's connected:
 
-    ![](node-red-ttn-connected.png)
+    ![Connected](node-red-ttn-connected.png)
 
     In the terminal you should see something like:
 
@@ -36,13 +36,13 @@ Messages sent by devices on the application can be received via the upper output
 1.  Drag a **debug** node from the output category of the toolbox.
 2.  Drag the upper output of the **ttn** node to the input of the **debug** node.
 
-    ![](node-red-debug.png)
+    ![Debug sidebar](node-red-debug.png)
 
 3.  Click **Deploy**.
 4.  In the right sidebar select the **debug** tab.
 5.  Soon after a device sends a message to your application you should see it come in like this:
     
-    ![](node-red-debug-message.png)
+    ![Debug message](node-red-debug-message.png)
 
     By default the debug node only shows `msg.payload`, which is mapped to `msg.payload_fields` or `msg.payload_raw` of the original message received via MQTT. If you followed the [The Things Uno Quick Start](/uno/#quick-start) this would look like:
 

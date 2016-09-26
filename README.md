@@ -15,10 +15,10 @@ Because we let GitHub Pages do the Jekyll builds the website will be updated aut
 * Use the main file of each guide for the intro.
 * Use the `sections` front matter to include additional content from files relative to the guide, preferably in a subfolder with the same name. Make sure to start these files with `_` to prevent Jekyll for outputting them as stand-alone pages.
 * Store guide assets in the same folder as the markdown you need it in and include them by their filename. You can also use relative paths to re-use images from other guides.
-* Start links to other guides with `/` and the `/docs` baseurl will be prepended for you.
-* Start links to site assets with `/assets` and the `/docs` baseurl will be prepended for you.
+* The `/docs` baseurl will be prepended to any links and image sources that start with `/`.
+* Always end internal links with `/`.
 * Use blockquotes (`>`) to create callouts for important notes.
-* If you do a lot of edits please use a local build to preview.
+* If you do a lot of edits please use a local build to preview and test.
 
 ## Build local for preview and design
 
@@ -49,7 +49,7 @@ Because we let GitHub Pages do the Jekyll builds the website will be updated aut
 	$ npm run dev
 	```
 
-> *NOTE:* Running `npm install` will overwrite the git pre-commit hook to execute [npm run webpack](package.json#L11) and append the production version of [js/bundle.js](js/bundle.js) it produces.
+> *NOTE:* Running `npm install` will overwrite the git pre-commit hook to execute [npm run webpack](package.json#L12), [npm test](package.json#L15) and [npm run add](package.json#L16) to append the webpack build.
 	
 ### Guidance
 
@@ -61,7 +61,20 @@ Because we let GitHub Pages do the Jekyll builds the website will be updated aut
 * Edit layouts in the [_layouts](_layouts) folder.
 * All layouts should inherit the [default](_layouts/default.html) layout.
 
+## Test
+
+Pull Requests and Pushes will be tested automatically by Travis. The test will let Jekyll build the site and then test for broken links and sorts using [HTMLProofer](https://github.com/gjtorikian/html-proofer).
+
+To run the test local, follow *Build local* to install the dependencies and then run:
+
+```
+./test
+```
+
+The test will also run automatically before every commit.
+
 ## Automatic updates
+
 Some content we source directly from elsewhere, e.g. the [MQTT API Reference](https://github.com/TheThingsNetwork/ttn/blob/refactor/mqtt/README.md).
 
 ### Update

@@ -7,7 +7,7 @@ sections:
  - cli/_configuration.md
  - cli/_api.md
 ---
-Your Applications and Devices can be managed via [The Things Network Dashboard](/dasboard), but you can also use the CLI, if you're into that kind of thing. 😎
+Your Applications and Devices can be managed via [The Things Network Dashboard](/dashboard/), but you can also use the CLI, if you're into that kind of thing. 😎
 
 ## Prerequisites
 

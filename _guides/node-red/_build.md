@@ -42,7 +42,7 @@ A common use case is to invoke a HTTP request to an external web service of your
 
     This should look something like:
 
-    ![](node-red-ifttt-function.png)
+    ![Edit function node](node-red-ifttt-function.png)
 
 6.  Drag a **http request** node from the same **function** category.
 7.  Drag a wire from the output of the **create request** node to the input of the **http request** node.
@@ -53,10 +53,10 @@ A common use case is to invoke a HTTP request to an external web service of your
     * Replace `{key}` with the key you found at the [Maker Channel](https://ifttt.com/maker) in step 12.
 11. Click **Done** and you should now have something like:
 
-    ![](node-red-ifttt-flow.png)
+    ![Flow](node-red-ifttt-flow.png)
 
 12. Click **Deploy** and soon you should receive an email like:
 
-    ![](node-red-ifttt-email.png)
+    ![E-mail](node-red-ifttt-email.png)
 
     You probably want to turn off the IFTTT recipe now, unless you like to be spammed.

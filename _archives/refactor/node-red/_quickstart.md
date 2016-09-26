@@ -61,7 +61,7 @@ If you haven't done so already, follow [Setup](#setup) and [Usage / Configure](#
 
     This should look something like:
 
-    ![](node-red-ifttt-function.png)
+    ![Edit function node](node-red-ifttt-function.png)
 
 6.  Drag a **http request** node from the same **function** category.
 7.  Drag a wire from the output of the **create request** node to the input of the **http request** node.
@@ -73,13 +73,13 @@ If you haven't done so already, follow [Setup](#setup) and [Usage / Configure](#
     * Replace `{key}` with the key you found at the [Maker Channel](https://ifttt.com/maker).
 11. Click **Done** and you should now have something like:
 
-    ![](node-red-ifttt-flow.png)
+    ![Flow](node-red-ifttt-flow.png)
 
 12. Click **Deploy**.
 
     Soon after your device sends a new message, you should see it come through in the Node-RED debug panel and arrive in your mailbox:
 
-    ![](node-red-ifttt-email.png)
+    ![E-mail](node-red-ifttt-email.png)
 
     🎉 Congratulations! You can now use both Node-RED and IFTTT to process device messages and hook up to countless of other services without writing any - well almost no - code.
 

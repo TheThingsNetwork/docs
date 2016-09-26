@@ -11,7 +11,7 @@ Setup the Arduino IDE and The Things Network library.
 3. Search for **TheThingsNetwork** and click the result to select it.
 4. Click the **Install** button which should appear:
 
-  ![](arduino_library.png)
+  ![Library Manager](arduino_library.png)
 
 The Arduino IDE will notify you of updates for the IDE and library automagically. :open_mouth:
 

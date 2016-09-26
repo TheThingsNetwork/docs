@@ -9,7 +9,7 @@ This guide will walk you through programming The Things Uno to send and receive 
 3. Search for **TheThingsNetwork** and click the result to select it.
 4. Click the **Install** button which should appear:
 
-  ![](../arduino/arduino_library.png)
+  ![Library Mananager](../arduino/arduino_library.png)
 
 The Arduino IDE will notify you of updates for the IDE and library automagically. :open_mouth:
 
@@ -29,7 +29,7 @@ The *DevEUI* is an unique address hard coded into the LoRa module. We use this a
 
 1.  In the Arduino IDE open **File > Examples > TheThingsNetwork > [DeviceInfo](https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/DeviceInfo/DeviceInfo.ino)**.
 2.  Select **Sketch > Upload** `Ctrl/⌘ U` to upload the sketch.
-3.  Select **Tools > Serial Monitor** `Ctrl/⌘ Shift M` to open the [Serial Monitor](/arduino/#serial-monitor).
+3.  Select **Tools > Serial Monitor** `Ctrl/⌘ Shift M` to open the Serial Monitor.
 4.  Soon, it should print a list with **Device Information**, including the **DevEUI**:
 
     ```
@@ -54,11 +54,11 @@ Messages to and from devices are routed via applications.
 2. Enter an **Application name**.
 3. Click **Create application**.
 
-![create application](create-application.png)
+![Create Application](create-application.png)
 
 You will be redirected to the newly created Application page where you find the App EUI and can proceed to register devices.
 
-![application info](app-info.png)
+![Application Info](app-info.png)
 
 ## Register Device
 Devices need to be registered with an application in order to send and receive messages via it.
@@ -75,12 +75,12 @@ Devices need to be registered with an application in order to send and receive m
 4.  Leave the **App Key** to be randomly generated.
 5.  Click **Register** to finish and get redirected to the device page:
 
-    ![](device-info-otaa.png)
+    ![Device Info](device-info-otaa.png)
 
 ## Activate Device
 Now that you have registered the device you need to activate it from the device itself.
 
-1.  In Arduino IDE, select **File > Examples > TheThingsNetwork > [SendOTAA](https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/SendOTAA/SendOTAA.ino)**.
+1.  In Arduino IDE, select **File > Examples > TheThingsNetwork > [Send](https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/Send/Send.ino)**.
 2.  Copy the **App EUI** and **App Key** from the device page to the example.
 
     > Use <code><i class="fa fa-eye"></i></code> to show obfuscated keys and <code><i class="fa fa-code"></i></code> to toggle to **msb**. Then use <code><i class="fa fa-clipboard"></i></code> to copy.
@@ -128,7 +128,7 @@ void loop() {
 ## Decode Message
 Still on the dashboard's device page, you should see the messages coming in under the **Messages** section:
 
-![](dashboard-device-messages-payload.png)
+![Encoded payload](dashboard-device-messages-payload.png)
 
 You could now use MQTT or the [TTN Node for Node-RED](/node-red/) to process the payload as it is, but we can also decode it first.
 
@@ -145,7 +145,7 @@ You could now use MQTT or the [TTN Node for Node-RED](/node-red/) to process the
 
 3.  Go back to the application page and the next message should be decoded:
 
-    ![](dashboard-device-messages-payload-decoded.png)
+    ![Decoded payload](dashboard-device-messages-payload-decoded.png)
 
 ## Receive Message (downlink)
 Now let's send a message back to the device. Devices can only receive the last message sent to them in response to a message they send themselves. This means that you need to poll The Things Network frequently to not miss any downlink messages.

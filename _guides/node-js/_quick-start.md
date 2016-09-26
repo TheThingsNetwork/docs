@@ -18,7 +18,7 @@ Let's install Node.js, create a Node.js project and install the TTN Client.
 
     > Just press return to accept the default answer to any question asked.
 
-3.  Install and save the [TTN Client](http://flows.nodered.org/node/node-red-contrib-ttn) as dependency:
+3.  Install and save the [TTN Client](https://www.npmjs.com/package/ttn) as dependency:
 
     ```bash
     npm install --save ttn
@@ -42,11 +42,11 @@ Next, we will write the script that requires the TTN Client module and uses it t
 
 3.  In the [dashboard](https://staging.thethingsnetwork.org/applications), navigate to the application you'd like to use and follow the link *learn how to get data from this app* in the **Application Info** box.
 
-    ![](dashboard-application-info.png)
+    ![Application Info](dashboard-application-info.png)
 
 4.  Copy the **App EUI** (hex) and **Access Keys** (base64)
 
-    ![](dashboard-application-credentials.png)
+    ![Application Credentials](dashboard-application-credentials.png)
 
 5.  In the editor, create an instance of the client using the **App EUI** and **Access Keys** you copied:
 
@@ -181,7 +181,7 @@ Again, I use the same script as [The Things Uno Quick Start](/uno/#quick-start) 
 
 1.  Follow the [The Things Uno Quick Start](/uno/#quick-start) or upload another sketch to your device which sends messages every few seconds and listens for a response it will then print to `Serial`.
 
-2.  In the Arduino IDE, select **Tools > Serial Monitor** `Ctrl/⌘ Shift M` to open the [Serial Monitor](/arduino/#serial-monitor).
+2.  In the Arduino IDE, select **Tools > Serial Monitor** `Ctrl/⌘ Shift M` to open the Serial Monitor.
 
 3.  In the editor for the script, add another listener for the `uplink` event that responds to every 3rd message:
 
