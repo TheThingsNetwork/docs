@@ -1,5 +1,4 @@
-The Things Network Documentation
-================================
+# The Things Network Documentation [![Build Status](https://travis-ci.org/TheThingsNetwork/docs.svg?branch=master)](https://travis-ci.org/TheThingsNetwork/docs)
 
 This is a [Jekyll](https://jekyllrb.com) site configured to be build and served through [GitHub Pages](https://help.github.com/articles/using-jekyll-as-a-static-site-generator-with-github-pages/).
 
@@ -61,7 +60,7 @@ Because we let GitHub Pages do the Jekyll builds the website will be updated aut
 * Edit layouts in the [_layouts](_layouts) folder.
 * All layouts should inherit the [default](_layouts/default.html) layout.
 
-## Test
+## Test [![Build Status](https://travis-ci.org/TheThingsNetwork/docs.svg?branch=master)](https://travis-ci.org/TheThingsNetwork/docs)
 
 Pull Requests and Pushes will be tested automatically by Travis. The test will let Jekyll build the site and then test for broken links and sorts using [HTMLProofer](https://github.com/gjtorikian/html-proofer).
 

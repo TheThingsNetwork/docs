@@ -2,7 +2,7 @@
 
 Try the Quick Start script right from your browser! Simply replace the `appEUI` and `accessKey` values with those you have found for your application in [Quick Start / Connect](#connect) and hit the green **Run** button.
 
-<script src="https://embed.tonicdev.com" data-element-id="live-code"></script>
+<script src="https://embed.runkit.com" data-element-id="live-code"></script>
 
 <div id="live-code"><pre class="highlight"><code>var ttn = require('ttn@2.0.0-4');
 
