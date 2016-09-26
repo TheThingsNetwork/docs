@@ -10,7 +10,7 @@ Because we let GitHub Pages do the Jekyll builds the website will be updated aut
 
 * The homepage for the site is [index.html](index.html).
 * The guides are a Jekyll collection in the [_guides](_guides) folder.
-* To archive (or draft) a guide move it to [_archives/*/](_archives/refactor).
+* To archive (or draft) a guide move it to [_versions/*/](_versions/refactor).
 * Use the main file of each guide for the intro.
 * Use the `sections` front matter to include additional content from files relative to the guide, preferably in a subfolder with the same name. Make sure to start these files with `_` to prevent Jekyll for outputting them as stand-alone pages.
 * Store guide assets in the same folder as the markdown you need it in and include them by their filename. You can also use relative paths to re-use images from other guides.
@@ -62,7 +62,7 @@ Because we let GitHub Pages do the Jekyll builds the website will be updated aut
 
 ## Test [![Build Status](https://travis-ci.org/TheThingsNetwork/docs.svg?branch=master)](https://travis-ci.org/TheThingsNetwork/docs)
 
-Pull Requests and Pushes will be tested automatically by Travis. The test will let Jekyll build the site and then test for broken links and sorts using [HTMLProofer](https://github.com/gjtorikian/html-proofer).
+Pull Requests and Pushes will be tested automatically by Travis using the [test](test) script. This will use [markdown-spellcheck](https://www.npmjs.com/package/markdown-spellcheck) on the Markdown source files, let Jekyll try to build the site and then use [HTMLProofer](https://github.com/gjtorikian/html-proofer) to test for broken links etc.
 
 To run the test local, follow *Build local* to install the dependencies and then run:
 
@@ -71,6 +71,8 @@ To run the test local, follow *Build local* to install the dependencies and then
 ```
 
 The test will also run automatically before every commit.
+
+To ignore spelling errors for all or certain files, add them to [.spelling](.spelling).
 
 ## Automatic updates
 

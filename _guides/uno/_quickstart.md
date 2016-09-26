@@ -176,7 +176,7 @@ Now let's send a message back to the device. Devices can only receive the last m
     48 69
     ```
 
-7.  In the Arduino IDE, you should see the next succesful transmission followed up with the response:
+7.  In the Arduino IDE, you should see the next successful transmission followed up with the response:
 
     ```
     Sending: mac tx uncnf 1 with 5 bytes

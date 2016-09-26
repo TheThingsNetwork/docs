@@ -20,7 +20,7 @@ var client = new ttn.Client(broker, appEUI, appAccessKey);
 
 ## Event: connect
 
-Emitted on succesful (re)connection.
+Emitted on successful (re)connection.
 
 ```js
 client.on('connect', function() {});

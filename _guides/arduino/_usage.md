@@ -14,7 +14,7 @@ To use the library:
 	#include <TheThingsNetwork.h>
 	```
 
-## Initialise
+## Initialize
 
 Your sketch will have the following template:
 
@@ -51,7 +51,7 @@ The actual streams you'd pass to `ttn.init()` depend on the board you use and th
 
 ## Activate
 
-In the [`setup()`](https://www.arduino.cc/en/Reference/setup) function, after initialising the library, we have to activate the device.
+In the [`setup()`](https://www.arduino.cc/en/Reference/setup) function, after initializing the library, we have to activate the device.
 
 There are two ways to activate your device.
 
@@ -112,7 +112,7 @@ byte data[3] = { 0x01, 0x02, 0x03 };
 ttn.sendBytes(data, sizeof(data));
 ```
 
-To minimise your use of the limited daily airtime try to use as little bytes as possible. See the Arduino [Array guide](https://www.arduino.cc/en/Reference/Array) and [Bit Math Tutorial](http://playground.arduino.cc/Code/BitMath#binary) to learn more.
+To minimize your use of the limited daily airtime try to use as little bytes as possible. See the Arduino [Array guide](https://www.arduino.cc/en/Reference/Array) and [Bit Math Tutorial](http://playground.arduino.cc/Code/BitMath#binary) to learn more.
 
 ## Receive
 

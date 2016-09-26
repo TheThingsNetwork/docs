@@ -1,6 +1,6 @@
 # Clients
 
-You can find MQTT Client libaries for any language or platform:
+You can find MQTT Client libraries for any language or platform:
 
 * For an extensive list see the official [MQTT.org Wiki](https://github.com/mqtt/mqtt.github.io/wiki/libraries).
 * The [Eclipse Paho](http://www.eclipse.org/paho/) project provides open-source client implementations for a good number of languages.

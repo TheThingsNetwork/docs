@@ -18,7 +18,7 @@ void reset(bool adr = true, int sf = DEFAULT_SF, int fsb = DEFAULT_FSB);
 - `int fsb = DEFAULT_FSB` **TODO**
 
 ## Method: init
-Initialise the library with the streams it should communicate with.
+Initialize the library with the streams it should communicate with.
 
 ```c
 void init(Stream& modemStream, Stream& debugStream);
@@ -105,7 +105,7 @@ Returns the size of the message received in response, if any. Use `downlink` for
 ## Method: sendString
 Send a message to the application using a string, which the library will encode as bytes for you.
 
-> To minimise air time we advise not to use this method and try to use a minimal amount of bytes to communicate your message.
+> To minimize air time we advise not to use this method and try to use a minimal amount of bytes to communicate your message.
 
 ```c
 int sendString(String message, int port = 1, bool confirm = false);
