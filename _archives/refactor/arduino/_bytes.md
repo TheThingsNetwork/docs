@@ -50,7 +50,7 @@ ttn.sendBytes(data, sizeof(data));
 Yeah, I know... `0x` kind of blows the shorter-to-write advantage of hex. 🙃
 
 ## How many bytes can I send?
-Technically, you can send 64 bytes. But, the more bytes you'll send, the more airtime the package will cost you and the sooner you'll hit your maximum allotted time. So, don't ask yourself how many you can possibly send but rather ask how few could do the job.
+Technically, you can send 51 bytes. But, the more bytes you'll send, the more airtime the package will cost you and the sooner you'll hit your maximum allotted time. So, don't ask yourself how many you can possibly send but rather ask how few could do the job.
 
 ## How to send big numbers?
 A better question would be how to send ranges bigger than 255.
@@ -263,7 +263,7 @@ memcpy(payloadA,
 
 The short answer is: **don't**. Text uses a lot of bytes. [Unicode](https://en.wikipedia.org/wiki/Unicode) defines more than 128000 characters, so that would take 3 bytes per character! There are rarely good reasons to use text instead of numbers, apart from maybe transmitting some user input.
 
-You didn't here it from me, but here's how you'd encode a string:
+You didn't hear it from me, but here's how you'd encode a string:
 
 ```c
 var myVal = "Hello";
