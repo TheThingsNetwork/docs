@@ -139,13 +139,11 @@ Encode (payload functions):
 ```js
 var myVal = 20000;
 var bytes = [];
-bytes[0] = (myVal & 0xFF00) >>> 8;
+bytes[0] = (myVal & 0xFF00) >> 8;
 bytes[1] = (myVal & 0x00FF);
 ```
 
 > Never seen `&` used this way before? This is a [Bitwise AND](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Bitwise_AND). Used this way the right side of the expression will act as a [mask](https://en.wikipedia.org/wiki/Mask_(computing)) to zero out one byte so we can work with just the other one.
-
-> You might have guessed `>>>` performs a right shift. The extra `>` makes it a [Zero-fill right shift](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#>>>_(Zero-fill_right_shift)) so the bits coming in from the left are `0` and not the previously left-most bit as it would by default.
 
 Decode (Arduino):
 
