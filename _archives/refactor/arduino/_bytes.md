@@ -50,7 +50,7 @@ ttn.sendBytes(data, sizeof(data));
 Yeah, I know... `0x` kind of blows the shorter-to-write advantage of hex. 🙃
 
 ## How many bytes can I send?
-Technically, you can send 64 bytes. But, the more bytes you'll send, the more airtime the package will cost you and the sooner you'll hit your maximum allotted time. So, don't ask yourself how many you can possibly send but rather ask how few could do the job.
+Technically, you can send 51 bytes. But, the more bytes you'll send, the more airtime the package will cost you and the sooner you'll hit your maximum allotted time. So, don't ask yourself how many you can possibly send but rather ask how few could do the job.
 
 ## How to send big numbers?
 A better question would be how to send ranges bigger than 255.
@@ -139,13 +139,11 @@ Encode (payload functions):
 ```js
 var myVal = 20000;
 var bytes = [];
-bytes[0] = (myVal & 0xFF00) >>> 8;
+bytes[0] = (myVal & 0xFF00) >> 8;
 bytes[1] = (myVal & 0x00FF);
 ```
 
 > Never seen `&` used this way before? This is a [Bitwise AND](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Bitwise_AND). Used this way the right side of the expression will act as a [mask](https://en.wikipedia.org/wiki/Mask_(computing)) to zero out one byte so we can work with just the other one.
-
-> You might have guessed `>>>` performs a right shift. The extra `>` makes it a [Zero-fill right shift](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#>>>_(Zero-fill_right_shift)) so the bits coming in from the left are `0` and not the previously left-most bit as it would by default.
 
 Decode (Arduino):
 
@@ -263,7 +261,7 @@ memcpy(payloadA,
 
 The short answer is: **don't**. Text uses a lot of bytes. [Unicode](https://en.wikipedia.org/wiki/Unicode) defines more than 128000 characters, so that would take 3 bytes per character! There are rarely good reasons to use text instead of numbers, apart from maybe transmitting some user input.
 
-You didn't here it from me, but here's how you'd encode a string:
+You didn't hear it from me, but here's how you'd encode a string:
 
 ```c
 var myVal = "Hello";
