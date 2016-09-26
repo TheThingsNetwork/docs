@@ -26,6 +26,7 @@ collections:
 markdown: kramdown
 exclude: [ node_modules, Gemfile, Gemfile.lock, gulpfile.js, package.json, README.md, webpack.config.js ]
 gems:
+  - jekyll-sitemap
   - jemoji
   - jekyll-seo-tag
   - jekyll-redirect-from

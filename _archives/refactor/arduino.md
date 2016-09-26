@@ -6,6 +6,7 @@ sections:
  - arduino/_ide.md
  - arduino/_usage.md
  - arduino/_api.md
+ - arduino/_bytes.md
  - arduino/_examples.md
  - arduino/_resources.md
 ---

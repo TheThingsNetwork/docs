@@ -60,8 +60,6 @@ Because we let GitHub Pages do the Jekyll builds the website will be updated aut
 * Store layout assets in [assets](assets) folder.
 * Edit layouts in the [_layouts](_layouts) folder.
 * All layouts should inherit the [default](_layouts/default.html) layout.
-* Any meta data should be stored in the [_data](_data) folder, not [_config.yml](_config.yml).
-
 
 ## Automatic updates
 Some content we source directly from elsewhere, e.g. the [MQTT API Reference](https://github.com/TheThingsNetwork/ttn/blob/refactor/mqtt/README.md).
