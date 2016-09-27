@@ -38,7 +38,7 @@ Let's start on IFTTT.
 
 7.  Click **Create Action**.
 8.  Click **Create Recipe**.
-12. Go to the [Maker Channel](https://ifttt.com/maker) to find your key.
+9.  Go to the [Maker Channel](https://ifttt.com/maker) to find your key.
 
 ## Wire your Node-RED flow
 If you haven't done so already, follow [Setup](#setup) and [Usage / Configure](#configure) to setup Node-RED, the TTN Node and configure it to connect to your application. I'll be here waiting for you. 😴
@@ -54,7 +54,7 @@ If you haven't done so already, follow [Setup](#setup) and [Usage / Configure](#
     ```javascript
     return {
         payload: {
-            value1: msg.payload.led ? 'on' : 'off'
+            value1: msg.payload.payload_fields.led ? 'on' : 'off'
         }
     };
     ```

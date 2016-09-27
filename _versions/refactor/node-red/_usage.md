@@ -13,6 +13,7 @@ To use the TTN node you need to configure it for your The Things Network Applica
 
 1.  In Node-RED, drag a **ttn** node from the input category in the toolbox on the left to your workflow.
 2.  Double click the node to edit it.
+3.  Click the `✏️` following *Add new ttn app...*.
 
     Copy-paste the following information from the dashboard:
 
@@ -43,49 +44,77 @@ Messages sent by devices on the application can be received via the upper output
 5.  Soon after a device sends a message to your application you should see it come in like this:
     
     ![Debug message](node-red-debug-message.png)
-
-    By default the debug node only shows `msg.payload`, which is mapped to `msg.payload_fields` or `msg.payload_raw` of the original message received via MQTT. If you followed the [The Things Uno Quick Start](/uno/#quick-start) this would look like:
+    
+    Nicely formatted, the debug output would look like:
 
     ```json
-    { 
-      "led": true
+    {
+    	"port": 1,
+    	"counter": 8,
+    	"payload_raw": {
+    		"type": "Buffer",
+    		"data": [0]
+    	},
+    	"payload_fields": {
+    		"led": false
+    	},
+    	"metadata": {
+    		"time": "2016-09-27T12:31:08.240406665Z",
+    		"frequency": 867.9,
+    		"modulation": "LORA",
+    		"data_rate": "SF7BW125",
+    		"coding_rate": "4/5",
+    		"gateways": [{
+    			"gtw_id": "eui-b827ebfffe87bd22",
+    			"timestamp": 1050972876,
+    			"time": "2016-09-27T12:31:08.22156Z",
+    			"channel": 7,
+    			"rssi": -105,
+    			"snr": 7.5
+    		}]
+    	}
     }
     ```
+    
+    By default the debug node only shows `msg.payload`, which does not include the ID of the device that sent the message.
     
 6.  Double click the **debug** node to edit it.
 7.  Click the gray part of the **Output** value, select **complete msg object** and click **Done**:
     
     ![Output complete msg object](node-red-debug-edit.png)
     
-8.  Click **Deploy** to see the next message in full, e.g.:
+8.  Click **Deploy** to see the next message in full, including the `devId`:
 
     ```json
     {
-      "dev_id": "my-uno",
-      "app_id": "hello-world",
-      "port": 1,
-      "counter": 19,
-      "payload_raw": "AQ==",
-      "payload_fields": {
-        "led": true
-      },
-      "metadata": {
-        "time": "2016-09-08T13:52:35.929159899Z",
-        "frequency": 867.3,
-        "modulation": "LORA",
-        "data_rate": "SF7BW125",
-        "coding_rate": "4/5",
-        "gateways": [{
-          "eui": "B827EBFFFE87BD22",
-          "timestamp": 792136819,
-          "time": "2016-09-08T13:52:35.912385Z",
-          "channel": 4,
-          "rssi": -55,
-          "snr": 10.2
-        }]
-      },
-      "payload": "[circular]",
-      "_msgid": "f4fb1670.0b04e8"
+    	"devId": "my-uno",
+    	"payload": {
+    		"port": 1,
+    		"counter": 31,
+    		"payload_raw": {
+    			"type": "Buffer",
+    			"data": [0]
+    		},
+    		"payload_fields": {
+    			"led": false
+    		},
+    		"metadata": {
+    			"time": "2016-09-27T12:35:46.8640105Z",
+    			"frequency": 867.1,
+    			"modulation": "LORA",
+    			"data_rate": "SF7BW125",
+    			"coding_rate": "4/5",
+    			"gateways": [{
+    				"gtw_id": "eui-b827ebfffe87bd22",
+    				"timestamp": 1329587859,
+    				"time": "2016-09-27T12:35:46.842692Z",
+    				"channel": 3,
+    				"rssi": -111,
+    				"snr": 6.2
+    			}]
+    		}
+    	},
+    	"_msgid": "426db946.bd9248"
     }
     ```
 
@@ -98,30 +127,28 @@ Device activations are sent from the lower node output.
 
     ```json
     {
-      "dev_id": "my-uno",
-      "app_id": "hello-world",
-      "app_eui": "70B3D57EF000001C",
-      "dev_eui": "0004A30B001B7AD2",
-      "dev_addr": "26012084",
-      "metadata": {
-        "time": "2016-09-08T14:04:52.755064047Z",
-        "frequency": 868.5,
-        "modulation": "LORA",
-        "data_rate": "SF7BW125",
-        "coding_rate": "4/5",
-        "gateways": [{
-          "eui": "B827EBFFFE87BD22",
-          "timestamp": 1528942955,
-          "time": "2016-09-08T14:04:52.716713Z",
-          "channel": 2,
-          "rssi": -57,
-          "snr": 7.5,
-          "rf_chain": 1
-        }]
+      "devId": "my-uno",
+      "payload": {
+        "app_eui": "70B3D57EF000001C",
+        "dev_eui": "0004A30B001B7AD2",
+        "dev_addr": "26012084",
+        "metadata": {
+          "time": "2016-09-08T14:04:52.755064047Z",
+          "frequency": 868.5,
+          "modulation": "LORA",
+          "data_rate": "SF7BW125",
+          "coding_rate": "4/5",
+          "gateways": [{
+            "eui": "B827EBFFFE87BD22",
+            "timestamp": 1528942955,
+            "time": "2016-09-08T14:04:52.716713Z",
+            "channel": 2,
+            "rssi": -57,
+            "snr": 7.5,
+            "rf_chain": 1
+          }]
+        }
       },
-      "payload": "my-uno",
       "_msgid": "10d6a2ba.ef295d"
     }
     ```
-  
-    Ask you can see the default `msg.payload` field is mapped to `msg.dev_id` which gives you the ID of the activated device.
