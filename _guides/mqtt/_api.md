@@ -150,7 +150,7 @@ To send a message to a specific device registered to the application, publish to
 Or, in this case maybe more clear:
 
 ```
-<AppEUI>/devices/<DeciceEUI>/down
+<AppEUI>/devices/<DeviceEUI>/down
 ```
 
 ### Message format
