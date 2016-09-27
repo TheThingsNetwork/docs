@@ -272,6 +272,8 @@ Let's see the messages come in.
 
     ```js
     function Decoder(bytes) {
+      // Decode an uplink message from a buffer
+      // (array) of bytes to an object of fields.
       var decoded = {};
     
       decoded.led = bytes[0];
@@ -290,12 +292,16 @@ Let's see the messages come in.
 5.  Now select **converter** and copy-paste the following code:
 
     ```js
-    function Convertor(decoded) {
-      var converted = {};
+    function Converter(decoded) {
+      // Merge, split or otherwise
+      // mutate decoded fields.
+      var converted = decoded;
     
-      if (decoded.led === 0) {
+      if (converted.led === 0) {
         converted.led = false;
-      } else if (decoded.led === 1) {
+      }
+    
+      if (converted.led === 1) {
         converted.led = true;
       }
     
@@ -314,8 +320,10 @@ Let's see the messages come in.
 
     ```js
     function Validator(converted) {
+      // Return false if the decoded, converted
+      // message is invalid and should be dropped.
     
-      if (typeof converted.led !== 'boolean') {
+      if (converted.led !== true && converted.led !== false) {
         return false;
       }
     
@@ -411,16 +419,17 @@ What would be cooler than turning a LED on by sending `00`? Sending `{ "led": tr
 2.  Select **encoder** and use the following code:
 
     ```js
-    function Encoder(obj) {
+    function Encoder(object) {
+      // Encode downlink messages sent as
+      // object to an array or buffer of bytes.
       var bytes = [];
     
-      if (typeof obj.led == 'boolean') {
-        bytes[0] = obj.led ? 1 : 0;
-      }
+      bytes[0] = object.led ? 1 : 0;
     
       return bytes;
     }
     ```
+
 4.  Use the input field and **Test** button to see how various [JSON encoded](http://www.json.org) payloads will be encoded as displayed in hex-formatted, space-separated bytes:
 
     * `{ "led": false }` becomes `00`
