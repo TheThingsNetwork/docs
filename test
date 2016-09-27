@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-set -e # halt script on error
-        
-npm run spelling
-bundle exec jekyll build -d ./_test/docs
-bundle exec htmlproofer ./_test

@@ -20,7 +20,7 @@ collections:
   guides:
     output: true
     permalink: /:path/
-  archives:
+  versions:
     output: true
     permalink: /:path/
 markdown: kramdown
