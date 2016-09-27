@@ -54,7 +54,7 @@ If you haven't done so already, follow [Setup](#setup) and [Usage / Configure](#
     ```javascript
     return {
         payload: {
-            value1: msg.payload.payload_fields.led ? 'on' : 'off'
+            value1: msg.payload.led ? 'on' : 'off'
         }
     };
     ```

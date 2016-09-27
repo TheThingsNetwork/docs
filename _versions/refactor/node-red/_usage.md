@@ -49,30 +49,7 @@ Messages sent by devices on the application can be received via the upper output
 
     ```json
     {
-    	"port": 1,
-    	"counter": 8,
-    	"payload_raw": {
-    		"type": "Buffer",
-    		"data": [0]
-    	},
-    	"payload_fields": {
-    		"led": false
-    	},
-    	"metadata": {
-    		"time": "2016-09-27T12:31:08.240406665Z",
-    		"frequency": 867.9,
-    		"modulation": "LORA",
-    		"data_rate": "SF7BW125",
-    		"coding_rate": "4/5",
-    		"gateways": [{
-    			"gtw_id": "eui-b827ebfffe87bd22",
-    			"timestamp": 1050972876,
-    			"time": "2016-09-27T12:31:08.22156Z",
-    			"channel": 7,
-    			"rssi": -105,
-    			"snr": 7.5
-    		}]
-    	}
+    	"led": false
     }
     ```
     
@@ -83,38 +60,39 @@ Messages sent by devices on the application can be received via the upper output
     
     ![Output complete msg object](node-red-debug-edit.png)
     
-8.  Click **Deploy** to see the next message in full, including the `devId`:
+8.  Click **Deploy** to see the next message in full, including `devId`:
 
     ```json
     {
-    	"devId": "my-uno",
-    	"payload": {
-    		"port": 1,
-    		"counter": 31,
-    		"payload_raw": {
-    			"type": "Buffer",
-    			"data": [0]
-    		},
-    		"payload_fields": {
-    			"led": false
-    		},
-    		"metadata": {
-    			"time": "2016-09-27T12:35:46.8640105Z",
-    			"frequency": 867.1,
-    			"modulation": "LORA",
-    			"data_rate": "SF7BW125",
-    			"coding_rate": "4/5",
-    			"gateways": [{
-    				"gtw_id": "eui-b827ebfffe87bd22",
-    				"timestamp": 1329587859,
-    				"time": "2016-09-27T12:35:46.842692Z",
-    				"channel": 3,
-    				"rssi": -111,
-    				"snr": 6.2
-    			}]
-    		}
-    	},
-    	"_msgid": "426db946.bd9248"
+      "port": 1,
+      "counter": 31,
+      "payload_raw": {
+        "type": "Buffer",
+        "data": [0]
+      },
+      "payload_fields": {
+        "led": false
+      },
+      "metadata": {
+        "time": "2016-09-27T12:35:46.8640105Z",
+        "frequency": 867.1,
+        "modulation": "LORA",
+        "data_rate": "SF7BW125",
+        "coding_rate": "4/5",
+        "gateways": [{
+          "gtw_id": "eui-b827ebfffe87bd22",
+          "timestamp": 1329587859,
+          "time": "2016-09-27T12:35:46.842692Z",
+          "channel": 3,
+          "rssi": -111,
+          "snr": 6.2
+        }]
+      },
+      "devId": "my-uno",
+      "payload": {
+        "led": false
+      },
+      "_msgid": "426db946.bd9248"
     }
     ```
 
@@ -127,28 +105,27 @@ Device activations are sent from the lower node output.
 
     ```json
     {
-      "devId": "my-uno",
-      "payload": {
-        "app_eui": "70B3D57EF000001C",
-        "dev_eui": "0004A30B001B7AD2",
-        "dev_addr": "26012084",
-        "metadata": {
-          "time": "2016-09-08T14:04:52.755064047Z",
-          "frequency": 868.5,
-          "modulation": "LORA",
-          "data_rate": "SF7BW125",
-          "coding_rate": "4/5",
-          "gateways": [{
-            "eui": "B827EBFFFE87BD22",
-            "timestamp": 1528942955,
-            "time": "2016-09-08T14:04:52.716713Z",
-            "channel": 2,
-            "rssi": -57,
-            "snr": 7.5,
-            "rf_chain": 1
-          }]
-        }
+      "app_eui": "70B3D57EF000001C",
+      "dev_eui": "0004A30B001B7AD2",
+      "dev_addr": "26012084",
+      "metadata": {
+        "time": "2016-09-08T14:04:52.755064047Z",
+        "frequency": 868.5,
+        "modulation": "LORA",
+        "data_rate": "SF7BW125",
+        "coding_rate": "4/5",
+        "gateways": [{
+          "eui": "B827EBFFFE87BD22",
+          "timestamp": 1528942955,
+          "time": "2016-09-08T14:04:52.716713Z",
+          "channel": 2,
+          "rssi": -57,
+          "snr": 7.5,
+          "rf_chain": 1
+        }]
       },
+      "devId": "my-uno",
+      "payload": "my-uno",
       "_msgid": "10d6a2ba.ef295d"
     }
     ```
