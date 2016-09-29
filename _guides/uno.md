@@ -1,5 +1,4 @@
 ---
-layout: guide
 title: The Things Uno
 zindex: 999
 sections:

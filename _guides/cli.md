@@ -1,5 +1,4 @@
 ---
-layout: guide
 title: The Things Network CLI
 zindex: 798
 sections:

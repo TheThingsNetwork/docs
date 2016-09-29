@@ -49,7 +49,7 @@ Messages sent by devices on the application can be received via the upper output
 
     ```json
     {
-    	"led": false
+      "led": false
     }
     ```
     

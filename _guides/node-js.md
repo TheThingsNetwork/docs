@@ -1,5 +1,4 @@
 ---
-layout: guide
 title: Node.js
 sections:
  - node-js/_quick-start.md

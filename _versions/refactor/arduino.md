@@ -1,5 +1,4 @@
 ---
-layout: guide
 title: Arduino
 zindex: 998
 sections:

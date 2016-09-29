@@ -1,5 +1,4 @@
 ---
-layout: guide
 title: The Things Network Dashboard
 zindex: 799
 sections:

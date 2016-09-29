@@ -1,5 +1,4 @@
 ---
-layout: guide
 title: Node-RED
 sections:
  - node-red/_setup.md

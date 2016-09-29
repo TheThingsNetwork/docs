@@ -1,5 +1,4 @@
 ---
-layout: guide
 title: MQTT
 sections:
  - mqtt/_clients.md
