@@ -61,7 +61,7 @@ Let's program your device with a so-called sketch.
     #define loraSerial Serial1
     #define debugSerial Serial
     
-    TheThingsNetwork ttn;
+    TheThingsNetwork ttn(loraSerial, debugSerial, /* TTN_FP_EU868 or TTN_FP_US915 */);
     
     void setup() {
       loraSerial.begin(57600);
@@ -70,23 +70,22 @@ Let's program your device with a so-called sketch.
       // Wait a maximum of 10s for Serial Monitor
       while (!debugSerial && millis() < 10000);
     
-      ttn.init(loraSerial, debugSerial);
-    
       debugSerial.println("-- STATUS");
       ttn.showStatus();
     }
     ```
     
+    > Replace `/* TTN_FP_EU868 or TTN_FP_US915 */` with either `TTN_FP_EU868` or `TTN_FP_US915` depending on your region.
+    
     This will do a few things:
     
     1.  Use [`#define`](https://www.arduino.cc/en/Reference/Define) to create more meaningful aliases for the [`Serial`](https://www.arduino.cc/en/Reference/Serial) ports that connect the LoRa modem and USB.
-    2.  Create an instance of TheThingsNetwork library, called `ttn`.
+    2.  Create an instance `ttn` of TheThingsNetwork class, passing the serial ports of the LoRa module and USB connection.
     3.  Call [`begin()`](https://www.arduino.cc/en/Serial/Begin) to set the data rate for both serial ports.
     4.  Wait for the Arduino IDE's Serial Monitor to open communication via USB, but no longer than 10 seconds (10.000ms).
 
         > This trick works because [`if(Serial)` will return `true`](https://www.arduino.cc/en/Serial/IfSerial) when communication is open and [`millis()`](https://www.arduino.cc/en/Reference/Millis) will give us the time since `setup()` was called.
         
-    5.  Call `ttn.init()` to pass the serial ports it needs.
     6.  Use [`println()`](https://www.arduino.cc/en/Serial/Println) to log to the Serial Monitor and call `ttn.showStatus()` to do the same, which will give us the information we need for our next step.
 
 ## Get your Device EUI
@@ -356,7 +355,7 @@ Now let's send a message to your device in return.
 
 We'll prepare your device to receive a message in response.
 
-1.  In the Arduino IDE, add the following line just after `ttn.init()` in the `setup()` function to let it know what function to call when a message comes in:
+1.  In the Arduino IDE, add the following line to `setup()` function to let it know what function to call when a message comes in:
 
     ```c
     // Set callback for incoming messages

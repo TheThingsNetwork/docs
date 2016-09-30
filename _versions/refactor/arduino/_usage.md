@@ -14,7 +14,7 @@ To use the library:
 	#include <TheThingsNetwork.h>
 	```
 
-## Initialise
+## Initialize
 
 A typical sketch has the following structure:
 
@@ -27,13 +27,11 @@ A typical sketch has the following structure:
 #define loraSerial Serial1
 #define debugSerial Serial
 
-TheThingsNetwork ttn;
+TheThingsNetwork ttn(loraSerial, debugSerial, /* TTN_FP_EU868 or TTN_FP_US915 */);
 
 void setup() {
   loraSerial.begin(57600);
   debugSerial.begin(9600);
-
-  ttn.init(loraSerial, debugSerial);
 
   // OTAA or ABP activation
   // ..
@@ -46,11 +44,11 @@ void loop() {
 }
 ```
 
-The actual streams you'd pass to `ttn.init()` depend on the board you use and the Serial Port you connected a LoRaWAN module to. For The Things Uno and Node use the Serial Ports and baud rates shown here.
+The actual streams you'd pass to the constructor depend on the board you use and the Serial Port you connected a LoRaWAN module to. For The Things Uno and Node use the Serial Ports and baud rates shown here. The third argument for the constructor is a constant to set the frequency plan your device operators on.
 
 ## Activate
 
-In the [`setup()`](https://www.arduino.cc/en/Reference/setup) function, after initialising the library, we have to activate the device.
+In the [`setup()`](https://www.arduino.cc/en/Reference/setup) function, after initializing the library, we have to activate the device.
 
 There are two ways to activate your device. By default your device is registered to use OTAA. You can personalise a device to use ABP.
 
@@ -68,7 +66,7 @@ For OTAA you will use the `join()` method with the **App EUI** and **App Key** c
     * For `appEui` use the **Application EUI** found on the device's page on the dashboard. Click `<>` to toggle to the **msb** format and then `📋` to copy.
     * For `appKey` use the **App Key** found on the device page. Click `<>` to toggle to the **msb** format. You'll have to click `👁` to show the key before you can copy it.
 
-2.  In your `setup()` function, right after `ttn.init()` call `ttn.join()` with the constants you just created:
+2.  In your `setup()` function, call `ttn.join()` with the constants you just created:
 
     ```c
     ttn.join(appEui, appKey);
@@ -92,7 +90,7 @@ For ABP you will use the `personalize()` method with the device's **Dev EUI**, *
     * For `nwkSKey ` use the **Network Session Key**. Click `<>` to toggle to the **msb** format. You'll have to click `👁` to show the key before you can copy it.
     * For `appSKey` use **App Session Key**.
 
-2.  In your `setup()` function, right after you have called `ttn.init()` and `ttn.reset()` call `ttn.personalize()` with the constants you just created:
+2.  In your `setup()` function, call `ttn.personalize()` with the constants you just created:
 
     ```c
     ttn.personalize(devAddr, nwkSKey, appSKey);
