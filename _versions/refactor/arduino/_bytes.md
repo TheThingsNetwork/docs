@@ -128,8 +128,8 @@ payload[1] = lowByte(myVal);
 Decode (payload functions):
 
 ```js
-decoded.myVal = bytes[0] << 8
-              + bytes[1];
+decoded.myVal = (bytes[0] << 8)
+               + bytes[1];
 ```
 
 > Wondering what the `<<` is about? This [Left shifts](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Left_shift) the 8 bits of the first byte 8 positions to the left. Confused? Think about how we could encode the number 11 as two 1's and decode by shifting the first 1 up one position (making it 10) before adding the other. We'll talk more about bit shifting next.
@@ -148,8 +148,8 @@ bytes[1] = (myVal & 0x00FF);
 Decode (Arduino):
 
 ```c
-int myVal = payload[0] << 8
-          + payload[1];
+int myVal = (payload[0] << 8)
+           + payload[1];
 ```
 
 ### 4. Shift bits
@@ -172,10 +172,10 @@ bytes[3] = (int) ((lng & 0X000000FF)       );
 Decode (payload functions):
 
 ```js
-decoded.myVal = bytes[0] << 24
-              + bytes[1] << 16
-              + bytes[2] << 8
-              + bytes[3];
+decoded.myVal = (bytes[0] << 24)
+              + (bytes[1] << 16)
+              + (bytes[2] << 8)
+              + (bytes[3]);
 ```
 
 ## How to send negative numbers?
