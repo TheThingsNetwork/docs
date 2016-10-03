@@ -194,6 +194,12 @@ Are you sure you want to unregister application test?
   INFO Unregistered application                 AppID=test
 ```
 
+## ttnctl config
+
+ttnctl config gets the config of ttnctl
+
+**Usage:** `ttnctl config`
+
 ## ttnctl devices
 
 ttnctl devices can be used to manage devices.
@@ -346,6 +352,18 @@ $ ttnctl devices set test --fcnt-up 0 --fcnt-down 0
   INFO Updated device                           AppID=test DevID=test
 ```
 
+## ttnctl discover
+
+ttnctl discover is used to discover all network components
+
+**Usage:** `ttnctl discover`
+
+### ttnctl discover prefixes
+
+ttnctl discover prefixes is used to discover all prefixes announced by brokers
+
+**Usage:** `ttnctl discover prefixes`
+
 ## ttnctl downlink
 
 ttnctl downlink can be used to send a downlink message to a device.
@@ -459,6 +477,12 @@ $ ttnctl gateways status test
                   Tx: (in: 0; ok: 0)
 ```
 
+## ttnctl selfupdate
+
+ttnctl selfupdate updates the current ttnctl to the latest version
+
+**Usage:** `ttnctl selfupdate`
+
 ## ttnctl subscribe
 
 ttnctl subscribe can be used to subscribe to events for this application.
@@ -526,3 +550,4 @@ Password: <entering password>
 ttnctl version gets the build and version information of ttnctl
 
 **Usage:** `ttnctl version`
+
