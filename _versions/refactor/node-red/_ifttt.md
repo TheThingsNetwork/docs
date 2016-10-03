@@ -1,5 +1,5 @@
-# Quick Start
-In this Quick Start we will use Node-RED to forward up to 3 message fields from our device to IFTTT's [Maker Channel](https://ifttt.com/maker). Once there, we can trigger tons of services. In this example we'll use it to send us an email.
+# IFTTT
+In this guide we will use Node-RED to forward up to 3 message fields from our device to IFTTT's [Maker Channel](https://ifttt.com/maker). Once there, we can trigger tons of services. In this example we'll use it to send us an email.
 
 > This guide assumes the sketch and payload functions of [The Things Uno / Quick Start](/uno/#quick-start), but can be easily applied to any other.
 

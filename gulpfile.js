@@ -8,6 +8,9 @@ gulp.task('pull', function() {
       url: 'https://raw.githubusercontent.com/TheThingsNetwork/node-app-lib/master/API.md',
       file: '_versions/refactor/node-js/_api.md'
     }, {
+      url: 'https://raw.githubusercontent.com/TheThingsNetwork/nodered-app-lib/refactor/API.md',
+      file: '_versions/refactor/node-red/_api.md'
+    }, {
       url: 'https://raw.githubusercontent.com/TheThingsNetwork/arduino-device-lib/master/API.md',
       file: '_versions/refactor/arduino/_api.md'
     }, {

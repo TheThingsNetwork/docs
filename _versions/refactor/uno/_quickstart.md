@@ -75,7 +75,7 @@ Let's program your device with a so-called sketch.
     }
     ```
     
-    > Replace `/* TTN_FP_EU868 or TTN_FP_US915 */` with either `TTN_FP_EU868` or `TTN_FP_US915` depending on your region.
+    > Replace `/* TTN_FP_EU868 or TTN_FP_US915 */` with either `TTN_FP_EU868` or `TTN_FP_US915` depending on the frequency plan of your device.
     
     This will do a few things:
     

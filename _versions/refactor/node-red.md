@@ -1,9 +1,9 @@
 ---
 title: Node-RED
 sections:
- - node-red/_setup.md
- - node-red/_usage.md
- - node-red/_quickstart.md
+ - node-red/_quick-start.md
+ - node-red/_ifttt.md
+ - node-red/_api.md
 ---
 
 [Node-RED](http://nodered.org/) is a free, JavaScript-based server and web GUI for wiring together hardware devices, APIs and online services. You can find a lot of example flows and additional nodes in the [Node-RED Library](http://flows.nodered.org/).

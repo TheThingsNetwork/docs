@@ -21,7 +21,7 @@ $(function() {
      */
 
     var anchors = new AnchorJS();
-    anchors.add('.js-toc-content h1, .js-toc-content h2');
+    anchors.add('.js-toc-content h1, .js-toc-content h2, .js-toc-content h3, .js-toc-content h4');
 
     /**
      * TocBot Sidebar
