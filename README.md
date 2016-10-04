@@ -52,7 +52,7 @@ Because we let GitHub Pages do the Jekyll builds the website will be updated aut
 	
 ### Guidance
 
-* Require and use any JS libraries you need in [_app/main.js](_app/main.js).
+* Require and use any JS libraries you need in [assets/js/_main.js](assets/js/_main.js).
 * Import any Sass files you need in [assets/css/main.scss](assets/css/main.scss).
 * Override Bootstrap variables in [_sass/_variables.scss](_sass/_variables.scss).
 * Edit styles in [_sass/_base.scss](_sass/_base.scss) or break out to additional Sass files to keep it organized.
