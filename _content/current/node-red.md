@@ -5,6 +5,8 @@ sections:
  - node-red/_configure.md
  - node-red/_test.md
  - node-red/_build.md
+redirect_from:
+ - /node-red/
 ---
 
 [Node-RED](http://nodered.org/) is a free, JavaScript-based server and web GUI for wiring together hardware devices, APIs and online services.

@@ -17,26 +17,18 @@ repository: TheThingsNetwork/docs
 
 # Build settings
 collections:
-  guides:
-    output: true
-    permalink: /:path/
-  versions:
+  content:
     output: true
     permalink: /:path/
 defaults:
   - scope:
       path: ""
-      type: guides
-    values:
-      layout: guide
-  - scope:
-      path: ""
-      type: versions
+      type: content
     values:
       layout: guide
 markdown: kramdown
 # Exclude vendor which Travis will add
-exclude: [ node_modules, vendor, Gemfile, Gemfile.lock, gulpfile.js, package.json, README.md, test, webpack.config.js ]
+exclude: [ node_modules, vendor, Gemfile, Gemfile.lock, gulpfile.js, "npm-debug.*", package.json, README.md, test, webpack.config.js ]
 gems:
   - jekyll-sitemap
   - jemoji

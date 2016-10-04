@@ -7,6 +7,8 @@ sections:
  - arduino/_api.md
  - arduino/_examples.md
  - arduino/_resources.md
+redirect_from:
+ - /arduino/
 ---
 
 [Arduino](https://www.arduino.cc/en/Guide/Introduction) is an open-source electronics platform based on easy-to-use hardware and software. It's intended for anyone making interactive projects.

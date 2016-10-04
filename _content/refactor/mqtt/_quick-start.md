@@ -62,7 +62,7 @@ hello-world/devices/my-uno/up/led true
 ```
 
 ## Send Messages (down)
-To send a message you will have to address a specific device by its **Device ID**. Let's send the same message used in the [The Things Uno / Quick Start](/uno/#receive-message-downlink):
+To send a message you will have to address a specific device by its **Device ID**. Let's send the same message used in the [The Things Uno / Quick Start](/uno/#message-your-device):
 
 ```bash
 {

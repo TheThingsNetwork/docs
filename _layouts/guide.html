@@ -2,35 +2,54 @@
 layout: default
 ---
 
-{% if page.collection == 'versions' %}
-  {% capture version %}{{ page.url | split: '/' | slice: 1 }}{% endcapture %}
-  {% capture current %}{{ page.url | split: '/' | slice: 2,10 | join: '/' | prepend: '/' | append: '/' }}{% endcapture %}
-{% else %}
-  {% assign current = page.url %}
-{% endif %}
+{% capture version %}{{ page.url | split: '/' | slice: 1 }}{% endcapture %}
+{% capture path %}{{ page.url | split: '/' | slice: 2, 10 | join: '/' }}{% endcapture %}
+{% assign guides = '' | split: '|' %}
+{% assign guide_versions = '' | split: '|' %}
+{% assign versions = '' | split: '|' %}
 
-{% for version in site.versions %}
-  {% capture version_of %}{{ version.url | split: '/' | slice: 2,10 | join: '/' | prepend: '/' | append: '/' }}{% endcapture %}
-  {% if version_of == current %}
-    {% unless achives %}{% assign versions = '' | split: '|' %}{% endunless %}
-    {% assign versions = versions | push: version %}
+{% for guide in site.content %}
+  {% capture guide_version %}{{ guide.url | split: '/' | slice: 1 }}{% endcapture %}
+  {% capture guide_path %}{{ guide.url | split: '/' | slice: 2, 10 | join: '/' }}{% endcapture %}
+  {% if guide_version == version %}
+    {% assign guides = guides | push: guide %}
   {% endif %}
+  {% if guide_path == path %}
+    {% assign guide_versions = guide_versions | push: guide %}
+  {% endif %}
+  {% unless versions contains guide_version %}
+    {% assign versions = versions | push: guide_version %}
+  {% endunless %}
 {% endfor %}
+
+<!--
+
+1. [X] Versie huidige guide bepalen (eerste deel pad)
+2. [X] Door content lopen en pagina's met die versie in array stoppen
+3. [X] ... en alle versies verzamelen
+4. [ ] ... en checken welke versies er van deze guide bestaan
+
+-->
 
 <div class="layout-guide container">
 
-  <div class="row">
+  <div class="row guide-nav">
     <div class="col-sm-9">
-      <ol class="breadcrumb">
-        <li><a href="{{ site.baseurl }}/">Docs</a></li>
-        <li class="active">{{page.title}}</li>
-      </ol>
-    </div>
-    {% unless version %}
-      <div class="col-sm-3 text-right">
-        <a class="btn btn-default hidden-xs" href="{{ site.github.repository_url }}/edit/master/{{ page.path | downcase }}" target="_blank"><i class="fa fa-pencil"></i> Improve this guide</a>
+      <div class="dropdown">
+        <button class="btn btn-primary" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Guide: {{ page.title }} <span class="caret"></span></button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          {% assign sorted = guides | sort:"zindex" | reverse %}
+          {% for guide in sorted %}
+            {% unless guide.hidden %}
+              <li{% if guide.path == page.path %} class="active"{% endif %}><a href="{{ site.baseurl }}{{ guide.url}}">{{ guide.title }}</a></li>
+            {% endunless %}
+          {% endfor %}
+        </ul>
       </div>
-    {% endunless %}
+    </div>
+    <div class="col-sm-3 text-right">
+      <a class="btn btn-default hidden-xs" href="{{ site.github.repository_url }}/edit/master/{{ page.path | downcase }}" target="_blank"><i class="fa fa-pencil"></i> Improve this guide</a>
+    </div>
   </div>
 
   <div class="row">
@@ -38,20 +57,6 @@ layout: default
     <div class="col-md-3" role="complementary">
 
       <div class="guide-sidebar">
-        
-        <div class="dropdown">
-          <button class="btn btn-primary btn-block" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Guides <span class="caret"></span></button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            {% assign sorted = site.guides | sort:"zindex" | reverse %}
-            {% for guide in sorted %}
-              {% unless guide.hidden %}
-                <li{% if guide.path == page.path %} class="active"{% endif %}><a href="{{ site.baseurl }}{{ guide.url}}">{{ guide.title }}</a></li>
-              {% endunless %}
-            {% endfor %}
-          </ul>
-        </div>
-
-        <hr />
 
         <div class="js-toc hidden-xs hidden-sm"></div>
 
@@ -61,23 +66,23 @@ layout: default
 
     <div class="col-md-9 js-toc-content content-body" role="main">
 
-      {% if version %}
+      {% if version != 'current' %}
         <div class="alert alert-warning"><strong>Attention:</strong> You are reading the <em>{{ version }}</em> version of this guide.</div>
       {% endif %}
 
-      {% assign replace_a_with = '<a href="' | append: site.baseurl | append: '/' %}
-      {% assign replace_img_with = '<img src="' | append: site.baseurl | append: '/' %}
+      {% assign replace_a_with = '<a href="' | append: site.baseurl | append: '/' | append: version | append: '/' %}
+      {% assign replace_img_with = '<img src="' | append: site.baseurl | append: '/' | append: version | append: '/' %}
 
       <section class="panel">
         <div class="panel-body">
-          {% if version %} <span class="label label-success pull-right">{{ version | upcase }}</span>{% endif %}
+          {% if version != 'current' %} <span class="label label-success pull-right">{{ version | upcase }}</span>{% endif %}
           <h1 id="top">{{page.title}}</h1>
           {{ content | replace: '<a href="/', replace_a_with | replace: '<img src="/', replace_img_with | replace: '<table>', '<table class="table">' }}
         </div>
-        {% if versions %}
+        {% if guide_versions %}
           <div class="panel-footer">
-            Versions:&nbsp;&nbsp;&nbsp; <a href="{{ site.baseurl | append: current }}" class="label label-{% if page.url == current %}success{% else %}default{% endif %}">CURRENT</a> {% for version in versions %}
-              <a href="{{ site.baseurl | append: version.url }}" class="label label-{% if page.url == version.url %}success{% else %}default{% endif %}">{{ version.url | split: '/' | slice: 1 | first | upcase }}</a>
+            Versions:&nbsp;&nbsp;&nbsp; {% for guide in guide_versions %}
+              <a href="{{ site.baseurl | append: guide.url }}" class="label label-{% if page.url == guide.url %}success{% else %}default{% endif %}">{{ guide.url | split: '/' | slice: 1 | first | upcase }}</a>
             {% endfor %}
           </div>
         {% endif %}

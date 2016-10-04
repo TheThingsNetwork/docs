@@ -4,6 +4,8 @@ sections:
  - node-js/_quick-start.md
  - node-js/_live.md
  - node-js/_api.md
+redirect_from:
+ - /node-js/
 ---
 
 [Node.js](https://nodejs.org/) is a JavaScript runtime built on Chrome's V8 JavaScript engine.

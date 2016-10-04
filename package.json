@@ -15,7 +15,7 @@
     "dev-webpack": "webpack --watch",
     "spelling": "mdspell --en-us -rna _guides/**/*.md _versions/**/*.md",
     "dev-spelling": "mdspell --en-us -na _guides/**/*.md _versions/**/*.md",
-    "htmlproof": "rm -rf _test && bundle exec jekyll build -d ./_test/docs && bundle exec htmlproofer --url-swap 'http(s)?\\://www\\.thethingsnetwork\\.org/docs:/docs' ./_test",
+    "htmlproof": "rm -rf _test && bundle exec jekyll build -d ./_test/docs && bundle exec htmlproofer  --url-ignore '/github.com\\/TheThingsNetwork\\/docs\\/edit/' --url-swap 'http(s)?\\://www\\.thethingsnetwork\\.org/docs:/docs' ./_test",
     "add": "git add ."
   },
   "pre-commit": [

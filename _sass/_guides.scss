@@ -1,12 +1,8 @@
 .layout-guide {
   padding-top: 35px;
 
-  .breadcrumb {
-    min-width: 213px;
-  }
-
-  .dropdown .btn {
-    text-align: left;
+  .guide-nav {
+    margin-bottom: 35px;
   }
 
   .panel {
@@ -58,7 +54,6 @@
 
   /* First level of nav */
   .js-toc > .nav {
-    margin-top: 20px;
     margin-bottom: 20px;
   }
 

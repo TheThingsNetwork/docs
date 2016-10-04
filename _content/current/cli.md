@@ -5,6 +5,8 @@ sections:
  - cli/_quickstart.md
  - cli/_configuration.md
  - cli/_api.md
+redirect_from:
+ - /cli/
 ---
 Your Applications and Devices can be managed via [The Things Network Dashboard](/dashboard/), but you can also use the CLI, if you're into that kind of thing. 😎
 
