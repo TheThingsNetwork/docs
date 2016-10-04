@@ -1,5 +1,5 @@
 require('tocbot');
-require('ttn-stylebook/dist/js/bootstrap');
+require('stylebook/dist/js/bootstrap');
 
 var AnchorJS = require('anchor-js');
 

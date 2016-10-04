@@ -6,22 +6,16 @@
   "main": "js/main.js",
   "scripts": {
     "start": "npm run prod",
-
     "dev": "npm run dev-webpack & npm run dev-jekyll",
     "prod": "npm run webpack & npm run jekyll",
     "test": "npm run spelling && npm run htmlproof",
-
     "jekyll": "bundle exec jekyll serve",
     "dev-jekyll": "bundle exec jekyll serve --incremental",
-
     "webpack": "webpack -p",
     "dev-webpack": "webpack --watch",
-    
     "spelling": "mdspell --en-us -rna _guides/**/*.md _versions/**/*.md",
     "dev-spelling": "mdspell --en-us -na _guides/**/*.md _versions/**/*.md",
-
     "htmlproof": "rm -rf _test && bundle exec jekyll build -d ./_test/docs && bundle exec htmlproofer --url-swap 'http(s)?\\://www\\.thethingsnetwork\\.org/docs:/docs' ./_test",
-
     "add": "git add ."
   },
   "pre-commit": [
@@ -55,5 +49,8 @@
     "tocbot": "^2.1.5",
     "ttn-stylebook": "github:thethingsnetwork/stylebook",
     "webpack": "^1.13.1"
+  },
+  "dependencies": {
+    "stylebook": "thethingsnetwork/stylebook"
   }
 }

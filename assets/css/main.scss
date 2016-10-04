@@ -8,11 +8,11 @@ $baseurl: {{ site.baseurl }};
 // Fonts
 @import 'https://fonts.googleapis.com/css?family=Lato';
 
-@import '../node_modules/ttn-stylebook/dist/scss/ttn/variables';
+@import '../node_modules/stylebook/dist/scss/ttn/variables';
 
 @import 'variables';
 
-@import '../node_modules/ttn-stylebook/dist/scss/ttn/bootstrap';
+@import '../node_modules/stylebook/dist/scss/ttn/bootstrap';
 
 // Include overrides for bootstrap styles
 @import 'bootstrap';

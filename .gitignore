@@ -12,7 +12,7 @@ npm-debug.log*
 
 # Do include Sass since GitHub Pages needs it to build the Jekyll site
 !/node_modules/font-awesome
-!/node_modules/ttn-stylebook
+!/node_modules/stylebook
 
 # Cache
 .npm
