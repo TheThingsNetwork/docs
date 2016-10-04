@@ -210,6 +210,7 @@ ttnctl devices can be used to manage devices.
       --app-eui string   The app EUI to use
       --app-id string    The app ID to use
 ```
+
 ### ttnctl devices delete
 
 ttnctl devices delete can be used to delete a device.
