@@ -4,9 +4,9 @@ This guide will walk you through migrating applications and devices from [stagin
 
 > The migration does not require any changes to devices that use OTAA (the default). Devices that use ABP will need their sketch to be updated with a new Device Address.
 
-<div class="alert alert-danger"><strong>Warning:</strong> This version of the backend is in preview. The database with registered application and devices might be reset before it goes in production.</div>
+<div class="alert alert-warning"><strong>Warning:</strong> This version of the backend is in preview. The database with registered application and devices might be reset before it goes in production.</div>
 
-<div class="alert alert-danger"><strong>Warning:</strong> Messages will be routed to the new backend automatically once you have migrated a device and will no longer be delivered to staging. You will have to delete a migrated device to use staging again.</div>
+<div class="alert alert-warning"><strong>Warning:</strong> Messages will be routed to the new backend automatically once you have migrated a device and will no longer be delivered to staging. You will have to delete a migrated device to use staging again.</div>
 
 ## Applications
 

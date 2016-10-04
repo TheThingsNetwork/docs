@@ -16,4 +16,4 @@ The Things Network uses MQTT to publish device activations and messages, but als
 * Access to [preview.dashboard.thethingsnetwork.org](https://preview.dashboard.thethingsnetwork.org/).
 * Access to an application with registered device on TTN.
 
-<div class="alert alert-danger"><strong>Warning:</strong> The APIs for these versions of the library and backend might still change and the database (registered application and devices) reset. Do not use in production!</div>
+<div class="alert alert-warning"><strong>Warning:</strong> The APIs for these versions of the library and backend might still change and the database (registered application and devices) reset. Do not use in production!</div>

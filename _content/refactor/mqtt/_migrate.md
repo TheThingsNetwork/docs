@@ -2,7 +2,7 @@
 
 This guide will walk you through migrating connections via MQTT from `staging.thethingsnetwork.org` to `<Region>.thethings.network`.
 
-<div class="alert alert-danger"><strong>Warning:</strong> The APIs for these versions of the library and backend might still change and the database (registered application and devices) reset. Do not use in production!</div>
+<div class="alert alert-warning"><strong>Warning:</strong> The APIs for these versions of the library and backend might still change and the database (registered application and devices) reset. Do not use in production!</div>
 
 ## Region-specific hostname
 

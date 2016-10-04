@@ -17,10 +17,10 @@ With the [Node-RED node for TTN](https://www.npmjs.com/package/node-red-contrib-
 * A Node-RED instance or server/computer to install it on.
 * Version 1.x of the [Node-RED node for TTN](https://www.npmjs.com/package/node-red-contrib-ttn).
 
-	> You can get version 1.x via the refactor tag:
-	> 
-	> ```bash
-	> npm install node-red-contrib-ttn@refactor
-	> ```
+    > You can get version 1.x via the refactor tag:
+    > 
+    > ```bash
+    > npm install node-red-contrib-ttn@refactor
+    > ```
 
-<div class="alert alert-danger"><strong>Warning:</strong> The APIs for these versions of the library and backend might still change and the database (registered application and devices) reset. Do not use in production!</div>
+<div class="alert alert-warning"><strong>Warning:</strong> The APIs for these versions of the library and backend might still change and the database (registered application and devices) reset. Do not use in production!</div>
