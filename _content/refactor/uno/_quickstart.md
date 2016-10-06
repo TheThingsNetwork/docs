@@ -267,7 +267,7 @@ Let's see the messages come in.
     What you see is the raw payload in hex-formatted, space-separated bytes. Let's decode that to meaningful fields.
 
 2.  Select **Payload Functions** from the top right menu.
-3.  Leave **decoder** selected and copy-paste the following JavaScript code:
+3.  Leave **decoder** selected and copy-paste [the following JavaScript code](https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/QuickStart/Decoder.js):
 
     ```js
     function Decoder(bytes) {
@@ -288,7 +288,7 @@ Let's see the messages come in.
     * `FF` becomes `{ "led": 255 }`
     * `01 02 03` becomes `{ "led": 1 }`
 
-5.  Now select **converter** and copy-paste the following code:
+5.  Now select **converter** and copy-paste [the following code](https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/QuickStart/Converter.js):
 
     ```js
     function Converter(decoded) {
@@ -315,7 +315,7 @@ Let's see the messages come in.
     * `FF` becomes `{ }`
     * `01 02 03` becomes `{ "led": true }`
 
-7.  Next, select **validator** and paste:
+7.  Next, select **validator** and paste [this code](https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/QuickStart/Validator.js):
 
     ```js
     function Validator(converted) {
@@ -415,7 +415,7 @@ We'll prepare your device to receive a message in response.
 What would be cooler than turning a LED on by sending `00`? Sending `{ "led": true }` of course! Just like we decode message on arrival on The Things Network we can also encode messages to devices before they will be delivered.
 
 1.  On the dashboard, navigate to the application and select **Payload Functions** from the top right menu.
-2.  Select **encoder** and use the following code:
+2.  Select **encoder** and use [the following code](https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/QuickStart/Encoder.js):
 
     ```js
     function Encoder(object) {
