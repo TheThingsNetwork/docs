@@ -17,15 +17,16 @@
 
     <script>
 
+    var site = {
+      baseurl: '{{ site.baseurl }}',
+      local: (document.location.port || document.location.protocol === 'file:')
+    };
+
     (function(canonical) {
-      if (!document.location.port && document.location.protocol !== 'file:' && document.location.href.substr(0, document.location.href.length - document.location.hash.length) !== canonical) {
+      if (!site.local && document.location.href.substr(0, document.location.href.length - document.location.hash.length) !== canonical) {
         window.location.replace(canonical);
       }
     })('{{ page.url | prepend: site.baseurl | prepend: site.url | replace:"/index.html", "/" }}');
-
-    var site = {
-      baseurl: '{{ site.baseurl }}'
-    };
 
     </script>
 

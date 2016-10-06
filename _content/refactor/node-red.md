@@ -2,7 +2,6 @@
 title: Node-RED
 sections:
  - node-red/_quick-start.md
- - node-red/_ifttt.md
  - node-red/_api.md
 ---
 

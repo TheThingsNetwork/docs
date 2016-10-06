@@ -224,4 +224,6 @@ Use the **ttn send** node to send messages to devices.
 
 7.  Click **Deploy**.
 
-    The next time your device sends a message, a message will be send in response to toggle the LED. You can use the last **debug** node we added to verify the message we use as input for the **ttn send** node.
+    The next time your device sends a message, a message will be send in response to toggle the LED. You can use the last **debug** node we added to verify the message we use as input for the **ttn send** node is correct.
+
+👏 You now know how to receive events and messages in Node-RED as well as how to trigger actions on that, for example by sending a message in response. Now go build something awesome and share it on [labs](https://www.thethingsnetwork.org/labs/)!
