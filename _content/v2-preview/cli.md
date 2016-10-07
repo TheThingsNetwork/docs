@@ -12,4 +12,4 @@ Your Applications and Devices can be managed via [The Things Network Console](/c
 
 ## Prerequisites
 
-* An account on [staging.account.thethingsnetwork.org](https://staging.account.thethingsnetwork.org)
+* An account on [preview.account.thethingsnetwork.org](https://preview.account.thethingsnetwork.org)

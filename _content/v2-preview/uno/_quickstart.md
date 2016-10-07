@@ -119,9 +119,9 @@ To communicate via The Things Network, you need to register your device. For thi
 ## Create an Account
 To register your device you'll need a The Things Network account.
 
-1.  Go to [staging.account.thethingsnetwork.org](https://staging.account.thethingsnetwork.org) and click [create an account](https://staging.account.thethingsnetwork.org/register).
+1.  Go to [preview.account.thethingsnetwork.org](https://preview.account.thethingsnetwork.org) and click [create an account](https://preview.account.thethingsnetwork.org/register).
 
-    > You can change all of this, including e-mail address and username later via your [Profile](https://staging.account.thethingsnetwork.org/users/profile).
+    > You can change all of this, including e-mail address and username later via your [Profile](https://preview.account.thethingsnetwork.org/users/profile).
 
 2.  Check your mailbox to validate your e-mail address.
 3.  Go to [preview.console.thethingsnetwork.org](http://preview.console.thethingsnetwork.org) and log in.
