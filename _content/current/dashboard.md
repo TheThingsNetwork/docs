@@ -7,6 +7,8 @@ sections:
  - dashboard/_register-device.md
 redirect_from:
  - /dashboard/
+aliases:
+ - console
 ---
 Your Applications and Devices can be managed via [The Things Network Dashboard](https://staging.thethingsnetwork.org).
 

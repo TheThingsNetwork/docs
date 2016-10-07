@@ -1,6 +1,6 @@
 # Migration Guide
 
-This guide will walk you through migrating applications and devices from [staging.thethingsnetwork.org](https://staging.thethingsnetwork.org/) to [preview.dashboard.thethingsnetwork.org](https://preview.dashboard.thethingsnetwork.org/).
+This guide will walk you through migrating applications and devices from [staging.thethingsnetwork.org](https://staging.thethingsnetwork.org/) to [preview.console.thethingsnetwork.org](https://preview.console.thethingsnetwork.org/).
 
 > The migration does not require any changes to devices that use OTAA (the default). Devices that use ABP will need their sketch to be updated with a new Device Address.
 
@@ -13,7 +13,7 @@ This guide will walk you through migrating applications and devices from [stagin
 For each application you'd like to migrate:
 
 1.  On [staging](https://staging.thethingsnetwork.org/applications/), click the application you'd like to migrate to see the **Application Info** box.
-2.  In [preview](https://preview.dashboard.thethingsnetwork.org/applications/), go to [add application](https://preview.dashboard.thethingsnetwork.org/applications/add).
+2.  In [preview](https://preview.console.thethingsnetwork.org/applications/), go to [add application](https://preview.console.thethingsnetwork.org/applications/add).
     - For **Application ID**, use anything you like as long as it is unique and only uses low case alphanumeric charachters and nonconsecutive `-` and `_`.
     - For **Application Description**, copy the **Application name** from staging.
 
@@ -24,7 +24,7 @@ For each application you'd like to migrate:
 5.  Click the **add EUI** or **Add one!** link.
     - Copy-paste the **App EUI** from the **Application Info** box on staging.
 
-    ![Customize EUI](dashboard-application-eui.png)
+    ![Customize EUI](console-application-eui.png)
 
 ### Payload Functions
 
@@ -42,7 +42,7 @@ For each device you'd like to migrate:
 
 1.  On [staging](https://staging.thethingsnetwork.org/applications/), click the application you'd like to migrate devices from.
 2.  In the **Devices** box click the **Dev EUI** of the device you'd like to migrate to see its **Device info** box.
-3.  In [preview](https://preview.dashboard.thethingsnetwork.org/applications/), click the [migrated application](#applications) to go to its **Application Overview** page.
+3.  In [preview](https://preview.console.thethingsnetwork.org/applications/), click the [migrated application](#applications) to go to its **Application Overview** page.
 4.  Click **Devices** on the top right.
 5.  Click **register device**.
     - For **Device ID**, use anything you like as long as it is unique and only uses alphanumeric charachters and nonconsecutive `-` and `_`.

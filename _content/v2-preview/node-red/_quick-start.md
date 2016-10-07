@@ -65,7 +65,7 @@ All The Things Network nodes can share the same app configuration.
 
     ![Add new ttn app config node](add-new-ttn-app-config-node.png)
     
-    Copy-paste the following information from your application on your dashboard:
+    Copy-paste the following information from your application in your console:
 
     * For **App ID**, copy **Application ID** from the **Application Overview** box.
     * For **Access Key**, scroll down to the **Access Keys**. For the key you'd like to use, click `👁` to show the key and then `📋` to copy it.
@@ -74,7 +74,7 @@ All The Things Network nodes can share the same app configuration.
 3.  Click **Add** to save the configuration.
 
 ## Receive Events
-[Activations](https://www.thethingsnetwork.org/docs/refactor/mqtt/#device-activations) and other [devices events](https://www.thethingsnetwork.org/docs/refactor/mqtt/#device-events) can be received via the **ttn device** node.
+[Activations](/mqtt/#device-activations) and other [devices events](/mqtt/#device-events) can be received via the **ttn device** node.
 
 1.  Still editing the **ttn device** node, enter `activations` in the **Event** field.
 2.  Click **Add** to create the node.

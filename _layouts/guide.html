@@ -6,7 +6,6 @@ layout: default
 {% capture path %}{{ page.url | split: '/' | slice: 2, 10 | join: '/' }}{% endcapture %}
 {% assign guides = '' | split: '|' %}
 {% assign guide_versions = '' | split: '|' %}
-{% assign versions = '' | split: '|' %}
 
 {% for guide in site.content %}
   {% capture guide_version %}{{ guide.url | split: '/' | slice: 1 }}{% endcapture %}
@@ -14,22 +13,14 @@ layout: default
   {% if guide_version == version %}
     {% assign guides = guides | push: guide %}
   {% endif %}
-  {% if guide_path == path %}
-    {% assign guide_versions = guide_versions | push: guide %}
+  {% if guide_path == path or page.aliases contains guide_path or guide.aliases contains path %}
+    {% if guide_version != "current" %}
+      {% assign guide_versions = guide_versions | push: guide %}
+    {% else %}
+      {% assign current = guide %}
+    {% endif %}
   {% endif %}
-  {% unless versions contains guide_version %}
-    {% assign versions = versions | push: guide_version %}
-  {% endunless %}
 {% endfor %}
-
-<!--
-
-1. [X] Versie huidige guide bepalen (eerste deel pad)
-2. [X] Door content lopen en pagina's met die versie in array stoppen
-3. [X] ... en alle versies verzamelen
-4. [ ] ... en checken welke versies er van deze guide bestaan
-
--->
 
 <div class="layout-guide container">
 
@@ -38,6 +29,7 @@ layout: default
       <div class="dropdown">
         <button class="btn btn-primary" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Guide: {{ page.title }} <span class="caret"></span></button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <li class="dropdown-header">{{ version | upcase }}</li>
           {% assign sorted = guides | sort:"zindex" | reverse %}
           {% for guide in sorted %}
             {% unless guide.hidden %}
@@ -60,6 +52,8 @@ layout: default
 
         <div class="js-toc hidden-xs hidden-sm"></div>
 
+        <p class="guide-top"><a href="#top">Back to top</a></p>
+
       </div>
 
     </div>
@@ -67,7 +61,7 @@ layout: default
     <div class="col-md-9 js-toc-content content-body" role="main">
 
       {% if version != 'current' %}
-        <div class="alert alert-warning"><strong>Attention:</strong> You are reading the <em>{{ version }}</em> version of this guide.</div>
+        <div class="alert alert-warning"><strong>Attention:</strong> You are reading the <small>{{ version | upcase }}</small> {% if current %}and not the <small><a href="{{ site.baseurl | append: current.url }}">CURRENT</a></small>{% endif %} version of this guide. {% if version == 'v2-preview' %} The UI and APIs might change and registered applications and devices might be deleted at any moment!{% endif %}</div>
       {% endif %}
 
       {% assign replace_a_with = '<a href="' | append: site.baseurl | append: '/' | append: version | append: '/' %}
@@ -75,13 +69,17 @@ layout: default
 
       <section class="panel">
         <div class="panel-body">
-          {% if version != 'current' %} <span class="label label-success pull-right">{{ version | upcase }}</span>{% endif %}
+          <span class="label label-success pull-right">{% if version == "current" %}CURRENT: {{ site.var.current | upcase }}{% else %}{{ version | upcase }}{% endif %}</span>
           <h1 id="top">{{page.title}}</h1>
           {{ content | replace: '<a href="/', replace_a_with | replace: '<img src="/', replace_img_with | replace: '<table>', '<table class="table">' }}
         </div>
         {% if guide_versions %}
           <div class="panel-footer">
-            Versions:&nbsp;&nbsp;&nbsp; {% for guide in guide_versions %}
+            Versions:&nbsp;&nbsp;&nbsp; 
+            {% if current %}
+              <a href="{{ site.baseurl | append: current.url }}" class="label label-{% if page.url == current.url %}success{% else %}default{% endif %}">CURRENT: {{ site.var.current | upcase }}</a>
+            {% endif %}
+            {% for guide in guide_versions %}
               <a href="{{ site.baseurl | append: guide.url }}" class="label label-{% if page.url == guide.url %}success{% else %}default{% endif %}">{{ guide.url | split: '/' | slice: 1 | first | upcase }}</a>
             {% endfor %}
           </div>

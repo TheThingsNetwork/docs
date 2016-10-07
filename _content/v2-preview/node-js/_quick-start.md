@@ -42,7 +42,7 @@ Next, we will write the script that requires the TTN Client module and uses it t
     var ttn = require('ttn');
     ```
 
-3.  In the [dashboard](https://preview.dashboard.thethingsnetwork.org/applications), navigate to the application you'd like to connect to.
+3.  In the [console](https://preview.console.thethingsnetwork.org/applications), navigate to the application you'd like to connect to.
 
 5.  In the editor, create an instance of the client:
 
@@ -54,7 +54,7 @@ Next, we will write the script that requires the TTN Client module and uses it t
     var client = new ttn.Client(region, appId, accessKey);
     ```
 
-    Here's where you can find the values in the dashboard:
+    Here's where you can find the values in the console:
     
     * For `region`, copy the part following `ttn-handler-` for **Handler Status** in the **Application Overview** box.
     * For `appId`, copy the value for **Application ID** in the **Application Overview** box.

@@ -124,13 +124,13 @@ To register your device you'll need a The Things Network account.
     > You can change all of this, including e-mail address and username later via your [Profile](https://staging.account.thethingsnetwork.org/users/profile).
 
 2.  Check your mailbox to validate your e-mail address.
-3.  Go to [preview.dashboard.thethingsnetwork.org](http://preview.dashboard.thethingsnetwork.org) and log in.
-4.  From the top right menu, select [Settings](https://preview.dashboard.thethingsnetwork.org/settings) and change the default (handler) region if the one currently selected is not near where you'll be deploying your devices.
+3.  Go to [preview.console.thethingsnetwork.org](http://preview.console.thethingsnetwork.org) and log in.
+4.  From the top right menu, select [Settings](https://preview.console.thethingsnetwork.org/settings) and change the default (handler) region if the one currently selected is not near where you'll be deploying your devices.
 
 ## Add an Application
 Devices need to be registered with an application to communicate with. Let's add one.
 
-1.  On [preview.dashboard.thethingsnetwork.org](https://preview.dashboard.thethingsnetwork.org/), click [add application](https://preview.dashboard.thethingsnetwork.org/applications/add).
+1.  On [preview.console.thethingsnetwork.org](https://preview.console.thethingsnetwork.org/), click [add application](https://preview.console.thethingsnetwork.org/applications/add).
 
 	* For **Application ID**, choose a unique ID of lower case, alphanumeric characters and nonconsecutive `-` and `_`.
 	* For **Application Description**, enter anything you like.
@@ -162,7 +162,7 @@ You are now ready to register your device to the application.
 ## Activate your Device
 Now that we have registered the device, we can activate the connection from our device itself.
 
-> Activation means that the device will use the generated App Key to negotiate session keys for further communication. This is also known as Over The Air Activation or OTAA. There's also [Activation By Personalisation](../dashboard/#personalise-device-for-abp) (ABP) where you set or generate the session keys via the dashboard and hard-code them on your device.
+> Activation means that the device will use the generated App Key to negotiate session keys for further communication. This is also known as Over The Air Activation or OTAA. There's also [Activation By Personalisation](../console/#personalise-device-for-abp) (ABP) where you set or generate the session keys via the console and hard-code them on your device.
 
 1.  In the Arduino IDE, go back to your sketch and copy-paste the following lines just after the `#include`:
 
@@ -171,7 +171,7 @@ Now that we have registered the device, we can activate the connection from our 
     const byte appKey[16] = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };
     ```
 
-2.  Replace the values for `appEUI` and `appKey` with the msb-encoded **Application EUI** and **App Key** found under **Device Overview** on your device screen in the dashboard.
+2.  Replace the values for `appEUI` and `appKey` with the msb-encoded **Application EUI** and **App Key** found under **Device Overview** on your device screen in the console.
 
     > Use `👁` to show obfuscated keys and then use `📋` to copy. For the Arduino library we'll need the values in msb format. Toggle the format with `<>`.
 
@@ -258,11 +258,11 @@ Let's say hello! Most Arduino boards have an on-board LED and the constant [`LED
 ## Monitor & Decode Messages
 Let's see the messages come in.
 
-1.  From the application's screen on the dashboard, select **Data** from the top right menu.
+1.  From the application's screen in the console, select **Data** from the top right menu.
 
     You should now see the messages come in:
 
-    ![Application Data](dashboard-data.png)
+    ![Application Data](console-data.png)
 
     What you see is the raw payload in hex-formatted, space-separated bytes. Let's decode that to meaningful fields.
 
@@ -332,7 +332,7 @@ Let's see the messages come in.
     
 8.  Run another round of tests to verify all payloads that don't convert to have a boolean `led` property are marked invalid:
 
-    ![Validator](dashboard-validator.png)
+    ![Validator](console-validator.png)
     
     Invalid messages will be dropped and not published to services that have subscribed to this application's messages.
     
@@ -342,7 +342,7 @@ Let's see the messages come in.
 
 11. If your device is still sending data any (valid) new messages should now show their decoded and converted payload in the **fields** column:
 
-    ![Decoded](dashboard-data-decoded.png)
+    ![Decoded](console-data-decoded.png)
     
 🎉 You can now decode cryptic byte messages to meaningful payloads!    
 
@@ -387,7 +387,7 @@ We'll prepare your device to receive a message in response.
     The function will use [`digitalWrite()`](https://www.arduino.cc/en/Reference/DigitalWrite) to turn the LED on or off, based on the single byte message we receive.
 
 3.  Select **Sketch > Upload** `Ctrl/⌘ U` to upload the sketch and then **Tools > Serial Monitor** `Ctrl/⌘ Shift M` to open the serial monitor.
-4.  On the dashboard, navigate to your application, **Devices** and select your device.
+4.  In the console, navigate to your application, **Devices** and select your device.
 5.  With the serial monitor still open, enter `01` in the input field of the **Downlink** box and click **Send**.
 
     The next time your device sends a message it should display something like:
@@ -405,7 +405,7 @@ We'll prepare your device to receive a message in response.
     
 5.  From the device screen, select **Data** from the top right menu and you should see that the next message the device sends indeed confirms the LED is now on:
 
-    ![Message led:true](dashboard-data-on.png)
+    ![Message led:true](console-data-on.png)
     
 6.  As a bonus, try sending `00` to turn of the LED and verify that the next message confirms it.
 
@@ -414,7 +414,7 @@ We'll prepare your device to receive a message in response.
 ## Encode Messages
 What would be cooler than turning a LED on by sending `00`? Sending `{ "led": true }` of course! Just like we decode message on arrival on The Things Network we can also encode messages to devices before they will be delivered.
 
-1.  On the dashboard, navigate to the application and select **Payload Functions** from the top right menu.
+1.  In the console, navigate to the application and select **Payload Functions** from the top right menu.
 2.  Select **encoder** and use [the following code](https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/QuickStart/Encoder.js):
 
     ```js
@@ -441,7 +441,7 @@ What would be cooler than turning a LED on by sending `00`? Sending `{ "led": tr
 6.  Select **Devices** from the top right menu and select your device.
 7.  With the serial monitor still open, select **fields** in the **Downlink** box, enter `{ "led": true }` in the input field and click **Send**.
 
-    You should now see the LED turn on again and be able to verify in the logs and dashboard data monitor. Don't forget to try `true` as well, you never know! 😉
+    You should now see the LED turn on again and be able to verify in the logs and console data monitor. Don't forget to try `true` as well, you never know! 😉
 
 🙌 You have now completed the Quick Start and are able to send messages, decode, convert and validate them and respond with encoded messages. Go build something!
 

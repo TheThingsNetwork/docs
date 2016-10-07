@@ -5,6 +5,8 @@ sections:
  - mqtt/_quick-start.md
  - mqtt/_api.md
  - mqtt/_migrate.md
+redirect_from:
+ - /refactor/mqtt/
 ---
 
 [MQTT](http://mqtt.org) is a machine-to-machine (M2M)/"Internet of Things" connectivity protocol. It was designed as an extremely lightweight publish/subscribe messaging transport.
@@ -13,7 +15,5 @@ The Things Network uses MQTT to publish device activations and messages, but als
 
 ## Prerequisites
 
-* Access to [preview.dashboard.thethingsnetwork.org](https://preview.dashboard.thethingsnetwork.org/).
+* Access to [preview.console.thethingsnetwork.org](https://preview.console.thethingsnetwork.org/).
 * Access to an application with registered device on TTN.
-
-<div class="alert alert-warning"><strong>Warning:</strong> The APIs for these versions of the library and backend might still change and the database (registered application and devices) reset. Do not use in production!</div>

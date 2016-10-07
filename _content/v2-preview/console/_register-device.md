@@ -1,6 +1,6 @@
 # Register Device
 
-To communicate with an application added via the dashboard, you will first need to register the device to the application.
+To communicate with an application added via the console, you will first need to register the device to the application.
 
 > To register you'll need to [get the **Dev EUI** of your device](/uno/#get-your-device-eui) first.
 
@@ -27,7 +27,7 @@ Normally, you'd use Over The Air Activation (OTAA) to negotiate session keys for
 
 > In production, you'll want to use OTAA. This is more reliable because the activation will be confirmed and more secure because the session keys will be negotiated with every activation. ABP is useful for workshops because you don't have to wait for a downlink window to become available to confirm the activation.
 
-1.  In the dashboard, go to the device you'd like to personalise.
+1.  In the console, go to the device you'd like to personalise.
 2.  From the top right menu, select **Settings**.
 3.  Click on **personalize device**, just right of the **Device Settings** header.
 

@@ -3,7 +3,7 @@
 ## ttn app
 
 <p>A node to share The Things Network application configurations between nodes.</p>
-<p>Use the following information of the application on The Things Network dashboard:</p>
+<p>Use the following information of the application on The Things Network Console:</p>
 <ul>
   <li><strong>App ID:</strong> Copy <em>Application ID</em> from the <em>Application Overview</em> box.</li>
   <li><strong>Access Key:</strong> Scroll down to the <em>Access Keys</em>. For the key you'd like to use, click <code>👁</code> to show the key and then <code>📋</code> to copy it.</li>

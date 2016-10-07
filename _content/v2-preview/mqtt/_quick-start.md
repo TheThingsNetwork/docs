@@ -9,7 +9,7 @@ This guide will walk you through subscribing to an application's activations and
 
 ## Credentials
 
-On [preview.dashboard.thethingsnetwork.org](https://preview.dashboard.thethingsnetwork.org/), navigate to the application you'd like to use. Here you can find the **Application ID** and an **Access Key** needed to authenticate over MQTT. Under **Handler Status** you will also find the region the application is registered to. You will need the part that follows `ttn-handler-`, e.g. `eu`.
+On [preview.console.thethingsnetwork.org](https://preview.console.thethingsnetwork.org/), navigate to the application you'd like to use. Here you can find the **Application ID** and an **Access Key** needed to authenticate over MQTT. Under **Handler Status** you will also find the region the application is registered to. You will need the part that follows `ttn-handler-`, e.g. `eu`.
     
 ## Receive Activations
 Let's listen for new device activations first.
