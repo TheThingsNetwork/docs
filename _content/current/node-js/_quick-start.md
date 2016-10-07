@@ -97,7 +97,7 @@ Next, we will write the script that requires the TTN Client module and uses it t
 ## Receive Activations
 Now that we are connected, let's listen for new device activations.
 
-> Be aware that you will only receive `activation` events since the moment the script connects.
+> Be aware that you will only receive `activation` events after the script has connected successfully.
 
 1.  Add a listener for the `activation` event:
 
