@@ -10,7 +10,7 @@ You can download the latest version of `ttnctl` using the following links:
 * [Linux (64 bit, zip)](https://ttnreleases.blob.core.windows.net/release/v2-preview/ttnctl-linux-amd64.zip)
 * [Linux (32 bit, zip)](https://ttnreleases.blob.core.windows.net/release/v2-preview/ttnctl-linux-386.zip)
 * [Linux (arm, zip)](https://ttnreleases.blob.core.windows.net/release/v2-preview/ttnctl-linux-arm.zip)
-* [Windows (64 bit, zip)](https://ttnreleases.blob.core.windows.net/release/v2-preview/ttnctl-windows-amd64.zip)
+* [Windows (64 bit, zip)](https://ttnreleases.blob.core.windows.net/release/v2-preview/ttnctl-windows-amd64.exe.zip)
 * [Windows (32 bit, zip)](https://ttnreleases.blob.core.windows.net/release/v2-preview/ttnctl-windows-386.exe.zip)
 
 > _Downloads are also available as `.tar.gz` archives, just change the extension in the links above._
