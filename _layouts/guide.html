@@ -22,7 +22,7 @@ layout: default
   {% endif %}
 {% endfor %}
 
-<div class="layout-guide container">
+<div id="top" class="layout-guide container">
 
   <div class="row guide-nav">
     <div class="col-sm-9">
@@ -70,7 +70,7 @@ layout: default
       <section class="panel">
         <div class="panel-body">
           <span class="label label-success pull-right">{% if version == "current" %}CURRENT: {{ site.var.current | upcase }}{% else %}{{ version | upcase }}{% endif %}</span>
-          <h1 id="top">{{page.title}}</h1>
+          <h1>{{page.title}}</h1>
           {{ content | replace: '<a href="/', replace_a_with | replace: '<img src="/', replace_img_with | replace: '<table>', '<table class="table">' }}
         </div>
         {% if guide_versions %}
