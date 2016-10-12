@@ -11,3 +11,4 @@ redirect_from:
     * Red, pulsates quickly (uploading)
     * Red, pulsates slowly (booting)
     * White, constant
+* https://github.com/hackscribble/hackscribble-MCP9804-library
