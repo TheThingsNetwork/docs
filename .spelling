@@ -57,21 +57,29 @@ powerbank
 2.x
 1.x
 10km
- - _guides/arduino/_api.md
+bootloader
+MultiConnect
+mCard
+Jac
+Kersing
+MultiTech
+mLinux
+MTAC-LoRa
+ - _content/current/arduino/_api.md
 Dev
 lication
- - _guides/arduino/_ide.md
+ - _content/current//arduino/_ide.md
 _mouth
- - _guides/cli/_api.md
+ - _content/current//cli/_api.md
 1h2m
- - _guides/arduino.md
+ - _content/current//arduino.md
 0.x
- - _guides/mqtt/_api.md
+ - _content/current//mqtt/_api.md
 mqtt-ca
 pem
- - _guides/mqtt/_clients.md
+ - _content/current//mqtt/_clients.md
 Paho
- - _guides/node-js/_live.md
+ - _content/current//node-js/_live.md
 ttn
 MU0T5xZCaqsD0bPqOhzA6iygGFoi4FAgMFgBfXSo
 ttn.Client
@@ -85,9 +93,9 @@ msg
 console.info
 JSON.stringify
 msg.counter
- - _guides/node-js/_quick-start.md
+ - _content/current//node-js/_quick-start.md
 Node.js.
- - _guides/node-red/_build.md
+ - _content/current//node-red/_build.md
 http
- - _guides/uno/_quickstart.md
+ - _content/current//uno/_quickstart.md
 msb

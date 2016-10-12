@@ -31,7 +31,7 @@ defaults:
       layout: guide
 markdown: kramdown
 # Exclude vendor which Travis will add
-exclude: [ node_modules, vendor, Gemfile, Gemfile.lock, gulpfile.js, "npm-debug.*", package.json, README.md, test, webpack.config.js ]
+exclude: [ node_modules, vendor, Gemfile, Gemfile.lock, gulpfile.js, "npm-debug.*", package.json, README.md, test, webpack.config.js, yarn.lock ]
 gems:
   - jekyll-sitemap
   - jemoji

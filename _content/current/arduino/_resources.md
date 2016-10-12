@@ -8,5 +8,4 @@ To learn more about Arduino and start prototyping with it we recommend:
 
 ## Shields
 
-* [Arduino Shield List](http://shieldlist.org)
 * [Grove Starter kit](http://www.seeedstudio.com/Grove-Starter-kit-for-Arduino%26Genuino-101-p-2664.html)

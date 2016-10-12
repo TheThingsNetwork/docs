@@ -58,6 +58,21 @@ module.exports.lessToScss = function(next) {
 				silent: true,
 			});
 
+			// less2sass doesn't convert variable interpolation well
+			// FIXME: https://github.com/brauliobo/less2sass/issues/10
+			replace({
+
+				// ${ttn-font-path}
+				regex: /(\$)\{([^}]+)\}/g,
+
+				// #{$icon-font-path}
+				replacement: '#{$1$2}',
+
+				paths: [path.join(utils.DIST, 'scss')],
+				recursive: true,
+				silent: true
+			});
+
 			// less doesn't has default variables because it lazy loads
 			replace({
 

@@ -1,7 +1,6 @@
 .ttn-navbar-body {
     padding-top: @ttn-navbar-height;
 }
-
 #navbar {
     position: fixed;
     z-index: 1001;
@@ -60,15 +59,16 @@
                 background-color: white;
                 border: none;
                 position: relative;
-                display: flex;
-                align-items: center;
-                justify-content: center;
                 cursor: pointer;
 
+                & > * {
+                    float: left;
+                }
+
                 .profile-icon {
-                    height: 50px;
-                    width: 50px;
-                    margin: 0 10px;
+                    height: 51px;
+                    width: 51px;
+                    margin: 7px 10px 0;
                     background-size: cover;
                     background-position: center;
                     border-radius: 50%;

@@ -87,10 +87,12 @@ Some content we source directly from elsewhere, e.g. the [MQTT API Reference](ht
     sudo npm i --global gulp
     ```
     
-3.  Run the `pull` task:
+3.  [Install Subversion](https://subversion.apache.org/packages.html).
+    
+3.  Run the default task:
 
     ```bash
-    gulp pull
+    gulp
     ```
     
 ### Source

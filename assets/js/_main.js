@@ -78,7 +78,7 @@ $(function() {
   } else {
 
     // so that front-page content scroll to below navbar as well
-    var smoothScroll = require('tocbot/node_modules/smooth-scroll');
+    var smoothScroll = require('smooth-scroll');
     smoothScroll.init(smoothScrollOptions);
   }
 

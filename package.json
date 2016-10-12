@@ -13,8 +13,8 @@
     "dev-jekyll": "bundle exec jekyll serve --incremental",
     "webpack": "webpack -p",
     "dev-webpack": "webpack --watch",
-    "spelling": "mdspell --en-us -rna _guides/**/*.md _versions/**/*.md",
-    "dev-spelling": "mdspell --en-us -na _guides/**/*.md _versions/**/*.md",
+    "spelling": "mdspell --en-us -rna _content/**/*.md",
+    "dev-spelling": "mdspell --en-us -na _content/**/*.md",
     "htmlproof": "rm -rf _test && bundle exec jekyll build -d ./_test/docs && bundle exec htmlproofer  --url-ignore '/github.com\\/TheThingsNetwork\\/docs\\/edit/' --url-swap 'http(s)?\\://www\\.thethingsnetwork\\.org/docs:/docs' ./_test",
     "add": "git add ."
   },
@@ -46,8 +46,9 @@
     "jquery": "^2.2.4",
     "markdown-spellcheck": "^0.11.0",
     "pre-commit": "^1.1.3",
+    "smooth-scroll": "cferdinandi/smooth-scroll",
+    "stylebook": "thethingsnetwork/stylebook",
     "tocbot": "^2.1.5",
-    "ttn-stylebook": "github:thethingsnetwork/stylebook",
     "webpack": "^1.13.1"
   },
   "dependencies": {
