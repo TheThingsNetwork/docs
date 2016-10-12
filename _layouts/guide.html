@@ -5,13 +5,18 @@ layout: default
 {% capture version %}{{ page.url | split: '/' | slice: 1 }}{% endcapture %}
 {% capture path %}{{ page.url | split: '/' | slice: 2, 10 | join: '/' }}{% endcapture %}
 {% assign guides = '' | split: '|' %}
+{% assign version_guides = '' | split: '|' %}
 {% assign guide_versions = '' | split: '|' %}
 
 {% for guide in site.content %}
   {% capture guide_version %}{{ guide.url | split: '/' | slice: 1 }}{% endcapture %}
   {% capture guide_path %}{{ guide.url | split: '/' | slice: 2, 10 | join: '/' }}{% endcapture %}
-  {% if guide_version == version %}
+  {% if guide_version == "current" %}
     {% assign guides = guides | push: guide %}
+  {% else %}
+    {% if guide_version == version %}
+      {% assign version_guides = version_guides | push: guide %}
+    {% endif %}
   {% endif %}
   {% if guide_path == path or page.aliases contains guide_path or guide.aliases contains path %}
     {% if guide_version != "current" %}
@@ -29,7 +34,16 @@ layout: default
       <div class="dropdown">
         <button class="btn btn-primary" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Guide: {{ page.title }} <span class="caret"></span></button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <li class="dropdown-header">{{ version | upcase }}</li>
+          {% if version_guides %}
+            <li class="dropdown-header">{{ version | upcase }}</li>
+            {% assign sorted = version_guides | sort:"zindex" | reverse %}
+            {% for guide in sorted %}
+              {% unless guide.hidden %}
+                <li{% if guide.path == page.path %} class="active"{% endif %}><a href="{{ site.baseurl }}{{ guide.url}}">{{ guide.title }}</a></li>
+              {% endunless %}
+            {% endfor %}
+          {% endif %}
+          <li class="dropdown-header">CURRENT</li>
           {% assign sorted = guides | sort:"zindex" | reverse %}
           {% for guide in sorted %}
             {% unless guide.hidden %}

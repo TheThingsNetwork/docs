@@ -3,7 +3,7 @@
 ## ttn app
 
 <p>A node to share The Things Network application configurations between nodes.</p>
-<p>Use the following information of the application on The Things Network Console:</p>
+<p>Use the following information of the application on The Things Network dashboard:</p>
 <ul>
   <li><strong>App ID:</strong> Copy <em>Application ID</em> from the <em>Application Overview</em> box.</li>
   <li><strong>Access Key:</strong> Scroll down to the <em>Access Keys</em>. For the key you'd like to use, click <code>👁</code> to show the key and then <code>📋</code> to copy it.</li>
@@ -17,7 +17,7 @@
 <p>The output message:</p>
 <ul>
   <li><code>devId</code>, the ID of the device that sent the message.</li>
-  <li><code>payload</code>, the original <a href="https://www.thethingsnetwork.org/docs/current/mqtt/#api-reference" target="_blank">MQTT events topic</a>.</li>
+  <li><code>payload</code>, the original <a href="https://www.thethingsnetwork.org/docs/mqtt/#api-reference" target="_blank">MQTT events topic</a>.</li>
 </ul>
 
 ## ttn message
@@ -28,7 +28,7 @@
 <ul>
   <li><code>devId</code>, the ID of the device that sent the message.</li>
   <li><code>payload</code>, an object of fields or the specified field if the application is configured with a decoder payload function, or a <a href="https://nodejs.org/api/buffer.html" target="_blank">Buffer</a> if it is not.</li>
-  <li>Unless a field was specified, the message is extended with the original <a href="https://www.thethingsnetwork.org/docs/current/mqtt/#api-reference" target="_blank">MQTT up topic</a>.</li>
+  <li>Unless a field was specified, the message is extended with the original <a href="https://www.thethingsnetwork.org/docs/mqtt/#api-reference" target="_blank">MQTT up topic</a>.</li>
 </ul>  
   
 ## ttn send
