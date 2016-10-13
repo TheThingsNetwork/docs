@@ -15,17 +15,17 @@ gulp.task('pull:download', function() {
       url: 'https://raw.githubusercontent.com/TheThingsNetwork/arduino-device-lib/master/API.md',
       file: '_content/v2-preview/arduino/_api.md'
     }, {
-      url: 'https://raw.githubusercontent.com/TheThingsNetwork/ttn/refactor/mqtt/README.md',
+      url: 'https://raw.githubusercontent.com/TheThingsNetwork/ttn/v2-preview/mqtt/README.md',
       file: '_content/v2-preview/mqtt/_api.md'
     }, {
-      url: 'https://raw.githubusercontent.com/TheThingsNetwork/ttn/refactor/ttnctl/cmd/docs/README.md',
+      url: 'https://raw.githubusercontent.com/TheThingsNetwork/ttn/v2-preview/ttnctl/cmd/docs/README.md',
       file: '_content/v2-preview/cli/_api.md'
     }])
     .pipe(gulp.dest('.'));
 });
 
 gulp.task('pull:multitech', function(cb) {
-  exec('rm -rf multitech && svn export https://github.com/FokkeZB/multitech-installer/branches/master/docs multitech  --trust-server-cert-failures=unknown-ca --non-interactive', {
+  exec('svn export https://github.com/FokkeZB/multitech-installer/branches/master/docs multitech --force --trust-server-cert-failures=unknown-ca --non-interactive', {
     cwd: path.join(__dirname, '_content', 'current')
   }, function (err, stdout, stderr) {
     console.log(stdout);

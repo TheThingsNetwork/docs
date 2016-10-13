@@ -1,10 +1,12 @@
 ---
 title: MultiTech Conduit
-redirect_from:
- - /multitech/
 sections:
  - multitech/_aep.md
  - multitech/_mlinux.md
+ - multitech/_register.md
+ - multitech/_next.md
+redirect_from:
+ - /multitech/
 ---
 
 The [MultiConnect® Conduit™](http://www.multitech.net/developer/products/multiconnect-conduit-platform/) is a configurable, scalable cellular communications gateway for industrial IoT applications. Conduit allows users to plug in two MultiConnect mCard™ accessory cards supporting wired or wireless interfaces.

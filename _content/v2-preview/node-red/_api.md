@@ -1,3 +1,5 @@
+<!-- ONLY EDIT THIS FILE AT https://github.com/TheThingsNetwork/nodered-app-lib/blob/refactor/API.md -->
+
 # API Reference
 
 ## ttn app
@@ -17,7 +19,7 @@
 <p>The output message:</p>
 <ul>
   <li><code>devId</code>, the ID of the device that sent the message.</li>
-  <li><code>payload</code>, the original <a href="https://www.thethingsnetwork.org/docs/mqtt/#api-reference" target="_blank">MQTT events topic</a>.</li>
+  <li><code>payload</code>, the original <a href="https://www.thethingsnetwork.org/docs/current/mqtt/#api-reference" target="_blank">MQTT events topic</a>.</li>
 </ul>
 
 ## ttn message
@@ -28,7 +30,7 @@
 <ul>
   <li><code>devId</code>, the ID of the device that sent the message.</li>
   <li><code>payload</code>, an object of fields or the specified field if the application is configured with a decoder payload function, or a <a href="https://nodejs.org/api/buffer.html" target="_blank">Buffer</a> if it is not.</li>
-  <li>Unless a field was specified, the message is extended with the original <a href="https://www.thethingsnetwork.org/docs/mqtt/#api-reference" target="_blank">MQTT up topic</a>.</li>
+  <li>Unless a field was specified, the message is extended with the original <a href="https://www.thethingsnetwork.org/docs/current/mqtt/#api-reference" target="_blank">MQTT up topic</a>.</li>
 </ul>  
   
 ## ttn send
