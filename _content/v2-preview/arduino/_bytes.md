@@ -161,12 +161,12 @@ Let's say we need to encode a [long](https://www.arduino.cc/en/Reference/Long) w
 Encode (Arduino):
 
 ```c
-long = 200000L;
+long lng = 200000L;
 byte payload[4];
-bytes[0] = (int) ((lng & 0xFF000000) >> 24 );
-bytes[1] = (int) ((lng & 0x00FF0000) >> 16 );
-bytes[2] = (int) ((lng & 0x0000FF00) >> 8  );
-bytes[3] = (int) ((lng & 0X000000FF)       );
+payload[0] = (int) ((lng & 0xFF000000) >> 24 );
+payload[1] = (int) ((lng & 0x00FF0000) >> 16 );
+payload[2] = (int) ((lng & 0x0000FF00) >> 8  );
+payload[3] = (int) ((lng & 0X000000FF)       );
 ```
 
 Decode (payload functions):

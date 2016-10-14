@@ -25,7 +25,7 @@ gulp.task('pull:download', function() {
 });
 
 gulp.task('pull:multitech', function(cb) {
-  exec('svn export https://github.com/FokkeZB/multitech-installer/branches/master/docs multitech --force --trust-server-cert-failures=unknown-ca --non-interactive', {
+  exec('svn export https://github.com/kersing/multitech-installer/branches/master/docs multitech --force --trust-server-cert-failures=unknown-ca --non-interactive', {
     cwd: path.join(__dirname, '_content', 'current')
   }, function (err, stdout, stderr) {
     console.log(stdout);
