@@ -12,3 +12,5 @@ redirect_from:
     * Red, pulsates slowly (booting)
     * White, constant
 * https://github.com/hackscribble/hackscribble-MCP9804-library
+* https://learn.sparkfun.com/tutorials/mma8452q-accelerometer-breakout-hookup-guide
+* Node gotcha, if in sleep, double click reset to upload

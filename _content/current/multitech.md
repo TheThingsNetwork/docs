@@ -11,7 +11,7 @@ redirect_from:
 
 The [MultiConnect® Conduit™](http://www.multitech.net/developer/products/multiconnect-conduit-platform/) is a configurable, scalable cellular communications gateway for industrial IoT applications. Conduit allows users to plug in two MultiConnect mCard™ accessory cards supporting wired or wireless interfaces.
 
-This guide will help you set up the gateway to communicate over The Things Network. Both the guide and the [install script](https://github.com/kersing/multitech-installer/) are a community effort lead by [Jac Kersing](https://www.thethingsnetwork.org/u/kersing/). 👏
+This guide will help you set up the gateway to communicate over The Things Network. Both the guide and the [install script](https://github.com/kersing/multitech-installer/) are a community effort led by [Jac Kersing](https://www.thethingsnetwork.org/u/kersing/). 👏
 
 ## Prerequisites
 
@@ -25,3 +25,7 @@ This guide will help you set up the gateway to communicate over The Things Netwo
   
 * Computer with USB port and terminal software. Included with Mac OS and Linux. For Windows use something like [Putty](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html).
 * For the mLinux version you'll need a USB stick.
+
+## Support
+
+The Things Network does not provide support for this gateway. For community support visit the [MultiTech Gateway](https://www.thethingsnetwork.org/forum/c/gateways/multitech-gateway) category on the forum.

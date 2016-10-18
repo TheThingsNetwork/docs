@@ -47,6 +47,10 @@ If you changed the IP Address or selected DHCP a popup will appear warning you t
 
 ![DHCP](dhcp.png)
 
+## Update firmware
+
+Before you continue, verify that the Conduit AEP runs Firmware 1.3.2 or later. This is display in the header of the web interface. If it is out-dated, follow the [instructions to upgrade](http://www.multitech.net/developer/software/aep/upgrading-the-aep-firmware/) to the latest version. The ttn-packer-forwarder might not work otherwise.
+
 ## Access & Network Configuration
 
 As the LAN interfaces do not allow specifying a DNS server and we need DNS to work later on we will now change to network to WAN. However as this would lock us out we need to allow remote access for the management first.
