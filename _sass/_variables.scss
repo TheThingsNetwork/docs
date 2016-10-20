@@ -29,8 +29,9 @@ $line-height-base: 1.8;
 $headings-color: $brand-primary;
 
 $font-size-base: 15px;
-$font-family-sans-serif:  Lato, "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-sans-serif:  Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
 $headings-font-family: 'League Spartan', $font-family-sans-serif;
+$font-family-monospace: Hack, Menlo, Monaco, Consolas, "Courier New", monospace;
 
 $font-size-h1: 25px;
 $font-size-h2: floor($font-size-h1 * 0.8);

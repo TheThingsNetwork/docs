@@ -14,11 +14,6 @@
   code {
     font-size: inherit;
     color: #fff; /* Effectively the base text color */
-
-    &:first-child {
-      display: inline-block;
-      padding-right: 45px;
-    }
   }
 
   .hll { background-color: #404040 }
