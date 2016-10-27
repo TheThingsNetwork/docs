@@ -198,7 +198,8 @@ Encode (Arduino):
 
 ```c
 float myVal = 1.22;
-byte payload[] = (int) round(myVal * 100);
+byte payload[1];
+payload[0] = round(myVal * 100);
 ```
 
 Decode (payload functions):
@@ -206,6 +207,20 @@ Decode (payload functions):
 ```js
 decoded.myVal = bytes[0] / 100;
 ```
+
+Encode (payload functions):
+
+```js
+bytes[0] = Math.round(1.22 * 100);
+```
+
+Decode (Arduino):
+
+```c
+float myVal = payload[0] / 100.00;
+```
+
+> Note that it uses `100.00`, not `100`. If both are integers, Arduino/C/C++ will do the math using integers as well, resulting in 1 instead of 1.22.
 
 ## How to send multiple numbers?
 
