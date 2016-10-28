@@ -19,9 +19,8 @@ layout: default
     {% endif %}
   {% endif %}
   {% if guide_path == path or page.aliases contains guide_path or guide.aliases contains path %}
-    {% if guide_version != "current" %}
-      {% assign guide_versions = guide_versions | push: guide %}
-    {% else %}
+    {% assign guide_versions = guide_versions | push: guide %}
+    {% if guide_version == "current" %}
       {% assign current = guide %}
     {% endif %}
   {% endif %}
@@ -34,7 +33,7 @@ layout: default
       <div class="dropdown">
         <button class="btn btn-primary" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Guide: {{ page.title }} <span class="caret"></span></button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          {% if version_guides %}
+          {% if version_guides.size > 0 %}
             <li class="dropdown-header">{{ version | upcase }}</li>
             {% assign sorted = version_guides | sort:"zindex" | reverse %}
             {% for guide in sorted %}
@@ -87,14 +86,17 @@ layout: default
           <h1>{{page.title}}</h1>
           {{ content | replace: '<a href="/', replace_a_with | replace: '<img src="/', replace_img_with | replace: '<table>', '<table class="table">' }}
         </div>
-        {% if guide_versions %}
+        {% if guide_versions.size > 1 %}
           <div class="panel-footer">
             Versions:&nbsp;&nbsp;&nbsp; 
             {% if current %}
               <a href="{{ site.baseurl | append: current.url }}" class="label label-{% if page.url == current.url %}success{% else %}default{% endif %}">CURRENT: {{ site.var.current | upcase }}</a>
             {% endif %}
             {% for guide in guide_versions %}
-              <a href="{{ site.baseurl | append: guide.url }}" class="label label-{% if page.url == guide.url %}success{% else %}default{% endif %}">{{ guide.url | split: '/' | slice: 1 | first | upcase }}</a>
+              {% capture guide_version %}{{ guide.url | split: '/' | slice: 1 }}{% endcapture %}
+              {% unless guide_version == "current" %}
+                <a href="{{ site.baseurl | append: guide.url }}" class="label label-{% if page.url == guide.url %}success{% else %}default{% endif %}">{{ guide.url | split: '/' | slice: 1 | first | upcase }}</a>
+              {% endunless %}
             {% endfor %}
           </div>
         {% endif %}
