@@ -1,3 +1,5 @@
+<!-- EDIT AT https://raw.githubusercontent.com/TheThingsNetwork/ttn/v2-preview/mqtt/README.md -->
+
 # API Reference
 
 * Host: `<Region>.thethings.network`

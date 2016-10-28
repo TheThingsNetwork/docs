@@ -1,3 +1,5 @@
+<!-- EDIT AT https://raw.githubusercontent.com/TheThingsNetwork/ttn/v2-preview/ttnctl/cmd/docs/README.md -->
+
 # API Reference
 
 Control The Things Network from the command line.

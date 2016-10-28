@@ -1,3 +1,5 @@
+<!-- EDIT AT https://raw.githubusercontent.com/TheThingsNetwork/arduino-device-lib/node/docs/TheThingsNode.md -->
+
 # API Reference
 
 ## Class: TheThingsNode

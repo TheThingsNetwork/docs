@@ -1,3 +1,5 @@
+<!-- EDIT AT https://raw.githubusercontent.com/TheThingsNetwork/node-app-lib/master/API.md -->
+
 # API Reference
 
 Require the TTN Client module:
