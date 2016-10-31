@@ -9,8 +9,7 @@ redirect_from:
  - /multitech/
 ambassador:
   name: Jac Kersing
-  url: https://www.thethingsnetwork.org/u/kersing/
-  image: https://account.thethingsnetwork.org/api/pp/570f721db6b1971100b3c2d9.jpg
+  username: kersing
   text: >
     Both this guide and the [install script](https://github.com/kersing/multitech-installer/) are a community effort led by our MultiTech ambassador [Jac Kersing](https://www.thethingsnetwork.org/u/kersing/). The Things Network does not provide support for this gateway. For community support visit the [MultiTech Gateway](https://www.thethingsnetwork.org/forum/c/gateways/multitech-gateway) category on the forum.
 ---
