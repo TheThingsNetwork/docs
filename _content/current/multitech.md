@@ -7,11 +7,17 @@ sections:
  - multitech/_next.md
 redirect_from:
  - /multitech/
+ambassador:
+  name: Jac Kersing
+  url: https://www.thethingsnetwork.org/u/kersing/
+  image: https://account.thethingsnetwork.org/api/pp/570f721db6b1971100b3c2d9.jpg
+  text: >
+    Both this guide and the [install script](https://github.com/kersing/multitech-installer/) are a community effort led by our MultiTech ambassador [Jac Kersing](https://www.thethingsnetwork.org/u/kersing/). The Things Network does not provide support for this gateway. For community support visit the [MultiTech Gateway](https://www.thethingsnetwork.org/forum/c/gateways/multitech-gateway) category on the forum.
 ---
 
 The [MultiConnect® Conduit™](http://www.multitech.net/developer/products/multiconnect-conduit-platform/) is a configurable, scalable cellular communications gateway for industrial IoT applications. Conduit allows users to plug in two MultiConnect mCard™ accessory cards supporting wired or wireless interfaces.
 
-This guide will help you set up the gateway to communicate over The Things Network. Both the guide and the [install script](https://github.com/kersing/multitech-installer/) are a community effort led by [Jac Kersing](https://www.thethingsnetwork.org/u/kersing/). 👏
+This guide will help you set up the gateway to communicate over The Things Network.
 
 ## Prerequisites
 
@@ -23,9 +29,5 @@ This guide will help you set up the gateway to communicate over The Things Netwo
 
   > Do not forget to mount the antenna to the mCard after fitting it in the conduit.
   
-* Computer with USB port and terminal software. Included with Mac OS and Linux. For Windows use something like [Putty](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html).
+* Computer with USB port and terminal software. Mac OS and Linux come with terminal software. For Windows you can use something like [Putty](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html).
 * For the mLinux version you'll need a USB stick.
-
-## Support
-
-The Things Network does not provide support for this gateway. For community support visit the [MultiTech Gateway](https://www.thethingsnetwork.org/forum/c/gateways/multitech-gateway) category on the forum.

@@ -102,6 +102,26 @@ layout: default
         {% endif %}
       </section>
 
+      {% if page.ambassador %}
+        <section class="panel panel-inverse ambassador">
+          <div class="panel-body">
+            <div class="media">
+              <div class="media-left">
+                <a href="{{ page.ambassador.url }}"><img src="{{ page.ambassador.image }}" alt="{{ page.ambassador.name }}" class="img-circle" /></a>
+              </div>
+              <div class="media-body">
+                {% if page.ambassador.text %}
+                  {{ page.ambassador.text | markdownify }}
+                {% else %}
+                  This guide is maintained by our ambassador <a href="{{ page.ambassador.url }}" target="_blank">{{ page.ambassador.name }}</a>.
+                {% endif %}
+                <p><small>Become an ambassador and help us support a new device or integration! <a href="mailto:fokke@thethingsnetwork.org">Drop us a line!</a></small></p>
+              </div>
+            </div>
+          </div>
+        </section>
+      {% endif %}
+
       {% for section in page.sections %}
         {% capture section_include %}{% include_relative {{section}} %}{% endcapture %}
         <section class="panel">

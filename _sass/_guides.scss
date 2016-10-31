@@ -21,6 +21,23 @@
     }
   }
 
+  .panel-inverse {
+    background-color: $ttn-color-brand;
+    color: white;
+
+    a {
+      color: white;
+      text-decoration: underline;
+    }
+  }
+
+  .ambassador {
+    img {
+      max-width: inherit;
+      width: 75px;
+    }
+  }
+
   .guide-sidebar {
     overflow-y: scroll;
     max-height: 100%;
