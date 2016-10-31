@@ -1,5 +1,3 @@
-<!-- EDIT AT https://github.com/kersing/multitech-installer/blob/master/docs/_mlinux.md -->
-
 # Configure mLinux model
 mLinux is an open source embedded Linux distribution for the MultiConnect Conduit and is the next generation version of CoreCDP.
 

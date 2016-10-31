@@ -1,5 +1,3 @@
-<!-- EDIT AT https://github.com/kersing/multitech-installer/blob/master/docs/_aep.md -->
-
 # Configure AEP model
 
 ## Login to web interface

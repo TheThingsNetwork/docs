@@ -38,29 +38,6 @@ gulp.task('pull:download', function() {
 
 });
 
-gulp.task('pull:multitech', function(cb) {
-  var from = 'https://github.com/kersing/multitech-installer/branches/master/docs';
-  var to = path.join(__dirname, '_content', 'current', 'multitech');
-  exec('svn export ' + from + ' . --force --trust-server-cert-failures=unknown-ca --non-interactive', {
-    cwd: to
-  }, function(err, stdout, stderr) {
-    console.log(stdout);
-    console.log(stderr);
-    if (!err) {
-      var match;
-      var re = /^A    (_.+\.md)$/gm;
-      while ((match = re.exec(stdout))) {
-        gulp.src(path.join(to, match[1]), {
-            base: './'
-          })
-          .pipe(insert.prepend('<!-- EDIT AT ' + from.replace('/branches/', '/blob/') + '/' + match[1] + ' -->\n\n'))
-          .pipe(gulp.dest('.'));
-      }
-    }
-    cb(err);
-  });
-});
-
 gulp.task('pull', ['pull:download', 'pull:multitech']);
 
 gulp.task('default', ['pull']);
