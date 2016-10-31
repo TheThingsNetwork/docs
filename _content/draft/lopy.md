@@ -69,7 +69,7 @@ s.setblocking(False)
 s.send(bytes([1, 2, 3]))
 ```
 
-Use socket options to configure the desired data rate. The minimmum data rate supported is 0 and the maximum is 7. For instance:
+Use socket options to configure the desired data rate. The minimum data rate supported is 0 and the maximum is 7. For instance:
 
 ```
 s.setsockopt(socket.SOL_LORA, socket.SO_DR, 0)
