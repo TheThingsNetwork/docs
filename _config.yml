@@ -20,13 +20,13 @@ var:
 
 # Build settings
 collections:
-  content:
+  includes:
     output: true
     permalink: /:path/
 defaults:
   - scope:
       path: ""
-      type: content
+      type: includes
     values:
       layout: guide
 markdown: kramdown

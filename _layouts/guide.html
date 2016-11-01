@@ -8,7 +8,7 @@ layout: default
 {% assign version_guides = '' | split: '|' %}
 {% assign guide_versions = '' | split: '|' %}
 
-{% for guide in site.content %}
+{% for guide in site.includes %}
   {% capture guide_version %}{{ guide.url | split: '/' | slice: 1 }}{% endcapture %}
   {% capture guide_path %}{{ guide.url | split: '/' | slice: 2, 10 | join: '/' }}{% endcapture %}
   {% if guide_version == "current" %}

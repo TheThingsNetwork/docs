@@ -9,12 +9,13 @@ Because we let GitHub Pages do the Jekyll builds the website will be updated aut
 ### Guidance
 
 * The homepage for the site is [index.html](index.html).
-* The guides are a Jekyll collection in the [_content](_content) folder, grouped per version.
+* The guides are a Jekyll collection in the [_includes](_includes) folder, grouped per version.
 * Use the main file of each guide for the intro.
 * Use the `sections` front matter to include additional content from files relative to the guide, preferably in a subfolder with the same name. Make sure to start these files with `_` to prevent Jekyll for outputting them as stand-alone pages.
 * Make sure there are no duplicate headings (of any level) between different sections or [specify a unique heading ID](http://kramdown.gettalong.org/syntax.html#specifying-a-header-id) for each of them.
 * Store guide assets in the same folder as the markdown you need it in and include them by their filename. You can also use relative paths to re-use images from other guides.
-* The guide layout will prepend `/docs/<version>` to all links and image references that start with `/`.
+* The guide layout will prepend `/docs/<version>` to all links and image references that start with `/`. To link to a different version start with `../<version>/<guide>`.
+* To include content from another guide use `{% include path/relative/to/_includes.md %}`.
 * Always end internal links with `/` to prevent redirects.
 * Use blockquotes (`>`) to create callouts for important notes.
 * If you do a lot of edits please use a local build to preview and test.

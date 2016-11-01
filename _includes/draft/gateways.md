@@ -1,5 +1,7 @@
 ---
 title: Gateways
+sections:
+- gateways/_register.md
 ---
 
 On gateways in general:
