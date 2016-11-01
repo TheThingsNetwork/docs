@@ -5,7 +5,8 @@ This guide will walk you through subscribing to an application's activations and
 
 ## Setup
 
-[Download](https://mosquitto.org/download/) and install Mosquitto.
+* [Download](https://mosquitto.org/download/) Mosquitto.
+* Download and save the [PEM encoded CA certificate](https://preview.console.thethingsnetwork.org/mqtt-ca.pem) if you'd like to use TLS.
 
 ## Credentials
 
@@ -25,6 +26,12 @@ Let's listen for new device activations first.
     * Replace `<AppKey>` with your **Access Key** (base64).
   
     > We add `-v` to also see the topics of the incoming messages.
+    
+    For TLS - assuming [mqtt-ca.pem](https://preview.console.thethingsnetwork.org/mqtt-ca.pem) is in the same folder - append:
+
+    ```bash
+    --cafile mqtt-ca.pem -p 8883
+    ```
 
 2.  Power up, reset or upload a new sketch to a device to force it to activate and you should see something like:
 
@@ -43,7 +50,7 @@ Now let's listen for actual messages coming in from devices.
     mosquitto_sub -h <Region>.thethings.network -t '+/devices/+/up' -u '<AppID>' -P '<AppKey>' -v
     ```
 
-    > Don't forget to replace `<Region>`, `<AppID>` and `<AppKey>`.
+    > Don't forget to replace `<Region>`, `<AppID>`, `<AppKey>` and append the options for TLS if you used that.
 
 2.  If you uploaded the [The Things Uno / Quick Start](/uno/#quick-start) sketch you should see something like:
 

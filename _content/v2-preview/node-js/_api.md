@@ -1,4 +1,4 @@
-<!-- EDIT AT https://raw.githubusercontent.com/TheThingsNetwork/node-app-lib/master/API.md -->
+<!-- EDIT AT https://github.com/TheThingsNetwork/node-app-lib/blob/master/API.md -->
 
 # API Reference
 

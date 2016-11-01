@@ -29,15 +29,16 @@ gulp.task('pull:download', function() {
   }];
 
   ops.forEach(function(op) {
+    var editUrl = op.url.replace(/^(https:\/\/)raw\.(github)usercontent(\.com\/[^\/]+\/[^\/]+\/)(.+)$/, '$1$2$3blob/$4');
 
     download(op)
-      .pipe(insert.prepend('<!-- EDIT AT ' + op.url + ' -->\n\n'))
+      .pipe(insert.prepend('<!-- EDIT AT ' + editUrl + ' -->\n\n'))
       .pipe(gulp.dest('.'));
 
   });
 
 });
 
-gulp.task('pull', ['pull:download', 'pull:multitech']);
+gulp.task('pull', ['pull:download']);
 
 gulp.task('default', ['pull']);

@@ -1,4 +1,4 @@
-<!-- EDIT AT https://raw.githubusercontent.com/TheThingsNetwork/arduino-device-lib/node/docs/TheThingsNode.md -->
+<!-- EDIT AT https://github.com/TheThingsNetwork/arduino-device-lib/blob/node/docs/TheThingsNode.md -->
 
 # API Reference
 
@@ -75,7 +75,7 @@ Usage:
 void setup() {
     node = TheThingsNode::setup();
     
-    node->onWake(sleep);
+    node->onSleep(sleep);
 }
 
 void sleep() {

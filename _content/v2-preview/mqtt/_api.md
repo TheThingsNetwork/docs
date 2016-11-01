@@ -1,4 +1,4 @@
-<!-- EDIT AT https://raw.githubusercontent.com/TheThingsNetwork/ttn/v2-preview/mqtt/README.md -->
+<!-- EDIT AT https://github.com/TheThingsNetwork/ttn/blob/v2-preview/mqtt/README.md -->
 
 # API Reference
 

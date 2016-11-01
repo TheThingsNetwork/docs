@@ -1,4 +1,4 @@
-<!-- EDIT AT https://raw.githubusercontent.com/TheThingsNetwork/nodered-app-lib/refactor/API.md -->
+<!-- EDIT AT https://github.com/TheThingsNetwork/nodered-app-lib/blob/refactor/API.md -->
 
 <!-- ONLY EDIT THIS FILE AT https://github.com/TheThingsNetwork/nodered-app-lib/blob/refactor/API.md -->
 

@@ -4,7 +4,7 @@ This guide will walk you through subscribing to an application's activations and
 ## Setup
 
 * [Download](https://mosquitto.org/download/) Mosquitto.
-* Download and save the [PEM encoded CA certificate](http://staging.thethingsnetwork.org/mqtt-ca.pem) if you'd like to use TLS.
+* Download and save the [PEM encoded CA certificate](https://staging.thethingsnetwork.org/mqtt-ca.pem) if you'd like to use TLS.
 
 ## Credentials
 
@@ -30,7 +30,7 @@ Let's listen for new device activations first.
   
     > We add `-v` to also see the topics of the incoming messages.
   
-    For TLS - assuming [mqtt-ca.pem](http://staging.thethingsnetwork.org/mqtt-ca.pem) is in the same folder - append:
+    For TLS - assuming [mqtt-ca.pem](https://staging.thethingsnetwork.org/mqtt-ca.pem) is in the same folder - append:
 
     ```bash
     --cafile mqtt-ca.pem -p 8883
