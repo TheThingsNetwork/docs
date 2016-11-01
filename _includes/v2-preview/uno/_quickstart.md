@@ -267,13 +267,13 @@ Let's see the messages come in.
 3.  Leave **decoder** selected and copy-paste [the following JavaScript code](https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/QuickStart/Decoder.js):
 
     ```js
-    function Decoder(bytes) {
+    function Decoder(bytes, port) {
       // Decode an uplink message from a buffer
       // (array) of bytes to an object of fields.
       var decoded = {};
-    
-      decoded.led = bytes[0];
-    
+        
+      if (port === 1) decoded.led = bytes[0];
+        
       return decoded;
     }
     ```
@@ -288,19 +288,15 @@ Let's see the messages come in.
 5.  Now select **converter** and copy-paste [the following code](https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/QuickStart/Converter.js):
 
     ```js
-    function Converter(decoded) {
+    function Converter(decoded, port) {
       // Merge, split or otherwise
       // mutate decoded fields.
       var converted = decoded;
-    
-      if (converted.led === 0) {
-        converted.led = false;
+        
+      if (port === 1 && (converted.led === 0 || converted.led === 1)) {
+        converted.led = Boolean(converted.led);
       }
-    
-      if (converted.led === 1) {
-        converted.led = true;
-      }
-    
+        
       return converted;
     }
     ```
@@ -315,14 +311,14 @@ Let's see the messages come in.
 7.  Next, select **validator** and paste [this code](https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/QuickStart/Validator.js):
 
     ```js
-    function Validator(converted) {
+    function Validator(converted, port) {
       // Return false if the decoded, converted
       // message is invalid and should be dropped.
-    
-      if (converted.led !== true && converted.led !== false) {
+        
+      if (port === 1 && typeof converted.led !== 'boolean') {
         return false;
       }
-    
+        
       return true;
     }
     ```
@@ -415,13 +411,13 @@ What would be cooler than turning a LED on by sending `00`? Sending `{ "led": tr
 2.  Select **encoder** and use [the following code](https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/QuickStart/Encoder.js):
 
     ```js
-    function Encoder(object) {
+    function Encoder(object, port) {
       // Encode downlink messages sent as
       // object to an array or buffer of bytes.
       var bytes = [];
-    
-      bytes[0] = object.led ? 1 : 0;
-    
+        
+      if (port === 1) bytes[0] = object.led ? 1 : 0;
+        
       return bytes;
     }
     ```
