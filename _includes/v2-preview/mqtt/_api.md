@@ -2,9 +2,9 @@
 
 # API Reference
 
-* Host: `<Region>.thethings.network`
-* Port: `1883`
-* TLS: Not yet available
+* Host: `<Region>.thethings.network`, where `<Region>` is last part of the handler you registered your application to, e.g. `eu`.
+* Port: `1883` or `8883` for TLS
+* PEM encoded CA certificate for TLS: [mqtt-ca.pem](https://preview.console.thethingsnetwork.org/mqtt-ca.pem)
 * Username: Application ID
 * Password: Application Access Key
 

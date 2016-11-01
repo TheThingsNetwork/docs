@@ -10,6 +10,7 @@
     "prod": "npm run webpack & npm run jekyll",
     "test": "npm run spelling && npm run htmlproof",
     "jekyll": "bundle exec jekyll serve",
+    "pull": "gulp pull",
     "dev-jekyll": "bundle exec jekyll serve --incremental",
     "webpack": "webpack -p",
     "dev-webpack": "webpack --watch",
@@ -19,6 +20,7 @@
     "add": "git add ."
   },
   "pre-commit": [
+    "pull",
     "webpack",
     "test",
     "add"

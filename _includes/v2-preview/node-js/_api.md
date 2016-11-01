@@ -13,14 +13,20 @@ var ttn = require('ttn');
 Creates an instance of the client:
 
 ```js
-var client = new ttn.Client(region, appId, appAccessKey);
+var client = new ttn.Client(region, appId, appAccessKey, options);
 ```
 
 * `region [string]`: The region (e.g. `eu`) or full hostname (e.g. `eu.thethings.network`) of the handler to connect to.
 * `appId [string]`: The ID of the application to connect to (e.g. `HELLO-WORLD`).
 * `appAccessKey [string]`: An access key for the application, formatted as base64 (e.g. `'2Z+MU0T5xZCaqsD0bPqOhzA6iygGFoi4FAgMFgBfXSo='`).
-
-> Notice that the first 2 arguments changed in version 2.0.0.
+* `options [object]`: Optional additional options to pass on to [`mqtt.connect()`](https://www.npmjs.com/package/mqtt#connect), for example to use TLS download [mqtt-ca.pem](https://preview.console.thethingsnetwork.org/mqtt-ca.pem) and do something like:
+  
+    ```node
+    var fs = require('fs');
+    var options = {
+      ca: fs.readFileSync('mqtt-ca.pem')
+    };
+    ```
 
 ## Event: connect
 

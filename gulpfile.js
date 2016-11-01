@@ -10,22 +10,22 @@ gulp.task('pull:download', function() {
 
   var ops = [{
     url: 'https://raw.githubusercontent.com/TheThingsNetwork/node-app-lib/master/API.md',
-    file: '_content/v2-preview/node-js/_api.md'
+    file: '_includes/v2-preview/node-js/_api.md'
   }, {
     url: 'https://raw.githubusercontent.com/TheThingsNetwork/nodered-app-lib/refactor/API.md',
-    file: '_content/v2-preview/node-red/_api.md'
+    file: '_includes/v2-preview/node-red/_api.md'
   }, {
     url: 'https://raw.githubusercontent.com/TheThingsNetwork/arduino-device-lib/master/API.md',
-    file: '_content/v2-preview/arduino/_api.md'
+    file: '_includes/v2-preview/arduino/_api.md'
   }, {
     url: 'https://raw.githubusercontent.com/TheThingsNetwork/arduino-device-lib/node/docs/TheThingsNode.md',
-    file: '_content/draft/node/_api.md'
+    file: '_includes/draft/node/_api.md'
   }, {
     url: 'https://raw.githubusercontent.com/TheThingsNetwork/ttn/v2-preview/mqtt/README.md',
-    file: '_content/v2-preview/mqtt/_api.md'
+    file: '_includes/v2-preview/mqtt/_api.md'
   }, {
     url: 'https://raw.githubusercontent.com/TheThingsNetwork/ttn/v2-preview/ttnctl/cmd/docs/README.md',
-    file: '_content/v2-preview/cli/_api.md'
+    file: '_includes/v2-preview/cli/_api.md'
   }];
 
   ops.forEach(function(op) {
