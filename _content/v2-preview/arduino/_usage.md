@@ -59,12 +59,12 @@ For OTAA you will use the `join()` method with the **App EUI** and **App Key** c
 1.  Right after the include for the library create constants to hold the keys:
 
     ```c
-    const byte appEui[8] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
-    const byte appKey[16] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
+    const char *appEui = "0000000000000000";
+    const char *appKey = "00000000000000000000000000000000";
     ```
 
-    * For `appEui` use the **Application EUI** found on the device's page in the console. Click `<>` to toggle to the **msb** format and then `📋` to copy.
-    * For `appKey` use the **App Key** found on the device page. Click `<>` to toggle to the **msb** format. You'll have to click `👁` to show the key before you can copy it.
+    * For `appEui` use the **Application EUI** found on the device's page in the console. Click `📋` to copy.
+    * For `appKey` use the **App Key** found on the device page.
 
 2.  In your `setup()` function, call `ttn.join()` with the constants you just created:
 
@@ -81,13 +81,13 @@ For ABP you will use the `personalize()` method with the device's **Dev EUI**, *
 1.  Right after the include for the library create constants to hold the keys:
 
     ```c
-    const byte devAddr[4] = {0x00, 0x00, 0x00, 0x00};
-    const byte nwkSKey[16] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
-    const byte appSKey[16] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
+    const char *devAddr = "00000000";
+    const char *nwkSKey = "00000000000000000000000000000000";
+    const char *appSKey = "00000000000000000000000000000000";
     ```
 
-    * For `devAddr ` use the **Device Address** found on the device's page in the console. Click `<>` to toggle to the **msb** format and then `📋` to copy.
-    * For `nwkSKey ` use the **Network Session Key**. Click `<>` to toggle to the **msb** format. You'll have to click `👁` to show the key before you can copy it.
+    * For `devAddr ` use the **Device Address** found on the device's page in the console. Click `📋` to copy.
+    * For `nwkSKey ` use the **Network Session Key**.
     * For `appSKey` use **App Session Key**.
 
 2.  In your `setup()` function, call `ttn.personalize()` with the constants you just created:

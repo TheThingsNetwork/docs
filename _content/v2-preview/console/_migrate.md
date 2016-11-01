@@ -64,10 +64,8 @@ If you had your device registered for ABP, follow these additional steps:
     - For **Network Session Key**, click **customize it** and copy-paste the **Network Session Key** from staging.
     - For **App Session Key**, click **customize it** and copy-paste the **App Session Key** from staging.
 4.  Connect the device.
-5.  Update the following line of your sketch with the generated **Device EUI** (msb):
+5.  Update the following line of your sketch with the generated **Device EUI**:
 
     ```c
-    const byte devAddr[4] = {0x00, 0x00, 0x00, 0x00};
+    const char *devAddr = "00000000";
     ```
-    
-    > Use `<>` to toggle to **msb** and then copy with `📋`.

@@ -167,14 +167,11 @@ Now that we have registered the device, we can activate the connection from our 
 1.  In the Arduino IDE, go back to your sketch and copy-paste the following lines just after the `#include`:
 
     ```c
-    const byte appEui[8] = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };
-    const byte appKey[16] = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };
+    const char *appEui = "0000000000000000";
+    const char *appKey = "00000000000000000000000000000000";
     ```
 
-2.  Replace the values for `appEUI` and `appKey` with the msb-encoded **Application EUI** and **App Key** found under **Device Overview** on your device screen in the console.
-
-    > Use `👁` to show obfuscated keys and then use `📋` to copy. For the Arduino library we'll need the values in msb format. Toggle the format with `<>`.
-
+2.  Replace the values for `appEUI` and `appKey` with the **Application EUI** and **App Key** found under **Device Overview** on your device screen in the console.
 3.  In the `setup()` function, copy the following code just after `ttn.showStatus()`:
     
     ```c
