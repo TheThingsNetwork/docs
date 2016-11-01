@@ -9,21 +9,23 @@ The format of these variables is the underscored version of the command line opt
 
 ```sh
 export TTNCTL_DEBUG=true
-export TTNCTL_TTN_ROUTER=localhost:1700
-export TTNCTL_MQTT_BROKER=localhost:1883
-export TTNCTL_TTN_HANDLER=localhost:1782
-export TTNCTL_TTN_ACCOUNT_SERVER=https://account.thethingsnetwork.org
+export TTNCTL_DISCOVERY_ADDRESS=localhost:1900
+export TTNCTL_AUTH_SERVER=https://preview.account.thethingsnetwork.org
+export TTNCTL_ROUTER_ID=dev
+export TTNCTL_HANDLER_ID=dev
+export TTNCTL_MQTT_ADRESS=localhost:1883
 ```
 
 ## Configuration File
 
-A configuration file can be specified using the `--config` option. By default, `ttnctl` looks for the file `~/.ttnctl.yaml` (in your home directory).
+A configuration file can be specified using the `--config` option. By default, `ttnctl` looks for the file `~/.ttnctl.yml` (in your home directory).
 The configuration file shown below shown below are the values needed for **local development**. If you just want to use the default TTN server, you don't have to do any configuration.
 
 ```yaml
 debug: true
-ttn-router: "localhost:1700"
-mqtt-broker: "localhost:1883"
-ttn-handler: "localhost:1782"
-ttn-account-server: "https://account.thethingsnetwork.org"
+discovery-address: localhost:1900
+auth-server: https://preview.account.thethingsnetwork.org
+router-id: dev
+handler-id: dev
+mqtt-address: localhost:1883
 ```
