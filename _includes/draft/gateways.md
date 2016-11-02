@@ -1,7 +1,7 @@
 ---
 title: Gateways
 sections:
-- gateways/_register.md
+- /v2-preview/console/_register-gateway.md
 ---
 
 On gateways in general:

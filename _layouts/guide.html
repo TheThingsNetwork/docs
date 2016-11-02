@@ -123,7 +123,8 @@ layout: default
       {% endif %}
 
       {% for section in page.sections %}
-        {% capture section_include %}{% include_relative {{section}} %}{% endcapture %}
+        {% assign section0 = section | split: '' | first %}
+        {% capture section_include %}{% if section0 == '/' %}{% include {{ section }} %}{% else %}{% include_relative {{ section }} %}{% endif %}{% endcapture %}
         <section class="panel">
           <div class="panel-body">
             {{ section_include | markdownify | replace: '<a href="/', replace_a_with | replace: '<img src="/', replace_img_with | replace: '<table>', '<table class="table">'}}
