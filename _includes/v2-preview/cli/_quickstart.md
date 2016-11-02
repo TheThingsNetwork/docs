@@ -15,6 +15,11 @@ You can download the latest version of `ttnctl` using the following links:
 
 > _Downloads are also available as `.tar.gz` archives, just change the extension in the links above._
 
+SHA256 checksums for the uncompressed binaries are listed in the [`checksums`](https://ttnreleases.blob.core.windows.net/release/v2-preview/checksums) file.
+
+The `checksums` file is signed using our GPG key with fingerprint `2F06 2CD1 5425 47AF 71BD  9B81 8FC5 CD2B 9DFB 1B4B`. 
+The signature is stored as [`checksums.sig`](https://ttnreleases.blob.core.windows.net/release/v2-preview/checksums).
+
 We often update `ttnctl`, so re-download it once in a while.
 
 ---
