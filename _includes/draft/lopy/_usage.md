@@ -63,9 +63,9 @@ import struct
 
 lora = LoRa(mode=LoRa.LORAWAN)
 
-dev_addr = struct.unpack(">l", binascii.unhexlify('00 00 00 01'.replace(' ','')))[0]
-nwk_swkey = binascii.unhexlify('2B 7E 15 16 28 AE D2 A6 AB F7 15 88 09 CF 4F 3C'.replace(' ',''))
-app_swkey = binascii.unhexlify('2B 7E 15 16 28 AE D2 A6 AB F7 15 88 09 CF 4F 3C'.replace(' ',''))
+dev_addr = struct.unpack(">l", binascii.unhexlify('00000000'))[0]
+nwk_swkey = binascii.unhexlify('00000000000000000000000000000000')
+app_swkey = binascii.unhexlify('00000000000000000000000000000000')
 
 lora.join(activation=LoRa.ABP, auth=(dev_addr, nwk_swkey, app_swkey))
 ```
