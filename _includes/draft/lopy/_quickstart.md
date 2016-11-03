@@ -79,4 +79,35 @@ s.settimeout(3.5)     # Configure the timeout of the socket to 3.5 seconds
 ```
 
 ## Receive
-**TODO**
+
+In ordert to receive something from the Gateway, a LoRaWAN node needs to send first. After joining the network, create a LoRa socket, send a packet, and then try to receive:
+
+```
+import socket
+import time
+s = socket.socket(socket.AF_LORA, socket.SOCK_RAW)
+s.setsockopt(socket.SOL_LORA, socket.SO_DR, 5)
+s.setblocking(False)
+s.send(bytes([1, 2, 3]))
+time.sleep(3.0) # wait for the tx and rx to complete
+rx_pkt = s.recv(64)   # get the packet received (if any)
+print(rx_pkt)
+```
+
+Reception happens in the background automatically, therefore `s.recv(64)` will simply fecth data from the receive queue. If the receive queue is empty, the ``recv`` method will raise a **OSError** exception with an **EAGAIN** error code . Be careful when using blocking sockets, as in that case,``recv`` will block indefinitely until something arrives (which might never happen if you are not able to send again...). The best is to set a sensible timeout value for the socket, for instance, after the network is joined:
+
+```
+import socket
+import time
+s = socket.socket(socket.AF_LORA, socket.SOCK_RAW)
+s.setsockopt(socket.SOL_LORA, socket.SO_DR, 5)
+s.setblocking(False)
+s.send(bytes([1, 2, 3]))
+s.settimeout(3.0) # configure a timeout value of 3 seconds
+try:
+   rx_pkt = s.recv(64)   # get the packet received (if any)
+   print(rx_pkt)
+except socket.timeout:
+  print('No packet received')
+```
+In the case above, if after 3 seconds there's no packet received, the call to ``s.recv(64)`` will raise a timeout exception.
