@@ -15,7 +15,7 @@ gulp.task('pull:download', function() {
     url: 'https://raw.githubusercontent.com/TheThingsNetwork/nodered-app-lib/refactor/API.md',
     file: '_includes/v2-preview/node-red/_api.md'
   }, {
-    url: 'https://raw.githubusercontent.com/TheThingsNetwork/arduino-device-lib/master/API.md',
+    url: 'https://raw.githubusercontent.com/TheThingsNetwork/arduino-device-lib/master/docs/TheThingsNetwork.md',
     file: '_includes/v2-preview/arduino/_api.md'
   }, {
     url: 'https://raw.githubusercontent.com/TheThingsNetwork/arduino-device-lib/node/docs/TheThingsNode.md',
