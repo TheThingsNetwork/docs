@@ -210,7 +210,7 @@ Now let's listen for actual messages coming in from devices.
         "coding_rate": "4/5",
         "gateways": [
           {
-            "eui": "B827EBFFFE87BD22",
+            "gtw_id": "B827EBFFFE87BD22",
             "timestamp": 1064899219,
             "time": "2016-09-08T13:57:08.673927Z",
             "channel": 1,

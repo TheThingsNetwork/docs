@@ -18,7 +18,7 @@ Client client = new Client(region, appId, accessKey [, connOpts]);
 ```
 
 * `region [String]`: The region (e.g. `eu`) or full hostname (e.g. `eu.thethings.network`) of the handler to connect to.
-* `appId [String]`: The ID of the application to connect to (e.g. `HELLO-WORLD`).
+* `appId [String]`: The ID of the application to connect to (e.g. `hello-world`).
 * `appAccessKey [String]`: An access key for the application, formatted as base64 (e.g. `'2Z+MU0T5xZCaqsD0bPqOhzA6iygGFoi4FAgMFgBfXSo='`).
 * `connOpts [MqttConnectOptions]`: Some custom configuration of the MQTT connection. This parameter is optional.
 
@@ -69,12 +69,7 @@ client.onUplink(new UplinkHandler() {
   {
     "port": 1,
     "counter": 10,
-    "payload_raw": {
-      "type": "Buffer",
-      "data": [
-        1
-      ]
-    },
+    "payload_raw": "MQ==",
     "payload_fields": {
       "led": true
     },
@@ -85,7 +80,7 @@ client.onUplink(new UplinkHandler() {
       "data_rate": "SF7BW125",
       "coding_rate": "4/5",
       "gateways": [{
-        "eui": "0000024B08060112",
+        "gtw_id": "0000024B08060112",
         "timestamp": 3955426155,
         "time": "2016-09-07T12:50:07.053048Z",
         "channel": 4,
@@ -153,7 +148,7 @@ client.onActivation(new ActivationHandler() {
       "data_rate": "SF7BW125",
       "coding_rate": "4/5",
       "gateways": [{
-        "eui": "0000024B08060112",
+        "gtw_id": "0000024B08060112",
         "timestamp": 3546311603,
         "time": "2016-09-07T12:43:17.938537Z",
         "channel": 2,
@@ -186,12 +181,7 @@ client.onOtherEvent(new AbstractEventHandler() {
   ```json
   {
     "port": 1,
-    "payload_raw": {
-      "type": "Buffer",
-      "data": [
-        1
-      ]
-    }
+    "payload_raw": "MQ==",
   }
   ```
 
