@@ -8,11 +8,16 @@ The full script that we will build is also included as [example](https://github.
 ## Setup
 Let's install Java, create a Java project and require the TTN Client.
 
-1.  [Download](https://www.java.com/fr/download/) and install Java. Under debian-based systems, use :
+1.  [Download](https://www.java.com/) and install Java (at least version 7). 
+
+    Under debian-based systems, use :
 
     ```bash
     sudo apt-get install openjdk-8-jdk
     ```
+    
+    For Mac and Windows users, download it here: [java](https://www.java.com/download/)
+    
 2.  [Download](https://maven.apache.org/download.cgi) and install maven. 
 
     Under debian-based systems, use :
