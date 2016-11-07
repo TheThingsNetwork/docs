@@ -87,6 +87,8 @@ client.onMessage(new BiConsumer<String, Object>() {
     }
   }
   ```
+  
+  > When no field is specified, `cb.data` holds a `Message`. It's a `JsonObject` with an additional method: `getBinary(String key)`, base64-decoding the requested field.
 
 ### Listen for a specific device
 
@@ -105,6 +107,7 @@ client.onMessage("my-uno", "led", new BiConsumer<String, Object>() {
         System.out.println("Message: " + devId + " " + data);
 });
 ```
+  > When a field is specified, `cb.data` holds the `String` representation of the value.
 
 ## Event: activation
 
