@@ -1,12 +1,9 @@
-<!-- EDIT AT https://raw.githubusercontent.com/TheThingsNetwork/node-app-lib/master/API.md -->
-
 # API Reference
 
 Require the TTN Client module:
 
 ```java
 import org.thethingsnetwork.java.app.lib.Client;
-import org.thethingsnetwork.java.app.lib.events.*;
 ```
 
 ## Class: Client
@@ -20,50 +17,49 @@ Client client = new Client(region, appId, accessKey [, connOpts]);
 * `region [String]`: The region (e.g. `eu`) or full hostname (e.g. `eu.thethings.network`) of the handler to connect to.
 * `appId [String]`: The ID of the application to connect to (e.g. `hello-world`).
 * `appAccessKey [String]`: An access key for the application, formatted as base64 (e.g. `'2Z+MU0T5xZCaqsD0bPqOhzA6iygGFoi4FAgMFgBfXSo='`).
-* `connOpts [MqttConnectOptions]`: Some custom configuration of the MQTT connection. This parameter is optional.
+* `connOpts [MqttConnectOptions]`: Some custom configuration of the MQTT connection. This parameter is optional. For example to use TLS download [mqtt-ca.pem](https://preview.console.thethingsnetwork.org/mqtt-ca.pem) and trust it following this guide: [Trust self-signed certificates](http://howardism.org/Technical/Java/SelfSignedCerts.html):
 
 ## Event: connect
 
 Emitted on successful connection.
 
 ```java
-client.onConnected(new ConnectHandler() {
-    public void handle(MqttClient client) {
+client.onConnected(new Consumer<MqttClient>() {
+    public void accept(MqttClient client) {
         System.out.println("connected !");
     }
 });
 ```
 
-* `client [MqttClient]`: MQTT connection wrapper. See [MQTT](http://www.eclipse.org/paho/files/javadoc/org/eclipse/paho/client/mqttv3/MqttClient.html).
+* `cb.client [MqttClient]`: MQTT connection wrapper. See [MQTT](http://www.eclipse.org/paho/files/javadoc/org/eclipse/paho/client/mqttv3/MqttClient.html).
 
 ## Event: error
 
 Emitted when the client cannot connect or when a parsing error occurs.
 
 ```java
-client.onError(new ErrorHandler() {
-    public void handle(Throwable error) {
+client.onError(new Consumer<Throwable>() {
+    public void accept(Throwable error) {
         System.err.println("error: " + error.getMessage());
     }
 });
 ```
 
-* `error [Throwable]`: Error object. See [MQTT](https://docs.oracle.com/javase/8/docs/api/java/lang/Exception.html).
+* `cb.error [Throwable]`: Error object. See [MQTT](https://docs.oracle.com/javase/8/docs/api/java/lang/Exception.html).
 
 ## Event: message
 
 Emitted when TTN forwards a message addressed to your application.
 
 ```java
-client.onUplink(new UplinkHandler() {
-    public void handle(String devId, Object data) {
+client.onMessage(new BiConsumer<String, Object>() {
+    public void accept(String devId, Object data) {
         System.out.println("Message: " + devId + " " + data);
-    }
 });
 ```
 
-* `devId [String]`: Device ID, e.g.: `my-uno`.
-* `data [Object]`: Message data, e.g.:
+* `cb.devId [String]`: Device ID, e.g.: `my-uno`.
+* `cb.data [Object]`: Message data, e.g.:
 
   ```json
   {
@@ -95,29 +91,18 @@ client.onUplink(new UplinkHandler() {
 ### Listen for a specific device
 
 ```java
-client.onUplink(new UplinkHandler() {
-    public void handle(String devId, Object data) {
+client.onMessage("my-uno", new BiConsumer<String, Object>() {
+    public void accept(String devId, Object data) {
         System.out.println("Message: " + devId + " " + data);
-    }
-    public String getDevId(){
-        return "my-uno";
-    }
 });
 ```
 
 ### Listen for a specific field (and device)
 
 ```java
-client.onUplink(new UplinkHandler() {
-    public void handle(String devId, Object data) {
+client.onMessage("my-uno", "led", new BiConsumer<String, Object>() {
+    public void accept(String devId, Object data) {
         System.out.println("Message: " + devId + " " + data);
-    }
-    public String getDevId(){
-        return "my-uno";
-    }
-    public String getField() {
-        return "led";
-    }
 });
 ```
 
@@ -126,15 +111,15 @@ client.onUplink(new UplinkHandler() {
 Emitted when a device registered to the application activates.
 
 ```java
-client.onActivation(new ActivationHandler() {
-    public void handle(String devId, JSONObject data) {
+client.onActivation(new BiConsumer<String, JSONObject>() {
+    public void accept(String _devId, JSONObject _data) {
         System.out.println("Activation: " + devId + " " + data);
     }
 });
 ```
 
-* `devId [String]`: Device ID, e.g.: `my-uno`.
-* `data [Object]`: Activation data, e.g.:
+* `cb.devId [String]`: Device ID, e.g.: `my-uno`.
+* `cb.data [Object]`: Activation data, e.g.:
 
   ```json
   {
@@ -164,19 +149,16 @@ client.onActivation(new ActivationHandler() {
 Emitted when a device event is published.
 
 ```java
-client.onOtherEvent(new AbstractEventHandler() {
-    public void handle(String devId, String event, JSONObject data) {
+client.onDevice(null, "down/scheduled", new TriConsumer<String, String, JSONObject>() {
+    public void accept(String devId, String event, JSONObject data) {
         System.out.println("Received event "+event+"for device "+devId);
-    }
-    public String getEvent() {
-        return "down/scheduled";
     }
 });
 ```
 
-* `devId [String]`: Device ID, e.g.: `my-uno`.
-* `event [String]`: Event name, e.g.: `down/scheduled`.
-* `data [Object]`: Event data, e.g. for `down/scheduled`:
+* `cb.devId [String]`: Device ID, e.g.: `my-uno`.
+* `cb.event [String]`: Event name, e.g.: `down/scheduled`.
+* `cb.data [Object]`: Event data, e.g. for `down/scheduled`:
 
   ```json
   {
@@ -196,11 +178,14 @@ client.send(devId, payload, port);
 *  `deviceId [String]`: The ID of the device to address, e.g. `my-uno`
 *  `payload [mixed]`: Message to send, either:
     *  Byte array, e.g. `[1]`
+    *  ByteBuffer, e.g. `ByteBuffer.allocate(2).put(0x00)`
     *  JsonObject, e.g. `{ led: true }`
     
         > This requires your application to be configured with an encoder payload function to encode the object in bytes.
         
 *  `port [Integer]`: Optional port to address. Default: `1`.
+
+> See the [Java ByteBuffer reference](https://docs.oracle.com/javase/8/docs/api/java/nio/ByteBuffer.html) for different ways to create a buffer. The client will rewind the buffer before publishing the message to The Things Network's MQTT broker.
 
 ## Method: end
 

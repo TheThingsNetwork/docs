@@ -60,10 +60,11 @@ Next, we will write the script that requires the TTN Client module and uses it t
     ```java
     package org.thethingsnetwork.java.app.sample;
 
+    import java.util.function.BiConsumer;
+    import java.util.function.Consumer;
     import org.eclipse.paho.client.mqttv3.MqttClient;
     import org.json.JSONObject;
     import org.thethingsnetwork.java.app.lib.Client;
-    import org.thethingsnetwork.java.app.lib.events.*;
     ```
 
 3.  In the [console](https://preview.console.thethingsnetwork.org/applications), navigate to the application you'd like to connect to.
@@ -140,9 +141,9 @@ Now that we are connected, let's listen for new device activations.
 1.  Add a listener for the `activation` event:
 
     ```java
-    client.onActivation(new ActivationHandler() {
-        public void handle(String _devId, JSONObject _data) {
-            System.out.println("Activation: " + _devId + " " + _data);
+    client.onActivation(new BiConsumer<String, JSONObject>() {
+        public void accept(String devId, JSONObject data) {
+            System.out.println("Activation: " + devId + " " + data);
         }
     });
     ```
@@ -178,9 +179,9 @@ Now let's listen for actual messages coming in from devices.
 1.  Add a listener for the `uplink` event:
 
     ```java
-    client.onUplink(new UplinkHandler() {
-        public void handle(String _devId, Object _data) {
-            System.out.println("Message: " + _devId + " " + _data);
+    client.onMessage(new BiConsumer<String, Object>() {
+        public void accept(String devId, Object data) {
+            System.out.println("Message: " + devId + " " + data);
         }
     });
     ```
@@ -231,24 +232,20 @@ The most common [Class A](https://www.lora-alliance.org/What-Is-LoRa/Technology)
 2.  In the editor for the script, add another listener for the `message` event:
 
     ```java
-    client.onUplink(new UplinkHandler() {
-        public void handle(String _devId, Object _data) {
+    client.onMessage(null, "led", new BiConsumer<String, Object>() {
+            public void accept(String devId, Object data) {
             try {
                 // Toggle the LED
-                JSONObject response = new JSONObject().put("led", !_data.equals("true"));
+                JSONObject response = new JSONObject().put("led", !data.equals("true"));
                 /**
                  * If you don't have an encoder payload function:
-                 * client.send(_devId, _data.equals("true") ? new byte[]{0x00} : new byte[]{0x01}, 0);
+                 * client.send(devId, data.equals("true") ? new byte[]{0x00} : new byte[]{0x01}, 0);
                  */
                 System.out.println("Sending: " + response);
-                client.send(_devId, response, 0);
+                client.send(devId, response, 0);
             } catch (Exception ex) {
                 System.out.println("Response failed: " + ex.getMessage());
             }
-        }
-
-        public String getField() {
-            return "led";
         }
     });
     ```
