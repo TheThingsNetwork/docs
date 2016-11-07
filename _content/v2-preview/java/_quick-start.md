@@ -72,9 +72,9 @@ Next, we will write the script that requires the TTN Client module and uses it t
 5.  In the editor, create an instance of the client:
 
     ```java 
-    String region = System.getenv("region");
-    String appId = System.getenv("appId");
-    String accessKey = System.getenv("accessKey");
+    String region = "eu";
+    String appId = "hello-world";
+    String accessKey = "2Z+MU0T5xZCaqsD0bPqOhzA6iygGFoi4FAgMFgBfXSo=";
 
     Client client = new Client(region, appId, accessKey);
     
@@ -85,7 +85,7 @@ Next, we will write the script that requires the TTN Client module and uses it t
     
     * For `region`, copy the part following `ttn-handler-` for **Handler Status** in the **Application Overview** box.
     * For `appId`, copy the value for **Application ID** in the **Application Overview** box.
-    * For `accessKey`, scroll down and then show and copy the value for **default key** in the **Access Key** box.
+    * For `accessKey`, scroll down and copy the value for **default key** in the **Access Key** box.
 
 6.  Add a listener for the `connected` and `error` events to test the connection:
 
@@ -131,8 +131,6 @@ Next, we will write the script that requires the TTN Client module and uses it t
     Connection refused: Not authorized
     ```
 
-    > Make sure you have used the **Application ID** and not an **Application EUI** like version 0.x of the client.
-
 ## Receive Activations
 Now that we are connected, let's listen for new device activations.
 
@@ -176,7 +174,7 @@ Now that we are connected, let's listen for new device activations.
 ## Receive Messages
 Now let's listen for actual messages coming in from devices.
 
-1.  Add a listener for the `uplink` event:
+1.  Add a listener for the `message` event:
 
     ```java
     client.onMessage(new BiConsumer<String, Object>() {
