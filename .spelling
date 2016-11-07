@@ -73,21 +73,22 @@ SparkFun
 Wifi
 MicroPython
 hostname
- - _content/current/arduino/_api.md
+Pycom's
+ - _includes/current/arduino/_api.md
 Dev
 lication
- - _content/current//arduino/_ide.md
+ - _includes/current//arduino/_ide.md
 _mouth
- - _content/current//cli/_api.md
+ - _includes/current//cli/_api.md
 1h2m
- - _content/current//arduino.md
+ - _includes/current//arduino.md
 0.x
- - _content/current//mqtt/_api.md
+ - _includes/current//mqtt/_api.md
 mqtt-ca
 pem
- - _content/current//mqtt/_clients.md
+ - _includes/current//mqtt/_clients.md
 Paho
- - _content/current//node-js/_live.md
+ - _includes/current//node-js/_live.md
 ttn
 MU0T5xZCaqsD0bPqOhzA6iygGFoi4FAgMFgBfXSo
 ttn.Client
@@ -101,9 +102,9 @@ msg
 console.info
 JSON.stringify
 msg.counter
- - _content/current//node-js/_quick-start.md
+ - _includes/current//node-js/_quick-start.md
 Node.js.
- - _content/current//node-red/_build.md
+ - _includes/current//node-red/_build.md
 http
- - _content/current//uno/_quickstart.md
+ - _includes/current//uno/_quickstart.md
 msb
