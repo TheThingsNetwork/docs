@@ -13,11 +13,22 @@ Let's install Java, create a Java project and require the TTN Client.
     ```bash
     sudo apt-get install openjdk-8-jdk
     ```
-2.  [Download](https://maven.apache.org/download.cgi) and install maven. Under debian-based systems, use :
+2.  [Download](https://maven.apache.org/download.cgi) and install maven. 
+
+    Under debian-based systems, use :
 
     ```bash
     sudo apt-get install maven
     ```
+
+    For Mac users:
+
+    ```bash
+    brew install maven
+    ```
+
+    For Windows users, see this [link](https://www.mkyong.com/maven/how-to-install-maven-in-windows/)
+   
 3.  Create a new Java project:
 
     ```bash

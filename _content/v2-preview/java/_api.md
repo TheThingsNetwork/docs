@@ -88,7 +88,21 @@ client.onMessage(new BiConsumer<String, Object>() {
   }
   ```
   
-  > When no field is specified, `cb.data` holds a `Message`. It's a `JsonObject` with an additional method: `getBinary(String key)`, base64-decoding the requested field.
+When no field is specified, `cb.data` holds a `Message`. It's a `JsonObject` with an additional method: `getBinary(String key)`, base64-decoding the requested field:
+
+```java
+client.onMessage(new BiConsumer<String, Object>() {
+    public void accept(String devId, Object data) {
+        byte[] payload = ((Message)data).getBinary("payload_raw");
+        System.out.println("Message: " + devId + " " + payload[0]);
+});
+```
+Should give you:
+
+```bash
+Message: my-uno 0
+```
+
 
 ### Listen for a specific device
 
@@ -107,7 +121,7 @@ client.onMessage("my-uno", "led", new BiConsumer<String, Object>() {
         System.out.println("Message: " + devId + " " + data);
 });
 ```
-  > When a field is specified, `cb.data` holds the `String` representation of the value.
+  > When a field is specified, `cb.data` holds the `String` representation of the field value.
 
 ## Event: activation
 
