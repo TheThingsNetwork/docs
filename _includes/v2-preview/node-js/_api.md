@@ -79,7 +79,7 @@ client.on('message', function cb(deviceId, data) {});
       "data_rate": "SF7BW125",
       "coding_rate": "4/5",
       "gateways": [{
-        "eui": "0000024B08060112",
+        "gtw_id": "0000024B08060112",
         "timestamp": 3955426155,
         "time": "2016-09-07T12:50:07.053048Z",
         "channel": 4,
@@ -127,7 +127,7 @@ client.on('activation', [deviceId], function cb(deviceId, data)) {});
       "data_rate": "SF7BW125",
       "coding_rate": "4/5",
       "gateways": [{
-        "eui": "0000024B08060112",
+        "gtw_id": "0000024B08060112",
         "timestamp": 3546311603,
         "time": "2016-09-07T12:43:17.938537Z",
         "channel": 2,
