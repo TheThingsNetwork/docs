@@ -24,6 +24,9 @@ gulp.task('pull:download', function() {
     url: 'https://raw.githubusercontent.com/TheThingsNetwork/ttn/v2-preview/mqtt/README.md',
     file: '_content/v2-preview/mqtt/_api.md'
   }, {
+    url: 'https://raw.githubusercontent.com/TheThingsNetwork/java-app-lib/master/API.md',
+    file: '_content/v2-preview/java/_api.md'
+  }, {
     url: 'https://raw.githubusercontent.com/TheThingsNetwork/ttn/v2-preview/ttnctl/cmd/docs/README.md',
     file: '_content/v2-preview/cli/_api.md'
   }];
