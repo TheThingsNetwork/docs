@@ -5,6 +5,11 @@ sections:
  - java/_api.md
 redirect_from:
  - /refactor/java/
+ambassador:
+  name: Romain Cambier
+  username: cambierr
+  text: >
+    Both this guide and the [client](https://github.com/thethingsnetwork/java-app-lib) are a community effort led by our Java ambassador [Romain Cambier](https://www.thethingsnetwork.org/u/cambierr/). The Things Network does not provide support for this gateway. For community support visit the [forum](https://www.thethingsnetwork.org/forum/search?q=java) or create an issue on [GitHub](https://github.com/thethingsnetwork/java-app-lib/issues).
 ---
 
 [Java](https://www.java.com) is a complete ecosystem that provides tools for developing software and deploying it in a cross-platform environment.
