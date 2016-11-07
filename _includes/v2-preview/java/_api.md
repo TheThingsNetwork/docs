@@ -1,3 +1,5 @@
+<!-- EDIT AT https://github.com/TheThingsNetwork/java-app-lib/blob/master/API.md -->
+
 # API Reference
 
 Require the TTN Client module:
