@@ -2,6 +2,7 @@
 title: Building Integrations
 sections:
  - integrations/_library.md
+ - integrations/_service.md
  - integrations/_hosting.md
 ---
 
