@@ -1,0 +1,35 @@
+- category: Devices
+  guides:
+    - name: The Things Node
+    - name: The Things Uno
+      path: /current/uno/
+    - name: Arduino
+      label: library
+      path: /current/arduino/
+- category: Gateways
+  guides:
+    - name: The Things Gateway
+    - name: MultiTech Conduit
+      path: /current/multitech/
+- category: Network
+  guides:
+    - name: Architecture
+      href: https://www.thethingsnetwork.org/wiki/Backend/Overview
+    - name: The Things Dashboard
+      path: /current/dashboard/
+    - name: The Things CLI
+      path: /current/cli/
+- category: Integrations
+  guides:
+    - name: MQTT
+      label: API
+      path: /current/mqtt/
+    - name: Node.js
+      label: library
+      path: /current/node-js/
+    - name: Node-RED
+      label: library
+      path: /current/node-red/
+    - name: Java
+      label: library
+      path: /v2-preview/java/

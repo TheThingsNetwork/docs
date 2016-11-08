@@ -51,6 +51,14 @@ $padding-base-horizontal: 14px;
 $padding-large-horizontal: 20px;
 
 $panel-border-radius: none;
+$panel-default-border: #efefef;
+$panel-default-heading-bg: $brand-primary;
+$panel-default-text: #ffffff;
+$panel-heading-padding: 15px;
+$panel-inner-border: $panel-default-border;
+
+$list-group-disabled-bg: transparent;
+$list-group-border: $panel-default-border;
 
 $breadcrumb-bg: white;
 $breadcrumb-separator: '//';

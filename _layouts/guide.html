@@ -4,20 +4,11 @@ layout: default
 
 {% capture version %}{{ page.url | split: '/' | slice: 1 }}{% endcapture %}
 {% capture path %}{{ page.url | split: '/' | slice: 2, 10 | join: '/' }}{% endcapture %}
-{% assign guides = '' | split: '|' %}
-{% assign version_guides = '' | split: '|' %}
 {% assign guide_versions = '' | split: '|' %}
 
 {% for guide in site.includes %}
   {% capture guide_version %}{{ guide.url | split: '/' | slice: 1 }}{% endcapture %}
   {% capture guide_path %}{{ guide.url | split: '/' | slice: 2, 10 | join: '/' }}{% endcapture %}
-  {% if guide_version == "current" %}
-    {% assign guides = guides | push: guide %}
-  {% else %}
-    {% if guide_version == version %}
-      {% assign version_guides = version_guides | push: guide %}
-    {% endif %}
-  {% endif %}
   {% if guide_path == path or page.aliases contains guide_path or guide.aliases contains path %}
     {% assign guide_versions = guide_versions | push: guide %}
     {% if guide_version == "current" %}
@@ -30,27 +21,29 @@ layout: default
 
   <div class="row guide-nav">
     <div class="col-sm-9">
-      <div class="dropdown">
-        <button class="btn btn-primary" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Guide: {{ page.title }} <span class="caret"></span></button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          {% if version_guides.size > 0 %}
-            <li class="dropdown-header">{{ version | upcase }}</li>
-            {% assign sorted = version_guides | sort:"zindex" | reverse %}
-            {% for guide in sorted %}
-              {% unless guide.hidden %}
-                <li{% if guide.path == page.path %} class="active"{% endif %}><a href="{{ site.baseurl }}{{ guide.url}}">{{ guide.title }}</a></li>
-              {% endunless %}
+      <ol class="breadcrumb">
+        <li><a href="http://www.thethingsnetwork.org/">Home</a></li>
+        <li><a href="{{ site.baseurl }}/">Learn</a></li>
+        <li class="dropdown"><a href id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ page.title }} <span class="caret"></span></a>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            {% for category in site.data.guides %}
+              <li class="dropdown-header">{{ category.category | upcase }}</li>
+              {% for guide in category.guides %}
+                {% if guide.href %}
+                  <li><a href="{{ guide.href }}">
+                {% else if guide.path %}
+                  <li{% if guide.path == page.path %} class="active"{% endif %}><a href="{{ site.baseurl }}{{ guide.path }}">
+                {% else %}
+                  <li class="disabled"><a href="#">
+                {% endif %}
+                {{ guide.name }}
+                {% if guide.label %}<span class="label label-info">{{ guide.label }}</span>{% endif %}
+                </a></li>
+              {% endfor %}
             {% endfor %}
-          {% endif %}
-          <li class="dropdown-header">CURRENT</li>
-          {% assign sorted = guides | sort:"zindex" | reverse %}
-          {% for guide in sorted %}
-            {% unless guide.hidden %}
-              <li{% if guide.path == page.path %} class="active"{% endif %}><a href="{{ site.baseurl }}{{ guide.url}}">{{ guide.title }}</a></li>
-            {% endunless %}
-          {% endfor %}
-        </ul>
-      </div>
+          </ul>
+        </li>
+      </ol>
     </div>
     <div class="col-sm-3 text-right">
       <a class="btn btn-default hidden-xs" href="{{ site.github.repository_url }}/edit/master/{{ page.path | downcase }}" target="_blank"><i class="fa fa-pencil"></i> Improve this guide</a>

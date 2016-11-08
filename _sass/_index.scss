@@ -1,4 +1,5 @@
 .layout-index {  
+  margin-bottom: 70px;
 
   @media (min-width: 1700px) {
     background-size: 100% auto;
@@ -6,78 +7,86 @@
 
   .index-header {
     height: 500px;
-    background-image: url($baseurl + '/assets/images/header-img.jpg');
+    background-image: url($baseurl + '/assets/images/header-img-learn.jpg');
     background-size: cover;
     background-position: center;
 
-    text-align: center;
+    h1 {
+      margin: auto;
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
 
-    img {
-      margin-top: 70px;
-      width: 180px;
-      margin-bottom: 60px;
-    }
+      img {
+        width: 170px;
+      }
 
-    .title {
-      margin: 0;
-      text-transform: uppercase;
-      font-size: 20px;
-      letter-spacing: 9px;
-      color: white;
-
-      @media (min-width: $screen-sm-min) {
-        font-size: 50px;
+      span {
+        display: block;
+        text-transform: uppercase;
+        font-size: 60px;
+        letter-spacing: 9px;
+        color: white;
+        margin-top: 40px;
       }
     }
 
     p {
-      margin-top: 10px;
+      @extend .text-center;
+      margin-top: 40px;
       font-size: 20px;
-      letter-spacing: 1px;
-      margin-bottom: 75px;
       color: white;
+    }
+
+    @media (min-width: $screen-sm-min) {
+      h1 {
+        flex-direction: row;
+        margin-top: 70px;
+
+        span {
+          font-size: 120px;
+          margin-left: 40px;
+          margin-top: 40px;
+        }
+      }
+
+      p {
+        font-size: 25px;
+        margin-top: 70px;
+      }
     }
   }
 
   .index-intro {
     margin-top: -50px;
     padding: 45px;
-    margin-bottom: 115px;
+    margin-bottom: 70px;
     text-align: center;
     color: $gray;
+
+    p:last-child {
+      margin-bottom: 0px;
+    }
+
+    @media (max-width: $screen-sm-max) {
+
+      .row > div {
+        margin-bottom: 1em;
+
+        &:last-child {
+          margin-bottom:  0;
+        }
+      }
+    }
   }
 
-  .index-group {
-    margin-top: 65px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #B7E2FD;
-  }
+  @media (min-width: $screen-sm-min) {
 
-  .index-topic {
-    margin-top: 50px;
-    margin-bottom: 50px;
-
-    &.disabled {
-      opacity: 0.5;
+    .index-categories {
+      display: flex;
+      flex-flow: row wrap;
     }
-
-    img {
-      width: 200px;
-      display: block;
-      margin: 20px auto;
-    }
-
-    .title {
-      @extend .h3;
-    }
-
-    hr {
-      margin: 0;
-    }
-
-    p {
-      color: $gray;
-    }
-
   }
 }
