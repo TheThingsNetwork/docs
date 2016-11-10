@@ -1,11 +1,9 @@
 # Usage
-This is how you perform common tasks to use The Things Network on the LoPy.
+This is how you perform common tasks to use The Things Network on the LoPy. This assumes you are familiar with [MicroPython for LoPy](https://docs.pycom.io/lopy/) documentation.
 
 ## Register your Device EUI
 
-To [register](../../v2-preview/console/#register-device) your device to a The Things Network application, you will need a unique Device EUI.
-
-You can either let The Things Network generate a Device EUI or use the unique MAC address of the LoRa module on the LoPy MAC.
+To [register](../../v2-preview/console/#register-device) your device to a The Things Network application, you will need a unique Device EUI. You can either let The Things Network generate a Device EUI or use the unique MAC address of the LoRa module on the LoPy MAC. This is how you get the MAC address:
 
 1.  [Start a MicroPython REPL prompt](https://docs.pycom.io/lopy/lopy/tutorial/repl.html), probably via [Telnet](https://docs.pycom.io/lopy/lopy/general.html#telnet-repl).
 
@@ -14,19 +12,25 @@ You can either let The Things Network generate a Device EUI or use the unique MA
 2.  Run the following commands in the REPL:
 
     ```bash
-    >>> from network import LoRa
-    >>> import binascii
-    >>> lora = LoRa(mode=LoRa.LORAWAN)
-    >>> DEUI = binascii.hexlify(lora.mac()).upper().decode('utf-8')
-    >>> print('%s %s %s %s %s %s %s %s' % (DEUI[:2], DEUI[2:4], DEUI[4:6], DEUI[6:8], DEUI[8:10], DEUI[10:12], DEUI[12:14], DEUI[14:16]))
-    70 B3 D5 49 95 85 FC A7
+    from network import LoRa
+    import binascii
+    lora = LoRa(mode=LoRa.LORAWAN)
+    print(binascii.hexlify(lora.mac()).upper().decode('utf-8'))
     ```
   
-    In this case the Device EUI is `70 B3 D5 49 95 85 FC A7`
+    This should print your Device EUI like:
+    
+    ```bash
+    70B3D5499585FCA1
+    ```
+    
+3. Follow the steps to [register your device](../../v2-preview/console/#register-device).
   
 ## Activate your Device
 
-This is how you activate your device to connect to The Things Network via either (recommended) OTAA or ABP.
+Once you have registered your device you can now activate it via either OTAA or ABP. OTAA is the preferred method.
+
+You'll probably want to program your your device via [Pymakr](https://www.pycom.io/solutions/pymakr/) or modify the `flash/main.py` file via [FTP](https://docs.pycom.io/lopy/lopy/general.html#local-file-system-and-ftp-access) instead of using the REPL.
 
 ### OTAA
 
@@ -49,8 +53,10 @@ while not lora.has_joined():
     time.sleep(2.5)
     print('Not joined yet...')
 
-print('Network joined!)
+print('Network joined!')
 ```
+
+> To monitor the logs, connect to the [Telnet REPL](https://docs.pycom.io/lopy/lopy/general.html#telnet-repl). This is also comes into use to to [soft-reboot](https://docs.pycom.io/lopy/lopy/tutorial/repl.html#resetting-the-board) the board after modifying `main.py`. Simply press `CTRL+D` to interrupt the active script and `CTRL+D` to soft reboot.
 
 ### ABP
 

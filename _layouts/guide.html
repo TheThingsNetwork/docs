@@ -27,11 +27,11 @@ layout: default
         <li class="dropdown"><a href id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ page.title }} <span class="caret"></span></a>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             {% for category in site.data.guides %}
-              <li class="dropdown-header">{{ category.category | upcase }}</li>
+              {% unless forloop.first %}<li role="separator" class="divider"></li>{% endunless %}
               {% for guide in category.guides %}
                 {% if guide.href %}
                   <li><a href="{{ guide.href }}">
-                {% else if guide.path %}
+                {% elsif guide.path %}
                   <li{% if guide.path == page.path %} class="active"{% endif %}><a href="{{ site.baseurl }}{{ guide.path }}">
                 {% else %}
                   <li class="disabled"><a href="#">

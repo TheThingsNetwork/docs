@@ -44,7 +44,9 @@ void loop() {
 }
 ```
 
-The actual streams you'd pass to the constructor depend on the board you use and the Serial Port you connected a LoRaWAN module to. For The Things Uno and Node use the Serial Ports and baud rates shown here. The third argument for the constructor is a constant to set the frequency plan your device operators on.
+The actual streams you'd pass to the constructor depend on the board you use and the Serial Port you connected a LoRaWAN module to. For The Things Uno and Node use the Serial Ports and baud rates shown here.
+
+The third argument for the constructor is a constant to set the frequency plan your device operators on. Replace `/* TTN_FP_EU868 or TTN_FP_US915 */` with either `TTN_FP_EU868` or `TTN_FP_US915`.
 
 ## Activate
 

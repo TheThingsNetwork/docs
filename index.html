@@ -50,13 +50,15 @@ layout: default
                 </div>
                 <div class="list-group">
                   {% for guide in category.guides %}
-                    {% if guide.path %}
+                    {% if guide.href %}
+                      <a class="list-group-item" href="{{ guide.href }}">
+                    {% elsif guide.path %}
                       <a class="list-group-item" href="{{ site.baseurl }}{{ guide.path }}">
                     {% else %}
-                      <a class="list-group-item disabled">
+                      <a class="list-group-item disabled" href="#">
                     {% endif %}
-                      {{ guide.name }}
-                      {% if guide.label %}<span class="label label-info">{{ guide.label }}</span>{% endif %}
+                    {{ guide.name }}
+                    {% if guide.label %}<span class="label label-info">{{ guide.label }}</span>{% endif %}
                     </a>
                   {% endfor %}
                 </div>
