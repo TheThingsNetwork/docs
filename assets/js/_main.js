@@ -79,6 +79,7 @@ $(function() {
       e.preventDefault();
       var src = this.getAttribute('src');
       if (window.innerWidth >= 768) {
+        $('#lightbox a').attr('href', src);
         $('#lightbox img').attr('src', src);
         $('#lightbox').modal('show');
       } else {
