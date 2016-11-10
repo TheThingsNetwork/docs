@@ -75,6 +75,11 @@ $(function() {
       });
     });
 
+    $('.content-body img').click(function(e) {
+      e.preventDefault();
+      window.open(this.getAttribute('src'));
+    });
+
   } else {
 
     // so that front-page content scroll to below navbar as well

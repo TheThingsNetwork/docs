@@ -53,8 +53,5 @@
     "stylebook": "thethingsnetwork/stylebook",
     "tocbot": "^2.1.5",
     "webpack": "^1.13.1"
-  },
-  "dependencies": {
-    "stylebook": "thethingsnetwork/stylebook"
   }
 }
