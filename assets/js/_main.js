@@ -77,7 +77,13 @@ $(function() {
 
     $('.content-body img').click(function(e) {
       e.preventDefault();
-      window.open(this.getAttribute('src'));
+      var src = this.getAttribute('src');
+      if (window.innerWidth >= 768) {
+        $('#lightbox img').attr('src', src);
+        $('#lightbox').modal('show');
+      } else {
+        window.open(src);
+      }
     });
 
   } else {
