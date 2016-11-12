@@ -12,6 +12,8 @@
     - name: The Things Gateway
     - name: MultiTech Conduit
       path: /current/multitech/
+    - name: Lorrier LR2
+      path: /current/lorrier/
     - name: Other Gateways
 - category: Network
   guides:
