@@ -45,4 +45,4 @@ The most advanced way is a full Platform Integration. Under the hood the HTTP In
 
 > If there's a SDK available for the platform the Integration is written in, of course you can use that SDK. We might even an SDK for the Account Server, like we do in [Go](https://github.com/TheThingsNetwork/go-account-lib).
 
-Platform Integrations can completely hide the user from any code and even The Things Network Console or CLI. A good example is an integration for Azure or Amazon IoT Hub where the user could manage his application and devices there, while the integration takes care of synchronizing with The Things Network.
+Platform Integrations can completely hide the user from any code and even The Things Network Console or CLI. A good example is an integration for Azure IoT Hub or Amazon IoT, where the user could manage his application and devices there, while the integration takes care of synchronizing with The Things Network.

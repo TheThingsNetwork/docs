@@ -32,4 +32,4 @@ You can host your platform integration on The Things Network Integration Platfor
 2. The configuration must be done via environment variables.
 3. The service must meet our standards for efficiency and stability.
 
-Contact [wienke@thethingsnetwork.org](mailto:wienke@thethingsnetwork.org) if you are interested.
+Contact [johan@thethingsnetwork.org](mailto:johan@thethingsnetwork.org) if you are interested.
