@@ -28,21 +28,12 @@ Some platforms do not allow to execute code or communicate with the Handler's MQ
 
 ## 4. Platform Integration
 
-The most advanced way is a full Platform Integration. Under the hood the HTTP Integration is in fact a platform integration as well.
+The most advanced way is a Platform Integration. For each integration the user adds, we spin up a container using a generic image for the selected platform. Configuration is passed to the container using environment variables.
 
-* For each integration the user adds, we spin up a container using a generic image for the selected platform. 
-* Configuration is passed to the container using environment variables.
-* Just like an application would, the integration uses the the Handler Interfaces to communicate with devices and manage both applications and devices.
-
-  > The HTTP Integration uses the environment variables to connect to the MQTT broker and subscribe to device messages.
-
-* The integration also takes care of communicating with the actual application on the platform it integrates with.
-
-  > The HTTP Integration uses the environment variables to construct HTTP requests for every message received over MQTT. It also creates a HTTP server and responds to incoming requests by publishing messages devices via MQTT.
-
+The integration uses the the Handler Interfaces to communicate with devices and manage both applications and devices. On the other end it uses the platform APIs or SDK to integrate The Things Network and the user application running on the platform.
   
 ![Platform Integration](integration.png)
 
-> If there's a SDK available for the platform the Integration is written in, of course you can use that SDK. We might even an SDK for the Account Server, like we do in [Go](https://github.com/TheThingsNetwork/go-account-lib).
+> If there's a SDK available for the platform the Integration is written in, of course you can use that SDK. We might even have an SDK for the Account Server, like we do in [Go](https://github.com/TheThingsNetwork/go-account-lib).
 
 Platform Integrations can completely hide the user from any code and even The Things Network Console or CLI. A good example is an integration for Azure IoT Hub or Amazon IoT, where the user could manage his application and devices there, while the integration takes care of synchronizing with The Things Network.
