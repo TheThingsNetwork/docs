@@ -30,7 +30,7 @@ Some platforms do not allow to execute code or communicate with the Handler's MQ
 
 The most advanced way is a full Platform Integration. Under the hood the HTTP Integration is in fact a platform integration as well.
 
-* For each integration the user adds, we spin up a container using a hard-coded image for the selected platform. 
+* For each integration the user adds, we spin up a container using a generic image for the selected platform. 
 * Configuration is passed to the container using environment variables.
 * Just like an application would, the integration uses the the Handler Interfaces to communicate with devices and manage both applications and devices.
 
