@@ -22,3 +22,6 @@ npm-debug.log*
 
 # OS X
 .DS_Store
+
+# Private
+/.env

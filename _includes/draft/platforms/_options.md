@@ -20,7 +20,7 @@ If there is no SDK available for you language of choice and you'd like to help o
 
 ## 3. HTTP Integration
 
-Some platforms do not allow to execute code or communicate with the Handler's MQTT broker directly. Good examples are [IFTTT](https://ifttt.com/) and [Zapier](https://zapier.com/). For these situations we provide an HTTP Integration which acts as a bridge to and from HTTP.
+Some platforms do not allow to execute code or communicate with the Handler's MQTT broker directly. Good examples are [IFTTT](https://ifttt.com/maker) and [Zapier](https://zapier.com/zapbook/webhook/). For these situations we provide an HTTP Integration which acts as a bridge to and from HTTP.
 
 Simply configure it with URLs and The Things Network will forward device messages and events as HTTP requests. It also provides you with a unique HTTP endpoint to send messages to devices.
 

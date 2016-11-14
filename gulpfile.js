@@ -1,3 +1,7 @@
+require('dotenv').config({
+  silent: true
+});
+
 var path = require('path');
 
 var exec = require('child_process').exec;
@@ -8,7 +12,7 @@ var insert = require('gulp-insert');
 
 gulp.task('pull:download', function() {
 
-  var ops = [{
+  var items = [{
     url: 'https://raw.githubusercontent.com/TheThingsNetwork/node-app-lib/master/API.md',
     file: '_includes/v2-preview/node-js/_api.md'
   }, {
@@ -34,13 +38,27 @@ gulp.task('pull:download', function() {
     file: '_includes/draft/platforms/_http-api.md'
   }];
 
-  ops.forEach(function(op) {
-    var editUrl = op.url.replace(/^(https:\/\/)raw\.(github)usercontent(\.com\/[^\/]+\/[^\/]+\/)(.+)$/, '$1$2$3blob/$4');
+  // skip private repos if we don't have a token
+  if (process.env.GITHUB_OAUTH_TOKEN) {
+    items.push({
+      url: 'https://api.github.com/repos/TheThingsIndustries/node-ttn-oauth2/contents/apidocs.md?ref=v2-preview',
+      options: {
+        headers: {
+          'User-Agent': 'TheThingsNetwork',
+          'Authorization': 'token ' + process.env.GITHUB_OAUTH_TOKEN,
+          'Accept': 'application/vnd.github.v3.raw'
+        }
+      },
+      file: '_includes/draft/platforms/_account_api.md'
+    });
+  }
 
-    download(op)
+  items.forEach(function(item) {
+    var editUrl = item.url.replace(/^(https:\/\/)raw\.(github)usercontent(\.com\/[^\/]+\/[^\/]+\/)(.+)$/, '$1$2$3blob/$4');
+
+    download(item, item.options)
       .pipe(insert.prepend('<!-- EDIT AT ' + editUrl + ' -->\n\n'))
       .pipe(gulp.dest('.'));
-
   });
 
 });
