@@ -74,6 +74,7 @@ Wifi
 MicroPython
 hostname
 Pycom's
+gRPC
  - _includes/current/arduino/_api.md
 Dev
 lication
@@ -110,5 +111,10 @@ http
 msb
  - _includes/draft/platforms.md
 wienke
+johan
+thethingsnetwork.org
+ - _includes/draft/application-manager.md
+handler.proto
+ - _includes/draft/build-integration.md
 johan
 thethingsnetwork.org

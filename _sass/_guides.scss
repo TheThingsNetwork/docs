@@ -105,6 +105,9 @@
     font-weight: bold;
     color: $gray;
     border-left: 2px solid transparent;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
   }
   .js-toc .nav > li > a:hover,
   .js-toc .nav > li > a:focus {
