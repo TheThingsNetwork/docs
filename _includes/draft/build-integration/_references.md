@@ -1,8 +1,6 @@
 # API References
 For a complete reference of all related APIs see:
 
-* Handler Data [MQTT API](../../current/mqtt/)
-* Handler Data AMQP API (coming)
-* Handler Application Manager gRPC API (coming)
-* Handler Application Manager [HTTP API](https://github.com/TheThingsNetwork/ttn/blob/v2-preview/api/handler/HTTP-API.md)
+* Handler Data [MQTT](../../current/mqtt/) and AMQP API (coming)
+* [Handler Application Manager APIs](/application-manager)
 * [Account Server API](/account/)
