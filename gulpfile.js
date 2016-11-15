@@ -59,7 +59,7 @@ gulp.task('pull:github', function() {
     repo: 'ttn',
     branch: 'v2-preview',
     path: 'api/handler/HTTP-API.md',
-    file: '_includes/draft/platforms/_http-api.md'
+    file: '_includes/draft/application-manager/_http-api.md'
   }];
 
   // skip private repos if we don't have a token
