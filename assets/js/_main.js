@@ -75,8 +75,11 @@ $(function() {
       });
     });
 
-    $('.content-body img').click(function(e) {
-      e.preventDefault();
+    $('#lightbox .modal-dialog').click(function() {
+      $('#lightbox').modal('hide');
+    });
+
+    $('.content-body img').click(function() {
       var src = this.getAttribute('src');
       if (window.innerWidth >= 768) {
         $('#lightbox a').attr('href', src);
