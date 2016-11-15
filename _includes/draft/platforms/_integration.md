@@ -9,7 +9,7 @@ A Platform Integration will almost always use the *Handler Data APIs* to communi
 To communicate with devices via The Things Network you will use the *Handler Data APIs*. To do so you need the **Access Key** provided to you via the environment variable `TTN_APP_ACCESS_KEY`. You can use either te MQTT or AMQP interface.
 
 ### Use the MQTT API
-See our [MQTT guide](/mqtt) for more information.
+See our [MQTT guide](../../current/mqtt) for more information.
 
 ### Use the AMQP API
 [AMQP](http://www.amqp.org/) has a few advantages over MQTT which led us to decide to offer this as an alternative. We already use this internally but yet have to provide a public SDK and documentation.

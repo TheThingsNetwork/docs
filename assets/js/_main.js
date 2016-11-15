@@ -4,7 +4,7 @@ require('stylebook/dist/js/bootstrap');
 var AnchorJS = require('anchor-js');
 
 $(function() {
-  var contentOffset = 100;
+  var contentOffset = 174;
 
   var smoothScrollOptions = {
     selector: 'a',

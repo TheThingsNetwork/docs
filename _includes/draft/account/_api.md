@@ -1,4 +1,4 @@
-<!-- EDIT AT https://api.github.com/repos/TheThingsIndustries/node-ttn-oauth2/contents/apidocs.md?ref=v2-preview -->
+<!-- EDIT AT https://github.com/TheThingsIndustries/node-ttn-oauth2/blob/v2-preview/apidocs.md -->
 
 The Things Network Account Server API
 =====================================

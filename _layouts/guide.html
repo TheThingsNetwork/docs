@@ -2,14 +2,34 @@
 layout: default
 ---
 
-{% capture version %}{{ page.url | split: '/' | slice: 1 }}{% endcapture %}
-{% capture path %}{{ page.url | split: '/' | slice: 2, 10 | join: '/' }}{% endcapture %}
-{% assign guide_versions = '' | split: '|' %}
+{% assign page_crumbs = page.id | split: '/' %}
 
+{% assign page_version = page_crumbs | slice: 1 | first %}
+{% assign page_path_noversion = page_crumbs | slice: 2, 10 | join: '/' %}
+
+{% assign page_crumbs_pages = '' | split: '|' %}
+{% if page_crumbs[3] %}
+  {% assign page_crumb_cum = '' | split: '|' %}
+  {% assign page_crumbs_paths = '' | split: '|' %}
+  {% for page_crumb in page_crumbs %}
+    {% unless forloop.last %}
+      {% assign page_crumb_cum = page_crumb_cum | push: page_crumb %}
+      {% if forloop.index0 > 1 %}
+        {% assign page_crumb_path = page_crumb_cum | join: '/' %}
+        {% assign page_crumbs_paths = page_crumbs_paths | push: page_crumb_path %}
+      {% endif %}
+    {% endunless %}
+  {% endfor %}
+{% endif %}
+
+{% assign guide_versions = '' | split: '|' %}
 {% for guide in site.includes %}
-  {% capture guide_version %}{{ guide.url | split: '/' | slice: 1 }}{% endcapture %}
-  {% capture guide_path %}{{ guide.url | split: '/' | slice: 2, 10 | join: '/' }}{% endcapture %}
-  {% if guide_path == path or page.aliases contains guide_path or guide.aliases contains path %}
+  {% if page_crumbs_paths contains guide.id %}
+    {% assign page_crumbs_pages = page_crumbs_pages | push: guide %}
+  {% endif %}
+  {% assign guide_version = guide.id | split: '/' | slice: 1 | first %}
+  {% assign guide_path_noversion = guide.id | split: '/' | slice: 2, 10 | join: '/' %}
+  {% if guide_path_noversion == page_path_noversion or page.aliases contains guide_path_noversion or guide.aliases contains page_path_noversion %}
     {% assign guide_versions = guide_versions | push: guide %}
     {% if guide_version == "current" %}
       {% assign current = guide %}
@@ -24,25 +44,10 @@ layout: default
       <ol class="breadcrumb">
         <li><a href="http://www.thethingsnetwork.org/">Home</a></li>
         <li><a href="{{ site.baseurl }}/">Learn</a></li>
-        <li class="dropdown"><a href id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ page.title }} <span class="caret"></span></a>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            {% for category in site.data.guides %}
-              {% unless forloop.first %}<li role="separator" class="divider"></li>{% endunless %}
-              {% for guide in category.guides %}
-                {% if guide.href %}
-                  <li><a href="{{ guide.href }}">
-                {% elsif guide.path %}
-                  <li{% if guide.path == page.path %} class="active"{% endif %}><a href="{{ site.baseurl }}{{ guide.path }}">
-                {% else %}
-                  <li class="disabled"><a href="#">
-                {% endif %}
-                {{ guide.name }}
-                {% if guide.label %}<span class="label label-info">{{ guide.label }}</span>{% endif %}
-                </a></li>
-              {% endfor %}
-            {% endfor %}
-          </ul>
-        </li>
+        {% for page in page_crumbs_pages %}
+          <li><a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a></li>
+        {% endfor %}
+        <li class="active">{{ page.title }}</li>
       </ol>
     </div>
     <div class="col-sm-3 text-right">
@@ -54,9 +59,30 @@ layout: default
 
     <div class="col-md-3" role="complementary">
 
-      <div class="guide-sidebar">
+      <div class="guide-switch btn-group btn-block">
+        <button type="button" class="btn btn-primary btn-block dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Guides <span class="caret"></span></button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          {% for category in site.data.guides %}
+            {% unless forloop.first %}<li role="separator" class="divider"></li>{% endunless %}
+            {% for guide in category.guides %}
+              {% if guide.href %}
+                <li><a href="{{ guide.href }}">
+              {% elsif guide.path %}
+                <li{% if guide.path == page.url %} class="active"{% endif %}><a href="{{ site.baseurl }}{{ guide.path }}">
+              {% else %}
+                <li class="disabled"><a href="#">
+              {% endif %}
+              {{ guide.title }}
+              {% if guide.label %}<span class="label label-info">{{ guide.label }}</span>{% endif %}
+              </a></li>
+            {% endfor %}
+          {% endfor %}
+        </ul>
+      </div>
 
-        <div class="js-toc hidden-xs hidden-sm"></div>
+      <div class="guide-sidebar hidden-xs hidden-sm">
+
+        <div class="js-toc"></div>
 
         <p class="guide-top"><a href="#top">Back to top</a></p>
 
@@ -66,16 +92,16 @@ layout: default
 
     <div class="col-md-9 js-toc-content content-body" role="main">
 
-      {% if version != 'current' %}
-        <div class="alert alert-warning"><strong>Attention:</strong> You are reading the <small>{{ version | upcase }}</small> {% if current %}and not the <small><a href="{{ site.baseurl | append: current.url }}">CURRENT</a></small>{% endif %} version of this guide. {% if version == 'v2-preview' %} The UI and APIs might change and registered applications and devices might be deleted at any moment!{% endif %}</div>
+      {% if page_version != 'current' %}
+        <div class="alert alert-warning"><strong>Attention:</strong> You are reading the <small>{{ page_version | upcase }}</small> {% if current %}and not the <small><a href="{{ site.baseurl | append: current.url }}">CURRENT</a></small>{% endif %} version of this guide. {% if page_version == 'v2-preview' %} The UI and APIs might change and registered applications and devices might be deleted at any moment!{% endif %}</div>
       {% endif %}
 
-      {% assign replace_a_with = '<a href="' | append: site.baseurl | append: '/' | append: version | append: '/' %}
-      {% assign replace_img_with = '<img src="' | append: site.baseurl | append: '/' | append: version | append: '/' %}
+      {% assign replace_a_with = '<a href="' | append: site.baseurl | append: '/' | append: page_version | append: '/' %}
+      {% assign replace_img_with = '<img src="' | append: site.baseurl | append: '/' | append: page_version | append: '/' %}
 
       <section class="panel">
         <div class="panel-body">
-          <span class="label label-success pull-right">{% if version == "current" %}CURRENT: {{ site.var.current | upcase }}{% else %}{{ version | upcase }}{% endif %}</span>
+          <span class="label label-success pull-right">{% if page_version == "current" %}CURRENT: {{ site.var.current | upcase }}{% else %}{{ page_version | upcase }}{% endif %}</span>
           <h1>{{page.title}}</h1>
           {{ content | replace: '<a href="/', replace_a_with | replace: '<img src="/', replace_img_with | replace: '<table>', '<table class="table">' }}
         </div>

@@ -1,40 +1,40 @@
 - category: Devices
   guides:
-    - name: The Things Node
-    - name: The Things Uno
+    - title: The Things Node
+    - title: The Things Uno
       path: /current/uno/
-    - name: Arduino
+    - title: Arduino
       label: SDK
       path: /current/arduino/
-    - name: Other Devices
+    - title: Other Devices
 - category: Gateways
   guides:
-    - name: The Things Gateway
-    - name: MultiTech Conduit
+    - title: The Things Gateway
+    - title: MultiTech Conduit
       path: /current/multitech/
-    - name: Lorrier LR2
+    - title: Lorrier LR2
       path: /current/lorrier/
-    - name: Other Gateways
+    - title: Other Gateways
 - category: Network
   guides:
-    - name: The Things Dashboard
+    - title: The Things Dashboard
       path: /current/dashboard/
-    - name: The Things CLI
+    - title: The Things CLI
       path: /current/cli/
-    - name: Architecture
+    - title: Architecture
       href: https://www.thethingsnetwork.org/wiki/Backend/Overview
 - category: Applications
   guides:
-    - name: MQTT
+    - title: MQTT
       label: API
       path: /current/mqtt/
-    - name: Node.js
+    - title: Node.js
       label: SDK
       path: /current/node-js/
-    - name: Node-RED
+    - title: Node-RED
       label: SDK
       path: /current/node-red/
-    - name: Java
+    - title: Java
       label: SDK
       path: /v2-preview/java/
-    - name: Other Platforms
+    - title: Other Platforms
