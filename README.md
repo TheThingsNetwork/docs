@@ -20,6 +20,7 @@ Because we let GitHub Pages do the Jekyll builds the website will be updated aut
 * Always end internal links with `/` to prevent redirects.
 * Use blockquotes (`>`) to create callouts for important notes.
 * If you do a lot of edits please use a local build to preview and test.
+* To set an image to use on Facebook and Twitter use `image:/absolute/path/to/image.png` in your frontmatter.
 
 ## Build local for preview and design
 
