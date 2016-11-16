@@ -11,7 +11,7 @@ redirect_from:
 ---
 Your Applications and Devices can be managed via [The Things Network Console](https://preview.console.thethingsnetwork.org).
 
-> Every component in the console has a small <i class="fa fa-question-circle"></i> icon. Click the icon for more information.
+> Every component in the console has a small <i class="ion-ios-help"></i> icon. Click the icon for more information.
 
 ## Prerequisites
 

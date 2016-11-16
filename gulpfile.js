@@ -3,12 +3,15 @@ require('dotenv').config({
 });
 
 var path = require('path');
-
 var exec = require('child_process').exec;
-
 var gulp = require('gulp');
 var download = require('gulp-download-stream');
 var insert = require('gulp-insert');
+var request = require('request');
+var fs = require('fs');
+
+gulp.task('pull', ['pull:github']);
+gulp.task('default', ['pull']);
 
 gulp.task('pull:github', function() {
 
@@ -108,7 +111,3 @@ gulp.task('pull:github', function() {
   });
 
 });
-
-gulp.task('pull', ['pull:github']);
-
-gulp.task('default', ['pull']);

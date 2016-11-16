@@ -83,7 +83,7 @@ Now that you have registered the device you need to activate it from the device 
 1.  In Arduino IDE, select **File > Examples > TheThingsNetwork > [Send](https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/Send/Send.ino)**.
 2.  Copy the **App EUI** and **App Key** from the device page to the example.
 
-    > Use <code><i class="fa fa-eye"></i></code> to show obfuscated keys and <code><i class="fa fa-code"></i></code> to toggle to **msb**. Then use <code><i class="fa fa-clipboard"></i></code> to copy.
+    > Use <i class="ion-eye"></i> to show obfuscated keys and <i class="ion-code"></i> to toggle to **msb**. Then use <i class="ion-clipboard"></i> to copy.
     >
     > ![App Key](app-key.png)
 
@@ -132,7 +132,7 @@ Still on the dashboard's device page, you should see the messages coming in unde
 
 You could now use MQTT or the [TTN Node for Node-RED](/node-red/) to process the payload as it is, but we can also decode it first.
 
-1.  Go back to the application page and click the **<i class="fa fa-pencil"></i> edit** link in the **Application Info** box.
+1.  Go back to the application page and click the **<i class="ion-edit"></i> edit** link in the **Application Info** box.
 2.  Leave **decoder** selected, paste the following JavaScript code and click **Save**.
 
     ```js

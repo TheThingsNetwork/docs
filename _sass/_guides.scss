@@ -57,8 +57,18 @@
     }
   }
 
-  .content-body img {
-    cursor: zoom-in;
+  .content-body {
+
+    img {
+      cursor: zoom-in;
+    }
+
+    i[class^='ion-'] {
+      background-color: white;
+      border: 2px solid #eee;
+      border-radius: 5px;
+      padding: 5px;
+    }
   }
 
   /*

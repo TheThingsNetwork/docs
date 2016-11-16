@@ -6,7 +6,7 @@ To use the TTN node you need to configure it for your The Things Network Applica
 1. Open a new browser tab and go to [The Things Network Dashboard](https://staging.thethingsnetwork.org/).
 2. Navigate to your application and then **Application Info > Application data > learn how to get data from this app**.
 
-> Use <code><i class="fa fa-eye"></i></code> to show obfuscated keys. Use <code><i class="fa fa-clipboard"></i></code> to copy the hex **App EUI** and base64 **Access Keys**.
+> Use <i class="ion-eye"></i> to show obfuscated keys. Use <i class="ion-clipboard"></i> to copy the hex **App EUI** and base64 **Access Keys**.
 
 ## Edit the TTN node
 

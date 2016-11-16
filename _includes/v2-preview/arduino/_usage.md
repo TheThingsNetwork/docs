@@ -65,7 +65,7 @@ For OTAA you will use the `join()` method with the **App EUI** and **App Key** c
     const char *appKey = "00000000000000000000000000000000";
     ```
 
-    * For `appEui` use the **Application EUI** found on the device's page in the console. Click `📋` to copy.
+    * For `appEui` use the **Application EUI** found on the device's page in the console. Click <i class="ion-clipboard"></i> to copy.
     * For `appKey` use the **App Key** found on the device page.
 
 2.  In your `setup()` function, call `ttn.join()` with the constants you just created:
@@ -88,7 +88,7 @@ For ABP you will use the `personalize()` method with the device's **Dev EUI**, *
     const char *appSKey = "00000000000000000000000000000000";
     ```
 
-    * For `devAddr ` use the **Device Address** found on the device's page in the console. Click `📋` to copy.
+    * For `devAddr ` use the **Device Address** found on the device's page in the console. Click <i class="ion-clipboard"></i> to copy.
     * For `nwkSKey ` use the **Network Session Key**.
     * For `appSKey` use **App Session Key**.
 

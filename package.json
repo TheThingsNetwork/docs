@@ -50,6 +50,7 @@
     "jquery": "^2.2.4",
     "markdown-spellcheck": "^0.11.0",
     "pre-commit": "^1.1.3",
+    "request": "^2.78.0",
     "smooth-scroll": "cferdinandi/smooth-scroll",
     "stylebook": "thethingsnetwork/stylebook",
     "tocbot": "^2.1.5",

@@ -16,4 +16,4 @@ Your Applications and Devices can be managed via [The Things Network Dashboard](
 
 * An account on [account.thethingsnetwork.org](https://account.thethingsnetwork.org/).
 
-> Every component on the dashboard has a small <i class="fa fa-question-circle"></i> icon. Click the icon for more information.
+> Every component on the dashboard has a small <i class="ion-ios-help"></i> icon. Click the icon for more information.

@@ -1,7 +1,5 @@
 <!-- EDIT AT https://github.com/TheThingsNetwork/nodered-app-lib/blob/refactor/API.md -->
 
-<!-- ONLY EDIT THIS FILE AT https://github.com/TheThingsNetwork/nodered-app-lib/blob/refactor/API.md -->
-
 # API Reference
 
 ## ttn app
@@ -10,7 +8,7 @@
 <p>Use the following information of the application on The Things Network dashboard:</p>
 <ul>
   <li><strong>App ID:</strong> Copy <em>Application ID</em> from the <em>Application Overview</em> box.</li>
-  <li><strong>Access Key:</strong> Scroll down to the <em>Access Keys</em>. For the key you'd like to use, click <code>👁</code> to show the key and then <code>📋</code> to copy it.</li>
+  <li><strong>Access Key:</strong> Scroll down to the <em>Access Keys</em>. For the key you'd like to use, click <i class="ion-eye"></i> to show the key and then <i class="ion-clipboard"></i> to copy it.</li>
   <li><strong>Region or Broker:</strong> Scroll back up again to <em>Handler Status</em> in the <em>Application Overview</em> box. Only copy the last bit following <code>ttn-handler-</code>.</li>
 </ul>
 

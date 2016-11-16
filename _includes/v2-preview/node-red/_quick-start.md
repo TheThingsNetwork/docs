@@ -68,7 +68,7 @@ All The Things Network nodes can share the same app configuration.
     Copy-paste the following information from your application in your console:
 
     * For **App ID**, copy **Application ID** from the **Application Overview** box.
-    * For **Access Key**, scroll down to the **Access Keys**. For the key you'd like to use, click `👁` to show the key and then `📋` to copy it.
+    * For **Access Key**, scroll down to the **Access Keys**. For the key you'd like to use, click <i class="ion-eye"></i> to show the key and then <i class="ion-clipboard"></i> to copy it.
     * For **Region or Broker**, scroll back again to use **Handler Status** from the **Application Overview** box. Only copy the last bit following `ttn-handler-`.
 
 3.  Click **Add** to save the configuration.
