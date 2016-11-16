@@ -5,7 +5,7 @@ sections:
  - lorrier/_config.md
  - lorrier/_winbox.md
  - lorrier/_ip.md
-image: /lorrier/lorrier.png
+image: /current/lorrier/lorrier.png
 ---
 
 [Lorrier LR2](https://lorrier.com/#introducing-lr2) is an improved carrier grade gateway for building professional IoT network based on LoRaWAN™ protocol. This is a fully outdoor device intended to establish a wide coverage network by telecommunications operators and local network by individuals or IoT connectivity service providers.
