@@ -126,7 +126,7 @@ layout: default
           <div class="panel-body">
             <div class="media">
               <div class="media-left">
-                <a href="https://www.thethingsnetwork.org/u/{{ page.ambassador.username }}/"><img src="https://account.thethingsnetwork.org/api/users/{{ page.ambassador.username }}/picture.jpg" alt="{{ page.ambassador.name }}" class="img-circle" /></a>
+                <a href="https://www.thethingsnetwork.org/u/{{ page.ambassador.username }}/"><img src="{% if page.ambassador.image %}{{ page.ambassador.image }}{% else %}https://account.thethingsnetwork.org/api/users/{{ page.ambassador.username }}/picture.jpg{% endif %}" alt="{{ page.ambassador.name }}" class="img-circle" /></a>
               </div>
               <div class="media-body">
                 {% if page.ambassador.text %}
@@ -134,7 +134,7 @@ layout: default
                 {% else %}
                   This guide is maintained by our ambassador <a href="{{ page.ambassador.url }}" target="_blank">{{ page.ambassador.name }}</a>.
                 {% endif %}
-                <p><small>Become an ambassador and help us support a new device or integration! <a href="mailto:fokke@thethingsnetwork.org">Drop us a line!</a></small></p>
+                <p><small>Become an ambassador and help us support more devices! <a href="mailto:fokke@thethingsnetwork.org">Drop us a line!</a></small></p>
               </div>
             </div>
           </div>

@@ -85,21 +85,13 @@ Some content we source directly from elsewhere, e.g. the [MQTT API Reference](ht
 ### Update
 
 1.  Follow the previous section to install NPM and dependencies.
-
-2.  [Install Gulp](http://gulpjs.com):
+    
+3.  Run the pull script:
 
     ```bash
-    sudo npm i --global gulp
-    ```
-    
-3.  [Install Subversion](https://subversion.apache.org/packages.html).
-    
-3.  Run the default task:
-
-    ```bash
-    gulp
+    npm run pull
     ```
     
 ### Source
 
-To source more content from elsewhere edit [gulpfile.js](gulpfile.js#L7).
+To source more content from elsewhere edit [_scripts/pull.js](_scripts/pull.js).
