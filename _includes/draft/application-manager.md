@@ -4,6 +4,7 @@ sections:
  - application-manager/_token.md
  - application-manager/_grpc.md
  - application-manager/_http-api.md
+ - application-manager/_grpc-api.md
 ---
 
 The Handler's Application Manager API lets you manage Applications and Devices registered to The Things Network. To use the API you need an Application Access Key or Access (JSON Web) Token. You can use either the gRPC service directly or the HTTP API which wraps it.

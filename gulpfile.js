@@ -13,7 +13,7 @@ var fs = require('fs');
 gulp.task('pull', ['pull:github']);
 gulp.task('default', ['pull']);
 
-gulp.task('pull:github', function() {
+gulp.task('pull:github', function () {
 
   var items = [{
     owner: 'TheThingsNetwork',
@@ -63,6 +63,12 @@ gulp.task('pull:github', function() {
     branch: 'v2-preview',
     path: 'api/handler/HTTP-API.md',
     file: '_includes/draft/application-manager/_http-api.md'
+  }, {
+    owner: 'TheThingsNetwork',
+    repo: 'ttn',
+    branch: 'v2-preview',
+    path: 'api/handler/ApplicationManager.md',
+    file: '_includes/draft/application-manager/_grpc-api.md'
   }];
 
   // skip private repos if we don't have a token
@@ -84,7 +90,7 @@ gulp.task('pull:github', function() {
     });
   }
 
-  items.forEach(function(item) {
+  items.forEach(function (item) {
     var url, options = {};
 
     if (item.token) {
