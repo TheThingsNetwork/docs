@@ -69,6 +69,12 @@ gulp.task('pull:github', function () {
     branch: 'v2-preview',
     path: 'api/handler/ApplicationManager.md',
     file: '_includes/draft/application-manager/_grpc-api.md'
+  }, {
+    owner: 'TheThingsNetwork',
+    repo: 'ttn',
+    branch: 'v2-preview',
+    path: 'api/discovery/Discovery.md',
+    file: '_includes/draft/discovery/_api.md'
   }];
 
   // skip private repos if we don't have a token
