@@ -52,6 +52,12 @@ var items = [{
   owner: 'TheThingsNetwork',
   repo: 'ttn',
   branch: 'v2-preview',
+  path: 'api/API_AUTHENTICATION.md',
+  file: '_includes/draft/application-manager/_auth.md'
+}, {
+  owner: 'TheThingsNetwork',
+  repo: 'ttn',
+  branch: 'v2-preview',
   path: 'api/handler/ApplicationManager.md',
   file: '_includes/draft/application-manager/_api.md',
   replace: [
@@ -62,7 +68,10 @@ var items = [{
   repo: 'ttn',
   branch: 'v2-preview',
   path: 'api/discovery/Discovery.md',
-  file: '_includes/draft/discovery/_api.md'
+  file: '_includes/draft/discovery/_api.md',
+  replace: [
+    [/^# Discovery API Reference/m, '# API Reference']
+  ]
 }];
 
 // skip private repos if we don't have a token

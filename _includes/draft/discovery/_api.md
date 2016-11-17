@@ -1,6 +1,6 @@
 <!-- EDIT AT https://github.com/TheThingsNetwork/ttn/blob/v2-preview/api/discovery/Discovery.md -->
 
-# Discovery API Reference
+# API Reference
 
 The Discovery service is used to discover services within The Things Network.
 
