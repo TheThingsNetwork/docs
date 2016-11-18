@@ -20,12 +20,87 @@ Get all announcements for a specific service
 - Request: [`GetAllRequest`](#discoverygetallrequest)
 - Response: [`AnnouncementsResponse`](#discoverygetallrequest)
 
+#### HTTP Endpoint
+
+- `GET` `/announcements/{service_name}`(`service_name` can be left out of the request body)
+
+#### JSON Request Format
+
+```json
+{
+  "service_name": "handler"
+}
+```
+
+#### JSON Response Format
+
+```json
+{
+  "services": [
+    {
+      "api_address": "http://eu.thethings.network:8084",
+      "certificate": "-----BEGIN CERTIFICATE-----\n...",
+      "description": "",
+      "id": "ttn-handler-eu",
+      "metadata": [
+        {
+          "key": "APP_ID",
+          "value": "some-app-id"
+        }
+      ],
+      "net_address": "eu.thethings.network:1904",
+      "public": true,
+      "public_key": "-----BEGIN PUBLIC KEY-----\n...",
+      "service_name": "handler",
+      "service_version": "2.0.0-dev-abcdef...",
+      "url": ""
+    }
+  ]
+}
+```
+
 ### `Get`
 
 Get a specific announcement
 
 - Request: [`GetRequest`](#discoverygetrequest)
 - Response: [`Announcement`](#discoverygetrequest)
+
+#### HTTP Endpoint
+
+- `GET` `/announcements/{service_name}/{id}`(`service_name`, `id` can be left out of the request body)
+
+#### JSON Request Format
+
+```json
+{
+  "id": "ttn-handler-eu",
+  "service_name": "handler"
+}
+```
+
+#### JSON Response Format
+
+```json
+{
+  "api_address": "http://eu.thethings.network:8084",
+  "certificate": "-----BEGIN CERTIFICATE-----\n...",
+  "description": "",
+  "id": "ttn-handler-eu",
+  "metadata": [
+    {
+      "key": "APP_ID",
+      "value": "some-app-id"
+    }
+  ],
+  "net_address": "eu.thethings.network:1904",
+  "public": true,
+  "public_key": "-----BEGIN PUBLIC KEY-----\n...",
+  "service_name": "handler",
+  "service_version": "2.0.0-dev-abcdef...",
+  "url": ""
+}
+```
 
 ### `AddMetadata`
 
@@ -58,6 +133,7 @@ The Announcement of a service (also called component)
 | `net_address` | `string` | Comma-separated network addresses in the form "[hostname]:[port]" (currently we only use the first) |
 | `public_key` | `string` | ECDSA public key of this component |
 | `certificate` | `string` | TLS Certificate (if TLS is enabled) |
+| `api_address` | `string` | Contains the address where the HTTP API is exposed (if there is one) |
 | `metadata` | _repeated_ [`Metadata`](#discoverymetadata) | Metadata for this component |
 
 ### `.discovery.AnnouncementsResponse`

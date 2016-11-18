@@ -75,6 +75,7 @@ MicroPython
 hostname
 Pycom's
 gRPC
+Kerlink
  - _includes/current/arduino/_api.md
 Dev
 lication
