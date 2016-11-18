@@ -18,6 +18,6 @@ The HTTP API is a wrapper around the gRPC API. We recommend to use gRPC if possi
 
 See [API Reference](#api-reference) for the available methods for both the gRPC and HTTP API.
 
-## Find an Handler
+## Find a Handler
 
-To find an Handler to connect to you need to use the [Discovery API](/discovery/). This is where all handler announce themselves. See the [documentation](/discovery/) on how to get hold of an handler.
+To find a Handler to connect to you need to use the [Discovery API](/discovery/). This is where all Handlers announce themselves. See the [documentation](/discovery/) on how to get hold of an handler.
