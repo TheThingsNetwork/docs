@@ -10,14 +10,12 @@ $baseurl: {{ site.baseurl }};
 @import 'https://cdn.jsdelivr.net/font-hack/2.020/css/hack-extended.min.css';
 @import 'http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css';
 
-@import '../node_modules/stylebook/dist/scss/ttn/variables';
+@import '../node_modules/stylebook/dist/scss/ttn/bootstrap-variables';
 
 @import 'variables';
 
-@import '../node_modules/stylebook/dist/scss/ttn/bootstrap';
-
-// Include overrides for bootstrap styles
-@import 'bootstrap';
+@import '../node_modules/stylebook/dist/scss/bootstrap/bootstrap';
+@import '../node_modules/stylebook/dist/scss/ttn/components';
 
 // Other libs
 @import '../node_modules/font-awesome/scss/font-awesome';
@@ -28,4 +26,4 @@ $baseurl: {{ site.baseurl }};
 
 // Specifics
 @import 'index';
-@import 'guides';
+@import 'page';

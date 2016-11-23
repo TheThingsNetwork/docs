@@ -2,25 +2,23 @@
 layout: default
 ---
 
-<div id="content" class="layout-index">
+{% assign pages = site.content | sort:'weight' | reversed %}
 
-  <div class="index-header">
-    <div class="container">
+<div class="layout-index">
 
+  <div class="ttn-header">
+    <div class="ttn-container container-fluid">
       <h1>
         <img src="{{ site.baseurl }}/assets/images/the-things-white.png" alt="⛅ The Things Network" />
         <span>Learn</span>
       </h1>
-
       <p>Learn how to grow the Network and connect all Things!</p>
-
     </div>
   </div>
 
-  <div class="container">
+  <div class="ttn-container container-fluid">
 
     <div class="index-intro panel">
-
       <div class="row">
         <div class="col-sm-6">
           <p>The Things Network is about enabling Things to use long range, low power Gateways to connect to an open-source Network to exchange messages with Applications.</p>
@@ -29,85 +27,82 @@ layout: default
           <p><img src="{{ site.baseurl }}/assets/images/architecture.png" alt="Devices - Gateways - The Things Network - Applications" /></p>
         </div>
       </div>
-
     </div>
 
-    <div class="row">
+    <h2>Docs</h2>
 
-      <div class="col-sm-8">
+    <div class="index-docs index-blocks row">
 
-        <h1>Documentation</h1>
-
-        <div class="row index-categories">
-
-          {% for category in site.data.guides %}
-
-            <div class="col-sm-6">
-
-              <div class="panel panel-default">
-                <div class="panel-heading">
-                  <h3 class="panel-title">{{ category.category }}</h3>
-                </div>
-                <div class="list-group">
-                  {% for guide in category.guides %}
-                    {% if guide.href %}
-                      <a class="list-group-item" href="{{ guide.href }}">
-                    {% elsif guide.path %}
-                      <a class="list-group-item" href="{{ site.baseurl }}{{ guide.path }}">
-                    {% else %}
-                      <a class="list-group-item disabled" href="#">
-                    {% endif %}
-                    {{ guide.title }}
-                    {% if guide.label %}<span class="label label-info">{{ guide.label }}</span>{% endif %}
-                    </a>
-                  {% endfor %}
-                </div>
+      {% for apage in pages %}
+        {% unless apage.hidden %}
+          {% assign apage_depth = apage.url | remove:'/index.html' | split:'/' | size %}
+          {% if apage_depth == 2 %}
+            <div class="col-sm-4">
+              <div class="panel">
+                <a href="{{ apage.url | prepend:site.baseurl }}">
+                  <div class="panel-body">
+                    <h3>{{ apage.title }}</h3>
+                    <p>{{ apage.lead }}</p>
+                  </div>
+                </a>
               </div>
-
             </div>
-
-          {% endfor %}
-
-        </div>
-
-      </div>
-
-      <div class="col-sm-4">
-
-        <h1>Community</h1>
-
-        <div class="panel panel-default">
-          <div class="panel-body">
-            <h2><a href="https://www.thethingsnetwork.org/forum">Forum</a></h2>
-            <p>Ask and answer questions about IoT, LoRa and other related topics.</p>
-          </div>
-        </div>
-
-        <div class="panel panel-default">
-          <div class="panel-body">
-            <h2><a href="http://slack.thethingsnetwork.org/">Slack</a></h2>
-            <p>Invite yourself to the community Slack to chat about The Things Network.</p>
-          </div>
-        </div>
-
-        <div class="panel panel-default">
-          <div class="panel-body">
-            <h2><a href="https://www.thethingsnetwork.org/wiki">Wiki</a></h2>
-            <p>Dive into the technical details with content curated by the community.</p>
-          </div>
-        </div>
-
-        <div class="panel panel-default">
-          <div class="panel-body">
-            <h2><a href="https://www.thethingsnetwork.org/labs">Labs</a></h2>
-            <p>Inspire and get inspired by community contributed use cases.</p>
-          </div>
-        </div>
-
-      </div>
+          {% endif %}
+        {% endunless %}
+      {% endfor %}
 
     </div>
 
-  </div>
+    <h2>Community</h2>
+
+    <div class="index-community index-blocks row">
+
+        <div class="col-sm-3">
+          <div class="panel">
+            <a href="https://www.thethingsnetwork.org/forum">
+              <div class="panel-body">
+                <h3>Forum</h3>
+                <p>Ask and answer questions about IoT, LoRa and other related topics.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-sm-3">
+          <div class="panel">
+            <a href="http://slack.thethingsnetwork.org/">
+              <div class="panel-body">
+                <h3>Slack</h3>
+                <p>Invite yourself to the community Slack to chat about The Things Network.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-sm-3">
+          <div class="panel">
+            <a href="https://www.thethingsnetwork.org/wiki">
+              <div class="panel-body">
+                <h3>Wiki</h3>
+                <p>Dive into the technical details with content curated by the community.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-sm-3">
+          <div class="panel">
+            <a href="https://www.thethingsnetwork.org/labs">
+              <div class="panel-body">
+                <h3>Labs</h3>
+                <p>Inspire and get inspired by community contributed use cases.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+    </div>
+
+  </div><!-- .ttn-container -->
 
 </div>

@@ -1,0 +1,200 @@
+.layout-page {
+    
+    .page-top-nav {
+        margin-top: 30px;
+        margin-bottom: 30px;
+
+        ul {
+            @extend .list-inline;
+            margin-bottom: 0;
+
+            li {
+                display: none;
+
+                @media (min-width: $screen-sm-min) {
+                    display: inline-block;
+                }
+
+                &.page-top-nav-crumb {
+                    display: inline-block;
+
+                    &:after {
+                        padding-left: 10px;
+                        margin-right: -5px;
+                        color: $gray-light;
+                        content: "/\00a0";
+                    }
+                }
+
+                a {
+                    color: $gray;
+                    border-bottom: 2px solid transparent;
+                    text-decoration: none;
+
+                    &:hover {
+                        border-bottom-color: $gray;
+                    }
+                }
+
+                &.active {
+                    display: inline-block;
+                    
+                    a {
+                        color: $brand-primary;
+
+                        &, &:hover {
+                            border-bottom-color: $brand-primary;
+                        }
+                    }
+                }
+            }
+        }
+
+        .page-edit {
+            color: $gray;
+            text-decoration: none;
+
+            &:hover {
+                color: $text-color;
+            }
+        }
+    }
+
+    .page-side-nav {
+        font-size: 0.85em;
+
+        &, ul {
+            @extend .list-unstyled;
+        }
+
+        a {
+            color: $text-color;
+            text-decoration: none;
+        }
+
+        .active > a, a:hover {
+            color: $brand-primary;
+        }
+
+        > li > ul > li ul {
+            margin-left: 1em;
+        }
+
+        .page-side-nav-section {
+            margin-top: 1em;
+
+            > span {
+                font-weight: bold;
+                color: $gray;
+            }
+        }
+    }
+
+    .page-ambassador {
+        @extend .small;
+
+        img {
+            max-width: inherit;
+            width: 75px;
+        }
+    }
+
+    .page-content {
+        padding-left: 30px;
+        padding-right: 30px;
+
+        .highlighter-rouge {
+            position: relative;
+
+            .btn-clipboard {
+                position: absolute;
+                top: 0;
+                right: 0;
+                z-index: 10;
+                display: block;
+                padding: 5px 8px;
+                font-size: 12px;
+                color: #767676;
+                cursor: pointer;
+                background-color: $gray-lighter;
+                border-radius: 0 0 0 4px;
+
+                &:hover {
+                    color: #fff;
+                    background-color: $brand-primary;
+                }
+            }
+        }
+
+        > .highlighter-rouge {
+            margin-left: -31px;
+            margin-right: -31px;
+
+            .highlight {
+                padding-left: 31px;
+                padding-right: 31px;
+
+                border-radius: 0;
+            }
+        }
+
+        i[class^='ion-'] {
+            background-color: white;
+            border: 2px solid #eee;
+            border-radius: 5px;
+            padding: 5px;
+        }
+
+        :not(a) img {
+            cursor: zoom-in;
+        }
+
+        a[href*="//"]:after {
+            content: "\f08e";
+            font-family: FontAwesome;
+            font-weight: normal;
+            font-style: normal;
+            display: inline-block;
+            text-decoration: none;
+            padding-left: 3px;
+        }
+
+        a[href*="www.thethingsnetwork.org"]:after {
+            content:"" !important;
+            padding-left: 0;
+        }
+
+        blockquote {
+            border: 1px solid $gray-light;
+            border-left: 5px solid $brand-primary;
+            border-radius: 3px 0 0 3px;
+            font-size: inherit;
+        }
+    }
+
+    .page-toc {
+        border-left: 2px solid $gray-light;
+        display: none !important;
+        padding: 0;
+
+        @media (min-width: 768px) {
+            display: block !important;
+        }
+
+        ul {
+            list-style-type: none !important;
+            padding-left: 10px;
+            font-size: 12px;
+            font-weight: 500;
+
+            ul {
+                font-weight: 400;
+                font-size: 11px;
+            }
+
+            a {
+                color: $gray-dark;
+            }
+        }
+    }
+}

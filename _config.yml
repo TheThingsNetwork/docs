@@ -25,19 +25,17 @@ var:
 
 # Build settings
 collections:
-  includes:
+  content:
     output: true
-    permalink: /:path/
+    permalink: /:path:output_ext
 defaults:
-  - scope:
+  - 
+    scope:
       path: ""
+      type: content
     values:
+      layout: page
       image: /assets/images/the-things-white.png
-  - scope:
-      path: ""
-      type: includes
-    values:
-      layout: guide
 markdown: kramdown
 # Exclude vendor which Travis will add
 exclude: [ node_modules, vendor, Gemfile, Gemfile.lock, gulpfile.js, "npm-debug.*", package.json, README.md, test, webpack.config.js, yarn.lock ]
