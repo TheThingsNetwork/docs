@@ -9,15 +9,10 @@ Because we let GitHub Pages do the Jekyll builds the website will be updated aut
 ### Guidance
 
 * The homepage for the site is [index.html](index.html).
-* The guides are a Jekyll collection in the [_includes](_includes) folder, grouped per version.
-* Use the main file of each guide for the intro.
-* Use the `sections` front matter to include additional content from files relative to the guide, preferably in a subfolder with the same name. Make sure to start these files with `_` to prevent Jekyll for outputting them as stand-alone pages.
-* To use a section from another guide or even version start with `/`.
-* Make sure there are no duplicate headings (of any level) between different sections or [specify a unique heading ID](http://kramdown.gettalong.org/syntax.html#specifying-a-header-id) for each of them.
-* Store guide assets in the same folder as the markdown you need it in and include them by their filename. You can also use relative paths to re-use images from other guides.
-* The guide layout will prepend `/docs/<version>` to all links and image references that start with `/`. To link to a different version start with `../<version>/<guide>`.
-* To include content from another guide use `{% include path/relative/to/_includes/folder.md %}`.
-* Always end internal links with `/` to prevent redirects.
+* The guides are a Jekyll collection in the [_content](_content) folder.
+* Store assets in the same folder as the markdown file you need it in and include them by their filename. You can also use relative paths to re-use images from other guides.
+* To link to another child guide, use the relative markdown path (e.g. `../devices/registration.md`) and Jekyll will make it `.html`.
+* To link to another parent guide, use the relative markdown path (e.g. `../devices/index.md`) or the directory path, ending with a slash (`../devices/`).
 * Use blockquotes (`>`) to create callouts for important notes.
 * If you do a lot of edits please use a local build to preview and test.
 * To set an image to use on Facebook and Twitter use `image:/absolute/path/to/image.png` in your frontmatter.
@@ -63,6 +58,18 @@ Because we let GitHub Pages do the Jekyll builds the website will be updated aut
 * Store layout assets in [assets](assets) folder.
 * Edit layouts in the [_layouts](_layouts) folder.
 * All layouts should inherit the [default](_layouts/default.html) layout.
+
+## Build and upload a preview
+
+If you do some major refactoring and would like to upload a build somewhere for preview, then you can use:
+
+```
+npm run scp user@host:/path
+```
+
+This will create a build `_scp` with the default config plus [`_scripts/scp.yml`](_scripts/scp.yml) and then upload it with `scp`. Make sure the server has your public key or it will prompt for a password and cause the script to fail.
+
+Alternatively, you can set the `SCP_TARGET` environment variable or [dotenv](https://www.npmjs.com/package/dotenv).
 
 ## Test [![Build Status](https://travis-ci.org/TheThingsNetwork/docs.svg?branch=master)](https://travis-ci.org/TheThingsNetwork/docs)
 

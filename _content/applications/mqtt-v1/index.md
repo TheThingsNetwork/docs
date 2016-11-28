@@ -1,6 +1,6 @@
 ---
 title: MQTT
-section: Deprecated
+section: APIs
 label: V1
 ---
 

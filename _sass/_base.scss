@@ -1,9 +1,9 @@
-body {
-  padding-top: $ttn-navbar-height;
-}
-
 img {
   max-width: 100%; // never exceed parent width
+}
+
+#navbar {
+  position: static;
 }
 
 #content {
@@ -111,12 +111,26 @@ img {
 
 /* linked panels */
 
-.panel > a {
-  text-decoration: none;
-  color: inherit;
+.panel {
 
-  &:hover * {
-    color: $link-color;
+  .panel-body {
+
+    :first-child {
+      margin-top: 0;
+    }
+    
+    :last-child {
+      margin-bottom: 0;
+    }
+  }
+  
+  & > a {
+    text-decoration: none;
+    color: inherit;
+
+    &:hover * {
+      color: $link-color;
+    }
   }
 }
 

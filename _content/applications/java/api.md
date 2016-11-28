@@ -1,6 +1,6 @@
 ---
 title: API Reference
-weight: 100
+zindex: 100
 source: https://github.com/TheThingsNetwork/java-app-lib/blob/master/API.md
 ---
 

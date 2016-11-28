@@ -13,7 +13,8 @@ $(function () {
   $('.page-toc').toc({
     title: '',
     listType: 'ul',
-    headers: '.page-content h2, .page-content h3'
+    headers: '.page-content h2, .page-content h3',
+    minimumHeaders: 1
   });
 
   /**
@@ -69,5 +70,20 @@ $(function () {
    */
   var anchors = new AnchorJS();
   anchors.add('.page-content h2, .page-content h3');
+
+  /**
+   * Affix
+   */
+
+  $('.page-affix').affix({
+    offset: {
+      top: $('.page-side-nav').parent().offset().top - 30,
+      bottom: 30
+    }
+  }).on('affix-top.bs.affix', function() {
+    $(this).width('auto');
+  }).on('affix.bs.affix', function() {
+    $(this).width($(this).parent().width());
+  });
 
 });

@@ -1,6 +1,6 @@
 ---
 title: Node-RED
-section: Integrations
+section: Platforms
 redirect_from:
  - /refactor/node-red/
  - /v2-preview/node-red/

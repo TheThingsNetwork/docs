@@ -42,7 +42,7 @@
             {% if include.section %}<li class="page-side-nav-section"><span>{{ include.section }}</span>{% endif %}
             <ul>
             {% for apage in pages_filtered %}
-                <li class="{% if apage.url == page.url %}active{% endif %}"><a href="{{ apage.url | prepend:site.baseurl}}">{{ apage.title }}</a>
+                <li class="{% if apage.url == page.url %}active{% endif %}"><a href="{{ apage.url | prepend:site.baseurl | remove:'index.html' }}">{{ apage.title }}</a>
                     {% if apage.label %}<span class="label label-info">{{ apage.label }}</span>{% endif %}
                     {% include tree.html pages=include.pages parent=apage %}
                 </li>

@@ -1,6 +1,6 @@
 ---
 title: The Things Uno
-section: Deprecated
+section: Hardware
 label: V1
 ---
 

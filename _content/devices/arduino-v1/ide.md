@@ -1,5 +1,6 @@
 ---
 title: Arduino IDE
+section: SDKs
 ---
 
 # Arduino Software (IDE)

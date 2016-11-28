@@ -1,6 +1,6 @@
 ---
 title: Quick Start
-weight: 10
+zindex: 10
 ---
 
 # Quick Start

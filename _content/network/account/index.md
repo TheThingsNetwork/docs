@@ -1,6 +1,6 @@
 ---
 title: Account Server
-section: APIs
+section: Components
 ---
 
 # Account Server

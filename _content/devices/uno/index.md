@@ -1,6 +1,6 @@
 ---
 title: The Things Uno
-section: Quick Start
+section: Hardware
 redirect-from:
  - /current/uno/
  - /refactor/uno/

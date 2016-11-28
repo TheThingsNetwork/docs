@@ -2,7 +2,7 @@
 layout: default
 ---
 
-{% assign pages = site.content | sort:'weight' | reversed %}
+{% assign pages = site.content | sort:'zindex' | reverse %}
 
 <div class="layout-index">
 
@@ -29,7 +29,7 @@ layout: default
       </div>
     </div>
 
-    <h2>Docs</h2>
+    <h2 class="index-title">Documentation</h2>
 
     <div class="index-docs index-blocks row">
 
@@ -39,10 +39,11 @@ layout: default
           {% if apage_depth == 2 %}
             <div class="col-sm-4">
               <div class="panel">
-                <a href="{{ apage.url | prepend:site.baseurl }}">
+                <a href="{{ apage.url | prepend:site.baseurl | remove:'index.html' }}">
                   <div class="panel-body">
                     <h3>{{ apage.title }}</h3>
-                    <p>{{ apage.lead }}</p>
+                    <img src="{{ apage.image | prepend:site.baseurl }}" />
+                    <p>{{ apage.description }}</p>
                   </div>
                 </a>
               </div>
@@ -53,7 +54,7 @@ layout: default
 
     </div>
 
-    <h2>Community</h2>
+    <h2 class="index-title">Community</h2>
 
     <div class="index-community index-blocks row">
 

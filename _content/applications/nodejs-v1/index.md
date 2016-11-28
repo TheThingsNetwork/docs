@@ -1,6 +1,6 @@
 ---
 title: Node.js
-section: Deprecated
+section: SDKs
 label: V1
 ---
 

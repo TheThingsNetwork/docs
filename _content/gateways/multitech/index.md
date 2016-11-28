@@ -1,14 +1,17 @@
 ---
 title: MultiTech Conduit
-section: Quick Start
+section: Hardware
 redirect_from:
  - /multitech/
 ambassador:
   name: Jac Kersing
   username: kersing
+image: /gateways/multitech/image.jpg
 ---
 
 The [MultiConnect® Conduit™](http://www.multitech.net/developer/products/multiconnect-conduit-platform/) is a configurable, scalable cellular communications gateway for industrial IoT applications. Conduit allows users to plug in two MultiConnect mCard™ accessory cards supporting wired or wireless interfaces.
+
+![MultiTech Conduit](image.jpg)
 
 This guide will help you set up the gateway to communicate over The Things Network.
 
