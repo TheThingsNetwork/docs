@@ -1,12 +1,8 @@
 # The Things Network Documentation [![Build Status](https://travis-ci.org/TheThingsNetwork/docs.svg?branch=master)](https://travis-ci.org/TheThingsNetwork/docs)
 
-This is a [Jekyll](https://jekyllrb.com) site configured to be build and served through [GitHub Pages](https://help.github.com/articles/using-jekyll-as-a-static-site-generator-with-github-pages/).
+This is a [Jekyll](https://jekyllrb.com) site which [Travis](https://travis-ci.org/TheThingsNetwork/docs) automatically tests and builds to the [gh-pages](https://github.com/TheThingsNetwork/docs/tree/gh-pages) branch to be served via [GitHub Pages](https://help.github.com/articles/what-is-github-pages/).
 
 ## Update content
-
-Because we let GitHub Pages do the Jekyll builds the website will be updated automatically after pushing commits or merging pull requests.
-
-### Guidance
 
 * The homepage for the site is [index.html](index.html).
 * The guides are a Jekyll collection in the [_content](_content) folder.
@@ -73,12 +69,12 @@ Alternatively, you can set the `SCP_TARGET` environment variable or [dotenv](htt
 
 ## Test [![Build Status](https://travis-ci.org/TheThingsNetwork/docs.svg?branch=master)](https://travis-ci.org/TheThingsNetwork/docs)
 
-Pull Requests and Pushes will be tested automatically by Travis using the [test](test) script. This will use [markdown-spellcheck](https://www.npmjs.com/package/markdown-spellcheck) on the Markdown source files, let Jekyll try to build the site and then use [HTMLProofer](https://github.com/gjtorikian/html-proofer) to test for broken links etc.
+Pull Requests and Pushes will be tested automatically by Travis. This will use [markdown-spellcheck](https://www.npmjs.com/package/markdown-spellcheck) on the Markdown source files, let Jekyll try to build the site and then use [HTMLProofer](https://github.com/gjtorikian/html-proofer) to test for broken links etc.
 
 To run the test local, follow *Build local* to install the dependencies and then run:
 
 ```
-./test
+npm test
 ```
 
 The test will also run automatically before every commit.
