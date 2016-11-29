@@ -25,7 +25,7 @@ You can of course use [The Things Node](node/) or [Uno](uno/), but The Things Ne
 
 ## SDKs
 
-To connect a device it needs to have a LoRaWAN module, either onboard, as a shield or wired. Most modules can be talked to via a serial interface. To hide you from the complexity of the commands and responses, some modules come with an SDK.
+To connect a device it needs to have a LoRaWAN module, either on board, as a shield or wired. Most modules can be talked to via a serial interface. To hide you from the complexity of the commands and responses, some modules come with an SDK.
 
 [The Things Node](node/) and [Uno](uno/) use the [Arduino](https://www.arduino.cc/) platform and [Microchip RN modules](http://www.microchip.com/design-centers/wireless-connectivity/embedded-wireless/lora-technology). We've build an [Arduino SDK](arduino/) which enables you to send a message in just a couple lines of code. We plan to provide SDKs for more IoT platforms as well.
 

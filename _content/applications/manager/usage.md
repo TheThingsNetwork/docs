@@ -16,7 +16,7 @@ See [Authentication](authentication.md) on how to use the key or token to authen
 
 ## gRPC or HTTP
 
-The primary interface for the Handler Management API is [gRPC](http://www.grpc.io/). To learn about gRPC follow the [gRPC Quick Start](http://www.grpc.io/docs/quickstart/) in your favourite language.  The service is defined in [handler.proto](https://github.com/TheThingsNetwork/ttn/blob/v2-preview/api/handler/handler.proto). 
+The primary interface for the Handler Management API is [gRPC](http://www.grpc.io/). To learn about gRPC follow the [gRPC Quick Start](http://www.grpc.io/docs/quickstart/) in your favorite language.  The service is defined in [handler.proto](https://github.com/TheThingsNetwork/ttn/blob/v2-preview/api/handler/handler.proto). 
 
 The HTTP API is a wrapper around the gRPC API. We recommend to use gRPC if possible because the performance is better.
 

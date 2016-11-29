@@ -167,7 +167,7 @@ You are now ready to register your device to the application.
 ## Activate your Device
 Now that we have registered the device, we can activate the connection from our device itself.
 
-> Activation means that the device will use the generated App Key to negotiate session keys for further communication. This is also known as Over The Air Activation or OTAA. There's also [Activation By Personalisation](../registration.md#personalise-device-for-abp) (ABP) where you set or generate the session keys via the console and hard-code them on your device.
+> Activation means that the device will use the generated App Key to negotiate session keys for further communication. This is also known as Over The Air Activation or OTAA. There's also [Activation By Personalization](../registration.md#personalize-device-for-abp) (ABP) where you set or generate the session keys via the console and hard-code them on your device.
 
 1.  In the Arduino IDE, go back to your sketch and copy-paste the following lines just after the `#include`:
 

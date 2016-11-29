@@ -4,7 +4,7 @@ title: SDKs
 
 # Platform SDKs
 
-Devices and Applications exchange messages and events via the Handler's MQTT broker. SKDs wrap this in a more friendly platform-specific API.
+Devices and Applications exchange messages and events via the Handler's MQTT broker. SDKs wrap this in a more friendly platform-specific API.
 
 ## Examples
 Examples of libraries that wrap MQTT are [Node.js](../applications/nodejs/index.md) and [Java](../applications/java/index.md). The [Node-RED](../applications/nodered/index.md) library actually is in fact another wrapper of the Node.js library.

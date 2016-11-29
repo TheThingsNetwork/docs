@@ -69,17 +69,13 @@ Alternatively, you can set the `SCP_TARGET` environment variable or [dotenv](htt
 
 ## Test [![Build Status](https://travis-ci.org/TheThingsNetwork/docs.svg?branch=master)](https://travis-ci.org/TheThingsNetwork/docs)
 
-Pull Requests and Pushes will be tested automatically by Travis. This will use [markdown-spellcheck](https://www.npmjs.com/package/markdown-spellcheck) on the Markdown source files, let Jekyll try to build the site and then use [HTMLProofer](https://github.com/gjtorikian/html-proofer) to test for broken links etc.
+Pull Requests and Pushes will be tested automatically by Travis. It will let Jekyll try to build the site and then run [HTMLProofer](https://github.com/gjtorikian/html-proofer) to test for broken links etc.
 
-To run the test local, follow *Build local* to install the dependencies and then run:
+The test will also run automatically before every commit. To run the test manually, follow *Build local* to install the dependencies and then run:
 
 ```
 npm test
 ```
-
-The test will also run automatically before every commit.
-
-To ignore spelling errors for all or certain files, add them to [.spelling](.spelling).
 
 ## Automatic updates
 

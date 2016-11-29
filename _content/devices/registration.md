@@ -25,13 +25,13 @@ To communicate with an application added via the console, you will first need to
 
     You will be redirected to the newly registered device where you can find the generated **App Key** needed to activate the device.
 
-## Personalise device for ABP
+## Personalize device for ABP
 
-Normally, you'd use Over The Air Activation (OTAA) to negotiate session keys for further communication. You have the option to personalise a device, which means you will generate or assign session keys manually and use hard code them on the device.
+Normally, you'd use Over The Air Activation (OTAA) to negotiate session keys for further communication. You have the option to personalize a device, which means you will generate or assign session keys manually and use hard code them on the device.
 
 > In production, you'll want to use OTAA. This is more reliable because the activation will be confirmed and more secure because the session keys will be negotiated with every activation. ABP is useful for workshops because you don't have to wait for a downlink window to become available to confirm the activation.
 
-1.  In the console, go to the device you'd like to personalise.
+1.  In the console, go to the device you'd like to personalize.
 2.  From the top right menu, select **Settings**.
 3.  Click on **personalize device**, just right of the **Device Settings** header.
 
