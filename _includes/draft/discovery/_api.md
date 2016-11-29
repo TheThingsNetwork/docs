@@ -8,7 +8,9 @@ The Discovery service is used to discover services within The Things Network.
 
 ### `Announce`
 
-Announce your component to the Discovery server
+Announce a component to the Discovery server.
+A call to `Announce` does not processes the `metadata` field, so you can safely leave this field empty.
+Adding or removing Metadata should be done with the `AddMetadata` and `DeleteMetadata` methods.
 
 - Request: [`Announcement`](#discoveryannouncement)
 - Response: [`Empty`](#discoveryannouncement)
@@ -45,7 +47,7 @@ Get all announcements for a specific service
       "metadata": [
         {
           "key": "APP_ID",
-          "value": "some-app-id"
+          "value": "c29tZS1hcHAtaWQ="
         }
       ],
       "net_address": "eu.thethings.network:1904",
@@ -90,7 +92,7 @@ Get a specific announcement
   "metadata": [
     {
       "key": "APP_ID",
-      "value": "some-app-id"
+      "value": "c29tZS1hcHAtaWQ="
     }
   ],
   "net_address": "eu.thethings.network:1904",
