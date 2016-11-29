@@ -43,7 +43,7 @@ layout: default
       </div>
 
       <div class="hidden-xs col-sm-3 text-right">
-        <a href="{% if page.source %}{{ page.source }}{% else %}{{ site.github.repository_url }}/edit/master/{{ page.path | downcase }}{% endif %}" class="page-edit"><i class="fa fa-github"></i> Edit <strong>{{ page.path | split:'/' | last }}</strong></a>
+        <a href="{% if page.source %}{{ page.source }}{% else %}{{ site.github.repository_url }}/edit/master/{{ page.path | downcase }}{% endif %}" class="page-edit" data-proofer-ignore><i class="fa fa-github"></i> Edit <strong>{{ page.path | split:'/' | last }}</strong></a>
       </div>
 
     </div>
@@ -108,7 +108,7 @@ layout: default
               <p class="lead">{{ page.description }}</p>
             {% endif %}
 
-            {{ content | replace:'index.md','' | replace:'.md','.html' | replace: '<table>', '<table class="table">' }}
+            {{ content | docs_content }}
 
           </div>
         </div>
