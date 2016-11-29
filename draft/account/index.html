@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags --><!-- 20111122 0939 --><link rel="stylesheet" href="/docs/assets/css/main.css">
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries --><!-- WARNING: Respond.js doesn't work if you view the page via file:// --><!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]--><script>
+
+    var site = {
+      baseurl: '/docs',
+      local: (document.location.port || document.location.protocol === 'file:')
+    };
+
+    (function(canonical) {
+      if (!site.local && document.location.href.substr(0, document.location.href.length - document.location.hash.length) !== canonical) {
+        window.location.replace(canonical);
+      }
+    })('https://www.thethingsnetwork.org/docs/draft/account/');
+
+    </script><!-- Begin Jekyll SEO tag v2.1.0 --><title>Account Server API - The Things Network</title>
+<meta property="og:title" content="Account Server API">
+<meta name="description" content="The Account Server manages the ACL for The Things Network. It closed-source. If you’d like to run the open-source backend you will need to provide an account server with the exact same API.">
+<meta property="og:description" content="The Account Server manages the ACL for The Things Network. It closed-source. If you’d like to run the open-source backend you will need to provide an account server with the exact same API.">
+<link rel="canonical" href="https://www.thethingsnetwork.org/docs/draft/account/">
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/draft/account/">
+<meta property="og:site_name" content="The Things Network">
+<meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/the-things-white.png">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2016-11-29T14:38:57+00:00">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@thethingsnetwrk">
+<meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork">
+<script type="application/ld+json">
+{"@context": "http://schema.org",
+"@type": "BlogPosting",
+"headline": "Account Server API",
+"image": "https://www.thethingsnetwork.org/docs/assets/images/the-things-white.png",
+"datePublished": "2016-11-29T14:38:57+00:00",
+"description": "The Account Server manages the ACL for The Things Network. It closed-source. If you’d like to run the open-source backend you will need to provide an account server with the exact same API.",
+"publisher": {"@type": "Organization",
+"logo": {"@type": "ImageObject",
+"url": "https://www.thethingsnetwork.org/docs/assets/images/the-things-white.png"}},
+"url": "https://www.thethingsnetwork.org/docs/draft/account/"}</script><!-- End Jekyll SEO tag --><link rel="apple-touch-icon-precomposed" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-152.png">
+<meta name="msapplication-TileColor" content="#FFFFFF">
+<meta name="msapplication-TileImage" content="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-144.png">
+<meta name="application-name" content="The Things Network">
+<meta name="msapplication-tooltip" content="Building a Global Internet of Things Network Together.">
+<meta name="msapplication-config" content="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/ieconfig.xml">
+<link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-32.png" sizes="32x32">
+<link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-57.png" sizes="57x57">
+<link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-76.png" sizes="76x76">
+<link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-96.png" sizes="96x96">
+<link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-120.png" sizes="120x120">
+<link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-128.png" sizes="128x128">
+<link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-144.png" sizes="144x144">
+<link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-152.png" sizes="152x152">
+<link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-180.png" sizes="180x180">
+<link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-195.png" sizes="195x195">
+<link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-228.png" sizes="228x228">
+<link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/smalltile.png" sizes="128x128">
+<link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/mediumtile.png" sizes="270x270">
+<link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/widetile.png" sizes="558x270">
+<link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png" sizes="558x558">
+<link rel="shortcut icon" sizes="196x196" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-196.png">
+</head>
+<body>
+
+    <div id="content">
+      
+
+
+
+
+
+
+
+
+
+
+<div id="top" class="layout-guide container">
+
+  <div class="row guide-nav">
+    <div class="col-sm-9">
+      <ol class="breadcrumb">
+<li><a href="http://www.thethingsnetwork.org/">Home</a></li>
+        <li><a href="/docs/">Learn</a></li>
+        
+        <li class="active">Account Server API</li>
+      </ol>
+</div>
+    <div class="col-sm-3 text-right">
+      <a class="btn btn-default hidden-xs" href="http://github.com/TheThingsNetwork/docs/edit/master/_includes/draft/account.md" target="_blank"><i class="fa fa-pencil"></i> Improve this guide</a>
+    </div>
+  </div>
+
+  <div class="row">
+
+    <div class="col-md-3" role="complementary">
+
+      <div class="guide-switch btn-group btn-block">
+        <button type="button" class="btn btn-primary btn-block dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Guides <span class="caret"></span></button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+<li class="disabled"><a href="#">
+              
+              The Things Node
+              
+              </a></li>
+            
+              
+                <li><a href="/docs/current/uno/">
+              
+              The Things Uno
+              
+              </a></li>
+            
+              
+                <li><a href="/docs/current/arduino/">
+              
+              Arduino
+              <span class="label label-info">SDK</span>
+              </a></li>
+            
+              
+                <li class="disabled"><a href="#">
+              
+              Other Devices
+              
+              </a></li>
+            
+          
+            <li role="separator" class="divider">
+            
+              
+                </li>
+<li class="disabled"><a href="#">
+              
+              The Things Gateway
+              
+              </a></li>
+            
+              
+                <li><a href="/docs/current/multitech/">
+              
+              MultiTech Conduit
+              
+              </a></li>
+            
+              
+                <li><a href="/docs/current/lorrier/">
+              
+              Lorrier LR2
+              
+              </a></li>
+            
+              
+                <li class="disabled"><a href="#">
+              
+              Other Gateways
+              
+              </a></li>
+            
+          
+            <li role="separator" class="divider">
+            
+              
+                </li>
+<li><a href="/docs/current/dashboard/">
+              
+              The Things Dashboard
+              
+              </a></li>
+            
+              
+                <li><a href="/docs/current/cli/">
+              
+              The Things CLI
+              
+              </a></li>
+            
+              
+                <li><a href="https://www.thethingsnetwork.org/wiki/Backend/Overview">
+              
+              Architecture
+              
+              </a></li>
+            
+          
+            <li role="separator" class="divider">
+            
+              
+                </li>
+<li><a href="/docs/current/mqtt/">
+              
+              MQTT
+              <span class="label label-info">API</span>
+              </a></li>
+            
+              
+                <li><a href="/docs/current/node-js/">
+              
+              Node.js
+              <span class="label label-info">SDK</span>
+              </a></li>
+            
+              
+                <li><a href="/docs/current/node-red/">
+              
+              Node-RED
+              <span class="label label-info">SDK</span>
+              </a></li>
+            
+              
+                <li><a href="/docs/v2-preview/java/">
+              
+              Java
+              <span class="label label-info">SDK</span>
+              </a></li>
+            
+              
+                <li class="disabled"><a href="#">
+              
+              Other Platforms
+              
+              </a></li>
+            
+          
+        </ul>
+</div>
+
+      <div class="guide-sidebar hidden-xs hidden-sm">
+
+        <div class="js-toc"></div>
+
+        <p class="guide-top"><a href="#top">Back to top</a></p>
+
+      </div>
+
+    </div>
+
+    <div class="col-md-9 js-toc-content content-body" role="main">
+
+      
+        <div class="alert alert-warning">
+<strong>Attention:</strong> You are reading the <small>DRAFT</small>  version of this guide. </div>
+      
+
+      
+      
+
+      <section class="panel"><div class="panel-body">
+          <span class="label label-success pull-right">DRAFT</span>
+          <h1>Account Server API</h1>
+          <p>The Account Server manages the <a href="https://en.wikipedia.org/wiki/Access_control_list">ACL</a> for The Things Network. It closed-source. If you’d like to run the <a href="https://github.com/thethingsnetwork/ttn">open-source backend</a> you will need to provide an account server with the exact same <a href="#api-reference">API</a>.</p>
+
+<p>This guide will inform you about the <a href="">access</a> and <a href="#api-reference">use</a> the Account Server API.</p>
+
+<p>The endpoint for The Things Network Account Servers is currently <code class="highlighter-rouge">https://preview.account.thethingsnetwork.org</code> but will change to <code class="highlighter-rouge">https://account.thethingsnetwork.org</code> once we go into production.</p>
+
+        </div>
+        
+      </section><section class="panel"><div class="panel-body">
+            <!-- EDIT AT https://github.com/TheThingsIndustries/node-ttn-oauth2/blob/v2-preview/AUTHENTICATION.md -->
+
+<h1 id="authentication">Authentication</h1>
+
+<p>This document describes the various aspects of authentication using this
+authentication server.</p>
+
+<h2 id="scopes">Scopes</h2>
+
+<p>Different endpoints require different client scopes.  These scopes
+restrict the clients to only be able to do certain types of actions.
+Currently these scopes are defined:</p>
+
+<ul>
+<li>
+<code class="highlighter-rouge">profile</code>: view and edit the users profile,</li>
+  <li>
+<code class="highlighter-rouge">apps</code>: manage the users applications and devices,</li>
+  <li>
+<code class="highlighter-rouge">apps:&lt;app_id&gt;</code>: manage the <code class="highlighter-rouge">app_id</code> app,</li>
+  <li>
+<code class="highlighter-rouge">components</code>: manage the users components,</li>
+  <li>
+<code class="highlighter-rouge">components:&lt;component_id&gt;</code>: manage the <code class="highlighter-rouge">component_id</code> component,</li>
+  <li>
+<code class="highlighter-rouge">gateways</code>: manage the users gateways,</li>
+  <li>
+<code class="highlighter-rouge">gateways:&lt;gateway_id&gt;</code>: manage the <code class="highlighter-rouge">gateway_id</code> gateway.</li>
+</ul>
+<p>Endpoints will check if the authentication method has the required scope
+depending on the method of authentication. As a rule of thumb, any endpoint
+that has an id (for instance an app id) in it’s URL, requires the specific
+scope for that id. For instance <code class="highlighter-rouge">GET /applications/foo</code> will require the
+<code class="highlighter-rouge">apps:foo</code> scope, <code class="highlighter-rouge">apps</code> is not enough. On the other hand to perform more
+general actions (like listing or creating apps) you will need the more general
+scope (eg. <code class="highlighter-rouge">apps</code>).</p>
+
+<h2 id="rights">Rights</h2>
+
+<p>Most actions a user wants to perform on the account server require he has the
+correct rights for the resource she is trying to access.</p>
+
+<p>Currently there are 3 main categories of rights:</p>
+
+<ul>
+<li><code class="highlighter-rouge">applications</code></li>
+  <li><code class="highlighter-rouge">gateways</code></li>
+  <li><code class="highlighter-rouge">components</code></li>
+</ul>
+<h3 id="application-rights">Application rights</h3>
+
+<p>To view and manage an application, a user needs rights to the application.
+Currently the following rights on applications are defined:</p>
+
+<ul>
+<li>
+<code class="highlighter-rouge">settings</code>: view and edit the settings of the application</li>
+  <li>
+<code class="highlighter-rouge">delete</code>: the ability to delete the application</li>
+  <li>
+<code class="highlighter-rouge">collaborators</code>: the ability to add and remove collaborators or edit their
+rights</li>
+  <li>
+<code class="highlighter-rouge">messages:up:r</code>: the ability to view messages sent by devices on the
+application</li>
+  <li>
+<code class="highlighter-rouge">messages:up:w</code>: the abilty to send messages to the application</li>
+  <li>
+<code class="highlighter-rouge">messages:down:w</code>: the abilty to send downlink messages to devices on the
+application</li>
+  <li>
+<code class="highlighter-rouge">devices</code>: List, view, add, edit and remove the devices for the application on a handler</li>
+</ul>
+<h3 id="gateway-rights">Gateway rights</h3>
+
+<p>To view and manage a gateway, a user needs rights to the gateway.
+Currently the following rights on gateways are defined:</p>
+
+<ul>
+<li>
+<code class="highlighter-rouge">gateway:settings</code>: view and edit the settings of the gateway</li>
+  <li>
+<code class="highlighter-rouge">gateway:delete</code>: the ability to delete the gateway</li>
+  <li>
+<code class="highlighter-rouge">gateway:collaborators</code>: the ability to add and remove collaborators or edit their rights</li>
+  <li>
+<code class="highlighter-rouge">gateway:status</code>: the ability to view the gateway status</li>
+  <li>
+<code class="highlighter-rouge">gateway:location</code>: the accurate location of the gateway, if this is not
+present, a scrambled location will be available</li>
+  <li>
+<code class="highlighter-rouge">gateway:owner</code>: view the owener of the gateway</li>
+</ul>
+<h3 id="component-rights">Component rights</h3>
+
+<p>To view and manage a network component, a user needs rights to the component.
+Currently the following rights on network components are defined:</p>
+
+<ul>
+<li>
+<code class="highlighter-rouge">component:settings</code>: read and write access to the settings and access key of a network component</li>
+  <li>
+<code class="highlighter-rouge">component:delete</code>: the right to delete the network component</li>
+</ul>
+<h2 id="authentication-methods">Authentication methods</h2>
+
+<p>Currently, there are 3 different methods of authenticating:</p>
+
+<ul>
+<li>session: sessions on account server, held by encrypted cookies,</li>
+  <li>bearer token: OAuth 2.0 bearer json web tokens,</li>
+  <li>access key: application access keys.</li>
+</ul>
+<h3 id="session">Session</h3>
+
+<p>This authentication method is only used on the account server website itself to
+keep the login status of a user. It automatically grants the <code class="highlighter-rouge">profile</code>
+scope, and no other scope.</p>
+
+<p>The method is checked for by looking at each requests <code class="highlighter-rouge">session</code> cookie.
+The cookies are HTTP-only and secure, to prevent hijacking.</p>
+
+<h3 id="bearer-token">Bearer Token</h3>
+
+<p>This authentication method is the main method of authenticating.  It checks
+the <code class="highlighter-rouge">Authorization</code> header to be in the following format:</p>
+
+<div class="language-plaintext highlighter-rouge">
+<pre class="highlight"><code>Authorization: Bearer &lt;token&gt;
+</code></pre>
+</div>
+
+<p>where <code class="highlighter-rouge">&lt;token&gt;</code> is the <a href="https://jwt.io">jwt</a> <code class="highlighter-rouge">access token</code> containing information about the user.
+This token is singed by a secret key that is kept by the account server. You can
+find the public decryprtion key using  <code class="highlighter-rouge">GET /key</code> endpoint.</p>
+
+<p>The <code class="highlighter-rouge">access token</code> is structured like this:</p>
+
+<div class="language-plaintext highlighter-rouge">
+<pre class="highlight"><code>{
+  sub: &lt;user id&gt;,         // the immutable user ID
+  client: &lt;client id&gt;,    // the ID of the client that requested the token
+  scope: [ &lt;scope...&gt; ],  // array of scopes this token grants
+
+  // Apps the user is a collaborator to, by app ID. The value at each key
+  // is an array of the rights the user has for the specific app.
+  // Only present when the client requesting the token has the apps scope.
+  apps: {
+    &lt;app id&gt;: [
+      &lt;app right...&gt;
+    ],
+  },
+
+  // Components the user is a collaborator to, by component ID. The value at each key
+  // is an array of the rights the user has for the specific component.
+  // Only present when the client requesting the token has the components scope.
+  components: {
+    &lt;component id&gt;: [
+      &lt;component right...&gt;
+    ],
+  },
+
+  // Gateways the user is a collaborator to, by component ID. The value at each key
+  // is an array of the rights the user has for the specific gateway.
+  // Only present when the client requesting the token has the gateways scope.
+  gateways: {
+    &lt;gateway eui&gt;: [
+      &lt;gateway right...&gt;
+    ],
+  },
+
+  // these fields are only present when the client requesting the 
+  // token has the profile scope.
+  username,
+  email,
+  created,
+  name,
+  valid,
+}
+</code></pre>
+</div>
+
+<h3 id="access-key">Access Key</h3>
+
+<p>You can access certain application endpoints by setting the <code class="highlighter-rouge">Authorization</code>
+header like:</p>
+
+<div class="language-plaintext highlighter-rouge">
+<pre class="highlight"><code>Authorization: Key &lt;access key&gt;
+</code></pre>
+</div>
+
+<p>where <code class="highlighter-rouge">&lt;access key&gt;</code> is an application access key.</p>
+
+<h3 id="requesting-the-access-token">Requesting the access token</h3>
+
+<p>To request an access token, initiate an OAuth 2.0 flow at <code class="highlighter-rouge">/users/token</code>.
+There’s support for both the <code class="highlighter-rouge">password</code> flow and the <code class="highlighter-rouge">authorization_code</code> flow,
+based on the grants of the client you are using.</p>
+
+<p>To prevent tokens from becoming too big (which might happen if a user has a lot
+of apps, gateways or components), a client can restrict the scope of the access
+token. By default the scope is not restricted and all entities are encoded in
+the token.</p>
+
+<p>To restrict the scope, a client should pass the optional <code class="highlighter-rouge">scope</code> parameter and
+select the entities it wants to be included in the token:</p>
+
+<div class="language-jsonnet highlighter-rouge">
+<pre class="highlight"><code><span class="p">{</span>
+  <span class="nx">grant_type</span><span class="p">:</span> <span class="s">'password'</span><span class="p">,</span>
+  <span class="nx">username</span><span class="p">:</span> <span class="s">'username'</span><span class="p">,</span>
+  <span class="nx">password</span><span class="p">:</span> <span class="s">'secret'</span><span class="p">,</span>
+  <span class="nx">scope</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s">'apps:app_id'</span><span class="p">,</span>
+    <span class="s">'gateways:gateway_id'</span><span class="p">,</span>
+    <span class="s">'components:component_id'</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>The resulting token will only have rights to edit the application <code class="highlighter-rouge">app_id</code>, the
+gateway <code class="highlighter-rouge">gateway_id</code> and the component <code class="highlighter-rouge">component_id</code>, other entities will be
+elided.</p>
+
+<p>If the client does not have access to a certain scope (for instance it does not
+have the <code class="highlighter-rouge">apps</code> scope), this request would result in a <code class="highlighter-rouge">400 Bad Request</code>.</p>
+
+<h3 id="restricted-access-keys">Restricted access keys</h3>
+
+<p>While having a lot of advantages, using jwt for access tokens has one problem:
+the token can become really big. For instance, a user with 20 apps and 30
+gateways will have a bigger token than a user with only 4 apps. This is a
+problem because HTTP restricts the length of headers and tokens that are to big
+cannot be used any more.</p>
+
+<p>To solve this problem, we restrict the size of each token to have only 10
+entities on it (where an entity is an <code class="highlighter-rouge">app</code>, a <code class="highlighter-rouge">gateway</code> or a <code class="highlighter-rouge">component</code>) and 
+we introduce a new endpoint <code class="highlighter-rouge">users/restrict-token</code> to allow access tokens to be
+exchanged for access tokens with similar scope but different specific entities.</p>
+
+<p>So if you have a token with the <code class="highlighter-rouge">scope</code> <code class="highlighter-rouge">[ 'apps' ]</code>, you can exchange it for
+another token that has the restricted scope <code class="highlighter-rouge">[ 'apps:an_app_id' ]</code> posting the
+following request to <code class="highlighter-rouge">/users/restrict-token</code>,  with your access token in the
+<code class="highlighter-rouge">Authorization: Bearer &lt;token&gt;</code> header:</p>
+
+<div class="language-json highlighter-rouge">
+<pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"scope"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"apps:another_app_id"</span><span class="w"> </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<p>The result of which would be:</p>
+
+<div class="language-json highlighter-rouge">
+<pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;new token for another_app_id&gt;"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<p>This way, in effect every token has the same power as a token with all <code class="highlighter-rouge">apps</code> on
+it, yet it does not have to as big.</p>
+
+<p>Some tokens should not have this ability though, that is why there is a field on
+the token claims: <code class="highlighter-rouge">interchangeable</code>. Only when this is <code class="highlighter-rouge">true</code>, the token will be
+interchangeable like this.</p>
+
+<h3 id="exchanging-an-access-key-for-an-access-token">Exchanging an Access Key for an Access Token</h3>
+
+<p>When you are building an integration, you will need an application access token,
+(which can be validated offline), to start the integration process.  However,
+users can only provide you with an application access key (which cannot be
+validated offline).  Therefore, you need to exchange the access key for an
+access token.  This can be done using the <code class="highlighter-rouge">/api/v2/applications/token</code> endpoint.</p>
+
+<p>It works exactly like a standard OAuth 2.0 password flow. The client initiates a
+request:</p>
+
+<div class="language-plaintext highlighter-rouge">
+<pre class="highlight"><code>HTTP/1.1  GET /api/v2/applications/token
+Content-Type: application/json
+Authorization: Basic &lt;basic_auth&gt;
+
+{
+  "username": "&lt;app_id&gt;",
+  "password": "&lt;access_key&gt;",
+  "grant_type": "password"
+}
+</code></pre>
+</div>
+
+<p>Where <code class="highlighter-rouge">&lt;app_id&gt;</code> is the application id you are requesting the access token for
+and <code class="highlighter-rouge">&lt;access_key&gt;</code> is the application access key you are exchanging.</p>
+
+<p><code class="highlighter-rouge">&lt;basic auth&gt;</code> is constructed following the <a href="https://en.wikipedia.org/wiki/Basic_access_authentication">standard basic auth</a> way:</p>
+
+<div class="language-plaintext highlighter-rouge">
+<pre class="highlight"><code># pseudo code
+basic_auth = base64("&lt;client_id&gt;:&lt;client_secret&gt;")
+</code></pre>
+</div>
+
+<p>Where <code class="highlighter-rouge">client_id</code> is the client ID for your integration and <code class="highlighter-rouge">&lt;client_secret&gt;</code> is 
+the client secret for you integration. For now, these need to be requested
+manually with TTN.</p>
+
+<p>If successful, you will receive a response like:</p>
+
+<div class="language-plaintext highlighter-rouge">
+<pre class="highlight"><code>200 Success
+Content-Type: application/json
+
+{
+  "access_token": "&lt;access_token&gt;",
+  "expires_in": 86400
+}
+</code></pre>
+</div>
+
+<p>The <code class="highlighter-rouge">access_token</code> is an access token that is scoped to the app you used in the
+exchange (eg. it has the <code class="highlighter-rouge">[ "app:&lt;app_id&gt;" ]</code>) scope and has the same rights as
+the access key you used to in the exchange.</p>
+
+<p>If the exchange fails for whatever reason, you will get a response like this:</p>
+
+<div class="language-plaintext highlighter-rouge">
+<pre class="highlight"><code>401 Unauthorized
+
+{
+  "code": 401,
+  "description": "&lt;error message&gt;"
+}
+</code></pre>
+</div>
+
+
+          </div>
+        </section><section class="panel"><div class="panel-body">
+            <!-- EDIT AT https://github.com/TheThingsIndustries/node-ttn-oauth2/blob/v2-preview/apidocs.md -->
+
+<h1 id="api-reference">API Reference</h1>
+<p>This is the API specification all account server need to comply to
+to be able to run a TTN backend.</p>
+
+<p><strong>Version:</strong> 2.0.0</p>
+
+<h3 id="security">Security</h3>
+<hr>
+<table class="table">
+<thead><tr>
+<th>oauth2</th>
+      <th><em>OAuth 2.0</em></th>
+    </tr></thead>
+<tbody>
+<tr>
+<td>Flow</td>
+      <td>accessCode</td>
+    </tr>
+<tr>
+<td>Authorization URL</td>
+      <td>/users/authorize</td>
+    </tr>
+<tr>
+<td>Token URL</td>
+      <td>/users/token</td>
+    </tr>
+<tr>
+<td><strong>Scopes</strong></td>
+      <td> </td>
+    </tr>
+<tr>
+<td>profile</td>
+      <td>Manage user profile</td>
+    </tr>
+<tr>
+<td>apps</td>
+      <td>Manage applications</td>
+    </tr>
+<tr>
+<td>apps:<app_id></app_id>
+</td>
+      <td>Manage application <app_id></app_id>
+</td>
+    </tr>
+<tr>
+<td>gateways</td>
+      <td>Manage gateways</td>
+    </tr>
+<tr>
+<td>gateways:<gateway_id></gateway_id>
+</td>
+      <td>Manage gateway <gateway_id></gateway_id>
+</td>
+    </tr>
+<tr>
+<td>components</td>
+      <td>Manage components</td>
+    </tr>
+<tr>
+<td>components:<component_id></component_id>
+</td>
+      <td>Manage component <component_id></component_id>
+</td>
+    </tr>
+</tbody>
+</table>
+<table class="table">
+<thead><tr>
+<th>apiKey</th>
+      <th><em>API Key</em></th>
+    </tr></thead>
+<tbody>
+<tr>
+<td>In</td>
+      <td>header</td>
+    </tr>
+<tr>
+<td>Name</td>
+      <td>Key</td>
+    </tr>
+</tbody>
+</table>
+<table class="table">
+<thead><tr>
+<th>oauth2</th>
+      <th><em>OAuth 2.0</em></th>
+    </tr></thead>
+<tbody>
+<tr>
+<td>Flow</td>
+      <td>password</td>
+    </tr>
+<tr>
+<td>Token URL</td>
+      <td>/applications/token</td>
+    </tr>
+<tr>
+<td><strong>Scopes</strong></td>
+      <td> </td>
+    </tr>
+<tr>
+<td>apps</td>
+      <td>Manage applications</td>
+    </tr>
+</tbody>
+</table>
+<h3 id="applications">/applications</h3>
+<hr>
+<h5 id="get"><strong><em>GET</em></strong></h5>
+<p><strong>Summary:</strong> List applications.</p>
+
+<p><strong>Description:</strong> Gets all the applictions the user has access to.</p>
+
+<p><strong>Responses</strong></p>
+
+<table class="table">
+<thead><tr>
+<th>Code</th>
+      <th>Description</th>
+    </tr></thead>
+<tbody><tr>
+<td>200</td>
+      <td>A list of applications.</td>
+    </tr></tbody>
+</table>
+<h5 id="post"><strong><em>POST</em></strong></h5>
+<p><strong>Summary:</strong> Create an application.</p>
+
+<p><strong>Description:</strong> Creates an application on the account server and adds the user as its first
+collaborator.</p>
+
+<p><strong>Parameters</strong></p>
+
+<table class="table">
+<thead><tr>
+<th>Name</th>
+      <th>Located in</th>
+      <th>Description</th>
+      <th>Required</th>
+      <th>Type</th>
+    </tr></thead>
+<tbody><tr>
+<td>application</td>
+      <td>body</td>
+      <td>The application to create.</td>
+      <td>No</td>
+      <td> </td>
+    </tr></tbody>
+</table>
+<p><strong>Responses</strong></p>
+
+<table class="table">
+<thead><tr>
+<th>Code</th>
+      <th>Description</th>
+    </tr></thead>
+<tbody>
+<tr>
+<td>201</td>
+      <td>The application was succesfully created.</td>
+    </tr>
+<tr>
+<td>409</td>
+      <td>The application could not be created because the id is already taken.</td>
+    </tr>
+</tbody>
+</table>
+<h3 id="appid">/{app_id}</h3>
+<hr>
+<h5 id="get-1"><strong><em>GET</em></strong></h5>
+<p><strong>Summary:</strong> Get application.</p>
+
+<p><strong>Description:</strong> Gets the application specified by the <code class="highlighter-rouge">app_id</code> parameter.</p>
+
+<p><strong>Parameters</strong></p>
+
+<table class="table">
+<thead><tr>
+<th>Name</th>
+      <th>Located in</th>
+      <th>Description</th>
+      <th>Required</th>
+      <th>Type</th>
+    </tr></thead>
+<tbody><tr>
+<td>app_id</td>
+      <td>path</td>
+      <td>The ID of the application.</td>
+      <td>Yes</td>
+      <td>string</td>
+    </tr></tbody>
+</table>
+<p><strong>Responses</strong></p>
+
+<table class="table">
+<thead><tr>
+<th>Code</th>
+      <th>Description</th>
+    </tr></thead>
+<tbody><tr>
+<td>200</td>
+      <td>Application found.</td>
+    </tr></tbody>
+</table>
+<h5 id="patch"><strong><em>PATCH</em></strong></h5>
+<p><strong>Summary:</strong> Edit application.</p>
+
+<p><strong>Description:</strong> Edits the application specified by the <code class="highlighter-rouge">app_id</code> parameter.</p>
+
+<p><strong>Parameters</strong></p>
+
+<table class="table">
+<thead><tr>
+<th>Name</th>
+      <th>Located in</th>
+      <th>Description</th>
+      <th>Required</th>
+      <th>Type</th>
+    </tr></thead>
+<tbody><tr>
+<td>app_id</td>
+      <td>path</td>
+      <td>The ID of the application.</td>
+      <td>Yes</td>
+      <td>string</td>
+    </tr></tbody>
+</table>
+<p><strong>Responses</strong></p>
+
+<table class="table">
+<thead><tr>
+<th>Code</th>
+      <th>Description</th>
+    </tr></thead>
+<tbody><tr>
+<td>204</td>
+      <td>Application edited.</td>
+    </tr></tbody>
+</table>
+<h5 id="delete"><strong><em>DELETE</em></strong></h5>
+<p><strong>Summary:</strong> Remove application.</p>
+
+<p><strong>Description:</strong> Removes the application specified by the <code class="highlighter-rouge">app_id</code> parameter.</p>
+
+<p><strong>Parameters</strong></p>
+
+<table class="table">
+<thead><tr>
+<th>Name</th>
+      <th>Located in</th>
+      <th>Description</th>
+      <th>Required</th>
+      <th>Type</th>
+    </tr></thead>
+<tbody><tr>
+<td>app_id</td>
+      <td>path</td>
+      <td>The ID of the application.</td>
+      <td>Yes</td>
+      <td>string</td>
+    </tr></tbody>
+</table>
+<p><strong>Responses</strong></p>
+
+<table class="table">
+<thead><tr>
+<th>Code</th>
+      <th>Description</th>
+    </tr></thead>
+<tbody><tr>
+<td>204</td>
+      <td>Succesfully removed the application.</td>
+    </tr></tbody>
+</table>
+<h3 id="appideuis">/{app_id}/euis</h3>
+<hr>
+<h5 id="get-2"><strong><em>GET</em></strong></h5>
+<p><strong>Summary:</strong> List EUIs of an application.</p>
+
+<p><strong>Description:</strong> Lists all of the applications EUIs.</p>
+
+<p><strong>Parameters</strong></p>
+
+<table class="table">
+<thead><tr>
+<th>Name</th>
+      <th>Located in</th>
+      <th>Description</th>
+      <th>Required</th>
+      <th>Type</th>
+    </tr></thead>
+<tbody><tr>
+<td>app_id</td>
+      <td>path</td>
+      <td>The ID of the application.</td>
+      <td>Yes</td>
+      <td>string</td>
+    </tr></tbody>
+</table>
+<p><strong>Responses</strong></p>
+
+<table class="table">
+<thead><tr>
+<th>Code</th>
+      <th>Description</th>
+    </tr></thead>
+<tbody><tr>
+<td>200</td>
+      <td>The list of EUIs.</td>
+    </tr></tbody>
+</table>
+<h5 id="post-1"><strong><em>POST</em></strong></h5>
+<p><strong>Summary:</strong> Request new EUI.</p>
+
+<p><strong>Description:</strong> Selects a new EUI from the TTN EUI block and adds it to the application.</p>
+
+<p><strong>Parameters</strong></p>
+
+<table class="table">
+<thead><tr>
+<th>Name</th>
+      <th>Located in</th>
+      <th>Description</th>
+      <th>Required</th>
+      <th>Type</th>
+    </tr></thead>
+<tbody><tr>
+<td>app_id</td>
+      <td>path</td>
+      <td>The ID of the application.</td>
+      <td>Yes</td>
+      <td>string</td>
+    </tr></tbody>
+</table>
+<p><strong>Responses</strong></p>
+
+<table class="table">
+<thead><tr>
+<th>Code</th>
+      <th>Description</th>
+    </tr></thead>
+<tbody><tr>
+<td>201</td>
+      <td>The EUI was created succesfully.</td>
+    </tr></tbody>
+</table>
+<h3 id="appideuiseui">/{app_id}/euis/{eui}</h3>
+<hr>
+<h5 id="put"><strong><em>PUT</em></strong></h5>
+<p><strong>Summary:</strong> Add an EUI to the application.</p>
+
+<p><strong>Description:</strong> Add an EUI to the application.</p>
+
+<p><strong>Parameters</strong></p>
+
+<table class="table">
+<thead><tr>
+<th>Name</th>
+      <th>Located in</th>
+      <th>Description</th>
+      <th>Required</th>
+      <th>Type</th>
+    </tr></thead>
+<tbody>
+<tr>
+<td>app_id</td>
+      <td>path</td>
+      <td>The ID of the application.</td>
+      <td>Yes</td>
+      <td>string</td>
+    </tr>
+<tr>
+<td>eui</td>
+      <td>path</td>
+      <td>The EUI of an application.</td>
+      <td>Yes</td>
+      <td>string</td>
+    </tr>
+</tbody>
+</table>
+<p><strong>Responses</strong></p>
+
+<table class="table">
+<thead><tr>
+<th>Code</th>
+      <th>Description</th>
+    </tr></thead>
+<tbody><tr>
+<td>204</td>
+      <td>The EUI was added successfully.</td>
+    </tr></tbody>
+</table>
+<h5 id="delete-1"><strong><em>DELETE</em></strong></h5>
+<p><strong>Summary:</strong> Remove an EUI from the application.</p>
+
+<p><strong>Description:</strong> Remove an EUI from the application.</p>
+
+<p><strong>Parameters</strong></p>
+
+<table class="table">
+<thead><tr>
+<th>Name</th>
+      <th>Located in</th>
+      <th>Description</th>
+      <th>Required</th>
+      <th>Type</th>
+    </tr></thead>
+<tbody>
+<tr>
+<td>app_id</td>
+      <td>path</td>
+      <td>The ID of the application.</td>
+      <td>Yes</td>
+      <td>string</td>
+    </tr>
+<tr>
+<td>eui</td>
+      <td>path</td>
+      <td>The EUI of an application.</td>
+      <td>Yes</td>
+      <td>string</td>
+    </tr>
+</tbody>
+</table>
+<p><strong>Responses</strong></p>
+
+<table class="table">
+<thead><tr>
+<th>Code</th>
+      <th>Description</th>
+    </tr></thead>
+<tbody><tr>
+<td>204</td>
+      <td>The EUI was removed.</td>
+    </tr></tbody>
+</table>
+<h3 id="appidcollaborators">/{app_id}/collaborators</h3>
+<hr>
+<h5 id="get-3"><strong><em>GET</em></strong></h5>
+<p><strong>Summary:</strong> List the collaborators of the application.</p>
+
+<p><strong>Description:</strong> List the collaborators of the application.</p>
+
+<p><strong>Parameters</strong></p>
+
+<table class="table">
+<thead><tr>
+<th>Name</th>
+      <th>Located in</th>
+      <th>Description</th>
+      <th>Required</th>
+      <th>Type</th>
+    </tr></thead>
+<tbody><tr>
+<td>app_id</td>
+      <td>path</td>
+      <td>The ID of the application.</td>
+      <td>Yes</td>
+      <td>string</td>
+    </tr></tbody>
+</table>
+<p><strong>Responses</strong></p>
+
+<table class="table">
+<thead><tr>
+<th>Code</th>
+      <th>Description</th>
+    </tr></thead>
+<tbody><tr>
+<td>200</td>
+      <td>The list of collaborators.</td>
+    </tr></tbody>
+</table>
+<h3 id="appidcollaboratorsusername">/{app_id}/collaborators/{username}</h3>
+<hr>
+<h5 id="get-4"><strong><em>GET</em></strong></h5>
+<p><strong>Summary:</strong> Get a collaborators rights to the application.</p>
+
+<p><strong>Parameters</strong></p>
+
+<table class="table">
+<thead><tr>
+<th>Name</th>
+      <th>Located in</th>
+      <th>Description</th>
+      <th>Required</th>
+      <th>Type</th>
+    </tr></thead>
+<tbody>
+<tr>
+<td>app_id</td>
+      <td>path</td>
+      <td>The ID of the application.</td>
+      <td>Yes</td>
+      <td>string</td>
+    </tr>
+<tr>
+<td>username</td>
+      <td>path</td>
+      <td>The username of a collaborator.</td>
+      <td>Yes</td>
+      <td>string</td>
+    </tr>
+</tbody>
+</table>
+<p><strong>Responses</strong></p>
+
+<table class="table">
+<thead><tr>
+<th>Code</th>
+      <th>Description</th>
+    </tr></thead>
+<tbody><tr>
+<td>200</td>
+      <td>The rights the collaborator has to the application.</td>
+    </tr></tbody>
+</table>
+<h5 id="put-1"><strong><em>PUT</em></strong></h5>
+<p><strong>Summary:</strong> Add or update the rights of a user as collaborator to the application.</p>
+
+<p><strong>Parameters</strong></p>
+
+<table class="table">
+<thead><tr>
+<th>Name</th>
+      <th>Located in</th>
+      <th>Description</th>
+      <th>Required</th>
+      <th>Type</th>
+    </tr></thead>
+<tbody>
+<tr>
+<td>app_id</td>
+      <td>path</td>
+      <td>The ID of the application.</td>
+      <td>Yes</td>
+      <td>string</td>
+    </tr>
+<tr>
+<td>username</td>
+      <td>path</td>
+      <td>The username of a collaborator.</td>
+      <td>Yes</td>
+      <td>string</td>
+    </tr>
+</tbody>
+</table>
+<p><strong>Responses</strong></p>
+
+<table class="table">
+<thead><tr>
+<th>Code</th>
+      <th>Description</th>
+    </tr></thead>
+<tbody><tr>
+<td>201</td>
+      <td>The rights where succesfully added to the collaborator.</td>
+    </tr></tbody>
+</table>
+<h5 id="delete-2"><strong><em>DELETE</em></strong></h5>
+<p><strong>Summary:</strong> Remove a user as collaborator from the application.</p>
+
+<p><strong>Description:</strong> Removes a collaborator from the application.</p>
+
+<p>It is not possible to
+- remove the last collaborator with the <code class="highlighter-rouge">collaborators</code> right from an application</p>
+
+<p><strong>Parameters</strong></p>
+
+<table class="table">
+<thead><tr>
+<th>Name</th>
+      <th>Located in</th>
+      <th>Description</th>
+      <th>Required</th>
+      <th>Type</th>
+    </tr></thead>
+<tbody>
+<tr>
+<td>app_id</td>
+      <td>path</td>
+      <td>The ID of the application.</td>
+      <td>Yes</td>
+      <td>string</td>
+    </tr>
+<tr>
+<td>username</td>
+      <td>path</td>
+      <td>The username of a collaborator.</td>
+      <td>Yes</td>
+      <td>string</td>
+    </tr>
+</tbody>
+</table>
+<p><strong>Responses</strong></p>
+
+<table class="table">
+<thead><tr>
+<th>Code</th>
+      <th>Description</th>
+    </tr></thead>
+<tbody><tr>
+<td>204</td>
+      <td>The collaborator was succesfully removed from the application.</td>
+    </tr></tbody>
+</table>
+<h3 id="appidrights">/{app_id}/rights</h3>
+<hr>
+<h5 id="get-5"><strong><em>GET</em></strong></h5>
+<p><strong>Summary:</strong> Get the rights you have to the specified application with the current authentication method.</p>
+
+<p><strong>Parameters</strong></p>
+
+<table class="table">
+<thead><tr>
+<th>Name</th>
+      <th>Located in</th>
+      <th>Description</th>
+      <th>Required</th>
+      <th>Type</th>
+    </tr></thead>
+<tbody><tr>
+<td>app_id</td>
+      <td>path</td>
+      <td>The ID of the application.</td>
+      <td>Yes</td>
+      <td>string</td>
+    </tr></tbody>
+</table>
+<p><strong>Responses</strong></p>
+
+<table class="table">
+<thead><tr>
+<th>Code</th>
+      <th>Description</th>
+    </tr></thead>
+<tbody><tr>
+<td>200</td>
+      <td>The rights you have to the application.</td>
+    </tr></tbody>
+</table>
+<h3 id="appidtoken">/{app_id}/token</h3>
+<hr>
+<h5 id="post-2"><strong><em>POST</em></strong></h5>
+<p><strong>Summary:</strong> Exchange an application Access Key for an application Access Token.</p>
+
+<p><strong>Parameters</strong></p>
+
+<table class="table">
+<thead><tr>
+<th>Name</th>
+      <th>Located in</th>
+      <th>Description</th>
+      <th>Required</th>
+      <th>Type</th>
+    </tr></thead>
+<tbody>
+<tr>
+<td>app_id</td>
+      <td>path</td>
+      <td>The ID of the application.</td>
+      <td>Yes</td>
+      <td>string</td>
+    </tr>
+<tr>
+<td>token_exchange</td>
+      <td>body</td>
+      <td>The credentials for the token exchange.</td>
+      <td>No</td>
+      <td> </td>
+    </tr>
+</tbody>
+</table>
+<p><strong>Responses</strong></p>
+
+<table class="table">
+<thead><tr>
+<th>Code</th>
+      <th>Description</th>
+    </tr></thead>
+<tbody><tr>
+<td>200</td>
+      <td>Token exchange successful.</td>
+    </tr></tbody>
+</table>
+</div>
+        </section>
+</div>
+
+  </div>
+</div>
+
+<div class="modal fade" id="lightbox" tabindex="-1" role="dialog">
+  <div class="modal-dialog text-center" role="document" style="width:auto;padding:20px;">
+    <a href="https://ttnstaticfile.blob.core.windows.net/static/ttn/media/logo/ttn-logo.png"><img class="modal-content modal-body" src="https://ttnstaticfile.blob.core.windows.net/static/ttn/media/logo/ttn-logo.png" alt="Zoom"></a>
+  </div>
+</div>
+
+    </div>
+
+    <script src="/docs/assets/js/bundle.js"></script><script src="https://www.thethingsnetwork.org/navbar.js"></script><script src="https://ttnstaticfile.blob.core.windows.net/static/common/js/ga.js"></script>
+</body>
+</html>
