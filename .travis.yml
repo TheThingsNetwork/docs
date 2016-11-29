@@ -1,3 +1,5 @@
+branches:
+  only: master
 language: ruby
 rvm: 2.2.0
 sudo: false
@@ -5,8 +7,11 @@ env:
   global:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
   - TRAVIS_NODE_VERSION="4"
+  - secure: PiWLpQoluWMoZHM+lWXgHKUs9ez3o07xiUKEohppGWhlC1k0y2qHu9C906r5YWGESZ2Okr22n1G+ToisW+CJ5Dd7CHzaDrJBt3SY9ZTfUxrg9pleAZF5EM/9DfhS7i4YnunYrrUooCYdT6UNvLS5FlWutNKueEeC9ACAXSgFG8IdN8WrEv3nUi+l10ORZEMlCQrndorxq2JvqBsZjdjVQciDzUv4SQ0AVUQT0d9JCT4OP/+TvcAwhcmAkAaM2NanAikdFq//7wccuAY+77S+lnm2m2NDNvbeHp4/mManBP+gtUQgk+GoWOmY8GOTyz8qUZuFzKDC0RI4XrHFgrcGmBq0dHXIpbbihTksJQowP6SC8qz4RBI1IWR4/yUzrOaIVyJpT49SHShLpx8inmb0cDt5c0pWpwY0JOIAHPWddfu74Uzi82RI4Ff1jVCcCHWKckdM6YJlB8YMimBslmKKYDNNwhWY+03n77nZihWx5uXjF8t8GW2YPl1jTDxtACTEzrUwgOaYxd6qrk6t6bSVFOMQC1b6RklvYYjWuAcr6C/4N1MUf2jTjRS63CTq3nDTd3/z19mv1gXTXjMOChCdebSEgxE1sF9tVZuhZsA2d0QcwSE0rHEzPZgflpYMrNxmWq5eTtFXQf3U0QG8fzKbn/LIz968bsW2gR4HvVIx4Fg=
 install:
 - bundle install
-- rm -rf ~/.nvm && git clone https://github.com/creationix/nvm.git ~/.nvm && (cd ~/.nvm && git checkout `git describe --abbrev=0 --tags`) && source ~/.nvm/nvm.sh && nvm install $TRAVIS_NODE_VERSION
+- rm -rf ~/.nvm && git clone https://github.com/creationix/nvm.git ~/.nvm && (cd ~/.nvm
+  && git checkout `git describe --abbrev=0 --tags`) && source ~/.nvm/nvm.sh && nvm
+  install $TRAVIS_NODE_VERSION
 - npm install
 script: npm test && bundle exec rake deploy

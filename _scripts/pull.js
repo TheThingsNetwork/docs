@@ -17,15 +17,6 @@ var items = [{
   }
 }, {
   owner: 'TheThingsNetwork',
-  repo: 'nodered-app-lib',
-  branch: 'refactor',
-  path: 'API.md',
-  target: '_content/applications/nodered/api.md',
-  yaml: {
-    title: 'API Reference'
-  }
-}, {
-  owner: 'TheThingsNetwork',
   repo: 'arduino-device-lib',
   branch: 'master',
   path: 'docs/TheThingsNetwork.md',
@@ -74,7 +65,7 @@ var items = [{
   repo: 'ttn',
   branch: 'v2-preview',
   path: 'api/API_AUTHENTICATION.md',
-  target: '_content/applications/manager/auth.md',
+  target: '_content/applications/manager/authentication.md',
   yaml: {
     title: 'Authentication'
   }
