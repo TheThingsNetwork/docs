@@ -5,7 +5,7 @@ title: Quick Start
 # Quick Start
 This guide will walk you through subscribing to an application's activations and messages as well as send a response to a specific device, using [Eclipse Mosquitto](https://mosquitto.org)'s CLIs to [subscribe](https://mosquitto.org/man/mosquitto_sub-1.html) and to [publish](https://mosquitto.org/man/mosquitto_pub-1.html) messages.
 
-> This guide assumes the sketch and payload functions of [The Things Uno / Quick Start](/uno/#quick-start), but can be easily applied to any other.
+> This guide assumes the sketch and payload functions of [The Things Uno / Quick Start](../../devices/uno/quick-start.md), but can be easily applied to any other.
 
 ## Setup
 
@@ -56,7 +56,7 @@ Now let's listen for actual messages coming in from devices.
 
     > Don't forget to replace `<Region>`, `<AppID>`, `<AppKey>` and append the options for TLS if you used that.
 
-2.  If you uploaded the [The Things Uno / Quick Start](/uno/#quick-start) sketch you should see something like:
+2.  If you uploaded the [The Things Uno / Quick Start](../../devices/uno/quick-start.md) sketch you should see something like:
 
     ```bash
     hello-world/devices/my-uno/up {"port":1,"counter":5,"payload_raw":"AQ==","payload_fields":{"led":true},"metadata":{"time":"2016-09-14T14:19:20.272552952Z","frequency":868.1,"modulation":"LORA","data_rate":"SF7BW125","coding_rate":"4/5","gateways":[{"eui":"B827EBFFFE87BD22","timestamp":1960494347,"time":"2016-09-14T14:19:20.258723Z","rssi":-49,"snr":9.5,"rf_chain":1}]}}
@@ -64,7 +64,7 @@ Now let's listen for actual messages coming in from devices.
     
 ### Subscribe to a specific field
 
-You can also subscribe to a specific field. Building on [The Things Uno / Quick Start](/uno/#quick-start) you could subscribe to get just the `led` field:
+You can also subscribe to a specific field. Building on [The Things Uno / Quick Start](../../devices/uno/quick-start.md) you could subscribe to get just the `led` field:
 
 ```bash
 mosquitto_sub -h <Region>.thethings.network -t '+/devices/+/up/led' -u '<AppID>' -P '<AppKey>' -v
@@ -73,7 +73,7 @@ hello-world/devices/my-uno/up/led true
 ```
 
 ## Send Messages (down)
-To send a message you will have to address a specific device by its **Device ID**. Let's send the same message used in the [The Things Uno / Quick Start](/uno/#message-your-device):
+To send a message you will have to address a specific device by its **Device ID**. Let's send the same message used in the [The Things Uno / Quick Start](../../devices/uno/quick-start.md#message-your-device):
 
 ```bash
 {
@@ -81,7 +81,7 @@ To send a message you will have to address a specific device by its **Device ID*
 }
 ```
 
-If you have followed [The Things Uno / Quick Start / Encode Messages](../uno/#encode-messages) you can send this as is using the `payload_fields` key:
+If you have followed [The Things Uno / Quick Start / Encode Messages](../../devices/uno/quick-start.md#encode-messages) you can send this as is using the `payload_fields` key:
 
 ```json
 {
@@ -105,7 +105,7 @@ Otherwise, you'll have to use `payload_raw` and send a base64 encoded array of b
     mosquitto_pub -h <Region>.thethings.network -t '<AppID>/devices/<DevID>/down' -u '<AppID>' -P '<AppKey>' -m '{"payload_fields":{"led":true}}'
     ```
 
-2.  If you are running [The Things Uno / Quick Start](/uno/#quick-start) sketch you should see something like:
+2.  If you are running [The Things Uno / Quick Start](../../devices/uno/quick-start.md) sketch you should see something like:
 
     ```
     -- LOOP

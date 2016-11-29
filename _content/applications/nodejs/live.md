@@ -5,7 +5,7 @@ zindex: 90
 
 # Live Example
 
-Try the Quick Start script right from your browser! Simply replace the `appEUI` and `accessKey` values with those you have found for your application in [Quick Start / Connect](#connect) and hit the green **Run** button.
+Try the Quick Start script right from your browser! Simply replace the `appEUI` and `accessKey` values with those you have found for your application in [Quick Start / Connect](quick-start.md#connect) and hit the green **Run** button.
 
 <script src="https://embed.runkit.com" data-element-id="live-code"></script>
 

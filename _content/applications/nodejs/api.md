@@ -1,7 +1,6 @@
 ---
-source: https://github.com/TheThingsNetwork/node-app-lib/blob/master/API.md
 title: API Reference
-zindex: 100
+source: 'https://github.com/TheThingsNetwork/node-app-lib/blob/master/API.md'
 ---
 
 # API Reference

@@ -1,11 +1,11 @@
 ---
 title: API Reference
-source: https://github.com/TheThingsIndustries/node-ttn-oauth2/blob/v2-preview/apidocs.md
+source: 'https://github.com/TheThingsIndustries/node-ttn-oauth2/blob/v2-preview/apidocs.md'
 ---
 
-The Things Network Account Server API
+API Reference
 =====================================
-This is the API specicification all account server need to comply to
+This is the API specification all account server need to comply to
 to be able to run a TTN backend.
 
 
@@ -13,6 +13,7 @@ to be able to run a TTN backend.
 
 ### Security
 ---
+
 |oauth2|*OAuth 2.0*|
 |---|---|
 |Flow|accessCode|
@@ -41,6 +42,7 @@ to be able to run a TTN backend.
 
 ### /applications
 ---
+
 ##### ***GET***
 **Summary:** List applications.
 
@@ -75,6 +77,7 @@ collaborator.
 
 ### /{app_id}
 ---
+
 ##### ***GET***
 **Summary:** Get application.
 
@@ -131,6 +134,7 @@ collaborator.
 
 ### /{app_id}/euis
 ---
+
 ##### ***GET***
 **Summary:** List EUIs of an application.
 
@@ -167,6 +171,7 @@ collaborator.
 
 ### /{app_id}/euis/{eui}
 ---
+
 ##### ***PUT***
 **Summary:** Add an EUI to the application.
 
@@ -205,6 +210,7 @@ collaborator.
 
 ### /{app_id}/collaborators
 ---
+
 ##### ***GET***
 **Summary:** List the collaborators of the application.
 
@@ -224,6 +230,7 @@ collaborator.
 
 ### /{app_id}/collaborators/{username}
 ---
+
 ##### ***GET***
 **Summary:** Get a collaborators rights to the application.
 
@@ -280,6 +287,7 @@ It is not possible to
 
 ### /{app_id}/rights
 ---
+
 ##### ***GET***
 **Summary:** Get the rights you have to the specified application with the current authentication method.
 
@@ -297,6 +305,7 @@ It is not possible to
 
 ### /{app_id}/token
 ---
+
 ##### ***POST***
 **Summary:** Exchange an application Access Key for an application Access Token.
 

@@ -75,7 +75,7 @@ while (!ttn.join(appEui, appKey)) {
 }
 ```
 
-See [Library Usage / Activate](#activate).
+See [Library Usage / Activate](usage.md#activate).
 
 ## Method: personalize
 Activate the device via ABP.
@@ -88,7 +88,7 @@ bool personalize(const byte devAddr[4], const byte nwkSKey[16], const byte appSK
 - `const byte nwkSKey[16]`: Network Session Key assigned to the device.
 - `const byte appSKey[16]`: App(lication) Session Key assigned to the device.
 
-See [Library Usage / Activate](#activate).
+See [Library Usage / Activate](usage.md#activate).
 
 ## Method: sendBytes
 Send a message to the application using raw bytes.

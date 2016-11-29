@@ -1,6 +1,6 @@
 ---
 title: Authentication
-source: https://github.com/TheThingsNetwork/ttn/blob/v2-preview/api/API_AUTHENTICATION.md
+source: 'https://github.com/TheThingsNetwork/ttn/blob/v2-preview/api/API_AUTHENTICATION.md'
 ---
 
 # Authentication

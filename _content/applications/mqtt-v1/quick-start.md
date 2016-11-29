@@ -61,20 +61,20 @@ Now let's listen for actual messages coming in from devices.
 
     Alternatively, you could also exit the process (`Ctrl C`) and subscribe to all topics using `-t '#'` instead.
 
-2.  If you uploaded the [The Things Uno / Quick Start](/uno/#quick-start) sketch you should see something like:
+2.  If you uploaded the [The Things Uno / Quick Start](../../devices/uno/quick-start.md) sketch you should see something like:
 
     ```bash
     70B3D57ED0000DA9/devices/0004A30B001B7AD2/up {"payload":"SGVsbG8=","port":1,"counter":6,"dev_eui":"0004A30B001B7AD2","metadata":[{"frequency":868.3,"datarate":"SF7BW125","codingrate":"4/5","gateway_timestamp":3553348659,"channel":1,"server_time":"2016-09-12T14:01:34.633450398Z","rssi":-48,"lsnr":9,"rfchain":1,"crc":1,"modulation":"LORA","gateway_eui":"B827EBFFFE87BD22","altitude":10,"longitude":5.90418,"latitude":52.95904}]}
     ```
 
 ## Send Messages (down)
-To send a message you will have to address a specific device by its **Dev EUI**. Let's send the same message as in the [The Things Uno / Quick Start](/uno/#receive-message-downlink):
+To send a message you will have to address a specific device by its **Dev EUI**. Let's send the same message as in the [The Things Uno / Quick Start](../../devices/uno/quick-start.md#message-your-device):
 
 ```bash
 Hi
 ```
 
-As explained in the API reference for the [+/devices/+/down](#topic-down-send) topic, we'll have to publish this as part of a JSON encoded object, with the payload itself base64 encoded:
+As explained in the API reference for the [+/devices/+/down](../mqtt/api.md#downlink-messages) topic, we'll have to publish this as part of a JSON encoded object, with the payload itself base64 encoded:
 
 ```json
 {
@@ -90,7 +90,7 @@ As explained in the API reference for the [+/devices/+/down](#topic-down-send) t
     mosquitto_pub -h staging.thethingsnetwork.org -t '<AppEUI>/devices/<DevEUI>/down' -u <AppEUI> -P '<AppKey>' -m '{ "payload":"SGk=","port":1,"ttl":"1h"}'
     ```
 
-2.  If you uploaded the [The Things Uno / Quick Start](/uno/#quick-start) sketch you should see something like:
+2.  If you uploaded the [The Things Uno / Quick Start](../../devices/uno/quick-start.md) sketch you should see something like:
 
     ```
     Sending: mac tx uncnf 1 with 5 bytes

@@ -34,7 +34,7 @@ defaults:
       image: /assets/images/the-things-white.png
 markdown: kramdown
 # Exclude vendor which Travis will add
-exclude: [ node_modules, vendor, Gemfile, Gemfile.lock, gulpfile.js, "npm-debug.*", package.json, README.md, test, webpack.config.js, yarn.lock ]
+exclude: [ node_modules, vendor, Rakefile, Gemfile, Gemfile.lock, gulpfile.js, "npm-debug.*", package.json, README.md, webpack.config.js ]
 gems:
   - jekyll-sitemap
   - jemoji

@@ -1,6 +1,6 @@
 ---
 title: API Reference
-source: https://github.com/TheThingsNetwork/arduino-device-lib/blob/node/docs/TheThingsNode.md
+source: 'https://github.com/TheThingsNetwork/arduino-device-lib/blob/node/docs/TheThingsNode.md'
 ---
 
 # API Reference

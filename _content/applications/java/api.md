@@ -1,7 +1,6 @@
 ---
 title: API Reference
-zindex: 100
-source: https://github.com/TheThingsNetwork/java-app-lib/blob/master/API.md
+source: 'https://github.com/TheThingsNetwork/java-app-lib/blob/master/API.md'
 ---
 
 # API Reference

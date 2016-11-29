@@ -5,7 +5,7 @@ title: Quick Start
 # Quick Start
 This guide will walk you through setting up a Node-RED flow that listens to device activations and messages and responds with a message in return.
 
-> This guide assumes the sketch and payload functions of [The Things Uno / Quick Start](/uno/#quick-start), but can be easily applied to any other.
+> This guide assumes the sketch and payload functions of [The Things Uno / Quick Start](../../devices/uno/quick-start.md), but can be easily applied to any other.
 
 The full flow that we will build is also included as [example](https://github.com/TheThingsNetwork/nodered-app-lib/blob/refactor/examples/quickstart.json) in the Node-RED library.
 
@@ -78,7 +78,7 @@ All The Things Network nodes can share the same app configuration.
 3.  Click **Add** to save the configuration.
 
 ## Receive Events
-[Activations](/mqtt/#device-activations) and other [devices events](/mqtt/#device-events) can be received via the **ttn device** node.
+[Activations](../mqtt/api.md#device-activations) and other [devices events](../mqtt/api.md#device-events) can be received via the **ttn device** node.
 
 1.  Still editing the **ttn device** node, enter `activations` in the **Event** field.
 2.  Click **Add** to create the node.

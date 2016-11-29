@@ -7,7 +7,7 @@ This is how you perform common tasks to use The Things Network on the LoPy. This
 
 ## Register your Device EUI
 
-To [register](../../v2-preview/console/#register-device) your device to a The Things Network application, you will need a unique Device EUI. You can either let The Things Network generate a Device EUI or use the unique MAC address of the LoRa module on the LoPy MAC. This is how you get the MAC address:
+To [register](../registration.md) your device to a The Things Network application, you will need a unique Device EUI. You can either let The Things Network generate a Device EUI or use the unique MAC address of the LoRa module on the LoPy MAC. This is how you get the MAC address:
 
 1.  [Start a MicroPython REPL prompt](https://docs.pycom.io/lopy/lopy/tutorial/repl.html), probably via [Telnet](https://docs.pycom.io/lopy/lopy/general.html#telnet-repl).
 
@@ -28,7 +28,7 @@ To [register](../../v2-preview/console/#register-device) your device to a The Th
     70B3D5499585FCA1
     ```
     
-3. Follow the steps to [register your device](../../v2-preview/console/#register-device).
+3. Follow the steps to [register your device](../registration.md).
   
 ## Activate your Device
 

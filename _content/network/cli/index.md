@@ -7,7 +7,7 @@ zindex: 800
 
 # The Things Network CLI
 
-Your Applications and Devices can be managed via [The Things Network Console](/console/), but you can also use the CLI, if you're into that kind of thing. 😎
+Your Applications and Devices can be managed via [The Things Network Console](../console/index.md), but you can also use the CLI, if you're into that kind of thing. 😎
 
 ![Architecture](architecture.png)
 

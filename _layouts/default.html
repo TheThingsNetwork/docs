@@ -15,20 +15,16 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    {% unless site.skipcanoncheck %}
+    <!-- site.serving: {{ site.serving }} -->
+    <!-- site.url: {{ site.url }} -->
+
+    {% unless site.url contains '://localhost:' %}
     <script>
-
-    var site = {
-      baseurl: '{{ site.baseurl }}',
-      local: (document.location.port || document.location.protocol === 'file:')
-    };
-
     (function(canonical) {
       if (!site.local && document.location.href.substr(0, document.location.href.length - document.location.hash.length) !== canonical) {
         window.location.replace(canonical);
       }
     })('{{ page.url | prepend: site.baseurl | prepend: site.url | replace:"/index.html", "/" }}');
-
     </script>
     {% endunless %}
 

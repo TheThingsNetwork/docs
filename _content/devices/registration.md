@@ -6,7 +6,7 @@ title: Device Registration
 
 To communicate with an application added via the console, you will first need to register the device to the application.
 
-> To register you'll need to [get the **Dev EUI** of your device](/uno/#get-your-device-eui) first.
+> To register you'll need to [get the **Dev EUI** of your device](uno/quick-start.md#get-your-device-eui) first.
 
 1.  Form the application page, select **Devices** from the top right menu.
 2.  In the **Devices** box, click **register device**.

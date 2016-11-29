@@ -22,7 +22,7 @@ async.series([
   (cb) => {
     console.log('Generating site...');
 
-    const child = child_process.exec('bundle exec jekyll build -d _scp --config _config.yml,_scripts/scp.yml', {
+    const child = child_process.exec('bundle exec jekyll build -d _scp', {
       cwd: cwd
     }, cb);
 

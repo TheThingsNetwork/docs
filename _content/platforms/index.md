@@ -28,6 +28,6 @@ An application can integrate The Things Network in different ways. This guide la
 
 For a complete reference of all APIs involved see:
 
-* Handler Data [MQTT](../../current/mqtt/) and AMQP API (coming)
-* [Handler Application Manager APIs](/application-manager)
-* [Account Server API](/account/)
+* Handler Data [MQTT](../applications/mqtt/index.md) and AMQP API (coming)
+* [Handler Application Manager APIs](../applications/manager/index.md)
+* [Account Server API](../network/account/index.md)

@@ -5,7 +5,7 @@ title: Quick Start
 # Quick Start
 This guide will walk you through setting up a Java project that listens to device activations and messages and responds to every 3rd message.
 
-> This guide assumes the sketch and payload functions of [The Things Uno / Quick Start](/uno/#quick-start), but can be easily applied to any other.
+> This guide assumes the sketch and payload functions of [The Things Uno / Quick Start](../../devices/uno/quick-start.md), but can be easily applied to any other.
 
 The full script that we will build is also included as [example](https://github.com/TheThingsNetwork/java-app-lib/blob/master/sample/src/main/java/org/thethingsnetwork/java/app/sample/App.java) in the Java library.
 

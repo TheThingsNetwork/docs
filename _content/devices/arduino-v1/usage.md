@@ -9,7 +9,7 @@ Here's how you include and use The Things Network library.
 
 To use the library:
 
-1.  Follow [setup](#setup) to install the library in Arduino IDE.
+1.  Follow [setup](ide.md#setup) to install the library in Arduino IDE.
 2.  Select **Sketch > Include Library > TheThingsNetwork** to include it.
 
 	Or simply copy and paste:

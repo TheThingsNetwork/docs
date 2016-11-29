@@ -1,5 +1,4 @@
 var path = require('path');
-var webpack = require('webpack');
 
 module.exports = {
   entry: {
@@ -26,12 +25,5 @@ module.exports = {
     alias: {
         jquery: 'jquery/src/jquery'
     }
-  },
-
-  plugins: [
-    // new webpack.ProvidePlugin({
-    //   $: 'jquery',
-    //   jQuery: 'jquery'
-    // })
-  ]
+  }
 };

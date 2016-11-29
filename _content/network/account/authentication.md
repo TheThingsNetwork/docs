@@ -1,6 +1,6 @@
 ---
 title: Authentication
-source: https://github.com/TheThingsIndustries/node-ttn-oauth2/blob/v2-preview/AUTHENTICATION.md
+source: 'https://github.com/TheThingsIndustries/node-ttn-oauth2/blob/v2-preview/AUTHENTICATION.md'
 ---
 
 # Authentication

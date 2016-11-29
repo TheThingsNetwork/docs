@@ -5,7 +5,7 @@ title: Quick Start
 # Quick Start
 This guide will walk you through setting up a Node.js project that listens to device activations and messages and responds to every 3rd message.
 
-> In a hurry? Skip to [Connect](#connect) to get your application **App EUI** and **Access Keys** and then jump to the [Live Example](#live-example) to run the script we'll write here directly in your browser!
+> In a hurry? Skip to [Connect](#connect) to get your application **App EUI** and **Access Keys** and then jump to the [Live Example](live.md) to run the script we'll write here directly in your browser!
 
 ## Setup
 Let's install Node.js, create a Node.js project and install the TTN Client.
@@ -130,7 +130,7 @@ Now that we are connected, let's listen for new device activations.
 ## Receive Messages (uplink)
 Now let's listen for actual messages coming in from devices.
 
-I use the same script as [The Things Uno Quick Start](/uno/#quick-start), which both sends and receives messages.
+I use the same script as [The Things Uno Quick Start](../../devices/uno/quick-start.md), which both sends and receives messages.
 
 1.  Add a listener for the `uplink` event:
 
@@ -181,9 +181,9 @@ I use the same script as [The Things Uno Quick Start](/uno/#quick-start), which 
 ## Send Messages (downlink)
 To send a message you will have to address a specific device by its **Dev EUI**. Devices will only receive the last (downlink) message send to them in response to the next (uplink) message they send themselves. So let's send a (downlink) message in response to each 3rd (uplink) message we receive from a device.
 
-Again, I use the same script as [The Things Uno Quick Start](/uno/#quick-start) as it is set up to both send and receives messages.
+Again, I use the same script as [The Things Uno Quick Start](../../devices/uno/quick-start.md) as it is set up to both send and receives messages.
 
-1.  Follow the [The Things Uno Quick Start](/uno/#quick-start) or upload another sketch to your device which sends messages every few seconds and listens for a response it will then print to `Serial`.
+1.  Follow the [The Things Uno Quick Start](../../devices/uno/quick-start.md) or upload another sketch to your device which sends messages every few seconds and listens for a response it will then print to `Serial`.
 
 2.  In the Arduino IDE, select **Tools > Serial Monitor** `Ctrl/⌘ Shift M` to open the Serial Monitor.
 

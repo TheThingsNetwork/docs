@@ -1,11 +1,15 @@
 ---
 title: API Reference
-source: https://github.com/TheThingsNetwork/ttn/blob/v2-preview/api/handler/ApplicationManager.md
+source: 'https://github.com/TheThingsNetwork/ttn/blob/v2-preview/api/handler/ApplicationManager.md'
 ---
 
 # API Reference
 
 ApplicationManager manages application and device registrations on the Handler
+
+To protect our quality of service, you can make up to 5000 calls to the
+ApplicationManager API per hour. Once you go over the rate limit, you will
+receive an error response.
 
 ## Methods
 

@@ -67,7 +67,7 @@ If you do some major refactoring and would like to upload a build somewhere for 
 npm run scp user@host:/path
 ```
 
-This will create a build `_scp` with the default config plus [`_scripts/scp.yml`](_scripts/scp.yml) and then upload it with `scp`. Make sure the server has your public key or it will prompt for a password and cause the script to fail.
+This will create a build in `_scp`, upload it with `scp` and then delete the directory. Make sure the server has your public key or it will prompt for a password and cause the script to fail.
 
 Alternatively, you can set the `SCP_TARGET` environment variable or [dotenv](https://www.npmjs.com/package/dotenv).
 

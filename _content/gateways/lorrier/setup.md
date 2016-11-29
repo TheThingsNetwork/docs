@@ -16,9 +16,9 @@ This guide follows most of the [LR2 Quick Settings Guide](https://github.com/lor
     
 3.  The LR2 by default is configured with `192.168.1.2` as static IP address. If this doesn't match the IP range of the network you will connect it to, you will need to change this first.
 
-    * Follow [Change Static IP Address](#change-static-ip-address) if needed.
+    * Follow [Change Static IP Address](ip.md) if needed.
         
-4.  If you're not connected via Winbox tools already to change the IP address then [do so now](#connect-via-winbox-tools) to change your password.
+4.  If you're not connected via Winbox tools already to change the IP address then [do so now](winbox.md) to change your password.
 
     * Go to **System > Password**.
     * The default password is `lorrier`.
@@ -32,4 +32,4 @@ This guide follows most of the [LR2 Quick Settings Guide](https://github.com/lor
     
     2.  To change the passwords type `passwd root` and `passwd debian`.
 
-7.  Continue to [Gateway Configuration](#gateway-configuration).
+7.  Continue to [Gateway Configuration](config.md).

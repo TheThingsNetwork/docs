@@ -4,12 +4,12 @@ title: Configuration
 
 # Configuration
 
-The `ttnctl` program can be configured with command line options described in the [API Reference](#api-reference), with environment variables or with a configuration file.
+The `ttnctl` program can be configured with command line options described in the [API Reference](api.md), with environment variables or with a configuration file.
 
 ## Environment
 
 `ttnctl` can be configured using environment variables.
-The format of these variables is the underscored version of the command line options that can be found in the [API Reference](#api-reference), prefixed with `TTNCTL_`. Environment variables are uppercase. The environment variables shown below are the values needed for **local development**. If you just want to use the default TTN server, you don't have to set any variables.
+The format of these variables is the underscored version of the command line options that can be found in the [API Reference](api.md), prefixed with `TTNCTL_`. Environment variables are uppercase. The environment variables shown below are the values needed for **local development**. If you just want to use the default TTN server, you don't have to set any variables.
 
 ```sh
 export TTNCTL_DEBUG=true

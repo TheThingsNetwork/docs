@@ -13,18 +13,18 @@ In the most basic scenario, the application uses standard protocol libraries to 
 ### Data API
 The Data API allow you to receive events and messages from devices as well as send messages to devices. You can use the Data API via:
 
-* [MQTT](../../current/mqtt/)
+* [MQTT](../applications/mqtt/index.md)
 * AMQP (coming)
 
 ### Application Manager API
 The Application Manager API let you manage applications and devices registered to it. You can use the Data API via:
 
 * gRPC (to be documented)
-* [HTTP](/application-manager/)
+* [HTTP](../applications/manager/index.md)
 
 ## 2. SDK
 
-We intend to SDKs for popular platforms such as [Node.js](../../current/node-js) and [Java](../../v2-preview/java). These SDKs provide a layer of abstraction to make it easier to interact with the APIs:
+We intend to SDKs for popular platforms such as [Node.js](../applications/nodejs/index.md) and [Java](../applications/java/index.md). These SDKs provide a layer of abstraction to make it easier to interact with the APIs:
 
 ![SDK](sdks.png)
 

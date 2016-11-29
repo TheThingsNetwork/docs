@@ -12,4 +12,4 @@ hidden: true
 * Go to `[URL]` and enter the unique code printed on `[LOCATION]` of The Things Uno.
 * Give it a minute and you should see your The Things Uno say *Hello*.
 
-No success? Use the Arduino IDE [Serial Monitor](/arduino/#serial-monitor) to verify that the device works and can connect with The Things Network.
+No success? Use the Arduino IDE [Serial Monitor](../arduino/ide.md#monitor-logs) to verify that the device works and can connect with The Things Network.

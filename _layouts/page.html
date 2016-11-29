@@ -27,7 +27,7 @@ layout: default
 
     <div class="row page-top-nav">
 
-      <div class="col-sm-10">
+      <div class="col-sm-9">
         <ul>
           <li class="page-top-nav-crumb"><a href="http://www.thethingsnetwork.org/">Home</a></li>
           <li class="page-top-nav-crumb"><a href="{{ site.baseurl }}/">Learn</a></li>
@@ -42,7 +42,7 @@ layout: default
         </ul>
       </div>
 
-      <div class="hidden-xs col-sm-2 text-right">
+      <div class="hidden-xs col-sm-3 text-right">
         <a href="{% if page.source %}{{ page.source }}{% else %}{{ site.github.repository_url }}/edit/master/{{ page.path | downcase }}{% endif %}" class="page-edit"><i class="fa fa-github"></i> Edit <strong>{{ page.path | split:'/' | last }}</strong></a>
       </div>
 
@@ -108,7 +108,7 @@ layout: default
               <p class="lead">{{ page.description }}</p>
             {% endif %}
 
-            {{ content | replace:'index.md">','">' | replace:'.md">','.html">' | replace: '<table>', '<table class="table">' }}
+            {{ content | replace:'index.md','' | replace:'.md','.html' | replace: '<table>', '<table class="table">' }}
 
           </div>
         </div>

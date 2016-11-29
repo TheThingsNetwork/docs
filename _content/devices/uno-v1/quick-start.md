@@ -17,7 +17,7 @@ This guide will walk you through programming The Things Uno to send and receive 
 
 The Arduino IDE will notify you of updates for the IDE and library automagically. :open_mouth:
 
-> See the [Arduino Guide](/arduino/) for more details.
+> See the [Arduino Guide](../arduino/index.md) for more details.
 
 ## Connect Device
 
@@ -73,7 +73,7 @@ Devices need to be registered with an application in order to send and receive m
 
 2.  On the **Register Device** screen leave **OTAA** selected.
 
-    > See the [Dashboard / Register Device](/dashboard/#register-device) guide for more details on OTAA and its alternative ABP.
+    > See the [Registration](../registration.md) guide for more details on OTAA and its alternative ABP.
 
 3.  Enter the **Dev(ice) EUI** you obtained earlier. When the format is correct, the **Register** button should become enabled.
 4.  Leave the **App Key** to be randomly generated.
@@ -134,7 +134,7 @@ Still on the dashboard's device page, you should see the messages coming in unde
 
 ![Encoded payload](dashboard-device-messages-payload.png)
 
-You could now use MQTT or the [TTN Node for Node-RED](/node-red/) to process the payload as it is, but we can also decode it first.
+You could now use MQTT or the [TTN Node for Node-RED](../../applications/nodered/index.md) to process the payload as it is, but we can also decode it first.
 
 1.  Go back to the application page and click the **<i class="ion-edit"></i> edit** link in the **Application Info** box.
 2.  Leave **decoder** selected, paste the following JavaScript code and click **Save**.
