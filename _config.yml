@@ -40,6 +40,8 @@ gist:
   noscript: false
 kramdown:
   math_engine: mathjax
+compress_html:
+  blanklines: true
 
 # Exclude vendor which Travis will add
 exclude: [ node_modules, vendor, Rakefile, Gemfile, Gemfile.lock, gulpfile.js, "npm-debug.*", package.json, Rakefile, README.md, webpack.config.js ]
