@@ -2,7 +2,6 @@
 title: Node-RED
 sections:
  - node-red/_quick-start.md
- - node-red/_api.md
 redirect_from:
  - /refactor/node-red/
 ---

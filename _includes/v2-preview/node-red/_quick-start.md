@@ -3,7 +3,7 @@ This guide will walk you through setting up a Node-RED flow that listens to devi
 
 > This guide assumes the sketch and payload functions of [The Things Uno / Quick Start](/uno/#quick-start), but can be easily applied to any other.
 
-The full flow that we will build is also included as [example](https://github.com/TheThingsNetwork/nodered-app-lib/blob/refactor/examples/quickstart.json) in the Node-RED library.
+The full flow that we will build is also included as [example](https://github.com/TheThingsNetwork/nodered-app-lib/blob/master/examples/quickstart.json) in the Node-RED library.
 
 ## Setup
 To get started you need to install Node-RED and add the TTN node, both via [NPM](https://www.npmjs.com/).
