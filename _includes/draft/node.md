@@ -18,4 +18,4 @@ Once you have validated your idea, the next step could be to use [The Things Uno
 
 * Access to [preview.console.thethingsnetwork.org](https://preview.console.thethingsnetwork.org/).
 * The Things Node.
-* The [node branch](https://github.com/TheThingsNetwork/arduino-device-lib/tree/node/) of the The Things Network Arduino Library.
+* The [master branch](https://github.com/TheThingsNetwork/arduino-device-lib/) of the The Things Network Arduino Library.

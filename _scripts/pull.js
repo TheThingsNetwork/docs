@@ -14,12 +14,6 @@ var items = [{
   file: '_includes/v2-preview/node-js/_api.md'
 }, {
   owner: 'TheThingsNetwork',
-  repo: 'nodered-app-lib',
-  branch: 'refactor',
-  path: 'API.md',
-  file: '_includes/v2-preview/node-red/_api.md'
-}, {
-  owner: 'TheThingsNetwork',
   repo: 'arduino-device-lib',
   branch: 'master',
   path: 'docs/TheThingsNetwork.md',
