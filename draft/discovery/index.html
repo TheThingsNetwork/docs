@@ -42,7 +42,7 @@
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/the-things-white.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2016-11-29T14:58:17+00:00" />
+<meta property="article:published_time" content="2016-12-02T10:10:23+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
@@ -51,7 +51,7 @@
 "@type": "BlogPosting",
 "headline": "Discovery API",
 "image": "https://www.thethingsnetwork.org/docs/assets/images/the-things-white.png",
-"datePublished": "2016-11-29T14:58:17+00:00",
+"datePublished": "2016-12-02T10:10:23+00:00",
 "description": "The Discovery Server is the key to the decentralized architecture of The Things Network. This is where routers, brokers and handlers announce themselves and where you can look them up.",
 "publisher": {"@type": "Organization",
 "logo": {"@type": "ImageObject",
@@ -308,11 +308,11 @@ Adding or removing Metadata should be done with the <code class="highlighter-rou
 
 <h3 id="getall"><code class="highlighter-rouge">GetAll</code></h3>
 
-<p>Get all announcements for a specific service</p>
+<p>Get all announcements for a specific service type</p>
 
 <ul>
-  <li>Request: <a href="#discoverygetallrequest"><code class="highlighter-rouge">GetAllRequest</code></a></li>
-  <li>Response: <a href="#discoverygetallrequest"><code class="highlighter-rouge">AnnouncementsResponse</code></a></li>
+  <li>Request: <a href="#discoverygetservicerequest"><code class="highlighter-rouge">GetServiceRequest</code></a></li>
+  <li>Response: <a href="#discoverygetservicerequest"><code class="highlighter-rouge">AnnouncementsResponse</code></a></li>
 </ul>
 
 <h4 id="http-endpoint">HTTP Endpoint</h4>
@@ -340,8 +340,9 @@ Adding or removing Metadata should be done with the <code class="highlighter-rou
       </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ttn-handler-eu"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="nt">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"APP_ID"</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c29tZS1hcHAtaWQ="</span><span class="w">
+          </span><span class="nt">"app_eui"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"app_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"some-app-id"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"dev_addr_prefix"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AAAAAAA="</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">],</span><span class="w">
       </span><span class="nt">"net_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eu.thethings.network:1904"</span><span class="p">,</span><span class="w">
@@ -389,8 +390,9 @@ Adding or removing Metadata should be done with the <code class="highlighter-rou
   </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ttn-handler-eu"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"APP_ID"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c29tZS1hcHAtaWQ="</span><span class="w">
+      </span><span class="nt">"app_eui"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"app_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"some-app-id"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"dev_addr_prefix"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AAAAAAA="</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="nt">"net_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eu.thethings.network:1904"</span><span class="p">,</span><span class="w">
@@ -515,25 +517,6 @@ Adding or removing Metadata should be done with the <code class="highlighter-rou
   </tbody>
 </table>
 
-<h3 id="discoverygetallrequest"><code class="highlighter-rouge">.discovery.GetAllRequest</code></h3>
-
-<table class="table">
-  <thead>
-    <tr>
-      <th>Field Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code class="highlighter-rouge">service_name</code></td>
-      <td><code class="highlighter-rouge">string</code></td>
-      <td>The name of the service (router/broker/handler)</td>
-    </tr>
-  </tbody>
-</table>
-
 <h3 id="discoverygetrequest"><code class="highlighter-rouge">.discovery.GetRequest</code></h3>
 
 <p>The identifier of the service that should be returned</p>
@@ -560,9 +543,7 @@ Adding or removing Metadata should be done with the <code class="highlighter-rou
   </tbody>
 </table>
 
-<h3 id="discoverymetadata"><code class="highlighter-rouge">.discovery.Metadata</code></h3>
-
-<p>Announcements have a list of Metadata</p>
+<h3 id="discoverygetservicerequest"><code class="highlighter-rouge">.discovery.GetServiceRequest</code></h3>
 
 <table class="table">
   <thead>
@@ -574,14 +555,43 @@ Adding or removing Metadata should be done with the <code class="highlighter-rou
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">key</code></td>
-      <td><a href="#discoverymetadatakey"><code class="highlighter-rouge">Key</code></a></td>
-      <td>The key indicates the metadata type</td>
+      <td><code class="highlighter-rouge">service_name</code></td>
+      <td><code class="highlighter-rouge">string</code></td>
+      <td>The name of the service (router/broker/handler)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="discoverymetadata"><code class="highlighter-rouge">.discovery.Metadata</code></h3>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>metadata</strong></td>
+      <td><strong>oneof 3</strong></td>
+      <td>one of the following 3</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">value</code></td>
+      <td><code class="highlighter-rouge">dev_addr_prefix</code></td>
       <td><code class="highlighter-rouge">bytes</code></td>
-      <td>The value depends on the key type</td>
+      <td>DevAddr prefix that is routed by this Broker 5 bytes; the first byte is the prefix length, the following 4 bytes are the address. Only authorized Brokers can announce PREFIX metadata.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">app_id</code></td>
+      <td><code class="highlighter-rouge">string</code></td>
+      <td>AppID that is registered to this Handler This metadata can only be added if the requesting client is authorized to manage this AppID.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">app_eui</code></td>
+      <td><code class="highlighter-rouge">bytes</code></td>
+      <td>AppEUI that is registered to this Join Handler Only authorized Join Handlers can announce APP_EUI metadata (and we don’t have any of those yet).</td>
     </tr>
   </tbody>
 </table>
@@ -612,7 +622,7 @@ Adding or removing Metadata should be done with the <code class="highlighter-rou
     <tr>
       <td><code class="highlighter-rouge">metadata</code></td>
       <td><a href="#discoverymetadata"><code class="highlighter-rouge">Metadata</code></a></td>
-      <td> </td>
+      <td>Metadata to add or remove</td>
     </tr>
   </tbody>
 </table>
@@ -621,39 +631,6 @@ Adding or removing Metadata should be done with the <code class="highlighter-rou
 
 <p>A generic empty message that you can re-use to avoid defining duplicated
 empty messages in your APIs.</p>
-
-<h2 id="used-enums">Used Enums</h2>
-
-<h3 id="discoverymetadatakey"><code class="highlighter-rouge">.discovery.Metadata.Key</code></h3>
-
-<p>The Key indicates the metadata type</p>
-
-<table class="table">
-  <thead>
-    <tr>
-      <th>Value</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code class="highlighter-rouge">OTHER</code></td>
-      <td>OTHER indicates arbitrary metadata. We currently don’t allow this.</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">PREFIX</code></td>
-      <td>The value for PREFIX consists of 1 byte denoting the number of bits, followed by the prefix and enough trailing bits to fill 4 octets. Only authorized brokers can announce PREFIX metadata.</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">APP_EUI</code></td>
-      <td>APP_EUI is used for announcing join handlers. The value for APP_EUI is the byte slice of the AppEUI. Only authorized join handlers can announce APP_EUI metadata (and we don’t have any of those yet).</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">APP_ID</code></td>
-      <td>APP_ID is used for announcing that this handler is responsible for a certain AppID. The value for APP_ID is the byte slice of the AppID string. This metadata can only be added if the requesting client is authorized to manage this AppID.</td>
-    </tr>
-  </tbody>
-</table>
 
 
           </div>
