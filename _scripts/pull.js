@@ -21,7 +21,7 @@ var items = [{
 }, {
   owner: 'TheThingsNetwork',
   repo: 'arduino-device-lib',
-  branch: 'node',
+  branch: 'feature/node',
   path: 'docs/TheThingsNode.md',
   file: '_includes/draft/node/_api.md'
 }, {
