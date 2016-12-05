@@ -16,4 +16,4 @@ It's the perfect board to start prototyping your IoT ideas or make an existing p
 
 * Access to [staging.thethingsnetwork.org](https://staging.thethingsnetwork.org/).
 * The Things Uno beta board.
-* Version 0.x of the [The Things Network Arduino Library](https://github.com/thethingsnetwork/arduino-device-lib).
+* Version 1.x of the [The Things Network Arduino Library](https://github.com/thethingsnetwork/arduino-device-lib).

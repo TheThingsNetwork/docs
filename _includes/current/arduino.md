@@ -5,10 +5,12 @@ sections:
  - arduino/_ide.md
  - arduino/_usage.md
  - arduino/_api.md
+ - arduino/_bytes.md
  - arduino/_examples.md
  - arduino/_resources.md
 redirect_from:
- - /arduino/
+ - /refactor/arduino/
+ - /v2-preview/arduino/
 ---
 
 [Arduino](https://www.arduino.cc/en/Guide/Introduction) is an open-source electronics platform based on easy-to-use hardware and software. It's intended for anyone making interactive projects.
@@ -17,8 +19,6 @@ With [The Things Network Library](https://github.com/thethingsnetwork/arduino-de
 
 ## Prerequisites
 
-* Access to [staging.thethingsnetwork.org](https://staging.thethingsnetwork.org/).
+* A staging or preview account.
 * Arduino board with [Microchip RN2xx3 module](http://www.microchip.com/design-centers/wireless-connectivity/embedded-wireless/lora-technology) for LoRaWAN.
-* Version 0.x of the [The Things Network Arduino Library](https://github.com/thethingsnetwork/arduino-device-lib).
-
-> Since version 0.17, the library now has its [own repository](https://github.com/thethingsnetwork/arduino-device-lib), can be installed via the [Library Manager](https://www.arduino.cc/en/Guide/Libraries#toc3) and has been renamed from `TheThingsUno` to `TheThingsNetwork`. I guess it should have been bumped to 1.x - oops! 😝
+* Version 1.x of the [The Things Network Arduino Library](https://github.com/thethingsnetwork/arduino-device-lib).

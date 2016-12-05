@@ -1,36 +1,24 @@
-# API Reference
+<!-- EDIT AT https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/docs/TheThingsNetwork.md -->
 
-Include TheThingsNetwork library:
+# API Reference
+Include and instantiate the TheThingsNetwork class. The constructor initialize the library with the Streams it should communicate with. It also sets the value of the spreading factor, the front-side Bus and the frequency plan.
+
+## Class: TheThingsNetwork
 
 ```c
 #include <TheThingsNetwork.h>
+
+TheThingsNetwork ttn(Stream& modemStream, Stream& debugStream, fp_ttn_t fp, uint8_t sf = 7, uint8_t fsb = 2);
 ```
 
-## Method: reset
-Reset the LoRaWAN module. In most cases you'd call this with no arguments before calling `init()`.
-
-```c
-void reset(bool adr = true, int sf = DEFAULT_SF, int fsb = DEFAULT_FSB);
-```
-
-- `bool adr = true` **TODO**
-- `int sf = DEFAULT_SF` **TODO**
-- `int fsb = DEFAULT_FSB` **TODO**
-
-## Method: init
-Initialize the library with the streams it should communicate with.
-
-```c
-void init(Stream& modemStream, Stream& debugStream);
-```
-
-- `Stream& modemStream`: Stream to the LoRaWAN modem.
-- `Stream& debugStream`: Stream to write debug logs to.
-
-For The Things Uno and Node use `Serial1` and `Serial`.
+- `Stream& modemStream`: Stream for the LoRa modem (for The Things Node/Uno use `Serial1` and data rate `57600`).
+- `Stream& debugStream`: Stream to write debug logs to (for The Things Node/Uno use `Serial` and data rate `9600`).
+- `fp_ttn_fp fp`: The frequency plan: `TTN_FP_EU868` or `TTN_FP_US915` depending on the region you deploy in.
+- `uint8_t sf = 7`: Optional custom spreading factor. Can be `7` to `12` for `TTN_FP_EU868` and `7` to `12` for `TTN_FP_US915`. Defaults to `7`.
+- `uint8_t fsb = 2`: Optional custom front-side bus. Can be `1` to `8`. Defaults to `2`.
 
 ## Method: showStatus
-Writes information about the device and LoRaWAN module to `debugStream`.
+Writes information about the device and LoRa module to `debugStream`.
 
 ```c
 void showStatus();
@@ -39,96 +27,111 @@ void showStatus();
 Will write something like:
 
 ```bash
-Device Information
-
-EUI: 0004A30B001B672E
-Battery: 3304
-AppEUI: 0000000000000000
-DevEUI: 0004A30B001B672E
-DevAddr: 00000000
+EUI: 0004A30B001B7AD2
+Battery: 3223
+AppEUI: 70B3D57EF000001C
+DevEUI: 0004A30B001B7AD2
+Band: 868
 Data Rate: 5
 RX Delay 1: 1000
 RX Delay 2: 2000
-
-use the device `EUI` to register the device for OTAA
+Total airtime: 0.00 s
 ```
+
+See the [DeviceInfo](https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/DeviceInfo/DeviceInfo.ino) example.
+
+## Method: onMessage
+Sets a function which will be called to process incoming messages.
+
+```c
+void onMessage(void (*cb)(const byte* payload, size_t length, port_t port));
+```
+
+- `const byte* payload`: Bytes received.
+- `size_t length`: Number of bytes.
+- `port_t port`: The port addressed.
+
+See the [Receive](https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/Receive/Receive.ino) example.
 
 ## Method: join
-Activate the device via OTAA.
+Activate the device via OTAA (default).
 
 ```c
-bool join(const byte appEui[8], const byte appKey[16]);
+bool join(const char *appEui, const char *appKey, int8_t retries = -1, uint32_t retryDelay = 10000);
+bool join(int8_t retries = -1, uint32_t retryDelay = 10000);
 ```
 
-- `const byte appEui[8]`: Application EUI the device is registered to.
-- `const byte appKey[16]`: Application Key assigned to the device.
+- `const char *appEui`: Application EUI the device is registered to.
+- `const char *appKey`: Application Key assigned to the device.
+- `int8_t retries = -1`: Number of times to retry after failed or unconfirmed join. Defaults to `-1` which means infinite.
+- `uint32_t retryDelay = 10000`: Delay in ms between attempts. Defaults to 10 seconds.
 
-Returns `true` or `false` depending on whether it received confirmation that the activation was successful. You'll probably call this method in a while to retry until it returns true:
+Returns `true` or `false` depending on whether it received confirmation that the activation was successful before the maximum number of attempts.
 
-```c
-while (!ttn.join(appEui, appKey)) {
-  delay(10000);
-}
-```
-
-See [Library Usage / Activate](#activate).
+Call the method without the first two arguments if the device's LoRa module comes with pre-flashed values.
 
 ## Method: personalize
 Activate the device via ABP.
 
 ```c
-bool personalize(const byte devAddr[4], const byte nwkSKey[16], const byte appSKey[16]);
+bool personalize(const char *devAddr, const char *nwkSKey, const char *appSKey);
+bool personalize();
 ```
 
-- `const byte devAddr[4]`: Dev(ice) Address assigned to the device.
-- `const byte nwkSKey[16]`: Network Session Key assigned to the device.
-- `const byte appSKey[16]`: App(lication) Session Key assigned to the device.
+- `const char *devAddr`: Device Address assigned to the device.
+- `const char *nwkSKey`: Network Session Key assigned to the device for identification.
+- `const char *appSKey`: Application Session Key assigned to the device for encryption.
 
-See [Library Usage / Activate](#activate).
+Returns `true` or `false` depending on whether the activation was successful.
+
+Call the method with no arguments if the device's LoRa module comes with pre-flashed values.
+
+See the [ABP](https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/ABP/ABP.ino) example.
 
 ## Method: sendBytes
 Send a message to the application using raw bytes.
 
 ```c
-int sendBytes(const byte* buffer, int length, int port = 1, bool confirm = false);
+int8_t sendBytes(const byte* payload, size_t length, port_t port = 1, bool confirm = false);
 ```
 
-- `const byte* buffer`: Bytes to send.
-- `int length`: The number of bytes. Use `sizeof(buffer)` to get it.
-- `int port = 1`: The port to address. Defaults to `1`.
+- `const byte* payload `: Bytes to send.
+- `size_t length`: The number of bytes. Use `sizeof(payload)` to get it.
+- `port_t port = 1`: The port to address. Defaults to `1`.
+- `bool confirm = false`: Whether to ask for confirmation. Defaults to `false`.
+
+Returns a success or error code and logs the related error message:
+
+* `-1`: Send command failed.
+* `-2`: Time-out.
+* `1`: Successful transmission.
+* `2`: Successful transmission. Received \<N> bytes
+* `-10`: Unexpected response: \<Response>
+
+See the [Send](https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/Send/Send.ino) example.
+
+Also in sendBytes, due to TTN's 30 second fair access policy, we update the airtime each time we uplink a message. This airtime is based on a lot of variables but the most important ones are the spreading factor and the size of the message, the higher it is the less messages you can send in 30 seconds (SF7 around 500 messages of 8 bytes, SF12 around 20 messages of 8 bytes).
+
+## Method: poll
+Calls `sendBytes()` with `{ 0x00 }` as payload to poll for incoming messages.
+
+```c
+int8_t poll(port_t port = 1, bool confirm = false);
+```
+
+- `port_t port = 1`: The port to address. Defaults to `1`.
 - `bool confirm = false`: Whether to ask for confirmation.
 
-	- **TODO:** How does one check the result?
+Returns the result of `sendBytes()`.
 
-Returns the size of the message received in response, if any. Use `downlink` for the actual bytes received.
+See the [Receive](https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/Receive/Receive.ino) example.
 
-## Method: sendString
-Send a message to the application using a string, which the library will encode as bytes for you.
-
-> To minimize air time we advise not to use this method and try to use a minimal amount of bytes to communicate your message.
+## Method: provision
+Sets the information needed to activate the device via OTAA, without actually activating. Call join() without the first 2 arguments to activate.
 
 ```c
-int sendString(String message, int port = 1, bool confirm = false);
+bool provision(const char *appEui, const char *appKey);
 ```
 
-- `String message`: String to encode and send.
-- `int port = 1`: The port to address. Defaults to `1`.
-- `bool confirm = false`: Whether to ask for confirmation.
-
-	- **TODO:** How does one check the result?
-
-Returns the size of the message received in response, if any. Use `downlink` for the actual bytes received.
-
-## Property: downlinkPort
-The port the last message received was addressed to.
-
-```c
-int downlinkPort
-```
-
-## Property: downlink
-The last message received.
-
-```c
-byte downlink[64];
-```
+- `const char *appEui`: Application Identifier for the device.
+- `const char *appKey`: Application Key assigned to the device.

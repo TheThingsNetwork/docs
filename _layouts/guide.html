@@ -101,7 +101,7 @@ layout: default
 
       <section class="panel">
         <div class="panel-body">
-          <span class="label label-success pull-right">{% if page_version == "current" %}CURRENT: {{ site.var.current | upcase }}{% else %}{{ page_version | upcase }}{% endif %}</span>
+          <span class="label label-success pull-right">{{ page_version | upcase }}</span>
           <h1>{{page.title}}</h1>
           {{ content | replace: '<a href="/', replace_a_with | replace: '<img src="/', replace_img_with | replace: '<table>', '<table class="table">' }}
         </div>
@@ -109,7 +109,7 @@ layout: default
           <div class="panel-footer">
             Versions:&nbsp;&nbsp;&nbsp; 
             {% if current %}
-              <a href="{{ site.baseurl | append: current.url }}" class="label label-{% if page.url == current.url %}success{% else %}default{% endif %}">CURRENT: {{ site.var.current | upcase }}</a>
+              <a href="{{ site.baseurl | append: current.url }}" class="label label-{% if page.url == current.url %}success{% else %}default{% endif %}">CURRENT</a>
             {% endif %}
             {% for guide in guide_versions %}
               {% capture guide_version %}{{ guide.url | split: '/' | slice: 1 }}{% endcapture %}

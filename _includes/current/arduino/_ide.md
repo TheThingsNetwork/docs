@@ -24,7 +24,7 @@ Most sketches write debug logs to the (emulated) Serial Port for the USB connect
 
 > Uploads might fail if you have the monitor open. Close it and try again. Visa versa an upload might break the monitor. Make sure the right port is still selected and re-open the monitor. 
 
-You will only see logs from the moment when you opened the Serial Monitor. Use [`delay()`](https://www.arduino.cc/en/Reference/Delay) to give yourself some time or even wait for the Serial Monitor completely:
+You will only see logs from the moment when you opened the Serial Monitor. Use [`delay()`](https://www.arduino.cc/en/Reference/Delay) or the following [`while()`](https://www.arduino.cc/en/Reference/While) to give yourself some time to open Serial Monitor:
 
 ```c
 #define debugSerial Serial
@@ -33,25 +33,20 @@ void setup()
 {
   debugSerial.begin(9600);
   
-  // wait 5 seconds
-  delay(5000);
+  // Wait a maximum of 10s for Serial Monitor
+  while (!debugSerial && millis() < 10000);
   
-  // or wait for monitor
-  while (!debugSerial);
-
-  // your setup
+  // Your setup
 }
 ```
-
-> Be aware that if you wait for the monitor your sketch will only run after opening the monitor. Connecting it to a USB power adapter or bank will not work.
 
 ## Verify & Upload sketches
 
 When you upload a sketch to your Arduino it will first compile and fail if your sketch has errors. If there are no errors it will continue to upload.
 
-1. Make sure **Tools > Port > ... (Arduino ..)** is selected.
-2. Select **Sketch > Upload** `Ctrl/⌘ U` to compile and upload your sketch.
-3. The Arduino IDE will give feedback which should look like:
+1.  Make sure **Tools > Port > ... (Arduino ..)** is selected.
+2.  Select **Sketch > Upload** `Ctrl/⌘ U` to compile and upload your sketch.
+3.  The Arduino IDE will give feedback which should look like:
 
         Sketch uses 9,656 bytes (33%) of program storage space. Maximum is 28,672 bytes.
         Global variables use 1,253 bytes (48%) of dynamic memory, leaving 1,307 bytes for local variables. Maximum is 2,560 bytes.

@@ -3,7 +3,7 @@ title: The Things Uno
 zindex: 999
 sections:
  - uno/_quickstart.md
- - arduino/_bytes.md
+ - /current/arduino/_bytes.md
 redirect_from:
  - /refactor/uno/
 ---
@@ -16,4 +16,4 @@ It's the perfect board to start prototyping your IoT ideas or make an existing p
 
 * Access to [preview.console.thethingsnetwork.org](https://preview.console.thethingsnetwork.org/).
 * The Things Uno beta board.
-* Version 0.x of the [The Things Network Arduino Library](https://github.com/thethingsnetwork/arduino-device-lib).
+* Version 1.x of the [The Things Network Arduino Library](https://github.com/thethingsnetwork/arduino-device-lib).

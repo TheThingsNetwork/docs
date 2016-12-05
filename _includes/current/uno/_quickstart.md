@@ -35,16 +35,17 @@ The *DevEUI* is an unique address hard coded into the LoRa module. We use this a
     ```
     Device Information
 
-    EUI: 0004A30B001B672E
-    Battery: 3304
-    AppEUI: 0000000000000000
-    DevEUI: 0004A30B001B672E
-    DevAddr: 00000000
+    EUI: 0004A30B001B4569
+    Battery: 3294
+    AppEui: 70B3D57EF000003E
+    DevEui: 0004A30B001B4569
     Data Rate: 5
     RX Delay 1: 1000
     RX Delay 2: 2000
+    Total Airtime: 0.00 s
 
-    use the device `EUI` to register the device for OTAA
+    Use the EUI to register the device for OTAA
+    -------------------------------------------
     ```
 
 ## Create Application
@@ -83,7 +84,7 @@ Now that you have registered the device you need to activate it from the device 
 1.  In Arduino IDE, select **File > Examples > TheThingsNetwork > [Send](https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/Send/Send.ino)**.
 2.  Copy the **App EUI** and **App Key** from the device page to the example.
 
-    > Use <i class="ion-eye"></i> to show obfuscated keys and <i class="ion-code"></i> to toggle to **msb**. Then use <i class="ion-clipboard"></i> to copy.
+    > Use <i class="ion-eye"></i> to show obfuscated keys and <i class="ion-clipboard"></i> to copy.
     >
     > ![App Key](app-key.png)
 
@@ -148,35 +149,42 @@ You could now use MQTT or the [TTN Node for Node-RED](/node-red/) to process the
     ![Decoded payload](dashboard-device-messages-payload-decoded.png)
 
 ## Receive Message (downlink)
-Now let's send a message back to the device. Devices can only receive the last message sent to them in response to a message they send themselves. This means that you need to poll The Things Network frequently to not miss any downlink messages.
+Now let's send a message back to the device. Devices can only receive the last message sent to them in response to a message they send themselves. This means that you need to poll The Things Network frequently to not miss any downlink messages. If you don't have anything to send like our *Hello*, then you can call the `poll()` method in your `loop()` function.
 
-1.  In the Arduino IDE, replace the call to `ttn.sendBytes()` with the following:
+1.  In the Arduino IDE, add the following line to `setup()` function to let it know what function to call when a message comes in:
 
     ```c
-    int downlinkBytes = ttn.sendBytes(payload, sizeof(payload));
+    // Set callback for incoming messages
+    ttn.onMessage(message);
+    ```
 
-    if (downlinkBytes > 0) {
+2.  Then copy paste the actual function to the end of the sketch:
+
+    ```c
+    void message(const byte* payload, int length, int port) {
       debugSerial.print("Received: ");
       
-      for (int i = 0; i < downlinkBytes; i++) {
-        debugSerial.print((char) ttn.downlink[i]);
+      for (int i = 0; i < length; i++) {
+        debugSerial.print((char) payload[i]);
       }
       
       debugSerial.println();
     }
     ```
+    
+    The function will use [`digitalWrite()`](https://www.arduino.cc/en/Reference/DigitalWrite) to turn the LED on or off, based on the single byte message we receive.
 
-2.  Select **Sketch > Upload** `Ctrl/⌘ U` to upload the sketch.
-3.  Select **Tools > Serial Monitor** `Ctrl/⌘ M` to open the Serial Monitor.
-4.  On the dashboard, go to the application page.
-5.  In the **Devices** box click on the **Dev EUI** of your device to go to its page.
-6.  In the **Downlink** box, paste the following hex-encoded list of bytes and click **Send**.
+3.  Select **Sketch > Upload** `Ctrl/⌘ U` to upload the sketch.
+4.  Select **Tools > Serial Monitor** `Ctrl/⌘ M` to open the Serial Monitor.
+5.  On the dashboard, go to the application page.
+6.  In the **Devices** box click on the **Dev EUI** of your device to go to its page.
+7.  In the **Downlink** box, paste the following hex-encoded list of bytes and click **Send**.
 
     ```
     48 69
     ```
 
-7.  In the Arduino IDE, you should see the next successful transmission followed up with the response:
+8.  In the Arduino IDE, you should see the next successful transmission followed up with the response:
 
     ```
     Sending: mac tx uncnf 1 with 5 bytes

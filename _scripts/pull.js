@@ -17,7 +17,7 @@ var items = [{
   repo: 'arduino-device-lib',
   branch: 'master',
   path: 'docs/TheThingsNetwork.md',
-  file: '_includes/v2-preview/arduino/_api.md'
+  file: '_includes/current/arduino/_api.md'
 }, {
   owner: 'TheThingsNetwork',
   repo: 'arduino-device-lib',
@@ -110,7 +110,11 @@ async.each(items, function (item, doneWithItem) {
   request(options, function (err, response, body) {
 
     if (err) {
-      return doneWithItem(err);
+      return doneWithItem(new Error('Failed to fetch ' + editUrl + ': ' + err));
+    }
+
+    if (response.statusCode !== 200) {
+      return doneWithItem(new Error('Failed to fetch ' + editUrl + ': ' + response.statusCode + ' ' + response.statusMessage));
     }
 
     // prepend warning
@@ -131,7 +135,7 @@ async.each(items, function (item, doneWithItem) {
 }, function (err) {
 
   if (err) {
-    console.error('Error: ' + err);
+    console.error(err);
   } else {
     console.log('Done!');
   }
