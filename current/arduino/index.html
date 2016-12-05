@@ -31,7 +31,7 @@
 <meta property="og:site_name" content="The Things Network">
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/the-things-white.png">
 <meta property="og:type" content="article">
-<meta property="article:published_time" content="2016-12-05T12:36:30+00:00">
+<meta property="article:published_time" content="2016-12-05T14:42:30+00:00">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@thethingsnetwrk">
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork">
@@ -40,7 +40,7 @@
 "@type": "BlogPosting",
 "headline": "Arduino",
 "image": "https://www.thethingsnetwork.org/docs/assets/images/the-things-white.png",
-"datePublished": "2016-12-05T12:36:30+00:00",
+"datePublished": "2016-12-05T14:42:30+00:00",
 "description": "Arduino is an open-source electronics platform based on easy-to-use hardware and software. It’s intended for anyone making interactive projects.",
 "publisher": {"@type": "Organization",
 "logo": {"@type": "ImageObject",
@@ -250,7 +250,7 @@
       
 
       <section class="panel"><div class="panel-body">
-          <span class="label label-success pull-right">CURRENT: V1-STAGING</span>
+          <span class="label label-success pull-right">CURRENT</span>
           <h1>Arduino</h1>
           <p><a href="https://www.arduino.cc/en/Guide/Introduction">Arduino</a> is an open-source electronics platform based on easy-to-use hardware and software. It’s intended for anyone making interactive projects.</p>
 
@@ -259,31 +259,11 @@
 <h2 id="prerequisites">Prerequisites</h2>
 
 <ul>
-<li>Access to <a href="https://staging.thethingsnetwork.org/">staging.thethingsnetwork.org</a>.</li>
+<li>A staging or preview account.</li>
   <li>Arduino board with <a href="http://www.microchip.com/design-centers/wireless-connectivity/embedded-wireless/lora-technology">Microchip RN2xx3 module</a> for LoRaWAN.</li>
-  <li>Version 0.x of the <a href="https://github.com/thethingsnetwork/arduino-device-lib">The Things Network Arduino Library</a>.</li>
+  <li>Version 1.x of the <a href="https://github.com/thethingsnetwork/arduino-device-lib">The Things Network Arduino Library</a>.</li>
 </ul>
-<blockquote>
-  <p>Since version 0.17, the library now has its <a href="https://github.com/thethingsnetwork/arduino-device-lib">own repository</a>, can be installed via the <a href="https://www.arduino.cc/en/Guide/Libraries#toc3">Library Manager</a> and has been renamed from <code class="highlighter-rouge">TheThingsUno</code> to <code class="highlighter-rouge">TheThingsNetwork</code>. I guess it should have been bumped to 1.x - oops! 😝</p>
-</blockquote>
-
-        </div>
-        
-          <div class="panel-footer">
-            Versions:    
-            
-              <a href="/docs/current/arduino/" class="label label-success">CURRENT: V1-STAGING</a>
-            
-            
-              
-              
-            
-              
-              
-                <a href="/docs/v2-preview/arduino/" class="label label-default">V2-PREVIEW</a>
-              
-            
-          </div>
+</div>
         
       </section><section class="panel"><div class="panel-body">
             <h1 id="arduino-software-ide">Arduino Software (IDE)</h1>
@@ -317,7 +297,7 @@
   <p>Uploads might fail if you have the monitor open. Close it and try again. Visa versa an upload might break the monitor. Make sure the right port is still selected and re-open the monitor.</p>
 </blockquote>
 
-<p>You will only see logs from the moment when you opened the Serial Monitor. Use <a href="https://www.arduino.cc/en/Reference/Delay"><code class="highlighter-rouge">delay()</code></a> to give yourself some time or even wait for the Serial Monitor completely:</p>
+<p>You will only see logs from the moment when you opened the Serial Monitor. Use <a href="https://www.arduino.cc/en/Reference/Delay"><code class="highlighter-rouge">delay()</code></a> or the following <a href="https://www.arduino.cc/en/Reference/While"><code class="highlighter-rouge">while()</code></a> to give yourself some time to open Serial Monitor:</p>
 
 <div class="language-c highlighter-rouge">
 <pre class="highlight"><code><span class="cp">#define debugSerial Serial
@@ -326,20 +306,13 @@
 <span class="p">{</span>
   <span class="n">debugSerial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
   
-  <span class="c1">// wait 5 seconds
-</span>  <span class="n">delay</span><span class="p">(</span><span class="mi">5000</span><span class="p">);</span>
+  <span class="c1">// Wait a maximum of 10s for Serial Monitor
+</span>  <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">debugSerial</span> <span class="o">&amp;&amp;</span> <span class="n">millis</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mi">10000</span><span class="p">);</span>
   
-  <span class="c1">// or wait for monitor
-</span>  <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">debugSerial</span><span class="p">);</span>
-
-  <span class="c1">// your setup
+  <span class="c1">// Your setup
 </span><span class="p">}</span>
 </code></pre>
 </div>
-
-<blockquote>
-  <p>Be aware that if you wait for the monitor your sketch will only run after opening the monitor. Connecting it to a USB power adapter or bank will not work.</p>
-</blockquote>
 
 <h2 id="verify--upload-sketches">Verify &amp; Upload sketches</h2>
 
@@ -352,8 +325,8 @@
     <p>The Arduino IDE will give feedback which should look like:</p>
 
     <div class="highlighter-rouge">
-<pre class="highlight"><code> Sketch uses 9,656 bytes (33%) of program storage space. Maximum is 28,672 bytes.
- Global variables use 1,253 bytes (48%) of dynamic memory, leaving 1,307 bytes for local variables. Maximum is 2,560 bytes.
+<pre class="highlight"><code>Sketch uses 9,656 bytes (33%) of program storage space. Maximum is 28,672 bytes.
+Global variables use 1,253 bytes (48%) of dynamic memory, leaving 1,307 bytes for local variables. Maximum is 2,560 bytes.
 </code></pre>
     </div>
   </li>
@@ -393,7 +366,7 @@
 </ol>
 <h2 id="initialize">Initialize</h2>
 
-<p>Your sketch will have the following template:</p>
+<p>A typical sketch has the following structure:</p>
 
 <div class="language-c highlighter-rouge">
 <pre class="highlight"><code><span class="cp">#include &lt;TheThingsNetwork.h&gt;
@@ -404,14 +377,11 @@
 <span class="cp">#define loraSerial Serial1
 #define debugSerial Serial
 </span>
-<span class="n">TheThingsNetwork</span> <span class="n">ttn</span><span class="p">;</span>
+<span class="n">TheThingsNetwork</span> <span class="n">ttn</span><span class="p">(</span><span class="n">loraSerial</span><span class="p">,</span> <span class="n">debugSerial</span><span class="p">,</span> <span class="cm">/* TTN_FP_EU868 or TTN_FP_US915 */</span><span class="p">);</span>
 
 <span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
-  <span class="n">debugSerial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
   <span class="n">loraSerial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">57600</span><span class="p">);</span>
-
-  <span class="n">ttn</span><span class="p">.</span><span class="n">init</span><span class="p">(</span><span class="n">loraSerial</span><span class="p">,</span> <span class="n">debugSerial</span><span class="p">);</span>
-  <span class="n">ttn</span><span class="p">.</span><span class="n">reset</span><span class="p">();</span>
+  <span class="n">debugSerial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
 
   <span class="c1">// OTAA or ABP activation
 </span>  <span class="c1">// ..
@@ -425,13 +395,15 @@
 </code></pre>
 </div>
 
-<p>The actual streams you’d pass to <code class="highlighter-rouge">ttn.init()</code> depend on the board you use and the Serial Port you connected a LoRaWAN module to. For The Things Uno and Node use the Serial Ports and baud rates from the template.</p>
+<p>The actual streams you’d pass to the constructor depend on the board you use and the Serial Port you connected a LoRaWAN module to. For The Things Uno and Node use the Serial Ports and baud rates shown here.</p>
+
+<p>The third argument for the constructor is a constant to set the frequency plan your device operators on. Replace <code class="highlighter-rouge">/* TTN_FP_EU868 or TTN_FP_US915 */</code> with either <code class="highlighter-rouge">TTN_FP_EU868</code> or <code class="highlighter-rouge">TTN_FP_US915</code>.</p>
 
 <h2 id="activate">Activate</h2>
 
 <p>In the <a href="https://www.arduino.cc/en/Reference/setup"><code class="highlighter-rouge">setup()</code></a> function, after initializing the library, we have to activate the device.</p>
 
-<p>There are two ways to activate your device.</p>
+<p>There are two ways to activate your device. By default your device is registered to use OTAA. You can personalise a device to use ABP.</p>
 
 <h3 id="over-the-air-activation-otaa">Over The Air Activation (OTAA)</h3>
 
@@ -442,28 +414,26 @@
     <p>Right after the include for the library create constants to hold the keys:</p>
 
     <div class="language-c highlighter-rouge">
-<pre class="highlight"><code><span class="k">const</span> <span class="n">byte</span> <span class="n">appEui</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mh">0x70</span><span class="p">,</span> <span class="mh">0xB3</span><span class="p">,</span> <span class="mh">0xD5</span><span class="p">,</span> <span class="mh">0x7E</span><span class="p">,</span> <span class="mh">0xE0</span><span class="p">,</span> <span class="mh">0xE0</span><span class="p">,</span> <span class="mh">0x01</span><span class="p">,</span> <span class="mh">0x4A1</span><span class="p">};</span>
-<span class="k">const</span> <span class="n">byte</span> <span class="n">appKey</span><span class="p">[</span><span class="mi">16</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mh">0x73</span><span class="p">,</span> <span class="mh">0x6D</span><span class="p">,</span> <span class="mh">0x24</span><span class="p">,</span> <span class="mh">0xD2</span><span class="p">,</span> <span class="mh">0x69</span><span class="p">,</span> <span class="mh">0xBE</span><span class="p">,</span> <span class="mh">0xE3</span><span class="p">,</span> <span class="mh">0xAE</span><span class="p">,</span> <span class="mh">0x0E</span><span class="p">,</span> <span class="mh">0xCE</span><span class="p">,</span> <span class="mh">0xF0</span><span class="p">,</span> <span class="mh">0xBB</span><span class="p">,</span> <span class="mh">0x6C</span><span class="p">,</span> <span class="mh">0xA4</span><span class="p">,</span> <span class="mh">0xBA</span><span class="p">,</span> <span class="mh">0xFE</span><span class="p">};</span>
+<pre class="highlight"><code><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">appEui</span> <span class="o">=</span> <span class="s">"0000000000000000"</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">appKey</span> <span class="o">=</span> <span class="s">"00000000000000000000000000000000"</span><span class="p">;</span>
 </code></pre>
     </div>
 
     <ul>
-<li>For <code class="highlighter-rouge">appEui</code> use the <strong>App EUI</strong> found on the application’s page on the dashboard. Click <i class="ion-code"></i> to toggle to the <strong>msb</strong> format and then <i class="ion-clipboard"></i> to copy.</li>
-      <li>For <code class="highlighter-rouge">appKey</code> use the <strong>App Key</strong> found on the device’s page under the application. Click <i class="ion-code"></i> to toggle to the <strong>msb</strong> format. You’ll have to click <i class="ion-eye"></i> to show the key before you can copy it.</li>
+<li>For <code class="highlighter-rouge">appEui</code> use the <strong>Application EUI</strong> found on the device’s page in the console. Click <i class="ion-clipboard"></i> to copy.</li>
+      <li>For <code class="highlighter-rouge">appKey</code> use the <strong>App Key</strong> found on the device page.</li>
     </ul>
 </li>
   <li>
-    <p>In your <code class="highlighter-rouge">setup()</code> function, right after you have called <code class="highlighter-rouge">ttn.init()</code> and <code class="highlighter-rouge">ttn.reset()</code> call <code class="highlighter-rouge">ttn.join()</code> with the constants you just created:</p>
+    <p>In your <code class="highlighter-rouge">setup()</code> function, call <code class="highlighter-rouge">ttn.join()</code> with the constants you just created:</p>
 
     <div class="language-c highlighter-rouge">
-<pre class="highlight"><code><span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">ttn</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">appEui</span><span class="p">,</span> <span class="n">appKey</span><span class="p">))</span> <span class="p">{</span>
-  <span class="n">delay</span><span class="p">(</span><span class="mi">10000</span><span class="p">);</span>
-<span class="p">}</span>
+<pre class="highlight"><code><span class="n">ttn</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">appEui</span><span class="p">,</span> <span class="n">appKey</span><span class="p">);</span>
 </code></pre>
     </div>
   </li>
 </ol>
-<p>Your device will now try to activate via OTAA every 10 seconds until it succeeds.</p>
+<p>Your device will now try to get a confirmed activation via OTAA every 10 seconds until it succeeds.</p>
 
 <h3 id="activation-by-personalization-abp">Activation By Personalization (ABP)</h3>
 
@@ -474,20 +444,20 @@
     <p>Right after the include for the library create constants to hold the keys:</p>
 
     <div class="language-c highlighter-rouge">
-<pre class="highlight"><code><span class="k">const</span> <span class="n">byte</span> <span class="n">devAddr</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mh">0x02</span><span class="p">,</span> <span class="mh">0xDE</span><span class="p">,</span> <span class="mh">0xAE</span><span class="p">,</span> <span class="mh">0x00</span><span class="p">};</span>
-<span class="k">const</span> <span class="n">byte</span> <span class="n">nwkSKey</span><span class="p">[</span><span class="mi">16</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mh">0x2B</span><span class="p">,</span> <span class="mh">0x7E</span><span class="p">,</span> <span class="mh">0x15</span><span class="p">,</span> <span class="mh">0x16</span><span class="p">,</span> <span class="mh">0x28</span><span class="p">,</span> <span class="mh">0xAE</span><span class="p">,</span> <span class="mh">0xD2</span><span class="p">,</span> <span class="mh">0xA6</span><span class="p">,</span> <span class="mh">0xAB</span><span class="p">,</span> <span class="mh">0xF7</span><span class="p">,</span> <span class="mh">0x15</span><span class="p">,</span> <span class="mh">0x88</span><span class="p">,</span> <span class="mh">0x09</span><span class="p">,</span> <span class="mh">0xCF</span><span class="p">,</span> <span class="mh">0x4F</span><span class="p">,</span> <span class="mh">0x3C</span><span class="p">};</span>
-<span class="k">const</span> <span class="n">byte</span> <span class="n">appSKey</span><span class="p">[</span><span class="mi">16</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mh">0x2B</span><span class="p">,</span> <span class="mh">0x7E</span><span class="p">,</span> <span class="mh">0x15</span><span class="p">,</span> <span class="mh">0x16</span><span class="p">,</span> <span class="mh">0x28</span><span class="p">,</span> <span class="mh">0xAE</span><span class="p">,</span> <span class="mh">0xD2</span><span class="p">,</span> <span class="mh">0xA6</span><span class="p">,</span> <span class="mh">0xAB</span><span class="p">,</span> <span class="mh">0xF7</span><span class="p">,</span> <span class="mh">0x15</span><span class="p">,</span> <span class="mh">0x88</span><span class="p">,</span> <span class="mh">0x09</span><span class="p">,</span> <span class="mh">0xCF</span><span class="p">,</span> <span class="mh">0x4F</span><span class="p">,</span> <span class="mh">0x3C</span><span class="p">};</span>
+<pre class="highlight"><code><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">devAddr</span> <span class="o">=</span> <span class="s">"00000000"</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">nwkSKey</span> <span class="o">=</span> <span class="s">"00000000000000000000000000000000"</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">appSKey</span> <span class="o">=</span> <span class="s">"00000000000000000000000000000000"</span><span class="p">;</span>
 </code></pre>
     </div>
 
     <ul>
-<li>For <code class="highlighter-rouge">devAddr </code> use the <strong>Dev Address</strong> found on the device’s page on the dashboard. Click <i class="ion-code"></i> to toggle to the <strong>msb</strong> format and then <i class="ion-clipboard"></i> to copy.</li>
-      <li>For <code class="highlighter-rouge">nwkSKey </code> use the <strong>Network Session Key</strong>. Click <i class="ion-code"></i> to toggle to the <strong>msb</strong> format. You’ll have to click <i class="ion-eye"></i> to show the key before you can copy it.</li>
+<li>For <code class="highlighter-rouge">devAddr </code> use the <strong>Device Address</strong> found on the device’s page in the console. Click <i class="ion-clipboard"></i> to copy.</li>
+      <li>For <code class="highlighter-rouge">nwkSKey </code> use the <strong>Network Session Key</strong>.</li>
       <li>For <code class="highlighter-rouge">appSKey</code> use <strong>App Session Key</strong>.</li>
     </ul>
 </li>
   <li>
-    <p>In your <code class="highlighter-rouge">setup()</code> function, right after you have called <code class="highlighter-rouge">ttn.init()</code> and <code class="highlighter-rouge">ttn.reset()</code> call <code class="highlighter-rouge">ttn.personalize()</code> with the constants you just created:</p>
+    <p>In your <code class="highlighter-rouge">setup()</code> function, call <code class="highlighter-rouge">ttn.personalize()</code> with the constants you just created:</p>
 
     <div class="language-c highlighter-rouge">
 <pre class="highlight"><code><span class="n">ttn</span><span class="p">.</span><span class="n">personalize</span><span class="p">(</span><span class="n">devAddr</span><span class="p">,</span> <span class="n">nwkSKey</span><span class="p">,</span> <span class="n">appSKey</span><span class="p">);</span>
@@ -495,99 +465,99 @@
     </div>
   </li>
 </ol>
-<p>Your device will now report to the network using these keys.</p>
+<p>Your device will now communicate with the network using these keys.</p>
+
+<p>See the <a href="https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/ABP/ABP.ino">ABP</a> example.</p>
 
 <h2 id="send">Send</h2>
 
-<p>To send messages call <code class="highlighter-rouge">ttn.sendBytes()</code> with an array of bytes and the size:</p>
-
-<div class="language-c highlighter-rouge">
-<pre class="highlight"><code><span class="n">byte</span> <span class="n">data</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="mh">0x01</span><span class="p">,</span> <span class="mh">0x02</span><span class="p">,</span> <span class="mh">0x03</span> <span class="p">};</span>
-<span class="n">ttn</span><span class="p">.</span><span class="n">sendBytes</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">data</span><span class="p">));</span>
-</code></pre>
-</div>
-
-<p>To minimize your use of the limited daily airtime try to use as little bytes as possible. See the Arduino <a href="https://www.arduino.cc/en/Reference/Array">Array guide</a> and <a href="http://playground.arduino.cc/Code/BitMath#binary">Bit Math Tutorial</a> to learn more.</p>
-
-<h2 id="receive">Receive</h2>
-
-<p>You can only receive messages in response to a message you send, even if it is just a single byte.</p>
-
-<ul>
-<li>The <code class="highlighter-rouge">ttn.sendBytes()</code> method will return the number of bytes received, if any.</li>
-  <li>Get the actual bytes via <code class="highlighter-rouge">ttn.downlink</code>.</li>
-  <li>The port the response addresses can be read from <code class="highlighter-rouge">ttn.downlinkPort</code>.</li>
-</ul>
-<p>Your <code class="highlighter-rouge">loop()</code> function might look like:</p>
+<p>To send messages call <code class="highlighter-rouge">ttn.sendBytes()</code> with an array of bytes and its size. Here’s an example of a <code class="highlighter-rouge">loop()</code> function that sends the current state of <a href="https://www.arduino.cc/en/Reference/Constants"><code class="highlighter-rouge">LED_BUILTIN</code></a> every 10 seconds:</p>
 
 <div class="language-c highlighter-rouge">
 <pre class="highlight"><code><span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
-  <span class="n">byte</span> <span class="n">send</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="mh">0x01</span> <span class="p">};</span>
-  <span class="kt">int</span> <span class="n">downlinkBytes</span> <span class="o">=</span> <span class="n">ttn</span><span class="p">.</span><span class="n">sendBytes</span><span class="p">(</span><span class="n">send</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">send</span><span class="p">));</span>
-
-  <span class="k">if</span> <span class="p">(</span><span class="n">downlinkBytes</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">debugSerial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">"Received "</span> <span class="o">+</span> <span class="n">String</span><span class="p">(</span><span class="n">downlinkBytes</span><span class="p">)</span> <span class="o">+</span> <span class="s">" bytes via "</span> <span class="o">+</span> <span class="n">String</span><span class="p">(</span><span class="n">ttn</span><span class="p">.</span><span class="n">downlinkPort</span><span class="p">)</span> <span class="o">+</span> <span class="s">": "</span><span class="p">)</span>
-
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">downlinkBytes</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">debugSerial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">String</span><span class="p">(</span><span class="n">ttn</span><span class="p">.</span><span class="n">downlink</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">+</span> <span class="s">" "</span><span class="p">);</span>
-    <span class="p">}</span>
-
-    <span class="n">debugSerial</span><span class="p">.</span><span class="n">println</span><span class="p">();</span>
-  <span class="p">}</span>
+  <span class="n">byte</span> <span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+  <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">digitalRead</span><span class="p">(</span><span class="n">LED_BUILTIN</span><span class="p">)</span> <span class="o">==</span> <span class="n">HIGH</span><span class="p">)</span> <span class="o">?</span> <span class="mi">1</span> <span class="o">:</span> <span class="mi">0</span><span class="p">;</span>
+    
+  <span class="n">ttn</span><span class="p">.</span><span class="n">sendBytes</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">data</span><span class="p">));</span>
   
   <span class="n">delay</span><span class="p">(</span><span class="mi">10000</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre>
 </div>
 
+<p>To minimise your use of the limited daily airtime try to use as little bytes as possible. See the Arduino <a href="https://www.arduino.cc/en/Reference/Array">Array guide</a> and <a href="http://playground.arduino.cc/Code/BitMath#binary">Bit Math Tutorial</a> to learn how.</p>
+
+<p>See the <a href="https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/Send/Send.ino">Send</a> example.</p>
+
+<h2 id="receive">Receive</h2>
+
+<p>The most common <a href="https://www.lora-alliance.org/What-Is-LoRa/Technology">Class A</a> LoRaWAN devices - including The Things Node and Uno - can only receive the last scheduled message in response to a message they send.</p>
+
+<blockquote>
+  <p>For your convenience, the library has a <code class="highlighter-rouge">ttn.poll()</code> method which sends a single byte to poll for incoming messages if you don’t have anything particular to send.</p>
+</blockquote>
+
+<p>To receive message you have to define a function and pass it to the library.</p>
+
+<ol>
+<li>
+    <p>Add the following function to your sketch:</p>
+
+    <div class="language-c highlighter-rouge">
+<pre class="highlight"><code><span class="kt">void</span> <span class="nf">message</span><span class="p">(</span><span class="k">const</span> <span class="n">byte</span><span class="o">*</span> <span class="n">payload</span><span class="p">,</span> <span class="kt">int</span> <span class="n">length</span><span class="p">,</span> <span class="kt">int</span> <span class="n">port</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">debugSerial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"-- MESSAGE"</span><span class="p">);</span>
+  <span class="n">debugSerial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">"Received "</span> <span class="o">+</span> <span class="n">String</span><span class="p">(</span><span class="n">length</span><span class="p">)</span> <span class="o">+</span> <span class="s">" bytes on port "</span> <span class="o">+</span> <span class="n">String</span><span class="p">(</span><span class="n">port</span><span class="p">)</span> <span class="o">+</span> <span class="s">":"</span><span class="p">);</span>
+    
+  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">debugSerial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">" "</span> <span class="o">+</span> <span class="n">String</span><span class="p">(</span><span class="n">payload</span><span class="p">[</span><span class="n">i</span><span class="p">]));</span>
+  <span class="p">}</span>
+    
+  <span class="n">debugSerial</span><span class="p">.</span><span class="n">println</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Register the function in your <code class="highlighter-rouge">setup()</code> function:</p>
+
+    <div class="language-c highlighter-rouge">
+<pre class="highlight"><code><span class="n">ttn</span><span class="p">.</span><span class="n">onMessage</span><span class="p">(</span><span class="n">message</span><span class="p">);</span>
+</code></pre>
+    </div>
+  </li>
+</ol>
+<p>See the <a href="https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/Receive/Receive.ino">Receive</a> example.</p>
+
           </div>
         </section><section class="panel"><div class="panel-body">
-            <h1 id="api-reference">API Reference</h1>
+            <!-- EDIT AT https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/docs/TheThingsNetwork.md -->
 
-<p>Include TheThingsNetwork library:</p>
+<h1 id="api-reference">API Reference</h1>
+<p>Include and instantiate the TheThingsNetwork class. The constructor initialize the library with the Streams it should communicate with. It also sets the value of the spreading factor, the front-side Bus and the frequency plan.</p>
+
+<h2 id="class-thethingsnetwork">Class: TheThingsNetwork</h2>
 
 <div class="language-c highlighter-rouge">
 <pre class="highlight"><code><span class="cp">#include &lt;TheThingsNetwork.h&gt;
-</span></code></pre>
-</div>
-
-<h2 id="method-reset">Method: reset</h2>
-<p>Reset the LoRaWAN module. In most cases you’d call this with no arguments before calling <code class="highlighter-rouge">init()</code>.</p>
-
-<div class="language-c highlighter-rouge">
-<pre class="highlight"><code><span class="kt">void</span> <span class="n">reset</span><span class="p">(</span><span class="n">bool</span> <span class="n">adr</span> <span class="o">=</span> <span class="nb">true</span><span class="p">,</span> <span class="kt">int</span> <span class="n">sf</span> <span class="o">=</span> <span class="n">DEFAULT_SF</span><span class="p">,</span> <span class="kt">int</span> <span class="n">fsb</span> <span class="o">=</span> <span class="n">DEFAULT_FSB</span><span class="p">);</span>
+</span>
+<span class="n">TheThingsNetwork</span> <span class="n">ttn</span><span class="p">(</span><span class="n">Stream</span><span class="o">&amp;</span> <span class="n">modemStream</span><span class="p">,</span> <span class="n">Stream</span><span class="o">&amp;</span> <span class="n">debugStream</span><span class="p">,</span> <span class="n">fp_ttn_t</span> <span class="n">fp</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">sf</span> <span class="o">=</span> <span class="mi">7</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">fsb</span> <span class="o">=</span> <span class="mi">2</span><span class="p">);</span>
 </code></pre>
 </div>
 
 <ul>
 <li>
-<code class="highlighter-rouge">bool adr = true</code> <strong>TODO</strong>
-</li>
+<code class="highlighter-rouge">Stream&amp; modemStream</code>: Stream for the LoRa modem (for The Things Node/Uno use <code class="highlighter-rouge">Serial1</code> and data rate <code class="highlighter-rouge">57600</code>).</li>
   <li>
-<code class="highlighter-rouge">int sf = DEFAULT_SF</code> <strong>TODO</strong>
-</li>
+<code class="highlighter-rouge">Stream&amp; debugStream</code>: Stream to write debug logs to (for The Things Node/Uno use <code class="highlighter-rouge">Serial</code> and data rate <code class="highlighter-rouge">9600</code>).</li>
   <li>
-<code class="highlighter-rouge">int fsb = DEFAULT_FSB</code> <strong>TODO</strong>
-</li>
+<code class="highlighter-rouge">fp_ttn_fp fp</code>: The frequency plan: <code class="highlighter-rouge">TTN_FP_EU868</code> or <code class="highlighter-rouge">TTN_FP_US915</code> depending on the region you deploy in.</li>
+  <li>
+<code class="highlighter-rouge">uint8_t sf = 7</code>: Optional custom spreading factor. Can be <code class="highlighter-rouge">7</code> to <code class="highlighter-rouge">12</code> for <code class="highlighter-rouge">TTN_FP_EU868</code> and <code class="highlighter-rouge">7</code> to <code class="highlighter-rouge">12</code> for <code class="highlighter-rouge">TTN_FP_US915</code>. Defaults to <code class="highlighter-rouge">7</code>.</li>
+  <li>
+<code class="highlighter-rouge">uint8_t fsb = 2</code>: Optional custom front-side bus. Can be <code class="highlighter-rouge">1</code> to <code class="highlighter-rouge">8</code>. Defaults to <code class="highlighter-rouge">2</code>.</li>
 </ul>
-<h2 id="method-init">Method: init</h2>
-<p>Initialize the library with the streams it should communicate with.</p>
-
-<div class="language-c highlighter-rouge">
-<pre class="highlight"><code><span class="kt">void</span> <span class="n">init</span><span class="p">(</span><span class="n">Stream</span><span class="o">&amp;</span> <span class="n">modemStream</span><span class="p">,</span> <span class="n">Stream</span><span class="o">&amp;</span> <span class="n">debugStream</span><span class="p">);</span>
-</code></pre>
-</div>
-
-<ul>
-<li>
-<code class="highlighter-rouge">Stream&amp; modemStream</code>: Stream to the LoRaWAN modem.</li>
-  <li>
-<code class="highlighter-rouge">Stream&amp; debugStream</code>: Stream to write debug logs to.</li>
-</ul>
-<p>For The Things Uno and Node use <code class="highlighter-rouge">Serial1</code> and <code class="highlighter-rouge">Serial</code>.</p>
-
 <h2 id="method-showstatus">Method: showStatus</h2>
-<p>Writes information about the device and LoRaWAN module to <code class="highlighter-rouge">debugStream</code>.</p>
+<p>Writes information about the device and LoRa module to <code class="highlighter-rouge">debugStream</code>.</p>
 
 <div class="language-c highlighter-rouge">
 <pre class="highlight"><code><span class="kt">void</span> <span class="n">showStatus</span><span class="p">();</span>
@@ -597,131 +567,505 @@
 <p>Will write something like:</p>
 
 <div class="language-bash highlighter-rouge">
-<pre class="highlight"><code>Device Information
-
-EUI: 0004A30B001B672E
-Battery: 3304
-AppEUI: 0000000000000000
-DevEUI: 0004A30B001B672E
-DevAddr: 00000000
+<pre class="highlight"><code>EUI: 0004A30B001B7AD2
+Battery: 3223
+AppEUI: 70B3D57EF000001C
+DevEUI: 0004A30B001B7AD2
+Band: 868
 Data Rate: 5
 RX Delay 1: 1000
 RX Delay 2: 2000
-
-use the device <span class="sb">`</span>EUI<span class="sb">`</span> to register the device <span class="k">for </span>OTAA
+Total airtime: 0.00 s
 </code></pre>
 </div>
 
-<h2 id="method-join">Method: join</h2>
-<p>Activate the device via OTAA.</p>
+<p>See the <a href="https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/DeviceInfo/DeviceInfo.ino">DeviceInfo</a> example.</p>
+
+<h2 id="method-onmessage">Method: onMessage</h2>
+<p>Sets a function which will be called to process incoming messages.</p>
 
 <div class="language-c highlighter-rouge">
-<pre class="highlight"><code><span class="n">bool</span> <span class="n">join</span><span class="p">(</span><span class="k">const</span> <span class="n">byte</span> <span class="n">appEui</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="k">const</span> <span class="n">byte</span> <span class="n">appKey</span><span class="p">[</span><span class="mi">16</span><span class="p">]);</span>
+<pre class="highlight"><code><span class="kt">void</span> <span class="n">onMessage</span><span class="p">(</span><span class="kt">void</span> <span class="p">(</span><span class="o">*</span><span class="n">cb</span><span class="p">)(</span><span class="k">const</span> <span class="n">byte</span><span class="o">*</span> <span class="n">payload</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">length</span><span class="p">,</span> <span class="n">port_t</span> <span class="n">port</span><span class="p">));</span>
 </code></pre>
 </div>
 
 <ul>
 <li>
-<code class="highlighter-rouge">const byte appEui[8]</code>: Application EUI the device is registered to.</li>
+<code class="highlighter-rouge">const byte* payload</code>: Bytes received.</li>
   <li>
-<code class="highlighter-rouge">const byte appKey[16]</code>: Application Key assigned to the device.</li>
+<code class="highlighter-rouge">size_t length</code>: Number of bytes.</li>
+  <li>
+<code class="highlighter-rouge">port_t port</code>: The port addressed.</li>
 </ul>
-<p>Returns <code class="highlighter-rouge">true</code> or <code class="highlighter-rouge">false</code> depending on whether it received confirmation that the activation was successful. You’ll probably call this method in a while to retry until it returns true:</p>
+<p>See the <a href="https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/Receive/Receive.ino">Receive</a> example.</p>
+
+<h2 id="method-join">Method: join</h2>
+<p>Activate the device via OTAA (default).</p>
 
 <div class="language-c highlighter-rouge">
-<pre class="highlight"><code><span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">ttn</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">appEui</span><span class="p">,</span> <span class="n">appKey</span><span class="p">))</span> <span class="p">{</span>
-  <span class="n">delay</span><span class="p">(</span><span class="mi">10000</span><span class="p">);</span>
-<span class="p">}</span>
+<pre class="highlight"><code><span class="n">bool</span> <span class="n">join</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">appEui</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">appKey</span><span class="p">,</span> <span class="kt">int8_t</span> <span class="n">retries</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">retryDelay</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">);</span>
+<span class="n">bool</span> <span class="n">join</span><span class="p">(</span><span class="kt">int8_t</span> <span class="n">retries</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">retryDelay</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">);</span>
 </code></pre>
 </div>
 
-<p>See <a href="#activate">Library Usage / Activate</a>.</p>
+<ul>
+<li>
+<code class="highlighter-rouge">const char *appEui</code>: Application EUI the device is registered to.</li>
+  <li>
+<code class="highlighter-rouge">const char *appKey</code>: Application Key assigned to the device.</li>
+  <li>
+<code class="highlighter-rouge">int8_t retries = -1</code>: Number of times to retry after failed or unconfirmed join. Defaults to <code class="highlighter-rouge">-1</code> which means infinite.</li>
+  <li>
+<code class="highlighter-rouge">uint32_t retryDelay = 10000</code>: Delay in ms between attempts. Defaults to 10 seconds.</li>
+</ul>
+<p>Returns <code class="highlighter-rouge">true</code> or <code class="highlighter-rouge">false</code> depending on whether it received confirmation that the activation was successful before the maximum number of attempts.</p>
+
+<p>Call the method without the first two arguments if the device’s LoRa module comes with pre-flashed values.</p>
 
 <h2 id="method-personalize">Method: personalize</h2>
 <p>Activate the device via ABP.</p>
 
 <div class="language-c highlighter-rouge">
-<pre class="highlight"><code><span class="n">bool</span> <span class="n">personalize</span><span class="p">(</span><span class="k">const</span> <span class="n">byte</span> <span class="n">devAddr</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="k">const</span> <span class="n">byte</span> <span class="n">nwkSKey</span><span class="p">[</span><span class="mi">16</span><span class="p">],</span> <span class="k">const</span> <span class="n">byte</span> <span class="n">appSKey</span><span class="p">[</span><span class="mi">16</span><span class="p">]);</span>
+<pre class="highlight"><code><span class="n">bool</span> <span class="n">personalize</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">devAddr</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">nwkSKey</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">appSKey</span><span class="p">);</span>
+<span class="n">bool</span> <span class="n">personalize</span><span class="p">();</span>
 </code></pre>
 </div>
 
 <ul>
 <li>
-<code class="highlighter-rouge">const byte devAddr[4]</code>: Dev(ice) Address assigned to the device.</li>
+<code class="highlighter-rouge">const char *devAddr</code>: Device Address assigned to the device.</li>
   <li>
-<code class="highlighter-rouge">const byte nwkSKey[16]</code>: Network Session Key assigned to the device.</li>
+<code class="highlighter-rouge">const char *nwkSKey</code>: Network Session Key assigned to the device for identification.</li>
   <li>
-<code class="highlighter-rouge">const byte appSKey[16]</code>: App(lication) Session Key assigned to the device.</li>
+<code class="highlighter-rouge">const char *appSKey</code>: Application Session Key assigned to the device for encryption.</li>
 </ul>
-<p>See <a href="#activate">Library Usage / Activate</a>.</p>
+<p>Returns <code class="highlighter-rouge">true</code> or <code class="highlighter-rouge">false</code> depending on whether the activation was successful.</p>
+
+<p>Call the method with no arguments if the device’s LoRa module comes with pre-flashed values.</p>
+
+<p>See the <a href="https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/ABP/ABP.ino">ABP</a> example.</p>
 
 <h2 id="method-sendbytes">Method: sendBytes</h2>
 <p>Send a message to the application using raw bytes.</p>
 
 <div class="language-c highlighter-rouge">
-<pre class="highlight"><code><span class="kt">int</span> <span class="n">sendBytes</span><span class="p">(</span><span class="k">const</span> <span class="n">byte</span><span class="o">*</span> <span class="n">buffer</span><span class="p">,</span> <span class="kt">int</span> <span class="n">length</span><span class="p">,</span> <span class="kt">int</span> <span class="n">port</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">bool</span> <span class="n">confirm</span> <span class="o">=</span> <span class="nb">false</span><span class="p">);</span>
+<pre class="highlight"><code><span class="kt">int8_t</span> <span class="n">sendBytes</span><span class="p">(</span><span class="k">const</span> <span class="n">byte</span><span class="o">*</span> <span class="n">payload</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">length</span><span class="p">,</span> <span class="n">port_t</span> <span class="n">port</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">bool</span> <span class="n">confirm</span> <span class="o">=</span> <span class="nb">false</span><span class="p">);</span>
 </code></pre>
 </div>
 
 <ul>
 <li>
-<code class="highlighter-rouge">const byte* buffer</code>: Bytes to send.</li>
+<code class="highlighter-rouge">const byte* payload </code>: Bytes to send.</li>
   <li>
-<code class="highlighter-rouge">int length</code>: The number of bytes. Use <code class="highlighter-rouge">sizeof(buffer)</code> to get it.</li>
+<code class="highlighter-rouge">size_t length</code>: The number of bytes. Use <code class="highlighter-rouge">sizeof(payload)</code> to get it.</li>
   <li>
-<code class="highlighter-rouge">int port = 1</code>: The port to address. Defaults to <code class="highlighter-rouge">1</code>.</li>
+<code class="highlighter-rouge">port_t port = 1</code>: The port to address. Defaults to <code class="highlighter-rouge">1</code>.</li>
   <li>
-    <p><code class="highlighter-rouge">bool confirm = false</code>: Whether to ask for confirmation.</p>
-
-    <ul>
-<li>
-<strong>TODO:</strong> How does one check the result?</li>
-    </ul>
-</li>
+<code class="highlighter-rouge">bool confirm = false</code>: Whether to ask for confirmation. Defaults to <code class="highlighter-rouge">false</code>.</li>
 </ul>
-<p>Returns the size of the message received in response, if any. Use <code class="highlighter-rouge">downlink</code> for the actual bytes received.</p>
+<p>Returns a success or error code and logs the related error message:</p>
 
-<h2 id="method-sendstring">Method: sendString</h2>
-<p>Send a message to the application using a string, which the library will encode as bytes for you.</p>
+<ul>
+<li>
+<code class="highlighter-rouge">-1</code>: Send command failed.</li>
+  <li>
+<code class="highlighter-rouge">-2</code>: Time-out.</li>
+  <li>
+<code class="highlighter-rouge">1</code>: Successful transmission.</li>
+  <li>
+<code class="highlighter-rouge">2</code>: Successful transmission. Received &lt;N&gt; bytes</li>
+  <li>
+<code class="highlighter-rouge">-10</code>: Unexpected response: &lt;Response&gt;</li>
+</ul>
+<p>See the <a href="https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/Send/Send.ino">Send</a> example.</p>
+
+<p>Also in sendBytes, due to TTN’s 30 second fair access policy, we update the airtime each time we uplink a message. This airtime is based on a lot of variables but the most important ones are the spreading factor and the size of the message, the higher it is the less messages you can send in 30 seconds (SF7 around 500 messages of 8 bytes, SF12 around 20 messages of 8 bytes).</p>
+
+<h2 id="method-poll">Method: poll</h2>
+<p>Calls <code class="highlighter-rouge">sendBytes()</code> with <code class="highlighter-rouge"><span class="p">{</span><span class="w"> </span><span class="err">0x00</span><span class="w"> </span><span class="p">}</span></code> as payload to poll for incoming messages.</p>
+
+<div class="language-c highlighter-rouge">
+<pre class="highlight"><code><span class="kt">int8_t</span> <span class="n">poll</span><span class="p">(</span><span class="n">port_t</span> <span class="n">port</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">bool</span> <span class="n">confirm</span> <span class="o">=</span> <span class="nb">false</span><span class="p">);</span>
+</code></pre>
+</div>
+
+<ul>
+<li>
+<code class="highlighter-rouge">port_t port = 1</code>: The port to address. Defaults to <code class="highlighter-rouge">1</code>.</li>
+  <li>
+<code class="highlighter-rouge">bool confirm = false</code>: Whether to ask for confirmation.</li>
+</ul>
+<p>Returns the result of <code class="highlighter-rouge">sendBytes()</code>.</p>
+
+<p>See the <a href="https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/Receive/Receive.ino">Receive</a> example.</p>
+
+<h2 id="method-provision">Method: provision</h2>
+<p>Sets the information needed to activate the device via OTAA, without actually activating. Call join() without the first 2 arguments to activate.</p>
+
+<div class="language-c highlighter-rouge">
+<pre class="highlight"><code><span class="n">bool</span> <span class="n">provision</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">appEui</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">appKey</span><span class="p">);</span>
+</code></pre>
+</div>
+
+<ul>
+<li>
+<code class="highlighter-rouge">const char *appEui</code>: Application Identifier for the device.</li>
+  <li>
+<code class="highlighter-rouge">const char *appKey</code>: Application Key assigned to the device.</li>
+</ul>
+</div>
+        </section><section class="panel"><div class="panel-body">
+            <h1 id="working-with-bytes">Working with bytes</h1>
+<p>To send data back and forth over The Things Network you’ll need to use bytes. This guide will help you encode different types of data in as little bytes possible.</p>
 
 <blockquote>
-  <p>To minimize air time we advise not to use this method and try to use a minimal amount of bytes to communicate your message.</p>
+  <p>The unprecedented range of the LoRaWAN technology we build on comes at the cost of low bandwidth and limited airtime (the number times size of packages you send). Fortunately, you don’t need a picture of that smart garage bin that needs to emptied. Even a single bit <code class="highlighter-rouge">1</code> would do!</p>
 </blockquote>
 
-<div class="language-c highlighter-rouge">
-<pre class="highlight"><code><span class="kt">int</span> <span class="n">sendString</span><span class="p">(</span><span class="n">String</span> <span class="n">message</span><span class="p">,</span> <span class="kt">int</span> <span class="n">port</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">bool</span> <span class="n">confirm</span> <span class="o">=</span> <span class="nb">false</span><span class="p">);</span>
+<h2 id="what-is-a-byte">What is a byte?</h2>
+<p>A <a href="https://simple.wikipedia.org/wiki/Byte">byte</a> is a group of 8 bits. A bit is the most basic unit and can be either 1 or 0. A byte is not just 8 values between 0 and 1, but 256 (2<sup>8</sup>) different combinations (rather <a href="https://www.mathsisfun.com/combinatorics/combinations-permutations.html">permutations</a>) ranging from <code class="highlighter-rouge">00000000</code> via e.g. <code class="highlighter-rouge">01010101</code> to <code class="highlighter-rouge">11111111</code>. Thus, one byte can represent a <a href="https://simple.wikipedia.org/wiki/Decimal">decimal</a> number between 0(00) and 255.</p>
+
+<blockquote>
+  <p>Puzzled? Remember that 3 decimal numbers also don’t just stand for 3 values between 0 and 9, but 1000 (10<sup>3</sup>) permutations from 0(00) to 999.</p>
+</blockquote>
+
+<p>Learn more on <a href="http://computer.howstuffworks.com/bytes.htm">How Stuff Works: How Bits and Bytes Work</a> and the <a href="http://playground.arduino.cc/Code/BitMath">Arduino Bit Math Tutorial</a> to learn more about it.</p>
+
+<h2 id="what-is-a-buffer-of-bytes">What is a buffer of bytes?</h2>
+<p>Think of <em>buffer</em> as just another word for an <em>array</em>, <em>list</em>, whatever resonates with your programming experience. Like a byte is a group of 8 bits, a <a href="https://en.wikipedia.org/wiki/Data_buffer">buffer</a> is a group of a pre-defined number of bytes. If we have a group of 3 bytes, this could either represent 3 values between 0 and 255, but also one single value between 0 and 16777216 (256<sup>3</sup>).</p>
+
+<blockquote>
+  <p>See the pattern? The number of choices per position (n) to the power of the number of positions (r) is the number of permutations: n<sup>r</sup>. Learn more on <a href="https://www.mathsisfun.com/combinatorics/combinations-permutations.html">MathIsFun.com</a>.</p>
+</blockquote>
+
+<h2 id="what-the-hex">What the hex?</h2>
+<p>Often, you’ll see a group of bytes displayed as:</p>
+
+<div class="highlighter-rouge">
+<pre class="highlight"><code>FF F0 0F 11
 </code></pre>
 </div>
 
-<ul>
-<li>
-<code class="highlighter-rouge">String message</code>: String to encode and send.</li>
-  <li>
-<code class="highlighter-rouge">int port = 1</code>: The port to address. Defaults to <code class="highlighter-rouge">1</code>.</li>
-  <li>
-    <p><code class="highlighter-rouge">bool confirm = false</code>: Whether to ask for confirmation.</p>
+<p>Wasn’t a byte a group of 8 <code class="highlighter-rouge">0</code>s and <code class="highlighter-rouge">1</code>s? 🤔 You’re totally right, but just like we already saw <code class="highlighter-rouge">11111111</code> translates to 255 in the good old decimal system, we can also translate it to FF in the <a href="https://simple.wikipedia.org/wiki/Hexadecimal_numeral_system">hexadecimal system</a> where each position has 16 (0-9 A-F) possible values. The advantage is that it is shorter and explicit about the maximum value (257 is not an option).</p>
 
-    <ul>
-<li>
-<strong>TODO:</strong> How does one check the result?</li>
-    </ul>
-</li>
-</ul>
-<p>Returns the size of the message received in response, if any. Use <code class="highlighter-rouge">downlink</code> for the actual bytes received.</p>
+<p>The above example <a href="https://www.mathsisfun.com/binary-decimal-hexadecimal-converter.html">translated</a> to the decimal system and padded for readability would be:</p>
 
-<h2 id="property-downlinkport">Property: downlinkPort</h2>
-<p>The port the last message received was addressed to.</p>
-
-<div class="language-c highlighter-rouge">
-<pre class="highlight"><code><span class="kt">int</span> <span class="n">downlinkPort</span>
+<div class="highlighter-rouge">
+<pre class="highlight"><code>255 240 015 017
 </code></pre>
 </div>
 
-<h2 id="property-downlink">Property: downlink</h2>
-<p>The last message received.</p>
+<p>To indicate that you mean <code class="highlighter-rouge">11</code> in hex and not two bits or the number eleven, you prefix it with the <code class="highlighter-rouge">0x</code> formatter. To tell it you mean binary use <code class="highlighter-rouge">B</code>.</p>
+
+<table class="table">
+<thead><tr>
+<th>Code</th>
+      <th>Byte value</th>
+      <th>Decimal value</th>
+      <th>Hexadecimal value</th>
+    </tr></thead>
+<tbody>
+<tr>
+<td><code class="highlighter-rouge">11</code></td>
+      <td>00001011</td>
+      <td>11</td>
+      <td>B</td>
+    </tr>
+<tr>
+<td><code class="highlighter-rouge">0x11</code></td>
+      <td>00010001</td>
+      <td>17</td>
+      <td>11</td>
+    </tr>
+<tr>
+<td><code class="highlighter-rouge">B11</code></td>
+      <td>00000011</td>
+      <td>3</td>
+      <td>3</td>
+    </tr>
+</tbody>
+</table>
+<p>An example for Arduino:</p>
 
 <div class="language-c highlighter-rouge">
-<pre class="highlight"><code><span class="n">byte</span> <span class="n">downlink</span><span class="p">[</span><span class="mi">64</span><span class="p">];</span>
+<pre class="highlight"><code><span class="n">byte</span> <span class="n">data</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span> <span class="mh">0xFF</span><span class="p">,</span> <span class="mh">0xF0</span><span class="p">,</span> <span class="mh">0x0F</span><span class="p">,</span> <span class="mh">0x11</span> <span class="p">};</span>
+<span class="c1">// identical: { 255, 240, 15, 17 };
+// identical: { B11111111, B11110000, B00001111, B00010001 };
+</span><span class="n">ttn</span><span class="p">.</span><span class="n">sendBytes</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">data</span><span class="p">));</span>
+</code></pre>
+</div>
+
+<p>Yeah, I know… <code class="highlighter-rouge">0x</code> kind of blows the shorter-to-write advantage of hex. 🙃</p>
+
+<h2 id="how-many-bytes-can-i-send">How many bytes can I send?</h2>
+<p>Technically, you can send 51 bytes. But, the more bytes you’ll send, the more airtime the package will cost you and the sooner you’ll hit your maximum allotted time. So, don’t ask yourself how many you can possibly send but rather ask how few could do the job.</p>
+
+<h2 id="how-to-send-big-numbers">How to send big numbers?</h2>
+<p>A better question would be how to send ranges bigger than 255.</p>
+
+<h3 id="index">1. Index</h3>
+<p>If the possible values you’d need to support don’t start at 0 and you know the minimum value, start by indexing on that number.</p>
+
+<p>For example, imagine we’d expect values between 3400 and 3600.</p>
+
+<p>On the device we’d encode this as:</p>
+
+<div class="language-c highlighter-rouge">
+<pre class="highlight"><code><span class="kt">int</span> <span class="n">myVal</span> <span class="o">=</span> <span class="mi">3450</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">myBase</span> <span class="o">=</span> <span class="mi">3400</span><span class="p">;</span>
+<span class="n">byte</span> <span class="n">payload</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span> <span class="n">myVal</span> <span class="o">-</span> <span class="n">myBase</span> <span class="p">};</span>
+</code></pre>
+</div>
+
+<p>And in the application payload functions do:</p>
+
+<div class="language-js highlighter-rouge">
+<pre class="highlight"><code><span class="kd">var</span> <span class="nx">myBase</span> <span class="o">=</span> <span class="mi">3400</span><span class="p">;</span>
+<span class="nx">decoded</span><span class="p">.</span><span class="nx">myVal</span> <span class="o">=</span> <span class="nx">bytes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="nx">myBase</span><span class="p">;</span>
+</code></pre>
+</div>
+
+<p>The other way around, in the application encoder payload function we would have:</p>
+
+<div class="language-js highlighter-rouge">
+<pre class="highlight"><code><span class="kd">var</span> <span class="nx">myVal</span> <span class="o">=</span> <span class="mi">3450</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">myBase</span> <span class="o">=</span> <span class="mi">3400</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">bytes</span> <span class="o">=</span> <span class="p">[</span><span class="nx">myVal</span> <span class="o">-</span> <span class="nx">myBase</span><span class="p">];</span>
+</code></pre>
+</div>
+
+<p>And on the device decode this with:</p>
+
+<div class="language-c highlighter-rouge">
+<pre class="highlight"><code><span class="kt">int</span> <span class="n">myBase</span> <span class="o">=</span> <span class="mi">3400</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">myVal</span> <span class="o">=</span> <span class="n">payload</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">myBase</span><span class="p">;</span>
+</code></pre>
+</div>
+
+<p>As you can see as long as the minimum value is known and the range of our value is 256 or less, we can still use a single byte without breaking a sweat. 😅</p>
+
+<h3 id="round">2. Round</h3>
+<p>Now what if the range is bigger than 256? The next question would be if you need to know the exact value. If your sensor has a range of 400 and an error margin of 2, you wouldn’t lose any meaning by rounding the value. Both 299 and 300 would round to 150, which is fine.</p>
+
+<p>On the device we’d encode this as:</p>
+
+<div class="language-c highlighter-rouge">
+<pre class="highlight"><code><span class="kt">int</span> <span class="n">myVal</span> <span class="o">=</span> <span class="mi">300</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">errorMargin</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">byte</span> <span class="n">payload</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span> <span class="n">round</span><span class="p">(</span><span class="n">myVal</span> <span class="o">/</span> <span class="n">errorMargin</span><span class="p">)</span> <span class="p">};</span>
+</code></pre>
+</div>
+
+<p>And in the application payload functions do:</p>
+
+<div class="language-js highlighter-rouge">
+<pre class="highlight"><code><span class="kd">var</span> <span class="nx">errorMargin</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="nx">decoded</span><span class="p">.</span><span class="nx">myVal</span> <span class="o">=</span> <span class="nx">bytes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="nx">errorMargin</span><span class="p">;</span>
+</code></pre>
+</div>
+
+<p>You’ll get the idea for the other way around.</p>
+
+<h3 id="use-words">3. Use words</h3>
+
+<p>A <a href="https://www.arduino.cc/en/Reference/Word">word</a> is 2 bytes, which already gets you a huge range of 65536 (256<sup>2</sup>). The <a href="https://www.arduino.cc/en/Reference/Int">int</a> data type is a word and Arduino comes with <a href="https://www.arduino.cc/en/Reference/HighByte"><code class="highlighter-rouge">highByte()</code></a> and <a href="https://www.arduino.cc/en/Reference/LowByte"><code class="highlighter-rouge">lowByte()</code></a> to extract the left and right byte from a word. This makes it really easy to encode and decode.</p>
+
+<p>Encode (Arduino):</p>
+
+<div class="language-c highlighter-rouge">
+<pre class="highlight"><code><span class="kt">int</span> <span class="n">myVal</span> <span class="o">=</span> <span class="mi">20000</span><span class="p">;</span>
+<span class="n">byte</span> <span class="n">payload</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+<span class="n">payload</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">highByte</span><span class="p">(</span><span class="n">myVal</span><span class="p">);</span>
+<span class="n">payload</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">lowByte</span><span class="p">(</span><span class="n">myVal</span><span class="p">);</span>
+</code></pre>
+</div>
+
+<p>Decode (payload functions):</p>
+
+<div class="language-js highlighter-rouge">
+<pre class="highlight"><code><span class="nx">decoded</span><span class="p">.</span><span class="nx">myVal</span> <span class="o">=</span> <span class="p">(</span><span class="nx">bytes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="mi">8</span><span class="p">)</span>
+               <span class="o">+</span> <span class="nx">bytes</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+</code></pre>
+</div>
+
+<blockquote>
+  <p>Wondering what the <code class="highlighter-rouge">&lt;&lt;</code> is about? This <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Left_shift">Left shifts</a> the 8 bits of the first byte 8 positions to the left. Confused? Think about how we could encode the number 11 as two 1’s and decode by shifting the first 1 up one position (making it 10) before adding the other. We’ll talk more about bit shifting next.</p>
+</blockquote>
+
+<p>Encode (payload functions):</p>
+
+<div class="language-js highlighter-rouge">
+<pre class="highlight"><code><span class="kd">var</span> <span class="nx">myVal</span> <span class="o">=</span> <span class="mi">20000</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">bytes</span> <span class="o">=</span> <span class="p">[];</span>
+<span class="nx">bytes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="nx">myVal</span> <span class="o">&amp;</span> <span class="mh">0xFF00</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">8</span><span class="p">;</span>
+<span class="nx">bytes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="nx">myVal</span> <span class="o">&amp;</span> <span class="mh">0x00FF</span><span class="p">);</span>
+</code></pre>
+</div>
+
+<blockquote>
+  <p>Never seen <code class="highlighter-rouge">&amp;</code> used this way before? This is a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Bitwise_AND">Bitwise AND</a>. Used this way the right side of the expression will act as a <a href="https://en.wikipedia.org/wiki/Mask_(computing)">mask</a> to zero out one byte so we can work with just the other one.</p>
+</blockquote>
+
+<p>Decode (Arduino):</p>
+
+<div class="language-c highlighter-rouge">
+<pre class="highlight"><code><span class="kt">int</span> <span class="n">myVal</span> <span class="o">=</span> <span class="p">(</span><span class="n">payload</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="mi">8</span><span class="p">)</span>
+           <span class="o">+</span> <span class="n">payload</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+</code></pre>
+</div>
+
+<h3 id="shift-bits">4. Shift bits</h3>
+
+<p>If the range of expected values is bigger than 65536 we can use the same trick. The only difference is that we have to manually shift bits when we encode on Arduino, just like we did in the payload function.</p>
+
+<p>Let’s say we need to encode a <a href="https://www.arduino.cc/en/Reference/Long">long</a> which uses 4 bytes for a range up to 4294967296.</p>
+
+<p>Encode (Arduino):</p>
+
+<div class="language-c highlighter-rouge">
+<pre class="highlight"><code><span class="kt">long</span> <span class="n">lng</span> <span class="o">=</span> <span class="mi">200000L</span><span class="p">;</span>
+<span class="n">byte</span> <span class="n">payload</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span>
+<span class="n">payload</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="p">((</span><span class="n">lng</span> <span class="o">&amp;</span> <span class="mh">0xFF000000</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">24</span> <span class="p">);</span>
+<span class="n">payload</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="p">((</span><span class="n">lng</span> <span class="o">&amp;</span> <span class="mh">0x00FF0000</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">16</span> <span class="p">);</span>
+<span class="n">payload</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="p">((</span><span class="n">lng</span> <span class="o">&amp;</span> <span class="mh">0x0000FF00</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">8</span>  <span class="p">);</span>
+<span class="n">payload</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="p">((</span><span class="n">lng</span> <span class="o">&amp;</span> <span class="mh">0X000000FF</span><span class="p">)</span>       <span class="p">);</span>
+</code></pre>
+</div>
+
+<p>Decode (payload functions):</p>
+
+<div class="language-js highlighter-rouge">
+<pre class="highlight"><code><span class="nx">decoded</span><span class="p">.</span><span class="nx">myVal</span> <span class="o">=</span> <span class="p">(</span><span class="nx">bytes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="mi">24</span><span class="p">)</span>
+              <span class="o">+</span> <span class="p">(</span><span class="nx">bytes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="mi">16</span><span class="p">)</span>
+              <span class="o">+</span> <span class="p">(</span><span class="nx">bytes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="mi">8</span><span class="p">)</span>
+              <span class="o">+</span> <span class="p">(</span><span class="nx">bytes</span><span class="p">[</span><span class="mi">3</span><span class="p">]);</span>
+</code></pre>
+</div>
+
+<h2 id="how-to-send-negative-numbers">How to send negative numbers?</h2>
+
+<p>To tell the difference between -100 and 100 you will need a <a href="https://en.wikipedia.org/wiki/Signed_number_representations">signed</a> data type. These set the highest (left-most) bit to <code class="highlighter-rouge">1</code> to indicate it’s a negative number. This does mean that for example in a word only 15 of the 16 bits are available for the actual number, limiting the range from 65536 to 32768.</p>
+
+<h3 id="index-round-and-shift">Index, round and shift</h3>
+
+<p>The data types we used so far are all signed, which means all of the tricks work just as well for negative values. Just be aware of the maximum value.</p>
+
+<h3 id="unsigned-data-types">Unsigned data types</h3>
+
+<p>If you don’t expect negative numbers and need a bigger range, explicitly use <a href="https://www.arduino.cc/en/Reference/UnsignedInt"><code class="highlighter-rouge">unsigned int</code></a> or <a href="https://www.arduino.cc/en/Reference/UnsignedLong"><code class="highlighter-rouge">unsigned long</code></a>.</p>
+
+<h2 id="how-to-send-decimals">How to send decimals?</h2>
+
+<p>So far we have only dealt with rounded numbers. What if you need more precision? The answer very similar to how we indexed or rounded big numbers. Simply multiple and divide the value as you encode and decode it.</p>
+
+<p>Encode (Arduino):</p>
+
+<div class="language-c highlighter-rouge">
+<pre class="highlight"><code><span class="kt">float</span> <span class="n">myVal</span> <span class="o">=</span> <span class="mi">1</span><span class="p">.</span><span class="mi">22</span><span class="p">;</span>
+<span class="n">byte</span> <span class="n">payload</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+<span class="n">payload</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">round</span><span class="p">(</span><span class="n">myVal</span> <span class="o">*</span> <span class="mi">100</span><span class="p">);</span>
+</code></pre>
+</div>
+
+<p>Decode (payload functions):</p>
+
+<div class="language-js highlighter-rouge">
+<pre class="highlight"><code><span class="nx">decoded</span><span class="p">.</span><span class="nx">myVal</span> <span class="o">=</span> <span class="nx">bytes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="mi">100</span><span class="p">;</span>
+</code></pre>
+</div>
+
+<p>Encode (payload functions):</p>
+
+<div class="language-js highlighter-rouge">
+<pre class="highlight"><code><span class="nx">bytes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="mf">1.22</span> <span class="o">*</span> <span class="mi">100</span><span class="p">);</span>
+</code></pre>
+</div>
+
+<p>Decode (Arduino):</p>
+
+<div class="language-c highlighter-rouge">
+<pre class="highlight"><code><span class="kt">float</span> <span class="n">myVal</span> <span class="o">=</span> <span class="n">payload</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="mi">100</span><span class="p">.</span><span class="mo">00</span><span class="p">;</span>
+</code></pre>
+</div>
+
+<blockquote>
+  <p>Note that it uses <code class="highlighter-rouge">100.00</code>, not <code class="highlighter-rouge">100</code>. If both are integers, Arduino/C/C++ will do the math using integers as well, resulting in 1 instead of 1.22.</p>
+</blockquote>
+
+<h2 id="how-to-send-multiple-numbers">How to send multiple numbers?</h2>
+
+<p>In a lot of cases you’ll want to send multiple values in a single message. Start off by encoding each individual number to a buffer of bytes and then combine them into a single buffer.</p>
+
+<p>Encode (Arduino):</p>
+
+<div class="language-c highlighter-rouge">
+<pre class="highlight"><code><span class="n">byte</span> <span class="n">payloadA</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span> <span class="mh">0xF0</span> <span class="p">};</span>
+<span class="n">byte</span> <span class="n">payloadB</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span> <span class="mh">0xF0</span><span class="p">,</span> <span class="mh">0x0F</span> <span class="p">};</span>
+<span class="n">byte</span> <span class="n">payloadC</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span> <span class="mh">0xF0</span><span class="p">,</span> <span class="mh">0x0F</span><span class="p">,</span> <span class="mh">0xFF</span> <span class="p">};</span>
+    
+<span class="kt">int</span> <span class="n">sizeofPayloadA</span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">payloadA</span><span class="p">);</span>
+<span class="kt">int</span> <span class="n">sizeofPayloadB</span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">payloadB</span><span class="p">);</span>
+<span class="kt">int</span> <span class="n">sizeofPayloadC</span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">payloadC</span><span class="p">);</span>
+    
+<span class="n">byte</span> <span class="n">payload</span><span class="p">[</span><span class="n">sizeofPayloadA</span> <span class="o">+</span> <span class="n">sizeofPayloadB</span> <span class="o">+</span> <span class="n">sizeofPayloadC</span><span class="p">];</span>
+    
+<span class="n">memcpy</span><span class="p">(</span><span class="n">payload</span><span class="p">,</span> <span class="n">payloadA</span><span class="p">,</span> <span class="n">sizeofPayloadA</span><span class="p">);</span>
+<span class="n">memcpy</span><span class="p">(</span><span class="n">payload</span> <span class="o">+</span> <span class="n">sizeofPayloadA</span><span class="p">,</span> <span class="n">payloadB</span><span class="p">,</span> <span class="n">sizeofPayloadB</span><span class="p">);</span>
+<span class="n">memcpy</span><span class="p">(</span><span class="n">payload</span> <span class="o">+</span> <span class="n">sizeofPayloadA</span> <span class="o">+</span> <span class="n">sizeofPayloadB</span><span class="p">,</span> <span class="n">payloadC</span><span class="p">,</span> <span class="n">sizeofPayloadC</span><span class="p">);</span>
+</code></pre>
+</div>
+
+<blockquote>
+  <p>You might wonder why <a href="http://en.cppreference.com/w/c/string/byte/memcpy"><code class="highlighter-rouge">memcpy()</code></a> accepts <code class="highlighter-rouge">payload + sizeOfPayloadA</code> as they seem 🍏 and 🍊. Think of it as an instruction to copy to the <code class="highlighter-rouge">payload</code> buffer, but after moving the point it will copy to with the length of the payloads we added so far.s</p>
+</blockquote>
+
+<p>Decode (payload functions)</p>
+
+<div class="language-js highlighter-rouge">
+<pre class="highlight"><code><span class="nx">decoded</span><span class="p">.</span><span class="nx">myValA</span> <span class="o">=</span> <span class="nx">bytes</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+<span class="nx">decoded</span><span class="p">.</span><span class="nx">myValB</span> <span class="o">=</span> <span class="nx">bytes</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
+
+<span class="c1">// Decode both byte arrays as we did before</span>
+</code></pre>
+</div>
+
+<p>Encode (payload function)</p>
+
+<div class="language-js highlighter-rouge">
+<pre class="highlight"><code><span class="c1">// Encode both values as we did before</span>
+
+<span class="kd">var</span> <span class="nx">bytes</span> <span class="o">=</span> <span class="nx">bytesA</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">bytesB</span><span class="p">);</span>
+</code></pre>
+</div>
+
+<p>Decode (Arduino):</p>
+
+<div class="language-c highlighter-rouge">
+<pre class="highlight"><code><span class="n">var</span> <span class="n">payloadA</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+<span class="n">var</span> <span class="n">payloadB</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span>
+
+<span class="n">memcpy</span><span class="p">(</span><span class="n">payloadA</span><span class="p">,</span> 
+</code></pre>
+</div>
+
+<h2 id="how-to-send-text">How to send text?</h2>
+
+<p>The short answer is: <strong>don’t</strong>. Text uses a lot of bytes. <a href="https://en.wikipedia.org/wiki/Unicode">Unicode</a> defines more than 128000 characters, so that would take 3 bytes per character! There are rarely good reasons to use text instead of numbers, apart from maybe transmitting some user input.</p>
+
+<p>You didn’t hear it from me, but here’s how you’d encode a string:</p>
+
+<div class="language-c highlighter-rouge">
+<pre class="highlight"><code><span class="n">var</span> <span class="n">myVal</span> <span class="o">=</span> <span class="s">"Hello"</span><span class="p">;</span>
+<span class="n">var</span> <span class="n">l</span> <span class="o">=</span> <span class="n">myVal</span><span class="p">.</span><span class="n">length</span><span class="p">();</span>
+<span class="n">byte</span> <span class="n">payload</span><span class="p">[</span><span class="n">l</span> <span class="o">+</span> <span class="mi">1</span><span class="p">];</span>
+<span class="n">myVal</span><span class="p">.</span><span class="n">getBytes</span><span class="p">(</span><span class="n">payload</span><span class="p">,</span> <span class="n">l</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+</code></pre>
+</div>
+
+<p>Which you would decode with:</p>
+
+<div class="language-js highlighter-rouge">
+<pre class="highlight"><code><span class="nx">decoded</span><span class="p">.</span><span class="nx">myVal</span> <span class="o">=</span> <span class="nb">String</span><span class="p">.</span><span class="nx">fromCharCode</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="nx">bytes</span><span class="p">);</span>
 </code></pre>
 </div>
 
@@ -732,7 +1076,7 @@ use the device <span class="sb">`</span>EUI<span class="sb">`</span> to register
 <p>The library comes with a couple of examples:</p>
 
 <ul>
-<li>Select an example under <strong>File &gt; New</strong>, <strong>Open</strong> or <strong>Examples &gt; TheThingsNetwork</strong>
+<li>Select an example under <strong>File &gt; New</strong>, <strong>Open</strong> or <strong>Examples &gt; <a href="https://github.com/TheThingsNetwork/arduino-device-lib/tree/master/examples">TheThingsNetwork</a></strong>
 </li>
 </ul>
 </div>

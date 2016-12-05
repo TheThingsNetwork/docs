@@ -31,7 +31,7 @@
 <meta property="og:site_name" content="The Things Network">
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/the-things-white.png">
 <meta property="og:type" content="article">
-<meta property="article:published_time" content="2016-12-05T12:36:30+00:00">
+<meta property="article:published_time" content="2016-12-05T14:42:30+00:00">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@thethingsnetwrk">
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork">
@@ -40,7 +40,7 @@
 "@type": "BlogPosting",
 "headline": "The Things Uno",
 "image": "https://www.thethingsnetwork.org/docs/assets/images/the-things-white.png",
-"datePublished": "2016-12-05T12:36:30+00:00",
+"datePublished": "2016-12-05T14:42:30+00:00",
 "description": "The Things Uno is based off the Arduino Leonardo (not the Arduino Uno) with added Microchip LoRaWAN module. It is fully compatible with the Arduino IDE and existing shields.",
 "publisher": {"@type": "Organization",
 "logo": {"@type": "ImageObject",
@@ -250,7 +250,7 @@
       
 
       <section class="panel"><div class="panel-body">
-          <span class="label label-success pull-right">CURRENT: V1-STAGING</span>
+          <span class="label label-success pull-right">CURRENT</span>
           <h1>The Things Uno</h1>
           <p><a href="https://shop.thethingsnetwork.com/index.php/product/the-things-uno/" target="_blank">The Things Uno</a> is based off the <a href="https://www.arduino.cc/en/Guide/ArduinoLeonardoMicro">Arduino Leonardo</a> (<a href="https://www.arduino.cc/en/Guide/ArduinoLeonardoMicro#toc9">not the Arduino Uno</a>) with added <a href="http://www.microchip.com/design-centers/wireless-connectivity/embedded-wireless/lora-technology">Microchip LoRaWAN module</a>. It is fully compatible with the <a href="https://www.arduino.cc/en/Main/Software">Arduino IDE</a> and existing shields.</p>
 
@@ -261,14 +261,14 @@
 <ul>
 <li>Access to <a href="https://staging.thethingsnetwork.org/">staging.thethingsnetwork.org</a>.</li>
   <li>The Things Uno beta board.</li>
-  <li>Version 0.x of the <a href="https://github.com/thethingsnetwork/arduino-device-lib">The Things Network Arduino Library</a>.</li>
+  <li>Version 1.x of the <a href="https://github.com/thethingsnetwork/arduino-device-lib">The Things Network Arduino Library</a>.</li>
 </ul>
 </div>
         
           <div class="panel-footer">
             Versions:    
             
-              <a href="/docs/current/uno/" class="label label-success">CURRENT: V1-STAGING</a>
+              <a href="/docs/current/uno/" class="label label-success">CURRENT</a>
             
             
               
@@ -326,16 +326,17 @@
     <div class="highlighter-rouge">
 <pre class="highlight"><code>Device Information
 
-EUI: 0004A30B001B672E
-Battery: 3304
-AppEUI: 0000000000000000
-DevEUI: 0004A30B001B672E
-DevAddr: 00000000
+EUI: 0004A30B001B4569
+Battery: 3294
+AppEui: 70B3D57EF000003E
+DevEui: 0004A30B001B4569
 Data Rate: 5
 RX Delay 1: 1000
 RX Delay 2: 2000
+Total Airtime: 0.00 s
 
-use the device `EUI` to register the device for OTAA
+Use the EUI to register the device for OTAA
+-------------------------------------------
 </code></pre>
     </div>
   </li>
@@ -387,7 +388,7 @@ use the device `EUI` to register the device for OTAA
     <p>Copy the <strong>App EUI</strong> and <strong>App Key</strong> from the device page to the example.</p>
 
     <blockquote>
-      <p>Use <i class="ion-eye"></i> to show obfuscated keys and <i class="ion-code"></i> to toggle to <strong>msb</strong>. Then use <i class="ion-clipboard"></i> to copy.</p>
+      <p>Use <i class="ion-eye"></i> to show obfuscated keys and <i class="ion-clipboard"></i> to copy.</p>
 
       <p><img src="app-key.png" alt="App Key"></p>
     </blockquote>
@@ -464,26 +465,35 @@ use the device `EUI` to register the device for OTAA
   </li>
 </ol>
 <h2 id="receive-message-downlink">Receive Message (downlink)</h2>
-<p>Now let’s send a message back to the device. Devices can only receive the last message sent to them in response to a message they send themselves. This means that you need to poll The Things Network frequently to not miss any downlink messages.</p>
+<p>Now let’s send a message back to the device. Devices can only receive the last message sent to them in response to a message they send themselves. This means that you need to poll The Things Network frequently to not miss any downlink messages. If you don’t have anything to send like our <em>Hello</em>, then you can call the <code class="highlighter-rouge">poll()</code> method in your <code class="highlighter-rouge">loop()</code> function.</p>
 
 <ol>
 <li>
-    <p>In the Arduino IDE, replace the call to <code class="highlighter-rouge">ttn.sendBytes()</code> with the following:</p>
+    <p>In the Arduino IDE, add the following line to <code class="highlighter-rouge">setup()</code> function to let it know what function to call when a message comes in:</p>
 
     <div class="language-c highlighter-rouge">
-<pre class="highlight"><code><span class="kt">int</span> <span class="n">downlinkBytes</span> <span class="o">=</span> <span class="n">ttn</span><span class="p">.</span><span class="n">sendBytes</span><span class="p">(</span><span class="n">payload</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">payload</span><span class="p">));</span>
+<pre class="highlight"><code><span class="c1">// Set callback for incoming messages
+</span><span class="n">ttn</span><span class="p">.</span><span class="n">onMessage</span><span class="p">(</span><span class="n">message</span><span class="p">);</span>
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Then copy paste the actual function to the end of the sketch:</p>
 
-<span class="k">if</span> <span class="p">(</span><span class="n">downlinkBytes</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <div class="language-c highlighter-rouge">
+<pre class="highlight"><code><span class="kt">void</span> <span class="nf">message</span><span class="p">(</span><span class="k">const</span> <span class="n">byte</span><span class="o">*</span> <span class="n">payload</span><span class="p">,</span> <span class="kt">int</span> <span class="n">length</span><span class="p">,</span> <span class="kt">int</span> <span class="n">port</span><span class="p">)</span> <span class="p">{</span>
   <span class="n">debugSerial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">"Received: "</span><span class="p">);</span>
       
-  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">downlinkBytes</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">debugSerial</span><span class="p">.</span><span class="n">print</span><span class="p">((</span><span class="kt">char</span><span class="p">)</span> <span class="n">ttn</span><span class="p">.</span><span class="n">downlink</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">debugSerial</span><span class="p">.</span><span class="n">print</span><span class="p">((</span><span class="kt">char</span><span class="p">)</span> <span class="n">payload</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
   <span class="p">}</span>
       
   <span class="n">debugSerial</span><span class="p">.</span><span class="n">println</span><span class="p">();</span>
 <span class="p">}</span>
 </code></pre>
     </div>
+
+    <p>The function will use <a href="https://www.arduino.cc/en/Reference/DigitalWrite"><code class="highlighter-rouge">digitalWrite()</code></a> to turn the LED on or off, based on the single byte message we receive.</p>
   </li>
   <li>Select <strong>Sketch &gt; Upload</strong> <code class="highlighter-rouge">Ctrl/⌘ U</code> to upload the sketch.</li>
   <li>Select <strong>Tools &gt; Serial Monitor</strong> <code class="highlighter-rouge">Ctrl/⌘ M</code> to open the Serial Monitor.</li>
