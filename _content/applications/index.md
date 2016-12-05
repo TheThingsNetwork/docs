@@ -4,7 +4,7 @@ description: Communicate with Devices on The Things Network.
 sections:
  - APIs
  - SDKs
- - Platforms
+ - Integrations
 image: /applications/icon.png
 zindex: 900
 ---

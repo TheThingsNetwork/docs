@@ -11,6 +11,4 @@ Your Applications and Devices can be managed via [The Things Network Console](..
 
 ![Architecture](architecture.png)
 
-## Prerequisites
-
-* An account on [preview.account.thethingsnetwork.org](https://preview.account.thethingsnetwork.org)
+> To use `preview.console.thethingsnetwork.org` you need an account at  [`preview.account`](https://preview.account.thethingsnetwork.org). Accounts on `account.thethingsnetwork.org` will not work.

@@ -1,8 +1,8 @@
 ---
-title: Hosting
+title: Host an Integration
 ---
 
-# Hosting the integration
+# Host an Integration
 Of course you can choose to host the Platform Integration yourself. You will have full control over the architecture and won't have to share the code with us.
 
 However, if you choose to host the Platform Integration with us, then users will see it listed in The Things Network Console and can configure and deploy it with the click of a button.

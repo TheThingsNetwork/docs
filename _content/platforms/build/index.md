@@ -1,8 +1,8 @@
 ---
-title: Architecture
+title: Build an Integration
 ---
 
-# Building the Integration
+# Build an Integration
 Building a Platform Integration is not much different from building an application. It uses the same Handler Data and Application Manager APIs or SDK.
 
 But now, the user's application lives on your platform and the integration uses our APIs and the private or public APIs of your platform to tie them together.

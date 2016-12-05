@@ -155,7 +155,11 @@ async.each(items, function (item, doneWithItem) {
   request(options, function (err, response, body) {
 
     if (err) {
-      return doneWithItem(err);
+      return doneWithItem(new Error('Failed to fetch ' + editUrl + ': ' + err));
+    }
+
+    if (response.statusCode !== 200) {
+      return doneWithItem(new Error('Failed to fetch ' + editUrl + ': ' + response.statusCode + ' ' + response.statusMessage));
     }
 
     if (!item.yaml) {
@@ -184,7 +188,7 @@ async.each(items, function (item, doneWithItem) {
 }, function (err) {
 
   if (err) {
-    console.error('Error: ' + err);
+    console.error(err);
   } else {
     console.log('Done!');
   }

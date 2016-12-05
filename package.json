@@ -6,7 +6,7 @@
   "main": "js/main.js",
   "scripts": {
     "start": "npm run prod",
-    "dev": "npm run dev-webpack & npm run dev-jekyll",
+    "dev": "rm -rf _site && npm run dev-webpack & npm run dev-jekyll",
     "prod": "npm run webpack && npm run jekyll",
     "test": "npm run htmlproof",
     "jekyll": "bundle exec jekyll serve",

@@ -28,7 +28,7 @@ We intend to SDKs for popular platforms such as [Node.js](../applications/nodejs
 
 ![SDK](sdks.png)
 
-> SDKs may not wrap all available APIs.
+> SDKs may not always wrap all available APIs.
 
 If you'd like to contribute to a SDK, contact [fokke@thethingsnetwork.org](mailto:fokke@thethingsnetwork.org).
 

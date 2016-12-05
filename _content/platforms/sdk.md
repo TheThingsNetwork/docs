@@ -1,8 +1,8 @@
 ---
-title: SDKs
+title: Build an SDK
 ---
 
-# Platform SDKs
+# Build an SDK
 
 Devices and Applications exchange messages and events via the Handler's MQTT broker. SDKs wrap this in a more friendly platform-specific API.
 
@@ -20,9 +20,19 @@ It is important to have a good understanding of how MQTT in general and our brok
 You can find a [MQTT client](https://github.com/mqtt/mqtt.github.io/wiki/libraries) for pretty much any language and platform. For example, the Node.js library uses [MQTT.js](https://www.npmjs.com/package/mqtt).
 
 ### Abstract the connection
-To connect to the MQTT broker we need the broker URL, username and password. We can ask the user for the full URL including scheme (`mqtt` or `mqtts`) and port, but........
+To connect to the MQTT broker we need the broker URL, username and password. Instead of asking the user for the full URL including scheme (`mqtt` or `mqtts`) and port, the SDK should ask for the Application ID, Access Key (which act as username and password) plus a region of the community network to which the SDK should append `.thethings.network`. The user should still be able to provide the full hostname.
+
+The constructor in pseudo code should look like:
+
+```plaintext
+var instance = new Client(region, appId, appAccessKey, [options])
+```
+
+See [how the Node.js SDK does this](https://github.com/TheThingsNetwork/node-app-sdk/blob/master/src/client.js#L7-L11).
 
 ### Abstract device events
+
+The [MQTT API](../applications/mqtt/api.md) provides a whole range of topics you can subscribe to. The SDK should...
 
 ### Abstract receiving messages
 

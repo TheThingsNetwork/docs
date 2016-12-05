@@ -167,27 +167,29 @@
             cursor: zoom-in;
         }
 
-        a[href^="http"]:after {
-            content: "\f08e";
-            font-family: FontAwesome;
-            font-weight: normal;
-            font-style: normal;
-            display: inline-block;
-            text-decoration: none;
-            padding-left: 3px;
-        }
-
-        a[href*="www.thethingsnetwork.org"]:after {
-            content:"" !important;
-            padding-left: 0;
-        }
-
         blockquote {
             border: 1px solid $gray-light;
             border-left: 5px solid $brand-primary;
             border-radius: 3px 0 0 3px;
             font-size: inherit;
         }
+    }
+
+    .page-content a[href^="http"]:after,
+    .page-side-nav a[href^="http"]:after {
+        content: "\f08e";
+        font-family: FontAwesome;
+        font-weight: normal;
+        font-style: normal;
+        display: inline-block;
+        text-decoration: none;
+        padding-left: 3px;
+    }
+
+    .page-content a[href*="www.thethingsnetwork.org"]:after,
+    .page-side-nav a[href*="www.thethingsnetwork.org"]:after {
+        content:"" !important;
+        padding-left: 0;
     }
 
     .page-toc {
