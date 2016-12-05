@@ -1,8 +1,8 @@
 ---
 title: LoPy
 ambassador:
-  name: Daniel Campora
-  username: danicampora
+  name: Corné van Strien
+  username: Batilan
 section: Hardware
 ---
 
