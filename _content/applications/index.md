@@ -1,12 +1,12 @@
 ---
 title: Applications
-description: Communicate with Devices on The Things Network.
+description: Exchange data with Devices on The Things Network.
 sections:
  - APIs
  - SDKs
  - Integrations
 image: /applications/icon.png
-zindex: 900
+zindex: 700
 ---
 
 # Applications

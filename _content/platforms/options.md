@@ -1,5 +1,5 @@
 ---
-title: Integration Options
+title: Options
 ---
 
 # Integration Options
@@ -30,7 +30,7 @@ We intend to SDKs for popular platforms such as [Node.js](../applications/nodejs
 
 > SDKs may not always wrap all available APIs.
 
-If you'd like to contribute to a SDK, contact [fokke@thethingsnetwork.org](mailto:fokke@thethingsnetwork.org).
+If you'd like to contribute to a SDK, contact [us](mailto:community@thethingsnetwork.org).
 
 ## 3. HTTP Integration
 

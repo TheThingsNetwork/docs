@@ -8,7 +8,7 @@ links:
  - title: Network Architecture
    href: https://www.thethingsnetwork.org/wiki/Backend/Overview
 image: /network/icon.png
-zindex: 600
+zindex: 800
 ---
 
 # Network

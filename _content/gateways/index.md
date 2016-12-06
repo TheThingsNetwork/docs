@@ -5,7 +5,7 @@ sections:
  - SDKs
  - Hardware
 image: /gateways/icon.png
-zindex: 800
+zindex: 900
 ---
 
 # Gateways
