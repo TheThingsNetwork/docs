@@ -10,7 +10,6 @@ to be able to run a TTN backend.
 
 ### Security
 ---
-
 |oauth2|*OAuth 2.0*|
 |---|---|
 |Flow|accessCode|
@@ -39,7 +38,6 @@ to be able to run a TTN backend.
 
 ### /applications
 ---
-
 ##### ***GET***
 **Summary:** List applications.
 
@@ -74,7 +72,6 @@ collaborator.
 
 ### /{app_id}
 ---
-
 ##### ***GET***
 **Summary:** Get application.
 
@@ -131,7 +128,6 @@ collaborator.
 
 ### /{app_id}/euis
 ---
-
 ##### ***GET***
 **Summary:** List EUIs of an application.
 
@@ -168,7 +164,6 @@ collaborator.
 
 ### /{app_id}/euis/{eui}
 ---
-
 ##### ***PUT***
 **Summary:** Add an EUI to the application.
 
@@ -207,7 +202,6 @@ collaborator.
 
 ### /{app_id}/collaborators
 ---
-
 ##### ***GET***
 **Summary:** List the collaborators of the application.
 
@@ -227,7 +221,6 @@ collaborator.
 
 ### /{app_id}/collaborators/{username}
 ---
-
 ##### ***GET***
 **Summary:** Get a collaborators rights to the application.
 
@@ -284,7 +277,6 @@ It is not possible to
 
 ### /{app_id}/rights
 ---
-
 ##### ***GET***
 **Summary:** Get the rights you have to the specified application with the current authentication method.
 
@@ -300,9 +292,54 @@ It is not possible to
 | ---- | ----------- |
 | 200 | The rights you have to the application. |
 
+### /{app_id}/access-keys
+---
+##### ***POST***
+**Summary:** Create a new access key with the specified name and rights
+
+**Parameters**
+
+| Name | Located in | Description | Required | Type |
+| ---- | ---------- | ----------- | -------- | ---- |
+| app_id | path | The ID of the application. | Yes | string |
+| token_exchange | body | The body of the request to create an access key | No |  |
+
+### /{app_id}/access-keys/{keyname}
+---
+##### ***GET***
+**Summary:** Get information about an app access key
+
+**Parameters**
+
+| Name | Located in | Description | Required | Type |
+| ---- | ---------- | ----------- | -------- | ---- |
+| app_id | path | The ID of the application. | Yes | string |
+| keyname | path | The name of the access key | Yes | string |
+
+**Responses**
+
+| Code | Description |
+| ---- | ----------- |
+| 200 | The resulting access key |
+
+##### ***DELETE***
+**Summary:** Remove an access key
+
+**Parameters**
+
+| Name | Located in | Description | Required | Type |
+| ---- | ---------- | ----------- | -------- | ---- |
+| app_id | path | The ID of the application. | Yes | string |
+| keyname | path | The name of the access key | Yes | string |
+
+**Responses**
+
+| Code | Description |
+| ---- | ----------- |
+| 204 | The key was successfully removed |
+
 ### /{app_id}/token
 ---
-
 ##### ***POST***
 **Summary:** Exchange an application Access Key for an application Access Token.
 

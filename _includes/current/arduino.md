@@ -11,6 +11,7 @@ sections:
 redirect_from:
  - /refactor/arduino/
  - /v2-preview/arduino/
+ - /arduino/
 ---
 
 [Arduino](https://www.arduino.cc/en/Guide/Introduction) is an open-source electronics platform based on easy-to-use hardware and software. It's intended for anyone making interactive projects.

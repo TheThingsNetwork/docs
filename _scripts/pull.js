@@ -76,7 +76,10 @@ if (process.env.GITHUB_OAUTH_TOKEN) {
     branch: 'v2-preview',
     path: 'apidocs.md',
     token: process.env.GITHUB_OAUTH_TOKEN,
-    file: '_includes/draft/account/_api.md'
+    file: '_includes/draft/account/_api.md',
+    replace: [
+      [/^The Things Network Account Server API/m, 'API Reference']
+    ]
   }, {
     owner: 'TheThingsIndustries',
     repo: 'node-ttn-oauth2',
