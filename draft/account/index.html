@@ -31,7 +31,7 @@
 <meta property="og:site_name" content="The Things Network">
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/the-things-white.png">
 <meta property="og:type" content="article">
-<meta property="article:published_time" content="2016-12-05T14:42:30+00:00">
+<meta property="article:published_time" content="2016-12-08T09:46:30+00:00">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@thethingsnetwrk">
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork">
@@ -40,7 +40,7 @@
 "@type": "BlogPosting",
 "headline": "Account Server API",
 "image": "https://www.thethingsnetwork.org/docs/assets/images/the-things-white.png",
-"datePublished": "2016-12-05T14:42:30+00:00",
+"datePublished": "2016-12-08T09:46:30+00:00",
 "description": "The Account Server manages the ACL for The Things Network. It closed-source. If you’d like to run the open-source backend you will need to provide an account server with the exact same API.",
 "publisher": {"@type": "Organization",
 "logo": {"@type": "ImageObject",
@@ -546,7 +546,7 @@ access token.  This can be done using the <code class="highlighter-rouge">/api/v
 request:</p>
 
 <div class="language-plaintext highlighter-rouge">
-<pre class="highlight"><code>HTTP/1.1  GET /api/v2/applications/token
+<pre class="highlight"><code>HTTP/1.1  POST /api/v2/applications/token
 Content-Type: application/json
 Authorization: Basic &lt;basic_auth&gt;
 
@@ -602,6 +602,60 @@ the access key you used to in the exchange.</p>
 </code></pre>
 </div>
 
+<h1 id="oauth-20-authorization-flow">OAuth 2.0 Authorization flow</h1>
+
+<p>In this section we describe a sample <code class="highlighter-rouge">authorization_code</code> code flow.
+Assuming you have a registered client with these properties:</p>
+
+<div class="highlighter-rouge">
+<pre class="highlight"><code>client_id: foo-client 
+client_secret: secret
+redirect_uri: http://www.example.com/oauth/callback
+scope: [ 'apps' ]
+</code></pre>
+</div>
+
+<h2 id="make-an-authorization-request">1. Make an authorization request</h2>
+
+<p>To be able to use your client, a user will have to authorize it first on the
+account server.  You can tell the user to do so by redirecting to:</p>
+
+<div class="highlighter-rouge">
+<pre class="highlight"><code>https://account.thethingsnetwork.org/users/authorize?client_id=foo-client&amp;redirect_uri=http://www.example.com/oauth/callback&amp;response_type=code
+</code></pre>
+</div>
+
+<p>This will ask the user to log in and presents her with a form to authorize your
+client.  If the user authorizes your client, she will be redirected to:</p>
+
+<div class="highlighter-rouge">
+<pre class="highlight"><code>http://www.example.com/oauth/callback?code=&lt;auth code&gt;
+</code></pre>
+</div>
+
+<p>You need the <code class="highlighter-rouge">&lt;auth code&gt;</code> from this redirect to go to step 2.</p>
+
+<p>The preference of the user will be stored so this authorization step will
+redirect immediatly (without showing the form) the next time you do this for the
+same user.</p>
+
+<h2 id="get-the-access-token">2. Get the access token</h2>
+<p>To get the access token perform the following request:
+```plaintext
+HTTP/1.1 POST /users/token
+Content-Type: application/json
+Authorization: Basic <basic_auth></basic_auth></p>
+
+<p>{
+  “grant_type”: “authorization_code”,
+  “code”: “<auth code="">",
+  "redirect_uri: "http://www.example.com/oauth/callback"
+}
+```</auth></p>
+
+<p>Where <code class="highlighter-rouge">&lt;basic_auth&gt;</code> is the basic auth digest for your client (<code class="highlighter-rouge">client_id</code> and
+<code class="highlighter-rouge">client_secret</code>) and <code class="highlighter-rouge">&lt;auth_code&gt;</code> is the authorization code received from step 1.</p>
+
 
           </div>
         </section><section class="panel"><div class="panel-body">
@@ -615,64 +669,20 @@ to be able to run a TTN backend.</p>
 
 <h3 id="security">Security</h3>
 <hr>
-<table class="table">
-<thead><tr>
-<th>oauth2</th>
-      <th><em>OAuth 2.0</em></th>
-    </tr></thead>
-<tbody>
-<tr>
-<td>Flow</td>
-      <td>accessCode</td>
-    </tr>
-<tr>
-<td>Authorization URL</td>
-      <td>/users/authorize</td>
-    </tr>
-<tr>
-<td>Token URL</td>
-      <td>/users/token</td>
-    </tr>
-<tr>
-<td><strong>Scopes</strong></td>
-      <td> </td>
-    </tr>
-<tr>
-<td>profile</td>
-      <td>Manage user profile</td>
-    </tr>
-<tr>
-<td>apps</td>
-      <td>Manage applications</td>
-    </tr>
-<tr>
-<td>apps:<app_id></app_id>
-</td>
-      <td>Manage application <app_id></app_id>
-</td>
-    </tr>
-<tr>
-<td>gateways</td>
-      <td>Manage gateways</td>
-    </tr>
-<tr>
-<td>gateways:<gateway_id></gateway_id>
-</td>
-      <td>Manage gateway <gateway_id></gateway_id>
-</td>
-    </tr>
-<tr>
-<td>components</td>
-      <td>Manage components</td>
-    </tr>
-<tr>
-<td>components:<component_id></component_id>
-</td>
-      <td>Manage component <component_id></component_id>
-</td>
-    </tr>
-</tbody>
-</table>
+<p>|oauth2|<em>OAuth 2.0</em>|
+|—|—|
+|Flow|accessCode|
+|Authorization URL|/users/authorize|
+|Token URL|/users/token|
+|<strong>Scopes</strong>||
+|profile|Manage user profile|
+|apps|Manage applications|
+|apps:<app_id>|Manage application <app_id>|
+|gateways|Manage gateways|
+|gateways:<gateway_id>|Manage gateway <gateway_id>|
+|components|Manage components|
+|components:<component_id>|Manage component <component_id>|</component_id></component_id></gateway_id></gateway_id></app_id></app_id></p>
+
 <table class="table">
 <thead><tr>
 <th>apiKey</th>
@@ -715,8 +725,8 @@ to be able to run a TTN backend.</p>
 </table>
 <h3 id="applications">/applications</h3>
 <hr>
-<h5 id="get"><strong><em>GET</em></strong></h5>
-<p><strong>Summary:</strong> List applications.</p>
+<p>##### <strong><em>GET</em></strong>
+<strong>Summary:</strong> List applications.</p>
 
 <p><strong>Description:</strong> Gets all the applictions the user has access to.</p>
 
@@ -776,8 +786,8 @@ collaborator.</p>
 </table>
 <h3 id="appid">/{app_id}</h3>
 <hr>
-<h5 id="get-1"><strong><em>GET</em></strong></h5>
-<p><strong>Summary:</strong> Get application.</p>
+<p>##### <strong><em>GET</em></strong>
+<strong>Summary:</strong> Get application.</p>
 
 <p><strong>Description:</strong> Gets the application specified by the <code class="highlighter-rouge">app_id</code> parameter.</p>
 
@@ -883,8 +893,8 @@ collaborator.</p>
 </table>
 <h3 id="appideuis">/{app_id}/euis</h3>
 <hr>
-<h5 id="get-2"><strong><em>GET</em></strong></h5>
-<p><strong>Summary:</strong> List EUIs of an application.</p>
+<p>##### <strong><em>GET</em></strong>
+<strong>Summary:</strong> List EUIs of an application.</p>
 
 <p><strong>Description:</strong> Lists all of the applications EUIs.</p>
 
@@ -955,8 +965,8 @@ collaborator.</p>
 </table>
 <h3 id="appideuiseui">/{app_id}/euis/{eui}</h3>
 <hr>
-<h5 id="put"><strong><em>PUT</em></strong></h5>
-<p><strong>Summary:</strong> Add an EUI to the application.</p>
+<p>##### <strong><em>PUT</em></strong>
+<strong>Summary:</strong> Add an EUI to the application.</p>
 
 <p><strong>Description:</strong> Add an EUI to the application.</p>
 
@@ -1045,8 +1055,8 @@ collaborator.</p>
 </table>
 <h3 id="appidcollaborators">/{app_id}/collaborators</h3>
 <hr>
-<h5 id="get-3"><strong><em>GET</em></strong></h5>
-<p><strong>Summary:</strong> List the collaborators of the application.</p>
+<p>##### <strong><em>GET</em></strong>
+<strong>Summary:</strong> List the collaborators of the application.</p>
 
 <p><strong>Description:</strong> List the collaborators of the application.</p>
 
@@ -1082,8 +1092,8 @@ collaborator.</p>
 </table>
 <h3 id="appidcollaboratorsusername">/{app_id}/collaborators/{username}</h3>
 <hr>
-<h5 id="get-4"><strong><em>GET</em></strong></h5>
-<p><strong>Summary:</strong> Get a collaborators rights to the application.</p>
+<p>##### <strong><em>GET</em></strong>
+<strong>Summary:</strong> Get a collaborators rights to the application.</p>
 
 <p><strong>Parameters</strong></p>
 
@@ -1124,7 +1134,7 @@ collaborator.</p>
       <td>The rights the collaborator has to the application.</td>
     </tr></tbody>
 </table>
-<h5 id="put-1"><strong><em>PUT</em></strong></h5>
+<h5 id="put"><strong><em>PUT</em></strong></h5>
 <p><strong>Summary:</strong> Add or update the rights of a user as collaborator to the application.</p>
 
 <p><strong>Parameters</strong></p>
@@ -1215,8 +1225,8 @@ collaborator.</p>
 </table>
 <h3 id="appidrights">/{app_id}/rights</h3>
 <hr>
-<h5 id="get-5"><strong><em>GET</em></strong></h5>
-<p><strong>Summary:</strong> Get the rights you have to the specified application with the current authentication method.</p>
+<p>##### <strong><em>GET</em></strong>
+<strong>Summary:</strong> Get the rights you have to the specified application with the current authentication method.</p>
 
 <p><strong>Parameters</strong></p>
 
@@ -1248,10 +1258,128 @@ collaborator.</p>
       <td>The rights you have to the application.</td>
     </tr></tbody>
 </table>
+<h3 id="appidaccess-keys">/{app_id}/access-keys</h3>
+<hr>
+<p>##### <strong><em>POST</em></strong>
+<strong>Summary:</strong> Create a new access key with the specified name and rights</p>
+
+<p><strong>Parameters</strong></p>
+
+<table class="table">
+<thead><tr>
+<th>Name</th>
+      <th>Located in</th>
+      <th>Description</th>
+      <th>Required</th>
+      <th>Type</th>
+    </tr></thead>
+<tbody>
+<tr>
+<td>app_id</td>
+      <td>path</td>
+      <td>The ID of the application.</td>
+      <td>Yes</td>
+      <td>string</td>
+    </tr>
+<tr>
+<td>token_exchange</td>
+      <td>body</td>
+      <td>The body of the request to create an access key</td>
+      <td>No</td>
+      <td> </td>
+    </tr>
+</tbody>
+</table>
+<h3 id="appidaccess-keyskeyname">/{app_id}/access-keys/{keyname}</h3>
+<hr>
+<p>##### <strong><em>GET</em></strong>
+<strong>Summary:</strong> Get information about an app access key</p>
+
+<p><strong>Parameters</strong></p>
+
+<table class="table">
+<thead><tr>
+<th>Name</th>
+      <th>Located in</th>
+      <th>Description</th>
+      <th>Required</th>
+      <th>Type</th>
+    </tr></thead>
+<tbody>
+<tr>
+<td>app_id</td>
+      <td>path</td>
+      <td>The ID of the application.</td>
+      <td>Yes</td>
+      <td>string</td>
+    </tr>
+<tr>
+<td>keyname</td>
+      <td>path</td>
+      <td>The name of the access key</td>
+      <td>Yes</td>
+      <td>string</td>
+    </tr>
+</tbody>
+</table>
+<p><strong>Responses</strong></p>
+
+<table class="table">
+<thead><tr>
+<th>Code</th>
+      <th>Description</th>
+    </tr></thead>
+<tbody><tr>
+<td>200</td>
+      <td>The resulting access key</td>
+    </tr></tbody>
+</table>
+<h5 id="delete-3"><strong><em>DELETE</em></strong></h5>
+<p><strong>Summary:</strong> Remove an access key</p>
+
+<p><strong>Parameters</strong></p>
+
+<table class="table">
+<thead><tr>
+<th>Name</th>
+      <th>Located in</th>
+      <th>Description</th>
+      <th>Required</th>
+      <th>Type</th>
+    </tr></thead>
+<tbody>
+<tr>
+<td>app_id</td>
+      <td>path</td>
+      <td>The ID of the application.</td>
+      <td>Yes</td>
+      <td>string</td>
+    </tr>
+<tr>
+<td>keyname</td>
+      <td>path</td>
+      <td>The name of the access key</td>
+      <td>Yes</td>
+      <td>string</td>
+    </tr>
+</tbody>
+</table>
+<p><strong>Responses</strong></p>
+
+<table class="table">
+<thead><tr>
+<th>Code</th>
+      <th>Description</th>
+    </tr></thead>
+<tbody><tr>
+<td>204</td>
+      <td>The key was successfully removed</td>
+    </tr></tbody>
+</table>
 <h3 id="appidtoken">/{app_id}/token</h3>
 <hr>
-<h5 id="post-2"><strong><em>POST</em></strong></h5>
-<p><strong>Summary:</strong> Exchange an application Access Key for an application Access Token.</p>
+<p>##### <strong><em>POST</em></strong>
+<strong>Summary:</strong> Exchange an application Access Key for an application Access Token.</p>
 
 <p><strong>Parameters</strong></p>
 
