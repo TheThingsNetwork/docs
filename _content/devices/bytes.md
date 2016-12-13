@@ -1,8 +1,8 @@
 ---
-title: Working with bytes
+title: Working with Bytes
 ---
 
-# Working with bytes
+# Working with Bytes
 To send data back and forth over The Things Network you'll need to use bytes. This guide will help you encode different types of data in as little bytes possible.
 
 > The unprecedented range of the LoRaWAN technology we build on comes at the cost of low bandwidth and limited airtime (the number times size of packages you send). Fortunately, you don't need a picture of that smart garage bin that needs to emptied. Even a single bit `1` would do!
@@ -248,7 +248,7 @@ memcpy(payload + sizeofPayloadA, payloadB, sizeofPayloadB);
 memcpy(payload + sizeofPayloadA + sizeofPayloadB, payloadC, sizeofPayloadC);
 ```
 
-> You might wonder why [`memcpy()`](http://en.cppreference.com/w/c/string/byte/memcpy) accepts `payload + sizeOfPayloadA` as they seem 🍏 and 🍊. Think of it as an instruction to copy to the `payload` buffer, but after moving the point it will copy to with the length of the payloads we added so far.s
+> You might wonder why [`memcpy()`](http://en.cppreference.com/w/c/string/byte/memcpy) accepts `payload + sizeOfPayloadA` as they seem 🍏 and 🍊. Think of it as an instruction to copy to the `payload` buffer, but after moving the point it will copy to, with the length of the payloads we added so far.
 
 Decode (payload functions)
 

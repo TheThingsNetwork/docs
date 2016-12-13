@@ -3,7 +3,7 @@ title: Devices
 description: Connect Things to the Internet via The Things Network.
 sections:
  - APIs
- - SDKs
+ - SDKs & Libaries
  - Hardware
 image: /devices/icon.png
 zindex: 1000

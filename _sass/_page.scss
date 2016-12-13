@@ -114,6 +114,16 @@
         padding: 30px;
         font-size: 1.1em;
 
+        blockquote, p {
+            margin-top: 25px;
+            margin-bottom: 25px;
+        }
+
+        blockquote > * {
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+
         .lead:first-child {
             margin-top: 15px;
             margin-bottom: 30px;

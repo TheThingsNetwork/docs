@@ -13,6 +13,7 @@ links:
  - title: Exchange Data
    href: ../applications/mqtt/
 image: /platforms/icon.png
+hidden: true
 zindex: 600
 ---
 

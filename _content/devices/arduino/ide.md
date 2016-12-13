@@ -1,14 +1,15 @@
 ---
-title: Arduino IDE
+title: IDE Setup & Usage
+zindex: 1000
 ---
 
-# Arduino Software (IDE)
+# IDE Setup & Usage
 
-We'll not reproduce the [Arduino Software Guide](https://www.arduino.cc/en/Guide/Environment#toc1) here, but here's how you install the Arduino IDE, The Things Network library and perform some common tasks that we will refer to later.
+We'll not reproduce the [Arduino Software Guide](https://www.arduino.cc/en/Guide/Environment#toc1) here, but here's how you install the Arduino IDE, The Things Network library and perform some common tasks.
 
 ## Setup
 
-Setup the Arduino IDE and The Things Network library.
+Setup the Arduino IDE and install The Things Network library.
 
 1. [Download](https://www.arduino.cc/en/Main/Software) and install the latest Arduino Software (IDE).
 2. Navigate to **Sketch > Include Library > Manage Libraries...**.
@@ -44,7 +45,7 @@ void setup()
 }
 ```
 
-## Verify & Upload sketches
+## Upload Sketches
 
 When you upload a sketch to your Arduino it will first compile and fail if your sketch has errors. If there are no errors it will continue to upload.
 
@@ -57,7 +58,7 @@ When you upload a sketch to your Arduino it will first compile and fail if your 
         
 > Uploads might fail if you have the monitor open. Close it and try again.
 
-### Verify only  
+## Verify Sketches  
     
 You can also compile your code without uploading to verify it has no errors:
 
