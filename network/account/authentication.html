@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags --><!-- 20111122 0939 --><link rel="stylesheet" href="/docs/assets/css/main.css">
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries --><!-- WARNING: Respond.js doesn't work if you view the page via file:// --><!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]--><!-- site.serving: false --><!-- site.url: https://www.thethingsnetwork.org --><script>
+    (function(canonical) {
+      if (!site.local && document.location.href.substr(0, document.location.href.length - document.location.hash.length) !== canonical) {
+        window.location.replace(canonical);
+      }
+    })('https://www.thethingsnetwork.org/docs/network/account/authentication.html');
+    </script><!-- Begin Jekyll SEO tag v2.1.0 --><title>Authentication - The Things Network</title>
+<meta property="og:title" content="Authentication">
+<meta name="description" content="Authentication">
+<meta property="og:description" content="Authentication">
+<link rel="canonical" href="https://www.thethingsnetwork.org/docs/network/account/authentication.html">
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/network/account/authentication.html">
+<meta property="og:site_name" content="The Things Network">
+<meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/the-things-white.png">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2016-12-14T21:21:03+00:00">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@thethingsnetwrk">
+<meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork">
+<script type="application/ld+json">
+{"@context": "http://schema.org",
+"@type": "BlogPosting",
+"headline": "Authentication",
+"image": "https://www.thethingsnetwork.org/docs/assets/images/the-things-white.png",
+"datePublished": "2016-12-14T21:21:03+00:00",
+"description": "Authentication",
+"publisher": {"@type": "Organization",
+"logo": {"@type": "ImageObject",
+"url": "https://www.thethingsnetwork.org/docs/assets/images/the-things-white.png"}},
+"url": "https://www.thethingsnetwork.org/docs/network/account/authentication.html"}</script><!-- End Jekyll SEO tag --><link rel="apple-touch-icon-precomposed" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-152.png">
+<meta name="msapplication-TileColor" content="#FFFFFF">
+<meta name="msapplication-TileImage" content="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-144.png">
+<meta name="application-name" content="The Things Network">
+<meta name="msapplication-tooltip" content="Building a Global Internet of Things Network Together.">
+<meta name="msapplication-config" content="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/ieconfig.xml">
+<link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-32.png" sizes="32x32">
+<link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-57.png" sizes="57x57">
+<link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-76.png" sizes="76x76">
+<link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-96.png" sizes="96x96">
+<link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-120.png" sizes="120x120">
+<link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-128.png" sizes="128x128">
+<link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-144.png" sizes="144x144">
+<link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-152.png" sizes="152x152">
+<link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-180.png" sizes="180x180">
+<link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-195.png" sizes="195x195">
+<link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-228.png" sizes="228x228">
+<link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/smalltile.png" sizes="128x128">
+<link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/mediumtile.png" sizes="270x270">
+<link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/widetile.png" sizes="558x270">
+<link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png" sizes="558x558">
+<link rel="shortcut icon" sizes="196x196" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-196.png">
+<script src="/docs/assets/js/main.js"></script>
+</head>
+<body>
+    <div id="content">
+<div class="layout-page">
+  <div class="ttn-header ttn-header-small">
+    <div class="ttn-container container-fluid">
+      <h1>
+        <img src="/docs/assets/images/the-things-white.png" alt="⛅ The Things Network"><span>Learn</span>
+      </h1>
+    </div>
+  </div>
+  <div class="container-fluid ttn-container">
+    <div class="row page-top-nav">
+      <div class="col-sm-9">
+        <ul>
+<li class="page-top-nav-crumb"><a href="http://www.thethingsnetwork.org/">Home</a></li>
+          <li class="page-top-nav-crumb"><a href="/docs/">Learn</a></li>
+                <li class=""><a href="/docs/devices/">Devices</a></li>
+                <li class=""><a href="/docs/gateways/">Gateways</a></li>
+                <li class="active"><a href="/docs/network/">Network</a></li>
+                <li class=""><a href="/docs/applications/">Applications</a></li>
+        </ul>
+</div>
+      <div class="hidden-xs col-sm-3 text-right">
+        <a href="https://github.com/TheThingsIndustries/node-ttn-oauth2/blob/v2-preview/AUTHENTICATION.md" class="page-edit" data-proofer-ignore><i class="fa fa-github"></i> Edit <strong>authentication.md</strong></a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="panel page-side-nav page-affix">
+          <div class="panel-body">
+            <h5>Network</h5>
+            <ul>
+<li class="">
+<a href="/docs/network/index.html">Overview</a>
+            <ul>
+<li class="">
+<a href="/docs/network/migrate.html">Migrate from Staging to Production</a>
+                </li>
+            </ul>
+</li>
+            <li class="page-side-nav-section">
+<span>Manage</span>
+            <ul>
+<li class="">
+<a href="/docs/network/console/">The Things Network Console</a>
+                </li>
+                <li class="">
+<a href="/docs/network/cli/">The Things Network CLI</a>
+                    <span class="label label-info">v2</span>
+                </li>
+                <li class="">
+<a href="/docs/network/cli-v1/">The Things Network CLI</a>
+                    <span class="label label-info">v1-staging</span>
+                </li>
+            </ul>
+</li>
+            <li class="page-side-nav-section">
+<span>Components</span>
+            <ul>
+<li class="">
+<a href="/docs/network/account/">Account Server</a>
+            <ul>
+<li class="">
+<a href="/docs/network/account/api.html">API Reference</a>
+                </li>
+                <li class="active">
+<a href="/docs/network/account/authentication.html">Authentication</a>
+                </li>
+            </ul>
+</li>
+                <li class="">
+<a href="/docs/network/discovery/">Discovery Server</a>
+                </li>
+            </ul>
+</li>
+                <li class="page-side-nav-section">
+<span>Links <i class="fa fa-link"></i></span>
+                  <ul>
+<li class=""><a href="https://www.thethingsnetwork.org/wiki/Backend/">Network Architecture</a></li>
+                  </ul>
+</li>
+            </ul>
+</div>
+        </div>
+      </div>
+      <div class="col-sm-7">
+        <div class="panel">
+          <div class="panel-body page-content">
+            <h1 id="authentication">Authentication</h1>
+<p>This document describes the various aspects of authentication using this
+authentication server.</p>
+<h2 id="scopes">Scopes</h2>
+<p>Different endpoints require different client scopes.  These scopes
+restrict the clients to only be able to do certain types of actions.
+Currently these scopes are defined:</p>
+<ul>
+<li>
+<code class="highlighter-rouge">profile</code>: view and edit the users profile,</li>
+  <li>
+<code class="highlighter-rouge">apps</code>: manage the users applications and devices,</li>
+  <li>
+<code class="highlighter-rouge">apps:&lt;app_id&gt;</code>: manage the <code class="highlighter-rouge">app_id</code> app,</li>
+  <li>
+<code class="highlighter-rouge">components</code>: manage the users components,</li>
+  <li>
+<code class="highlighter-rouge">components:&lt;component_id&gt;</code>: manage the <code class="highlighter-rouge">component_id</code> component,</li>
+  <li>
+<code class="highlighter-rouge">gateways</code>: manage the users gateways,</li>
+  <li>
+<code class="highlighter-rouge">gateways:&lt;gateway_id&gt;</code>: manage the <code class="highlighter-rouge">gateway_id</code> gateway.</li>
+</ul>
+<p>Endpoints will check if the authentication method has the required scope
+depending on the method of authentication. As a rule of thumb, any endpoint
+that has an id (for instance an app id) in it’s URL, requires the specific
+scope for that id. For instance <code class="highlighter-rouge">GET /applications/foo</code> will require the
+<code class="highlighter-rouge">apps:foo</code> scope, <code class="highlighter-rouge">apps</code> is not enough. On the other hand to perform more
+general actions (like listing or creating apps) you will need the more general
+scope (eg. <code class="highlighter-rouge">apps</code>).</p>
+<h2 id="rights">Rights</h2>
+<p>Most actions a user wants to perform on the account server require he has the
+correct rights for the resource she is trying to access.</p>
+<p>Currently there are 3 main categories of rights:</p>
+<ul>
+<li><code class="highlighter-rouge">applications</code></li>
+  <li><code class="highlighter-rouge">gateways</code></li>
+  <li><code class="highlighter-rouge">components</code></li>
+</ul>
+<h3 id="application-rights">Application rights</h3>
+<p>To view and manage an application, a user needs rights to the application.
+Currently the following rights on applications are defined:</p>
+<ul>
+<li>
+<code class="highlighter-rouge">settings</code>: view and edit the settings of the application</li>
+  <li>
+<code class="highlighter-rouge">delete</code>: the ability to delete the application</li>
+  <li>
+<code class="highlighter-rouge">collaborators</code>: the ability to add and remove collaborators or edit their
+rights</li>
+  <li>
+<code class="highlighter-rouge">messages:up:r</code>: the ability to view messages sent by devices on the
+application</li>
+  <li>
+<code class="highlighter-rouge">messages:up:w</code>: the abilty to send messages to the application</li>
+  <li>
+<code class="highlighter-rouge">messages:down:w</code>: the abilty to send downlink messages to devices on the
+application</li>
+  <li>
+<code class="highlighter-rouge">devices</code>: List, view, add, edit and remove the devices for the application on a handler</li>
+</ul>
+<h3 id="gateway-rights">Gateway rights</h3>
+<p>To view and manage a gateway, a user needs rights to the gateway.
+Currently the following rights on gateways are defined:</p>
+<ul>
+<li>
+<code class="highlighter-rouge">gateway:settings</code>: view and edit the settings of the gateway</li>
+  <li>
+<code class="highlighter-rouge">gateway:delete</code>: the ability to delete the gateway</li>
+  <li>
+<code class="highlighter-rouge">gateway:collaborators</code>: the ability to add and remove collaborators or edit their rights</li>
+  <li>
+<code class="highlighter-rouge">gateway:status</code>: the ability to view the gateway status</li>
+  <li>
+<code class="highlighter-rouge">gateway:location</code>: the accurate location of the gateway, if this is not
+present, a scrambled location will be available</li>
+  <li>
+<code class="highlighter-rouge">gateway:owner</code>: view the owener of the gateway</li>
+</ul>
+<h3 id="component-rights">Component rights</h3>
+<p>To view and manage a network component, a user needs rights to the component.
+Currently the following rights on network components are defined:</p>
+<ul>
+<li>
+<code class="highlighter-rouge">component:settings</code>: read and write access to the settings and access key of a network component</li>
+  <li>
+<code class="highlighter-rouge">component:delete</code>: the right to delete the network component</li>
+</ul>
+<h2 id="authentication-methods">Authentication methods</h2>
+<p>Currently, there are 3 different methods of authenticating:</p>
+<ul>
+<li>session: sessions on account server, held by encrypted cookies,</li>
+  <li>bearer token: OAuth 2.0 bearer json web tokens,</li>
+  <li>access key: application access keys.</li>
+</ul>
+<h3 id="session">Session</h3>
+<p>This authentication method is only used on the account server website itself to
+keep the login status of a user. It automatically grants the <code class="highlighter-rouge">profile</code>
+scope, and no other scope.</p>
+<p>The method is checked for by looking at each requests <code class="highlighter-rouge">session</code> cookie.
+The cookies are HTTP-only and secure, to prevent hijacking.</p>
+<h3 id="bearer-token">Bearer Token</h3>
+<p>This authentication method is the main method of authenticating.  It checks
+the <code class="highlighter-rouge">Authorization</code> header to be in the following format:</p>
+<div class="language-plaintext highlighter-rouge">
+<pre class="highlight"><code>Authorization: Bearer &lt;token&gt;
+</code></pre>
+</div>
+<p>where <code class="highlighter-rouge">&lt;token&gt;</code> is the <a href="https://jwt.io">jwt</a> <code class="highlighter-rouge">access token</code> containing information about the user.
+This token is singed by a secret key that is kept by the account server. You can
+find the public decryprtion key using  <code class="highlighter-rouge">GET /key</code> endpoint.</p>
+<p>The <code class="highlighter-rouge">access token</code> is structured like this:</p>
+<div class="language-plaintext highlighter-rouge">
+<pre class="highlight"><code>{
+  sub: &lt;user id&gt;,         // the immutable user ID
+  client: &lt;client id&gt;,    // the ID of the client that requested the token
+  scope: [ &lt;scope...&gt; ],  // array of scopes this token grants
+
+  // Apps the user is a collaborator to, by app ID. The value at each key
+  // is an array of the rights the user has for the specific app.
+  // Only present when the client requesting the token has the apps scope.
+  apps: {
+    &lt;app id&gt;: [
+      &lt;app right...&gt;
+    ],
+  },
+
+  // Components the user is a collaborator to, by component ID. The value at each key
+  // is an array of the rights the user has for the specific component.
+  // Only present when the client requesting the token has the components scope.
+  components: {
+    &lt;component id&gt;: [
+      &lt;component right...&gt;
+    ],
+  },
+
+  // Gateways the user is a collaborator to, by component ID. The value at each key
+  // is an array of the rights the user has for the specific gateway.
+  // Only present when the client requesting the token has the gateways scope.
+  gateways: {
+    &lt;gateway eui&gt;: [
+      &lt;gateway right...&gt;
+    ],
+  },
+
+  // these fields are only present when the client requesting the 
+  // token has the profile scope.
+  username,
+  email,
+  created,
+  name,
+  valid,
+}
+</code></pre>
+</div>
+<h3 id="access-key">Access Key</h3>
+<p>You can access certain application endpoints by setting the <code class="highlighter-rouge">Authorization</code>
+header like:</p>
+<div class="language-plaintext highlighter-rouge">
+<pre class="highlight"><code>Authorization: Key &lt;access key&gt;
+</code></pre>
+</div>
+<p>where <code class="highlighter-rouge">&lt;access key&gt;</code> is an application access key.</p>
+<h3 id="requesting-the-access-token">Requesting the access token</h3>
+<p>To request an access token, initiate an OAuth 2.0 flow at <code class="highlighter-rouge">/users/token</code>.
+There’s support for both the <code class="highlighter-rouge">password</code> flow and the <code class="highlighter-rouge">authorization_code</code> flow,
+based on the grants of the client you are using.</p>
+<p>To prevent tokens from becoming too big (which might happen if a user has a lot
+of apps, gateways or components), a client can restrict the scope of the access
+token. By default the scope is not restricted and all entities are encoded in
+the token.</p>
+<p>To restrict the scope, a client should pass the optional <code class="highlighter-rouge">scope</code> parameter and
+select the entities it wants to be included in the token:</p>
+<div class="language-jsonnet highlighter-rouge">
+<pre class="highlight"><code><span class="p">{</span>
+  <span class="nx">grant_type</span><span class="p">:</span> <span class="s">'password'</span><span class="p">,</span>
+  <span class="nx">username</span><span class="p">:</span> <span class="s">'username'</span><span class="p">,</span>
+  <span class="nx">password</span><span class="p">:</span> <span class="s">'secret'</span><span class="p">,</span>
+  <span class="nx">scope</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s">'apps:app_id'</span><span class="p">,</span>
+    <span class="s">'gateways:gateway_id'</span><span class="p">,</span>
+    <span class="s">'components:component_id'</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+<p>The resulting token will only have rights to edit the application <code class="highlighter-rouge">app_id</code>, the
+gateway <code class="highlighter-rouge">gateway_id</code> and the component <code class="highlighter-rouge">component_id</code>, other entities will be
+elided.</p>
+<p>If the client does not have access to a certain scope (for instance it does not
+have the <code class="highlighter-rouge">apps</code> scope), this request would result in a <code class="highlighter-rouge">400 Bad Request</code>.</p>
+<h3 id="restricted-access-keys">Restricted access keys</h3>
+<p>While having a lot of advantages, using jwt for access tokens has one problem:
+the token can become really big. For instance, a user with 20 apps and 30
+gateways will have a bigger token than a user with only 4 apps. This is a
+problem because HTTP restricts the length of headers and tokens that are to big
+cannot be used any more.</p>
+<p>To solve this problem, we restrict the size of each token to have only 10
+entities on it (where an entity is an <code class="highlighter-rouge">app</code>, a <code class="highlighter-rouge">gateway</code> or a <code class="highlighter-rouge">component</code>) and 
+we introduce a new endpoint <code class="highlighter-rouge">users/restrict-token</code> to allow access tokens to be
+exchanged for access tokens with similar scope but different specific entities.</p>
+<p>So if you have a token with the <code class="highlighter-rouge">scope</code> <code class="highlighter-rouge">[ 'apps' ]</code>, you can exchange it for
+another token that has the restricted scope <code class="highlighter-rouge">[ 'apps:an_app_id' ]</code> posting the
+following request to <code class="highlighter-rouge">/users/restrict-token</code>,  with your access token in the
+<code class="highlighter-rouge">Authorization: Bearer &lt;token&gt;</code> header:</p>
+<div class="language-json highlighter-rouge">
+<pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"scope"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"apps:another_app_id"</span><span class="w"> </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+<p>The result of which would be:</p>
+<div class="language-json highlighter-rouge">
+<pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;new token for another_app_id&gt;"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+<p>This way, in effect every token has the same power as a token with all <code class="highlighter-rouge">apps</code> on
+it, yet it does not have to as big.</p>
+<p>Some tokens should not have this ability though, that is why there is a field on
+the token claims: <code class="highlighter-rouge">interchangeable</code>. Only when this is <code class="highlighter-rouge">true</code>, the token will be
+interchangeable like this.</p>
+<h3 id="exchanging-an-access-key-for-an-access-token">Exchanging an Access Key for an Access Token</h3>
+<p>When you are building an integration, you will need an application access token,
+(which can be validated offline), to start the integration process.  However,
+users can only provide you with an application access key (which cannot be
+validated offline).  Therefore, you need to exchange the access key for an
+access token.  This can be done using the <code class="highlighter-rouge">/api/v2/applications/token</code> endpoint.</p>
+<p>It works exactly like a standard OAuth 2.0 password flow. The client initiates a
+request:</p>
+<div class="language-plaintext highlighter-rouge">
+<pre class="highlight"><code>HTTP/1.1  POST /api/v2/applications/token
+Content-Type: application/json
+Authorization: Basic &lt;basic_auth&gt;
+
+{
+  "username": "&lt;app_id&gt;",
+  "password": "&lt;access_key&gt;",
+  "grant_type": "password"
+}
+</code></pre>
+</div>
+<p>Where <code class="highlighter-rouge">&lt;app_id&gt;</code> is the application id you are requesting the access token for
+and <code class="highlighter-rouge">&lt;access_key&gt;</code> is the application access key you are exchanging.</p>
+<p><code class="highlighter-rouge">&lt;basic auth&gt;</code> is constructed following the <a href="https://en.wikipedia.org/wiki/Basic_access_authentication">standard basic auth</a> way:</p>
+<div class="language-plaintext highlighter-rouge">
+<pre class="highlight"><code># pseudo code
+basic_auth = base64("&lt;client_id&gt;:&lt;client_secret&gt;")
+</code></pre>
+</div>
+<p>Where <code class="highlighter-rouge">client_id</code> is the client ID for your integration and <code class="highlighter-rouge">&lt;client_secret&gt;</code> is 
+the client secret for you integration. For now, these need to be requested
+manually with TTN.</p>
+<p>If successful, you will receive a response like:</p>
+<div class="language-plaintext highlighter-rouge">
+<pre class="highlight"><code>200 Success
+Content-Type: application/json
+
+{
+  "access_token": "&lt;access_token&gt;",
+  "expires_in": 86400
+}
+</code></pre>
+</div>
+<p>The <code class="highlighter-rouge">access_token</code> is an access token that is scoped to the app you used in the
+exchange (eg. it has the <code class="highlighter-rouge">[ "app:&lt;app_id&gt;" ]</code>) scope and has the same rights as
+the access key you used to in the exchange.</p>
+<p>If the exchange fails for whatever reason, you will get a response like this:</p>
+<div class="language-plaintext highlighter-rouge">
+<pre class="highlight"><code>401 Unauthorized
+
+{
+  "code": 401,
+  "description": "&lt;error message&gt;"
+}
+</code></pre>
+</div>
+<h1 id="oauth-20-authorization-flow">OAuth 2.0 Authorization flow</h1>
+<p>In this section we describe a sample <code class="highlighter-rouge">authorization_code</code> code flow.
+Assuming you have a registered client with these properties:</p>
+<div class="highlighter-rouge">
+<pre class="highlight"><code>client_id: foo-client 
+client_secret: secret
+redirect_uri: http://www.example.com/oauth/callback
+scope: [ 'apps' ]
+</code></pre>
+</div>
+<h2 id="1-make-an-authorization-request">1. Make an authorization request</h2>
+<p>To be able to use your client, a user will have to authorize it first on the
+account server.  You can tell the user to do so by redirecting to:</p>
+<div class="highlighter-rouge">
+<pre class="highlight"><code>https://account.thethingsnetwork.org/users/authorize?client_id=foo-client&amp;redirect_uri=http://www.example.com/oauth/callback&amp;response_type=code
+</code></pre>
+</div>
+<p>This will ask the user to log in and presents her with a form to authorize your
+client.  If the user authorizes your client, she will be redirected to:</p>
+<div class="highlighter-rouge">
+<pre class="highlight"><code>http://www.example.com/oauth/callback?code=&lt;auth code&gt;
+</code></pre>
+</div>
+<p>You need the <code class="highlighter-rouge">&lt;auth code&gt;</code> from this redirect to go to step 2.</p>
+<p>The preference of the user will be stored so this authorization step will
+redirect immediatly (without showing the form) the next time you do this for the
+same user.</p>
+<h2 id="2-get-the-access-token">2. Get the access token</h2>
+<p>To get the access token perform the following request:</p>
+<div class="language-plaintext highlighter-rouge">
+<pre class="highlight"><code>HTTP/1.1 POST /users/token
+Content-Type: application/json
+Authorization: Basic &lt;basic_auth&gt;
+
+{
+  "grant_type": "authorization_code",
+  "code": "&lt;auth code&gt;",
+  "redirect_uri: "http://www.example.com/oauth/callback"
+}
+</code></pre>
+</div>
+<p>Where <code class="highlighter-rouge">&lt;basic_auth&gt;</code> is the basic auth digest for your client (<code class="highlighter-rouge">client_id</code> and
+<code class="highlighter-rouge">client_secret</code>) and <code class="highlighter-rouge">&lt;auth_code&gt;</code> is the authorization code received from step 1.</p>
+          </div>
+        </div>
+      </div>
+      <div class="hidden-xs col-sm-2">
+        <div class="page-toc page-affix"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="lightbox" tabindex="-1" role="dialog">
+  <div class="modal-dialog text-center" role="document" style="width:auto;padding:20px;">
+    <a href="https://ttnstaticfile.blob.core.windows.net/static/ttn/media/logo/ttn-logo.png"><img class="modal-content modal-body" src="https://ttnstaticfile.blob.core.windows.net/static/ttn/media/logo/ttn-logo.png" alt="Zoom"></a>
+  </div>
+</div>
+<script src="/docs/assets/js/page.js"></script>
+</div>
+    <script src="https://www.thethingsnetwork.org/navbar.js"></script><script src="https://ttnstaticfile.blob.core.windows.net/static/common/js/ga.js"></script>
+</body>
+</html>

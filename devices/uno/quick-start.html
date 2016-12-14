@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags --><!-- 20111122 0939 --><link rel="stylesheet" href="/docs/assets/css/main.css">
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries --><!-- WARNING: Respond.js doesn't work if you view the page via file:// --><!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]--><!-- site.serving: false --><!-- site.url: https://www.thethingsnetwork.org --><script>
+    (function(canonical) {
+      if (!site.local && document.location.href.substr(0, document.location.href.length - document.location.hash.length) !== canonical) {
+        window.location.replace(canonical);
+      }
+    })('https://www.thethingsnetwork.org/docs/devices/uno/quick-start.html');
+    </script><!-- Begin Jekyll SEO tag v2.1.0 --><title>Quick Start - The Things Network</title>
+<meta property="og:title" content="Quick Start">
+<meta name="description" content="Quick Start">
+<meta property="og:description" content="Quick Start">
+<link rel="canonical" href="https://www.thethingsnetwork.org/docs/devices/uno/quick-start.html">
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/devices/uno/quick-start.html">
+<meta property="og:site_name" content="The Things Network">
+<meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/the-things-white.png">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2016-12-14T21:21:03+00:00">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@thethingsnetwrk">
+<meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork">
+<script type="application/ld+json">
+{"@context": "http://schema.org",
+"@type": "BlogPosting",
+"headline": "Quick Start",
+"image": "https://www.thethingsnetwork.org/docs/assets/images/the-things-white.png",
+"datePublished": "2016-12-14T21:21:03+00:00",
+"description": "Quick Start",
+"publisher": {"@type": "Organization",
+"logo": {"@type": "ImageObject",
+"url": "https://www.thethingsnetwork.org/docs/assets/images/the-things-white.png"}},
+"url": "https://www.thethingsnetwork.org/docs/devices/uno/quick-start.html"}</script><!-- End Jekyll SEO tag --><link rel="apple-touch-icon-precomposed" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-152.png">
+<meta name="msapplication-TileColor" content="#FFFFFF">
+<meta name="msapplication-TileImage" content="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-144.png">
+<meta name="application-name" content="The Things Network">
+<meta name="msapplication-tooltip" content="Building a Global Internet of Things Network Together.">
+<meta name="msapplication-config" content="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/ieconfig.xml">
+<link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-32.png" sizes="32x32">
+<link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-57.png" sizes="57x57">
+<link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-76.png" sizes="76x76">
+<link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-96.png" sizes="96x96">
+<link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-120.png" sizes="120x120">
+<link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-128.png" sizes="128x128">
+<link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-144.png" sizes="144x144">
+<link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-152.png" sizes="152x152">
+<link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-180.png" sizes="180x180">
+<link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-195.png" sizes="195x195">
+<link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-228.png" sizes="228x228">
+<link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/smalltile.png" sizes="128x128">
+<link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/mediumtile.png" sizes="270x270">
+<link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/widetile.png" sizes="558x270">
+<link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png" sizes="558x558">
+<link rel="shortcut icon" sizes="196x196" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-196.png">
+<script src="/docs/assets/js/main.js"></script>
+</head>
+<body>
+    <div id="content">
+<div class="layout-page">
+  <div class="ttn-header ttn-header-small">
+    <div class="ttn-container container-fluid">
+      <h1>
+        <img src="/docs/assets/images/the-things-white.png" alt="⛅ The Things Network"><span>Learn</span>
+      </h1>
+    </div>
+  </div>
+  <div class="container-fluid ttn-container">
+    <div class="row page-top-nav">
+      <div class="col-sm-9">
+        <ul>
+<li class="page-top-nav-crumb"><a href="http://www.thethingsnetwork.org/">Home</a></li>
+          <li class="page-top-nav-crumb"><a href="/docs/">Learn</a></li>
+                <li class="active"><a href="/docs/devices/">Devices</a></li>
+                <li class=""><a href="/docs/gateways/">Gateways</a></li>
+                <li class=""><a href="/docs/network/">Network</a></li>
+                <li class=""><a href="/docs/applications/">Applications</a></li>
+        </ul>
+</div>
+      <div class="hidden-xs col-sm-3 text-right">
+        <a href="https://github.com/TheThingsNetwork/docs/edit/master/_content/devices/uno/quick-start.md" class="page-edit" data-proofer-ignore><i class="fa fa-github"></i> Edit <strong>quick-start.md</strong></a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="panel page-side-nav page-affix">
+          <div class="panel-body">
+            <h5>Devices</h5>
+            <ul>
+<li class="">
+<a href="/docs/devices/index.html">Overview</a>
+            <ul>
+<li class="">
+<a href="/docs/devices/registration.html">Device Registration</a>
+                </li>
+                <li class="">
+<a href="/docs/devices/bytes.html">Working with Bytes</a>
+                </li>
+            </ul>
+</li>
+            <li class="page-side-nav-section">
+<span>SDKs &amp; Libaries</span>
+            <ul>
+<li class="">
+<a href="/docs/devices/arduino/">Arduino</a>
+                </li>
+            </ul>
+</li>
+            <li class="page-side-nav-section">
+<span>Hardware</span>
+            <ul>
+<li class="">
+<a href="/docs/devices/lopy/">LoPy</a>
+                </li>
+                <li class="">
+<a href="/docs/devices/node/">The Things Node</a>
+                    <span class="label label-info">draft</span>
+                </li>
+                <li class="">
+<a href="/docs/devices/uno/">The Things Uno</a>
+            <ul>
+<li class="active">
+<a href="/docs/devices/uno/quick-start.html">Quick Start</a>
+                </li>
+            </ul>
+</li>
+            </ul>
+</li>
+                <li class="page-side-nav-section">
+<span>Links <i class="fa fa-link"></i></span>
+                  <ul>
+<li class=""><a href="../network/migrate.html">Migrate form Staging to Production</a></li>
+                  </ul>
+</li>
+            </ul>
+</div>
+        </div>
+      </div>
+      <div class="col-sm-7">
+        <div class="panel">
+          <div class="panel-body page-content">
+            <h1 id="quick-start">Quick Start</h1>
+<p>This guide will walk you through programming The Things Uno to send and receive your first message via The Things Network. We’ll use the <a href="https://en.wikipedia.org/wiki/%22Hello,_World!%22_program">Hello, World!</a> of Arduino: <a href="https://www.arduino.cc/en/Reference/Constants"><code class="highlighter-rouge">LED_BUILTIN</code></a>. 💡</p>
+<p>The full sketch of this Quick Start is also included in TheThingsNetwork library for the Arduino IDE. You can find it under <strong>File &gt; Examples &gt; TheThingsNetwork &gt; <a href="https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/QuickStart/QuickStart.ino">QuickStart</a></strong>.</p>
+<h2 id="setup-arduino-ide">Setup Arduino IDE</h2>
+<p>Let’s start by setting up the software we’ll need to program your device.</p>
+<ol>
+<li>
+<a href="https://www.arduino.cc/en/Main/Software">Download</a> and install the latest Arduino Software (IDE).</li>
+  <li>Navigate to <strong>Sketch &gt; Include Library &gt; Manage Libraries…</strong>.</li>
+  <li>Search for <strong>TheThingsNetwork</strong> and click the result to select it.</li>
+  <li>Click the <strong>Install</strong> button which should appear:</li>
+</ol>
+<p><img src="arduino_library.png" alt="Library Manager"></p>
+<p>The Arduino IDE will notify you of updates for the IDE and library automagically. <img class="emoji" title=":open_mouth:" alt=":open_mouth:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f62e.png" height="20" width="20" align="absmiddle"></p>
+<blockquote>
+  <p>See the <a href="../arduino/">Arduino Guide</a> for more details.</p>
+</blockquote>
+<h2 id="connect-your-device">Connect your Device</h2>
+<p>Next, connect your device to the IDE over USB.</p>
+<ol>
+<li>Use the included Micro-USB cable to connect The Things Uno to an USB port of your computer.</li>
+  <li>In Arduino IDE select <strong>Tools &gt; Board &gt; Arduino Leonardo</strong>.</li>
+  <li>
+    <p>Navigate to <strong>Tools &gt; Port</strong> and select the port that identifies as <strong>Arduino Leonardo</strong>.</p>
+    <p><img src="port.png" alt="port"></p>
+  </li>
+</ol>
+<p>If you don’t see a port that identifies as <strong>Arduino Leonardo</strong> make sure The Things Uno’s power LED is on and check the cable and USB port you have used. On Windows, you might need to <a href="https://www.arduino.cc/en/Guide/ArduinoLeonardoMicro#toc2">install drivers</a>. See <a href="https://www.arduino.cc/en/Guide/Troubleshooting#toc16">Arduino Troubleshooting</a> for more suggestions.</p>
+<h2 id="create-a-sketch">Create a Sketch</h2>
+<p>Let’s program your device with a so-called sketch.</p>
+<ol>
+<li>
+    <p>In the Arduino IDE, select <strong>File &gt; New</strong> <code class="highlighter-rouge">Ctrl/⌘ N</code>.</p>
+    <p>This should get you the basic structure with <a href="https://www.arduino.cc/en/Reference/Setup"><code class="highlighter-rouge">setup()</code></a> and <a href="https://www.arduino.cc/en/Reference/Loop"><code class="highlighter-rouge">loop()</code></a>:</p>
+    <div class="language-c highlighter-rouge">
+<pre class="highlight"><code><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// put your setup code here, to run once:
+</span>    	
+<span class="p">}</span>
+    	
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// put your main code here, to run repeatedly:
+</span>    	
+<span class="p">}</span>
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Select <strong>Sketch &gt; Include Library &gt; TheThingsNetwork</strong>.</p>
+    <p>This should prepend an <a href="https://www.arduino.cc/en/Reference/Include"><code class="highlighter-rouge">#include</code></a> for TheThingsNetwork library:</p>
+    <div class="language-c highlighter-rouge">
+<pre class="highlight"><code><span class="cp">#include &lt;TheThingsNetwork.h&gt;
+</span></code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Let’s leave <code class="highlighter-rouge">loop()</code> for what it is and replace all code above it with the following:</p>
+    <div class="language-c highlighter-rouge">
+<pre class="highlight"><code><span class="cp">#include &lt;TheThingsNetwork.h&gt;
+</span>    
+<span class="cp">#define loraSerial Serial1
+#define debugSerial Serial
+</span>
+<span class="c1">// Replace REPLACE_ME with TTN_FP_EU868 or TTN_FP_US915
+</span><span class="cp">#define freqPlan REPLACE_ME
+</span>    
+<span class="n">TheThingsNetwork</span> <span class="n">ttn</span><span class="p">(</span><span class="n">loraSerial</span><span class="p">,</span> <span class="n">debugSerial</span><span class="p">,</span> <span class="n">freqPlan</span><span class="p">);</span>
+    
+<span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">loraSerial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">57600</span><span class="p">);</span>
+  <span class="n">debugSerial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+    
+  <span class="c1">// Wait a maximum of 10s for Serial Monitor
+</span>  <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">debugSerial</span> <span class="o">&amp;&amp;</span> <span class="n">millis</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mi">10000</span><span class="p">);</span>
+    
+  <span class="n">debugSerial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"-- STATUS"</span><span class="p">);</span>
+  <span class="n">ttn</span><span class="p">.</span><span class="n">showStatus</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre>
+    </div>
+    <blockquote>
+      <p>Replace <code class="highlighter-rouge">REPLACE_ME</code> with either <code class="highlighter-rouge">TTN_FP_EU868</code> or <code class="highlighter-rouge">TTN_FP_US915</code> depending on the frequency plan of your device.</p>
+    </blockquote>
+    <p>This will do a few things:</p>
+    <ol>
+<li>Use <a href="https://www.arduino.cc/en/Reference/Define"><code class="highlighter-rouge">#define</code></a> to create more meaningful aliases for the <a href="https://www.arduino.cc/en/Reference/Serial"><code class="highlighter-rouge">Serial</code></a> ports for the LoRa modem and the USB connection, as well as the frequency plan.</li>
+      <li>Create an instance <code class="highlighter-rouge">ttn</code> of TheThingsNetwork class, passing the serial ports and the frequency plan.</li>
+      <li>Call <a href="https://www.arduino.cc/en/Serial/Begin"><code class="highlighter-rouge">begin()</code></a> to set the data rate for both serial ports.</li>
+      <li>
+        <p>Wait for the Arduino IDE’s Serial Monitor to open communication via USB, but no longer than 10 seconds (10.000ms).</p>
+        <blockquote>
+          <p>This trick works because <a href="https://www.arduino.cc/en/Serial/IfSerial"><code class="highlighter-rouge">if(Serial)</code> will return <code class="highlighter-rouge">true</code></a> when communication is open and <a href="https://www.arduino.cc/en/Reference/Millis"><code class="highlighter-rouge">millis()</code></a> will give us the time since <code class="highlighter-rouge">setup()</code> was called.</p>
+        </blockquote>
+      </li>
+      <li>Use <a href="https://www.arduino.cc/en/Serial/Println"><code class="highlighter-rouge">println()</code></a> to log to the Serial Monitor and call <code class="highlighter-rouge">ttn.showStatus()</code> to do the same, which will give us the information we need for our next step.</li>
+    </ol>
+</li>
+</ol>
+<h2 id="get-your-device-eui">Get your Device EUI</h2>
+<p>To communicate via The Things Network, you need to register your device. For this, we’ll need its unique <strong>Device EUI</strong>. This is a unique address, hard coded into the LoRa module. The <code class="highlighter-rouge">ttn.showStatus()</code> method we added in the previous step will get us this and other information about our device.</p>
+<ol>
+<li>
+    <p>In the Arduino IDE, select <strong>Sketch &gt; Upload</strong> <code class="highlighter-rouge">Ctrl/⌘ U</code> to upload the sketch.</p>
+    <blockquote>
+      <p>Uploads might fail if the Serial Monitor is open or if the IDE lost track of <a href="#connect-your-device">the port you selected</a>. Close the monitor, check the port selection and try again. If it still fails, check <a href="https://www.arduino.cc/en/Guide/Troubleshooting#toc1">Arduino Troubleshooting</a>.</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>Within 10 seconds, select <strong>Tools &gt; Serial Monitor</strong> <code class="highlighter-rouge">Ctrl/⌘ Shift M</code> to open the <a href="https://www.arduino.cc/en/Guide/Environment#toc12">Serial Monitor</a>.</p>
+    <p>Soon, it should print a list of information:</p>
+    <div class="highlighter-rouge">
+<pre class="highlight"><code>-- STATUS
+EUI: 0004A30B001B7AD2
+Battery: 3223
+AppEUI: 70B3D57EF000001C
+DevEUI: 0004A30B001B7AD2
+Band: 868
+Data Rate: 5
+RX Delay 1: 1000
+RX Delay 2: 2000
+Total airtime: 0.00 s
+</code></pre>
+    </div>
+    <p>Use the first <code class="highlighter-rouge">EUI</code> value to register your device.</p>
+  </li>
+</ol>
+<blockquote>
+  <p>Next time you need the Device EUI of a device, simply select <strong>File &gt; Examples &gt; TheThingsNetwork &gt; <a href="https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/DeviceInfo/DeviceInfo.ino">DeviceInfo</a></strong>, only set the frequency plan and upload this sketch which will call <code class="highlighter-rouge">ttn.showStatus()</code> every 10 seconds.</p>
+</blockquote>
+<p>🎉 You have connected your device, written your first sketch, uploaded it to your device and monitored your device logs to retrieve its Device EUI.</p>
+<h2 id="create-an-account">Create an Account</h2>
+<p>To register your device you’ll need a The Things Network account.</p>
+<ol>
+<li>
+    <p>Go to <a href="https://account.thethingsnetwork.org">account.thethingsnetwork.org</a> and click <a href="https://account.thethingsnetwork.org/register">create an account</a>.</p>
+    <p>You will receive an email to confirm your email address. You have 24 hours to do so, so let’s now wait for that and carry on! 🚀</p>
+    <blockquote>
+      <p>You can change all but your username later via your <a href="https://account.thethingsnetwork.org/users/profile">Profile</a>.</p>
+    </blockquote>
+  </li>
+  <li>Select <a href="https://console.thethingsnetwork.org">Console</a> from the top menu.</li>
+  <li>From the top right menu, select your name and then <a href="https://console.thethingsnetwork.org/settings">Settings</a> from the dropdown menu to change the default Handler if the one currently selected is not where you’ll be deploying most of your devices.</li>
+</ol>
+<h2 id="add-an-application">Add an Application</h2>
+<p>Devices need to be registered with an application to communicate with. Let’s add one.</p>
+<ol>
+<li>
+    <p>On <a href="https://console.thethingsnetwork.org/">console.thethingsnetwork.org</a>, click <a href="https://console.thethingsnetwork.org/applications/add">add application</a>.</p>
+    <ul>
+<li>For <strong>Application ID</strong>, choose a unique ID of lower case, alphanumeric characters and nonconsecutive <code class="highlighter-rouge">-</code> and <code class="highlighter-rouge">_</code>.</li>
+      <li>For <strong>Description</strong>, enter anything you like.</li>
+      <li>Leave the checkbox enabled to automatically register the application to your default region.</li>
+    </ul>
+<p><img src="add-application.png" alt="Add Application"></p>
+  </li>
+  <li>
+    <p>Click <strong>Add application</strong> to finish.</p>
+    <p>You will be redirected to the newly added application.</p>
+  </li>
+</ol>
+<h2 id="register-your-device">Register your Device</h2>
+<p>You are now ready to register your device to the application.</p>
+<ol>
+<li>On the application’s screen, scroll down to <strong>Devices</strong> or select <strong>Devices</strong> from the top right menu.</li>
+  <li>
+    <p>In the <strong>Devices</strong> box, click <strong>register device</strong>.</p>
+    <ul>
+<li>For <strong>Device ID</strong>, choose a - for this application - unique ID of lower case, alphanumeric characters and nonconsecutive <code class="highlighter-rouge">-</code> and <code class="highlighter-rouge">_</code>.</li>
+      <li>For <strong>Device EUI</strong>, copy-paste the <strong>DevEUI</strong> <a href="#get-your-device-eui">you retrieved from your device</a>.</li>
+      <li>Leave the <strong>App Key</strong> to be randomly generated.</li>
+      <li>Leave the default <strong>App EUI</strong> selected.</li>
+    </ul>
+<p><img src="register-device.png" alt="Register Device (OTAA)"></p>
+  </li>
+  <li>
+    <p>Click <strong>Register</strong> to finish.</p>
+    <p>You will be redirected to the newly registered device, where you can find the generated <strong>App Key</strong> which we’ll need next.</p>
+  </li>
+</ol>
+<h2 id="activate-your-device">Activate your Device</h2>
+<p>Now that we have registered the device, we can activate the connection from our device itself.</p>
+<blockquote>
+  <p>Activation means that the device will use the generated App Key to negotiate session keys for further communication. This is also known as Over The Air Activation or OTAA. There’s also <a href="../registration.html#personalize-device-for-abp">Activation By Personalization</a> (ABP) where you set or generate the session keys via the console and hard-code them on your device.</p>
+</blockquote>
+<ol>
+<li>
+    <p>In the console, scroll down the device’s screen to <strong>Example Code</strong> and copy the keys:</p>
+    <p><img src="keys-otaa.png" alt="OTAA Keys"></p>
+  </li>
+  <li>Paste the keys right after the <code class="highlighter-rouge">#include</code> of your sketch.</li>
+  <li>
+    <p>In the <code class="highlighter-rouge">setup()</code> function, copy the following code just after <code class="highlighter-rouge">ttn.showStatus()</code>:</p>
+    <div class="language-c highlighter-rouge">
+<pre class="highlight"><code><span class="n">debugSerial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"-- JOIN"</span><span class="p">);</span>
+<span class="n">ttn</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">appEui</span><span class="p">,</span> <span class="n">appKey</span><span class="p">);</span>
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Select <strong>Sketch &gt; Upload</strong> <code class="highlighter-rouge">Ctrl/⌘ U</code> to upload the sketch and then <strong>Tools &gt; Serial Monitor</strong> <code class="highlighter-rouge">Ctrl/⌘ Shift M</code> to open the Serial Monitor.</p>
+    <p>You should see something like:</p>
+    <div class="highlighter-rouge">
+<pre class="highlight"><code>-- STATUS
+EUI: 0004A30B001B7AD2
+Battery: 3223
+AppEUI: 70B3D57EF000001C
+DevEUI: 0004A30B001B7AD2
+DevAddr: 260127C6
+Data Rate: 5
+RX Delay 1: 1000
+RX Delay 2: 2000
+Total airtime: 0.00 s
+-- JOIN
+Version is RN2483 1.0.1 Dec 15 2015 09:38:09, model is RN2483
+...
+Sending: mac set appeui with 8 bytes
+Sending: mac set deveui 0004A30B001B7AD2
+Sending: mac set appkey with 16 bytes
+Sending: mac join otaa
+Join accepted. Status: 00000401
+DevAddr: 26012E93
+</code></pre>
+    </div>
+  </li>
+</ol>
+<p>🎉 Your device is now activated and connected to The Things Network!</p>
+<h2 id="message-the-application">Message the application</h2>
+<p>Let’s say hello! Most Arduino boards have an on-board LED and the constant <a href="https://www.arduino.cc/en/Reference/Constants"><code class="highlighter-rouge">LED_BUILTIN</code></a> (scroll all the way down) will tell us which pin it is connected to. We are going send a message to tell us if it’s on or not. Exciting! 💡</p>
+<ol>
+<li>
+    <p>In the Arduino IDE, go back to your sketch and replace the <code class="highlighter-rouge">loop()</code> function with:</p>
+    <div class="language-c highlighter-rouge">
+<pre class="highlight"><code><span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">debugSerial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"-- LOOP"</span><span class="p">);</span>
+    
+  <span class="c1">// Prepare array of 1 byte to indicate LED status
+</span>  <span class="n">byte</span> <span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+  <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">digitalRead</span><span class="p">(</span><span class="n">LED_BUILTIN</span><span class="p">)</span> <span class="o">==</span> <span class="n">HIGH</span><span class="p">)</span> <span class="o">?</span> <span class="mi">1</span> <span class="o">:</span> <span class="mi">0</span><span class="p">;</span>
+    
+  <span class="c1">// Send it off
+</span>  <span class="n">ttn</span><span class="p">.</span><span class="n">sendBytes</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">data</span><span class="p">));</span>
+      
+  <span class="n">delay</span><span class="p">(</span><span class="mi">10000</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+    </div>
+    <p>This will do a few things:</p>
+    <ol>
+<li>
+        <p>Create an <a href="https://www.arduino.cc/en/Reference/Array">array</a> of <a href="https://www.arduino.cc/en/Reference/byte">bytes</a> to hold our message.</p>
+        <blockquote>
+          <p>With LoRaWAN, airtime is expensive. The bigger the message, the more airtime it will cost. Encode any message you need to send in as little bytes as you can. See <a href="../bytes.html">Working with Bytes</a> to learn more.</p>
+        </blockquote>
+      </li>
+      <li>
+        <p>Use <a href="https://www.arduino.cc/en/Reference/DigitalRead"><code class="highlighter-rouge">digitalRead</code></a> to get the current value of the LED pin. This will be either <a href="https://www.arduino.cc/en/Reference/Constants">constants</a> <code class="highlighter-rouge">HIGH</code> or <code class="highlighter-rouge">LOW</code>, which we translate to <code class="highlighter-rouge">1</code> and <code class="highlighter-rouge">0</code>.</p>
+      </li>
+      <li>
+        <p>Call <code class="highlighter-rouge">ttn.sendBytes()</code> to send the message. This takes the array itself as well as its length via <a href="https://www.arduino.cc/en/Reference/Sizeof"><code class="highlighter-rouge">sizeof()</code></a>.</p>
+        <blockquote>
+          <p>Can’t <code class="highlighter-rouge">sendBytes()</code> figure out the length you’re asking? The short answer: no. For a longer answer, check <a href="http://stackoverflow.com/a/8464659">Stack Overflow</a>.</p>
+        </blockquote>
+      </li>
+      <li>
+        <p>Pause 10 seconds between loops.</p>
+      </li>
+    </ol>
+</li>
+  <li>
+    <p>Select <strong>Sketch &gt; Upload</strong> <code class="highlighter-rouge">Ctrl/⌘ U</code> to upload the sketch and then <strong>Tools &gt; Serial Monitor</strong> <code class="highlighter-rouge">Ctrl/⌘ Shift M</code> to open the Serial Monitor.</p>
+    <p>You should see something like:</p>
+    <div class="highlighter-rouge">
+<pre class="highlight"><code>-- LOOP
+Sending: mac tx uncnf 1 with 1 bytes
+Successful transmission
+</code></pre>
+    </div>
+  </li>
+</ol>
+<h2 id="monitor--decode-messages">Monitor &amp; Decode Messages</h2>
+<p>Let’s see the messages come in.</p>
+<ol>
+<li>
+    <p>From the application’s screen in the console, select <strong>Data</strong> from the top right menu.</p>
+    <p>You should now see the messages come in:</p>
+    <p><img src="console-data.png" alt="Application Data"></p>
+    <p>What you see is the raw payload in hex-formatted, space-separated bytes. Let’s decode that to meaningful fields.</p>
+  </li>
+  <li>Select <strong>Payload Functions</strong> from the top right menu.</li>
+  <li>
+    <p>Leave <strong>decoder</strong> selected and copy-paste <a href="https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/QuickStart/Decoder.js">the following JavaScript code</a>:</p>
+    <div class="language-js highlighter-rouge">
+<pre class="highlight"><code><span class="kd">function</span> <span class="nx">Decoder</span><span class="p">(</span><span class="nx">bytes</span><span class="p">,</span> <span class="nx">port</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// Decode an uplink message from a buffer</span>
+  <span class="c1">// (array) of bytes to an object of fields.</span>
+  <span class="kd">var</span> <span class="nx">decoded</span> <span class="o">=</span> <span class="p">{};</span>
+        
+  <span class="k">if</span> <span class="p">(</span><span class="nx">port</span> <span class="o">===</span> <span class="mi">1</span><span class="p">)</span> <span class="nx">decoded</span><span class="p">.</span><span class="nx">led</span> <span class="o">=</span> <span class="nx">bytes</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+        
+  <span class="k">return</span> <span class="nx">decoded</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Use the input field and <strong>Test</strong> button to see how various payloads of hex-formatted, space-separated bytes are decoded by selecting the first byte (as number) for a field called <code class="highlighter-rouge">led</code>:</p>
+    <ul>
+<li>
+<code class="highlighter-rouge">00</code> becomes <code class="highlighter-rouge"><span class="p">{</span><span class="w"> </span><span class="nt">"led"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">}</span></code>
+</li>
+      <li>
+<code class="highlighter-rouge">01</code> becomes <code class="highlighter-rouge"><span class="p">{</span><span class="w"> </span><span class="nt">"led"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">}</span></code>
+</li>
+      <li>
+<code class="highlighter-rouge">FF</code> becomes <code class="highlighter-rouge"><span class="p">{</span><span class="w"> </span><span class="nt">"led"</span><span class="p">:</span><span class="w"> </span><span class="mi">255</span><span class="w"> </span><span class="p">}</span></code>
+</li>
+      <li>
+<code class="highlighter-rouge">01 02 03</code> becomes <code class="highlighter-rouge"><span class="p">{</span><span class="w"> </span><span class="nt">"led"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">}</span></code>
+</li>
+    </ul>
+</li>
+  <li>
+    <p>Now select <strong>converter</strong> and copy-paste <a href="https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/QuickStart/Converter.js">the following code</a>:</p>
+    <div class="language-js highlighter-rouge">
+<pre class="highlight"><code><span class="kd">function</span> <span class="nx">Converter</span><span class="p">(</span><span class="nx">decoded</span><span class="p">,</span> <span class="nx">port</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// Merge, split or otherwise</span>
+  <span class="c1">// mutate decoded fields.</span>
+  <span class="kd">var</span> <span class="nx">converted</span> <span class="o">=</span> <span class="nx">decoded</span><span class="p">;</span>
+        
+  <span class="k">if</span> <span class="p">(</span><span class="nx">port</span> <span class="o">===</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">converted</span><span class="p">.</span><span class="nx">led</span> <span class="o">===</span> <span class="mi">0</span> <span class="o">||</span> <span class="nx">converted</span><span class="p">.</span><span class="nx">led</span> <span class="o">===</span> <span class="mi">1</span><span class="p">))</span> <span class="p">{</span>
+    <span class="nx">converted</span><span class="p">.</span><span class="nx">led</span> <span class="o">=</span> <span class="nb">Boolean</span><span class="p">(</span><span class="nx">converted</span><span class="p">.</span><span class="nx">led</span><span class="p">);</span>
+  <span class="p">}</span>
+        
+  <span class="k">return</span> <span class="nx">converted</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Again, test with various bytes to how the decoded object gets converted to more meaningful values:</p>
+    <ul>
+<li>
+<code class="highlighter-rouge">00</code> becomes <code class="highlighter-rouge"><span class="p">{</span><span class="w"> </span><span class="nt">"led"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">}</span></code>
+</li>
+      <li>
+<code class="highlighter-rouge">01</code> becomes <code class="highlighter-rouge"><span class="p">{</span><span class="w"> </span><span class="nt">"led"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">}</span></code>
+</li>
+      <li>
+<code class="highlighter-rouge">FF</code> becomes <code class="highlighter-rouge"><span class="p">{</span><span class="w"> </span><span class="p">}</span></code>
+</li>
+      <li>
+<code class="highlighter-rouge">01 02 03</code> becomes <code class="highlighter-rouge"><span class="p">{</span><span class="w"> </span><span class="nt">"led"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">}</span></code>
+</li>
+    </ul>
+</li>
+  <li>
+    <p>Next, select <strong>validator</strong> and paste <a href="https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/QuickStart/Validator.js">this code</a>:</p>
+    <div class="language-js highlighter-rouge">
+<pre class="highlight"><code><span class="kd">function</span> <span class="nx">Validator</span><span class="p">(</span><span class="nx">converted</span><span class="p">,</span> <span class="nx">port</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// Return false if the decoded, converted</span>
+  <span class="c1">// message is invalid and should be dropped.</span>
+        
+  <span class="k">if</span> <span class="p">(</span><span class="nx">port</span> <span class="o">===</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="k">typeof</span> <span class="nx">converted</span><span class="p">.</span><span class="nx">led</span> <span class="o">!==</span> <span class="s1">'boolean'</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+  <span class="p">}</span>
+        
+  <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Run another round of tests to verify all payloads that don’t convert to have a boolean <code class="highlighter-rouge">led</code> property are marked invalid:</p>
+    <p><img src="console-validator.png" alt="Validator"></p>
+    <p>Invalid messages will be dropped and not published to services that have subscribed to this application’s messages.</p>
+  </li>
+  <li>
+    <p>Click <strong>Save Payload Functions</strong> to save all three in one go.</p>
+  </li>
+  <li>
+    <p>Select <strong>Data</strong> from the top right menu.</p>
+  </li>
+  <li>
+    <p>If your device is still sending data any (valid) new messages should now show their decoded and converted payload in the <strong>fields</strong> column:</p>
+    <p><img src="console-data-decoded.png" alt="Decoded"></p>
+  </li>
+</ol>
+<p>🎉 You can now decode cryptic byte messages to meaningful payloads!</p>
+<blockquote>
+  <p>Would you like to learn how to receive and further process these messages? Head over to the <a href="../../applications/mqtt/">MQTT</a> guide!</p>
+</blockquote>
+<h2 id="message-your-device">Message your device</h2>
+<p>Now let’s send a message to your device in return.</p>
+<blockquote>
+  <p>There are different <a href="https://www.lora-alliance.org/What-Is-LoRa/Technology">classes of LoRa devices</a>. Like most devices, The Things Uno and Node can only receive the single last message queued for them in response to a message they send themselves.</p>
+</blockquote>
+<p>We’ll prepare your device to receive a message in response.</p>
+<ol>
+<li>
+    <p>In the Arduino IDE, add the following line to <code class="highlighter-rouge">setup()</code> function to let it know what function to call when a message comes in:</p>
+    <div class="language-c highlighter-rouge">
+<pre class="highlight"><code><span class="c1">// Set callback for incoming messages
+</span><span class="n">ttn</span><span class="p">.</span><span class="n">onMessage</span><span class="p">(</span><span class="n">message</span><span class="p">);</span>
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Then copy paste the actual function to the end of the sketch:</p>
+    <div class="language-c highlighter-rouge">
+<pre class="highlight"><code><span class="kt">void</span> <span class="nf">message</span><span class="p">(</span><span class="k">const</span> <span class="n">byte</span><span class="o">*</span> <span class="n">payload</span><span class="p">,</span> <span class="kt">int</span> <span class="n">length</span><span class="p">,</span> <span class="kt">int</span> <span class="n">port</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">debugSerial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"-- MESSAGE"</span><span class="p">);</span>
+    
+  <span class="c1">// Only handle messages of a single byte
+</span>  <span class="k">if</span> <span class="p">(</span><span class="n">length</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span><span class="p">;</span>
+  <span class="p">}</span>
+    
+  <span class="k">if</span> <span class="p">(</span><span class="n">payload</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">debugSerial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"LED: off"</span><span class="p">);</span>
+    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">LED_BUILTIN</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+          
+  <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">payload</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">debugSerial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"LED: on"</span><span class="p">);</span>
+    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">LED_BUILTIN</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+    </div>
+    <p>The function will use <a href="https://www.arduino.cc/en/Reference/DigitalWrite"><code class="highlighter-rouge">digitalWrite()</code></a> to turn the LED on or off, based on the single byte message we receive.</p>
+  </li>
+  <li>Select <strong>Sketch &gt; Upload</strong> <code class="highlighter-rouge">Ctrl/⌘ U</code> to upload the sketch and then <strong>Tools &gt; Serial Monitor</strong> <code class="highlighter-rouge">Ctrl/⌘ Shift M</code> to open the serial monitor.</li>
+  <li>In the console, navigate to your application, <strong>Devices</strong> and select your device.</li>
+  <li>
+    <p>With the serial monitor still open, enter <code class="highlighter-rouge">01</code> in the input field of the <strong>Downlink</strong> box and click <strong>Send</strong>.</p>
+    <p>The next time your device sends a message it should display something like:</p>
+    <div class="highlighter-rouge">
+<pre class="highlight"><code>-- LOOP
+Sending: mac tx uncnf 1 with 1 bytes
+Successful transmission. Received 1 bytes
+LED: on
+</code></pre>
+    </div>
+    <p>And… there was light! 💡</p>
+    <p><img src="led_on.jpg" alt="The Things Uno with LED on"></p>
+  </li>
+  <li>
+    <p>From the device screen, select <strong>Data</strong> from the top right menu and you should see that the next message the device sends indeed confirms the LED is now on:</p>
+    <p><img src="console-data-on.png" alt="Message led:true"></p>
+  </li>
+  <li>As a bonus, try sending <code class="highlighter-rouge">00</code> to turn of the LED and verify that the next message confirms it.</li>
+</ol>
+<p>🎉 Congrats! You just closed the circle and can communicate via The Things Network in both ways.</p>
+<h2 id="encode-messages">Encode Messages</h2>
+<p>What would be cooler than turning a LED on by sending <code class="highlighter-rouge">00</code>? Sending <code class="highlighter-rouge"><span class="p">{</span><span class="w"> </span><span class="nt">"led"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">}</span></code> of course! Just like we decode message on arrival on The Things Network we can also encode messages to devices before they will be delivered.</p>
+<ol>
+<li>In the console, navigate to the application and select <strong>Payload Functions</strong> from the top right menu.</li>
+  <li>
+    <p>Select <strong>encoder</strong> and use <a href="https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/QuickStart/Encoder.js">the following code</a>:</p>
+    <div class="language-js highlighter-rouge">
+<pre class="highlight"><code><span class="kd">function</span> <span class="nx">Encoder</span><span class="p">(</span><span class="nx">object</span><span class="p">,</span> <span class="nx">port</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// Encode downlink messages sent as</span>
+  <span class="c1">// object to an array or buffer of bytes.</span>
+  <span class="kd">var</span> <span class="nx">bytes</span> <span class="o">=</span> <span class="p">[];</span>
+        
+  <span class="k">if</span> <span class="p">(</span><span class="nx">port</span> <span class="o">===</span> <span class="mi">1</span><span class="p">)</span> <span class="nx">bytes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="nx">object</span><span class="p">.</span><span class="nx">led</span> <span class="p">?</span> <span class="mi">1</span> <span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+        
+  <span class="k">return</span> <span class="nx">bytes</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Use the input field and <strong>Test</strong> button to see how various <a href="http://www.json.org">JSON encoded</a> payloads will be encoded as displayed in hex-formatted, space-separated bytes:</p>
+    <ul>
+<li>
+<code class="highlighter-rouge"><span class="p">{</span><span class="w"> </span><span class="nt">"led"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">}</span></code> becomes <code class="highlighter-rouge">00</code>
+</li>
+      <li>
+<code class="highlighter-rouge"><span class="p">{</span><span class="w"> </span><span class="nt">"led"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">}</span></code> becomes <code class="highlighter-rouge">01</code>
+</li>
+      <li>
+<code class="highlighter-rouge"><span class="p">{</span><span class="w"> </span><span class="nt">"foo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bar"</span><span class="w"> </span><span class="p">}</span></code> becomes ` ` (nothing)</li>
+    </ul>
+<blockquote>
+      <p>There is no separate converter and validator function for this direction. Return an empty array to drop the message.</p>
+    </blockquote>
+  </li>
+  <li>Click <strong>Save Payload Functions</strong>.</li>
+  <li>Select <strong>Devices</strong> from the top right menu and select your device.</li>
+  <li>
+    <p>With the serial monitor still open, select <strong>fields</strong> in the <strong>Downlink</strong> box, enter <code class="highlighter-rouge"><span class="p">{</span><span class="w"> </span><span class="nt">"led"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">}</span></code> in the input field and click <strong>Send</strong>.</p>
+    <p>You should now see the LED turn on again and be able to verify in the logs and console data monitor. Don’t forget to try <code class="highlighter-rouge">true</code> as well, you never know! 😉</p>
+  </li>
+</ol>
+<p>🙌 You have now completed the Quick Start and are able to send messages, decode, convert and validate them and respond with encoded messages. Go build something!</p>
+<h2 id="whats-next">What’s next?</h2>
+<p>Next, you’ll want to:</p>
+<ol>
+<li>Learn how to receive and send messages from anywhere using <a href="../../applications/mqtt/">MQTT</a> or our <a href="../../applications/nodered/quick-start.html">Node-RED</a> or <a href="../../applications/nodejs/quick-start.html">Node.js</a> library.</li>
+  <li>
+    <p>Learn how to add sensors and actuators to your device to harvest data and trigger actions anywhere, thanks to the long range, low power The Things Network.</p>
+    <p>Let <a href="https://www.thethingsnetwork.org/labs/stories?search=&amp;c2=on&amp;c3=on&amp;c4=on&amp;c5=on">The Things Lab</a> inspire you!</p>
+    <blockquote>
+      <p>We’ll have a guide on encoding and decoding sensor and actuator data for efficient communication soon.</p>
+    </blockquote>
+  </li>
+</ol>
+</div>
+        </div>
+      </div>
+      <div class="hidden-xs col-sm-2">
+        <div class="page-toc page-affix"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="lightbox" tabindex="-1" role="dialog">
+  <div class="modal-dialog text-center" role="document" style="width:auto;padding:20px;">
+    <a href="https://ttnstaticfile.blob.core.windows.net/static/ttn/media/logo/ttn-logo.png"><img class="modal-content modal-body" src="https://ttnstaticfile.blob.core.windows.net/static/ttn/media/logo/ttn-logo.png" alt="Zoom"></a>
+  </div>
+</div>
+<script src="/docs/assets/js/page.js"></script>
+</div>
+    <script src="https://www.thethingsnetwork.org/navbar.js"></script><script src="https://ttnstaticfile.blob.core.windows.net/static/common/js/ga.js"></script>
+</body>
+</html>

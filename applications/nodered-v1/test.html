@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- 20111122 0939 -->
+    <link rel="stylesheet" href="/docs/assets/css/main.css" />
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- site.serving: false -->
+    <!-- site.url: https://www.thethingsnetwork.org -->
+    <script>
+    (function(canonical) {
+      if (!site.local && document.location.href.substr(0, document.location.href.length - document.location.hash.length) !== canonical) {
+        window.location.replace(canonical);
+      }
+    })('https://www.thethingsnetwork.org/docs/applications/nodered-v1/test.html');
+    </script>
+    <!-- Begin Jekyll SEO tag v2.1.0 -->
+<title>Test - The Things Network</title>
+<meta property="og:title" content="Test" />
+<meta name="description" content="Test Let’s verify if Node-RED receives your application messages." />
+<meta property="og:description" content="Test Let’s verify if Node-RED receives your application messages." />
+<link rel="canonical" href="https://www.thethingsnetwork.org/docs/applications/nodered-v1/test.html" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/applications/nodered-v1/test.html" />
+<meta property="og:site_name" content="The Things Network" />
+<meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/the-things-white.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2016-12-14T21:21:03+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@thethingsnetwrk" />
+<meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
+<script type="application/ld+json">
+{"@context": "http://schema.org",
+"@type": "BlogPosting",
+"headline": "Test",
+"image": "https://www.thethingsnetwork.org/docs/assets/images/the-things-white.png",
+"datePublished": "2016-12-14T21:21:03+00:00",
+"description": "Test Let’s verify if Node-RED receives your application messages.",
+"publisher": {"@type": "Organization",
+"logo": {"@type": "ImageObject",
+"url": "https://www.thethingsnetwork.org/docs/assets/images/the-things-white.png"}},
+"url": "https://www.thethingsnetwork.org/docs/applications/nodered-v1/test.html"}</script>
+<!-- End Jekyll SEO tag -->
+    <link rel="apple-touch-icon-precomposed" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-152.png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-144.png">
+    <meta name="application-name" content="The Things Network">
+    <meta name="msapplication-tooltip" content="Building a Global Internet of Things Network Together.">
+    <meta name="msapplication-config" content="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/ieconfig.xml">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-32.png" sizes="32x32">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-57.png" sizes="57x57">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-76.png" sizes="76x76">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-96.png" sizes="96x96">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-120.png" sizes="120x120">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-128.png" sizes="128x128">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-144.png" sizes="144x144">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-152.png" sizes="152x152">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-180.png" sizes="180x180">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-195.png" sizes="195x195">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-228.png" sizes="228x228">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/smalltile.png" sizes="128x128">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/mediumtile.png" sizes="270x270">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/widetile.png" sizes="558x270">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png" sizes="558x558">
+    <link rel="shortcut icon" sizes="196x196" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-196.png">
+    <script src="/docs/assets/js/main.js"></script>
+  </head>
+  <body>
+    <div id="content">
+<div class="layout-page">
+  <div class="ttn-header ttn-header-small">
+    <div class="ttn-container container-fluid">
+      <h1>
+        <img src="/docs/assets/images/the-things-white.png" alt="⛅ The Things Network" />
+        <span>Learn</span>
+      </h1>
+    </div>
+  </div>
+  <div class="container-fluid ttn-container">
+    <div class="row page-top-nav">
+      <div class="col-sm-9">
+        <ul>
+          <li class="page-top-nav-crumb"><a href="http://www.thethingsnetwork.org/">Home</a></li>
+          <li class="page-top-nav-crumb"><a href="/docs/">Learn</a></li>
+                <li class=""><a href="/docs/devices/">Devices</a></li>
+                <li class=""><a href="/docs/gateways/">Gateways</a></li>
+                <li class=""><a href="/docs/network/">Network</a></li>
+                <li class="active"><a href="/docs/applications/">Applications</a></li>
+        </ul>
+      </div>
+      <div class="hidden-xs col-sm-3 text-right">
+        <a href="https://github.com/TheThingsNetwork/docs/edit/master/_content/applications/nodered-v1/test.md" class="page-edit" data-proofer-ignore><i class="fa fa-github"></i> Edit <strong>test.md</strong></a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="panel page-side-nav page-affix">
+          <div class="panel-body">
+            <h5>Applications</h5>
+            <ul>
+              <li class=""><a href="/docs/applications/index.html">Overview</a>
+            <ul>
+                <li class=""><a href="/docs/applications/add.html">Add an Application</a>
+                </li>
+                <li class=""><a href="/docs/applications/options.html">Integration Options</a>
+                </li>
+            </ul>
+              </li>
+            <li class="page-side-nav-section"><span>APIs</span>
+            <ul>
+                <li class=""><a href="/docs/applications/manager/">Application Manager</a>
+                </li>
+                <li class=""><a href="/docs/applications/mqtt/">MQTT</a>
+                    <span class="label label-info">v2</span>
+                </li>
+                <li class=""><a href="/docs/applications/mqtt-v1/">MQTT</a>
+                    <span class="label label-info">v1-staging</span>
+                </li>
+            </ul>
+            </li>
+            <li class="page-side-nav-section"><span>SDKs & Libaries</span>
+            <ul>
+                <li class=""><a href="/docs/applications/java/">Java</a>
+                </li>
+                <li class=""><a href="/docs/applications/nodered/">Node-RED</a>
+                    <span class="label label-info">v2</span>
+                </li>
+                <li class=""><a href="/docs/applications/nodered-v1/">Node-RED</a>
+                    <span class="label label-info">v1-staging</span>
+            <ul>
+                <li class=""><a href="/docs/applications/nodered-v1/setup.html">Setup</a>
+                </li>
+                <li class=""><a href="/docs/applications/nodered-v1/configure.html">Configure</a>
+                </li>
+                <li class="active"><a href="/docs/applications/nodered-v1/test.html">Test</a>
+                </li>
+                <li class=""><a href="/docs/applications/nodered-v1/build.html">Build</a>
+                </li>
+            </ul>
+                </li>
+                <li class=""><a href="/docs/applications/nodejs/">Node.js</a>
+                    <span class="label label-info">v2</span>
+                </li>
+                <li class=""><a href="/docs/applications/nodejs-v1/">Node.js</a>
+                    <span class="label label-info">v1-staging</span>
+                </li>
+            </ul>
+            </li>
+                <li class="page-side-nav-section"><span>Links <i class="fa fa-link"></i></span>
+                  <ul>
+                      <li class=""><a href="../network/migrate.html">Migrate form Staging to Production</a></li>
+                  </ul>
+                </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-7">
+        <div class="panel">
+          <div class="panel-body page-content">
+            <h1 id="test">Test</h1>
+<p>Let’s verify if Node-RED receives your application messages.</p>
+<h2 id="messages">Messages</h2>
+<p>Messages sent by devices on the application can be received via the upper output of the <strong>ttn</strong> node.</p>
+<ol>
+  <li>Drag a <strong>debug</strong> node from the output category of the toolbox.</li>
+  <li>Drag the upper output of the <strong>ttn</strong> node to the input of the <strong>debug</strong> node.</li>
+  <li>Double click the <strong>debug</strong> node to edit it.</li>
+  <li>
+    <p>Click the gray part of the <strong>Output</strong> value, select <strong>complete msg object</strong> and click <strong>Done</strong>:</p>
+    <p><img src="node-red-debug.png" alt="Debug sidebar" /></p>
+  </li>
+  <li>Click <strong>Deploy</strong>.</li>
+  <li>In the right sidebar select the <strong>debug</strong> tab.</li>
+  <li>
+    <p>Soon after a device sends a message to your application you should see it come in like this:</p>
+    <p><img src="node-red-debug-message.png" alt="Debug message" /></p>
+    <p>The output has the following format:</p>
+    <div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w"> 
+  </span><span class="nt">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"foo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AA=="</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">"appEUI"</span><span class="p">:</span><span class="w"> </span><span class="s2">"70B3D57ED00001DA"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"devEUI"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00000000973572D0"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"counter"</span><span class="p">:</span><span class="w"> </span><span class="mi">38</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"_msgid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6e29afc4.91d65"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> 
+    </span><span class="nt">"frequency"</span><span class="p">:</span><span class="w"> </span><span class="mf">868.32684</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"datarate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SF8BW125"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"codingrate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4/5"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"gateway_timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"gateway_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-05-25T20:34:12.55856605Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"channel"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"server_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-05-25T20:34:12.555147951Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"rssi"</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"lsnr"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.4</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"rfchain"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"crc"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"modulation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LoRa"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"gateway_eui"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0102030405060708"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"altitude"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+    </div>
+  </li>
+</ol>
+<h2 id="device-activation-events">Device activation events</h2>
+<p>Device activation events are sent from the lower node output.</p>
+<p>Follow the same steps as for <strong>Messages</strong> to verify you get an output like:</p>
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w"> </span><span class="nt">"devEUI"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00000000973572D0"</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+          </div>
+        </div>
+      </div>
+      <div class="hidden-xs col-sm-2">
+        <div class="page-toc page-affix"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="lightbox" tabindex="-1" role="dialog">
+  <div class="modal-dialog text-center" role="document" style="width:auto;padding:20px;">
+    <a href="https://ttnstaticfile.blob.core.windows.net/static/ttn/media/logo/ttn-logo.png"><img class="modal-content modal-body" src="https://ttnstaticfile.blob.core.windows.net/static/ttn/media/logo/ttn-logo.png" alt="Zoom" /></a>
+  </div>
+</div>
+<script src="/docs/assets/js/page.js"></script>
+    </div>
+    <script src="https://www.thethingsnetwork.org/navbar.js"></script>
+    <script src="https://ttnstaticfile.blob.core.windows.net/static/common/js/ga.js"></script>
+  </body>
+</html>

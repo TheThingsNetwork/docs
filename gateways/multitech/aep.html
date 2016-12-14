@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- 20111122 0939 -->
+    <link rel="stylesheet" href="/docs/assets/css/main.css" />
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- site.serving: false -->
+    <!-- site.url: https://www.thethingsnetwork.org -->
+    <script>
+    (function(canonical) {
+      if (!site.local && document.location.href.substr(0, document.location.href.length - document.location.hash.length) !== canonical) {
+        window.location.replace(canonical);
+      }
+    })('https://www.thethingsnetwork.org/docs/gateways/multitech/aep.html');
+    </script>
+    <!-- Begin Jekyll SEO tag v2.1.0 -->
+<title>Configure AEP model - The Things Network</title>
+<meta property="og:title" content="Configure AEP model" />
+<meta name="description" content="Configure AEP model" />
+<meta property="og:description" content="Configure AEP model" />
+<link rel="canonical" href="https://www.thethingsnetwork.org/docs/gateways/multitech/aep.html" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/gateways/multitech/aep.html" />
+<meta property="og:site_name" content="The Things Network" />
+<meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/the-things-white.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2016-12-14T21:21:03+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@thethingsnetwrk" />
+<meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
+<script type="application/ld+json">
+{"@context": "http://schema.org",
+"@type": "BlogPosting",
+"headline": "Configure AEP model",
+"image": "https://www.thethingsnetwork.org/docs/assets/images/the-things-white.png",
+"datePublished": "2016-12-14T21:21:03+00:00",
+"description": "Configure AEP model",
+"publisher": {"@type": "Organization",
+"logo": {"@type": "ImageObject",
+"url": "https://www.thethingsnetwork.org/docs/assets/images/the-things-white.png"}},
+"url": "https://www.thethingsnetwork.org/docs/gateways/multitech/aep.html"}</script>
+<!-- End Jekyll SEO tag -->
+    <link rel="apple-touch-icon-precomposed" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-152.png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-144.png">
+    <meta name="application-name" content="The Things Network">
+    <meta name="msapplication-tooltip" content="Building a Global Internet of Things Network Together.">
+    <meta name="msapplication-config" content="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/ieconfig.xml">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-32.png" sizes="32x32">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-57.png" sizes="57x57">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-76.png" sizes="76x76">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-96.png" sizes="96x96">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-120.png" sizes="120x120">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-128.png" sizes="128x128">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-144.png" sizes="144x144">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-152.png" sizes="152x152">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-180.png" sizes="180x180">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-195.png" sizes="195x195">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-228.png" sizes="228x228">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/smalltile.png" sizes="128x128">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/mediumtile.png" sizes="270x270">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/widetile.png" sizes="558x270">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png" sizes="558x558">
+    <link rel="shortcut icon" sizes="196x196" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-196.png">
+    <script src="/docs/assets/js/main.js"></script>
+  </head>
+  <body>
+    <div id="content">
+<div class="layout-page">
+  <div class="ttn-header ttn-header-small">
+    <div class="ttn-container container-fluid">
+      <h1>
+        <img src="/docs/assets/images/the-things-white.png" alt="⛅ The Things Network" />
+        <span>Learn</span>
+      </h1>
+    </div>
+  </div>
+  <div class="container-fluid ttn-container">
+    <div class="row page-top-nav">
+      <div class="col-sm-9">
+        <ul>
+          <li class="page-top-nav-crumb"><a href="http://www.thethingsnetwork.org/">Home</a></li>
+          <li class="page-top-nav-crumb"><a href="/docs/">Learn</a></li>
+                <li class=""><a href="/docs/devices/">Devices</a></li>
+                <li class="active"><a href="/docs/gateways/">Gateways</a></li>
+                <li class=""><a href="/docs/network/">Network</a></li>
+                <li class=""><a href="/docs/applications/">Applications</a></li>
+        </ul>
+      </div>
+      <div class="hidden-xs col-sm-3 text-right">
+        <a href="https://github.com/TheThingsNetwork/docs/edit/master/_content/gateways/multitech/aep.md" class="page-edit" data-proofer-ignore><i class="fa fa-github"></i> Edit <strong>aep.md</strong></a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="panel page-side-nav page-affix">
+          <div class="panel-body">
+            <h5>Gateways</h5>
+            <ul>
+              <li class=""><a href="/docs/gateways/index.html">Overview</a>
+            <ul>
+                <li class=""><a href="/docs/gateways/registration.html">Gateway Registration</a>
+                </li>
+                <li class=""><a href="/docs/gateways/troubleshooting.html">Troubleshooting</a>
+                </li>
+            </ul>
+              </li>
+            <li class="page-side-nav-section"><span>Hardware</span>
+            <ul>
+                <li class=""><a href="/docs/gateways/kerlink/">Kerlink LoRa IoT Station</a>
+                </li>
+                <li class=""><a href="/docs/gateways/lorrier/">Lorrier LR2</a>
+                </li>
+                <li class=""><a href="/docs/gateways/multitech/">MultiTech Conduit</a>
+            <ul>
+                <li class="active"><a href="/docs/gateways/multitech/aep.html">Configure AEP model</a>
+                </li>
+                <li class=""><a href="/docs/gateways/multitech/mlinux.html">Configure mLinux model</a>
+                </li>
+                <li class=""><a href="/docs/gateways/multitech/register.html">Register with TTN</a>
+                </li>
+                <li class=""><a href="/docs/gateways/multitech/next.html">What's next?</a>
+                </li>
+            </ul>
+                </li>
+                <li class=""><a href="/docs/gateways/gateway/">The Things Gateway</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-7">
+        <div class="panel">
+          <div class="panel-body page-content">
+            <h1 id="configure-aep-model">Configure AEP model</h1>
+<h2 id="login-to-web-interface">Login to web interface</h2>
+<p>To start configuring your conduit connect a computer to its LAN interface and open a browser to <code class="highlighter-rouge">http://192.168.2.1/</code>. This opens the login dialog for the configuration interface of the conduit:</p>
+<p><img src="login-aep.png" alt="Login" /></p>
+<p>The default credentials are:</p>
+<ul>
+  <li><strong>Username</strong>: <code class="highlighter-rouge">admin</code></li>
+  <li><strong>Password</strong>: <code class="highlighter-rouge">admin</code></li>
+</ul>
+<h2 id="first-time-setup-wizard">First-Time Setup Wizard</h2>
+<p>After login (be patient, it takes a while) the <strong>First-Time Setup Wizard</strong> opens:</p>
+<p><img src="wizard.png" alt="First-Time Setup Wizard" /></p>
+<p>Click <strong>Next</strong> to begin.</p>
+<h3 id="choose-password">Choose Password</h3>
+<p>The first step it to change the current default password (<code class="highlighter-rouge">admin</code>):</p>
+<p><img src="password.png" alt="Choose Password" /></p>
+<blockquote>
+  <p>Keep your new password in a safe place, you will have to reset to factory defaults if you lose it!</p>
+</blockquote>
+<h3 id="time-configuration">Time Configuration</h3>
+<p>Select your time zone and update both date and time if required.</p>
+<p><img src="time.png" alt="Time Configuration" /></p>
+<p>Click <strong>Next</strong> to proceed.</p>
+<h3 id="internet-configuration">Internet Configuration</h3>
+<p>Set the <strong>Mode</strong> to <em>DHCP Client</em> if you use DHCP on your network (most likely) or manually configure your internet connection. Click <strong>Finish</strong> once you are done.</p>
+<p><img src="ip.png" alt="IP Setup - eth0" /></p>
+<p>If you changed the IP Address or selected DHCP a popup will appear warning you that the DHCP Server of the Conduit itself will be disabled. This is fine, so click <strong>OK</strong> to continue.</p>
+<p><img src="dhcp.png" alt="DHCP" /></p>
+<h2 id="update-firmware">Update firmware</h2>
+<p>Before you continue, verify that the Conduit AEP runs Firmware 1.3.2 or later. This is display in the header of the web interface. If it is out-dated, follow the <a href="http://www.multitech.net/developer/software/aep/upgrading-the-aep-firmware/">instructions to upgrade</a> to the latest version. The ttn-packer-forwarder might not work otherwise.</p>
+<h2 id="access--network-configuration">Access &amp; Network Configuration</h2>
+<p>As the LAN interfaces do not allow specifying a DNS server and we need DNS to work later on we will now change to network to WAN. However as this would lock us out we need to allow remote access for the management first.</p>
+<blockquote>
+  <p>Skip this step if you are using a cellular modem to connect the gateway to the internet. Just configure the cellular modem per instructions on the MultiTech website.</p>
+</blockquote>
+<h3 id="access-configuration">Access Configuration</h3>
+<p>In the left hand menu choose <strong>Administration</strong> followed by <strong>Access Configuration</strong>:</p>
+<p><img src="menu-access.png" alt="Administration / Access Configuration" /></p>
+<p>On the next screen tick the boxes marked yellow in the next screenshot:</p>
+<p><img src="access.png" alt="Access Configuration" /></p>
+<p>When you select <strong>Via WAN</strong> under HTTPS a warning will appear. Just click <strong>Continue</strong>.</p>
+<p><img src="wan-access.png" alt="HTTPS WAN Access" /></p>
+<p>Once you have selected the 3 checkboxes, click <strong>Submit</strong> to save the changes.</p>
+<h3 id="network-interfaces">Network Interfaces</h3>
+<p>Select <strong>Setup &gt; Network Interfaces</strong> from the left menu:</p>
+<p><img src="menu-network.png" alt="Setup / Network Interfaces" /></p>
+<p>In the next screen select the pencil in the <strong>eth0</strong> row:</p>
+<p><img src="interfaces.png" alt="Network Interfaces Configuration" /></p>
+<p>In the configuration popup change the <strong>Type</strong> from <em>LAN</em> to <em>WAN</em>.</p>
+<blockquote>
+  <p>If you use a static IP, fill out the gateway and DNS entries. Use 8.8.8.8 for Google’s public DNS if you do not have (or know) the local DNS server information.</p>
+</blockquote>
+<p><img src="interface.png" alt="Network Interfaces Configuration - eth0" /></p>
+<p>Click <strong>Finish</strong> to save.</p>
+<p>Now select <strong>Save and Restart</strong> from the menu:</p>
+<p><img src="menu-restart.png" alt="Save and Restart" /></p>
+<p>You will be prompted to confirm the restart. Choose <strong>OK</strong> to proceed.</p>
+<p>Disconnect the temporary network cable and connect the Conduit to the target network while it is restarting.</p>
+<h2 id="ttn-configuration-aep">TTN Configuration</h2>
+<p>Once the Conduit has finished restarting and is connected to the target network, connect a computer to the same network and login to the Conduit.</p>
+<blockquote>
+  <p>If you have not configured your Conduit with a static IP, you will have to <a href="http://apple.stackexchange.com/questions/19783/how-do-i-know-the-ip-addresses-of-other-computers-in-my-network">find out which IP the DHCP assigned to it</a>.</p>
+</blockquote>
+<ul>
+  <li>
+    <p>For Windows use a terminal program like Putty to connect to <code class="highlighter-rouge">admin@&lt;IP&gt;</code>:</p>
+    <p><img src="putty-aep.png" alt="PuTTY Configuration" /></p>
+    <p>You will get a security alert concerning the host key. Accept the new key with <strong>Yes</strong>.</p>
+    <p><img src="putty-warning.png" alt="PuTTY Security Alert" /></p>
+  </li>
+  <li>
+    <p>For Linux/OSX open terminal and connect via <code class="highlighter-rouge">ssh admin@&lt;IP&gt;</code>.</p>
+  </li>
+</ul>
+<p>Download the <a href="https://github.com/kersing/multitech-installer/raw/master/installer.sh">installer</a> by entering the next command:</p>
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>wget https://github.com/kersing/multitech-installer/raw/master/installer.sh --no-check-certificate
+</code></pre>
+</div>
+<p><img src="wget.png" alt="wget" /></p>
+<p>Now run the installer and provide the prompted information. (Answer <strong>Yes</strong> to the first question, since we’ve already set up the conduit network etc in the previous steps.</p>
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>sh installer.sh
+</code></pre>
+</div>
+<p><img src="installer-aep.png" alt="installer" /></p>
+          </div>
+        </div>
+      </div>
+      <div class="hidden-xs col-sm-2">
+        <div class="page-toc page-affix"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="lightbox" tabindex="-1" role="dialog">
+  <div class="modal-dialog text-center" role="document" style="width:auto;padding:20px;">
+    <a href="https://ttnstaticfile.blob.core.windows.net/static/ttn/media/logo/ttn-logo.png"><img class="modal-content modal-body" src="https://ttnstaticfile.blob.core.windows.net/static/ttn/media/logo/ttn-logo.png" alt="Zoom" /></a>
+  </div>
+</div>
+<script src="/docs/assets/js/page.js"></script>
+    </div>
+    <script src="https://www.thethingsnetwork.org/navbar.js"></script>
+    <script src="https://ttnstaticfile.blob.core.windows.net/static/common/js/ga.js"></script>
+  </body>
+</html>
