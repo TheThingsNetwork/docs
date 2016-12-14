@@ -87,6 +87,13 @@ if (process.env.GITHUB_OAUTH_TOKEN) {
     path: 'AUTHENTICATION.md',
     token: process.env.GITHUB_OAUTH_TOKEN,
     file: '_includes/draft/account/_authentication.md'
+  }, {
+    owner: 'TheThingsIndustries',
+    repo: 'integration-storage',
+    branch: 'master',
+    path: 'api/README.md',
+    token: process.env.GITHUB_OAUTH_TOKEN,
+    file: '_includes/draft/storage/_api.md'
   });
 } else {
   console.log('Skipping private repositories...');
