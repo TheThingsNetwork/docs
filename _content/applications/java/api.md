@@ -22,7 +22,7 @@ Client client = new Client(region, appId, accessKey [, connOpts]);
 * `region [String]`: The region (e.g. `eu`) or full hostname (e.g. `eu.thethings.network`) of the handler to connect to.
 * `appId [String]`: The ID of the application to connect to (e.g. `hello-world`).
 * `appAccessKey [String]`: An access key for the application, formatted as base64 (e.g. `'2Z+MU0T5xZCaqsD0bPqOhzA6iygGFoi4FAgMFgBfXSo='`).
-* `connOpts [MqttConnectOptions]`: Some custom configuration of the MQTT connection. This parameter is optional. For example to use TLS download [mqtt-ca.pem](https://console.thethingsnetwork.org/mqtt-ca.pem) and trust it following this guide: [Trust self-signed certificates](http://howardism.org/Technical/Java/SelfSignedCerts.html):
+* `connOpts [MqttConnectOptions]`: Some custom configuration of the MQTT connection. This parameter is optional. For example to use TLS download [mqtt-ca.pem](https://preview.console.thethingsnetwork.org/mqtt-ca.pem) and trust it following this guide: [Trust self-signed certificates](http://howardism.org/Technical/Java/SelfSignedCerts.html):
 
 ## Event: connect
 

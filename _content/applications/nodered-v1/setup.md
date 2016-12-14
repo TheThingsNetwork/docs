@@ -1,5 +1,6 @@
 ---
 title: Setup
+zindex: 1000
 ---
 
 # Setup

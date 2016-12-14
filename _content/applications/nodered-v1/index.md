@@ -1,6 +1,6 @@
 ---
 title: Node-RED
-label: 0.x
+label: v1-staging
 section: SDKs & Libaries
 ---
 

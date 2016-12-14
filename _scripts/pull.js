@@ -123,6 +123,19 @@ if (process.env.GITHUB_OAUTH_TOKEN) {
     yaml: {
       title: 'Authentication'
     }
+  }, {
+    owner: 'TheThingsIndustries',
+    repo: 'integration-storage',
+    branch: 'master',
+    path: 'api/README.md',
+    token: process.env.GITHUB_OAUTH_TOKEN,
+    target: '_content/applications/storage/api.md',
+    replace: [
+      [/^# Storage API Reference/m, '# API Reference']
+    ],
+    yaml: {
+      title: 'API Reference'
+    }
   });
 } else {
   console.log('Skipping private repositories...');

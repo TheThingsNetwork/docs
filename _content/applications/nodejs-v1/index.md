@@ -1,6 +1,6 @@
 ---
 title: Node.js
-label: 1.x
+label: v1-staging
 section: SDKs & Libaries
 ---
 

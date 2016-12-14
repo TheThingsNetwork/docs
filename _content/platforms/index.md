@@ -6,6 +6,8 @@ sections:
 redirect_from:
  - /draft/build-integration/
 links:
+ - title: Integration Options
+   href: ../applications/options.html
  - title: Get an Access Token
    href: ../network/account/authentication.html#exchanging-an-access-key-for-an-access-token
  - title: Find an Handler Server
@@ -22,7 +24,7 @@ hidden: true
 
 > This guide deals with building integrations. To use integrations see [Applications](../applications).
 
-An application can integrate The Things Network in different ways. This guide lays out the different [options](options.md) ranging from working directly with the APIs to working via a Platform Integration. It then continues to explain how to build an integration for your platform.
+An application can integrate The Things Network in different ways. This guide lays out the different [options](../applications/options.md) ranging from working directly with the APIs to working via a Platform Integration. It then continues to explain how to build an integration for your platform.
 
 ## Architecture
 A platform integration uses the same APIs as [application](../applications/index.md), to integrate The Things Network with an application platform. This allows users to integrate  their applications on that platform in a few clicks.

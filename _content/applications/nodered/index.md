@@ -1,6 +1,6 @@
 ---
 title: Node-RED
-label: 2.x
+label: v2
 section: SDKs & Libaries
 redirect_from:
  - /refactor/node-red/
