@@ -1,6 +1,6 @@
 ---
 title: API Reference
-source: 'https://github.com/TheThingsNetwork/ttn/blob/v2-preview/api/handler/ApplicationManager.md'
+source: 'https://github.com/TheThingsNetwork/ttn/blob/master/api/handler/ApplicationManager.md'
 ---
 
 # API Reference

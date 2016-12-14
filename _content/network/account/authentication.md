@@ -256,7 +256,7 @@ It works exactly like a standard OAuth 2.0 password flow. The client initiates a
 request:
 
 ```plaintext
-HTTP/1.1  GET /api/v2/applications/token
+HTTP/1.1  POST /api/v2/applications/token
 Content-Type: application/json
 Authorization: Basic <basic_auth>
 
@@ -309,5 +309,57 @@ If the exchange fails for whatever reason, you will get a response like this:
 }
 ```
 
+# OAuth 2.0 Authorization flow
+
+In this section we describe a sample `authorization_code` code flow.
+Assuming you have a registered client with these properties:
+
+```
+client_id: foo-client 
+client_secret: secret
+redirect_uri: http://www.example.com/oauth/callback
+scope: [ 'apps' ]
+```
+
+## 1. Make an authorization request
+
+To be able to use your client, a user will have to authorize it first on the
+account server.  You can tell the user to do so by redirecting to:
+
+```
+https://account.thethingsnetwork.org/users/authorize?client_id=foo-client&redirect_uri=http://www.example.com/oauth/callback&response_type=code
+```
+
+This will ask the user to log in and presents her with a form to authorize your
+client.  If the user authorizes your client, she will be redirected to:
+
+```
+http://www.example.com/oauth/callback?code=<auth code>
+```
+
+You need the `<auth code>` from this redirect to go to step 2.
+
+The preference of the user will be stored so this authorization step will
+redirect immediatly (without showing the form) the next time you do this for the
+same user.
+
+
+## 2. Get the access token 
+To get the access token perform the following request:
+```plaintext
+HTTP/1.1 POST /users/token
+Content-Type: application/json
+Authorization: Basic <basic_auth>
+
+{
+  "grant_type": "authorization_code",
+  "code": "<auth code>",
+  "redirect_uri: "http://www.example.com/oauth/callback"
+}
+```
+
+Where `<basic_auth>` is the basic auth digest for your client (`client_id` and
+`client_secret`) and `<auth_code>` is the authorization code received from step 1.
 
 [jwt]: https://jwt.io
+

@@ -4,9 +4,10 @@ source: 'https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/docs
 ---
 
 # API Reference
-Include and instantiate the TheThingsNetwork class. The constructor initialize the library with the Streams it should communicate with. It also sets the value of the spreading factor, the front-side Bus and the frequency plan.
+The `TheThingsNetwork` class enables Arduino devices with supported LoRa modules to communicate via The Things Network.
 
 ## Class: TheThingsNetwork
+Include and instantiate the TheThingsNetwork class. The constructor initialize the library with the Streams it should communicate with. It also sets the value of the spreading factor, the front-side Bus and the frequency plan.
 
 ```c
 #include <TheThingsNetwork.h>
@@ -44,7 +45,7 @@ Total airtime: 0.00 s
 See the [DeviceInfo](https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/DeviceInfo/DeviceInfo.ino) example.
 
 ## Method: onMessage
-Sets a function which will be called to process incoming messages.
+Sets a function which will be called to process incoming messages. You'll want to do this in your `setup()` function and then define a `void (*cb)(const byte* payload, size_t length, port_t port)` function somewhere else in your sketch.
 
 ```c
 void onMessage(void (*cb)(const byte* payload, size_t length, port_t port));
@@ -95,21 +96,20 @@ See the [ABP](https://github.com/TheThingsNetwork/arduino-device-lib/blob/master
 Send a message to the application using raw bytes.
 
 ```c
-int8_t sendBytes(const byte* payload, size_t length, port_t port = 1, bool confirm = false);
+ttn_response_t sendBytes(const byte* payload, size_t length, port_t port = 1, bool confirm = false);
 ```
 
 - `const byte* payload `: Bytes to send.
 - `size_t length`: The number of bytes. Use `sizeof(payload)` to get it.
 - `port_t port = 1`: The port to address. Defaults to `1`.
-- `bool confirm = false`: Whether to ask for confirmation. Defaults to `false`.
+- `bool confirm = false`: Whether to ask for confirmation. Defaults to `false`. If confirmation fails, the method will return error code `TTN_ERROR_UNEXPECTED_RESPONSE`.
 
 Returns a success or error code and logs the related error message:
 
-* `-1`: Send command failed.
-* `-2`: Time-out.
-* `1`: Successful transmission.
-* `2`: Successful transmission. Received \<N> bytes
-* `-10`: Unexpected response: \<Response>
+* `TTN_ERROR_SEND_COMMAND_FAILED`: Send command failed.
+* `TTN_SUCCESSFUL_TRANSMISSION`: Successful transmission.
+* `TTN_SUCCESSFUL_RECEIVE`: Successful transmission. Received \<N> bytes
+* `TTN_ERROR_UNEXPECTED_RESPONSE`: Unexpected response: \<Response>
 
 See the [Send](https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/Send/Send.ino) example.
 
@@ -138,3 +138,14 @@ bool provision(const char *appEui, const char *appKey);
 
 - `const char *appEui`: Application Identifier for the device.
 - `const char *appKey`: Application Key assigned to the device.
+
+## Method: calculateAirtime
+Calculate the uplink time of a message.
+
+```c
+float calculateAirtime(size_t payloadSize);
+```
+
+- `size_t payloadSize`: number of bytes you want to send.
+
+Returns the uplink time of the message in seconds.

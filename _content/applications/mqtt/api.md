@@ -1,6 +1,6 @@
 ---
 title: API Reference
-source: 'https://github.com/TheThingsNetwork/ttn/blob/v2-preview/mqtt/README.md'
+source: 'https://github.com/TheThingsNetwork/ttn/blob/master/mqtt/README.md'
 ---
 
 # API Reference

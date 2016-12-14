@@ -8,7 +8,7 @@ require('dotenv').config({
 
 var items = [{
   owner: 'TheThingsNetwork',
-  repo: 'node-app-lib',
+  repo: 'node-app-sdk',
   branch: 'master',
   path: 'API.md',
   target: '_content/applications/nodejs/api.md',
@@ -27,7 +27,7 @@ var items = [{
 }, {
   owner: 'TheThingsNetwork',
   repo: 'arduino-device-lib',
-  branch: 'node',
+  branch: 'feature/node',
   path: 'docs/TheThingsNode.md',
   target: '_content/devices/node/api.md',
   yaml: {
@@ -36,7 +36,7 @@ var items = [{
 }, {
   owner: 'TheThingsNetwork',
   repo: 'ttn',
-  branch: 'v2-preview',
+  branch: 'master',
   path: 'mqtt/README.md',
   target: '_content/applications/mqtt/api.md',
   yaml: {
@@ -44,7 +44,7 @@ var items = [{
   }
 }, {
   owner: 'TheThingsNetwork',
-  repo: 'java-app-lib',
+  repo: 'java-app-sdk',
   branch: 'master',
   path: 'API.md',
   target: '_content/applications/java/api.md',
@@ -54,7 +54,7 @@ var items = [{
 }, {
   owner: 'TheThingsNetwork',
   repo: 'ttn',
-  branch: 'v2-preview',
+  branch: 'master',
   path: 'ttnctl/cmd/docs/README.md',
   target: '_content/network/cli/api.md',
   yaml: {
@@ -63,7 +63,7 @@ var items = [{
 }, {
   owner: 'TheThingsNetwork',
   repo: 'ttn',
-  branch: 'v2-preview',
+  branch: 'master',
   path: 'api/API_AUTHENTICATION.md',
   target: '_content/applications/manager/authentication.md',
   yaml: {
@@ -72,7 +72,7 @@ var items = [{
 }, {
   owner: 'TheThingsNetwork',
   repo: 'ttn',
-  branch: 'v2-preview',
+  branch: 'master',
   path: 'api/handler/ApplicationManager.md',
   target: '_content/applications/manager/api.md',
   replace: [
@@ -84,7 +84,7 @@ var items = [{
 }, {
   owner: 'TheThingsNetwork',
   repo: 'ttn',
-  branch: 'v2-preview',
+  branch: 'master',
   path: 'api/discovery/Discovery.md',
   target: '_content/network/discovery/api.md',
   replace: [
@@ -107,6 +107,9 @@ if (process.env.GITHUB_OAUTH_TOKEN) {
     path: 'apidocs.md',
     token: process.env.GITHUB_OAUTH_TOKEN,
     target: '_content/network/account/api.md',
+    replace: [
+      [/^The Things Network Account Server API$/m, 'API Reference']
+    ],
     yaml: {
       title: 'API Reference'
     }

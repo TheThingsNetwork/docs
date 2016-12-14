@@ -1,6 +1,6 @@
 ---
 title: API Reference
-source: 'https://github.com/TheThingsNetwork/ttn/blob/v2-preview/ttnctl/cmd/docs/README.md'
+source: 'https://github.com/TheThingsNetwork/ttn/blob/master/ttnctl/cmd/docs/README.md'
 ---
 
 # API Reference

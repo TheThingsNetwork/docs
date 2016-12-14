@@ -1,6 +1,6 @@
 ---
 title: API Reference
-source: 'https://github.com/TheThingsNetwork/java-app-lib/blob/master/API.md'
+source: 'https://github.com/TheThingsNetwork/java-app-sdk/blob/master/API.md'
 ---
 
 # API Reference
