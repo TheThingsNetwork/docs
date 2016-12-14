@@ -7,7 +7,7 @@ title: Build an SDK
 Devices and Applications exchange messages and events via the Handler's MQTT broker. SDKs wrap this in a more friendly platform-specific API.
 
 ## Examples
-Examples of libraries that wrap MQTT are [Node.js](../applications/nodejs/index.md) and [Java](../applications/java/index.md). The [Node-RED](../applications/nodered/index.md) library actually is in fact another wrapper of the Node.js library.
+Examples of libraries that wrap MQTT are [Node.js](../applications/nodejs/index.md) and [Java](../applications/java/index.md) SDK. The [Node-RED](../applications/nodered/index.md) Node actually is in fact another wrapper of the Node.js SDK.
 
 ## Understanding MQTT
 It is important to have a good understanding of how MQTT in general and our broker specifically works. For more information, see the [MQTT guide](../applications/mqtt/index.md).
@@ -17,7 +17,7 @@ It is important to have a good understanding of how MQTT in general and our brok
 ## Building a SDK
 
 ### Find a MQTT client
-You can find a [MQTT client](https://github.com/mqtt/mqtt.github.io/wiki/libraries) for pretty much any language and platform. For example, the Node.js library uses [MQTT.js](https://www.npmjs.com/package/mqtt).
+You can find a [MQTT client](https://github.com/mqtt/mqtt.github.io/wiki/libraries) for pretty much any language and platform. For example, the Node.js SDK uses [MQTT.js](https://www.npmjs.com/package/mqtt).
 
 ### Abstract Connections
 To connect to the MQTT broker we need the broker URL, username and password. Instead of asking the user for the full URL including scheme (`mqtt` or `mqtts`) and port, the SDK should ask for the Application ID, Access Key (which act as username and password) plus a region of the community network to which the SDK should append `.thethings.network`. The user should still be able to provide the full hostname.

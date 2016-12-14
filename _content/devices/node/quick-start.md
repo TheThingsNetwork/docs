@@ -6,7 +6,7 @@ title: Quick Start
 
 ## Setup Arduino IDE
 
-1. Follow [Arduino / Arduino Software (IDE) / Setup](../arduino/ide.md#setup) to setup the IDE and install The Things Network library.
+1. Follow [Arduino / Arduino Software (IDE) / Setup](../arduino/ide.md#setup) to setup the IDE and install The Things Network Library.
 2. Follow SparkFun's [Installation Instructions](https://github.com/sparkfun/Arduino_Boards#installation-instructions) to add the additional board manager and install the **SparkFun AVR Boards**.
 
 ## Prepare your Node

@@ -9,7 +9,7 @@ We'll not reproduce the [Arduino Software Guide](https://www.arduino.cc/en/Guide
 
 ## Setup
 
-Setup the Arduino IDE and install The Things Network library.
+Setup the Arduino IDE and install The Things Network Library.
 
 1. [Download](https://www.arduino.cc/en/Main/Software) and install the latest Arduino Software (IDE).
 2. Navigate to **Sketch > Include Library > Manage Libraries...**.
@@ -18,7 +18,7 @@ Setup the Arduino IDE and install The Things Network library.
 
   ![Library Manager](arduino_library.png)
 
-The Arduino IDE will notify you of updates for the IDE and library automagically. :open_mouth:
+The Arduino IDE will notify you of updates for the IDE and Library automagically. :open_mouth:
 
 ## Monitor logs
 

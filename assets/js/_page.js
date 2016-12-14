@@ -13,7 +13,7 @@ $(function () {
   $('.page-toc').toc({
     title: '',
     listType: 'ul',
-    headers: '.page-content h2, .page-content h3',
+    headers: '.page-content h2, .page-content h3, .page-content h4',
     minimumHeaders: 1
   });
 
@@ -69,7 +69,7 @@ $(function () {
    * Anchors
    */
   var anchors = new AnchorJS();
-  anchors.add('.page-content h2, .page-content h3');
+  anchors.add('.page-content h2, .page-content h3, .page-content h4');
 
   /**
    * Affix

@@ -9,7 +9,7 @@ This guide will walk you through setting up a Node.js project that listens to de
 
 > This guide assumes the sketch and payload functions of [The Things Uno / Quick Start](../../devices/uno/quick-start.md), but can be easily applied to any other.
 
-The full script that we will build is also included as [example](https://github.com/TheThingsNetwork/node-app-sdk/blob/master/src/example.js) in the Node.js library. You can even modify and run it directly in your browser via the [Live Example](live.md).
+The full script that we will build is also included as [example](https://github.com/TheThingsNetwork/node-app-sdk/blob/master/src/example.js) in the Node.js SDK. You can even modify and run it directly in your browser via the [Live Example](live.md).
 
 ## Setup
 Let's install Node.js, create a Node.js project and install the TTN Client.

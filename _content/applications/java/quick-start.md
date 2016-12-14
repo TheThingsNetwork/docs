@@ -8,7 +8,7 @@ This guide will walk you through setting up a Java project that listens to devic
 
 > This guide assumes the sketch and payload functions of [The Things Uno / Quick Start](../../devices/uno/quick-start.md), but can be easily applied to any other.
 
-The full script that we will build is also included as [example](https://github.com/TheThingsNetwork/java-app-sdk/blob/master/sample/src/main/java/org/thethingsnetwork/java/app/sample/App.java) in the Java library.
+The full script that we will build is also included as [example](https://github.com/TheThingsNetwork/java-app-sdk/blob/master/sample/src/main/java/org/thethingsnetwork/java/app/sample/App.java) in the Java SDK.
 
 ## Setup
 Let's install Java, create a Java project and require the TTN Client.

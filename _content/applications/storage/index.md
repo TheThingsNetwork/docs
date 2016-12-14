@@ -1,6 +1,7 @@
 ---
 title: Storage Integration
 section: Integrations
+hidden: true
 ---
 
 # Storage Integration
