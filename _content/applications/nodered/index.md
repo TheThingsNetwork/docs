@@ -1,6 +1,6 @@
 ---
 title: Node-RED
-label: 1.x
+label: 2.x
 section: Integrations
 redirect_from:
  - /refactor/node-red/
