@@ -16,7 +16,6 @@ links:
    href: ../applications/mqtt/
 image: /platforms/icon.png
 hidden: true
-zindex: 600
 ---
 
 # Platform Integrations

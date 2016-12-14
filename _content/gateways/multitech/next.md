@@ -1,6 +1,5 @@
 ---
 title: What's next?
-zindex: 100
 ---
 
 # What's next?

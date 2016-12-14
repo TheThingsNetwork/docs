@@ -2,7 +2,6 @@
 title: The Things Network CLI
 label: v1-staging
 section: Manage
-zindex: 799
 ---
 
 # The Things Network CLI

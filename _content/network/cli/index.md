@@ -7,7 +7,6 @@ redirect_from:
  - /v2-preview/cli/
  - /cli/
 image: /network/cli/architecture.png
-zindex: 800
 ---
 
 # The Things Network CLI

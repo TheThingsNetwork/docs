@@ -2,7 +2,7 @@
 layout: default
 ---
 
-{% assign pages = site.content | sort:'zindex' | reverse %}
+{% assign pages = site.content | sort_pages %}
 
 {% assign top = page.url | split:'/' | slice:0,2 | join:'/' | append:'/index.html' %}
 {% for apage in pages %}
@@ -11,7 +11,7 @@ layout: default
     {% break %}
   {% endif %}
 {% endfor %}
- {{ page.foo }}
+
 <div class="layout-page">
 
   <div class="ttn-header ttn-header-small">

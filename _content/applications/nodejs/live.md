@@ -1,6 +1,6 @@
 ---
 title: Live Example
-zindex: 90
+zindex: 900
 ---
 
 # Live Example

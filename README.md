@@ -10,7 +10,7 @@ If you do a lot of edits please use a local build to preview and test.
 * Store assets in the same folder as the markdown file you need it in and include them by their filename. You can also use relative paths to re-use images from other guides.
 * To link to another child guide, use the relative markdown path (e.g. `../devices/registration.md`) and Jekyll will make it `.html`.
 * To link to another parent guide, use the relative markdown path (e.g. `../devices/index.md`) or the directory path, ending with a slash (`../devices/`).
-* Guides are sorted alphabetically based on their filename. You can override this with `zindex` in the frontmatter.
+* Guides are sorted on descending `zindex` first, then `title` ascending and if those are equal `label` descending.
 * Use blockquotes (`>`) to create callouts for important notes.
 * To set an image to use on Facebook and Twitter use `image:/absolute/path/to/image.png` in your frontmatter.
 * You can use most of the [icons](http://ionicons.com/cheatsheet.html) we use in the console. Simply use `<i class="ion-eye"></i>` in the Markdown and we'll style it as a button.
