@@ -48,7 +48,7 @@ Next, we will write the script that requires the TTN Client module and uses it t
     var ttn = require('ttn');
     ```
 
-3.  In the [console](https://preview.console.thethingsnetwork.org/applications), navigate to the application you'd like to connect to.
+3.  In the [console](https://console.thethingsnetwork.org/applications), navigate to the application you'd like to connect to.
 
 5.  In the editor, create an instance of the client:
 

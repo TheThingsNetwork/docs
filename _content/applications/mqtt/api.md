@@ -7,7 +7,7 @@ source: 'https://github.com/TheThingsNetwork/ttn/blob/master/mqtt/README.md'
 
 * Host: `<Region>.thethings.network`, where `<Region>` is last part of the handler you registered your application to, e.g. `eu`.
 * Port: `1883` or `8883` for TLS
-* PEM encoded CA certificate for TLS: [mqtt-ca.pem](https://preview.console.thethingsnetwork.org/mqtt-ca.pem)
+* PEM encoded CA certificate for TLS: [mqtt-ca.pem](https://console.thethingsnetwork.org/mqtt-ca.pem)
 * Username: Application ID
 * Password: Application Access Key
 

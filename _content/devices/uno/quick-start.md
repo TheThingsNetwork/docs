@@ -131,19 +131,19 @@ To communicate via The Things Network, you need to register your device. For thi
 ## Create an Account
 To register your device you'll need a The Things Network account.
 
-1.  Go to [preview.account.thethingsnetwork.org](https://preview.account.thethingsnetwork.org) and click [create an account](https://preview.account.thethingsnetwork.org/register).
+1.  Go to [account.thethingsnetwork.org](https://account.thethingsnetwork.org) and click [create an account](https://account.thethingsnetwork.org/register).
 
     You will receive an email to confirm your email address. You have 24 hours to do so, so let's now wait for that and carry on! 🚀
 
-    > You can change all but your username later via your [Profile](https://preview.account.thethingsnetwork.org/users/profile).
+    > You can change all but your username later via your [Profile](https://account.thethingsnetwork.org/users/profile).
 
-2.  Select [Console](https://preview.console.thethingsnetwork.org) from the top menu.
-3.  From the top right menu, select your name and then [Settings](https://preview.console.thethingsnetwork.org/settings) from the dropdown menu to change the default Handler if the one currently selected is not where you'll be deploying most of your devices.
+2.  Select [Console](https://console.thethingsnetwork.org) from the top menu.
+3.  From the top right menu, select your name and then [Settings](https://console.thethingsnetwork.org/settings) from the dropdown menu to change the default Handler if the one currently selected is not where you'll be deploying most of your devices.
 
 ## Add an Application
 Devices need to be registered with an application to communicate with. Let's add one.
 
-1.  On [preview.console.thethingsnetwork.org](https://preview.console.thethingsnetwork.org/), click [add application](https://preview.console.thethingsnetwork.org/applications/add).
+1.  On [console.thethingsnetwork.org](https://console.thethingsnetwork.org/), click [add application](https://console.thethingsnetwork.org/applications/add).
 
 	* For **Application ID**, choose a unique ID of lower case, alphanumeric characters and nonconsecutive `-` and `_`.
 	* For **Description**, enter anything you like.

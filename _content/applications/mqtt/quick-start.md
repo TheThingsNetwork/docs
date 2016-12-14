@@ -10,11 +10,11 @@ This guide will walk you through subscribing to an application's activations and
 ## Setup
 
 * [Download](https://mosquitto.org/download/) Mosquitto.
-* Download and save the [PEM encoded CA certificate](https://preview.console.thethingsnetwork.org/mqtt-ca.pem) if you'd like to use TLS.
+* Download and save the [PEM encoded CA certificate](https://console.thethingsnetwork.org/mqtt-ca.pem) if you'd like to use TLS.
 
 ## Credentials
 
-On [preview.console.thethingsnetwork.org](https://preview.console.thethingsnetwork.org/), navigate to the application you'd like to use. Here you can find the **Application ID** and an **Access Key** needed to authenticate over MQTT. Under **Handler Status** you will also find the region the application is registered to. You will need the part that follows `ttn-handler-`, e.g. `eu`.
+On [console.thethingsnetwork.org](https://console.thethingsnetwork.org/), navigate to the application you'd like to use. Here you can find the **Application ID** and an **Access Key** needed to authenticate over MQTT. Under **Handler Status** you will also find the region the application is registered to. You will need the part that follows `ttn-handler-`, e.g. `eu`.
     
 ## Receive Activations
 Let's listen for new device activations first.
@@ -31,7 +31,7 @@ Let's listen for new device activations first.
   
     > We add `-v` to also see the topics of the incoming messages.
     
-    For TLS - assuming [mqtt-ca.pem](https://preview.console.thethingsnetwork.org/mqtt-ca.pem) is in the same folder - append:
+    For TLS - assuming [mqtt-ca.pem](https://console.thethingsnetwork.org/mqtt-ca.pem) is in the same folder - append:
 
     ```bash
     --cafile mqtt-ca.pem -p 8883

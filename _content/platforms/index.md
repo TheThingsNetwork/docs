@@ -3,6 +3,8 @@ title: Platforms
 description: Build Integrations between The Things Network and Application Platforms.
 sections:
  - APIs
+redirect_from:
+ - /draft/build-integration/
 links:
  - title: Get an Access Token
    href: ../network/account/authentication.html#exchanging-an-access-key-for-an-access-token

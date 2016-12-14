@@ -4,6 +4,9 @@ ambassador:
   name: Corné van Strien
   username: Batilan
 section: Hardware
+redirect_from:
+ - /draft/lopy/
+ - /lopy/
 ---
 
 # LoPy

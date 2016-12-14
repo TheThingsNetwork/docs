@@ -2,6 +2,9 @@
 title: Kerlink LoRa IoT Station
 image: /gateways/kerlink/image.png
 section: Hardware
+redirect_from:
+ - /draft/kerlink/
+ - /kerlink/
 ---
 
 # Kerlink LoRa IoT Station

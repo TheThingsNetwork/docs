@@ -1,6 +1,9 @@
 ---
 title: Account Server
 section: Components
+redirect_from:
+ - /draft/account/
+ - /account/
 ---
 
 # Account Server
@@ -9,4 +12,4 @@ The Account Server manages the [ACL](https://en.wikipedia.org/wiki/Access_contro
 
 This guide will inform you about the [access](authentication.md) and [use](api.md) the Account Server API.
 
-The endpoint for The Things Network Account Servers is currently `https://preview.account.thethingsnetwork.org` but will change to `https://account.thethingsnetwork.org` once we go into production.
+The endpoint for The Things Network Account Servers is currently `https://account.thethingsnetwork.org`.

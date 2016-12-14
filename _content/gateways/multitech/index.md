@@ -2,6 +2,7 @@
 title: MultiTech Conduit
 section: Hardware
 redirect_from:
+ - /current/multitech/
  - /multitech/
 ambassador:
   name: Jac Kersing

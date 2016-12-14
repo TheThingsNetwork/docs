@@ -3,8 +3,7 @@ title: Applications
 description: Exchange data with Devices on The Things Network.
 sections:
  - APIs
- - SDKs
- - Integrations
+ - SDKs & Libaries
 links:
  - title: Migrate form Staging to Production
    href: ../network/migrate.html

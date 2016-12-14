@@ -1,6 +1,9 @@
 ---
 title: Application Manager
 section: APIs
+redirect_from:
+ - /draft/application-manager/
+ - /manager/
 image: /draft/application-manager/handler.png
 ---
 

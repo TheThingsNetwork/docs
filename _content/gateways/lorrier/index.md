@@ -5,8 +5,6 @@ image: /gateways/lorrier/image.png
 redirect_from:
  - /lorrier/
  - /current/lorrier/
- - /v2-preview/lorrier/
- - /refactor/lorrier/
 ambassador:
   name: Wim Debbaut
   username: wdebbaut

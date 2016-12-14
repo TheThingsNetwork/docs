@@ -1,7 +1,7 @@
 ---
 title: Node.js
 label: 1.x
-section: SDKs
+section: SDKs & Libaries
 ---
 
 # Node.js SDKs

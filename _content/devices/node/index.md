@@ -2,6 +2,9 @@
 title: The Things Node
 section: Hardware
 label: draft
+redirect_from:
+ - /draft/node/
+ - /node/
 image: /devices/node/image.png
 ---
 
@@ -19,6 +22,5 @@ Once you have validated your idea, the next step could be to use [The Things Uno
 
 ## Prerequisites
 
-* Access to [preview.console.thethingsnetwork.org](https://preview.console.thethingsnetwork.org/).
 * The Things Node.
-* The [node branch](https://github.com/TheThingsNetwork/arduino-device-lib/tree/node/) of the The Things Network Arduino Library.
+* The [`preview/node` branch](https://github.com/TheThingsNetwork/arduino-device-lib/tree/preview/node/) of the The Things Network Arduino Library.

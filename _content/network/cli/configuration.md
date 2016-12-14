@@ -14,7 +14,7 @@ The format of these variables is the underscored version of the command line opt
 ```sh
 export TTNCTL_DEBUG=true
 export TTNCTL_DISCOVERY_ADDRESS=localhost:1900
-export TTNCTL_AUTH_SERVER=https://preview.account.thethingsnetwork.org
+export TTNCTL_AUTH_SERVER=https://account.thethingsnetwork.org
 export TTNCTL_ROUTER_ID=dev
 export TTNCTL_HANDLER_ID=dev
 export TTNCTL_MQTT_ADRESS=localhost:1883
@@ -28,7 +28,7 @@ The configuration file shown below shown below are the values needed for **local
 ```yaml
 debug: true
 discovery-address: localhost:1900
-auth-server: https://preview.account.thethingsnetwork.org
+auth-server: https://account.thethingsnetwork.org
 router-id: dev
 handler-id: dev
 mqtt-address: localhost:1883

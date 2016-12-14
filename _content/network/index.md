@@ -6,7 +6,7 @@ sections:
  - Components
 links:
  - title: Network Architecture
-   href: https://www.thethingsnetwork.org/wiki/Backend/Overview
+   href: https://www.thethingsnetwork.org/wiki/Backend/
 image: /network/icon.png
 zindex: 800
 ---

@@ -4,7 +4,7 @@ title: Migrate from Staging to Production
 
 # Migrate from Staging to Production
 
-This guide will walk you through migrating applications and devices from [staging.thethingsnetwork.org](https://staging.thethingsnetwork.org/) to production at [console.thethingsnetwork.org](https://preview.console.thethingsnetwork.org/).
+This guide will walk you through migrating applications and devices from [staging.thethingsnetwork.org](https://staging.thethingsnetwork.org/) to production at [console.thethingsnetwork.org](https://console.thethingsnetwork.org/).
 
 For the announcement and discussion of the launch of production see the [forum](https://www.thethingsnetwork.org/forum/t/launching-production-environment/4435).
 
@@ -17,7 +17,7 @@ For the announcement and discussion of the launch of production see the [forum](
 For each application you'd like to migrate:
 
 1.  On [staging](https://staging.thethingsnetwork.org/applications/), click the application you'd like to migrate to see the **Application Info** box.
-2.  In [production](https://preview.console.thethingsnetwork.org/applications/), go to [add application](https://preview.console.thethingsnetwork.org/applications/add).
+2.  In [production](https://console.thethingsnetwork.org/applications/), go to [add application](https://console.thethingsnetwork.org/applications/add).
 
     - For **Application ID**, use anything you like as long as it is unique and only uses low case alphanumeric charachters and nonconsecutive `-` and `_`.
     - For **Description**, copy the **Application name** from staging.
@@ -73,7 +73,7 @@ For each device you'd like to migrate:
 
 1.  On [staging](https://staging.thethingsnetwork.org/applications/), go to the application you'd like to migrate devices from.
 2.  In the **Devices** box click the **Dev EUI** of the device you'd like to migrate to see its **Device info** box.
-3.  In [production](https://preview.console.thethingsnetwork.org/applications/), go to the migrated application.
+3.  In [production](https://console.thethingsnetwork.org/applications/), go to the migrated application.
 4.  Scroll down to **Devices** or select **Devices** from the top right menu.
 5.  Click **register device**.
     - For **Device ID**, use anything you like as long as it is unique and only uses alphanumeric charachters and nonconsecutive `-` and `_`.

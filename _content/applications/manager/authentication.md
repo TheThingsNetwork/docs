@@ -49,7 +49,7 @@ You can authenticate to the gRPC endpoint by supplying a `key` field in the Meta
 
 ```go
 md := metadata.Pairs(
-  "key", "ttn-account-preview.n4BAoKOGuK2hj7MXg_OVtpLO0BTJI8lLzt66UsvTlUvZPsi6FADOptnmSH3e3PuQzbLLEUhXxYhkxr34xyUqBQ",
+  "key", "ttn-account.n4BAoKOGuK2hj7MXg_OVtpLO0BTJI8lLzt66UsvTlUvZPsi6FADOptnmSH3e3PuQzbLLEUhXxYhkxr34xyUqBQ",
 )
 ctx := metadata.NewContext(context.Background(), md)
 ```
@@ -61,5 +61,5 @@ For HTTP Endpoints, you should supply the `Authorization` header: `Authorization
 **Example:**
 
 ```
-Authorization: Key ttn-account-preview.n4BAoKOGuK2hj7MXg_OVtpLO0BTJI8lLzt66UsvTlUvZPsi6FADOptnmSH3e3PuQzbLLEUhXxYhkxr34xyUqBQ
+Authorization: Key ttn-account.n4BAoKOGuK2hj7MXg_OVtpLO0BTJI8lLzt66UsvTlUvZPsi6FADOptnmSH3e3PuQzbLLEUhXxYhkxr34xyUqBQ
 ```

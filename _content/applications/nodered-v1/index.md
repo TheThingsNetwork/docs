@@ -1,7 +1,7 @@
 ---
 title: Node-RED
 label: 0.x
-section: Integrations
+section: SDKs & Libaries
 ---
 
 # Node-RED
