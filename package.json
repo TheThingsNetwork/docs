@@ -7,7 +7,7 @@
   "scripts": {
     "start": "npm run prod",
     "dev": "rm -rf _site && npm run dev-webpack & npm run dev-jekyll",
-    "prod": "npm run webpack && npm run jekyll",
+    "prod": "rm -rf _site && npm run webpack && npm run jekyll",
     "test": "npm run htmlproof",
     "jekyll": "bundle exec jekyll serve",
     "dev-jekyll": "bundle exec jekyll serve --incremental",

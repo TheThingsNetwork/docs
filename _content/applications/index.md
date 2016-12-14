@@ -5,6 +5,9 @@ sections:
  - APIs
  - SDKs
  - Integrations
+links:
+ - title: Migrate form Staging to Production
+   href: ../network/migrate.html
 image: /applications/icon.png
 zindex: 700
 ---

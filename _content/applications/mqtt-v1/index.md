@@ -1,7 +1,7 @@
 ---
 title: MQTT
+label: v1-staging
 section: APIs
-label: V1
 ---
 
 [MQTT](http://mqtt.org) is a machine-to-machine (M2M)/"Internet of Things" connectivity protocol. It was designed as an extremely lightweight publish/subscribe messaging transport.

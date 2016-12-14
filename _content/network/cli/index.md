@@ -1,5 +1,6 @@
 ---
 title: The Things Network CLI
+label: 2.x
 section: Manage
 image: /network/cli/architecture.png
 zindex: 800

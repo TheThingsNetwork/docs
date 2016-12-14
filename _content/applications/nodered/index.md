@@ -1,5 +1,6 @@
 ---
 title: Node-RED
+label: 1.x
 section: Integrations
 redirect_from:
  - /refactor/node-red/
@@ -7,6 +8,8 @@ redirect_from:
  - /current/node-red/
  - /node-red/
 ---
+
+# Node-RED
 
 [Node-RED](http://nodered.org/) is a free, JavaScript-based server and web GUI for wiring together hardware devices, APIs and online services. You can find a lot of example flows and additional nodes in the [Node-RED Library](http://flows.nodered.org/).
 

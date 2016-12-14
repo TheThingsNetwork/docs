@@ -6,7 +6,7 @@ title: Quick Start
 
 This guide will walk you through programming The Things Uno to send and receive your first message via The Things Network. We'll use the [Hello, World!](https://en.wikipedia.org/wiki/%22Hello,_World!%22_program) of Arduino: [`LED_BUILTIN`](https://www.arduino.cc/en/Reference/Constants). 💡
 
-The full sketch comes with TheThingsNetwork library for the Arduino IDE as the [QuickStart](https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/QuickStart/QuickStart.ino) example.
+The full sketch of this Quick Start is also included in TheThingsNetwork library for the Arduino IDE. You can find it under **File > Examples > TheThingsNetwork > [QuickStart](https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/QuickStart/QuickStart.ino)**.
 
 ## Setup Arduino IDE
 Let's start by setting up the software we'll need to program your device.
@@ -25,11 +25,13 @@ The Arduino IDE will notify you of updates for the IDE and library automagically
 ## Connect your Device
 Next, connect your device to the IDE over USB.
 
-1. Use the included Micro-USB cable to connect The Things Uno to an USB port of your computer.
-2. In Arduino IDE select **Tools > Board > Arduino Leonardo**.
-3. Navigate to **Tools > Port** and select the port that identifies as **Arduino Leonardo**.
+1.  Use the included Micro-USB cable to connect The Things Uno to an USB port of your computer.
+2.  In Arduino IDE select **Tools > Board > Arduino Leonardo**.
+3.  Navigate to **Tools > Port** and select the port that identifies as **Arduino Leonardo**.
 
-If you don't see a port that identifies as **Arduino Leonardo** make sure The Things Uno's power LED is on and check the cable and USB port you have used. See [Arduino Troubleshooting](https://www.arduino.cc/en/Guide/Troubleshooting#toc16) for more suggestions.
+    ![port](port.png)
+
+If you don't see a port that identifies as **Arduino Leonardo** make sure The Things Uno's power LED is on and check the cable and USB port you have used. On Windows, you might need to [install drivers](https://www.arduino.cc/en/Guide/ArduinoLeonardoMicro#toc2). See [Arduino Troubleshooting](https://www.arduino.cc/en/Guide/Troubleshooting#toc16) for more suggestions.
 
 ## Create a Sketch
 Let's program your device with a so-called sketch.
@@ -65,8 +67,11 @@ Let's program your device with a so-called sketch.
     
     #define loraSerial Serial1
     #define debugSerial Serial
+
+    // Replace REPLACE_ME with TTN_FP_EU868 or TTN_FP_US915
+    #define freqPlan REPLACE_ME
     
-    TheThingsNetwork ttn(loraSerial, debugSerial, /* TTN_FP_EU868 or TTN_FP_US915 */);
+    TheThingsNetwork ttn(loraSerial, debugSerial, freqPlan);
     
     void setup() {
       loraSerial.begin(57600);
@@ -80,12 +85,12 @@ Let's program your device with a so-called sketch.
     }
     ```
     
-    > Replace `/* TTN_FP_EU868 or TTN_FP_US915 */` with either `TTN_FP_EU868` or `TTN_FP_US915` depending on the frequency plan of your device.
+    > Replace `REPLACE_ME` with either `TTN_FP_EU868` or `TTN_FP_US915` depending on the frequency plan of your device.
     
     This will do a few things:
     
-    1.  Use [`#define`](https://www.arduino.cc/en/Reference/Define) to create more meaningful aliases for the [`Serial`](https://www.arduino.cc/en/Reference/Serial) ports that connect the LoRa modem and USB.
-    2.  Create an instance `ttn` of TheThingsNetwork class, passing the serial ports of the LoRa module and USB connection.
+    1.  Use [`#define`](https://www.arduino.cc/en/Reference/Define) to create more meaningful aliases for the [`Serial`](https://www.arduino.cc/en/Reference/Serial) ports for the LoRa modem and the USB connection, as well as the frequency plan.
+    2.  Create an instance `ttn` of TheThingsNetwork class, passing the serial ports and the frequency plan.
     3.  Call [`begin()`](https://www.arduino.cc/en/Serial/Begin) to set the data rate for both serial ports.
     4.  Wait for the Arduino IDE's Serial Monitor to open communication via USB, but no longer than 10 seconds (10.000ms).
 
@@ -110,27 +115,30 @@ To communicate via The Things Network, you need to register your device. For thi
     Battery: 3223
     AppEUI: 70B3D57EF000001C
     DevEUI: 0004A30B001B7AD2
+    Band: 868
     Data Rate: 5
     RX Delay 1: 1000
     RX Delay 2: 2000
+    Total airtime: 0.00 s
     ```
     
     Use the first `EUI` value to register your device.
 
-> Next time you need the Device EUI of a device, simply select **File > Examples > TheThingsNetwork > [DeviceInfo](https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/DeviceInfo/DeviceInfo.ino)** and upload this sketch that will call `ttn.showStatus()` every 10 seconds from `loop()`.
+> Next time you need the Device EUI of a device, simply select **File > Examples > TheThingsNetwork > [DeviceInfo](https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/DeviceInfo/DeviceInfo.ino)**, only set the frequency plan and upload this sketch which will call `ttn.showStatus()` every 10 seconds.
 
-🎉 You have connected your device, written your first sketch, uploaded it to your device and retrieved its logs!
+🎉 You have connected your device, written your first sketch, uploaded it to your device and monitored your device logs to retrieve its Device EUI.
 
 ## Create an Account
 To register your device you'll need a The Things Network account.
 
 1.  Go to [preview.account.thethingsnetwork.org](https://preview.account.thethingsnetwork.org) and click [create an account](https://preview.account.thethingsnetwork.org/register).
 
-    > You can change all of this, including e-mail address and username later via your [Profile](https://preview.account.thethingsnetwork.org/users/profile).
+    You will receive an email to confirm your email address. You have 24 hours to do so, so let's now wait for that and carry on! 🚀
 
-2.  Check your mailbox to validate your e-mail address.
-3.  Go to [preview.console.thethingsnetwork.org](http://preview.console.thethingsnetwork.org) and log in.
-4.  From the top right menu, select [Settings](https://preview.console.thethingsnetwork.org/settings) and change the default (handler) region if the one currently selected is not near where you'll be deploying your devices.
+    > You can change all but your username later via your [Profile](https://preview.account.thethingsnetwork.org/users/profile).
+
+2.  Select [Console](https://preview.console.thethingsnetwork.org) from the top menu.
+3.  From the top right menu, select your name and then [Settings](https://preview.console.thethingsnetwork.org/settings) from the dropdown menu to change the default Handler if the one currently selected is not where you'll be deploying most of your devices.
 
 ## Add an Application
 Devices need to be registered with an application to communicate with. Let's add one.
@@ -138,25 +146,25 @@ Devices need to be registered with an application to communicate with. Let's add
 1.  On [preview.console.thethingsnetwork.org](https://preview.console.thethingsnetwork.org/), click [add application](https://preview.console.thethingsnetwork.org/applications/add).
 
 	* For **Application ID**, choose a unique ID of lower case, alphanumeric characters and nonconsecutive `-` and `_`.
-	* For **Application Description**, enter anything you like.
+	* For **Description**, enter anything you like.
 	* Leave the checkbox enabled to automatically register the application to your default region.
 
 	![Add Application](add-application.png)
 
-2.  Click **Add Application** to finish.
+2.  Click **Add application** to finish.
 
     You will be redirected to the newly added application.
 
 ## Register your Device
 You are now ready to register your device to the application.
 
-1.  On the application screen, select **Devices** from the top right menu.
+1.  On the application's screen, scroll down to **Devices** or select **Devices** from the top right menu.
 2.  In the **Devices** box, click **register device**.
 
     * For **Device ID**, choose a - for this application - unique ID of lower case, alphanumeric characters and nonconsecutive `-` and `_`.
     * For **Device EUI**, copy-paste the **DevEUI** [you retrieved from your device](#get-your-device-eui).
     * Leave the **App Key** to be randomly generated.
-    * For **App EUI**, select the generated EUI of our application from the list.
+    * Leave the default **App EUI** selected.
 
     ![Register Device (OTAA)](register-device.png)
 
@@ -169,14 +177,11 @@ Now that we have registered the device, we can activate the connection from our 
 
 > Activation means that the device will use the generated App Key to negotiate session keys for further communication. This is also known as Over The Air Activation or OTAA. There's also [Activation By Personalization](../registration.md#personalize-device-for-abp) (ABP) where you set or generate the session keys via the console and hard-code them on your device.
 
-1.  In the Arduino IDE, go back to your sketch and copy-paste the following lines just after the `#include`:
+1.  In the console, scroll down the device's screen to **Example Code** and copy the keys:
 
-    ```c
-    const char *appEui = "0000000000000000";
-    const char *appKey = "00000000000000000000000000000000";
-    ```
+    ![OTAA Keys](keys-otaa.png)
 
-2.  Replace the values for `appEUI` and `appKey` with the **Application EUI** and **App Key** found under **Device Overview** on your device screen in the console.
+2.  Paste the keys right after the `#include` of your sketch.
 3.  In the `setup()` function, copy the following code just after `ttn.showStatus()`:
     
     ```c
@@ -198,11 +203,10 @@ Now that we have registered the device, we can activate the connection from our 
     Data Rate: 5
     RX Delay 1: 1000
     RX Delay 2: 2000
+    Total airtime: 0.00 s
     -- JOIN
     Version is RN2483 1.0.1 Dec 15 2015 09:38:09, model is RN2483
-    Sending: mac set adr off
-    Sending: mac set pwridx 1
-    Sending: mac set dr 5
+    ...
     Sending: mac set appeui with 8 bytes
     Sending: mac set deveui 0004A30B001B7AD2
     Sending: mac set appkey with 16 bytes
@@ -214,7 +218,7 @@ Now that we have registered the device, we can activate the connection from our 
 🎉 Your device is now activated and connected to The Things Network!
 
 ## Message the application
-Let's say hello! Most Arduino boards have an on-board LED and the constant [`LED_BUILTIN`](https://www.arduino.cc/en/Reference/Constants) (scroll all the way down) will tell us to which pin it is connected. We are going send a message to tell us if it's on or not. Exciting! 💡
+Let's say hello! Most Arduino boards have an on-board LED and the constant [`LED_BUILTIN`](https://www.arduino.cc/en/Reference/Constants) (scroll all the way down) will tell us which pin it is connected to. We are going send a message to tell us if it's on or not. Exciting! 💡
 
 1.  In the Arduino IDE, go back to your sketch and replace the `loop()` function with:
 
@@ -237,7 +241,7 @@ Let's say hello! Most Arduino boards have an on-board LED and the constant [`LED
     
     1.  Create an [array](https://www.arduino.cc/en/Reference/Array) of [bytes](https://www.arduino.cc/en/Reference/byte) to hold our message.
 
-        > With LoRaWAN, airtime is expensive. The bigger the message, the more airtime it will cost. Encode any message you need to send in as little bytes as you can.
+        > With LoRaWAN, airtime is expensive. The bigger the message, the more airtime it will cost. Encode any message you need to send in as little bytes as you can. See [Working with Bytes](../bytes.md) to learn more.
         
     2.  Use [`digitalRead`](https://www.arduino.cc/en/Reference/DigitalRead) to get the current value of the LED pin. This will be either [constants](https://www.arduino.cc/en/Reference/Constants) `HIGH` or `LOW`, which we translate to `1` and `0`.
 

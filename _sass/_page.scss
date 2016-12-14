@@ -114,14 +114,21 @@
         padding: 30px;
         font-size: 1.1em;
 
-        blockquote, p {
+        blockquote, p, ol, ul {
             margin-top: 25px;
             margin-bottom: 25px;
         }
 
-        blockquote > * {
-            margin-top: 5px;
-            margin-bottom: 5px;
+        p:first-child {
+            margin-top: 0;
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+
+            > img {
+                margin-bottom: 25px;
+            }
         }
 
         .lead:first-child {

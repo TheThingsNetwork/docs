@@ -1,5 +1,6 @@
 ---
 title: Node.js
+label: 2.x
 section: SDKs
 redirect_from:
  - /refactor/node-js/
