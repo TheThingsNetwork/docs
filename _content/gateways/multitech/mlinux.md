@@ -7,7 +7,8 @@ mLinux is an open source embedded Linux distribution for the MultiConnect Condui
 
 ## Prepare USB stick
 
-Find a FAT or FAT32 formatted USB stick and download [installer.sh](https://github.com/kersing/multitech-installer/raw/master/installer.sh) to it.
+Find a USB stick and add the file [installer.sh](https://github.com/kersing/multitech-installer/raw/master/installer.sh) to it.
+*If the USB is not recognized by the Conduit, please check whether it is FAT or FAT32 formatted*
 
 ## Connect
 
@@ -23,7 +24,7 @@ Use Windows Device Manager to look up the `COM*` for the Conduit, identified by 
 
 ![USB UART](uart.png)
 
-Start PuTTY, select **Serial**, enter the COM port you found and set the **Speed** to `115200`:
+Start PuTTY, set the **Connection type** to: **Serial**, enter the COM port you found and set the **Speed** to `115200`:
 
 ![PuTTY Configuration](putty-mlinux.png)
 
@@ -78,7 +79,7 @@ Tell Linux to release the USB drive:
 umount /mnt
 ```
 
-> During the download to the USB stick the `installer.sh` file might have been renamed to `installer.txt`. If that happened, just use `installer.txt` whenever the instructions say `installer.sh`.
+> During the download to the USB stick the `installer.sh` file might have been renamed to `installer.txt` or `installer.sh.txt`. If that happened, just use `installer.txt` or `installer.sh.txt` whenever the instructions say `installer.sh`.
 
 ## Network Setup
 
@@ -105,6 +106,7 @@ Once the led has stopped blinking you can remove the power cable, USB drive, the
 Now use an ethernet cable to connect the Conduit to the target network and reconnect the power cable. Wait for the conduit to finish booting (the heartbeat led starts blinking), connect a computer to the same network and login to the Conduit.
 
 > If you have not configured your Conduit with a static IP, you will have to [find out which IP the DHCP assigned to it](http://apple.stackexchange.com/questions/19783/how-do-i-know-the-ip-addresses-of-other-computers-in-my-network).
+> You can also find the IP address by reconnecting the Conduit with the Micro-USB Cable. Log in with your Username and Password and type `ifconfig`. Look for `eth0`. The number that comes after `inet addr` is the IP address. 
 
 * For Windows use a terminal program like Putty to connect to `<IP>`:
 
@@ -138,7 +140,7 @@ Check the output of the packet forwarder for any errors:
 tail /var/log/lora-pkt-fwd.log
 ```
 
-The installation was successful if the output looks like:
+The installation was successful if the output looks something like:
 
 ```
 ##### 2016-08-06 23:19:11 GMT #####
