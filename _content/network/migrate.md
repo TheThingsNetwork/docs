@@ -6,6 +6,8 @@ title: Migrate from Staging to Production
 
 This guide will walk you through migrating applications and devices from [staging.thethingsnetwork.org](https://staging.thethingsnetwork.org/) to production at [console.thethingsnetwork.org](https://preview.console.thethingsnetwork.org/).
 
+For the announcement and discussion of the launch of production see the [forum](https://www.thethingsnetwork.org/forum/t/launching-production-environment/4435).
+
 > The migration does not require any changes to devices that use OTAA (the default). Devices that use ABP will need their sketch to be updated with a new Device Address.
 
 > Messages will be routed to the new backend automatically once you have migrated a device and will no longer be delivered to staging.
@@ -87,16 +89,8 @@ For each device you'd like to migrate:
 
 7.  On staging, delete the device or you will risk join accept and routing conflicts.
 
-    If you have other devices left to migrate or would like to keep the empty application around:
-
     1.  On staging, go to the migrated device.
     2.  Scroll down to the bottom and click the red **Delete device** button.
-
-    If this is the last device of the application:
-
-    1.  On staging, go to the migrated application.
-    2.  Click **settings** in the **Application Info** box.
-    3.  Click the red **Delete application** button on the bottom left.
 
 ### Devices registered for ABP
 
@@ -289,3 +283,47 @@ The JSON encoded payload to send a message has also changed. Update the code whe
 ```
 
 > Note that `payload` has been renamed to `payload_raw` and `ttl` is no longer included. Also consider to use the new [`payload_fields`](../applications/mqtt/api.html#downlink-fields).
+
+## SDKs & Libraries
+
+We are using a versioning format where the same major version means compatibility. All 2.x components will be compatible with each other, including the routing services, Console, Account Server, SDKs, platform integrations and libraries.
+
+### Arduino Library
+Although version 1.x of the Arduino Library worked fine with both staging and production, we've released 2.x to follow the above convention. Get it via the Arduino IDE. This version (for now) continuous to work with staging as well.
+
+### Node.js SDK
+For production use versions 2.x:
+
+```bash
+npm install --save ttn
+```
+
+Carefully study and compare the API References of [1.x](../applications/nodejs-v1/api.md) and [2.x](../applications/nodejs/api.md) to migrate any application code that you use the SDK in.
+
+The last version compatible with staging is 1.3.2:
+
+```bash
+npm install --save ttn@1.3.2
+```
+
+### Node-RED Node
+For production use versions 2.x:
+
+```bash
+npm install node-red-contrib-ttn
+```
+
+After updating you will need to update an perhaps even re-add some of the `ttn-*` nodes because there are a lot of breaking changes. Carefully study and compare the guides of [1.x](../applications/nodered-v1/index.md) and [2.x](../applications/nodered/index.md).
+
+
+The last version compatible with staging is 1.0.0:
+
+```bash
+npm install node-red-contrib-ttn@1.0.0
+```
+
+## CLI
+
+Versions 2.x of The Things Network CLI are compatible with production. See the [Quick Start](../network/cli/quick-start.md#installation) for installation instructions.
+
+For staging, you can continue to use the [`v1-staging`](../network/cli-v1/quick-start.md#installation) version. However, since `account.thethingsnetwork.org` is now production and staging has been renamed to `v1.account.thethingsnetwork.org` you will need to [reconfigure](../network/cli-v1/configuration.md) it to use this new hostname.
