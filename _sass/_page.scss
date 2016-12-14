@@ -1,0 +1,242 @@
+.layout-page {
+    
+    .page-top-nav {
+        margin-top: 30px;
+        margin-bottom: 30px;
+
+        ul {
+            @extend .list-inline;
+            margin-bottom: 0;
+
+            li {
+                display: none;
+
+                @media (min-width: $screen-sm-min) {
+                    display: inline-block;
+                }
+
+                &.page-top-nav-crumb {
+                    display: inline-block;
+
+                    &:after {
+                        padding-left: 10px;
+                        margin-right: -5px;
+                        color: $gray-light;
+                        content: "/\00a0";
+                    }
+                }
+
+                a {
+                    color: $gray;
+                    border-bottom: 2px solid transparent;
+                    text-decoration: none;
+
+                    &:hover {
+                        border-bottom-color: $gray;
+                    }
+                }
+
+                &.active {
+                    display: inline-block;
+                    
+                    a {
+                        color: $brand-primary;
+
+                        &, &:hover {
+                            border-bottom-color: $brand-primary;
+                        }
+                    }
+                }
+            }
+        }
+
+        .page-edit {
+            color: $gray;
+            text-decoration: none;
+
+            &:hover {
+                color: $text-color;
+            }
+        }
+    }
+
+    .page-side-nav {
+
+        &.affix {
+            top: 30px;
+        }
+
+        .panel-body {
+            font-size: 0.9em;
+
+            > ul {
+
+                &, ul {
+                    @extend .list-unstyled;
+                }
+
+                a {
+                    color: $text-color;
+                    text-decoration: none;
+                }
+
+                .active > a, a:hover {
+                    color: $brand-primary;
+                }
+
+                > li > ul > li ul {
+                    margin-left: 1em;
+                    font-weight: 0.9em;
+                }
+
+                .page-side-nav-section {
+                    margin-top: 1em;
+
+                    > span {
+                        font-weight: bold;
+                        color: $gray;
+                    }
+                }
+            }
+        }
+    }
+
+    .page-ambassador {
+        font-weight: 0.9em;
+
+        img {
+            max-width: inherit;
+            width: 75px;
+        }
+    }
+
+    .page-content {
+        padding: 30px;
+        font-size: 1.1em;
+
+        blockquote, p, ol, ul {
+            margin-top: 25px;
+            margin-bottom: 25px;
+        }
+
+        p:first-child {
+            margin-top: 0;
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+
+            > img {
+                margin-bottom: 25px;
+            }
+        }
+
+        .lead:first-child {
+            margin-top: 15px;
+            margin-bottom: 30px;
+        }
+
+        .highlighter-rouge {
+            position: relative;
+            margin-top: 10px;
+            margin-bottom: 10px;
+
+            .btn-clipboard {
+                position: absolute;
+                top: 0;
+                right: 0;
+                z-index: 10;
+                display: block;
+                padding: 5px 8px;
+                font-size: 12px;
+                color: #767676;
+                cursor: pointer;
+                background-color: $gray-lighter;
+                border-radius: 0 0 0 4px;
+
+                &:hover {
+                    color: #fff;
+                    background-color: $brand-primary;
+                }
+            }
+        }
+
+        > .highlighter-rouge {
+            margin-left: -31px;
+            margin-right: -31px;
+
+            .highlight {
+                padding-left: 31px;
+                padding-right: 31px;
+
+                border-radius: 0;
+            }
+        }
+
+        i[class^='ion-'] {
+            background-color: white;
+            border: 2px solid #eee;
+            border-radius: 5px;
+            padding: 5px;
+        }
+
+        :not(a) img {
+            cursor: zoom-in;
+        }
+
+        blockquote {
+            border: 1px solid $gray-light;
+            border-left: 5px solid $brand-primary;
+            border-radius: 3px 0 0 3px;
+            font-size: inherit;
+        }
+    }
+
+    .page-content a[href^="http"]:after,
+    .page-side-nav a[href^="http"]:after {
+        content: "\f08e";
+        font-family: FontAwesome;
+        font-weight: normal;
+        font-style: normal;
+        display: inline-block;
+        text-decoration: none;
+        padding-left: 3px;
+    }
+
+    .page-content a[href*="www.thethingsnetwork.org"]:after,
+    .page-side-nav a[href*="www.thethingsnetwork.org"]:after {
+        content:"" !important;
+        padding-left: 0;
+    }
+
+    .page-toc {
+        border-left: 2px solid $gray-light;
+        display: none !important;
+        padding: 0;
+        font-size: 0.9em;
+
+        &.affix {
+            top: 30px;
+        }
+
+        @media (min-width: 768px) {
+            display: block !important;
+        }
+
+        ul {
+            list-style-type: none !important;
+            padding-left: 10px;
+            margin-bottom: 0;
+            font-weight: bold;
+
+            ul {
+                font-weight: normal;
+                font-size: 0.9em;
+            }
+
+            a {
+                color: $gray-dark;
+            }
+        }
+    }
+}

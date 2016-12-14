@@ -1,68 +1,9 @@
 .layout-index {  
-  margin-bottom: 70px;
-
-  @media (min-width: 1700px) {
-    background-size: 100% auto;
-  }
-
-  .index-header {
-    height: 500px;
-    background-image: url($baseurl + '/assets/images/header-img-learn.jpg');
-    background-size: cover;
-    background-position: center;
-
-    h1 {
-      margin: auto;
-      margin-top: 40px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-
-      img {
-        width: 170px;
-      }
-
-      span {
-        display: block;
-        text-transform: uppercase;
-        font-size: 60px;
-        letter-spacing: 9px;
-        color: white;
-        margin-top: 40px;
-      }
-    }
-
-    p {
-      @extend .text-center;
-      margin-top: 40px;
-      font-size: 20px;
-      color: white;
-    }
-
-    @media (min-width: $screen-sm-min) {
-      h1 {
-        flex-direction: row;
-        margin-top: 70px;
-
-        span {
-          font-size: 120px;
-          margin-left: 40px;
-          margin-top: 40px;
-        }
-      }
-
-      p {
-        font-size: 25px;
-        margin-top: 70px;
-      }
-    }
-  }
 
   .index-intro {
     margin-top: -50px;
     padding: 45px;
-    margin-bottom: 70px;
+    margin-bottom: 30px;
     text-align: center;
     color: $gray;
 
@@ -84,9 +25,45 @@
 
   @media (min-width: $screen-sm-min) {
 
-    .index-categories {
+    .index-blocks {
       display: flex;
       flex-flow: row wrap;
+
+      > div {
+        display: flex;
+
+        > div {
+          flex: 1
+        }
+      }
+
+      .panel-body {
+        text-align: center;
+      }
     }
+  }
+
+  .index-docs {
+    img {
+      margin: 1em 0;
+    }
+  }
+
+  .index-title {
+    display: table;
+    white-space: nowrap;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+    &:before, &:after {
+      border-top: 1px solid $gray-light;
+      content: '';
+      display: table-cell;
+      position: relative;
+      top: 0.5em;
+      width: 45%;
+    }
+    &:before { right: 1.5%; }
+    &:after { left: 1.5%; }
   }
 }

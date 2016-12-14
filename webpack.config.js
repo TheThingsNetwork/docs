@@ -1,11 +1,13 @@
 var path = require('path');
-var webpack = require('webpack');
 
 module.exports = {
-  entry: path.join(__dirname, 'assets', 'js', '_main.js'),
+  entry: {
+    main: path.join(__dirname, 'assets', 'js', '_main.js'),
+    page: path.join(__dirname, 'assets', 'js', '_page.js')
+  },
   output: {
     path: path.join(__dirname, 'assets', 'js'),
-    filename: 'bundle.js'
+    filename: '[name].js'
   },
   module: {
     loaders: [
@@ -23,12 +25,5 @@ module.exports = {
     alias: {
         jquery: 'jquery/src/jquery'
     }
-  },
-
-  plugins: [
-    new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery'
-    })
-  ]
+  }
 };

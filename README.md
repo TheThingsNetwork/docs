@@ -3,19 +3,15 @@
 This is a [Jekyll](https://jekyllrb.com) site which [Travis](https://travis-ci.org/TheThingsNetwork/docs) automatically tests and builds to the [gh-pages](https://github.com/TheThingsNetwork/docs/tree/gh-pages) branch to be served via [GitHub Pages](https://help.github.com/articles/what-is-github-pages/).
 
 ## Update content
+If you do a lot of edits please use a local build to preview and test.
 
 * The homepage for the site is [index.html](index.html).
-* The guides are a Jekyll collection in the [_includes](_includes) folder, grouped per version.
-* Use the main file of each guide for the intro.
-* Use the `sections` front matter to include additional content from files relative to the guide, preferably in a subfolder with the same name. Make sure to start these files with `_` to prevent Jekyll for outputting them as stand-alone pages.
-* To use a section from another guide or even version start with `/`.
-* Make sure there are no duplicate headings (of any level) between different sections or [specify a unique heading ID](http://kramdown.gettalong.org/syntax.html#specifying-a-header-id) for each of them.
-* Store guide assets in the same folder as the markdown you need it in and include them by their filename. You can also use relative paths to re-use images from other guides.
-* The guide layout will prepend `/docs/<version>` to all links and image references that start with `/`. To link to a different version start with `../<version>/<guide>`.
-* To include content from another guide use `{% include path/relative/to/_includes/folder.md %}`.
-* Always end internal links with `/` to prevent redirects.
+* The guides are a Jekyll collection in the [_content](_content) folder.
+* Store assets in the same folder as the markdown file you need it in and include them by their filename. You can also use relative paths to re-use images from other guides.
+* To link to another child guide, use the relative markdown path (e.g. `../devices/registration.md`) and Jekyll will make it `.html`.
+* To link to another parent guide, use the relative markdown path (e.g. `../devices/index.md`) or the directory path, ending with a slash (`../devices/`).
+* Guides are sorted on descending `zindex` first, then `title` ascending and if those are equal `label` descending.
 * Use blockquotes (`>`) to create callouts for important notes.
-* If you do a lot of edits please use a local build to preview and test.
 * To set an image to use on Facebook and Twitter use `image:/absolute/path/to/image.png` in your frontmatter.
 * You can use most of the [icons](http://ionicons.com/cheatsheet.html) we use in the console. Simply use `<i class="ion-eye"></i>` in the Markdown and we'll style it as a button.
 
@@ -41,14 +37,16 @@ This is a [Jekyll](https://jekyllrb.com) site which [Travis](https://travis-ci.o
   ```basg
   $ npm install
   ```
+  
+    > This will also overwrite any local git pre-commit hook to execute [npm run webpack](package.json#L12), [npm test](package.json#L15) and [npm run add](package.json#L16) to append the webpack build.
 
 4. Run [Webpack](http://webpack.github.io/), build the local Jekyll site and watch for changes:
 
 	```bash
 	$ npm run dev
 	```
-
-> *NOTE:* Running `npm install` will overwrite the git pre-commit hook to execute [npm run webpack](package.json#L12), [npm test](package.json#L15) and [npm run add](package.json#L16) to append the webpack build.
+	
+	> Be aware that this will use Jekyll's experimental incremental mode. Only the file you edit will be regenerated. So a change in a guide's title will not cause the navigation on all other pages to be updated. Just kill the proces and run it again.
 	
 ### Guidance
 
@@ -60,23 +58,31 @@ This is a [Jekyll](https://jekyllrb.com) site which [Travis](https://travis-ci.o
 * Edit layouts in the [_layouts](_layouts) folder.
 * All layouts should inherit the [default](_layouts/default.html) layout.
 
+## Build and upload a preview
+
+If you do some major refactoring and would like to upload a build somewhere for preview, then you can use:
+
+```
+npm run scp user@host:/path
+```
+
+This will create a build in `_scp`, upload it with `scp` and then delete the directory. Make sure the server has your public key or it will prompt for a password and cause the script to fail.
+
+Alternatively, you can set the `SCP_TARGET` environment variable or [dotenv](https://www.npmjs.com/package/dotenv).
+
 ## Test [![Build Status](https://travis-ci.org/TheThingsNetwork/docs.svg?branch=master)](https://travis-ci.org/TheThingsNetwork/docs)
 
-Pull Requests and Pushes will be tested automatically by Travis. This will use [markdown-spellcheck](https://www.npmjs.com/package/markdown-spellcheck) on the Markdown source files, let Jekyll try to build the site and then use [HTMLProofer](https://github.com/gjtorikian/html-proofer) to test for broken links etc.
+Pull Requests and Pushes will be tested automatically by Travis. It will let Jekyll try to build the site and then run [HTMLProofer](https://github.com/gjtorikian/html-proofer) to test for broken links etc.
 
-To run the test local, follow *Build local* to install the dependencies and then run:
+The test will also run automatically before every commit. To run the test manually, follow *Build local* to install the dependencies and then run:
 
 ```
 npm test
 ```
 
-The test will also run automatically before every commit.
-
-To ignore spelling errors for all or certain files, add them to [.spelling](.spelling).
-
 ## Automatic updates
 
-Some content we source directly from elsewhere, e.g. the [MQTT API Reference](https://github.com/TheThingsNetwork/ttn/blob/v2-preview/mqtt/README.md).
+Some content we source directly from elsewhere, e.g. the [MQTT API Reference](https://github.com/TheThingsNetwork/ttn/blob/refactor/mqtt/README.md).
 
 ### Update
 

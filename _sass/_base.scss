@@ -1,14 +1,137 @@
-body {
-  padding-top: $ttn-navbar-height;
-}
-
 img {
   max-width: 100%; // never exceed parent width
 }
 
+#navbar {
+  position: static;
+}
+
 #content {
   overflow-x: hidden;
-  font-size: 15px;
+  margin-bottom: 30px;
+}
+
+.ttn-container {
+  padding: 0 15%;
+
+  @media screen and (max-width: 1130px) {
+    padding: 0 5%;
+  }
+
+  @media screen and (max-width: $ttn-mobile-max) {
+    padding: 0;
+
+    &.container, &.container-fluid {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+}
+
+.ttn-header {
+  height: 500px;
+  background-image: url($baseurl + '/assets/images/header-img-learn.jpg');
+  background-size: cover;
+  background-position: center;
+
+  h1 {
+    margin: auto;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    img {
+      width: 170px;
+    }
+
+    span {
+      display: block;
+      text-transform: uppercase;
+      font-size: 60px;
+      letter-spacing: 9px;
+      color: white;
+      margin-top: 40px;
+    }
+  }
+
+  p {
+    @extend .text-center;
+    margin-top: 40px;
+    font-size: 20px;
+    color: white;
+  }
+
+  @media (min-width: $screen-sm-min) {
+    h1 {
+      flex-direction: row;
+      margin-top: 70px;
+
+      span {
+        font-size: 120px;
+        margin-left: 40px;
+        margin-top: 40px;
+      }
+    }
+
+    p {
+      font-size: 25px;
+      margin-top: 70px;
+    }
+  }
+
+  &.ttn-header-small {
+    height: 150px;
+
+    h1 {
+      margin-top: 25px;
+
+      img {
+        width: 75px;
+      }
+
+      span {
+        font-size: 30px;
+        margin-top: 20px;
+      }
+    }
+
+    @media (min-width: $screen-sm-min) {
+      h1 {
+        margin-top: 35px;
+
+        span {
+          font-size: 60px;
+        }
+      }
+    }
+  }
+}
+
+/* linked panels */
+
+.panel {
+
+  .panel-body {
+
+    > :first-child {
+      margin-top: 0;
+    }
+    
+    > :last-child {
+      margin-bottom: 0;
+    }
+  }
+  
+  & > a {
+    text-decoration: none;
+    color: inherit;
+
+    &:hover * {
+      color: $link-color;
+    }
+  }
 }
 
 /* anchor-js */
@@ -16,14 +139,4 @@ img {
 .anchorjs-link:hover,
 .anchorjs-link:active {
   text-decoration: none;
-}
-
-/* footer */
-
-.footer {
-  margin-top: 1.5rem;
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-  color: $text-muted;
-  border-top: .05rem solid $gray-light;
 }

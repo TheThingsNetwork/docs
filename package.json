@@ -6,16 +6,15 @@
   "main": "js/main.js",
   "scripts": {
     "start": "npm run prod",
-    "dev": "npm run dev-webpack & npm run dev-jekyll",
-    "prod": "npm run webpack & npm run jekyll",
-    "test": "npm run spelling && npm run htmlproof",
+    "dev": "rm -rf _site && npm run dev-webpack & npm run dev-jekyll",
+    "prod": "rm -rf _site && npm run webpack && npm run jekyll",
+    "test": "npm run htmlproof",
     "jekyll": "bundle exec jekyll serve",
-    "pull": "node _scripts/pull.js",
     "dev-jekyll": "bundle exec jekyll serve --incremental",
+    "pull": "node _scripts/pull.js",
+    "scp": "npm run webpack && node _scripts/scp.js",
     "webpack": "webpack -p",
     "dev-webpack": "webpack --watch",
-    "spelling": "mdspell --en-us -rna _includes/**/*.md",
-    "dev-spelling": "mdspell --en-us -na _includes/**/*.md",
     "htmlproof": "rm -rf _test && bundle exec jekyll build -d ./_test/docs && bundle exec htmlproofer --allow-hash-href --url-ignore '/github.com\\/TheThingsNetwork\\/docs\\/edit/' --url-swap 'http(s)?\\://www\\.thethingsnetwork\\.org/docs:/docs' ./_test",
     "add": "git add ."
   },
@@ -46,12 +45,10 @@
     "dotenv": "^2.0.0",
     "font-awesome": "^4.6.3",
     "jquery": "^2.2.4",
-    "markdown-spellcheck": "^0.11.0",
+    "js-yaml": "^3.7.0",
     "pre-commit": "^1.1.3",
     "request": "^2.78.0",
-    "smooth-scroll": "cferdinandi/smooth-scroll",
     "stylebook": "thethingsnetwork/stylebook",
-    "tocbot": "^2.1.5",
     "webpack": "^1.13.1"
   }
 }

@@ -2,73 +2,103 @@ require('dotenv').config({
   silent: true
 });
 
-var async = require('async');
-var request = require('request');
-var fs = require('fs');
+/**
+ * Add files to pull from public repositories here:
+ */
 
 var items = [{
   owner: 'TheThingsNetwork',
-  repo: 'node-app-lib',
+  repo: 'node-app-sdk',
   branch: 'master',
   path: 'API.md',
-  file: '_includes/v2-preview/node-js/_api.md'
+  target: '_content/applications/nodejs/api.md',
+  yaml: {
+    title: 'API Reference',
+  }
 }, {
   owner: 'TheThingsNetwork',
   repo: 'arduino-device-lib',
   branch: 'master',
   path: 'docs/TheThingsNetwork.md',
-  file: '_includes/current/arduino/_api.md'
+  target: '_content/devices/arduino/api.md',
+  yaml: {
+    title: 'API Reference'
+  }
 }, {
   owner: 'TheThingsNetwork',
   repo: 'arduino-device-lib',
   branch: 'feature/node',
   path: 'docs/TheThingsNode.md',
-  file: '_includes/draft/node/_api.md'
+  target: '_content/devices/node/api.md',
+  yaml: {
+    title: 'API Reference'
+  }
 }, {
   owner: 'TheThingsNetwork',
   repo: 'ttn',
-  branch: 'v2-preview',
+  branch: 'master',
   path: 'mqtt/README.md',
-  file: '_includes/v2-preview/mqtt/_api.md'
+  target: '_content/applications/mqtt/api.md',
+  yaml: {
+    title: 'API Reference'
+  }
 }, {
   owner: 'TheThingsNetwork',
-  repo: 'java-app-lib',
+  repo: 'java-app-sdk',
   branch: 'master',
   path: 'API.md',
-  file: '_includes/v2-preview/java/_api.md'
+  target: '_content/applications/java/api.md',
+  yaml: {
+    title: 'API Reference'
+  }
 }, {
   owner: 'TheThingsNetwork',
   repo: 'ttn',
-  branch: 'v2-preview',
+  branch: 'master',
   path: 'ttnctl/cmd/docs/README.md',
-  file: '_includes/v2-preview/cli/_api.md'
+  target: '_content/network/cli/api.md',
+  yaml: {
+    title: 'API Reference'
+  }
 }, {
   owner: 'TheThingsNetwork',
   repo: 'ttn',
-  branch: 'v2-preview',
+  branch: 'master',
   path: 'api/API_AUTHENTICATION.md',
-  file: '_includes/draft/application-manager/_auth.md'
+  target: '_content/applications/manager/authentication.md',
+  yaml: {
+    title: 'Authentication'
+  }
 }, {
   owner: 'TheThingsNetwork',
   repo: 'ttn',
-  branch: 'v2-preview',
+  branch: 'master',
   path: 'api/handler/ApplicationManager.md',
-  file: '_includes/draft/application-manager/_api.md',
+  target: '_content/applications/manager/api.md',
   replace: [
     [/^# ApplicationManager API Reference/m, '# API Reference']
-  ]
+  ],
+  yaml: {
+    title: 'API Reference'
+  }
 }, {
   owner: 'TheThingsNetwork',
   repo: 'ttn',
-  branch: 'v2-preview',
+  branch: 'master',
   path: 'api/discovery/Discovery.md',
-  file: '_includes/draft/discovery/_api.md',
+  target: '_content/network/discovery/api.md',
   replace: [
     [/^# Discovery API Reference/m, '# API Reference']
-  ]
+  ],
+  yaml: {
+    title: 'API Reference'
+  }
 }];
 
-// skip private repos if we don't have a token
+/**
+ * Add files to pull from private repositories here:
+ */
+
 if (process.env.GITHUB_OAUTH_TOKEN) {
   items.push({
     owner: 'TheThingsIndustries',
@@ -76,21 +106,49 @@ if (process.env.GITHUB_OAUTH_TOKEN) {
     branch: 'v2-preview',
     path: 'apidocs.md',
     token: process.env.GITHUB_OAUTH_TOKEN,
-    file: '_includes/draft/account/_api.md',
+    target: '_content/network/account/api.md',
     replace: [
-      [/^The Things Network Account Server API/m, 'API Reference']
-    ]
+      [/^The Things Network Account Server API$/m, 'API Reference']
+    ],
+    yaml: {
+      title: 'API Reference'
+    }
   }, {
     owner: 'TheThingsIndustries',
     repo: 'node-ttn-oauth2',
     branch: 'v2-preview',
     path: 'AUTHENTICATION.md',
     token: process.env.GITHUB_OAUTH_TOKEN,
-    file: '_includes/draft/account/_authentication.md'
+    target: '_content/network/account/authentication.md',
+    yaml: {
+      title: 'Authentication'
+    }
+  }, {
+    owner: 'TheThingsIndustries',
+    repo: 'integration-storage',
+    branch: 'master',
+    path: 'api/README.md',
+    token: process.env.GITHUB_OAUTH_TOKEN,
+    target: '_content/applications/storage/api.md',
+    replace: [
+      [/^# Storage API Reference/m, '# API Reference']
+    ],
+    yaml: {
+      title: 'API Reference'
+    }
   });
 } else {
   console.log('Skipping private repositories...');
 }
+
+/**
+ * Do not edit:
+ */
+
+var async = require('async');
+var request = require('request');
+var fs = require('fs');
+var yaml = require('js-yaml');
 
 async.each(items, function (item, doneWithItem) {
   var options = {};
@@ -120,8 +178,11 @@ async.each(items, function (item, doneWithItem) {
       return doneWithItem(new Error('Failed to fetch ' + editUrl + ': ' + response.statusCode + ' ' + response.statusMessage));
     }
 
-    // prepend warning
-    body = (item.frontmatter ? '---\n' + JSON.stringify(item.frontmatter, null, 2) + '\n---\n' : '') + '<!-- EDIT AT ' + editUrl + ' -->\n\n' + body;
+    if (!item.yaml) {
+      item.yaml = {};
+    }
+
+    item.yaml.source = editUrl;
 
     // replacements
     if (item.replace) {
@@ -130,9 +191,14 @@ async.each(items, function (item, doneWithItem) {
       });
     }
 
-    console.log('Writing: ' + item.file);
+    body = '---\n' + yaml.safeDump(item.yaml, {
+      lineWidth: 1000,
+      noCompatMode: true
+    }) + '---\n\n' + body;
 
-    fs.writeFile(item.file, body, doneWithItem);
+    console.log('Writing: ' + item.target);
+
+    fs.writeFile(item.target, body, doneWithItem);
   });
 
 }, function (err) {

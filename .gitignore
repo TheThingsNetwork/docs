@@ -1,6 +1,7 @@
 # Generated site
-_site
-_test
+/_site
+/_test
+/_scp
 
 # Logs
 logs
@@ -13,7 +14,6 @@ npm-debug.log*
 # Do include Sass since GitHub Pages needs it to build the Jekyll site
 !/node_modules/font-awesome
 !/node_modules/stylebook
-!/node_modules/smooth-scroll
 
 # Cache
 .npm
