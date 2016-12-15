@@ -8,12 +8,12 @@ This guide will walk you through setting up a Java project that listens to devic
 
 > This guide assumes the sketch and payload functions of [The Things Uno / Quick Start](../../devices/uno/quick-start.md), but can be easily applied to any other.
 
-The full script that we will build is also included as [example](https://github.com/TheThingsNetwork/java-app-sdk/blob/master/sample/src/main/java/org/thethingsnetwork/java/app/sample/App.java) in the Java SDK.
+The full script that we will build is also included as [example](https://github.com/TheThingsNetwork/java-app-sdk/blob/2.0.0/samples/mqtt/src/main/java/org/thethingsnetwork/samples/mqtt/App.java) in the Java library.
 
 ## Setup
 Let's install Java, create a Java project and require the TTN Client.
 
-1.  [Download](https://www.java.com/) and install Java (at least version 7). 
+1.  [Download](https://www.java.com/) and install Java (at least version 8). 
 
     Under debian-based systems, use :
 
@@ -44,20 +44,20 @@ Let's install Java, create a Java project and require the TTN Client.
     ```bash
     cd $HOME
     mvn archetype:generate \
-    -DgroupId=org.thethingsnetwork.java.app.sample \
-    -DartifactId=sample \
+    -DgroupId=org.thethingsnetwork.samples.mqtt \
+    -DartifactId=mqtt \
     -DarchetypeArtifactId=maven-archetype-quickstart \
     -DinteractiveMode=false
-    cd sample
+    cd mqtt
     ```
 
-4.  Require the [TTN Client](http://mvnrepository.com/artifact/org.thethingsnetwork/java-app-lib) as dependency:
+4.  Require the [TTN Client](http://mvnrepository.com/artifact/org.thethingsnetwork/data-mqtt) as dependency:
 
     ```xml
     <dependency>
       <groupId>org.thethingsnetwork</groupId>
       <artifactId>java-app-lib</artifactId>
-      <version>1.0.0</version>
+      <version>2.0.0</version>
     </dependency>
     ```
     
@@ -73,19 +73,17 @@ Next, we will write the script that requires the TTN Client module and uses it t
 1.  Create the main script and open it in your favorite editor:
 
     ```bash
-    open src/main/java/org/thethingsnetwork/java/app/sample/App.java
+    open src/main/java/org/thethingsnetwork/samples/mqtt/App.java
     ```
 
 2.  Import all required classes :
 
     ```java
-    package org.thethingsnetwork.java.app.sample;
+    package org.thethingsnetwork.samples.mqtt;
 
-    import java.util.function.BiConsumer;
-    import java.util.function.Consumer;
-    import org.eclipse.paho.client.mqttv3.MqttClient;
     import org.json.JSONObject;
-    import org.thethingsnetwork.java.app.lib.Client;
+    import org.thethingsnetwork.data.common.Connection;
+    import org.thethingsnetwork.data.mqtt.Client;
     ```
 
 3.  In the [console](https://console.thethingsnetwork.org/applications), navigate to the application you'd like to connect to.
@@ -111,24 +109,16 @@ Next, we will write the script that requires the TTN Client module and uses it t
 6.  Add a listener for the `connected` and `error` events to test the connection:
 
     ```java
-    client.onError(new ErrorHandler() {
-        public void handle(Throwable _error) {
-            System.err.println("error: " + _error.getMessage());
-        }
-    });
+    client.onError((Throwable _error) -> System.err.println("error: " + _error.getMessage()));
 
-    client.onConnected(new ConnectHandler() {
-        public void handle(MqttClient _client) {
-            System.out.println("connected !");
-        }
-    });
+    client.onConnected((Connection _client) -> System.out.println("connected !"));
     ```
  
 7.  Run the script to test the connection:
 
     ```bash
     mvn clean compile exec:java \
-    -Dexec.mainClass="org.thethingsnetwork.java.app.sample.App"
+    -Dexec.mainClass="org.thethingsnetwork.samples.mqtt.App"
     ```
 
     You should see something like:
@@ -137,7 +127,7 @@ Next, we will write the script that requires the TTN Client module and uses it t
     [INFO] Scanning for projects...
     [INFO] 
     [INFO] -----------------------------------------------------------
-    [INFO] Building sample 1.0.0
+    [INFO] Building mqtt 1.0.0
     [INFO] -----------------------------------------------------------
     [INFO] 
     [INFO] --- exec-maven-plugin:1.2.1:exec (default-cli) @ sample ---
@@ -160,18 +150,14 @@ Now that we are connected, let's listen for new device activations.
 1.  Add a listener for the `activation` event:
 
     ```java
-    client.onActivation(new BiConsumer<String, JSONObject>() {
-        public void accept(String devId, JSONObject data) {
-            System.out.println("Activation: " + devId + " " + data);
-        }
-    });
+    client.onActivation((String _devId, JSONObject _data) -> System.out.println("Activation: " + _devId + ", data: " + _data));
     ```
 
 2.  Run the script again:
 
     ```bash
     mvn clean compile exec:java \
-    -Dexec.mainClass="org.thethingsnetwork.java.app.sample.App"
+    -Dexec.mainClass="org.thethingsnetwork.samples.mqtt.App"
     ```
 
 3.  Power up, reset or upload a new sketch to a device to force it to activate and you should see something like:
@@ -198,18 +184,14 @@ Now let's listen for actual messages coming in from devices.
 1.  Add a listener for the `message` event:
 
     ```java
-    client.onMessage(new BiConsumer<String, Object>() {
-        public void accept(String devId, Object data) {
-            System.out.println("Message: " + devId + " " + data);
-        }
-    });
+    client.onMessage((String devId, Object data) -> System.out.println("Message: " + devId + " " + data));
     ```
 
 2.  Run the script again:
 
     ```bash
     mvn clean compile exec:java \
-    -Dexec.mainClass="org.thethingsnetwork.java.app.sample.App"
+    -Dexec.mainClass="org.thethingsnetwork.samples.mqtt.App"
     ```
 
     You should see messages come in like:
@@ -251,22 +233,21 @@ The most common [Class A](https://www.lora-alliance.org/What-Is-LoRa/Technology)
 2.  In the editor for the script, add another listener for the `message` event:
 
     ```java
-    client.onMessage(null, "led", new BiConsumer<String, Object>() {
-            public void accept(String devId, Object data) {
+    client.onMessage(null, "led", (String _devId, Object _data) -> {
             try {
                 // Toggle the LED
-                JSONObject response = new JSONObject().put("led", !data.equals("true"));
+                JSONObject response = new JSONObject().put("led", !_data.equals("true"));
+
                 /**
                  * If you don't have an encoder payload function:
-                 * client.send(devId, data.equals("true") ? new byte[]{0x00} : new byte[]{0x01}, 0);
+                 * client.send(_devId, _data.equals("true") ? new byte[]{0x00} : new byte[]{0x01}, 0);
                  */
                 System.out.println("Sending: " + response);
-                client.send(devId, response, 0);
+                client.send(_devId, response, 0);
             } catch (Exception ex) {
                 System.out.println("Response failed: " + ex.getMessage());
             }
-        }
-    });
+        });
     ```
     
     This is what it will do:
@@ -279,7 +260,7 @@ The most common [Class A](https://www.lora-alliance.org/What-Is-LoRa/Technology)
 
     ```bash
     mvn clean compile exec:java \
-    -Dexec.mainClass="org.thethingsnetwork.java.app.sample.App"
+    -Dexec.mainClass="org.thethingsnetwork.samples.mqtt.App"
     ```
 
     After every message the script should output:
