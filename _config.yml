@@ -18,7 +18,7 @@ facebook:
   publisher: https://www.facebook.com/thethingsnetwork
 github:
   repository_url: https://github.com/TheThingsNetwork/docs
-logo: /assets/images/the-things-white.png
+logo: https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png
 
 # Build settings
 collections:
@@ -32,7 +32,7 @@ defaults:
       type: content
     values:
       layout: page
-      image: /assets/images/the-things-white.png
+      image: /assets/images/og-image.png
 markdown: kramdown
 lsi: false
 highlighter: rouge
