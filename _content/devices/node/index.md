@@ -23,4 +23,4 @@ Once you have validated your idea, the next step could be to use [The Things Uno
 ## Prerequisites
 
 * The Things Node.
-* The [`preview/node` branch](https://github.com/TheThingsNetwork/arduino-device-lib/tree/preview/node/) of the The Things Network Arduino Library.
+* The [`feature/node` branch](https://github.com/TheThingsNetwork/arduino-device-lib/tree/feature/node/) of the The Things Network Arduino Library.

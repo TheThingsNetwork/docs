@@ -6,7 +6,7 @@ section: SDKs & Libaries
 
 # Node.js SDKs
 
-> This guide is for version 1.x of the SDK, which works with [staging.thethingsnetwork.org](staging.thethingsnetwork.org). Please migrate to version 2.x for [console.thethingsnetwork.org](console.thethingsnetwork.org) ASAP.
+> This guide is for version 1.x of the SDK, which works with [staging.thethingsnetwork.org](https://staging.thethingsnetwork.org/). Please migrate to version 2.x for [console.thethingsnetwork.org](https://console.thethingsnetwork.org/) ASAP.
 
 [Node.js](https://nodejs.org/) is a JavaScript run-time built on Chrome's V8 JavaScript engine.
 

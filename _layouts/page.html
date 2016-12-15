@@ -68,7 +68,7 @@ layout: default
                 <li class="page-side-nav-section"><span>Links <i class="fa fa-link"></i></span>
                   <ul>
                     {% for link in top.links %}
-                      <li class=""><a href="{{ link.href }}">{{ link.title }}</a></li>
+                      <li class=""><a href="{% if link.href contains ':' %}{{ link.href }}{% else %}{{ link.href | prepend:top.url | prepend:site.baseurl | remove:'index.html' }}{% endif %}">{{ link.title }}</a></li>
                     {% endfor %}
                   </ul>
                 </li>

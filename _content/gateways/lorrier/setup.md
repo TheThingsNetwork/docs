@@ -36,8 +36,6 @@ This guide follows most of the [LR2 Quick Settings Guide](https://github.com/lor
     
     2.  To change the passwords type `passwd root` and `passwd debian`.
 
-7.  Continue to [Gateway Configuration](config.md).
-
 ## Configuration
 
 1.  Open the LR2 web interface in your browser.
