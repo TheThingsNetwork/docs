@@ -322,6 +322,11 @@ The last version compatible with staging is 1.0.0:
 npm install node-red-contrib-ttn@1.0.0
 ```
 
+### Java SDK
+For production use versions 2.x. Although 1.x already supported production and not staging, we bumped to 2.x to align it with other SDKs and components. As part of this we did change the package and class names in preparation for adding more APIs to this SDK.
+
+Please check the [Java guide](../applications/java/index.md) for more details.
+
 ## CLI
 
 Versions 2.x of The Things Network CLI are compatible with production. See the [Quick Start](../network/cli/quick-start.md#installation) for installation instructions.
