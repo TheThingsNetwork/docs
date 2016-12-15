@@ -8625,7 +8625,8 @@ img {
     display: flex;
     flex-flow: row wrap; }
     .layout-index .index-blocks > div {
-      display: flex; }
+      display: flex;
+      flex: 1; }
       .layout-index .index-blocks > div > div {
         flex: 1; }
     .layout-index .index-blocks .panel-body {
