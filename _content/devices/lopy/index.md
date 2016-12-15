@@ -4,6 +4,7 @@ ambassador:
   name: Corné van Strien
   username: Batilan
 section: Hardware
+image: /devices/lopy/image.jpg
 redirect_from:
  - /draft/lopy/
  - /lopy/
@@ -12,6 +13,8 @@ redirect_from:
 # LoPy
 
 With LoRa, Wifi and BLE, the the [LoPy](https://www.pycom.io/solutions/py-boards/lopy/) is the only triple bearer MicroPython enabled micro controller on the market today – the perfect enterprise grade IoT platform for your connected Things.
+
+![LoPy](image.jpg)
 
 This guide will walk you through using The Things Network on the LoPy as node.
 
@@ -34,3 +37,15 @@ This guide will walk you through using The Things Network on the LoPy as node.
   > Mount the LoPy with the LED (white square) [positioned on the same side](https://docs.pycom.io/lopy/lopy/tutorial/intro.html#plugging-into-the-expansion-board-and-powering-on) as the Micro-USB connector of the expansion board.
   
 **Bonus:** If you use the case, guide the pigtail coming from the LoPy between the LoPy and the row of pins. It should then bent back to the antenna in a way that it doesn't hide the pin labels from you once you close the case.
+
+# Resources
+
+Official resources by Pycom:
+
+* [Getting Started with the LoPy](https://www.pycom.io/gettingstarted/)
+* [Documentation for MicroPython and the LoPy](https://docs.pycom.io/lopy/)
+
+Resources for community support:
+
+* [The Things Network Forum / LoPy](https://www.thethingsnetwork.org/forum/search?q=lopy)
+* [Pycom Forum / LoPy](https://forum.pycom.io/category/6/the-lopy)

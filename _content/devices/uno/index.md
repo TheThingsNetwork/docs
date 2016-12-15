@@ -7,6 +7,7 @@ redirect-from:
  - /v2-preview/uno/
  - /uno/
 image: /devices/uno/image.png
+zindex: 1000
 ---
 
 # The Things Uno

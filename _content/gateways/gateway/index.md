@@ -2,6 +2,7 @@
 title: The Things Gateway
 image: /gateways/gateway/image.png
 section: Hardware
+zindex: 1000
 ---
 
 # The Things Gateway

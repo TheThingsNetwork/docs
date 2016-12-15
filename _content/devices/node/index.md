@@ -6,6 +6,7 @@ redirect_from:
  - /draft/node/
  - /node/
 image: /devices/node/image.png
+zindex: 900
 ---
 
 # The Things Node

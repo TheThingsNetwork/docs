@@ -8,6 +8,7 @@ ambassador:
   name: Jac Kersing
   username: kersing
 image: /gateways/multitech/image.jpg
+zindex: 900
 ---
 
 The [MultiConnect® Conduit™](http://www.multitech.net/developer/products/multiconnect-conduit-platform/) is a configurable, scalable cellular communications gateway for industrial IoT applications. Conduit allows users to plug in two MultiConnect mCard™ accessory cards supporting wired or wireless interfaces.
