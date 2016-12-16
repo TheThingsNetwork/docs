@@ -32,7 +32,8 @@ To hide the complexity of parsing and composing the message payloads from you, T
 
 At the moment, we offer clients for:
 
-* [Node.js](../nodejs/index.md)
+* [Java](../java/index.md)
 * [Node-RED](../nodered/index.md)
+* [Node.js](../nodejs/index.md)
 
 If you'd like to create and maintain a client for another language or platform, let us know! We'd like to support you and look after achieving consistent APIs across libraries.
