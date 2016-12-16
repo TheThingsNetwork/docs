@@ -29,7 +29,7 @@
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2016-12-15T10:42:36+00:00" />
+<meta property="article:published_time" content="2016-12-16T08:12:44+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
@@ -38,7 +38,7 @@
 "@type": "BlogPosting",
 "headline": "Quick Start",
 "image": "https://www.thethingsnetwork.org/docs/assets/images/og-image.png",
-"datePublished": "2016-12-15T10:42:36+00:00",
+"datePublished": "2016-12-16T08:12:44+00:00",
 "description": "Quick Start This guide will walk you through setting up a Java project that listens to device activations and messages and responds to every 3rd message.",
 "publisher": {"@type": "Organization",
 "logo": {"@type": "ImageObject",
@@ -163,12 +163,12 @@
 <blockquote>
   <p>This guide assumes the sketch and payload functions of <a href="../../devices/uno/quick-start.html">The Things Uno / Quick Start</a>, but can be easily applied to any other.</p>
 </blockquote>
-<p>The full script that we will build is also included as <a href="https://github.com/TheThingsNetwork/java-app-sdk/blob/master/sample/src/main/java/org/thethingsnetwork/java/app/sample/App.java">example</a> in the Java SDK.</p>
+<p>The full script that we will build is also included as <a href="https://github.com/TheThingsNetwork/java-app-sdk/blob/master/samples/mqtt/src/main/java/org/thethingsnetwork/samples/mqtt/App.java">example</a> in the Java SDK.</p>
 <h2 id="setup">Setup</h2>
 <p>Let’s install Java, create a Java project and require the TTN Client.</p>
 <ol>
   <li>
-    <p><a href="https://www.java.com/">Download</a> and install Java (at least version 7).</p>
+    <p><a href="https://www.java.com/">Download</a> and install Java (at least version 8).</p>
     <p>Under debian-based systems, use :</p>
     <div class="language-bash highlighter-rouge"><pre class="highlight"><code>sudo apt-get install openjdk-8-jdk
 </code></pre>
@@ -191,20 +191,20 @@
     <p>Create a new Java project:</p>
     <div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="nb">cd</span> <span class="nv">$HOME</span>
 mvn archetype:generate <span class="se">\</span>
--DgroupId<span class="o">=</span>org.thethingsnetwork.java.app.sample <span class="se">\</span>
--DartifactId<span class="o">=</span>sample <span class="se">\</span>
+-DgroupId<span class="o">=</span>org.thethingsnetwork.samples.mqtt <span class="se">\</span>
+-DartifactId<span class="o">=</span>mqtt <span class="se">\</span>
 -DarchetypeArtifactId<span class="o">=</span>maven-archetype-quickstart <span class="se">\</span>
 -DinteractiveMode<span class="o">=</span><span class="nb">false
-cd </span>sample
+cd </span>mqtt
 </code></pre>
     </div>
   </li>
   <li>
-    <p>Require the <a href="http://mvnrepository.com/artifact/org.thethingsnetwork/java-app-lib">TTN Client</a> as dependency:</p>
+    <p>Require the <a href="https://github.com/TheThingsNetwork/java-app-sdk/tree/master/data/mqtt">TTN Client</a> as dependency:</p>
     <div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;dependency&gt;</span>
   <span class="nt">&lt;groupId&gt;</span>org.thethingsnetwork<span class="nt">&lt;/groupId&gt;</span>
-  <span class="nt">&lt;artifactId&gt;</span>java-app-lib<span class="nt">&lt;/artifactId&gt;</span>
-  <span class="nt">&lt;version&gt;</span>1.0.0<span class="nt">&lt;/version&gt;</span>
+  <span class="nt">&lt;artifactId&gt;</span>data-mqtt<span class="nt">&lt;/artifactId&gt;</span>
+  <span class="nt">&lt;version&gt;</span>2.0.0<span class="nt">&lt;/version&gt;</span>
 <span class="nt">&lt;/dependency&gt;</span>
 </code></pre>
     </div>
@@ -221,19 +221,17 @@ cd </span>sample
 <ol>
   <li>
     <p>Create the main script and open it in your favorite editor:</p>
-    <div class="language-bash highlighter-rouge"><pre class="highlight"><code>open src/main/java/org/thethingsnetwork/java/app/sample/App.java
+    <div class="language-bash highlighter-rouge"><pre class="highlight"><code>open src/main/java/org/thethingsnetwork/samples/mqtt/App.java
 </code></pre>
     </div>
   </li>
   <li>
     <p>Import all required classes :</p>
-    <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kn">package</span> <span class="n">org</span><span class="o">.</span><span class="na">thethingsnetwork</span><span class="o">.</span><span class="na">java</span><span class="o">.</span><span class="na">app</span><span class="o">.</span><span class="na">sample</span><span class="o">;</span>
+    <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kn">package</span> <span class="n">org</span><span class="o">.</span><span class="na">thethingsnetwork</span><span class="o">.</span><span class="na">samples</span><span class="o">.</span><span class="na">mqtt</span><span class="o">;</span>
 
-<span class="kn">import</span> <span class="nn">java.util.function.BiConsumer</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.util.function.Consumer</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.eclipse.paho.client.mqttv3.MqttClient</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">org.json.JSONObject</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.thethingsnetwork.java.app.lib.Client</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.thethingsnetwork.data.common.Connection</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.thethingsnetwork.data.mqtt.Client</span><span class="o">;</span>
 </code></pre>
     </div>
   </li>
@@ -260,31 +258,23 @@ cd </span>sample
   </li>
   <li>
     <p>Add a listener for the <code class="highlighter-rouge">connected</code> and <code class="highlighter-rouge">error</code> events to test the connection:</p>
-    <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">client</span><span class="o">.</span><span class="na">onError</span><span class="o">(</span><span class="k">new</span> <span class="n">ErrorHandler</span><span class="o">()</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">handle</span><span class="o">(</span><span class="n">Throwable</span> <span class="n">_error</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">err</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"error: "</span> <span class="o">+</span> <span class="n">_error</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
-    <span class="o">}</span>
-<span class="o">});</span>
+    <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">client</span><span class="o">.</span><span class="na">onError</span><span class="o">((</span><span class="n">Throwable</span> <span class="n">_error</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">err</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"error: "</span> <span class="o">+</span> <span class="n">_error</span><span class="o">.</span><span class="na">getMessage</span><span class="o">()));</span>
 
-<span class="n">client</span><span class="o">.</span><span class="na">onConnected</span><span class="o">(</span><span class="k">new</span> <span class="n">ConnectHandler</span><span class="o">()</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">handle</span><span class="o">(</span><span class="n">MqttClient</span> <span class="n">_client</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"connected !"</span><span class="o">);</span>
-    <span class="o">}</span>
-<span class="o">});</span>
+<span class="n">client</span><span class="o">.</span><span class="na">onConnected</span><span class="o">((</span><span class="n">Connection</span> <span class="n">_client</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"connected !"</span><span class="o">));</span>
 </code></pre>
     </div>
   </li>
   <li>
     <p>Run the script to test the connection:</p>
     <div class="language-bash highlighter-rouge"><pre class="highlight"><code>mvn clean compile <span class="nb">exec</span>:java <span class="se">\</span>
--Dexec.mainClass<span class="o">=</span><span class="s2">"org.thethingsnetwork.java.app.sample.App"</span>
+-Dexec.mainClass<span class="o">=</span><span class="s2">"org.thethingsnetwork.samples.mqtt.App"</span>
 </code></pre>
     </div>
     <p>You should see something like:</p>
     <div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="o">[</span>INFO] Scanning <span class="k">for </span>projects...
 <span class="o">[</span>INFO] 
 <span class="o">[</span>INFO] -----------------------------------------------------------
-<span class="o">[</span>INFO] Building sample 1.0.0
+<span class="o">[</span>INFO] Building mqtt 1.0.0
 <span class="o">[</span>INFO] -----------------------------------------------------------
 <span class="o">[</span>INFO] 
 <span class="o">[</span>INFO] --- <span class="nb">exec</span>-maven-plugin:1.2.1:exec <span class="o">(</span>default-cli<span class="o">)</span> @ sample ---
@@ -306,18 +296,14 @@ connected !
 <ol>
   <li>
     <p>Add a listener for the <code class="highlighter-rouge">activation</code> event:</p>
-    <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">client</span><span class="o">.</span><span class="na">onActivation</span><span class="o">(</span><span class="k">new</span> <span class="n">BiConsumer</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">JSONObject</span><span class="o">&gt;()</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">accept</span><span class="o">(</span><span class="n">String</span> <span class="n">devId</span><span class="o">,</span> <span class="n">JSONObject</span> <span class="n">data</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Activation: "</span> <span class="o">+</span> <span class="n">devId</span> <span class="o">+</span> <span class="s">" "</span> <span class="o">+</span> <span class="n">data</span><span class="o">);</span>
-    <span class="o">}</span>
-<span class="o">});</span>
+    <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">client</span><span class="o">.</span><span class="na">onActivation</span><span class="o">((</span><span class="n">String</span> <span class="n">_devId</span><span class="o">,</span> <span class="n">JSONObject</span> <span class="n">_data</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Activation: "</span> <span class="o">+</span> <span class="n">_devId</span> <span class="o">+</span> <span class="s">", data: "</span> <span class="o">+</span> <span class="n">_data</span><span class="o">));</span>
 </code></pre>
     </div>
   </li>
   <li>
     <p>Run the script again:</p>
     <div class="language-bash highlighter-rouge"><pre class="highlight"><code>mvn clean compile <span class="nb">exec</span>:java <span class="se">\</span>
--Dexec.mainClass<span class="o">=</span><span class="s2">"org.thethingsnetwork.java.app.sample.App"</span>
+-Dexec.mainClass<span class="o">=</span><span class="s2">"org.thethingsnetwork.samples.mqtt.App"</span>
 </code></pre>
     </div>
   </li>
@@ -344,18 +330,14 @@ connected !
 <ol>
   <li>
     <p>Add a listener for the <code class="highlighter-rouge">message</code> event:</p>
-    <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">client</span><span class="o">.</span><span class="na">onMessage</span><span class="o">(</span><span class="k">new</span> <span class="n">BiConsumer</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;()</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">accept</span><span class="o">(</span><span class="n">String</span> <span class="n">devId</span><span class="o">,</span> <span class="n">Object</span> <span class="n">data</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Message: "</span> <span class="o">+</span> <span class="n">devId</span> <span class="o">+</span> <span class="s">" "</span> <span class="o">+</span> <span class="n">data</span><span class="o">);</span>
-    <span class="o">}</span>
-<span class="o">});</span>
+    <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">client</span><span class="o">.</span><span class="na">onMessage</span><span class="o">((</span><span class="n">String</span> <span class="n">devId</span><span class="o">,</span> <span class="n">Object</span> <span class="n">data</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Message: "</span> <span class="o">+</span> <span class="n">devId</span> <span class="o">+</span> <span class="s">" "</span> <span class="o">+</span> <span class="n">data</span><span class="o">));</span>
 </code></pre>
     </div>
   </li>
   <li>
     <p>Run the script again:</p>
     <div class="language-bash highlighter-rouge"><pre class="highlight"><code>mvn clean compile <span class="nb">exec</span>:java <span class="se">\</span>
--Dexec.mainClass<span class="o">=</span><span class="s2">"org.thethingsnetwork.java.app.sample.App"</span>
+-Dexec.mainClass<span class="o">=</span><span class="s2">"org.thethingsnetwork.samples.mqtt.App"</span>
 </code></pre>
     </div>
     <p>You should see messages come in like:</p>
@@ -397,22 +379,21 @@ connected !
   </li>
   <li>
     <p>In the editor for the script, add another listener for the <code class="highlighter-rouge">message</code> event:</p>
-    <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">client</span><span class="o">.</span><span class="na">onMessage</span><span class="o">(</span><span class="kc">null</span><span class="o">,</span> <span class="s">"led"</span><span class="o">,</span> <span class="k">new</span> <span class="n">BiConsumer</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;()</span> <span class="o">{</span>
-        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">accept</span><span class="o">(</span><span class="n">String</span> <span class="n">devId</span><span class="o">,</span> <span class="n">Object</span> <span class="n">data</span><span class="o">)</span> <span class="o">{</span>
+    <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">client</span><span class="o">.</span><span class="na">onMessage</span><span class="o">(</span><span class="kc">null</span><span class="o">,</span> <span class="s">"led"</span><span class="o">,</span> <span class="o">(</span><span class="n">String</span> <span class="n">_devId</span><span class="o">,</span> <span class="n">Object</span> <span class="n">_data</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="o">{</span>
         <span class="k">try</span> <span class="o">{</span>
             <span class="c1">// Toggle the LED</span>
-            <span class="n">JSONObject</span> <span class="n">response</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JSONObject</span><span class="o">().</span><span class="na">put</span><span class="o">(</span><span class="s">"led"</span><span class="o">,</span> <span class="o">!</span><span class="n">data</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"true"</span><span class="o">));</span>
+            <span class="n">JSONObject</span> <span class="n">response</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JSONObject</span><span class="o">().</span><span class="na">put</span><span class="o">(</span><span class="s">"led"</span><span class="o">,</span> <span class="o">!</span><span class="n">_data</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"true"</span><span class="o">));</span>
+
             <span class="cm">/**
              * If you don't have an encoder payload function:
-             * client.send(devId, data.equals("true") ? new byte[]{0x00} : new byte[]{0x01}, 0);
+             * client.send(_devId, _data.equals("true") ? new byte[]{0x00} : new byte[]{0x01}, 0);
              */</span>
             <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Sending: "</span> <span class="o">+</span> <span class="n">response</span><span class="o">);</span>
-            <span class="n">client</span><span class="o">.</span><span class="na">send</span><span class="o">(</span><span class="n">devId</span><span class="o">,</span> <span class="n">response</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>
+            <span class="n">client</span><span class="o">.</span><span class="na">send</span><span class="o">(</span><span class="n">_devId</span><span class="o">,</span> <span class="n">response</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>
         <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">ex</span><span class="o">)</span> <span class="o">{</span>
             <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Response failed: "</span> <span class="o">+</span> <span class="n">ex</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
         <span class="o">}</span>
-    <span class="o">}</span>
-<span class="o">});</span>
+    <span class="o">});</span>
 </code></pre>
     </div>
     <p>This is what it will do:</p>
@@ -425,7 +406,7 @@ connected !
   <li>
     <p>Run the script again:</p>
     <div class="language-bash highlighter-rouge"><pre class="highlight"><code>mvn clean compile <span class="nb">exec</span>:java <span class="se">\</span>
--Dexec.mainClass<span class="o">=</span><span class="s2">"org.thethingsnetwork.java.app.sample.App"</span>
+-Dexec.mainClass<span class="o">=</span><span class="s2">"org.thethingsnetwork.samples.mqtt.App"</span>
 </code></pre>
     </div>
     <p>After every message the script should output:</p>
