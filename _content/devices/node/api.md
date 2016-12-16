@@ -1,5 +1,6 @@
 ---
 title: API Reference
+zindex: -1000
 source: 'https://github.com/TheThingsNetwork/arduino-device-lib/blob/feature/node/docs/TheThingsNode.md'
 ---
 

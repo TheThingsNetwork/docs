@@ -33,6 +33,7 @@ defaults:
     values:
       layout: page
       image: /assets/images/og-image.png
+      zindex: 0
 markdown: kramdown
 lsi: false
 highlighter: rouge

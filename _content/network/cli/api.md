@@ -1,5 +1,6 @@
 ---
 title: API Reference
+zindex: -1000
 source: 'https://github.com/TheThingsNetwork/ttn/blob/master/ttnctl/cmd/docs/README.md'
 ---
 

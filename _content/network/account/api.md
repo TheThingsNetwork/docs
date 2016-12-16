@@ -1,5 +1,6 @@
 ---
 title: API Reference
+zindex: -1000
 source: 'https://github.com/TheThingsIndustries/node-ttn-oauth2/blob/v2-preview/apidocs.md'
 ---
 

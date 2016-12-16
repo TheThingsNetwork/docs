@@ -1,5 +1,6 @@
 ---
 title: API Reference
+zindex: -1000
 source: 'https://github.com/TheThingsIndustries/integration-storage/blob/master/api/README.md'
 ---
 

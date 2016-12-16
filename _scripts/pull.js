@@ -14,6 +14,7 @@ var items = [{
   target: '_content/applications/nodejs/api.md',
   yaml: {
     title: 'API Reference',
+    zindex: -1000
   }
 }, {
   owner: 'TheThingsNetwork',
@@ -22,7 +23,8 @@ var items = [{
   path: 'docs/TheThingsNetwork.md',
   target: '_content/devices/arduino/api.md',
   yaml: {
-    title: 'API Reference'
+    title: 'API Reference',
+    zindex: -1000
   }
 }, {
   owner: 'TheThingsNetwork',
@@ -31,7 +33,8 @@ var items = [{
   path: 'docs/TheThingsNode.md',
   target: '_content/devices/node/api.md',
   yaml: {
-    title: 'API Reference'
+    title: 'API Reference',
+    zindex: -1000
   }
 }, {
   owner: 'TheThingsNetwork',
@@ -40,7 +43,8 @@ var items = [{
   path: 'mqtt/README.md',
   target: '_content/applications/mqtt/api.md',
   yaml: {
-    title: 'API Reference'
+    title: 'API Reference',
+    zindex: -1000
   }
 }, {
   owner: 'TheThingsNetwork',
@@ -49,7 +53,8 @@ var items = [{
   path: 'data/mqtt/API.md',
   target: '_content/applications/java/api.md',
   yaml: {
-    title: 'API Reference'
+    title: 'API Reference',
+    zindex: -1000
   }
 }, {
   owner: 'TheThingsNetwork',
@@ -58,7 +63,8 @@ var items = [{
   path: 'ttnctl/cmd/docs/README.md',
   target: '_content/network/cli/api.md',
   yaml: {
-    title: 'API Reference'
+    title: 'API Reference',
+    zindex: -1000
   }
 }, {
   owner: 'TheThingsNetwork',
@@ -79,7 +85,8 @@ var items = [{
     [/^# ApplicationManager API Reference/m, '# API Reference']
   ],
   yaml: {
-    title: 'API Reference'
+    title: 'API Reference',
+    zindex: -1000
   }
 }, {
   owner: 'TheThingsNetwork',
@@ -91,7 +98,8 @@ var items = [{
     [/^# Discovery API Reference/m, '# API Reference']
   ],
   yaml: {
-    title: 'API Reference'
+    title: 'API Reference',
+    zindex: -1000
   }
 }];
 
@@ -111,7 +119,8 @@ if (process.env.GITHUB_OAUTH_TOKEN) {
       [/^The Things Network Account Server API$/m, 'API Reference']
     ],
     yaml: {
-      title: 'API Reference'
+      title: 'API Reference',
+      zindex: -1000
     }
   }, {
     owner: 'TheThingsIndustries',
@@ -134,7 +143,8 @@ if (process.env.GITHUB_OAUTH_TOKEN) {
       [/^# Storage API Reference/m, '# API Reference']
     ],
     yaml: {
-      title: 'API Reference'
+      title: 'API Reference',
+      zindex: -1000
     }
   });
 } else {
