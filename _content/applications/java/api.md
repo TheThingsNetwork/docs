@@ -1,3 +1,8 @@
+---
+title: API Reference
+source: 'https://github.com/TheThingsNetwork/java-app-sdk/blob/master/data/mqtt/API.md'
+---
+
 # API Reference
 
 Require the TTN Client module:
