@@ -46,7 +46,7 @@ var items = [{
   owner: 'TheThingsNetwork',
   repo: 'java-app-sdk',
   branch: 'master',
-  path: 'API.md',
+  path: 'data/mqtt/API.md',
   target: '_content/applications/java/api.md',
   yaml: {
     title: 'API Reference'
