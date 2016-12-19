@@ -5,7 +5,8 @@ module Jekyll
       input
         .gsub(/(href="[^:"]+\/)index.md((?:#[\da-z-]+)?")/i, '\1\2') # replace local path to /index.md with /
         .gsub(/(href="[^:"]+\.)md((?:#[\da-z-]+)?")/i, '\1html\2') # replace local path to foo.md with foo.html
-        .gsub('<table>', '<table class="table">') # add bootstrap table class to tables
+        .gsub('<table>', '<div class="table-responsive"><table class="table">') # let tables use Bootstrap class and responsive
+        .gsub('</table>', '</table></div>')
     end
 
     def sort_pages(input)

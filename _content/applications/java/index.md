@@ -1,6 +1,6 @@
 ---
 title: Java
-section: SDKs & Libaries
+section: SDKs & Libraries
 redirect_from:
  - /refactor/java/
  - /v2-preview/java/

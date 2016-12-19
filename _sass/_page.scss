@@ -63,7 +63,10 @@
     .page-side-nav {
 
         &.affix {
-            top: 30px;
+
+            @media (max-width: 768px) {
+                position: static;
+            }
         }
 
         .panel-body {

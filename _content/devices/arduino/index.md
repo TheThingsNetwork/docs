@@ -1,6 +1,6 @@
 ---
 title: Arduino
-section: SDKs & Libaries
+section: SDKs & Libraries
 redirect_from:
  - /refactor/arduino/
  - /v2-preview/arduino/

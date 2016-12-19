@@ -1,7 +1,7 @@
 ---
 title: Node.js
 label: v2
-section: SDKs & Libaries
+section: SDKs & Libraries
 redirect_from:
  - /refactor/node-js/
  - /current/node-js/

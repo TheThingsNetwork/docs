@@ -1,7 +1,7 @@
 ---
 title: Node-RED
 label: v1-staging
-section: SDKs & Libaries
+section: SDKs & Libraries
 ---
 
 # Node-RED

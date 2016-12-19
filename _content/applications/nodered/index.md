@@ -1,7 +1,7 @@
 ---
 title: Node-RED
 label: v2
-section: SDKs & Libaries
+section: SDKs & Libraries
 redirect_from:
  - /refactor/node-red/
  - /v2-preview/node-red/
