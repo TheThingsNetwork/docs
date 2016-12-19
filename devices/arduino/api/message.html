@@ -17,15 +17,15 @@
       if (document.location.href.substr(0, document.location.href.length - document.location.hash.length) !== canonical) {
         window.location.replace(canonical);
       }
-    })('https://www.thethingsnetwork.org/docs/devices/arduino/');
+    })('https://www.thethingsnetwork.org/docs/devices/arduino/api/message.html');
     </script>
     <!-- Begin Jekyll SEO tag v2.1.0 -->
-<title>Arduino - The Things Network</title>
-<meta property="og:title" content="Arduino" />
-<meta name="description" content="Arduino" />
-<meta property="og:description" content="Arduino" />
-<link rel="canonical" href="https://www.thethingsnetwork.org/docs/devices/arduino/" />
-<meta property="og:url" content="https://www.thethingsnetwork.org/docs/devices/arduino/" />
+<title>TheThingsMessage - The Things Network</title>
+<meta property="og:title" content="TheThingsMessage" />
+<meta name="description" content="API Reference The TheThingsMessage class provides structs for device and application data you can encode and decode as bytes." />
+<meta property="og:description" content="API Reference The TheThingsMessage class provides structs for device and application data you can encode and decode as bytes." />
+<link rel="canonical" href="https://www.thethingsnetwork.org/docs/devices/arduino/api/message.html" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/devices/arduino/api/message.html" />
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
@@ -36,14 +36,14 @@
 <script type="application/ld+json">
 {"@context": "http://schema.org",
 "@type": "BlogPosting",
-"headline": "Arduino",
+"headline": "TheThingsMessage",
 "image": "https://www.thethingsnetwork.org/docs/assets/images/og-image.png",
 "datePublished": "2016-12-19T14:50:01+00:00",
-"description": "Arduino",
+"description": "API Reference The TheThingsMessage class provides structs for device and application data you can encode and decode as bytes.",
 "publisher": {"@type": "Organization",
 "logo": {"@type": "ImageObject",
 "url": "https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},
-"url": "https://www.thethingsnetwork.org/docs/devices/arduino/"}</script>
+"url": "https://www.thethingsnetwork.org/docs/devices/arduino/api/message.html"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-152.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -93,7 +93,7 @@
         </ul>
       </div>
       <div class="hidden-xs col-sm-3 text-right">
-        <a href="https://github.com/TheThingsNetwork/docs/edit/master/_content/devices/arduino/index.md" class="page-edit" data-proofer-ignore><i class="fa fa-github"></i> Edit <strong>index.md</strong></a>
+        <a href="https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/docs/TheThingsMessage.md" class="page-edit" data-proofer-ignore><i class="fa fa-github"></i> Edit <strong>message.md</strong></a>
       </div>
     </div>
     <div class="row">
@@ -112,7 +112,7 @@
               </li>
             <li class="page-side-nav-section"><span>SDKs & Libaries</span>
             <ul>
-                <li class="active"><a href="/docs/devices/arduino/">Arduino</a>
+                <li class=""><a href="/docs/devices/arduino/">Arduino</a>
             <ul>
                 <li class=""><a href="/docs/devices/arduino/ide.html">IDE Setup & Usage</a>
                 </li>
@@ -120,6 +120,16 @@
                 </li>
                 <li class=""><a href="/docs/devices/arduino/api/network.html">API Reference</a>
                     <i class="fa fa-link"></i>
+            <ul>
+                <li class=""><a href="/docs/devices/arduino/api/network.html">TheThingsNetwork</a>
+                </li>
+                <li class="active"><a href="/docs/devices/arduino/api/message.html">TheThingsMessage</a>
+                </li>
+                <li class=""><a href="/docs/devices/arduino/api/../../node/api.html">TheThingsNode</a>
+                    <i class="fa fa-link"></i>
+                    <span class="label label-info">draft</span>
+                </li>
+            </ul>
                 </li>
             </ul>
                 </li>
@@ -148,16 +158,70 @@
       <div class="col-sm-7">
         <div class="panel">
           <div class="panel-body page-content">
-            <h1 id="arduino">Arduino</h1>
-<p><a href="https://www.arduino.cc/en/Guide/Introduction">Arduino</a> is an open-source electronics platform based on easy-to-use hardware and software. It’s intended for anyone making interactive projects.</p>
-<p>With <a href="https://github.com/thethingsnetwork/arduino-device-lib">The Things Network Library</a> Arduino Boards can communicate via The Things Network. Both <a href="../uno/">The Things Uno</a> and The Things Node are Arduino Boards that include a LoRaWAN module.</p>
-<h2 id="resources">Resources</h2>
-<p>To learn more about Arduino and start prototyping with it we recommend:</p>
+            <h1 id="api-reference">API Reference</h1>
+<p>The <code class="highlighter-rouge">TheThingsMessage</code> class provides structs for device and application data you can encode and decode as bytes.</p>
+<h2 id="class-thethingsmessage">Class: TheThingsMessage</h2>
+<div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="cp">#include &lt;TheThingsMessage.h&gt;
+</span></code></pre>
+</div>
+<h2 id="type-devicedata_t">Type: devicedata_t</h2>
+<p>Create a struct of this type using <code class="highlighter-rouge">api_DeviceData_init_default</code> as defaults.</p>
+<div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="n">devicedata_t</span> <span class="n">data</span> <span class="o">=</span> <span class="n">api_DeviceData_init_default</span><span class="p">;</span>
+</code></pre>
+</div>
+<p>Then in your <code class="highlighter-rouge">setup()</code> function select what fields of the struct should be included when encoding it as bytes:</p>
+<div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="n">data</span><span class="p">.</span><span class="n">has_motion</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+<span class="n">data</span><span class="p">.</span><span class="n">has_water</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+<span class="n">data</span><span class="p">.</span><span class="n">has_temperature_celcius</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+<span class="n">data</span><span class="p">.</span><span class="n">has_temperature_fahrenheit</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+<span class="n">data</span><span class="p">.</span><span class="n">has_humidity</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+</code></pre>
+</div>
+<p>In your <code class="highlighter-rouge">loop()</code> function read your sensors and set the fields of the struct:</p>
+<div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="n">data</span><span class="p">.</span><span class="n">motion</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+<span class="n">data</span><span class="p">.</span><span class="n">water</span> <span class="o">=</span> <span class="mi">682</span><span class="p">;</span>
+<span class="n">data</span><span class="p">.</span><span class="n">temperature_celcius</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="n">data</span><span class="p">.</span><span class="n">temperature_fahrenheit</span> <span class="o">=</span> <span class="mi">86</span><span class="p">;</span>
+<span class="n">data</span><span class="p">.</span><span class="n">humidity</span> <span class="o">=</span> <span class="mi">97</span><span class="p">;</span>
+</code></pre>
+</div>
+<h3 id="additional-analog-readings">Additional analog readings</h3>
+<p>You can also add other analog readings.</p>
+<blockquote>
+  <p><strong>TODO:</strong> Document how this works and include in example.</p>
+</blockquote>
+<h2 id="method-encodedevicedata">Method: encodeDeviceData</h2>
+<p>Encode the message you want to send.</p>
+<div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="k">static</span> <span class="kt">void</span> <span class="n">encodeDeviceData</span><span class="p">(</span><span class="n">devicedata_t</span> <span class="o">*</span><span class="n">data</span><span class="p">,</span> <span class="n">byte</span> <span class="o">**</span><span class="n">buffer</span><span class="p">,</span> <span class="kt">size_t</span> <span class="o">*</span><span class="n">size</span><span class="p">);</span>
+</code></pre>
+</div>
 <ul>
-  <li><a href="https://www.arduino.cc/en/Guide/HomePage">Getting Started with Arduino and Genuino products</a></li>
-  <li><a href="https://www.arduino.cc/en/Tutorial/Foundations">Foundations</a></li>
+  <li><code class="highlighter-rouge">devicedata_t *data</code>: Structure containing typical fields that devices send.</li>
+  <li><code class="highlighter-rouge">byte **buffer</code>: Bytes to send.</li>
+  <li><code class="highlighter-rouge">size_t *size</code>: The number of bytes to send.</li>
 </ul>
-<p>We also recommend the <a href="http://www.seeedstudio.com/Grove-Starter-kit-for-Arduino%26Genuino-101-p-2664.html">Grove Starter kit</a> to make working with sensors easier.</p>
+<p>Usage:</p>
+<div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="n">byte</span> <span class="o">*</span><span class="n">buffer</span><span class="p">;</span>
+<span class="kt">size_t</span> <span class="n">size</span><span class="p">;</span>
+<span class="n">TheThingsMessage</span><span class="o">::</span><span class="n">encodeDeviceData</span><span class="p">(</span><span class="o">&amp;</span><span class="n">data</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">buffer</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">size</span><span class="p">);</span>
+</code></pre>
+</div>
+<h2 id="method-decodeappdata">Method: decodeAppData</h2>
+<p>Decode the message you received.</p>
+<div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="k">static</span> <span class="n">bool</span> <span class="n">decodeAppData</span><span class="p">(</span><span class="n">appdata_t</span> <span class="o">*</span><span class="n">receiveData</span><span class="p">,</span> <span class="k">const</span> <span class="n">byte</span> <span class="o">*</span><span class="n">payload</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">length</span><span class="p">);</span>
+</code></pre>
+</div>
+<ul>
+  <li><code class="highlighter-rouge">appdata_t *receiveData</code>: Structure containing all the message we can interpret.</li>
+  <li><code class="highlighter-rouge">const byte *payload</code>: Bytes received.</li>
+  <li><code class="highlighter-rouge">size_t *length</code>: The number of bytes.</li>
+</ul>
+<p>Usage:</p>
+<div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="k">const</span> <span class="n">byte</span> <span class="o">*</span><span class="n">payload</span><span class="p">;</span>
+<span class="kt">size_t</span> <span class="n">length</span><span class="p">;</span>
+<span class="n">TheThingsMessage</span><span class="o">::</span><span class="n">decodeAppData</span><span class="p">(</span><span class="o">&amp;</span><span class="n">receiveData</span><span class="p">,</span> <span class="n">payload</span><span class="p">,</span> <span class="n">length</span><span class="p">);</span>
+</code></pre>
+</div>
           </div>
         </div>
       </div>

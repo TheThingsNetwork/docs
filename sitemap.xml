@@ -106,7 +106,10 @@
 <loc>https://www.thethingsnetwork.org/docs/applications/storage/</loc>
 </url>
 <url>
-<loc>https://www.thethingsnetwork.org/docs/devices/arduino/api.html</loc>
+<loc>https://www.thethingsnetwork.org/docs/devices/arduino/api/message.html</loc>
+</url>
+<url>
+<loc>https://www.thethingsnetwork.org/docs/devices/arduino/api/network.html</loc>
 </url>
 <url>
 <loc>https://www.thethingsnetwork.org/docs/devices/arduino/ide.html</loc>
