@@ -21,10 +21,20 @@ var items = [{
   repo: 'arduino-device-lib',
   branch: 'master',
   path: 'docs/TheThingsNetwork.md',
-  target: '_content/devices/arduino/api.md',
+  target: '_content/devices/arduino/api/network.md',
   yaml: {
-    title: 'API Reference',
-    zindex: -1000
+    title: 'TheThingsNetwork',
+    zindex: 1000
+  }
+}, {
+  owner: 'TheThingsNetwork',
+  repo: 'arduino-device-lib',
+  branch: 'master',
+  path: 'docs/TheThingsMessage.md',
+  target: '_content/devices/arduino/api/message.md',
+  yaml: {
+    title: 'TheThingsMessage',
+    zindex: 900
   }
 }, {
   owner: 'TheThingsNetwork',

@@ -16,7 +16,7 @@ Let's start by setting up the software we'll need to program your device.
 3. Search for **TheThingsNetwork** and click the result to select it.
 4. Click the **Install** button which should appear:
 
-  ![Library Manager](arduino_library.png)
+  ![Library Manager](../arduino/arduino_library.png)
 
 The Arduino IDE will notify you of updates for the IDE and library automagically. :open_mouth:
 
@@ -149,7 +149,7 @@ Devices need to be registered with an application to communicate with. Let's add
 	* For **Description**, enter anything you like.
 	* Leave the checkbox enabled to automatically register the application to your default region.
 
-	![Add Application](add-application.png)
+	![Add Application](../../applications/add-application.png)
 
 2.  Click **Add application** to finish.
 
@@ -166,7 +166,7 @@ You are now ready to register your device to the application.
     * Leave the **App Key** to be randomly generated.
     * Leave the default **App EUI** selected.
 
-    ![Register Device (OTAA)](register-device.png)
+    ![Register Device (OTAA)](../register-device.png)
 
 4.  Click **Register** to finish.
 

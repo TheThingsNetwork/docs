@@ -28,6 +28,10 @@ module Jekyll
       end
     end
 
+    def dirname(input)
+      File.dirname(input)
+    end
+
     private
     def compare(a, b, nils_order)
       if !a.nil? && b.nil?
