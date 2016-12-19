@@ -8685,8 +8685,9 @@ img {
     text-decoration: none; }
     .layout-page .page-top-nav .page-edit:hover {
       color: #333333; }
-.layout-page .page-side-nav.affix {
-  top: 30px; }
+@media (max-width: 768px) {
+  .layout-page .page-side-nav.affix {
+    position: static; } }
 .layout-page .page-side-nav .panel-body {
   font-size: 0.9em; }
   .layout-page .page-side-nav .panel-body > ul a {

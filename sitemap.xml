@@ -10,6 +10,9 @@
 <loc>https://www.thethingsnetwork.org/docs/applications/add.html</loc>
 </url>
 <url>
+<loc>https://www.thethingsnetwork.org/docs/applications/apis.html</loc>
+</url>
+<url>
 <loc>https://www.thethingsnetwork.org/docs/applications/</loc>
 </url>
 <url>
@@ -98,6 +101,9 @@
 </url>
 <url>
 <loc>https://www.thethingsnetwork.org/docs/applications/options.html</loc>
+</url>
+<url>
+<loc>https://www.thethingsnetwork.org/docs/applications/sdks.html</loc>
 </url>
 <url>
 <loc>https://www.thethingsnetwork.org/docs/applications/storage/api.html</loc>
