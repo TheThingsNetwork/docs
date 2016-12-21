@@ -1,6 +1,5 @@
 ---
 title: API Reference
-zindex: -1000
 source: 'https://github.com/TheThingsNetwork/java-app-sdk/blob/master/data/mqtt/API.md'
 ---
 
