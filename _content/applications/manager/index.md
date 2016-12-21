@@ -24,3 +24,11 @@ Use the following endpoints for the community network:
 - HTTP: `https://<Region>.thethings.network:8084`
 
 Replace `<Region>` with the last part of the handler you registered your application to, e.g. `eu`.
+
+## Example
+
+To demonstrate the usage of this API we have an [example in Go](https://github.com/htdvisser/ttn-application-manager-example).
+
+## SDKs
+
+Only the [Java SDK](https://github.com/TheThingsNetwork/java-app-sdk) has experimental support for the Application Manager API.

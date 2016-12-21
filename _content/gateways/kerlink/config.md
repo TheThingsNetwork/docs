@@ -89,7 +89,7 @@ The gateway does not automatically send data to auto include itself on the statu
 
 When the packet forwarder is running, it report to the TTN network. The activity of all the gateways on the network can be checked by the NOC tool. 
 
-1.	Go to the [noc gateway overview](http://noc.thethingsnetwork.org:2020/api/v1/gateways)
+1.	Go to the [noc gateway overview](http://noc.thethingsnetwork.org:8085/api/v2/gateways)
 2.	Look up your gateway EUI by using the find-tool (`Crtl/Cmd + F`)
 3.	You’ll see the following information next to the EUI:
 
