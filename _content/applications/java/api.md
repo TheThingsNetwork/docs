@@ -1,6 +1,6 @@
 ---
 title: API Reference
-source: 'https://github.com/TheThingsNetwork/java-app-sdk/blob/master/API.md'
+source: 'https://github.com/TheThingsNetwork/java-app-sdk/blob/master/data/mqtt/API.md'
 ---
 
 # API Reference
@@ -8,7 +8,7 @@ source: 'https://github.com/TheThingsNetwork/java-app-sdk/blob/master/API.md'
 Require the TTN Client module:
 
 ```java
-import org.thethingsnetwork.java.app.lib.Client;
+import org.thethingsnetwork.data.mqtt.Client;
 ```
 
 ## Class: Client
@@ -22,32 +22,24 @@ Client client = new Client(region, appId, accessKey [, connOpts]);
 * `region [String]`: The region (e.g. `eu`) or full hostname (e.g. `eu.thethings.network`) of the handler to connect to.
 * `appId [String]`: The ID of the application to connect to (e.g. `hello-world`).
 * `appAccessKey [String]`: An access key for the application, formatted as base64 (e.g. `'2Z+MU0T5xZCaqsD0bPqOhzA6iygGFoi4FAgMFgBfXSo='`).
-* `connOpts [MqttConnectOptions]`: Some custom configuration of the MQTT connection. This parameter is optional. For example to use TLS download [mqtt-ca.pem](https://preview.console.thethingsnetwork.org/mqtt-ca.pem) and trust it following this guide: [Trust self-signed certificates](http://howardism.org/Technical/Java/SelfSignedCerts.html):
+* `connOpts [MqttConnectOptions]`: Some custom configuration of the MQTT connection. This parameter is optional. For example to use TLS download [mqtt-ca.pem](https://console.thethingsnetwork.org/mqtt-ca.pem) and trust it following this guide: [Trust self-signed certificates](http://howardism.org/Technical/Java/SelfSignedCerts.html):
 
 ## Event: connect
 
 Emitted on successful connection.
 
 ```java
-client.onConnected(new Consumer<MqttClient>() {
-    public void accept(MqttClient client) {
-        System.out.println("connected !");
-    }
-});
+client.onConnected((Connection _client) -> System.out.println("connected !"));
 ```
 
-* `cb.client [MqttClient]`: MQTT connection wrapper. See [MQTT](http://www.eclipse.org/paho/files/javadoc/org/eclipse/paho/client/mqttv3/MqttClient.html).
+* `cb.client [Connection]`: MQTT connection wrapper. See [MQTT](http://www.eclipse.org/paho/files/javadoc/org/eclipse/paho/client/mqttv3/MqttClient.html).
 
 ## Event: error
 
 Emitted when the client cannot connect or when a parsing error occurs.
 
 ```java
-client.onError(new Consumer<Throwable>() {
-    public void accept(Throwable error) {
-        System.err.println("error: " + error.getMessage());
-    }
-});
+client.onError((Throwable _error) -> System.err.println("error: " + _error.getMessage()));
 ```
 
 * `cb.error [Throwable]`: Error object. See [MQTT](https://docs.oracle.com/javase/8/docs/api/java/lang/Exception.html).
@@ -57,10 +49,7 @@ client.onError(new Consumer<Throwable>() {
 Emitted when TTN forwards a message addressed to your application.
 
 ```java
-client.onMessage(new BiConsumer<String, Object>() {
-    public void accept(String devId, Object data) {
-        System.out.println("Message: " + devId + " " + data);
-});
+client.onMessage((String devId, Object data) -> System.out.println("Message: " + devId + " " + data));
 ```
 
 * `cb.devId [String]`: Device ID, e.g.: `my-uno`.
@@ -96,10 +85,9 @@ client.onMessage(new BiConsumer<String, Object>() {
 When no field is specified, `cb.data` holds a `Message`. It's a `JsonObject` with an additional method: `getBinary(String key)`, base64-decoding the requested field:
 
 ```java
-client.onMessage(new BiConsumer<String, Object>() {
-    public void accept(String devId, Object data) {
-        byte[] payload = ((Message)data).getBinary("payload_raw");
-        System.out.println("Message: " + devId + " " + payload[0]);
+client.onMessage((String devId, Object data) -> {
+    byte[] payload = ((Message) data).getBinary("payload_raw");
+    System.out.println("Message: " + devId + " " + payload[0]);
 });
 ```
 Should give you:
@@ -112,19 +100,13 @@ Message: my-uno 0
 ### Listen for a specific device
 
 ```java
-client.onMessage("my-uno", new BiConsumer<String, Object>() {
-    public void accept(String devId, Object data) {
-        System.out.println("Message: " + devId + " " + data);
-});
+client.onMessage("my-uno", (String devId, Object data) -> System.out.println("Message: " + devId + " " + data));
 ```
 
 ### Listen for a specific field (and device)
 
 ```java
-client.onMessage("my-uno", "led", new BiConsumer<String, Object>() {
-    public void accept(String devId, Object data) {
-        System.out.println("Message: " + devId + " " + data);
-});
+client.onMessage("my-uno", "led", (String devId, Object data) -> System.out.println("Message: " + devId + " " + data));
 ```
   > When a field is specified, `cb.data` holds the `String` representation of the field value.
 
@@ -133,11 +115,7 @@ client.onMessage("my-uno", "led", new BiConsumer<String, Object>() {
 Emitted when a device registered to the application activates.
 
 ```java
-client.onActivation(new BiConsumer<String, JSONObject>() {
-    public void accept(String _devId, JSONObject _data) {
-        System.out.println("Activation: " + devId + " " + data);
-    }
-});
+client.onActivation((String _devId, JSONObject _data) -> System.out.println("Activation: " + _devId + ", data: " + _data));
 ```
 
 * `cb.devId [String]`: Device ID, e.g.: `my-uno`.
@@ -171,11 +149,7 @@ client.onActivation(new BiConsumer<String, JSONObject>() {
 Emitted when a device event is published.
 
 ```java
-client.onDevice(null, "down/scheduled", new TriConsumer<String, String, JSONObject>() {
-    public void accept(String devId, String event, JSONObject data) {
-        System.out.println("Received event "+event+"for device "+devId);
-    }
-});
+client.onDevice(null, "down/scheduled", (String devId, String event, JSONObject data) -> System.out.println("Received event " + event + "for device " + devId));
 ```
 
 * `cb.devId [String]`: Device ID, e.g.: `my-uno`.
