@@ -8,9 +8,6 @@ This guides walks you through programming your The Things Node with your first s
 ## Setup Arduino IDE
 
 1.  Follow [Arduino / IDE Setup & Usage](../arduino/ide.md) to setup the IDE.
-
-    > Skip the installation of TheThingsNetwork library. Instead, [download](https://github.com/TheThingsNetwork/arduino-device-lib/archive/feature/node.zip) the [`feature/node`](https://github.com/TheThingsNetwork/arduino-device-lib/tree/feature/node/) branch of the The Things Network Arduino Library and follow the instructions on [Importing a .zip Library](https://www.arduino.cc/en/Guide/Libraries#toc4).
-
 2.  Follow SparkFun's [Installation Instructions](https://github.com/sparkfun/Arduino_Boards#installation-instructions) to add the additional board manager and install the **SparkFun AVR Boards**.
 
 ## Connect your Device
@@ -117,7 +114,7 @@ The library also comes with an example demonstrating most of these APIs. Let's h
 
     ![OTAA Keys](../uno/keys-otaa.png)
 
-2.  In the Arduino IDE, select **File > Examples > TheThingsNetwork > [Node](https://github.com/TheThingsNetwork/arduino-device-lib/blob/feature/node/examples/Node/Node.ino)**.
+2.  In the Arduino IDE, select **File > Examples > TheThingsNetwork > [Node](https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/Node/Node.ino)**.
 
     * Replace the lines following the comment **Set your AppEUI and AppKey** with the keys you copied from the Console.
     * Replace `REPLACE_ME` with either `TTN_FP_EU868` or `TTN_FP_US915` depending on the frequency plan of your device.
@@ -158,7 +155,7 @@ Let's see the messages come in.
     What you see is the raw payload in hex-formatted, space-separated bytes. Let's decode that to meaningful fields.
 
 2.  Select **Payload Functions** from the top right menu.
-3.  Leave **decoder** selected and copy-paste the JavaScript code found in the examples folder as [Node/Decoder.js](https://github.com/TheThingsNetwork/arduino-device-lib/blob/feature/node/examples/Node/Decoder.js).
+3.  Leave **decoder** selected and copy-paste the JavaScript code found in the examples folder as [Node/Decoder.js](https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/Node/Decoder.js).
     
 4.  Use the input field and **Test** button to see how various payloads of hex-formatted, space-separated bytes are decoded.
 

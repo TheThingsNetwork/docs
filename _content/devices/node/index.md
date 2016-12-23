@@ -20,8 +20,3 @@ The Things Node is the perfect LoRa node to start prototyping your ideas without
 Our [Arduino](../arduino/index.md) library comes with a class specifically for The Things Node. Configure and read sensors without having to worry about the underlying sensor registries.
 
 Once you have validated your idea, the next step could be to use [The Things Uno](../uno/index.md) and different sensors to find out what to print on a custom board to take into production.
-
-## Prerequisites
-
-* The Things Node.
-* The [`feature/node` branch](https://github.com/TheThingsNetwork/arduino-device-lib/tree/feature/node/) of the The Things Network Arduino Library.

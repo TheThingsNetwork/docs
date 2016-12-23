@@ -39,7 +39,7 @@ var items = [{
 }, {
   owner: 'TheThingsNetwork',
   repo: 'arduino-device-lib',
-  branch: 'feature/node',
+  branch: 'master',
   path: 'docs/TheThingsNode.md',
   target: '_content/devices/node/api.md',
   yaml: {
