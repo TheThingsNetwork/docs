@@ -12,6 +12,6 @@ Although at this point the gateway does work and is connected to The Things Netw
     cat /var/config/lora/local_conf.json
     ```
     
-2.  [Register your gateway](https://www.thethingsnetwork.org/g/new/edit) using the above information.
+2.  [Register your gateway](https://console.thethingsnetwork.org/gateways/register) using the above information.
 
 👏 Your gateway is now connected to The Things Network!
