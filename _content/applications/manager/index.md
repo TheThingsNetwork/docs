@@ -21,7 +21,9 @@ The Handler Application Manager API is mostly used to [build Platform Integratio
 Use the following endpoints for the community network:
 
 - [gRPC](http://www.grpc.io/): `<Region>.thethings.network:1904`
-- HTTP: `https://<Region>.thethings.network:8084`
+- HTTP: `http://<Region>.thethings.network:8084`
+
+  > A secure endpoint at `https` will follow soon.
 
 Replace `<Region>` with the last part of the handler you registered your application to, e.g. `eu`.
 
