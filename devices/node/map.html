@@ -17,15 +17,15 @@
       if (document.location.href.substr(0, document.location.href.length - document.location.hash.length) !== canonical) {
         window.location.replace(canonical);
       }
-    })('https://www.thethingsnetwork.org/docs/devices/arduino/');
+    })('https://www.thethingsnetwork.org/docs/devices/node/map.html');
     </script>
     <!-- Begin Jekyll SEO tag v2.1.0 -->
-<title>Arduino - The Things Network</title>
-<meta property="og:title" content="Arduino" />
-<meta name="description" content="Arduino" />
-<meta property="og:description" content="Arduino" />
-<link rel="canonical" href="https://www.thethingsnetwork.org/docs/devices/arduino/" />
-<meta property="og:url" content="https://www.thethingsnetwork.org/docs/devices/arduino/" />
+<title>Map your Device! - The Things Network</title>
+<meta property="og:title" content="Map your Device!" />
+<meta name="description" content="Map your Device! The Things Node comes with a preinstalled Arduino Sketch that pings home and sends the sensor data on setup as well as every minute, when you release its button or start moving the device." />
+<meta property="og:description" content="Map your Device! The Things Node comes with a preinstalled Arduino Sketch that pings home and sends the sensor data on setup as well as every minute, when you release its button or start moving the device." />
+<link rel="canonical" href="https://www.thethingsnetwork.org/docs/devices/node/map.html" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/devices/node/map.html" />
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
@@ -36,14 +36,14 @@
 <script type="application/ld+json">
 {"@context": "http://schema.org",
 "@type": "BlogPosting",
-"headline": "Arduino",
+"headline": "Map your Device!",
 "image": "https://www.thethingsnetwork.org/docs/assets/images/og-image.png",
 "datePublished": "2016-12-28T15:52:33+00:00",
-"description": "Arduino",
+"description": "Map your Device! The Things Node comes with a preinstalled Arduino Sketch that pings home and sends the sensor data on setup as well as every minute, when you release its button or start moving the device.",
 "publisher": {"@type": "Organization",
 "logo": {"@type": "ImageObject",
 "url": "https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},
-"url": "https://www.thethingsnetwork.org/docs/devices/arduino/"}</script>
+"url": "https://www.thethingsnetwork.org/docs/devices/node/map.html"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-152.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -93,7 +93,7 @@
         </ul>
       </div>
       <div class="hidden-xs col-sm-3 text-right">
-        <a href="https://github.com/TheThingsNetwork/docs/edit/master/_content/devices/arduino/index.md" class="page-edit" data-proofer-ignore><i class="fa fa-github"></i> Edit <strong>index.md</strong></a>
+        <a href="https://github.com/TheThingsNetwork/docs/edit/master/_content/devices/node/map.md" class="page-edit" data-proofer-ignore><i class="fa fa-github"></i> Edit <strong>map.md</strong></a>
       </div>
     </div>
     <div class="row">
@@ -112,16 +112,7 @@
               </li>
             <li class="page-side-nav-section"><span>SDKs & Libraries</span>
             <ul>
-                <li class="active"><a href="/docs/devices/arduino/">Arduino</a>
-            <ul>
-                <li class=""><a href="/docs/devices/arduino/ide.html">IDE Setup & Usage</a>
-                </li>
-                <li class=""><a href="/docs/devices/arduino/usage.html">Library Usage</a>
-                </li>
-                <li class=""><a href="/docs/devices/arduino/api/network.html">API Reference</a>
-                    <i class="fa fa-link"></i>
-                </li>
-            </ul>
+                <li class=""><a href="/docs/devices/arduino/">Arduino</a>
                 </li>
             </ul>
             </li>
@@ -131,6 +122,16 @@
                 </li>
                 <li class=""><a href="/docs/devices/node/">The Things Node</a>
                     <span class="label label-info">draft</span>
+            <ul>
+                <li class="active"><a href="/docs/devices/node/map.html">Map your Device!</a>
+                </li>
+                <li class=""><a href="/docs/devices/node/quick-start.html">Quick Start</a>
+                </li>
+                <li class=""><a href="/docs/devices/node/api.html">API Reference</a>
+                </li>
+                <li class=""><a href="/docs/devices/node/troubleshooting.html">Troubleshooting</a>
+                </li>
+            </ul>
                 </li>
                 <li class=""><a href="/docs/devices/lopy/">LoPy</a>
                 </li>
@@ -148,16 +149,83 @@
       <div class="col-sm-7">
         <div class="panel">
           <div class="panel-body page-content">
-            <h1 id="arduino">Arduino</h1>
-<p><a href="https://www.arduino.cc/en/Guide/Introduction">Arduino</a> is an open-source electronics platform based on easy-to-use hardware and software. It’s intended for anyone making interactive projects.</p>
-<p>With <a href="https://github.com/thethingsnetwork/arduino-device-lib">The Things Network Library</a> Arduino Boards can communicate via The Things Network. Both <a href="../uno/">The Things Uno</a> and The Things Node are Arduino Boards that include a LoRaWAN module.</p>
-<h2 id="resources">Resources</h2>
-<p>To learn more about Arduino and start prototyping with it we recommend:</p>
-<ul>
-  <li><a href="https://www.arduino.cc/en/Guide/HomePage">Getting Started with Arduino and Genuino products</a></li>
-  <li><a href="https://www.arduino.cc/en/Tutorial/Foundations">Foundations</a></li>
-</ul>
-<p>We also recommend the <a href="http://www.seeedstudio.com/Grove-Starter-kit-for-Arduino%26Genuino-101-p-2664.html">Grove Starter kit</a> to make working with sensors easier.</p>
+            <h1 id="map-your-device">Map your Device!</h1>
+<p>The Things Node comes with a preinstalled Arduino Sketch that pings home and sends the sensor data on setup as well as every minute, when you release its button or start moving the device.</p>
+<blockquote>
+  <p>As soon as you upload your first sketch it will overwrite the preinstalled one!</p>
+</blockquote>
+<p>Simply insert batteries or connect it to a power source via USB and you’ll see it appear on the map at <a href="http://ttn.fyi/activate">ttn.fyi/activate</a>:</p>
+<p><img src="map.png" alt="Map" /></p>
+<h2 id="power-your-device">Power your Device</h2>
+<p>While you keep an eye on the map at <a href="http://ttn.fyi/activate">ttn.fyi/activate</a>, follow these steps:</p>
+<ol>
+  <li>Open the case using a double-slot (cross) screw drive.</li>
+  <li>
+    <p>Either insert 3 AAA batteries or use a Micro-USB cable to connect the device to your computer or a power adapter.</p>
+    <p>You can find the connector between the battery compartment and the top side of the case:</p>
+    <p><img src="cable.png" alt="Cable" /></p>
+    <blockquote>
+      <p>Some Micro-USB connectors may not fit the limited space between the batteries compartment and casing. The one we ship with the Uno should.</p>
+    </blockquote>
+  </li>
+</ol>
+<p>Soon, you should see your device appear on the map.</p>
+<h3 id="how-do-we-get-your-location">How do we get your location?</h3>
+<p>The Node does not have a GPS sensor, but we do know the location of most gateways. Your device will appear in the center of all gateways that forwarded its message.</p>
+<h2 id="identify-your-device">Identify your Device</h2>
+<p>If you can’t tell by the location, you will need your unique Device EUI. The preinstalled sketch prints this to USB port every time it sends data. You can read it using the Arduino IDE’s Serial Monitor.</p>
+<ol>
+  <li>Follow <a href="../arduino/ide.html">Arduino / IDE Setup &amp; Usage</a> to setup the IDE.</li>
+  <li>Follow SparkFun’s <a href="https://github.com/sparkfun/Arduino_Boards#installation-instructions">Installation Instructions</a> to add the additional board manager and install the <strong>SparkFun AVR Boards</strong>.</li>
+  <li>
+    <p>Make sure your device is connected to your computer with a Micro-USB cable.</p>
+    <blockquote>
+      <p>Make sure you use a cable that supports data, not just power. The one we ship with the Uno should work.</p>
+    </blockquote>
+  </li>
+  <li>In the Arduino IDE, select <strong>Tools &gt; Boards &gt; SparkFun Pro Micro</strong>.</li>
+  <li>Select <strong>Tools &gt; Processor &gt; ATmega32U4 (3.3V, 8Mhz)</strong>.</li>
+  <li>
+    <p>Select the Node’s Serial Port under <strong>Tools &gt; Port</strong>.</p>
+    <blockquote>
+      <p>Unlike The Things Uno, which the Arduino IDE recognizes as <em>Arduino Leonardo</em>, it does not always recognize the Node as <em>SparkFun Pro Micro</em>. You will have to see what <code class="highlighter-rouge">/dev/*usb*</code> (Mac/Linux) or <code class="highlighter-rouge">COM</code> (Windows) option appears in the menu after connecting the Node.</p>
+    </blockquote>
+    <blockquote>
+      <p>Another <a href="troubleshooting.html#serial-port-not-showing">common issue</a> is that on recent Macs the Node may not appear at all. We suggest to connect via an USB hub.</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>Select <strong>Tools &gt; Serial Monitor</strong> <code class="highlighter-rouge">Ctrl/⌘ Shift M</code> to open the Serial Monitor.</p>
+    <p>Press the Node’s button and it should print a list of information:</p>
+    <div class="highlighter-rouge"><pre class="highlight"><code>EUI: 0004A30B001B7AD2
+Battery: 3223
+AppEUI: 70B3D57EF000001C
+DevEUI: 0004A30B001B7AD2
+Band: 868
+Data Rate: 5
+RX Delay 1: 1000
+RX Delay 2: 2000
+Total airtime: 0.00 s
+Light: 25
+Temperature: 23.16 C
+Temperature alert: No
+Moving: No
+Button pressed: No
+Color: Yellow
+USB connected: Yes
+Battery voltage: 4704 MV
+</code></pre>
+    </div>
+    <p>The first <code class="highlighter-rouge">EUI</code> value is what we’re looking for.</p>
+  </li>
+  <li>Switch back to <a href="http://ttn.fyi/activate">ttn.fyi/activate</a> and scroll to the filter input.</li>
+  <li>
+    <p>Enter the EUI and click <strong>Filter</strong>.</p>
+    <p>The map will now show your device only:</p>
+    <p><img src="filter.png" alt="Filter" /></p>
+  </li>
+</ol>
+<p>🎉 Congrats! When you are done playing with the temperature, motion and button sensor, continue to the <a href="quick-start.html">Quick Start</a> to learn how to upload your own sketch.</p>
           </div>
         </div>
       </div>

@@ -29,7 +29,7 @@
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2016-12-27T12:30:42+00:00" />
+<meta property="article:published_time" content="2016-12-28T15:52:33+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
@@ -38,7 +38,7 @@
 "@type": "BlogPosting",
 "headline": "API Reference",
 "image": "https://www.thethingsnetwork.org/docs/assets/images/og-image.png",
-"datePublished": "2016-12-27T12:30:42+00:00",
+"datePublished": "2016-12-28T15:52:33+00:00",
 "description": "API Reference",
 "publisher": {"@type": "Organization",
 "logo": {"@type": "ImageObject",
@@ -180,7 +180,7 @@
 <p>Query the devices for which data has been stored.</p>
 <h4 id="http-endpoint">HTTP Endpoint</h4>
 <ul>
-  <li><code class="highlighter-rouge">GET</code> <code class="highlighter-rouge">/devices</code></li>
+  <li><code class="highlighter-rouge">GET</code> <code class="highlighter-rouge">/api/v2/devices</code></li>
 </ul>
 <h4 id="json-response-format">JSON Response Format</h4>
 <div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="p">[</span><span class="s2">"device-1"</span><span class="p">,</span><span class="w"> </span><span class="s2">"device-2"</span><span class="p">]</span><span class="w">
@@ -190,7 +190,7 @@
   <p>Note: this endpoint only returns devices for which data has been stored. When you delete a devices, its data will not be deleted. To fetch the current registered devices, use the <a href="https://github.com/TheThingsNetwork/ttn/blob/master/api/handler/ApplicationManager.md">ApplicationManager API</a>.</p>
 </blockquote>
 <h4 id="example">Example</h4>
-<div class="highlighter-rouge"><pre class="highlight"><code>➜ curl -H "Authorization: key ttn-account.&lt;secret&gt;" https://office-app.data.thethingsnetwork.org/devices
+<div class="highlighter-rouge"><pre class="highlight"><code>➜ curl -H "Authorization: key ttn-account.&lt;secret&gt;" https://office-app.data.thethingsnetwork.org/v2/api/devices
 
 ["basement", "conference-1", "conference-2", "ballroom"]
 </code></pre>
@@ -199,10 +199,10 @@
 <p>Query the data for all devices or a specific device.</p>
 <h4 id="http-endpoint-1">HTTP Endpoint</h4>
 <ul>
-  <li><code class="highlighter-rouge">GET</code> <code class="highlighter-rouge">/query</code></li>
-  <li><code class="highlighter-rouge">GET</code> <code class="highlighter-rouge">/query?last=&lt;time&gt;</code></li>
-  <li><code class="highlighter-rouge">GET</code> <code class="highlighter-rouge">/query/&lt;device-id&gt;</code></li>
-  <li><code class="highlighter-rouge">GET</code> <code class="highlighter-rouge">/query/&lt;device-id&gt;?last=&lt;time&gt;</code></li>
+  <li><code class="highlighter-rouge">GET</code> <code class="highlighter-rouge">/api/v2/query</code></li>
+  <li><code class="highlighter-rouge">GET</code> <code class="highlighter-rouge">/api/v2/query?last=&lt;time&gt;</code></li>
+  <li><code class="highlighter-rouge">GET</code> <code class="highlighter-rouge">/api/v2/query/&lt;device-id&gt;</code></li>
+  <li><code class="highlighter-rouge">GET</code> <code class="highlighter-rouge">/api/v2/query/&lt;device-id&gt;?last=&lt;time&gt;</code></li>
 </ul>
 <p>When omitting the device ID, data for all devices is returned. When omitting the <code class="highlighter-rouge">last</code> parameter, data of the last hour is returned. The <code class="highlighter-rouge">last</code> parameter contains time, e.g. <code class="highlighter-rouge">30s</code> for the last 30 seconds, <code class="highlighter-rouge">1h</code> for the last hour and <code class="highlighter-rouge">2d</code> for the last 48 hours.</p>
 <h4 id="json-response-format-1">JSON Response Format</h4>
@@ -228,7 +228,7 @@
   <p>Note: the fields returned are the result of the payload functions. If you do not have an decoder or converter payload function configured, only the <code class="highlighter-rouge">raw</code> field is available, containing the base64 encoded payload.</p>
 </blockquote>
 <h4 id="example-1">Example</h4>
-<div class="highlighter-rouge"><pre class="highlight"><code>➜ curl -H "Authorization: key ttn-account.&lt;secret&gt;" https://office-app.data.thethingsnetwork.org/query?last=1m
+<div class="highlighter-rouge"><pre class="highlight"><code>➜ curl -H "Authorization: key ttn-account.&lt;secret&gt;" https://office-app.data.thethingsnetwork.org/v2/api/query?last=1m
 
 [{"celcius":23.3,"device_id":"office-hq","light":477,"raw":"Ad0JGgGH","sound":391,"time":"2016-12-14T14:58:34.26230046Z"},{"celcius":23.3,"device_id":"office-hq","light":476,"raw":"AdwJGgI/","sound":575,"time":"2016-12-14T14:58:56.461535619Z"},{"celcius":23.3,"device_id":"office-hq","light":476,"raw":"AdwJGgFl","sound":357,"time":"2016-12-14T14:59:18.653984846Z"}]
 </code></pre>

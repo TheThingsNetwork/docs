@@ -17,15 +17,15 @@
       if (document.location.href.substr(0, document.location.href.length - document.location.hash.length) !== canonical) {
         window.location.replace(canonical);
       }
-    })('https://www.thethingsnetwork.org/docs/applications/nodered-v1/configure.html');
+    })('https://www.thethingsnetwork.org/docs/devices/uno/map.html');
     </script>
     <!-- Begin Jekyll SEO tag v2.1.0 -->
-<title>Configure - The Things Network</title>
-<meta property="og:title" content="Configure" />
-<meta name="description" content="Configure To use the TTN node you need to configure it for your The Things Network Application." />
-<meta property="og:description" content="Configure To use the TTN node you need to configure it for your The Things Network Application." />
-<link rel="canonical" href="https://www.thethingsnetwork.org/docs/applications/nodered-v1/configure.html" />
-<meta property="og:url" content="https://www.thethingsnetwork.org/docs/applications/nodered-v1/configure.html" />
+<title>Map your Device! - The Things Network</title>
+<meta property="og:title" content="Map your Device!" />
+<meta name="description" content="Map your Device! The Things Uno comes with a preinstalled Arduino Sketch that pings home on setup and every following minute." />
+<meta property="og:description" content="Map your Device! The Things Uno comes with a preinstalled Arduino Sketch that pings home on setup and every following minute." />
+<link rel="canonical" href="https://www.thethingsnetwork.org/docs/devices/uno/map.html" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/devices/uno/map.html" />
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
@@ -36,14 +36,14 @@
 <script type="application/ld+json">
 {"@context": "http://schema.org",
 "@type": "BlogPosting",
-"headline": "Configure",
+"headline": "Map your Device!",
 "image": "https://www.thethingsnetwork.org/docs/assets/images/og-image.png",
 "datePublished": "2016-12-28T15:52:33+00:00",
-"description": "Configure To use the TTN node you need to configure it for your The Things Network Application.",
+"description": "Map your Device! The Things Uno comes with a preinstalled Arduino Sketch that pings home on setup and every following minute.",
 "publisher": {"@type": "Organization",
 "logo": {"@type": "ImageObject",
 "url": "https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},
-"url": "https://www.thethingsnetwork.org/docs/applications/nodered-v1/configure.html"}</script>
+"url": "https://www.thethingsnetwork.org/docs/devices/uno/map.html"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-152.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -86,85 +86,56 @@
         <ul>
           <li class="page-top-nav-crumb"><a href="http://www.thethingsnetwork.org/">Home</a></li>
           <li class="page-top-nav-crumb"><a href="/docs/">Learn</a></li>
-                <li class=""><a href="/docs/devices/">Devices</a></li>
+                <li class="active"><a href="/docs/devices/">Devices</a></li>
                 <li class=""><a href="/docs/gateways/">Gateways</a></li>
                 <li class=""><a href="/docs/network/">Network</a></li>
-                <li class="active"><a href="/docs/applications/">Applications</a></li>
+                <li class=""><a href="/docs/applications/">Applications</a></li>
         </ul>
       </div>
       <div class="hidden-xs col-sm-3 text-right">
-        <a href="https://github.com/TheThingsNetwork/docs/edit/master/_content/applications/nodered-v1/configure.md" class="page-edit" data-proofer-ignore><i class="fa fa-github"></i> Edit <strong>configure.md</strong></a>
+        <a href="https://github.com/TheThingsNetwork/docs/edit/master/_content/devices/uno/map.md" class="page-edit" data-proofer-ignore><i class="fa fa-github"></i> Edit <strong>map.md</strong></a>
       </div>
     </div>
     <div class="row">
       <div class="col-sm-3">
         <div class="panel page-side-nav page-affix">
           <div class="panel-body">
-            <h5>Applications</h5>
+            <h5>Devices</h5>
             <ul>
-              <li class=""><a href="/docs/applications/index.html">Overview</a>
+              <li class=""><a href="/docs/devices/index.html">Overview</a>
             <ul>
-                <li class=""><a href="/docs/applications/add.html">Add an Application</a>
+                <li class=""><a href="/docs/devices/registration.html">Device Registration</a>
                 </li>
-                <li class=""><a href="/docs/applications/options.html">Build an Application</a>
+                <li class=""><a href="/docs/devices/bytes.html">Working with Bytes</a>
                 </li>
             </ul>
               </li>
-            <li class="page-side-nav-section"><span>APIs</span>
-            <ul>
-                <li class=""><a href="/docs/applications/apis.html">Overview</a>
-                </li>
-                <li class=""><a href="/docs/applications/manager/">Application Manager</a>
-                </li>
-                <li class=""><a href="/docs/applications/mqtt/">MQTT</a>
-                    <span class="label label-info">v2</span>
-                </li>
-                <li class=""><a href="/docs/applications/mqtt-v1/">MQTT</a>
-                    <span class="label label-info">v1-staging</span>
-                </li>
-            </ul>
-            </li>
             <li class="page-side-nav-section"><span>SDKs & Libraries</span>
             <ul>
-                <li class=""><a href="/docs/applications/sdks.html">Overview</a>
-                </li>
-                <li class=""><a href="/docs/applications/java/">Java</a>
-                </li>
-                <li class=""><a href="/docs/applications/nodered/">Node-RED</a>
-                    <span class="label label-info">v2</span>
-                </li>
-                <li class=""><a href="/docs/applications/nodered-v1/">Node-RED</a>
-                    <span class="label label-info">v1-staging</span>
-            <ul>
-                <li class=""><a href="/docs/applications/nodered-v1/setup.html">Setup</a>
-                </li>
-                <li class="active"><a href="/docs/applications/nodered-v1/configure.html">Configure</a>
-                </li>
-                <li class=""><a href="/docs/applications/nodered-v1/test.html">Test</a>
-                </li>
-                <li class=""><a href="/docs/applications/nodered-v1/build.html">Build</a>
-                </li>
-            </ul>
-                </li>
-                <li class=""><a href="/docs/applications/nodejs/">Node.js</a>
-                    <span class="label label-info">v2</span>
-                </li>
-                <li class=""><a href="/docs/applications/nodejs-v1/">Node.js</a>
-                    <span class="label label-info">v1-staging</span>
+                <li class=""><a href="/docs/devices/arduino/">Arduino</a>
                 </li>
             </ul>
             </li>
-            <li class="page-side-nav-section"><span>Integrations</span>
+            <li class="page-side-nav-section"><span>Hardware</span>
             <ul>
-                <li class=""><a href="/docs/applications/integrations.html">Overview</a>
+                <li class=""><a href="/docs/devices/uno/">The Things Uno</a>
+            <ul>
+                <li class="active"><a href="/docs/devices/uno/map.html">Map your Device!</a>
                 </li>
-                <li class=""><a href="/docs/applications/storage/">Storage Integration</a>
+                <li class=""><a href="/docs/devices/uno/quick-start.html">Quick Start</a>
+                </li>
+            </ul>
+                </li>
+                <li class=""><a href="/docs/devices/node/">The Things Node</a>
+                    <span class="label label-info">draft</span>
+                </li>
+                <li class=""><a href="/docs/devices/lopy/">LoPy</a>
                 </li>
             </ul>
             </li>
                 <li class="page-side-nav-section"><span>Links <i class="fa fa-link"></i></span>
                   <ul>
-                      <li class=""><a href="/docs/applications/../network/migrate.html">Migrate form Staging to Production</a></li>
+                      <li class=""><a href="/docs/devices/../network/migrate.html">Migrate form Staging to Production</a></li>
                   </ul>
                 </li>
             </ul>
@@ -174,33 +145,59 @@
       <div class="col-sm-7">
         <div class="panel">
           <div class="panel-body page-content">
-            <h1 id="configure">Configure</h1>
-<p>To use the TTN node you need to configure it for your The Things Network Application.</p>
-<h2 id="get-your-application-keys">Get your application keys</h2>
-<ol>
-  <li>Open a new browser tab and go to <a href="https://staging.thethingsnetwork.org/">The Things Network Dashboard</a>.</li>
-  <li>Navigate to your application and then <strong>Application Info &gt; Application data &gt; learn how to get data from this app</strong>.</li>
-</ol>
+            <h1 id="map-your-device">Map your Device!</h1>
+<p>The Things Uno comes with a preinstalled Arduino Sketch that pings home on setup and every following minute.</p>
 <blockquote>
-  <p>Use <i class="ion-eye"></i> to show obfuscated keys. Use <i class="ion-clipboard"></i> to copy the hex <strong>App EUI</strong> and base64 <strong>Access Keys</strong>.</p>
+  <p>As soon as you upload your first sketch it will overwrite the preinstalled one!</p>
 </blockquote>
-<h2 id="edit-the-ttn-node">Edit the TTN node</h2>
+<p>Simply connect it to a power source via USB and you’ll see it appear on the map at <a href="http://ttn.fyi/activate">ttn.fyi/activate</a>:</p>
+<p><img src="../node/map.png" alt="Map" /></p>
+<h2 id="power-your-device">Power your Device</h2>
+<p>While you keep an eye on the map at <a href="http://ttn.fyi/activate">ttn.fyi/activate</a>, use the bundled Micro-USB cable to connect the device to your computer or a power adapter.</p>
+<p>Soon, you should see your device appear on the map.</p>
+<h3 id="how-do-we-get-your-location">How do we get your location?</h3>
+<p>The Uno does not have a GPS sensor, but we do know the location of most gateways. Your device will appear in the center of all gateways that forwarded its message.</p>
+<h2 id="identify-your-device">Identify your Device</h2>
+<p>If you can’t tell by the location, you will need your unique Device EUI. The preinstalled sketch prints this to USB port every time it sends data. You can read it using the Arduino IDE’s Serial Monitor.</p>
 <ol>
-  <li>In Node-RED, drag a <strong>ttn</strong> node from the input category in the toolbox on the left to your workflow.</li>
-  <li>Double click the node to edit it.</li>
+  <li>Follow <a href="../arduino/ide.html">Arduino / IDE Setup &amp; Usage</a> to setup the IDE.</li>
   <li>
-    <p>Paste the <strong>App EUI</strong> and <strong>Access Key</strong> and click <strong>Done</strong>:</p>
-    <p><img src="node-red-ttn-edit.png" alt="Edit ttn node" /></p>
+    <p>Make sure your device is connected to your computer with a Micro-USB cable.</p>
+    <blockquote>
+      <p>Make sure you use a cable that supports data, not just power. The one we ship with the Uno should work.</p>
+    </blockquote>
+  </li>
+  <li>In the Arduino IDE, select <strong>Tools &gt; Boards &gt; Arduino Leonardo</strong> - not <em>Uno</em>!</li>
+  <li>
+    <p>Select the Node’s Serial Port under <strong>Tools &gt; Port</strong>.</p>
+    <blockquote>
+      <p>If you don’t see a port that identifies as <strong>Arduino Leonardo</strong> make sure The Things Uno’s power LED is on and check the cable and USB port you have used. On Windows, you might need to <a href="https://www.arduino.cc/en/Guide/ArduinoLeonardoMicro#toc2">install drivers</a>. See <a href="https://www.arduino.cc/en/Guide/Troubleshooting#toc16">Arduino Troubleshooting</a> for more suggestions.</p>
+    </blockquote>
   </li>
   <li>
-    <p>Click <strong>Deploy</strong> on the top right. The node should say it’s connected:</p>
-    <p><img src="node-red-ttn-connected.png" alt="Connected" /></p>
-    <p>In the terminal you should see something like:</p>
-    <div class="highlighter-rouge"><pre class="highlight"><code>29 Aug 12:34:27 - [info] [ttn:f2d6214.9aaa5e] Connected to TTN application 70B3D57ED0000AFB
+    <p>Select <strong>Tools &gt; Serial Monitor</strong> <code class="highlighter-rouge">Ctrl/⌘ Shift M</code> to open the Serial Monitor.</p>
+    <p>The next time it sends a message (every minute) it should print a list of information:</p>
+    <div class="highlighter-rouge"><pre class="highlight"><code>EUI: 0004A30B001B7AD2
+Battery: 3223
+AppEUI: 70B3D57EF000001C
+DevEUI: 0004A30B001B7AD2
+Band: 868
+Data Rate: 5
+RX Delay 1: 1000
+RX Delay 2: 2000
+Total airtime: 0.00 s
 </code></pre>
     </div>
+    <p>The first <code class="highlighter-rouge">EUI</code> value is what we’re looking for.</p>
+  </li>
+  <li>Switch back to <a href="http://ttn.fyi/activate">ttn.fyi/activate</a> and scroll to the filter input.</li>
+  <li>
+    <p>Enter the EUI and click <strong>Filter</strong>.</p>
+    <p>The map will now show your device only:</p>
+    <p><img src="../node/filter.png" alt="Filter" /></p>
   </li>
 </ol>
+<p>🎉 Congrats! Continue to the <a href="quick-start.html">Quick Start</a> to learn how to upload your own sketch.</p>
           </div>
         </div>
       </div>
