@@ -17,7 +17,7 @@ var ttn = require('ttn');
 Creates an instance of the client:
 
 ```js
-var client = new ttn.Client(region, appId, appAccessKey, options);
+var client = new ttn.Client(region, appId, appAccessKey, [options]);
 ```
 
 * `region [string]`: The region (e.g. `eu`) or full hostname (e.g. `eu.thethings.network`) of the handler to connect to.
@@ -57,9 +57,11 @@ client.on('error', function cb(err) {});
 Emitted when TTN forwards a message addressed to your application.
 
 ```js
-client.on('message', function cb(deviceId, data) {});
+client.on('message', [deviceId], [field], function cb(deviceId, data) {});
 ```
 
+* `deviceId [string]`: Optional device ID to filter on, e.g.: `my-uno`.
+* `field [string]`: Optional field (path) to filter on, e.g.: `led`.
 * `cb.deviceId [string]`: Device ID, e.g.: `my-uno`.
 * `cb.data [object]`: Message data, e.g.:
 
@@ -95,19 +97,36 @@ client.on('message', function cb(deviceId, data) {});
   }
   ```
 
-### Listen for a specific device
+## Event: device
+
+Emitted when a device event is published.
 
 ```js
-client.on('message', 'my-uno', function cb(deviceId, data) {});
+client.on('device', [deviceId], [event], function cb(deviceId, data)) {});
 ```
 
-### Listen for a specific field (and device)
+* `deviceId [string]`: Optional device ID to filter on, e.g.: `my-uno`.
+* `event [string]`: Optional event (path) to filter on, e.g.: `activations` or `down/scheduled`.
+* `cb.deviceId [string]`: Device ID, e.g.: `my-uno`.
+* `cb.data [object]`: Event data, e.g. for `down/scheduled`:
 
-```js
-client.on('message', [deviceId], 'led', function cb(deviceId, data) {});
-```
+  ```json
+  {
+    "port": 1,
+    "payload_raw": {
+      "type": "Buffer",
+      "data": [
+        1
+      ]
+    }
+  }
+  ```
+  
+> The `activation` is a type of `device` event and internally mapped as such.
 
 ## Event: activation
+
+> **DEPRECATED:** Use the `device` event with `activations` as event filter.
 
 Emitted when a device registered to the application activates.
 
@@ -138,33 +157,6 @@ client.on('activation', [deviceId], function cb(deviceId, data)) {});
         "rssi": -107,
         "snr": 1.2
       }]
-    }
-  }
-  ```
-  
-> The `activation` is a type of `device` event and internally mapped as such.
-
-## Event: device
-
-Emitted when a device event is published.
-
-```js
-client.on('device', [deviceId], event, function cb(deviceId, data)) {});
-```
-
-* `deviceId [string]`: Optional device ID to filter on, e.g.: `my-uno`.
-* `event [string]`: Event name, e.g.: `activations` or `down/scheduled`.
-* `cb.deviceId [string]`: Device ID, e.g.: `my-uno`.
-* `cb.data [object]`: Event data, e.g. for `down/scheduled`:
-
-  ```json
-  {
-    "port": 1,
-    "payload_raw": {
-      "type": "Buffer",
-      "data": [
-        1
-      ]
     }
   }
   ```

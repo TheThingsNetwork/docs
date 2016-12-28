@@ -24,7 +24,7 @@ Query the devices for which data has been stored.
 
 #### HTTP Endpoint
 
-- `GET` `/devices`
+- `GET` `/api/v2/devices`
 
 #### JSON Response Format
 
@@ -37,7 +37,7 @@ Query the devices for which data has been stored.
 #### Example
 
 ```
-➜ curl -H "Authorization: key ttn-account.<secret>" https://office-app.data.thethingsnetwork.org/devices
+➜ curl -H "Authorization: key ttn-account.<secret>" https://office-app.data.thethingsnetwork.org/v2/api/devices
 
 ["basement", "conference-1", "conference-2", "ballroom"]
 ```
@@ -48,10 +48,10 @@ Query the data for all devices or a specific device.
 
 #### HTTP Endpoint
 
-- `GET` `/query`
-- `GET` `/query?last=<time>`
-- `GET` `/query/<device-id>`
-- `GET` `/query/<device-id>?last=<time>`
+- `GET` `/api/v2/query`
+- `GET` `/api/v2/query?last=<time>`
+- `GET` `/api/v2/query/<device-id>`
+- `GET` `/api/v2/query/<device-id>?last=<time>`
 
 When omitting the device ID, data for all devices is returned. When omitting the `last` parameter, data of the last hour is returned. The `last` parameter contains time, e.g. `30s` for the last 30 seconds, `1h` for the last hour and `2d` for the last 48 hours.
 
@@ -81,7 +81,7 @@ When omitting the device ID, data for all devices is returned. When omitting the
 #### Example
 
 ```
-➜ curl -H "Authorization: key ttn-account.<secret>" https://office-app.data.thethingsnetwork.org/query?last=1m
+➜ curl -H "Authorization: key ttn-account.<secret>" https://office-app.data.thethingsnetwork.org/v2/api/query?last=1m
 
 [{"celcius":23.3,"device_id":"office-hq","light":477,"raw":"Ad0JGgGH","sound":391,"time":"2016-12-14T14:58:34.26230046Z"},{"celcius":23.3,"device_id":"office-hq","light":476,"raw":"AdwJGgI/","sound":575,"time":"2016-12-14T14:58:56.461535619Z"},{"celcius":23.3,"device_id":"office-hq","light":476,"raw":"AdwJGgFl","sound":357,"time":"2016-12-14T14:59:18.653984846Z"}]
 ```

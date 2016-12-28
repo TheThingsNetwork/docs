@@ -12,22 +12,24 @@ This guides walks you through programming your The Things Node with your first s
 
 ## Connect your Device
 
-1.  Open the case.
+1.  Open the case using a double-slot (cross) screw drive.
 
     > You do not need to insert batteries since while we program it, the Node will be powered over USB.
 
-2.  Connect the Micro-USB cable to the connector found between the batteries compartment and the top side of the case.
+2.  Connect a Micro-USB cable to the connector found between the batteries compartment and the top side of the case.
 
     ![Cable](cable.png)
 
-    > Some Micro-USB cables might not fit the limited space between the batteries compartment and the casing. The one we ship with the Node does.
+    > Some Micro-USB cables might not fit the limited space between the batteries compartment and the casing. Also make sure you use a cable that supports data, not just power. The one we ship with the Uno should work.
     
 3.  Connect the USB cable to your computer.
 4.  In the Arduino IDE, select **Tools > Boards > SparkFun Pro Micro**.
 5.  Select **Tools > Processor > ATmega32U4 (3.3V, 8Mhz)**.
 6.  Select the Node's Serial Port under **Tools > Port**.
 
-    > Unlike The Things Uno, which the Arduino IDE recognizes as *Arduino Leonardo*, it does not recognize the No as *SparkFun Pro Micro*. You will have to see what `/dev/*usb*` (Mac/Linux) or `COM` (Windows) option appears in the menu after connecting the Node.
+    > Unlike The Things Uno, which the Arduino IDE recognizes as *Arduino Leonardo*, it does not always recognize the Node as *SparkFun Pro Micro*. You will have to see what `/dev/*usb*` (Mac/Linux) or `COM` (Windows) option appears in the menu after connecting the Node.
+    
+    > Another [common issue](troubleshooting.md#serial-port-not-showing) is that on recent Macs the Node may not appear at all. We suggest to connect via an USB hub.
     
 ## Get your Device EUI
 To communicate via The Things Network, you need to register your device. For this, we'll need its unique **Device EUI**. This is a unique address, hard coded into the LoRa module.
