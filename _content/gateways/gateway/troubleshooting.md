@@ -7,8 +7,8 @@ hidden: true
 # Troubleshooting
 We've try hard for The Things Gateway to never cause you any trouble, but when it does here is some help to get back on your feet quickly.
 
-## It doesn't work
-Like all hardware, the first thing you'll want to try is press the reset button briefly to reboot it.
+## It somehow stopped working
+Like with all hardware, the first thing you'll want to try is press the reset button briefly to reboot it.
 
 ## I've deleted my registration
 Oops! No worries. Press the reset button for 10 seconds until the LEDs start to blink. Then [activate](activate.md) your gateway again.
