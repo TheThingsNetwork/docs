@@ -13,4 +13,4 @@ The Discovery Server is the key to the decentralized architecture of The Things 
 Use the following endpoints for the community network:
 
 - [gRPC](http://www.grpc.io/): `discovery.thethingsnetwork.org:1900`
-- HTTP: `https://discovery.thethingsnetwork.org:8080`
+- HTTP: `http://discovery.thethingsnetwork.org:8080`
