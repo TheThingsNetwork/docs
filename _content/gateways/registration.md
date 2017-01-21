@@ -4,7 +4,7 @@ title: Gateway Registration
 
 # Gateway Registration
 
-We will transitioning to a new way to register and manage your gateways. Please read this guide carefully to understand how it currently works and what will change.
+We are transitioning to a new way to register and manage your gateways. Please read this guide carefully to understand how it currently works and what will change.
 
 > At the moment, most gateways don't support the Gateway Connector yet. Follow [Via Bridge](#via-bridge).
 
@@ -59,7 +59,7 @@ We have a special bridge in place that will continue to accept packages from gat
 > After registering the gateway, select **Settings** from the top right menu on the Gateway screen so set the gateway description, location altitude, privacy settings and other information.
 
 ### Unregistered Gateways
-If you don't register your gateway, The Things Network will still accept messages it forwards, but mark them as **untrusted**. The gateway will appear on the [map](https://www.thethingsnetwork.org/map) as **Unregistered**. You will not be able to manage its configuration (e.g. location) form the Console.
+If you don't register your gateway, The Things Network will still accept messages it forwards, but mark them as **untrusted**. The gateway will appear on the [map](https://www.thethingsnetwork.org/map) as **Unregistered**. You will not be able to manage its configuration (e.g. location) from the Console.
 
 ## Troubleshooting & FAQ
 
