@@ -126,7 +126,7 @@ All The Things Network nodes can share the same app configuration.
           "rf_chain": 1
         }]
       },
-      "devId": "my-uno",
+      "dev_id": "my-uno",
       "payload": "my-uno",
       "_msgid": "10d6a2ba.ef295d"
     }
@@ -160,7 +160,7 @@ Messages sent by devices on the application can be received via the **ttn messag
     
     ![Output complete msg object](node-red-debug-edit.png)
     
-10. Click **Deploy** to see the next message in full, including `devId`:
+10. Click **Deploy** to see the next message in full, including `dev_id`:
 
     ```json
     {
@@ -188,7 +188,7 @@ Messages sent by devices on the application can be received via the **ttn messag
           "snr": 6.2
         }]
       },
-      "devId": "my-uno",
+      "dev_id": "my-uno",
       "payload": {
         "led": false
       },
@@ -211,7 +211,7 @@ Use the **ttn send** node to send messages to devices.
 
     ```js
     return {
-        devId: msg.devId,
+        dev_id: msg.dev_id,
         port: msg.port,
         payload: {
             led: !msg.payload.led
