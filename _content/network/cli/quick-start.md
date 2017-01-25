@@ -44,7 +44,7 @@ If you don't like the default configuration options of `ttnctl`, you can configu
     INFO Registered user
     ```
 
-2. Now go to [account.thethingsnetwork.org](https://account.thethingsnetwork.org/) and click [ttnctl access code](https://account.thethingsnetwork.org/oauth/callback/ttnctl?code=LzWtldT-VGvN56I3u3oJiU8apRJGaWJAJKbYvALJoP4).
+2. Now go to [account.thethingsnetwork.org](https://account.thethingsnetwork.org/) and click [ttnctl access code](https://account.thethingsnetwork.org/users/authorize?client_id=ttnctl&redirect_uri=/oauth/callback/ttnctl&response_type=code).
 
 3. You now have 5 minutes to use this code to login with [`ttnctl user login`](api.md#ttnctl-user-login):
 
