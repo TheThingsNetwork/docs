@@ -24,7 +24,7 @@ This guide will walk you through using The Things Network on the LoPy as node.
 
 * [LoPy](https://www.pycom.io/product/lopy/), upgraded to the latest firmware.
 
-  Follow Pycom's [Getting Started](https://www.pycom.io/gettingstarted/) to [upgrade](https://docs.pycom.io/pycom_esp32/pycom_esp32/firmware.html) the [firmware](https://www.pycom.io/support/supportdownloads/) and connect to the LoPy.
+  Follow Pycom's [Getting Started](https://www.pycom.io/gettingstarted/) to [upgrade](https://docs.pycom.io/pycom_esp32/pycom_esp32/firmware.html) the [firmware](https://www.pycom.io/support/supportdownloads/#firmware) and connect to the LoPy.
   
   > Be aware that you need a male-to-male wire to boot into safe mode.
 
@@ -34,7 +34,7 @@ This guide will walk you through using The Things Network on the LoPy as node.
 
 * [Expansion Board](https://www.pycom.io/product/expansion-board/).
 
-  > Mount the LoPy with the LED (white square) [positioned on the same side](https://docs.pycom.io/pycom_esp32/pycom_esp32/getstarted.html#placement-on-the-expansion-board) as the Micro-USB connector of the expansion board.
+  > Mount the LoPy with the LED (white square) [positioned on the same side](https://docs.pycom.io/pycom_esp32/pycom_esp32/getstarted.html#unboxing) as the Micro-USB connector of the expansion board.
   
 **Bonus:** If you use the case, guide the pigtail coming from the LoPy between the LoPy and the row of pins. It should then bent back to the antenna in a way that it doesn't hide the pin labels from you once you close the case.
 
