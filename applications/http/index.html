@@ -17,15 +17,15 @@
       if (document.location.href.substr(0, document.location.href.length - document.location.hash.length) !== canonical) {
         window.location.replace(canonical);
       }
-    })('https://www.thethingsnetwork.org/docs/applications/nodejs/');
+    })('https://www.thethingsnetwork.org/docs/applications/http/');
     </script>
     <!-- Begin Jekyll SEO tag v2.1.0 -->
-<title>Node.js - The Things Network</title>
-<meta property="og:title" content="Node.js" />
-<meta name="description" content="Node.js SDK" />
-<meta property="og:description" content="Node.js SDK" />
-<link rel="canonical" href="https://www.thethingsnetwork.org/docs/applications/nodejs/" />
-<meta property="og:url" content="https://www.thethingsnetwork.org/docs/applications/nodejs/" />
+<title>HTTP Integration - The Things Network</title>
+<meta property="og:title" content="HTTP Integration" />
+<meta name="description" content="HTTP Integration" />
+<meta property="og:description" content="HTTP Integration" />
+<link rel="canonical" href="https://www.thethingsnetwork.org/docs/applications/http/" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/applications/http/" />
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
@@ -36,14 +36,14 @@
 <script type="application/ld+json">
 {"@context": "http://schema.org",
 "@type": "BlogPosting",
-"headline": "Node.js",
+"headline": "HTTP Integration",
 "image": "https://www.thethingsnetwork.org/docs/assets/images/og-image.png",
 "datePublished": "2017-02-04T23:11:52+00:00",
-"description": "Node.js SDK",
+"description": "HTTP Integration",
 "publisher": {"@type": "Organization",
 "logo": {"@type": "ImageObject",
 "url": "https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},
-"url": "https://www.thethingsnetwork.org/docs/applications/nodejs/"}</script>
+"url": "https://www.thethingsnetwork.org/docs/applications/http/"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-152.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -93,7 +93,7 @@
         </ul>
       </div>
       <div class="hidden-xs col-sm-3 text-right">
-        <a href="https://github.com/TheThingsNetwork/docs/edit/master/_content/applications/nodejs/index.md" class="page-edit" data-proofer-ignore><i class="fa fa-github"></i> Edit <strong>index.md</strong></a>
+        <a href="https://github.com/TheThingsIndustries/integration-messaging/blob/master/ttn/README.md" class="page-edit" data-proofer-ignore><i class="fa fa-github"></i> Edit <strong>index.md</strong></a>
       </div>
     </div>
     <div class="row">
@@ -136,16 +136,8 @@
                 <li class=""><a href="/docs/applications/nodered-v1/">Node-RED</a>
                     <span class="label label-info">v1-staging</span>
                 </li>
-                <li class="active"><a href="/docs/applications/nodejs/">Node.js</a>
+                <li class=""><a href="/docs/applications/nodejs/">Node.js</a>
                     <span class="label label-info">v2</span>
-            <ul>
-                <li class=""><a href="/docs/applications/nodejs/quick-start.html">Quick Start</a>
-                </li>
-                <li class=""><a href="/docs/applications/nodejs/live.html">Live Example</a>
-                </li>
-                <li class=""><a href="/docs/applications/nodejs/api.html">API Reference</a>
-                </li>
-            </ul>
                 </li>
                 <li class=""><a href="/docs/applications/nodejs-v1/">Node.js</a>
                     <span class="label label-info">v1-staging</span>
@@ -156,7 +148,7 @@
             <ul>
                 <li class=""><a href="/docs/applications/integrations.html">Overview</a>
                 </li>
-                <li class=""><a href="/docs/applications/http/">HTTP Integration</a>
+                <li class="active"><a href="/docs/applications/http/">HTTP Integration</a>
                 </li>
                 <li class=""><a href="/docs/applications/storage/">Storage Integration</a>
                 </li>
@@ -174,9 +166,74 @@
       <div class="col-sm-7">
         <div class="panel">
           <div class="panel-body page-content">
-            <h1 id="nodejs-sdk">Node.js SDK</h1>
-<p><a href="https://nodejs.org/">Node.js</a> is a JavaScript run-time built on Chrome’s V8 JavaScript engine.</p>
-<p>With the <a href="https://www.npmjs.com/package/ttn">TTN Client</a> you can receive activations and uplink messages from devices via The Things Network as well as respond with downlink messages.</p>
+            <h1 id="http-integration">HTTP Integration</h1>
+<p>The HTTP Integration allows you to send uplink data to an endpoint and receive downlink data over HTTP.</p>
+<h2 id="uplink">Uplink</h2>
+<p>You can configure the URL, the HTTP method (e.g. <code class="highlighter-rouge">POST</code>) and optionally the HTTP Authorization header of your endpoint.</p>
+<p>The integration will post data in the following format:</p>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="p">{</span>
+  <span class="s2">"app_id"</span><span class="err">:</span> <span class="s2">"my-app-id"</span><span class="p">,</span> <span class="c1">// The app ID</span>
+  <span class="s2">"dev_id"</span><span class="err">:</span> <span class="s2">"my-dev-id"</span><span class="p">,</span> <span class="c1">// The device ID</span>
+  <span class="s2">"hardware_serial"</span><span class="err">:</span> <span class="s2">"0102030405060708"</span><span class="p">,</span> <span class="c1">// In case of LoRaWAN: the DevEUI</span>
+  <span class="s2">"port"</span><span class="err">:</span> <span class="mi">1</span><span class="p">,</span> <span class="c1">// LoRaWAN FPort</span>
+  <span class="s2">"counter"</span><span class="err">:</span> <span class="mi">2</span><span class="p">,</span> <span class="c1">// LoRaWAN frame counter</span>
+  <span class="s2">"is_retry"</span><span class="err">:</span> <span class="kc">false</span><span class="p">,</span> <span class="c1">// Is set to true if this message is a retry (you could also detect this from the counter)</span>
+  <span class="s2">"payload_raw"</span><span class="err">:</span> <span class="s2">"AQIDBA=="</span><span class="p">,</span> <span class="c1">// Base64 encoded payload: [0x01, 0x02, 0x03, 0x04]</span>
+  <span class="s2">"payload_fields"</span><span class="err">:</span> <span class="p">{},</span> <span class="c1">// Object containing the results from the payload functions - left out when empty</span>
+  <span class="s2">"metadata"</span><span class="err">:</span> <span class="p">{</span>
+    <span class="s2">"time"</span><span class="err">:</span> <span class="s2">"1970-01-01T00:00:00Z"</span><span class="p">,</span> <span class="c1">// Time when the server received the message</span>
+    <span class="s2">"frequency"</span><span class="err">:</span> <span class="mf">868.1</span><span class="p">,</span> <span class="c1">// Frequency at which the message was sent</span>
+    <span class="s2">"modulation"</span><span class="err">:</span> <span class="s2">"LORA"</span><span class="p">,</span> <span class="c1">// Modulation that was used - LORA or FSK</span>
+    <span class="s2">"data_rate"</span><span class="err">:</span> <span class="s2">"SF7BW125"</span><span class="p">,</span> <span class="c1">// Data rate that was used - if LORA modulation</span>
+    <span class="s2">"bit_rate"</span><span class="err">:</span> <span class="mi">50000</span><span class="p">,</span> <span class="c1">// Bit rate that was used - if FSK modulation</span>
+    <span class="s2">"coding_rate"</span><span class="err">:</span> <span class="s2">"4/5"</span><span class="p">,</span> <span class="c1">// Coding rate that was used</span>
+    <span class="s2">"gateways"</span><span class="err">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="s2">"id"</span><span class="p">:</span> <span class="s2">"ttn-herengracht-ams"</span><span class="p">,</span> <span class="c1">// The gateway ID</span>
+        <span class="s2">"timestamp"</span><span class="p">:</span> <span class="mi">12345</span><span class="p">,</span> <span class="c1">// Timestamp when the gateway received the message</span>
+        <span class="s2">"time"</span><span class="p">:</span> <span class="s2">"1970-01-01T00:00:00Z"</span><span class="p">,</span> <span class="c1">// Time when the gateway received the message - left out when gateway does not have synchronized time </span>
+        <span class="s2">"channel"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="c1">// Channel where the gateway received the message</span>
+        <span class="s2">"rssi"</span><span class="p">:</span> <span class="o">-</span><span class="mi">25</span><span class="p">,</span> <span class="c1">// Signal strength of the received message</span>
+        <span class="s2">"snr"</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="c1">// Signal to noise ratio of the received message</span>
+        <span class="s2">"rf_chain"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="c1">// RF chain where the gateway received the message</span>
+      <span class="p">},</span>
+      <span class="c1">//...more if received by more gateways...</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="s2">"downlink_url"</span><span class="err">:</span> <span class="s2">"https://integrations.thethingsnetwork.org/ttn/api/v2/down/my-app-id/my-process-id?key=ttn-account-v2.secret"</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+<h2 id="downlink">Downlink</h2>
+<p>Your application can schedule a downlink message to a URL for your application, process name and app access key:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>https://integrations.thethingsnetwork.org/ttn/api/v2/down/my-app-id/my-process-id?key=ttn-account-v2.secret
+</code></pre>
+</div>
+<p>This URL is also provided in each uplink message for convenience. However, you can call this URL any time to schedule downlink.</p>
+<p>Your application should <code class="highlighter-rouge">POST</code> or <code class="highlighter-rouge">PUT</code> a downlink message.</p>
+<h3 id="with-raw-payload">With Raw payload</h3>
+<p>You can schedule a message with raw payload using this format:</p>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="p">{</span>
+  <span class="s2">"dev_id"</span><span class="err">:</span> <span class="s2">"my-dev-id"</span><span class="p">,</span> <span class="c1">// The device ID</span>
+  <span class="s2">"port"</span><span class="err">:</span> <span class="mi">1</span><span class="p">,</span> <span class="c1">// LoRaWAN FPort</span>
+  <span class="s2">"confirmed"</span><span class="err">:</span> <span class="kc">false</span><span class="p">,</span> <span class="c1">// Whether the downlink should be confirmed by the device</span>
+  <span class="s2">"payload_raw"</span><span class="err">:</span> <span class="s2">"AQIDBA=="</span><span class="p">,</span> <span class="c1">// Base64 encoded payload: [0x01, 0x02, 0x03, 0x04]</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+<h3 id="with-payload-fields">With Payload Fields</h3>
+<p>You can also use payload fields if your application has a encoder payload function declared to encode JSON to binary:</p>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="p">{</span>
+  <span class="s2">"dev_id"</span><span class="err">:</span> <span class="s2">"my-dev-id"</span><span class="p">,</span> <span class="c1">// The device ID</span>
+  <span class="s2">"port"</span><span class="err">:</span> <span class="mi">1</span><span class="p">,</span> <span class="c1">// LoRaWAN FPort</span>
+  <span class="s2">"confirmed"</span><span class="err">:</span> <span class="kc">false</span><span class="p">,</span> <span class="c1">// Whether the downlink should be confirmed by the device</span>
+  <span class="s2">"payload_fields"</span><span class="err">:</span> <span class="p">{</span> <span class="c1">// The JSON object to be encoded by your encoder payload function</span>
+    <span class="s2">"on"</span><span class="err">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="s2">"color"</span><span class="err">:</span> <span class="s2">"blue"</span><span class="p">,</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
           </div>
         </div>
       </div>

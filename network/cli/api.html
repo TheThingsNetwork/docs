@@ -24,7 +24,7 @@
 <meta property="og:site_name" content="The Things Network">
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png">
 <meta property="og:type" content="article">
-<meta property="article:published_time" content="2017-02-03T12:00:31+00:00">
+<meta property="article:published_time" content="2017-02-04T23:11:52+00:00">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@thethingsnetwrk">
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork">
@@ -33,7 +33,7 @@
 "@type": "BlogPosting",
 "headline": "API Reference",
 "image": "https://www.thethingsnetwork.org/docs/assets/images/og-image.png",
-"datePublished": "2017-02-03T12:00:31+00:00",
+"datePublished": "2017-02-04T23:11:52+00:00",
 "description": "API Reference",
 "publisher": {"@type": "Organization",
 "logo": {"@type": "ImageObject",
@@ -160,7 +160,6 @@
 <pre class="highlight"><code>      --auth-server string         The address of the OAuth 2.0 server (default "https://account.thethingsnetwork.org")
       --config string              config file (default is $HOME/.ttnctl.yml)
       --data string                directory where ttnctl stores data (default is $HOME/.ttnctl)
-  -d, --debug                      Enable debug mode
       --discovery-address string   The address of the Discovery server (default "discover.thethingsnetwork.org:1900")
       --handler-id string          The ID of the TTN Handler as announced in the Discovery server (default "ttn-handler-eu")
       --mqtt-address string        The address of the MQTT broker (default "eu.thethings.network:1883")
@@ -190,7 +189,7 @@
 </div>
 <h3 id="ttnctl-applications-delete">ttnctl applications delete</h3>
 <p>ttnctl devices delete can be used to delete an application.</p>
-<p><strong>Usage:</strong> <code class="highlighter-rouge">ttnctl applications delete</code></p>
+<p><strong>Usage:</strong> <code class="highlighter-rouge">ttnctl applications delete [AppID]</code></p>
 <h3 id="ttnctl-applications-info">ttnctl applications info</h3>
 <p>ttnctl applications info can be used to info applications.</p>
 <p><strong>Usage:</strong> <code class="highlighter-rouge">ttnctl applications info [AppID]</code></p>
@@ -279,11 +278,20 @@ function Decoder(bytes, port) {
 
   return decoded;
 }
+
+Do you want to test the payload functions? (Y/n)
+Y
+
+Payload: 12 34
+Port: 1
+
+  INFO Function tested successfully
+
   INFO Updated application                      AppID=test
 </code></pre>
 </div>
 <h3 id="ttnctl-applications-register">ttnctl applications register</h3>
-<p>ttnctl register can be used to register this application with the handler.</p>
+<p>ttnctl applications register can be used to register this application with the handler.</p>
 <p><strong>Usage:</strong> <code class="highlighter-rouge">ttnctl applications register</code></p>
 <p><strong>Example</strong></p>
 <div class="highlighter-rouge">
@@ -295,7 +303,7 @@ function Decoder(bytes, port) {
 </div>
 <h3 id="ttnctl-applications-select">ttnctl applications select</h3>
 <p>ttnctl applications select can be used to select the application to use in next commands.</p>
-<p><strong>Usage:</strong> <code class="highlighter-rouge">ttnctl applications select</code></p>
+<p><strong>Usage:</strong> <code class="highlighter-rouge">ttnctl applications select [AppID [AppEUI]]</code></p>
 <p><strong>Example</strong></p>
 <div class="highlighter-rouge">
 <pre class="highlight"><code>$ ttnctl applications select
@@ -408,7 +416,7 @@ test 	70B3D57EF0000024	0001D544B2936FCE	26001ADA
 </div>
 <h3 id="ttnctl-devices-register">ttnctl devices register</h3>
 <p>ttnctl devices register can be used to register a new device.</p>
-<p><strong>Usage:</strong> <code class="highlighter-rouge">ttnctl devices register [Device ID] [DevEUI] [AppKey]</code></p>
+<p><strong>Usage:</strong> <code class="highlighter-rouge">ttnctl devices register [Device ID] [DevEUI] [AppKey] [Lat,Long]</code></p>
 <p><strong>Example</strong></p>
 <div class="highlighter-rouge">
 <pre class="highlight"><code>$ ttnctl devices register test
@@ -427,6 +435,7 @@ test 	70B3D57EF0000024	0001D544B2936FCE	26001ADA
 <div class="highlighter-rouge">
 <pre class="highlight"><code>      --16-bit-fcnt          Use 16 bit FCnt
       --32-bit-fcnt          Use 32 bit FCnt (default)
+      --altitude int32       Set altitude
       --app-eui string       Set AppEUI
       --app-key string       Set AppKey
       --app-s-key string     Set AppSKey
@@ -436,6 +445,8 @@ test 	70B3D57EF0000024	0001D544B2936FCE	26001ADA
       --enable-fcnt-check    Enable FCnt check (default)
       --fcnt-down int        Set FCnt Down (default -1)
       --fcnt-up int          Set FCnt Up (default -1)
+      --latitude float32     Set latitude
+      --longitude float32    Set longitude
       --nwk-s-key string     Set NwkSKey
       --override             Override protection against breaking changes
 </code></pre>
@@ -449,12 +460,21 @@ test 	70B3D57EF0000024	0001D544B2936FCE	26001ADA
   INFO Updated device                           AppID=test DevID=test
 </code></pre>
 </div>
+<h3 id="ttnctl-devices-simulate">ttnctl devices simulate</h3>
+<p>ttnctl devices simulate can be used to simulate an uplink message for a device.</p>
+<p><strong>Usage:</strong> <code class="highlighter-rouge">ttnctl devices simulate [Device ID] [Payload]</code></p>
+<p><strong>Options</strong></p>
+<div class="highlighter-rouge">
+<pre class="highlight"><code>      --port uint32   Port number (default 1)
+</code></pre>
+</div>
 <h2 id="ttnctl-downlink">ttnctl downlink</h2>
 <p>ttnctl downlink can be used to send a downlink message to a device.</p>
 <p><strong>Usage:</strong> <code class="highlighter-rouge">ttnctl downlink [DevID] [Payload]</code></p>
 <p><strong>Options</strong></p>
 <div class="highlighter-rouge">
-<pre class="highlight"><code>      --fport int   FPort for downlink (default 1)
+<pre class="highlight"><code>      --confirmed   Confirmed downlink
+      --fport int   FPort for downlink (default 1)
       --json        Provide the payload as JSON
 </code></pre>
 </div>
