@@ -14,7 +14,7 @@ Platform Integrations completely you from any code and even The Things Network C
 
 ## Messaging Integration
 
-A common integration is to forward messages to some webhook or other messaging endpoint (uplink messages). For these situations we provide a set of messaging integrations which act as a bridge between the Handler Data API and any endpoint you configure. It also provides you with an endpoint to send messages back to devices (downlink messages). Easy to configure and use is the HTTP Integration.
+A common integration is to forward messages to some webhook or other messaging endpoint (uplink messages). For these situations we provide a set of messaging integrations which act as a bridge between the Handler Data API and any endpoint you configure. It also provides you with an endpoint to send messages back to devices (downlink messages). Easy to configure and use is the [HTTP Integration](http/index.md).
 
 ![HTTP Integration](options-http.png)
 
