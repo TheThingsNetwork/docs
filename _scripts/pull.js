@@ -120,8 +120,8 @@ var items = [{
 if (process.env.GITHUB_OAUTH_TOKEN) {
   items.push({
     owner: 'TheThingsIndustries',
-    repo: 'node-ttn-oauth2',
-    branch: 'v2-preview',
+    repo: 'account-server',
+    branch: 'master',
     path: 'apidocs.md',
     token: process.env.GITHUB_OAUTH_TOKEN,
     target: '_content/network/account/api.md',
@@ -134,8 +134,8 @@ if (process.env.GITHUB_OAUTH_TOKEN) {
     }
   }, {
     owner: 'TheThingsIndustries',
-    repo: 'node-ttn-oauth2',
-    branch: 'v2-preview',
+    repo: 'account-server',
+    branch: 'master',
     path: 'AUTHENTICATION.md',
     token: process.env.GITHUB_OAUTH_TOKEN,
     target: '_content/network/account/authentication.md',
@@ -155,6 +155,17 @@ if (process.env.GITHUB_OAUTH_TOKEN) {
     yaml: {
       title: 'API Reference',
       zindex: -1000
+    }
+  }, {
+    owner: 'TheThingsIndustries',
+    repo: 'integration-messaging',
+    branch: 'master',
+    path: 'ttn/README.md',
+    token: process.env.GITHUB_OAUTH_TOKEN,
+    target: '_content/applications/http/index.md',
+    yaml: {
+      title: 'HTTP Integration',
+      section: 'Integrations'
     }
   });
 } else {

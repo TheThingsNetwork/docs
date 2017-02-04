@@ -38,12 +38,12 @@ Integrations are the easiest way to connect your devices to an applications. An 
 
 ![Platform Integration](options-integration.png)
 
-Platform Integrations completely you from any code and even The Things Network Console or CLI. A good example is an integration for Azure IoT Hub or Amazon IoT, where the user could manage his application and devices from there, while the integration takes care of synchronizing with The Things Network.
+Platform Integrations completely you from any code and even The Things Network Console or CLI. A good example is an integration for Azure IoT Hub or AWS IoT, where the user could manage his application and devices from there, while the integration takes care of synchronizing with The Things Network.
 
-### HTTP Integration
+### Messaging Integration
 
-A common integration is to forward messages to some webhook or other HTTP endpoint. Good examples are [IFTTT](https://ifttt.com/maker) and [Zapier](https://zapier.com/zapbook/webhook/). For these situations we provide an single HTTP Integration which acts as a bridge between the Handler Data API and any HTTP request you configure. It also provides you with a unique HTTP endpoint to send messages back to devices.
+A common integration is to forward messages to some webhook or other messaging endpoint (uplink messages). For these situations we provide a set of messaging integrations which act as a bridge between the Handler Data API and any endpoint you configure. It also provides you with an endpoint to send messages back to devices (downlink messages). Easy to configure and use is the [HTTP Integration](http/index.md).
 
 ![HTTP Integration](options-http.png)
 
-For some platforms we provide a configuration template. Instead of directly configuring the HTTP requests, we ask you only for variables like a platform key and generate the configuration for you.
+For some messaging integrations we provide a configuration template. Instead of manually configuring the HTTP Integration, we ask you only for variables like a platform key and generate the configuration for you.
