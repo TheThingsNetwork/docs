@@ -46,7 +46,7 @@ To get started you need to install Node-RED and add the TTN node, both via [NPM]
 
     ```bash
     cd $HOME/.node-red
-    npm install node-red-contrib-ttn@refactor
+    npm install node-red-contrib-ttn
     ```
         
     See Node-RED's [Getting Started / Adding Nodes](http://nodered.org/docs/getting-started/adding-nodes) for details.
