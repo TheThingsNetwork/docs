@@ -22,14 +22,14 @@
     <!-- Begin Jekyll SEO tag v2.1.0 -->
 <title>API Reference - The Things Network</title>
 <meta property="og:title" content="API Reference" />
-<meta name="description" content="API Reference This is the API specification all account server need to comply to to be able to run a TTN backend." />
-<meta property="og:description" content="API Reference This is the API specification all account server need to comply to to be able to run a TTN backend." />
+<meta name="description" content="The Things Network Account Server API, version 2.0.0" />
+<meta property="og:description" content="The Things Network Account Server API, version 2.0.0" />
 <link rel="canonical" href="https://www.thethingsnetwork.org/docs/network/account/api.html" />
 <meta property="og:url" content="https://www.thethingsnetwork.org/docs/network/account/api.html" />
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2017-02-09T12:06:07+00:00" />
+<meta property="article:published_time" content="2017-02-10T10:59:58+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
@@ -38,8 +38,8 @@
 "@type": "BlogPosting",
 "headline": "API Reference",
 "image": "https://www.thethingsnetwork.org/docs/assets/images/og-image.png",
-"datePublished": "2017-02-09T12:06:07+00:00",
-"description": "API Reference This is the API specification all account server need to comply to to be able to run a TTN backend.",
+"datePublished": "2017-02-10T10:59:58+00:00",
+"description": "The Things Network Account Server API, version 2.0.0",
 "publisher": {"@type": "Organization",
 "logo": {"@type": "ImageObject",
 "url": "https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},
@@ -146,569 +146,683 @@
       <div class="col-sm-7">
         <div class="panel">
           <div class="panel-body page-content">
-            <h1 id="api-reference">API Reference</h1>
-<p>This is the API specification all account server need to comply to
-to be able to run a TTN backend.</p>
-<p><strong>Version:</strong> 2.0.0</p>
-<h3 id="security">Security</h3>
-<hr />
-<p>|oauth2|<em>OAuth 2.0</em>|
-|—|—|
-|Flow|accessCode|
-|Authorization URL|/users/authorize|
-|Token URL|/users/token|
-|<strong>Scopes</strong>||
-|profile|Manage user profile|
-|apps|Manage applications|
-|apps:<app_id>|Manage application <app_id>|
-|gateways|Manage gateways|
-|gateways:<gateway_id>|Manage gateway <gateway_id>|
-|components|Manage components|
-|components:<component_id>|Manage component <component_id>|</component_id></component_id></gateway_id></gateway_id></app_id></app_id></p>
+            <h1 id="the-things-network-account-server-api-version-200">The Things Network Account Server API, version 2.0.0</h1>
+<p>Base URL: https://preview.account.thethingsnetwork.org/api/v2</p>
+<ul>
+  <li><a href="#endpoints">Endpoints</a>
+    <ul>
+      <li><a href="#get-applications">GET /applications</a></li>
+      <li><a href="#post-applications">POST /applications</a></li>
+      <li><a href="#get-applicationsapp_id">GET /applications/{app_id}</a></li>
+      <li><a href="#patch-applicationsapp_id">PATCH /applications/{app_id}</a></li>
+      <li><a href="#delete-applicationsapp_id">DELETE /applications/{app_id}</a></li>
+      <li><a href="#post-applicationsapp_idrestore">POST /applications/{app_id}/restore</a></li>
+      <li><a href="#get-applicationsapp_ideuis">GET /applications/{app_id}/euis</a></li>
+      <li><a href="#post-applicationsapp_ideuis">POST /applications/{app_id}/euis</a></li>
+      <li><a href="#put-applicationsapp_ideuiseui">PUT /applications/{app_id}/euis/{eui}</a></li>
+      <li><a href="#delete-applicationsapp_ideuiseui">DELETE /applications/{app_id}/euis/{eui}</a></li>
+      <li><a href="#get-applicationsapp_idcollaborators">GET /applications/{app_id}/collaborators</a></li>
+      <li><a href="#get-applicationsapp_idcollaboratorsusername">GET /applications/{app_id}/collaborators/{username}</a></li>
+      <li><a href="#put-applicationsapp_idcollaboratorsusername">PUT /applications/{app_id}/collaborators/{username}</a></li>
+      <li><a href="#delete-applicationsapp_idcollaboratorsusername">DELETE /applications/{app_id}/collaborators/{username}</a></li>
+      <li><a href="#get-applicationsapp_idrights">GET /applications/{app_id}/rights</a></li>
+      <li><a href="#get-applicationsapp_idaccess-keys">GET /applications/{app_id}/access-keys</a></li>
+      <li><a href="#post-applicationsapp_idaccess-keys">POST /applications/{app_id}/access-keys</a></li>
+      <li><a href="#get-applicationsapp_idaccess-keyskeyname">GET /applications/{app_id}/access-keys/{keyname}</a></li>
+      <li><a href="#delete-applicationsapp_idaccess-keyskeyname">DELETE /applications/{app_id}/access-keys/{keyname}</a></li>
+      <li><a href="#post-applicationsapp_idtoken">POST /applications/{app_id}/token</a></li>
+      <li><a href="#get-gateways">GET /gateways</a></li>
+      <li><a href="#post-gateways">POST /gateways</a></li>
+      <li><a href="#get-gatewaysgw_id">GET /gateways/{gw_id}</a></li>
+      <li><a href="#patch-gatewaysgw_id">PATCH /gateways/{gw_id}</a></li>
+      <li><a href="#delete-gatewaysgw_id">DELETE /gateways/{gw_id}</a></li>
+      <li><a href="#get-gatewaysgw_idcollaborators">GET /gateways/{gw_id}/collaborators</a></li>
+      <li><a href="#get-gatewaysgw_idcollaboratorsusername">GET /gateways/{gw_id}/collaborators/{username}</a></li>
+      <li><a href="#put-gatewaysgw_idcollaboratorsusername">PUT /gateways/{gw_id}/collaborators/{username}</a></li>
+      <li><a href="#delete-gatewaysgw_idcollaboratorsusername">DELETE /gateways/{gw_id}/collaborators/{username}</a></li>
+      <li><a href="#get-gatewaysgw_idrights">GET /gateways/{gw_id}/rights</a></li>
+    </ul>
+  </li>
+</ul>
+<h2 id="endpoints">Endpoints</h2>
+<h3 id="get-applications">GET /applications</h3>
+<p>Gets all the applictions the user has access to.</p>
+<p><strong>Parameters</strong></p>
 <div class="table-responsive"><table class="table">
   <thead>
     <tr>
-      <th>apiKey</th>
-      <th><em>API Key</em></th>
+      <th>in</th>
+      <th>name</th>
+      <th>required</th>
+      <th>description</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>In</td>
-      <td>header</td>
-    </tr>
-    <tr>
-      <td>Name</td>
-      <td>Key</td>
+      <td>query</td>
+      <td>deleted</td>
+      <td>false</td>
+      <td>Set to <code class="highlighter-rouge">1</code> to also include deleted apps.</td>
     </tr>
   </tbody>
 </table></div>
-<div class="table-responsive"><table class="table">
-  <thead>
-    <tr>
-      <th>oauth2</th>
-      <th><em>OAuth 2.0</em></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Flow</td>
-      <td>password</td>
-    </tr>
-    <tr>
-      <td>Token URL</td>
-      <td>/applications/token</td>
-    </tr>
-    <tr>
-      <td><strong>Scopes</strong></td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>apps</td>
-      <td>Manage applications</td>
-    </tr>
-  </tbody>
-</table></div>
-<h3 id="applications">/applications</h3>
-<hr />
-<h5 id="get"><strong><em>GET</em></strong></h5>
-<p><strong>Summary:</strong> List applications.</p>
-<p><strong>Description:</strong> Gets all the applictions the user has access to.</p>
-<p><strong>Responses</strong></p>
-<div class="table-responsive"><table class="table">
-  <thead>
-    <tr>
-      <th>Code</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>200</td>
-      <td>A list of applications.</td>
-    </tr>
-  </tbody>
-</table></div>
-<h5 id="post"><strong><em>POST</em></strong></h5>
-<p><strong>Summary:</strong> Create an application.</p>
-<p><strong>Description:</strong> Creates an application on the account server and adds the user as its first
+<h4 id="response-200">Response: 200</h4>
+<p>A list of applications.</p>
+<p><strong>Schema</strong></p>
+<ul>
+  <li>(array)
+    <ul>
+      <li>(object)
+        <ul>
+          <li>id (string) The globally unique identifier of the application.</li>
+          <li>name (string) The friendly name/description of the application.</li>
+          <li>euis (array) The list of EUIs this application is reachable at.
+            <ul>
+              <li>(string)</li>
+            </ul>
+          </li>
+          <li>created (string, date-time) The time this application was created.</li>
+          <li>rights (array) A list of rights the current user has for the application.
+            <ul>
+              <li>(string)</li>
+            </ul>
+          </li>
+          <li>collaborators (array) (optional) The collaborators that have access to this app.
+            <ul>
+              <li>(object)
+                <ul>
+                  <li>username (string) The username of the collaborator.</li>
+                  <li>email (string, email) The email address of the collaborator.</li>
+                  <li>rights (array) The rights the collaborator has to the specified application or gateway.
+                    <ul>
+                      <li>(string)</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>access_keys (array) (optional) The access keys of this application.
+            <ul>
+              <li>(object)
+                <ul>
+                  <li>name (string) The friendly name for the access key.</li>
+                  <li>key (string) The opaque string that is the access key.</li>
+                  <li>rights (array) The rights the access key will grant if used.
+                    <ul>
+                      <li>(string)</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>deleted (string, date) (optional) Set to the time of app deletion, if and only if the app is to be considered deleted.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+<h3 id="post-applications">POST /applications</h3>
+<p>Creates an application on the account server and adds the user as its first
 collaborator.</p>
 <p><strong>Parameters</strong></p>
 <div class="table-responsive"><table class="table">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Located in</th>
-      <th>Description</th>
-      <th>Required</th>
-      <th>Type</th>
+      <th>in</th>
+      <th>name</th>
+      <th>required</th>
+      <th>description</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>application</td>
       <td>body</td>
+      <td>application</td>
+      <td>false</td>
       <td>The application to create.</td>
-      <td>No</td>
+    </tr>
+  </tbody>
+</table></div>
+<p><strong>Request Body</strong></p>
+<ul>
+  <li>(object)
+    <ul>
+      <li>id (string) The globally unique identifier of the application.</li>
+      <li>name (string) The friendly name/description of the application.</li>
+      <li>euis (array) The list of EUIs this application is reachable at.
+        <ul>
+          <li>(string)</li>
+        </ul>
+      </li>
+      <li>created (string, date-time) The time this application was created.</li>
+      <li>rights (array) A list of rights the current user has for the application.
+        <ul>
+          <li>(string)</li>
+        </ul>
+      </li>
+      <li>collaborators (array) (optional) The collaborators that have access to this app.
+        <ul>
+          <li>(object)
+            <ul>
+              <li>username (string) The username of the collaborator.</li>
+              <li>email (string, email) The email address of the collaborator.</li>
+              <li>rights (array) The rights the collaborator has to the specified application or gateway.
+                <ul>
+                  <li>(string)</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>access_keys (array) (optional) The access keys of this application.
+        <ul>
+          <li>(object)
+            <ul>
+              <li>name (string) The friendly name for the access key.</li>
+              <li>key (string) The opaque string that is the access key.</li>
+              <li>rights (array) The rights the access key will grant if used.
+                <ul>
+                  <li>(string)</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>deleted (string, date) (optional) Set to the time of app deletion, if and only if the app is to be considered deleted.</li>
+    </ul>
+  </li>
+</ul>
+<h4 id="response-201">Response: 201</h4>
+<p>The application was succesfully created.</p>
+<p><strong>Schema</strong></p>
+<ul>
+  <li>(object)
+    <ul>
+      <li>id (string) The globally unique identifier of the application.</li>
+      <li>name (string) The friendly name/description of the application.</li>
+      <li>euis (array) The list of EUIs this application is reachable at.
+        <ul>
+          <li>(string)</li>
+        </ul>
+      </li>
+      <li>created (string, date-time) The time this application was created.</li>
+      <li>rights (array) A list of rights the current user has for the application.
+        <ul>
+          <li>(string)</li>
+        </ul>
+      </li>
+      <li>collaborators (array) (optional) The collaborators that have access to this app.
+        <ul>
+          <li>(object)
+            <ul>
+              <li>username (string) The username of the collaborator.</li>
+              <li>email (string, email) The email address of the collaborator.</li>
+              <li>rights (array) The rights the collaborator has to the specified application or gateway.
+                <ul>
+                  <li>(string)</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>access_keys (array) (optional) The access keys of this application.
+        <ul>
+          <li>(object)
+            <ul>
+              <li>name (string) The friendly name for the access key.</li>
+              <li>key (string) The opaque string that is the access key.</li>
+              <li>rights (array) The rights the access key will grant if used.
+                <ul>
+                  <li>(string)</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>deleted (string, date) (optional) Set to the time of app deletion, if and only if the app is to be considered deleted.</li>
+    </ul>
+  </li>
+</ul>
+<h4 id="response-409">Response: 409</h4>
+<p>The application could not be created because the id is already taken.</p>
+<p><strong>Schema</strong></p>
+<p>N/A</p>
+<h3 id="get-applicationsapp_id">GET /applications/{app_id}</h3>
+<p>Gets the application specified by the <code class="highlighter-rouge">app_id</code> parameter.</p>
+<p><strong>Parameters</strong></p>
+<div class="table-responsive"><table class="table">
+  <thead>
+    <tr>
+      <th>in</th>
+      <th>name</th>
+      <th>type</th>
+      <th>required</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>path</td>
+      <td>app_id</td>
+      <td>string</td>
+      <td>true</td>
+      <td>The ID of the application.</td>
+    </tr>
+  </tbody>
+</table></div>
+<h4 id="response-200-1">Response: 200</h4>
+<p>Application found.</p>
+<p><strong>Schema</strong></p>
+<ul>
+  <li>(object)
+    <ul>
+      <li>id (string) The globally unique identifier of the application.</li>
+      <li>name (string) The friendly name/description of the application.</li>
+      <li>euis (array) The list of EUIs this application is reachable at.
+        <ul>
+          <li>(string)</li>
+        </ul>
+      </li>
+      <li>created (string, date-time) The time this application was created.</li>
+      <li>rights (array) A list of rights the current user has for the application.
+        <ul>
+          <li>(string)</li>
+        </ul>
+      </li>
+      <li>collaborators (array) (optional) The collaborators that have access to this app.
+        <ul>
+          <li>(object)
+            <ul>
+              <li>username (string) The username of the collaborator.</li>
+              <li>email (string, email) The email address of the collaborator.</li>
+              <li>rights (array) The rights the collaborator has to the specified application or gateway.
+                <ul>
+                  <li>(string)</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>access_keys (array) (optional) The access keys of this application.
+        <ul>
+          <li>(object)
+            <ul>
+              <li>name (string) The friendly name for the access key.</li>
+              <li>key (string) The opaque string that is the access key.</li>
+              <li>rights (array) The rights the access key will grant if used.
+                <ul>
+                  <li>(string)</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>deleted (string, date) (optional) Set to the time of app deletion, if and only if the app is to be considered deleted.</li>
+    </ul>
+  </li>
+</ul>
+<h3 id="patch-applicationsapp_id">PATCH /applications/{app_id}</h3>
+<p>Edits the application specified by the <code class="highlighter-rouge">app_id</code> parameter.</p>
+<p><strong>Parameters</strong></p>
+<div class="table-responsive"><table class="table">
+  <thead>
+    <tr>
+      <th>in</th>
+      <th>name</th>
+      <th>type</th>
+      <th>required</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>path</td>
+      <td>app_id</td>
+      <td>string</td>
+      <td>true</td>
+      <td>The ID of the application.</td>
+    </tr>
+  </tbody>
+</table></div>
+<h4 id="response-204">Response: 204</h4>
+<p>Application edited.</p>
+<p><strong>Schema</strong></p>
+<p>N/A</p>
+<h3 id="delete-applicationsapp_id">DELETE /applications/{app_id}</h3>
+<p>Removes the application specified by the <code class="highlighter-rouge">app_id</code> parameter.</p>
+<p><strong>Parameters</strong></p>
+<div class="table-responsive"><table class="table">
+  <thead>
+    <tr>
+      <th>in</th>
+      <th>name</th>
+      <th>type</th>
+      <th>required</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>path</td>
+      <td>app_id</td>
+      <td>string</td>
+      <td>true</td>
+      <td>The ID of the application.</td>
+    </tr>
+  </tbody>
+</table></div>
+<h4 id="response-204-1">Response: 204</h4>
+<p>Succesfully removed the application.</p>
+<p><strong>Schema</strong></p>
+<p>N/A</p>
+<h3 id="post-applicationsapp_idrestore">POST /applications/{app_id}/restore</h3>
+<p><strong>Parameters</strong></p>
+<div class="table-responsive"><table class="table">
+  <thead>
+    <tr>
+      <th>in</th>
+      <th>name</th>
+      <th>type</th>
+      <th>required</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>path</td>
+      <td>app_id</td>
+      <td>string</td>
+      <td>true</td>
+      <td>The ID of the application.</td>
+    </tr>
+  </tbody>
+</table></div>
+<h4 id="response-204-2">Response: 204</h4>
+<p>Succesfully restored the application.</p>
+<p><strong>Schema</strong></p>
+<p>N/A</p>
+<h3 id="get-applicationsapp_ideuis">GET /applications/{app_id}/euis</h3>
+<p>Lists all of the applications EUIs.</p>
+<p><strong>Parameters</strong></p>
+<div class="table-responsive"><table class="table">
+  <thead>
+    <tr>
+      <th>in</th>
+      <th>name</th>
+      <th>type</th>
+      <th>required</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>path</td>
+      <td>app_id</td>
+      <td>string</td>
+      <td>true</td>
+      <td>The ID of the application.</td>
+    </tr>
+  </tbody>
+</table></div>
+<h4 id="response-200-2">Response: 200</h4>
+<p>The list of EUIs.</p>
+<p><strong>Schema</strong></p>
+<ul>
+  <li>(array)
+    <ul>
+      <li>(string)</li>
+    </ul>
+  </li>
+</ul>
+<h3 id="post-applicationsapp_ideuis">POST /applications/{app_id}/euis</h3>
+<p>Selects a new EUI from the TTN EUI block and adds it to the application.</p>
+<p><strong>Parameters</strong></p>
+<div class="table-responsive"><table class="table">
+  <thead>
+    <tr>
+      <th>in</th>
+      <th>name</th>
+      <th>type</th>
+      <th>required</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>path</td>
+      <td>app_id</td>
+      <td>string</td>
+      <td>true</td>
+      <td>The ID of the application.</td>
+    </tr>
+  </tbody>
+</table></div>
+<h4 id="response-201-1">Response: 201</h4>
+<p>The EUI was created succesfully.</p>
+<p><strong>Schema</strong></p>
+<ul>
+  <li>(string)</li>
+</ul>
+<h3 id="put-applicationsapp_ideuiseui">PUT /applications/{app_id}/euis/{eui}</h3>
+<p>Add an EUI to the application.</p>
+<p><strong>Parameters</strong></p>
+<div class="table-responsive"><table class="table">
+  <thead>
+    <tr>
+      <th>in</th>
+      <th>name</th>
+      <th>type</th>
+      <th>required</th>
+      <th>description</th>
+      <th>pattern</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>path</td>
+      <td>app_id</td>
+      <td>string</td>
+      <td>true</td>
+      <td>The ID of the application.</td>
       <td> </td>
     </tr>
-  </tbody>
-</table></div>
-<p><strong>Responses</strong></p>
-<div class="table-responsive"><table class="table">
-  <thead>
     <tr>
-      <th>Code</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>201</td>
-      <td>The application was succesfully created.</td>
-    </tr>
-    <tr>
-      <td>409</td>
-      <td>The application could not be created because the id is already taken.</td>
-    </tr>
-  </tbody>
-</table></div>
-<h3 id="app_id">/{app_id}</h3>
-<hr />
-<h5 id="get-1"><strong><em>GET</em></strong></h5>
-<p><strong>Summary:</strong> Get application.</p>
-<p><strong>Description:</strong> Gets the application specified by the <code class="highlighter-rouge">app_id</code> parameter.</p>
-<p><strong>Parameters</strong></p>
-<div class="table-responsive"><table class="table">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Located in</th>
-      <th>Description</th>
-      <th>Required</th>
-      <th>Type</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>app_id</td>
       <td>path</td>
-      <td>The ID of the application.</td>
-      <td>Yes</td>
-      <td>string</td>
-    </tr>
-  </tbody>
-</table></div>
-<p><strong>Responses</strong></p>
-<div class="table-responsive"><table class="table">
-  <thead>
-    <tr>
-      <th>Code</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>200</td>
-      <td>Application found.</td>
-    </tr>
-  </tbody>
-</table></div>
-<h5 id="patch"><strong><em>PATCH</em></strong></h5>
-<p><strong>Summary:</strong> Edit application.</p>
-<p><strong>Description:</strong> Edits the application specified by the <code class="highlighter-rouge">app_id</code> parameter.</p>
-<p><strong>Parameters</strong></p>
-<div class="table-responsive"><table class="table">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Located in</th>
-      <th>Description</th>
-      <th>Required</th>
-      <th>Type</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>app_id</td>
-      <td>path</td>
-      <td>The ID of the application.</td>
-      <td>Yes</td>
-      <td>string</td>
-    </tr>
-  </tbody>
-</table></div>
-<p><strong>Responses</strong></p>
-<div class="table-responsive"><table class="table">
-  <thead>
-    <tr>
-      <th>Code</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>204</td>
-      <td>Application edited.</td>
-    </tr>
-  </tbody>
-</table></div>
-<h5 id="delete"><strong><em>DELETE</em></strong></h5>
-<p><strong>Summary:</strong> Remove application.</p>
-<p><strong>Description:</strong> Removes the application specified by the <code class="highlighter-rouge">app_id</code> parameter.</p>
-<p><strong>Parameters</strong></p>
-<div class="table-responsive"><table class="table">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Located in</th>
-      <th>Description</th>
-      <th>Required</th>
-      <th>Type</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>app_id</td>
-      <td>path</td>
-      <td>The ID of the application.</td>
-      <td>Yes</td>
-      <td>string</td>
-    </tr>
-  </tbody>
-</table></div>
-<p><strong>Responses</strong></p>
-<div class="table-responsive"><table class="table">
-  <thead>
-    <tr>
-      <th>Code</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>204</td>
-      <td>Succesfully removed the application.</td>
-    </tr>
-  </tbody>
-</table></div>
-<h3 id="app_ideuis">/{app_id}/euis</h3>
-<hr />
-<h5 id="get-2"><strong><em>GET</em></strong></h5>
-<p><strong>Summary:</strong> List EUIs of an application.</p>
-<p><strong>Description:</strong> Lists all of the applications EUIs.</p>
-<p><strong>Parameters</strong></p>
-<div class="table-responsive"><table class="table">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Located in</th>
-      <th>Description</th>
-      <th>Required</th>
-      <th>Type</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>app_id</td>
-      <td>path</td>
-      <td>The ID of the application.</td>
-      <td>Yes</td>
-      <td>string</td>
-    </tr>
-  </tbody>
-</table></div>
-<p><strong>Responses</strong></p>
-<div class="table-responsive"><table class="table">
-  <thead>
-    <tr>
-      <th>Code</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>200</td>
-      <td>The list of EUIs.</td>
-    </tr>
-  </tbody>
-</table></div>
-<h5 id="post-1"><strong><em>POST</em></strong></h5>
-<p><strong>Summary:</strong> Request new EUI.</p>
-<p><strong>Description:</strong> Selects a new EUI from the TTN EUI block and adds it to the application.</p>
-<p><strong>Parameters</strong></p>
-<div class="table-responsive"><table class="table">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Located in</th>
-      <th>Description</th>
-      <th>Required</th>
-      <th>Type</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>app_id</td>
-      <td>path</td>
-      <td>The ID of the application.</td>
-      <td>Yes</td>
-      <td>string</td>
-    </tr>
-  </tbody>
-</table></div>
-<p><strong>Responses</strong></p>
-<div class="table-responsive"><table class="table">
-  <thead>
-    <tr>
-      <th>Code</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>201</td>
-      <td>The EUI was created succesfully.</td>
-    </tr>
-  </tbody>
-</table></div>
-<h3 id="app_ideuiseui">/{app_id}/euis/{eui}</h3>
-<hr />
-<h5 id="put"><strong><em>PUT</em></strong></h5>
-<p><strong>Summary:</strong> Add an EUI to the application.</p>
-<p><strong>Description:</strong> Add an EUI to the application.</p>
-<p><strong>Parameters</strong></p>
-<div class="table-responsive"><table class="table">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Located in</th>
-      <th>Description</th>
-      <th>Required</th>
-      <th>Type</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>app_id</td>
-      <td>path</td>
-      <td>The ID of the application.</td>
-      <td>Yes</td>
-      <td>string</td>
-    </tr>
-    <tr>
       <td>eui</td>
-      <td>path</td>
-      <td>The EUI of an application.</td>
-      <td>Yes</td>
       <td>string</td>
+      <td>true</td>
+      <td>The EUI of an application.</td>
+      <td><code class="highlighter-rouge">[0-9A-Z]{16}</code></td>
     </tr>
   </tbody>
 </table></div>
-<p><strong>Responses</strong></p>
-<div class="table-responsive"><table class="table">
-  <thead>
-    <tr>
-      <th>Code</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>204</td>
-      <td>The EUI was added successfully.</td>
-    </tr>
-  </tbody>
-</table></div>
-<h5 id="delete-1"><strong><em>DELETE</em></strong></h5>
-<p><strong>Summary:</strong> Remove an EUI from the application.</p>
-<p><strong>Description:</strong> Remove an EUI from the application.</p>
+<h4 id="response-204-3">Response: 204</h4>
+<p>The EUI was added successfully.</p>
+<p><strong>Schema</strong></p>
+<p>N/A</p>
+<h3 id="delete-applicationsapp_ideuiseui">DELETE /applications/{app_id}/euis/{eui}</h3>
+<p>Remove an EUI from the application.</p>
 <p><strong>Parameters</strong></p>
 <div class="table-responsive"><table class="table">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Located in</th>
-      <th>Description</th>
-      <th>Required</th>
-      <th>Type</th>
+      <th>in</th>
+      <th>name</th>
+      <th>type</th>
+      <th>required</th>
+      <th>description</th>
+      <th>pattern</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>app_id</td>
       <td>path</td>
-      <td>The ID of the application.</td>
-      <td>Yes</td>
+      <td>app_id</td>
       <td>string</td>
+      <td>true</td>
+      <td>The ID of the application.</td>
+      <td> </td>
     </tr>
     <tr>
+      <td>path</td>
       <td>eui</td>
-      <td>path</td>
+      <td>string</td>
+      <td>true</td>
       <td>The EUI of an application.</td>
-      <td>Yes</td>
-      <td>string</td>
+      <td><code class="highlighter-rouge">[0-9A-Z]{16}</code></td>
     </tr>
   </tbody>
 </table></div>
-<p><strong>Responses</strong></p>
-<div class="table-responsive"><table class="table">
-  <thead>
-    <tr>
-      <th>Code</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>204</td>
-      <td>The EUI was removed.</td>
-    </tr>
-  </tbody>
-</table></div>
-<h3 id="app_idcollaborators">/{app_id}/collaborators</h3>
-<hr />
-<h5 id="get-3"><strong><em>GET</em></strong></h5>
-<p><strong>Summary:</strong> List the collaborators of the application.</p>
-<p><strong>Description:</strong> List the collaborators of the application.</p>
+<h4 id="response-204-4">Response: 204</h4>
+<p>The EUI was removed.</p>
+<p><strong>Schema</strong></p>
+<p>N/A</p>
+<h3 id="get-applicationsapp_idcollaborators">GET /applications/{app_id}/collaborators</h3>
+<p>List the collaborators of the application.</p>
 <p><strong>Parameters</strong></p>
 <div class="table-responsive"><table class="table">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Located in</th>
-      <th>Description</th>
-      <th>Required</th>
-      <th>Type</th>
+      <th>in</th>
+      <th>name</th>
+      <th>type</th>
+      <th>required</th>
+      <th>description</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>app_id</td>
       <td>path</td>
-      <td>The ID of the application.</td>
-      <td>Yes</td>
+      <td>app_id</td>
       <td>string</td>
+      <td>true</td>
+      <td>The ID of the application.</td>
     </tr>
   </tbody>
 </table></div>
-<p><strong>Responses</strong></p>
-<div class="table-responsive"><table class="table">
-  <thead>
-    <tr>
-      <th>Code</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>200</td>
-      <td>The list of collaborators.</td>
-    </tr>
-  </tbody>
-</table></div>
-<h3 id="app_idcollaboratorsusername">/{app_id}/collaborators/{username}</h3>
-<hr />
-<h5 id="get-4"><strong><em>GET</em></strong></h5>
-<p><strong>Summary:</strong> Get a collaborators rights to the application.</p>
+<h4 id="response-200-3">Response: 200</h4>
+<p>The list of collaborators.</p>
+<p><strong>Schema</strong></p>
+<ul>
+  <li>(array)
+    <ul>
+      <li>(object)
+        <ul>
+          <li>username (string) The username of the collaborator.</li>
+          <li>email (string, email) The email address of the collaborator.</li>
+          <li>rights (array) The rights the collaborator has to the specified application or gateway.
+            <ul>
+              <li>(string)</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+<h3 id="get-applicationsapp_idcollaboratorsusername">GET /applications/{app_id}/collaborators/{username}</h3>
 <p><strong>Parameters</strong></p>
 <div class="table-responsive"><table class="table">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Located in</th>
-      <th>Description</th>
-      <th>Required</th>
-      <th>Type</th>
+      <th>in</th>
+      <th>name</th>
+      <th>type</th>
+      <th>required</th>
+      <th>description</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>app_id</td>
       <td>path</td>
-      <td>The ID of the application.</td>
-      <td>Yes</td>
+      <td>app_id</td>
       <td>string</td>
+      <td>true</td>
+      <td>The ID of the application.</td>
     </tr>
     <tr>
+      <td>path</td>
       <td>username</td>
-      <td>path</td>
-      <td>The username of a collaborator.</td>
-      <td>Yes</td>
       <td>string</td>
+      <td>true</td>
+      <td>The username of a collaborator.</td>
     </tr>
   </tbody>
 </table></div>
-<p><strong>Responses</strong></p>
-<div class="table-responsive"><table class="table">
-  <thead>
-    <tr>
-      <th>Code</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>200</td>
-      <td>The rights the collaborator has to the application.</td>
-    </tr>
-  </tbody>
-</table></div>
-<h5 id="put-1"><strong><em>PUT</em></strong></h5>
-<p><strong>Summary:</strong> Add or update the rights of a user as collaborator to the application.</p>
+<h4 id="response-200-4">Response: 200</h4>
+<p>The rights the collaborator has to the application.</p>
+<p><strong>Schema</strong></p>
+<ul>
+  <li>(object)
+    <ul>
+      <li>username (string) The username of the collaborator.</li>
+      <li>email (string, email) The email address of the collaborator.</li>
+      <li>rights (array) The rights the collaborator has to the specified application or gateway.
+        <ul>
+          <li>(string)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+<h3 id="put-applicationsapp_idcollaboratorsusername">PUT /applications/{app_id}/collaborators/{username}</h3>
 <p><strong>Parameters</strong></p>
 <div class="table-responsive"><table class="table">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Located in</th>
-      <th>Description</th>
-      <th>Required</th>
-      <th>Type</th>
+      <th>in</th>
+      <th>name</th>
+      <th>type</th>
+      <th>required</th>
+      <th>description</th>
     </tr>
   </thead>
   <tbody>
     <tr>
+      <td>path</td>
       <td>app_id</td>
-      <td>path</td>
+      <td>string</td>
+      <td>true</td>
       <td>The ID of the application.</td>
-      <td>Yes</td>
-      <td>string</td>
     </tr>
     <tr>
-      <td>username</td>
       <td>path</td>
-      <td>The username of a collaborator.</td>
-      <td>Yes</td>
+      <td>username</td>
       <td>string</td>
+      <td>true</td>
+      <td>The username of a collaborator.</td>
     </tr>
     <tr>
+      <td>body</td>
+      <td>rights</td>
       <td> </td>
-      <td> </td>
-      <td> </td>
-      <td>No</td>
-      <td> </td>
+      <td>true</td>
+      <td>The rights you want to grant the collaborator.</td>
     </tr>
   </tbody>
 </table></div>
-<p><strong>Responses</strong></p>
-<div class="table-responsive"><table class="table">
-  <thead>
-    <tr>
-      <th>Code</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>201</td>
-      <td>The rights where succesfully added to the collaborator.</td>
-    </tr>
-  </tbody>
-</table></div>
-<h5 id="delete-2"><strong><em>DELETE</em></strong></h5>
-<p><strong>Summary:</strong> Remove a user as collaborator from the application.</p>
-<p><strong>Description:</strong> Removes a collaborator from the application.</p>
+<p><strong>Request Body</strong></p>
+<ul>
+  <li>(array)
+    <ul>
+      <li>(string)</li>
+    </ul>
+  </li>
+</ul>
+<h4 id="response-201-2">Response: 201</h4>
+<p>The rights where succesfully added to the collaborator.</p>
+<p><strong>Schema</strong></p>
+<p>N/A</p>
+<h3 id="delete-applicationsapp_idcollaboratorsusername">DELETE /applications/{app_id}/collaborators/{username}</h3>
+<p>Removes a collaborator from the application.</p>
 <p>It is not possible to</p>
 <ul>
   <li>remove the last collaborator with the <code class="highlighter-rouge">collaborators</code> right from an application</li>
@@ -717,301 +831,856 @@ collaborator.</p>
 <div class="table-responsive"><table class="table">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Located in</th>
-      <th>Description</th>
-      <th>Required</th>
-      <th>Type</th>
+      <th>in</th>
+      <th>name</th>
+      <th>type</th>
+      <th>required</th>
+      <th>description</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>app_id</td>
       <td>path</td>
-      <td>The ID of the application.</td>
-      <td>Yes</td>
+      <td>app_id</td>
       <td>string</td>
+      <td>true</td>
+      <td>The ID of the application.</td>
     </tr>
     <tr>
+      <td>path</td>
       <td>username</td>
-      <td>path</td>
+      <td>string</td>
+      <td>true</td>
       <td>The username of a collaborator.</td>
-      <td>Yes</td>
-      <td>string</td>
     </tr>
   </tbody>
 </table></div>
-<p><strong>Responses</strong></p>
-<div class="table-responsive"><table class="table">
-  <thead>
-    <tr>
-      <th>Code</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>204</td>
-      <td>The collaborator was succesfully removed from the application.</td>
-    </tr>
-  </tbody>
-</table></div>
-<h3 id="app_idrights">/{app_id}/rights</h3>
-<hr />
-<h5 id="get-5"><strong><em>GET</em></strong></h5>
-<p><strong>Summary:</strong> Get the rights you have to the specified application with the current authentication method.</p>
+<h4 id="response-204-5">Response: 204</h4>
+<p>The collaborator was succesfully removed from the application.</p>
+<p><strong>Schema</strong></p>
+<p>N/A</p>
+<h3 id="get-applicationsapp_idrights">GET /applications/{app_id}/rights</h3>
 <p><strong>Parameters</strong></p>
 <div class="table-responsive"><table class="table">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Located in</th>
-      <th>Description</th>
-      <th>Required</th>
-      <th>Type</th>
+      <th>in</th>
+      <th>name</th>
+      <th>type</th>
+      <th>required</th>
+      <th>description</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>app_id</td>
       <td>path</td>
-      <td>The ID of the application.</td>
-      <td>Yes</td>
+      <td>app_id</td>
       <td>string</td>
+      <td>true</td>
+      <td>The ID of the application.</td>
     </tr>
   </tbody>
 </table></div>
-<p><strong>Responses</strong></p>
-<div class="table-responsive"><table class="table">
-  <thead>
-    <tr>
-      <th>Code</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>200</td>
-      <td>The rights you have to the application.</td>
-    </tr>
-  </tbody>
-</table></div>
-<h3 id="app_idaccess-keys">/{app_id}/access-keys</h3>
-<hr />
-<h5 id="get-6"><strong><em>GET</em></strong></h5>
-<p><strong>Summary:</strong> List the applications access keys</p>
+<h4 id="response-200-5">Response: 200</h4>
+<p>The rights you have to the application.</p>
+<p><strong>Schema</strong></p>
+<ul>
+  <li>(array)
+    <ul>
+      <li>(string)</li>
+    </ul>
+  </li>
+</ul>
+<h3 id="get-applicationsapp_idaccess-keys">GET /applications/{app_id}/access-keys</h3>
 <p><strong>Parameters</strong></p>
 <div class="table-responsive"><table class="table">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Located in</th>
-      <th>Description</th>
-      <th>Required</th>
-      <th>Type</th>
+      <th>in</th>
+      <th>name</th>
+      <th>type</th>
+      <th>required</th>
+      <th>description</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>app_id</td>
       <td>path</td>
-      <td>The ID of the application.</td>
-      <td>Yes</td>
+      <td>app_id</td>
       <td>string</td>
+      <td>true</td>
+      <td>The ID of the application.</td>
     </tr>
   </tbody>
 </table></div>
-<p><strong>Responses</strong></p>
-<div class="table-responsive"><table class="table">
-  <thead>
-    <tr>
-      <th>Code</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>200</td>
-      <td>The rights you have to the application.</td>
-    </tr>
-  </tbody>
-</table></div>
-<h5 id="post-2"><strong><em>POST</em></strong></h5>
-<p><strong>Summary:</strong> Create a new access key with the specified name and rights</p>
+<h4 id="response-200-6">Response: 200</h4>
+<p>The rights you have to the application.</p>
+<p><strong>Schema</strong></p>
+<ul>
+  <li>(array)
+    <ul>
+      <li>(object)
+        <ul>
+          <li>name (string) The friendly name for the access key.</li>
+          <li>key (string) The opaque string that is the access key.</li>
+          <li>rights (array) The rights the access key will grant if used.
+            <ul>
+              <li>(string)</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+<h3 id="post-applicationsapp_idaccess-keys">POST /applications/{app_id}/access-keys</h3>
 <p><strong>Parameters</strong></p>
 <div class="table-responsive"><table class="table">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Located in</th>
-      <th>Description</th>
-      <th>Required</th>
-      <th>Type</th>
+      <th>in</th>
+      <th>name</th>
+      <th>type</th>
+      <th>required</th>
+      <th>description</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>app_id</td>
       <td>path</td>
-      <td>The ID of the application.</td>
-      <td>Yes</td>
+      <td>app_id</td>
       <td>string</td>
+      <td>true</td>
+      <td>The ID of the application.</td>
     </tr>
     <tr>
-      <td>name</td>
       <td>body</td>
-      <td>The name of the new access key</td>
-      <td>Yes</td>
-      <td> </td>
-    </tr>
-    <tr>
       <td>rights</td>
-      <td>body</td>
+      <td> </td>
+      <td>true</td>
       <td>The rights the new access key will have</td>
-      <td>Yes</td>
-      <td> </td>
     </tr>
   </tbody>
 </table></div>
-<h3 id="app_idaccess-keyskeyname">/{app_id}/access-keys/{keyname}</h3>
-<hr />
-<h5 id="get-7"><strong><em>GET</em></strong></h5>
-<p><strong>Summary:</strong> Get information about an app access key</p>
+<p><strong>Request Body</strong></p>
+<ul>
+  <li>(object)
+    <ul>
+      <li>name (string)</li>
+      <li>rights (array)
+        <ul>
+          <li>(string)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+<h4 id="response-204-6">Response: 204</h4>
+<p>Access key created successfully.</p>
+<p><strong>Schema</strong></p>
+<p>N/A</p>
+<h4 id="response-401">Response: 401</h4>
+<p>The request is not authorized.</p>
+<p><strong>Schema</strong></p>
+<p>N/A</p>
+<h4 id="response-403">Response: 403</h4>
+<p>The request is authorized but does not have the rights to edit access keys.</p>
+<p><strong>Schema</strong></p>
+<p>N/A</p>
+<h4 id="response-404">Response: 404</h4>
+<p>Application with does not exist.</p>
+<p><strong>Schema</strong></p>
+<p>N/A</p>
+<h4 id="response-409-1">Response: 409</h4>
+<p>An access key with that name already exists.</p>
+<p><strong>Schema</strong></p>
+<p>N/A</p>
+<h3 id="get-applicationsapp_idaccess-keyskeyname">GET /applications/{app_id}/access-keys/{keyname}</h3>
 <p><strong>Parameters</strong></p>
 <div class="table-responsive"><table class="table">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Located in</th>
-      <th>Description</th>
-      <th>Required</th>
-      <th>Type</th>
+      <th>in</th>
+      <th>name</th>
+      <th>type</th>
+      <th>required</th>
+      <th>description</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>app_id</td>
       <td>path</td>
-      <td>The ID of the application.</td>
-      <td>Yes</td>
+      <td>app_id</td>
       <td>string</td>
+      <td>true</td>
+      <td>The ID of the application.</td>
     </tr>
     <tr>
+      <td>path</td>
       <td>keyname</td>
-      <td>path</td>
-      <td>The name of the access key</td>
-      <td>Yes</td>
       <td>string</td>
+      <td>true</td>
+      <td>The name of the access key</td>
     </tr>
   </tbody>
 </table></div>
-<p><strong>Responses</strong></p>
-<div class="table-responsive"><table class="table">
-  <thead>
-    <tr>
-      <th>Code</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>200</td>
-      <td>The resulting access key</td>
-    </tr>
-  </tbody>
-</table></div>
-<h5 id="delete-3"><strong><em>DELETE</em></strong></h5>
-<p><strong>Summary:</strong> Remove an access key</p>
+<h4 id="response-200-7">Response: 200</h4>
+<p>The resulting access key</p>
+<p><strong>Schema</strong></p>
+<ul>
+  <li>(object)
+    <ul>
+      <li>name (string) The friendly name for the access key.</li>
+      <li>key (string) The opaque string that is the access key.</li>
+      <li>rights (array) The rights the access key will grant if used.
+        <ul>
+          <li>(string)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+<h3 id="delete-applicationsapp_idaccess-keyskeyname">DELETE /applications/{app_id}/access-keys/{keyname}</h3>
 <p><strong>Parameters</strong></p>
 <div class="table-responsive"><table class="table">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Located in</th>
-      <th>Description</th>
-      <th>Required</th>
-      <th>Type</th>
+      <th>in</th>
+      <th>name</th>
+      <th>type</th>
+      <th>required</th>
+      <th>description</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>app_id</td>
       <td>path</td>
-      <td>The ID of the application.</td>
-      <td>Yes</td>
+      <td>app_id</td>
       <td>string</td>
+      <td>true</td>
+      <td>The ID of the application.</td>
     </tr>
     <tr>
+      <td>path</td>
       <td>keyname</td>
-      <td>path</td>
-      <td>The name of the access key</td>
-      <td>Yes</td>
       <td>string</td>
+      <td>true</td>
+      <td>The name of the access key</td>
     </tr>
   </tbody>
 </table></div>
-<p><strong>Responses</strong></p>
-<div class="table-responsive"><table class="table">
-  <thead>
-    <tr>
-      <th>Code</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>204</td>
-      <td>The key was successfully removed</td>
-    </tr>
-  </tbody>
-</table></div>
-<h3 id="app_idtoken">/{app_id}/token</h3>
-<hr />
-<h5 id="post-3"><strong><em>POST</em></strong></h5>
-<p><strong>Summary:</strong> Exchange an application Access Key for an application Access Token.</p>
+<h4 id="response-204-7">Response: 204</h4>
+<p>The key was successfully removed</p>
+<p><strong>Schema</strong></p>
+<p>N/A</p>
+<h3 id="post-applicationsapp_idtoken">POST /applications/{app_id}/token</h3>
 <p><strong>Parameters</strong></p>
 <div class="table-responsive"><table class="table">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Located in</th>
-      <th>Description</th>
-      <th>Required</th>
-      <th>Type</th>
+      <th>in</th>
+      <th>name</th>
+      <th>type</th>
+      <th>required</th>
+      <th>description</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>app_id</td>
       <td>path</td>
-      <td>The ID of the application.</td>
-      <td>Yes</td>
+      <td>app_id</td>
       <td>string</td>
+      <td>true</td>
+      <td>The ID of the application.</td>
     </tr>
     <tr>
-      <td>token_exchange</td>
       <td>body</td>
-      <td>The credentials for the token exchange.</td>
-      <td>No</td>
+      <td>token_exchange</td>
       <td> </td>
+      <td>false</td>
+      <td>The credentials for the token exchange.</td>
     </tr>
   </tbody>
 </table></div>
-<p><strong>Responses</strong></p>
+<p><strong>Request Body</strong></p>
+<p>N/A</p>
+<h4 id="response-200-8">Response: 200</h4>
+<p>Token exchange successful.</p>
+<p><strong>Schema</strong></p>
+<p>N/A</p>
+<h3 id="get-gateways">GET /gateways</h3>
+<p>Gets all the gateways the user has access to.</p>
+<h4 id="response-200-9">Response: 200</h4>
+<p>A list of gateways.</p>
+<p><strong>Schema</strong></p>
+<ul>
+  <li>(array)
+    <ul>
+      <li>(object)
+        <ul>
+          <li>id (string) The globally unique identifier of the application.</li>
+          <li>name (string) The friendly name/description of the application.</li>
+          <li>euis (array) The list of EUIs this application is reachable at.
+            <ul>
+              <li>(string)</li>
+            </ul>
+          </li>
+          <li>created (string, date-time) The time this application was created.</li>
+          <li>rights (array) A list of rights the current user has for the application.
+            <ul>
+              <li>(string)</li>
+            </ul>
+          </li>
+          <li>collaborators (array) (optional) The collaborators that have access to this app.
+            <ul>
+              <li>(object)
+                <ul>
+                  <li>username (string) The username of the collaborator.</li>
+                  <li>email (string, email) The email address of the collaborator.</li>
+                  <li>rights (array) The rights the collaborator has to the specified application or gateway.
+                    <ul>
+                      <li>(string)</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>access_keys (array) (optional) The access keys of this application.
+            <ul>
+              <li>(object)
+                <ul>
+                  <li>name (string) The friendly name for the access key.</li>
+                  <li>key (string) The opaque string that is the access key.</li>
+                  <li>rights (array) The rights the access key will grant if used.
+                    <ul>
+                      <li>(string)</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>deleted (string, date) (optional) Set to the time of app deletion, if and only if the app is to be considered deleted.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+<h3 id="post-gateways">POST /gateways</h3>
+<p>Registers a gateway on the account server and adds the user as its first
+collaborator.</p>
+<p><strong>Parameters</strong></p>
 <div class="table-responsive"><table class="table">
   <thead>
     <tr>
-      <th>Code</th>
-      <th>Description</th>
+      <th>in</th>
+      <th>name</th>
+      <th>required</th>
+      <th>description</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>200</td>
-      <td>Token exchange successful.</td>
+      <td>body</td>
+      <td>gateway</td>
+      <td>false</td>
+      <td>The gateway to create.</td>
     </tr>
   </tbody>
 </table></div>
+<p><strong>Request Body</strong></p>
+<ul>
+  <li>(object)
+    <ul>
+      <li>id (string) The ID if the new gateway.</li>
+      <li>frequency_plan (string) The frequency plan the new gateway will use.</li>
+      <li>location (object) (optional)
+        <ul>
+          <li>lng (number) The longitude.</li>
+          <li>lat (number) The latitude.</li>
+        </ul>
+      </li>
+      <li>auto_update (boolean) (optional) Wether or not the gateway should automatically update itself.</li>
+    </ul>
+  </li>
+</ul>
+<h4 id="response-201-3">Response: 201</h4>
+<p>The gateway was succesfully registered.</p>
+<p><strong>Schema</strong></p>
+<ul>
+  <li>(object)
+    <ul>
+      <li>id (string) The globally unique identifier of the gateway.</li>
+      <li>frequency_plan (string) The frequency plan the gateway is using.</li>
+      <li>frequency_plan_url (string, url) The URL of the frequency plan description.</li>
+      <li>public_rights (array) The list of rights that are public on the gateway.
+        <ul>
+          <li>(string)</li>
+        </ul>
+      </li>
+      <li>location_public (boolean) Wether or not the location is public.</li>
+      <li>owner_public (boolean) Wether or not the owner is public.</li>
+      <li>status_public (boolean) Wether or not the status is public.</li>
+      <li>attributes (object) A free form map of gateway attributes.</li>
+      <li>router (string, url) The address of the router the gateway talks to.</li>
+      <li>location (object) (optional) The configured location of the gateway.
+        <ul>
+          <li>lng (number) (optional) The longitude.</li>
+          <li>lat (number) (optional) The latitude.</li>
+        </ul>
+      </li>
+      <li>altitude (number) (optional) The altitude at which the gateway antenna is placed.</li>
+      <li>collaborators (array) (optional) A list of collaborators that have access to the gateway.
+        <ul>
+          <li>(object)
+            <ul>
+              <li>username (string) The username of the collaborator.</li>
+              <li>email (string, email) The email address of the collaborator.</li>
+              <li>rights (array) The rights the collaborator has to the specified application or gateway.
+                <ul>
+                  <li>(string)</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>key (string) (optional) An opaque string that the gateway can use to prove it’s identity (keep this safe!).</li>
+      <li>auto_update (boolean) (optional) Wether or not the gateway has auto updates enabled.</li>
+      <li>activated (boolean) (optional) Wether or not the gateway has been activated.</li>
+      <li>token (object) (optional) A token the gateway can use to authenticate itself to components of the network.
+        <ul>
+          <li>expires_in (integer) The number of seconds before the token expires.</li>
+          <li>access_token (string) The signed JWT that can be used to authenticate.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+<h4 id="response-409-2">Response: 409</h4>
+<p>The gateway could not be created because the ID is already taken.</p>
+<p><strong>Schema</strong></p>
+<p>N/A</p>
+<h3 id="get-gatewaysgw_id">GET /gateways/{gw_id}</h3>
+<p>Gets the application specified by the <code class="highlighter-rouge">app_id</code> parameter.</p>
+<p><strong>Parameters</strong></p>
+<div class="table-responsive"><table class="table">
+  <thead>
+    <tr>
+      <th>in</th>
+      <th>name</th>
+      <th>type</th>
+      <th>required</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>path</td>
+      <td>gw_id</td>
+      <td>string</td>
+      <td>true</td>
+      <td>The ID of the gateway.</td>
+    </tr>
+  </tbody>
+</table></div>
+<h4 id="response-200-10">Response: 200</h4>
+<p>Gateway found.</p>
+<p><strong>Schema</strong></p>
+<ul>
+  <li>(object)
+    <ul>
+      <li>id (string) The globally unique identifier of the application.</li>
+      <li>name (string) The friendly name/description of the application.</li>
+      <li>euis (array) The list of EUIs this application is reachable at.
+        <ul>
+          <li>(string)</li>
+        </ul>
+      </li>
+      <li>created (string, date-time) The time this application was created.</li>
+      <li>rights (array) A list of rights the current user has for the application.
+        <ul>
+          <li>(string)</li>
+        </ul>
+      </li>
+      <li>collaborators (array) (optional) The collaborators that have access to this app.
+        <ul>
+          <li>(object)
+            <ul>
+              <li>username (string) The username of the collaborator.</li>
+              <li>email (string, email) The email address of the collaborator.</li>
+              <li>rights (array) The rights the collaborator has to the specified application or gateway.
+                <ul>
+                  <li>(string)</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>access_keys (array) (optional) The access keys of this application.
+        <ul>
+          <li>(object)
+            <ul>
+              <li>name (string) The friendly name for the access key.</li>
+              <li>key (string) The opaque string that is the access key.</li>
+              <li>rights (array) The rights the access key will grant if used.
+                <ul>
+                  <li>(string)</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>deleted (string, date) (optional) Set to the time of app deletion, if and only if the app is to be considered deleted.</li>
+    </ul>
+  </li>
+</ul>
+<h4 id="response-404-1">Response: 404</h4>
+<p>Gateway not found.</p>
+<p><strong>Schema</strong></p>
+<p>N/A</p>
+<h3 id="patch-gatewaysgw_id">PATCH /gateways/{gw_id}</h3>
+<p>Edits the gateway specified by the <code class="highlighter-rouge">gw_id</code> parameter.</p>
+<p><strong>Parameters</strong></p>
+<div class="table-responsive"><table class="table">
+  <thead>
+    <tr>
+      <th>in</th>
+      <th>name</th>
+      <th>type</th>
+      <th>required</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>path</td>
+      <td>gw_id</td>
+      <td>string</td>
+      <td>true</td>
+      <td>The ID of the gateway.</td>
+    </tr>
+  </tbody>
+</table></div>
+<h4 id="response-204-8">Response: 204</h4>
+<p>Gateway successfully edited.</p>
+<p><strong>Schema</strong></p>
+<p>N/A</p>
+<h4 id="response-400">Response: 400</h4>
+<p>Gateway editing failed.</p>
+<p><strong>Schema</strong></p>
+<p>N/A</p>
+<h4 id="response-401-1">Response: 401</h4>
+<p>The request is not authorized.</p>
+<p><strong>Schema</strong></p>
+<p>N/A</p>
+<h4 id="response-403-1">Response: 403</h4>
+<p>The request was authorized, but did not have the correct rights.</p>
+<p><strong>Schema</strong></p>
+<p>N/A</p>
+<h4 id="response-404-2">Response: 404</h4>
+<p>The gateway does not exist.</p>
+<p><strong>Schema</strong></p>
+<p>N/A</p>
+<h3 id="delete-gatewaysgw_id">DELETE /gateways/{gw_id}</h3>
+<p>Removes the gateway specified by the <code class="highlighter-rouge">gw_id</code> parameter.</p>
+<p><strong>Parameters</strong></p>
+<div class="table-responsive"><table class="table">
+  <thead>
+    <tr>
+      <th>in</th>
+      <th>name</th>
+      <th>type</th>
+      <th>required</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>path</td>
+      <td>gw_id</td>
+      <td>string</td>
+      <td>true</td>
+      <td>The ID of the gateway.</td>
+    </tr>
+  </tbody>
+</table></div>
+<h4 id="response-204-9">Response: 204</h4>
+<p>Succesfully removed the gateway.</p>
+<p><strong>Schema</strong></p>
+<p>N/A</p>
+<h4 id="response-401-2">Response: 401</h4>
+<p>The request is not authorized.</p>
+<p><strong>Schema</strong></p>
+<p>N/A</p>
+<h4 id="response-403-2">Response: 403</h4>
+<p>The request was authorized, but did not have the correct rights to delete the gateway.</p>
+<p><strong>Schema</strong></p>
+<p>N/A</p>
+<h4 id="response-404-3">Response: 404</h4>
+<p>The gateway does not exist.</p>
+<p><strong>Schema</strong></p>
+<p>N/A</p>
+<h3 id="get-gatewaysgw_idcollaborators">GET /gateways/{gw_id}/collaborators</h3>
+<p><strong>Parameters</strong></p>
+<div class="table-responsive"><table class="table">
+  <thead>
+    <tr>
+      <th>in</th>
+      <th>name</th>
+      <th>type</th>
+      <th>required</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>path</td>
+      <td>gw_id</td>
+      <td>string</td>
+      <td>true</td>
+      <td>The ID of the gateway.</td>
+    </tr>
+  </tbody>
+</table></div>
+<h4 id="response-200-11">Response: 200</h4>
+<p>The list of collaborators.</p>
+<p><strong>Schema</strong></p>
+<ul>
+  <li>(array)
+    <ul>
+      <li>(object)
+        <ul>
+          <li>username (string) The username of the collaborator.</li>
+          <li>email (string, email) The email address of the collaborator.</li>
+          <li>rights (array) The rights the collaborator has to the specified application or gateway.
+            <ul>
+              <li>(string)</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+<h4 id="response-401-3">Response: 401</h4>
+<p>The request is not authorized.</p>
+<p><strong>Schema</strong></p>
+<p>N/A</p>
+<h4 id="response-403-3">Response: 403</h4>
+<p>The request was authorized, but did not have the correct rights to view the gateway collaborators.</p>
+<p><strong>Schema</strong></p>
+<p>N/A</p>
+<h4 id="response-404-4">Response: 404</h4>
+<p>The gateway does with the specified ID not exist.</p>
+<p><strong>Schema</strong></p>
+<p>N/A</p>
+<h3 id="get-gatewaysgw_idcollaboratorsusername">GET /gateways/{gw_id}/collaborators/{username}</h3>
+<p><strong>Parameters</strong></p>
+<div class="table-responsive"><table class="table">
+  <thead>
+    <tr>
+      <th>in</th>
+      <th>name</th>
+      <th>type</th>
+      <th>required</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>path</td>
+      <td>gw_id</td>
+      <td>string</td>
+      <td>true</td>
+      <td>The ID of the gateway.</td>
+    </tr>
+    <tr>
+      <td>path</td>
+      <td>username</td>
+      <td>string</td>
+      <td>true</td>
+      <td>The username of a collaborator.</td>
+    </tr>
+  </tbody>
+</table></div>
+<h4 id="response-200-12">Response: 200</h4>
+<p>Found a collaborator.</p>
+<p><strong>Schema</strong></p>
+<ul>
+  <li>(object)
+    <ul>
+      <li>username (string) The username of the collaborator.</li>
+      <li>email (string, email) The email address of the collaborator.</li>
+      <li>rights (array) The rights the collaborator has to the specified application or gateway.
+        <ul>
+          <li>(string)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+<h4 id="response-401-4">Response: 401</h4>
+<p>The request is not authorized.</p>
+<p><strong>Schema</strong></p>
+<p>N/A</p>
+<h4 id="response-403-4">Response: 403</h4>
+<p>The request was authorized, but did not have the correct rights to view the gateway collaborators.</p>
+<p><strong>Schema</strong></p>
+<p>N/A</p>
+<h4 id="response-404-5">Response: 404</h4>
+<p>The gateway does with the specified ID not exist.</p>
+<p><strong>Schema</strong></p>
+<p>N/A</p>
+<h3 id="put-gatewaysgw_idcollaboratorsusername">PUT /gateways/{gw_id}/collaborators/{username}</h3>
+<p><strong>Parameters</strong></p>
+<div class="table-responsive"><table class="table">
+  <thead>
+    <tr>
+      <th>in</th>
+      <th>name</th>
+      <th>type</th>
+      <th>required</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>path</td>
+      <td>gw_id</td>
+      <td>string</td>
+      <td>true</td>
+      <td>The ID of the gateway.</td>
+    </tr>
+    <tr>
+      <td>path</td>
+      <td>username</td>
+      <td>string</td>
+      <td>true</td>
+      <td>The username of a collaborator.</td>
+    </tr>
+    <tr>
+      <td>body</td>
+      <td>rights</td>
+      <td> </td>
+      <td>true</td>
+      <td>The rights you want to grant the collaborator</td>
+    </tr>
+  </tbody>
+</table></div>
+<p><strong>Request Body</strong></p>
+<ul>
+  <li>(array)
+    <ul>
+      <li>(string)</li>
+    </ul>
+  </li>
+</ul>
+<h4 id="response-201-4">Response: 201</h4>
+<p>The rights where succesfully added to the collaborator.</p>
+<p><strong>Schema</strong></p>
+<p>N/A</p>
+<h4 id="response-400-1">Response: 400</h4>
+<p>Something went wrong when adding or updating the collaborator.</p>
+<p><strong>Schema</strong></p>
+<p>N/A</p>
+<h4 id="response-401-5">Response: 401</h4>
+<p>The request is not authorized.</p>
+<p><strong>Schema</strong></p>
+<p>N/A</p>
+<h4 id="response-403-5">Response: 403</h4>
+<p>The request was authorized, but did not have the correct rights to edit the gateway collaborators.</p>
+<p><strong>Schema</strong></p>
+<p>N/A</p>
+<h4 id="response-404-6">Response: 404</h4>
+<p>The gateway does with the specified ID not exist.</p>
+<p><strong>Schema</strong></p>
+<p>N/A</p>
+<h3 id="delete-gatewaysgw_idcollaboratorsusername">DELETE /gateways/{gw_id}/collaborators/{username}</h3>
+<p>Removes a collaborator from the gateway.</p>
+<p>It is not possible to</p>
+<ul>
+  <li>remove the last collaborator with the <code class="highlighter-rouge">collaborators</code> right from an gateway</li>
+</ul>
+<p><strong>Parameters</strong></p>
+<div class="table-responsive"><table class="table">
+  <thead>
+    <tr>
+      <th>in</th>
+      <th>name</th>
+      <th>type</th>
+      <th>required</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>path</td>
+      <td>gw_id</td>
+      <td>string</td>
+      <td>true</td>
+      <td>The ID of the gateway.</td>
+    </tr>
+    <tr>
+      <td>path</td>
+      <td>username</td>
+      <td>string</td>
+      <td>true</td>
+      <td>The username of a collaborator.</td>
+    </tr>
+  </tbody>
+</table></div>
+<h4 id="response-204-10">Response: 204</h4>
+<p>The collaborator was succesfully removed from the application.</p>
+<p><strong>Schema</strong></p>
+<p>N/A</p>
+<h4 id="response-401-6">Response: 401</h4>
+<p>The request is not authorized.</p>
+<p><strong>Schema</strong></p>
+<p>N/A</p>
+<h4 id="response-403-6">Response: 403</h4>
+<p>The request was authorized, but did not have the correct rights to remove gateway collaborators.</p>
+<p><strong>Schema</strong></p>
+<p>N/A</p>
+<h4 id="response-404-7">Response: 404</h4>
+<p>The gateway does with the specified ID not exist.</p>
+<p><strong>Schema</strong></p>
+<p>N/A</p>
+<h3 id="get-gatewaysgw_idrights">GET /gateways/{gw_id}/rights</h3>
+<p><strong>Parameters</strong></p>
+<div class="table-responsive"><table class="table">
+  <thead>
+    <tr>
+      <th>in</th>
+      <th>name</th>
+      <th>type</th>
+      <th>required</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>path</td>
+      <td>gw_id</td>
+      <td>string</td>
+      <td>true</td>
+      <td>The ID of the gateway.</td>
+    </tr>
+  </tbody>
+</table></div>
+<h4 id="response-200-13">Response: 200</h4>
+<p>The rights you have to the application.</p>
+<p><strong>Schema</strong></p>
+<ul>
+  <li>(array)
+    <ul>
+      <li>(string)</li>
+    </ul>
+  </li>
+</ul>
           </div>
         </div>
       </div>
