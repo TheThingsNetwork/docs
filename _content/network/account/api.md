@@ -4,264 +4,394 @@ zindex: -1000
 source: 'https://github.com/TheThingsIndustries/account-server/blob/master/apidocs.md'
 ---
 
-API Reference
-=====================================
-This is the API specification all account server need to comply to
-to be able to run a TTN backend.
+# The Things Network Account Server API, version 2.0.0
+
+Base URL: https://preview.account.thethingsnetwork.org/api/v2
+
+- [Endpoints](#endpoints)
+  - [GET /applications](#get-applications)
+  - [POST /applications](#post-applications)
+  - [GET /applications/{app_id}](#get-applicationsapp_id)
+  - [PATCH /applications/{app_id}](#patch-applicationsapp_id)
+  - [DELETE /applications/{app_id}](#delete-applicationsapp_id)
+  - [POST /applications/{app_id}/restore](#post-applicationsapp_idrestore)
+  - [GET /applications/{app_id}/euis](#get-applicationsapp_ideuis)
+  - [POST /applications/{app_id}/euis](#post-applicationsapp_ideuis)
+  - [PUT /applications/{app_id}/euis/{eui}](#put-applicationsapp_ideuiseui)
+  - [DELETE /applications/{app_id}/euis/{eui}](#delete-applicationsapp_ideuiseui)
+  - [GET /applications/{app_id}/collaborators](#get-applicationsapp_idcollaborators)
+  - [GET /applications/{app_id}/collaborators/{username}](#get-applicationsapp_idcollaboratorsusername)
+  - [PUT /applications/{app_id}/collaborators/{username}](#put-applicationsapp_idcollaboratorsusername)
+  - [DELETE /applications/{app_id}/collaborators/{username}](#delete-applicationsapp_idcollaboratorsusername)
+  - [GET /applications/{app_id}/rights](#get-applicationsapp_idrights)
+  - [GET /applications/{app_id}/access-keys](#get-applicationsapp_idaccess-keys)
+  - [POST /applications/{app_id}/access-keys](#post-applicationsapp_idaccess-keys)
+  - [GET /applications/{app_id}/access-keys/{keyname}](#get-applicationsapp_idaccess-keyskeyname)
+  - [DELETE /applications/{app_id}/access-keys/{keyname}](#delete-applicationsapp_idaccess-keyskeyname)
+  - [POST /applications/{app_id}/token](#post-applicationsapp_idtoken)
+  - [GET /gateways](#get-gateways)
+  - [POST /gateways](#post-gateways)
+  - [GET /gateways/{gw_id}](#get-gatewaysgw_id)
+  - [PATCH /gateways/{gw_id}](#patch-gatewaysgw_id)
+  - [DELETE /gateways/{gw_id}](#delete-gatewaysgw_id)
+  - [GET /gateways/{gw_id}/collaborators](#get-gatewaysgw_idcollaborators)
+  - [GET /gateways/{gw_id}/collaborators/{username}](#get-gatewaysgw_idcollaboratorsusername)
+  - [PUT /gateways/{gw_id}/collaborators/{username}](#put-gatewaysgw_idcollaboratorsusername)
+  - [DELETE /gateways/{gw_id}/collaborators/{username}](#delete-gatewaysgw_idcollaboratorsusername)
+  - [GET /gateways/{gw_id}/rights](#get-gatewaysgw_idrights)
+
+## Endpoints
+
+### GET /applications
+
+Gets all the applictions the user has access to.
 
 
-**Version:** 2.0.0
+**Parameters**
 
-### Security
----
-|oauth2|*OAuth 2.0*|
-|---|---|
-|Flow|accessCode|
-|Authorization URL|/users/authorize|
-|Token URL|/users/token|
-|**Scopes**||
-|profile|Manage user profile|
-|apps|Manage applications|
-|apps:<app_id>|Manage application <app_id>|
-|gateways|Manage gateways|
-|gateways:<gateway_id>|Manage gateway <gateway_id>|
-|components|Manage components|
-|components:<component_id>|Manage component <component_id>|
+| in    | name    | required | description                              |
+|-------|---------|----------|------------------------------------------|
+| query | deleted | false    | Set to `1` to also include deleted apps. |
 
-|apiKey|*API Key*|
-|---|---|
-|In|header|
-|Name|Key|
+#### Response: 200
 
-|oauth2|*OAuth 2.0*|
-|---|---|
-|Flow|password|
-|Token URL|/applications/token|
-|**Scopes**||
-|apps|Manage applications|
+A list of applications.
 
-### /applications
----
-##### ***GET***
-**Summary:** List applications.
+**Schema**
 
-**Description:** Gets all the applictions the user has access to.
+- (array)
+  - (object)
+    - id (string) The globally unique identifier of the application.
+    - name (string) The friendly name/description of the application.
+    - euis (array) The list of EUIs this application is reachable at.
+      - (string)
+    - created (string, date-time) The time this application was created.
+    - rights (array) A list of rights the current user has for the application.
+      - (string)
+    - collaborators (array) (optional) The collaborators that have access to this app.
+      - (object)
+        - username (string) The username of the collaborator.
+        - email (string, email) The email address of the collaborator.
+        - rights (array) The rights the collaborator has to the specified application or gateway.
+          - (string)
+    - access_keys (array) (optional) The access keys of this application.
+      - (object)
+        - name (string) The friendly name for the access key.
+        - key (string) The opaque string that is the access key.
+        - rights (array) The rights the access key will grant if used.
+          - (string)
+    - deleted (string, date) (optional) Set to the time of app deletion, if and only if the app is to be considered deleted.
 
+### POST /applications
 
-**Responses**
-
-| Code | Description |
-| ---- | ----------- |
-| 200 | A list of applications. |
-
-##### ***POST***
-**Summary:** Create an application.
-
-**Description:** Creates an application on the account server and adds the user as its first
+Creates an application on the account server and adds the user as its first
 collaborator.
 
 
 **Parameters**
 
-| Name | Located in | Description | Required | Type |
-| ---- | ---------- | ----------- | -------- | ---- |
-| application | body | The application to create. | No |  |
+| in   | name        | required | description                |
+|------|-------------|----------|----------------------------|
+| body | application | false    | The application to create. |
 
-**Responses**
+**Request Body**
 
-| Code | Description |
-| ---- | ----------- |
-| 201 | The application was succesfully created. |
-| 409 | The application could not be created because the id is already taken. |
+- (object)
+  - id (string) The globally unique identifier of the application.
+  - name (string) The friendly name/description of the application.
+  - euis (array) The list of EUIs this application is reachable at.
+    - (string)
+  - created (string, date-time) The time this application was created.
+  - rights (array) A list of rights the current user has for the application.
+    - (string)
+  - collaborators (array) (optional) The collaborators that have access to this app.
+    - (object)
+      - username (string) The username of the collaborator.
+      - email (string, email) The email address of the collaborator.
+      - rights (array) The rights the collaborator has to the specified application or gateway.
+        - (string)
+  - access_keys (array) (optional) The access keys of this application.
+    - (object)
+      - name (string) The friendly name for the access key.
+      - key (string) The opaque string that is the access key.
+      - rights (array) The rights the access key will grant if used.
+        - (string)
+  - deleted (string, date) (optional) Set to the time of app deletion, if and only if the app is to be considered deleted.
 
-### /{app_id}
----
-##### ***GET***
-**Summary:** Get application.
+#### Response: 201
 
-**Description:** Gets the application specified by the `app_id` parameter.
+The application was succesfully created.
+
+**Schema**
+
+- (object)
+  - id (string) The globally unique identifier of the application.
+  - name (string) The friendly name/description of the application.
+  - euis (array) The list of EUIs this application is reachable at.
+    - (string)
+  - created (string, date-time) The time this application was created.
+  - rights (array) A list of rights the current user has for the application.
+    - (string)
+  - collaborators (array) (optional) The collaborators that have access to this app.
+    - (object)
+      - username (string) The username of the collaborator.
+      - email (string, email) The email address of the collaborator.
+      - rights (array) The rights the collaborator has to the specified application or gateway.
+        - (string)
+  - access_keys (array) (optional) The access keys of this application.
+    - (object)
+      - name (string) The friendly name for the access key.
+      - key (string) The opaque string that is the access key.
+      - rights (array) The rights the access key will grant if used.
+        - (string)
+  - deleted (string, date) (optional) Set to the time of app deletion, if and only if the app is to be considered deleted.
+
+#### Response: 409
+
+The application could not be created because the id is already taken.
+
+**Schema**
+
+N/A
+
+### GET /applications/{app_id}
+
+Gets the application specified by the `app_id` parameter.
+
+
+**Parameters**
+
+| in   | name   | type   | required | description                |
+|------|--------|--------|----------|----------------------------|
+| path | app_id | string | true     | The ID of the application. |
+
+#### Response: 200
+
+Application found.
+
+**Schema**
+
+- (object)
+  - id (string) The globally unique identifier of the application.
+  - name (string) The friendly name/description of the application.
+  - euis (array) The list of EUIs this application is reachable at.
+    - (string)
+  - created (string, date-time) The time this application was created.
+  - rights (array) A list of rights the current user has for the application.
+    - (string)
+  - collaborators (array) (optional) The collaborators that have access to this app.
+    - (object)
+      - username (string) The username of the collaborator.
+      - email (string, email) The email address of the collaborator.
+      - rights (array) The rights the collaborator has to the specified application or gateway.
+        - (string)
+  - access_keys (array) (optional) The access keys of this application.
+    - (object)
+      - name (string) The friendly name for the access key.
+      - key (string) The opaque string that is the access key.
+      - rights (array) The rights the access key will grant if used.
+        - (string)
+  - deleted (string, date) (optional) Set to the time of app deletion, if and only if the app is to be considered deleted.
+
+### PATCH /applications/{app_id}
+
+Edits the application specified by the `app_id` parameter.
 
 
 **Parameters**
 
-| Name | Located in | Description | Required | Type |
-| ---- | ---------- | ----------- | -------- | ---- |
-| app_id | path | The ID of the application. | Yes | string |
+| in   | name   | type   | required | description                |
+|------|--------|--------|----------|----------------------------|
+| path | app_id | string | true     | The ID of the application. |
 
-**Responses**
+#### Response: 204
 
-| Code | Description |
-| ---- | ----------- |
-| 200 | Application found. |
+Application edited.
 
-##### ***PATCH***
-**Summary:** Edit application.
+**Schema**
 
-**Description:** Edits the application specified by the `app_id` parameter.
+N/A
 
+### DELETE /applications/{app_id}
 
-**Parameters**
-
-| Name | Located in | Description | Required | Type |
-| ---- | ---------- | ----------- | -------- | ---- |
-| app_id | path | The ID of the application. | Yes | string |
-
-**Responses**
-
-| Code | Description |
-| ---- | ----------- |
-| 204 | Application edited. |
-
-##### ***DELETE***
-**Summary:** Remove application.
-
-**Description:** Removes the application specified by the `app_id` parameter.
+Removes the application specified by the `app_id` parameter.
 
 
 **Parameters**
 
-| Name | Located in | Description | Required | Type |
-| ---- | ---------- | ----------- | -------- | ---- |
-| app_id | path | The ID of the application. | Yes | string |
+| in   | name   | type   | required | description                |
+|------|--------|--------|----------|----------------------------|
+| path | app_id | string | true     | The ID of the application. |
 
-**Responses**
+#### Response: 204
 
-| Code | Description |
-| ---- | ----------- |
-| 204 | Succesfully removed the application. |
+Succesfully removed the application.
 
-### /{app_id}/euis
----
-##### ***GET***
-**Summary:** List EUIs of an application.
+**Schema**
 
-**Description:** Lists all of the applications EUIs.
+N/A
+
+### POST /applications/{app_id}/restore
 
 **Parameters**
 
-| Name | Located in | Description | Required | Type |
-| ---- | ---------- | ----------- | -------- | ---- |
-| app_id | path | The ID of the application. | Yes | string |
+| in   | name   | type   | required | description                |
+|------|--------|--------|----------|----------------------------|
+| path | app_id | string | true     | The ID of the application. |
 
-**Responses**
+#### Response: 204
 
-| Code | Description |
-| ---- | ----------- |
-| 200 | The list of EUIs. |
+Succesfully restored the application.
 
-##### ***POST***
-**Summary:** Request new EUI.
+**Schema**
 
-**Description:** Selects a new EUI from the TTN EUI block and adds it to the application.
+N/A
 
-**Parameters**
+### GET /applications/{app_id}/euis
 
-| Name | Located in | Description | Required | Type |
-| ---- | ---------- | ----------- | -------- | ---- |
-| app_id | path | The ID of the application. | Yes | string |
-
-**Responses**
-
-| Code | Description |
-| ---- | ----------- |
-| 201 | The EUI was created succesfully. |
-
-### /{app_id}/euis/{eui}
----
-##### ***PUT***
-**Summary:** Add an EUI to the application.
-
-**Description:** Add an EUI to the application.
+Lists all of the applications EUIs.
 
 **Parameters**
 
-| Name | Located in | Description | Required | Type |
-| ---- | ---------- | ----------- | -------- | ---- |
-| app_id | path | The ID of the application. | Yes | string |
-| eui | path | The EUI of an application. | Yes | string |
+| in   | name   | type   | required | description                |
+|------|--------|--------|----------|----------------------------|
+| path | app_id | string | true     | The ID of the application. |
 
-**Responses**
+#### Response: 200
 
-| Code | Description |
-| ---- | ----------- |
-| 204 | The EUI was added successfully. |
+The list of EUIs.
 
-##### ***DELETE***
-**Summary:** Remove an EUI from the application.
+**Schema**
 
-**Description:** Remove an EUI from the application.
+- (array)
+  - (string)
 
-**Parameters**
+### POST /applications/{app_id}/euis
 
-| Name | Located in | Description | Required | Type |
-| ---- | ---------- | ----------- | -------- | ---- |
-| app_id | path | The ID of the application. | Yes | string |
-| eui | path | The EUI of an application. | Yes | string |
-
-**Responses**
-
-| Code | Description |
-| ---- | ----------- |
-| 204 | The EUI was removed. |
-
-### /{app_id}/collaborators
----
-##### ***GET***
-**Summary:** List the collaborators of the application.
-
-**Description:** List the collaborators of the application.
+Selects a new EUI from the TTN EUI block and adds it to the application.
 
 **Parameters**
 
-| Name | Located in | Description | Required | Type |
-| ---- | ---------- | ----------- | -------- | ---- |
-| app_id | path | The ID of the application. | Yes | string |
+| in   | name   | type   | required | description                |
+|------|--------|--------|----------|----------------------------|
+| path | app_id | string | true     | The ID of the application. |
 
-**Responses**
+#### Response: 201
 
-| Code | Description |
-| ---- | ----------- |
-| 200 | The list of collaborators. |
+The EUI was created succesfully.
 
-### /{app_id}/collaborators/{username}
----
-##### ***GET***
-**Summary:** Get a collaborators rights to the application.
+**Schema**
 
-**Parameters**
+- (string)
 
-| Name | Located in | Description | Required | Type |
-| ---- | ---------- | ----------- | -------- | ---- |
-| app_id | path | The ID of the application. | Yes | string |
-| username | path | The username of a collaborator. | Yes | string |
+### PUT /applications/{app_id}/euis/{eui}
 
-**Responses**
-
-| Code | Description |
-| ---- | ----------- |
-| 200 | The rights the collaborator has to the application. |
-
-##### ***PUT***
-**Summary:** Add or update the rights of a user as collaborator to the application.
+Add an EUI to the application.
 
 **Parameters**
 
-| Name | Located in | Description | Required | Type |
-| ---- | ---------- | ----------- | -------- | ---- |
-| app_id | path | The ID of the application. | Yes | string |
-| username | path | The username of a collaborator. | Yes | string |
-|  |  |  | No |  |
+| in   | name   | type   | required | description                | pattern        |
+|------|--------|--------|----------|----------------------------|----------------|
+| path | app_id | string | true     | The ID of the application. |                |
+| path | eui    | string | true     | The EUI of an application. | `[0-9A-Z]{16}` |
 
-**Responses**
+#### Response: 204
 
-| Code | Description |
-| ---- | ----------- |
-| 201 | The rights where succesfully added to the collaborator. |
+The EUI was added successfully.
 
-##### ***DELETE***
-**Summary:** Remove a user as collaborator from the application.
+**Schema**
 
-**Description:** Removes a collaborator from the application.
+N/A
+
+### DELETE /applications/{app_id}/euis/{eui}
+
+Remove an EUI from the application.
+
+**Parameters**
+
+| in   | name   | type   | required | description                | pattern        |
+|------|--------|--------|----------|----------------------------|----------------|
+| path | app_id | string | true     | The ID of the application. |                |
+| path | eui    | string | true     | The EUI of an application. | `[0-9A-Z]{16}` |
+
+#### Response: 204
+
+The EUI was removed.
+
+**Schema**
+
+N/A
+
+### GET /applications/{app_id}/collaborators
+
+List the collaborators of the application.
+
+**Parameters**
+
+| in   | name   | type   | required | description                |
+|------|--------|--------|----------|----------------------------|
+| path | app_id | string | true     | The ID of the application. |
+
+#### Response: 200
+
+The list of collaborators.
+
+**Schema**
+
+- (array)
+  - (object)
+    - username (string) The username of the collaborator.
+    - email (string, email) The email address of the collaborator.
+    - rights (array) The rights the collaborator has to the specified application or gateway.
+      - (string)
+
+### GET /applications/{app_id}/collaborators/{username}
+
+**Parameters**
+
+| in   | name     | type   | required | description                     |
+|------|----------|--------|----------|---------------------------------|
+| path | app_id   | string | true     | The ID of the application.      |
+| path | username | string | true     | The username of a collaborator. |
+
+#### Response: 200
+
+The rights the collaborator has to the application.
+
+**Schema**
+
+- (object)
+  - username (string) The username of the collaborator.
+  - email (string, email) The email address of the collaborator.
+  - rights (array) The rights the collaborator has to the specified application or gateway.
+    - (string)
+
+### PUT /applications/{app_id}/collaborators/{username}
+
+**Parameters**
+
+| in   | name     | type   | required | description                                    |
+|------|----------|--------|----------|------------------------------------------------|
+| path | app_id   | string | true     | The ID of the application.                     |
+| path | username | string | true     | The username of a collaborator.                |
+| body | rights   |        | true     | The rights you want to grant the collaborator. |
+
+**Request Body**
+
+- (array)
+  - (string)
+
+#### Response: 201
+
+The rights where succesfully added to the collaborator.
+
+**Schema**
+
+N/A
+
+### DELETE /applications/{app_id}/collaborators/{username}
+
+Removes a collaborator from the application.
 
 It is not possible to
 - remove the last collaborator with the `collaborators` right from an application
@@ -269,110 +399,615 @@ It is not possible to
 
 **Parameters**
 
-| Name | Located in | Description | Required | Type |
-| ---- | ---------- | ----------- | -------- | ---- |
-| app_id | path | The ID of the application. | Yes | string |
-| username | path | The username of a collaborator. | Yes | string |
+| in   | name     | type   | required | description                     |
+|------|----------|--------|----------|---------------------------------|
+| path | app_id   | string | true     | The ID of the application.      |
+| path | username | string | true     | The username of a collaborator. |
 
-**Responses**
+#### Response: 204
 
-| Code | Description |
-| ---- | ----------- |
-| 204 | The collaborator was succesfully removed from the application. |
+The collaborator was succesfully removed from the application.
 
-### /{app_id}/rights
----
-##### ***GET***
-**Summary:** Get the rights you have to the specified application with the current authentication method.
+**Schema**
 
-**Parameters**
+N/A
 
-| Name | Located in | Description | Required | Type |
-| ---- | ---------- | ----------- | -------- | ---- |
-| app_id | path | The ID of the application. | Yes | string |
-
-**Responses**
-
-| Code | Description |
-| ---- | ----------- |
-| 200 | The rights you have to the application. |
-
-### /{app_id}/access-keys
----
-##### ***GET***
-**Summary:** List the applications access keys
+### GET /applications/{app_id}/rights
 
 **Parameters**
 
-| Name | Located in | Description | Required | Type |
-| ---- | ---------- | ----------- | -------- | ---- |
-| app_id | path | The ID of the application. | Yes | string |
+| in   | name   | type   | required | description                |
+|------|--------|--------|----------|----------------------------|
+| path | app_id | string | true     | The ID of the application. |
 
-**Responses**
+#### Response: 200
 
-| Code | Description |
-| ---- | ----------- |
-| 200 | The rights you have to the application. |
+The rights you have to the application.
 
-##### ***POST***
-**Summary:** Create a new access key with the specified name and rights
+**Schema**
 
-**Parameters**
+- (array)
+  - (string)
 
-| Name | Located in | Description | Required | Type |
-| ---- | ---------- | ----------- | -------- | ---- |
-| app_id | path | The ID of the application. | Yes | string |
-| name | body | The name of the new access key | Yes |  |
-| rights | body | The rights the new access key will have | Yes |  |
-
-### /{app_id}/access-keys/{keyname}
----
-##### ***GET***
-**Summary:** Get information about an app access key
+### GET /applications/{app_id}/access-keys
 
 **Parameters**
 
-| Name | Located in | Description | Required | Type |
-| ---- | ---------- | ----------- | -------- | ---- |
-| app_id | path | The ID of the application. | Yes | string |
-| keyname | path | The name of the access key | Yes | string |
+| in   | name   | type   | required | description                |
+|------|--------|--------|----------|----------------------------|
+| path | app_id | string | true     | The ID of the application. |
 
-**Responses**
+#### Response: 200
 
-| Code | Description |
-| ---- | ----------- |
-| 200 | The resulting access key |
+The rights you have to the application.
 
-##### ***DELETE***
-**Summary:** Remove an access key
+**Schema**
 
-**Parameters**
+- (array)
+  - (object)
+    - name (string) The friendly name for the access key.
+    - key (string) The opaque string that is the access key.
+    - rights (array) The rights the access key will grant if used.
+      - (string)
 
-| Name | Located in | Description | Required | Type |
-| ---- | ---------- | ----------- | -------- | ---- |
-| app_id | path | The ID of the application. | Yes | string |
-| keyname | path | The name of the access key | Yes | string |
-
-**Responses**
-
-| Code | Description |
-| ---- | ----------- |
-| 204 | The key was successfully removed |
-
-### /{app_id}/token
----
-##### ***POST***
-**Summary:** Exchange an application Access Key for an application Access Token.
+### POST /applications/{app_id}/access-keys
 
 **Parameters**
 
-| Name | Located in | Description | Required | Type |
-| ---- | ---------- | ----------- | -------- | ---- |
-| app_id | path | The ID of the application. | Yes | string |
-| token_exchange | body | The credentials for the token exchange. | No |  |
+| in   | name   | type   | required | description                             |
+|------|--------|--------|----------|-----------------------------------------|
+| path | app_id | string | true     | The ID of the application.              |
+| body | rights |        | true     | The rights the new access key will have |
 
-**Responses**
+**Request Body**
 
-| Code | Description |
-| ---- | ----------- |
-| 200 | Token exchange successful. |
+- (object)
+  - name (string)
+  - rights (array)
+    - (string)
+
+#### Response: 204
+
+Access key created successfully.
+
+**Schema**
+
+N/A
+
+#### Response: 401
+
+The request is not authorized.
+
+**Schema**
+
+N/A
+
+#### Response: 403
+
+The request is authorized but does not have the rights to edit access keys.
+
+**Schema**
+
+N/A
+
+#### Response: 404
+
+Application with does not exist.
+
+**Schema**
+
+N/A
+
+#### Response: 409
+
+An access key with that name already exists.
+
+**Schema**
+
+N/A
+
+### GET /applications/{app_id}/access-keys/{keyname}
+
+**Parameters**
+
+| in   | name    | type   | required | description                |
+|------|---------|--------|----------|----------------------------|
+| path | app_id  | string | true     | The ID of the application. |
+| path | keyname | string | true     | The name of the access key |
+
+#### Response: 200
+
+The resulting access key
+
+**Schema**
+
+- (object)
+  - name (string) The friendly name for the access key.
+  - key (string) The opaque string that is the access key.
+  - rights (array) The rights the access key will grant if used.
+    - (string)
+
+### DELETE /applications/{app_id}/access-keys/{keyname}
+
+**Parameters**
+
+| in   | name    | type   | required | description                |
+|------|---------|--------|----------|----------------------------|
+| path | app_id  | string | true     | The ID of the application. |
+| path | keyname | string | true     | The name of the access key |
+
+#### Response: 204
+
+The key was successfully removed
+
+**Schema**
+
+N/A
+
+### POST /applications/{app_id}/token
+
+**Parameters**
+
+| in   | name           | type   | required | description                             |
+|------|----------------|--------|----------|-----------------------------------------|
+| path | app_id         | string | true     | The ID of the application.              |
+| body | token_exchange |        | false    | The credentials for the token exchange. |
+
+**Request Body**
+
+N/A
+
+#### Response: 200
+
+Token exchange successful.
+
+**Schema**
+
+N/A
+
+### GET /gateways
+
+Gets all the gateways the user has access to.
+
+
+#### Response: 200
+
+A list of gateways.
+
+**Schema**
+
+- (array)
+  - (object)
+    - id (string) The globally unique identifier of the application.
+    - name (string) The friendly name/description of the application.
+    - euis (array) The list of EUIs this application is reachable at.
+      - (string)
+    - created (string, date-time) The time this application was created.
+    - rights (array) A list of rights the current user has for the application.
+      - (string)
+    - collaborators (array) (optional) The collaborators that have access to this app.
+      - (object)
+        - username (string) The username of the collaborator.
+        - email (string, email) The email address of the collaborator.
+        - rights (array) The rights the collaborator has to the specified application or gateway.
+          - (string)
+    - access_keys (array) (optional) The access keys of this application.
+      - (object)
+        - name (string) The friendly name for the access key.
+        - key (string) The opaque string that is the access key.
+        - rights (array) The rights the access key will grant if used.
+          - (string)
+    - deleted (string, date) (optional) Set to the time of app deletion, if and only if the app is to be considered deleted.
+
+### POST /gateways
+
+Registers a gateway on the account server and adds the user as its first
+collaborator.
+
+
+**Parameters**
+
+| in   | name    | required | description            |
+|------|---------|----------|------------------------|
+| body | gateway | false    | The gateway to create. |
+
+**Request Body**
+
+- (object)
+  - id (string) The ID if the new gateway.
+  - frequency_plan (string) The frequency plan the new gateway will use.
+  - location (object) (optional)
+    - lng (number) The longitude.
+    - lat (number) The latitude.
+  - auto_update (boolean) (optional) Wether or not the gateway should automatically update itself.
+
+#### Response: 201
+
+The gateway was succesfully registered.
+
+**Schema**
+
+- (object)
+  - id (string) The globally unique identifier of the gateway.
+  - frequency_plan (string) The frequency plan the gateway is using.
+  - frequency_plan_url (string, url) The URL of the frequency plan description.
+  - public_rights (array) The list of rights that are public on the gateway.
+    - (string)
+  - location_public (boolean) Wether or not the location is public.
+  - owner_public (boolean) Wether or not the owner is public.
+  - status_public (boolean) Wether or not the status is public.
+  - attributes (object) A free form map of gateway attributes.
+  - router (string, url) The address of the router the gateway talks to.
+  - location (object) (optional) The configured location of the gateway.
+    - lng (number) (optional) The longitude.
+    - lat (number) (optional) The latitude.
+  - altitude (number) (optional) The altitude at which the gateway antenna is placed.
+  - collaborators (array) (optional) A list of collaborators that have access to the gateway.
+    - (object)
+      - username (string) The username of the collaborator.
+      - email (string, email) The email address of the collaborator.
+      - rights (array) The rights the collaborator has to the specified application or gateway.
+        - (string)
+  - key (string) (optional) An opaque string that the gateway can use to prove it's identity (keep this safe!).
+  - auto_update (boolean) (optional) Wether or not the gateway has auto updates enabled.
+  - activated (boolean) (optional) Wether or not the gateway has been activated.
+  - token (object) (optional) A token the gateway can use to authenticate itself to components of the network.
+    - expires_in (integer) The number of seconds before the token expires.
+    - access_token (string) The signed JWT that can be used to authenticate.
+
+#### Response: 409
+
+The gateway could not be created because the ID is already taken.
+
+**Schema**
+
+N/A
+
+### GET /gateways/{gw_id}
+
+Gets the application specified by the `app_id` parameter.
+
+
+**Parameters**
+
+| in   | name  | type   | required | description            |
+|------|-------|--------|----------|------------------------|
+| path | gw_id | string | true     | The ID of the gateway. |
+
+#### Response: 200
+
+Gateway found.
+
+**Schema**
+
+- (object)
+  - id (string) The globally unique identifier of the application.
+  - name (string) The friendly name/description of the application.
+  - euis (array) The list of EUIs this application is reachable at.
+    - (string)
+  - created (string, date-time) The time this application was created.
+  - rights (array) A list of rights the current user has for the application.
+    - (string)
+  - collaborators (array) (optional) The collaborators that have access to this app.
+    - (object)
+      - username (string) The username of the collaborator.
+      - email (string, email) The email address of the collaborator.
+      - rights (array) The rights the collaborator has to the specified application or gateway.
+        - (string)
+  - access_keys (array) (optional) The access keys of this application.
+    - (object)
+      - name (string) The friendly name for the access key.
+      - key (string) The opaque string that is the access key.
+      - rights (array) The rights the access key will grant if used.
+        - (string)
+  - deleted (string, date) (optional) Set to the time of app deletion, if and only if the app is to be considered deleted.
+
+#### Response: 404
+
+Gateway not found.
+
+**Schema**
+
+N/A
+
+### PATCH /gateways/{gw_id}
+
+Edits the gateway specified by the `gw_id` parameter.
+
+
+**Parameters**
+
+| in   | name  | type   | required | description            |
+|------|-------|--------|----------|------------------------|
+| path | gw_id | string | true     | The ID of the gateway. |
+
+#### Response: 204
+
+Gateway successfully edited.
+
+**Schema**
+
+N/A
+
+#### Response: 400
+
+Gateway editing failed.
+
+**Schema**
+
+N/A
+
+#### Response: 401
+
+The request is not authorized.
+
+**Schema**
+
+N/A
+
+#### Response: 403
+
+The request was authorized, but did not have the correct rights.
+
+**Schema**
+
+N/A
+
+#### Response: 404
+
+The gateway does not exist.
+
+**Schema**
+
+N/A
+
+### DELETE /gateways/{gw_id}
+
+Removes the gateway specified by the `gw_id` parameter.
+
+**Parameters**
+
+| in   | name  | type   | required | description            |
+|------|-------|--------|----------|------------------------|
+| path | gw_id | string | true     | The ID of the gateway. |
+
+#### Response: 204
+
+Succesfully removed the gateway.
+
+**Schema**
+
+N/A
+
+#### Response: 401
+
+The request is not authorized.
+
+**Schema**
+
+N/A
+
+#### Response: 403
+
+The request was authorized, but did not have the correct rights to delete the gateway.
+
+**Schema**
+
+N/A
+
+#### Response: 404
+
+The gateway does not exist.
+
+**Schema**
+
+N/A
+
+### GET /gateways/{gw_id}/collaborators
+
+**Parameters**
+
+| in   | name  | type   | required | description            |
+|------|-------|--------|----------|------------------------|
+| path | gw_id | string | true     | The ID of the gateway. |
+
+#### Response: 200
+
+The list of collaborators.
+
+**Schema**
+
+- (array)
+  - (object)
+    - username (string) The username of the collaborator.
+    - email (string, email) The email address of the collaborator.
+    - rights (array) The rights the collaborator has to the specified application or gateway.
+      - (string)
+
+#### Response: 401
+
+The request is not authorized.
+
+**Schema**
+
+N/A
+
+#### Response: 403
+
+The request was authorized, but did not have the correct rights to view the gateway collaborators.
+
+**Schema**
+
+N/A
+
+#### Response: 404
+
+The gateway does with the specified ID not exist.
+
+**Schema**
+
+N/A
+
+### GET /gateways/{gw_id}/collaborators/{username}
+
+**Parameters**
+
+| in   | name     | type   | required | description                     |
+|------|----------|--------|----------|---------------------------------|
+| path | gw_id    | string | true     | The ID of the gateway.          |
+| path | username | string | true     | The username of a collaborator. |
+
+#### Response: 200
+
+Found a collaborator.
+
+**Schema**
+
+- (object)
+  - username (string) The username of the collaborator.
+  - email (string, email) The email address of the collaborator.
+  - rights (array) The rights the collaborator has to the specified application or gateway.
+    - (string)
+
+#### Response: 401
+
+The request is not authorized.
+
+**Schema**
+
+N/A
+
+#### Response: 403
+
+The request was authorized, but did not have the correct rights to view the gateway collaborators.
+
+**Schema**
+
+N/A
+
+#### Response: 404
+
+The gateway does with the specified ID not exist.
+
+**Schema**
+
+N/A
+
+### PUT /gateways/{gw_id}/collaborators/{username}
+
+**Parameters**
+
+| in   | name     | type   | required | description                                   |
+|------|----------|--------|----------|-----------------------------------------------|
+| path | gw_id    | string | true     | The ID of the gateway.                        |
+| path | username | string | true     | The username of a collaborator.               |
+| body | rights   |        | true     | The rights you want to grant the collaborator |
+
+**Request Body**
+
+- (array)
+  - (string)
+
+#### Response: 201
+
+The rights where succesfully added to the collaborator.
+
+**Schema**
+
+N/A
+
+#### Response: 400
+
+Something went wrong when adding or updating the collaborator.
+
+**Schema**
+
+N/A
+
+#### Response: 401
+
+The request is not authorized.
+
+**Schema**
+
+N/A
+
+#### Response: 403
+
+The request was authorized, but did not have the correct rights to edit the gateway collaborators.
+
+**Schema**
+
+N/A
+
+#### Response: 404
+
+The gateway does with the specified ID not exist.
+
+**Schema**
+
+N/A
+
+### DELETE /gateways/{gw_id}/collaborators/{username}
+
+Removes a collaborator from the gateway.
+
+It is not possible to
+- remove the last collaborator with the `collaborators` right from an gateway
+
+
+**Parameters**
+
+| in   | name     | type   | required | description                     |
+|------|----------|--------|----------|---------------------------------|
+| path | gw_id    | string | true     | The ID of the gateway.          |
+| path | username | string | true     | The username of a collaborator. |
+
+#### Response: 204
+
+The collaborator was succesfully removed from the application.
+
+**Schema**
+
+N/A
+
+#### Response: 401
+
+The request is not authorized.
+
+**Schema**
+
+N/A
+
+#### Response: 403
+
+The request was authorized, but did not have the correct rights to remove gateway collaborators.
+
+**Schema**
+
+N/A
+
+#### Response: 404
+
+The gateway does with the specified ID not exist.
+
+**Schema**
+
+N/A
+
+### GET /gateways/{gw_id}/rights
+
+**Parameters**
+
+| in   | name  | type   | required | description            |
+|------|-------|--------|----------|------------------------|
+| path | gw_id | string | true     | The ID of the gateway. |
+
+#### Response: 200
+
+The rights you have to the application.
+
+**Schema**
+
+- (array)
+  - (string)
