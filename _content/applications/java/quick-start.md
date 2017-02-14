@@ -57,7 +57,7 @@ Let's install Java, create a Java project and require the TTN Client.
     <dependency>
       <groupId>org.thethingsnetwork</groupId>
       <artifactId>data-mqtt</artifactId>
-      <version>2.0.0</version>
+      <version>2.1.0</version>
     </dependency>
     ```
     
