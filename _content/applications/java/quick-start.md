@@ -51,13 +51,13 @@ Let's install Java, create a Java project and require the TTN Client.
     cd mqtt
     ```
 
-4.  Require the [TTN Client](https://github.com/TheThingsNetwork/java-app-sdk/tree/master/data/mqtt) as dependency:
+4.  Require the [TTN Client](https://github.com/TheThingsNetwork/java-app-sdk/tree/master/data/data-mqtt) as dependency:
 
     ```xml
     <dependency>
       <groupId>org.thethingsnetwork</groupId>
       <artifactId>data-mqtt</artifactId>
-      <version>2.0.0</version>
+      <version>2.1.0</version>
     </dependency>
     ```
     
