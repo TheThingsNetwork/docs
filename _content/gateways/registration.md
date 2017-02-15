@@ -34,7 +34,7 @@ You then configure the gateway with the ID and Key from the registration. This a
 > If your gateway does not have a GPS module we advise you not to configure a manual location in the gateway. Do this in the Console instead so that you can change it without accessing the gateway.
 
 ### Untrusted & Unmanaged Gateways
-If you don't register your gateway or use the key to activate it, The Things Network will still accept the packages, but mark them as **untrusted**. The gateway will appear on the [map](https://www.thethingsnetwork.org/map) as **Unregistered** or **Unactivated**. If it is unregistered you will not be able to manage its configuration (e.g. location) form the Console.
+If you don't register your gateway or use the key to activate it, The Things Network will still accept the packages, but mark them as **untrusted**. The gateway will appear on the [map](https://www.thethingsnetwork.org/map) as **Unregistered** or **Unactivated**. If it is unregistered you will not be able to manage its configuration (e.g. location) from the Console.
 
 ## Via Packet Forwarder
 
