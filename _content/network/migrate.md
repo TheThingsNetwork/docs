@@ -92,6 +92,8 @@ For each device you'd like to migrate:
     1.  On staging, go to the migrated device.
     2.  Scroll down to the bottom and click the red **Delete device** button.
 
+> Important: After migrating OTAA devices with the same **App EUI**, activations in staging should be disabled. This requires your **App EUI** to be blacklisted in staging. To request a blacklist, please file a request through The Things Network's Slack **#support** channel. [Request a Slack invite for your account](https://account.thethingsnetwork.org)
+
 ### Devices registered for ABP
 
 If you had your device registered for ABP, follow these additional steps:
@@ -179,7 +181,7 @@ The JSON encoded payload has also changed on several points. Update the code whe
     "data_rate": "SF7BW125",
     "coding_rate": "4/5",
     "gateways": [{
-      "eui": "B827EBFFFE87BD22",
+      "gtw_id": "eui-b827ebfffe87bd22",
       "timestamp": 1484146403,
       "time": "2016-09-13T09:59:02.867283Z",
       "channel": 2,
@@ -193,7 +195,7 @@ The JSON encoded payload has also changed on several points. Update the code whe
 
 > Note that you now receive the Application EUI and the Device EUI and Address. Also, Gateway metadata can now be found in an array of all gateways that forwarded the activation.
 
-### Up(link) payload
+### Uplink payload
 
 The JSON encoded payload has changed on several points. Update the code where you process it.
 
@@ -245,7 +247,7 @@ The JSON encoded payload has changed on several points. Update the code where yo
     "data_rate": "SF7BW125",
     "coding_rate": "4/5",
     "gateways": [{
-      "eui": "B827EBFFFE87BD22",
+      "gtw_id": "eui-b827ebfffe87bd22",
       "timestamp": 1489443003,
       "time": "2016-09-13T09:59:08.167028Z",
       "channel": 1,
@@ -259,7 +261,7 @@ The JSON encoded payload has changed on several points. Update the code where yo
 
 > Note that `payload` is now `payload_raw` and `fields` has been renamed to `payload_fields`. Also, `dev_eui` is no longer there and Gateway metadata can now be found in an array of all gateways that forwarded the activation.
 
-### Down(link) payload
+### Downlink payload
 
 The JSON encoded payload to send a message has also changed. Update the code where you compose the payload.
 
