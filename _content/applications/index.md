@@ -6,7 +6,7 @@ sections:
  - SDKs & Libraries
  - Integrations
 links:
- - title: Migrate form Staging to Production
+ - title: Migrate from Staging to Production
    href: ../network/migrate.html
 image: /applications/icon.png
 ---
