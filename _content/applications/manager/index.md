@@ -33,4 +33,4 @@ To demonstrate the usage of this API we have an [example in Go](https://github.c
 
 ## SDKs
 
-Only the [Java SDK](https://github.com/TheThingsNetwork/java-app-sdk) has experimental support for the Application Manager API.
+The [Java SDK](https://github.com/TheThingsNetwork/java-app-sdk) has support for the Application Manager API.
