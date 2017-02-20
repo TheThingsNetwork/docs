@@ -60,7 +60,7 @@ var items = [{
   owner: 'TheThingsNetwork',
   repo: 'java-app-sdk',
   branch: 'master',
-  path: 'data/mqtt/API.md',
+  path: 'data/data-mqtt/API.md',
   target: '_content/applications/java/api.md',
   yaml: {
     title: 'API Reference',
