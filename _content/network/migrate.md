@@ -92,7 +92,7 @@ For each device you'd like to migrate:
     1.  On staging, go to the migrated device.
     2.  Scroll down to the bottom and click the red **Delete device** button.
 
-> Important: After migrating OTAA devices with the same **App EUI**, activations in staging should be disabled. This requires your **App EUI** to be blacklisted in staging. To request a blacklist, please file a request through The Things Network's Slack **#support** channel. [Request a Slack invite for your account](https://account.thethingsnetwork.org)
+> Important: If your application on staging used to activate devices with a **Default App Key**, activations in staging should be disabled for your **App EUI**. This requires your **App EUI** to be blacklisted in staging. To request a blacklist, please file a request through The Things Network's Slack **#support** channel. [Request a Slack invite for your account](https://account.thethingsnetwork.org)
 
 ### Devices registered for ABP
 
