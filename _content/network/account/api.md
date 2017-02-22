@@ -578,26 +578,32 @@ A list of gateways.
 
 - (array)
   - (object)
-    - id (string) The globally unique identifier of the application.
-    - name (string) The friendly name/description of the application.
-    - euis (array) The list of EUIs this application is reachable at.
+    - id (string) The globally unique identifier of the gateway.
+    - frequency_plan (string) The frequency plan the gateway is using.
+    - frequency_plan_url (string, url) The URL of the frequency plan description.
+    - public_rights (array) The list of rights that are public on the gateway.
       - (string)
-    - created (string, date-time) The time this application was created.
-    - rights (array) A list of rights the current user has for the application.
-      - (string)
-    - collaborators (array) (optional) The collaborators that have access to this app.
+    - location_public (boolean) Wether or not the location is public.
+    - owner_public (boolean) Wether or not the owner is public.
+    - status_public (boolean) Wether or not the status is public.
+    - attributes (object) A free form map of gateway attributes.
+    - router (string, url) The address of the router the gateway talks to.
+    - location (object) (optional) The configured location of the gateway.
+      - lng (number) (optional) The longitude.
+      - lat (number) (optional) The latitude.
+    - altitude (number) (optional) The altitude at which the gateway antenna is placed.
+    - collaborators (array) (optional) A list of collaborators that have access to the gateway.
       - (object)
         - username (string) The username of the collaborator.
         - email (string, email) The email address of the collaborator.
         - rights (array) The rights the collaborator has to the specified application or gateway.
           - (string)
-    - access_keys (array) (optional) The access keys of this application.
-      - (object)
-        - name (string) The friendly name for the access key.
-        - key (string) The opaque string that is the access key.
-        - rights (array) The rights the access key will grant if used.
-          - (string)
-    - deleted (string, date) (optional) Set to the time of app deletion, if and only if the app is to be considered deleted.
+    - key (string) (optional) An opaque string that the gateway can use to prove it's identity (keep this safe!).
+    - auto_update (boolean) (optional) Wether or not the gateway has auto updates enabled.
+    - activated (boolean) (optional) Wether or not the gateway has been activated.
+    - token (object) (optional) A token the gateway can use to authenticate itself to components of the network.
+      - expires_in (integer) The number of seconds before the token expires.
+      - access_token (string) The signed JWT that can be used to authenticate.
 
 ### POST /gateways
 
@@ -665,7 +671,7 @@ N/A
 
 ### GET /gateways/{gw_id}
 
-Gets the application specified by the `app_id` parameter.
+Gets the application specified by the `gw_id` parameter.
 
 
 **Parameters**
@@ -681,26 +687,32 @@ Gateway found.
 **Schema**
 
 - (object)
-  - id (string) The globally unique identifier of the application.
-  - name (string) The friendly name/description of the application.
-  - euis (array) The list of EUIs this application is reachable at.
+  - id (string) The globally unique identifier of the gateway.
+  - frequency_plan (string) The frequency plan the gateway is using.
+  - frequency_plan_url (string, url) The URL of the frequency plan description.
+  - public_rights (array) The list of rights that are public on the gateway.
     - (string)
-  - created (string, date-time) The time this application was created.
-  - rights (array) A list of rights the current user has for the application.
-    - (string)
-  - collaborators (array) (optional) The collaborators that have access to this app.
+  - location_public (boolean) Wether or not the location is public.
+  - owner_public (boolean) Wether or not the owner is public.
+  - status_public (boolean) Wether or not the status is public.
+  - attributes (object) A free form map of gateway attributes.
+  - router (string, url) The address of the router the gateway talks to.
+  - location (object) (optional) The configured location of the gateway.
+    - lng (number) (optional) The longitude.
+    - lat (number) (optional) The latitude.
+  - altitude (number) (optional) The altitude at which the gateway antenna is placed.
+  - collaborators (array) (optional) A list of collaborators that have access to the gateway.
     - (object)
       - username (string) The username of the collaborator.
       - email (string, email) The email address of the collaborator.
       - rights (array) The rights the collaborator has to the specified application or gateway.
         - (string)
-  - access_keys (array) (optional) The access keys of this application.
-    - (object)
-      - name (string) The friendly name for the access key.
-      - key (string) The opaque string that is the access key.
-      - rights (array) The rights the access key will grant if used.
-        - (string)
-  - deleted (string, date) (optional) Set to the time of app deletion, if and only if the app is to be considered deleted.
+  - key (string) (optional) An opaque string that the gateway can use to prove it's identity (keep this safe!).
+  - auto_update (boolean) (optional) Wether or not the gateway has auto updates enabled.
+  - activated (boolean) (optional) Wether or not the gateway has been activated.
+  - token (object) (optional) A token the gateway can use to authenticate itself to components of the network.
+    - expires_in (integer) The number of seconds before the token expires.
+    - access_token (string) The signed JWT that can be used to authenticate.
 
 #### Response: 404
 
