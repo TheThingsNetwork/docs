@@ -130,7 +130,7 @@ Now restart the installer and provide the required answers when prompted:
 sh installer.sh
 ```
 
-![installer](installer-mlinux-2nd.png)
+![installer](installer-mlinux-2nd-no-gps.png)
 
 The installation is complete once the `Starting ttn-packet-forwarder: OK` message appears.
 
@@ -155,9 +155,6 @@ The installation was successful if the output looks something like:
 # PULL_RESP(onse) datagrams received: 0 (0 bytes)
 # RF packets sent to concentrator: 0 (0 bytes)
 # TX errors: 0
-### [GPS] ###
-# Invalid gps time reference (age: 1470525551 sec)
-# Manual GPS coordinates: latitude 53.18977, longitude 6.55738, altitude 5 m
 ##### END #####
 INFO: [up] PUSH_ACK for server router.eu.thethings.network received in 13 ms
 INFO: [down] for server router.eu.thethings.network PULL_ACK received in 13 ms
