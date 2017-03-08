@@ -6,7 +6,7 @@ source: 'https://github.com/TheThingsIndustries/account-server/blob/master/apido
 
 # The Things Network Account Server API, version 2.0.0
 
-Base URL: https://preview.account.thethingsnetwork.org/api/v2
+Base URL: https://account.thethingsnetwork.org/api/v2
 
 - [Endpoints](#endpoints)
   - [GET /applications](#get-applications)
@@ -152,7 +152,9 @@ The application could not be created because the id is already taken.
 
 **Schema**
 
-N/A
+- (object)
+  - code (number) The error status code (corresponds to the HTTP status code).
+  - error (string) A human-readable description of what went wrong.
 
 ### GET /applications/{app_id}
 
@@ -480,7 +482,9 @@ The request is not authorized.
 
 **Schema**
 
-N/A
+- (object)
+  - code (number) The error status code (corresponds to the HTTP status code).
+  - error (string) A human-readable description of what went wrong.
 
 #### Response: 403
 
@@ -488,7 +492,9 @@ The request is authorized but does not have the rights to edit access keys.
 
 **Schema**
 
-N/A
+- (object)
+  - code (number) The error status code (corresponds to the HTTP status code).
+  - error (string) A human-readable description of what went wrong.
 
 #### Response: 404
 
@@ -496,7 +502,9 @@ Application with does not exist.
 
 **Schema**
 
-N/A
+- (object)
+  - code (number) The error status code (corresponds to the HTTP status code).
+  - error (string) A human-readable description of what went wrong.
 
 #### Response: 409
 
@@ -504,7 +512,9 @@ An access key with that name already exists.
 
 **Schema**
 
-N/A
+- (object)
+  - code (number) The error status code (corresponds to the HTTP status code).
+  - error (string) A human-readable description of what went wrong.
 
 ### GET /applications/{app_id}/access-keys/{keyname}
 
@@ -587,7 +597,6 @@ A list of gateways.
     - owner_public (boolean) Wether or not the owner is public.
     - status_public (boolean) Wether or not the status is public.
     - attributes (object) A free form map of gateway attributes.
-    - router (string, url) The address of the router the gateway talks to.
     - location (object) (optional) The configured location of the gateway.
       - lng (number) (optional) The longitude.
       - lat (number) (optional) The latitude.
@@ -604,6 +613,15 @@ A list of gateways.
     - token (object) (optional) A token the gateway can use to authenticate itself to components of the network.
       - expires_in (integer) The number of seconds before the token expires.
       - access_token (string) The signed JWT that can be used to authenticate.
+    - router (object) The router the gateway should talk to.
+      - id (string) The id of the router.
+      - address (string, url) The gRPC address of the router the gateway will talk to.
+      - mqtt_address (string, url) The MQTT address of the router the gateway will talk to.
+    - fallback_routers (array) (optional) List of fallback routers that the gateway should attempt to connect to when the primary one is down.
+      - (object)
+        - id (string) The id of the router.
+        - address (string, url) The gRPC address of the router the gateway will talk to.
+        - mqtt_address (string, url) The MQTT address of the router the gateway will talk to.
 
 ### POST /gateways
 
@@ -643,7 +661,6 @@ The gateway was succesfully registered.
   - owner_public (boolean) Wether or not the owner is public.
   - status_public (boolean) Wether or not the status is public.
   - attributes (object) A free form map of gateway attributes.
-  - router (string, url) The address of the router the gateway talks to.
   - location (object) (optional) The configured location of the gateway.
     - lng (number) (optional) The longitude.
     - lat (number) (optional) The latitude.
@@ -660,6 +677,15 @@ The gateway was succesfully registered.
   - token (object) (optional) A token the gateway can use to authenticate itself to components of the network.
     - expires_in (integer) The number of seconds before the token expires.
     - access_token (string) The signed JWT that can be used to authenticate.
+  - router (object) The router the gateway should talk to.
+    - id (string) The id of the router.
+    - address (string, url) The gRPC address of the router the gateway will talk to.
+    - mqtt_address (string, url) The MQTT address of the router the gateway will talk to.
+  - fallback_routers (array) (optional) List of fallback routers that the gateway should attempt to connect to when the primary one is down.
+    - (object)
+      - id (string) The id of the router.
+      - address (string, url) The gRPC address of the router the gateway will talk to.
+      - mqtt_address (string, url) The MQTT address of the router the gateway will talk to.
 
 #### Response: 409
 
@@ -667,7 +693,9 @@ The gateway could not be created because the ID is already taken.
 
 **Schema**
 
-N/A
+- (object)
+  - code (number) The error status code (corresponds to the HTTP status code).
+  - error (string) A human-readable description of what went wrong.
 
 ### GET /gateways/{gw_id}
 
@@ -696,7 +724,6 @@ Gateway found.
   - owner_public (boolean) Wether or not the owner is public.
   - status_public (boolean) Wether or not the status is public.
   - attributes (object) A free form map of gateway attributes.
-  - router (string, url) The address of the router the gateway talks to.
   - location (object) (optional) The configured location of the gateway.
     - lng (number) (optional) The longitude.
     - lat (number) (optional) The latitude.
@@ -713,6 +740,15 @@ Gateway found.
   - token (object) (optional) A token the gateway can use to authenticate itself to components of the network.
     - expires_in (integer) The number of seconds before the token expires.
     - access_token (string) The signed JWT that can be used to authenticate.
+  - router (object) The router the gateway should talk to.
+    - id (string) The id of the router.
+    - address (string, url) The gRPC address of the router the gateway will talk to.
+    - mqtt_address (string, url) The MQTT address of the router the gateway will talk to.
+  - fallback_routers (array) (optional) List of fallback routers that the gateway should attempt to connect to when the primary one is down.
+    - (object)
+      - id (string) The id of the router.
+      - address (string, url) The gRPC address of the router the gateway will talk to.
+      - mqtt_address (string, url) The MQTT address of the router the gateway will talk to.
 
 #### Response: 404
 
@@ -720,7 +756,9 @@ Gateway not found.
 
 **Schema**
 
-N/A
+- (object)
+  - code (number) The error status code (corresponds to the HTTP status code).
+  - error (string) A human-readable description of what went wrong.
 
 ### PATCH /gateways/{gw_id}
 
@@ -747,7 +785,9 @@ Gateway editing failed.
 
 **Schema**
 
-N/A
+- (object)
+  - code (number) The error status code (corresponds to the HTTP status code).
+  - error (string) A human-readable description of what went wrong.
 
 #### Response: 401
 
@@ -755,7 +795,9 @@ The request is not authorized.
 
 **Schema**
 
-N/A
+- (object)
+  - code (number) The error status code (corresponds to the HTTP status code).
+  - error (string) A human-readable description of what went wrong.
 
 #### Response: 403
 
@@ -763,7 +805,9 @@ The request was authorized, but did not have the correct rights.
 
 **Schema**
 
-N/A
+- (object)
+  - code (number) The error status code (corresponds to the HTTP status code).
+  - error (string) A human-readable description of what went wrong.
 
 #### Response: 404
 
@@ -771,7 +815,9 @@ The gateway does not exist.
 
 **Schema**
 
-N/A
+- (object)
+  - code (number) The error status code (corresponds to the HTTP status code).
+  - error (string) A human-readable description of what went wrong.
 
 ### DELETE /gateways/{gw_id}
 
@@ -797,7 +843,9 @@ The request is not authorized.
 
 **Schema**
 
-N/A
+- (object)
+  - code (number) The error status code (corresponds to the HTTP status code).
+  - error (string) A human-readable description of what went wrong.
 
 #### Response: 403
 
@@ -805,7 +853,9 @@ The request was authorized, but did not have the correct rights to delete the ga
 
 **Schema**
 
-N/A
+- (object)
+  - code (number) The error status code (corresponds to the HTTP status code).
+  - error (string) A human-readable description of what went wrong.
 
 #### Response: 404
 
@@ -813,7 +863,9 @@ The gateway does not exist.
 
 **Schema**
 
-N/A
+- (object)
+  - code (number) The error status code (corresponds to the HTTP status code).
+  - error (string) A human-readable description of what went wrong.
 
 ### GET /gateways/{gw_id}/collaborators
 
@@ -842,7 +894,9 @@ The request is not authorized.
 
 **Schema**
 
-N/A
+- (object)
+  - code (number) The error status code (corresponds to the HTTP status code).
+  - error (string) A human-readable description of what went wrong.
 
 #### Response: 403
 
@@ -850,7 +904,9 @@ The request was authorized, but did not have the correct rights to view the gate
 
 **Schema**
 
-N/A
+- (object)
+  - code (number) The error status code (corresponds to the HTTP status code).
+  - error (string) A human-readable description of what went wrong.
 
 #### Response: 404
 
@@ -858,7 +914,9 @@ The gateway does with the specified ID not exist.
 
 **Schema**
 
-N/A
+- (object)
+  - code (number) The error status code (corresponds to the HTTP status code).
+  - error (string) A human-readable description of what went wrong.
 
 ### GET /gateways/{gw_id}/collaborators/{username}
 
@@ -887,7 +945,9 @@ The request is not authorized.
 
 **Schema**
 
-N/A
+- (object)
+  - code (number) The error status code (corresponds to the HTTP status code).
+  - error (string) A human-readable description of what went wrong.
 
 #### Response: 403
 
@@ -895,7 +955,9 @@ The request was authorized, but did not have the correct rights to view the gate
 
 **Schema**
 
-N/A
+- (object)
+  - code (number) The error status code (corresponds to the HTTP status code).
+  - error (string) A human-readable description of what went wrong.
 
 #### Response: 404
 
@@ -903,7 +965,9 @@ The gateway does with the specified ID not exist.
 
 **Schema**
 
-N/A
+- (object)
+  - code (number) The error status code (corresponds to the HTTP status code).
+  - error (string) A human-readable description of what went wrong.
 
 ### PUT /gateways/{gw_id}/collaborators/{username}
 
@@ -934,7 +998,9 @@ Something went wrong when adding or updating the collaborator.
 
 **Schema**
 
-N/A
+- (object)
+  - code (number) The error status code (corresponds to the HTTP status code).
+  - error (string) A human-readable description of what went wrong.
 
 #### Response: 401
 
@@ -942,7 +1008,9 @@ The request is not authorized.
 
 **Schema**
 
-N/A
+- (object)
+  - code (number) The error status code (corresponds to the HTTP status code).
+  - error (string) A human-readable description of what went wrong.
 
 #### Response: 403
 
@@ -950,7 +1018,9 @@ The request was authorized, but did not have the correct rights to edit the gate
 
 **Schema**
 
-N/A
+- (object)
+  - code (number) The error status code (corresponds to the HTTP status code).
+  - error (string) A human-readable description of what went wrong.
 
 #### Response: 404
 
@@ -958,7 +1028,9 @@ The gateway does with the specified ID not exist.
 
 **Schema**
 
-N/A
+- (object)
+  - code (number) The error status code (corresponds to the HTTP status code).
+  - error (string) A human-readable description of what went wrong.
 
 ### DELETE /gateways/{gw_id}/collaborators/{username}
 
@@ -989,7 +1061,9 @@ The request is not authorized.
 
 **Schema**
 
-N/A
+- (object)
+  - code (number) The error status code (corresponds to the HTTP status code).
+  - error (string) A human-readable description of what went wrong.
 
 #### Response: 403
 
@@ -997,7 +1071,9 @@ The request was authorized, but did not have the correct rights to remove gatewa
 
 **Schema**
 
-N/A
+- (object)
+  - code (number) The error status code (corresponds to the HTTP status code).
+  - error (string) A human-readable description of what went wrong.
 
 #### Response: 404
 
@@ -1005,7 +1081,9 @@ The gateway does with the specified ID not exist.
 
 **Schema**
 
-N/A
+- (object)
+  - code (number) The error status code (corresponds to the HTTP status code).
+  - error (string) A human-readable description of what went wrong.
 
 ### GET /gateways/{gw_id}/rights
 
