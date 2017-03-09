@@ -66,10 +66,10 @@ You can schedule a message with raw payload using this format:
 
 ```js
 {
-  "dev_id": "my-dev-id", // The device ID
-  "port": 1, // LoRaWAN FPort
-  "confirmed": false, // Whether the downlink should be confirmed by the device
-  "payload_raw": "AQIDBA==", // Base64 encoded payload: [0x01, 0x02, 0x03, 0x04]
+  "dev_id": "my-dev-id",    // The device ID
+  "port": 1,                // LoRaWAN FPort
+  "confirmed": false,       // Whether the downlink should be confirmed by the device
+  "payload_raw": "AQIDBA==" // Base64 encoded payload: [0x01, 0x02, 0x03, 0x04]
 }
 ```
 
@@ -80,11 +80,11 @@ You can also use payload fields if your application has a encoder payload functi
 ```js
 {
   "dev_id": "my-dev-id", // The device ID
-  "port": 1, // LoRaWAN FPort
-  "confirmed": false, // Whether the downlink should be confirmed by the device
-  "payload_fields": { // The JSON object to be encoded by your encoder payload function
+  "port": 1,             // LoRaWAN FPort
+  "confirmed": false,    // Whether the downlink should be confirmed by the device
+  "payload_fields": {    // The JSON object to be encoded by your encoder payload function
     "on": true,
-    "color": "blue",
+    "color": "blue"
   }
 }
 ```

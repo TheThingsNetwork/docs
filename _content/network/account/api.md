@@ -597,9 +597,10 @@ A list of gateways.
     - owner_public (boolean) Wether or not the owner is public.
     - status_public (boolean) Wether or not the status is public.
     - attributes (object) A free form map of gateway attributes.
-    - location (object) (optional) The configured location of the gateway.
-      - lng (number) (optional) The longitude.
-      - lat (number) (optional) The latitude.
+    - antenna_location (object) (optional) The (gps) location of the gateway antenna.
+      - longitude (number) (optional) The longitude.
+      - latitude (number) (optional) The latitude.
+      - altitude (number) (optional) The altitude.
     - altitude (number) (optional) The altitude at which the gateway antenna is placed.
     - collaborators (array) (optional) A list of collaborators that have access to the gateway.
       - (object)
@@ -641,8 +642,9 @@ collaborator.
   - id (string) The ID if the new gateway.
   - frequency_plan (string) The frequency plan the new gateway will use.
   - location (object) (optional)
-    - lng (number) The longitude.
-    - lat (number) The latitude.
+    - longitude (number) (optional) The longitude.
+    - latitude (number) (optional) The latitude.
+    - altitude (number) (optional) The altitude.
   - auto_update (boolean) (optional) Wether or not the gateway should automatically update itself.
 
 #### Response: 201
@@ -661,9 +663,10 @@ The gateway was succesfully registered.
   - owner_public (boolean) Wether or not the owner is public.
   - status_public (boolean) Wether or not the status is public.
   - attributes (object) A free form map of gateway attributes.
-  - location (object) (optional) The configured location of the gateway.
-    - lng (number) (optional) The longitude.
-    - lat (number) (optional) The latitude.
+  - antenna_location (object) (optional) The (gps) location of the gateway antenna.
+    - longitude (number) (optional) The longitude.
+    - latitude (number) (optional) The latitude.
+    - altitude (number) (optional) The altitude.
   - altitude (number) (optional) The altitude at which the gateway antenna is placed.
   - collaborators (array) (optional) A list of collaborators that have access to the gateway.
     - (object)
@@ -724,9 +727,10 @@ Gateway found.
   - owner_public (boolean) Wether or not the owner is public.
   - status_public (boolean) Wether or not the status is public.
   - attributes (object) A free form map of gateway attributes.
-  - location (object) (optional) The configured location of the gateway.
-    - lng (number) (optional) The longitude.
-    - lat (number) (optional) The latitude.
+  - antenna_location (object) (optional) The (gps) location of the gateway antenna.
+    - longitude (number) (optional) The longitude.
+    - latitude (number) (optional) The latitude.
+    - altitude (number) (optional) The altitude.
   - altitude (number) (optional) The altitude at which the gateway antenna is placed.
   - collaborators (array) (optional) A list of collaborators that have access to the gateway.
     - (object)
