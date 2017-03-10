@@ -10,7 +10,7 @@ var items = [{
   owner: 'TheThingsNetwork',
   repo: 'node-app-sdk',
   branch: 'master',
-  path: 'API.md',
+  path: 'docs/data.MQTT.md',
   target: '_content/applications/nodejs/api.md',
   yaml: {
     title: 'API Reference',
@@ -38,7 +38,7 @@ var items = [{
   }
 }, {
   owner: 'TheThingsNetwork',
-  repo: 'arduino-device-lib',
+  repo: 'arduino-node-lib',
   branch: 'master',
   path: 'docs/TheThingsNode.md',
   target: '_content/devices/node/api.md',

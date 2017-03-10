@@ -22,6 +22,7 @@ The integration will post data in the following format:
   "port": 1,                          // LoRaWAN FPort
   "counter": 2,                       // LoRaWAN frame counter
   "is_retry": false,                  // Is set to true if this message is a retry (you could also detect this from the counter)
+  "confirmed": false,                 // Is set to true if this message was a confirmed message
   "payload_raw": "AQIDBA==",          // Base64 encoded payload: [0x01, 0x02, 0x03, 0x04]
   "payload_fields": {},               // Object containing the results from the payload functions - left out when empty
   "metadata": {
@@ -40,13 +41,21 @@ The integration will post data in the following format:
         "rssi": -25,                     // Signal strength of the received message
         "snr": 5,                        // Signal to noise ratio of the received message
         "rf_chain": 0,                   // RF chain where the gateway received the message
+        "latitude": 52.1234,             // Latitude of the gateway reported in its status updates
+        "longitude": 6.1234,             // Longitude of the gateway
+        "altitude": 6                    // Altitude of the gateway
       },
       //...more if received by more gateways...
-    ]
+    ],
+    "latitude": 52.2345,              // Latitude of the device
+    "longitude": 6.2345,              // Longitude of the device
+    "altitude": 2                     // Altitude of the device
   },
   "downlink_url": "https://integrations.thethingsnetwork.org/ttn/api/v2/down/my-app-id/my-process-id?key=ttn-account-v2.secret"
 }
 ```
+
+*Note: Note: Some values may be omitted if they are `null`, `false`, `""` or `0`.*
 
 ## Downlink
 

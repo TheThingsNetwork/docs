@@ -1,10 +1,10 @@
 ---
 title: API Reference
 zindex: -1000
-source: 'https://github.com/TheThingsNetwork/node-app-sdk/blob/master/API.md'
+source: 'https://github.com/TheThingsNetwork/node-app-sdk/blob/master/docs/data.MQTT.md'
 ---
 
-# API Reference
+# API Reference: Data MQTT
 
 Require the TTN Client module:
 
@@ -12,7 +12,7 @@ Require the TTN Client module:
 var ttn = require('ttn');
 ```
 
-## Class: Client
+## Class: data.MQTT
 
 Creates an instance of the client:
 
