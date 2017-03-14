@@ -38,6 +38,16 @@ var items = [{
   }
 }, {
   owner: 'TheThingsNetwork',
+  repo: 'arduino-device-lib',
+  branch: 'master',
+  path: 'docs/CayenneLPP.md',
+  target: '_content/devices/arduino/api/cayennelpp.md',
+  yaml: {
+    title: 'CayenneLPP',
+    zindex: 800
+  }
+}, {
+  owner: 'TheThingsNetwork',
   repo: 'arduino-node-lib',
   branch: 'master',
   path: 'docs/TheThingsNode.md',
