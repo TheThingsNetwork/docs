@@ -591,8 +591,6 @@ A list of gateways.
     - id (string) The globally unique identifier of the gateway.
     - frequency_plan (string) The frequency plan the gateway is using.
     - frequency_plan_url (string, url) The URL of the frequency plan description.
-    - public_rights (array) The list of rights that are public on the gateway.
-      - (string)
     - location_public (boolean) Wether or not the location is public.
     - owner_public (boolean) Wether or not the owner is public.
     - status_public (boolean) Wether or not the status is public.
@@ -600,8 +598,7 @@ A list of gateways.
     - antenna_location (object) (optional) The (gps) location of the gateway antenna.
       - longitude (number) (optional) The longitude.
       - latitude (number) (optional) The latitude.
-      - altitude (number) (optional) The altitude.
-    - altitude (number) (optional) The altitude at which the gateway antenna is placed.
+      - altitude (integer) (optional) The altitude.
     - collaborators (array) (optional) A list of collaborators that have access to the gateway.
       - (object)
         - username (string) The username of the collaborator.
@@ -644,7 +641,7 @@ collaborator.
   - location (object) (optional)
     - longitude (number) (optional) The longitude.
     - latitude (number) (optional) The latitude.
-    - altitude (number) (optional) The altitude.
+    - altitude (integer) (optional) The altitude.
   - auto_update (boolean) (optional) Wether or not the gateway should automatically update itself.
 
 #### Response: 201
@@ -657,8 +654,6 @@ The gateway was succesfully registered.
   - id (string) The globally unique identifier of the gateway.
   - frequency_plan (string) The frequency plan the gateway is using.
   - frequency_plan_url (string, url) The URL of the frequency plan description.
-  - public_rights (array) The list of rights that are public on the gateway.
-    - (string)
   - location_public (boolean) Wether or not the location is public.
   - owner_public (boolean) Wether or not the owner is public.
   - status_public (boolean) Wether or not the status is public.
@@ -666,8 +661,7 @@ The gateway was succesfully registered.
   - antenna_location (object) (optional) The (gps) location of the gateway antenna.
     - longitude (number) (optional) The longitude.
     - latitude (number) (optional) The latitude.
-    - altitude (number) (optional) The altitude.
-  - altitude (number) (optional) The altitude at which the gateway antenna is placed.
+    - altitude (integer) (optional) The altitude.
   - collaborators (array) (optional) A list of collaborators that have access to the gateway.
     - (object)
       - username (string) The username of the collaborator.
@@ -721,8 +715,6 @@ Gateway found.
   - id (string) The globally unique identifier of the gateway.
   - frequency_plan (string) The frequency plan the gateway is using.
   - frequency_plan_url (string, url) The URL of the frequency plan description.
-  - public_rights (array) The list of rights that are public on the gateway.
-    - (string)
   - location_public (boolean) Wether or not the location is public.
   - owner_public (boolean) Wether or not the owner is public.
   - status_public (boolean) Wether or not the status is public.
@@ -730,8 +722,7 @@ Gateway found.
   - antenna_location (object) (optional) The (gps) location of the gateway antenna.
     - longitude (number) (optional) The longitude.
     - latitude (number) (optional) The latitude.
-    - altitude (number) (optional) The altitude.
-  - altitude (number) (optional) The altitude at which the gateway antenna is placed.
+    - altitude (integer) (optional) The altitude.
   - collaborators (array) (optional) A list of collaborators that have access to the gateway.
     - (object)
       - username (string) The username of the collaborator.
