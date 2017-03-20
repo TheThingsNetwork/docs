@@ -41,7 +41,7 @@ The meaning of rights returned here are:
 The presence of these rights tells the MQTT plugin what type of messages allow
 the client to see or send.
 
-> Important Note: due to the limited right management of most MQTT implementations, make
+> Important Note: due to the limited right management of our MQTT  auhtentication implementation, make
 > sure to always return either both rights or none, only returning one will have
 > the same result as returning no rights.
 
