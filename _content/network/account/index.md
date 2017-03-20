@@ -13,3 +13,6 @@ The Account Server manages the [ACL](https://en.wikipedia.org/wiki/Access_contro
 This guide will inform you about the [access](authentication.md) and [use](api.md) the Account Server API.
 
 The endpoint for The Things Network Account Servers is currently `https://account.thethingsnetwork.org`.
+
+You can run your own network by implementing the relevant enpoint of the account
+server [yourself](implement.md).
