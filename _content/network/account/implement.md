@@ -1,3 +1,7 @@
+---
+title: Implementing Your Own
+---
+
 # Implementing you own Account Server for application management
 
 To implement your own account server, you need to implement a couple of things:
