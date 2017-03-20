@@ -29,7 +29,7 @@
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2017-03-14T12:33:02+00:00" />
+<meta property="article:published_time" content="2017-03-20T12:06:59+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
@@ -38,7 +38,7 @@
 "@type": "BlogPosting",
 "headline": "API Reference",
 "image": "https://www.thethingsnetwork.org/docs/assets/images/og-image.png",
-"datePublished": "2017-03-14T12:33:02+00:00",
+"datePublished": "2017-03-20T12:06:59+00:00",
 "description": "The Things Network Account Server API, version 2.0.0",
 "publisher": {"@type": "Organization",
 "logo": {"@type": "ImageObject",
@@ -122,6 +122,8 @@
                 <li class=""><a href="/docs/network/account/">Account Server</a>
             <ul>
                 <li class=""><a href="/docs/network/account/authentication.html">Authentication</a>
+                </li>
+                <li class=""><a href="/docs/network/account/implement.html">Implementing Your Own</a>
                 </li>
                 <li class="active"><a href="/docs/network/account/api.html">API Reference</a>
                 </li>
@@ -1153,11 +1155,6 @@ collaborator.</p>
           <li>id (string) The globally unique identifier of the gateway.</li>
           <li>frequency_plan (string) The frequency plan the gateway is using.</li>
           <li>frequency_plan_url (string, url) The URL of the frequency plan description.</li>
-          <li>public_rights (array) The list of rights that are public on the gateway.
-            <ul>
-              <li>(string)</li>
-            </ul>
-          </li>
           <li>location_public (boolean) Wether or not the location is public.</li>
           <li>owner_public (boolean) Wether or not the owner is public.</li>
           <li>status_public (boolean) Wether or not the status is public.</li>
@@ -1166,10 +1163,9 @@ collaborator.</p>
             <ul>
               <li>longitude (number) (optional) The longitude.</li>
               <li>latitude (number) (optional) The latitude.</li>
-              <li>altitude (number) (optional) The altitude.</li>
+              <li>altitude (integer) (optional) The altitude.</li>
             </ul>
           </li>
-          <li>altitude (number) (optional) The altitude at which the gateway antenna is placed.</li>
           <li>collaborators (array) (optional) A list of collaborators that have access to the gateway.
             <ul>
               <li>(object)
@@ -1249,7 +1245,7 @@ collaborator.</p>
         <ul>
           <li>longitude (number) (optional) The longitude.</li>
           <li>latitude (number) (optional) The latitude.</li>
-          <li>altitude (number) (optional) The altitude.</li>
+          <li>altitude (integer) (optional) The altitude.</li>
         </ul>
       </li>
       <li>auto_update (boolean) (optional) Wether or not the gateway should automatically update itself.</li>
@@ -1265,11 +1261,6 @@ collaborator.</p>
       <li>id (string) The globally unique identifier of the gateway.</li>
       <li>frequency_plan (string) The frequency plan the gateway is using.</li>
       <li>frequency_plan_url (string, url) The URL of the frequency plan description.</li>
-      <li>public_rights (array) The list of rights that are public on the gateway.
-        <ul>
-          <li>(string)</li>
-        </ul>
-      </li>
       <li>location_public (boolean) Wether or not the location is public.</li>
       <li>owner_public (boolean) Wether or not the owner is public.</li>
       <li>status_public (boolean) Wether or not the status is public.</li>
@@ -1278,10 +1269,9 @@ collaborator.</p>
         <ul>
           <li>longitude (number) (optional) The longitude.</li>
           <li>latitude (number) (optional) The latitude.</li>
-          <li>altitude (number) (optional) The altitude.</li>
+          <li>altitude (integer) (optional) The altitude.</li>
         </ul>
       </li>
-      <li>altitude (number) (optional) The altitude at which the gateway antenna is placed.</li>
       <li>collaborators (array) (optional) A list of collaborators that have access to the gateway.
         <ul>
           <li>(object)
@@ -1370,11 +1360,6 @@ collaborator.</p>
       <li>id (string) The globally unique identifier of the gateway.</li>
       <li>frequency_plan (string) The frequency plan the gateway is using.</li>
       <li>frequency_plan_url (string, url) The URL of the frequency plan description.</li>
-      <li>public_rights (array) The list of rights that are public on the gateway.
-        <ul>
-          <li>(string)</li>
-        </ul>
-      </li>
       <li>location_public (boolean) Wether or not the location is public.</li>
       <li>owner_public (boolean) Wether or not the owner is public.</li>
       <li>status_public (boolean) Wether or not the status is public.</li>
@@ -1383,10 +1368,9 @@ collaborator.</p>
         <ul>
           <li>longitude (number) (optional) The longitude.</li>
           <li>latitude (number) (optional) The latitude.</li>
-          <li>altitude (number) (optional) The altitude.</li>
+          <li>altitude (integer) (optional) The altitude.</li>
         </ul>
       </li>
-      <li>altitude (number) (optional) The altitude at which the gateway antenna is placed.</li>
       <li>collaborators (array) (optional) A list of collaborators that have access to the gateway.
         <ul>
           <li>(object)
