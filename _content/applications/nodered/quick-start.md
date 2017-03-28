@@ -42,7 +42,7 @@ To get started you need to install Node-RED and add the TTN node, both via [NPM]
 
 ### The Things Network nodes
     
-1.  Add The Things Network nodes using the refactor tag:
+1.  Add The Things Network nodes:
 
     ```bash
     cd $HOME/.node-red

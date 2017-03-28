@@ -26,10 +26,10 @@ Let's install Node.js, create a Node.js project and install the TTN Client.
 
     > Just press return to accept the default answer to any question asked.
 
-3.  Install and save the [TTN Client](https://www.npmjs.com/package/ttn) as dependency using the refactor tag:
+3.  Install and save the [TTN Client](https://www.npmjs.com/package/ttn) as dependency:
 
     ```bash
-    npm install --save ttn@refactor
+    npm install --save ttn
     ```
 
 ## Connect
