@@ -24,7 +24,7 @@
 <meta property="og:site_name" content="The Things Network">
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png">
 <meta property="og:type" content="article">
-<meta property="article:published_time" content="2017-03-20T12:06:59+00:00">
+<meta property="article:published_time" content="2017-03-28T07:33:55+00:00">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@thethingsnetwrk">
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork">
@@ -33,7 +33,7 @@
 "@type": "BlogPosting",
 "headline": "API Reference",
 "image": "https://www.thethingsnetwork.org/docs/assets/images/og-image.png",
-"datePublished": "2017-03-20T12:06:59+00:00",
+"datePublished": "2017-03-28T07:33:55+00:00",
 "description": "API Reference",
 "publisher": {"@type": "Organization",
 "logo": {"@type": "ImageObject",
@@ -153,7 +153,8 @@
 <p>Control The Things Network from the command line.</p>
 <p><strong>Options</strong></p>
 <div class="highlighter-rouge">
-<pre class="highlight"><code>      --auth-server string         The address of the OAuth 2.0 server (default "https://account.thethingsnetwork.org")
+<pre class="highlight"><code>      --allow-insecure             Allow insecure fallback if TLS unavailable
+      --auth-server string         The address of the OAuth 2.0 server (default "https://account.thethingsnetwork.org")
       --config string              config file (default is $HOME/.ttnctl.yml)
       --data string                directory where ttnctl stores data (default is $HOME/.ttnctl)
       --discovery-address string   The address of the Discovery server (default "discover.thethingsnetwork.org:1900")
@@ -248,6 +249,11 @@ function Decoder(bytes, port) {
 <p>ttnctl pf set can be used to get or set payload functions of an application.
 The functions are read from the supplied file or from STDIN.</p>
 <p><strong>Usage:</strong> <code class="highlighter-rouge">ttnctl applications pf set [decoder/converter/validator/encoder] [file.js]</code></p>
+<p><strong>Options</strong></p>
+<div class="highlighter-rouge">
+<pre class="highlight"><code>      --skip-test   skip payload function test
+</code></pre>
+</div>
 <p><strong>Example</strong></p>
 <div class="highlighter-rouge">
 <pre class="highlight"><code>$ ttnctl applications pf set decoder
