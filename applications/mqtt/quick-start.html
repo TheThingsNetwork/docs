@@ -29,7 +29,7 @@
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2017-03-28T07:33:55+00:00" />
+<meta property="article:published_time" content="2017-04-03T08:21:03+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
@@ -38,7 +38,7 @@
 "@type": "BlogPosting",
 "headline": "Quick Start",
 "image": "https://www.thethingsnetwork.org/docs/assets/images/og-image.png",
-"datePublished": "2017-03-28T07:33:55+00:00",
+"datePublished": "2017-04-03T08:21:03+00:00",
 "description": "Quick Start This guide will walk you through subscribing to an application’s activations and messages as well as send a response to a specific device, using Eclipse Mosquitto’s CLIs to subscribe and to publish messages.",
 "publisher": {"@type": "Organization",
 "logo": {"@type": "ImageObject",
@@ -170,11 +170,11 @@
 </blockquote>
 <h2 id="setup">Setup</h2>
 <ul>
-  <li><a href="https://mosquitto.org/download/">Download</a> Mosquitto.</li>
+  <li>Install or <a href="https://mosquitto.org/download/">download</a> Mosquitto.</li>
   <li>Download and save the <a href="https://console.thethingsnetwork.org/mqtt-ca.pem">PEM encoded CA certificate</a> if you’d like to use TLS.</li>
 </ul>
 <h2 id="credentials">Credentials</h2>
-<p>On <a href="https://console.thethingsnetwork.org/">console.thethingsnetwork.org</a>, navigate to the application you’d like to use. Here you can find the <strong>Application ID</strong> and an <strong>Access Key</strong> needed to authenticate over MQTT. Under <strong>Handler Status</strong> you will also find the region the application is registered to. You will need the part that follows <code class="highlighter-rouge">ttn-handler-</code>, e.g. <code class="highlighter-rouge">eu</code>.</p>
+<p>On <a href="https://console.thethingsnetwork.org/">console.thethingsnetwork.org</a>, navigate to the application you’d like to use. Here you can find the <strong>Application ID</strong> and an <strong>Access Key</strong> needed to authenticate over MQTT. Under <strong>Handler</strong> you will also find the region the application is registered to. You will need the part that follows <code class="highlighter-rouge">ttn-handler-</code>, e.g. <code class="highlighter-rouge">eu</code>.</p>
 <h2 id="receive-activations">Receive Activations</h2>
 <p>Let’s listen for new device activations first.</p>
 <ol>
