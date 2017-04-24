@@ -118,7 +118,7 @@ You'll get the idea for the other way around.
 
 ### 3. Use words
 
-A [word](https://www.arduino.cc/en/Reference/Word) is 2 bytes, which already gets you a huge range of 65536 (256<sup>2</sup>). The [int](https://www.arduino.cc/en/Reference/Int) data type is a word and Arduino comes with [`highByte()`](https://www.arduino.cc/en/Reference/HighByte) and [`lowByte()`](https://www.arduino.cc/en/Reference/LowByte) to extract the left and right byte from a word. This makes it really easy to encode and decode.
+A [word](https://www.arduino.cc/en/Reference/Word) is 2 bytes (except on Due, Zero and similar boards where it is 4 bytes), which already gets you a huge range of 65536 (256<sup>2</sup>). The [int](https://www.arduino.cc/en/Reference/Int) data type is a word and Arduino comes with [`highByte()`](https://www.arduino.cc/en/Reference/HighByte) and [`lowByte()`](https://www.arduino.cc/en/Reference/LowByte) to extract the left and right byte from a word. This makes it really easy to encode and decode.
 
 Encode (Arduino):
 
