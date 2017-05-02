@@ -23,9 +23,7 @@ For more details about Kerlink firmware updates, head over to the [Wiki](https:/
 
 ### SSH-Serial
 
-Logon to the gateway by using the SSH protocol, on a Mac or Linux system just use the Terminal and `run ssh root@10.1.0.117` (substitute by the correct IP-address). On a Windows PC you can use [Putty](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html). Login with the user `root` and default password `root` (if using 2.x firmware) or `pdmk-0` followed by the last 7 characters of the gateway serial number (if using 3.x firmware).
-
-At your firewall system make sure the external IP-address used will map port `1700` to the internal IP-address of the gateway. This is needed when using NAT for internal IP-address translation.
+Logon to the gateway by using the SSH protocol, on a Mac or Linux system just use the Terminal and run `ssh root@10.1.0.117` (substitute by the correct IP-address). On a Windows PC you can use [Putty](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html). Login with the user `root` and default password `root` (if using 2.x firmware) or `pdmk-0` followed by the last 7 characters of the gateway serial number (if using 3.x firmware).
 
 Your are basically done now. For further checking continue to the next step. The following steps require some knowledge about how to use the command-line in Linux or Mac.
 
