@@ -25,8 +25,6 @@ For more details about Kerlink firmware updates, head over to the [Wiki](https:/
 
 Logon to the gateway by using the SSH protocol, on a Mac or Linux system just use the Terminal and run `ssh root@10.1.0.117` (substitute by the correct IP-address). On a Windows PC you can use [Putty](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html). Login with the user `root` and default password `root` (if using 2.x firmware) or `pdmk-0` followed by the last 7 characters of the gateway serial number (if using 3.x firmware).
 
-If the gateway is plugged into a network behind a router, which does NAT, remember to forward UDP port `1700` to the gateway's IP address.
-
 Your are basically done now. For further checking continue to the next step. The following steps require some knowledge about how to use the command-line in Linux or Mac.
 
 ### WIRGRID
