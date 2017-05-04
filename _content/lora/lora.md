@@ -12,6 +12,10 @@ What makes LoRa special is the long range that the signal can travel and still b
 
 In information theory we have the [Shannon-Hartley theorem](https://en.wikipedia.org/wiki/Shannon%E2%80%93Hartley_theorem) that indicates what the maximum speed is at which you can communicate across a channel. When using radio it boils down to: the further you need to communicate, the slower you need to communicate. It is important to keep this in mind when using LoRa. By design LoRa uses a low data rate to make it possible for the signal to be received at a greater distance. The speed of LoRa can not at all be compared to WiFI or 3G. When using LoRa you are limited to sending a couple of bytes per minute. Think about a temperature sensor sending its value every 10 minutes. LoRa will never work for the transmission of video or photos. For more bandwidth it is recommended to switch to WiFi or 3G.
 
+A LoRa signal is normally transmitted in a channel of 125kHz, 250kHz or 500kHz wide. To encode data the signal is shifted around within this channel, create so-called "chirps". From there the name Chirp Spread Spectrum modulation for the technique that is used by LoRa.
+
 ## References
 * Semtech - http://www.semtech.com/
 * LoRa crash course by Thomas Telkamp - https://www.youtube.com/watch?v=T3dGLqZrjIQ
+* RN2483 command reference module
+* SX1276 datasheet
