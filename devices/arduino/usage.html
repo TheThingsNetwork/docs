@@ -29,7 +29,7 @@
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2017-05-03T16:37:17+00:00" />
+<meta property="article:published_time" content="2017-05-04T11:25:56+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
@@ -38,7 +38,7 @@
 "@type": "BlogPosting",
 "headline": "Library Usage",
 "image": "https://www.thethingsnetwork.org/docs/assets/images/og-image.png",
-"datePublished": "2017-05-03T16:37:17+00:00",
+"datePublished": "2017-05-04T11:25:56+00:00",
 "description": "Library Usage Here’s how you include and use The Things Network library. Also have a look at the examples bundled with the library. You can find them in the Arduino IDE under File &gt; Examples &gt; TheThingsNetwork.",
 "publisher": {"@type": "Organization",
 "logo": {"@type": "ImageObject",
@@ -192,8 +192,8 @@
 </span><span class="p">}</span>
 </code></pre>
 </div>
-<p>The actual streams you’d pass to the constructor depend on the board you use and the Serial Port you connected a LoRaWAN module to. For The Things Uno and Node use the Serial Ports and baud rates shown here.</p>
-<p>The third argument for the constructor is a constant to set the frequency plan your device operators on. Replace <code class="highlighter-rouge">REPLACE_ME</code> with either <code class="highlighter-rouge">TTN_FP_EU868</code> or <code class="highlighter-rouge">TTN_FP_US915</code>.</p>
+<p>The actual streams you’d pass to the constructor depend on the board you use and the Serial Port you connected a LoRaWAN module to. For The Things Uno and Node use the Serial Ports and baud rates shown here. For other devices see the notes about serial ports at the end of this document.</p>
+<p>The third argument for the constructor is a constant to set the frequency plan your device operates on. Replace <code class="highlighter-rouge">REPLACE_ME</code> with either <code class="highlighter-rouge">TTN_FP_EU868</code> or <code class="highlighter-rouge">TTN_FP_US915</code>.</p>
 <h2 id="activate">Activate</h2>
 <p>In the <a href="https://www.arduino.cc/en/Reference/setup"><code class="highlighter-rouge">setup()</code></a> function, after initializing the library, we have to activate the device.</p>
 <p>There are two ways to activate your device. By default your device is registered to use OTAA. You can also personalise a device to use ABP.</p>
@@ -292,6 +292,71 @@
   </li>
 </ol>
 <p>Also see <strong>File &gt; Examples &gt; TheThingsNetwork &gt; <a href="https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/Receive/Receive.ino">Receive</a></strong>.</p>
+<h1 id="notes">Notes</h1>
+<h2 id="serial-ports">Serial ports</h2>
+<p>The RN2483 and RN2903 make use of a serial interface to communicate with your device’s main processor. Serial interfaces are similar to the RS232 serial port on older computers. The most microcontrollers have hardware Universal Asynchronous Receiver/Transmitters (UARTs) or also called HardwareSerial ports. Serial communication is offloaded to these UARTs so that the main processor does not have to waste time on this slow task. A UART can only support one serial interface at a time, and most processors only have one or two UARTs. Therefore if you already used the available UARTs to communicate with, for example, your computer and a GPS, you do not have any left for the RN2483/RN2903.</p>
+<p>When you run out of UARTs, you can still use serial communication handled in software. In this case it is not offloaded to dedicated hardware, and the main processor needs to handle the communication. This is called Software Serial. Depending on how the software serial is implemented, you can have as many as you want, as long as you have free GPIO pins on your device. Note that not all GPIO pins support all types of software serial. Examples of software serial is the default Arduino <a href="https://www.arduino.cc/en/Reference/SoftwareSerial">SoftwareSerial</a> library, and the <a href="https://www.pjrc.com/teensy/td_libs_AltSoftSerial.html">AltSoftSerial</a> library.</p>
+<p>Serial communication uses high and low voltages to signal ones and zeros. The RN2483/RN2903 runs on 3.3V, which means a one is represented as a 3.3V level on the communication line, and a 0 is a 0V level on the line. Because the most Arduinos run at 5V, they expect a one to be represented by a 5V level on the line. Therefore when and Arduino sees a 3.3V signal, it causes an ambiguity. If you are lucky it works fine, but it is out of specification. To connect an RN2483/RN2903 to a 5V Arduino, you will need to include a level shifter.</p>
+<h3 id="stream-objects">Stream objects</h3>
+<p>In the Arduino world serial ports are abstracted as stream objects. All stream objects have the same functions, even if lower down they use different physical connections (UART, SoftwareSerial, AltSoftSerial). This library does not care what you use, as long as it extends the Stream object.</p>
+<p>The Stream objects need to be initialized at the correct baud rates at the start of your <code class="highlighter-rouge">setup()</code> function. See <a href="https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples">our examples</a> for more details. For example:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>  loraSerial.begin(57600);
+  debugSerial.begin(9600);
+</code></pre>
+</div>
+<h3 id="thethingsuno">TheThingsUno</h3>
+<p>TheThingsUno is basically the same as an Arduino Leonardo with Serial1 connected to the RN2483/RN2903. Therefore if you use an Arduino Leonardo, and connect your RN2483/RN2903 to the Serial1 pins, you can use the same configuration than for TheThingsUno.</p>
+<p>At the top of your sketch use</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>#define loraSerial Serial1
+#define debugSerial Serial
+</code></pre>
+</div>
+<p>And in your <code class="highlighter-rouge">setup()</code> function use</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>void setup()
+{
+  loraSerial.begin(57600);
+  debugSerial.begin(9600);
+  ...
+}
+</code></pre>
+</div>
+<h3 id="sodaq-one">SODAQ One</h3>
+<p>At the top of your sketch use</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>#define loraSerial Serial1
+#define debugSerial SerialUSB
+</code></pre>
+</div>
+<p>And in your <code class="highlighter-rouge">setup()</code> function use</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>void setup()
+{
+  loraSerial.begin(57600);
+  debugSerial.begin(9600);
+  ...
+}
+</code></pre>
+</div>
+<h3 id="arduino-uno-arduino-nano-or-other-devices-using-softwareserial">Arduino Uno, Arduino Nano or other devices using SoftwareSerial</h3>
+<p>The Arduino Uno only has one hardware serial port which is used to communicate over USB to the computer. When connecting an RN2483/RN2903 to the Arduino Uno, one has to make use of SoftwareSerial. If you connected the RN2483/RN2903 to the Arduino using the same pinout as <a href="https://www.thethingsnetwork.org/forum/t/how-to-build-your-first-ttn-node-arduino-rn2483/1574">described on the forum</a>, you can make use of the following code.</p>
+<p>At the top of your sketch use</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>#include &lt;SoftwareSerial.h&gt;
+
+#define debugSerial Serial
+
+SoftwareSerial loraSerial(10, 11); // RX, TX
+</code></pre>
+</div>
+<p>And in your <code class="highlighter-rouge">setup()</code> function use</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>void setup()
+{
+  loraSerial.begin(9600);
+  debugSerial.begin(9600);
+  ...
+}
+</code></pre>
+</div>
+<p>SoftwareSerial does not operate correctly at high baud rates. We normally use it at 9600 baud. Because the RN2483 and RN2903 normally operates at 57600 baud, we need to switch it to 9600 baud so that we can communicate with it using 9600 baud. This is done automatically inside TheThingsNetwork Arduino library. Changing of the baud rate of the RN2483/RN2903 is not always very reliable. Power cycling the device, or a reset, might be necessary.</p>
+<p>If you connected the RN2483/RN2903 to different pins on the Arduino, you can change the line <code class="highlighter-rouge">SoftwareSerial loraSerial(10, 11); // RX, TX</code> to specify the correct RX and TX pins (from the Arduino’s perspective).</p>
+<p>When using the <a href="https://github.com/PaulStoffregen/AltSoftSerial">AltSoftSerial</a> library the pins you can use for software serial is fixed according to which device you use. You therefore do not have a choice which pins to use, and you may lose some other functionality, but this library seems to be more stable than the default SoftwareSerial library. Both are however usable with TheThingsNetwork library.</p>
           </div>
         </div>
       </div>
