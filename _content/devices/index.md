@@ -14,7 +14,7 @@ zindex: 1000
 
 # Devices
 
-The Things Network is the first open source, decentralized infrastructure for the Internet of Things. The community edition is free for fair use. Learn how to connect your Thing!
+The Things Network is the first open source, decentralized infrastructure for the Internet of Things. The community edition is free for fair use. Learn how to connect your Things!
 
 Before your device can communicate via The Things Network, you will need to [register](registration.md) it.
 
