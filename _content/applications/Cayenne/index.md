@@ -1,24 +1,28 @@
 ---
 title: Cayenne Integration
 section: Integrations
+source: 'https://github.com/TheThingsNetwork/docs/blob/master/_content/applications/Cayenne/index.md'
 ---
 
 
-# Cayenne Integration
-<img src="logo-cayenne.png" width="200">
+# myDevices Cayenne
+<!-- <img src="logo-cayenne.png" width="200"> -->
 
-Cayenne myDevices allows you to quickly design, prototype, and visualize IoT solutions. You can use Cayenne as a tool to visualize real-time and historical data, sent over The Things Network.
+[myDevices Cayenne](https://mydevices.com/) allows you to quickly design, prototype, and visualize IoT solutions. You can use Cayenne as a tool to visualize real-time and historical data, sent over The Things Network.
 
 
 ## Change the payload to Cayenne LPP
 
 In order to display your content in the Cayenne dashboard, the payload has to be encoded with the Cayenne Lower Power Protocol (LPP)
 
-> We need to send extra data for Cayenne to understand what data comes into their dashboard. Before we send the sensor data, we need to define what data is sent. The first byte is the so-called **Channel ID**. The sencond bytes explains the **Data Type** (so Cayenne knows that the data contains temperature values). The latter bytes contain the actualy sensor values.
-Please have a look [here](https://mydevices.com/cayenne/docs/#lora-cayenne-low-power-payload) to find more information on the Cayenne Lower Power Protocol (LPP).
+> We need to send extra data for Cayenne to understand what data comes into their dashboard. Before we send the sensor data, we need to define what data is sent. The first byte is the so-called `Channel ID`. The sencond bytes explains the `Data Type` (so Cayenne knows that the data contains temperature values). The latter bytes contain the actualy sensor values.
+Please have a look [**here**](https://mydevices.com/cayenne/docs/#lora-cayenne-low-power-payload) to find more information on the **Cayenne Lower Power Protocol (LPP)**.
  
- 
-Find **the documentation about how to alter your Arduino sketch to encode data with the Cayenne Lower Power Protocol** (LPP) [here](https://www.thethingsnetwork.org/docs/devices/arduino/api/cayennelpp.html). Examle code: 
+
+###CayenneLPP Class
+Documentation about altering your Arduino Sketch to encode data with `CayenneLPP` can be found [here](https://www.thethingsnetwork.org/docs/devices/arduino/api/cayennelpp.html).
+
+Examle code: 
 
 ```js
 TheThingsNetwork ttn(loraSerial, debugSerial, freqPlan);
@@ -32,8 +36,10 @@ lpp.addGPS(3, 52.37365, 4.88650, 2);
 ttn.sendBytes(lpp.getBuffer(), lpp.getSize());
 ```
 
-After encoding data with the Cayenne Lower Power Protocol, have a look at the console to change the **Payload Formats**
- 
+### Set the `Payload Format` in the Console
+
+After encoding data with CayenneLPP, have a look at the console to change the **Payload Formats**
+
 * Go to your Application in the [**The Things Network Console**](https://console.thethingsnetwork.org/) and click **Payload Formats**
 * Select in the dropdown menu **Cayenne LPP** instead of **Custom**
 
@@ -51,16 +57,17 @@ After encoding data with the Cayenne Lower Power Protocol, have a look at the co
 
 ## Add the myDevices Cayenne integration in the Console
 
-1.  Go to your application in the [**Console**](https://console.thethingsnetwork.org/applications) and add the myDevices integration via **Add Integration**
+1.  Go to your application in the [**Console**](https://console.thethingsnetwork.org/applications) and add the Cayenne integration via **Add Integration**
 	![myDevices-dashboard](integrations.png) 
 
-2.  You can find your **Process ID** in the URL of the myDevices dashboard, starting after `/lora/`
+2.  You can find your **Process ID** in the URL of the myDevices Cayenne dashboard, starting after `/lora/`
 3.  Add the integration
 
 
 
+
 ## Build your Cayenne dashboard
-Click the device on the left side of your dashboard in Cayenne and you data is should be shown right away. After a bit of editing you can make quite some fancy stuff:
+Click the device on the left side of your dashboard in Cayenne and your data is shown right away. After a bit of editing you can make quite some fancy stuff.
 
 ![myDevices-dashboard](mydevices-data.png) 
 
