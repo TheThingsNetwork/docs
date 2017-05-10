@@ -4,16 +4,14 @@ title: Gateway Registration
 
 # Gateway Registration
 
-The are mainly two types of packet forwarders that can be running on your gateway, namely [TTN Packet Forwarder](https://github.com/TheThingsNetwork/packet_forwarder/tree/master) (formerly known as the Gateway Connector) or [UDP Packet Forwarder](https://github.com/TheThingsNetwork/packet_forwarder/tree/legacy) (also known as the Semtech Packet Forwarder or Poly Packet Forwarder). 
+There are mainly two types of packet forwarders that can be running on your gateway, namely [TTN Packet Forwarder](https://github.com/TheThingsNetwork/packet_forwarder/tree/master) or [UDP Packet Forwarder](https://github.com/TheThingsNetwork/packet_forwarder/tree/legacy) (also known as the Semtech Packet Forwarder or Poly Packet Forwarder). 
 
 Please read this guide carefully to understand how to register your gateway with The Things Network.
 
 > If you have an off-the-shelf gateway with the default software, it most likely uses the UDP Packet Forwarder. Follow the steps for connecting using the [UDP Packet Forwarder](#via-udp-packet-forwarder).
 
 ## Via TTN Packet Forwarder
-The Things Gateway uses this packet forwarder and we also have support for Kerlink, Multitech and other Linux based gateways. This is the preferred packet forwarder to use with The Things Network. Firmware and guides for other gateways will need to be updated.
-
-> Make sure your gateway runs [The Things Network Packet Forwarder](https://github.com/TheThingsNetwork/packet_forwarder/tree/master) before you continue.
+The Things Network Packet Forwarder uses an authenticated and encrypted TCP connection to our network server and has support for Kerlink, Multitech and other Linux based gateways. This is the preferred packet forwarder to use with The Things Network.
 
 ### Start with Registration
 You start by [registering your gateway](https://console.thethingsnetwork.org/gateways/register) in the Console.
@@ -21,7 +19,7 @@ You start by [registering your gateway](https://console.thethingsnetwork.org/gat
 ![Registration for Gateway Connector](registration-connector.png)
 
 - For **Protocol**, leave **gateway connector** selected.
-- For **Gateway ID**, choose a unique ID of lower case, alphanumeric characters and nonconsecutive `-` and `_`. **DO NOT** use an EUI.
+- For **Gateway ID**, choose a unique ID of lower case, alphanumeric characters and nonconsecutive `-` and `_`.
 - Select the frequency plan ([determined by your region](https://www.thethingsnetwork.org/wiki/LoRaWAN/Frequencies/By-Country)) the gateway uses.
 - Click to drop the pin at the exact location (pan and zoom in before you drop).
 - Click **Register Gateway** to finish.
@@ -31,7 +29,9 @@ You start by [registering your gateway](https://console.thethingsnetwork.org/gat
 > After registering the gateway, select **Settings** from the top right menu on the Gateway screen so set the gateway description, location altitude, privacy settings and other information.
 
 ### Configure gateway with TTN Packet Forwarder
-You then configure the gateway with the ID and Key from the registration. This allows you to manage most of the gateway's configuration from the Console.
+
+
+Make sure your gateway runs [The Things Network Packet Forwarder](https://github.com/TheThingsNetwork/packet_forwarder/tree/master) before you continue. Then configure it with the ID and Key from the registration on the console. This allows you to manage most of the gateway's configuration from the Console, without having to log on to the gateway.
 
 > If your gateway does not have a GPS module we advise you not to configure a manual location in the gateway. Do this in the Console instead so that you can change it without accessing the gateway.
 
