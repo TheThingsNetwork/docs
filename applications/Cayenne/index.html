@@ -17,15 +17,15 @@
       if (document.location.href.substr(0, document.location.href.length - document.location.hash.length) !== canonical) {
         window.location.replace(canonical);
       }
-    })('https://www.thethingsnetwork.org/docs/applications/integrations.html');
+    })('https://www.thethingsnetwork.org/docs/applications/Cayenne/');
     </script>
     <!-- Begin Jekyll SEO tag v2.1.0 -->
-<title>Overview - The Things Network</title>
-<meta property="og:title" content="Overview" />
-<meta name="description" content="Integrations" />
-<meta property="og:description" content="Integrations" />
-<link rel="canonical" href="https://www.thethingsnetwork.org/docs/applications/integrations.html" />
-<meta property="og:url" content="https://www.thethingsnetwork.org/docs/applications/integrations.html" />
+<title>Cayenne Integration - The Things Network</title>
+<meta property="og:title" content="Cayenne Integration" />
+<meta name="description" content="Cayenne Integration" />
+<meta property="og:description" content="Cayenne Integration" />
+<link rel="canonical" href="https://www.thethingsnetwork.org/docs/applications/Cayenne/" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/applications/Cayenne/" />
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
@@ -36,14 +36,14 @@
 <script type="application/ld+json">
 {"@context": "http://schema.org",
 "@type": "BlogPosting",
-"headline": "Overview",
+"headline": "Cayenne Integration",
 "image": "https://www.thethingsnetwork.org/docs/assets/images/og-image.png",
 "datePublished": "2017-05-10T08:55:07+00:00",
-"description": "Integrations",
+"description": "Cayenne Integration",
 "publisher": {"@type": "Organization",
 "logo": {"@type": "ImageObject",
 "url": "https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},
-"url": "https://www.thethingsnetwork.org/docs/applications/integrations.html"}</script>
+"url": "https://www.thethingsnetwork.org/docs/applications/Cayenne/"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-152.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -93,7 +93,7 @@
         </ul>
       </div>
       <div class="hidden-xs col-sm-3 text-right">
-        <a href="https://github.com/TheThingsNetwork/docs/edit/master/_content/applications/integrations.md" class="page-edit" data-proofer-ignore><i class="fa fa-github"></i> Edit <strong>integrations.md</strong></a>
+        <a href="https://github.com/TheThingsNetwork/docs/edit/master/_content/applications/cayenne/index.md" class="page-edit" data-proofer-ignore><i class="fa fa-github"></i> Edit <strong>index.md</strong></a>
       </div>
     </div>
     <div class="row">
@@ -137,9 +137,9 @@
             </li>
             <li class="page-side-nav-section"><span>Integrations</span>
             <ul>
-                <li class="active"><a href="/docs/applications/integrations.html">Overview</a>
+                <li class=""><a href="/docs/applications/integrations.html">Overview</a>
                 </li>
-                <li class=""><a href="/docs/applications/Cayenne/">Cayenne Integration</a>
+                <li class="active"><a href="/docs/applications/Cayenne/">Cayenne Integration</a>
                 </li>
                 <li class=""><a href="/docs/applications/http/">HTTP Integration</a>
                 </li>
@@ -159,32 +159,55 @@
       <div class="col-sm-7">
         <div class="panel">
           <div class="panel-body page-content">
-            <h1 id="integrations">Integrations</h1>
-<p>Integrations are the easiest way to connect your devices to an applications. An integration uses the same APIs or SDKs an application could use directly. Together with the private or public APIs of the platform it ties up the application running on the platform with The Things Network:</p>
-<p><img src="options-integration.png" alt="Platform Integration" /></p>
-<p>Platform Integrations completely you from any code and even The Things Network Console or CLI. A good example is an integration for Azure IoT Hub or Amazon IoT, where the user could manage his application and devices from there, while the integration takes care of synchronizing with The Things Network.</p>
-<h2 id="messaging-integration">Messaging Integration</h2>
-<p>A common integration is to forward messages to some webhook or other messaging endpoint (uplink messages). For these situations we provide a set of messaging integrations which act as a bridge between the Handler Data API and any endpoint you configure. It also provides you with an endpoint to send messages back to devices (downlink messages). Easy to configure and use is the <a href="http/">HTTP Integration</a>.</p>
-<p><img src="options-http.png" alt="HTTP Integration" /></p>
-<p>For some messaging integrations we provide a configuration template. Instead of manually configuring the HTTP Integration, we ask you only for variables like a platform key and generate the configuration for you.</p>
-<h2 id="add-an-integration">Add an Integration</h2>
+            <h1 id="cayenne-integration">Cayenne Integration</h1>
+<p>Cayenne myDevicesallows you to quickly design, prototype, and visualize IoT solutions. You can use Cayenne to build a nice-looking dashboard that showcases your data nicely.</p>
+<h1 id="start-building-the-dashboard">Start building the dashboard</h1>
+<h2 id="change-the-payload-format">Change the payload format</h2>
+<p>In order to display your content in the Cayenne dashboard, the format of the payload has to be adapted.</p>
+<blockquote>
+  <p>We need to send extra data for Cayenne to understand what data comes into their dashboard. Before we send the sensor data, we need to define what data is sent. The first byte is the so-called <strong>Channel ID</strong>. The sencond bytes explains the <strong>Data Type</strong> (so Cayenne knows that the data contains temperature values). The latter bytes contain the actualy sensor values.
+Please have a look <a href="https://mydevices.com/cayenne/docs/#lora-cayenne-low-power-payload">here</a> to find more information on the Cayenne Lower Power Protocol (LPP).</p>
+</blockquote>
+<p>Find <strong>the documentation about how to alter your Arduino sketch to encode data with the Cayenne Lower Power Protocol</strong> (LPP) <a href="https://www.thethingsnetwork.org/docs/devices/arduino/api/cayennelpp.html">here</a>. Examle code:</p>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">TheThingsNetwork</span> <span class="nx">ttn</span><span class="p">(</span><span class="nx">loraSerial</span><span class="p">,</span> <span class="nx">debugSerial</span><span class="p">,</span> <span class="nx">freqPlan</span><span class="p">);</span>
+<span class="nx">CayenneLPP</span> <span class="nx">lpp</span><span class="p">(</span><span class="mi">51</span><span class="p">);</span>
+
+<span class="nx">lpp</span><span class="p">.</span><span class="nx">reset</span><span class="p">();</span>
+<span class="nx">lpp</span><span class="p">.</span><span class="nx">addTemperature</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">22.5</span><span class="p">);</span>
+<span class="nx">lpp</span><span class="p">.</span><span class="nx">addBarometricPressure</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mf">1073.21</span><span class="p">);</span>
+<span class="nx">lpp</span><span class="p">.</span><span class="nx">addGPS</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mf">52.37365</span><span class="p">,</span> <span class="mf">4.88650</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+
+<span class="nx">ttn</span><span class="p">.</span><span class="nx">sendBytes</span><span class="p">(</span><span class="nx">lpp</span><span class="p">.</span><span class="nx">getBuffer</span><span class="p">(),</span> <span class="nx">lpp</span><span class="p">.</span><span class="nx">getSize</span><span class="p">());</span>
+</code></pre>
+</div>
+<p>After encoding data with the Cayenne Lower Power Protocol, have a look at the console to change the <strong>Payload Formats</strong></p>
+<ul>
+  <li>Go to your Application in the <a href="https://console.thethingsnetwork.org/"><strong>The Things Network Console</strong></a> and click <strong>Payload Formats</strong></li>
+  <li>Select in the dropdown menu <strong>Cayenne LPP</strong> instead of <strong>Custom</strong></li>
+</ul>
+<h2 id="setup-your-mydevices-account">Setup your myDevices account</h2>
 <ol>
-  <li>Go the application in the Console.</li>
-  <li>Select <strong>Integrations</strong> from the top-right menu.</li>
-  <li>Click the <strong>add integration</strong> link.</li>
+  <li>Create an account on <a href="https://mydevices.com/">myDevices</a></li>
   <li>
-    <p>Click to select the integration you’d like to add:</p>
-    <p><img src="integration-select.png" alt="Select" /></p>
+    <p>Log-in and click on <strong>LoRa</strong></p>
+    <p><img src="myDevices-lora.png" width="130" /></p>
   </li>
-  <li>
-    <p>Configure the integration (if there are any settings):</p>
-    <p><img src="integration-config.png" alt="Config" /></p>
-    <blockquote>
-      <p>Depending on the integration, there might be more options to set. See the guide for the integration for details.</p>
-    </blockquote>
-  </li>
-  <li>Click <strong>Create integration</strong>.</li>
+  <li>Select <strong>The Things Network</strong> at the bottom of the left menu bar, click on <strong>Cayenne LPP</strong> and fill in your <strong>DevEUI</strong> of your device (which you can find in the <a href="https://console.thethingsnetwork.org/applications"><strong>Console</strong></a>)
+<img src="cayenne-add-device.png" alt="add-device" /></li>
 </ol>
+<h2 id="add-the-mydevices-cayenne-integration-in-the-console">Add the myDevices Cayenne integration in the Console</h2>
+<ol>
+  <li>
+    <p>Go to your application in the <a href="https://console.thethingsnetwork.org/applications"><strong>Console</strong></a> and add the myDevices integration via <strong>Add Integration</strong>
+<img src="integrations.png" alt="myDevices-dashboard" /></p>
+  </li>
+  <li>You can find your <strong>Process ID</strong> in the URL of the myDevices dashboard, starting after <code class="highlighter-rouge">/lora/</code></li>
+  <li>Add the integration</li>
+</ol>
+<h2 id="build-your-cayenne-dashboard">Build your Cayenne dashboard</h2>
+<p>Click the device on the left side of your dashboard in Cayenne and you data is should be shown right away. After a bit of editing you can make quite some fancy stuff:</p>
+<p><img src="mydevices-data.png" alt="myDevices-dashboard" /></p>
+<p>🎉 Now impress some folks with this amazing dashboard you built on Twitter <em>@thethingsntwrk @CayenneIoT</em></p>
           </div>
         </div>
       </div>
