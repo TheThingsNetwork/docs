@@ -5,21 +5,21 @@ section: Integrations
 
 
 # Cayenne Integration
+<img src="logo-cayenne.png" width="200">
 
-Cayenne myDevicesallows you to quickly design, prototype, and visualize IoT solutions. You can use Cayenne to build a nice-looking dashboard that showcases your data nicely.
+Cayenne myDevices allows you to quickly design, prototype, and visualize IoT solutions. You can use Cayenne as a tool to visualize real-time and historical data, sent over The Things Network.
 
 
-# Start building the dashboard
+## Change the payload to Cayenne LPP
 
-## Change the payload format 
-
-In order to display your content in the Cayenne dashboard, the format of the payload has to be adapted. 
+In order to display your content in the Cayenne dashboard, the payload has to be encoded with the Cayenne Lower Power Protocol (LPP)
 
 > We need to send extra data for Cayenne to understand what data comes into their dashboard. Before we send the sensor data, we need to define what data is sent. The first byte is the so-called **Channel ID**. The sencond bytes explains the **Data Type** (so Cayenne knows that the data contains temperature values). The latter bytes contain the actualy sensor values.
 Please have a look [here](https://mydevices.com/cayenne/docs/#lora-cayenne-low-power-payload) to find more information on the Cayenne Lower Power Protocol (LPP).
  
  
 Find **the documentation about how to alter your Arduino sketch to encode data with the Cayenne Lower Power Protocol** (LPP) [here](https://www.thethingsnetwork.org/docs/devices/arduino/api/cayennelpp.html). Examle code: 
+
 ```js
 TheThingsNetwork ttn(loraSerial, debugSerial, freqPlan);
 CayenneLPP lpp(51);
@@ -65,5 +65,5 @@ Click the device on the left side of your dashboard in Cayenne and you data is s
 ![myDevices-dashboard](mydevices-data.png) 
 
 
-🎉 Now impress some folks with this amazing dashboard you built on Twitter *@thethingsntwrk @CayenneIoT*
+🎉 Now impress some folks with this amazing dashboard you built on Twitter, using *@thethingsntwrk @CayenneIoT*
 
