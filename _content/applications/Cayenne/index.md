@@ -13,39 +13,37 @@ source: 'https://github.com/TheThingsNetwork/docs/blob/master/_content/applicati
 
 ## Change the payload to Cayenne LPP
 
-In order to display your content in the Cayenne dashboard, the payload has to be encoded with the Cayenne Lower Power Protocol (LPP)
+In order to display your content in the Cayenne dashboard, the payload has to be encoded with the Cayenne Low Power Payload (LPP)
 
-> We need to send extra data for Cayenne to understand what data comes into their dashboard. Before we send the sensor data, we need to define what data is sent. The first byte is the so-called `Channel ID`. The sencond bytes explains the `Data Type` (so Cayenne knows that the data contains temperature values). The latter bytes contain the actualy sensor values.
-Please have a look [**here**](https://mydevices.com/cayenne/docs/#lora-cayenne-low-power-payload) to find more information on the **Cayenne Lower Power Protocol (LPP)**.
- 
+> We need to send extra data for Cayenne to understand what data comes into their dashboard. Before we send the sensor data, we need to define what type of data it is. The first byte is the so-called `Channel ID`. The second byte explains the `Data Type`. The latter bytes contain the actual sensor values.
+Please have a look [**here**](https://mydevices.com/cayenne/docs/#lora-cayenne-low-power-payload) to find more information on the **Cayenne Low Power Payload (LPP)**.
 
-###CayenneLPP Class
+### CayenneLPP Class
 Documentation about altering your Arduino Sketch to encode data with `CayenneLPP` can be found [here](https://www.thethingsnetwork.org/docs/devices/arduino/api/cayennelpp.html).
 
-Examle code: 
+Example code: 
 
 ```js
 TheThingsNetwork ttn(loraSerial, debugSerial, freqPlan);
-CayenneLPP lpp(51);
+CayenneLPP lpp(51);                    // create a buffer of 51 bytes to store the payload
 
-lpp.reset();
-lpp.addTemperature(1, 22.5);
-lpp.addBarometricPressure(2, 1073.21);
-lpp.addGPS(3, 52.37365, 4.88650, 2);
+lpp.reset();                           // clear the buffer
+lpp.addTemperature(1, 22.5);           // on channel 1, add temperature, value 22.5°C
+lpp.addBarometricPressure(2, 1073.21); // channel 2, pressure
+lpp.addGPS(3, 52.37365, 4.88650, 2);   // channel 3, coordinates
 
 ttn.sendBytes(lpp.getBuffer(), lpp.getSize());
 ```
 
-### Set the `Payload Format` in the Console
+### Set the Payload Format in the Console
 
 After encoding data with CayenneLPP, have a look at the console to change the **Payload Formats**
 
-* Go to your Application in the [**The Things Network Console**](https://console.thethingsnetwork.org/) and click **Payload Formats**
-* Select in the dropdown menu **Cayenne LPP** instead of **Custom**
+* Go to your Application in [**The Things Network Console**](https://console.thethingsnetwork.org/) and click **Payload Formats**
+* In the dropdown menu select **Cayenne LPP** instead of **Custom**
 
 
-
-## Setup your myDevices account
+## Set up your myDevices account
 
 1.  Create an account on [myDevices](https://mydevices.com/)
 2.  Log-in and click on **LoRa**
@@ -58,7 +56,7 @@ After encoding data with CayenneLPP, have a look at the console to change the **
 ## Add the myDevices Cayenne integration in the Console
 
 1.  Go to your application in the [**Console**](https://console.thethingsnetwork.org/applications) and add the Cayenne integration via **Add Integration**
-	![myDevices-dashboard](integrations.png) 
+ ![myDevices-dashboard](integrations.png) 
 
 2.  You can find your **Process ID** in the URL of the myDevices Cayenne dashboard, starting after `/lora/`
 3.  Add the integration
