@@ -21,7 +21,7 @@ Please have a look [**here**](https://mydevices.com/cayenne/docs/#lora-cayenne-l
 ### CayenneLPP Class
 Documentation about altering your Arduino Sketch to encode data with `CayenneLPP` can be found [here](https://www.thethingsnetwork.org/docs/devices/arduino/api/cayennelpp.html).
 
-Example code: 
+*Example code:*
 
 ```js
 TheThingsNetwork ttn(loraSerial, debugSerial, freqPlan);
