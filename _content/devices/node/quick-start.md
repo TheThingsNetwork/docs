@@ -8,7 +8,8 @@ This guides walks you through programming your The Things Node with your first s
 ## Setup Arduino IDE
 
 1.  Follow [Arduino / IDE Setup & Usage](../arduino/ide.md) to setup the IDE.
-2.  Follow SparkFun's [Installation Instructions](https://github.com/sparkfun/Arduino_Boards#installation-instructions) to add the additional board manager and install the **SparkFun AVR Boards**.
+2.  Download the `TheThingsNode` library via **Sketch > Include Library v Manage Libraries...**. Search for `TheThingsNode` in the search bar and install the library. 
+3.  Follow SparkFun's [Installation Instructions](https://github.com/sparkfun/Arduino_Boards#installation-instructions) to add the additional board manager and install the **SparkFun AVR Boards**.
 
 ## Connect your Device
 
@@ -116,7 +117,7 @@ The library also comes with an example demonstrating most of these APIs. Let's h
 
     ![OTAA Keys](../uno/keys-otaa.png)
 
-2.  In the Arduino IDE, select **File > Examples > TheThingsNetwork > [Node](https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/Node/Node.ino)**.
+2.  In the Arduino IDE, select **File > Examples > TheThingsNode > [Basic](https://github.com/TheThingsNetwork/arduino-node-lib/tree/master/examples/Basic)**.
 
     * Replace the lines following the comment **Set your AppEUI and AppKey** with the keys you copied from the Console.
     * Replace `REPLACE_ME` with either `TTN_FP_EU868` or `TTN_FP_US915` depending on the frequency plan of your device.
