@@ -29,7 +29,7 @@
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2017-05-14T14:46:22+00:00" />
+<meta property="article:published_time" content="2017-05-16T17:03:18+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
@@ -38,7 +38,7 @@
 "@type": "BlogPosting",
 "headline": "TheThingsNetwork",
 "image": "https://www.thethingsnetwork.org/docs/assets/images/og-image.png",
-"datePublished": "2017-05-14T14:46:22+00:00",
+"datePublished": "2017-05-16T17:03:18+00:00",
 "description": "API Reference",
 "publisher": {"@type": "Organization",
 "logo": {"@type": "ImageObject",
@@ -161,20 +161,20 @@
         <div class="panel">
           <div class="panel-body page-content">
             <h1 id="api-reference">API Reference</h1>
-<p>The <code class="highlighter-rouge">TheThingsNetwork</code> class enables Arduino devices with supported LoRa modules to communicate via The Things Network.</p>
+<p>The <code class="highlighter-rouge">TheThingsNetwork</code> class enables Arduino devices with supported LoRaWAN modules to communicate via The Things Network. Currently supported LoRaWAN modules are the Microchip RN2483 and the RN2903.</p>
 <h2 id="class-thethingsnetwork">Class: <code class="highlighter-rouge">TheThingsNetwork</code></h2>
-<p>Include and instantiate the TheThingsNetwork class. The constructor initialize the library with the Streams it should communicate with. It also sets the value of the spreading factor, the front-side Bus and the frequency plan.</p>
+<p>Include and instantiate the TheThingsNetwork class. The constructor initialize the library with the Streams it should communicate with. It also sets the value of the spreading factor, the frequency plan and the frequency sub-band.</p>
 <div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="cp">#include &lt;TheThingsNetwork.h&gt;
 </span>
 <span class="n">TheThingsNetwork</span> <span class="n">ttn</span><span class="p">(</span><span class="n">Stream</span><span class="o">&amp;</span> <span class="n">modemStream</span><span class="p">,</span> <span class="n">Stream</span><span class="o">&amp;</span> <span class="n">debugStream</span><span class="p">,</span> <span class="n">fp_ttn_t</span> <span class="n">fp</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">sf</span> <span class="o">=</span> <span class="mi">7</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">fsb</span> <span class="o">=</span> <span class="mi">2</span><span class="p">);</span>
 </code></pre>
 </div>
 <ul>
-  <li><code class="highlighter-rouge">Stream&amp; modemStream</code>: Stream for the LoRa modem (for The Things Node/Uno use <code class="highlighter-rouge">Serial1</code> and data rate <code class="highlighter-rouge">57600</code>).</li>
-  <li><code class="highlighter-rouge">Stream&amp; debugStream</code>: Stream to write debug logs to (for The Things Node/Uno use <code class="highlighter-rouge">Serial</code> and data rate <code class="highlighter-rouge">9600</code>).</li>
+  <li><code class="highlighter-rouge">Stream&amp; modemStream</code>: Stream for the LoRa modem (<a href="https://www.thethingsnetwork.org/docs/devices/arduino/usage.html">see notes</a>).</li>
+  <li><code class="highlighter-rouge">Stream&amp; debugStream</code>: Stream to write debug logs to (<a href="https://www.thethingsnetwork.org/docs/devices/arduino/usage.html">see notes</a>).</li>
   <li><code class="highlighter-rouge">fp_ttn_fp fp</code>: The frequency plan: <code class="highlighter-rouge">TTN_FP_EU868</code> or <code class="highlighter-rouge">TTN_FP_US915</code> depending on the region you deploy in.</li>
   <li><code class="highlighter-rouge">uint8_t sf = 7</code>: Optional custom spreading factor. Can be <code class="highlighter-rouge">7</code> to <code class="highlighter-rouge">12</code> for <code class="highlighter-rouge">TTN_FP_EU868</code> and <code class="highlighter-rouge">7</code> to <code class="highlighter-rouge">10</code> for <code class="highlighter-rouge">TTN_FP_US915</code>. Defaults to <code class="highlighter-rouge">7</code>.</li>
-  <li><code class="highlighter-rouge">uint8_t fsb = 2</code>: Optional custom frequency subband. Can be <code class="highlighter-rouge">1</code> to <code class="highlighter-rouge">8</code>. Defaults to <code class="highlighter-rouge">2</code> (for US915).</li>
+  <li><code class="highlighter-rouge">uint8_t fsb = 2</code>: Optional custom frequency sub-band. Can be <code class="highlighter-rouge">1</code> to <code class="highlighter-rouge">8</code>. Defaults to <code class="highlighter-rouge">2</code> (for US915).</li>
 </ul>
 <h2 id="method-reset">Method: <code class="highlighter-rouge">reset</code></h2>
 <p>Performs a software reset of the RN module. This does not clear saved state, e.g. provisioned keys.</p>
@@ -205,7 +205,6 @@ Band: 868
 Data Rate: 5
 RX Delay 1: 1000
 RX Delay 2: 2000
-Total airtime: 0.00 s
 </code></pre>
 </div>
 <p>See the <a href="https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/DeviceInfo/DeviceInfo.ino">DeviceInfo</a> example.</p>
@@ -268,7 +267,6 @@ Total airtime: 0.00 s
   <li><code class="highlighter-rouge">TTN_ERROR_UNEXPECTED_RESPONSE</code>: Unexpected response: &lt;Response&gt;</li>
 </ul>
 <p>See the <a href="https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/Send/Send.ino">Send</a> example.</p>
-<p>Also in sendBytes, due to TTN’s 30 second fair access policy, we update the airtime each time we uplink a message. This airtime is based on a lot of variables but the most important ones are the spreading factor and the size of the message, the higher it is the less messages you can send in 30 seconds (SF7 around 500 messages of 8 bytes, SF12 around 20 messages of 8 bytes).</p>
 <h2 id="method-poll">Method: <code class="highlighter-rouge">poll</code></h2>
 <p>Calls <code class="highlighter-rouge">sendBytes()</code> with <code class="highlighter-rouge"><span class="p">{</span><span class="w"> </span><span class="err">0x00</span><span class="w"> </span><span class="p">}</span></code> as payload to poll for incoming messages.</p>
 <div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="kt">int8_t</span> <span class="n">poll</span><span class="p">(</span><span class="n">port_t</span> <span class="n">port</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">bool</span> <span class="n">confirm</span> <span class="o">=</span> <span class="nb">false</span><span class="p">);</span>
