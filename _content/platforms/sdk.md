@@ -7,7 +7,7 @@ title: Build an SDK
 Devices and Applications exchange messages and events via the Handler's MQTT broker. SDKs wrap this in a more friendly platform-specific API.
 
 ## Examples
-Examples of libraries that wrap MQTT are [Node.js](../applications/nodejs/index.md) and [Java](../applications/java/index.md) SDK. The [Node-RED](../applications/nodered/index.md) Node actually is in fact another wrapper of the Node.js SDK.
+Examples of libraries that wrap MQTT are the [Go](../applications/golang/index.md), [Node.js](../applications/nodejs/index.md) and [Java](../applications/java/index.md) SDKs. The [Node-RED](../applications/nodered/index.md) Node actually is in fact another wrapper of the Node.js SDK.
 
 ## Understanding MQTT
 It is important to have a good understanding of how MQTT in general and our broker specifically works. For more information, see the [MQTT guide](../applications/mqtt/index.md).
