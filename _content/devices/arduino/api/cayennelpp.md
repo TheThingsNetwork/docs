@@ -7,7 +7,6 @@ source: 'https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/docs
 # API Reference
 
 The `CayenneLPP` class enables Arduino devices to encode data with the Cayenne Lower Power Protocol (LPP). [Read more about Cayenne LPP](https://mydevices.com/cayenne/docs/#lora-cayenne-low-power-payload)
-After encoding your data with Cayenne LPP, have a look at the [documentation](https://www.thethingsnetwork.org/docs/applications/Cayenne/) on adding the myDevices Cayenne integration to the Console.
 
 ## Class: `CayenneLPP`
 

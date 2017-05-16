@@ -24,7 +24,7 @@ The Application Manager API let you manage applications and devices registered t
 
 ## 2. [SDKs](sdks.md)
 
-We intend to SDKs for popular platforms such as [Node.js](nodejs/index.md) and [Java](java/index.md). These SDKs provide a layer of abstraction to make it easier to interact with the APIs:
+We intend to publish SDKs for popular platforms such as [Go](golang/index.md), [Java](java/index.md) and [Node.js](nodejs/index.md). These SDKs provide a layer of abstraction to make it easier to interact with the APIs:
 
 > If you'd like to contribute to a SDK, contact [us](mailto:community@thethingsnetwork.org).
 

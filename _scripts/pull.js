@@ -78,6 +78,16 @@ var items = [{
   }
 }, {
   owner: 'TheThingsNetwork',
+  repo: 'go-app-sdk',
+  branch: 'master',
+  path: 'API.md',
+  target: '_content/applications/golang/api.md',
+  yaml: {
+    title: 'API Reference',
+    zindex: -1000
+  }
+}, {
+  owner: 'TheThingsNetwork',
   repo: 'ttn',
   branch: 'master',
   path: 'ttnctl/cmd/docs/README.md',

@@ -32,6 +32,7 @@ To hide the complexity of parsing and composing the message payloads from you, T
 
 At the moment, we offer clients for:
 
+* [Go](../golang/index.md)
 * [Java](../java/index.md)
 * [Node-RED](../nodered/index.md)
 * [Node.js](../nodejs/index.md)
