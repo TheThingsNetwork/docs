@@ -3,25 +3,25 @@ title: Quick Start
 ---
 
 # Quick Start
-This guides walks you through programming your The Things Node with your first sketch to send its measurements over The Things Network.
+This guide will walk you through programming your The Things Node with your first sketch to send its measurements over The Things Network.
 
 ## Setup Arduino IDE
 
 1.  Follow [Arduino / IDE Setup & Usage](../arduino/ide.md) to setup the IDE.
-2.  Download the `TheThingsNode` library via **Sketch > Include Library v Manage Libraries...**. Search for `TheThingsNode` in the search bar and install the library. 
+2.  Download the `TheThingsNode` library via **Sketch > Include Library > Manage Libraries...**. Search for `TheThingsNode` in the search bar and install the library. 
 3.  Follow SparkFun's [Installation Instructions](https://github.com/sparkfun/Arduino_Boards#installation-instructions) to add the additional board manager and install the **SparkFun AVR Boards**.
 
 ## Connect your Device
 
-1.  Open the case using a double-slot (cross) screw drive.
+1.  Open the case using a Phillips (cross) screw driver.
 
-    > You do not need to insert batteries since while we program it, the Node will be powered over USB.
+    > You do not need to insert batteries while we program it, since the Node will be powered via USB. Using both batteries and USB at the same time is also ok, as the device will then switch to using USB.
 
-2.  Connect a Micro-USB cable to the connector found between the batteries compartment and the top side of the case.
+2.  Connect a micro-USB cable to the connector found between the battery compartment and the top side of the case.
 
     ![Cable](cable.png)
 
-    > Some Micro-USB cables might not fit the limited space between the batteries compartment and the casing. Also make sure you use a cable that supports data, not just power. The one we ship with the Uno should work.
+    > Some Micro-USB cables might not fit the limited space between the battery compartment and the casing. Also make sure you use a cable that supports data, not just power. The one we ship with The Things Uno should work.
     
 3.  Connect the USB cable to your computer.
 4.  In the Arduino IDE, select **Tools > Boards > SparkFun Pro Micro**.
@@ -30,7 +30,7 @@ This guides walks you through programming your The Things Node with your first s
 
     > Unlike The Things Uno, which the Arduino IDE recognizes as *Arduino Leonardo*, it does not always recognize the Node as *SparkFun Pro Micro*. You will have to see what `/dev/*usb*` (Mac/Linux) or `COM` (Windows) option appears in the menu after connecting the Node.
     
-    > Another [common issue](troubleshooting.md#serial-port-not-showing) is that on recent Macs the Node may not appear at all. We suggest to connect via an USB hub.
+    > Another [common issue](troubleshooting.md#serial-port-not-showing) is that on recent Macs the Node may not appear at all. We suggest to connect via a USB hub.
     
 ## Get your Device EUI
 To communicate via The Things Network, you need to register your device. For this, we'll need its unique **Device EUI**. This is a unique address, hard coded into the LoRa module.
@@ -39,11 +39,11 @@ To communicate via The Things Network, you need to register your device. For thi
 
     > Replace `REPLACE_ME` with either `TTN_FP_EU868` or `TTN_FP_US915` depending on the frequency plan of your device.
 
-2.  Select **Sketch > Upload** `Ctrl/⌘ U` to upload the sketch.
+2.  Select **Sketch > Upload** to upload the sketch.
 
-    > Uploads might fail if the Serial Monitor is open or if the IDE lost track of [the port you selected](#connect-your-device). Close the monitor, check the port selection and try again. If it still fails, check [Arduino Troubleshooting](https://www.arduino.cc/en/Guide/Troubleshooting#toc1).
+    > Uploads may fail if the Serial Monitor is open or if the IDE lost track of [the port you selected](#connect-your-device). Close the serial monitor, check the port selection and try again. If it still fails, check [Arduino Troubleshooting](https://www.arduino.cc/en/Guide/Troubleshooting#toc1), or [the troubleshooting page](troubleshooting.html).
 
-2.  Within 10 seconds, select **Tools > Serial Monitor** `Ctrl/⌘ Shift M` to open the [Serial Monitor](https://www.arduino.cc/en/Guide/Environment#toc12).
+2.  Within 10 seconds, select **Tools > Serial Monitor** to open the [Serial Monitor](https://www.arduino.cc/en/Guide/Environment#toc12).
 
     Soon, it should print a list of information:
 
@@ -69,12 +69,12 @@ To register your device you'll need a The Things Network account.
 
 1.  Go to [account.thethingsnetwork.org](https://account.thethingsnetwork.org) and click [create an account](https://account.thethingsnetwork.org/register).
 
-    You will receive an email to confirm your email address. You have 24 hours to do so, so let's now wait for that and carry on! 🚀
+    You will receive an email to confirm your email address. You have 24 hours to do so, so let's wait for the mail and carry on! 🚀
 
     > You can change all but your username later via your [Profile](https://account.thethingsnetwork.org/users/profile).
 
 2.  Select [Console](https://console.thethingsnetwork.org) from the top menu.
-3.  From the top right menu, select your name and then [Settings](https://console.thethingsnetwork.org/settings) from the dropdown menu to change the default Handler if the one currently selected is not where you'll be deploying most of your devices.
+3.  From the top right menu, select your name and then [Settings](https://console.thethingsnetwork.org/settings). Then change the default Handler if the one currently selected is not where you'll be deploying most of your devices.
 
 ## Add an Application
 Devices need to be registered with an application to communicate with. Let's add one.
@@ -83,7 +83,7 @@ Devices need to be registered with an application to communicate with. Let's add
 
 	* For **Application ID**, choose a unique ID of lower case, alphanumeric characters and nonconsecutive `-` and `_`.
 	* For **Description**, enter anything you like.
-	* Leave the checkbox enabled to automatically register the application to your default region.
+	* Leave the **Handler registration** on the default selected value, unless you are going to use this application in a different region than your default region.
 
 	![Add Application](../../applications/add-application.png)
 
@@ -94,24 +94,24 @@ Devices need to be registered with an application to communicate with. Let's add
 ## Register your Device
 You are now ready to register your device to the application.
 
-1.  On the application's screen, scroll down to **Devices** or select **Devices** from the top right menu.
+1.  On the application's page, scroll down to **Devices** or select **Devices** from the top right menu.
 2.  In the **Devices** box, click **register device**.
 
-    * For **Device ID**, choose a - for this application - unique ID of lower case, alphanumeric characters and nonconsecutive `-` and `_`.
+    * For **Device ID**, choose an ID of lower case, alphanumeric characters and nonconsecutive `-` and `_`. A device ID needs to be unique per application, but can be reused in another application.
     * For **Device EUI**, copy-paste the **DevEUI** [you retrieved from your device](#get-your-device-eui).
-    * Leave the **App Key** to be randomly generated.
+    * Leave the **App Key** on "this field will be generated".
     * Leave the default **App EUI** selected.
 
     ![Register Device (OTAA)](../register-device.png)
 
 4.  Click **Register** to finish.
 
-    You will be redirected to the newly registered device, where you can find the generated **App Key** which we'll need next.
+    You will be redirected to the newly registered device, where you can find the generated **Example Code** which we'll need next.
 
 ## The Things Node example
 The The Things Network [Arduino Library](../arduino/index.md) comes with a class dedicated to The Things Node. It wraps the commands to work with the various sensors in simple APIs.
 
-The library also comes with an example demonstrating most of these APIs. Let's hit the ground running by uploading that example.
+The library also comes with an example demonstrating most of these APIs. Let's get started by uploading the basic example.
 
 1.  Still in the console, scroll down the device's screen to **Example Code** and copy the keys:
 
@@ -120,12 +120,12 @@ The library also comes with an example demonstrating most of these APIs. Let's h
 2.  In the Arduino IDE, select **File > Examples > TheThingsNode > [Basic](https://github.com/TheThingsNetwork/arduino-node-lib/tree/master/examples/Basic)**.
 
     * Replace the lines following the comment **Set your AppEUI and AppKey** with the keys you copied from the Console.
-    * Replace `REPLACE_ME` with either `TTN_FP_EU868` or `TTN_FP_US915` depending on the frequency plan of your device.
+    * Replace `REPLACE_ME` with the appropriate frequency plan for your device (listed in the comments in the line above it).
 
-2.  Select **Sketch > Upload** `Ctrl/⌘ U` to upload the sketch.
-3.  Within 10 seconds, select **Tools > Serial Monitor** `Ctrl/⌘ Shift M` to open the [Serial Monitor](https://www.arduino.cc/en/Guide/Environment#toc12).
+2.  Select **Sketch > Upload** to upload the sketch.
+3.  Within 10 seconds, select **Tools > Serial Monitor** to open the [Serial Monitor](https://www.arduino.cc/en/Guide/Environment#toc12).
 
-    Soon it should it should log the current temperature and the values of other sensors The Things Node has.
+    Shortly after this you will see the current temperature and values from the other sensors on the Things Node.
     
 Let's run through the Sketch together to understand what it does.
 
@@ -146,19 +146,35 @@ Any code you want to run regularly should be put in a function registered using 
 In the callbacks you can use the [API](api.md)'s getters and setters to read sensors, change the LED's color, reconfigure or temporarily disable sensors etc. And of course you can use TheThingsNetwork class to send the sensor data over The Things Network.
 
 ### Send Data
-As you can see the example sends all sensor data from the `interval()` callback, which is configured to run every 20 seconds. In addition, it will send the temperature when it exceeds the configured limits as well as the duration of any detected motion or the press of a button.
+As you can see, the example sends all sensor data from the `interval()` callback, which is configured to run every 20 seconds. In addition, it will send the temperature when it exceeds the configured limits as well as the duration of any detected motion or the press of a button.
 
 ## Monitor & Decode Messages
 Let's see the messages come in.
 
 1.  From the application's screen in the console, select **Data** from the top right menu.
 
-    You should now see the messages come in.
+    You should now see the messages come in. If you don't see anything you likely [do not have network coverage](https://www.thethingsnetwork.org/wiki/FAQ#frequently-asked-questions_does-the-things-network-have-coverage-where-i-live) at your location.
 
-    What you see is the raw payload in hex-formatted, space-separated bytes. Let's decode that to meaningful fields.
+    What you see on the data page is the raw payload in hex-formatted, space-separated bytes. Let's decode that to meaningful fields.
 
-2.  Select **Payload Functions** from the top right menu.
-3.  Leave **decoder** selected and copy-paste the JavaScript code found in the examples folder as [Node/Decoder.js](https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/Node/Decoder.js).
+2.  Select **Payload Formats** from the top right menu.
+3.  Select **custom** under Payload Format. Then make sure **decoder** is selected on the next line. Now copy-paste the following JavaScript code into the text field, replacing all exiting text inside it.
+    ```js
+    function Decoder(bytes, port) {
+      var decoded = {};
+      var events = {
+        1: 'setup',
+        2: 'interval',
+        3: 'motion',
+        4: 'button'
+      };
+      decoded.event = events[port];
+      decoded.battery = (bytes[0] << 8) + bytes[1];
+      decoded.light = (bytes[2] << 8) + bytes[3];
+      decoded.temperature = ((bytes[4] << 8) + bytes[5]) / 100;
+      return decoded;
+    }
+    ```
     
 4.  Use the input field and **Test** button to see how various payloads of hex-formatted, space-separated bytes are decoded.
 
@@ -180,8 +196,8 @@ Let's see the messages come in.
 
 6.  Select **Data** from the top right menu.
 
-7.  New messages should now show their decoded payload:
+7.  New messages should now show their decoded payload.
     
-🎉 You can now decode cryptic byte messages to meaningful payloads!    
+🎉 You are now decoding cryptic byte messages to meaningful payloads!    
 
 > Would you like to learn how to receive and further process these messages? Head over to the [MQTT](../../applications/mqtt/index.md) guide!
