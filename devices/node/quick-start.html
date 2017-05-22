@@ -22,14 +22,14 @@
     <!-- Begin Jekyll SEO tag v2.1.0 -->
 <title>Quick Start - The Things Network</title>
 <meta property="og:title" content="Quick Start" />
-<meta name="description" content="Quick Start This guides walks you through programming your The Things Node with your first sketch to send its measurements over The Things Network." />
-<meta property="og:description" content="Quick Start This guides walks you through programming your The Things Node with your first sketch to send its measurements over The Things Network." />
+<meta name="description" content="Quick Start This guide will walk you through programming your The Things Node with your first sketch to send its measurements over The Things Network." />
+<meta property="og:description" content="Quick Start This guide will walk you through programming your The Things Node with your first sketch to send its measurements over The Things Network." />
 <link rel="canonical" href="https://www.thethingsnetwork.org/docs/devices/node/quick-start.html" />
 <meta property="og:url" content="https://www.thethingsnetwork.org/docs/devices/node/quick-start.html" />
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2017-05-16T21:28:33+00:00" />
+<meta property="article:published_time" content="2017-05-22T14:52:55+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
@@ -38,8 +38,8 @@
 "@type": "BlogPosting",
 "headline": "Quick Start",
 "image": "https://www.thethingsnetwork.org/docs/assets/images/og-image.png",
-"datePublished": "2017-05-16T21:28:33+00:00",
-"description": "Quick Start This guides walks you through programming your The Things Node with your first sketch to send its measurements over The Things Network.",
+"datePublished": "2017-05-22T14:52:55+00:00",
+"description": "Quick Start This guide will walk you through programming your The Things Node with your first sketch to send its measurements over The Things Network.",
 "publisher": {"@type": "Organization",
 "logo": {"@type": "ImageObject",
 "url": "https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},
@@ -148,26 +148,26 @@
         <div class="panel">
           <div class="panel-body page-content">
             <h1 id="quick-start">Quick Start</h1>
-<p>This guides walks you through programming your The Things Node with your first sketch to send its measurements over The Things Network.</p>
+<p>This guide will walk you through programming your The Things Node with your first sketch to send its measurements over The Things Network.</p>
 <h2 id="setup-arduino-ide">Setup Arduino IDE</h2>
 <ol>
   <li>Follow <a href="../arduino/ide.html">Arduino / IDE Setup &amp; Usage</a> to setup the IDE.</li>
-  <li>Download the <code class="highlighter-rouge">TheThingsNode</code> library via <strong>Sketch &gt; Include Library v Manage Libraries…</strong>. Search for <code class="highlighter-rouge">TheThingsNode</code> in the search bar and install the library.</li>
+  <li>Download the <code class="highlighter-rouge">TheThingsNode</code> library via <strong>Sketch &gt; Include Library &gt; Manage Libraries…</strong>. Search for <code class="highlighter-rouge">TheThingsNode</code> in the search bar and install the library.</li>
   <li>Follow SparkFun’s <a href="https://github.com/sparkfun/Arduino_Boards#installation-instructions">Installation Instructions</a> to add the additional board manager and install the <strong>SparkFun AVR Boards</strong>.</li>
 </ol>
 <h2 id="connect-your-device">Connect your Device</h2>
 <ol>
   <li>
-    <p>Open the case using a double-slot (cross) screw drive.</p>
+    <p>Open the case using a Phillips (cross) screw driver.</p>
     <blockquote>
-      <p>You do not need to insert batteries since while we program it, the Node will be powered over USB.</p>
+      <p>You do not need to insert batteries while we program it, since the Node will be powered via USB. Using both batteries and USB at the same time is also ok, as the device will then switch to using USB.</p>
     </blockquote>
   </li>
   <li>
-    <p>Connect a Micro-USB cable to the connector found between the batteries compartment and the top side of the case.</p>
+    <p>Connect a micro-USB cable to the connector found between the battery compartment and the top side of the case.</p>
     <p><img src="cable.png" alt="Cable" /></p>
     <blockquote>
-      <p>Some Micro-USB cables might not fit the limited space between the batteries compartment and the casing. Also make sure you use a cable that supports data, not just power. The one we ship with the Uno should work.</p>
+      <p>Some Micro-USB cables might not fit the limited space between the battery compartment and the casing. Also make sure you use a cable that supports data, not just power. The one we ship with The Things Uno should work.</p>
     </blockquote>
   </li>
   <li>Connect the USB cable to your computer.</li>
@@ -179,7 +179,7 @@
       <p>Unlike The Things Uno, which the Arduino IDE recognizes as <em>Arduino Leonardo</em>, it does not always recognize the Node as <em>SparkFun Pro Micro</em>. You will have to see what <code class="highlighter-rouge">/dev/*usb*</code> (Mac/Linux) or <code class="highlighter-rouge">COM</code> (Windows) option appears in the menu after connecting the Node.</p>
     </blockquote>
     <blockquote>
-      <p>Another <a href="troubleshooting.html#serial-port-not-showing">common issue</a> is that on recent Macs the Node may not appear at all. We suggest to connect via an USB hub.</p>
+      <p>Another <a href="troubleshooting.html#serial-port-not-showing">common issue</a> is that on recent Macs the Node may not appear at all. We suggest to connect via a USB hub.</p>
     </blockquote>
   </li>
 </ol>
@@ -193,13 +193,13 @@
     </blockquote>
   </li>
   <li>
-    <p>Select <strong>Sketch &gt; Upload</strong> <code class="highlighter-rouge">Ctrl/⌘ U</code> to upload the sketch.</p>
+    <p>Select <strong>Sketch &gt; Upload</strong> to upload the sketch.</p>
     <blockquote>
-      <p>Uploads might fail if the Serial Monitor is open or if the IDE lost track of <a href="#connect-your-device">the port you selected</a>. Close the monitor, check the port selection and try again. If it still fails, check <a href="https://www.arduino.cc/en/Guide/Troubleshooting#toc1">Arduino Troubleshooting</a>.</p>
+      <p>Uploads may fail if the Serial Monitor is open or if the IDE lost track of <a href="#connect-your-device">the port you selected</a>. Close the serial monitor, check the port selection and try again. If it still fails, check <a href="https://www.arduino.cc/en/Guide/Troubleshooting#toc1">Arduino Troubleshooting</a>, or <a href="troubleshooting.html">the troubleshooting page</a>.</p>
     </blockquote>
   </li>
   <li>
-    <p>Within 10 seconds, select <strong>Tools &gt; Serial Monitor</strong> <code class="highlighter-rouge">Ctrl/⌘ Shift M</code> to open the <a href="https://www.arduino.cc/en/Guide/Environment#toc12">Serial Monitor</a>.</p>
+    <p>Within 10 seconds, select <strong>Tools &gt; Serial Monitor</strong> to open the <a href="https://www.arduino.cc/en/Guide/Environment#toc12">Serial Monitor</a>.</p>
     <p>Soon, it should print a list of information:</p>
     <div class="highlighter-rouge"><pre class="highlight"><code>-- STATUS
 EUI: 0004A30B001B7AD2
@@ -222,13 +222,13 @@ Total airtime: 0.00 s
 <ol>
   <li>
     <p>Go to <a href="https://account.thethingsnetwork.org">account.thethingsnetwork.org</a> and click <a href="https://account.thethingsnetwork.org/register">create an account</a>.</p>
-    <p>You will receive an email to confirm your email address. You have 24 hours to do so, so let’s now wait for that and carry on! 🚀</p>
+    <p>You will receive an email to confirm your email address. You have 24 hours to do so, so let’s wait for the mail and carry on! 🚀</p>
     <blockquote>
       <p>You can change all but your username later via your <a href="https://account.thethingsnetwork.org/users/profile">Profile</a>.</p>
     </blockquote>
   </li>
   <li>Select <a href="https://console.thethingsnetwork.org">Console</a> from the top menu.</li>
-  <li>From the top right menu, select your name and then <a href="https://console.thethingsnetwork.org/settings">Settings</a> from the dropdown menu to change the default Handler if the one currently selected is not where you’ll be deploying most of your devices.</li>
+  <li>From the top right menu, select your name and then <a href="https://console.thethingsnetwork.org/settings">Settings</a>. Then change the default Handler if the one currently selected is not where you’ll be deploying most of your devices.</li>
 </ol>
 <h2 id="add-an-application">Add an Application</h2>
 <p>Devices need to be registered with an application to communicate with. Let’s add one.</p>
@@ -238,7 +238,7 @@ Total airtime: 0.00 s
     <ul>
       <li>For <strong>Application ID</strong>, choose a unique ID of lower case, alphanumeric characters and nonconsecutive <code class="highlighter-rouge">-</code> and <code class="highlighter-rouge">_</code>.</li>
       <li>For <strong>Description</strong>, enter anything you like.</li>
-      <li>Leave the checkbox enabled to automatically register the application to your default region.</li>
+      <li>Leave the <strong>Handler registration</strong> on the default selected value, unless you are going to use this application in a different region than your default region.</li>
     </ul>
     <p><img src="../../applications/add-application.png" alt="Add Application" /></p>
   </li>
@@ -250,25 +250,25 @@ Total airtime: 0.00 s
 <h2 id="register-your-device">Register your Device</h2>
 <p>You are now ready to register your device to the application.</p>
 <ol>
-  <li>On the application’s screen, scroll down to <strong>Devices</strong> or select <strong>Devices</strong> from the top right menu.</li>
+  <li>On the application’s page, scroll down to <strong>Devices</strong> or select <strong>Devices</strong> from the top right menu.</li>
   <li>
     <p>In the <strong>Devices</strong> box, click <strong>register device</strong>.</p>
     <ul>
-      <li>For <strong>Device ID</strong>, choose a - for this application - unique ID of lower case, alphanumeric characters and nonconsecutive <code class="highlighter-rouge">-</code> and <code class="highlighter-rouge">_</code>.</li>
+      <li>For <strong>Device ID</strong>, choose an ID of lower case, alphanumeric characters and nonconsecutive <code class="highlighter-rouge">-</code> and <code class="highlighter-rouge">_</code>. A device ID needs to be unique per application, but can be reused in another application.</li>
       <li>For <strong>Device EUI</strong>, copy-paste the <strong>DevEUI</strong> <a href="#get-your-device-eui">you retrieved from your device</a>.</li>
-      <li>Leave the <strong>App Key</strong> to be randomly generated.</li>
+      <li>Leave the <strong>App Key</strong> on “this field will be generated”.</li>
       <li>Leave the default <strong>App EUI</strong> selected.</li>
     </ul>
     <p><img src="../register-device.png" alt="Register Device (OTAA)" /></p>
   </li>
   <li>
     <p>Click <strong>Register</strong> to finish.</p>
-    <p>You will be redirected to the newly registered device, where you can find the generated <strong>App Key</strong> which we’ll need next.</p>
+    <p>You will be redirected to the newly registered device, where you can find the generated <strong>Example Code</strong> which we’ll need next.</p>
   </li>
 </ol>
 <h2 id="the-things-node-example">The Things Node example</h2>
 <p>The The Things Network <a href="../arduino/">Arduino Library</a> comes with a class dedicated to The Things Node. It wraps the commands to work with the various sensors in simple APIs.</p>
-<p>The library also comes with an example demonstrating most of these APIs. Let’s hit the ground running by uploading that example.</p>
+<p>The library also comes with an example demonstrating most of these APIs. Let’s get started by uploading the basic example.</p>
 <ol>
   <li>
     <p>Still in the console, scroll down the device’s screen to <strong>Example Code</strong> and copy the keys:</p>
@@ -278,13 +278,13 @@ Total airtime: 0.00 s
     <p>In the Arduino IDE, select <strong>File &gt; Examples &gt; TheThingsNode &gt; <a href="https://github.com/TheThingsNetwork/arduino-node-lib/tree/master/examples/Basic">Basic</a></strong>.</p>
     <ul>
       <li>Replace the lines following the comment <strong>Set your AppEUI and AppKey</strong> with the keys you copied from the Console.</li>
-      <li>Replace <code class="highlighter-rouge">REPLACE_ME</code> with either <code class="highlighter-rouge">TTN_FP_EU868</code> or <code class="highlighter-rouge">TTN_FP_US915</code> depending on the frequency plan of your device.</li>
+      <li>Replace <code class="highlighter-rouge">REPLACE_ME</code> with the appropriate frequency plan for your device (listed in the comments in the line above it).</li>
     </ul>
   </li>
-  <li>Select <strong>Sketch &gt; Upload</strong> <code class="highlighter-rouge">Ctrl/⌘ U</code> to upload the sketch.</li>
+  <li>Select <strong>Sketch &gt; Upload</strong> to upload the sketch.</li>
   <li>
-    <p>Within 10 seconds, select <strong>Tools &gt; Serial Monitor</strong> <code class="highlighter-rouge">Ctrl/⌘ Shift M</code> to open the <a href="https://www.arduino.cc/en/Guide/Environment#toc12">Serial Monitor</a>.</p>
-    <p>Soon it should it should log the current temperature and the values of other sensors The Things Node has.</p>
+    <p>Within 10 seconds, select <strong>Tools &gt; Serial Monitor</strong> to open the <a href="https://www.arduino.cc/en/Guide/Environment#toc12">Serial Monitor</a>.</p>
+    <p>Shortly after this you will see the current temperature and values from the other sensors on the Things Node.</p>
   </li>
 </ol>
 <p>Let’s run through the Sketch together to understand what it does.</p>
@@ -301,18 +301,33 @@ Total airtime: 0.00 s
 <h3 id="callbacks">Callbacks</h3>
 <p>In the callbacks you can use the <a href="api.html">API</a>’s getters and setters to read sensors, change the LED’s color, reconfigure or temporarily disable sensors etc. And of course you can use TheThingsNetwork class to send the sensor data over The Things Network.</p>
 <h3 id="send-data">Send Data</h3>
-<p>As you can see the example sends all sensor data from the <code class="highlighter-rouge">interval()</code> callback, which is configured to run every 20 seconds. In addition, it will send the temperature when it exceeds the configured limits as well as the duration of any detected motion or the press of a button.</p>
+<p>As you can see, the example sends all sensor data from the <code class="highlighter-rouge">interval()</code> callback, which is configured to run every 20 seconds. In addition, it will send the temperature when it exceeds the configured limits as well as the duration of any detected motion or the press of a button.</p>
 <h2 id="monitor--decode-messages">Monitor &amp; Decode Messages</h2>
 <p>Let’s see the messages come in.</p>
 <ol>
   <li>
     <p>From the application’s screen in the console, select <strong>Data</strong> from the top right menu.</p>
-    <p>You should now see the messages come in.</p>
-    <p>What you see is the raw payload in hex-formatted, space-separated bytes. Let’s decode that to meaningful fields.</p>
+    <p>You should now see the messages come in. If you don’t see anything you likely <a href="https://www.thethingsnetwork.org/wiki/FAQ#frequently-asked-questions_does-the-things-network-have-coverage-where-i-live">do not have network coverage</a> at your location.</p>
+    <p>What you see on the data page is the raw payload in hex-formatted, space-separated bytes. Let’s decode that to meaningful fields.</p>
   </li>
-  <li>Select <strong>Payload Functions</strong> from the top right menu.</li>
-  <li>
-    <p>Leave <strong>decoder</strong> selected and copy-paste the JavaScript code found in the examples folder as <a href="https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/Node/Decoder.js">Node/Decoder.js</a>.</p>
+  <li>Select <strong>Payload Formats</strong> from the top right menu.</li>
+  <li>Select <strong>custom</strong> under Payload Format. Then make sure <strong>decoder</strong> is selected on the next line. Now copy-paste the following JavaScript code into the text field, replacing all exiting text inside it.
+    <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Decoder</span><span class="p">(</span><span class="nx">bytes</span><span class="p">,</span> <span class="nx">port</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">decoded</span> <span class="o">=</span> <span class="p">{};</span>
+  <span class="kd">var</span> <span class="nx">events</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="mi">1</span><span class="p">:</span> <span class="s1">'setup'</span><span class="p">,</span>
+    <span class="mi">2</span><span class="p">:</span> <span class="s1">'interval'</span><span class="p">,</span>
+    <span class="mi">3</span><span class="p">:</span> <span class="s1">'motion'</span><span class="p">,</span>
+    <span class="mi">4</span><span class="p">:</span> <span class="s1">'button'</span>
+  <span class="p">};</span>
+  <span class="nx">decoded</span><span class="p">.</span><span class="nx">event</span> <span class="o">=</span> <span class="nx">events</span><span class="p">[</span><span class="nx">port</span><span class="p">];</span>
+  <span class="nx">decoded</span><span class="p">.</span><span class="nx">battery</span> <span class="o">=</span> <span class="p">(</span><span class="nx">bytes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="mi">8</span><span class="p">)</span> <span class="o">+</span> <span class="nx">bytes</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+  <span class="nx">decoded</span><span class="p">.</span><span class="nx">light</span> <span class="o">=</span> <span class="p">(</span><span class="nx">bytes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="mi">8</span><span class="p">)</span> <span class="o">+</span> <span class="nx">bytes</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span>
+  <span class="nx">decoded</span><span class="p">.</span><span class="nx">temperature</span> <span class="o">=</span> <span class="p">((</span><span class="nx">bytes</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="mi">8</span><span class="p">)</span> <span class="o">+</span> <span class="nx">bytes</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span> <span class="o">/</span> <span class="mi">100</span><span class="p">;</span>
+  <span class="k">return</span> <span class="nx">decoded</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+    </div>
   </li>
   <li>
     <p>Use the input field and <strong>Test</strong> button to see how various payloads of hex-formatted, space-separated bytes are decoded.</p>
@@ -335,9 +350,9 @@ Total airtime: 0.00 s
   <li>
     <p>Select <strong>Data</strong> from the top right menu.</p>
   </li>
-  <li>New messages should now show their decoded payload:</li>
+  <li>New messages should now show their decoded payload.</li>
 </ol>
-<p>🎉 You can now decode cryptic byte messages to meaningful payloads!</p>
+<p>🎉 You are now decoding cryptic byte messages to meaningful payloads!</p>
 <blockquote>
   <p>Would you like to learn how to receive and further process these messages? Head over to the <a href="../../applications/mqtt/">MQTT</a> guide!</p>
 </blockquote>
