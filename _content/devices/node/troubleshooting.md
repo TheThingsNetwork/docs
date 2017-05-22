@@ -12,8 +12,8 @@ Since Mac OS El Capitan, there have been [many reports](https://www.google.com/s
 
 ## Serial Port shows up, but uploading code fails (Linux)
 
-Try the steps documented on the Arduino Website. Normally the problem is another program also trying to access the serial port. **modemmanager** and **usb_modeswitch** are common culprits of this.
-http://www.arduino.org/learning/getting-started/arduino-ide-on-linux-based-os
+Try the [steps documented on the Arduino Website](http://www.arduino.org/learning/getting-started/arduino-ide-on-linux-based-os). Normally the problem is another program also trying to access the serial port. **modemmanager** and **usb_modeswitch** are common culprits of this.
+
 
 
 ## Bricked
