@@ -27,15 +27,15 @@ SparkFun has a [guide](https://learn.sparkfun.com/tutorials/pro-micro--fio-v3-ho
 
 2. Open up the back of The Things Node using a Phillips screw driver.
 
-![Open case](node-open-case.jpg)
+<img src="node-open-case.jpg" width="500">
 
 3. Remove the batteries, and remove the two Torx screws inside the battery holder. You will need a Torx #10 screw driver for this.
 
-![Remove PCB](node-remove-pcb.jpg)
+<img src="node-remove-pcb.jpg" width="500">
 
 4. Remove the PCB from the case. On the rear side you will see the Reset button (marked as **S2**) and the LED (marked as **D2**).
 
-![Layout](node-reset-led.jpg)
+<img src="node-reset-led.jpg" width="500">
 
 5. Plug in a USB cable between the Node and your computer. The Node should power up and the LED should blink or stay on, depending on what code is on it. Press the reset button twice, with about a second between presses. If you were successful, the LED should start fading on and off.
 
