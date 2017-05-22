@@ -26,16 +26,13 @@ SparkFun has a [guide](https://learn.sparkfun.com/tutorials/pro-micro--fio-v3-ho
 1. Prepare by opening the Arduino IDE. Open a new blank sketch, go to **Tools > Boards > SparkFun Pro Micro** and then **Tools > Processor > ATmega32U4 (3.3V, 8Mhz)** for The Things Node (choose Arduino Leonardo if you are using The Things Uno). Click on verify.
 
 2. Open up the back of The Things Node using a Phillips screw driver.
-
-<img src="node-open-case.jpg" width="500">
+   ![](node-open-case.jpg)
 
 3. Remove the batteries, and remove the two Torx screws inside the battery holder. You will need a Torx #10 screw driver for this.
-
-<img src="node-remove-pcb.jpg" width="500">
+   ![](node-remove-pcb.jpg)
 
 4. Remove the PCB from the case. On the rear side you will see the Reset button (marked as **S2**) and the LED (marked as **D2**).
-
-<img src="node-reset-led.jpg" width="500">
+   ![](node-reset-led.jpg)
 
 5. Plug in a USB cable between the Node and your computer. The Node should power up and the LED should blink or stay on, depending on what code is on it. Press the reset button twice, with about a second between presses. If you were successful, the LED should start fading on and off.
 
