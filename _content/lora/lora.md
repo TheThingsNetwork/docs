@@ -4,7 +4,7 @@ title: What is LoRa
 
 # What is LoRa
 
-LoRa&reg; is a trademark of the [Semtech](http://www.semtech.com/wireless-rf/lora.html) company. Originally intended to be an abbreviation of **Lo**ng **Ra**nge, but also Low Power. LoRa is a wireless protocol designed with the Internet-of-Things (IoT) in mind. In normal situations LoRa can reach multiple kilometres, using a quarter of the power of a WiFi connection. Because LoRa is so low power, devices incorporating it can last for years on the same battery. Compared to other radio standards that can reach the same distance, LoRa hardware is very low-cost.
+LoRa&reg; is a trademark of the [Semtech](http://www.semtech.com/wireless-rf/lora.html) company. Originally intended to be an abbreviation of **Lo**ng **Ra**nge, but also Low Power. LoRa is a wireless physical layer protocol designed with the Internet-of-Things (IoT) in mind. In normal situations LoRa can reach multiple kilometres, using a quarter of the power of a WiFi connection. Because LoRa is so low power, devices incorporating it can last for years on the same battery. Compared to other radio standards that can reach the same distance, LoRa hardware is very low-cost.
 
 ## Long range
 
@@ -21,7 +21,7 @@ As already mentioned to obtain long range you need to communicate slower. There 
 
 The further a signal travels, the weaker it becomes. This is called [free-space path loss](https://en.wikipedia.org/wiki/Free-space_path_loss) (FSPL). FSPL is not the same for all signals. The higher the radio frequency at which you communicate, the higher the FSPL. To obtain a longer range you therefore want to communicate at a lower frequency.
 
-When you send out a signal, it will travel through the air, lose some of its energy due to FSPL, and arrive at the receiver as a very weak signal. If this is the case you are lucky. Along the path the signal travels along it can be obstructed by trees, mountains, buildings, cars, or any other object in the way. Some objects let a part of the signal pass, but this causes a big loss in the strength of the signal, and therefore the distance it can travel. The rule of thumb is to keep a open path between the transmitter and receiver - also known as Line of Sight.
+When you send out a signal, it will travel through the air, lose some of its energy due to FSPL, and arrive at the receiver as a very weak signal. If this is the case you are lucky. Along the path the signal travels along it can be obstructed by trees, mountains, buildings, cars, or any other object in the way. Some objects let a part of the signal pass, but this causes a big loss in the strength of the signal, and therefore the distance it can travel. The rule of thumb is to keep an open path between the transmitter and receiver - also known as Line of Sight.
 
 A radio signal can also be reflected by solid objects. If the receiver receives the signal directly from the transmitter, there is a good chance that it will also receive another copy of it that was reflected by some object, or even by the surface of the earth. When these two copies of the signal arrive at the same time, or almost at the same time, they can corrupt each other. In this case you are not able to decode the data inside the radio signal. To prevent reflections from happening it is a good principle to keep not only the Line of Sight path free, but also some area around it. This is called the [Fresnel zone](https://en.wikipedia.org/wiki/Fresnel_zone). It is good to note that a free Fresnel zone is important for a good radio link, but can be difficult to guarantee. Especially when one of the radios is mobile.
 
@@ -34,7 +34,7 @@ Another unique feature of LoRa is that different spreading factors are orthogona
 The LoRa physical layer includes [Forward Error Correction](https://en.wikipedia.org/wiki/Forward_error_correction) (FEC). FEC is a technique where extra data is transmitted in every message so that when some of the data is lost, the original message can still be recovered. In other words if a few bits are corrupted during the transmission of a packet, these bits can be corrected because some extra information was transmitted to enable the receiver to "fill in the blanks". The further a signal travels, the higher the chance of bits getting corrupted. FEC helps to prevent this, so with FEC you can communicate slightly further than without it.
 
 ## Frequency drifts
-Except that LoRa modulation is robust against noise, it is also robust against changes in frequency. It means that if a transmitter and a receiver are not exactly aligned on the same frequency, communication will still be successful between them. This feature of LoRa enables the use of cheaper hardware that is less stable in frequency over a wide temperature range. Another benefit of this is that LoRa does not suffer from [doppler shift](ttps://en.wikipedia.org/wiki/Doppler_effect).
+Except that LoRa modulation is robust against noise, it is also robust against changes in frequency. It means that if a transmitter and a receiver are not exactly aligned on the same frequency, communication will still be successful between them. This feature of LoRa enables the use of cheaper hardware that is less stable in frequency over a wide temperature range. Another benefit of this is that LoRa does not suffer from [doppler shift](https://en.wikipedia.org/wiki/Doppler_effect).
 
 ## Other radio fundamentals to keep in mind
 ### Link budget
@@ -60,11 +60,11 @@ To focus your transmitted energy and your receiver's sensitivity into a specific
 LoRa was designed to operate in sub gigahertz frequencies. Normally LoRa is used in conjunction with the LoRaWAN protocol, which declares frequency plans to use falling inside the license-free and ISM bands. This however differ by country. Common sub-gigahertz bands that are used are 433MHz, 868MHz and 915MHz.
 
 ## Compared to other radio standards
-With the standard ISM bands and limits LoRa can reach a couple of kilometres. Of course it depends on your line of sight and Fresnel zone, but some people have already manage to make it work above 10km, or even sporadically above 100km. A common range in a city is 5km at a maximum speed of 22kbps. A LoRa device can last years on a battery.
+With the standard ISM bands and limits LoRa can reach a couple of kilometres. Of course it depends on your line of sight and Fresnel zone, but some people have already managed to make it work above 10km, or even sporadically above 100km. A common range in a city is 5km at a maximum speed of 22kbps. A LoRa device can last years on a battery.
 
-WiFi can normally only reach a few hundred metres, but the speed can be hundreds om megabits per second. A WiFi device normally lasts a couple of days on a battery.
+WiFi can normally only reach a few hundred metres, but the speed can be hundreds of megabits per second. A WiFi device normally lasts a couple of days on a battery.
 
-Bluetooth Low Energy (BLE) can reach ten's of metres and has a speed of around 10mbps. A good BLE device can last weeks or months on a battery.
+Bluetooth Low Energy (BLE) can reach tens of metres and has a speed of around 10mbps. A good BLE device can last weeks or months on a battery.
 
 Zigbee works at ranges of around 100 metre at a speed of 250kbps. A device lasts years on a battery.
 
