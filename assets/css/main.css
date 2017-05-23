@@ -8543,6 +8543,9 @@ img {
 #navbar {
   position: static; }
 
+.fixed-banner {
+  position: static; }
+
 #content {
   overflow-x: hidden;
   margin-bottom: 30px; }
