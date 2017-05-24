@@ -29,7 +29,7 @@
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2017-05-23T15:06:09+00:00" />
+<meta property="article:published_time" content="2017-05-24T13:41:46+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
@@ -38,7 +38,7 @@
 "@type": "BlogPosting",
 "headline": "API Reference",
 "image": "https://www.thethingsnetwork.org/docs/assets/images/og-image.png",
-"datePublished": "2017-05-23T15:06:09+00:00",
+"datePublished": "2017-05-24T13:41:46+00:00",
 "description": "API Reference",
 "publisher": {"@type": "Organization",
 "logo": {"@type": "ImageObject",
@@ -375,6 +375,16 @@ Battery voltage: 4704 MV
 </ul>
 <h3 id="method-ismoving">Method: isMoving</h3>
 <p>Returns <code class="highlighter-rouge">true</code> if the device is currently moving. Requires the sensor to be enabled via <code class="highlighter-rouge">onMotionStart()</code>, <code class="highlighter-rouge">onMotionStop()</code> or <code class="highlighter-rouge">setMotion()</code>.</p>
+<h3 id="method-getacceleration">Method: getAcceleration</h3>
+<p>Returns the acceleration measured by the motion sensor in <a href="https://en.wikipedia.org/wiki/G-force">units of g-force</a>. Each of the values x, y and z falls in the range -2g to +2g. This function is useful to determine the orientation of the sensor relative to the earth, as gravity causes a 1g acceleration towards the centre of the earth. Requires the sensor to be enabled via <code class="highlighter-rouge">onMotionStart()</code>, <code class="highlighter-rouge">onMotionStop()</code> or <code class="highlighter-rouge">setMotion()</code>.</p>
+<div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="kt">void</span> <span class="n">getAcceleration</span><span class="p">(</span><span class="kt">float</span> <span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="kt">float</span> <span class="o">*</span><span class="n">y</span><span class="p">,</span> <span class="kt">float</span> <span class="o">*</span><span class="n">z</span><span class="p">);</span>
+</code></pre>
+</div>
+<ul>
+  <li><code class="highlighter-rouge">float *x</code>: Float to store the acceleration along the x-axis.</li>
+  <li><code class="highlighter-rouge">float *y</code>: Float to store the acceleration along the y-axis.</li>
+  <li><code class="highlighter-rouge">float *z</code>: Float to store the acceleration along the z-axis.</li>
+</ul>
 <h3 id="method-configmotion">Method: configMotion</h3>
 <p>Enable or disable the motion sensor. The sensor will be enabled automatically by <code class="highlighter-rouge">onMotionStart()</code> and <code class="highlighter-rouge">onMotionStop()</code>, but you can use this method to temporarily disable the sensor.</p>
 <div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="kt">void</span> <span class="n">configMotion</span><span class="p">(</span><span class="n">bool</span> <span class="n">enabled</span><span class="p">);</span>
