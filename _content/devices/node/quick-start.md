@@ -8,7 +8,7 @@ This guide will walk you through programming your The Things Node with your firs
 ## Setup Arduino IDE
 
 1.  Follow [Arduino / IDE Setup & Usage](../arduino/ide.md) to setup the IDE.
-2.  Download the `TheThingsNode` library via **Sketch > Include Library > Manage Libraries...**. Search for `TheThingsNode` in the search bar and install the library. 
+2.  Download the `TheThingsNetwork` and `TheThingsNode` libraries via **Sketch > Include Library v Manage Libraries...**. Search for `TheThings` in the search bar. Install the latest versions of both `TheThingsNetwork` and `TheThingsNode`.
 3.  Follow SparkFun's [Installation Instructions](https://github.com/sparkfun/Arduino_Boards#installation-instructions) to add the additional board manager and install the **SparkFun AVR Boards**.
 
 ## Connect your Device
