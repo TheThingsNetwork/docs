@@ -15,6 +15,18 @@ lesscss-percentage(n)
     font-weight bold
     font-size 1.3em
     letter-spacing 1px
+    &:hover
+      text-decoration underline
+  & > span
+    color white
+    cursor pointer
+    position absolute
+    right 21px
+    font-weight bold
+    align-self center
   @media screen and (max-width: 900px)
     & > a
-      font-size 1.1em
+      font-size 1em
+    & > span
+      top 12px
+      right 11px

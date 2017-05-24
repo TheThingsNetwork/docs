@@ -6104,9 +6104,21 @@ body {
     font-weight: bold;
     font-size: 1.3em;
     letter-spacing: 1px; }
+    .fixed-banner > a:hover {
+      text-decoration: underline; }
+  .fixed-banner > span {
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    right: 21px;
+    font-weight: bold;
+    align-self: center; }
   @media screen and (max-width: 900px) {
     .fixed-banner > a {
-      font-size: 1.1em; } }
+      font-size: 1em; }
+    .fixed-banner > span {
+      top: 12px;
+      right: 11px; } }
 
 .docs-color-swatch {
   float: left;
