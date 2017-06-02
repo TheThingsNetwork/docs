@@ -6,7 +6,7 @@ sections:
  - SDKs & Libraries
  - Hardware
 links:
- - title: Migrate form Staging to Production
+ - title: Migrate from Staging to Production
    href: ../network/migrate.html
 image: /devices/icon.png
 zindex: 1000
