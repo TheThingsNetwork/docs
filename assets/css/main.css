@@ -6089,39 +6089,6 @@ body {
   outline: 0 !important;
   color: grey; }
 
-.fixed-banner {
-  position: fixed;
-  width: 100%;
-  height: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-size: cover;
-  z-index: 1000; }
-  .fixed-banner > a.link {
-    color: white;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 1.6em;
-    letter-spacing: 1px; }
-  .fixed-banner > a.button {
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid white;
-    border-radius: 12px;
-    padding: 2px 12px;
-    font-size: 1.2em;
-    margin-left: 33px; }
-  .fixed-banner a:hover {
-    text-decoration: underline; }
-  @media screen and (max-width: 900px) {
-    .fixed-banner > a.link {
-      font-size: 1.1em; }
-    .fixed-banner > a.button {
-      display: none; } }
-
 /*!
  *  Font Awesome 4.6.3 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
@@ -8555,9 +8522,6 @@ img {
   max-width: 100%; }
 
 #navbar {
-  position: static; }
-
-.fixed-banner {
   position: static; }
 
 #content {
