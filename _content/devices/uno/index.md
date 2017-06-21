@@ -18,6 +18,6 @@ The Things Uno is the perfect board to start prototyping your IoT ideas or make 
 
 [The Things Uno](https://shop.thethingsnetwork.com/index.php/product/the-things-uno/) is based on the [Arduino Leonardo](https://www.arduino.cc/en/Guide/ArduinoLeonardoMicro) ([not the Arduino Uno](https://www.arduino.cc/en/Guide/ArduinoLeonardoMicro#toc9)) with an added [Microchip LoRaWAN module](http://www.microchip.com/design-centers/wireless-connectivity/embedded-wireless/lora-technology). It is fully compatible with the [Arduino IDE](https://www.arduino.cc/en/Main/Software) and existing shields.
 
-## Getting started with The Things Uno
+## Getting started video
 
 [![Getting started with The Things Uno](http://img.youtube.com/vi/kqI78zkhaFQ/0.jpg)](https://www.youtube.com/watch?v=kqI78zkhaFQ&index=4&list=PLM8eOeiKY7JVwrBYRHxsf9p0VM_dVapXl)
