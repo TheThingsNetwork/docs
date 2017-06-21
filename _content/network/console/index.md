@@ -21,5 +21,5 @@ In addition to that it provides a UI to our closed-source Network Operations Cen
 
 ## Getting started video
 
-<a href="https://www.youtube.com/watch?v=JrNjY-pGuno&list=PLM8eOeiKY7JVwrBYRHxsf9p0VM_dVapXl&index=1" target="_blank"><img src="https://github.com/TheThingsNetwork/docs/blob/master/_content/network/console/Console_movie.png" 
+<a href="https://www.youtube.com/watch?v=JrNjY-pGuno&list=PLM8eOeiKY7JVwrBYRHxsf9p0VM_dVapXl&index=1" target="_blank"><img src="https://www.thethingsnetwork.org/docs/network/console/Console_movie.png" 
 alt="Getting started with the console" width="480" /></a>
