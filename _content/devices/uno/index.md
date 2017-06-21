@@ -20,4 +20,4 @@ The Things Uno is the perfect board to start prototyping your IoT ideas or make 
 
 ## Getting started video
 
-[![Getting started with The Things Uno](http://img.youtube.com/vi/kqI78zkhaFQ/0.jpg)](https://www.youtube.com/watch?v=kqI78zkhaFQ&index=4&list=PLM8eOeiKY7JVwrBYRHxsf9p0VM_dVapXl)
+[![Getting started with The Things Uno](http://img.youtube.com/vi/kqI78zkhaFQ/0.jpg)](https://www.youtube.com/watch?v=28Fh5OF8ev0&list=PLM8eOeiKY7JVwrBYRHxsf9p0VM_dVapXl&index=5)
