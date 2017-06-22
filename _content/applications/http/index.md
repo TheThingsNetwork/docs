@@ -8,6 +8,13 @@ source: 'https://github.com/TheThingsIndustries/integration-messaging/blob/maste
 
 The HTTP Integration allows you to send uplink data to an endpoint and receive downlink data over HTTP.
 
+
+## Getting started video
+
+<a href="https://www.youtube.com/watch?v=Uebcq7xmI1M&index=2&list=PLM8eOeiKY7JVwrBYRHxsf9p0VM_dVapXl" target="_blank"><img src="https://www.thethingsnetwork.org/docs/applications/HTTP-Integration.png" 
+alt="Getting started with the HTTP Integration" width="480" /></a>
+
+
 ## Uplink
 
 You can configure the URL, the HTTP method (e.g. `POST`) and optionally the HTTP Authorization header of your endpoint.
