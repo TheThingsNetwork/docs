@@ -51,7 +51,7 @@ The integration will post data in the following format:
     "longitude": 6.2345,              // Longitude of the device
     "altitude": 2                     // Altitude of the device
   },
-  "downlink_url": "https://integrations.thethingsnetwork.org/ttn/api/v2/down/my-app-id/my-process-id?key=ttn-account-v2.secret"
+  "downlink_url": "https://integrations.thethingsnetwork.org/ttn-eu/api/v2/down/my-app-id/my-process-id?key=ttn-account-v2.secret"
 }
 ```
 
@@ -59,13 +59,13 @@ The integration will post data in the following format:
 
 ## Downlink
 
-Your application can schedule a downlink message to a URL for your application, process name and app access key:
+Your application can schedule a downlink message to a URL for your application in a region, process name and app access key:
 
 ```
-https://integrations.thethingsnetwork.org/ttn/api/v2/down/my-app-id/my-process-id?key=ttn-account-v2.secret
+https://integrations.thethingsnetwork.org/ttn-eu/api/v2/down/my-app-id/my-process-id?key=ttn-account-v2.secret
 ```
 
-This URL is also provided in each uplink message for convenience. However, you can call this URL any time to schedule downlink.
+This URL is also provided in each uplink message for convenience. However, you can call this URL any time to schedule downlink. Note that `ttn-eu` refers to the region; other valid regions are `ttn-us-west`, `ttn-brazil` and `ttn-asia-se`.
 
 Your application should `POST` or `PUT` a downlink message.
 
