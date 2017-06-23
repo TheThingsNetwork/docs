@@ -9,7 +9,8 @@ zindex: 1000
 
 Let's install Go, create a new project and install the TTN Client.
 
-1.  [Download](https://golang.org/dl/) and install Go.
+1.  [Download](https://golang.org/dl/) and install Go. Run `go version` and make sure your version is newer than 1.8.
+
 2.  Create a new Go project:
 
     ```bash
@@ -22,6 +23,8 @@ Let's install Go, create a new project and install the TTN Client.
     ```bash
     go get -u github.com/TheThingsNetwork/go-app-sdk/...
     ```
+
+4.  Install [Govendor](https://github.com/kardianos/govendor) and then run `govendor sync` inside `$GOPATH/src/github.com/TheThingsNetwork/go-app-sdk`.
 
 ## `main.go`
 
