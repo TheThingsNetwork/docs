@@ -219,4 +219,6 @@ if err != nil {
 }
 ```
 
+> If you run the above code as-is, the program will run and directly exit. It is because go kills all goroutines when the end of the program is reached. A quick fix for this is to block and wait for the CTRL+C command at the end of your main function.
+
 🎉 Congratulations! Now you know how to get started with our Go SDK for Application Developers. Go build something!
