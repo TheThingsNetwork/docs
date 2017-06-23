@@ -38,7 +38,7 @@ Configure the autoconnect in `/knet/knetd.xml`
 <!-- frequency of connection monitoring -ping- (in seconds) -->
 <CONNECT link_timeout="30"/>
 <!-- DNS servers will be pinged if commented or deleted. Some operators can block the ping on there DNS servers -->
-<CONNECT ip_link="192.168.4.90"/>
+<CONNECT ip_link="8.8.8.8"/>
 
 <!-- ############## default area for connection policy ############## -->
 
