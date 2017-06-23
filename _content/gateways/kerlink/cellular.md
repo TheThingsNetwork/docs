@@ -10,7 +10,8 @@ It is possible to connect the Kerlink to a GPRS/3G connection. This may be eligi
 SIM card detection is only done at boot time. Insert the SIM card in the powered off LoRa station.
 
 Set your APN settings in `/etc/sysconfig/network` (see [Provider Settings](#provider-settings)):
-*You can open the file via the terminal, type: `vi /etc/sysconfig/network`. Type `i` to start editing the file, after doing so, save and quit the file: press `esc` > `:w` > `esc` > `:q`*
+
+>You can open the file via the terminal, type: `vi /etc/sysconfig/network`. Type `i` to start editing the file, after doing so, save and quit the file: press `esc` > `:w` > `esc` > `:q`*
 
 
 **Warning:** Tere is a bug in the software. When `GPRSUSER` and `GPRSPASSWORD` needs to stay empty the Kerlink does funny things and no connection is made. To resolve this problem, please apply [this patch](https://github.com/TheThingsNetwork/kerlink-station-firmware/blob/master/dota/dota_update_gprs_script.tar.gz?raw=true).
