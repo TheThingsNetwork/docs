@@ -1,7 +1,7 @@
 ---
 title: Cayenne Integration
 section: Integrations
-source: 'https://github.com/TheThingsNetwork/docs/blob/master/_content/applications/Cayenne/index.md'
+source: 'https://github.com/TheThingsNetwork/docs/blob/master/_content/applications/cayenne/index.md'
 ---
 
 

@@ -176,17 +176,6 @@ if (process.env.GITHUB_OAUTH_TOKEN) {
       title: 'API Reference',
       zindex: -1000
     }
-  }, {
-    owner: 'TheThingsIndustries',
-    repo: 'integration-messaging',
-    branch: 'master',
-    path: 'ttn/README.md',
-    token: process.env.GITHUB_OAUTH_TOKEN,
-    target: '_content/applications/http/index.md',
-    yaml: {
-      title: 'HTTP Integration',
-      section: 'Integrations'
-    }
   });
 } else {
   console.log('Skipping private repositories...');

@@ -1,7 +1,6 @@
 ---
 title: HTTP Integration
 section: Integrations
-source: 'https://github.com/TheThingsIndustries/integration-messaging/blob/master/ttn/README.md'
 ---
 
 # HTTP Integration
