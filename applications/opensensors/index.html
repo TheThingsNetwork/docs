@@ -17,16 +17,16 @@
       if (document.location.href.substr(0, document.location.href.length - document.location.hash.length) !== canonical) {
         window.location.replace(canonical);
       }
-    })('https://www.thethingsnetwork.org/docs/applications/integrations.html');
+    })('https://www.thethingsnetwork.org/docs/applications/opensensors/');
     </script>
     <!-- Begin Jekyll SEO tag v2.2.3 -->
-<title>Overview | The Things Network</title>
-<meta property="og:title" content="Overview" />
+<title>OpenSensors Integration | The Things Network</title>
+<meta property="og:title" content="OpenSensors Integration" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Integrations" />
-<meta property="og:description" content="Integrations" />
-<link rel="canonical" href="https://www.thethingsnetwork.org/docs/applications/integrations.html" />
-<meta property="og:url" content="https://www.thethingsnetwork.org/docs/applications/integrations.html" />
+<meta name="description" content="OpenSensors Integration" />
+<meta property="og:description" content="OpenSensors Integration" />
+<link rel="canonical" href="https://www.thethingsnetwork.org/docs/applications/opensensors/" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/applications/opensensors/" />
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
@@ -35,7 +35,7 @@
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"@context":"http://schema.org","@type":"BlogPosting","headline":"Overview","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","datePublished":"2017-07-13T16:58:07+00:00","dateModified":"2017-07-13T16:58:07+00:00","description":"Integrations","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/applications/integrations.html"},"url":"https://www.thethingsnetwork.org/docs/applications/integrations.html"}</script>
+{"@context":"http://schema.org","@type":"BlogPosting","headline":"OpenSensors Integration","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","datePublished":"2017-07-13T16:58:07+00:00","dateModified":"2017-07-13T16:58:07+00:00","description":"OpenSensors Integration","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/applications/opensensors/"},"url":"https://www.thethingsnetwork.org/docs/applications/opensensors/"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-152.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -85,7 +85,7 @@
         </ul>
       </div>
       <div class="hidden-xs col-sm-3 text-right">
-        <a href="https://github.com/TheThingsNetwork/docs/edit/master/_content/applications/integrations.md" class="page-edit" data-proofer-ignore><i class="fa fa-github"></i> Edit <strong>integrations.md</strong></a>
+        <a href="https://github.com/TheThingsNetwork/docs/edit/master/_content/applications/opensensors/index.md" class="page-edit" data-proofer-ignore><i class="fa fa-github"></i> Edit <strong>index.md</strong></a>
       </div>
     </div>
     <div class="row">
@@ -132,13 +132,13 @@
             </li>
             <li class="page-side-nav-section"><span>Integrations</span>
             <ul>
-                <li class="active"><a href="/docs/applications/integrations.html">Overview</a>
+                <li class=""><a href="/docs/applications/integrations.html">Overview</a>
                 </li>
                 <li class=""><a href="/docs/applications/Cayenne/">Cayenne Integration</a>
                 </li>
                 <li class=""><a href="/docs/applications/http/">HTTP Integration</a>
                 </li>
-                <li class=""><a href="/docs/applications/opensensors/">OpenSensors Integration</a>
+                <li class="active"><a href="/docs/applications/opensensors/">OpenSensors Integration</a>
                 </li>
                 <li class=""><a href="/docs/applications/storage/">Storage Integration</a>
                 </li>
@@ -156,32 +156,34 @@
       <div class="col-sm-7">
         <div class="panel">
           <div class="panel-body page-content">
-            <h1 id="integrations">Integrations</h1>
-<p>Integrations are the easiest way to connect your devices to an applications. An integration uses the same APIs or SDKs an application could use directly. Together with the private or public APIs of the platform it ties up the application running on the platform with The Things Network:</p>
-<p><img src="options-integration.png" alt="Platform Integration" /></p>
-<p>Platform Integrations completely you from any code and even The Things Network Console or CLI. A good example is an integration for Azure IoT Hub or Amazon IoT, where the user could manage his application and devices from there, while the integration takes care of synchronizing with The Things Network.</p>
-<h2 id="messaging-integration">Messaging Integration</h2>
-<p>A common integration is to forward messages to some webhook or other messaging endpoint (uplink messages). For these situations we provide a set of messaging integrations which act as a bridge between the Handler Data API and any endpoint you configure. It also provides you with an endpoint to send messages back to devices (downlink messages). Easy to configure and use is the <a href="http/">HTTP Integration</a>.</p>
-<p><img src="options-http.png" alt="HTTP Integration" /></p>
-<p>For some messaging integrations we provide a configuration template. Instead of manually configuring the HTTP Integration, we ask you only for variables like a platform key and generate the configuration for you.</p>
-<h2 id="add-an-integration">Add an Integration</h2>
+            <h1 id="opensensors-integration">OpenSensors Integration</h1>
+<p>The OpenSensors integration allows you to publish uplink data to the OpenSensors broker.</p>
+<p>OpenSensors is a real time data exchange for the internet of things, called ‘Twitter for Sensors’ by wired.com, their mission is to make data generated from IoT useful and accessible.</p>
+<p><img src="example.png" alt="OpenSensors Example" /></p>
+<h2 id="how-to-setup-opensensors">How to Setup OpenSensors</h2>
 <ol>
-  <li>Go the application in the Console.</li>
-  <li>Select <strong>Integrations</strong> from the top-right menu.</li>
-  <li>Click the <strong>add integration</strong> link.</li>
-  <li>
-    <p>Click to select the integration you’d like to add:</p>
-    <p><img src="integration-select.png" alt="Select" /></p>
-  </li>
-  <li>
-    <p>Configure the integration (if there are any settings):</p>
-    <p><img src="integration-config.png" alt="Config" /></p>
-    <blockquote>
-      <p>Depending on the integration, there might be more options to set. See the guide for the integration for details.</p>
-    </blockquote>
-  </li>
-  <li>Click <strong>Create integration</strong>.</li>
+  <li>Generate an <a href="https://opensensorsio.helpscoutdocs.com/article/42-where-is-my-api-key">API key</a></li>
+  <li>Create a new <a href="https://opensensorsio.helpscoutdocs.com/article/36-how-do-i-create-a-new-device">device</a> and get the device <code class="highlighter-rouge">Client ID</code> and <code class="highlighter-rouge">password</code>. This will serve as proxy for all devices in your The Things Network application. Note that password will be shown only once, although you can easily reset it by clicking <code class="highlighter-rouge">Reset password</code></li>
 </ol>
+<h2 id="create-the-integration">Create the Integration</h2>
+<p>In the The Things Network Console you will be asked to enter the four following settings:</p>
+<ol>
+  <li>Your OpenSensors.io username</li>
+  <li>The API Key you previously generated</li>
+  <li>The <code class="highlighter-rouge">Client ID</code> of the device you previously created</li>
+  <li>The device password of the proxy device</li>
+</ol>
+<h2 id="uplink">Uplink</h2>
+<p>Device uplinks will be published to topics in the form <code class="highlighter-rouge">users/&lt;username&gt;/&lt;device-id&gt;</code>. The topics will be created automatically. The payload contains the decoded payload and the <code class="highlighter-rouge">raw</code> field with the base64 encoded raw payload. Note that this may overwrite an existing <code class="highlighter-rouge">raw</code> field that is output of your decoder or converter payload function.</p>
+<p>Example published payload:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"celcius"</span><span class="p">:</span><span class="w"> </span><span class="mf">25.19</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"light"</span><span class="p">:</span><span class="w"> </span><span class="mi">759</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"raw"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MDJGODAyMDcwMThB"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"sound"</span><span class="p">:</span><span class="w"> </span><span class="mi">473</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
           </div>
         </div>
       </div>

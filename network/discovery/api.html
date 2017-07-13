@@ -19,9 +19,10 @@
       }
     })('https://www.thethingsnetwork.org/docs/network/discovery/api.html');
     </script>
-    <!-- Begin Jekyll SEO tag v2.1.0 -->
-<title>API Reference - The Things Network</title>
+    <!-- Begin Jekyll SEO tag v2.2.3 -->
+<title>API Reference | The Things Network</title>
 <meta property="og:title" content="API Reference" />
+<meta property="og:locale" content="en_US" />
 <meta name="description" content="API Reference" />
 <meta property="og:description" content="API Reference" />
 <link rel="canonical" href="https://www.thethingsnetwork.org/docs/network/discovery/api.html" />
@@ -29,21 +30,12 @@
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2017-06-27T08:45:20+00:00" />
+<meta property="article:published_time" content="2017-07-13T16:58:07+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"@context": "http://schema.org",
-"@type": "BlogPosting",
-"headline": "API Reference",
-"image": "https://www.thethingsnetwork.org/docs/assets/images/og-image.png",
-"datePublished": "2017-06-27T08:45:20+00:00",
-"description": "API Reference",
-"publisher": {"@type": "Organization",
-"logo": {"@type": "ImageObject",
-"url": "https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},
-"url": "https://www.thethingsnetwork.org/docs/network/discovery/api.html"}</script>
+{"@context":"http://schema.org","@type":"BlogPosting","headline":"API Reference","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","datePublished":"2017-07-13T16:58:07+00:00","dateModified":"2017-07-13T16:58:07+00:00","description":"API Reference","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/network/discovery/api.html"},"url":"https://www.thethingsnetwork.org/docs/network/discovery/api.html"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-152.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -249,6 +241,16 @@ Adding or removing Metadata should be done with the <code class="highlighter-rou
   <li>Request: <a href="#discoverymetadatarequest"><code class="highlighter-rouge">MetadataRequest</code></a></li>
   <li>Response: <a href="#discoverymetadatarequest"><code class="highlighter-rouge">Empty</code></a></li>
 </ul>
+<h3 id="getbyappid"><code class="highlighter-rouge">GetByAppID</code></h3>
+<ul>
+  <li>Request: <a href="#discoverygetbyappidrequest"><code class="highlighter-rouge">GetByAppIDRequest</code></a></li>
+  <li>Response: <a href="#discoverygetbyappidrequest"><code class="highlighter-rouge">Announcement</code></a></li>
+</ul>
+<h3 id="getbyappeui"><code class="highlighter-rouge">GetByAppEUI</code></h3>
+<ul>
+  <li>Request: <a href="#discoverygetbyappeuirequest"><code class="highlighter-rouge">GetByAppEUIRequest</code></a></li>
+  <li>Response: <a href="#discoverygetbyappeuirequest"><code class="highlighter-rouge">Announcement</code></a></li>
+</ul>
 <h2 id="messages">Messages</h2>
 <h3 id="discoveryannouncement"><code class="highlighter-rouge">.discovery.Announcement</code></h3>
 <p>The Announcement of a service (also called component)</p>
@@ -342,6 +344,40 @@ Adding or removing Metadata should be done with the <code class="highlighter-rou
     <tr>
       <td><code class="highlighter-rouge">services</code></td>
       <td><em>repeated</em> <a href="#discoveryannouncement"><code class="highlighter-rouge">Announcement</code></a></td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table></div>
+<h3 id="discoverygetbyappeuirequest"><code class="highlighter-rouge">.discovery.GetByAppEUIRequest</code></h3>
+<div class="table-responsive"><table class="table">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">app_eui</code></td>
+      <td><code class="highlighter-rouge">bytes</code></td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table></div>
+<h3 id="discoverygetbyappidrequest"><code class="highlighter-rouge">.discovery.GetByAppIDRequest</code></h3>
+<div class="table-responsive"><table class="table">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">app_id</code></td>
+      <td><code class="highlighter-rouge">string</code></td>
       <td> </td>
     </tr>
   </tbody>

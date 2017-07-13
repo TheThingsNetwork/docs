@@ -19,9 +19,10 @@
       }
     })('https://www.thethingsnetwork.org/docs/applications/manager/api.html');
     </script>
-    <!-- Begin Jekyll SEO tag v2.1.0 -->
-<title>API Reference - The Things Network</title>
+    <!-- Begin Jekyll SEO tag v2.2.3 -->
+<title>API Reference | The Things Network</title>
 <meta property="og:title" content="API Reference" />
+<meta property="og:locale" content="en_US" />
 <meta name="description" content="API Reference" />
 <meta property="og:description" content="API Reference" />
 <link rel="canonical" href="https://www.thethingsnetwork.org/docs/applications/manager/api.html" />
@@ -29,21 +30,12 @@
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2017-06-27T08:45:20+00:00" />
+<meta property="article:published_time" content="2017-07-13T16:58:07+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"@context": "http://schema.org",
-"@type": "BlogPosting",
-"headline": "API Reference",
-"image": "https://www.thethingsnetwork.org/docs/assets/images/og-image.png",
-"datePublished": "2017-06-27T08:45:20+00:00",
-"description": "API Reference",
-"publisher": {"@type": "Organization",
-"logo": {"@type": "ImageObject",
-"url": "https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},
-"url": "https://www.thethingsnetwork.org/docs/applications/manager/api.html"}</script>
+{"@context":"http://schema.org","@type":"BlogPosting","headline":"API Reference","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","datePublished":"2017-07-13T16:58:07+00:00","dateModified":"2017-07-13T16:58:07+00:00","description":"API Reference","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/applications/manager/api.html"},"url":"https://www.thethingsnetwork.org/docs/applications/manager/api.html"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-152.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -154,6 +146,8 @@
                 </li>
                 <li class=""><a href="/docs/applications/http/">HTTP Integration</a>
                 </li>
+                <li class=""><a href="/docs/applications/opensensors/">OpenSensors Integration</a>
+                </li>
                 <li class=""><a href="/docs/applications/storage/">Storage Integration</a>
                 </li>
             </ul>
@@ -218,6 +212,8 @@ receive an error response.</p>
   </span><span class="nt">"converter"</span><span class="p">:</span><span class="w"> </span><span class="s2">"function Converter(decoded, port) {..."</span><span class="p">,</span><span class="w">
   </span><span class="nt">"decoder"</span><span class="p">:</span><span class="w"> </span><span class="s2">"function Decoder(bytes, port) {..."</span><span class="p">,</span><span class="w">
   </span><span class="nt">"encoder"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Encoder(object, port) {..."</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"payload_format"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"register_on_join_access_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
   </span><span class="nt">"validator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Validator(converted, port) {..."</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -239,6 +235,8 @@ receive an error response.</p>
   </span><span class="nt">"converter"</span><span class="p">:</span><span class="w"> </span><span class="s2">"function Converter(decoded, port) {..."</span><span class="p">,</span><span class="w">
   </span><span class="nt">"decoder"</span><span class="p">:</span><span class="w"> </span><span class="s2">"function Decoder(bytes, port) {..."</span><span class="p">,</span><span class="w">
   </span><span class="nt">"encoder"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Encoder(object, port) {..."</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"payload_format"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"register_on_join_access_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
   </span><span class="nt">"validator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Validator(converted, port) {..."</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -288,6 +286,12 @@ receive an error response.</p>
 <div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"altitude"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
   </span><span class="nt">"app_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"some-app-id"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
   </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Some description of the device"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"dev_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"some-dev-id"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">52.375</span><span class="p">,</span><span class="w">
@@ -328,6 +332,12 @@ receive an error response.</p>
 <div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"altitude"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
   </span><span class="nt">"app_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"some-app-id"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
   </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Some description of the device"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"dev_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"some-dev-id"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">52.375</span><span class="p">,</span><span class="w">
@@ -398,6 +408,12 @@ receive an error response.</p>
     </span><span class="p">{</span><span class="w">
       </span><span class="nt">"altitude"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
       </span><span class="nt">"app_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"some-app-id"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
       </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Some description of the device"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"dev_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"some-dev-id"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">52.375</span><span class="p">,</span><span class="w">
@@ -462,24 +478,34 @@ empty messages in your APIs.</p>
       <td> </td>
     </tr>
     <tr>
+      <td><code class="highlighter-rouge">payload_format</code></td>
+      <td><code class="highlighter-rouge">string</code></td>
+      <td>The payload format indicates how payload is formatted.</td>
+    </tr>
+    <tr>
       <td><code class="highlighter-rouge">decoder</code></td>
       <td><code class="highlighter-rouge">string</code></td>
-      <td>The decoder is a JavaScript function that decodes a byte array to an object.</td>
+      <td>The decoder is a JavaScript function that decodes a byte array to an object. This function is used when the payload format is set to custom.</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">converter</code></td>
       <td><code class="highlighter-rouge">string</code></td>
-      <td>The converter is a JavaScript function that can be used to convert values in the object returned from the decoder. This can for example be useful to convert a voltage to a temperature.</td>
+      <td>The converter is a JavaScript function that can be used to convert values in the object returned from the decoder. This can for example be useful to convert a voltage to a temperature. This function is used when the payload format is set to custom.</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">validator</code></td>
       <td><code class="highlighter-rouge">string</code></td>
-      <td>The validator is a JavaScript function that checks the validity of the object returned by the decoder or converter. If validation fails, the message is dropped.</td>
+      <td>The validator is a JavaScript function that checks the validity of the object returned by the decoder or converter. If validation fails, the message is dropped. This function is used when the payload format is set to custom.</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">encoder</code></td>
       <td><code class="highlighter-rouge">string</code></td>
-      <td>The encoder is a JavaScript function that encodes an object to a byte array.</td>
+      <td>The encoder is a JavaScript function that encodes an object to a byte array. This function is used when the payload format is set to custom.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">register_on_join_access_key</code></td>
+      <td><code class="highlighter-rouge">string</code></td>
+      <td>The “register on join” access key should only be set if devices need to be registered on join</td>
     </tr>
   </tbody>
 </table></div>
@@ -542,7 +568,34 @@ empty messages in your APIs.</p>
       <td> </td>
     </tr>
     <tr>
+      <td><code class="highlighter-rouge">attributes</code></td>
+      <td><em>repeated</em> <a href="#handlerdeviceattributesentry"><code class="highlighter-rouge">AttributesEntry</code></a></td>
+      <td> </td>
+    </tr>
+    <tr>
       <td><code class="highlighter-rouge">description</code></td>
+      <td><code class="highlighter-rouge">string</code></td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table></div>
+<h3 id="handlerdeviceattributesentry"><code class="highlighter-rouge">.handler.Device.AttributesEntry</code></h3>
+<div class="table-responsive"><table class="table">
+  <thead>
+    <tr>
+      <th>Field Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">key</code></td>
+      <td><code class="highlighter-rouge">string</code></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">value</code></td>
       <td><code class="highlighter-rouge">string</code></td>
       <td> </td>
     </tr>
