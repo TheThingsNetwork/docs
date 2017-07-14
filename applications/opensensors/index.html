@@ -30,12 +30,12 @@
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2017-07-13T16:58:07+00:00" />
+<meta property="article:published_time" content="2017-07-14T11:31:15+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"@context":"http://schema.org","@type":"BlogPosting","headline":"OpenSensors Integration","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","datePublished":"2017-07-13T16:58:07+00:00","dateModified":"2017-07-13T16:58:07+00:00","description":"OpenSensors Integration","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/applications/opensensors/"},"url":"https://www.thethingsnetwork.org/docs/applications/opensensors/"}</script>
+{"@context":"http://schema.org","@type":"BlogPosting","headline":"OpenSensors Integration","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","datePublished":"2017-07-14T11:31:15+00:00","dateModified":"2017-07-14T11:31:15+00:00","description":"OpenSensors Integration","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/applications/opensensors/"},"url":"https://www.thethingsnetwork.org/docs/applications/opensensors/"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-152.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -158,23 +158,24 @@
           <div class="panel-body page-content">
             <h1 id="opensensors-integration">OpenSensors Integration</h1>
 <p>The OpenSensors integration allows you to publish uplink data to the OpenSensors broker.</p>
-<p>OpenSensors is a real time data exchange for the internet of things, called ‘Twitter for Sensors’ by wired.com, their mission is to make data generated from IoT useful and accessible.</p>
+<p>OpenSensors is a real time data exchange for the internet of things, called ‘Twitter for Sensors’ by wired.com. Their mission is to make data generated from IoT useful and accessible.</p>
+<p>Go to <a href="https://www.opensensors.io">www.opensensors.io</a> for more information.</p>
 <p><img src="example.png" alt="OpenSensors Example" /></p>
 <h2 id="how-to-setup-opensensors">How to Setup OpenSensors</h2>
 <ol>
-  <li>Generate an <a href="https://opensensorsio.helpscoutdocs.com/article/42-where-is-my-api-key">API key</a></li>
-  <li>Create a new <a href="https://opensensorsio.helpscoutdocs.com/article/36-how-do-i-create-a-new-device">device</a> and get the device <code class="highlighter-rouge">Client ID</code> and <code class="highlighter-rouge">password</code>. This will serve as proxy for all devices in your The Things Network application. Note that password will be shown only once, although you can easily reset it by clicking <code class="highlighter-rouge">Reset password</code></li>
+  <li>Find your <a href="https://opensensorsio.helpscoutdocs.com/article/42-where-is-my-api-key">API key</a></li>
+  <li>Create a new <a href="https://opensensorsio.helpscoutdocs.com/article/36-how-do-i-create-a-new-device">device</a> and get the device’s <strong>Client ID</strong> and <strong>password</strong>. This will serve as a proxy for all devices in your The Things Network application. The <strong>Client ID</strong> is a numeric value. Note that the password will be shown only once, although you can easily reset it by clicking <code class="highlighter-rouge">Reset password</code>.</li>
 </ol>
 <h2 id="create-the-integration">Create the Integration</h2>
 <p>In the The Things Network Console you will be asked to enter the four following settings:</p>
 <ol>
   <li>Your OpenSensors.io username</li>
-  <li>The API Key you previously generated</li>
-  <li>The <code class="highlighter-rouge">Client ID</code> of the device you previously created</li>
+  <li>The API Key from your profile</li>
+  <li>The Client ID of the proxy device</li>
   <li>The device password of the proxy device</li>
 </ol>
 <h2 id="uplink">Uplink</h2>
-<p>Device uplinks will be published to topics in the form <code class="highlighter-rouge">users/&lt;username&gt;/&lt;device-id&gt;</code>. The topics will be created automatically. The payload contains the decoded payload and the <code class="highlighter-rouge">raw</code> field with the base64 encoded raw payload. Note that this may overwrite an existing <code class="highlighter-rouge">raw</code> field that is output of your decoder or converter payload function.</p>
+<p>Device uplinks will be published to topics in the form <code class="highlighter-rouge">users/&lt;opensensors-username&gt;/&lt;ttn-device-id&gt;</code>. The topics will be created automatically. The payload contains the decoded payload and the <code class="highlighter-rouge">raw</code> field with the base64 encoded raw payload. Note that this may overwrite an existing <code class="highlighter-rouge">raw</code> field that is output of your decoder or converter payload function.</p>
 <p>Example published payload:</p>
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"celcius"</span><span class="p">:</span><span class="w"> </span><span class="mf">25.19</span><span class="p">,</span><span class="w">
