@@ -16,7 +16,7 @@ Go to [www.opensensors.io](https://www.opensensors.io) for more information.
 ## How to Setup OpenSensors
 
 1. Find your [API key](https://opensensorsio.helpscoutdocs.com/article/42-where-is-my-api-key)
-2. Create a new [device](https://opensensorsio.helpscoutdocs.com/article/36-how-do-i-create-a-new-device) and get the device's **Client ID** and **password**. This will serve as a proxy for all devices in your The Things Network application. The **Client ID** is a numeric value. Note that the password will be shown only once, although you can easily reset it by clicking `Reset password`.
+2. Create a new [device](https://opensensorsio.helpscoutdocs.com/article/36-how-do-i-create-a-new-device) and get the device's **Client ID** and **password**. This will serve as a proxy for all devices in your The Things Network application. The **Client ID** is a numeric value. Note that the password will be shown only once, although you can easily reset it by clicking **Reset password**.
 
 ## Create the Integration
 
