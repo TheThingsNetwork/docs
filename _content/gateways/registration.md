@@ -4,16 +4,22 @@ title: Gateway Registration
 
 # Gateway Registration
 
-There are mainly two types of packet forwarders that can be running on your gateway, namely [TTN Packet Forwarder](https://github.com/TheThingsNetwork/packet_forwarder/tree/master) or [UDP Packet Forwarder](https://github.com/TheThingsNetwork/packet_forwarder/tree/legacy) (also known as the Semtech Packet Forwarder or Poly Packet Forwarder). 
+There are mainly two types of packet forwarders that can be running on your gateway:
+
++ Packet forwarders that connect using the Semtech UDP protocol (such as the [poly packet forwarder](https://github.com/TheThingsNetwork/packet_forwarder/tree/legacy)). This protocol is not encrypted, less reliable (UDP-based), but its simplicity makes it work on a large number of gateways.
+
++ Packet forwarders that connect using the new TTN Gateway Connector protocol (such as the [TTN Packet Forwarder](https://github.com/TheThingsNetwork/packet_forwarder/tree/master)). This protocol is more secure and safer.
 
 Please read this guide carefully to understand how to register your gateway with The Things Network.
 
-> If you have an off-the-shelf gateway with the default software, it most likely uses the UDP Packet Forwarder. Follow the steps for connecting using the [UDP Packet Forwarder](#via-udp-packet-forwarder).
+> If you have an off-the-shelf gateway with the default software, it most likely uses the Semtech UDP protocol. Follow the steps for connecting using the [UDP Packet Forwarder](#via-udp-packet-forwarder).
 
 ## Via TTN Packet Forwarder
+
 The Things Network Packet Forwarder uses an authenticated and encrypted TCP connection to our network server and has support for Kerlink, Multitech and other Linux based gateways. This is the preferred packet forwarder to use with The Things Network.
 
 ### Start with Registration
+
 You start by [registering your gateway](https://console.thethingsnetwork.org/gateways/register) in the Console.
 
 ![Registration for Gateway Connector](registration-connector.png)

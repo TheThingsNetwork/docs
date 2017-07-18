@@ -11,7 +11,7 @@ source: 'https://github.com/TheThingsNetwork/go-app-sdk/blob/master/API.md'
 Package ttnsdk implements the Go SDK for The Things Network.
 
 This package wraps The Things Network's application and device management APIs
-(github.com/TheThingsNetwork/ttn/api) and the publish/subscribe API
+(github.com/TheThingsNetwork/api) and the publish/subscribe API
 (github.com/TheThingsNetwork/ttn/mqtt). It works with the Discovery Server to
 retrieve the addresses of the Handler and MQTT server.
 
