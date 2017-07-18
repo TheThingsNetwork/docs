@@ -62,6 +62,8 @@ However, this protocol lacks features for production-ready networks:
 
 + There is no **encryption** available. Gateway messages can be intercepted - and modified - during transport.
 
++ Message exchange is not **reliable**, since the exchange is over 2-way UDP.
+
 + The UDP protocol is based on a format close to JSON, but not fully compliant ; for example, the specs specify that an object can hold multiple properties with the same index. This makes it easy to write by hand for testing purposes, but difficult to parse in some situations.
 
 ### Gateway connector protocol

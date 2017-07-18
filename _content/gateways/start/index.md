@@ -1,5 +1,7 @@
 ---
 title: Where to start
+section: Running a gateway
+zindex: 100
 redirect_from:
  - /start/
  - /draft/start/
