@@ -4,7 +4,7 @@ title: Gateway Registration
 
 # Gateway Registration
 
-There are mainly two types of packet forwarders that can be running on your gateway:
+There are mainly two types of packet forwarders that can be running on your gateway, depending on the kind of [network protocol](start/connection) they use:
 
 + Packet forwarders that connect using the Semtech UDP protocol (such as the [poly packet forwarder](https://github.com/TheThingsNetwork/packet_forwarder/tree/legacy)). This protocol is not encrypted, less reliable (UDP-based), but its simplicity makes it work on a large number of gateways.
 
