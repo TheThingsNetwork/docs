@@ -12,7 +12,7 @@ zindex: 900
 
 Gateways form the bridge between devices and The Things Network. Devices use low power networks like LoRaWAN to connect to the Gateway, while the Gateway uses high bandwidth networks like WiFi, Ethernet or Cellular to connect to The Things Network.
 
-All Gateways within reach of a device will receive its messages and forward them to The Things Network. The network will deduplicate the messages and select the best Gateway to forward any messages queued for the device. A single Gateway can serve thousands of devices.
+All Gateways within reach of a device will receive the device's messages and forward them to The Things Network. The network will deduplicate the messages and select the best Gateway to forward any messages queued for downlink. A single Gateway can serve thousands of devices.
 
 ## Help build a global network
 
