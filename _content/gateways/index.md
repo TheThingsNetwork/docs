@@ -12,6 +12,7 @@ zindex: 900
 
 Gateways form the bridge between devices and The Things Network. Devices use low power networks like LoRaWAN to connect to the Gateway, while the Gateway uses high bandwidth networks like WiFi, Ethernet or Cellular to connect to The Things Network.
 
+<<<<<<< HEAD
 **All gateways within reach of a device will receive its messages and forward them to The Things Network.** The network will deduplicate the messages and select the best gateway to forward any messages queued for the device. A single gateway can serve thousands of devices.
 
 ![Gateways](gateways-overview.png)
@@ -23,6 +24,9 @@ Gateways are routers equipped with a **LoRa concentrator**, allowing them to rec
 + Gateways running on a **minimal firmware**, making them low-cost and easy to use (e.g. The Things Gateway), running only the packet forwarding software.
 
 + Gateways running an **operating system**, for which the packet forwarding software is run as a background program (e.g. Kerlink IoT Station, Multitech Conduit). This gives more liberty to the gateway administrator to manage their gateway and to install their own software.
+=======
+All Gateways within reach of a device will receive the device's messages and forward them to The Things Network. The network will deduplicate the messages and select the best Gateway to forward any messages queued for downlink. A single Gateway can serve thousands of devices.
+>>>>>>> 1f31c8e12ee109330554e33889803a3c0ec58e84
 
 ## Help build a global network
 
