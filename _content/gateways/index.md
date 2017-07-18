@@ -24,6 +24,10 @@ Gateways are routers equipped with a **LoRa concentrator**, allowing them to rec
 
 + Gateways running an **operating system**, for which the packet forwarding software is run as a background program (e.g. Kerlink IoT Station, Multitech Conduit). This gives more liberty to the gateway administrator to manage their gateway and to install their own software.
 
+## Can I install a gateway without a license?
+
+LoRaWAN operates on unlicensed bands, so in most countries, running your own gateway is completely legal. There can be, however, country-to-country restrictions (e.g. where to install antennas, and such). Reach out to your local communities if you have a doubt!
+
 ## Help build a global network
 
 No coverage where your device lives? Need more bandwidth? Simply add another Gateway to extend the network for both your own use and anyone else's.
