@@ -8,7 +8,7 @@ The TTN Packet Forwarder is a new packet forwarder, developed by the Things Netw
 
 + Built in [Golang](https://golang.org) and open-source
 
-+ Connects with the [Gateway Connector protocol](../start/connection#gateway-connector-protocol): authentified, reliable and encrypted
++ Connects with the [Gateway Connector protocol](../start/connection.html#gateway-connector-protocol): authentified, reliable and encrypted
 
 + Pre-built for multiple gateways, and build instructions available for all SPI LoRa gateways
 
