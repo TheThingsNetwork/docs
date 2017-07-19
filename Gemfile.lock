@@ -28,7 +28,7 @@ GEM
       typhoeus (~> 0.7)
       yell (~> 2.0)
     i18n (0.8.6)
-    jekyll (3.3.0)
+    jekyll (3.4.5)
       addressable (~> 2.4)
       colorator (~> 1.0)
       jekyll-sass-converter (~> 1.0)
@@ -78,11 +78,11 @@ GEM
       ffi (>= 0.5.0, < 2)
     rouge (1.11.1)
     safe_yaml (1.0.4)
-    sass (3.5.0)
-      sass-listen (~> 3.0.7)
-    sass-listen (3.0.7)
-      rb-fsevent (>= 0.9.3)
-      rb-inotify (>= 0.9.7)
+    sass (3.5.1)
+      sass-listen (~> 4.0.0)
+    sass-listen (4.0.0)
+      rb-fsevent (~> 0.9, >= 0.9.4)
+      rb-inotify (~> 0.9, >= 0.9.7)
     thread_safe (0.3.6)
     typhoeus (0.8.0)
       ethon (>= 0.8.0)
@@ -95,7 +95,7 @@ PLATFORMS
 
 DEPENDENCIES
   html-proofer
-  jekyll (= 3.3.0)
+  jekyll (= 3.4.5)
   jekyll-redirect-from
   jekyll-seo-tag
   jekyll-sitemap
