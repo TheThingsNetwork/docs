@@ -1,5 +1,5 @@
 ---
-title: List of gateways
+title: List of commercial gateways
 zindex: 100
 ---
 

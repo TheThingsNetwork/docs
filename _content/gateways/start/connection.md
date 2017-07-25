@@ -5,7 +5,7 @@ zindex: 100
 
 # Gateway connection to TTN
 
-This page explains how packet forwarders exchange data with TTN. You don't need to understand this to make a gateway work, but if you're curious of how packet forwarders work, this can help you!
+This page explains **how packet forwarders exchange data with TTN**. You don't need to understand all of this to make a gateway work, but if you're curious of how packet forwarders work, this can help you!
 
 ## The Things Network Router
 
@@ -61,6 +61,8 @@ However, this protocol lacks features for production-ready networks:
 + It does not provide **authentication**. Gateways are supposed to identify themselves with their EUI - but anyone can usurpate another gateway.
 
 + There is no **encryption** available. Gateway messages can be intercepted - and modified - during transport.
+
++ Message exchange is not **reliable**, since the exchange is over 2-way UDP.
 
 + The UDP protocol is based on a format close to JSON, but not fully compliant ; for example, the specs specify that an object can hold multiple properties with the same index. This makes it easy to write by hand for testing purposes, but difficult to parse in some situations.
 

@@ -1,5 +1,7 @@
 ---
 title: Where to start
+section: Running a gateway
+zindex: 100
 redirect_from:
  - /start/
  - /draft/start/
@@ -17,4 +19,4 @@ Are you looking to improve the coverage of the Things Network, either for your p
 
 ## Other gateways
 
-If you have specific needs, or would like to learn how to build your own gateway, we have documentation available on the existing gateways. Find out which one matches the best what you want to do!
+If you have specific needs, or would like to learn [how to build your own gateway](build), we have documentation available on the [existing gateways](purchasing). Find out which one matches the best what you want to do!
