@@ -24,16 +24,10 @@ Gateways are routers equipped with a **LoRa concentrator**, allowing them to rec
 + Gateways running on a **minimal firmware**, making them low-cost and easy to use (e.g. The Things Gateway), running only the packet forwarding software.
 
 + Gateways running an **operating system**, for which the packet forwarding software is run as a background program (e.g. Kerlink IoT Station, Multitech Conduit). This gives more liberty to the gateway administrator to manage their gateway and to install their own software.
-<<<<<<< HEAD
-=======
-All Gateways within reach of a device will receive the device's messages and forward them to The Things Network. The network will deduplicate the messages and select the best Gateway to forward any messages queued for downlink. A single Gateway can serve thousands of devices.
->>>>>>> 1f31c8e12ee109330554e33889803a3c0ec58e84
-=======
 
 ## Can I install a gateway without a license?
 
 LoRaWAN operates on unlicensed bands, so in most countries, running your own gateway is completely legal. There can be, however, country-to-country restrictions (e.g. where to install antennas, and such). Reach out to your local communities if you have a doubt!
->>>>>>> 413c324d6ed9b6771dd0658bfb1d03c10ada3879
 
 ## Help build a global network
 
