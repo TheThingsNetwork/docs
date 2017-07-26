@@ -30,12 +30,12 @@
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2017-07-25T08:38:52+00:00" />
+<meta property="article:published_time" content="2017-07-26T08:01:50+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"@context":"http://schema.org","@type":"BlogPosting","headline":"TheThingsNetwork","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","datePublished":"2017-07-25T08:38:52+00:00","dateModified":"2017-07-25T08:38:52+00:00","description":"API Reference","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/devices/arduino/api/network.html"},"url":"https://www.thethingsnetwork.org/docs/devices/arduino/api/network.html"}</script>
+{"@context":"http://schema.org","@type":"BlogPosting","headline":"TheThingsNetwork","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","datePublished":"2017-07-26T08:01:50+00:00","dateModified":"2017-07-26T08:01:50+00:00","description":"API Reference","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/devices/arduino/api/network.html"},"url":"https://www.thethingsnetwork.org/docs/devices/arduino/api/network.html"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-152.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -289,6 +289,29 @@ RX Delay 2: 2000
 <ul>
   <li><code class="highlighter-rouge">unsigned long mseconds</code>: number of milliseconds to sleep.</li>
 </ul>
+<h2 id="method-wake">Method: <code class="highlighter-rouge">wake</code></h2>
+<p>Wake up the LoRa module from sleep before the expiration of the defined time.</p>
+<div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="kt">void</span> <span class="n">wake</span><span class="p">();</span>
+</code></pre>
+</div>
+<h2 id="method-linkcheck">Method: <code class="highlighter-rouge">linkCheck</code></h2>
+<p>Sets the time interval for the link check process to be triggered.</p>
+<div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="kt">void</span> <span class="n">linkCheck</span><span class="p">(</span><span class="kt">uint16_t</span> <span class="n">seconds</span><span class="p">);</span>
+</code></pre>
+</div>
+<ul>
+  <li><code class="highlighter-rouge">uint16_t seconds</code>: the time interval in seconds. A value of 0 will disable the link check process.</li>
+</ul>
+<h2 id="method-getlinkcheckgateways">Method: <code class="highlighter-rouge">getLinkCheckGateways</code></h2>
+<p>Gets the number of gateways that successfully received the last Link Check Request frame.</p>
+<div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="kt">uint8_t</span> <span class="n">getLinkCheckGateways</span><span class="p">();</span>
+</code></pre>
+</div>
+<h2 id="method-getlinkcheckmargin">Method: <code class="highlighter-rouge">getLinkCheckMargin</code></h2>
+<p>Gets the demodulation margin as received in the last Link Check Answer frame.</p>
+<div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="kt">uint8_t</span> <span class="n">getLinkCheckMargin</span><span class="p">();</span>
+</code></pre>
+</div>
           </div>
         </div>
       </div>
