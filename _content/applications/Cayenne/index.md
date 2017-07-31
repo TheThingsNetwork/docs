@@ -78,7 +78,7 @@ After encoding data with CayenneLPP, have a look at the console to change the **
 
 
 ## Build your Cayenne dashboard
-Click the device on the left side of your dashboard in Cayenne and your data as well as the action button are shown right away. After a bit of editing you can make quite some fancy stuff.
+Click the device on the left side of your dashboard in Cayenne and your data as well as the actions buttons are shown right away. After a bit of editing you can make quite some fancy stuff.
 
 ![myDevices-dashboard](mydevices-data.png) 
 
