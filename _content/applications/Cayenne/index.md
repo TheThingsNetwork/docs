@@ -35,6 +35,19 @@ lpp.addGPS(3, 52.37365, 4.88650, 2);   // channel 3, coordinates
 ttn.sendBytes(lpp.getBuffer(), lpp.getSize());
 ```
 
+### Contact your device
+
+In order to send data to your device, you first need to "open" a channel. For that send a packet saying that an `Output` is available, you will only need to do that once. Both digital and analog are available.
+```js
+  lpp.addDigitalOutput(2, 1);
+  //or
+  lpp.addAnalogOutput(2, 120.0);
+```
+An action button will then appear on your dashboard; Now you can send data to your device with a click!
+
+Be aware, the data sent by the dashboard will arrive on the same channel as the `Output` but will be tagged as `Input`.
+
+
 ### Set the Payload Format in the Console
 
 After encoding data with CayenneLPP, have a look at the console to change the **Payload Formats**
@@ -65,7 +78,7 @@ After encoding data with CayenneLPP, have a look at the console to change the **
 
 
 ## Build your Cayenne dashboard
-Click the device on the left side of your dashboard in Cayenne and your data is shown right away. After a bit of editing you can make quite some fancy stuff.
+Click the device on the left side of your dashboard in Cayenne and your data as well as the action button are shown right away. After a bit of editing you can make quite some fancy stuff.
 
 ![myDevices-dashboard](mydevices-data.png) 
 
