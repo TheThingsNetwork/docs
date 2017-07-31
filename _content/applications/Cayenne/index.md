@@ -37,7 +37,7 @@ ttn.sendBytes(lpp.getBuffer(), lpp.getSize());
 
 ### Contact your device
 
-In order to send data to your device, you first need to "open" a channel. For that send a packet saying that an `Output` is available, you will only need to do that once. Both digital and analog are available.
+In order to send data to your device, you first need to "open" a channel. For that, send a packet saying that an `Output` is available, you only need to do that once. Both digital and analog are available.
 ```js
   lpp.addDigitalOutput(2, 1);
   //or
