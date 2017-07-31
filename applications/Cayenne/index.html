@@ -30,12 +30,12 @@
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2017-07-26T08:01:50+00:00" />
+<meta property="article:published_time" content="2017-07-31T14:34:38+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"@context":"http://schema.org","@type":"BlogPosting","headline":"Cayenne Integration","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","datePublished":"2017-07-26T08:01:50+00:00","dateModified":"2017-07-26T08:01:50+00:00","description":"myDevices Cayenne","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/applications/Cayenne/"},"url":"https://www.thethingsnetwork.org/docs/applications/Cayenne/"}</script>
+{"@context":"http://schema.org","@type":"BlogPosting","headline":"Cayenne Integration","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","datePublished":"2017-07-31T14:34:38+00:00","dateModified":"2017-07-31T14:34:38+00:00","description":"myDevices Cayenne","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/applications/Cayenne/"},"url":"https://www.thethingsnetwork.org/docs/applications/Cayenne/"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-152.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -179,6 +179,15 @@ Please have a look <a href="https://mydevices.com/cayenne/docs/#lora-cayenne-low
 <span class="nx">ttn</span><span class="p">.</span><span class="nx">sendBytes</span><span class="p">(</span><span class="nx">lpp</span><span class="p">.</span><span class="nx">getBuffer</span><span class="p">(),</span> <span class="nx">lpp</span><span class="p">.</span><span class="nx">getSize</span><span class="p">());</span>
 </code></pre>
 </div>
+<h3 id="contact-your-device">Contact your device</h3>
+<p>In order to send data to your device, you first need to “open” a channel. For that send a packet saying that an <code class="highlighter-rouge">Output</code> is available, you will only need to do that once. Both digital and analog are available.</p>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code>  <span class="nx">lpp</span><span class="p">.</span><span class="nx">addDigitalOutput</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+  <span class="c1">//or</span>
+  <span class="nx">lpp</span><span class="p">.</span><span class="nx">addAnalogOutput</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mf">120.0</span><span class="p">);</span>
+</code></pre>
+</div>
+<p>An action button will then appear on your dashboard; Now you can send data to your device with a click!</p>
+<p>Be aware, the data sent by the dashboard will arrive on the same channel as the <code class="highlighter-rouge">Output</code> but will be tagged as <code class="highlighter-rouge">Input</code>.</p>
 <h3 id="set-the-payload-format-in-the-console">Set the Payload Format in the Console</h3>
 <p>After encoding data with CayenneLPP, have a look at the console to change the <strong>Payload Formats</strong></p>
 <ul>
@@ -205,7 +214,7 @@ Please have a look <a href="https://mydevices.com/cayenne/docs/#lora-cayenne-low
   <li>Add the integration</li>
 </ol>
 <h2 id="build-your-cayenne-dashboard">Build your Cayenne dashboard</h2>
-<p>Click the device on the left side of your dashboard in Cayenne and your data is shown right away. After a bit of editing you can make quite some fancy stuff.</p>
+<p>Click the device on the left side of your dashboard in Cayenne and your data as well as the action button are shown right away. After a bit of editing you can make quite some fancy stuff.</p>
 <p><img src="mydevices-data.png" alt="myDevices-dashboard" /></p>
 <p>🎉 Now impress some folks with this amazing dashboard you built on Twitter, using <em>@thethingsntwrk @CayenneIoT</em></p>
           </div>
