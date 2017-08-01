@@ -107,13 +107,10 @@ var items = [{
   }
 }, {
   owner: 'TheThingsNetwork',
-  repo: 'ttn',
+  repo: 'api',
   branch: 'master',
-  path: 'api/handler/ApplicationManager.md',
+  path: 'handler/ApplicationManager.md',
   target: '_content/applications/manager/api.md',
-  replace: [
-    [/^# ApplicationManager API Reference/m, '# API Reference']
-  ],
   yaml: {
     title: 'API Reference',
     zindex: -1000
