@@ -99,7 +99,7 @@ We start by adding a new device. For this we need to get a **Device Manager** fr
 ```go
 devices, err := client.ManageDevices()
 if err != nil {
-  log.WithError(err).Fatal("my-amazing-app: could not get device manager")
+  log.WithError(err).Fatalf("%s: could not read CA certificate file", sdkClientName)
 }
 ```
 
@@ -120,7 +120,7 @@ Now we can `Set` the device on the network server:
 ```go
 err = devices.Set(dev)
 if err != nil {
-  log.WithError(err).Fatal("my-amazing-app: could not create device")
+  log.WithError(err).Fatalf("%s: could not create device", sdkClientName)
 }
 ```
 
@@ -129,7 +129,7 @@ After this, we can also `Get` the device back from the server
 ```go
 dev, err = devices.Get("my-new-device")
 if err != nil {
-  log.WithError(err).Fatal("my-amazing-app: could not get device")
+  log.WithError(err).Fatalf("%s: could not get device", sdkClientName)
 }
 ```
 
@@ -138,7 +138,7 @@ Your newly created device is now ready to join the network, so let's subscribe t
 ```go
 pubsub, err := client.PubSub()
 if err != nil {
-  log.WithError(err).Fatal("my-amazing-app: could not get application pub/sub")
+  log.WithError(err).Fatalf("%s: could not get application pub/sub", sdkClientName)
 }
 ```
 
@@ -153,7 +153,7 @@ Now we can subscribe to device activations. This will give us a Go channel (`cha
 ```go
 activations, err := allDevicesPubSub.SubscribeActivations()
 if err != nil {
-  log.WithError(err).Fatal("my-amazing-app: could not subscribe to activations")
+  log.WithError(err).Fatalf("%s: could not subscribe to activations", sdkClientName)
 }
 go func() {
   for activation := range activations {
@@ -173,7 +173,7 @@ If we are no longer interested in activations, we can unsubscribe from them. Thi
 ```go
 err = allDevicesPubSub.UnsubscribeActivations()
 if err != nil {
-  log.WithError(err).Fatal("my-amazing-app: could not unsubscribe from activations")
+  log.WithError(err).Fatalf("%s: could not unsubscribe from activations", sdkClientName)
 }
 ```
 
@@ -188,12 +188,12 @@ And then we subscribe to uplink messages, logging them to the console as they ar
 ```go
 uplink, err := myNewDevicePubSub.SubscribeUplink()
 if err != nil {
-  log.WithError(err).Fatal("my-amazing-app: could not subscribe to uplink messages")
+  log.WithError(err).Fatalf("%s: could not subscribe to uplink messages", sdkClientName)
 }
 go func() {
   for message := range uplink {
     hexPayload := hex.EncodeToString(message.PayloadRaw)
-    log.WithField("data", hexPayload).Info("my-amazing-app: received uplink")
+    log.WithField("data", hexPayload).Infof("%s: received uplink", sdkClientName)
   }
 }()
 ```
@@ -203,7 +203,7 @@ Again, we can unsubscribe when we're no longer interested:
 ```go
 err = myNewDevicePubSub.UnsubscribeUplink()
 if err != nil {
-  log.WithError(err).Fatal("my-amazing-app: could not unsubscribe from uplink")
+  log.WithError(err).Fatalf("%s: could not unsubscribe from uplink", sdkClientName)
 }
 ```
 
@@ -215,7 +215,7 @@ err = myNewDevicePubSub.Publish(&types.DownlinkMessage{
   FPort:      10,
 })
 if err != nil {
-  log.WithError(err).Fatal("my-amazing-app: could not schedule downlink message")
+  log.WithError(err).Fatalf("%s: could not schedule downlink message", sdkClientName)
 }
 ```
 
