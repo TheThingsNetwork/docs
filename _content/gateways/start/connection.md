@@ -72,7 +72,7 @@ Because of the reasons above, we've developed a new protocol, solving these issu
 
 + Gateways are identified by an **ID** and by a **key**. Sending a message to a router requires to know the combination.
 
-+ Messages are sent encoded in **[protocol buffers](https://developers.google.com/protocol-buffers/)**. This serialisation technology allows transfer of data from a program to another, in first-class types, **regardless of the language**.
++ Messages are sent encoded in **[protocol buffers](https://developers.google.com/protocol-buffers/)**. This serialisation technology allows transfer of data from a program to another, in native types, **regardless of the language**.
 
 With the gateway connector protocol, messages can be exchanged through two network protocols:
 
