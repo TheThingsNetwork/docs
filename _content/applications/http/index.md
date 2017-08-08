@@ -16,7 +16,7 @@ alt="Getting started with the HTTP Integration" width="480" /></a>
 
 ## Uplink
 
-You can configure the URL, the HTTP method (e.g. `POST`) and optionally the HTTP Authorization header of your endpoint.
+You can configure the URL, the HTTP method (e.g. `POST`) and optionally the HTTP Authorization header of your endpoint but also a custom HTTP header of your choice.
 
 The integration will post data in the following format:
 
