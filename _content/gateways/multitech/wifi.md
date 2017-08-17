@@ -6,7 +6,7 @@ title: Configure Wi-Fi
 New models of Multitech Conduit now support Wi-Fi connectivity: ideal for environments where it is difficult to pass over an Ethernet cable.
 
 ## Connect to the Multitech Conduit
-[Connect first](mlinux#connect) to the Multitech Conduit - we'll need to execute some commands on the gateway.
+[Connect first](mlinux.html#connect) to the Multitech Conduit - we'll need to execute some commands on the gateway.
 
 ## Configuring Wi-Fi connection
 Once you're connected to the Conduit, let's configure it for your Wi-Fi network!
