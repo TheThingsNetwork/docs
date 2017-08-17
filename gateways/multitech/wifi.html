@@ -17,16 +17,16 @@
       if (document.location.href.substr(0, document.location.href.length - document.location.hash.length) !== canonical) {
         window.location.replace(canonical);
       }
-    })('https://www.thethingsnetwork.org/docs/gateways/kerlink/specs.html');
+    })('https://www.thethingsnetwork.org/docs/gateways/multitech/wifi.html');
     </script>
     <!-- Begin Jekyll SEO tag v2.2.3 -->
-<title>Specifications | The Things Network</title>
-<meta property="og:title" content="Specifications" />
+<title>Configure Wi-Fi | The Things Network</title>
+<meta property="og:title" content="Configure Wi-Fi" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Specifications" />
-<meta property="og:description" content="Specifications" />
-<link rel="canonical" href="https://www.thethingsnetwork.org/docs/gateways/kerlink/specs.html" />
-<meta property="og:url" content="https://www.thethingsnetwork.org/docs/gateways/kerlink/specs.html" />
+<meta name="description" content="Configure Wi-Fi New models of Multitech Conduit now support Wi-Fi connectivity: ideal for environments where it is difficult to pass over an Ethernet cable." />
+<meta property="og:description" content="Configure Wi-Fi New models of Multitech Conduit now support Wi-Fi connectivity: ideal for environments where it is difficult to pass over an Ethernet cable." />
+<link rel="canonical" href="https://www.thethingsnetwork.org/docs/gateways/multitech/wifi.html" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/gateways/multitech/wifi.html" />
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
@@ -35,7 +35,7 @@
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"@context":"http://schema.org","@type":"BlogPosting","headline":"Specifications","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","datePublished":"2017-08-17T15:02:21+00:00","dateModified":"2017-08-17T15:02:21+00:00","description":"Specifications","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/gateways/kerlink/specs.html"},"url":"https://www.thethingsnetwork.org/docs/gateways/kerlink/specs.html"}</script>
+{"@context":"http://schema.org","@type":"BlogPosting","headline":"Configure Wi-Fi","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","datePublished":"2017-08-17T15:02:21+00:00","dateModified":"2017-08-17T15:02:21+00:00","description":"Configure Wi-Fi New models of Multitech Conduit now support Wi-Fi connectivity: ideal for environments where it is difficult to pass over an Ethernet cable.","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/gateways/multitech/wifi.html"},"url":"https://www.thethingsnetwork.org/docs/gateways/multitech/wifi.html"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-152.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -85,7 +85,7 @@
         </ul>
       </div>
       <div class="hidden-xs col-sm-3 text-right">
-        <a href="https://github.com/TheThingsNetwork/docs/edit/master/_content/gateways/kerlink/specs.md" class="page-edit" data-proofer-ignore><i class="fa fa-github"></i> Edit <strong>specs.md</strong></a>
+        <a href="https://github.com/TheThingsNetwork/docs/edit/master/_content/gateways/multitech/wifi.md" class="page-edit" data-proofer-ignore><i class="fa fa-github"></i> Edit <strong>wifi.md</strong></a>
       </div>
     </div>
     <div class="row">
@@ -117,20 +117,20 @@
                 <li class=""><a href="/docs/gateways/gateway/">The Things Gateway</a>
                 </li>
                 <li class=""><a href="/docs/gateways/multitech/">MultiTech Conduit</a>
-                </li>
-                <li class=""><a href="/docs/gateways/kerlink/">Kerlink LoRa IoT Station</a>
             <ul>
-                <li class="active"><a href="/docs/gateways/kerlink/specs.html">Specifications</a>
+                <li class=""><a href="/docs/gateways/multitech/aep.html">Configure AEP model</a>
                 </li>
-                <li class=""><a href="/docs/gateways/kerlink/setup.html">Setup</a>
+                <li class="active"><a href="/docs/gateways/multitech/wifi.html">Configure Wi-Fi</a>
                 </li>
-                <li class=""><a href="/docs/gateways/kerlink/config.html">Configuration</a>
+                <li class=""><a href="/docs/gateways/multitech/mlinux.html">Configure mLinux model</a>
                 </li>
-                <li class=""><a href="/docs/gateways/kerlink/cellular.html">Cellular Connection</a>
+                <li class=""><a href="/docs/gateways/multitech/register.html">Register with TTN</a>
                 </li>
-                <li class=""><a href="/docs/gateways/kerlink/mount.html">Mount</a>
+                <li class=""><a href="/docs/gateways/multitech/next.html">What's next?</a>
                 </li>
             </ul>
+                </li>
+                <li class=""><a href="/docs/gateways/kerlink/">Kerlink LoRa IoT Station</a>
                 </li>
                 <li class=""><a href="/docs/gateways/lorrier/">Lorrier LR2</a>
                 </li>
@@ -143,61 +143,45 @@
       <div class="col-sm-7">
         <div class="panel">
           <div class="panel-body page-content">
-            <h1 id="specifications">Specifications</h1>
-<div class="table-responsive"><table class="table">
-  <thead>
-    <tr>
-      <th style="text-align: left">Name</th>
-      <th style="text-align: left">Kerlink LoRa IoT Station</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left">Price</td>
-      <td style="text-align: left">On request, 1.200 Euro EXW incoterms (approx. 1.500 EUR final)</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">Availability</td>
-      <td style="text-align: left">Send inquiry to <a href="mailto:sales@kerlink.fr">Kerlink Sales</a></td>
-    </tr>
-    <tr>
-      <td style="text-align: left">Capacity</td>
-      <td style="text-align: left">8 band</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">Casing</td>
-      <td style="text-align: left">IP67 (Suitable for outdoor mounting)</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">Installation</td>
-      <td style="text-align: left">requires a skilled technician</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">Hardware</td>
-      <td style="text-align: left">proprietary</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">Software</td>
-      <td style="text-align: left">open source &amp; proprietary</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">Backhaul</td>
-      <td style="text-align: left">Ethernet (UTP) or Cellular (2G/3G)</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">LoRa Bands</td>
-      <td style="text-align: left">868MHz, 915MHz or 920/925MHz (choose correct band when ordering)</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">GPS</td>
-      <td style="text-align: left">Onboard GPS</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">Package</td>
-      <td style="text-align: left">Kerlink IoT Station, Antenna + 1m cable, PoE injector, mounting brackets for pole mounting</td>
-    </tr>
-  </tbody>
-</table></div>
+            <h1 id="configure-wi-fi">Configure Wi-Fi</h1>
+<p>New models of Multitech Conduit now support Wi-Fi connectivity: ideal for environments where it is difficult to pass over an Ethernet cable.</p>
+<h2 id="connect-to-the-multitech-conduit">Connect to the Multitech Conduit</h2>
+<p><a href="mlinux#connect">Connect first</a> to the Multitech Conduit - we’ll need to execute some commands on the gateway.</p>
+<h2 id="configuring-wi-fi-connection">Configuring Wi-Fi connection</h2>
+<p>Once you’re connected to the Conduit, let’s configure it for your Wi-Fi network!</p>
+<p>For this part, you’ll need to be able to use a command-line text editor. If you’ve never used any, we recommend using <a href="https://www.nano-editor.org/dist/v2.1/nano.html"><code class="highlighter-rouge">nano</code></a> - an accessible, user-friendly text editor.</p>
+<h3 id="configuring-the-wi-fi-network">Configuring the Wi-Fi network</h3>
+<p>Once connected to the gateway, open the <code class="highlighter-rouge">/etc/wpa_supplicant.conf</code> file:</p>
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>nano /etc/wpa_supplicant.conf
+</code></pre>
+</div>
+<p>We’ll add extra lines at the end of this file, depending on the network you want to add.</p>
+<ul>
+  <li>If the network you want to add is not protected by a password, add those lines:</li>
+</ul>
+<div class="highlighter-rouge"><pre class="highlight"><code>network={
+        ssid="&lt;ssid of the network&gt;"
+        key_mgmt=NONE
+}
+</code></pre>
+</div>
+<ul>
+  <li>If the network is protected by a password, add those lines:</li>
+</ul>
+<div class="highlighter-rouge"><pre class="highlight"><code>network={
+        ssid="&lt;ssid of the network&gt;"
+        psk="&lt;password of the network&gt;"
+}
+</code></pre>
+</div>
+<p>If there already is a <code class="highlighter-rouge">network={[...]}</code> configuration, delete it before adding your own network.</p>
+<p><img src="wpa-supplicant.png" alt="Networks configuration file" /></p>
+<h3 id="configuring-the-network-interfaces">Configuring the network interfaces</h3>
+<p>All you have to do left to enable Wi-Fi is to enable the Wi-Fi network interface. Open up the <code class="highlighter-rouge">/etc/network/interfaces</code> file, find the paragraph that begins with <code class="highlighter-rouge">auto wifi0</code>, and uncomment all the next lines.</p>
+<p><img src="network-interfaces.png" alt="Network interfaces" /></p>
+<h3 id="reboot-the-gateway">Reboot the gateway</h3>
+<p>Reboot your gateway, by typing this command: <code class="highlighter-rouge">shutdown -r now</code>.</p>
+<p>When your gateway starts up, it should have connected to your Wi-Fi network! To verify this, execute the command <code class="highlighter-rouge">ifconfig</code> ; the system will show the available network interfaces. The <code class="highlighter-rouge">wifi0</code> should have appeared, with an associated IP for the gateway.</p>
           </div>
         </div>
       </div>
