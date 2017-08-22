@@ -64,7 +64,7 @@ Password: pdmk-0b0e032d
 
 ### On the gateway
 
-Use the following command on the gateway to check whether data is being sent and received:
+Use the following command on the gateway to check whether data is being sent and received (change the port number depending on the packet forwarder used (e.g. 1901 for the new packet forwarder)):
 
 ```bash
 tcpdump -AUq port 1700
