@@ -10,7 +10,7 @@ Integrations are the easiest way to connect your devices to an applications. An 
 
 ![Platform Integration](options-integration.png)
 
-Platform Integrations completely you from any code and even The Things Network Console or CLI. A good example is an integration for Azure IoT Hub or Amazon IoT, where the user could manage his application and devices from there, while the integration takes care of synchronizing with The Things Network.
+Platform Integrations are full integrations with external IoT platforms to synchronize the device registry and uplink and downlink data, so you don't need to write code or use The Things Network Console. External IoT platform are for example Azure IoT Hub, AWS IoT and IBM Watson IoT, where the user manages application and devices while the integration process takes care of synchronizing with The Things Network.
 
 ## Messaging Integration
 
