@@ -23,19 +23,19 @@
 <title>API Reference | The Things Network</title>
 <meta property="og:title" content="API Reference" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="API Reference: Data MQTT" />
-<meta property="og:description" content="API Reference: Data MQTT" />
+<meta name="description" content="We are building a global open free crowdsourced long range low power IoT data network." />
+<meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network." />
 <link rel="canonical" href="https://www.thethingsnetwork.org/docs/applications/nodejs/api.html" />
 <meta property="og:url" content="https://www.thethingsnetwork.org/docs/applications/nodejs/api.html" />
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2017-08-29T12:32:28+00:00" />
+<meta property="article:published_time" content="2017-08-31T12:45:29+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"@context":"http://schema.org","@type":"BlogPosting","headline":"API Reference","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","datePublished":"2017-08-29T12:32:28+00:00","dateModified":"2017-08-29T12:32:28+00:00","description":"API Reference: Data MQTT","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/applications/nodejs/api.html"},"url":"https://www.thethingsnetwork.org/docs/applications/nodejs/api.html"}</script>
+{"@context":"http://schema.org","@type":"BlogPosting","headline":"API Reference","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","datePublished":"2017-08-31T12:45:29+00:00","dateModified":"2017-08-31T12:45:29+00:00","description":"We are building a global open free crowdsourced long range low power IoT data network.","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/applications/nodejs/api.html"},"url":"https://www.thethingsnetwork.org/docs/applications/nodejs/api.html"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-152.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -85,7 +85,7 @@
         </ul>
       </div>
       <div class="hidden-xs col-sm-3 text-right">
-        <a href="https://github.com/TheThingsNetwork/node-app-sdk/blob/master/docs/data.MQTT.md" class="page-edit" data-proofer-ignore><i class="fa fa-github"></i> Edit <strong>api.md</strong></a>
+        <a href="https://github.com/TheThingsNetwork/node-app-sdk/blob/master/DOCUMENTATION.md" class="page-edit" data-proofer-ignore><i class="fa fa-github"></i> Edit <strong>api.md</strong></a>
       </div>
     </div>
     <div class="row">
@@ -130,8 +130,6 @@
             <ul>
                 <li class=""><a href="/docs/applications/nodejs/quick-start.html">Quick Start</a>
                 </li>
-                <li class=""><a href="/docs/applications/nodejs/live.html">Live Example</a>
-                </li>
                 <li class="active"><a href="/docs/applications/nodejs/api.html">API Reference</a>
                 </li>
             </ul>
@@ -164,195 +162,452 @@
       <div class="col-sm-7">
         <div class="panel">
           <div class="panel-body page-content">
-            <h1 id="api-reference-data-mqtt">API Reference: Data MQTT</h1>
-<p>Require the TTN Client module:</p>
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">ttn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ttn'</span><span class="p">);</span>
-</code></pre>
-</div>
-<h2 id="class-datamqtt">Class: data.MQTT</h2>
-<p>Creates an instance of the client:</p>
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ttn</span><span class="p">.</span><span class="nx">Client</span><span class="p">(</span><span class="nx">region</span><span class="p">,</span> <span class="nx">appId</span><span class="p">,</span> <span class="nx">appAccessKey</span><span class="p">,</span> <span class="p">[</span><span class="nx">options</span><span class="p">]);</span>
-</code></pre>
-</div>
+            <!-- Generated by documentation.js. Update this documentation by updating the source code. -->
+<h3 id="table-of-contents">Table of Contents</h3>
 <ul>
-  <li><code class="highlighter-rouge">region [string]</code>: The region (e.g. <code class="highlighter-rouge">eu</code>) or full hostname (e.g. <code class="highlighter-rouge">eu.thethings.network</code>) of the handler to connect to.</li>
-  <li><code class="highlighter-rouge">appId [string]</code>: The ID of the application to connect to (e.g. <code class="highlighter-rouge">HELLO-WORLD</code>).</li>
-  <li><code class="highlighter-rouge">appAccessKey [string]</code>: An access key for the application, formatted as base64 (e.g. <code class="highlighter-rouge">'2Z+MU0T5xZCaqsD0bPqOhzA6iygGFoi4FAgMFgBfXSo='</code>).</li>
-  <li>
-    <p><code class="highlighter-rouge">options [object]</code>: Optional additional options to pass on to <a href="https://www.npmjs.com/package/mqtt#connect"><code class="highlighter-rouge">mqtt.connect()</code></a>, for example to use TLS download <a href="https://preview.console.thethingsnetwork.org/mqtt-ca.pem">mqtt-ca.pem</a> and do something like:</p>
-    <pre><code class="language-node">  var fs = require('fs');
-  var options = {
-    ca: fs.readFileSync('mqtt-ca.pem')
-  };
-</code></pre>
-  </li>
-</ul>
-<h2 id="event-connect">Event: connect</h2>
-<p>Emitted on successful (re)connection.</p>
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">client</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'connect'</span><span class="p">,</span> <span class="kd">function</span> <span class="nx">cb</span><span class="p">(</span><span class="nx">connack</span><span class="p">)</span> <span class="p">{});</span>
-</code></pre>
-</div>
-<ul>
-  <li><code class="highlighter-rouge">cb.connack [object]</code>: Connack packet. See <a href="https://www.npmjs.com/package/mqtt#event-connect">MQTT</a>.</li>
-</ul>
-<h2 id="event-error">Event: error</h2>
-<p>Emitted when the client cannot connect or when a parsing error occurs.</p>
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">client</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'error'</span><span class="p">,</span> <span class="kd">function</span> <span class="nx">cb</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{});</span>
-</code></pre>
-</div>
-<ul>
-  <li><code class="highlighter-rouge">cb.err [Error]</code>: Error object. See <a href="https://www.npmjs.com/package/mqtt#event-error">MQTT</a>.</li>
-</ul>
-<h2 id="event-message">Event: message</h2>
-<p>Emitted when TTN forwards a message addressed to your application.</p>
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">client</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'message'</span><span class="p">,</span> <span class="p">[</span><span class="nx">deviceId</span><span class="p">],</span> <span class="p">[</span><span class="nx">field</span><span class="p">],</span> <span class="kd">function</span> <span class="nx">cb</span><span class="p">(</span><span class="nx">deviceId</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{});</span>
-</code></pre>
-</div>
-<ul>
-  <li><code class="highlighter-rouge">deviceId [string]</code>: Optional device ID to filter on, e.g.: <code class="highlighter-rouge">my-uno</code>.</li>
-  <li><code class="highlighter-rouge">field [string]</code>: Optional field (path) to filter on, e.g.: <code class="highlighter-rouge">led</code>.</li>
-  <li><code class="highlighter-rouge">cb.deviceId [string]</code>: Device ID, e.g.: <code class="highlighter-rouge">my-uno</code>.</li>
-  <li>
-    <p><code class="highlighter-rouge">cb.data [object]</code>: Message data, e.g.:</p>
-    <div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"port"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"counter"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"payload_raw"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Buffer"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="mi">1</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="nt">"payload_fields"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"led"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="nt">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-09-07T12:50:07.068771281Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"frequency"</span><span class="p">:</span><span class="w"> </span><span class="mf">868.1</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"modulation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LORA"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"data_rate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SF7BW125"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"coding_rate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4/5"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"gateways"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-      </span><span class="nt">"gtw_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0000024B08060112"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">3955426155</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-09-07T12:50:07.053048Z"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"channel"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"rssi"</span><span class="p">:</span><span class="w"> </span><span class="mi">-109</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"snr"</span><span class="p">:</span><span class="w"> </span><span class="mf">5.8</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"rf_chain"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
-    </span><span class="p">}]</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-    </div>
-  </li>
-</ul>
-<h2 id="event-device">Event: device</h2>
-<p>Emitted when a device event is published.</p>
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">client</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'device'</span><span class="p">,</span> <span class="p">[</span><span class="nx">deviceId</span><span class="p">],</span> <span class="p">[</span><span class="nx">event</span><span class="p">],</span> <span class="kd">function</span> <span class="nx">cb</span><span class="p">(</span><span class="nx">deviceId</span><span class="p">,</span> <span class="nx">data</span><span class="p">))</span> <span class="p">{});</span>
-</code></pre>
-</div>
-<ul>
-  <li><code class="highlighter-rouge">deviceId [string]</code>: Optional device ID to filter on, e.g.: <code class="highlighter-rouge">my-uno</code>.</li>
-  <li><code class="highlighter-rouge">event [string]</code>: Optional event (path) to filter on, e.g.: <code class="highlighter-rouge">activations</code> or <code class="highlighter-rouge">down/scheduled</code>.</li>
-  <li><code class="highlighter-rouge">cb.deviceId [string]</code>: Device ID, e.g.: <code class="highlighter-rouge">my-uno</code>.</li>
-  <li>
-    <p><code class="highlighter-rouge">cb.data [object]</code>: Event data, e.g. for <code class="highlighter-rouge">down/scheduled</code>:</p>
-    <div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"port"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"payload_raw"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Buffer"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="mi">1</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-    </div>
-  </li>
-</ul>
-<blockquote>
-  <p>The <code class="highlighter-rouge">activation</code> is a type of <code class="highlighter-rouge">device</code> event and internally mapped as such.</p>
-</blockquote>
-<h2 id="event-activation">Event: activation</h2>
-<blockquote>
-  <p><strong>DEPRECATED:</strong> Use the <code class="highlighter-rouge">device</code> event with <code class="highlighter-rouge">activations</code> as event filter.</p>
-</blockquote>
-<p>Emitted when a device registered to the application activates.</p>
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">client</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'activation'</span><span class="p">,</span> <span class="p">[</span><span class="nx">deviceId</span><span class="p">],</span> <span class="kd">function</span> <span class="nx">cb</span><span class="p">(</span><span class="nx">deviceId</span><span class="p">,</span> <span class="nx">data</span><span class="p">))</span> <span class="p">{});</span>
-</code></pre>
-</div>
-<ul>
-  <li><code class="highlighter-rouge">deviceId [string]</code>: Optional device ID to filter on, e.g.: <code class="highlighter-rouge">my-uno</code>.</li>
-  <li><code class="highlighter-rouge">cb.deviceId [string]</code>: Device ID, e.g.: <code class="highlighter-rouge">my-uno</code>.</li>
-  <li>
-    <p><code class="highlighter-rouge">cb.data [object]</code>: Activation data, e.g.:</p>
-    <div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"app_eui"</span><span class="p">:</span><span class="w"> </span><span class="s2">"70B3D57ED0000AFB"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"dev_eui"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0004A30B001B7AD2"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"dev_addr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"260023BB"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-09-07T12:43:17.97454032Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"frequency"</span><span class="p">:</span><span class="w"> </span><span class="mf">867.1</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"modulation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LORA"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"data_rate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SF7BW125"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"coding_rate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4/5"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"gateways"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-      </span><span class="nt">"gtw_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0000024B08060112"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">3546311603</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-09-07T12:43:17.938537Z"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"channel"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"rssi"</span><span class="p">:</span><span class="w"> </span><span class="mi">-107</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"snr"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.2</span><span class="w">
-    </span><span class="p">}]</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-    </div>
-  </li>
-</ul>
-<blockquote>
-  <p>The <code class="highlighter-rouge">activation</code> is a type of <code class="highlighter-rouge">device</code> event and internally mapped as such.</p>
-</blockquote>
-<h2 id="method-send">Method: send</h2>
-<p>Send a message to a specific device.</p>
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">client</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">deviceId</span><span class="p">,</span> <span class="nx">payload</span><span class="p">,</span> <span class="p">[</span><span class="nx">port</span><span class="p">]);</span>
-</code></pre>
-</div>
-<ul>
-  <li><code class="highlighter-rouge">deviceId [string]</code>: The ID of the device to address, e.g. <code class="highlighter-rouge">MY-UNO</code></li>
-  <li><code class="highlighter-rouge">payload [mixed]</code>: Message to send, either:
+  <li><a href="#application">Application</a></li>
+  <li><a href="#key">key</a></li>
+  <li><a href="#is-token">is-token</a></li>
+  <li><a href="#setup">setup</a></li>
+  <li><a href="#payloadfunctions">PayloadFunctions</a></li>
+  <li><a href="#open">open</a></li>
+  <li><a href="#applicationclient">ApplicationClient</a>
     <ul>
-      <li>Array, e.g. <code class="highlighter-rouge">[1]</code></li>
-      <li><a href="https://nodejs.org/api/buffer.html">Buffer</a>, e.g. <code class="highlighter-rouge">new Buffer([0x01])</code></li>
-      <li>
-        <p>Object, e.g. <code class="highlighter-rouge"><span class="p">{</span><span class="w"> </span><span class="err">led:</span><span class="w"> </span><span class="err">true</span><span class="w"> </span><span class="p">}</span></code></p>
-        <blockquote>
-          <p>This requires your application to be configured with an encoder payload function to encode the object in bytes.</p>
-        </blockquote>
-      </li>
+      <li><a href="#constructor">constructor</a></li>
+      <li><a href="#get">get</a></li>
+      <li><a href="#setpayloadformat">setPayloadFormat</a></li>
+      <li><a href="#setcustompayloadfunctions">setCustomPayloadFunctions</a></li>
+      <li><a href="#setregisteronjoinaccesskey">setRegisterOnJoinAccessKey</a></li>
+      <li><a href="#unregister">unregister</a></li>
+      <li><a href="#devices">devices</a></li>
+      <li><a href="#registerdevice">registerDevice</a></li>
+      <li><a href="#device">device</a></li>
+      <li><a href="#updatedevice">updateDevice</a></li>
+      <li><a href="#deletedevice">deleteDevice</a></li>
     </ul>
   </li>
-  <li><code class="highlighter-rouge">port [number]</code>: Optional port to address. Default: <code class="highlighter-rouge">1</code>.</li>
+  <li><a href="#discoveryoptions">DiscoveryOptions</a></li>
+  <li><a href="#handlerclient">HandlerClient</a>
+    <ul>
+      <li><a href="#open-1">open</a></li>
+      <li><a href="#data">data</a></li>
+      <li><a href="#application-1">application</a></li>
+    </ul>
+  </li>
+  <li><a href="#dataclient">DataClient</a>
+    <ul>
+      <li><a href="#constructor-1">constructor</a></li>
+      <li><a href="#close">close</a></li>
+      <li><a href="#end">end</a></li>
+      <li><a href="#on">on</a></li>
+      <li><a href="#off">off</a></li>
+      <li><a href="#send">send</a></li>
+    </ul>
+  </li>
+  <li><a href="#applicationsettings">ApplicationSettings</a></li>
+  <li><a href="#application-2">application</a></li>
+  <li><a href="#service">Service</a></li>
+  <li><a href="#announcement">Announcement</a></li>
+  <li><a href="#app">app</a></li>
+  <li><a href="#data-1">data</a></li>
+  <li><a href="#discovery">Discovery</a>
+    <ul>
+      <li><a href="#constructor-2">constructor</a></li>
+      <li><a href="#getall">getAll</a></li>
+      <li><a href="#get-1">get</a></li>
+      <li><a href="#getbyappid">getByAppID</a></li>
+    </ul>
+  </li>
+  <li><a href="#services">services</a>
+    <ul>
+      <li><a href="#handler">Handler</a></li>
+      <li><a href="#router">Router</a></li>
+      <li><a href="#broker">Broker</a></li>
+    </ul>
+  </li>
 </ul>
-<blockquote>
-  <p>See the <a href="https://nodejs.org/api/buffer.html#buffer_class_buffer">Node.js Buffer reference</a> for different ways to create a buffer. The client will call <a href="https://nodejs.org/api/buffer.html#buffer_buf_tostring_encoding_start_end"><code class="highlighter-rouge">Buffer.toString('base64')</code></a> before publishing the message to The Things Network’s MQTT broker.</p>
-</blockquote>
-<h2 id="method-end">Method: end</h2>
-<p>Close the client via <a href="https://www.npmjs.com/package/mqtt#end"><code class="highlighter-rouge">client.mqtt.end()</code></a>.</p>
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">client</span><span class="p">.</span><span class="nx">end</span><span class="p">([</span><span class="nx">force</span><span class="p">],</span> <span class="p">[</span><span class="nx">cb</span><span class="p">]);</span>
-</code></pre>
-</div>
+<h2 id="application">Application</h2>
+<p>Application is an application on the network.</p>
+<p>Type: {appId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, payloadFormat: PayloadFormat, decoder: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>?, converter: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>?, validator: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>?, encoder: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>?, registerOnJoinAccessKey: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>?}</p>
+<p><strong>Properties</strong></p>
 <ul>
-  <li><code class="highlighter-rouge">force [bool]</code>: Passing it to true will close the client right away, without waiting for the in-flight messages to be acked. This parameter is optional.</li>
-  <li><code class="highlighter-rouge">cb [Function]</code>: will be called when the client is closed. This parameter is optional.</li>
+  <li><code class="highlighter-rouge">appId</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></strong></li>
+  <li><code class="highlighter-rouge">payloadFormat</code> <strong>PayloadFormat</strong></li>
+  <li><code class="highlighter-rouge">decoder</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>?</strong></li>
+  <li><code class="highlighter-rouge">converter</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>?</strong></li>
+  <li><code class="highlighter-rouge">validator</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>?</strong></li>
+  <li><code class="highlighter-rouge">encoder</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>?</strong></li>
+  <li><code class="highlighter-rouge">registerOnJoinAccessKey</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>?</strong></li>
 </ul>
-<h2 id="property-mqtt">Property: mqtt</h2>
-<p>Interact with the wrapped <a href="https://www.npmjs.com/package/mqtt">MQTT client</a>:</p>
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">client</span><span class="p">.</span><span class="nx">mqtt</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'reconnect'</span><span class="p">,</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">'reconnect'</span><span class="p">));</span>
-<span class="nx">client</span><span class="p">.</span><span class="nx">mqtt</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'close'</span><span class="p">,</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">'close'</span><span class="p">));</span>
+<h2 id="key">key</h2>
+<p>Generates a new key to be used for Lora</p>
+<p><strong>Parameters</strong></p>
+<ul>
+  <li><code class="highlighter-rouge">length</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></strong>  (optional, default <code class="highlighter-rouge">16</code>)</li>
+</ul>
+<h2 id="is-token">is-token</h2>
+<p>Returns true if the passed in string
+is a json web token, and false otherwise.
+It does NOT validate the token signature.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+  <li><code class="highlighter-rouge">str</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></strong></li>
+</ul>
+<p>Returns <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></strong></p>
+<p>##</p>
+<p>A token that can register ApplicationSettings</p>
+<h2 id="setup">setup</h2>
+<p>Setup function that prepares the environment with the required
+application and devices for testing.</p>
+<h2 id="payloadfunctions">PayloadFunctions</h2>
+<p>PayloadFunctions is an object that bundles the payload functions of an
+application.</p>
+<p>Type: {decoder: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>?, converter: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>?, validator: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>?, encoder: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>?}</p>
+<p><strong>Properties</strong></p>
+<ul>
+  <li><code class="highlighter-rouge">decoder</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>?</strong></li>
+  <li><code class="highlighter-rouge">converter</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>?</strong></li>
+  <li><code class="highlighter-rouge">validator</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>?</strong></li>
+  <li><code class="highlighter-rouge">encoder</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>?</strong></li>
+</ul>
+<h2 id="open">open</h2>
+<p><code class="highlighter-rouge">open</code> creates and opens a HandlerClient for the application with the specified ID.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+  <li><code class="highlighter-rouge">appID</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></strong> The ID of the application you want to manage.</li>
+  <li><code class="highlighter-rouge">accessKerOrToken</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></strong></li>
+  <li><code class="highlighter-rouge">opts</code> <strong><a href="#discoveryoptions">DiscoveryOptions</a>?</strong> Optional options to pass to the Discovery client.</li>
+  <li><code class="highlighter-rouge">tokenOrKey</code>  The Access Token or Access Key used to authenticate.</li>
+</ul>
+<p>Returns <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&lt;<a href="#handlerclient">HandlerClient</a>&gt;</strong></p>
+<h2 id="applicationclient">ApplicationClient</h2>
+<p>A client that manages devices on the handler.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+  <li><code class="highlighter-rouge">appID</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></strong></li>
+  <li><code class="highlighter-rouge">tokenOrKey</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></strong></li>
+  <li><code class="highlighter-rouge">netAddress</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></strong></li>
+  <li><code class="highlighter-rouge">certificate</code> <strong><a href="https://nodejs.org/api/buffer.html">Buffer</a>?</strong></li>
+</ul>
+<h3 id="constructor">constructor</h3>
+<p>Create and open an application manager client that can be used for
+retreiving and updating an application and its devices.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+  <li><code class="highlighter-rouge">appID</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></strong> The ID of the application you want to manage</li>
+  <li><code class="highlighter-rouge">tokenOrKey</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></strong> The Access Token or Access Key used to authenticate</li>
+  <li><code class="highlighter-rouge">netAddress</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></strong> The gRPC address of the handler where the application is registered</li>
+  <li><code class="highlighter-rouge">certificate</code> <strong><a href="https://nodejs.org/api/buffer.html">Buffer</a>?</strong> An optional certificate used to connect to the handler securely</li>
+</ul>
+<p>Returns <strong>void</strong></p>
+<h3 id="get">get</h3>
+<p>Get the application</p>
+<p>Returns <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&lt;<a href="#application">Application</a>&gt;</strong></p>
+<h3 id="setpayloadformat">setPayloadFormat</h3>
+<p>Change the payload format of the application.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+  <li><code class="highlighter-rouge">format</code> <strong>PayloadFormat</strong></li>
+</ul>
+<p>Returns <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&lt;void&gt;</strong></p>
+<h3 id="setcustompayloadfunctions">setCustomPayloadFunctions</h3>
+<p>Set the custom payload functions of the application and set the format
+to custom.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+  <li><code class="highlighter-rouge">fns</code> <strong><a href="#payloadfunctions">PayloadFunctions</a></strong>  (optional, default <code class="highlighter-rouge"><span class="p">{}</span></code>)</li>
+</ul>
+<p>Returns <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&lt;void&gt;</strong></p>
+<h3 id="setregisteronjoinaccesskey">setRegisterOnJoinAccessKey</h3>
+<p>Set the registerOnJoinAccessKey or remove it.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+  <li><code class="highlighter-rouge">to</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></strong></li>
+</ul>
+<p>Returns <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&lt;void&gt;</strong></p>
+<h3 id="unregister">unregister</h3>
+<p>Unregister the application from the handler.</p>
+<p>Returns <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&lt;void&gt;</strong></p>
+<h3 id="devices">devices</h3>
+<p>List the devices of the application</p>
+<p>Returns <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&lt;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&lt;Device»</strong></p>
+<h3 id="registerdevice">registerDevice</h3>
+<p>Register a device in the application.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+  <li><code class="highlighter-rouge">devID</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></strong></li>
+  <li><code class="highlighter-rouge">device</code> <strong>DeviceUpdates</strong></li>
+</ul>
+<p>Returns <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&lt;void&gt;</strong></p>
+<h3 id="device">device</h3>
+<p>Get the device specified by the devID</p>
+<p><strong>Parameters</strong></p>
+<ul>
+  <li><code class="highlighter-rouge">devID</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></strong></li>
+</ul>
+<p>Returns <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&lt;Device&gt;</strong></p>
+<h3 id="updatedevice">updateDevice</h3>
+<p>Update the device specified by the devID with the specified updates</p>
+<p><strong>Parameters</strong></p>
+<ul>
+  <li><code class="highlighter-rouge">devID</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></strong></li>
+  <li><code class="highlighter-rouge">updates</code> <strong>DeviceUpdates</strong></li>
+</ul>
+<p>Returns <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&lt;void&gt;</strong></p>
+<h3 id="deletedevice">deleteDevice</h3>
+<p>Delete the specified device.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+  <li><code class="highlighter-rouge">devID</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></strong></li>
+</ul>
+<p>Returns <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&lt;void&gt;</strong></p>
+<h2 id="discoveryoptions">DiscoveryOptions</h2>
+<p>Type: {address: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>?, insecure: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>?, certificate: <a href="https://nodejs.org/api/buffer.html">Buffer</a>?}</p>
+<p><strong>Properties</strong></p>
+<ul>
+  <li><code class="highlighter-rouge">address</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>?</strong></li>
+  <li><code class="highlighter-rouge">insecure</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>?</strong></li>
+  <li><code class="highlighter-rouge">certificate</code> <strong><a href="https://nodejs.org/api/buffer.html">Buffer</a>?</strong></li>
+</ul>
+<h2 id="handlerclient">HandlerClient</h2>
+<p><code class="highlighter-rouge">Handler</code> is a  client for The Things Network handler APIs.
+It can be used to get data from an application or to manage devices.</p>
+<p>Example:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>const handler = new Handler("my-app-id", "my-app-access-key")
 </code></pre>
 </div>
+<p><strong>Parameters</strong></p>
+<ul>
+  <li><code class="highlighter-rouge">appID</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></strong></li>
+  <li><code class="highlighter-rouge">appAccessKey</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></strong></li>
+  <li><code class="highlighter-rouge">opts</code> <strong><a href="#discoveryoptions">DiscoveryOptions</a>?</strong></li>
+</ul>
+<h3 id="open-1">open</h3>
+<p><code class="highlighter-rouge">open</code> opens the client to the handler.</p>
+<p>Returns <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&lt;<a href="#handlerclient">HandlerClient</a>&gt;</strong></p>
+<h3 id="data">data</h3>
+<p>Open a data client that can be used to receive live application data</p>
+<p>Returns <strong><a href="#dataclient">DataClient</a></strong></p>
+<h3 id="application-1">application</h3>
+<p>Open a application manager that can be used to manage the settings and devices of the
+application.</p>
+<p>Returns <strong><a href="#applicationclient">ApplicationClient</a></strong></p>
+<h2 id="dataclient">DataClient</h2>
+<p>DataClient is a client for The Things Network data API.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+  <li><code class="highlighter-rouge">appID</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></strong></li>
+  <li><code class="highlighter-rouge">appAccessKey</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></strong></li>
+  <li><code class="highlighter-rouge">mqttAddress</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></strong></li>
+</ul>
+<h3 id="constructor-1">constructor</h3>
+<p>Creates a new DataClient and opens the MQTT connection.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+  <li><code class="highlighter-rouge">appID</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></strong></li>
+  <li><code class="highlighter-rouge">appAccessKey</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></strong></li>
+  <li><code class="highlighter-rouge">mqttAddress</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></strong></li>
+</ul>
+<p>Returns <strong>void</strong></p>
+<h3 id="close">close</h3>
+<p>Close the mqtt connection</p>
+<p><strong>Parameters</strong></p>
+<ul>
+  <li><code class="highlighter-rouge">force</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>?</strong> passing it to true will close the client right away, without waiting for the in-flight messages to be acked</li>
+  <li><code class="highlighter-rouge">callback</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>?</strong> will be called when the client is closed</li>
+</ul>
+<h3 id="end">end</h3>
+<p>Same as close (for backwards compatibility).</p>
+<p><strong>Parameters</strong></p>
+<ul>
+  <li><code class="highlighter-rouge">force</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>?</strong></li>
+  <li><code class="highlighter-rouge">callback</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>?</strong></li>
+</ul>
+<h3 id="on">on</h3>
+<p>Starts listening to events.</p>
+<p>Possible events are:</p>
+<ul>
+  <li><code class="highlighter-rouge">uplink</code> (or <code class="highlighter-rouge">message</code>): Messages sent by the devices to the appliction.</li>
+  <li><code class="highlighter-rouge">activation</code>: An alias for the <code class="highlighter-rouge">activations</code> (see <code class="highlighter-rouge">event</code>)</li>
+  <li><code class="highlighter-rouge">event</code> (or <code class="highlighter-rouge">device</code>): Events that happen to devices. You can filter on
+the events by adding more parameters. For instance:
+    <ul>
+      <li><code class="highlighter-rouge">downlink/scheduled</code></li>
+      <li><code class="highlighter-rouge">downlink/sent</code></li>
+      <li><code class="highlighter-rouge">activations</code></li>
+      <li><code class="highlighter-rouge">create</code></li>
+      <li><code class="highlighter-rouge">update</code></li>
+      <li><code class="highlighter-rouge">delete</code></li>
+      <li><code class="highlighter-rouge">down/acks</code></li>
+      <li><code class="highlighter-rouge">up/errors</code></li>
+      <li><code class="highlighter-rouge">down/errors</code></li>
+      <li><code class="highlighter-rouge">activations/errors</code></li>
+    </ul>
+  </li>
+</ul>
+<p>See <a href="https://www.thethingsnetwork.org/docs/applications/mqtt/api.html">The MQTT API Reference</a>
+for more information about these events and what their payloads look like.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+  <li><code class="highlighter-rouge">event</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></strong> The name of the event to listen to.</li>
+  <li><code class="highlighter-rouge">args</code> <strong>…<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&lt;any&gt;</strong></li>
+  <li><code class="highlighter-rouge">devID</code>  An optional devID. If not passed will subscribe to the event for all devices.</li>
+  <li><code class="highlighter-rouge">callback</code>  The callback to call when the event occurs.</li>
+</ul>
+<p><strong>Examples</strong></p>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">// listens to all uplinks from all devices</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">"uplink"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">devID</span><span class="p">,</span> <span class="nx">message</span><span class="p">)</span> <span class="p">{})</span>
+</code></pre>
+</div>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">// listens to all uplinks from the device with id `foo`</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">"uplink"</span><span class="p">,</span> <span class="s2">"foo"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">devID</span><span class="p">,</span> <span class="nx">message</span><span class="p">)</span> <span class="p">{})</span>
+</code></pre>
+</div>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">// listens to all device events for all devices</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">"event"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">devID</span><span class="p">,</span> <span class="nx">message</span><span class="p">)</span> <span class="p">{})</span>
+</code></pre>
+</div>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">// listens to all device events for device with id `foo`</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">"event"</span><span class="p">,</span> <span class="s2">"foo"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">devID</span><span class="p">,</span> <span class="nx">message</span><span class="p">)</span> <span class="p">{})</span>
+</code></pre>
+</div>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">// listens to the `downlink/scheduled` events for device with id `foo`</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">"event"</span><span class="p">,</span> <span class="s2">"foo"</span><span class="p">,</span> <span class="s2">"downlink/scheduled"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">devID</span><span class="p">,</span> <span class="nx">message</span><span class="p">)</span> <span class="p">{})</span>
+</code></pre>
+</div>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">// listens to the `downlink/scheduled` events for all devices</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">"event"</span><span class="p">,</span> <span class="s2">"+"</span><span class="p">,</span> <span class="s2">"downlink/scheduled"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">devID</span><span class="p">,</span> <span class="nx">message</span><span class="p">)</span> <span class="p">{})</span>
+</code></pre>
+</div>
+<p>Returns <strong>void</strong></p>
+<h3 id="off">off</h3>
+<p>Stop listening to events.
+The argument structure is the same as for <code class="highlighter-rouge">on()</code>.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+  <li><code class="highlighter-rouge">event</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></strong></li>
+  <li><code class="highlighter-rouge">args</code> <strong>…<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&lt;any&gt;</strong></li>
+</ul>
+<p>Returns <strong>void</strong></p>
+<h3 id="send">send</h3>
+<p>Send a message to the device with the specified device ID.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+  <li><code class="highlighter-rouge">devID</code> <strong>DeviceID</strong></li>
+  <li>
+    <div class="table-responsive"><table class="table">
+      <tbody>
+        <tr>
+          <td><code class="highlighter-rouge">payload</code> **(PayloadArray</td>
+          <td>PayloadRaw</td>
+          <td>PayloadFields)**</td>
+        </tr>
+      </tbody>
+    </table></div>
+  </li>
+  <li><code class="highlighter-rouge">port</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></strong>  (optional, default <code class="highlighter-rouge">1</code>)</li>
+</ul>
+<h2 id="applicationsettings">ApplicationSettings</h2>
+<p>ApplicationSettings hold the settings of an application.</p>
+<p>Type: {payloadFormat: PayloadFormat?, registerOnJoinAccessKey: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>?}</p>
+<p><strong>Properties</strong></p>
+<ul>
+  <li><code class="highlighter-rouge">payloadFormat</code> <strong>PayloadFormat?</strong></li>
+  <li><code class="highlighter-rouge">registerOnJoinAccessKey</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>?</strong></li>
+</ul>
+<h2 id="application-2">application</h2>
+<p><code class="highlighter-rouge">application</code> creates and opens an ApplicationClient for the application with the specified ID.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+  <li><code class="highlighter-rouge">appID</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></strong> The ID of the application you want to manage</li>
+  <li><code class="highlighter-rouge">accessKeyOrToken</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></strong> The Access Token or Access Key used to authenticate</li>
+  <li><code class="highlighter-rouge">opts</code> <strong><a href="#discoveryoptions">DiscoveryOptions</a>?</strong></li>
+</ul>
+<p>Returns <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&lt;<a href="#applicationclient">ApplicationClient</a>&gt;</strong></p>
+<h2 id="service">Service</h2>
+<p>Service is an enum of the possible services types to get from the discovery
+server.</p>
+<p>Type: (<code class="highlighter-rouge">"router"</code> | <code class="highlighter-rouge">"broker"</code> | <code class="highlighter-rouge">"handler"</code>)</p>
+<h2 id="announcement">Announcement</h2>
+<p>Announcement is an announcement on the discovery server.</p>
+<p>Type: {id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, serviceName: <a href="#service">Service</a>, serviceVersion: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, description: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, pb_public: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>, url: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, netAddress: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, mqttAddress: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, apiAddress: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, publicKey: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>?, certificate: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>?, metadataList: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&lt;any&gt;?}</p>
+<p><strong>Properties</strong></p>
+<ul>
+  <li><code class="highlighter-rouge">id</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></strong></li>
+  <li><code class="highlighter-rouge">serviceName</code> <strong><a href="#service">Service</a></strong></li>
+  <li><code class="highlighter-rouge">serviceVersion</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></strong></li>
+  <li><code class="highlighter-rouge">description</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></strong></li>
+  <li><code class="highlighter-rouge">pb_public</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></strong></li>
+  <li><code class="highlighter-rouge">url</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></strong></li>
+  <li><code class="highlighter-rouge">netAddress</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></strong></li>
+  <li><code class="highlighter-rouge">mqttAddress</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></strong></li>
+  <li><code class="highlighter-rouge">apiAddress</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></strong></li>
+  <li><code class="highlighter-rouge">publicKey</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>?</strong></li>
+  <li><code class="highlighter-rouge">certificate</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>?</strong></li>
+  <li><code class="highlighter-rouge">metadataList</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&lt;any&gt;?</strong></li>
+</ul>
+<p>##</p>
+<p>Settings for the discovery server</p>
+<h2 id="app">app</h2>
+<p>The app used for testing</p>
+<h2 id="data-1">data</h2>
+<p><code class="highlighter-rouge">data</code> creates and opens an DataClient for the application with the specified ID.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+  <li><code class="highlighter-rouge">appID</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></strong> The ID of the application you want to manage</li>
+  <li><code class="highlighter-rouge">accessKeyOrToken</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></strong> The Access Token or Access Key used to authenticate</li>
+  <li><code class="highlighter-rouge">opts</code> <strong><a href="#discoveryoptions">DiscoveryOptions</a>?</strong></li>
+</ul>
+<p>Returns <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&lt;<a href="#dataclient">DataClient</a>&gt;</strong></p>
+<p>##</p>
+<p>Settings for the handler</p>
+<h2 id="discovery">Discovery</h2>
+<p>Discovery is a client for The Things Network discovery API</p>
+<p><strong>Parameters</strong></p>
+<ul>
+  <li><code class="highlighter-rouge">opts</code> <strong><a href="#discoveryoptions">DiscoveryOptions</a></strong>  (optional, default <code class="highlighter-rouge"><span class="p">{}</span></code>)</li>
+</ul>
+<h3 id="constructor-2">constructor</h3>
+<p>Create a new Discovery client.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+  <li><code class="highlighter-rouge">opts</code> <strong><a href="#discoveryoptions">DiscoveryOptions</a></strong>  (optional, default <code class="highlighter-rouge"><span class="p">{}</span></code>)</li>
+</ul>
+<p>Returns <strong>void</strong></p>
+<h3 id="getall">getAll</h3>
+<p><code class="highlighter-rouge">getAll</code> returns announcements for all services known to
+the discovery server that match the service name.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+  <li><code class="highlighter-rouge">serviceName</code> <strong><a href="#service">Service</a></strong> The name of the services to look for, eg. <code class="highlighter-rouge">"handler"</code></li>
+</ul>
+<p>Returns <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&lt;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&lt;<a href="#announcement">Announcement</a>»</strong></p>
+<h3 id="get-1">get</h3>
+<p><code class="highlighter-rouge">get</code> returns the announcement for the service with the
+specified service name and id.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+  <li><code class="highlighter-rouge">serviceName</code> <strong><a href="#service">Service</a></strong> The name of the services to look for, eg. <code class="highlighter-rouge">"handler"</code></li>
+  <li><code class="highlighter-rouge">id</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></strong> The id of the service to look for, eg. <code class="highlighter-rouge">"ttn-handler-eu"</code></li>
+</ul>
+<p>Returns <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&lt;<a href="#announcement">Announcement</a>&gt;</strong></p>
+<h3 id="getbyappid">getByAppID</h3>
+<p><code class="highlighter-rouge">getByAppID</code> gets a handler announcement by application ID.
+It looks up the handler the application is registered to.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+  <li><code class="highlighter-rouge">appID</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></strong></li>
+</ul>
+<p>Returns <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&lt;<a href="#announcement">Announcement</a>&gt;</strong></p>
+<h2 id="services">services</h2>
+<p>services is a map with the known service names for the discovery server.</p>
+<p>Type: {}</p>
+<h3 id="handler">Handler</h3>
+<p>Handler is a Handler service</p>
+<h3 id="router">Router</h3>
+<p>Router is a Router service</p>
+<h3 id="broker">Broker</h3>
+<p>Broker is a Broker service</p>
           </div>
         </div>
       </div>

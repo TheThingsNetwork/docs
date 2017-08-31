@@ -25,12 +25,12 @@
 <meta property="og:site_name" content="The Things Network">
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png">
 <meta property="og:type" content="article">
-<meta property="article:published_time" content="2017-08-29T12:32:28+00:00">
+<meta property="article:published_time" content="2017-08-31T12:45:29+00:00">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@thethingsnetwrk">
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork">
 <script type="application/ld+json">
-{"@context":"http://schema.org","@type":"BlogPosting","headline":"API Reference","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","datePublished":"2017-08-29T12:32:28+00:00","dateModified":"2017-08-29T12:32:28+00:00","description":"API Reference","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/network/cli/api.html"},"url":"https://www.thethingsnetwork.org/docs/network/cli/api.html"}</script><!-- End Jekyll SEO tag --><link rel="apple-touch-icon-precomposed" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-152.png">
+{"@context":"http://schema.org","@type":"BlogPosting","headline":"API Reference","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","datePublished":"2017-08-31T12:45:29+00:00","dateModified":"2017-08-31T12:45:29+00:00","description":"API Reference","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/network/cli/api.html"},"url":"https://www.thethingsnetwork.org/docs/network/cli/api.html"}</script><!-- End Jekyll SEO tag --><link rel="apple-touch-icon-precomposed" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-152.png">
 <meta name="msapplication-TileColor" content="#FFFFFF">
 <meta name="msapplication-TileImage" content="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-144.png">
 <meta name="application-name" content="The Things Network">
@@ -525,8 +525,21 @@ Available rights are: gateway:settings, gateway:collaborators, gateway:delete, g
 <p><strong>Usage:</strong> <code class="highlighter-rouge">ttnctl gateways edit [GatewayID] [flags]</code></p>
 <p><strong>Options</strong></p>
 <div class="highlighter-rouge">
-<pre class="highlight"><code>      --frequency-plan string   The frequency plan to use on the gateway
+<pre class="highlight"><code>      --antenna-model string    The antenna model of the gateway
+      --antenna-type string     The antenna type of the gateway
+      --brand string            The brand of the gateway
+      --description string      The description of the gateway
+      --frequency-plan string   The frequency plan to use on the gateway
       --location string         The location of the gateway
+      --location-private        Make the location of the gateway private
+      --location-public         Make the location of the gateway public
+      --model string            The model of the gateway
+      --owner string            The owner of the gateway
+      --owner-private           Make the owner of the gateway private
+      --owner-public            Make the owner of the gateway public
+      --router string           The router of the gateway
+      --status-private          Make the status of the gateway private
+      --status-public           Make the status of the gateway public
 </code></pre>
 </div>
 <p><strong>Example</strong></p>
