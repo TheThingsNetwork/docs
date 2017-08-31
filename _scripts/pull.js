@@ -117,9 +117,9 @@ var items = [{
   }
 }, {
   owner: 'TheThingsNetwork',
-  repo: 'ttn',
+  repo: 'api',
   branch: 'master',
-  path: 'api/discovery/Discovery.md',
+  path: 'discovery/Discovery.md',
   target: '_content/network/discovery/api.md',
   replace: [
     [/^# Discovery API Reference/m, '# API Reference']
