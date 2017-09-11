@@ -30,12 +30,12 @@
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2017-09-11T15:07:40+00:00" />
+<meta property="article:published_time" content="2017-09-11T15:23:09+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"@context":"http://schema.org","@type":"BlogPosting","headline":"Quick Start","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","datePublished":"2017-09-11T15:07:40+00:00","dateModified":"2017-09-11T15:07:40+00:00","description":"Quick Start This guide will walk you through subscribing to an application’s activations and messages as well as send a response to a specific device, using Eclipse Mosquitto’s CLIs to subscribe and to publish messages.","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/applications/mqtt/quick-start.html"},"url":"https://www.thethingsnetwork.org/docs/applications/mqtt/quick-start.html"}</script>
+{"@context":"http://schema.org","@type":"BlogPosting","headline":"Quick Start","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","datePublished":"2017-09-11T15:23:09+00:00","dateModified":"2017-09-11T15:23:09+00:00","description":"Quick Start This guide will walk you through subscribing to an application’s activations and messages as well as send a response to a specific device, using Eclipse Mosquitto’s CLIs to subscribe and to publish messages.","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/applications/mqtt/quick-start.html"},"url":"https://www.thethingsnetwork.org/docs/applications/mqtt/quick-start.html"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-152.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -182,6 +182,10 @@
     <div class="language-bash highlighter-rouge"><pre class="highlight"><code>mosquitto_sub -h &lt;Region&gt;.thethings.network -t <span class="s1">'+/devices/+/events/activations'</span> -u <span class="s1">'&lt;AppID&gt;'</span> -P <span class="s1">'&lt;AppKey&gt;'</span> -v
 </code></pre>
     </div>
+    <p>When using Windows, extra quotation marks have to be added to make the above code work:</p>
+    <div class="language-bash highlighter-rouge"><pre class="highlight"><code>mosquitto_sub -h &lt;Region&gt;.thethings.network -t <span class="s2">"+/devices/+/events/activations"</span> -u <span class="s2">"&lt;AppID&gt;"</span> -P <span class="s2">"&lt;AppKey&gt;"</span> -v
+</code></pre>
+    </div>
     <ul>
       <li>Replace <code class="highlighter-rouge">&lt;Region&gt;</code> with the region you looked up.</li>
       <li>Replace <code class="highlighter-rouge">&lt;AppID&gt;</code> with your <strong>Application ID</strong>.</li>
@@ -254,6 +258,10 @@ hello-world/devices/my-uno/up/led <span class="nb">true</span>
   <li>
     <p>Open another terminal window and execute the following command:</p>
     <div class="language-bash highlighter-rouge"><pre class="highlight"><code>mosquitto_pub -h &lt;Region&gt;.thethings.network -t <span class="s1">'&lt;AppID&gt;/devices/&lt;DevID&gt;/down'</span> -u <span class="s1">'&lt;AppID&gt;'</span> -P <span class="s1">'&lt;AppKey&gt;'</span> -m <span class="s1">'{"payload_fields":{"led":true}}'</span>
+</code></pre>
+    </div>
+    <p>When using Windows, extra quotation marks have to be added to make the above code work:</p>
+    <div class="language-bash highlighter-rouge"><pre class="highlight"><code>mosquitto_pub -h &lt;Region&gt;.thethings.network -t <span class="s2">"&lt;AppID&gt;/devices/&lt;DevID&gt;/down"</span> -u <span class="s2">"&lt;AppID&gt;"</span> -P <span class="s2">"&lt;AppKey&gt;"</span> -m <span class="s2">"{""payload_fields"":{""led"":true}}"</span>
 </code></pre>
     </div>
   </li>
