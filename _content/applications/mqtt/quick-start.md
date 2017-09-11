@@ -25,7 +25,11 @@ Let's listen for new device activations first.
     ```bash
     mosquitto_sub -h <Region>.thethings.network -t '+/devices/+/events/activations' -u '<AppID>' -P '<AppKey>' -v
     ```
-  
+    When using Windows, extra quotation marks have to be added to make the above code work:
+    
+    ```bash
+    mosquitto_sub -h <Region>.thethings.network -t "+/devices/+/events/activations" -u "<AppID>" -P "<AppKey>" -v
+    ```
     * Replace `<Region>` with the region you looked up.
     * Replace `<AppID>` with your **Application ID**.
     * Replace `<AppKey>` with your **Access Key** (base64).
@@ -104,6 +108,11 @@ Otherwise, you'll have to use `payload_raw` and send a base64 encoded array of b
 
     ```bash
     mosquitto_pub -h <Region>.thethings.network -t '<AppID>/devices/<DevID>/down' -u '<AppID>' -P '<AppKey>' -m '{"payload_fields":{"led":true}}'
+    ```
+    When using Windows, extra quotation marks have to be added to make the above code work:
+    
+    ```bash
+    mosquitto_pub -h <Region>.thethings.network -t "<AppID>/devices/<DevID>/down" -u "<AppID>" -P "<AppKey>" -m "{""payload_fields"":{""led"":true}}"
     ```
 
 2.  If you are running [The Things Uno / Quick Start](../../devices/uno/quick-start.md) sketch you should see something like:
