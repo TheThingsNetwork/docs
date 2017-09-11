@@ -30,12 +30,12 @@
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2017-09-03T17:56:06+00:00" />
+<meta property="article:published_time" content="2017-09-11T15:07:40+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"@context":"http://schema.org","@type":"BlogPosting","headline":"API Reference","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","datePublished":"2017-09-03T17:56:06+00:00","dateModified":"2017-09-03T17:56:06+00:00","description":"We are building a global open free crowdsourced long range low power IoT data network.","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/applications/nodejs/api.html"},"url":"https://www.thethingsnetwork.org/docs/applications/nodejs/api.html"}</script>
+{"@context":"http://schema.org","@type":"BlogPosting","headline":"API Reference","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","datePublished":"2017-09-11T15:07:40+00:00","dateModified":"2017-09-11T15:07:40+00:00","description":"We are building a global open free crowdsourced long range low power IoT data network.","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/applications/nodejs/api.html"},"url":"https://www.thethingsnetwork.org/docs/applications/nodejs/api.html"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-152.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -207,8 +207,8 @@
   <li><a href="#applicationsettings">ApplicationSettings</a></li>
   <li><a href="#application-2">application</a></li>
   <li><a href="#service">Service</a></li>
-  <li><a href="#announcement">Announcement</a></li>
   <li><a href="#app">app</a></li>
+  <li><a href="#announcement">Announcement</a></li>
   <li><a href="#data-1">data</a></li>
   <li><a href="#discovery">Discovery</a>
     <ul>
@@ -287,7 +287,7 @@ application.</p>
   <li><code class="highlighter-rouge">appID</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></strong></li>
   <li><code class="highlighter-rouge">tokenOrKey</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></strong></li>
   <li><code class="highlighter-rouge">netAddress</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></strong></li>
-  <li><code class="highlighter-rouge">certificate</code> <strong><a href="https://nodejs.org/api/buffer.html">Buffer</a>?</strong></li>
+  <li><code class="highlighter-rouge">certificate</code> <strong>(<a href="https://nodejs.org/api/buffer.html">Buffer</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)?</strong></li>
 </ul>
 <h3 id="constructor">constructor</h3>
 <p>Create and open an application manager client that can be used for
@@ -297,7 +297,7 @@ retreiving and updating an application and its devices.</p>
   <li><code class="highlighter-rouge">appID</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></strong> The ID of the application you want to manage</li>
   <li><code class="highlighter-rouge">tokenOrKey</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></strong> The Access Token or Access Key used to authenticate</li>
   <li><code class="highlighter-rouge">netAddress</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></strong> The gRPC address of the handler where the application is registered</li>
-  <li><code class="highlighter-rouge">certificate</code> <strong><a href="https://nodejs.org/api/buffer.html">Buffer</a>?</strong> An optional certificate used to connect to the handler securely</li>
+  <li><code class="highlighter-rouge">certificate</code> <strong>(<a href="https://nodejs.org/api/buffer.html">Buffer</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)?</strong> An optional certificate used to connect to the handler securely</li>
 </ul>
 <p>Returns <strong>void</strong></p>
 <h3 id="get">get</h3>
@@ -362,12 +362,12 @@ to custom.</p>
 </ul>
 <p>Returns <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&lt;void&gt;</strong></p>
 <h2 id="discoveryoptions">DiscoveryOptions</h2>
-<p>Type: {address: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>?, insecure: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>?, certificate: <a href="https://nodejs.org/api/buffer.html">Buffer</a>?}</p>
+<p>Type: {address: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>?, insecure: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>?, certificate: (<a href="https://nodejs.org/api/buffer.html">Buffer</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)?}</p>
 <p><strong>Properties</strong></p>
 <ul>
   <li><code class="highlighter-rouge">address</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>?</strong></li>
   <li><code class="highlighter-rouge">insecure</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>?</strong></li>
-  <li><code class="highlighter-rouge">certificate</code> <strong><a href="https://nodejs.org/api/buffer.html">Buffer</a>?</strong></li>
+  <li><code class="highlighter-rouge">certificate</code> <strong>(<a href="https://nodejs.org/api/buffer.html">Buffer</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)?</strong></li>
 </ul>
 <h2 id="handlerclient">HandlerClient</h2>
 <p><code class="highlighter-rouge">Handler</code> is a  client for The Things Network handler APIs.
@@ -490,22 +490,23 @@ The argument structure is the same as for <code class="highlighter-rouge">on()</
 </ul>
 <p>Returns <strong>void</strong></p>
 <h3 id="send">send</h3>
-<p>Send a message to the device with the specified device ID.</p>
+<p>Send a downlink message to the device with the specified device ID.</p>
 <p><strong>Parameters</strong></p>
 <ul>
-  <li><code class="highlighter-rouge">devID</code> <strong>DeviceID</strong></li>
+  <li><code class="highlighter-rouge">devID</code> <strong>DeviceID</strong> The device ID of the device to send the downlink to.</li>
   <li>
     <div class="table-responsive"><table class="table">
       <tbody>
         <tr>
           <td><code class="highlighter-rouge">payload</code> **(PayloadArray</td>
           <td>PayloadRaw</td>
-          <td>PayloadFields)**</td>
+          <td>PayloadFields)** The raw payload as a Buffer or an Array or an object of payload fields.</td>
         </tr>
       </tbody>
     </table></div>
   </li>
-  <li><code class="highlighter-rouge">port</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></strong>  (optional, default <code class="highlighter-rouge">1</code>)</li>
+  <li><code class="highlighter-rouge">port</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></strong> The port to send the message on.</li>
+  <li><code class="highlighter-rouge">confirmed</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></strong> Set to true for confirmed downlink.</li>
 </ul>
 <h2 id="applicationsettings">ApplicationSettings</h2>
 <p>ApplicationSettings hold the settings of an application.</p>
@@ -528,6 +529,10 @@ The argument structure is the same as for <code class="highlighter-rouge">on()</
 <p>Service is an enum of the possible services types to get from the discovery
 server.</p>
 <p>Type: (<code class="highlighter-rouge">"router"</code> | <code class="highlighter-rouge">"broker"</code> | <code class="highlighter-rouge">"handler"</code>)</p>
+<p>##</p>
+<p>Settings for the discovery server</p>
+<h2 id="app">app</h2>
+<p>The app used for testing</p>
 <h2 id="announcement">Announcement</h2>
 <p>Announcement is an announcement on the discovery server.</p>
 <p>Type: {id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, serviceName: <a href="#service">Service</a>, serviceVersion: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, description: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, pb_public: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>, url: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, netAddress: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, mqttAddress: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, apiAddress: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, publicKey: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>?, certificate: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>?, metadataList: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&lt;any&gt;?}</p>
@@ -546,10 +551,6 @@ server.</p>
   <li><code class="highlighter-rouge">certificate</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>?</strong></li>
   <li><code class="highlighter-rouge">metadataList</code> <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&lt;any&gt;?</strong></li>
 </ul>
-<p>##</p>
-<p>Settings for the discovery server</p>
-<h2 id="app">app</h2>
-<p>The app used for testing</p>
 <h2 id="data-1">data</h2>
 <p><code class="highlighter-rouge">data</code> creates and opens an DataClient for the application with the specified ID.</p>
 <p><strong>Parameters</strong></p>
