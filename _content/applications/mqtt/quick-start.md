@@ -41,7 +41,7 @@ Let's listen for new device activations first.
     ```bash
     --cafile mqtt-ca.pem -p 8883
     ```
-       
+
 2.  Power up, reset or upload a new sketch to a device to force it to activate and you should see something like:
 
     ```bash
