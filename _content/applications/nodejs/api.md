@@ -41,8 +41,8 @@ source: 'https://github.com/TheThingsNetwork/node-app-sdk/blob/master/DOCUMENTAT
 -   [ApplicationSettings](#applicationsettings)
 -   [application](#application-2)
 -   [Service](#service)
--   [Announcement](#announcement)
 -   [app](#app)
+-   [Announcement](#announcement)
 -   [data](#data-1)
 -   [Discovery](#discovery)
     -   [constructor](#constructor-2)
@@ -135,7 +135,7 @@ A client that manages devices on the handler.
 -   `appID` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** 
 -   `tokenOrKey` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** 
 -   `netAddress` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** 
--   `certificate` **[Buffer](https://nodejs.org/api/buffer.html)?** 
+-   `certificate` **([Buffer](https://nodejs.org/api/buffer.html) \| [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String))?** 
 
 ### constructor
 
@@ -147,7 +147,7 @@ retreiving and updating an application and its devices.
 -   `appID` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** The ID of the application you want to manage
 -   `tokenOrKey` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** The Access Token or Access Key used to authenticate
 -   `netAddress` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** The gRPC address of the handler where the application is registered
--   `certificate` **[Buffer](https://nodejs.org/api/buffer.html)?** An optional certificate used to connect to the handler securely
+-   `certificate` **([Buffer](https://nodejs.org/api/buffer.html) \| [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String))?** An optional certificate used to connect to the handler securely
 
 Returns **void** 
 
@@ -244,13 +244,13 @@ Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 ## DiscoveryOptions
 
-Type: {address: [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)?, insecure: [boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)?, certificate: [Buffer](https://nodejs.org/api/buffer.html)?}
+Type: {address: [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)?, insecure: [boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)?, certificate: ([Buffer](https://nodejs.org/api/buffer.html) \| [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String))?}
 
 **Properties**
 
 -   `address` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)?** 
 -   `insecure` **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)?** 
--   `certificate` **[Buffer](https://nodejs.org/api/buffer.html)?** 
+-   `certificate` **([Buffer](https://nodejs.org/api/buffer.html) \| [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String))?** 
 
 ## HandlerClient
 
@@ -405,13 +405,14 @@ Returns **void**
 
 ### send
 
-Send a message to the device with the specified device ID.
+Send a downlink message to the device with the specified device ID.
 
 **Parameters**
 
--   `devID` **DeviceID** 
--   `payload` **(PayloadArray | PayloadRaw | PayloadFields)** 
--   `port` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)**  (optional, default `1`)
+-   `devID` **DeviceID** The device ID of the device to send the downlink to.
+-   `payload` **(PayloadArray | PayloadRaw | PayloadFields)** The raw payload as a Buffer or an Array or an object of payload fields.
+-   `port` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** The port to send the message on.
+-   `confirmed` **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** Set to true for confirmed downlink.
 
 ## ApplicationSettings
 
@@ -443,6 +444,14 @@ server.
 
 Type: (`"router"` \| `"broker"` \| `"handler"`)
 
+## 
+
+Settings for the discovery server
+
+## app
+
+The app used for testing
+
 ## Announcement
 
 Announcement is an announcement on the discovery server.
@@ -463,14 +472,6 @@ Type: {id: [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 -   `publicKey` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)?** 
 -   `certificate` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)?** 
 -   `metadataList` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;any>?** 
-
-## 
-
-Settings for the discovery server
-
-## app
-
-The app used for testing
 
 ## data
 
