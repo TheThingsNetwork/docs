@@ -20,3 +20,5 @@ You will need:
 Wire them up together, and you can build your own gateway!
 
 Our friends from the Zurich community put together [a guide](https://github.com/ttn-zh/ic880a-gateway/wiki) on how to build a gateway in a week-end with a Raspberry Pi and an iC880a concentrator board. In a matter of a few days, you should have a LoRaWAN gateway up and running on The Things Network!
+
+Our lab pages contain a number of other [tutorials for building gateways](https://www.thethingsnetwork.org/labs/stories/gateway) provided by our fantastic community.
