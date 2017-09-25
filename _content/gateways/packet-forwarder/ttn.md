@@ -4,6 +4,8 @@ title: TTN Packet Forwarder
 
 # TTN Packet Forwarder
 
+**⚠️ The development of this packet forwarder has been put on hold. We're currently working on new tools to make gateways easier to manage, that we will make public when ready. In the meanwhile, we recommend to use other packet forwarders ([Semtech packet forwarder](https://github.com/Lora-net/packet_forwarder), [MP packet forwarder](https://github.com/kersing/packet_forwarder)). To learn more, join the discussion on [the forum](https://www.thethingsnetwork.org/forum/t/new-ttn-packet-forwarder-available/7644/46).**
+
 The TTN Packet Forwarder is a new packet forwarder, developed by the Things Network Core Team in Go. Builds for a selection of gateways, and documentation on how it is built, is available [on GitHub](https://github.com/TheThingsNetwork/packet_forwarder). Among the features of this packet forwarder:
 
 + Built in [Golang](https://golang.org) and open-source
