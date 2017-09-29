@@ -55,7 +55,7 @@ Usage:
 ```c
 void setup() {
     node = TheThingsNode::setup();
-    
+
     node->onWake(wake);
 }
 
@@ -78,7 +78,7 @@ Usage:
 ```c
 void setup() {
     node = TheThingsNode::setup();
-    
+
     node->onSleep(sleep);
 }
 
@@ -93,10 +93,10 @@ Instead of using your `loop()` function, use `configInterval()` and `onInterval(
 ```c
 void setup() {
     node = TheThingsNode::setup();
-    
+
     // Call every 30s instead of the default 60
     node->configInterval(true, 30000);
-    
+
     node->onInterval(interval);
 }
 
@@ -199,7 +199,7 @@ void configTemperature(bool enabled, MCP9804_Resolution resolution);
 void configTemperature(bool enabled);
 ```
 
-- `bool enabled `: Enable or disable temperature alerts. Enabled automatically by `onTemperature()`, but you can use this method to temporarily disable the alerts. Defaults to `false`.
+- `bool enabled `: Enable or disable the temperature sensor. Enabled automatically by `onTemperature()`, but you can use this method to temporarily disable the sensor and therefore the alerts. Defaults to `false`.
 - `MCP9804_Resolution resolution = R_DEGREES_0_0625 `: Set the resolution (precision) of the sensor. One of:
     - `R_DEGREES_0_5000`: +0.5 C
     - `R_DEGREES_0_2500`: +0.25 C
@@ -207,7 +207,7 @@ void configTemperature(bool enabled);
     - `R_DEGREES_0_0625`: +0.0625 (default)
 
   See the sensor's [data sheet, section 5.2.4](http://ww1.microchip.com/downloads/en/DeviceDoc/22203C.pdf) for more details.
-    
+
 - `int8_t lower`: Alert when temperature in Celsius is lower. Defaults to `0`.
 - `int8_t upper`: Alert when temperature in Celsius is higher. Defaults to `30`.
 - `int8_t critical = 55`: Alert when temperature in Celsius is higher. Defaults to `55`, above which you run the risk of battery failure.
