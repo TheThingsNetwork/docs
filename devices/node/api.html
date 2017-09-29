@@ -30,12 +30,12 @@
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2017-09-25T11:18:25+00:00" />
+<meta property="article:published_time" content="2017-09-29T12:37:46+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"@context":"http://schema.org","@type":"BlogPosting","headline":"API Reference","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","datePublished":"2017-09-25T11:18:25+00:00","dateModified":"2017-09-25T11:18:25+00:00","description":"API Reference","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/devices/node/api.html"},"url":"https://www.thethingsnetwork.org/docs/devices/node/api.html"}</script>
+{"@context":"http://schema.org","@type":"BlogPosting","headline":"API Reference","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","datePublished":"2017-09-29T12:37:46+00:00","dateModified":"2017-09-29T12:37:46+00:00","description":"API Reference","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/devices/node/api.html"},"url":"https://www.thethingsnetwork.org/docs/devices/node/api.html"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-152.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -180,7 +180,7 @@
 <p>Usage:</p>
 <div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
     <span class="n">node</span> <span class="o">=</span> <span class="n">TheThingsNode</span><span class="o">::</span><span class="n">setup</span><span class="p">();</span>
-    
+
     <span class="n">node</span><span class="o">-&gt;</span><span class="n">onWake</span><span class="p">(</span><span class="n">wake</span><span class="p">);</span>
 <span class="p">}</span>
 
@@ -200,7 +200,7 @@
 <p>Usage:</p>
 <div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
     <span class="n">node</span> <span class="o">=</span> <span class="n">TheThingsNode</span><span class="o">::</span><span class="n">setup</span><span class="p">();</span>
-    
+
     <span class="n">node</span><span class="o">-&gt;</span><span class="n">onSleep</span><span class="p">(</span><span class="n">sleep</span><span class="p">);</span>
 <span class="p">}</span>
 
@@ -213,10 +213,10 @@
 <p>Instead of using your <code class="highlighter-rouge">loop()</code> function, use <code class="highlighter-rouge">configInterval()</code> and <code class="highlighter-rouge">onInterval()</code> to set a function to be called on a certain interval:</p>
 <div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
     <span class="n">node</span> <span class="o">=</span> <span class="n">TheThingsNode</span><span class="o">::</span><span class="n">setup</span><span class="p">();</span>
-    
+
     <span class="c1">// Call every 30s instead of the default 60
 </span>    <span class="n">node</span><span class="o">-&gt;</span><span class="n">configInterval</span><span class="p">(</span><span class="nb">true</span><span class="p">,</span> <span class="mi">30000</span><span class="p">);</span>
-    
+
     <span class="n">node</span><span class="o">-&gt;</span><span class="n">onInterval</span><span class="p">(</span><span class="n">interval</span><span class="p">);</span>
 <span class="p">}</span>
 
@@ -307,7 +307,7 @@ Battery voltage: 4704 MV
 </code></pre>
 </div>
 <ul>
-  <li><code class="highlighter-rouge">bool enabled </code>: Enable or disable temperature alerts. Enabled automatically by <code class="highlighter-rouge">onTemperature()</code>, but you can use this method to temporarily disable the alerts. Defaults to <code class="highlighter-rouge">false</code>.</li>
+  <li><code class="highlighter-rouge">bool enabled </code>: Enable or disable the temperature sensor. Enabled automatically by <code class="highlighter-rouge">onTemperature()</code>, but you can use this method to temporarily disable the sensor and therefore the alerts. Defaults to <code class="highlighter-rouge">false</code>.</li>
   <li><code class="highlighter-rouge">MCP9804_Resolution resolution = R_DEGREES_0_0625 </code>: Set the resolution (precision) of the sensor. One of:
     <ul>
       <li><code class="highlighter-rouge">R_DEGREES_0_5000</code>: +0.5 C</li>
