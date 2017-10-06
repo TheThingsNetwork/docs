@@ -27,6 +27,8 @@ Logon to the gateway by using the SSH protocol, on a Mac or Linux system just us
 
 Your are basically done now. For further checking continue to the next step. The following steps require some knowledge about how to use the command-line in Linux or Mac.
 
+
+
 ### WIRGRID
 
 The serial interface (linux console) of the gateway can also be accessed by using the WIRGRID debug tool. This tool connects to your PC by a USB (type B > A) cable.
@@ -59,6 +61,10 @@ Example:
 Wirnet_0b0e032d login: root
 Password: pdmk-0b0e032d
 ```
+
+> **Change root password**
+> It is highly recommanded to change the default root password. Use the following command to change the password:
+> `passwd`
 
 ## Check if the Packet forwarder is running
 
@@ -101,6 +107,16 @@ E.. ..@.4...4.L.
 ```
 
 The gateway does not automatically send data to auto include itself on the status pages of The Things Network. This will only happen after a network node has sent or is sending data via the gateway.
+
+
+### Firewall configuration to enable downlink
+
+When using the wirnet_v3.1 firmware, the firewall is activated by default. This could disable the gateway from sending downlink. To solve this, we can simply disable the firewall:
+
+* Open the file `/etc/sysconfig/network`
+* Change `FIREWALL=yes` to `FIREWALL=no`
+* reboot the gateway
+
 
 ### On the Console
 
