@@ -1,7 +1,6 @@
 ---
 title: The Things Node
 section: Hardware
-label: draft
 redirect_from:
  - /draft/node/
  - /node/
@@ -20,3 +19,9 @@ The Things Node is the perfect LoRa node to start prototyping your ideas without
 Our [Arduino](../arduino/index.md) library comes with a class specifically for The Things Node. Configure and read sensors without having to worry about the underlying sensor registries.
 
 Once you have validated your idea, the next step could be to use [The Things Uno](../uno/index.md) and different sensors to find out what to print on a custom board to take into production.
+
+
+
+## Getting started video
+
+[![Getting started with The Things Uno](http://img.youtube.com/vi/tapK6EINx1k/0.jpg)](https://www.youtube.com/watch?v=tapK6EINx1k&feature=youtu.be)
