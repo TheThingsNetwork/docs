@@ -168,6 +168,7 @@ if (process.env.GITHUB_OAUTH_TOKEN) {
     target: '_content/applications/evrythng/index.md',
     yaml: {
       title: 'EVRYTHNG',
+      section: 'Integrations',
       zindex: -1000
     }
   }, {
