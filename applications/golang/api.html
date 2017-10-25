@@ -30,12 +30,12 @@
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2017-10-11T08:48:20+00:00" />
+<meta property="article:published_time" content="2017-10-25T21:41:26+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"@context":"http://schema.org","@type":"BlogPosting","headline":"API Reference","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","datePublished":"2017-10-11T08:48:20+00:00","dateModified":"2017-10-11T08:48:20+00:00","description":"API Reference","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/applications/golang/api.html"},"url":"https://www.thethingsnetwork.org/docs/applications/golang/api.html"}</script>
+{"@context":"http://schema.org","@type":"BlogPosting","headline":"API Reference","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","datePublished":"2017-10-25T21:41:26+00:00","dateModified":"2017-10-25T21:41:26+00:00","description":"API Reference","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/applications/golang/api.html"},"url":"https://www.thethingsnetwork.org/docs/applications/golang/api.html"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-152.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -99,6 +99,8 @@
                 <li class=""><a href="/docs/applications/add.html">Add an Application</a>
                 </li>
                 <li class=""><a href="/docs/applications/options.html">Build an Application</a>
+                </li>
+                <li class=""><a href="/docs/applications/evrythng/">EVRYTHNG</a>
                 </li>
             </ul>
               </li>
@@ -179,6 +181,24 @@ retrieve the addresses of the Handler and MQTT server.</p>
 </span></code></pre>
 </div>
 <p>ClientVersion to use</p>
+<div class="language-go highlighter-rouge"><pre class="highlight"><code><span class="k">var</span><span class="x"> </span><span class="n">DialOptions</span><span class="x"> </span><span class="o">=</span><span class="x"> </span><span class="p">[]</span><span class="n">grpc</span><span class="o">.</span><span class="n">DialOption</span><span class="p">{</span><span class="x">
+	</span><span class="n">grpc</span><span class="o">.</span><span class="n">WithUnaryInterceptor</span><span class="p">(</span><span class="n">grpc_middleware</span><span class="o">.</span><span class="n">ChainUnaryClient</span><span class="p">(</span><span class="x">
+		</span><span class="n">rpclog</span><span class="o">.</span><span class="n">UnaryClientInterceptor</span><span class="p">(</span><span class="no">nil</span><span class="p">),</span><span class="x">
+	</span><span class="p">)),</span><span class="x">
+	</span><span class="n">grpc</span><span class="o">.</span><span class="n">WithStreamInterceptor</span><span class="p">(</span><span class="n">grpc_middleware</span><span class="o">.</span><span class="n">ChainStreamClient</span><span class="p">(</span><span class="x">
+		</span><span class="n">restartstream</span><span class="o">.</span><span class="n">Interceptor</span><span class="p">(</span><span class="n">restartstream</span><span class="o">.</span><span class="n">DefaultSettings</span><span class="p">),</span><span class="x">
+		</span><span class="n">rpclog</span><span class="o">.</span><span class="n">StreamClientInterceptor</span><span class="p">(</span><span class="no">nil</span><span class="p">),</span><span class="x">
+	</span><span class="p">)),</span><span class="x">
+	</span><span class="n">grpc</span><span class="o">.</span><span class="n">WithBlock</span><span class="p">(),</span><span class="x">
+</span><span class="p">}</span><span class="x">
+</span></code></pre>
+</div>
+<p>DialOptions to use when connecting to components</p>
+<h2 id="func--movedevice">func  MoveDevice</h2>
+<div class="language-go highlighter-rouge"><pre class="highlight"><code><span class="k">func</span><span class="x"> </span><span class="n">MoveDevice</span><span class="p">(</span><span class="n">devID</span><span class="x"> </span><span class="kt">string</span><span class="p">,</span><span class="x"> </span><span class="n">from</span><span class="p">,</span><span class="x"> </span><span class="n">to</span><span class="x"> </span><span class="n">DeviceManager</span><span class="p">)</span><span class="x"> </span><span class="p">(</span><span class="n">err</span><span class="x"> </span><span class="kt">error</span><span class="p">)</span><span class="x">
+</span></code></pre>
+</div>
+<p>MoveDevice moves a device to another application</p>
 <h2 id="type-applicationmanager">type ApplicationManager</h2>
 <div class="language-go highlighter-rouge"><pre class="highlight"><code><span class="k">type</span><span class="x"> </span><span class="n">ApplicationManager</span><span class="x"> </span><span class="k">interface</span><span class="x"> </span><span class="p">{</span><span class="x">
 	</span><span class="c">// Get the payload format used in this application. If the payload format is "custom", you can get the custom JS</span><span class="x">
@@ -230,6 +250,7 @@ retrieve the addresses of the Handler and MQTT server.</p>
 <p>ApplicationManager manages an application.</p>
 <h2 id="type-applicationpubsub">type ApplicationPubSub</h2>
 <div class="language-go highlighter-rouge"><pre class="highlight"><code><span class="k">type</span><span class="x"> </span><span class="n">ApplicationPubSub</span><span class="x"> </span><span class="k">interface</span><span class="x"> </span><span class="p">{</span><span class="x">
+	</span><span class="n">Publish</span><span class="p">(</span><span class="n">devID</span><span class="x"> </span><span class="kt">string</span><span class="p">,</span><span class="x"> </span><span class="n">downlink</span><span class="x"> </span><span class="o">*</span><span class="n">types</span><span class="o">.</span><span class="n">DownlinkMessage</span><span class="p">)</span><span class="x"> </span><span class="kt">error</span><span class="x">
 	</span><span class="n">Device</span><span class="p">(</span><span class="n">devID</span><span class="x"> </span><span class="kt">string</span><span class="p">)</span><span class="x"> </span><span class="n">DevicePubSub</span><span class="x">
 	</span><span class="n">AllDevices</span><span class="p">()</span><span class="x"> </span><span class="n">DeviceSub</span><span class="x">
 	</span><span class="n">Close</span><span class="p">()</span><span class="x">
@@ -332,6 +353,11 @@ Application ID and Application access key.</p>
 </span></code></pre>
 </div>
 <p>Delete the device. This function panics if this is a new device.</p>
+<h2 id="func-device-isnew">func (*Device) IsNew</h2>
+<div class="language-go highlighter-rouge"><pre class="highlight"><code><span class="k">func</span><span class="x"> </span><span class="p">(</span><span class="n">d</span><span class="x"> </span><span class="o">*</span><span class="n">Device</span><span class="p">)</span><span class="x"> </span><span class="n">IsNew</span><span class="p">()</span><span class="x"> </span><span class="kt">bool</span><span class="x">
+</span></code></pre>
+</div>
+<p>IsNew indicates whether the device is new.</p>
 <h2 id="func-device-personalize">func (*Device) Personalize</h2>
 <div class="language-go highlighter-rouge"><pre class="highlight"><code><span class="k">func</span><span class="x"> </span><span class="p">(</span><span class="n">d</span><span class="x"> </span><span class="o">*</span><span class="n">Device</span><span class="p">)</span><span class="x"> </span><span class="n">Personalize</span><span class="p">(</span><span class="n">nwkSKey</span><span class="x"> </span><span class="n">types</span><span class="o">.</span><span class="n">NwkSKey</span><span class="p">,</span><span class="x"> </span><span class="n">appSKey</span><span class="x"> </span><span class="n">types</span><span class="o">.</span><span class="n">AppSKey</span><span class="p">)</span><span class="x"> </span><span class="kt">error</span><span class="x">
 </span></code></pre>
@@ -355,17 +381,33 @@ first.</p>
 network, and setting the NwkSKey and AppSKey to randomly generated values. This
 function panics if this is a new device, so make sure you Get() the device
 first.</p>
+<h2 id="func-device-setmanager">func (*Device) SetManager</h2>
+<div class="language-go highlighter-rouge"><pre class="highlight"><code><span class="k">func</span><span class="x"> </span><span class="p">(</span><span class="n">d</span><span class="x"> </span><span class="o">*</span><span class="n">Device</span><span class="p">)</span><span class="x"> </span><span class="n">SetManager</span><span class="p">(</span><span class="n">manager</span><span class="x"> </span><span class="n">DeviceManager</span><span class="p">)</span><span class="x">
+</span></code></pre>
+</div>
+<p>SetManager sets the manager of the device. This function panics if this is not a
+new device.</p>
 <h2 id="func-device-update">func (*Device) Update</h2>
 <div class="language-go highlighter-rouge"><pre class="highlight"><code><span class="k">func</span><span class="x"> </span><span class="p">(</span><span class="n">d</span><span class="x"> </span><span class="o">*</span><span class="n">Device</span><span class="p">)</span><span class="x"> </span><span class="n">Update</span><span class="p">()</span><span class="x"> </span><span class="kt">error</span><span class="x">
 </span></code></pre>
 </div>
 <p>Update the device. This function panics if this is a new device.</p>
+<h2 id="type-devicelist">type DeviceList</h2>
+<div class="language-go highlighter-rouge"><pre class="highlight"><code><span class="k">type</span><span class="x"> </span><span class="n">DeviceList</span><span class="x"> </span><span class="p">[]</span><span class="o">*</span><span class="n">SparseDevice</span><span class="x">
+</span></code></pre>
+</div>
+<p>DeviceList is a slice of *SparseDevice.</p>
+<h2 id="func-devicelist-asdevices">func (DeviceList) AsDevices</h2>
+<div class="language-go highlighter-rouge"><pre class="highlight"><code><span class="k">func</span><span class="x"> </span><span class="p">(</span><span class="n">d</span><span class="x"> </span><span class="n">DeviceList</span><span class="p">)</span><span class="x"> </span><span class="n">AsDevices</span><span class="p">()</span><span class="x"> </span><span class="p">[]</span><span class="o">*</span><span class="n">Device</span><span class="x">
+</span></code></pre>
+</div>
+<p>AsDevices returns the DeviceList as a slice of *Device instead of *SparseDevice</p>
 <h2 id="type-devicemanager">type DeviceManager</h2>
 <div class="language-go highlighter-rouge"><pre class="highlight"><code><span class="k">type</span><span class="x"> </span><span class="n">DeviceManager</span><span class="x"> </span><span class="k">interface</span><span class="x"> </span><span class="p">{</span><span class="x">
 	</span><span class="c">// List devices in an application. Use the limit and offset for pagination. Requests that fetch many devices will be</span><span class="x">
 	</span><span class="c">// very slow, which is often not necessary. If you use this function too often, the response will be cached by the</span><span class="x">
 	</span><span class="c">// server, and you might receive outdated data.</span><span class="x">
-	</span><span class="n">List</span><span class="p">(</span><span class="n">limit</span><span class="p">,</span><span class="x"> </span><span class="n">offset</span><span class="x"> </span><span class="kt">uint64</span><span class="p">)</span><span class="x"> </span><span class="p">([]</span><span class="o">*</span><span class="n">SparseDevice</span><span class="p">,</span><span class="x"> </span><span class="kt">error</span><span class="p">)</span><span class="x">
+	</span><span class="n">List</span><span class="p">(</span><span class="n">limit</span><span class="p">,</span><span class="x"> </span><span class="n">offset</span><span class="x"> </span><span class="kt">uint64</span><span class="p">)</span><span class="x"> </span><span class="p">(</span><span class="n">DeviceList</span><span class="p">,</span><span class="x"> </span><span class="kt">error</span><span class="p">)</span><span class="x">
 
 	</span><span class="c">// Get details for a device</span><span class="x">
 	</span><span class="n">Get</span><span class="p">(</span><span class="n">devID</span><span class="x"> </span><span class="kt">string</span><span class="p">)</span><span class="x"> </span><span class="p">(</span><span class="o">*</span><span class="n">Device</span><span class="p">,</span><span class="x"> </span><span class="kt">error</span><span class="p">)</span><span class="x">
@@ -417,23 +459,30 @@ device</p>
 <p>Simulator simulates messages for devices</p>
 <h2 id="type-sparsedevice">type SparseDevice</h2>
 <div class="language-go highlighter-rouge"><pre class="highlight"><code><span class="k">type</span><span class="x"> </span><span class="n">SparseDevice</span><span class="x"> </span><span class="k">struct</span><span class="x"> </span><span class="p">{</span><span class="x">
-	</span><span class="n">AppID</span><span class="x">       </span><span class="kt">string</span><span class="x">         </span><span class="s">`json:"app_id"`</span><span class="x">
-	</span><span class="n">DevID</span><span class="x">       </span><span class="kt">string</span><span class="x">         </span><span class="s">`json:"dev_id"`</span><span class="x">
-	</span><span class="n">AppEUI</span><span class="x">      </span><span class="n">types</span><span class="o">.</span><span class="n">AppEUI</span><span class="x">   </span><span class="s">`json:"app_eui"`</span><span class="x">
-	</span><span class="n">DevEUI</span><span class="x">      </span><span class="n">types</span><span class="o">.</span><span class="n">DevEUI</span><span class="x">   </span><span class="s">`json:"dev_eui"`</span><span class="x">
-	</span><span class="n">Description</span><span class="x"> </span><span class="kt">string</span><span class="x">         </span><span class="s">`json:"description,omitempty"`</span><span class="x">
-	</span><span class="n">DevAddr</span><span class="x">     </span><span class="o">*</span><span class="n">types</span><span class="o">.</span><span class="n">DevAddr</span><span class="x"> </span><span class="s">`json:"dev_addr,omitempty"`</span><span class="x">
-	</span><span class="n">NwkSKey</span><span class="x">     </span><span class="o">*</span><span class="n">types</span><span class="o">.</span><span class="n">NwkSKey</span><span class="x"> </span><span class="s">`json:"nwk_s_key,omitempty"`</span><span class="x">
-	</span><span class="n">AppSKey</span><span class="x">     </span><span class="o">*</span><span class="n">types</span><span class="o">.</span><span class="n">AppSKey</span><span class="x"> </span><span class="s">`json:"app_s_key,omitempty"`</span><span class="x">
-	</span><span class="n">AppKey</span><span class="x">      </span><span class="o">*</span><span class="n">types</span><span class="o">.</span><span class="n">AppKey</span><span class="x">  </span><span class="s">`json:"app_key,omitempty"`</span><span class="x">
-	</span><span class="n">Latitude</span><span class="x">    </span><span class="kt">float32</span><span class="x">        </span><span class="s">`json:"latitude,omitempty"`</span><span class="x">
-	</span><span class="n">Longitude</span><span class="x">   </span><span class="kt">float32</span><span class="x">        </span><span class="s">`json:"longitude,omitempty"`</span><span class="x">
-	</span><span class="n">Altitude</span><span class="x">    </span><span class="kt">int32</span><span class="x">          </span><span class="s">`json:"altitude,omitempty"`</span><span class="x">
+	</span><span class="n">AppID</span><span class="x">       </span><span class="kt">string</span><span class="x">            </span><span class="s">`json:"app_id"`</span><span class="x">
+	</span><span class="n">DevID</span><span class="x">       </span><span class="kt">string</span><span class="x">            </span><span class="s">`json:"dev_id"`</span><span class="x">
+	</span><span class="n">AppEUI</span><span class="x">      </span><span class="n">types</span><span class="o">.</span><span class="n">AppEUI</span><span class="x">      </span><span class="s">`json:"app_eui"`</span><span class="x">
+	</span><span class="n">DevEUI</span><span class="x">      </span><span class="n">types</span><span class="o">.</span><span class="n">DevEUI</span><span class="x">      </span><span class="s">`json:"dev_eui"`</span><span class="x">
+	</span><span class="n">Description</span><span class="x"> </span><span class="kt">string</span><span class="x">            </span><span class="s">`json:"description,omitempty"`</span><span class="x">
+	</span><span class="n">DevAddr</span><span class="x">     </span><span class="o">*</span><span class="n">types</span><span class="o">.</span><span class="n">DevAddr</span><span class="x">    </span><span class="s">`json:"dev_addr,omitempty"`</span><span class="x">
+	</span><span class="n">NwkSKey</span><span class="x">     </span><span class="o">*</span><span class="n">types</span><span class="o">.</span><span class="n">NwkSKey</span><span class="x">    </span><span class="s">`json:"nwk_s_key,omitempty"`</span><span class="x">
+	</span><span class="n">AppSKey</span><span class="x">     </span><span class="o">*</span><span class="n">types</span><span class="o">.</span><span class="n">AppSKey</span><span class="x">    </span><span class="s">`json:"app_s_key,omitempty"`</span><span class="x">
+	</span><span class="n">AppKey</span><span class="x">      </span><span class="o">*</span><span class="n">types</span><span class="o">.</span><span class="n">AppKey</span><span class="x">     </span><span class="s">`json:"app_key,omitempty"`</span><span class="x">
+	</span><span class="n">Latitude</span><span class="x">    </span><span class="kt">float32</span><span class="x">           </span><span class="s">`json:"latitude,omitempty"`</span><span class="x">
+	</span><span class="n">Longitude</span><span class="x">   </span><span class="kt">float32</span><span class="x">           </span><span class="s">`json:"longitude,omitempty"`</span><span class="x">
+	</span><span class="n">Altitude</span><span class="x">    </span><span class="kt">int32</span><span class="x">             </span><span class="s">`json:"altitude,omitempty"`</span><span class="x">
+	</span><span class="n">Attributes</span><span class="x">  </span><span class="k">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">string</span><span class="x"> </span><span class="s">`json:"attributes,omitempty"`</span><span class="x">
 </span><span class="p">}</span><span class="x">
 </span></code></pre>
 </div>
 <p>SparseDevice contains most, but not all fields of the device. It’s returned by
 List operations to save server resources</p>
+<h2 id="func-sparsedevice-asdevice">func (*SparseDevice) AsDevice</h2>
+<div class="language-go highlighter-rouge"><pre class="highlight"><code><span class="k">func</span><span class="x"> </span><span class="p">(</span><span class="n">d</span><span class="x"> </span><span class="o">*</span><span class="n">SparseDevice</span><span class="p">)</span><span class="x"> </span><span class="n">AsDevice</span><span class="p">()</span><span class="x"> </span><span class="o">*</span><span class="n">Device</span><span class="x">
+</span></code></pre>
+</div>
+<p>AsDevice wraps the *SparseDevice and returns a *Device containing that sparse
+device</p>
           </div>
         </div>
       </div>

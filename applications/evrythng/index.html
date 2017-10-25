@@ -17,25 +17,25 @@
       if (document.location.href.substr(0, document.location.href.length - document.location.hash.length) !== canonical) {
         window.location.replace(canonical);
       }
-    })('https://www.thethingsnetwork.org/docs/applications/manager/');
+    })('https://www.thethingsnetwork.org/docs/applications/evrythng/');
     </script>
     <!-- Begin Jekyll SEO tag v2.2.3 -->
-<title>Application Manager | The Things Network</title>
-<meta property="og:title" content="Application Manager" />
+<title>EVRYTHNG | The Things Network</title>
+<meta property="og:title" content="EVRYTHNG" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Application Manager" />
-<meta property="og:description" content="Application Manager" />
-<link rel="canonical" href="https://www.thethingsnetwork.org/docs/applications/manager/" />
-<meta property="og:url" content="https://www.thethingsnetwork.org/docs/applications/manager/" />
+<meta name="description" content="title: EVRYTHNG Integration section: Integrations —" />
+<meta property="og:description" content="title: EVRYTHNG Integration section: Integrations —" />
+<link rel="canonical" href="https://www.thethingsnetwork.org/docs/applications/evrythng/" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/applications/evrythng/" />
 <meta property="og:site_name" content="The Things Network" />
-<meta property="og:image" content="https://www.thethingsnetwork.org/docs/draft/application-manager/handler.png" />
+<meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2017-10-25T21:41:26+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"@context":"http://schema.org","@type":"BlogPosting","headline":"Application Manager","image":"https://www.thethingsnetwork.org/docs/draft/application-manager/handler.png","datePublished":"2017-10-25T21:41:26+00:00","dateModified":"2017-10-25T21:41:26+00:00","description":"Application Manager","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/applications/manager/"},"url":"https://www.thethingsnetwork.org/docs/applications/manager/"}</script>
+{"@context":"http://schema.org","@type":"BlogPosting","headline":"EVRYTHNG","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","datePublished":"2017-10-25T21:41:26+00:00","dateModified":"2017-10-25T21:41:26+00:00","description":"title: EVRYTHNG Integration section: Integrations —","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/applications/evrythng/"},"url":"https://www.thethingsnetwork.org/docs/applications/evrythng/"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-152.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -85,7 +85,7 @@
         </ul>
       </div>
       <div class="hidden-xs col-sm-3 text-right">
-        <a href="https://github.com/TheThingsNetwork/docs/edit/master/_content/applications/manager/index.md" class="page-edit" data-proofer-ignore><i class="fa fa-github"></i> Edit <strong>index.md</strong></a>
+        <a href="https://github.com/TheThingsIndustries/integration-messaging/blob/master/evrythng/README.md" class="page-edit" data-proofer-ignore><i class="fa fa-github"></i> Edit <strong>index.md</strong></a>
       </div>
     </div>
     <div class="row">
@@ -100,7 +100,7 @@
                 </li>
                 <li class=""><a href="/docs/applications/options.html">Build an Application</a>
                 </li>
-                <li class=""><a href="/docs/applications/evrythng/">EVRYTHNG</a>
+                <li class="active"><a href="/docs/applications/evrythng/">EVRYTHNG</a>
                 </li>
             </ul>
               </li>
@@ -108,15 +108,7 @@
             <ul>
                 <li class=""><a href="/docs/applications/apis.html">Overview</a>
                 </li>
-                <li class="active"><a href="/docs/applications/manager/">Application Manager</a>
-            <ul>
-                <li class=""><a href="/docs/applications/manager/authentication.html">Authentication</a>
-                </li>
-                <li class=""><a href="/docs/applications/manager/usage.html">Usage</a>
-                </li>
-                <li class=""><a href="/docs/applications/manager/api.html">API Reference</a>
-                </li>
-            </ul>
+                <li class=""><a href="/docs/applications/manager/">Application Manager</a>
                 </li>
                 <li class=""><a href="/docs/applications/mqtt/">MQTT</a>
                     <span class="label label-info">v2</span>
@@ -166,27 +158,31 @@
       <div class="col-sm-7">
         <div class="panel">
           <div class="panel-body page-content">
-            <h1 id="application-manager">Application Manager</h1>
-<p>The Handler’s Application Manager API offers methods manage Applications and Devices registered to The Things Network. To use the API you need an Application Access Key or Access (JSON Web) Token. You can use either the <a href="usage.html#grpc-or-http">gRPC API or the HTTP API</a> which wraps it.</p>
-<h2 id="use-and-context">Use and Context</h2>
-<p>The Handler Application Manager API is mostly used to <a href="../../platforms/">build Platform Integrations</a>. To actually communicate with devices over The Things Network you need the <a href="../../applications/mqtt/">Data API</a> of the Handler.</p>
-<p><img src="handler.png" alt="Handler APIs" /></p>
-<h2 id="community-endpoints">Community endpoints</h2>
-<p>Use the following endpoints for the community network:</p>
+            <hr />
+<p>title: EVRYTHNG Integration
+section: Integrations
+—</p>
+<h1 id="evrythng-integration">EVRYTHNG Integration</h1>
+<p>EVRYTHNG is an online platform for managing IoT devices and using their data to enhance business operations. See <a href="https://www.evrythng.com">www.evrythng.com</a> for more information.</p>
+<p>This integration enables LoRaWAN with THNGs through The Things Network. See also <a href="https://developers.evrythng.com/docs/the-things-network">integration documentation</a> by EVRYTHNG.</p>
+<h2 id="how-to-setup-evrythng">How to setup EVRYTHNG</h2>
+<p>You will need an EVRYTHNG developer account. You can sign up for the <a href="https://dashboard.evrythng.com/signup">US platform</a> or for the <a href="https://dashboard-eu.evrythng.com/signup">EU platform</a>.</p>
+<p>Your EVRYTHNG developer account needs to have an application in a project. See the <a href="https://developers.evrythng.com/docs/connected-device-walkthrough-projects-and-applications">EVRYTHNG documentation</a> on how to set up your application.</p>
+<p>Please note:</p>
 <ul>
-  <li><a href="http://www.grpc.io/">gRPC</a>: <code class="highlighter-rouge">&lt;Region&gt;.thethings.network:1904</code></li>
-  <li>
-    <p>HTTP: <code class="highlighter-rouge">http://&lt;Region&gt;.thethings.network:8084</code></p>
-    <blockquote>
-      <p>A secure endpoint at <code class="highlighter-rouge">https</code> will follow soon.</p>
-    </blockquote>
-  </li>
+  <li>Which platform/region your EVRYTHNG account is on. This is either <strong>us</strong> (United States) or <strong>eu</strong> (Europe). If you access EVRYTHNG through <strong>dashboard-eu.evrythng.com</strong> then your account is on the <strong>eu</strong> platform. If there’s no <strong>-eu</strong> in the URL, you’re on the <strong>us</strong> platform</li>
+  <li>Your EVRYTHNG application’s <strong>Trusted API Key</strong>, which can be found on the application’s page in your dashboard</li>
 </ul>
-<p>Replace <code class="highlighter-rouge">&lt;Region&gt;</code> with the last part of the handler you registered your application to, e.g. <code class="highlighter-rouge">eu</code>.</p>
-<h2 id="example">Example</h2>
-<p>To demonstrate the usage of this API we have an <a href="https://github.com/htdvisser/ttn-application-manager-example">example in Go</a>.</p>
-<h2 id="sdks">SDKs</h2>
-<p>The <a href="https://github.com/TheThingsNetwork/java-app-sdk">Java SDK</a> has support for the Application Manager API.</p>
+<h2 id="create-the-integration">Create the integration</h2>
+<p>In the <a href="https://console.thethingsnetwork.org">The Things Network Console</a>, navigate to your application, click on <strong>Integrations</strong> -&gt; <strong>add an integration</strong> -&gt; <strong>EVRYTHNG integration</strong>.</p>
+<p>You will be asked to enter the following settings:</p>
+<ul>
+  <li><strong>Region</strong>: this is the platform your EVRYTHNG account is on (<strong>eu</strong> or <strong>us</strong>)</li>
+  <li><strong>Create</strong>: enter <strong>true</strong> if you want the integration to create a new THNG for each device automatically, or <strong>false</strong></li>
+  <li><strong>Trusted Api Key</strong>: the Trusted API Key for your EVRYTHNG application</li>
+</ul>
+<h2 id="uplink">Uplink</h2>
+<p>Device uplinks will update their corresponding THNG’s properties, creating new properties if needed. The raw payload will also be stored as an additional THNG property.</p>
           </div>
         </div>
       </div>
