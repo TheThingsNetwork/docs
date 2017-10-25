@@ -22,6 +22,27 @@ var ClientVersion = "2.x.x"
 ```
 ClientVersion to use
 
+```go
+var DialOptions = []grpc.DialOption{
+	grpc.WithUnaryInterceptor(grpc_middleware.ChainUnaryClient(
+		rpclog.UnaryClientInterceptor(nil),
+	)),
+	grpc.WithStreamInterceptor(grpc_middleware.ChainStreamClient(
+		restartstream.Interceptor(restartstream.DefaultSettings),
+		rpclog.StreamClientInterceptor(nil),
+	)),
+	grpc.WithBlock(),
+}
+```
+DialOptions to use when connecting to components
+
+## func  MoveDevice
+
+```go
+func MoveDevice(devID string, from, to DeviceManager) (err error)
+```
+MoveDevice moves a device to another application
+
 ## type ApplicationManager
 
 ```go
@@ -78,6 +99,7 @@ ApplicationManager manages an application.
 
 ```go
 type ApplicationPubSub interface {
+	Publish(devID string, downlink *types.DownlinkMessage) error
 	Device(devID string) DevicePubSub
 	AllDevices() DeviceSub
 	Close()
@@ -198,6 +220,13 @@ func (d *Device) Delete() error
 ```
 Delete the device. This function panics if this is a new device.
 
+## func (*Device) IsNew
+
+```go
+func (d *Device) IsNew() bool
+```
+IsNew indicates whether the device is new.
+
 ## func (*Device) Personalize
 
 ```go
@@ -227,12 +256,35 @@ network, and setting the NwkSKey and AppSKey to randomly generated values. This
 function panics if this is a new device, so make sure you Get() the device
 first.
 
+## func (*Device) SetManager
+
+```go
+func (d *Device) SetManager(manager DeviceManager)
+```
+SetManager sets the manager of the device. This function panics if this is not a
+new device.
+
 ## func (*Device) Update
 
 ```go
 func (d *Device) Update() error
 ```
 Update the device. This function panics if this is a new device.
+
+## type DeviceList
+
+```go
+type DeviceList []*SparseDevice
+```
+
+DeviceList is a slice of *SparseDevice.
+
+## func (DeviceList) AsDevices
+
+```go
+func (d DeviceList) AsDevices() []*Device
+```
+AsDevices returns the DeviceList as a slice of *Device instead of *SparseDevice
 
 ## type DeviceManager
 
@@ -241,7 +293,7 @@ type DeviceManager interface {
 	// List devices in an application. Use the limit and offset for pagination. Requests that fetch many devices will be
 	// very slow, which is often not necessary. If you use this function too often, the response will be cached by the
 	// server, and you might receive outdated data.
-	List(limit, offset uint64) ([]*SparseDevice, error)
+	List(limit, offset uint64) (DeviceList, error)
 
 	// Get details for a device
 	Get(devID string) (*Device, error)
@@ -308,20 +360,29 @@ Simulator simulates messages for devices
 
 ```go
 type SparseDevice struct {
-	AppID       string         `json:"app_id"`
-	DevID       string         `json:"dev_id"`
-	AppEUI      types.AppEUI   `json:"app_eui"`
-	DevEUI      types.DevEUI   `json:"dev_eui"`
-	Description string         `json:"description,omitempty"`
-	DevAddr     *types.DevAddr `json:"dev_addr,omitempty"`
-	NwkSKey     *types.NwkSKey `json:"nwk_s_key,omitempty"`
-	AppSKey     *types.AppSKey `json:"app_s_key,omitempty"`
-	AppKey      *types.AppKey  `json:"app_key,omitempty"`
-	Latitude    float32        `json:"latitude,omitempty"`
-	Longitude   float32        `json:"longitude,omitempty"`
-	Altitude    int32          `json:"altitude,omitempty"`
+	AppID       string            `json:"app_id"`
+	DevID       string            `json:"dev_id"`
+	AppEUI      types.AppEUI      `json:"app_eui"`
+	DevEUI      types.DevEUI      `json:"dev_eui"`
+	Description string            `json:"description,omitempty"`
+	DevAddr     *types.DevAddr    `json:"dev_addr,omitempty"`
+	NwkSKey     *types.NwkSKey    `json:"nwk_s_key,omitempty"`
+	AppSKey     *types.AppSKey    `json:"app_s_key,omitempty"`
+	AppKey      *types.AppKey     `json:"app_key,omitempty"`
+	Latitude    float32           `json:"latitude,omitempty"`
+	Longitude   float32           `json:"longitude,omitempty"`
+	Altitude    int32             `json:"altitude,omitempty"`
+	Attributes  map[string]string `json:"attributes,omitempty"`
 }
 ```
 
 SparseDevice contains most, but not all fields of the device. It's returned by
 List operations to save server resources
+
+## func (*SparseDevice) AsDevice
+
+```go
+func (d *SparseDevice) AsDevice() *Device
+```
+AsDevice wraps the *SparseDevice and returns a *Device containing that sparse
+device

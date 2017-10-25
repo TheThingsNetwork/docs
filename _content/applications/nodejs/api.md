@@ -31,6 +31,7 @@ source: 'https://github.com/TheThingsNetwork/node-app-sdk/blob/master/DOCUMENTAT
     -   [open](#open-1)
     -   [data](#data)
     -   [application](#application-1)
+-   [ApplicationSettings](#applicationsettings)
 -   [DataClient](#dataclient)
     -   [constructor](#constructor-1)
     -   [close](#close)
@@ -38,7 +39,6 @@ source: 'https://github.com/TheThingsNetwork/node-app-sdk/blob/master/DOCUMENTAT
     -   [on](#on)
     -   [off](#off)
     -   [send](#send)
--   [ApplicationSettings](#applicationsettings)
 -   [application](#application-2)
 -   [Service](#service)
 -   [app](#app)
@@ -286,6 +286,17 @@ application.
 
 Returns **[ApplicationClient](#applicationclient)** 
 
+## ApplicationSettings
+
+ApplicationSettings hold the settings of an application.
+
+Type: {payloadFormat: PayloadFormat?, registerOnJoinAccessKey: [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)?}
+
+**Properties**
+
+-   `payloadFormat` **PayloadFormat?** 
+-   `registerOnJoinAccessKey` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)?** 
+
 ## DataClient
 
 DataClient is a client for The Things Network data API.
@@ -410,20 +421,10 @@ Send a downlink message to the device with the specified device ID.
 **Parameters**
 
 -   `devID` **DeviceID** The device ID of the device to send the downlink to.
--   `payload` **(PayloadArray | PayloadRaw | PayloadFields)** The raw payload as a Buffer or an Array or an object of payload fields.
+-   `payload` **(PayloadArray | PayloadRaw | [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | PayloadFields)** The raw payload as a Buffer, an Array of numbers, a hex string  or an object of payload fields.
 -   `port` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** The port to send the message on.
 -   `confirmed` **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** Set to true for confirmed downlink.
-
-## ApplicationSettings
-
-ApplicationSettings hold the settings of an application.
-
-Type: {payloadFormat: PayloadFormat?, registerOnJoinAccessKey: [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)?}
-
-**Properties**
-
--   `payloadFormat` **PayloadFormat?** 
--   `registerOnJoinAccessKey` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)?** 
+-   `schedule` **Schedule** Set to the scheduling you want to use (first, last or replace).
 
 ## application
 

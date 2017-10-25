@@ -161,6 +161,17 @@ if (process.env.GITHUB_OAUTH_TOKEN) {
     }
   }, {
     owner: 'TheThingsIndustries',
+    repo: 'integration-messaging',
+    branch: 'master',
+    path: 'evrythng/README.md',
+    token: process.env.GITHUB_OAUTH_TOKEN,
+    target: '_content/applications/evrythng/index.md',
+    yaml: {
+      title: 'EVRYTHNG',
+      zindex: -1000
+    }
+  }, {
+    owner: 'TheThingsIndustries',
     repo: 'integration-storage',
     branch: 'master',
     path: 'api/README.md',
