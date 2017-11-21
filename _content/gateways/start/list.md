@@ -13,7 +13,7 @@ This is a list of commercial LoRaWAN gateways currently available for purchase. 
 
 ## Laird - RG1xx
 
-Laird RG186 & RG191 - ( https://www.lairdtech.com/products/rg1xx-lora-gateway ) A cost effective 868 / 915MHz LoRa Gateway with dual band Wi-Fi, Ethernet and BT capabilities with integrated presets for simple one click configuration for The Thing Network
++ [Laird RG1xx Series](https://www.lairdtech.com/products/rg1xx-lora-gateway): A cost effective 868 / 915MHz LoRa Gateway with dual band Wi-Fi, Ethernet and BT capabilities. Includes integrated presets for simple, one click configuration for The Things Network.
 
 ## Kerlink
 
