@@ -11,6 +11,10 @@ This is a list of commercial LoRaWAN gateways currently available for purchase. 
 
 + [The Things Gateway](../gateway): Following a [successful Kickstarter](https://www.kickstarter.com/projects/419277966/the-things-network) our own LoRa Gateway will soon be available world-wide. At a price of just €300 and with its easy web-based setup, it is the best choice to help build The Things Network.
 
+## Laird - RG1xx
+
++ [Laird RG1xx Series](https://www.lairdtech.com/products/rg1xx-lora-gateway): A cost effective 868 / 915MHz LoRa Gateway with dual band Wi-Fi, Ethernet and BT capabilities. Includes integrated presets for simple, one click configuration for The Things Network.
+
 ## Kerlink
 
 + [Kerlink IoT Station](../kerlink): The Kerlink IoT Station was one of the first commercially available gateways, running a Linux OS. Although the software is outdated and will required a trained engineer, it is a suitable industrial solution. Our documentation explains how to connect it to The Things Network.
