@@ -17,6 +17,7 @@ Following a [successful Kickstarter](https://www.kickstarter.com/projects/419277
 ## Frequently Asked Questions
 
 **Q. I want to get in-depth insight in what my gateway is doing, is that possible?**
+
 A. The gateway has a UART port on which it prints debug messages. To see these messages you need to connect a device between the gateway and your computer that can read out a UART (e.g. an FTDI cable/board).
 
 Connect UART-interface device to your computer and the RX line to the RX pin. Start terminal to UART with 115200@8N1.
@@ -30,7 +31,7 @@ Example connection FTDI:
 
 ![alt text](https://ttnstaticfile.blob.core.windows.net/media/md_editor/image-1513861871281.25.18.large.png)
 
-**Q. My gateway stays in AP mode, what do I do? **
+**Q. My gateway stays in AP mode, what do I do?**
 
 A. This behaviour occurs when there is a hick up in the wifi connection of the gateway.
 When this happens, your gateway will turn into an AP and devices you used to set up the gateway can connect to it (your laptop oThe reset button is indicated with the text: Moder phone). To avoid this issue, you should 'forget' the wifi AP of the gateway on your phone/laptop.
