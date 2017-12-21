@@ -49,6 +49,42 @@ The reset button is indicated with the text: Mode
 **Q. The second time I power my Gateway it takes a time to start up, why?**
 A. On power cycle and every 24 hours it checks for new firmware. If the latest firmware is not downloaded yet it will download the new image and perform are reboot in order to install the image. This will take a few minutes. The process is indicated by a flashing power LED. Power cycling during this process is not dangerous, but will be restarted once started up again. Please be patient. 
 
+**Q. What does the LED light on the gateway indicate?**
+A. If in the process of activating the gateway, it takes too long then probably something went wrong. Check the LED’s on the gateway to find out what is going on.
+
+     LED 1: On
+     LED 2: Slowly blinking
+     Status - Connecting to the internet
+
+     LED 1: On
+     LED 2: Fast blinking
+     Status - Could not connect to the internet
+
+     LED 1: On
+     LED 2: On
+     LED 3: Slowly blinking
+     Status - Still activating
+
+     LED 1: On
+     LED 2: On
+     LED 3: Fast blinking
+     Status - Could not activate (start from step 1)
+
+     LED 1: On
+     LED 2: On
+     LED 3: On
+     Status - Activated
+
+     LED 1: On
+     LED 2: On
+     LED 3: On
+     LED 4: On
+     Status - Connected to the router
+
+     LED 1: On
+     LED 2: Fast blinking
+     Status - Could not connect to the internet
+
 
 
 
