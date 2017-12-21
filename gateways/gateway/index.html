@@ -30,12 +30,12 @@
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/gateways/gateway/image.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2017-12-21T13:20:35+00:00" />
+<meta property="article:published_time" content="2017-12-21T13:28:45+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"@context":"http://schema.org","@type":"BlogPosting","headline":"The Things Gateway","image":"https://www.thethingsnetwork.org/docs/gateways/gateway/image.png","datePublished":"2017-12-21T13:20:35+00:00","dateModified":"2017-12-21T13:20:35+00:00","description":"The Things Gateway","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/gateways/gateway/"},"url":"https://www.thethingsnetwork.org/docs/gateways/gateway/"}</script>
+{"@context":"http://schema.org","@type":"BlogPosting","headline":"The Things Gateway","image":"https://www.thethingsnetwork.org/docs/gateways/gateway/image.png","datePublished":"2017-12-21T13:28:45+00:00","dateModified":"2017-12-21T13:28:45+00:00","description":"The Things Gateway","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/gateways/gateway/"},"url":"https://www.thethingsnetwork.org/docs/gateways/gateway/"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-152.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -160,6 +160,42 @@ A. * Pressing the button shortly while powered on restarts the gateway.</p>
 <p><img src="https://ttnstaticfile.blob.core.windows.net/media/md_editor/image-1513862053263.34.01.large.png" alt="alt text" /></p>
 <p><strong>Q. The second time I power my Gateway it takes a time to start up, why?</strong>
 A. On power cycle and every 24 hours it checks for new firmware. If the latest firmware is not downloaded yet it will download the new image and perform are reboot in order to install the image. This will take a few minutes. The process is indicated by a flashing power LED. Power cycling during this process is not dangerous, but will be restarted once started up again. Please be patient.</p>
+<p><strong>Q. What does the LED light on the gateway indicate?</strong>
+A. If in the process of activating the gateway, it takes too long then probably something went wrong. Check the LED’s on the gateway to find out what is going on.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code> LED 1: On
+ LED 2: Slowly blinking
+ Status - Connecting to the internet
+
+ LED 1: On
+ LED 2: Fast blinking
+ Status - Could not connect to the internet
+
+ LED 1: On
+ LED 2: On
+ LED 3: Slowly blinking
+ Status - Still activating
+
+ LED 1: On
+ LED 2: On
+ LED 3: Fast blinking
+ Status - Could not activate (start from step 1)
+
+ LED 1: On
+ LED 2: On
+ LED 3: On
+ Status - Activated
+
+ LED 1: On
+ LED 2: On
+ LED 3: On
+ LED 4: On
+ Status - Connected to the router
+
+ LED 1: On
+ LED 2: Fast blinking
+ Status - Could not connect to the internet
+</code></pre>
+</div>
           </div>
         </div>
       </div>
