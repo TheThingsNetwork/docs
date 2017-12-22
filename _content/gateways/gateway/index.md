@@ -11,7 +11,7 @@ Following a [successful Kickstarter](https://www.kickstarter.com/projects/419277
 
 ![Box, Casing and PCB](image.png)
 
-> [Pre-order your The Things Gateway now!](https://shop.thethingsnetwork.com/index.php/product/the-things-gateway/)
+> [Order your The Things Gateway now!](https://shop.thethingsnetwork.com/index.php/product/the-things-gateway/)
 
 
 ## Frequently Asked Questions
