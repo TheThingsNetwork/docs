@@ -27,6 +27,7 @@ source: 'https://github.com/TheThingsNetwork/node-app-sdk/blob/master/DOCUMENTAT
     -   [open](#open-1)
     -   [data](#data)
     -   [application](#application-1)
+-   [DiscoveryOptions](#discoveryoptions)
 -   [ApplicationClient](#applicationclient)
     -   [constructor](#constructor)
     -   [get](#get)
@@ -40,7 +41,7 @@ source: 'https://github.com/TheThingsNetwork/node-app-sdk/blob/master/DOCUMENTAT
     -   [updateDevice](#updatedevice)
     -   [deleteDevice](#deletedevice)
     -   [getEUIs](#geteuis)
--   [DiscoveryOptions](#discoveryoptions)
+    -   [getDeviceAddress](#getdeviceaddress)
 -   [ApplicationSettings](#applicationsettings)
 -   [DataClient](#dataclient)
     -   [constructor](#constructor-1)
@@ -276,6 +277,16 @@ application.
 
 Returns **[ApplicationClient](#applicationclient)** 
 
+## DiscoveryOptions
+
+Type: {address: [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)?, insecure: [boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)?, certificate: ([Buffer](https://nodejs.org/api/buffer.html) \| [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String))?}
+
+**Properties**
+
+-   `address` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)?** 
+-   `insecure` **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)?** 
+-   `certificate` **([Buffer](https://nodejs.org/api/buffer.html) \| [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String))?** 
+
 ## ApplicationClient
 
 A client that manages devices on the handler.
@@ -398,15 +409,15 @@ Returns the EUI(s) for this application from the account server.
 
 Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)>>** 
 
-## DiscoveryOptions
+### getDeviceAddress
 
-Type: {address: [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)?, insecure: [boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)?, certificate: ([Buffer](https://nodejs.org/api/buffer.html) \| [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String))?}
+Return a device address for the given constraints.
 
-**Properties**
+**Parameters**
 
--   `address` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)?** 
--   `insecure` **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)?** 
--   `certificate` **([Buffer](https://nodejs.org/api/buffer.html) \| [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String))?** 
+-   `usage` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;Usage>** The list for wich the address will be used.
+
+Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;[Buffer](https://nodejs.org/api/buffer.html)>** address - A buffer containing the address.
 
 ## ApplicationSettings
 
