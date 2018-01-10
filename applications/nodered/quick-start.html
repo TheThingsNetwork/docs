@@ -24,19 +24,19 @@
 <meta name="generator" content="Jekyll v3.4.5" />
 <meta property="og:title" content="Quick Start" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Quick Start This guide will walk you through setting up a Node-RED flow that listens to device activations and messages and responds with a message in return." />
-<meta property="og:description" content="Quick Start This guide will walk you through setting up a Node-RED flow that listens to device activations and messages and responds with a message in return." />
+<meta name="description" content="Quick Start" />
+<meta property="og:description" content="Quick Start" />
 <link rel="canonical" href="https://www.thethingsnetwork.org/docs/applications/nodered/quick-start.html" />
 <meta property="og:url" content="https://www.thethingsnetwork.org/docs/applications/nodered/quick-start.html" />
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-01-10T11:20:53+00:00" />
+<meta property="article:published_time" content="2018-01-10T11:48:44+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"description":"Quick Start This guide will walk you through setting up a Node-RED flow that listens to device activations and messages and responds with a message in return.","url":"https://www.thethingsnetwork.org/docs/applications/nodered/quick-start.html","headline":"Quick Start","dateModified":"2018-01-10T11:20:53+00:00","datePublished":"2018-01-10T11:20:53+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/applications/nodered/quick-start.html"},"@context":"http://schema.org"}</script>
+{"description":"Quick Start","url":"https://www.thethingsnetwork.org/docs/applications/nodered/quick-start.html","headline":"Quick Start","dateModified":"2018-01-10T11:48:44+00:00","datePublished":"2018-01-10T11:48:44+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/applications/nodered/quick-start.html"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-152.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -139,7 +139,7 @@
             <ul>
                 <li class=""><a href="/docs/applications/integrations.html">Overview</a>
                 </li>
-                <li class=""><a href="/docs/applications/Cayenne/">Cayenne Integration</a>
+                <li class=""><a href="/docs/applications/cayenne/">Cayenne Integration</a>
                 </li>
                 <li class=""><a href="/docs/applications/http/">HTTP Integration</a>
                 </li>
@@ -220,7 +220,7 @@ npm install node-red-contrib-ttn
     <p><img src="edit-ttn-device-node.png" alt="Edit ttn device node" /></p>
   </li>
   <li>
-    <p>Now for <strong>App</strong> either select an existing configuration or select <strong>Add new ttn app…</strong> selected and click the <code class="highlighter-rouge">✏️</code>  button.</p>
+    <p>Now for <strong>App</strong> either select an existing configuration or select <strong>Add new ttn app…</strong> selected and click the <code class="highlighter-rouge">✏️</code> button.</p>
     <p><img src="add-new-ttn-app-config-node.png" alt="Add new ttn app config node" /></p>
     <p>Copy-paste the following information from your application in your console:</p>
     <ul>
@@ -270,15 +270,17 @@ npm install node-red-contrib-ttn
     </span><span class="nt">"modulation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LORA"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"data_rate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SF7BW125"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"coding_rate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4/5"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"gateways"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-      </span><span class="nt">"eui"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B827EBFFFE87BD22"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1528942955</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-09-08T14:04:52.716713Z"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"channel"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"rssi"</span><span class="p">:</span><span class="w"> </span><span class="mi">-57</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"snr"</span><span class="p">:</span><span class="w"> </span><span class="mf">7.5</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"rf_chain"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
-    </span><span class="p">}]</span><span class="w">
+    </span><span class="nt">"gateways"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"eui"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B827EBFFFE87BD22"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1528942955</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-09-08T14:04:52.716713Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"channel"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"rssi"</span><span class="p">:</span><span class="w"> </span><span class="mi">-57</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"snr"</span><span class="p">:</span><span class="w"> </span><span class="mf">7.5</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"rf_chain"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nt">"dev_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"my-uno"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"payload"</span><span class="p">:</span><span class="w"> </span><span class="s2">"my-uno"</span><span class="p">,</span><span class="w">
@@ -302,9 +304,9 @@ npm install node-red-contrib-ttn
   <li>In the right sidebar select the <strong>debug</strong> tab.</li>
   <li>
     <p>Soon after a device sends a message to your application you should see it come in like this:</p>
-    <div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"led"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
-</span><span class="p">}</span><span class="w">
+    <div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="w"> </span><span class="p">{</span><span class="w">
+   </span><span class="nt">"led"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+ </span><span class="p">}</span><span class="w">
 </span></code></pre>
     </div>
     <p>By default the debug node only shows <code class="highlighter-rouge">msg.payload</code>, which does not include the ID of the device that sent the message.</p>
@@ -332,14 +334,16 @@ npm install node-red-contrib-ttn
     </span><span class="nt">"modulation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LORA"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"data_rate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SF7BW125"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"coding_rate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4/5"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"gateways"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-      </span><span class="nt">"gtw_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eui-b827ebfffe87bd22"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1329587859</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-09-27T12:35:46.842692Z"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"channel"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"rssi"</span><span class="p">:</span><span class="w"> </span><span class="mi">-111</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"snr"</span><span class="p">:</span><span class="w"> </span><span class="mf">6.2</span><span class="w">
-    </span><span class="p">}]</span><span class="w">
+    </span><span class="nt">"gateways"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"gtw_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eui-b827ebfffe87bd22"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1329587859</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-09-27T12:35:46.842692Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"channel"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"rssi"</span><span class="p">:</span><span class="w"> </span><span class="mi">-111</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"snr"</span><span class="p">:</span><span class="w"> </span><span class="mf">6.2</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nt">"dev_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"my-uno"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -365,11 +369,11 @@ npm install node-red-contrib-ttn
     <p>Drag a <strong>function</strong> node from the function category of the toolbox and double click to configure it.</p>
     <p>Use the following code for the function:</p>
     <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="k">return</span> <span class="p">{</span>
-    <span class="na">dev_id</span><span class="p">:</span> <span class="nx">msg</span><span class="p">.</span><span class="nx">dev_id</span><span class="p">,</span>
-    <span class="na">port</span><span class="p">:</span> <span class="nx">msg</span><span class="p">.</span><span class="nx">port</span><span class="p">,</span>
-    <span class="na">payload</span><span class="p">:</span> <span class="p">{</span>
-        <span class="na">led</span><span class="p">:</span> <span class="o">!</span><span class="nx">msg</span><span class="p">.</span><span class="nx">payload</span><span class="p">.</span><span class="nx">led</span>
-    <span class="p">}</span>
+  <span class="na">dev_id</span><span class="p">:</span> <span class="nx">msg</span><span class="p">.</span><span class="nx">dev_id</span><span class="p">,</span>
+  <span class="na">port</span><span class="p">:</span> <span class="nx">msg</span><span class="p">.</span><span class="nx">port</span><span class="p">,</span>
+  <span class="na">payload</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">led</span><span class="p">:</span> <span class="o">!</span><span class="nx">msg</span><span class="p">.</span><span class="nx">payload</span><span class="p">.</span><span class="nx">led</span>
+  <span class="p">}</span>
 <span class="p">};</span>
 </code></pre>
     </div>

@@ -17,7 +17,7 @@
       if (document.location.href.substr(0, document.location.href.length - document.location.hash.length) !== canonical) {
         window.location.replace(canonical);
       }
-    })('https://www.thethingsnetwork.org/docs/applications/Cayenne/');
+    })('https://www.thethingsnetwork.org/docs/applications/cayenne/');
     </script>
     <!-- Begin Jekyll SEO tag v2.4.0 -->
 <title>Cayenne Integration | The Things Network</title>
@@ -26,17 +26,17 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="myDevices Cayenne" />
 <meta property="og:description" content="myDevices Cayenne" />
-<link rel="canonical" href="https://www.thethingsnetwork.org/docs/applications/Cayenne/" />
-<meta property="og:url" content="https://www.thethingsnetwork.org/docs/applications/Cayenne/" />
+<link rel="canonical" href="https://www.thethingsnetwork.org/docs/applications/cayenne/" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/applications/cayenne/" />
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-01-10T11:20:53+00:00" />
+<meta property="article:published_time" content="2018-01-10T11:48:44+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"description":"myDevices Cayenne","url":"https://www.thethingsnetwork.org/docs/applications/Cayenne/","headline":"Cayenne Integration","dateModified":"2018-01-10T11:20:53+00:00","datePublished":"2018-01-10T11:20:53+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/applications/Cayenne/"},"@context":"http://schema.org"}</script>
+{"description":"myDevices Cayenne","url":"https://www.thethingsnetwork.org/docs/applications/cayenne/","headline":"Cayenne Integration","dateModified":"2018-01-10T11:48:44+00:00","datePublished":"2018-01-10T11:48:44+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/applications/cayenne/"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-152.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -135,7 +135,7 @@
             <ul>
                 <li class=""><a href="/docs/applications/integrations.html">Overview</a>
                 </li>
-                <li class="active"><a href="/docs/applications/Cayenne/">Cayenne Integration</a>
+                <li class="active"><a href="/docs/applications/cayenne/">Cayenne Integration</a>
                 </li>
                 <li class=""><a href="/docs/applications/http/">HTTP Integration</a>
                 </li>
@@ -160,37 +160,34 @@
         <div class="panel">
           <div class="panel-body page-content">
             <h1 id="mydevices-cayenne">myDevices Cayenne</h1>
-<!-- <img src="logo-cayenne.png" width="200"> -->
 <p><a href="https://mydevices.com/">myDevices Cayenne</a> allows you to quickly design, prototype, and visualize IoT solutions. You can use Cayenne as a tool to visualize real-time and historical data, sent over The Things Network.</p>
 <h2 id="change-the-payload-to-cayenne-lpp">Change the payload to Cayenne LPP</h2>
-<p>In order to display your content in the Cayenne dashboard, the payload has to be encoded with the Cayenne Low Power Payload (LPP)</p>
+<p>In order to display your content in the Cayenne dashboard, the payload has to be encoded with the Cayenne Low Power Payload (Cayenne LPP).</p>
 <blockquote>
-  <p>We need to send extra data for Cayenne to understand what data comes into their dashboard. Before we send the sensor data, we need to define what type of data it is. The first byte is the so-called <code class="highlighter-rouge">Channel ID</code>. The second byte explains the <code class="highlighter-rouge">Data Type</code>. The latter bytes contain the actual sensor values.
-Please have a look <a href="https://mydevices.com/cayenne/docs/#lora-cayenne-low-power-payload"><strong>here</strong></a> to find more information on the <strong>Cayenne Low Power Payload (LPP)</strong>.</p>
+  <p>CayenneLPP contains metadata for Cayenne to understand what data comes into their dashboard. As part of each data value, we need to define the identifier and what type of data it is. The first byte is the identifier, the <code class="highlighter-rouge">Channel ID</code>. The second byte is the data type <code class="highlighter-rouge">Data Type</code>.
+Please have a look <a href="https://mydevices.com/cayenne/docs/#lora-cayenne-low-power-payload"><strong>here</strong></a> to find more information on the Cayenne LPP.</p>
 </blockquote>
-<h3 id="cayennelpp-class">CayenneLPP Class</h3>
+<h3 id="sending-uplink">Sending uplink</h3>
 <p>Documentation about altering your Arduino Sketch to encode data with <code class="highlighter-rouge">CayenneLPP</code> can be found <a href="https://www.thethingsnetwork.org/docs/devices/arduino/api/cayennelpp.html">here</a>.</p>
 <p><em>Example code:</em></p>
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">TheThingsNetwork</span> <span class="nx">ttn</span><span class="p">(</span><span class="nx">loraSerial</span><span class="p">,</span> <span class="nx">debugSerial</span><span class="p">,</span> <span class="nx">freqPlan</span><span class="p">);</span>
-<span class="nx">CayenneLPP</span> <span class="nx">lpp</span><span class="p">(</span><span class="mi">51</span><span class="p">);</span>                    <span class="c1">// create a buffer of 51 bytes to store the payload</span>
-
-<span class="nx">lpp</span><span class="p">.</span><span class="nx">reset</span><span class="p">();</span>                           <span class="c1">// clear the buffer</span>
-<span class="nx">lpp</span><span class="p">.</span><span class="nx">addTemperature</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">22.5</span><span class="p">);</span>           <span class="c1">// on channel 1, add temperature, value 22.5°C</span>
-<span class="nx">lpp</span><span class="p">.</span><span class="nx">addBarometricPressure</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mf">1073.21</span><span class="p">);</span> <span class="c1">// channel 2, pressure</span>
-<span class="nx">lpp</span><span class="p">.</span><span class="nx">addGPS</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mf">52.37365</span><span class="p">,</span> <span class="mf">4.88650</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>   <span class="c1">// channel 3, coordinates</span>
-
-<span class="nx">ttn</span><span class="p">.</span><span class="nx">sendBytes</span><span class="p">(</span><span class="nx">lpp</span><span class="p">.</span><span class="nx">getBuffer</span><span class="p">(),</span> <span class="nx">lpp</span><span class="p">.</span><span class="nx">getSize</span><span class="p">());</span>
+<div class="language-cpp highlighter-rouge"><pre class="highlight"><code><span class="n">TheThingsNetwork</span> <span class="n">ttn</span><span class="p">(</span><span class="n">loraSerial</span><span class="p">,</span> <span class="n">debugSerial</span><span class="p">,</span> <span class="n">freqPlan</span><span class="p">);</span>
+<span class="n">CayenneLPP</span> <span class="n">lpp</span><span class="p">(</span><span class="mi">51</span><span class="p">);</span>                    <span class="c1">// create a buffer of 51 bytes to store the payload
+</span>
+<span class="n">lpp</span><span class="p">.</span><span class="n">reset</span><span class="p">();</span>                           <span class="c1">// clear the buffer
+</span><span class="n">lpp</span><span class="p">.</span><span class="n">addTemperature</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">22.5</span><span class="p">);</span>           <span class="c1">// on channel 1, add temperature, value 22.5°C
+</span><span class="n">lpp</span><span class="p">.</span><span class="n">addBarometricPressure</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mf">1073.21</span><span class="p">);</span> <span class="c1">// channel 2, pressure
+</span><span class="n">lpp</span><span class="p">.</span><span class="n">addGPS</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mf">52.37365</span><span class="p">,</span> <span class="mf">4.88650</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>   <span class="c1">// channel 3, coordinates
+</span>
+<span class="n">ttn</span><span class="p">.</span><span class="n">sendBytes</span><span class="p">(</span><span class="n">lpp</span><span class="p">.</span><span class="n">getBuffer</span><span class="p">(),</span> <span class="n">lpp</span><span class="p">.</span><span class="n">getSize</span><span class="p">());</span>
 </code></pre>
 </div>
-<h3 id="contact-your-device">Contact your device</h3>
-<p>In order to send data to your device, you first need to “open” a channel. For that, send a packet saying that an <code class="highlighter-rouge">Output</code> is available, you only need to do that once. Both digital and analog are available.</p>
-<div class="language-js highlighter-rouge"><pre class="highlight"><code>  <span class="nx">lpp</span><span class="p">.</span><span class="nx">addDigitalOutput</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
-  <span class="c1">//or</span>
-  <span class="nx">lpp</span><span class="p">.</span><span class="nx">addAnalogOutput</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mf">120.0</span><span class="p">);</span>
-</code></pre>
+<h3 id="receiving-downlink">Receiving downlink</h3>
+<p>In order to send data to your device as downlink message, you need to make an output channel available as part of an uplink message. You only need to do that once. Both digital and analog are available.</p>
+<div class="language-cpp highlighter-rouge"><pre class="highlight"><code><span class="n">lpp</span><span class="p">.</span><span class="n">addDigitalOutput</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>    <span class="c1">// channel 4, set digital output high
+</span><span class="n">lpp</span><span class="p">.</span><span class="n">addAnalogOutput</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mf">120.0</span><span class="p">);</span> <span class="c1">// channel 5, set analog output to 120
+</span></code></pre>
 </div>
-<p>An action button will then appear on your dashboard; Now you can send data to your device with a click!</p>
-<p>Be aware, the data sent by the dashboard will arrive on the same channel as the <code class="highlighter-rouge">Output</code> but will be tagged as <code class="highlighter-rouge">Input</code>.</p>
+<p>For digital outputs, a switch will appear to set the output high or low. For analog outputs, you get a slider to set the analog value. Changes in these controls trigger a downlink message.</p>
 <h3 id="set-the-payload-format-in-the-console">Set the Payload Format in the Console</h3>
 <p>After encoding data with CayenneLPP, have a look at the console to change the <strong>Payload Formats</strong></p>
 <ul>
@@ -211,7 +208,7 @@ Please have a look <a href="https://mydevices.com/cayenne/docs/#lora-cayenne-low
 <ol>
   <li>
     <p>Go to your application in the <a href="https://console.thethingsnetwork.org/applications"><strong>Console</strong></a> and add the Cayenne integration via <strong>Add Integration</strong>
- <img src="integrations.png" alt="myDevices-dashboard" /></p>
+<img src="integrations.png" alt="myDevices-dashboard" /></p>
   </li>
   <li>You can find your <strong>Process ID</strong> in the URL of the myDevices Cayenne dashboard, starting after <code class="highlighter-rouge">/lora/</code></li>
   <li>Add the integration</li>
