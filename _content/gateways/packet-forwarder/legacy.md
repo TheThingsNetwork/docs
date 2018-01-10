@@ -47,3 +47,7 @@ Unless you're running the network yourself on specific ports, the **ports** will
   }
 }
 ```
+
+## Troubleshooting
+
+Click [here](../troubleshooting/legacy.html) to see troubleshooting steps for the legacy packet forwarder!
