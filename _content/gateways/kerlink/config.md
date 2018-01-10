@@ -7,7 +7,7 @@ zindex: 800
 
 ## Configuring packet forwarder
 
-To configure the gateway, you need to download [The Things Network's packet forwarder (EU version)](https://github.com/TheThingsNetwork/kerlink-station-firmware/blob/master/dota/dota_thethingsnetwork_v1.3_EU.tar.gz) and [produsb.zip](https://github.com/TheThingsNetwork/kerlink-station-firmware/blob/master/dota/produsb.zip) from our Github.
+To configure the gateway, you need to download [The Things Network's packet forwarder (EU version)](https://github.com/TheThingsNetwork/kerlink-station-firmware/blob/master/dota/dota_thethingsnetwork_v1.4_EU.tar.gz) and [produsb.zip](https://github.com/TheThingsNetwork/kerlink-station-firmware/blob/master/dota/produsb.zip) from our Github.
 
 Install the update the following way:
 
@@ -35,7 +35,7 @@ The serial interface (linux console) of the gateway can also be accessed by usin
 
 ![WIRGRID](config-wirgrid.jpg)
 
-1. Connect the WIRGRID tool to your gateway and PC 
+1. Connect the WIRGRID tool to your gateway and PC
 2. Look up to which port the WIRGRID is assigned to
 3. Open a serial connection with the following settings:
     - **Baudrate:** 115200
@@ -56,7 +56,7 @@ Password: `root`
 
 For 3.1 firmware, the password is `pdmk-0` followed by the last 7 characters of the serial
 
-Example: 
+Example:
 ```
 Wirnet_0b0e032d login: root
 Password: pdmk-0b0e032d
