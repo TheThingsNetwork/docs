@@ -36,13 +36,7 @@ This can be due, for example:
 
 + To a communication error with the LoRa concentrator. This highly depends on your gateway. Some gateways don't require any configuration to communicate with the LoRa concentrator ; other gateways require executing actions before communicating with the concentrator. For example, the Kerlink IoT Station requires executing a script called `modem_on.sh` to communicate with the concentrator after starting the OS. There are also edge cases for some gateways that prevent communication with the concentrator in specific circumstances.
 
-This usually manifests by a `failed to start the concentrator` error when starting the packet forwarder. To troubleshooting this by yourself:
-
-1. <a name="start"></a>Find the directory in which the **binary** of the packet forwarder is located. For example, for Kerlink packet forwarders, it will be at `/mnt/fsuser-1/thethingsnetwork` ; for Multitech packet forwarders, it is often located at `/opt/lora`.
-
-2. Find the directory in which the **configuration file** of the packet forwarder is located. Depending on the installation, it is sometimes located in the same directory (e.g. for Kerlink gateways), and sometimes in a different directory (e.g. Multitech gateways, where it is located at `/var/config/lora`).
-
-3. From the directory where the configuration is located, **execute the packet forwarder**. The packet forwarder will look for configuration in the directory of execution. In the logs of the packet forwarder, you'll be able to see if the packet forwarder is able to start or not.
+This usually manifests by a `failed to start the concentrator` error when starting the packet forwarder - to confirm this, check the [logs of the packet forwarder](#logs).
 
 ### Unexpected stop
 
@@ -52,28 +46,12 @@ The packet forwarder could have **quit unexpectedly, and didn't restart**. The S
 
 The packet forwarder is running, however you are still having issues with it - it doesn't show up in the console, or it seems that your specific gateway has an unexpected behavior.
 
-<a name="obtainlogs"></a>In those cases, you'll need the **packet forwarder logs** to diagnose the issue. In many gateways, you'll have access to the logs in the filesystem - for example, on Multitech gateways, the logs are often saved at `/var/log/lora_pkt_fwd.log`. Once you find the file in which the logs are being saved, you can follow them by executing `tail -f <filename>`.
+### Network issue
 
-If you can't find where the logs are being saved, you can also troubleshoot by **starting the packet forwarder in your terminal**. You'll need to stop the packet forwarder process (e.g. by using `kill -9 <packet forwarder PID>`), and then [restart it yourself](#start).
-
-To diagnose issues, we'll especially use the **status logs**. Those are printed by the packet forwarder every ~30 seconds:
+It could be that your gateway is not connected to the network server. To check this, look at this line of the [status logs](#logs):
 
 ```
 ##### 2016-01-05 18:17:08 GMT #####
-### [UPSTREAM] ###
-# RF packets received by concentrator: 0
-# CRC_OK: 0.00%, CRC_FAIL: 0.00%, NO_CRC: 0.00%
-# RF packets forwarded: 0 (0 bytes)
-[...]
-### [DOWNSTREAM] ###
-[...]
-```
-
-### Network issue
-
-It could be that your gateway is not connected to the network server. To check this, look at this line of the status logs:
-
-```
 [...]
 ### [DOWNSTREAM] ###
 # PULL_DATA sent: 3 (100.00% acknowledged)
@@ -106,7 +84,7 @@ If the logs of your gateway indicate a 100% acknowledgement of `PULL_DATA` but t
 
 ### CRC issues
 
-In the logs of the packet forwarder, you can see statistics regarding CRC checks of the packets received by the gateway:
+In the [logs](#logs), you can see statistics regarding CRC checks of the packets received by the gateway:
 
 ```
 [...]
@@ -130,15 +108,15 @@ Reasons why a gateway can have a high rate of CRC failures are:
 
 ### Filtering packets
 
-In LoRaWAN, a device doesn't connect to a specific gateway - it **joins a network**, and a gateway only relays RF packets received to the configured network server, which then handles activating devices and transmitting messages regardless of the gateway it was transmitted through.
+In LoRaWAN, there's no concept of devices connecting to gateways - a device **joins a network**, and a gateway only relays RF packets received to the configured network server, which then handles activating devices and transmitting messages regardless of the gateway it was transmitted through.
 
-The legacy packet forwarder doesn't filter received uplinks based on the network, and transmits all received packets to the Things Network (which will then filter packets, and drop packets from other networks). It is not possible to select which packets the packet forwarder should transmit.
+The Semtech UDP Packet Forwarder doesn't filter received uplinks based on the network, and transmits all received packets to the Things Network (which will then filter packets, and drop packets from other networks). It is not possible to select which packets the packet forwarder should transmit.
 
 ## Downlinks issues
 
 ### The gateway doesn't receive any downlink
 
-If a gateway that isn't registered on the Things Network connects anyway using the legacy packet forwarder, the Things Network will accept upcoming uplinks - however, the Things Network won't use that gateway for downlink transmission.
+If a gateway that isn't registered on the Things Network connects anyway using the Semtech UDP Packet Forwarder, the Things Network will accept upcoming uplinks - however, the Things Network won't use that gateway for downlink transmission.
 
 If you notice that your gateway isn't being sent any downlink, it could be that:
 
@@ -148,19 +126,42 @@ If you notice that your gateway isn't being sent any downlink, it could be that:
 
 ### Downlinks aren't transmitted by the gateway
 
-It can happen that a gateway is indicated as connected in the console, transmits uplinks, but doesn't transmit any of the downlinks it receives from the Things Network. This is usually due to latency issues between the gateway and the network server. If you've isolated the issue, and are confident that the issue comes from the gateway, here's how to check downlink connectivity on a gateway:
+It can happen that a gateway is indicated as connected in the console, transmits uplinks, but doesn't transmit any of the downlinks it receives from the Things Network. This is usually due to latency issues between the gateway and the network server.
 
-1. You'll need the **logs** of the gateway - which you can obtain by [following the logs or starting the packet forwarder manually](#obtainlogs).
+If you've isolated the issue, and are confident that the issue comes from the gateway, check in the [logs](#logs) the time in which `PULL_ACK` messages are being received by the network server:
 
-2. Check the time in which `PULL_ACK` messages are being received by the network server:
+```
+INFO: [down] for server 54.72.145.119 PULL_ACK received in 105 ms
+INFO: [down] for server 54.72.145.119 PULL_ACK received in 104 ms
+```
 
-    ```
-    INFO: [down] for server 54.72.145.119 PULL_ACK received in 105 ms
-    INFO: [down] for server 54.72.145.119 PULL_ACK received in 104 ms
-    ```
+If the delay in which `PULL_ACK` messages are received is too long (e.g. >300ms), it means that there's a high latency between the gateway and the network server - it can then happen that the downlink is received too late by the gateway.
 
-    If the delay in which `PULL_ACK` messages are received is too long (e.g. >300ms), it can happen that the downlink was received by the gateway too late.
+You can detect downlinks being received too late in two places in the logs: either if `TOO_LATE` messages appear in the logs, or if there is a line in the status logs indicating `TX rejected (too late)` messages.
 
-    You can detect those cases in two places in the logs: either if `TOO_LATE` messages appear in the logs, or if there is a line in the status logs indicating `TX rejected (too late)` messages.
+If delay is too high, you might want to check your Internet connection. One way to mitigate this effect is to [use the router closest to your location](https://www.thethingsnetwork.org/wiki/Backend/Connect/Gateway), if you aren't.
 
-    If delay is too high, you might want to check your Internet connection. One way to mitigate this effect is to [use the router closest to your location](https://www.thethingsnetwork.org/wiki/Backend/Connect/Gateway), if you aren't.
+## Logs
+
+### Find log file
+
+In some gateways, you'll have access to the logs in the filesystem. Once you find the file in which the logs are being saved, you can read them as they're being written by executing `tail -f <filename>`. Here are known log file locations:
+
+|Model|Location|
+|---|---|
+|Multitech Conduit|`/var/log/lora_pkt_fwd.log`|
+|Kerlink IoT Station|`/mnt/fsuser-1/thethingsnetwork/poly_pkt_fwd.log` starting from DOTA V1.4 (January 2018)|
+
+### Get logs by starting the packet forwarder
+
+If you can't find where the logs are being saved, you can also troubleshoot by **starting the packet forwarder in your terminal**.
+
+To retrieve the logs in the shell by starting the packet forwarder yourself:
+
+1. Stop the running packet forwarder process, by using `kill -9 <packet forwarder PID>`. You can find the PID of the packet forwarder with the `ps` command.
+
+2. Find the directory in which the **binary** of the packet forwarder is located. For example, for Kerlink packet forwarders, it will be at `/mnt/fsuser-1/thethingsnetwork` ; for Multitech packet forwarders, it is often located at `/opt/lora`.
+
+3. Find the directory in which the **configuration file** of the packet forwarder is located. Depending on the installation, it is sometimes located in the same directory (e.g. for Kerlink gateways), and sometimes in a different directory (e.g. Multitech gateways, where it is located at `/var/config/lora`).
+
+4. From the directory where the configuration is located, **execute the packet forwarder**. The packet forwarder will look for configuration in the directory of execution. In the logs of the packet forwarder, you'll be able to see if the packet forwarder is able to start or not.
