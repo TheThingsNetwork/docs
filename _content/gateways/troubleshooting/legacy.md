@@ -122,7 +122,7 @@ If you notice that your gateway isn't being sent any downlink, it could be that:
 
 + There's a gateway nearby with better coverage and signal, that is prioritized by TTN
 
-+ Your gateway isn't recognized by TTN. Make sure that you've [registered](../packet-forwarder/legacy.html#registration) your gateway on the console, and that the gateway ID on the console matches the EUI entered in the configuration of the gateway.
++ Your gateway isn't recognized by TTN. Make sure that you've [registered](../packet-forwarder/legacy#registration) your gateway on the console, and that the gateway ID on the console matches the EUI entered in the configuration of the gateway.
 
 ### Downlinks aren't transmitted by the gateway
 
