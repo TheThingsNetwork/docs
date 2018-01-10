@@ -1,7 +1,7 @@
 branches:
   only: master
 language: ruby
-rvm: 2.2.0
+rvm: 2.2.5
 sudo: false
 env:
   global:
