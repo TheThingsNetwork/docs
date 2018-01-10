@@ -73,7 +73,7 @@ This URL is also provided in each uplink message for convenience. However, you c
 
 Your application should `POST` or `PUT` a downlink message.
 
-### With Raw payload
+### With raw payload
 
 You can schedule a message with raw payload using this format:
 
@@ -86,7 +86,7 @@ You can schedule a message with raw payload using this format:
 }
 ```
 
-### With Payload Fields
+### With payload fields
 
 You can also use payload fields if your application has a encoder payload function declared to encode JSON to binary:
 
