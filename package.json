@@ -1,9 +1,8 @@
 {
   "name": "ttn-docs",
   "private": true,
-  "version": "0.0.1",
-  "description":
-    "A static site that serves Parse's documentation using Jekyll on GitHub Pages. Work in progress.",
+  "version": "2.0.0",
+  "description": "The Things Network documentation.",
   "main": "js/main.js",
   "scripts": {
     "start": "npm run prod",
