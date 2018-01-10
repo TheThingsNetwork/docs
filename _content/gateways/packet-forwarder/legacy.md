@@ -32,7 +32,7 @@ Once the registration is complete, add the **gateway EUI** in the `local_conf.js
 
 ### Router configuration
 
-After that, edit the `global_conf.json` file to point to the router. If you're using the public community network, you will need to add the **hostname of the router region** - for example, for the EU region, it will be `router.eu.thethings.network`. Otherwise, it will be the hostname of your **router** - most of the time, it is just the hostname of your network.
+After that, edit the `global_conf.json` file to point to the router. If you're using the public community network, you will need to add the **address of the router region** - for example, for the EU region, it will be `router.eu.thethings.network`. Otherwise, it will be the hostname of your **router** - most of the time, it is just the hostname of your network.
 
 Unless you're running the network yourself on specific ports, the **ports** will be 1700 and 1700.
 
@@ -47,6 +47,21 @@ Unless you're running the network yourself on specific ports, the **ports** will
   }
 }
 ```
+
+#### Router addresses
+
+|Region|Router address|
+|---|---|
+|`router.eu.thethings.network`|EU 433 and EU 863-870|
+|`router.us.thethings.network`|US 902-928|
+|`router.cn.thethings.network`|China 470-510 and 779-787|
+|`router.as.thethings.network`|Southeast Asia 923 MHz|
+|`router.as1.thethings.network`|Southeast Asia 920-923 MHz|
+|`router.as2.thethings.network`|Southeast Asia 923-925 MHz|
+|`router.kr.thethings.network`|Korea 920-923 MHz|
+|`thethings.meshed.com.au`|Australia 915-928 MHz|
+|`as923.thethings.meshed.com.au`|Australia (Southeast Asia 923MHz frequency plan)|
+|`ttn.opennetworkinfrastructure.org`|Switzerland (EU 433 and EU 863-870)|
 
 ## Troubleshooting
 
