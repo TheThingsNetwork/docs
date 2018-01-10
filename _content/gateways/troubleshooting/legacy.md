@@ -136,7 +136,19 @@ The legacy packet forwarder doesn't filter received uplinks based on the network
 
 ## Downlinks issues
 
-It can happen that a gateway is indicated as connected in the console, transmits uplinks, but doesn't transmit any downlink. This is usually due to latency issues between the gateway and the network server. If you've isolated the issue, and are confident that the issue comes from the gateway, here's how to check downlink connectivity on a gateway:
+### The gateway doesn't receive any downlink
+
+If a gateway that isn't registered on the Things Network connects anyway using the legacy packet forwarder, the Things Network will accept upcoming uplinks - however, the Things Network won't use that gateway for downlink transmission.
+
+If you notice that your gateway isn't being sent any downlink, it could be that:
+
++ There's a gateway nearby with better coverage and signal, that is prioritized by TTN
+
++ Your gateway isn't recognized by TTN. Make sure that you've [registered](../packet-forwarder/legacy.html#registration) your gateway on the console, and that the gateway ID on the console matches the EUI entered in the configuration of the gateway.
+
+### Downlinks aren't transmitted by the gateway
+
+It can happen that a gateway is indicated as connected in the console, transmits uplinks, but doesn't transmit any of the downlinks it receives from the Things Network. This is usually due to latency issues between the gateway and the network server. If you've isolated the issue, and are confident that the issue comes from the gateway, here's how to check downlink connectivity on a gateway:
 
 1. You'll need the **logs** of the gateway - which you can obtain by [following the logs or starting the packet forwarder manually](#obtainlogs).
 
