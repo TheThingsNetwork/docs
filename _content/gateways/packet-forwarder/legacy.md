@@ -1,10 +1,10 @@
 ---
-title: Semtech Packet Forwarder
+title: Semtech UDP Packet Forwarder
 ---
 
-# Semtech Packet Forwarder
+# Semtech UDP Packet Forwarder
 
-The Semtech Packet Forwarder is the **first packet forwarder**, connecting to servers through the [Semtech UDP protocol](../start/connection.html#semtech-udp-protocol). Although this protocol has several flaws, many gateways include a pre-compiled version of the packet forwarder, which makes it easy to test a gateway with this protocol.
+The Semtech UDP Packet Forwarder is the **first packet forwarder**, connecting to servers through the [Semtech UDP protocol](../start/connection.html#semtech-udp-protocol). Although this protocol has several flaws, many gateways include a pre-compiled version of the packet forwarder, which makes it easy to test a gateway with this protocol.
 
 ## Installation
 
@@ -50,4 +50,4 @@ Unless you're running the network yourself on specific ports, the **ports** will
 
 ## Troubleshooting
 
-Click [here](../troubleshooting/legacy.html) to see troubleshooting steps for the legacy packet forwarder!
+Click [here](../troubleshooting/legacy) to see troubleshooting steps for the legacy packet forwarder!
