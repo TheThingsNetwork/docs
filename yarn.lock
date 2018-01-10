@@ -2063,7 +2063,7 @@ strip-json-comments@~2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
 
-"stylebook@github:thethingsnetwork/stylebook#1.0.2":
+stylebook@thethingsnetwork/stylebook:
   version "1.0.0"
   resolved "https://codeload.github.com/thethingsnetwork/stylebook/tar.gz/0e0517dca3dc7cb7d3886acb4ecc9e73a5f347e0"
 

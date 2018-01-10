@@ -15,11 +15,13 @@
     "scp": "npm run webpack && node _scripts/scp.js",
     "webpack": "webpack -p",
     "dev-webpack": "webpack --watch",
-    "htmlproof":
-      "rm -rf _test && bundle exec jekyll build -d ./_test/docs && bundle exec htmlproofer --allow-hash-href --url-ignore '/github.com\\/TheThingsNetwork\\/docs\\/edit/' --url-swap 'http(s)?\\://www\\.thethingsnetwork\\.org/docs:/docs' ./_test",
+    "htmlproof": "rm -rf _test && bundle exec jekyll build -d ./_test/docs && bundle exec htmlproofer --allow-hash-href --url-ignore '/github.com\\/TheThingsNetwork\\/docs\\/edit/' --url-swap 'http(s)?\\://www\\.thethingsnetwork\\.org/docs:/docs' ./_test",
     "add": "git add ."
   },
-  "pre-commit": ["webpack", "test"],
+  "pre-commit": [
+    "webpack",
+    "test"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/thethingsnetwork/docs.git"
@@ -32,7 +34,7 @@
   "homepage": "https://github.com/thethingsnetwork/docs#readme",
   "dependencies": {
     "font-awesome": "^4.7.0",
-    "stylebook": "github:thethingsnetwork/stylebook#1.0.2"
+    "stylebook": "thethingsnetwork/stylebook"
   },
   "devDependencies": {
     "anchor-js": "^3.2.1",
