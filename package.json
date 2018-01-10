@@ -15,13 +15,11 @@
     "scp": "npm run webpack && node _scripts/scp.js",
     "webpack": "webpack -p",
     "dev-webpack": "webpack --watch",
-    "htmlproof": "rm -rf _test && bundle exec jekyll build -d ./_test/docs && bundle exec htmlproofer --allow-hash-href --url-ignore '/github.com\\/TheThingsNetwork\\/docs\\/edit/' --url-swap 'http(s)?\\://www\\.thethingsnetwork\\.org/docs:/docs' ./_test",
+    "htmlproof":
+      "rm -rf _test && bundle exec jekyll build -d ./_test/docs && bundle exec htmlproofer --allow-hash-href --url-ignore '/github.com\\/TheThingsNetwork\\/docs\\/edit/' --url-swap 'http(s)?\\://www\\.thethingsnetwork\\.org/docs:/docs' ./_test",
     "add": "git add ."
   },
-  "pre-commit": [
-    "webpack",
-    "test"
-  ],
+  "pre-commit": ["webpack", "test"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/thethingsnetwork/docs.git"
@@ -32,6 +30,10 @@
     "url": "https://github.com/thethingsnetwork/docs/issues"
   },
   "homepage": "https://github.com/thethingsnetwork/docs#readme",
+  "dependencies": {
+    "font-awesome": "^4.7.0",
+    "stylebook": "github:thethingsnetwork/stylebook#1.0.2"
+  },
   "devDependencies": {
     "anchor-js": "^3.2.1",
     "async": "^2.1.2",
@@ -41,12 +43,10 @@
     "babel-preset-react": "^6.5.0",
     "clipboard": "^1.5.12",
     "dotenv": "^2.0.0",
-    "font-awesome": "^4.6.3",
     "jquery": "^2.2.4",
     "js-yaml": "^3.7.0",
     "pre-commit": "^1.1.3",
     "request": "^2.78.0",
-    "stylebook": "github:thethingsnetwork/stylebook#1.0.2",
     "webpack": "^1.13.1"
   }
 }
