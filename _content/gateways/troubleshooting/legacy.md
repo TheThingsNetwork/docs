@@ -1,11 +1,11 @@
 ---
-title: Legacy packet forwarder
+title: Semtech UDP Packet Forwarder
 zindex: 200
 ---
 
-# Troubleshooting the legacy packet forwarder
+# Troubleshooting the Semtech UDP Packet Forwarder
 
-If the legacy packet forwarder doesn't seem to be working, these steps should help you identify the issue.
+If the Semtech UDP Packet Forwarder doesn't seem to be working, these steps should help you identify the issue.
 
 ## Ensuring the packet forwarder is running
 
@@ -46,7 +46,7 @@ This usually manifests by a `failed to start the concentrator` error when starti
 
 ### Unexpected stop
 
-The packet forwarder could have **quit unexpectedly, and didn't restart**. The legacy packet forwarder is usually stable, and this situation doesn't happen often - however, some circumstances can lead to this, for example if you have other processes on the gateway consuming a lot of resources. If this happens often, you'll want to look at the **root causes** of why the packet forwarder is quitting. You might also want to look at **mitigation strategies** - such as, wrapping the packet forwarder process in a managing process that will restart it when it quits.
+The packet forwarder could have **quit unexpectedly, and didn't restart**. The Semtech UDP Packet Forwarder is usually stable, and this situation doesn't happen often - however, some circumstances can lead to this, for example if you have other processes on the gateway consuming a lot of resources. If this happens often, you'll want to look at the **root causes** of why the packet forwarder is quitting - the [logs](#logs) might help you to isolate it. You might also want to look at **mitigation strategies** - such as, wrapping the packet forwarder process in a managing process that will restart it when it quits.
 
 ## Common issues with a running packet forwarder
 
@@ -96,7 +96,7 @@ If the logs of your gateway indicate a 100% acknowledgement of `PULL_DATA` but t
 
 + Check that in your gateway configuration, `server_address` is set on a [The Things Network](https://www.thethingsnetwork.org/wiki/Backend/Connect/Gateway#connect-a-gateway_configuring-your-gateway) router, and not to another network server. If you're using a **private network**, make sure that `server_address` is not pointing to The Things Network, but to your own router.
 
-+ When registering the gateway on the console, you should have checked **I'm using the legacy packet forwarder**, and have entered the **same EUI** as `gateway_ID` in your configuration file. At the end of the registration, this will create a gateway on TTN of which the ID will be `eui-<eui>` For example, if `gateway_ID` is equal to `AA555A0000000101`, the registration will create a gateway with the ID `eui-AA555A0000000101` on the console.
++ When registering the gateway on the console, you should have checked **I'm using the Semtech UDP Packet Forwarder**, and have entered the **same EUI** as `gateway_ID` in your configuration file. At the end of the registration, this will create a gateway on TTN of which the ID will be `eui-<eui>` For example, if `gateway_ID` is equal to `AA555A0000000101`, the registration will create a gateway with the ID `eui-AA555A0000000101` on the console.
 
     ![Gateway with EUI `0000024b08030c5f`](gateway-id.png)
 
