@@ -2,7 +2,8 @@
   "name": "ttn-docs",
   "private": true,
   "version": "0.0.1",
-  "description": "A static site that serves Parse's documentation using Jekyll on GitHub Pages. Work in progress.",
+  "description":
+    "A static site that serves Parse's documentation using Jekyll on GitHub Pages. Work in progress.",
   "main": "js/main.js",
   "scripts": {
     "start": "npm run prod",
@@ -15,15 +16,11 @@
     "scp": "npm run webpack && node _scripts/scp.js",
     "webpack": "webpack -p",
     "dev-webpack": "webpack --watch",
-    "htmlproof": "rm -rf _test && bundle exec jekyll build -d ./_test/docs && bundle exec htmlproofer --allow-hash-href --url-ignore '/github.com\\/TheThingsNetwork\\/docs\\/edit/' --url-swap 'http(s)?\\://www\\.thethingsnetwork\\.org/docs:/docs' ./_test",
+    "htmlproof":
+      "rm -rf _test && bundle exec jekyll build -d ./_test/docs && bundle exec htmlproofer --allow-hash-href --url-ignore '/github.com\\/TheThingsNetwork\\/docs\\/edit/' --url-swap 'http(s)?\\://www\\.thethingsnetwork\\.org/docs:/docs' ./_test",
     "add": "git add ."
   },
-  "pre-commit": [
-    "pull",
-    "webpack",
-    "test",
-    "add"
-  ],
+  "pre-commit": ["webpack", "test"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/thethingsnetwork/docs.git"
