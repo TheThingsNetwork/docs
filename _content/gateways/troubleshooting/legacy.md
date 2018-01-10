@@ -102,6 +102,38 @@ If the logs of your gateway indicate a 100% acknowledgement of `PULL_DATA` but t
 
     For example, this gateway should have `"gateway_ID": "0000024B08030C5F"` in its configuration.
 
+## Uplink issues
+
+### CRC issues
+
+In the logs of the packet forwarder, you can see statistics regarding CRC checks of the packets received by the gateway:
+
+```
+[...]
+### [UPSTREAM] ###
+# RF packets received by concentrator: 4
+# CRC_OK: 100.00%, CRC_FAIL: 0.00%, NO_CRC: 0.00%
+[...]
+```
+
+A CRC check is a verification made by the gateway to ensure that an uplink has not been altered during transmission. If a packet is transmitted successfully to the gateway, the CRC check **will pass**. If the packet was altered (because of e.g. interferences), CRC check **will fail**. Even if a packet that failed CRC check is transmitted to the network server, it is often unparsable and won't be sent to the application.
+
+Reasons why a gateway can have a high rate of CRC failures are:
+
++ If one or multiple devices nearby is faulty.
+
++ If there is a lot of noise on the reception band, the concentrator might interpret random signals as LoRa packets, which will fail CRC check.
+
++ If the configuration of the gateway doesn't match the concentrator used ; for example, if a 868MHz concentrator is configured for a 915MHz frequency plan.
+
++ If the antenna of the gateway is faulty, preventing correct reception of messages.
+
+### Filtering packets
+
+In LoRaWAN, a device doesn't connect to a specific gateway - it **joins a network**, and a gateway only relays RF packets received to the configured network server, which then handles activating devices and transmitting messages regardless of the gateway it was transmitted through.
+
+The legacy packet forwarder doesn't filter received uplinks based on the network, and transmits all received packets to the Things Network (which will then filter packets, and drop packets from other networks). It is not possible to select which packets the packet forwarder should transmit.
+
 ## Downlinks issues
 
 It can happen that a gateway is indicated as connected in the console, transmits uplinks, but doesn't transmit any downlink. This is usually due to latency issues between the gateway and the network server. If you've isolated the issue, and are confident that the issue comes from the gateway, here's how to check downlink connectivity on a gateway:
@@ -115,7 +147,7 @@ It can happen that a gateway is indicated as connected in the console, transmits
     INFO: [down] for server 54.72.145.119 PULL_ACK received in 104 ms
     ```
 
-    If the delay in which `PULL_ACK` messages are received is too long (e.g. >400ms), it can happen that the downlink was received by the gateway too late.
+    If the delay in which `PULL_ACK` messages are received is too long (e.g. >300ms), it can happen that the downlink was received by the gateway too late.
 
     You can detect those cases in two places in the logs: either if `TOO_LATE` messages appear in the logs, or if there is a line in the status logs indicating `TX rejected (too late)` messages.
 
