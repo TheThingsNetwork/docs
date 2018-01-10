@@ -1,6 +1,5 @@
 ---
 title: Go
-label: v2
 section: SDKs & Libraries
 redirect_from:
  - /current/go/

@@ -1,5 +1,5 @@
 ---
-title: OpenSensors Integration
+title: OpenSensors
 section: Integrations
 ---
 

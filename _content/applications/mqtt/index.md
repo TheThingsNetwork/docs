@@ -1,6 +1,5 @@
 ---
 title: MQTT
-label: v2
 section: APIs
 redirect_from:
  - /refactor/mqtt/

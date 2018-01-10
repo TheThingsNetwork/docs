@@ -1,5 +1,5 @@
 ---
-title: Storage Integration
+title: Storage
 section: Integrations
 ---
 

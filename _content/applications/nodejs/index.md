@@ -1,6 +1,5 @@
 ---
 title: Node.js
-label: v2
 section: SDKs & Libraries
 redirect_from:
  - /refactor/node-js/

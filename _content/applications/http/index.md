@@ -1,5 +1,5 @@
 ---
-title: HTTP Integration
+title: HTTP
 section: Integrations
 ---
 
@@ -7,12 +7,10 @@ section: Integrations
 
 The HTTP Integration allows you to send uplink data to an endpoint and receive downlink data over HTTP.
 
-
 ## Getting started video
 
 <a href="https://www.youtube.com/watch?v=Uebcq7xmI1M&index=2&list=PLM8eOeiKY7JVwrBYRHxsf9p0VM_dVapXl" target="_blank"><img src="https://www.thethingsnetwork.org/docs/applications/HTTP-Integration.png" 
 alt="Getting started with the HTTP Integration" width="480" /></a>
-
 
 ## Uplink
 
@@ -61,7 +59,7 @@ The integration will post data in the following format:
 }
 ```
 
-*Note: Note: Some values may be omitted if they are `null`, `false`, `""` or `0`.*
+_Note: Note: Some values may be omitted if they are `null`, `false`, `""` or `0`._
 
 ## Downlink
 

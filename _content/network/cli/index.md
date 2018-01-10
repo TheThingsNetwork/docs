@@ -1,6 +1,5 @@
 ---
 title: The Things Network CLI
-label: v2
 section: Manage
 redirect_from:
  - /current/cli/
