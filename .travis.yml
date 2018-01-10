@@ -1,7 +1,7 @@
 branches:
   only: master
 language: ruby
-rvm: 2.2.0
+rvm: 2.2.5
 sudo: false
 env:
   global:
@@ -14,5 +14,5 @@ install:
 - rm -rf ~/.nvm && git clone https://github.com/creationix/nvm.git ~/.nvm && (cd ~/.nvm
   && git checkout `git describe --abbrev=0 --tags`) && source ~/.nvm/nvm.sh && nvm
   install $TRAVIS_NODE_VERSION
-- npm install
+- yarn
 script: npm test && bundle exec rake deploy

@@ -9,7 +9,7 @@ logs
 npm-debug.log*
 
 # Dependencies
-/node_modules/*
+node_modules
 
 # Do include Sass since GitHub Pages needs it to build the Jekyll site
 !/node_modules/font-awesome
