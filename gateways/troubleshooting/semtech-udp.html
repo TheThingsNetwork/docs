@@ -17,7 +17,7 @@
       if (document.location.href.substr(0, document.location.href.length - document.location.hash.length) !== canonical) {
         window.location.replace(canonical);
       }
-    })('https://www.thethingsnetwork.org/docs/gateways/troubleshooting/legacy.html');
+    })('https://www.thethingsnetwork.org/docs/gateways/troubleshooting/semtech-udp.html');
     </script>
     <!-- Begin Jekyll SEO tag v2.4.0 -->
 <title>Semtech UDP Packet Forwarder | The Things Network</title>
@@ -26,17 +26,17 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Troubleshooting the Semtech UDP Packet Forwarder" />
 <meta property="og:description" content="Troubleshooting the Semtech UDP Packet Forwarder" />
-<link rel="canonical" href="https://www.thethingsnetwork.org/docs/gateways/troubleshooting/legacy.html" />
-<meta property="og:url" content="https://www.thethingsnetwork.org/docs/gateways/troubleshooting/legacy.html" />
+<link rel="canonical" href="https://www.thethingsnetwork.org/docs/gateways/troubleshooting/semtech-udp.html" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/gateways/troubleshooting/semtech-udp.html" />
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-01-11T12:23:00+00:00" />
+<meta property="article:published_time" content="2018-01-11T12:43:38+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"description":"Troubleshooting the Semtech UDP Packet Forwarder","url":"https://www.thethingsnetwork.org/docs/gateways/troubleshooting/legacy.html","headline":"Semtech UDP Packet Forwarder","dateModified":"2018-01-11T12:23:00+00:00","datePublished":"2018-01-11T12:23:00+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/gateways/troubleshooting/legacy.html"},"@context":"http://schema.org"}</script>
+{"description":"Troubleshooting the Semtech UDP Packet Forwarder","url":"https://www.thethingsnetwork.org/docs/gateways/troubleshooting/semtech-udp.html","headline":"Semtech UDP Packet Forwarder","dateModified":"2018-01-11T12:43:38+00:00","datePublished":"2018-01-11T12:43:38+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/gateways/troubleshooting/semtech-udp.html"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-152.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -86,7 +86,7 @@
         </ul>
       </div>
       <div class="hidden-xs col-sm-3 text-right">
-        <a href="https://github.com/TheThingsNetwork/docs/edit/master/_content/gateways/troubleshooting/legacy.md" class="page-edit" data-proofer-ignore><i class="fa fa-github"></i> Edit <strong>legacy.md</strong></a>
+        <a href="https://github.com/TheThingsNetwork/docs/edit/master/_content/gateways/troubleshooting/semtech-udp.md" class="page-edit" data-proofer-ignore><i class="fa fa-github"></i> Edit <strong>semtech-udp.md</strong></a>
       </div>
     </div>
     <div class="row">
@@ -107,7 +107,7 @@
                 </li>
                 <li class=""><a href="/docs/gateways/troubleshooting/">Troubleshooting</a>
             <ul>
-                <li class="active"><a href="/docs/gateways/troubleshooting/legacy.html">Semtech UDP Packet Forwarder</a>
+                <li class="active"><a href="/docs/gateways/troubleshooting/semtech-udp.html">Semtech UDP Packet Forwarder</a>
                 </li>
                 <li class=""><a href="https://status.thethings.network/">Network status</a>
                     <i class="fa fa-link"></i>
@@ -140,7 +140,7 @@
 <blockquote>
   <p>This section contains the most frequent issues with packet forwarders. If you find issues that are not covered in this guide, feel free to reach out to <a href="https://www.thethingsnetwork.org/forum">The Things Network community forum</a>.</p>
 </blockquote>
-<h2 id="ensuring-the-packet-forwarder-is-running">Ensuring the packet forwarder is running</h2>
+<h2 id="ensure-the-packet-forwarder-is-running">Ensure the packet forwarder is running</h2>
 <p>You will first want to ensure that the process is correctly running. Depending on your system, you can use <code class="highlighter-rouge">ps</code>, <code class="highlighter-rouge">ps -a</code> or <code class="highlighter-rouge">ps -A</code> to display all the running processes. It will return a list of processes, with their PIDs:</p>
 <div class="highlighter-rouge"><pre class="highlight"><code>admin@gateway:/# ps -A
   PID TTY          TIME CMD
@@ -205,7 +205,7 @@
     <p>From the directory where the configuration is located, <strong>execute the packet forwarder</strong>. The packet forwarder will look for configuration in the directory of execution. In the logs of the packet forwarder, you will be able to see if the packet forwarder is able to start or not. You may also specify the folder with configuration by passing the <code class="highlighter-rouge">-c &lt;folder&gt;</code> flag to the packet forwarder.</p>
   </li>
 </ol>
-<h2 id="common-issues-with-a-running-packet-forwarder">Common issues with a running packet forwarder</h2>
+<h2 id="common-issues">Common issues</h2>
 <p>The packet forwarder is running, however you are still having issues with it - it does not show up in the Console, or it seems that your specific gateway has an unexpected behavior.</p>
 <h3 id="network-issue">Network issue</h3>
 <p>It could be that your gateway is not connected to the network server. To check this, look at this line of the <a href="#logs">status logs</a>:</p>
@@ -225,7 +225,7 @@
     <p>If there is a firewall, that the firewall allows outgoing packets on UDP port 1700.</p>
   </li>
   <li>
-    <p>The network server address and ports are correctly set in the packet forwarder configuration. For example, for the EU region of The Things Network, you will find <a href="../packet-forwarder/legacy">here</a> the server addresses - such as <code class="highlighter-rouge">router.eu.thethings.network</code> or <code class="highlighter-rouge">router.kr.thethings.network</code>.</p>
+    <p>The network server address and ports are correctly set in the packet forwarder configuration. For example, for the EU region of The Things Network, you will find <a href="../packet-forwarder/semtech-udp">here</a> the server addresses - such as <code class="highlighter-rouge">router.eu.thethings.network</code> or <code class="highlighter-rouge">router.kr.thethings.network</code>.</p>
   </li>
 </ul>
 <p>There is also a possibility that the network itself is down. Check our <a href="https://status.thethings.network/">status page</a> for more information on the status of The Things Network.</p>
@@ -233,7 +233,7 @@
 <p>If the logs of your gateway indicate a 100% acknowledgement of <code class="highlighter-rouge">PULL_DATA</code> but the Console still does not show your gateway as connected:</p>
 <ul>
   <li>
-    <p>Check that in your gateway configuration, <code class="highlighter-rouge">server_address</code> is set on a <a href="../packet-forwarder/legacy">The Things Network</a> router. If you are using a <strong>private network</strong>, make sure that <code class="highlighter-rouge">server_address</code> is not pointing to The Things Network, but to your own router.</p>
+    <p>Check that in your gateway configuration, <code class="highlighter-rouge">server_address</code> is set on a <a href="../packet-forwarder/semtech-udp">The Things Network</a> router. If you are using a <strong>private network</strong>, make sure that <code class="highlighter-rouge">server_address</code> is not pointing to The Things Network, but to your own router.</p>
   </li>
   <li>
     <p>When registering the gateway on the Console, you should have checked <strong>I’m using the Semtech UDP Packet Forwarder</strong>, and have entered the <strong>same EUI</strong> as <code class="highlighter-rouge">gateway_ID</code> in your configuration file. At the end of the registration, this will create a gateway on TTN of which the ID will be <code class="highlighter-rouge">eui-&lt;eui&gt;</code> For example, if <code class="highlighter-rouge">gateway_ID</code> is equal to <code class="highlighter-rouge">AA555A0000000101</code>, the registration will create a gateway with the ID <code class="highlighter-rouge">eui-aa555a0000000101</code> on the Console.</p>
@@ -279,7 +279,7 @@
     <p>There’s a gateway nearby with better coverage and signal, that is prioritized by TTN</p>
   </li>
   <li>
-    <p>Your gateway is not recognized by TTN. Make sure that you have <a href="../packet-forwarder/legacy#registration">registered</a> your gateway on the Console, and that the gateway ID on the Console matches the EUI entered in the configuration of the gateway.</p>
+    <p>Your gateway is not recognized by TTN. Make sure that you have <a href="../packet-forwarder/semtech-udp#registration">registered</a> your gateway on the Console, and that the gateway ID on the Console matches the EUI entered in the configuration of the gateway.</p>
   </li>
 </ul>
 <h3 id="downlinks-are-not-transmitted-by-the-gateway">Downlinks are not transmitted by the gateway</h3>
@@ -291,7 +291,7 @@ INFO: [down] for server 54.72.145.119 PULL_ACK received in 104 ms
 </div>
 <p>If the delay in which <code class="highlighter-rouge">PULL_ACK</code> messages are received is too long (e.g. &gt;300ms), it means that there’s a high latency between the gateway and the network server - it can then happen that the downlink is received too late by the gateway.</p>
 <p>You can detect downlinks being received too late in two places in the logs: either if <code class="highlighter-rouge">TOO_LATE</code> messages appear in the logs, or if there is a line in the status logs indicating <code class="highlighter-rouge">TX rejected (too late)</code> messages.</p>
-<p>If you often encounter downlink arriving too late at the gateway, you might want to check your internet connection. One way to mitigate this effect is to <a href="../packet-forwarder/legacy">use the router closest to your location</a>. Other reasons for high latency are cellular or satellite backhauls for gateways.</p>
+<p>If you often encounter downlink arriving too late at the gateway, you might want to check your internet connection. One way to mitigate this effect is to <a href="../packet-forwarder/semtech-udp">use the router closest to your location</a>. Other reasons for high latency are cellular or satellite backhauls for gateways.</p>
           </div>
         </div>
       </div>
