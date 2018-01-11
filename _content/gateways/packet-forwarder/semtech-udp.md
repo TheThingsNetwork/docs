@@ -1,5 +1,7 @@
 ---
 title: Semtech UDP Packet Forwarder
+redirect-from:
+  - /gateways/packet-forwarder/legacy
 ---
 
 # Semtech UDP Packet Forwarder
@@ -24,9 +26,9 @@ Once the registration is complete, add the **gateway EUI** in the `local_conf.js
 
 ```json
 {
-    "gateway_conf": {
-        "gateway_ID": "<Gateway EUI>"
-    }
+  "gateway_conf": {
+    "gateway_ID": "<Gateway EUI>"
+  }
 }
 ```
 
@@ -50,19 +52,19 @@ Unless you're running the network yourself on specific ports, the **ports** will
 
 #### Router addresses
 
-|Region|Router address|
-|---|---|
-|`router.eu.thethings.network`|EU 433 and EU 863-870|
-|`router.us.thethings.network`|US 902-928|
-|`router.cn.thethings.network`|China 470-510 and 779-787|
-|`router.as.thethings.network`|Southeast Asia 923 MHz|
-|`router.as1.thethings.network`|Southeast Asia 920-923 MHz|
-|`router.as2.thethings.network`|Southeast Asia 923-925 MHz|
-|`router.kr.thethings.network`|Korea 920-923 MHz|
-|`thethings.meshed.com.au`|Australia 915-928 MHz|
-|`as923.thethings.meshed.com.au`|Australia (Southeast Asia 923MHz frequency plan)|
-|`ttn.opennetworkinfrastructure.org`|Switzerland (EU 433 and EU 863-870)|
+| Region                              | Router address                                   |
+| ----------------------------------- | ------------------------------------------------ |
+| `router.eu.thethings.network`       | EU 433 and EU 863-870                            |
+| `router.us.thethings.network`       | US 902-928                                       |
+| `router.cn.thethings.network`       | China 470-510 and 779-787                        |
+| `router.as.thethings.network`       | Southeast Asia 923 MHz                           |
+| `router.as1.thethings.network`      | Southeast Asia 920-923 MHz                       |
+| `router.as2.thethings.network`      | Southeast Asia 923-925 MHz                       |
+| `router.kr.thethings.network`       | Korea 920-923 MHz                                |
+| `thethings.meshed.com.au`           | Australia 915-928 MHz                            |
+| `as923.thethings.meshed.com.au`     | Australia (Southeast Asia 923MHz frequency plan) |
+| `ttn.opennetworkinfrastructure.org` | Switzerland (EU 433 and EU 863-870)              |
 
 ## Troubleshooting
 
-Click [here](../troubleshooting/legacy) to see troubleshooting steps for the legacy packet forwarder!
+Click [here](../troubleshooting/semtech-udp) to see troubleshooting steps for the Semtech UDP Packet Forwarder!

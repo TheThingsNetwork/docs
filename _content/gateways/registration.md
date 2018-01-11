@@ -8,7 +8,7 @@ zindex: 900
 
 There are mainly two types of packet forwarders that can be running on your gateway, depending on the kind of [network protocol](start/connection) they use:
 
-* Packet forwarders that connect using the Semtech UDP protocol (such as the [Semtech UDP Packet Forwarder](packet-forwarder/legacy)). This protocol is not encrypted, less reliable (UDP-based), but its simplicity makes it work on a large number of gateways.
+* Packet forwarders that connect using the Semtech UDP protocol (such as the [Semtech UDP Packet Forwarder](packet-forwarder/semtech-udp)). This protocol is not encrypted, less reliable (UDP-based), but its simplicity makes it work on a large number of gateways.
 
 * Packet forwarders that connect using the new TTN Gateway Connector protocol (such as the [TTN Packet Forwarder](packet-forwarder/ttn)). This protocol is more secure, reliable and safer.
 

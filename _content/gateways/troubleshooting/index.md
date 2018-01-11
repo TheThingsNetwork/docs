@@ -34,4 +34,4 @@ Here are a few leads of questions to which the answer will give you a better ins
 
 * Does the packet forwarder have a successful connection to The Things Network?
 
-> Are you using a [Semtech UDP Packet Forwarder](../packet-forwarder/legacy)? See [Troubleshooting](legacy.md).
+> Are you using a [Semtech UDP Packet Forwarder](../packet-forwarder/semtech-udp)? See [Troubleshooting](semtech-udp).

@@ -1,5 +1,7 @@
 ---
 title: Semtech UDP Packet Forwarder
+redirect-from:
+  - /gateways/troubleshooting/legacy
 zindex: 200
 ---
 
@@ -9,7 +11,7 @@ If the Semtech UDP Packet Forwarder does not seem to be working, these steps sho
 
 > This section contains the most frequent issues with packet forwarders. If you find issues that are not covered in this guide, feel free to reach out to [The Things Network community forum](https://www.thethingsnetwork.org/forum).
 
-## Ensuring the packet forwarder is running
+## Ensure the packet forwarder is running
 
 You will first want to ensure that the process is correctly running. Depending on your system, you can use `ps`, `ps -a` or `ps -A` to display all the running processes. It will return a list of processes, with their PIDs:
 
@@ -69,7 +71,7 @@ To retrieve the logs in the shell by starting the packet forwarder yourself:
 
 4. From the directory where the configuration is located, **execute the packet forwarder**. The packet forwarder will look for configuration in the directory of execution. In the logs of the packet forwarder, you will be able to see if the packet forwarder is able to start or not. You may also specify the folder with configuration by passing the `-c <folder>` flag to the packet forwarder.
 
-## Common issues with a running packet forwarder
+## Common issues
 
 The packet forwarder is running, however you are still having issues with it - it does not show up in the Console, or it seems that your specific gateway has an unexpected behavior.
 
@@ -91,7 +93,7 @@ It could be that your gateway is not connected to the network server. To check t
 
 * If there is a firewall, that the firewall allows outgoing packets on UDP port 1700.
 
-* The network server address and ports are correctly set in the packet forwarder configuration. For example, for the EU region of The Things Network, you will find [here](../packet-forwarder/legacy) the server addresses - such as `router.eu.thethings.network` or `router.kr.thethings.network`.
+* The network server address and ports are correctly set in the packet forwarder configuration. For example, for the EU region of The Things Network, you will find [here](../packet-forwarder/semtech-udp) the server addresses - such as `router.eu.thethings.network` or `router.kr.thethings.network`.
 
 There is also a possibility that the network itself is down. Check our [status page](https://status.thethings.network/) for more information on the status of The Things Network.
 
@@ -99,7 +101,7 @@ There is also a possibility that the network itself is down. Check our [status p
 
 If the logs of your gateway indicate a 100% acknowledgement of `PULL_DATA` but the Console still does not show your gateway as connected:
 
-* Check that in your gateway configuration, `server_address` is set on a [The Things Network](../packet-forwarder/legacy) router. If you are using a **private network**, make sure that `server_address` is not pointing to The Things Network, but to your own router.
+* Check that in your gateway configuration, `server_address` is set on a [The Things Network](../packet-forwarder/semtech-udp) router. If you are using a **private network**, make sure that `server_address` is not pointing to The Things Network, but to your own router.
 
 * When registering the gateway on the Console, you should have checked **I'm using the Semtech UDP Packet Forwarder**, and have entered the **same EUI** as `gateway_ID` in your configuration file. At the end of the registration, this will create a gateway on TTN of which the ID will be `eui-<eui>` For example, if `gateway_ID` is equal to `AA555A0000000101`, the registration will create a gateway with the ID `eui-aa555a0000000101` on the Console.
 
@@ -149,7 +151,7 @@ If you notice that your gateway is not being sent any downlink, it could be that
 
 * There's a gateway nearby with better coverage and signal, that is prioritized by TTN
 
-* Your gateway is not recognized by TTN. Make sure that you have [registered](../packet-forwarder/legacy#registration) your gateway on the Console, and that the gateway ID on the Console matches the EUI entered in the configuration of the gateway.
+* Your gateway is not recognized by TTN. Make sure that you have [registered](../packet-forwarder/semtech-udp#registration) your gateway on the Console, and that the gateway ID on the Console matches the EUI entered in the configuration of the gateway.
 
 ### Downlinks are not transmitted by the gateway
 
@@ -166,4 +168,4 @@ If the delay in which `PULL_ACK` messages are received is too long (e.g. >300ms)
 
 You can detect downlinks being received too late in two places in the logs: either if `TOO_LATE` messages appear in the logs, or if there is a line in the status logs indicating `TX rejected (too late)` messages.
 
-If you often encounter downlink arriving too late at the gateway, you might want to check your internet connection. One way to mitigate this effect is to [use the router closest to your location](../packet-forwarder/legacy). Other reasons for high latency are cellular or satellite backhauls for gateways.
+If you often encounter downlink arriving too late at the gateway, you might want to check your internet connection. One way to mitigate this effect is to [use the router closest to your location](../packet-forwarder/semtech-udp). Other reasons for high latency are cellular or satellite backhauls for gateways.
