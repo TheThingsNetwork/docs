@@ -31,12 +31,12 @@
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-01-10T22:09:53+00:00" />
+<meta property="article:published_time" content="2018-01-11T12:23:00+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"description":"Troubleshooting a gateway","url":"https://www.thethingsnetwork.org/docs/gateways/troubleshooting/","headline":"Troubleshooting","dateModified":"2018-01-10T22:09:53+00:00","datePublished":"2018-01-10T22:09:53+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/gateways/troubleshooting/"},"@context":"http://schema.org"}</script>
+{"description":"Troubleshooting a gateway","url":"https://www.thethingsnetwork.org/docs/gateways/troubleshooting/","headline":"Troubleshooting","dateModified":"2018-01-11T12:23:00+00:00","datePublished":"2018-01-11T12:23:00+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/gateways/troubleshooting/"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-152.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -96,20 +96,23 @@
             <h5>Gateways</h5>
             <ul>
               <li class=""><a href="/docs/gateways/index.html">Overview</a>
-            <ul>
-                <li class=""><a href="/docs/gateways/registration.html">Gateway Registration</a>
-                </li>
-                <li class=""><a href="/docs/gateways/troubleshooting.html">Troubleshooting</a>
-                </li>
-            </ul>
               </li>
             <li class="page-side-nav-section"><span>Running a gateway</span>
             <ul>
-                <li class="active"><a href="/docs/gateways/troubleshooting/">Troubleshooting</a>
+                <li class=""><a href="/docs/gateways/start/">Where to start</a>
+                </li>
+                <li class=""><a href="/docs/gateways/registration.html">Gateway Registration</a>
                 </li>
                 <li class=""><a href="/docs/gateways/packet-forwarder/">Packet Forwarders</a>
                 </li>
-                <li class=""><a href="/docs/gateways/start/">Where to start</a>
+                <li class="active"><a href="/docs/gateways/troubleshooting/">Troubleshooting</a>
+            <ul>
+                <li class=""><a href="/docs/gateways/troubleshooting/legacy.html">Semtech UDP Packet Forwarder</a>
+                </li>
+                <li class=""><a href="https://status.thethings.network/">Network status</a>
+                    <i class="fa fa-link"></i>
+                </li>
+            </ul>
                 </li>
             </ul>
             </li>
@@ -134,8 +137,11 @@
           <div class="panel-body page-content">
             <h1 id="troubleshooting-a-gateway">Troubleshooting a gateway</h1>
 <p>Your gateway doesn’t seem to send data to The Things Network? This section is here to help you find out the issue might come from. We’ll give you a few leads to help you troubleshoot your gateway.</p>
-<h2 id="from-the-console">From the console</h2>
-<p>The Things Network’s <a href="https://console.thethingsnetwork.org">console</a> is connected to our Network Operations Center, which monitors the gateways across the network. This means you can now see if the gateway is estimated to be connected or not connected:</p>
+<blockquote>
+  <p>This section contains the most frequent issues with packet forwarders. If you find issues that are not covered in this guide, feel free to reach out to <a href="https://www.thethingsnetwork.org/forum">The Things Network community forum</a>.</p>
+</blockquote>
+<h2 id="from-the-console">From the Console</h2>
+<p><a href="https://console.thethingsnetwork.org">The Things Network Console</a> is connected to our Network Operations Center, which monitors the gateways across the network. This means you can now see if the gateway is estimated to be connected or not connected:</p>
 <p><img src="status-console.png" alt="Status in the console" /></p>
 <p>If your gateway is considered to be connected, you can also see the traffic going through this gateway:</p>
 <p><img src="traffic-console.png" alt="Traffic in the console" /></p>
@@ -151,12 +157,12 @@
     <p>Is the packet forwarder running on your gateway? The way to answer this question depends on your type of gateway. Many gateways rely on SystemV or systemd managers, which can give you the status of the packet forwarder. Other gateways rely on <a href="https://resin.io">resin.io</a>, for which you can consult the status from a Web interface. Some other, like the Kerlink IoT Station, have their own init systems - often, consulting the list of running processes (with <code class="highlighter-rouge">ps -a</code>) can give you insight on whether the packet forwarder is running.</p>
   </li>
   <li>
-    <p>Does the packet forwarder have a successful connection to The Things Network? For example, in the legacy Semtech packet forwarder, some logs indicate whether acknowledgments are being sent by the network:</p>
+    <p>Does the packet forwarder have a successful connection to The Things Network?</p>
   </li>
 </ul>
-<div class="highlighter-rouge"><pre class="highlight"><code>INFO: [up] PUSH_ACK for server router.thethings.network received in 61 ms
-</code></pre>
-</div>
+<blockquote>
+  <p>Are you using a <a href="../packet-forwarder/legacy">Semtech UDP Packet Forwarder</a>? See <a href="legacy.html">Troubleshooting</a>.</p>
+</blockquote>
           </div>
         </div>
       </div>

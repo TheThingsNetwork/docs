@@ -20,23 +20,23 @@
     })('https://www.thethingsnetwork.org/docs/gateways/packet-forwarder/legacy.html');
     </script>
     <!-- Begin Jekyll SEO tag v2.4.0 -->
-<title>Semtech Packet Forwarder | The Things Network</title>
+<title>Semtech UDP Packet Forwarder | The Things Network</title>
 <meta name="generator" content="Jekyll v3.4.5" />
-<meta property="og:title" content="Semtech Packet Forwarder" />
+<meta property="og:title" content="Semtech UDP Packet Forwarder" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Semtech Packet Forwarder" />
-<meta property="og:description" content="Semtech Packet Forwarder" />
+<meta name="description" content="Semtech UDP Packet Forwarder" />
+<meta property="og:description" content="Semtech UDP Packet Forwarder" />
 <link rel="canonical" href="https://www.thethingsnetwork.org/docs/gateways/packet-forwarder/legacy.html" />
 <meta property="og:url" content="https://www.thethingsnetwork.org/docs/gateways/packet-forwarder/legacy.html" />
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-01-10T22:09:53+00:00" />
+<meta property="article:published_time" content="2018-01-11T12:23:00+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"description":"Semtech Packet Forwarder","url":"https://www.thethingsnetwork.org/docs/gateways/packet-forwarder/legacy.html","headline":"Semtech Packet Forwarder","dateModified":"2018-01-10T22:09:53+00:00","datePublished":"2018-01-10T22:09:53+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/gateways/packet-forwarder/legacy.html"},"@context":"http://schema.org"}</script>
+{"description":"Semtech UDP Packet Forwarder","url":"https://www.thethingsnetwork.org/docs/gateways/packet-forwarder/legacy.html","headline":"Semtech UDP Packet Forwarder","dateModified":"2018-01-11T12:23:00+00:00","datePublished":"2018-01-11T12:23:00+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/gateways/packet-forwarder/legacy.html"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-152.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -96,26 +96,22 @@
             <h5>Gateways</h5>
             <ul>
               <li class=""><a href="/docs/gateways/index.html">Overview</a>
-            <ul>
-                <li class=""><a href="/docs/gateways/registration.html">Gateway Registration</a>
-                </li>
-                <li class=""><a href="/docs/gateways/troubleshooting.html">Troubleshooting</a>
-                </li>
-            </ul>
               </li>
             <li class="page-side-nav-section"><span>Running a gateway</span>
             <ul>
-                <li class=""><a href="/docs/gateways/troubleshooting/">Troubleshooting</a>
+                <li class=""><a href="/docs/gateways/start/">Where to start</a>
+                </li>
+                <li class=""><a href="/docs/gateways/registration.html">Gateway Registration</a>
                 </li>
                 <li class=""><a href="/docs/gateways/packet-forwarder/">Packet Forwarders</a>
             <ul>
-                <li class="active"><a href="/docs/gateways/packet-forwarder/legacy.html">Semtech Packet Forwarder</a>
+                <li class="active"><a href="/docs/gateways/packet-forwarder/legacy.html">Semtech UDP Packet Forwarder</a>
                 </li>
                 <li class=""><a href="/docs/gateways/packet-forwarder/ttn.html">TTN Packet Forwarder</a>
                 </li>
             </ul>
                 </li>
-                <li class=""><a href="/docs/gateways/start/">Where to start</a>
+                <li class=""><a href="/docs/gateways/troubleshooting/">Troubleshooting</a>
                 </li>
             </ul>
             </li>
@@ -138,8 +134,8 @@
       <div class="col-sm-7">
         <div class="panel">
           <div class="panel-body page-content">
-            <h1 id="semtech-packet-forwarder">Semtech Packet Forwarder</h1>
-<p>The Semtech Packet Forwarder is the <strong>first packet forwarder</strong>, connecting to servers through the <a href="../start/connection.html#semtech-udp-protocol">Semtech UDP protocol</a>. Although this protocol has several flaws, many gateways include a pre-compiled version of the packet forwarder, which makes it easy to test a gateway with this protocol.</p>
+            <h1 id="semtech-udp-packet-forwarder">Semtech UDP Packet Forwarder</h1>
+<p>The Semtech UDP Packet Forwarder is the <strong>first packet forwarder</strong>, connecting to servers through the <a href="../start/connection#semtech-udp-protocol">Semtech UDP protocol</a>. Although this protocol has several flaws, many gateways include a pre-compiled version of the packet forwarder, which makes it easy to test a gateway with this protocol.</p>
 <h2 id="installation">Installation</h2>
 <p>Many gateways (Multitech Conduit, LORIX One…) include a pre-compiled version of this packet forwarder. For other gateways, the code is <a href="https://github.com/Lora-net/packet_forwarder">available online</a>, and can be compiled with Semtech’s <a href="https://github.com/Lora-net/lora_gateway">LoRa library</a>.</p>
 <h2 id="configuration">Configuration</h2>
@@ -156,7 +152,7 @@
 </span></code></pre>
 </div>
 <h3 id="router-configuration">Router configuration</h3>
-<p>After that, edit the <code class="highlighter-rouge">global_conf.json</code> file to point to the router. If you’re using the public community network, you will need to add the <strong>hostname of the router region</strong> - for example, for the EU region, it will be <code class="highlighter-rouge">router.eu.thethings.network</code>. Otherwise, it will be the hostname of your <strong>router</strong> - most of the time, it is just the hostname of your network.</p>
+<p>After that, edit the <code class="highlighter-rouge">global_conf.json</code> file to point to the router. If you’re using the public community network, you will need to add the <strong>address of the router region</strong> - for example, for the EU region, it will be <code class="highlighter-rouge">router.eu.thethings.network</code>. Otherwise, it will be the hostname of your <strong>router</strong> - most of the time, it is just the hostname of your network.</p>
 <p>Unless you’re running the network yourself on specific ports, the <strong>ports</strong> will be 1700 and 1700.</p>
 <div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="err">[...]</span><span class="w">
@@ -169,6 +165,59 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 </div>
+<h4 id="router-addresses">Router addresses</h4>
+<div class="table-responsive"><table class="table">
+  <thead>
+    <tr>
+      <th>Region</th>
+      <th>Router address</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">router.eu.thethings.network</code></td>
+      <td>EU 433 and EU 863-870</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">router.us.thethings.network</code></td>
+      <td>US 902-928</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">router.cn.thethings.network</code></td>
+      <td>China 470-510 and 779-787</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">router.as.thethings.network</code></td>
+      <td>Southeast Asia 923 MHz</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">router.as1.thethings.network</code></td>
+      <td>Southeast Asia 920-923 MHz</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">router.as2.thethings.network</code></td>
+      <td>Southeast Asia 923-925 MHz</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">router.kr.thethings.network</code></td>
+      <td>Korea 920-923 MHz</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">thethings.meshed.com.au</code></td>
+      <td>Australia 915-928 MHz</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">as923.thethings.meshed.com.au</code></td>
+      <td>Australia (Southeast Asia 923MHz frequency plan)</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">ttn.opennetworkinfrastructure.org</code></td>
+      <td>Switzerland (EU 433 and EU 863-870)</td>
+    </tr>
+  </tbody>
+</table></div>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<p>Click <a href="../troubleshooting/legacy">here</a> to see troubleshooting steps for the legacy packet forwarder!</p>
           </div>
         </div>
       </div>

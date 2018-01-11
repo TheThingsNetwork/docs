@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <link rel="stylesheet" href="/docs/assets/css/main.css" />
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script>
+    (function(canonical) {
+      if (document.location.href.substr(0, document.location.href.length - document.location.hash.length) !== canonical) {
+        window.location.replace(canonical);
+      }
+    })('https://www.thethingsnetwork.org/docs/gateways/troubleshooting/legacy.html');
+    </script>
+    <!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>Semtech UDP Packet Forwarder | The Things Network</title>
+<meta name="generator" content="Jekyll v3.4.5" />
+<meta property="og:title" content="Semtech UDP Packet Forwarder" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Troubleshooting the Semtech UDP Packet Forwarder" />
+<meta property="og:description" content="Troubleshooting the Semtech UDP Packet Forwarder" />
+<link rel="canonical" href="https://www.thethingsnetwork.org/docs/gateways/troubleshooting/legacy.html" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/gateways/troubleshooting/legacy.html" />
+<meta property="og:site_name" content="The Things Network" />
+<meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-01-11T12:23:00+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@thethingsnetwrk" />
+<meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
+<script type="application/ld+json">
+{"description":"Troubleshooting the Semtech UDP Packet Forwarder","url":"https://www.thethingsnetwork.org/docs/gateways/troubleshooting/legacy.html","headline":"Semtech UDP Packet Forwarder","dateModified":"2018-01-11T12:23:00+00:00","datePublished":"2018-01-11T12:23:00+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/gateways/troubleshooting/legacy.html"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+    <link rel="apple-touch-icon-precomposed" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-152.png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-144.png">
+    <meta name="application-name" content="The Things Network">
+    <meta name="msapplication-tooltip" content="Building a Global Internet of Things Network Together.">
+    <meta name="msapplication-config" content="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/ieconfig.xml">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-32.png" sizes="32x32">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-57.png" sizes="57x57">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-76.png" sizes="76x76">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-96.png" sizes="96x96">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-120.png" sizes="120x120">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-128.png" sizes="128x128">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-144.png" sizes="144x144">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-152.png" sizes="152x152">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-180.png" sizes="180x180">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-195.png" sizes="195x195">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-228.png" sizes="228x228">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/smalltile.png" sizes="128x128">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/mediumtile.png" sizes="270x270">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/widetile.png" sizes="558x270">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png" sizes="558x558">
+    <link rel="shortcut icon" sizes="196x196" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-196.png">
+    <script src="/docs/assets/js/main.js"></script>
+  </head>
+  <body>
+    <div id="content">
+<div class="layout-page">
+  <div class="ttn-header ttn-header-small">
+    <div class="ttn-container container-fluid">
+      <h1>
+        <img src="/docs/assets/images/the-things-white.png" alt="⛅ The Things Network" />
+        <span>Learn</span>
+      </h1>
+    </div>
+  </div>
+  <div class="container-fluid ttn-container">
+    <div class="row page-top-nav">
+      <div class="col-sm-9">
+        <ul>
+          <li class="page-top-nav-crumb"><a href="http://www.thethingsnetwork.org/">Home</a></li>
+          <li class="page-top-nav-crumb"><a href="/docs/">Learn</a></li>
+                <li class=""><a href="/docs/devices/">Devices</a></li>
+                <li class="active"><a href="/docs/gateways/">Gateways</a></li>
+                <li class=""><a href="/docs/network/">Network</a></li>
+                <li class=""><a href="/docs/applications/">Applications</a></li>
+        </ul>
+      </div>
+      <div class="hidden-xs col-sm-3 text-right">
+        <a href="https://github.com/TheThingsNetwork/docs/edit/master/_content/gateways/troubleshooting/legacy.md" class="page-edit" data-proofer-ignore><i class="fa fa-github"></i> Edit <strong>legacy.md</strong></a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="panel page-side-nav page-affix">
+          <div class="panel-body">
+            <h5>Gateways</h5>
+            <ul>
+              <li class=""><a href="/docs/gateways/index.html">Overview</a>
+              </li>
+            <li class="page-side-nav-section"><span>Running a gateway</span>
+            <ul>
+                <li class=""><a href="/docs/gateways/start/">Where to start</a>
+                </li>
+                <li class=""><a href="/docs/gateways/registration.html">Gateway Registration</a>
+                </li>
+                <li class=""><a href="/docs/gateways/packet-forwarder/">Packet Forwarders</a>
+                </li>
+                <li class=""><a href="/docs/gateways/troubleshooting/">Troubleshooting</a>
+            <ul>
+                <li class="active"><a href="/docs/gateways/troubleshooting/legacy.html">Semtech UDP Packet Forwarder</a>
+                </li>
+                <li class=""><a href="https://status.thethings.network/">Network status</a>
+                    <i class="fa fa-link"></i>
+                </li>
+            </ul>
+                </li>
+            </ul>
+            </li>
+            <li class="page-side-nav-section"><span>Hardware</span>
+            <ul>
+                <li class=""><a href="/docs/gateways/gateway/">The Things Gateway</a>
+                </li>
+                <li class=""><a href="/docs/gateways/multitech/">MultiTech Conduit</a>
+                </li>
+                <li class=""><a href="/docs/gateways/kerlink/">Kerlink LoRa IoT Station</a>
+                </li>
+                <li class=""><a href="/docs/gateways/lorrier/">Lorrier LR2</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-7">
+        <div class="panel">
+          <div class="panel-body page-content">
+            <h1 id="troubleshooting-the-semtech-udp-packet-forwarder">Troubleshooting the Semtech UDP Packet Forwarder</h1>
+<p>If the Semtech UDP Packet Forwarder does not seem to be working, these steps should help you identify the issue.</p>
+<blockquote>
+  <p>This section contains the most frequent issues with packet forwarders. If you find issues that are not covered in this guide, feel free to reach out to <a href="https://www.thethingsnetwork.org/forum">The Things Network community forum</a>.</p>
+</blockquote>
+<h2 id="ensuring-the-packet-forwarder-is-running">Ensuring the packet forwarder is running</h2>
+<p>You will first want to ensure that the process is correctly running. Depending on your system, you can use <code class="highlighter-rouge">ps</code>, <code class="highlighter-rouge">ps -a</code> or <code class="highlighter-rouge">ps -A</code> to display all the running processes. It will return a list of processes, with their PIDs:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>admin@gateway:/# ps -A
+  PID TTY          TIME CMD
+    1 ??       00:00:00 init
+    6 ??       00:00:00 poly_pkt_fwd
+    8 pts/0    00:00:00 sh
+   10 pts/0    00:00:00 ps
+</code></pre>
+</div>
+<p>You will usually identify the packet forwarder process with the <code class="highlighter-rouge">pkt_fwd</code> keyword: common names for the process are <code class="highlighter-rouge">poly_pkt_fwd</code>, <code class="highlighter-rouge">mp_pkt_fwd</code>, <code class="highlighter-rouge">basic_pkt_fwd</code> or <code class="highlighter-rouge">gps_pkt_fwd</code>.</p>
+<p>If the process is not in the list, it is likely that the packet forwarder is not running. This could be due to several reasons:</p>
+<h3 id="improper-installation">Improper installation</h3>
+<p>The packet forwarder could <strong>be installed improperly</strong>, and never started. Look at the documentation you used to ensure the packet forwarder is correctly installed. If you did not install anything yourself, please contact the gateway manufacturer or vendor that installed the gateway.</p>
+<h3 id="the-packet-forwarder-did-not-start">The packet forwarder did not start</h3>
+<p>This can be due, for example:</p>
+<ul>
+  <li>
+    <p>To an invalid configuration.</p>
+  </li>
+  <li>
+    <p>To a communication error with the LoRa concentrator. This highly depends on your gateway. Some gateways do not require any configuration to communicate with the LoRa concentrator ; other gateways require executing actions before communicating with the concentrator. For example, the Kerlink IoT Station requires executing a script called <code class="highlighter-rouge">modem_on.sh</code> to communicate with the concentrator after starting the OS. There are also edge cases for some gateways that prevent communication with the concentrator in specific circumstances.</p>
+  </li>
+</ul>
+<p>This usually manifests by a <code class="highlighter-rouge">failed to start the concentrator</code> error when starting the packet forwarder - to confirm this, check the <a href="#logs">logs of the packet forwarder</a>.</p>
+<h3 id="unexpected-stop">Unexpected stop</h3>
+<p>The packet forwarder could have <strong>quit unexpectedly, and did not restart</strong>. The Semtech UDP Packet Forwarder is usually stable, and this situation does not happen often - however, some circumstances can lead to this, for example if you have other processes on the gateway consuming a lot of resources. If this happens often, you will want to look at the <strong>root causes</strong> of why the packet forwarder is quitting - the <a href="#logs">logs</a> might help you to isolate it. You might also want to look at <strong>mitigation strategies</strong> - such as, wrapping the packet forwarder process in a managing process that will restart it when it quits.</p>
+<h2 id="logs">Logs</h2>
+<h3 id="find-log-file">Find log file</h3>
+<p>In some gateways, you will have access to the logs in the filesystem. Once you find the file in which the logs are being saved, you can read and follow them as they are being written by executing <code class="highlighter-rouge">tail -f &lt;filename&gt;</code> (see <a href="http://man7.org/linux/man-pages/man1/tail.1.html">man tail</a>). Here are known log file locations:</p>
+<div class="table-responsive"><table class="table">
+  <thead>
+    <tr>
+      <th>Model</th>
+      <th>Location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Multitech Conduit</td>
+      <td><code class="highlighter-rouge">/var/log/lora_pkt_fwd.log</code></td>
+    </tr>
+    <tr>
+      <td>Kerlink IoT Station</td>
+      <td><code class="highlighter-rouge">/mnt/fsuser-1/thethingsnetwork/poly_pkt_fwd.log</code> starting from DOTA V1.4 (January 2018)</td>
+    </tr>
+  </tbody>
+</table></div>
+<h3 id="manually-start-the-packet-forwarder">Manually start the packet forwarder</h3>
+<p>If you cannot find where the logs are being saved, you can also troubleshoot by <strong>starting the packet forwarder in your terminal</strong>.</p>
+<p>To retrieve the logs in the shell by starting the packet forwarder yourself:</p>
+<ol>
+  <li>
+    <p>Stop the running packet forwarder process, by using <code class="highlighter-rouge">kill -9 &lt;packet forwarder PID&gt;</code>. You can find the PID of the packet forwarder with the <code class="highlighter-rouge">ps</code> command, see <a href="#ensuring-the-packet-forwarder-is-running">above</a>.</p>
+  </li>
+  <li>
+    <p>Find the directory in which the <strong>binary</strong> of the packet forwarder is located. For example, for Kerlink packet forwarders, it will be in <code class="highlighter-rouge">/mnt/fsuser-1/thethingsnetwork</code>; for Multitech packet forwarders, it is often located in <code class="highlighter-rouge">/opt/lora</code>.</p>
+  </li>
+  <li>
+    <p>Find the directory in which the <strong>configuration file</strong> of the packet forwarder is located. Depending on the installation, it is sometimes located in the same directory (e.g. for Kerlink gateways), and sometimes in a different directory (e.g. Multitech gateways, where it is located at <code class="highlighter-rouge">/var/config/lora</code>).</p>
+  </li>
+  <li>
+    <p>From the directory where the configuration is located, <strong>execute the packet forwarder</strong>. The packet forwarder will look for configuration in the directory of execution. In the logs of the packet forwarder, you will be able to see if the packet forwarder is able to start or not. You may also specify the folder with configuration by passing the <code class="highlighter-rouge">-c &lt;folder&gt;</code> flag to the packet forwarder.</p>
+  </li>
+</ol>
+<h2 id="common-issues-with-a-running-packet-forwarder">Common issues with a running packet forwarder</h2>
+<p>The packet forwarder is running, however you are still having issues with it - it does not show up in the Console, or it seems that your specific gateway has an unexpected behavior.</p>
+<h3 id="network-issue">Network issue</h3>
+<p>It could be that your gateway is not connected to the network server. To check this, look at this line of the <a href="#logs">status logs</a>:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>##### 2016-01-05 18:17:08 GMT #####
+[...]
+### [DOWNSTREAM] ###
+# PULL_DATA sent: 3 (100.00% acknowledged)
+[...]
+</code></pre>
+</div>
+<p><strong>100% of the <code class="highlighter-rouge">PULL_DATA</code> should be acknowledged</strong>. If 0% is acknowledged, it means the gateway is not connected. Check that:</p>
+<ul>
+  <li>
+    <p>Your gateway is connected to Internet. This can be checked by using <code class="highlighter-rouge">ping 8.8.8.8</code>, and seeing if you receive a response.</p>
+  </li>
+  <li>
+    <p>If there is a firewall, that the firewall allows outgoing packets on UDP port 1700.</p>
+  </li>
+  <li>
+    <p>The network server address and ports are correctly set in the packet forwarder configuration. For example, for the EU region of The Things Network, you will find <a href="../packet-forwarder/legacy">here</a> the server addresses - such as <code class="highlighter-rouge">router.eu.thethings.network</code> or <code class="highlighter-rouge">router.kr.thethings.network</code>.</p>
+  </li>
+</ul>
+<p>There is also a possibility that the network itself is down. Check our <a href="https://status.thethings.network/">status page</a> for more information on the status of The Things Network.</p>
+<h3 id="gateway-not-detected">Gateway not detected</h3>
+<p>If the logs of your gateway indicate a 100% acknowledgement of <code class="highlighter-rouge">PULL_DATA</code> but the Console still does not show your gateway as connected:</p>
+<ul>
+  <li>
+    <p>Check that in your gateway configuration, <code class="highlighter-rouge">server_address</code> is set on a <a href="../packet-forwarder/legacy">The Things Network</a> router. If you are using a <strong>private network</strong>, make sure that <code class="highlighter-rouge">server_address</code> is not pointing to The Things Network, but to your own router.</p>
+  </li>
+  <li>
+    <p>When registering the gateway on the Console, you should have checked <strong>I’m using the Semtech UDP Packet Forwarder</strong>, and have entered the <strong>same EUI</strong> as <code class="highlighter-rouge">gateway_ID</code> in your configuration file. At the end of the registration, this will create a gateway on TTN of which the ID will be <code class="highlighter-rouge">eui-&lt;eui&gt;</code> For example, if <code class="highlighter-rouge">gateway_ID</code> is equal to <code class="highlighter-rouge">AA555A0000000101</code>, the registration will create a gateway with the ID <code class="highlighter-rouge">eui-aa555a0000000101</code> on the Console.</p>
+    <p><img src="gateway-id.png" alt="Gateway with EUI `0000024b08030c5f`" /></p>
+    <p>For example, this gateway should have <code class="highlighter-rouge">"gateway_ID": "0000024B08030C5F"</code> in its configuration.</p>
+  </li>
+</ul>
+<h2 id="uplink-issues">Uplink issues</h2>
+<h3 id="crc-issues">CRC issues</h3>
+<p>In the <a href="#logs">logs</a>, you can see statistics regarding CRC checks of the packets received by the gateway:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>[...]
+### [UPSTREAM] ###
+# RF packets received by concentrator: 4
+# CRC_OK: 100.00%, CRC_FAIL: 0.00%, NO_CRC: 0.00%
+[...]
+</code></pre>
+</div>
+<p>A CRC check is a verification made by the gateway to ensure that an uplink has not been altered during transmission. If a packet is transmitted successfully to the gateway, the CRC check <strong>will pass</strong>. If the packet was altered (because of e.g. interferences), CRC check <strong>will fail</strong>. Even if a packet that failed CRC check is transmitted to the network server, it is often unparsable and wo not be sent to the application.</p>
+<p>Reasons why a gateway can have a high rate of CRC failures are:</p>
+<ul>
+  <li>
+    <p>If one or multiple devices nearby is faulty.</p>
+  </li>
+  <li>
+    <p>If there is a lot of noise on the reception band, the concentrator might interpret random signals as LoRa packets, which will fail CRC check.</p>
+  </li>
+  <li>
+    <p>If the configuration of the gateway does not match the concentrator used ; for example, if a 868MHz concentrator is configured for a 915MHz frequency plan.</p>
+  </li>
+  <li>
+    <p>If the antenna of the gateway is faulty, preventing correct reception of messages.</p>
+  </li>
+</ul>
+<h3 id="filtering-packets">Filtering packets</h3>
+<p>In LoRaWAN, there’s no concept of devices connecting to gateways - a device <strong>joins a network</strong>, and a gateway only relays RF packets received to the configured network server, which then handles activating devices and transmitting messages regardless of the gateway it was transmitted through.</p>
+<p>The Semtech UDP Packet Forwarder does not filter received uplinks based on the network, and transmits all received packets to the Things Network (which will then filter packets, and drop packets from other networks). It is not possible to select which packets the packet forwarder should transmit.</p>
+<h2 id="downlinks-issues">Downlinks issues</h2>
+<h3 id="the-gateway-does-not-receive-any-downlink">The gateway does not receive any downlink</h3>
+<p>If a gateway that is not registered on the Things Network connects anyway using the Semtech UDP Packet Forwarder, the Things Network will accept upcoming uplinks - however, the Things Network wo not use that gateway for downlink transmission.</p>
+<p>If you notice that your gateway is not being sent any downlink, it could be that:</p>
+<ul>
+  <li>
+    <p>There’s a gateway nearby with better coverage and signal, that is prioritized by TTN</p>
+  </li>
+  <li>
+    <p>Your gateway is not recognized by TTN. Make sure that you have <a href="../packet-forwarder/legacy#registration">registered</a> your gateway on the Console, and that the gateway ID on the Console matches the EUI entered in the configuration of the gateway.</p>
+  </li>
+</ul>
+<h3 id="downlinks-are-not-transmitted-by-the-gateway">Downlinks are not transmitted by the gateway</h3>
+<p>It can happen that a gateway is indicated as connected in the Console, transmits uplinks, but does not transmit any of the downlinks it receives from the Things Network. This is usually due to latency issues between the gateway and the network server.</p>
+<p>If you have isolated the issue, and are confident that the issue comes from the gateway, check in the <a href="#logs">logs</a> the time in which <code class="highlighter-rouge">PULL_ACK</code> messages are being received by the network server:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>INFO: [down] for server 54.72.145.119 PULL_ACK received in 105 ms
+INFO: [down] for server 54.72.145.119 PULL_ACK received in 104 ms
+</code></pre>
+</div>
+<p>If the delay in which <code class="highlighter-rouge">PULL_ACK</code> messages are received is too long (e.g. &gt;300ms), it means that there’s a high latency between the gateway and the network server - it can then happen that the downlink is received too late by the gateway.</p>
+<p>You can detect downlinks being received too late in two places in the logs: either if <code class="highlighter-rouge">TOO_LATE</code> messages appear in the logs, or if there is a line in the status logs indicating <code class="highlighter-rouge">TX rejected (too late)</code> messages.</p>
+<p>If you often encounter downlink arriving too late at the gateway, you might want to check your internet connection. One way to mitigate this effect is to <a href="../packet-forwarder/legacy">use the router closest to your location</a>. Other reasons for high latency are cellular or satellite backhauls for gateways.</p>
+          </div>
+        </div>
+      </div>
+      <div class="hidden-xs col-sm-2">
+        <div class="page-toc page-affix"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="lightbox" tabindex="-1" role="dialog">
+  <div class="modal-dialog text-center" role="document" style="width:auto;padding:20px;">
+    <a href="https://ttnstaticfile.blob.core.windows.net/static/ttn/media/logo/ttn-logo.png"><img class="modal-content modal-body" src="https://ttnstaticfile.blob.core.windows.net/static/ttn/media/logo/ttn-logo.png" alt="Zoom" /></a>
+  </div>
+</div>
+<script src="/docs/assets/js/page.js"></script>
+    </div>
+    <script src="https://www.thethingsnetwork.org/navbar.js"></script>
+    <script src="https://ttnstaticfile.blob.core.windows.net/static/common/js/ga.js"></script>
+  </body>
+</html>

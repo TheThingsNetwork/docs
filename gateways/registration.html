@@ -31,12 +31,12 @@
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-01-10T22:09:53+00:00" />
+<meta property="article:published_time" content="2018-01-11T12:23:00+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"description":"Gateway Registration","url":"https://www.thethingsnetwork.org/docs/gateways/registration.html","headline":"Gateway Registration","dateModified":"2018-01-10T22:09:53+00:00","datePublished":"2018-01-10T22:09:53+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/gateways/registration.html"},"@context":"http://schema.org"}</script>
+{"description":"Gateway Registration","url":"https://www.thethingsnetwork.org/docs/gateways/registration.html","headline":"Gateway Registration","dateModified":"2018-01-11T12:23:00+00:00","datePublished":"2018-01-11T12:23:00+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/gateways/registration.html"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-152.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -96,20 +96,16 @@
             <h5>Gateways</h5>
             <ul>
               <li class=""><a href="/docs/gateways/index.html">Overview</a>
-            <ul>
-                <li class="active"><a href="/docs/gateways/registration.html">Gateway Registration</a>
-                </li>
-                <li class=""><a href="/docs/gateways/troubleshooting.html">Troubleshooting</a>
-                </li>
-            </ul>
               </li>
             <li class="page-side-nav-section"><span>Running a gateway</span>
             <ul>
-                <li class=""><a href="/docs/gateways/troubleshooting/">Troubleshooting</a>
+                <li class=""><a href="/docs/gateways/start/">Where to start</a>
+                </li>
+                <li class="active"><a href="/docs/gateways/registration.html">Gateway Registration</a>
                 </li>
                 <li class=""><a href="/docs/gateways/packet-forwarder/">Packet Forwarders</a>
                 </li>
-                <li class=""><a href="/docs/gateways/start/">Where to start</a>
+                <li class=""><a href="/docs/gateways/troubleshooting/">Troubleshooting</a>
                 </li>
             </ul>
             </li>
@@ -136,10 +132,10 @@
 <p>There are mainly two types of packet forwarders that can be running on your gateway, depending on the kind of <a href="start/connection">network protocol</a> they use:</p>
 <ul>
   <li>
-    <p>Packet forwarders that connect using the Semtech UDP protocol (such as the <a href="https://github.com/TheThingsNetwork/packet_forwarder/tree/legacy">poly packet forwarder</a>). This protocol is not encrypted, less reliable (UDP-based), but its simplicity makes it work on a large number of gateways.</p>
+    <p>Packet forwarders that connect using the Semtech UDP protocol (such as the <a href="packet-forwarder/legacy">Semtech UDP Packet Forwarder</a>). This protocol is not encrypted, less reliable (UDP-based), but its simplicity makes it work on a large number of gateways.</p>
   </li>
   <li>
-    <p>Packet forwarders that connect using the new TTN Gateway Connector protocol (such as the <a href="https://github.com/TheThingsNetwork/packet_forwarder/tree/master">TTN Packet Forwarder</a>). This protocol is more secure and safer.</p>
+    <p>Packet forwarders that connect using the new TTN Gateway Connector protocol (such as the <a href="packet-forwarder/ttn">TTN Packet Forwarder</a>). This protocol is more secure, reliable and safer.</p>
   </li>
 </ul>
 <p>Please read this guide carefully to understand how to register your gateway with The Things Network.</p>
@@ -169,7 +165,7 @@
 <blockquote>
   <p>If your gateway does not have a GPS module we advise you not to configure a manual location in the gateway. Do this in the Console instead so that you can change it without accessing the gateway.</p>
 </blockquote>
-<h2 id="via-udp-packet-forwarder">Via UDP Packet Forwarder</h2>
+<h2 id="via-semtech-udp-packet-forwarder">Via Semtech UDP Packet Forwarder</h2>
 <p>The UDP Packet Forwarder is deprecated, but will still be supported by TTN. We advise you to upgrade to the TTN Packet Forwarder.</p>
 <h3 id="start-with-configuration">Start with Configuration</h3>
 <p>Follow your gateway’s manual to configure it to forward packets to The Things Network. Configure it to forward to the correct <a href="https://www.thethingsnetwork.org/wiki/Backend/Connect/Gateway#connect-a-gateway_server-addresses">router address</a> for <a href="https://www.thethingsnetwork.org/wiki/LoRaWAN/Frequencies/By-Country">your region</a>. The guide should also help you set or retrieve the gateway’s EUI, likely the MAC address of the LoRa module which looks like <code class="highlighter-rouge">B827EBFFFE87BD11</code>.</p>
