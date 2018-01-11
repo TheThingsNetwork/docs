@@ -12,7 +12,18 @@ The integration supports reporting shadow state on uplink messages, and send sha
 
 Reporting shadow state on uplink messages requires you to return a `state` object from your decoder or converter payload function in The Things Network, for example:
 
-![Decoder payload function](decoder-payload-function.png)
+```js
+function Decoder(bytes, port) {
+  var colors = ["red", "green", "blue"];
+  return {
+    light: (bytes[0] << 8) | bytes[1],
+    temperature: ((bytes[2] << 8) | bytes[3]) / 100,
+    state: {
+      color: colors[bytes[4]]
+    }
+  };
+}
+```
 
 This function returns `light` and `temperature` as **telemetry** and `color` as **reported shadow state**.
 
@@ -28,7 +39,16 @@ This function returns `light` and `temperature` as **telemetry** and `color` as 
 
 Sending shadow delta updates as downlink messages requires you to encode a `state` object in your encoder payload function to bytes, for example:
 
-![Encoder payload function](encoder-payload-function.png)
+```js
+function Encoder(object, port) {
+  var colors = ["red", "green", "blue"];
+  var bytes = [];
+  if (object.state && object.state.color) {
+    bytes.push(colors.indexOf(object.state.color));
+  }
+  return bytes;
+}
+```
 
 This function returns the color index of the specified color in `state`.
 
@@ -48,4 +68,4 @@ This function returns the color index of the specified color in `state`.
 
    ![Reported shadow](reported-desired-shadow.png)
 
-> AWS IoT has extensive documentation on reported, desired and delta thing shadow states. In this guide, we use manual interaction. Programmatic interaction is easy through the AWS IoT HTTP API and MQTT. [See Using Thing Shadows](https://docs.aws.amazon.com/iot/latest/developerguide/using-thing-shadows.html)
+> AWS IoT has extensive documentation on reported, desired and delta thing shadow states. In this guide, we use manual interaction. Programmatic interaction is easy and highly scalable by using the AWS IoT HTTP API and MQTT protocols. [See Using Thing Shadows](https://docs.aws.amazon.com/iot/latest/developerguide/using-thing-shadows.html)
