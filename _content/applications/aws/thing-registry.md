@@ -11,7 +11,7 @@ Synchronization happens in two ways: devices on The Things Network are created a
 
 > The integration process synchronizes the thing registry by default every 10 minutes, see the AWS CloudFormation stack parameters in the [Quick Start](quick-start).
 
-## Manage things
+## Manage Things
 
 1. Log in to the [AWS Management Console](http://console.aws.amazon.com)
 2. In **Services** under **Internet Of Things**, go to **AWS IoT**
@@ -21,7 +21,7 @@ Synchronization happens in two ways: devices on The Things Network are created a
 
    ![Device Attributes](device-attributes.png)
 
-## Create thing in AWS IoT
+## Create Thing in AWS IoT
 
 1. In **AWS IoT**, under **Manage**, go to **Things**
 2. Click **Create**

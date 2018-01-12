@@ -9,7 +9,7 @@ AWS IoT rules allow for filtering and routing uplink messages to many AWS servic
 
 This guide walks you through storing uplink messages in AWS DynamoDB.
 
-## Store data in DynamoDB
+## Store Data in DynamoDB
 
 A common reason to use IoT platforms such as AWS IoT is to store uplink messages to analyze later. AWS comes with the highly scalable table-based storage service DynamoDB. This guide walks you through storing uplink messages to a AWS DynamoDB table.
 

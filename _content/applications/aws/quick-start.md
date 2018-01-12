@@ -7,8 +7,6 @@ zindex: 1000
 
 This guide will walk you through setting up the AWS IoT integration using AWS CloudFormation, sync thing registry, sync thing shadows and work with uplink and downlink messages.
 
-## Setup
-
 1. Log in to the [AWS Management Console](http://console.aws.amazon.com)
 2. In **Services** under **Management Tools**, go to **CloudFormation**
 3. Click **Create Stack**
