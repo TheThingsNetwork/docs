@@ -6,11 +6,11 @@ zindex: 900
 
 # Gateway Registration
 
-There are mainly two types of packet forwarders that can be running on your gateway, depending on the kind of [network protocol](start/connection) they use:
+There are mainly two types of packet forwarders that can be running on your gateway, depending on the kind of [network protocol](start/connection.md) they use:
 
-* Packet forwarders that connect using the Semtech UDP protocol (such as the [Semtech UDP Packet Forwarder](packet-forwarder/semtech-udp)). This protocol is not encrypted, less reliable (UDP-based), but its simplicity makes it work on a large number of gateways.
+* Packet forwarders that connect using the Semtech UDP protocol (such as the [Semtech UDP Packet Forwarder](packet-forwarder/semtech-udp.md)). This protocol is not encrypted, less reliable (UDP-based), but its simplicity makes it work on a large number of gateways.
 
-* Packet forwarders that connect using the new TTN Gateway Connector protocol (such as the [TTN Packet Forwarder](packet-forwarder/ttn)). This protocol is more secure, reliable and safer.
+* Packet forwarders that connect using the new TTN Gateway Connector protocol (such as the [TTN Packet Forwarder](packet-forwarder/ttn.md)). This protocol is more secure, reliable and safer.
 
 Please read this guide carefully to understand how to register your gateway with The Things Network.
 
