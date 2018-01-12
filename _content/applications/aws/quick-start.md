@@ -5,7 +5,7 @@ zindex: 1000
 
 # Quick Start
 
-This guide will walk you through setting up the AWS IoT integration using AWS CloudFormation, sync thing registry, sync thing shadows and work with uplink and downlink messages.
+This guide will walk you through setting up the AWS IoT integration using CloudFormation: an easy process to configure one of the most advanced integrations for The Things Network.
 
 1. Log in to the [AWS Management Console](http://console.aws.amazon.com)
 2. In **Services** under **Management Tools**, go to **CloudFormation**
