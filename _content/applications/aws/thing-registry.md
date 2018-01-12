@@ -1,5 +1,6 @@
 ---
 title: Thing Registry
+zindex: 900
 ---
 
 # Thing Registry

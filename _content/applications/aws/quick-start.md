@@ -1,5 +1,6 @@
 ---
 title: Quick Start
+zindex: 1000
 ---
 
 # Quick Start
@@ -24,6 +25,7 @@ This guide will walk you through setting up the AWS IoT integration using AWS Cl
 
    * Enter a **Stack name**, for example `ttn-app`
    * Enter the **AppID** and an **AppAccessKey** of your application in The Things Network
+   * Enter an **EnvironmentName** for Elastic Beanstalk, for example `ttn-app`
    * If you are using a private network, change the **AccountServer** and **DiscoveryServer** to the endpoints of your private network
    * Select an existing EC2 KeyPair in **KeyName** to access the EC2 instance. [Read more](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html)
 
@@ -40,6 +42,6 @@ This guide will walk you through setting up the AWS IoT integration using AWS Cl
 
     ![Stacks](stacks.png)
 
-    > The `awseb-...` stack is an AWS ElasticBeanstalk stack that is created as part of the stack of the integration process.
+    > The `awseb-...` stack is an AWS Elastic Beanstalk stack that is created as part of the stack of the integration process.
 
-🎉 You have now successfully configured the AWS IoT integration! See the guides on the left to learn working with the thing registry, thing shadows, messages, metrics and acting on data.
+🎉 You have now successfully configured the AWS IoT integration! See the guides on the left to learn working with the [thing registry](thing-registry), [test messages](test-messages), [thing shadows](thing-shadows), [act on data](act-on-data), [view metrics](view-metrics) and [update](update) the integration.

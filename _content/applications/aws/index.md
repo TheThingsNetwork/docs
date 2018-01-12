@@ -11,6 +11,6 @@ Syncing the thing registry allows you to manage LoRaWAN devices in AWS IoT: devi
 
 This integration runs in your AWS account and security context and can connect to The Things Network public community network and private networks.
 
-## Getting started
+## Getting Started
 
-See [Quick Start](./quick-start) on how to get started.
+See [Quick Start](quick-start) on how to get started.

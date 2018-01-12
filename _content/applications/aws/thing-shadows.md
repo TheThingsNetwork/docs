@@ -1,5 +1,6 @@
 ---
 title: Thing Shadows
+zindex: 450
 ---
 
 # Thing Shadows
@@ -8,18 +9,21 @@ A very powerful feature of AWS IoT are [Thing Shadows](https://docs.aws.amazon.c
 
 The integration supports reporting shadow state on uplink messages, and send shadow delta updates as downlink messages.
 
-## Report shadow state
+## Report Shadow State
 
-Reporting shadow state on uplink messages requires you to return a `state` object from your decoder or converter payload function in The Things Network, for example:
+For reporting shadow state on uplink messages, you need to return the state in a `state` object as a result of your Decoder or Converter payload function in The Things Network. Do not put telemetry inside the `state` object. For example:
 
 ```js
 function Decoder(bytes, port) {
+  var light = (bytes[0] << 8) | bytes[1];
+  var temperature = ((bytes[2] << 8) | bytes[3]) / 100;
   var colors = ["red", "green", "blue"];
+  var color = colors[bytes[4]];
   return {
-    light: (bytes[0] << 8) | bytes[1],
-    temperature: ((bytes[2] << 8) | bytes[3]) / 100,
+    light: light,
+    temperature: temperature,
     state: {
-      color: colors[bytes[4]]
+      color: color
     }
   };
 }
@@ -35,7 +39,7 @@ This function returns `light` and `temperature` as **telemetry** and `color` as 
 
    ![Reported shadow](reported-shadow.png)
 
-## Send shadow delta updates
+## Send Shadow Delta Updates
 
 Sending shadow delta updates as downlink messages requires you to encode a `state` object in your encoder payload function to bytes, for example:
 
