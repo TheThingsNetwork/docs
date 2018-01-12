@@ -42,4 +42,4 @@ This guide will walk you through setting up the AWS IoT integration using CloudF
 
     > The `awseb-...` stack is an AWS Elastic Beanstalk stack that is created as part of the stack of the integration process.
 
-🎉 You have now successfully configured the AWS IoT integration! See the guides on the left to learn working with the [thing registry](thing-registry), [test messages](test-messages), [thing shadows](thing-shadows), [act on data](act-on-data), [view metrics](view-metrics) and [update](update) the integration.
+🎉 You have now successfully configured the AWS IoT integration! See the guides on the left to learn working with the [thing registry](./thing-registry.md), [test messages](./test-messages.md), [thing shadows](./thing-shadows.md), [act on data](./act-on-data.md), [view metrics](./view-metrics.md) and [update](./update.md) the integration.

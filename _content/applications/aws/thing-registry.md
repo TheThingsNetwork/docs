@@ -9,7 +9,7 @@ A key feature of the integration is synchronizing the thing registries of AWS Io
 
 Synchronization happens in two ways: devices on The Things Network are created as things on AWS IoT, and things on AWS IoT are created as devices on The Things Network. In addition, changes to AWS IoT things are applied to The Things Network devices.
 
-> The integration process synchronizes the thing registry by default every 10 minutes, see the AWS CloudFormation stack parameters in the [Quick Start](quick-start).
+> The integration process synchronizes the thing registry by default every 10 minutes, see the AWS CloudFormation stack parameters in the [Quick Start](./quick-start.md).
 
 ## Manage Things
 

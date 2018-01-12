@@ -13,4 +13,4 @@ This integration runs in your AWS account and security context and can connect t
 
 ## Getting Started
 
-See [Quick Start](quick-start) on how to get started.
+See [Quick Start](./quick-start.md) on how to get started.

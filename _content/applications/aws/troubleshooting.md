@@ -9,7 +9,7 @@ Are you encountering issues with the AWS IoT integration? This guide walks you t
 
 ## Check Health
 
-1. [Update the integration](update) to the latest version
+1. [Update the integration](./update.md) to the latest version
 2. Log in to the [AWS Management Console](http://console.aws.amazon.com)
 3. In **Services** under **Compute**, go to **Elastic Beanstalk**
 4. Find your application
