@@ -18,7 +18,7 @@ When developing LoRaWAN applications in AWS IoT, you often want to view data as 
 1. Log in to the [AWS Management Console](http://console.aws.amazon.com)
 2. In **Services** under **Internet Of Things**, go to **AWS IoT**
 3. In the menu on the left, go to **Test**
-4. Enter in **Subscription topic** the uplink topic `+/devices/+/up` (or `<AppID>/devices/+/up` for a specific application). [Read more about uplink topics](../mqtt/api.md#uplink-messages))
+4. Enter in **Subscription topic** the uplink topic `+/devices/+/up` (or `<AppID>/devices/+/up` for a specific application). [Read more about uplink topics](../mqtt/api.md#uplink-messages)
 
    ![Test subscribe](test-subscribe.png)
 

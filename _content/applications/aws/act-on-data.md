@@ -33,7 +33,7 @@ A common reason to use IoT platforms such as AWS IoT is to store uplink messages
    1. Click **Create table**
    2. Enter any **Table name**, for example `my-app`
    3. As **Partition key**, enter `time`
-   4. Optionally, check **Add sort key** and enter **dev_id** to sort by device ID
+   4. Optionally, check **Add sort key** and enter `dev_id` to sort by device ID
 
       ![Create table](create-table.png)
 
