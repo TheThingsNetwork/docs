@@ -20,7 +20,7 @@ A common reason to use IoT platforms such as AWS IoT is to store uplink messages
 5. Enter a name for the rule, e.g. `store`
 6. Under **Message source**, you can query JSON messages that are published on MQTT in a SQL-like format
 
-   * In **Attribute**, enter `dev_id, metadata.time, payload_raw` to query the device ID, the time and the raw payload. You can add payload fields too, for example `payload_field.temperature`
+   * In **Attribute**, enter `dev_id, metadata.time, payload_raw` to query the device ID, the time and the raw payload. You can add payload fields too, for example `payload_fields.temperature`
    * In **Topic filter**, enter `+/devices/+/up` (see [messages](./test-messages.md#uplink-messages))
    * Optionally, in **Condition**, enter a filter. Leave blank to store everything
 
