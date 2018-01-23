@@ -7,6 +7,8 @@ zindex: 700
 
 It is possible to connect the Kerlink to a GPRS/3G connection. This may be eligible when LAN security is tight.
 
+## Configure
+
 SIM card detection is only done at boot time. Insert the SIM card in the powered off LoRa station.
 
 Set your APN settings in `/etc/sysconfig/network` (see [Provider Settings](#provider-settings)):
