@@ -85,3 +85,17 @@ GPSDNS=yes
 GPRSUSER=vodafone
 GPRSPASSWORD=vodafone
 ```
+
+### Ben
+
+```plaintext
+# Selector operator APN
+GPRSAPN=internet.ben
+# Enter pin code if activated
+GPRSPIN=
+# Update /etc/resolv.conf to get dns facilities
+GPSDNS=yes
+# PAP authentication
+GPRSUSER=
+GPRSPASSWORD=
+```
