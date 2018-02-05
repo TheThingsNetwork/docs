@@ -17,7 +17,7 @@ LoRaWAN offers two methods of device activation: **OTAA** (Over The Air) and **A
 
 + **Flexibility**: Configuring your device with OTAA gives you the liberty of changing the network server by re-registering a device on a different network server, and by performing a re-join. The new network server will then attribute to this device a `DevAddr` that will be part of its [address space](https://www.thethingsnetwork.org/wiki/LoRaWAN/Address-Space), and the device will be interacting with the new network server without reprogramming.
 
-    ABP devices need the `DevAddr` to be hardcoded in the device - which means a device is tightly coupled to a network server, and even more to the specific activation. Although network servers are designed to keep activations in permanent storage, there can be situations where a device needs to rejoin - in those cases, ABP devices need to be reprogrammed.
+    ABP devices need the `DevAddr` to be registered in the device by another way - usually hardcoding. This means the device is tightly coupled to the network server, and even more to the specific activation. Although network servers are designed to keep activations in permanent storage, there can be situations where a device needs to rejoin - in those cases, ABP devices need to be reprogrammed.
 
 + **Scalability**: On select regional bands, when a device performs activation, the network server answers with a list of additional frequencies the device can use to exchange messages. This means the device doesn't have to use only the default regional bands, but also the ones defined by the network server operators.
 
