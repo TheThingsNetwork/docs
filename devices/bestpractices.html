@@ -31,12 +31,12 @@
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-02-05T10:58:05+00:00" />
+<meta property="article:published_time" content="2018-02-05T11:01:34+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"description":"Best practices for device development","url":"https://www.thethingsnetwork.org/docs/devices/bestpractices.html","headline":"Best practices","dateModified":"2018-02-05T10:58:05+00:00","datePublished":"2018-02-05T10:58:05+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/devices/bestpractices.html"},"@context":"http://schema.org"}</script>
+{"description":"Best practices for device development","url":"https://www.thethingsnetwork.org/docs/devices/bestpractices.html","headline":"Best practices","dateModified":"2018-02-05T11:01:34+00:00","datePublished":"2018-02-05T11:01:34+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/devices/bestpractices.html"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-152.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -153,7 +153,7 @@
 <h3 id="otaa-best-practices">OTAA best practices</h3>
 <p>When a device performs a network join, a <code class="highlighter-rouge">DevAddr</code> is attributed and sent to the device. <code class="highlighter-rouge">DevAddr</code> are designed to be kept in the long-term, from days to years - The Things Network is designed to keep activations in memory for years, even in the event of an outage.</p>
 <p>For this reason, the LoRaWAN documentation specifies clearly that <strong>devices should perform join operations the less possible in their lifetime</strong>. The LoRaWAN specifications warn especially against systematic rejoin in case of network failure. A device should keep the result of an activation in permanent storage if the device is expected to be turned off during its lifetime.</p>
-<p>A device not receiving messages from the network can be due to many reasons: if the network server is suffering from an outage, if gateways are suffering a system or network outage, if there’s no coverage in the area… Whenever a device rejoins, it consumes the closest gateway’s airtime to emit the downlink - and if many devices in an area are rejoining at the same time (e.g. in case of a temporary gateway outage), this leads to a network bloating in the area.</p>
+<p>A device not receiving messages from the network can be due to many reasons: if the network server is suffering from an outage, if gateways are suffering a power or network outage, if there’s no coverage in the area… Whenever a device rejoins, it consumes the closest gateway’s airtime to emit the downlink - and if many devices in an area are rejoining at the same time (e.g. in case of a temporary gateway outage), this leads to a network bloating in the area.</p>
 <h4 id="examples">Examples</h4>
 <p>A device equipped with a temperature sensor sends data upstream every hour. To ensure that the data is received upstream, the device has a confirmation system - if no confirmation is received, the data is re-sent.</p>
 <ul>
