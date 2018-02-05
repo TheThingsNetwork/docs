@@ -27,7 +27,7 @@ When a device performs a network join, a `DevAddr` is attributed and sent to the
 
 For this reason, the LoRaWAN documentation specifies clearly that **devices should perform join operations the less possible in their lifetime**. The LoRaWAN specifications warn especially against systematic rejoin in case of network failure. A device should keep the result of an activation in permanent storage if the device is expected to be turned off during its lifetime.
 
-A device not receiving messages from the network can be due to many reasons: if the network server is suffering from an outage, if gateways are suffering a system or network outage, if there's no coverage in the area... Whenever a device rejoins, it consumes the closest gateway's airtime to emit the downlink - and if many devices in an area are rejoining at the same time (e.g. in case of a temporary gateway outage), this leads to a network bloating in the area.
+A device not receiving messages from the network can be due to many reasons: if the network server is suffering from an outage, if gateways are suffering a power or network outage, if there's no coverage in the area... Whenever a device rejoins, it consumes the closest gateway's airtime to emit the downlink - and if many devices in an area are rejoining at the same time (e.g. in case of a temporary gateway outage), this leads to a network bloating in the area.
 
 #### Examples
 
