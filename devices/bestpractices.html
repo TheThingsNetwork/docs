@@ -31,12 +31,12 @@
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-02-05T10:53:19+00:00" />
+<meta property="article:published_time" content="2018-02-05T10:58:05+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"description":"Best practices for device development","url":"https://www.thethingsnetwork.org/docs/devices/bestpractices.html","headline":"Best practices","dateModified":"2018-02-05T10:53:19+00:00","datePublished":"2018-02-05T10:53:19+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/devices/bestpractices.html"},"@context":"http://schema.org"}</script>
+{"description":"Best practices for device development","url":"https://www.thethingsnetwork.org/docs/devices/bestpractices.html","headline":"Best practices","dateModified":"2018-02-05T10:58:05+00:00","datePublished":"2018-02-05T10:58:05+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/devices/bestpractices.html"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-152.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -144,7 +144,7 @@
   </li>
   <li>
     <p><strong>Flexibility</strong>: Configuring your device with OTAA gives you the liberty of changing the network server by re-registering a device on a different network server, and by performing a re-join. The new network server will then attribute to this device a <code class="highlighter-rouge">DevAddr</code> that will be part of its <a href="https://www.thethingsnetwork.org/wiki/LoRaWAN/Address-Space">address space</a>, and the device will be interacting with the new network server without reprogramming.</p>
-    <p>ABP devices need the <code class="highlighter-rouge">DevAddr</code> to be hardcoded in the device - which means a device is tightly coupled to a network server, and even more to the specific activation. Although network servers are designed to keep activations in permanent storage, there can be situations where a device needs to rejoin - in those cases, ABP devices need to be reprogrammed.</p>
+    <p>ABP devices need the <code class="highlighter-rouge">DevAddr</code> to be registered in the device by another way - usually hardcoding. This means the device is tightly coupled to the network server, and even more to the specific activation. Although network servers are designed to keep activations in permanent storage, there can be situations where a device needs to rejoin - in those cases, ABP devices need to be reprogrammed.</p>
   </li>
   <li>
     <p><strong>Scalability</strong>: On select regional bands, when a device performs activation, the network server answers with a list of additional frequencies the device can use to exchange messages. This means the device doesn’t have to use only the default regional bands, but also the ones defined by the network server operators.</p>
