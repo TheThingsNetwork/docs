@@ -35,7 +35,7 @@ A device equipped with a temperature sensor sends data upstream every hour. To e
 
 + A **bad practice** would be to have the device re-join after several consecutive unconfirmed uplinks. This would lead to the network bloat situation above.
 
-+ A **good practice** would be to continue sending the uplink - while respecting local duty cycle reglementation and TTN's [Fair Access Policy](https://www.thethingsnetwork.org/forum/t/limitations-data-rate-packet-size-30-seconds-uplink-and-10-messages-downlink-per-day-fair-access-policy/1300).
++ A **good practice** would be to continue sending uplinks - while respecting local duty cycle reglementation and TTN's [Fair Access Policy](https://www.thethingsnetwork.org/forum/t/limitations-data-rate-packet-size-30-seconds-uplink-and-10-messages-downlink-per-day-fair-access-policy/1300). Other mecanisms can be used to ensure connectivity (gateway monitoring, network server monitoring...)
 
 A device equipped with a button is designed for hikers to be enabled in case of emergency.
 
