@@ -8,18 +8,7 @@ zindex: 1000
 This guide will walk you through setting up the AWS IoT integration using CloudFormation: an easy process to configure one of the most advanced integrations for The Things Network.
 
 1. Log in to the [AWS Management Console](http://console.aws.amazon.com)
-2. In **Services** under **Management Tools**, go to **CloudFormation**
-3. Click **Create Stack**
-4. Under **Choose a template**, select **Specify an AWS S3 template URL** and enter:
-
-   ```
-   https://s3.amazonaws.com/thethingsnetwork/builds/integration-aws/dist/cloudformation.template
-   ```
-
-   ![Select Template](select-template.png)
-
-5. Click **Next**
-6. In the **Specify Details**, configure the integration:
+2. Click on [this link](https://eu-west-1.console.aws.amazon.com/cloudformation/home?region=eu-west-1#/stacks/create/review?filter=active&templateURL=https:%2F%2Fs3-eu-west-1.amazonaws.com%2Fcf-templates-svx3p85gmokv-eu-west-1%2F2018038aRl-cloudformation.template&stackName=TTN-AWS-Integration&param_AccountServer=https:%2F%2Faccount.thethingsnetwork.org&param_DiscoveryServer=discovery.thethings.network:1900&param_InstanceType=t2.micro&param_ThingShadowDeltaFPort=1&param_ThingSyncEnabled=true&param_ThingSyncInterval=10m&param_ThingTypeName=lorawan) to create a new stack
 
    * Enter a **Stack name**, for example `ttn-app`
    * Enter the **AppID** and an **AppAccessKey** of your application in The Things Network
@@ -32,11 +21,9 @@ This guide will walk you through setting up the AWS IoT integration using CloudF
    Example parameters:
    ![Parameters](parameters.png)
 
-7. Click **Next**
-8. Leave the **Tags**, **Permissions** and **Advanced** as is, and click **Next** again
-9. Review your settings and check the **I acknowledge** box to acknowledge that resources for the integration may be created in your AWS account
-10. Click **Create** to initiate the creation of the stack
-11. After a coffee break of about six minutes, you will see two new stacks:
+3. Review your settings and check the **I acknowledge** box to acknowledge that resources for the integration may be created in your AWS account
+4. Click **Create** to initiate the creation of the stack
+5. After a coffee break of about six minutes, you will see two new stacks:
 
     ![Stacks](stacks.png)
 
