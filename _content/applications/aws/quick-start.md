@@ -8,7 +8,7 @@ zindex: 1000
 This guide will walk you through setting up the AWS IoT integration using CloudFormation: an easy process to configure one of the most advanced integrations for The Things Network.
 
 1. Log in to the [AWS Management Console](http://console.aws.amazon.com)
-2. Click on [this link](https://eu-west-1.console.aws.amazon.com/cloudformation/home?region=eu-west-1#/stacks/create/review?filter=active&templateURL=https:%2F%2Fs3-eu-west-1.amazonaws.com%2Fcf-templates-svx3p85gmokv-eu-west-1%2F2018038aRl-cloudformation.template&stackName=TTN-AWS-Integration&param_AccountServer=https:%2F%2Faccount.thethingsnetwork.org&param_DiscoveryServer=discovery.thethings.network:1900&param_InstanceType=t2.micro&param_ThingShadowDeltaFPort=1&param_ThingSyncEnabled=true&param_ThingSyncInterval=10m&param_ThingTypeName=lorawan) to create a new stack
+2. Click on [this link](https://eu-west-1.console.aws.amazon.com/cloudformation/home?region=eu-west-1#/stacks/create/review?filter=active&templateURL=https:%2F%2Fs3-eu-west-1.amazonaws.com%2Fsvdgraaf-bitlog%2Fcloudformation.template&stackName=TTN-AWS-Integration&param_AccountServer=https:%2F%2Faccount.thethingsnetwork.org&param_DiscoveryServer=discovery.thethings.network:1900&param_InstanceType=t2.micro&param_ThingShadowDeltaFPort=1&param_ThingSyncEnabled=true&param_ThingSyncInterval=10m&param_ThingTypeName=lorawan) to create a new stack
 
    * Enter a **Stack name**, for example `ttn-app`
    * Enter the **AppID** and an **AppAccessKey** of your application in The Things Network
