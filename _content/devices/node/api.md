@@ -461,7 +461,7 @@ When disabled, the [`loop()`](#method-loop) method will delay 100ms until an int
 > When the Node goes into sleep, the Serial Monitor will loose its connection. The Node will try to reopen the connection when it wakes up, but Serial Monitor might not always be able to pick it up.
 
 ## Method: getBattery
-Returns the battery level in micro voltage as a unsigned integer of 2 bytes.
+Returns the battery level in millivolt (mV) as a unsigned integer of 2 bytes.
 
 ```c
 uint16_t getBattery();
