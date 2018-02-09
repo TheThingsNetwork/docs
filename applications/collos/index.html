@@ -17,17 +17,17 @@
       if (document.location.href.substr(0, document.location.href.length - document.location.hash.length) !== canonical) {
         window.location.replace(canonical);
       }
-    })('https://www.thethingsnetwork.org/docs/gateways/packet-forwarder/');
+    })('https://www.thethingsnetwork.org/docs/applications/collos/');
     </script>
     <!-- Begin Jekyll SEO tag v2.4.0 -->
-<title>Packet Forwarders | The Things Network</title>
+<title>Collos | The Things Network</title>
 <meta name="generator" content="Jekyll v3.4.5" />
-<meta property="og:title" content="Packet Forwarders" />
+<meta property="og:title" content="Collos" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Packet Forwarders" />
-<meta property="og:description" content="Packet Forwarders" />
-<link rel="canonical" href="https://www.thethingsnetwork.org/docs/gateways/packet-forwarder/" />
-<meta property="og:url" content="https://www.thethingsnetwork.org/docs/gateways/packet-forwarder/" />
+<meta name="description" content="Collos Integration" />
+<meta property="og:description" content="Collos Integration" />
+<link rel="canonical" href="https://www.thethingsnetwork.org/docs/applications/collos/" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/applications/collos/" />
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
@@ -36,7 +36,7 @@
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"description":"Packet Forwarders","url":"https://www.thethingsnetwork.org/docs/gateways/packet-forwarder/","headline":"Packet Forwarders","dateModified":"2018-02-09T15:47:35+00:00","datePublished":"2018-02-09T15:47:35+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/gateways/packet-forwarder/"},"@context":"http://schema.org"}</script>
+{"description":"Collos Integration","url":"https://www.thethingsnetwork.org/docs/applications/collos/","headline":"Collos","dateModified":"2018-02-09T15:47:35+00:00","datePublished":"2018-02-09T15:47:35+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/applications/collos/"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-152.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -80,53 +80,84 @@
           <li class="page-top-nav-crumb"><a href="http://www.thethingsnetwork.org/">Home</a></li>
           <li class="page-top-nav-crumb"><a href="/docs/">Learn</a></li>
                 <li class=""><a href="/docs/devices/">Devices</a></li>
-                <li class="active"><a href="/docs/gateways/">Gateways</a></li>
+                <li class=""><a href="/docs/gateways/">Gateways</a></li>
                 <li class=""><a href="/docs/network/">Network</a></li>
-                <li class=""><a href="/docs/applications/">Applications</a></li>
+                <li class="active"><a href="/docs/applications/">Applications</a></li>
         </ul>
       </div>
       <div class="hidden-xs col-sm-3 text-right">
-        <a href="https://github.com/TheThingsNetwork/docs/edit/master/_content/gateways/packet-forwarder/index.md" class="page-edit" data-proofer-ignore><i class="fa fa-github"></i> Edit <strong>index.md</strong></a>
+        <a href="https://github.com/TheThingsNetwork/docs/edit/master/_content/applications/collos/index.md" class="page-edit" data-proofer-ignore><i class="fa fa-github"></i> Edit <strong>index.md</strong></a>
       </div>
     </div>
     <div class="row">
       <div class="col-sm-3">
         <div class="panel page-side-nav page-affix">
           <div class="panel-body">
-            <h5>Gateways</h5>
+            <h5>Applications</h5>
             <ul>
-              <li class=""><a href="/docs/gateways/index.html">Overview</a>
+              <li class=""><a href="/docs/applications/index.html">Overview</a>
+            <ul>
+                <li class=""><a href="/docs/applications/add.html">Add an Application</a>
+                </li>
+                <li class=""><a href="/docs/applications/options.html">Build an Application</a>
+                </li>
+            </ul>
               </li>
-            <li class="page-side-nav-section"><span>Running a gateway</span>
+            <li class="page-side-nav-section"><span>APIs</span>
             <ul>
-                <li class=""><a href="/docs/gateways/start/">Where to start</a>
+                <li class=""><a href="/docs/applications/apis.html">Overview</a>
                 </li>
-                <li class=""><a href="/docs/gateways/registration.html">Gateway Registration</a>
+                <li class=""><a href="/docs/applications/manager/">Application Manager</a>
                 </li>
-                <li class="active"><a href="/docs/gateways/packet-forwarder/">Packet Forwarders</a>
-            <ul>
-                <li class=""><a href="/docs/gateways/packet-forwarder/semtech-udp.html">Semtech UDP Packet Forwarder</a>
-                </li>
-                <li class=""><a href="/docs/gateways/packet-forwarder/ttn.html">TTN Packet Forwarder</a>
-                </li>
-            </ul>
-                </li>
-                <li class=""><a href="/docs/gateways/troubleshooting/">Troubleshooting</a>
+                <li class=""><a href="/docs/applications/mqtt/">MQTT</a>
                 </li>
             </ul>
             </li>
-            <li class="page-side-nav-section"><span>Hardware</span>
+            <li class="page-side-nav-section"><span>SDKs & Libraries</span>
             <ul>
-                <li class=""><a href="/docs/gateways/gateway/">The Things Gateway</a>
+                <li class=""><a href="/docs/applications/sdks.html">Overview</a>
                 </li>
-                <li class=""><a href="/docs/gateways/multitech/">MultiTech Conduit</a>
+                <li class=""><a href="/docs/applications/golang/">Go</a>
                 </li>
-                <li class=""><a href="/docs/gateways/kerlink/">Kerlink LoRa IoT Station</a>
+                <li class=""><a href="/docs/applications/java/">Java</a>
                 </li>
-                <li class=""><a href="/docs/gateways/lorrier/">Lorrier LR2</a>
+                <li class=""><a href="/docs/applications/nodered/">Node-RED</a>
+                </li>
+                <li class=""><a href="/docs/applications/nodejs/">Node.js</a>
                 </li>
             </ul>
             </li>
+            <li class="page-side-nav-section"><span>Integrations</span>
+            <ul>
+                <li class=""><a href="/docs/applications/integrations.html">Overview</a>
+                </li>
+                <li class=""><a href="/docs/applications/aws/">AWS IoT</a>
+                </li>
+                <li class=""><a href="/docs/applications/cayenne/">Cayenne</a>
+                </li>
+                <li class="active"><a href="/docs/applications/collos/">Collos</a>
+            <ul>
+                <li class=""><a href="/docs/applications/collos/quick-start.html">Quick Start</a>
+                </li>
+                <li class=""><a href="/docs/applications/collos/wifi.html">WiFi Localization</a>
+                </li>
+            </ul>
+                </li>
+                <li class=""><a href="/docs/applications/http/">HTTP</a>
+                </li>
+                <li class=""><a href="/docs/applications/opensensors/">OpenSensors</a>
+                </li>
+                <li class=""><a href="/docs/applications/storage/">Storage</a>
+                </li>
+                <li class=""><a href="/docs/applications/evrythng/">EVRYTHNG</a>
+                </li>
+            </ul>
+            </li>
+                <li class="page-side-nav-section"><span>Links <i class="fa fa-link"></i></span>
+                  <ul>
+                      <li class=""><a href="/docs/applications/../network/migrate.html">Migrate from Staging to Production</a></li>
+                  </ul>
+                </li>
             </ul>
           </div>
         </div>
@@ -134,17 +165,11 @@
       <div class="col-sm-7">
         <div class="panel">
           <div class="panel-body page-content">
-            <h1 id="packet-forwarders">Packet Forwarders</h1>
-<p>A Packet Forwarder is a program running on a gateway, that interacts:</p>
-<ul>
-  <li>
-    <p>with the <strong>LoRa chip</strong>, to receive and transmits LoRa packets ;</p>
-  </li>
-  <li>
-    <p>with the <strong>network</strong>, to transmit them for applications.</p>
-  </li>
-</ul>
-<p><img src="scheme.png" alt="Packet forwarder" /></p>
+            <h1 id="collos-integration">Collos Integration</h1>
+<p>Collos offers a collection of location-ready APIs all allowing free prototyping with instant sign-up. What is more, within the Collos framework and market place it is easy to build on top of existing technology adding intelligence and learning to make new and powerful location services. Your new location service can be kept private or shared back to Collos for others to use. When sharing back to Collos, you set the price of using it – it can even be free, if you choose.</p>
+<p>Collos is now in preview. See <a href="http://preview.collos.org">preview.collos.org</a> for more information and sign up.</p>
+<h2 id="getting-started">Getting Started</h2>
+<p>See <a href="./quick-start.html">Quick Start</a> on how to get started.</p>
           </div>
         </div>
       </div>
