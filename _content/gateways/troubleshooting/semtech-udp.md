@@ -168,4 +168,4 @@ If the delay in which `PULL_ACK` messages are received is too long (e.g. >300ms)
 
 You can detect downlinks being received too late in two places in the logs: either if `TOO_LATE` messages appear in the logs, or if there is a line in the status logs indicating `TX rejected (too late)` messages.
 
-If you often encounter downlink arriving too late at the gateway, you might want to check your internet connection. One way to mitigate this effect is to [use the router closest to your location](../packet-forwarder/semtech-udp). Other reasons for high latency are cellular or satellite backhauls for gateways.
+If you often encounter downlink arriving too late at the gateway, you might want to check your internet connection. One way to mitigate this effect is to [use the router closest to your location](../packet-forwarder/semtech-udp.html). Other reasons for high latency are cellular or satellite backhauls for gateways.
