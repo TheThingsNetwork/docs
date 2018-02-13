@@ -1,5 +1,5 @@
 ---
-title: MQTT
+title: Data API (MQTT)
 section: APIs
 redirect_from:
  - /refactor/mqtt/

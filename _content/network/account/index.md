@@ -8,11 +8,8 @@ redirect_from:
 
 # Account Server
 
-The Account Server manages the [ACL](https://en.wikipedia.org/wiki/Access_control_list) for The Things Network. It closed-source. If you'd like to run the [open-source backend](https://github.com/thethingsnetwork/ttn) you will need to provide an account server with the exact same [API](api.md).
+The Account Server manages the applications, gateways, users and rights for The Things Network. The current V2 Account Server is closed source and hosted at `https://account.thethingsnetwork.org`. The future V3 Identity Server will be open source.
 
-This guide will inform you about the [access](authentication.md) and [use](api.md) the Account Server API.
+This guide will inform you about the [access](./authentication.md) and [use](./api.md) the Account Server API. In order to use the API, you need to [request a client ID](./clientid.md).
 
-The endpoint for The Things Network Account Servers is currently `https://account.thethingsnetwork.org`.
-
-You can run your own network by implementing the relevant enpoint of the account
-server [yourself](implement.md).
+If you'd like to run the [open source backend](https://github.com/thethingsnetwork/ttn) you can use the community Account Server, or [./implement.md](implement your own).
