@@ -17,7 +17,7 @@ SDK | [Data API](./mqtt/index.md) | [Application Manager API](./manager/index.md
 [Go](golang/index.md) | Yes | Yes
 [Java](java/index.md) | Yes | Yes
 [Node.js](nodejs/index.md) | Yes | Yes
-[Python](https://pypi.python.org/pypi/ttn/2.0.0) | Yes | Yes
+[Python](https://pypi.python.org/pypi/ttn/2.1.0) | Yes | Yes
 [Node-RED](nodered/index.md) | Yes | No
 
 > If you'd like to contribute to a SDK, contact [us](mailto:community@thethingsnetwork.org).
