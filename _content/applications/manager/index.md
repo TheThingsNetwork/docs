@@ -1,5 +1,5 @@
 ---
-title: Application Manager
+title: Application Manager API
 section: APIs
 redirect_from:
  - /draft/application-manager/
@@ -7,30 +7,24 @@ redirect_from:
 image: /draft/application-manager/handler.png
 ---
 
-# Application Manager
+# Application Manager API
 
-The Handler's Application Manager API offers methods manage Applications and Devices registered to The Things Network. To use the API you need an Application Access Key or Access (JSON Web) Token. You can use either the [gRPC API or the HTTP API](usage.md#grpc-or-http) which wraps it.
+The Application Manager API offers methods manage applications and devices registered to The Things Network. The Application Manager API is exposed by the Handler. To use the API you need an Application Access Key or JWT. You can use either the [gRPC API or the HTTP API](usage.md#grpc-or-http) which wraps it.
 
 ## Use and Context
 
-The Handler Application Manager API is mostly used to [build Platform Integrations](../../platforms/index.md). To actually communicate with devices over The Things Network you need the [Data API](../../applications/mqtt/index.md) of the Handler.
+The Application Manager API is mostly used to integrate The Things Network stack in applications for device management. You can use the [Data API](../mqtt/index.md) to send and receive messages.
 
 ![Handler APIs](handler.png)
 
 ## Community endpoints
 Use the following endpoints for the community network:
 
-- [gRPC](http://www.grpc.io/): `<Region>.thethings.network:1904`
-- HTTP: `http://<Region>.thethings.network:8084`
+- [gRPC](http://www.grpc.io/): `<region>.thethings.network:1904`
+- HTTP: `http://<region>.thethings.network:8084`
 
-  > A secure endpoint at `https` will follow soon.
-
-Replace `<Region>` with the last part of the handler you registered your application to, e.g. `eu`.
-
-## Example
-
-To demonstrate the usage of this API we have an [example in Go](https://github.com/htdvisser/ttn-application-manager-example).
+Replace `<region>` with the last part of the handler you registered your application to, e.g. `eu`, `us-west`, `asia-se` or `brazil`.
 
 ## SDKs
 
-The [Java SDK](https://github.com/TheThingsNetwork/java-app-sdk) has support for the Application Manager API.
+See [SDKs](../sdks.md) for ready-to-use software developer kits for key programming languages.
