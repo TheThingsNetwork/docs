@@ -20,4 +20,6 @@ SDK | [Data API](./mqtt/index.md) | [Application Manager API](./manager/index.md
 [Python](https://pypi.python.org/pypi/ttn/2.1.0) | Yes | Yes
 [Node-RED](nodered/index.md) | Yes | No
 
+When using the Application Manager API, please [request a client ID](../network/account/clientid.md).
+
 > If you'd like to contribute to a SDK, contact [us](mailto:community@thethingsnetwork.org).
