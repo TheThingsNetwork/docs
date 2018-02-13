@@ -31,12 +31,12 @@
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-02-12T13:38:12+00:00" />
+<meta property="article:published_time" content="2018-02-13T11:53:54+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"description":"APIs","url":"https://www.thethingsnetwork.org/docs/applications/apis.html","headline":"Overview","dateModified":"2018-02-12T13:38:12+00:00","datePublished":"2018-02-12T13:38:12+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/applications/apis.html"},"@context":"http://schema.org"}</script>
+{"description":"APIs","url":"https://www.thethingsnetwork.org/docs/applications/apis.html","headline":"Overview","dateModified":"2018-02-13T11:53:54+00:00","datePublished":"2018-02-13T11:53:54+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/applications/apis.html"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-152.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -107,9 +107,9 @@
             <ul>
                 <li class="active"><a href="/docs/applications/apis.html">Overview</a>
                 </li>
-                <li class=""><a href="/docs/applications/manager/">Application Manager</a>
+                <li class=""><a href="/docs/applications/manager/">Application Manager API</a>
                 </li>
-                <li class=""><a href="/docs/applications/mqtt/">MQTT</a>
+                <li class=""><a href="/docs/applications/mqtt/">Data API (MQTT)</a>
                 </li>
             </ul>
             </li>
@@ -163,17 +163,11 @@
 <p>The most basic way to integrate your application with The Things Network is to use standard protocol libraries to connect directly to The Things Network’s Handler APIs:</p>
 <p><img src="options-apis.png" alt="APIs" /></p>
 <h3 id="data-api">Data API</h3>
-<p>The Data API allow you to receive events and messages from devices as well as send messages to devices. You can use the Data API via:</p>
-<ul>
-  <li><a href="mqtt/">MQTT</a></li>
-  <li>AMQP (coming)</li>
-</ul>
+<p>The Data API allow you to receive events and messages from devices as well as send messages to devices.</p>
+<p>You can work with the Data PI using <a href="./sdks.html">SDKs</a> or directly through <a href="./mqtt/">MQTT</a>.</p>
 <h3 id="application-manager-api">Application Manager API</h3>
-<p>The Application Manager API let you manage applications and devices registered to it. You can use the Data API via:</p>
-<ul>
-  <li>gRPC (to be documented)</li>
-  <li><a href="manager/">HTTP</a></li>
-</ul>
+<p>The Application Manager API lets you manage applications, gateways and devices.</p>
+<p>You can work with the Application Manager API using <a href="./sdks.html">SDKs</a> or directly through <a href="./manager/">HTTP</a>.</p>
           </div>
         </div>
       </div>

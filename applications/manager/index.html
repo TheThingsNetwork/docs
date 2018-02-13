@@ -20,23 +20,23 @@
     })('https://www.thethingsnetwork.org/docs/applications/manager/');
     </script>
     <!-- Begin Jekyll SEO tag v2.4.0 -->
-<title>Application Manager | The Things Network</title>
+<title>Application Manager API | The Things Network</title>
 <meta name="generator" content="Jekyll v3.4.5" />
-<meta property="og:title" content="Application Manager" />
+<meta property="og:title" content="Application Manager API" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Application Manager" />
-<meta property="og:description" content="Application Manager" />
+<meta name="description" content="Application Manager API" />
+<meta property="og:description" content="Application Manager API" />
 <link rel="canonical" href="https://www.thethingsnetwork.org/docs/applications/manager/" />
 <meta property="og:url" content="https://www.thethingsnetwork.org/docs/applications/manager/" />
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/draft/application-manager/handler.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-02-12T13:38:12+00:00" />
+<meta property="article:published_time" content="2018-02-13T11:53:54+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"description":"Application Manager","url":"https://www.thethingsnetwork.org/docs/applications/manager/","headline":"Application Manager","dateModified":"2018-02-12T13:38:12+00:00","datePublished":"2018-02-12T13:38:12+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/draft/application-manager/handler.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/applications/manager/"},"@context":"http://schema.org"}</script>
+{"description":"Application Manager API","url":"https://www.thethingsnetwork.org/docs/applications/manager/","headline":"Application Manager API","dateModified":"2018-02-13T11:53:54+00:00","datePublished":"2018-02-13T11:53:54+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/draft/application-manager/handler.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/applications/manager/"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-152.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -107,7 +107,7 @@
             <ul>
                 <li class=""><a href="/docs/applications/apis.html">Overview</a>
                 </li>
-                <li class="active"><a href="/docs/applications/manager/">Application Manager</a>
+                <li class="active"><a href="/docs/applications/manager/">Application Manager API</a>
             <ul>
                 <li class=""><a href="/docs/applications/manager/authentication.html">Authentication</a>
                 </li>
@@ -117,7 +117,7 @@
                 </li>
             </ul>
                 </li>
-                <li class=""><a href="/docs/applications/mqtt/">MQTT</a>
+                <li class=""><a href="/docs/applications/mqtt/">Data API (MQTT)</a>
                 </li>
             </ul>
             </li>
@@ -167,27 +167,20 @@
       <div class="col-sm-7">
         <div class="panel">
           <div class="panel-body page-content">
-            <h1 id="application-manager">Application Manager</h1>
-<p>The Handler’s Application Manager API offers methods manage Applications and Devices registered to The Things Network. To use the API you need an Application Access Key or Access (JSON Web) Token. You can use either the <a href="usage.html#grpc-or-http">gRPC API or the HTTP API</a> which wraps it.</p>
+            <h1 id="application-manager-api">Application Manager API</h1>
+<p>The Application Manager API offers methods manage applications and devices registered to The Things Network. The Application Manager API is exposed by the Handler. To use the API you need an Application Access Key or JWT. You can use either the <a href="usage.html#grpc-or-http">gRPC API or the HTTP API</a> which wraps it.</p>
 <h2 id="use-and-context">Use and Context</h2>
-<p>The Handler Application Manager API is mostly used to <a href="../../platforms/">build Platform Integrations</a>. To actually communicate with devices over The Things Network you need the <a href="../../applications/mqtt/">Data API</a> of the Handler.</p>
+<p>The Application Manager API is mostly used to integrate The Things Network stack in applications for device management. You can use the <a href="../mqtt/">Data API</a> to send and receive messages.</p>
 <p><img src="handler.png" alt="Handler APIs" /></p>
 <h2 id="community-endpoints">Community endpoints</h2>
 <p>Use the following endpoints for the community network:</p>
 <ul>
-  <li><a href="http://www.grpc.io/">gRPC</a>: <code class="highlighter-rouge">&lt;Region&gt;.thethings.network:1904</code></li>
-  <li>
-    <p>HTTP: <code class="highlighter-rouge">http://&lt;Region&gt;.thethings.network:8084</code></p>
-    <blockquote>
-      <p>A secure endpoint at <code class="highlighter-rouge">https</code> will follow soon.</p>
-    </blockquote>
-  </li>
+  <li><a href="http://www.grpc.io/">gRPC</a>: <code class="highlighter-rouge">&lt;region&gt;.thethings.network:1904</code></li>
+  <li>HTTP: <code class="highlighter-rouge">http://&lt;region&gt;.thethings.network:8084</code></li>
 </ul>
-<p>Replace <code class="highlighter-rouge">&lt;Region&gt;</code> with the last part of the handler you registered your application to, e.g. <code class="highlighter-rouge">eu</code>.</p>
-<h2 id="example">Example</h2>
-<p>To demonstrate the usage of this API we have an <a href="https://github.com/htdvisser/ttn-application-manager-example">example in Go</a>.</p>
+<p>Replace <code class="highlighter-rouge">&lt;region&gt;</code> with the last part of the handler you registered your application to, e.g. <code class="highlighter-rouge">eu</code>, <code class="highlighter-rouge">us-west</code>, <code class="highlighter-rouge">asia-se</code> or <code class="highlighter-rouge">brazil</code>.</p>
 <h2 id="sdks">SDKs</h2>
-<p>The <a href="https://github.com/TheThingsNetwork/java-app-sdk">Java SDK</a> has support for the Application Manager API.</p>
+<p>See <a href="../sdks.html">SDKs</a> for ready-to-use software developer kits for key programming languages.</p>
           </div>
         </div>
       </div>

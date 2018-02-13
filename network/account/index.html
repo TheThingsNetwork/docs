@@ -31,12 +31,12 @@
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-02-12T13:38:12+00:00" />
+<meta property="article:published_time" content="2018-02-13T11:53:54+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"description":"Account Server","url":"https://www.thethingsnetwork.org/docs/network/account/","headline":"Account Server","dateModified":"2018-02-12T13:38:12+00:00","datePublished":"2018-02-12T13:38:12+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/network/account/"},"@context":"http://schema.org"}</script>
+{"description":"Account Server","url":"https://www.thethingsnetwork.org/docs/network/account/","headline":"Account Server","dateModified":"2018-02-13T11:53:54+00:00","datePublished":"2018-02-13T11:53:54+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/network/account/"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-152.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -117,6 +117,8 @@
                 </li>
                 <li class=""><a href="/docs/network/account/implement.html">Implementing Your Own</a>
                 </li>
+                <li class=""><a href="/docs/network/account/clientid.html">Request a Client ID</a>
+                </li>
                 <li class=""><a href="/docs/network/account/api.html">API Reference</a>
                 </li>
             </ul>
@@ -138,11 +140,9 @@
         <div class="panel">
           <div class="panel-body page-content">
             <h1 id="account-server">Account Server</h1>
-<p>The Account Server manages the <a href="https://en.wikipedia.org/wiki/Access_control_list">ACL</a> for The Things Network. It closed-source. If you’d like to run the <a href="https://github.com/thethingsnetwork/ttn">open-source backend</a> you will need to provide an account server with the exact same <a href="api.html">API</a>.</p>
-<p>This guide will inform you about the <a href="authentication.html">access</a> and <a href="api.html">use</a> the Account Server API.</p>
-<p>The endpoint for The Things Network Account Servers is currently <code class="highlighter-rouge">https://account.thethingsnetwork.org</code>.</p>
-<p>You can run your own network by implementing the relevant enpoint of the account
-server <a href="implement.html">yourself</a>.</p>
+<p>The Account Server manages the applications, gateways, users and rights for The Things Network. The current V2 Account Server is closed source and hosted at <code class="highlighter-rouge">https://account.thethingsnetwork.org</code>. The future V3 Identity Server will be open source.</p>
+<p>This guide will inform you about the <a href="./authentication.html">access</a> and <a href="./api.html">use</a> the Account Server API. In order to use the API, you need to <a href="./clientid.html">request a client ID</a>.</p>
+<p>If you’d like to run the <a href="https://github.com/thethingsnetwork/ttn">open source backend</a> you can use the community Account Server, or <a href="implement your own">./implement.md</a>.</p>
           </div>
         </div>
       </div>

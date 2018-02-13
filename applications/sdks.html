@@ -31,12 +31,12 @@
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-02-12T13:38:12+00:00" />
+<meta property="article:published_time" content="2018-02-13T11:53:54+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"description":"SDKs &amp; Libraries","url":"https://www.thethingsnetwork.org/docs/applications/sdks.html","headline":"Overview","dateModified":"2018-02-12T13:38:12+00:00","datePublished":"2018-02-12T13:38:12+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/applications/sdks.html"},"@context":"http://schema.org"}</script>
+{"description":"SDKs &amp; Libraries","url":"https://www.thethingsnetwork.org/docs/applications/sdks.html","headline":"Overview","dateModified":"2018-02-13T11:53:54+00:00","datePublished":"2018-02-13T11:53:54+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/applications/sdks.html"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-152.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -107,9 +107,9 @@
             <ul>
                 <li class=""><a href="/docs/applications/apis.html">Overview</a>
                 </li>
-                <li class=""><a href="/docs/applications/manager/">Application Manager</a>
+                <li class=""><a href="/docs/applications/manager/">Application Manager API</a>
                 </li>
-                <li class=""><a href="/docs/applications/mqtt/">MQTT</a>
+                <li class=""><a href="/docs/applications/mqtt/">Data API (MQTT)</a>
                 </li>
             </ul>
             </li>
@@ -160,48 +160,48 @@
         <div class="panel">
           <div class="panel-body page-content">
             <h1 id="sdks--libraries">SDKs &amp; Libraries</h1>
-<p>We intend to SDKs for popular platforms to provide a layer of abstraction to make it easier to interact with the APIs. Not all SDKs wrap all APIs, so depending on which ones you need you might need to still talk to some directly.</p>
+<p>You can use Software Developer Kits (SDKs) for development platforms to use The Things Network APIs in your application.</p>
 <p><img src="options-sdks.png" alt="SDK" /></p>
-<blockquote>
-  <p>If you’d like to contribute to a SDK, contact <a href="mailto:community@thethingsnetwork.org">us</a>.</p>
-</blockquote>
 <h2 id="sdk-matrix">SDK Matrix</h2>
 <div class="table-responsive"><table class="table">
   <thead>
     <tr>
       <th>SDK</th>
-      <th>Application Data</th>
-      <th><a href="manager/">Application Manager</a></th>
-      <th><a href="../network/account/">Account Server</a></th>
+      <th><a href="./mqtt/">Data API</a></th>
+      <th><a href="./manager/">Application Manager API</a></th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td><a href="golang/">Go</a></td>
-      <td>MQTT</td>
-      <td>gRPC</td>
-      <td>WIP</td>
+      <td>Yes</td>
+      <td>Yes</td>
     </tr>
     <tr>
       <td><a href="java/">Java</a></td>
-      <td>MQTT &amp; AMQP (WIP)</td>
-      <td>WIP</td>
-      <td>WIP</td>
+      <td>Yes</td>
+      <td>Yes</td>
     </tr>
     <tr>
       <td><a href="nodejs/">Node.js</a></td>
-      <td>MQTT</td>
-      <td> </td>
-      <td> </td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td><a href="https://pypi.python.org/pypi/ttn/2.1.0">Python</a></td>
+      <td>Yes</td>
+      <td>Yes</td>
     </tr>
     <tr>
       <td><a href="nodered/">Node-RED</a></td>
-      <td>Via Node.JS (no TLS)</td>
-      <td> </td>
-      <td> </td>
+      <td>Yes</td>
+      <td>No</td>
     </tr>
   </tbody>
 </table></div>
+<blockquote>
+  <p>If you’d like to contribute to a SDK, contact <a href="mailto:community@thethingsnetwork.org">us</a>.</p>
+</blockquote>
           </div>
         </div>
       </div>
