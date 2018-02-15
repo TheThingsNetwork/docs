@@ -70,7 +70,7 @@ The Raspberry Pi model 3 requires some settings to correct the timing and switch
 
 ![](images/image00079.png)
 
-1. Add:
+2. Add:
 <table>
 <tr><th>Name</th><th>Value</th></tr>
 <tr><td>RESIN_HOST_CONFIG_core_freq</td><td>250</td></tr>
@@ -122,7 +122,7 @@ Proceed to the next step while dd is writing to the sdcard
 Earlier we have created the resin.io application. Now we need to add the application code that should be run on the Raspberry Pi. For this we will use a prepared LoRaWAN gateway application available on github.
 
 1. Open (OSX/Linux) Terminal or (Windows) Git Bash
-1. Create a new directory to store the code on you local system go to it
+2. Create a new directory to store the code on you local system go to it
 ```
 mkdir lorawan-software
 cd lorawan-software
@@ -149,7 +149,7 @@ cd ttn-resin-gateway-rpi
 
 ![](images/image00077.png)
 
-1. Copy the text marked in the picture (for your application page) and paste it on the command line of your terminal/git bash.
+6. Copy the text marked in the picture (for your application page) and paste it on the command line of your terminal/git bash.
 ```
 git remote add resin <your resin.io account>@git.resin.io:<your resin.io account>/lorawangw.git
 ```
@@ -217,15 +217,15 @@ The top window on the right shows the output from the device. In this case it sh
 To configure our gateway we need to add it in the TTN console.
 
 1. Use your TTN credentials to log in to https://console.thethingsnetwork.org/
-1. In the main screen click on gateways
+2. In the main screen click on gateways
 
 ![](images/image00083.png)
 
-1. Click on "register gateway" (or "Get started by registering one")
+3. Click on "register gateway" (or "Get started by registering one")
 
 ![](images/image00084.png)
 
-1. In the form enter the following values:
+4. In the form enter the following values:
 <table>
 <tr><th>Name</th><th>Value</th></tr>
 <tr><td>Gateway ID</td><td>unique name for the gateway, allowed A-Z, a-z, 0-9 and -</td></tr>
@@ -256,12 +256,12 @@ Click on "ENVIRONMENT VARIABLES".
 
 You need to add three variables:
 1. Name the first one "GW_ID" (no quotes) and copy the value listed for the "Gateway ID" in the TTN console.
-1. Name the second one "GW_KEY" (no quotes), on the TTN console click on the little eye icon to the right of "Gateway Key", this will display the value. Now use the icon at the end of the line to copy the value (and display "copied")
+2. Name the second one "GW_KEY" (no quotes), on the TTN console click on the little eye icon to the right of "Gateway Key", this will display the value. Now use the icon at the end of the line to copy the value (and display "copied")
 
 ![](images/image00087.png)
 
-1. Paste this value and add.
-1. Enter "GW_RESET_PIN" (no quotes) and value 11.
+3. Paste this value and add.
+4. Enter "GW_RESET_PIN" (no quotes) and value 11.
 
 ![](images/image00088.png)
 

@@ -5,8 +5,8 @@ For Windows we will be using the Portable version of Etcher. This version does n
 
 ![](images/image00064.png)
 
-1. Start the software from your downloads directory to check it starts properly
+2. Start the software from your downloads directory to check it starts properly
 
 ![](images/image00065.png)
 
-1. Iconize or close the software for now
+3. Iconize or close the software for now
