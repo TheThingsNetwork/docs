@@ -13,7 +13,7 @@ zindex: 900
 # Build your own RAK831 based gateway
 This document is based on a workshop held during The Things Network Conference 2018.
 
-[The slides used during that workshop.](The Things Network Conference 2018 Gateway Workshop.pdf)
+[The slides used during that workshop.](TheThingsNetworkConference2018GatewayWorkshop.pdf)
 
 In this workshop we will build a gateway based on the RAK831 and a Raspberry Pi model 3.
 ![rak gateway](images/rak831-gateway.png)
@@ -36,18 +36,23 @@ On the first screen enter your e-mail address and a (secure) password.
 ![](images/image00066.png)
 
 Next you provide your first and last name, company if applicable and choose whether you will be using resin.io for a personal or professional project.
+
 ![](images/image00067.png)
 
 Now we need to add our public SSH key. Resin.io uses this key when we upload code to run on our devices.
 In the upper right of the page click on the down arrow next to your name and select 'Preferences' from the menu.
+
 ![](images/image00070.png)
 
 Now select the tab "SSH keys" and click on "Enter SSH key manually"
+
 ![](images/image00071.png)
 
 In the next window you need to paste the **public** part of your SSH key. This is store in id_rsa.pub in the folder .ssh in your home folder (Windows: c:\users\<your username>\.ssh\id_rsa.pub, OSX /Users/<your username>.ssh/id_rsa.pub, Linux: /home<your username>/.ssh/id_rsa.pub)
 Use your favorite editor to open the file and copy the contents to the form.
+
 ![](images/image00072.png)
+
 Save with "Add SSH key". Go back to the main page by clickin the resin.io logo in the top left of the page.
 
 ## Existing resin.io users
@@ -55,13 +60,16 @@ Go to http://resin.io and log in.
 
 ## Create a new application
 On the resin.io main screen you are able to create a new application. The device type conveniantly defaults to Rapsberry Pi 3, which we will be using. Enter 'lorawangw' for the application name and proceed with 'CREATE NEW APPLICATION'
+
 ![](images/image00069.png)
 
 ## Set Fleet configuration
 The Raspberry Pi model 3 requires some settings to correct the timing and switch serial ports (not used in this setup, but would be required to access a GPS if it had been mounted)
 
 1. In your browser go to 'FLEET'
+
 ![](images/image00079.png)
+
 1. Add:
 <table>
 <tr><th>Name</th><th>Value</th></tr>
@@ -73,9 +81,11 @@ The Raspberry Pi model 3 requires some settings to correct the timing and switch
 
 ## Add device
 In the application select "Add device"
+
 ![](images/image00073.png)
 
 Leave all settings set to the default and click "Download resinOS".
+
 ![](images/image00074.png)
 
 Save the download to disk. (Remember where you save it!)
@@ -84,11 +94,14 @@ Once the download is finished, extract the contents of the zip file to disk (kee
 
 ## Write image to SDcard
 Get the micro SDcard from the Raspberry Pi
+
 ![sdcard](images/sdcard.png)
+
 Insert it into the SDcard writer (use a full size SDcard adapter if required).
 
 Windows & OSX:
 Open Etcher, click "Select image" and browse to the ISO file extracted in the previous step, verify the correct SDcard is choosen.
+
 ![](images/image00075.png)
 
 Once the right file and device have been click 'Flash!'. (On Windows this will show the UAC dialog, click 'Yes')
@@ -133,7 +146,9 @@ Unpacking objects: 100% (27/27), done.
 cd ttn-resin-gateway-rpi
 ```
 5. Now we need to couple this reposity to resin.io so we are able to send the code there. For this we need to execute the git command listed on our application page. (Top right)
+
 ![](images/image00077.png)
+
 1. Copy the text marked in the picture (for your application page) and paste it on the command line of your terminal/git bash.
 ```
 git remote add resin <your resin.io account>@git.resin.io:<your resin.io account>/lorawangw.git
@@ -176,6 +191,7 @@ Total 27 (delta 4), reused 0 (delta 0)
 
 This will take a few minutes. When the build is finished a unicorn will be shown.
 Proceed with the next step while the build is running.
+
 ![](images/image00089.png)
 
 ## Boot the gateway hardware
@@ -186,11 +202,13 @@ Make sure the antenna is connected to the RAK831 card (see pciture at the top), 
 The red LED on the Raspberry Pi should light and (after a few seconds) a green LED should start flashing.
 
 Switch to your browser, select "DEVICES" on the left. After 1-2 minutes a device should appear in on the application page
+
 ![](images/image00078.png)
 
 If the build we started in the previous step is finished the node will start downloading, if not it will stay idle.
 
 Click on the device name to open the device details
+
 ![](images/image00082.png)
 
 The top window on the right shows the output from the device. In this case it shows an error because the software attemped to start but is missing configuration parameters
@@ -200,9 +218,13 @@ To configure our gateway we need to add it in the TTN console.
 
 1. Use your TTN credentials to log in to https://console.thethingsnetwork.org/
 1. In the main screen click on gateways
+
 ![](images/image00083.png)
+
 1. Click on "register gateway" (or "Get started by registering one")
+
 ![](images/image00084.png)
+
 1. In the form enter the following values:
 <table>
 <tr><th>Name</th><th>Value</th></tr>
@@ -220,12 +242,14 @@ To configure our gateway we need to add it in the TTN console.
 Click "Register Gateway" to proceed.
 
 The result should look like:
+
 ![](images/image00086.png)
 
 Keep this window open, you need it to copy-and-paste information
 
 ## Configure your device
 Switch to your resin.io page. If you do not have the device summary page open, open it now.
+
 ![](images/image00082.png)
 
 Click on "ENVIRONMENT VARIABLES".
@@ -233,9 +257,12 @@ Click on "ENVIRONMENT VARIABLES".
 You need to add three variables:
 1. Name the first one "GW_ID" (no quotes) and copy the value listed for the "Gateway ID" in the TTN console.
 1. Name the second one "GW_KEY" (no quotes), on the TTN console click on the little eye icon to the right of "Gateway Key", this will display the value. Now use the icon at the end of the line to copy the value (and display "copied")
+
 ![](images/image00087.png)
+
 1. Paste this value and add.
 1. Enter "GW_RESET_PIN" (no quotes) and value 11.
+
 ![](images/image00088.png)
 
 Once set (and the software download has finished) the software will start. If the software starts correctly you will see "concentrator started" in the output in the resin.io Logs.
@@ -250,6 +277,4 @@ In the TTN console switch to "Traffic". If there are any nodes nearby sending da
 
 ![](images/image00092.png)
 
-<span style="color: green; font-size: 20pt">Congratulations, the gateway is now operational!</span>
-
-Please wait for the next part of the workshop to commence...
+Congratulations, the gateway is now operational!
