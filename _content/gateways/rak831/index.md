@@ -233,8 +233,8 @@ To configure our gateway we need to add it in the TTN console.
 	* For 'Frequency Plan', choose the one appropriate for your location, for Amsterdam use Europe 868MHz
 	* For 'Router', choose the one closest to you. Routers prefixed with 'ttn-' are public ones operated by The Things Network. 
 	switch-router is based in Switzerland and meshed-router is Australian.
-	* For 'Location' choose your location on the map
-	* For 'Antenna Placement' choose Indoor/Outdoor as appropriate
+	* For 'Location', choose your location on the map
+	* For 'Antenna Placement', choose Indoor/Outdoor as appropriate
 
 ![](images/image00085.png)
 
