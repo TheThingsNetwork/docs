@@ -31,12 +31,12 @@
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/gateways/rak831/images/rak831-gateway.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-02-15T11:12:46+00:00" />
+<meta property="article:published_time" content="2018-02-16T08:44:32+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"description":"Build your own RAK831 based gateway This document is based on a workshop held during The Things Network Conference 2018.","url":"https://www.thethingsnetwork.org/docs/gateways/rak831/","headline":"RAK831","dateModified":"2018-02-15T11:12:46+00:00","datePublished":"2018-02-15T11:12:46+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/gateways/rak831/images/rak831-gateway.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/gateways/rak831/"},"@context":"http://schema.org"}</script>
+{"description":"Build your own RAK831 based gateway This document is based on a workshop held during The Things Network Conference 2018.","url":"https://www.thethingsnetwork.org/docs/gateways/rak831/","headline":"RAK831","dateModified":"2018-02-16T08:44:32+00:00","datePublished":"2018-02-16T08:44:32+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/gateways/rak831/images/rak831-gateway.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/gateways/rak831/"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-152.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -312,42 +312,47 @@ Proceed with the next step while the build is running.</p>
 </ol>
 <p><img src="images/image00084.png" alt="" /></p>
 <ol>
-  <li>In the form enter the following values:</li>
+  <li>
+    <p>In the form enter the following values:</p>
+    <ul>
+      <li>For ‘Gateway ID’, choose a unique name for the gateway, allowed A-Z, a-z, 0-9 and -</li>
+      <li>Do <strong>not</strong> check ‘legacy packet forwarder’</li>
+      <li>For ‘Description’, enter a human read-able description</li>
+      <li>For ‘Frequency Plan’, choose the one appropriate for your location, for Amsterdam use Europe 868MHz</li>
+      <li>For ‘Router’, choose the one closest to you. Routers prefixed with ‘ttn-‘ are public ones operated by The Things Network. 
+ switch-router is based in Switzerland and meshed-router is Australian.</li>
+      <li>For ‘Location’, choose your location on the map</li>
+      <li>For ‘Antenna Placement’, choose Indoor/Outdoor as appropriate</li>
+    </ul>
+  </li>
 </ol>
-<div class="table-responsive"><table class="table">
-<tr><th>Name</th><th>Value</th></tr>
-<tr><td>Gateway ID</td><td>unique name for the gateway, allowed A-Z, a-z, 0-9 and -</td></tr>
-<tr><td>legacy packet forwarder</td><td>do <b>not</b> check this</td></tr>
-<tr><td>Description</td><td>Human read-able description</td></tr>
-<tr><td>Frequency Plan</td><td>Europe 868MHz</td></tr>
-<tr><td>Router</td><td>ttn-router-eu</td>&lt;/td&gt;
-<tr><td>Location</td><td>do <b>not</b> set a location</td></tr>
-<tr><td>Antenna Placement</td><td>Indoor</td></tr>
-&lt;/table&gt;
-![](images/image00085.png)
-Click "Register Gateway" to proceed.
-The result should look like:
-![](images/image00086.png)
-Keep this window open, you need it to copy-and-paste information
-## Configure your device
-Switch to your resin.io page. If you do not have the device summary page open, open it now.
-![](images/image00082.png)
-Click on "ENVIRONMENT VARIABLES".
-You need to add three variables:
-1. Name the first one "GW_ID" (no quotes) and copy the value listed for the "Gateway ID" in the TTN console.
-2. Name the second one "GW_KEY" (no quotes), on the TTN console click on the little eye icon to the right of "Gateway Key", this will display the value. Now use the icon at the end of the line to copy the value (and display "copied")
-![](images/image00087.png)
-3. Paste this value and add.
-4. Enter "GW_RESET_PIN" (no quotes) and value 11.
-![](images/image00088.png)
-Once set (and the software download has finished) the software will start. If the software starts correctly you will see "concentrator started" in the output in the resin.io Logs.
-![](images/image00090.png)
-In the TTN console the "Last seen" status should change to somthing between 0 and 60 seconds
-![](images/image00091.png)
-In the TTN console switch to "Traffic". If there are any nodes nearby sending data (should be the case during the conference), packets will show
-![](images/image00092.png)
-Congratulations, the gateway is now operational!
-</tr></table></div>
+<p><img src="images/image00085.png" alt="" /></p>
+<p>Click “Register Gateway” to proceed.</p>
+<p>The result should look like:</p>
+<p><img src="images/image00086.png" alt="" /></p>
+<p>Keep this window open, you need it to copy-and-paste information</p>
+<h2 id="configure-your-device">Configure your device</h2>
+<p>Switch to your resin.io page. If you do not have the device summary page open, open it now.</p>
+<p><img src="images/image00082.png" alt="" /></p>
+<p>Click on “ENVIRONMENT VARIABLES”.</p>
+<p>You need to add three variables:</p>
+<ol>
+  <li>Name the first one “GW_ID” (no quotes) and copy the value listed for the “Gateway ID” in the TTN console.</li>
+  <li>Name the second one “GW_KEY” (no quotes), on the TTN console click on the little eye icon to the right of “Gateway Key”, this will display the value. Now use the icon at the end of the line to copy the value (and display “copied”)</li>
+</ol>
+<p><img src="images/image00087.png" alt="" /></p>
+<ol>
+  <li>Paste this value and add.</li>
+  <li>Enter “GW_RESET_PIN” (no quotes) and value 11.</li>
+</ol>
+<p><img src="images/image00088.png" alt="" /></p>
+<p>Once set (and the software download has finished) the software will start. If the software starts correctly you will see “concentrator started” in the output in the resin.io Logs.</p>
+<p><img src="images/image00090.png" alt="" /></p>
+<p>In the TTN console the “Last seen” status should change to somthing between 0 and 60 seconds</p>
+<p><img src="images/image00091.png" alt="" /></p>
+<p>In the TTN console switch to “Traffic”. If there are any nodes nearby sending data (should be the case during the conference), packets will show</p>
+<p><img src="images/image00092.png" alt="" /></p>
+<p>Congratulations, the gateway is now operational!</p>
           </div>
         </div>
       </div>
