@@ -73,6 +73,17 @@ Show your applications with [`ttnctl applications list`](api.md#ttnctl-applicati
 1  hello-world  Hello World App  1     1            1
 ```
 
+After an application is created, you'll need to **register it** on a handler before you can start registering devices:
+
+```bash
+❯ ttnctl applications register
+  INFO Discovering Handler...                   Handler=ttn-handler-eu
+  INFO Connecting with Handler...               Handler=eu.thethings.network:1904
+  INFO Registered application                   AppID=hello-world
+```
+
+> By default, your application is registered on the `ttn-handler-eu` handler. This means that every LoRaWAN packet will be transmitted to the `eu` region of The Things Network. You can indicate another handler with the `--handler-id` flag. To show the list of available handlers, you can use the `ttnctl discover handler` command.
+
 ## Selecting an application
 
 The newly added application has been selected for further commands automatically. To select a different app call [`ttnctl applications select`](api.md#ttnctl-applications-select):
