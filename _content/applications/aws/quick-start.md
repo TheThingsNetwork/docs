@@ -8,35 +8,22 @@ zindex: 1000
 This guide will walk you through setting up the AWS IoT integration using CloudFormation: an easy process to configure one of the most advanced integrations for The Things Network.
 
 1. Log in to the [AWS Management Console](http://console.aws.amazon.com)
-2. In **Services** under **Management Tools**, go to **CloudFormation**
-3. Click **Create Stack**
-4. Under **Choose a template**, select **Specify an AWS S3 template URL** and enter:
-
-   ```
-   https://s3.amazonaws.com/thethingsnetwork/builds/integration-aws/dist/cloudformation.template
-   ```
-
-   ![Select Template](select-template.png)
-
-5. Click **Next**
-6. In the **Specify Details**, configure the integration:
+2. Click on your region to create a new stack in that region: [🇺🇸 **us-west-2**](https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/create/review?filter=active&templateURL=https%3A%2F%2Fs3.amazonaws.com%2Fthethingsnetwork%2Fbuilds%2Fintegration-aws%2Fdist%2Fcloudformation.template&stackName=ttn-integration&param_AccountServer=https:%2F%2Faccount.thethingsnetwork.org&param_DiscoveryServer=discovery.thethings.network:1900&param_InstanceType=t2.micro&param_ThingShadowDeltaFPort=1&param_ThingSyncEnabled=true&param_ThingSyncInterval=10m&param_ThingTypeName=lorawan), [🇪🇺 **eu-west-1**](https://eu-west-1.console.aws.amazon.com/cloudformation/home?region=eu-west-1#/stacks/create/review?filter=active&templateURL=https%3A%2F%2Fs3.amazonaws.com%2Fthethingsnetwork%2Fbuilds%2Fintegration-aws%2Fdist%2Fcloudformation.template&stackName=ttn-integration&param_AccountServer=https:%2F%2Faccount.thethingsnetwork.org&param_DiscoveryServer=discovery.thethings.network:1900&param_InstanceType=t2.micro&param_ThingShadowDeltaFPort=1&param_ThingSyncEnabled=true&param_ThingSyncInterval=10m&param_ThingTypeName=lorawan), [🇸🇬 **ap-southeast-1**](https://ap-southeast-1.console.aws.amazon.com/cloudformation/home?region=ap-southeast-1#/stacks/create/review?filter=active&templateURL=https%3A%2F%2Fs3.amazonaws.com%2Fthethingsnetwork%2Fbuilds%2Fintegration-aws%2Fdist%2Fcloudformation.template&stackName=ttn-integration&param_AccountServer=https:%2F%2Faccount.thethingsnetwork.org&param_DiscoveryServer=discovery.thethings.network:1900&param_InstanceType=t2.micro&param_ThingShadowDeltaFPort=1&param_ThingSyncEnabled=true&param_ThingSyncInterval=10m&param_ThingTypeName=lorawan)
 
    * Enter a **Stack name**, for example `ttn-app`
-   * Enter the **AppID** and an **AppAccessKey** of your application in The Things Network
-   * Enter an **EnvironmentName** for Elastic Beanstalk, for example `ttn-app`
-   * If you are using a private network, change the **AccountServer** and **DiscoveryServer** to the endpoints of your private network
-   * Select an existing EC2 KeyPair in **KeyName** to access the EC2 instance. [Read more](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html)
+   * Enter the **App ID** and an **App Access Key** of your application in The Things Network
+   * Enter an **Environment Name** for Elastic Beanstalk, for example `ttn-app`
+   * If you are using a private network, change the **Account Server** and **Discovery Server** to the endpoints of your private network
+   * Select an existing EC2 KeyPair in **SSH Key** to access the EC2 instance. [Read more](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html)
 
-   > The **AppAccessKey** that you enter should at least have the `messages` and `devices` rights.
+   > The **App Access Key** that you enter should at least have the `messages` and `devices` rights.
 
    Example parameters:
    ![Parameters](parameters.png)
 
-7. Click **Next**
-8. Leave the **Tags**, **Permissions** and **Advanced** as is, and click **Next** again
-9. Review your settings and check the **I acknowledge** box to acknowledge that resources for the integration may be created in your AWS account
-10. Click **Create** to initiate the creation of the stack
-11. After a coffee break of about six minutes, you will see two new stacks:
+3. Review your settings and check the **I acknowledge** box to acknowledge that resources for the integration may be created in your AWS account
+4. Click **Create** to initiate the creation of the stack
+5. After a coffee break of about six minutes, you will see two new stacks:
 
     ![Stacks](stacks.png)
 

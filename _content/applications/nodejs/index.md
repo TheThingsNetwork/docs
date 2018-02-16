@@ -12,4 +12,4 @@ redirect_from:
 
 [Node.js](https://nodejs.org/) is a JavaScript run-time built on Chrome's V8 JavaScript engine.
 
-With the [Node.js Application SDK](https://www.npmjs.com/package/ttn) you can manage applications, receive uplink messages and send downlink messages.
+With the [Node.js Application SDK](https://www.npmjs.com/package/ttn) you can manage applications, receive uplink messages and send downlink messages. You can also use the SDK to manage devices.

@@ -6,17 +6,20 @@ zindex: 1000
 
 # SDKs & Libraries
 
-We intend to SDKs for popular platforms to provide a layer of abstraction to make it easier to interact with the APIs. Not all SDKs wrap all APIs, so depending on which ones you need you might need to still talk to some directly.
+You can use Software Developer Kits (SDKs) for development platforms to use The Things Network APIs in your application.
 
 ![SDK](options-sdks.png)
 
-> If you'd like to contribute to a SDK, contact [us](mailto:community@thethingsnetwork.org).
-
 ## SDK Matrix
 
-SDK | Application Data | [Application Manager](manager/index.md) | [Account Server](../network/account/index.md)
-----|------------------|-----------------------------------------|--------------------------|--------------------------
-[Go](golang/index.md) | MQTT | gRPC | WIP
-[Java](java/index.md) | MQTT & AMQP (WIP) | WIP | WIP
-[Node.js](nodejs/index.md) | MQTT
-[Node-RED](nodered/index.md) | Via Node.JS (no TLS)
+SDK | [Data API](./mqtt/index.md) | [Application Manager API](./manager/index.md)
+----|------------------|-----------------------------------------|--------------------------
+[Go](golang/index.md) | Yes | Yes
+[Java](java/index.md) | Yes | Yes
+[Node.js](nodejs/index.md) | Yes | Yes
+[Python](https://pypi.python.org/pypi/ttn/2.1.0) | Yes | Yes
+[Node-RED](nodered/index.md) | Yes | No
+
+When using the Application Manager API, please [request a client ID](../network/account/clientid.md).
+
+> If you'd like to contribute to a SDK, contact [us](mailto:community@thethingsnetwork.org).

@@ -11,13 +11,13 @@ The most basic way to integrate your application with The Things Network is to u
 ![APIs](options-apis.png)
 
 ### Data API
-The Data API allow you to receive events and messages from devices as well as send messages to devices. You can use the Data API via:
 
-* [MQTT](mqtt/index.md)
-* AMQP (coming)
+The Data API allow you to receive events and messages from devices as well as send messages to devices.
+
+You can work with the Data PI using [SDKs](./sdks.md) or directly through [MQTT](./mqtt/index.md).
 
 ### Application Manager API
-The Application Manager API let you manage applications and devices registered to it. You can use the Data API via:
 
-* gRPC (to be documented)
-* [HTTP](manager/index.md)
+The Application Manager API lets you manage applications, gateways and devices.
+
+You can work with the Application Manager API using [SDKs](./sdks.md) or directly through [HTTP](./manager/index.md).
