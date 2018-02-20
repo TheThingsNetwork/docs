@@ -7,11 +7,11 @@ zindex: 800
 
 ## Configuring packet forwarder
 
-To configure the gateway, you need to download [The Things Network's packet forwarder (EU version)](https://github.com/TheThingsNetwork/kerlink-station-firmware/blob/master/dota/dota_thethingsnetwork_v1.3_EU.tar.gz) and [produsb.zip](https://github.com/TheThingsNetwork/kerlink-station-firmware/blob/master/dota/produsb.zip) from our Github.
+To configure the gateway, you need to download [The Things Network's packet forwarder (EU version)](https://github.com/TheThingsNetwork/kerlink-station-firmware/blob/master/dota/dota_thethingsnetwork_v1.4_EU.tar.gz) and [produsb.zip](https://github.com/TheThingsNetwork/kerlink-station-firmware/blob/master/dota/produsb.zip) from our Github.
 
 Install the update the following way:
 
-- Copy `produsb.sh` (from extracting `produsb.zip`) and `dota_thethingsnetwork_v1.3_EU.tar.gz` onto an empty USB flash drive formatted in FAT-32. Make sure there is no `.log` file.
+- Copy `produsb.sh` (from extracting `produsb.zip`) and `dota_thethingsnetwork_v1.4_EU.tar.gz` onto an empty USB flash drive formatted in FAT-32. Make sure there is no `.log` file.
 - Plug the USB flash drive into the gateway.
 - Wait for 5 min. During this time the gateway will reboot itself.
 - Unplug the key and check that a `.log` file has appeared. The file should contain  `WirmaV2 0x080XXXXX updated`. This log file prevents any further installation on the gateways to avoid cyclic reboots.
