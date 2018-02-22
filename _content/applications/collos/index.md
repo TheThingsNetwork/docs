@@ -11,4 +11,4 @@ Collos is now in preview. See [preview.collos.org](http://preview.collos.org) fo
 
 ## Getting Started
 
-See [Quick Start](./quick-start.md) on how to get started.
+See [Quick Start](./quick-start.md) on how to get started and [listen to the full story](https://www.youtube.com/watch?v=WEqLESKW6N8) of COLLOS by Richard Lansdowne (COLLOS product manager, Semtech) at The Things Conference.
