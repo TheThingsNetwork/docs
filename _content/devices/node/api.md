@@ -87,6 +87,9 @@ void sleep() {
 }
 ```
 
+Pay attention, this internal sleep method of the library does not put the LoRa module (RN2483 or RN2903) into sleep mode and thus your node may consume 3mA even in sleep mode. You need to manually set the LoRa module to sleep and wake. 
+Check the example [BatteryMonitorLPP](../examples/BatteryMonitorLPP/)
+
 ## Interval
 Instead of using your `loop()` function, use `configInterval()` and `onInterval()` to set a function to be called on a certain interval:
 

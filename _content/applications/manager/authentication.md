@@ -8,11 +8,11 @@ source: 'https://github.com/TheThingsNetwork/ttn/blob/master/api/API_AUTHENTICAT
 Currently, there are two methods of authenticating to the gRPC and HTTP APIs:
 
 - Bearer token: OAuth 2.0 Bearer JSON Web Tokens (preferred)
-- Access keys: Application access keys (only for  Application Manager API)
+- Access keys: Application access keys (only for `ApplicationManager` API)
 
 ## Bearer Token
 
-This authentication method is the preferred method of authenticating. In order to use this authentication flow, you need to support OAuth 2.0 and [request a client ID](../../network/account/clientid.md).
+This authentication method is the preferred method of authenticating. 
 
 ### gRPC
 
