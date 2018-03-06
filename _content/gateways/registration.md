@@ -48,7 +48,7 @@ The UDP Packet Forwarder is deprecated, but will still be supported by TTN. We a
 
 ### Start with Configuration
 
-Follow your gateway's manual to configure it to forward packets to The Things Network. Configure it to forward to the correct [router address](https://www.thethingsnetwork.org/wiki/Backend/Connect/Gateway#connect-a-gateway_server-addresses) for [your region](https://www.thethingsnetwork.org/wiki/LoRaWAN/Frequencies/By-Country). The guide should also help you set or retrieve the gateway's EUI, likely the MAC address of the LoRa module which looks like `B827EBFFFE87BD11`.
+Follow your gateway's manual to configure it to forward packets to The Things Network. Configure it to forward to the correct [router address](packet-forwarder/semtech-udp.md) for [your region](https://www.thethingsnetwork.org/wiki/LoRaWAN/Frequencies/By-Country). The guide should also help you set or retrieve the gateway's EUI, likely the MAC address of the LoRa module which looks like `B827EBFFFE87BD11`.
 
 You will likely also need the `global_conf.json` file for the frequency plan used in your region. You can find it on [our github repo](https://github.com/TheThingsNetwork/gateway-conf).
 
