@@ -2,8 +2,8 @@
 title: TTN Mapper
 section: Integrations
 ambassador:
-  name: Romain Cambier
-  username: cambierr
+  name: Timothy Sealy
+  username: timothy
 ---
 
 # TTN Mapper
