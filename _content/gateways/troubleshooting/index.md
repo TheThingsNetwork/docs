@@ -4,7 +4,7 @@ section: Running a gateway
 zindex: 200
 ---
 
-# Troubleshooting a gateway
+# Troubleshooting
 
 Your gateway doesn't seem to send data to The Things Network? This section is here to help you find out the issue might come from. We'll give you a few leads to help you troubleshoot your gateway.
 
