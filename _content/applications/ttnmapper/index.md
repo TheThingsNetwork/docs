@@ -1,9 +1,6 @@
 ---
 title: TTNMapper
 section: Integrations
-ambassador:
-  name: Timothy Sealy
-  username: timothy
 ---
 
 # TTN Mapper
