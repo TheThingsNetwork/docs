@@ -14,6 +14,7 @@ Suitable use-cases for LoRaWAN:
 * **Low bandwidth** - something like 400 bytes per hour
 * **Coverage everywhere** - you are the network! Just install your own gateways
 * **Secure** - 128bit end-to-end encrypted
+* **Geolocation / Triangulation** - you should probably use GPS for this, but we're doing our best to make it work with just LoRa. Check out [Collos](../applications/collos/index.md).
 
 Not Suitable for LoRaWAN:
 
@@ -21,7 +22,6 @@ Not Suitable for LoRaWAN:
 * **Phone calls** - you can do that with GPRS/3G/LTE
 * **Controlling lights in your house** - check out ZigBee or BlueTooth
 * **Sending photos, watching Netflix** - check out WiFi
-* **Geolocation / Triangulation** - you should probably use GPS for this, but we're doing our best to make it work with only LoRa. Might take a few years though.
 
 ## Sending data from a Node to your Application (uplink)
 
