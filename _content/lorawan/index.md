@@ -5,7 +5,7 @@ image: /devices/icon.png
 zindex: 1100
 ---
 
-# LoRaWAN 
+# LoRaWAN Overview
 
 LoRaWAN is a media access control (MAC) protocol for wide area networks. It is designed to allow low-powered devices to communicate with Internet-connected applications over long range wireless connections. LoRaWAN can be mapped to the second and third layer of the OSI model. It is implemented on top of LoRa or FSK modulation in industrial, scientific and medical (ISM) radio bands. The LoRaWAN protocols are defined by the [LoRa Alliance](https://www.lora-alliance.org/) and formalized in the LoRaWAN Specification which can be [requested](https://www.lora-alliance.org/lorawan-for-developers) on the LoRa Alliance website. 
 
@@ -72,6 +72,8 @@ Devices and applications have a 64 bit unique identifier (`DevEUI` and `AppEUI`)
 LoRaWAN 1.0 knows three distinct 128-bit security keys. The application key `AppKey` is only known by the device and by the application. When a device joins the network (this is called a join or activation), an application session key `AppSKey` and a network session key `NwkSKey` are generated. The `NwkSKey` is shared with the network, while the `AppSKey` is kept private. These session keys will be used for the duration of the session.
 
 The algorithm used for this is AES-128, similar to the algorithm used in the 802.15.4 standard. The `NwkSKey` is used to validate the integrity of each message by its Message Integrity Code (MIC). This MIC is similar to a checksum, except that it prevents intentional tampering with a message. For this, LoRaWAN uses AES-CMAC. The `AppSKey` is used for encryption of the application payload.
+
+See [Security](security.md) for more information.
 
 ### Frame Counters
 
