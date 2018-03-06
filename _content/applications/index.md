@@ -5,9 +5,6 @@ sections:
  - APIs
  - SDKs & Libraries
  - Integrations
-links:
- - title: Migrate from Staging to Production
-   href: ../network/migrate.html
 image: /applications/icon.png
 ---
 
