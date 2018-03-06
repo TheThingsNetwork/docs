@@ -68,12 +68,19 @@ layout: compress
   </head>
   <body>
 
+    <div id="header"></div>
+
     <div id="content">
       {{ content }}
     </div>
 
-    <script src="https://www.thethingsnetwork.org/navbar.js"></script>
-    <script src="https://ttnstaticfile.blob.core.windows.net/static/common/js/ga.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+    <script src="https://ttnweb.azureedge.net/static/common/js/ttn-components.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill@7/dist/polyfill.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
+    <script src="https://ttnweb.azureedge.net/static/common/js/vue-navbar.js"></script>
+
+    <script src="https://ttnweb.azureedge.net/static/common/js/ga.js"></script>
 
   </body>
 </html>
