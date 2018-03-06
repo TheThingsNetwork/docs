@@ -35,7 +35,7 @@ When developing LoRaWAN applications in AWS IoT, you often want to send downlink
 2. In **Services** under **Internet Of Things**, go to **AWS IoT**
 3. In the menu on the left, go to **Test**
 4. Under **Publish**, enter a downlink topic to publish to: `<AppID>/devices/<DevID>/down`
-5. Enter the downlink message according to the downlink message format (see [MQTT topic and payload format](../mqtt/api#downlink-messages)):
+5. Enter the downlink message according to the downlink message format (see [MQTT topic and payload format](../mqtt/api.html#downlink-messages)):
 
    For example, sending raw payload:
 
