@@ -1,8 +1,6 @@
 ---
 title: TTN Mapper
 section: Integrations
-zindex: -1000
-source: 'https://github.com/TheThingsIndustries/integration-messaging/blob/master/ttnmapper/README.md'
 ambassador:
   name: Timothy Sealy
   username: timothy
