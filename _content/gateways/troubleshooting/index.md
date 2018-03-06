@@ -4,11 +4,15 @@ section: Running a gateway
 zindex: 200
 ---
 
-# Troubleshooting
+# Gateway Troubleshooting
 
 Your gateway doesn't seem to send data to The Things Network? This section is here to help you find out the issue might come from. We'll give you a few leads to help you troubleshoot your gateway.
 
 > This section contains the most frequent issues with packet forwarders. If you find issues that are not covered in this guide, feel free to reach out to [The Things Network community forum](https://www.thethingsnetwork.org/forum).
+
+## Check the Status page
+
+Did your gateway work before? Before diving in to the Console and the gateway itself, check [The Things Network Status](https://status.thethings.network) to see if all services are operational.
 
 ## From the Console
 
