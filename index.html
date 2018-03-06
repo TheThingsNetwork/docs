@@ -34,24 +34,68 @@ image: /assets/images/og-image.png
 
     <div class="index-docs index-blocks row">
 
-      {% for apage in pages %}
-        {% unless apage.hidden %}
-          {% assign apage_depth = apage.url | remove:'/index.html' | split:'/' | size %}
-          {% if apage_depth == 2 %}
-            <div class="col-sm-3">
-              <div class="panel">
-                <a href="{{ apage.url | prepend:site.baseurl | remove:'index.html' }}">
-                  <div class="panel-body">
-                    <h3>{{ apage.title }}</h3>
-                    <img src="{{ apage.image | prepend:site.baseurl }}" alt="{{ apage.title }}" />
-                    <p>{{ apage.description }}</p>
-                  </div>
-                </a>
-              </div>
+      <div class="col-sm-12">
+        <div class="panel">
+          <a href="lorawan/index.html">
+            <div class="panel-body">
+              <img src="lorawan/icon.gif" alt="LoRaWAN" width="150" height"49" />
+              <p>Learn about LoRaWAN: the secure messaging protocol used by The Things Network.</p>
             </div>
-          {% endif %}
-        {% endunless %}
-      {% endfor %}
+          </a>
+        </div>
+      </div>
+    
+    </div>
+
+    <div class="index-docs index-blocks row">
+
+      <div class="col-sm-3">
+        <div class="panel">
+          <a href="devices/index.html">
+            <div class="panel-body">
+              <h3>Devices</h3>
+              <img src="devices/icon.png" alt="Devices" />
+              <p>Connect devices to The Things Network.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="col-sm-3">
+        <div class="panel">
+          <a href="gateways/index.html">
+            <div class="panel-body">
+              <h3>Gateways</h3>
+              <img src="gateways/icon.png" alt="Gateways" />
+              <p>Extend The Things Network by installing a gateway.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="col-sm-3">
+        <div class="panel">
+          <a href="network/index.html">
+            <div class="panel-body">
+              <h3>Network</h3>
+              <img src="network/icon.png" alt="Network" />
+              <p>Manage your applications and devices.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="col-sm-3">
+        <div class="panel">
+          <a href="applications/index.html">
+            <div class="panel-body">
+              <h3>Applications</h3>
+              <img src="applications/icon.png" alt="Applications" />
+              <p>Build applications on The Things Network.</p>
+            </div>
+          </a>
+        </div>
+      </div>
 
     </div>
 
