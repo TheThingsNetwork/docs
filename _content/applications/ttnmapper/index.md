@@ -1,10 +1,16 @@
 ---
-title: TTN Mapper
-section: Integrations
+title: ttnmapper
+section: SDKs & Libraries
+redirect_from:
+ - /refactor/java/
+ - /v2-preview/java/
+ - /current/java/
+ - /java/
 ambassador:
-  name: Timothy Sealy
-  username: timothy
+  name: Romain Cambier
+  username: cambierr
 ---
+
 
 # TTN Mapper
 The TTN Mapper integration allows you to upload coverage information (location, rssi and snr) to TTN Mapper directly from the TTN backend.
