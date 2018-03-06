@@ -1,6 +1,9 @@
 ---
 title: TTNMapper
 section: Integrations
+ambassador:
+  name: Romain Cambier
+  username: cambierr
 ---
 
 # TTN Mapper
