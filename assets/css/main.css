@@ -8650,8 +8650,8 @@ body {
 img {
   max-width: 100%; }
 
-#navbar {
-  position: static; }
+body {
+  padding-top: 65px; }
 
 #content {
   overflow-x: hidden;
