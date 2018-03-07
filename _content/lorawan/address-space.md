@@ -91,8 +91,8 @@ It's good to keep in mind that device addresses are not unique. We can (and prob
 
 ## Applications
 
-Applications in LoRaWAN and The Things Network have a 64 bit unique identifier (`AppEUI`). When you run the `ttnctl applications create` command, The Things Network's account server allocates an `AppEUI` from our MAC address block. This means that every `AppEUI` starts with `70B3D57ED`.
+Applications in LoRaWAN and The Things Network have a 64 bit unique identifier (`AppEUI`). When you create an application, The Things Network's account server allocates an `AppEUI` from the address block of The Things Network Foundation. This means that every application has at least an `AppEUI` that starts with `70B3D57ED`. If you have your own `AppEUI`s, you can also add those to your application.
 
 ## Gateways
 
-Although the `packet forwarder` configuration file suggests that one can just choose an EUI for the gateway, these also have a unique MAC address, which should also be used for identifying with The Things Network.
+Gateways are manufactured with an embedded EUI, which can then be used to register the gateway on The Things Network. Although the configuration files of some gateways suggest that you can just choose an EUI for the gateway, this is **not true**. If your gateway did not come with an embedded EUI, you can use another EUI that you own, or configure an `AppEUI` that is registered to your account. You may also use an MQTT-based forwarder, which only needs a `GatewayID` (that you can choose yourself) instead of a `GatewayEUI`.
