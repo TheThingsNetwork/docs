@@ -17,8 +17,6 @@ Install the update the following way:
 - Unplug the key and check that a `.log` file has appeared. The file should contain  `WirmaV2 0x080XXXXX updated`. This log file prevents any further installation on the gateways to avoid cyclic reboots.
 - To redo the update on same gateway, remove this log file from the flash drive reinsert it into the gateway USB. This is not needed if you update another gateway.
 
-For more details about Kerlink firmware updates, head over to the [Wiki](https://www.thethingsnetwork.org/wiki/Hardware/Gateways/Kerlink/Firmware).
-
 ## Connect with the Gateway
 
 ### SSH-Serial
