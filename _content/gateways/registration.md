@@ -28,7 +28,7 @@ You start by [registering your gateway](https://console.thethingsnetwork.org/gat
 
 * For **Protocol**, leave **gateway connector** selected.
 * For **Gateway ID**, choose a unique ID of lower case, alphanumeric characters and nonconsecutive `-` and `_`.
-* Select the frequency plan ([determined by your region](https://www.thethingsnetwork.org/wiki/LoRaWAN/Frequencies/By-Country)) the gateway uses.
+* Select the frequency plan ([determined by your region](../lorawan/frequencies-by-country.md)) the gateway uses.
 * Click to drop the pin at the exact location (pan and zoom in before you drop).
 * Click **Register Gateway** to finish.
 
@@ -48,7 +48,7 @@ The UDP Packet Forwarder is deprecated, but will still be supported by TTN. We a
 
 ### Start with Configuration
 
-Follow your gateway's manual to configure it to forward packets to The Things Network. Configure it to forward to the correct [router address](packet-forwarder/semtech-udp.md) for [your region](https://www.thethingsnetwork.org/wiki/LoRaWAN/Frequencies/By-Country). The guide should also help you set or retrieve the gateway's EUI, likely the MAC address of the LoRa module which looks like `B827EBFFFE87BD11`.
+Follow your gateway's manual to configure it to forward packets to The Things Network. Configure it to forward to the correct [router address for your region](packet-forwarder/semtech-udp.md). The guide should also help you set or retrieve the gateway's EUI, likely the MAC address of the LoRa module which looks like `B827EBFFFE87BD11`.
 
 You will likely also need the `global_conf.json` file for the frequency plan used in your region. You can find it on [our github repo](https://github.com/TheThingsNetwork/gateway-conf).
 
@@ -66,7 +66,7 @@ We have a special bridge in place that will continue to accept packages from gat
 
 * For **Protocol**, select **packet forwarder**.
 * For **Gateway EUI**, paste your gateway's EUI (8 bytes).
-* Select the frequency plan ([determined by your region](https://www.thethingsnetwork.org/wiki/LoRaWAN/Frequencies/By-Country)) the gateway uses.
+* Select the frequency plan ([determined by your region](../lorawan/frequencies-by-country.md)) the gateway uses.
 * Click to drop the pin at the exact location (pan and zoom in before you drop).
 
 > After registering the gateway, select **Settings** from the top right menu on the Gateway screen so set the gateway description, location altitude, privacy settings and other information.

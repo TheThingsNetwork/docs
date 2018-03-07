@@ -153,7 +153,7 @@ Let's see the messages come in.
 
 1.  From the application's screen in the console, select **Data** from the top right menu.
 
-    You should now see the messages come in. If you don't see anything you likely [do not have network coverage](https://www.thethingsnetwork.org/wiki/FAQ#frequently-asked-questions_does-the-things-network-have-coverage-where-i-live) at your location.
+    You should now see the messages come in. If you don't see anything you likely do not have network coverage at your location.
 
     What you see on the data page is the raw payload in hex-formatted, space-separated bytes. Let's decode that to meaningful fields.
 

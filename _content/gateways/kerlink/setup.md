@@ -19,7 +19,7 @@ The gateway can be connected to Ethernet by either a UTP connection or by a cell
 
 ### Antenna
 
-It is important that the antenna is connected to the gateway before booting the gateway. Booting the gateway without an external antenna my result in permanent damage to the antenna amplifier. Depending on environment where the gateway is placed, earthing and [surge protection](https://www.thethingsnetwork.org/wiki/Hardware/Gateways/Lightning-Protection) is recommended.
+It is important that the antenna is connected to the gateway before booting the gateway. Booting the gateway without an external antenna my result in permanent damage to the antenna amplifier. Depending on environment where the gateway is placed, earthing and [surge protection](../lightning-protection.md) is recommended.
 
 ## UTP cable
 
