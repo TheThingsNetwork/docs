@@ -31,12 +31,12 @@
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-03-07T09:09:32+00:00" />
+<meta property="article:published_time" content="2018-03-07T09:22:20+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"description":"LoRaWAN Security","url":"https://www.thethingsnetwork.org/docs/lorawan/security.html","headline":"Security","dateModified":"2018-03-07T09:09:32+00:00","datePublished":"2018-03-07T09:09:32+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/lorawan/security.html"},"@context":"http://schema.org"}</script>
+{"description":"LoRaWAN Security","url":"https://www.thethingsnetwork.org/docs/lorawan/security.html","headline":"Security","dateModified":"2018-03-07T09:22:20+00:00","datePublished":"2018-03-07T09:22:20+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/lorawan/security.html"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-152.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -126,7 +126,7 @@
         <div class="panel">
           <div class="panel-body page-content">
             <h1 id="lorawan-security">LoRaWAN Security</h1>
-<p>LoRaWAN specifies a number of security keys: <code class="highlighter-rouge">NwkSKey</code>, <code class="highlighter-rouge">AppSKey</code> and <code class="highlighter-rouge">AppKey</code>. All keys have a length of 128 bits.</p>
+<p>LoRaWAN 1.0 specifies a number of security keys: <code class="highlighter-rouge">NwkSKey</code>, <code class="highlighter-rouge">AppSKey</code> and <code class="highlighter-rouge">AppKey</code>. All keys have a length of 128 bits.</p>
 <p>The network session key (<code class="highlighter-rouge">NwkSKey</code>) is used for interaction between the Node and the Network. This key is used to check the validity of messages (MIC check). In the backend of The Things Network this validation is also used to map a non-unique device address (<code class="highlighter-rouge">DevAddr</code>) to a unique <code class="highlighter-rouge">DevEUI</code> and <code class="highlighter-rouge">AppEUI</code>.</p>
 <p>The application session key (<code class="highlighter-rouge">AppSKey</code>) is used for encryption and decryption of the payload. The payload is fully encrypted between the Node and the Handler component of The Things Network (which you will be able to run on your own server). This means that nobody except you is able to read the contents of messages you send or receive.</p>
 <p>These two session keys (<code class="highlighter-rouge">NwkSKey</code> and <code class="highlighter-rouge">AppSKey</code>) are unique per device, per session. If you dynamically activate your device (OTAA), these keys are re-generated on every activation. If you statically activate your device (ABP), these keys stay the same until you change them.</p>
