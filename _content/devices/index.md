@@ -1,6 +1,6 @@
 ---
 title: Devices
-description: Connect Things to the Internet via The Things Network.
+description: Connect devices to The Things Network.
 sections:
  - APIs
  - SDKs & Libraries

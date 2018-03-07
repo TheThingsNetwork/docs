@@ -1,6 +1,6 @@
 ---
 title: Applications
-description: Exchange data with Devices on The Things Network.
+description: Build applications on The Things Network.
 sections:
  - APIs
  - SDKs & Libraries
