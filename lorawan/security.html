@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <link rel="stylesheet" href="/docs/assets/css/main.css" />
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script>
+    (function(canonical) {
+      if (document.location.href.substr(0, document.location.href.length - document.location.hash.length) !== canonical) {
+        window.location.replace(canonical);
+      }
+    })('https://www.thethingsnetwork.org/docs/lorawan/security.html');
+    </script>
+    <!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>Security | The Things Network</title>
+<meta name="generator" content="Jekyll v3.4.5" />
+<meta property="og:title" content="Security" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="LoRaWAN Security" />
+<meta property="og:description" content="LoRaWAN Security" />
+<link rel="canonical" href="https://www.thethingsnetwork.org/docs/lorawan/security.html" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/lorawan/security.html" />
+<meta property="og:site_name" content="The Things Network" />
+<meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-03-07T09:09:32+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@thethingsnetwrk" />
+<meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
+<script type="application/ld+json">
+{"description":"LoRaWAN Security","url":"https://www.thethingsnetwork.org/docs/lorawan/security.html","headline":"Security","dateModified":"2018-03-07T09:09:32+00:00","datePublished":"2018-03-07T09:09:32+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/lorawan/security.html"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+    <link rel="apple-touch-icon-precomposed" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-152.png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-144.png">
+    <meta name="application-name" content="The Things Network">
+    <meta name="msapplication-tooltip" content="Building a Global Internet of Things Network Together.">
+    <meta name="msapplication-config" content="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/ieconfig.xml">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-32.png" sizes="32x32">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-57.png" sizes="57x57">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-76.png" sizes="76x76">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-96.png" sizes="96x96">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-120.png" sizes="120x120">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-128.png" sizes="128x128">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-144.png" sizes="144x144">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-152.png" sizes="152x152">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-180.png" sizes="180x180">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-195.png" sizes="195x195">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-228.png" sizes="228x228">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/smalltile.png" sizes="128x128">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/mediumtile.png" sizes="270x270">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/widetile.png" sizes="558x270">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png" sizes="558x558">
+    <link rel="shortcut icon" sizes="196x196" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-196.png">
+    <script src="/docs/assets/js/main.js"></script>
+  </head>
+  <body>
+    <div id="content">
+<div class="layout-page">
+  <div class="ttn-header ttn-header-small">
+    <div class="ttn-container container-fluid">
+      <h1>
+        <img src="/docs/assets/images/the-things-white.png" alt="⛅ The Things Network" />
+        <span>Learn</span>
+      </h1>
+    </div>
+  </div>
+  <div class="container-fluid ttn-container">
+    <div class="row page-top-nav">
+      <div class="col-sm-9">
+        <ul>
+          <li class="page-top-nav-crumb"><a href="http://www.thethingsnetwork.org/">Home</a></li>
+          <li class="page-top-nav-crumb"><a href="/docs/">Learn</a></li>
+                <li class="active"><a href="/docs/lorawan/">LoRaWAN</a></li>
+                <li class=""><a href="/docs/devices/">Devices</a></li>
+                <li class=""><a href="/docs/gateways/">Gateways</a></li>
+                <li class=""><a href="/docs/network/">Network</a></li>
+                <li class=""><a href="/docs/applications/">Applications</a></li>
+        </ul>
+      </div>
+      <div class="hidden-xs col-sm-3 text-right">
+        <a href="https://github.com/TheThingsNetwork/docs/edit/master/_content/lorawan/security.md" class="page-edit" data-proofer-ignore><i class="fa fa-github"></i> Edit <strong>security.md</strong></a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="panel page-side-nav page-affix">
+          <div class="panel-body">
+            <h5>LoRaWAN</h5>
+            <ul>
+              <li class=""><a href="/docs/lorawan/index.html">Overview</a>
+            <ul>
+                <li class=""><a href="/docs/lorawan/adr.html">Adaptive Data Rate</a>
+                </li>
+                <li class=""><a href="/docs/lorawan/address-space.html">Address Space</a>
+                </li>
+                <li class=""><a href="/docs/lorawan/duty-cycle.html">Duty Cycle</a>
+                </li>
+                <li class=""><a href="/docs/lorawan/limitations.html">Limitations</a>
+                </li>
+                <li class="active"><a href="/docs/lorawan/security.html">Security</a>
+                </li>
+            </ul>
+              </li>
+            <li class="page-side-nav-section"><span>Frequency Plans</span>
+            <ul>
+                <li class=""><a href="/docs/lorawan/frequencies-by-country.html">By Country</a>
+                </li>
+                <li class=""><a href="/docs/lorawan/frequency-plans.html">Overview</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-7">
+        <div class="panel">
+          <div class="panel-body page-content">
+            <h1 id="lorawan-security">LoRaWAN Security</h1>
+<p>LoRaWAN specifies a number of security keys: <code class="highlighter-rouge">NwkSKey</code>, <code class="highlighter-rouge">AppSKey</code> and <code class="highlighter-rouge">AppKey</code>. All keys have a length of 128 bits.</p>
+<p>The network session key (<code class="highlighter-rouge">NwkSKey</code>) is used for interaction between the Node and the Network. This key is used to check the validity of messages (MIC check). In the backend of The Things Network this validation is also used to map a non-unique device address (<code class="highlighter-rouge">DevAddr</code>) to a unique <code class="highlighter-rouge">DevEUI</code> and <code class="highlighter-rouge">AppEUI</code>.</p>
+<p>The application session key (<code class="highlighter-rouge">AppSKey</code>) is used for encryption and decryption of the payload. The payload is fully encrypted between the Node and the Handler component of The Things Network (which you will be able to run on your own server). This means that nobody except you is able to read the contents of messages you send or receive.</p>
+<p>These two session keys (<code class="highlighter-rouge">NwkSKey</code> and <code class="highlighter-rouge">AppSKey</code>) are unique per device, per session. If you dynamically activate your device (OTAA), these keys are re-generated on every activation. If you statically activate your device (ABP), these keys stay the same until you change them.</p>
+<p>Dynamically activated devices (OTAA) use the application key (<code class="highlighter-rouge">AppKey</code>) to derive the two session keys during the activation procedure. In The Things Network you can have a <em>default</em> <code class="highlighter-rouge">AppKey</code> which will be used to activate all devices, or customize the <code class="highlighter-rouge">AppKey</code> per device.</p>
+<h2 id="frame-counters">Frame Counters</h2>
+<p>Because we’re working with a radio protocol, anyone will be able to capture and store messages. It’s not possible to read these messages without the <code class="highlighter-rouge">AppSKey</code>, because they’re encrypted. Nor is it possible to tamper with them without the <code class="highlighter-rouge">NwkSKey</code>, because this will make the MIC check fail. It is however possible to re-transmit the messages. These so-called replay attacks can be detected and blocked using frame counters.</p>
+<p>When a device is activated, these frame counters (<code class="highlighter-rouge">FCntUp</code> and <code class="highlighter-rouge">FCntDown</code>) are both set to <code class="highlighter-rouge">0</code>. Every time the device transmits an uplink message, the <code class="highlighter-rouge">FCntUp</code> is incremented and every time the network sends a downlink message, the <code class="highlighter-rouge">FCntDown</code> is incremented. If either the device or the network receives a message with a frame counter that is lower than the last one, the message is ignored.</p>
+<p>This security measure has consequences for development devices, which often are statically activated (ABP). When you do this, you should realize that these frame counters reset to <code class="highlighter-rouge">0</code> every time the device restarts (when you flash the firmware or when you unplug it). As a result, The Things Network will block all messages from the device until the <code class="highlighter-rouge">FCntUp</code> becomes higher than the previous <code class="highlighter-rouge">FCntUp</code>. Therefore, you should re-register your device in the backend every time you reset it.</p>
+<h2 id="spread-spectrum">Spread Spectrum</h2>
+<blockquote>
+  <p>TODO: Explain why spread-spectrum communication is good for security (and reliability)</p>
+</blockquote>
+<h2 id="metadata">Metadata</h2>
+<blockquote>
+  <p>TODO: Explain what kind of information can not be encrypted</p>
+</blockquote>
+          </div>
+        </div>
+      </div>
+      <div class="hidden-xs col-sm-2">
+        <div class="page-toc page-affix"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="lightbox" tabindex="-1" role="dialog">
+  <div class="modal-dialog text-center" role="document" style="width:auto;padding:20px;">
+    <a href="https://ttnstaticfile.blob.core.windows.net/static/ttn/media/logo/ttn-logo.png"><img class="modal-content modal-body" src="https://ttnstaticfile.blob.core.windows.net/static/ttn/media/logo/ttn-logo.png" alt="Zoom" /></a>
+  </div>
+</div>
+<script src="/docs/assets/js/page.js"></script>
+    </div>
+    <script src="https://www.thethingsnetwork.org/navbar.js"></script>
+    <script src="https://ttnstaticfile.blob.core.windows.net/static/common/js/ga.js"></script>
+  </body>
+</html>

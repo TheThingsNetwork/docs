@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <link rel="stylesheet" href="/docs/assets/css/main.css" />
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script>
+    (function(canonical) {
+      if (document.location.href.substr(0, document.location.href.length - document.location.hash.length) !== canonical) {
+        window.location.replace(canonical);
+      }
+    })('https://www.thethingsnetwork.org/docs/lorawan/duty-cycle.html');
+    </script>
+    <!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>Duty Cycle | The Things Network</title>
+<meta name="generator" content="Jekyll v3.4.5" />
+<meta property="og:title" content="Duty Cycle" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Duty Cycle for LoRaWAN Devices" />
+<meta property="og:description" content="Duty Cycle for LoRaWAN Devices" />
+<link rel="canonical" href="https://www.thethingsnetwork.org/docs/lorawan/duty-cycle.html" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/lorawan/duty-cycle.html" />
+<meta property="og:site_name" content="The Things Network" />
+<meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-03-07T09:09:32+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@thethingsnetwrk" />
+<meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
+<script type="application/ld+json">
+{"description":"Duty Cycle for LoRaWAN Devices","url":"https://www.thethingsnetwork.org/docs/lorawan/duty-cycle.html","headline":"Duty Cycle","dateModified":"2018-03-07T09:09:32+00:00","datePublished":"2018-03-07T09:09:32+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/lorawan/duty-cycle.html"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+    <link rel="apple-touch-icon-precomposed" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-152.png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-144.png">
+    <meta name="application-name" content="The Things Network">
+    <meta name="msapplication-tooltip" content="Building a Global Internet of Things Network Together.">
+    <meta name="msapplication-config" content="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/ieconfig.xml">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-32.png" sizes="32x32">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-57.png" sizes="57x57">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-76.png" sizes="76x76">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-96.png" sizes="96x96">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-120.png" sizes="120x120">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-128.png" sizes="128x128">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-144.png" sizes="144x144">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-152.png" sizes="152x152">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-180.png" sizes="180x180">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-195.png" sizes="195x195">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-228.png" sizes="228x228">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/smalltile.png" sizes="128x128">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/mediumtile.png" sizes="270x270">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/widetile.png" sizes="558x270">
+    <link rel="icon" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png" sizes="558x558">
+    <link rel="shortcut icon" sizes="196x196" href="https://ttnstaticfile.blob.core.windows.net/static/common/favicon/favicon-196.png">
+    <script src="/docs/assets/js/main.js"></script>
+  </head>
+  <body>
+    <div id="content">
+<div class="layout-page">
+  <div class="ttn-header ttn-header-small">
+    <div class="ttn-container container-fluid">
+      <h1>
+        <img src="/docs/assets/images/the-things-white.png" alt="⛅ The Things Network" />
+        <span>Learn</span>
+      </h1>
+    </div>
+  </div>
+  <div class="container-fluid ttn-container">
+    <div class="row page-top-nav">
+      <div class="col-sm-9">
+        <ul>
+          <li class="page-top-nav-crumb"><a href="http://www.thethingsnetwork.org/">Home</a></li>
+          <li class="page-top-nav-crumb"><a href="/docs/">Learn</a></li>
+                <li class="active"><a href="/docs/lorawan/">LoRaWAN</a></li>
+                <li class=""><a href="/docs/devices/">Devices</a></li>
+                <li class=""><a href="/docs/gateways/">Gateways</a></li>
+                <li class=""><a href="/docs/network/">Network</a></li>
+                <li class=""><a href="/docs/applications/">Applications</a></li>
+        </ul>
+      </div>
+      <div class="hidden-xs col-sm-3 text-right">
+        <a href="https://github.com/TheThingsNetwork/docs/edit/master/_content/lorawan/duty-cycle.md" class="page-edit" data-proofer-ignore><i class="fa fa-github"></i> Edit <strong>duty-cycle.md</strong></a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="panel page-side-nav page-affix">
+          <div class="panel-body">
+            <h5>LoRaWAN</h5>
+            <ul>
+              <li class=""><a href="/docs/lorawan/index.html">Overview</a>
+            <ul>
+                <li class=""><a href="/docs/lorawan/adr.html">Adaptive Data Rate</a>
+                </li>
+                <li class=""><a href="/docs/lorawan/address-space.html">Address Space</a>
+                </li>
+                <li class="active"><a href="/docs/lorawan/duty-cycle.html">Duty Cycle</a>
+                </li>
+                <li class=""><a href="/docs/lorawan/limitations.html">Limitations</a>
+                </li>
+                <li class=""><a href="/docs/lorawan/security.html">Security</a>
+                </li>
+            </ul>
+              </li>
+            <li class="page-side-nav-section"><span>Frequency Plans</span>
+            <ul>
+                <li class=""><a href="/docs/lorawan/frequencies-by-country.html">By Country</a>
+                </li>
+                <li class=""><a href="/docs/lorawan/frequency-plans.html">Overview</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-7">
+        <div class="panel">
+          <div class="panel-body page-content">
+            <h1 id="duty-cycle-for-lorawan-devices">Duty Cycle for LoRaWAN Devices</h1>
+<p><strong>Duty Cycle indicates the fraction of time a resource is busy.</strong></p>
+<p>When a single device transmits on a channel for 2 <em>time units</em> every 10 <em>time units</em>, this device has a duty cycle of 20%.</p>
+<p><img src="duty-cycle-single-channel.png" alt="Single Channel Duty Cycle" /></p>
+<p>However, if we also consider <em>channels</em>, things get a bit more complicated. When we have a device that transmits on 3 channels instead of one, each individual <em>channel</em> is still occupied for 2 <em>time units</em> every 10 <em>time units</em> (so 20%). However, the <em>device</em> is now transmitting for 6 <em>time units</em> every 10 <em>time units</em>, giving it a duty cycle of 60%.</p>
+<p><img src="duty-cycle-multi-channel.png" alt="Multiple Channel Duty Cycle" /></p>
+<p>In our European frequency plan, we have channels in different <em>sub-bands</em>, so when considering the duty cycle, we also have to consider these. Let’s say the 3 channels we used before, are in 2 different <em>sub-bands</em>. Each separate <em>channel</em> still has a duty cycle of 20%, the <em>device</em> still has a duty cycle of 60%, but we now see that <em>Band 1</em> is in use for 2 <em>time units</em> every 10 <em>time units</em> (20%), while <em>Band 2</em> is in use for 4 <em>time units</em> every 10 <em>time units</em> (40%).</p>
+<p><img src="duty-cycle-multi-band.png" alt="Multiple Band Duty Cycle" /></p>
+<h2 id="maximum-duty-cycle">Maximum Duty Cycle</h2>
+<p>The duty cycle of radio devices is often regulated by government. If this is the case, the duty cycle is commonly set to 1%, but make sure to check the regulations of your local government to be sure.</p>
+<p>In Europe, duty cycles are regulated by section 7.2.3 of the ETSI EN300.220 standard. This standard defines the following sub-bands and their duty cycles:</p>
+<ul>
+  <li><strong>g</strong> (863.0 – 868.0 MHz): 1%</li>
+  <li><strong>g1</strong> (868.0 – 868.6 MHz): 1%</li>
+  <li><strong>g2</strong> (868.7 – 869.2 MHz): 0.1%</li>
+  <li><strong>g3</strong> (869.4 – 869.65 MHz): 10%</li>
+  <li><strong>g4</strong> (869.7 – 870.0 MHz): 1%</li>
+</ul>
+<p>Additionally, the LoRaWAN specification dictates duty cycles for the <em>join frequencies</em>, the frequencies devices of all LoRaWAN-compliant networks use for over-the-air activations (OTAA) of devices. In most regions this duty cycle is set to <strong>1%</strong>.</p>
+<p>Finally, on The Things Network’s public community network, we have a <strong>Fair Access Policy</strong> that limits the <strong>uplink airtime</strong> to <strong>30 seconds per day (24 hours) per node</strong> and the <strong>downlink messages</strong> to <strong>10 messages per day (24 hours) per node</strong>. If you use a private network, these limits do not apply, but you still have to be compliant with the governmental and LoRaWAN limits.</p>
+<h2 id="compliance">Compliance</h2>
+<p>Every radio device must be compliant with the regulated duty cycle limits. This applies to <strong>both nodes and gateways</strong>.</p>
+<p>In practice, this means that you should program your nodes in such a way, that they stay within the limits. The easiest way to do this, is to calculate how much <em>airtime</em> each message consumes using one of the many <a href="https://docs.google.com/spreadsheets/d/1QvcKsGeTTPpr9icj4XkKXq4r2zTc2j0gsHLrnplzM3I/edit">airtime calculators</a> and use that information to choose a good transmit interval.</p>
+<p>Some radio modules (such as the RN2483) also enforce the duty cycle limits. If you exceed the limits, the module will complain with a message <code class="highlighter-rouge">no_free_ch</code>. Specifically, the RN2483 limits the duty cycle on a per-channel basis. This means that if you only have 1 channel configured, the module will start enforcing the duty cycle after the first message.</p>
+<p><em>The figure below shows enforcement on a resource with a 20% duty cycle limit</em></p>
+<p><img src="duty-cycle-single-channel-off-air.png" alt="Single Channel Off-air" /></p>
+<p>In the European band, a transmission on a channel within a frequency band, also influences the other frequencies in that band.</p>
+<p><em>The figure below shows enforcement on two bands, each with a 20% duty cycle limit</em></p>
+<p><img src="duty-cycle-multi-band-off-air.png" alt="Multiple Band Off-air" /></p>
+<p>As a per-channel duty cycle limit is easier to implement, you can also divide the sub-band duty cycle over the number of channels in that sub-band. So for example, in a sub-band with 8 channels and a duty cycle of 1%, each channel has a duty cycle of 1/8% (that’s 0.125%).</p>
+<p>This method is also implemented by the RN2483 module, and as a result, instead of seeing the <code class="highlighter-rouge">no_free_ch</code> when you send too quickly after the first message you can send multiple messages before all 8 channels are “blocked” and the duty cycle is enforced.</p>
+<p><em>The figure below shows enforcement on those same two bands, but enforced per channel</em></p>
+<p><img src="duty-cycle-multi-channel-off-air-2.png" alt="Multiple Band Off-air" /></p>
+<p><em>(note: channel 3 is blocked until slot 11)</em></p>
+          </div>
+        </div>
+      </div>
+      <div class="hidden-xs col-sm-2">
+        <div class="page-toc page-affix"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="lightbox" tabindex="-1" role="dialog">
+  <div class="modal-dialog text-center" role="document" style="width:auto;padding:20px;">
+    <a href="https://ttnstaticfile.blob.core.windows.net/static/ttn/media/logo/ttn-logo.png"><img class="modal-content modal-body" src="https://ttnstaticfile.blob.core.windows.net/static/ttn/media/logo/ttn-logo.png" alt="Zoom" /></a>
+  </div>
+</div>
+<script src="/docs/assets/js/page.js"></script>
+    </div>
+    <script src="https://www.thethingsnetwork.org/navbar.js"></script>
+    <script src="https://ttnstaticfile.blob.core.windows.net/static/common/js/ga.js"></script>
+  </body>
+</html>
