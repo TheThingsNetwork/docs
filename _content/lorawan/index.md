@@ -2,6 +2,8 @@
 title: LoRaWAN
 description: Background information about LoRaWAN
 image: /devices/icon.png
+sections:
+ - Frequency Plans
 zindex: 1100
 ---
 
