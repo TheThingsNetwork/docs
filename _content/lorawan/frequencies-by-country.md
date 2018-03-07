@@ -1,7 +1,8 @@
 ---
 title: By Country
 section: Frequency Plans
----
+zindex: 0
+--- 
 
 # LoRaWAN Frequency Plans and Regulations by Country.
 

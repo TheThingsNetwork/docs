@@ -1,6 +1,7 @@
 ---
 title: Overview
 section: Frequency Plans
+zindex: 100
 ---
 
 # LoRaWAN Frequencies Overview
