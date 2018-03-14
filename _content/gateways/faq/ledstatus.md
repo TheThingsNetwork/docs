@@ -1,3 +1,9 @@
+---
+title: Gateway LED Status
+hidden: false
+zindex: 200
+---
+
 # Gateway LED Status
 
 ## Possible Combinations
