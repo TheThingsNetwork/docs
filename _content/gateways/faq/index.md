@@ -32,7 +32,7 @@ Upon every power cycle and every 24 hours, the gateway checks for new firmware. 
 
 #### Q. My gateway stays in AP mode. What do I do?
 
-This behaviour occurs when there is a glitch in the wifi connection of the gateway. When this happens, your gateway will turn into an AP(Access Point) and devices you used to set up the gateway can connect to it (your laptop or phone). To avoid this issue, you should remove the gateway from the list of APs from your laptop/phone(Network->Things-Gateway-XXXX-> forget this network).
+This behaviour occurs when there is a glitch in the wifi connection of the gateway. When this happens, your gateway will turn into an AP(Access Point) and devices you used to set up the gateway can connect to it (your laptop or phone). To avoid this issue, you should remove the gateway from the list of APs from your laptop/phone(Network Settings-> Things-Gateway-XXXX -> forget this network).
 
 #### Q. I want to get in-depth insight/read debug messages of my gateway. Is that possible?
 The gateway has a UART port on which it prints debug messages. To see these messages you need to connect a device between the gateway and your computer that can read out a UART (e.g. an FTDI cable/board).
@@ -56,9 +56,9 @@ The gateway has a UART port on which it prints debug messages. To see these mess
 The LED lights are a great way of understanding the current state of the gateway. Click [here](ledstatus.md) for the complete list.
 
 
-#### Q. What if I take the gateway to a different location. Do I have repeat the configuration?
+#### Q. What steps do I need to take if I want to relocate my gateway?
 
-No you don't have to re-configure. For better accuracy, it is recommeded to however update the location settings in the Console (Settings->Location).
+There is no need to re-configure it in this case. However, for better accuracy, it is recommended to update the location settings in the Console (Settings->Location).
 
 #### Q. How do I connect to the WiFi access point of the gateway?
 
