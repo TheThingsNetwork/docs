@@ -57,6 +57,16 @@ var items = [{
     zindex: -1000
   }
 }, {
+  owner: 'TheThingsProducts',
+  repo: 'gateway',
+  branch: 'master',
+  path: 'doc/LEDs.md',
+  target: '_content/gateways/gateway/ledstatus.md',
+  yaml: {
+    title: 'Status LEDs',
+    zindex: 200
+  }
+}, {
   owner: 'TheThingsNetwork',
   repo: 'ttn',
   branch: 'master',

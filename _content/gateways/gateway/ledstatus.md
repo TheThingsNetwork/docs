@@ -1,20 +1,21 @@
 ---
-title: Gateway LED Status
-hidden: false
+title: Status LEDs
 zindex: 200
+source: 'https://github.com/TheThingsProducts/gateway/blob/master/doc/LEDs.md'
 ---
 
-# Gateway LED Status
+# The Things Gateway Status LEDs
 
 ## Possible Combinations
 
+
 | **LED 1** | **LED 2**  | **LED 3**  | **LED 4**  | **Status** |
 | --------- | ---------- | ---------- | ---------- | ---------- |
-| On        | Slow blink |       -    |     -      | Connecting to the internet |
-| On        | Fast blink |      -     |     -      | Could not connect to the internet |
-| On        | On         | Slow blink |       -    | Activating |
-| On        | On         | Fast blink |       -    | Could not activate (restart activation from step 1) |
-| On        | On         | On         |     -      | Activated |
+| On        | Slow blink |            |            | Connecting to the internet |
+| On        | Fast blink |            |            | Could not connect to the internet |
+| On        | On         | Slow blink |            | Activating |
+| On        | On         | Fast blink |            | Could not activate (restart activation from step 1) |
+| On        | On         | On         |            | Activated |
 | On        | On         | On         | On         | Connected to the server |
 
 ## Details
@@ -22,8 +23,8 @@ zindex: 200
 | **LED** | **State** | **Reason** | **Cause** | **User Action** |
 | ------- | --------- | ---------- | --------- | ------------- |
 | **1 - Power** | Off | No software is running | No power | Make sure the device is powered |
-| | Off| - | Incorrect firmware loaded | Make sure the correct firmware is loaded |
-| | Slow | Software update in progress | -| Wait |
+| | | | Incorrect firmware loaded | Make sure the correct firmware is loaded |
+| | Slow | Software update in progress | | Wait |
 | | On | Software is loaded and running |
 | **2 - Internet** | Slow | Checking for internet |
 | | Fast | No Ethernet or WiFi connection | No Ethernet link and WiFi connection failed; only possible way to connect is via the gateway’s WiFi access point (AP) | Connect to gateway's AP |
