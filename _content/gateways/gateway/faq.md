@@ -43,13 +43,16 @@ The gateway has a UART port on which it prints debug messages. To see these mess
     ![FTDI Board](ftdi.jpg)
 
     **UART pins on the gateway**
-    ![gtw-uart](gtw-uart.jpg)
+    ![Gateway UART pins](gtw-uart.jpg)
 
     **Sample Gateway to UART connection**
-    ![FTDI Board](sampleconn.png)
+    ![Sample connection](uart-sample.jpg)
 
+- Start a terminal session (on Windows use PuTTY; on macOS or Linux use `screen`) to UART with 115200@8N:
 
-- Start a terminal session (putty: windows, terminal: macOS/linux) to UART with 115200@8N
+    **Sample output on "screen"**
+    ![Sample output on "screen"](screen-macos.png)
+
 
 #### Q. What do the LED lights on the gateway indicate?
 
