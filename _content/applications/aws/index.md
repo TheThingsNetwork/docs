@@ -19,3 +19,5 @@ See [Quick Start](./quick-start.md) on how to get started.
 ## Video
 
 [![Getting started with AWS IoT](https://img.youtube.com/vi/XuMv258g1kY/0.jpg)](https://www.youtube.com/watch?v=XuMv258g1kY)
+
+Find the Arduino Sketch for The Things Node [here](https://github.com/TheThingsNetwork/docs/blob/master/_content/applications/aws/AWS-The-Things-Node.ino).
