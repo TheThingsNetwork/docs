@@ -14,3 +14,8 @@ This integration runs in your AWS account and security context and can connect t
 ## Getting Started
 
 See [Quick Start](./quick-start.md) on how to get started.
+
+
+## Video
+
+[![Getting started with AWS IoT](https://img.youtube.com/vi/XuMv258g1kY/0.jpg)](https://www.youtube.com/watch?v=XuMv258g1kY)
