@@ -14,8 +14,10 @@ Following a [successful Kickstarter](https://www.kickstarter.com/projects/419277
 
 The Things Gateway enables devices such as sensors and embedded computers to connect to the internet. With an easy to connect process, you are creating the most substantial aspect of your IoT data network. Activate the gateway in just 5 minutes and create your own local network. With the capacity to serve thousands of nodes, the gateway is the main building block of your connected network. This version operates at 868MHz for use in the EU and 915Mhz for use in US.
 
-# Video
-<iframe width="560" height="315" src="https://www.youtube.com/embed/cJNK4y1is2Q" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+## Getting started video
+
+[![Getting started with The Things Gateway](http://img.youtube.com/vi/cJNK4y1is2Q/0.jpg)](https://www.youtube.com/watch?v=cJNK4y1is2Q)
+
 
 **Salient Features:**
 * Fastest way to get started with LoRaWAN (Long Range WAN)
