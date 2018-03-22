@@ -31,6 +31,7 @@ Now load the hex file from your PC. The IPE checks it for validity.
    **Load Hex File**
     ![loadhex](ipe_3_selected_hex.png)
 
+> In case you encounter a warning `hexfile contains code that is located at addresses that do not exist on the device`, you should still be able to continue with programming.
 
 #### 5. Start Programming
 Now click `Program` to start the reprogramming of the gateway.
