@@ -28,8 +28,9 @@ Click the `connect` button next to the Tool to allow the IPE to connect to the P
 #### 4. Load Hex File
 Now load the hex file from your PC. The IPE checks it for validity.
 
-   **Loac Hex File**
+   **Load Hex File**
     ![loadhex](ipe_3_selected_hex.png)
+
 
 #### 5. Start Programming
 Now click `Program` to start the reprogramming of the gateway.
