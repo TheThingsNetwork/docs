@@ -1,6 +1,5 @@
 ---
 title: Academic Research
-description: Academic research on LoRa and LoRaWAN
 ---
 
 # Academic Research
