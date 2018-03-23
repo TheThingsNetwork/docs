@@ -6,9 +6,13 @@ title: Academic Research
 
 A lot of research is conducted on LoRa and LoRaWAN. This page is created to better share the conducted academic research and created scientific articles. 
 
+*Please help to extend this list by adding new relevant papers and articles, and by adding the right links to all sources [update this file](https://github.com/TheThingsNetwork/docs/edit/master/_content/lorawan/academic.md).* 
+
+
+
 Title | Author | Journal/Proceedings | Year |
 | -------------------- | ---------- | ---------- | ------ |
-A Fair Adaptive Data Rate Algorithm for LoRaWAN | Abdelfadeel, K.Q., Cionca, V. and Pesch, D. | arXiv preprint arXiv:1801.00522 | 2018 | 
+[A Fair Adaptive Data Rate Algorithm for LoRaWAN](https://arxiv.org/abs/1801.05411) | Abdelfadeel, K.Q., Cionca, V. and Pesch, D. | arXiv preprint arXiv:1801.00522 | 2018 | 
 [Understanding the Limits of LoRaWAN](https://arxiv.org/pdf/1607.08011.pdf) | Adelantado, F., Vilajosana, X., Tuset-Peiro, P., Martinez, B., Melia-Segui, J. and Watteyne, T. | IEEE Communications Magazine Vol. 55(9), pp. 34-40 | 2017 |
 Comparison of 6LoWPAN and LPWAN for the Internet of Things | Al-Kashoash, H. and Kemp, A.H. | 	Australian Journal of Electrical and Electronics Engineering Vol. 13(4), pp. 268-274 | 2016 |
 LoRa protocol performance assessment in critical noise conditions | Angrisani, L., Arpaia, P., Bonavolontà, F., Conti, M. and Liccardo, A. | Research and Technologies for Society and Industry (RTSI), 2017 IEEE 3rd International Forum on, pp. 1-5 | 2017|
