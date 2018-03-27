@@ -23,6 +23,7 @@ LoRaWAN in the wild: Measurements from the things network | Blenn, N. and Kuiper
 LoRa transmission parameter selection| Bor, M. and Roedig, U.	 | Proceedings of the 13th IEEE International Conference on Distributed Computing in Sensor Systems (DCOSS), Ottawa, ON, Canada, pp. 5-7  | 2017 |
 LoRa for the Internet of Things | Bor, M., Vidler, J.E. and Roedig, U. |  | 2016 |
 [Do LoRa low-power wide-area networks scale?](https://www.researchgate.net/publication/310200794) | Bor, M.C., Roedig, U., Voigt, T. and Alonso, J.M. | Proceedings of the 19th ACM International Conference on Modeling, Analysis and Simulation of Wireless and Mobile Systems, pp. 59-67  | 2016 |
+[Modeling the Energy Performance of LoRaWAN](http://www.mdpi.com/1424-8220/17/10/2364) | Casals, L., Mir, B., Vidal, R. and Gomez, C. | Sensors | 2017 |
 An Experimental Evaluation of the Reliability of LoRa Long-Range Low-Power Wireless Communication | Cattani, M., Boano, C.A. and Römer, K. | Journal of Sensor and Actuator Networks Vol. 6(2), pp. 7 	 | 2017 |
 Long-range communications in unlicensed bands: The rising stars in the IoT and smart city scenarios | Centenaro, M., Vangelista, L., Zanella, A. and Zorzi, M. | IEEE Wireless Communications Vol. 23(5), pp. 60-67 | 2016 |
 Empowering Low-Power Wide Area Networks in Urban Settings | Eletreby, R., Zhang, D., Kumar, S. and Yağan, O. | Proceedings of the Conference of the ACM Special Interest Group on Data Communication, pp. 309-321 | 2017 |
