@@ -12,9 +12,10 @@ The full sketch of this Quick Start is also included in TheThingsNetwork library
 Let's start by setting up the software we'll need to program your device.
 
 1. [Download](https://www.arduino.cc/en/Main/Software) and install the latest Arduino Software (IDE).
-2. Navigate to **Sketch > Include Library > Manage Libraries...**.
-3. Search for **TheThingsNetwork** and click the result to select it.
-4. Click the **Install** button which should appear:
+2. Install TheThingsNetwork Device library, follow the instructions in the link: [Installation Instructions](https://github.com/samuel-puschacher/TTP_Arduino_Boards)
+3. Navigate to **Sketch > Include Library > Manage Libraries...**.
+4. Search for **TheThingsNetwork** and click the result to select it.
+5. Click the **Install** button which should appear:
 
   ![Library Manager](../arduino/arduino_library.png)
 
@@ -26,7 +27,7 @@ The Arduino IDE will notify you of updates for the IDE and library automagically
 Next, connect your device to the IDE over USB.
 
 1.  Use the included Micro-USB cable to connect The Things Uno to an USB port of your computer.
-2.  In Arduino IDE select **Tools > Board > Arduino Leonardo**.
+2.  In Arduino IDE select **Tools > Board > The Things UNO**.
 3.  Navigate to **Tools > Port** and select the port that identifies as **Arduino Leonardo**.
 
     ![port](port.png)

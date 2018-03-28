@@ -8,8 +8,9 @@ This guide will walk you through programming your The Things Node with your firs
 ## Setup Arduino IDE
 
 1.  Follow [Arduino / IDE Setup & Usage](../arduino/ide.md) to setup the IDE.
-2.  Download the `TheThingsNetwork` and `TheThingsNode` libraries via **Sketch > Include Library v Manage Libraries...**. Search for `TheThings` in the search bar. Install the latest versions of both `TheThingsNetwork` and `TheThingsNode`.
-3.  Follow SparkFun's [Installation Instructions](https://github.com/sparkfun/Arduino_Boards#installation-instructions) to add the additional board manager and install the **SparkFun AVR Boards**.
+2.  Install TheThingsNetwork Device library, follow the instructions in the link: [Installation Instructions](https://github.com/samuel-puschacher/TTP_Arduino_Boards)
+3.  Download the `TheThingsNetwork` and `TheThingsNode` libraries via **Sketch > Include Library v Manage Libraries...**. Search for `TheThings` in the search bar. Install the latest versions of both `TheThingsNetwork` and `TheThingsNode`.
+
 
 ## Connect your Device
 
@@ -24,9 +25,8 @@ This guide will walk you through programming your The Things Node with your firs
     > Some Micro-USB cables might not fit the limited space between the battery compartment and the casing. Also make sure you use a cable that supports data, not just power. The one we ship with The Things Uno should work.
     
 3.  Connect the USB cable to your computer.
-4.  In the Arduino IDE, select **Tools > Boards > SparkFun Pro Micro**.
-5.  Select **Tools > Processor > ATmega32U4 (3.3V, 8Mhz)**.
-6.  Select the Node's Serial Port under **Tools > Port**.
+4.  In the Arduino IDE, select **Tools > Boards > TheThingsNode**.
+5.  Select the Node's Serial Port under **Tools > Port**.
 
     > Unlike The Things Uno, which the Arduino IDE recognizes as *Arduino Leonardo*, it does not always recognize the Node as *SparkFun Pro Micro*. You will have to see what `/dev/*usb*` (Mac/Linux) or `COM` (Windows) option appears in the menu after connecting the Node.
     
