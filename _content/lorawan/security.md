@@ -29,3 +29,16 @@ This security measure has consequences for development devices, which often are 
 ## Metadata
 
 > TODO: Explain what kind of information can not be encrypted
+Anybody with network access can ‘sniff’ the back-haul link between any Gateway and the (TTN) Network server.  All packets can be captured, recorded and analysed – after all this is the Internet and packets have well known formats.  This apparently alarming situation can be demonstrated by a real world example taken during the course of writing this article.
+
+The sniffing command used is tcpdump – a basic tool.  It can collect all network traffic but can have filters applied that are used to narrow down any sniff to look for specific parameters such as source address, destination address and port numbers. 
+
+A typical single gateway transmission can be seen below where the contents has been converted for easy human consumption.  A quick scan through the content reveals the date and time of the transmission along with other parameters that will be familiar from the gateway or applications pages of the main TTN pages. It’s also possible to see that the node that sent the original LoRa packet to the gateway is in very close proximity. 
+
+tcpdump 'port 1700' -A
+
+14:47:45.279919 IP <Gateway Address> <ttn server address port=1700>
+
+{"rxpk":[{"tmst":789603980,"time":"2018-03-29T13:47:45.279764Z","chan":6,"rfch":0,"freq":867.700000,"stat":1,"modu":"LORA","datr":"SF7BW125","codr":"4/5","lsnr":10.8,"rssi":-33,"size":19,"data":"QOEnASYA+RIDabg30ue8KNKS0Q=="}]}
+
+The important point is that the section following the metadata -  data is not in plain text.  There are two reasons for this.  The first is that the data packet is 64 bit encoded, to minimise the data packet size but even when de-encoded the contents are further encrypted by the 128 bit AES imposed by the LoRaWAN layer.  Imposing encryption ensures that all packets are totally intelligible from end to end.  
