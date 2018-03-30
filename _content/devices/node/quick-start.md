@@ -8,7 +8,7 @@ This guide will walk you through programming your The Things Node with your firs
 ## Setup Arduino IDE
 
 1.  Follow [Arduino / IDE Setup & Usage](../arduino/ide.md) to setup the IDE.
-2.  Install TheThingsNetwork Device library, follow the instructions in the link: [Installation Instructions](https://github.com/samuel-puschacher/TTP_Arduino_Boards)
+2.  Install TheThingsNetwork Device library, follow the instructions in the link: [Installation Instructions](https://github.com/samuel-puschacher/arduino-boards)
 3.  Download the `TheThingsNetwork` and `TheThingsNode` libraries via **Sketch > Include Library v Manage Libraries...**. Search for `TheThings` in the search bar. Install the latest versions of both `TheThingsNetwork` and `TheThingsNode`.
 
 
