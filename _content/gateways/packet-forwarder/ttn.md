@@ -16,7 +16,7 @@ The TTN Packet Forwarder is a new packet forwarder, developed by the Things Netw
 
 ## Installation
 
-Currently, we have installation guides available to install the packet forwarder for [Multitech Conduit](https://github.com/TheThingsNetwork/packet_forwarder/blob/master/docs/INSTALL_INSTRUCTIONS/MULTITECH.md), [Kerlink IoT Station](https://github.com/TheThingsNetwork/packet_forwarder/blob/master/docs/INSTALL_INSTRUCTIONS/KERLINK.md) and [Raspberry Pi + iC880a](https://github.com/TheThingsNetwork/packet_forwarder/blob/master/docs/INSTALL_INSTRUCTIONS/KERLINK.md) setups.
+Currently, we have installation guides available to install the packet forwarder for [Multitech Conduit](https://github.com/TheThingsNetwork/packet_forwarder/blob/master/docs/INSTALL_INSTRUCTIONS/MULTITECH.md), [Kerlink IoT Station](https://github.com/TheThingsNetwork/packet_forwarder/blob/master/docs/INSTALL_INSTRUCTIONS/KERLINK.md) and [Raspberry Pi + iC880a](https://github.com/TheThingsNetwork/packet_forwarder/blob/master/docs/INSTALL_INSTRUCTIONS/IMST_RPI.md) setups.
 
 https://github.com/TheThingsNetwork/packet_forwarder/blob/master/docs/INSTALL_INSTRUCTIONS/IMST_RPI.md
 
