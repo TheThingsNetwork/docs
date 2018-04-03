@@ -231,7 +231,7 @@ For discussions about the frequency plans in different countries, see the posts 
 | Papua New Guinea
 | Paraguay | US902-928 | |
 | Peru | US902-928 | |
-| Philippines
+| Philippines | EU863-870<br />EU433 | **NOTE:** This is not a license free band. If you connect to a commercial telecoms operator you are however allowed to use thier frequencies. Please check the rules and obtain a license before running a gateway. |
 | Poland | EU863-870<br />EU433 | CEPT Rec. 70-03 |
 | Portugal | EU863-870<br />EU433 | CEPT Rec. 70-03 |
 | Puerto Rico | US902-928 | |
