@@ -403,9 +403,9 @@ We'll prepare your device to receive a message in response.
     
     And... there was light! 💡
     
-    ![The Things Uno with LED on](led_on.png)
+    ![The Things Uno with LED on](led_on.jpg)
     
-    > Note: The LED is labelled 13 next to the power supply, which is much brighter in the image. 
+    > Note: The LED is labelled `13` next to the power supply, in the image above. 
 
 5.  From the device screen, select **Data** from the top right menu and you should see that the next message the device sends indeed confirms the LED is now on:
 
