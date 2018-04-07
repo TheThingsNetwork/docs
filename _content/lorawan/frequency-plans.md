@@ -32,7 +32,16 @@ Downlink:
 
 ## EU433
 
-> No frequency plan yet. Submit a proposal!
+> Proposed frequency plan.
+
+1. **434.1** - SF7BW125 to SF12BW125
+2. **434.3** - SF7BW125 to SF12BW125
+3. **434.5** - SF7BW125 to SF12BW125
+4. **433.125** - SF7BW125 to SF12BW125
+5. **433.3** - SF7BW125 to SF12BW125
+6. **433.5** - SF7BW125 to SF12BW125
+7. **433.7** - SF7BW125 to SF12BW125
+8. **433.9** - SF7BW125 to SF12BW125
 
 ## US902-928
 
