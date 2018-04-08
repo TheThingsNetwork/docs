@@ -18,6 +18,11 @@ Getting started with The Things Gateway is a 3 step process:
 - Second step - Go to the website (https://ttn.fyi/activate)
 - Third step - Follow the instructions on the website
 
+#### Q. How can I open/close The Things Gateway?
+
+To open the gateway put it down with the antenna socket at the top and (gently) lift the left and right sides of the white shield. For a video instruction see https://youtu.be/cJNK4y1is2Q?t=45s
+
+To close the gateway align the lid and push firmly at the sides only you hear it snap in place.
 
 #### Q. How can I reset my gateway?
 
