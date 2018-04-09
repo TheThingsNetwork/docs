@@ -31,12 +31,12 @@
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-04-09T08:08:08+00:00" />
+<meta property="article:published_time" content="2018-04-09T08:29:04+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"description":"Troubleshooting The Things Node is based on the SparkFun Pro Micro - 3.3V/8Mhz. A lot of their resources apply to our board as well. In this section we’ll discuss some common issues and link to relevant resources from SparkFun.","url":"https://www.thethingsnetwork.org/docs/devices/node/troubleshooting.html","headline":"Troubleshooting","dateModified":"2018-04-09T08:08:08+00:00","datePublished":"2018-04-09T08:08:08+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/devices/node/troubleshooting.html"},"@context":"http://schema.org"}</script>
+{"description":"Troubleshooting The Things Node is based on the SparkFun Pro Micro - 3.3V/8Mhz. A lot of their resources apply to our board as well. In this section we’ll discuss some common issues and link to relevant resources from SparkFun.","url":"https://www.thethingsnetwork.org/docs/devices/node/troubleshooting.html","headline":"Troubleshooting","dateModified":"2018-04-09T08:29:04+00:00","datePublished":"2018-04-09T08:29:04+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/devices/node/troubleshooting.html"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -143,7 +143,7 @@
 <h2 id="serial-port-not-showing-up-mac-os">Serial Port not showing up (Mac OS)</h2>
 <p>Since Mac OS El Capitan, there have been <a href="https://www.google.com/search?q=arduino+usb+el+capitan+unstable">many reports</a> with all kinds of Arduino devices where the serial port does not show up. Both <a href="https://learn.sparkfun.com/tutorials/how-to-install-ftdi-drivers/all#yosemite">SparkFun</a> and the Google search we linked give all kinds of suggestions for possible fixes. However, the simplest solution that always seems to work is to connect the Arduino via a USB hub.</p>
 <h2 id="serial-port-shows-up-but-uploading-code-fails-linux">Serial Port shows up, but uploading code fails (Linux)</h2>
-<p>Try the <a href="http://www.arduino.org/learning/getting-started/arduino-ide-on-linux-based-os">steps documented on the Arduino Website</a>. Normally the problem is another program also trying to access the serial port. <strong>modemmanager</strong> and <strong>usb_modeswitch</strong> are common culprits of this.</p>
+<p>Try the <a href="https://www.arduino.cc/en/Guide/Linux#toc6">steps documented on the Arduino Website</a>. Normally the problem is another program also trying to access the serial port. <strong>modemmanager</strong> and <strong>usb_modeswitch</strong> are common culprits of this.</p>
 <h2 id="bricked">Bricked</h2>
 <p>When your Things Node or Things Uno is bricked, the serial port is also not showing up. Following the common steps as laid out above does not work when the device is bricked. “Bricked” basically means that the USB-serial-port on the board is not active, meaning that you do not have a way to program it.</p>
 <p>The most common cause of “bricking” is uploading code to the device that was verified and uploaded while an incorrectly board was chosen in the Arduino IDE. This is such an easy mistake which happens to the best of us, especially if you are switching between working on your The Things Uno and The Things Node.</p>
