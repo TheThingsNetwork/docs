@@ -14,7 +14,7 @@ Connect the programmer to the `MCU_PROG` port of the gateway as shown below
     ![Programmer](programmer.jpg)
 
 #### 2. Selection
-Once connected, open the MPLAB IPE on your computer and select the device
+Once connected, open the MPLAB IPE on your computer and select the device `PIC32MZ2048EFM144`.
 
    **Selection**
     ![Selection](ipe_1_selected.png)
