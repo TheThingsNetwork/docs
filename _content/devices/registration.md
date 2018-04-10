@@ -8,7 +8,9 @@ Before a device can communicate via The Things Network you need to register it w
 
 To use the default Over The Air Activation you will need to register your device with its Device EUI. See the documentation of your device for instructions, as for example that of [The Things Uno](uno/quick-start.md#get-your-device-eui).
 
-1.  In the Console, from the Application or an application's Devices screen, click **register device**.
+1.  Log in and Open the [Console](https://console.thethingsnetwork.org/) by clicking your account and selecting Console. If you don't have an account yet you can register for free. Each device is registered to an Application. Before you can add a device, [add an application](https://console.thethingsnetwork.org/applications/add). For more information on how to do this have a look a the [**Applications**](https://www.thethingsnetwork.org/docs/applications/add.html) section.
+
+2.  Open the application to which you wish to add a device and click **register device**.
 
     * For **Device ID**, choose a - for this application - unique ID of lower case, alphanumeric characters and nonconsecutive `-` and `_`.
     * For **Device EUI**, copy-paste the one you retrieved from your device.
@@ -20,7 +22,7 @@ To use the default Over The Air Activation you will need to register your device
 
     ![Register Device (OTAA)](register-device.png)
 
-4.  Click **Register** to finish.
+3.  Click **Register** to finish.
 
     You will be redirected to the newly registered device where you can find the generated **App Key** needed to activate the device.
 
