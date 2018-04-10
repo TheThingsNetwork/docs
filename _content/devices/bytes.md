@@ -68,7 +68,7 @@ On the device we'd encode this as:
 
 ```c
 int myVal = 3450;
-int myBase = 3400;
+const int myBase = 3400;
 byte payload[] = { myVal - myBase };
 ```
 
@@ -94,7 +94,7 @@ int myBase = 3400;
 int myVal = payload[0] + myBase;
 ```
 
-As you can see as long as the minimum value is known and the range of our value is 256 or less, we can still use a single byte without breaking a sweat. 😅
+As you can see as long as the minimum value is known and the range of our value is 256 or less, we can still use a single byte without breaking a sweat. Be sure to check your value is not bigger than 3655 to prevent nasty bugs.😅
 
 ### 2. Round
 Now what if the range is bigger than 256? The next question would be if you need to know the exact value. If your sensor has a range of 400 and an error margin of 2, you wouldn't lose any meaning by rounding the value. Both 299 and 300 would round to 150, which is fine.
@@ -152,7 +152,7 @@ bytes[1] = (myVal & 0x00FF);
 Decode (Arduino):
 
 ```c
-int myVal = (payload[0] << 8)
+int myVal = ((int)(payload[0]) << 8)
            + payload[1];
 ```
 
@@ -167,19 +167,19 @@ Encode (Arduino):
 ```c
 long lng = 200000L;
 byte payload[4];
-payload[0] = (int) ((lng & 0xFF000000) >> 24 );
-payload[1] = (int) ((lng & 0x00FF0000) >> 16 );
-payload[2] = (int) ((lng & 0x0000FF00) >> 8  );
-payload[3] = (int) ((lng & 0X000000FF)       );
+payload[0] = (byte) ((lng & 0xFF000000) >> 24 );
+payload[1] = (byte) ((lng & 0x00FF0000) >> 16 );
+payload[2] = (byte) ((lng & 0x0000FF00) >> 8  );
+payload[3] = (byte) ((lng & 0X000000FF)       );
 ```
 
 Decode (payload functions):
 
 ```js
-decoded.myVal = (bytes[0] << 24)
-              + (bytes[1] << 16)
-              + (bytes[2] << 8)
-              + (bytes[3]);
+decoded.myVal = ((long)(bytes[0]) << 24)
+              + ((long)(bytes[1]) << 16)
+              + ((long)(bytes[2]) << 8)
+              + ((long)(bytes[3]));
 ```
 
 ## How to send negative numbers?
@@ -278,14 +278,14 @@ memcpy(payloadA,
 
 ## How to send text?
 
-The short answer is: **don't**. Text uses a lot of bytes. [Unicode](https://en.wikipedia.org/wiki/Unicode) defines more than 128000 characters, so that would take 3 bytes per character! There are rarely good reasons to use text instead of numbers, apart from maybe transmitting some user input.
+The short answer is: **don't**. Text uses a lot of bytes. [Unicode](https://en.wikipedia.org/wiki/Unicode) defines more than 128000 characters, so that would take 3 bytes per character! There are rarely good reasons to use text instead of numbers, apart from maybe transmitting some user input. Most of the time only the Alpha-numeric characters suffice, in that case you can get away by using [ASCII characters](https://en.wikipedia.org/wiki/ASCII#Printable_characters) that only use a single byte per character. Every string must be terminated with a NULL (0x00, '\0') character to indicate the string has ended.
 
 You didn't hear it from me, but here's how you'd encode a string:
 
 ```c
 var myVal = "Hello";
 var l = myVal.length();
-byte payload[l + 1];
+byte payload[l + 1]; //1 is added for the NULL character at the end of the string
 myVal.getBytes(payload, l + 1);
 ```
 
