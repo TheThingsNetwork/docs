@@ -25,7 +25,7 @@ This is a list of commercial LoRaWAN gateways currently available for purchase. 
 
 + [Multitech Conduit](../multitech): The Multitech Conduit offers a very good price/quality compromise. It has recent software, with multiple programmation interface (SDK, Python environment...). It comes in multiple models: AEP, mLinux, cellular...
 
-+ [Multitech Conduit Access Point](http://www.multitech.net/developer/products/multiconnect-conduit-access-point/): The Access Point is the successor of the Multitech Conduit. It is very close to the Conduit, but offers an SPI interface to the LoRa concentrator, whereas the Conduit interfaced through USB.
++ [Multitech Conduit Access Point](http://www.multitech.net/developer/products/multiconnect-conduit-access-point/): The Access Point is the smaller sibling of the Multitech Conduit. It uses the same hardware components as the Conduit, but offers an SPI interface to the LoRa concentrator, whereas the Conduit interfaced through USB.
 
 ## Lorrier
 
