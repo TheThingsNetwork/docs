@@ -53,7 +53,7 @@ Configure the autoconnect in `/knet/knetd.xml`
   
 **Warning:** There is a bug in the software. When `GPRSUSER` and `GPRSPASSWORD` needs to stay empty the Kerlink does funny things and no connection is made. To resolve this problem, please apply [this patch](https://github.com/TheThingsNetwork/kerlink-station-firmware/blob/master/dota/dota_update_gprs_script.tar.gz?raw=true).
 
-**Troubleshooting:** The gateway goes offline when the GPRS connection drops and doesn't restart automatically. A workaround is to restart the packet forwarder when this happens. You can do so by adding the line: `/usr/bin/killall poly_pkt_fwd` at the bottom of the files `/etc/ppp/ip-up` and `/etc/ppp/ip-down`.
+**Troubleshooting:** The gateway goes offline and doesn't restart automatically when the GPRS connection drops. A workaround is to restart the packet forwarder when this occurs. You can do so by adding the line: `/usr/bin/killall poly_pkt_fwd` at the bottom of the files `/etc/ppp/ip-up` and `/etc/ppp/ip-down`.
 
 
 ## Provider Settings
