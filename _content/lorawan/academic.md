@@ -27,8 +27,7 @@ LoRa for the Internet of Things | Bor, M., Vidler, J.E. and Roedig, U. |  | 2016
 An Experimental Evaluation of the Reliability of LoRa Long-Range Low-Power Wireless Communication | Cattani, M., Boano, C.A. and Römer, K. | Journal of Sensor and Actuator Networks Vol. 6(2), pp. 7 	 | 2017 |
 Long-range communications in unlicensed bands: The rising stars in the IoT and smart city scenarios | Centenaro, M., Vangelista, L., Zanella, A. and Zorzi, M. | IEEE Wireless Communications Vol. 23(5), pp. 60-67 | 2016 |
 Empowering Low-Power Wide Area Networks in Urban Settings | Eletreby, R., Zhang, D., Kumar, S. and Yağan, O. | Proceedings of the Conference of the ACM Special Interest Group on Data Communication, pp. 309-321 | 2017 |
-Low power wide area network analysis: Can lora scale? | Georgiou, O. and Raza, U.	 | IEEE Wireless Communications Letters
-Vol. 6(2), pp. 162-165 | 2017 |
+Low power wide area network analysis: Can lora scale? | Georgiou, O. and Raza, U.	 | IEEE Wireless Communications Letters Vol. 6(2), pp. 162-165 | 2017 |
 Indoor signal propagation of LoRa technology | Gregora, L., Vojtech, L. and Neruda, M. | Mechatronics-Mechatronika (ME), 2016 17th International Conference on, pp. 1-4 | 2016 |
 Effects of Shadowing on LoRa LPWAN Radio Links | Habaebi, M.H., Chowdhury, I.J., Islam, M.R. and Zainal, N.A.B.	 | International Journal of Electrical and Computer Engineering (IJECE) Vol. 7(6), pp. 2970-2976 	 | 2017 |
 [Experimental evaluation of LoRa(WAN) in indoor and outdoor environments](http://essay.utwente.nl/71133/) | Hakkenberg, C. | University of Twente | 2016 |
