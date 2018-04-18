@@ -12,9 +12,9 @@ A lot of research is conducted on LoRa and LoRaWAN. This page is created to bett
 
 Title | Author | Journal/Proceedings | Year |
 | -------------------- | ---------- | ---------- | ------ |
-[A Fair Adaptive Data Rate Algorithm for LoRaWAN](https://arxiv.org/abs/1801.05411) | Abdelfadeel, K.Q., Cionca, V. and Pesch, D. | arXiv preprint arXiv:1801.00522 | 2018 | 
+[A Fair Adaptive Data Rate Algorithm for LoRaWAN](https://arxiv.org/abs/1801.00522) | Abdelfadeel, K.Q., Cionca, V. and Pesch, D. | arXiv preprint arXiv:1801.00522 | 2018 | 
 [Understanding the Limits of LoRaWAN](https://arxiv.org/pdf/1607.08011.pdf) | Adelantado, F., Vilajosana, X., Tuset-Peiro, P., Martinez, B., Melia-Segui, J. and Watteyne, T. | IEEE Communications Magazine Vol. 55(9), pp. 34-40 | 2017 |
-Comparison of 6LoWPAN and LPWAN for the Internet of Things | Al-Kashoash, H. and Kemp, A.H. | 	Australian Journal of Electrical and Electronics Engineering Vol. 13(4), pp. 268-274 | 2016 |
+[Comparison of 6LoWPAN and LPWAN for the Internet of Things](https://www.researchgate.net/publication/316236998_Comparison_of_6LoWPAN_and_LPWAN_for_the_Internet_of_Things) | Al-Kashoash, H. and Kemp, A.H. | 	Australian Journal of Electrical and Electronics Engineering Vol. 13(4), pp. 268-274 | 2016 |
 LoRa protocol performance assessment in critical noise conditions | Angrisani, L., Arpaia, P., Bonavolontà, F., Conti, M. and Liccardo, A. | Research and Technologies for Society and Industry (RTSI), 2017 IEEE 3rd International Forum on, pp. 1-5 | 2017|
 A study of LoRa: Long range & low power networks for the internet of things | Augustin, A., Yi, J., Clausen, T. and Townsley, W.M. | Sensors Vol. 16(9), pp. 1466 | 2016 |
 On the limits of lorawan channel access | Bankov, D., Khorov, E. and Lyakhov, A.	 | Engineering and Telecommunication (EnT), 2016 International Conference on, pp. 10-14 | 2016 |
