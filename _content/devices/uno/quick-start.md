@@ -77,8 +77,8 @@ Let's program your device with a so-called sketch.
       loraSerial.begin(57600);
       debugSerial.begin(9600);
       
-      // Initialise LED output pin
-      pinMode(LED_BUILTIN,OUTPUT);
+      // Initialize LED output pin
+      pinMode(LED_BUILTIN, OUTPUT);
     
       // Wait a maximum of 10s for Serial Monitor
       while (!debugSerial && millis() < 10000);
