@@ -12,6 +12,8 @@ A lot of research is conducted on LoRa and LoRaWAN. This page is created to bett
 
 Title | Author | Journal/Proceedings | Year |
 | -------------------- | ---------- | ---------- | ------ |
+[Resource Efficiency in Low-Power Wide-Area Networks for IoT Applications](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8254800) | Z. Qin and J. McCann. | IEEE Global Communications Conference (GLOBECOM), pp. 1-7.| 2017 |
+[Modelling and analysis of low-power wide-area networks](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7996589) | Z. Qin, y. Liu, G. Y. Li, and J. McCann. | IEEE International Conference on Communications (ICC), pp. 1-7.| 2017 |
 [A Fair Adaptive Data Rate Algorithm for LoRaWAN](https://arxiv.org/abs/1801.00522) | Abdelfadeel, K.Q., Cionca, V. and Pesch, D. | arXiv preprint arXiv:1801.00522 | 2018 | 
 [Understanding the Limits of LoRaWAN](https://arxiv.org/pdf/1607.08011.pdf) | Adelantado, F., Vilajosana, X., Tuset-Peiro, P., Martinez, B., Melia-Segui, J. and Watteyne, T. | IEEE Communications Magazine Vol. 55(9), pp. 34-40 | 2017 |
 [Comparison of 6LoWPAN and LPWAN for the Internet of Things](https://www.researchgate.net/publication/316236998_Comparison_of_6LoWPAN_and_LPWAN_for_the_Internet_of_Things) | Al-Kashoash, H. and Kemp, A.H. | 	Australian Journal of Electrical and Electronics Engineering Vol. 13(4), pp. 268-274 | 2016 |
