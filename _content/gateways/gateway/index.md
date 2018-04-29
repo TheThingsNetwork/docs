@@ -28,8 +28,8 @@ The Things Gateway enables devices such as sensors and embedded computers to con
 * Can serve thousands of nodes (depending on traffic)
 
 
-> [Order your The Things Gateway now!](https://shop.thethingsnetwork.com/index.php/product/the-things-gateway/)
-> You can also place an order through our partner network to get next day delivery. At the moment this method of delivery is only available in Europe through [Farnell](http://uk.farnell.com/the-things-network/ttn-gw-868/the-things-gateway-eu/dp/2675813) and in US through [Newark](http://www.newark.com/the-things-network/ttn-gw-915/accessory-type-wireless-gateway/dp/05AC1807).
+## Order your The Things Gateway
+> You can place an order through our partner network to get next day delivery. At the moment this method of delivery is only available in Europe through [Farnell](http://uk.farnell.com/the-things-network/ttn-gw-868/the-things-gateway-eu/dp/2675813) and in US through [Newark](http://www.newark.com/the-things-network/ttn-gw-915/accessory-type-wireless-gateway/dp/05AC1807).
 
 
 ## Activate your gateway in 5 min
