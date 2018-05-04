@@ -12,6 +12,7 @@ A lot of research is conducted on LoRa and LoRaWAN. This page is created to bett
 
 Title | Author | Journal/Proceedings | Year |
 | -------------------- | ---------- | ---------- | ------ |
+[Integration of LoRaWAN and 4G/5G for the Industrial Internet of Things](https://ieeexplore.ieee.org/document/8291115/) | Navarro-Ortiz, J., Sendra, S., Ameigeiras, P., Lopez-Soler, J.M. | IEEE Communications Magazine, Vol. 56(2), pp. 60-67 | 2018 | 
 [Resource Efficiency in Low-Power Wide-Area Networks for IoT Applications](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8254800) | Z. Qin and J. McCann. | IEEE Global Communications Conference (GLOBECOM), pp. 1-7.| 2017 |
 [Modelling and analysis of low-power wide-area networks](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7996589) | Z. Qin, y. Liu, G. Y. Li, and J. McCann. | IEEE International Conference on Communications (ICC), pp. 1-7.| 2017 |
 [A Fair Adaptive Data Rate Algorithm for LoRaWAN](https://arxiv.org/abs/1801.00522) | Abdelfadeel, K.Q., Cionca, V. and Pesch, D. | arXiv preprint arXiv:1801.00522 | 2018 | 
