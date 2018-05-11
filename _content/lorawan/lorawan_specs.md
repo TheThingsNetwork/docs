@@ -13,7 +13,7 @@ The LoRaWAN™ specification documents are developed and maintained by the LoRa 
 
 While these specifications define the technical implementation, they do not define any commercial model or type of deployment (public, shared, private, enterprise) and so offer the industry the freedom to innovate and differentiate in how a LoRaWAN system is implemented.
 
-The specification defines provides seamless interoperability between manufacturers, as demonstrated via the device certification program.
+The specification defines and provides seamless interoperability between manufacturers, as demonstrated via the device certification program.
 
 ![file](https://ttnstaticfile.blob.core.windows.net/media/md_editor/image-1526028762688.large.png)
 
