@@ -1,8 +1,8 @@
 ---
-title: LoRaWAN Specifications
+title: LoRaWAN Specification
 ---
 
-# LoRaWAN Specifications
+# LoRaWAN Specification
 
 The LoRaWAN™ specification documents are developed and maintained by the LoRa Alliance: an open association of collaborating members. To fully define the LoRaWAN protocol, and to ensure interoperability among devices and networks, the LoRa Alliance develops and maintains the following documents:
 
