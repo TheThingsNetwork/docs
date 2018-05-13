@@ -41,6 +41,10 @@ LoRaWAN operates in unlicensed radio spectrum. This means that anyone can use th
 
 LoRaWAN uses lower radio frequencies with a longer range. The fact that frequencies have a longer range also comes with more restrictions that are often country-specific. This poses a challenge for LoRaWAN, that tries to be as uniform as possible in all different regions of the world. As a result, LoRaWAN is specified for a number of bands for these regions. These bands are similar enough to support a region-agnostic protocol, but have a number of consequences for the implementation of the backend systems.
 
++ LoRaWAN has official regional specifications, called **Regional Parameters**, that you can download from the [LoRa Alliance website](https://lora-alliance.org/lorawan-for-developers).
+
++ These LoRaWAN regional specifications do not specify everything either. They only cover a region by specifying the common denominator. For example, the LoRaWAN regional parameters for Asia only specify a common subset of channels - but there are variations between regulations in Asian countries. Furthermore, each network server operator is free to select additional parameters, such as additional emission channels. We call these parameters **Frequency Plans**. For The Things Network, they are defined in [this GitHub repository](https://github.com/TheThingsNetwork/gateway-conf).
+
 ## EU 863-870 MHz and Duty Cycle
 
 In Europe, LoRaWAN operates in the 863-870 MHz frequency band. European frequency regulations impose specific duty-cycles on devices for each sub-band. These apply to each device that transmits on a certain frequency, so both gateways and devices have to respect these duty-cycles. Most channels used by LoRaWAN have a duty-cycle as low as 1% or even 0.1%. As a result, the network should be smart in scheduling messages on gateways that are less busy or on channels that have a higher duty-cycle. Application developers are encouraged to keep their payloads small, do not transmit too often and avoid downlink messages if possible.
