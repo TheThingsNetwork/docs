@@ -31,12 +31,12 @@
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/lorawan/icon.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-05-11T11:54:06+00:00" />
+<meta property="article:published_time" content="2018-05-13T15:16:47+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"description":"Background information about LoRaWAN","url":"https://www.thethingsnetwork.org/docs/lorawan/","headline":"LoRaWAN","dateModified":"2018-05-11T11:54:06+00:00","datePublished":"2018-05-11T11:54:06+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/lorawan/icon.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/lorawan/"},"@context":"http://schema.org"}</script>
+{"description":"Background information about LoRaWAN","url":"https://www.thethingsnetwork.org/docs/lorawan/","headline":"LoRaWAN","dateModified":"2018-05-13T15:16:47+00:00","datePublished":"2018-05-13T15:16:47+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/lorawan/icon.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/lorawan/"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -150,6 +150,14 @@
 <h2 id="frequency-bands">Frequency Bands</h2>
 <p>LoRaWAN operates in unlicensed radio spectrum. This means that anyone can use the radio frequencies without having to pay million dollar fees for transmission rights. It is similar to WiFi, which uses the 2.4GHz and 5GHz ISM bands worldwide. Anyone is allowed to set up WiFi routers and transmit WiFi signals without the need for a license or permit.</p>
 <p>LoRaWAN uses lower radio frequencies with a longer range. The fact that frequencies have a longer range also comes with more restrictions that are often country-specific. This poses a challenge for LoRaWAN, that tries to be as uniform as possible in all different regions of the world. As a result, LoRaWAN is specified for a number of bands for these regions. These bands are similar enough to support a region-agnostic protocol, but have a number of consequences for the implementation of the backend systems.</p>
+<ul>
+  <li>
+    <p>LoRaWAN has official regional specifications, called <strong>Regional Parameters</strong>, that you can download from the <a href="https://lora-alliance.org/lorawan-for-developers">LoRa Alliance website</a>.</p>
+  </li>
+  <li>
+    <p>These LoRaWAN regional specifications do not specify everything either. They only cover a region by specifying the common denominator. For example, the LoRaWAN regional parameters for Asia only specify a common subset of channels - but there are variations between regulations in Asian countries. Furthermore, each network server operator is free to select additional parameters, such as additional emission channels. We call these parameters <strong>Frequency Plans</strong>. For The Things Network, they are defined in <a href="https://github.com/TheThingsNetwork/gateway-conf">this GitHub repository</a>.</p>
+  </li>
+</ul>
 <h2 id="eu-863-870-mhz-and-duty-cycle">EU 863-870 MHz and Duty Cycle</h2>
 <p>In Europe, LoRaWAN operates in the 863-870 MHz frequency band. European frequency regulations impose specific duty-cycles on devices for each sub-band. These apply to each device that transmits on a certain frequency, so both gateways and devices have to respect these duty-cycles. Most channels used by LoRaWAN have a duty-cycle as low as 1% or even 0.1%. As a result, the network should be smart in scheduling messages on gateways that are less busy or on channels that have a higher duty-cycle. Application developers are encouraged to keep their payloads small, do not transmit too often and avoid downlink messages if possible.</p>
 <h4 id="us-902-928-mhz">US 902-928 MHz</h4>
