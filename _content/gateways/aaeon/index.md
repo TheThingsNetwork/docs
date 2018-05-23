@@ -1,10 +1,10 @@
 ---
-title: AAEON AIOT-ILRA01 
+title: AAEON 
 image: /gateways/aaeon/aaeon.jpg
 section: Hardware
 ---
 
-# Introduction
+# AAEON AIOT-ILRA01
 
 The Things Network is building a network for the Internet of Things by creating abundant data connectivity, so applications and businesses can flourish.
 Fo rmore informations visit https://www.thethingsnetwork.org/
