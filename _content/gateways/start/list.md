@@ -39,9 +39,9 @@ This is a list of commercial LoRaWAN gateways currently available for purchase. 
 
 + [Lorank 8](https://webshop.ideetron.nl/LORANK-8): The device is built upon the radio board of IMST and the open source hardware BeagleBone Black.
 
-## Aaeon
+## AAEON AIOT-ILRA01
 
-+ [Aaeon UP](http://www.aaeon.com/en/p/intel-lora-gateway-system-server): The Aaeon UP is a powerful gateway, running Debian on an AMD64 processor. It's ideal to run a packet forwarder, and applications on the same machine.
++ [Aaeon UP](http://industrialgateways.eu/docs/): The AAEON AIOT-ILRA01 is a powerful gateway, running Debian on an AMD64 processor. It's ideal to run a packet forwarder, and applications on the same machine.
 
 ## Gemtek
 
