@@ -10,7 +10,7 @@ You will need two USB flash drives. The first will be for the AIOT-ILRA01 TTN-re
 
 First of all, get a copy of the latest image for your gateway. Unzip the directory on a FAT32 formatted USB key.
 
-You will also need to download the latest version of clonezilla to mount our image on your ILRA01. Download the latest AMD64, ZIP version of clonezilla here. Getting clonezilla ready is different depending on what OS you are. For a detailed guide, please visit the official documentation page on how to burn a USB flash drive.
+You will also need to download the latest version of clonezilla to mount our image on your ILRA01. [Download the latest AMD64, ZIP version of clonezilla here](http://clonezilla.org/downloads/download.php?branch=stable). Getting clonezilla ready is different depending on what OS you are. For a detailed guide, please visit the official documentation page on how to burn a USB flash drive.
 
 Backup anything you need before you continue, as flashing the TTN-ready image will completely wipe your gateway.
 
@@ -39,7 +39,7 @@ Login of Ubilinux is:   user: ubilinux password: ubilinux
 
 # Register the gateway to TTN Console
 
-Before to be able to connect the gateway to TTN, login to TTN console and register a new gateway.
+Before to be able to connect the gateway to TTN, login to [TTN console](https://console.thethingsnetwork.org/) and register a new gateway.
 
 Select “I’m using the legacy packet forwarder” (AAEON TTN-ready image use Semtech UDP packet forwarder) and enter the gateway EUI (ID) of 8 bytes.
 
