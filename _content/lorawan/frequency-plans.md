@@ -61,7 +61,7 @@ Downlink:
 7. **926.9** - SF7BW500 to SF12BW500
 8. **927.5** - SF7BW500 to SF12BW500
 
-Note that The Things Network uses 2nd Sub-Band only (channels 8,9,10,11,12,13,14,15,65). If your devices use OTAA and ADR, this will be configured automatically when they join (expect some join retries and the first ~8 packets to fail). If your devices use ABP, you'll need to program the specific channels into the devices in order to make them work with TTN.
+>Note that The Things Network uses 2nd Sub-Band only (channels 8 to 15 and 65). If your devices use OTAA and ADR, this will be configured automatically when they join (expect some join retries and the first ~8 packets to fail). If your devices use ABP, you'll need to program the specific channels into the devices in order to make them work with TTN.
 
 ## CN470-510
 
