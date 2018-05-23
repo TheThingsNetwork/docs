@@ -17,17 +17,17 @@
       if (document.location.href.substr(0, document.location.href.length - document.location.hash.length) !== canonical) {
         window.location.replace(canonical);
       }
-    })('https://www.thethingsnetwork.org/docs/gateways/troubleshooting/');
+    })('https://www.thethingsnetwork.org/docs/gateways/aaeon/connect.html');
     </script>
     <!-- Begin Jekyll SEO tag v2.4.0 -->
-<title>Troubleshooting | The Things Network</title>
+<title>Connect AIOT-ILRA01 to TTN | The Things Network</title>
 <meta name="generator" content="Jekyll v3.4.5" />
-<meta property="og:title" content="Troubleshooting" />
+<meta property="og:title" content="Connect AIOT-ILRA01 to TTN" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Gateway Troubleshooting" />
-<meta property="og:description" content="Gateway Troubleshooting" />
-<link rel="canonical" href="https://www.thethingsnetwork.org/docs/gateways/troubleshooting/" />
-<meta property="og:url" content="https://www.thethingsnetwork.org/docs/gateways/troubleshooting/" />
+<meta name="description" content="Restore the pre-built OS image" />
+<meta property="og:description" content="Restore the pre-built OS image" />
+<link rel="canonical" href="https://www.thethingsnetwork.org/docs/gateways/aaeon/connect.html" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/gateways/aaeon/connect.html" />
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
@@ -36,7 +36,7 @@
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"description":"Gateway Troubleshooting","url":"https://www.thethingsnetwork.org/docs/gateways/troubleshooting/","headline":"Troubleshooting","dateModified":"2018-05-23T10:05:45+00:00","datePublished":"2018-05-23T10:05:45+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/gateways/troubleshooting/"},"@context":"http://schema.org"}</script>
+{"description":"Restore the pre-built OS image","url":"https://www.thethingsnetwork.org/docs/gateways/aaeon/connect.html","headline":"Connect AIOT-ILRA01 to TTN","dateModified":"2018-05-23T10:05:45+00:00","datePublished":"2018-05-23T10:05:45+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/gateways/aaeon/connect.html"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -88,7 +88,7 @@
         </ul>
       </div>
       <div class="hidden-xs col-sm-3 text-right">
-        <a href="https://github.com/TheThingsNetwork/docs/edit/master/_content/gateways/troubleshooting/index.md" class="page-edit" data-proofer-ignore><i class="fa fa-github"></i> Edit <strong>index.md</strong></a>
+        <a href="https://github.com/TheThingsNetwork/docs/edit/master/_content/gateways/aaeon/connect.md" class="page-edit" data-proofer-ignore><i class="fa fa-github"></i> Edit <strong>connect.md</strong></a>
       </div>
     </div>
     <div class="row">
@@ -109,14 +109,7 @@
                 </li>
                 <li class=""><a href="/docs/gateways/lightning-protection.html">Lightning Protection</a>
                 </li>
-                <li class="active"><a href="/docs/gateways/troubleshooting/">Troubleshooting</a>
-            <ul>
-                <li class=""><a href="/docs/gateways/troubleshooting/semtech-udp.html">Semtech UDP Packet Forwarder</a>
-                </li>
-                <li class=""><a href="https://status.thethings.network/">Network status</a>
-                    <i class="fa fa-link"></i>
-                </li>
-            </ul>
+                <li class=""><a href="/docs/gateways/troubleshooting/">Troubleshooting</a>
                 </li>
             </ul>
             </li>
@@ -129,6 +122,10 @@
                 <li class=""><a href="/docs/gateways/rak831/">RAK831</a>
                 </li>
                 <li class=""><a href="/docs/gateways/aaeon/">AAEON AIOT-ILRA01</a>
+            <ul>
+                <li class="active"><a href="/docs/gateways/aaeon/connect.html">Connect AIOT-ILRA01 to TTN</a>
+                </li>
+            </ul>
                 </li>
                 <li class=""><a href="/docs/gateways/cisco/">Cisco LoRaWAN Gateway</a>
                 </li>
@@ -145,36 +142,40 @@
       <div class="col-sm-7">
         <div class="panel">
           <div class="panel-body page-content">
-            <h1 id="gateway-troubleshooting">Gateway Troubleshooting</h1>
-<p>Your gateway doesn’t seem to send data to The Things Network? This section is here to help you find out the issue might come from. We’ll give you a few leads to help you troubleshoot your gateway.</p>
-<blockquote>
-  <p>This section contains the most frequent issues with packet forwarders. If you find issues that are not covered in this guide, feel free to reach out to <a href="https://www.thethingsnetwork.org/forum">The Things Network community forum</a>.</p>
-</blockquote>
-<h2 id="check-the-status-page">Check the Status page</h2>
-<p>Did your gateway work before? Before diving in to the Console and the gateway itself, check <a href="https://status.thethings.network">The Things Network Status</a> to see if all services are operational.</p>
-<h2 id="from-the-console">From the Console</h2>
-<p><a href="https://console.thethingsnetwork.org">The Things Network Console</a> is connected to our Network Operations Center, which monitors the gateways across the network. This means you can now see if the gateway is estimated to be connected or not connected:</p>
-<p><img src="status-console.png" alt="Status in the console" /></p>
-<p>If your gateway is considered to be connected, you can also see the traffic going through this gateway:</p>
-<p><img src="traffic-console.png" alt="Traffic in the console" /></p>
-<p>The availability of these features depends however on the <a href="https://status.thethings.network">status</a> of the NOC.</p>
-<h2 id="from-the-gateway">From the gateway</h2>
-<p>If you think the network isn’t receiving any traffic from your gateway, you’ll want to figure out why.</p>
-<p>Here are a few leads of questions to which the answer will give you a better insight:</p>
+            <h1 id="restore-the-pre-built-os-image">Restore the pre-built OS image</h1>
+<p>You will need two USB flash drives. The first will be for the AIOT-ILRA01 TTN-ready image, and the second for the Clonezilla boot disk.</p>
+<p>First of all, get a copy of the latest image for your gateway. Unzip the directory on a FAT32 formatted USB key.</p>
+<p>You will also need to download the latest version of clonezilla to mount our image on your ILRA01. Download the latest AMD64, ZIP version of clonezilla here. Getting clonezilla ready is different depending on what OS you are. For a detailed guide, please visit the official documentation page on how to burn a USB flash drive.</p>
+<p>Backup anything you need before you continue, as flashing the TTN-ready image will completely wipe your gateway.</p>
 <ul>
-  <li>
-    <p>Does your gateway have a working network connection? To test this, connect to your gateway, and execute a few pings or DNS lookups: <code class="highlighter-rouge">ping www.google.com</code> or <code class="highlighter-rouge">nslookup account.thethingsnetwork.org</code>, for Linux gateways. If these tests are unsuccessful, you’ll probably want to check the network connection of your gateway.</p>
-  </li>
-  <li>
-    <p>Is the packet forwarder running on your gateway? The way to answer this question depends on your type of gateway. Many gateways rely on SystemV or systemd managers, which can give you the status of the packet forwarder. Other gateways rely on <a href="https://resin.io">resin.io</a>, for which you can consult the status from a Web interface. Some other, like the Kerlink IoT Station, have their own init systems - often, consulting the list of running processes (with <code class="highlighter-rouge">ps -a</code>) can give you insight on whether the packet forwarder is running.</p>
-  </li>
-  <li>
-    <p>Does the packet forwarder have a successful connection to The Things Network?</p>
-  </li>
+  <li>Make sure the clonezilla flash drive is plugged in the gateway</li>
+  <li>Make sure your clonezilla flash disk Boot your gateway, if it’s the first time you will automatically be in the BIOS setup configuration, otherwise choose the “Advanced system setup” page on the OS selection list. Go to the “boot” tab, a make sure your clonezilla USB key is set to boot before the hard disk of the gateway. Now you can save and exit.</li>
+  <li>The system will now reboot, and the clonezilla setup screen will appear. Select “Clonezilla Live (To RAM)”. When prompted, select the correct layout for your keyboard.</li>
+  <li>Select “Start Clonezilla”. When prompted, select the first option, “Device-Image”.</li>
+  <li>When prompted select a “local_dev” configuration.</li>
+  <li>Press enter</li>
+  <li>Now you can safely remove the clonezilla flash drive and enter the drive with the TTN-ready image</li>
+  <li>Press CTRL + C as asked</li>
+  <li>Now you can select your newly inserted USB device as the image source (usually sda1).</li>
+  <li>Select the folder where image has been copied</li>
+  <li>Choose BEGINNER mode as it’s the fastest option</li>
+  <li>When prompted, select the “Restore Disk” option</li>
+  <li>Select the folder with the TTN-ready image again</li>
+  <li>SELECT the hard disk of your gateway as the destination</li>
+  <li>You can ask clonezilla to verify the validity of the TTN-ready image you downloaded</li>
+  <li>Ask for a reboot when the mounting is finished</li>
+  <li>All partitions will be now copied. Whenever prompted, just say “y”</li>
 </ul>
-<blockquote>
-  <p>Are you using a <a href="../packet-forwarder/semtech-udp.html">Semtech UDP Packet Forwarder</a>? See <a href="semtech-udp.html">Troubleshooting</a>.</p>
-</blockquote>
+<p>The machine will now reboot. Your gateway is now running a fresh installation of ubilinux with all set ready for The Things Network.</p>
+<p>Login of Ubilinux is:   user: ubilinux password: ubilinux</p>
+<h1 id="register-the-gateway-to-ttn-console">Register the gateway to TTN Console</h1>
+<p>Before to be able to connect the gateway to TTN, login to TTN console and register a new gateway.</p>
+<p>Select “I’m using the legacy packet forwarder” (AAEON TTN-ready image use Semtech UDP packet forwarder) and enter the gateway EUI (ID) of 8 bytes.</p>
+<p>Complete the rest of the steps, then take note of Gateway EUI.</p>
+<p>Login into Ubilinux on the fresh restored gateway AIOT-ILRA01 and launch from desktop the script gateway_ID.sh by double clicking on it; select “Execute in terminal” when the dialog box pops-up, the terminal window will open a file editor.</p>
+<p>Replace TTN GATEWAY ID, with the Gateway EUI (example <code class="highlighter-rouge">AB01FFBBCC110011</code>), press CTRL+X, Save the file and exit.</p>
+<p>Restart the system and at the following reboot the gateway will connect to TTN console.
+There is no need o login Ubilinux to enable the connection.</p>
           </div>
         </div>
       </div>
