@@ -1,5 +1,5 @@
 ---
-title: Connect AIOT-ILRA01 to TTN
+title: Connect to TTN
 zindex: 800
 ---
 
