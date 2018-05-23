@@ -20,9 +20,9 @@
     })('https://www.thethingsnetwork.org/docs/gateways/aaeon/connect.html');
     </script>
     <!-- Begin Jekyll SEO tag v2.4.0 -->
-<title>Connect AIOT-ILRA01 to TTN | The Things Network</title>
+<title>Connect to TTN | The Things Network</title>
 <meta name="generator" content="Jekyll v3.4.5" />
-<meta property="og:title" content="Connect AIOT-ILRA01 to TTN" />
+<meta property="og:title" content="Connect to TTN" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Restore the pre-built OS image" />
 <meta property="og:description" content="Restore the pre-built OS image" />
@@ -31,12 +31,12 @@
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-05-23T10:13:30+00:00" />
+<meta property="article:published_time" content="2018-05-23T10:15:32+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"description":"Restore the pre-built OS image","url":"https://www.thethingsnetwork.org/docs/gateways/aaeon/connect.html","headline":"Connect AIOT-ILRA01 to TTN","dateModified":"2018-05-23T10:13:30+00:00","datePublished":"2018-05-23T10:13:30+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/gateways/aaeon/connect.html"},"@context":"http://schema.org"}</script>
+{"description":"Restore the pre-built OS image","url":"https://www.thethingsnetwork.org/docs/gateways/aaeon/connect.html","headline":"Connect to TTN","dateModified":"2018-05-23T10:15:32+00:00","datePublished":"2018-05-23T10:15:32+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/gateways/aaeon/connect.html"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -123,7 +123,7 @@
                 </li>
                 <li class=""><a href="/docs/gateways/aaeon/">AAEON</a>
             <ul>
-                <li class="active"><a href="/docs/gateways/aaeon/connect.html">Connect AIOT-ILRA01 to TTN</a>
+                <li class="active"><a href="/docs/gateways/aaeon/connect.html">Connect to TTN</a>
                 </li>
                 <li class=""><a href="/docs/gateways/aaeon/ResIOT.html">Connect to ResIOT</a>
                 </li>
@@ -147,7 +147,7 @@
             <h1 id="restore-the-pre-built-os-image">Restore the pre-built OS image</h1>
 <p>You will need two USB flash drives. The first will be for the AIOT-ILRA01 TTN-ready image, and the second for the Clonezilla boot disk.</p>
 <p>First of all, get a copy of the latest image for your gateway. Unzip the directory on a FAT32 formatted USB key.</p>
-<p>You will also need to download the latest version of clonezilla to mount our image on your ILRA01. Download the latest AMD64, ZIP version of clonezilla here. Getting clonezilla ready is different depending on what OS you are. For a detailed guide, please visit the official documentation page on how to burn a USB flash drive.</p>
+<p>You will also need to download the latest version of clonezilla to mount our image on your ILRA01. <a href="http://clonezilla.org/downloads/download.php?branch=stable">Download the latest AMD64, ZIP version of clonezilla here</a>. Getting clonezilla ready is different depending on what OS you are. For a detailed guide, please visit the official documentation page on how to burn a USB flash drive.</p>
 <p>Backup anything you need before you continue, as flashing the TTN-ready image will completely wipe your gateway.</p>
 <ul>
   <li>Make sure the clonezilla flash drive is plugged in the gateway</li>
@@ -171,7 +171,7 @@
 <p>The machine will now reboot. Your gateway is now running a fresh installation of ubilinux with all set ready for The Things Network.</p>
 <p>Login of Ubilinux is:   user: ubilinux password: ubilinux</p>
 <h1 id="register-the-gateway-to-ttn-console">Register the gateway to TTN Console</h1>
-<p>Before to be able to connect the gateway to TTN, login to TTN console and register a new gateway.</p>
+<p>Before to be able to connect the gateway to TTN, login to <a href="https://console.thethingsnetwork.org/">TTN console</a> and register a new gateway.</p>
 <p>Select “I’m using the legacy packet forwarder” (AAEON TTN-ready image use Semtech UDP packet forwarder) and enter the gateway EUI (ID) of 8 bytes.</p>
 <p>Complete the rest of the steps, then take note of Gateway EUI.</p>
 <p>Login into Ubilinux on the fresh restored gateway AIOT-ILRA01 and launch from desktop the script gateway_ID.sh by double clicking on it; select “Execute in terminal” when the dialog box pops-up, the terminal window will open a file editor.</p>
