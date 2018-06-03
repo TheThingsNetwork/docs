@@ -195,3 +195,21 @@ Downlink:
 
 - Uplink channels 1-3 (RX1)
 - **866.550** - SF10BW125 (RX2)
+
+ISR915-917
+
+Used In Israel 915 -917 MHz ( Limits of 915mhz - 917mhz) 300khz between 100mw on 916.3 Channels 25mw on the rest
+
+Uplink:
+
+    915.1 - SF7BW125 to SF10BW125
+    915.4 - SF7BW125 to SF10BW125
+    915.7 - SF7BW125 to SF10BW125
+    916.0 - SF7BW125 to SF10BW125
+    916.3 - SF7BW125 to SF10BW125
+    916.6 - SF7BW125 to SF10BW125
+    916.9 - SF7BW125 to SF10BW125
+
+Downlink:
+- Uplink channels 1-7 (RX1)
+
