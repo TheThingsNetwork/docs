@@ -139,7 +139,7 @@ For discussions about the frequency plans in different countries, see the posts 
 | Iran | | EN 302 208 |
 | Iraq
 | Ireland | EU863-870<br />EU433 | CEPT Rec. 70-03 |
-| Israel | | EN 302 208 |
+| Israel | ISR915-917mhz  />EU433 | https://www.gov.il/he/Departments/news/iot27102017|
 | Italy | EU863-870<br />EU433 | CEPT Rec. 70-03 |
 
 ### J
