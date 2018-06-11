@@ -14,7 +14,7 @@ The Things Node is the perfect LoRa node to start prototyping your ideas without
 
 ![Box, Casing and PCBA](image.png)
 
-[The Things Node](http://thethingsproducts.com/) is based off the [SparkFun Pro Micro - 3.3V/8Mhz](https://www.sparkfun.com/products/12587) with added Microchip [LoRaWAN module](http://www.microchip.com/design-centers/wireless-connectivity/embedded-wireless/lora-technology) and [temperature sensor](http://www.microchip.com/wwwproducts/en/en530196), NXP's [digital accelerometer](http://www.nxp.com/products/sensors/accelerometers/3-axis-accelerometers/2g-4g-8g-low-g-12-bit-digital-accelerometer:MMA8452Q), a light sensor, button and RGB LED. All this is packaged in a matchbox-sized waterproof (IP54) casing with 3 AAA batteries to power it for months of usage.
+[The Things Node](http://thethingsproducts.com/#the-things-product-buy) is based off the [SparkFun Pro Micro - 3.3V/8Mhz](https://www.sparkfun.com/products/12587) with added Microchip [LoRaWAN module](http://www.microchip.com/design-centers/wireless-connectivity/embedded-wireless/lora-technology) and [temperature sensor](http://www.microchip.com/wwwproducts/en/en530196), NXP's [digital accelerometer](http://www.nxp.com/products/sensors/accelerometers/3-axis-accelerometers/2g-4g-8g-low-g-12-bit-digital-accelerometer:MMA8452Q), a light sensor, button and RGB LED. All this is packaged in a matchbox-sized waterproof (IP54) casing with 3 AAA batteries to power it for months of usage.
 
 Our [Arduino](../arduino/index.md) library comes with a class specifically for The Things Node. Configure and read sensors without having to worry about the underlying sensor registries.
 
