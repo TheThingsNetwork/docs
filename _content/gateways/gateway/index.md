@@ -7,7 +7,7 @@ zindex: 1000
 
 # The Things Gateway
 
-Following a [successful Kickstarter](https://www.kickstarter.com/projects/419277966/the-things-network) our own LoRa Gateway is now available world-wide. At a price of just under €300 and its easy, web-based setup, it is the best choice to help build The Things Network.
+Following a [successful Kickstarter](https://www.kickstarter.com/projects/419277966/the-things-network) our own LoRa Gateway is now available world-wide. At a price of just under €300 and its easy, web-based setup, it is the best choice to help build The Things Network. Order The Things Gateway [here](http://thethingsproducts.com/#the-things-product-buy)
 
 
 ![Box, Casing and PCB](image.png)
@@ -29,7 +29,7 @@ The Things Gateway enables devices such as sensors and embedded computers to con
 
 
 ## Order your The Things Gateway
-> You can place an order through our partner network to get next day delivery. At the moment this method of delivery is only available in Europe through [Farnell](http://uk.farnell.com/the-things-network/ttn-gw-868/the-things-gateway-eu/dp/2675813) and in US through [Newark](http://www.newark.com/the-things-network/ttn-gw-915/accessory-type-wireless-gateway/dp/05AC1807).
+> You can place an order through our partner network to get next day delivery. At the moment this method of delivery is only available in Europe and in the US. Order your gateway [here](http://thethingsproducts.com/#the-things-product-buy).
 
 
 ## Activate your gateway in 5 min
