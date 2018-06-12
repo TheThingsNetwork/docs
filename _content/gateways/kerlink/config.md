@@ -123,3 +123,7 @@ When using the wirnet_v3.1 firmware, the firewall is activated by default. This 
 ### On the Console
 
 When the packet forwarder is running, it reports to the TTN network. The activity of all the gateways on the network can be checked in [the Console](https://console.thethingsnetwork.org/gateways).
+
+### Troubleshooting
+
+If you still encounter problems with the packet forwarder, head to the [Troubleshooting page](../../troubleshooting/semtech-udp.md) of the packet forwarder.
