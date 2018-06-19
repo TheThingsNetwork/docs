@@ -11,9 +11,12 @@ The easy-to-install package contains:
 * Getting started guide 
 * 1 month support
 
+![smart-building](smart-building-1.jpg)
+
+
 ## Connecting Devices
 * [Create an account](https://account.thethingsnetwork.org/) at The Things Network
-* (If applicable) Connect your pre-configured Laird gateway
+* (If applicable) Connect your pre-configured gateway
 * Install the Android app [Elsys Sensor Settings](https://play.google.com/store/apps/details?id=se.elsys.nfc.elsysnfc)
 * Visit [The Things Network Console](https://console.thethingsnetwork.org/), create a new application and register all devices using the Device EUIs which you can find on the back of the sensors. The devices can be provisioned through NFC via the Elsys app. For more information you can walk through the Elsys' [Operating Manual](https://www.elsys.se/en/wp-content/uploads/sites/3/2016/09/OPERATING-MANUAL-ERS_A5_V3.pdf) or check out Elsys’ [Video tutorials](https://www.elsys.se/en/lora-videos/)
 
