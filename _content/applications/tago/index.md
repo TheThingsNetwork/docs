@@ -14,7 +14,7 @@ After creating an account on [Tago.io](https://tago.io/), activate the integrati
 
 Think of a Process ID, select your access key and add (optional) the Authorization.
 
-> The Authorization field is not required, but it adds security to your integration, to use it, just type any secret text there and type the same code when generating the token at Tago
+> The **Authorization field** is not required, but it adds security to your integration, to use it, just type any secret text there and type the same code when generating the token at Tago
 
 ![Add-integration2](Tago2.png)
 
