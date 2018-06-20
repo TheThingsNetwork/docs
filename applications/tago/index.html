@@ -17,17 +17,17 @@
       if (document.location.href.substr(0, document.location.href.length - document.location.hash.length) !== canonical) {
         window.location.replace(canonical);
       }
-    })('https://www.thethingsnetwork.org/docs/gateways/lightning-protection.html');
+    })('https://www.thethingsnetwork.org/docs/applications/tago/');
     </script>
     <!-- Begin Jekyll SEO tag v2.4.0 -->
-<title>Lightning Protection | The Things Network</title>
+<title>Tago | The Things Network</title>
 <meta name="generator" content="Jekyll v3.4.5" />
-<meta property="og:title" content="Lightning Protection" />
+<meta property="og:title" content="Tago" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Lightning protection" />
-<meta property="og:description" content="Lightning protection" />
-<link rel="canonical" href="https://www.thethingsnetwork.org/docs/gateways/lightning-protection.html" />
-<meta property="og:url" content="https://www.thethingsnetwork.org/docs/gateways/lightning-protection.html" />
+<meta name="description" content="Tago" />
+<meta property="og:description" content="Tago" />
+<link rel="canonical" href="https://www.thethingsnetwork.org/docs/applications/tago/" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/applications/tago/" />
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
@@ -36,7 +36,7 @@
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"description":"Lightning protection","url":"https://www.thethingsnetwork.org/docs/gateways/lightning-protection.html","headline":"Lightning Protection","dateModified":"2018-06-20T08:33:48+00:00","datePublished":"2018-06-20T08:33:48+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/gateways/lightning-protection.html"},"@context":"http://schema.org"}</script>
+{"description":"Tago","url":"https://www.thethingsnetwork.org/docs/applications/tago/","headline":"Tago","dateModified":"2018-06-20T08:33:48+00:00","datePublished":"2018-06-20T08:33:48+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/applications/tago/"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -82,52 +82,74 @@
           <li class="page-top-nav-crumb"><a href="/docs/">Learn</a></li>
                 <li class=""><a href="/docs/lorawan/">LoRaWAN</a></li>
                 <li class=""><a href="/docs/devices/">Devices</a></li>
-                <li class="active"><a href="/docs/gateways/">Gateways</a></li>
+                <li class=""><a href="/docs/gateways/">Gateways</a></li>
                 <li class=""><a href="/docs/network/">Network</a></li>
-                <li class=""><a href="/docs/applications/">Applications</a></li>
+                <li class="active"><a href="/docs/applications/">Applications</a></li>
         </ul>
       </div>
       <div class="hidden-xs col-sm-3 text-right">
-        <a href="https://github.com/TheThingsNetwork/docs/edit/master/_content/gateways/lightning-protection.md" class="page-edit" data-proofer-ignore><i class="fa fa-github"></i> Edit <strong>lightning-protection.md</strong></a>
+        <a href="https://github.com/TheThingsNetwork/docs/blob/master/_content/applications/tago/index.md" class="page-edit" data-proofer-ignore><i class="fa fa-github"></i> Edit <strong>index.md</strong></a>
       </div>
     </div>
     <div class="row">
       <div class="col-sm-3">
         <div class="panel page-side-nav page-affix">
           <div class="panel-body">
-            <h5>Gateways</h5>
+            <h5>Applications</h5>
             <ul>
-              <li class=""><a href="/docs/gateways/index.html">Overview</a>
+              <li class=""><a href="/docs/applications/index.html">Overview</a>
+            <ul>
+                <li class=""><a href="/docs/applications/add.html">Add an Application</a>
+                </li>
+                <li class=""><a href="/docs/applications/options.html">Build an Application</a>
+                </li>
+            </ul>
               </li>
-            <li class="page-side-nav-section"><span>Running a gateway</span>
+            <li class="page-side-nav-section"><span>APIs</span>
             <ul>
-                <li class=""><a href="/docs/gateways/start/">Where to start</a>
+                <li class=""><a href="/docs/applications/apis.html">Overview</a>
                 </li>
-                <li class=""><a href="/docs/gateways/registration.html">Gateway Registration</a>
+                <li class=""><a href="/docs/applications/manager/">Application Manager API</a>
                 </li>
-                <li class=""><a href="/docs/gateways/packet-forwarder/">Packet Forwarders</a>
-                </li>
-                <li class="active"><a href="/docs/gateways/lightning-protection.html">Lightning Protection</a>
-                </li>
-                <li class=""><a href="/docs/gateways/troubleshooting/">Troubleshooting</a>
+                <li class=""><a href="/docs/applications/mqtt/">Data API (MQTT)</a>
                 </li>
             </ul>
             </li>
-            <li class="page-side-nav-section"><span>Hardware</span>
+            <li class="page-side-nav-section"><span>SDKs & Libraries</span>
             <ul>
-                <li class=""><a href="/docs/gateways/gateway/">The Things Gateway</a>
+                <li class=""><a href="/docs/applications/sdks.html">Overview</a>
                 </li>
-                <li class=""><a href="/docs/gateways/multitech/">MultiTech Conduit</a>
+                <li class=""><a href="/docs/applications/golang/">Go</a>
                 </li>
-                <li class=""><a href="/docs/gateways/rak831/">RAK831</a>
+                <li class=""><a href="/docs/applications/java/">Java</a>
                 </li>
-                <li class=""><a href="/docs/gateways/aaeon/">AAEON</a>
+                <li class=""><a href="/docs/applications/nodered/">Node-RED</a>
                 </li>
-                <li class=""><a href="/docs/gateways/cisco/">Cisco LoRaWAN Gateway</a>
+                <li class=""><a href="/docs/applications/nodejs/">Node.js</a>
                 </li>
-                <li class=""><a href="/docs/gateways/kerlink/">Kerlink LoRa IoT Station</a>
+            </ul>
+            </li>
+            <li class="page-side-nav-section"><span>Integrations</span>
+            <ul>
+                <li class=""><a href="/docs/applications/integrations.html">Overview</a>
                 </li>
-                <li class=""><a href="/docs/gateways/lorrier/">Lorrier LR2</a>
+                <li class=""><a href="/docs/applications/aws/">AWS IoT</a>
+                </li>
+                <li class=""><a href="/docs/applications/cayenne/">Cayenne</a>
+                </li>
+                <li class=""><a href="/docs/applications/collos/">Collos</a>
+                </li>
+                <li class=""><a href="/docs/applications/evrythng/">EVRYTHNG</a>
+                </li>
+                <li class=""><a href="/docs/applications/http/">HTTP</a>
+                </li>
+                <li class=""><a href="/docs/applications/opensensors/">OpenSensors</a>
+                </li>
+                <li class=""><a href="/docs/applications/storage/">Storage</a>
+                </li>
+                <li class=""><a href="/docs/applications/ttnmapper/">TTN Mapper</a>
+                </li>
+                <li class="active"><a href="/docs/applications/tago/">Tago</a>
                 </li>
             </ul>
             </li>
@@ -138,27 +160,35 @@
       <div class="col-sm-7">
         <div class="panel">
           <div class="panel-body page-content">
-            <h1 id="lightning-protection">Lightning protection</h1>
-<p>When using an outdoor antenna, please consider installing surge protection devices on the antenna and/or ethernet cables. Even the electrical field of a nearby lightning strike can destroy all connected equipment (also inside the building).</p>
-<h2 id="citel">Citel</h2>
-<ul>
-  <li>Coax: <a href="http://www.citel.fr/en/produit/citel-radiocommunication-surge-protectors/citel-coaxial-gdt/gamme-coaxial-P8AX/p8ax09-nmf.html">P8AX09</a></li>
-  <li>Ethernet: <a href="http://www.citel.fr/en/produit/citel-surge-protector-for-dataline-network/poe-surge-protector/surge-protectors-MJ8-POE/mj8-poe-b.html">MJ8-POE-B</a></li>
-</ul>
-<h2 id="wimood">WiMood</h2>
-<ul>
-  <li><a href="http://www.wimoodshop.nl/product/613/Ubiquiti-Gigabit-Ethernet-Surge-Protector">Ubiquiti Gigabit Ethernet Surge Protector</a></li>
-  <li><a href="http://www.wimoodshop.nl/product/82/Bliksembeveiliging-tot-2,4-GHz">Lightning protection</a></li>
-</ul>
-<h2 id="hubersuhner">Huber+Suhner</h2>
-<ul>
-  <li><a href="http://www.hubersuhner.com/en/lightningprotection">Lightning protection</a></li>
-</ul>
-<h2 id="aliexpress">Aliexpress</h2>
-<ul>
-  <li><a href="http://www.aliexpress.com/item/1-10pcs-RJ45-Ethernet-Network-Surge-Protector-Lightning-Arrester-SPD-Device-10KA/32384571796.html">RJ45 lightning protection</a> <em>(Assuming you use power over ethernet)</em></li>
-  <li><a href="http://www.aliexpress.com/item/Hi-Power-60W-10-100-1000M-Gigabyte-POE-Injector-AC100-240V-Midspan4-5-7-8-for/32596142073.html?spm=2114.10010108.1000010.3.7dSlHv">PoE Injector + lightning protection</a></li>
-</ul>
+            <h1 id="tago">Tago</h1>
+<p><a href="https://tago.io/">Tago</a> allows you to quickly store, visualize, and act on sensor data.</p>
+<p>After creating an account on <a href="https://tago.io/">Tago.io</a>, activate the integration in The Things Network <a href="https://console.thethingsnetwork.org/">Developer Console</a> by going to your application and Select Tago from the integration options.</p>
+<p><img src="Tago1.png" alt="Add-integration" /></p>
+<p>Think of a Process ID, select your access key and add (optional) the Authorization.</p>
+<blockquote>
+  <p>The Authorization field is not required, but it adds security to your integration, to use it, just type any secret text there and type the same code when generating the token at Tago</p>
+</blockquote>
+<p><img src="Tago2.png" alt="Add-integration2" /></p>
+<h2 id="uplink">Uplink</h2>
+<p>For your application to authenticate to Tago, you need to register your device at Tago.</p>
+<p>Go to the <a href="https://admin.tago.io/">Tago admin</a>, then go to <strong>Device</strong> and create a new one</p>
+<p><img src="Tago3.png" alt="Uplink" /></p>
+<p>Go to tokens and type your <em>device EUI</em>.</p>
+<blockquote>
+  <p>If you use the Authorization at TTN, type the same secret text in the Verification Code</p>
+</blockquote>
+<p><img src="Tago4.png" alt="Add-integration" /></p>
+<p>Now when your device sends data to The Things Network, it will automatically send it to Tago.</p>
+<h2 id="downlink">Downlink</h2>
+<p>To send data back to your device, just go to your device at Tago and visit the tab <strong>Configuration Parameters</strong>.</p>
+<p><img src="Tago5.png" alt="Downlink" /></p>
+<p>Here you can add two parameters, for different data formats.</p>
+<p><strong>payload_raw</strong> 
+Will send the raw payload to your device.</p>
+<p><strong>payload_fields</strong> 
+The payload fields value needs to be a <strong>valid JSON Object</strong>, and Tago will send that object to your device.</p>
+<p>You can choose between these two data formats, or you can send both.</p>
+<p>When your data is sent to The Things Network and scheduled to send to your device, your parameter will be <strong>marked as sent</strong>, to <strong>send it again</strong>, mark the parameter as not sent.</p>
           </div>
         </div>
       </div>
