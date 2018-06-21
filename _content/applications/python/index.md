@@ -22,8 +22,7 @@ $ pip install ttn
 ```
 
 ## Documentation
-* [API Reference](https://www.thethingsnetwork.org/docs/applications/python/api.html)
-
+* See the [API Reference](./api-reference.md) to learn how to start using the Python SDK.
 
 ## Example
 
