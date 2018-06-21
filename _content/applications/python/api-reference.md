@@ -1,6 +1,6 @@
 ---
 title: API Reference
-zindex: 800
+zindex: 1000
 ---
 
 # API Reference
