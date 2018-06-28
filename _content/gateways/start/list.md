@@ -43,6 +43,10 @@ This is a list of commercial LoRaWAN gateways currently available for purchase. 
 
 + [Aaeon UP](http://industrialgateways.eu/docs/): The AAEON AIOT-ILRA01 is a powerful gateway, running Debian on an AMD64 processor. It's ideal to run a packet forwarder, and applications on the same machine.
 
+## Cisco LoRaWAN Gateway
+
++ The [Cisco LoRaWAN Gateway](https://www.cisco.com/c/en/us/products/routers/wireless-gateway-lorawan/index.html) is carrier-grade solution suitable for users who have experience with Cisco software, and that are looking for an industrial-grade LoRaWAN gateway. It supports 16 channels, as well as geolocation.
+
 ## Gemtek
 
 + Outdoor Gateway
