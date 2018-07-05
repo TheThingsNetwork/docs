@@ -93,7 +93,7 @@ It could be that your gateway is not connected to the network server. To check t
 
 * If there is a firewall, that the firewall allows outgoing packets on UDP port 1700.
 
-* The network server address and ports are correctly set in the packet forwarder configuration. For example, for the EU region of The Things Network, you will find [here](../packet-forwarder/semtech-udp) the server addresses - such as `router.eu.thethings.network` or `router.kr.thethings.network`.
+* The network server address and ports are correctly set in the packet forwarder configuration. For example, for the EU region of The Things Network, you will find [here](../packet-forwarder/semtech-udp.html) the server addresses - such as `router.eu.thethings.network` or `router.kr.thethings.network`.
 
 There is also a possibility that the network itself is down. Check our [status page](https://status.thethings.network/) for more information on the status of The Things Network.
 
