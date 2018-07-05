@@ -84,6 +84,8 @@ Next is installing Semtech's Packet forwarder and connecting it to The Things Ne
 
 
 
-Download the firmware [here](http://wikikerlink.fr/wirnet-ifemtocell/doku.php?id=wirnet-ifemtocell:resources)
 
 
+
+If all went well, you should see something like this:
+![Kerlink iFemtoCell Console](console.png)
