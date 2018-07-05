@@ -52,11 +52,9 @@ To install the latest firmware (watch out: this erases the whole partition to re
 
 1. Find an empty usb stick (FAT-32 formatted)
 2. Add the three files listed below to the usb. You can download the files [here](http://wikikerlink.fr/wirnet-ifemtocell/doku.php?id=wirnet-ifemtocell:resources)
-
  * `liveburner_X.X.X_klk-wifc-signed.ipk`
  * `usb.autorun`
  * `usbkey.txt`
- 
 3. Connect the usb to the gateway, the files are automatically installed. The installations is finished when the LEDs start blinking red/green
 
 
@@ -66,11 +64,9 @@ Next is installing Semtech's Packet forwarder and connecting it to The Things Ne
 
 1. Find an empty usb stick (FAT-32 formatted)
 2. Add the three files listed below to the usb. You can download the files [here](http://wikikerlink.fr/wirnet-ifemtocell/doku.php?id=wirnet-ifemtocell:resources)
-
  * `spf_3.1.0-klk18_4.1.3-klk11_klk_wifc.ipk`
  * `usb.autorun`
  * `usbkey.txt`
- 
 3. Connect the usb to the gateway, the files are automatically installed. The installation is finished when the LEDs start blinking red/green
 4. Open the file: `/user/spf/etc/global_conf.json`
  Fill in the details below. Check [this link](https://www.thethingsnetwork.org/docs/gateways/packet-forwarder/semtech-udp.html#router-addresses) for the right **server_address**
