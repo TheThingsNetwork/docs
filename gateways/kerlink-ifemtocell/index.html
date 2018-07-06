@@ -31,12 +31,12 @@
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/gateways/kerlink-ifemtocell/image.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-07-05T16:25:29+00:00" />
+<meta property="article:published_time" content="2018-07-06T14:06:11+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"description":"Kerlink iFemtoCell","url":"https://www.thethingsnetwork.org/docs/gateways/kerlink-ifemtocell/","headline":"Kerlink iFemtoCell","dateModified":"2018-07-05T16:25:29+00:00","datePublished":"2018-07-05T16:25:29+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/gateways/kerlink-ifemtocell/image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/gateways/kerlink-ifemtocell/"},"@context":"http://schema.org"}</script>
+{"description":"Kerlink iFemtoCell","url":"https://www.thethingsnetwork.org/docs/gateways/kerlink-ifemtocell/","headline":"Kerlink iFemtoCell","dateModified":"2018-07-06T14:06:11+00:00","datePublished":"2018-07-06T14:06:11+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/gateways/kerlink-ifemtocell/image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/gateways/kerlink-ifemtocell/"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -192,7 +192,7 @@ Password: <code class="highlighter-rouge">pdmk-1234AB</code></p>
   </li>
   <li>Connect the usb to the gateway, the files are automatically installed. The installation is finished when the LEDs start blinking red/green</li>
   <li>Open the file: <code class="highlighter-rouge">/user/spf/etc/global_conf.json</code>
- Fill in the details below. Check <a href="https://www.thethingsnetwork.org/docs/gateways/packet-forwarder/semtech-udp.html#router-addresses">this link</a> for the right <strong>server_address</strong>
+ Fill in the details below. Check <a href="https://www.thethingsnetwork.org/docs/gateways/packet-forwarder/semtech-udp.html#router-addresses">this link</a> for the right <strong>server_address</strong>. The UDP ports <code class="highlighter-rouge">1700</code> are used, both for outgoing and incoming traffic. You can set this UDP port in the lines <code class="highlighter-rouge">serv_port_up</code> and <code class="highlighter-rouge">serv_port_down</code>. (In some cases, firewalls block these UDP ports. Please contact your network administrator if you’re in doubt).
     <div class="highlighter-rouge"><pre class="highlight"><code>"gateway_conf": {
  "server_address": "router.eu.thethings.network",
  "serv_port_up": 1700,                                               
@@ -200,8 +200,9 @@ Password: <code class="highlighter-rouge">pdmk-1234AB</code></p>
 </code></pre>
     </div>
   </li>
-  <li>Register the gateway in the <a href="https://console.thethingsnetwork.org/">Developer Console</a>. You can find the gateway EUI in the file <code class="highlighter-rouge">/user/spf/etc/local_conf.json</code></li>
+  <li>Register the gateway in the <a href="https://console.thethingsnetwork.org/">Developer Console</a>. You can find more information on how to register your gateway in the Console <a href="https://www.thethingsnetwork.org/docs/gateways/registration.html">here</a>.</li>
 </ol>
+<p>How to find the <strong>Gateway EUI:</strong> Open the file on your gateway <code class="highlighter-rouge">/user/spf/etc/local_conf.json</code>. At the bottom of this page you can find the EUI you need for registering your gateway.</p>
 <p>If all went well, you should see something like this:
 <img src="console.png" alt="Kerlink iFemtoCell Console" /></p>
           </div>
