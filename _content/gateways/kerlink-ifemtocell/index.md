@@ -69,16 +69,16 @@ Next is installing Semtech's Packet forwarder and connecting it to The Things Ne
  * `usbkey.txt`
 3. Connect the usb to the gateway, the files are automatically installed. The installation is finished when the LEDs start blinking red/green
 4. Open the file: `/user/spf/etc/global_conf.json`
- Fill in the details below. Check [this link](https://www.thethingsnetwork.org/docs/gateways/packet-forwarder/semtech-udp.html#router-addresses) for the right **server_address**
+ Fill in the details below. Check [this link](https://www.thethingsnetwork.org/docs/gateways/packet-forwarder/semtech-udp.html#router-addresses) for the right **server_address**. The UDP ports `1700` are used, both for outgoing and incoming traffic. You can set this UDP port in the lines `serv_port_up` and `serv_port_down`. (In some cases, firewalls block these UDP ports. Please contact your network administrator if you're in doubt).
  ```
 "gateway_conf": {
 	"server_address": "router.eu.thethings.network",
 	"serv_port_up": 1700,                                               
 	"serv_port_down": 1700,
  ```
-5. Register the gateway in the [Developer Console](https://console.thethingsnetwork.org/). You can find the gateway EUI in the file `/user/spf/etc/local_conf.json`
+5. Register the gateway in the [Developer Console](https://console.thethingsnetwork.org/). You can find more information on how to register your gateway in the Console [here](https://www.thethingsnetwork.org/docs/gateways/registration.html). 
 
-
+ How to find the **Gateway EUI:** Open the file on your gateway `/user/spf/etc/local_conf.json`. At the bottom of this page you can find the EUI you need for registering your gateway.
 
 
 
