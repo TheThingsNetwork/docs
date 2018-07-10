@@ -33,8 +33,7 @@ Once you are connected to the gateway, log in with `root` / `pdmk-$serialno` as 
 * ##### Remote LAN connection
 
   * **Using SSH:** Start an SSH client (typically Putty on Windows) using port 22 and the gateway’s IP address obtained from the DHCP server.
-
- * **Using SFTP:** Start a SFTP client (typically WinSCP on Windows) using the gateway’s IP address obtained from the DHCP server.
+  * **Using SFTP:** Start a SFTP client (typically WinSCP on Windows) using the gateway’s IP address obtained from the DHCP server.
 
 
 * ##### Local connection
@@ -55,7 +54,7 @@ cat /tmp/sys_startup_status.json
 
 ```
 
-It should respond something like:
+The response should look something like:
 
 ```
 {
