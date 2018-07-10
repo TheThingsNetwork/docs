@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <link rel="stylesheet" href="/docs/assets/css/main.css" />
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script>
+    (function(canonical) {
+      if (document.location.href.substr(0, document.location.href.length - document.location.hash.length) !== canonical) {
+        window.location.replace(canonical);
+      }
+    })('https://www.thethingsnetwork.org/docs/gateways/kerlink-ibts/');
+    </script>
+    <!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>Kerlink iBTS | The Things Network</title>
+<meta name="generator" content="Jekyll v3.4.5" />
+<meta property="og:title" content="Kerlink iBTS" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="iBTS" />
+<meta property="og:description" content="iBTS" />
+<link rel="canonical" href="https://www.thethingsnetwork.org/docs/gateways/kerlink-ibts/" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/gateways/kerlink-ibts/" />
+<meta property="og:site_name" content="The Things Network" />
+<meta property="og:image" content="https://www.thethingsnetwork.org/docs/gateways/kerlink-iBTS/image.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-07-10T14:05:59+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@thethingsnetwrk" />
+<meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
+<script type="application/ld+json">
+{"description":"iBTS","url":"https://www.thethingsnetwork.org/docs/gateways/kerlink-ibts/","headline":"Kerlink iBTS","dateModified":"2018-07-10T14:05:59+00:00","datePublished":"2018-07-10T14:05:59+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/gateways/kerlink-iBTS/image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/gateways/kerlink-ibts/"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+    <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png">
+    <meta name="application-name" content="The Things Network">
+    <meta name="msapplication-tooltip" content="Tooltip">
+    <meta name="msapplication-config" content="https://ttnweb.azureedge.net/static/common/favicon/ieconfig.54334a5ee30c.xml">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-32.61b30f85680a.png" sizes="32x32">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-57.83b86c64dc82.png" sizes="57x57">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-76.7dcf8fa36dfc.png" sizes="76x76">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-96.27ac17adaa8b.png" sizes="96x96">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-120.e1526731335e.png" sizes="120x120">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-128.fabea041224c.png" sizes="128x128">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png" sizes="144x144">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png" sizes="152x152">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-180.fcd414307ca3.png" sizes="180x180">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-195.c55ce09d66da.png" sizes="195x195">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-228.bea53ec4b10b.png" sizes="228x228">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/smalltile.fabea041224c.png" sizes="128x128">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/mediumtile.3d42f7faac82.png" sizes="270x270">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
+    <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
+    <script src="/docs/assets/js/main.js"></script>
+  </head>
+  <body>
+    <div id="header"></div>
+    <div id="content">
+<div class="layout-page">
+  <div class="ttn-header ttn-header-small">
+    <div class="ttn-container container-fluid">
+      <h1>
+        <img src="/docs/assets/images/the-things-white.png" alt="⛅ The Things Network" />
+        <span>Learn</span>
+      </h1>
+    </div>
+  </div>
+  <div class="container-fluid ttn-container">
+    <div class="row page-top-nav">
+      <div class="col-sm-9">
+        <ul>
+          <li class="page-top-nav-crumb"><a href="http://www.thethingsnetwork.org/">Home</a></li>
+          <li class="page-top-nav-crumb"><a href="/docs/">Learn</a></li>
+                <li class=""><a href="/docs/lorawan/">LoRaWAN</a></li>
+                <li class=""><a href="/docs/devices/">Devices</a></li>
+                <li class="active"><a href="/docs/gateways/">Gateways</a></li>
+                <li class=""><a href="/docs/network/">Network</a></li>
+                <li class=""><a href="/docs/applications/">Applications</a></li>
+        </ul>
+      </div>
+      <div class="hidden-xs col-sm-3 text-right">
+        <a href="https://github.com/TheThingsNetwork/docs/edit/master/_content/gateways/kerlink-ibts/index.md" class="page-edit" data-proofer-ignore><i class="fa fa-github"></i> Edit <strong>index.md</strong></a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="panel page-side-nav page-affix">
+          <div class="panel-body">
+            <h5>Gateways</h5>
+            <ul>
+              <li class=""><a href="/docs/gateways/index.html">Overview</a>
+              </li>
+            <li class="page-side-nav-section"><span>Running a gateway</span>
+            <ul>
+                <li class=""><a href="/docs/gateways/start/">Where to start</a>
+                </li>
+                <li class=""><a href="/docs/gateways/registration.html">Gateway Registration</a>
+                </li>
+                <li class=""><a href="/docs/gateways/packet-forwarder/">Packet Forwarders</a>
+                </li>
+                <li class=""><a href="/docs/gateways/lightning-protection.html">Lightning Protection</a>
+                </li>
+                <li class=""><a href="/docs/gateways/troubleshooting/">Troubleshooting</a>
+                </li>
+            </ul>
+            </li>
+            <li class="page-side-nav-section"><span>Hardware</span>
+            <ul>
+                <li class=""><a href="/docs/gateways/gateway/">The Things Gateway</a>
+                </li>
+                <li class=""><a href="/docs/gateways/multitech/">MultiTech Conduit</a>
+                </li>
+                <li class=""><a href="/docs/gateways/rak831/">RAK831</a>
+                </li>
+                <li class=""><a href="/docs/gateways/aaeon/">AAEON</a>
+                </li>
+                <li class=""><a href="/docs/gateways/cisco/">Cisco LoRaWAN Gateway</a>
+                </li>
+                <li class=""><a href="/docs/gateways/kerlink/">Kerlink LoRa IoT Station</a>
+                </li>
+                <li class="active"><a href="/docs/gateways/kerlink-ibts/">Kerlink iBTS</a>
+                </li>
+                <li class=""><a href="/docs/gateways/kerlink-ifemtocell/">Kerlink iFemtoCell</a>
+                </li>
+                <li class=""><a href="/docs/gateways/lorrier/">Lorrier LR2</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-7">
+        <div class="panel">
+          <div class="panel-body page-content">
+            <h1 id="ibts">iBTS</h1>
+<p>The Wirnet iBTS is the successor of the Wirnet IoT Station. It is based on Semtech’s gateway reference design and can be used for GPS-free geolocalization services.</p>
+<p>The Wirnet iBTS has a modular architecture allowing you to configure and upgrade the gateway to according to your needs. Thanks to the modularity you are able to choose:</p>
+<ul>
+  <li>The backhaul network: Ethernet or GPRS/EDGE/HSPA/CDMA/LTE</li>
+  <li>The unlicensed band (ISM) where to operate the LoRa LPWAN: 868MHz, 902-928MHz or 915-928MHz</li>
+  <li>The number of channels to operate the LoRa LPWAN: 8 to 64</li>
+  <li>The antenna interface: single (omnidirectional), dual (space diversity or dual polarization) or tri (sectorization)</li>
+</ul>
+<p><a href="http://wikikerlink.fr/wirnet-ibts/doku.php">Source &amp; further info</a>
+<em>You do need to request a login and password from Kerlink</em></p>
+<h2 id="1-connecting-to-the-gateway">1. Connecting to the gateway</h2>
+<p>You can either connect to the gateways via SSH, or via the Wirma2 Debug Tool. <a href="http://wikikerlink.fr/wirnet-ibts/doku.php?id=wiki:connect">More info</a></p>
+<p>Once you are connected to the gateway, log in with <code class="highlighter-rouge">root</code> / <code class="highlighter-rouge">pdmk-$serialno</code> as credentials. The <code class="highlighter-rouge">$serialno</code> equals the 6 last characters of its serial number.</p>
+<blockquote>
+  <p>For security reasons, it is highly recommended to change the password. You can do so with the command: <code class="highlighter-rouge">passwd</code></p>
+</blockquote>
+<h3 id="connect-via-ssh">Connect via SSH</h3>
+<ul>
+  <li>
+    <h5 id="remote-lan-connection">Remote LAN connection</h5>
+    <ul>
+      <li><strong>Using SSH:</strong> Start an SSH client (typically Putty on Windows) using port 22 and the gateway’s IP address obtained from the DHCP server.</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Using SFTP:</strong> Start a SFTP client (typically WinSCP on Windows) using the gateway’s IP address obtained from the DHCP server.</p>
+  </li>
+  <li>
+    <h5 id="local-connection">Local connection</h5>
+  </li>
+</ul>
+<p>You can connect you laptop directly to the gateway via the LOCAL port.</p>
+<ul>
+  <li>
+    <p>If you have an DHCP server: Start an ssh client on port 22 and use the gateway’s IP address obtained from the DHCP server.</p>
+  </li>
+  <li>
+    <p>You don’t have a DHCP server: Configure your PC Ethernet card to use <code class="highlighter-rouge">192.168.1.100</code> (netmask: 255.255.255.0) and start a ssh client on port 22 and using the gateway default LOCAL IP address which is <code class="highlighter-rouge">192.168.1.1</code>.</p>
+  </li>
+</ul>
+<h2 id="2-update-the-firmware">2. Update the firmware</h2>
+<p>Check the firmware version using the command:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>cat /tmp/sys_startup_status.json
+
+</code></pre>
+</div>
+<p>It should respond something like:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nt">"cpu"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+        </span><span class="p">},</span><span class="w"> 
+        </span><span class="nt">"serial_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x2e040353"</span><span class="p">,</span><span class="w"> 
+        </span><span class="nt">"start_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"15:19:04 2018-07-09"</span><span class="p">,</span><span class="w"> 
+        </span><span class="nt">"sw_version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3.1.7_20170516105845"</span><span class="w">
+</span></code></pre>
+</div>
+<h4 id="update-with-the-last-firmware-version">Update with the last firmware version:</h4>
+<p>To update the gateway firmware with the last <strong>Wirnet iBTS KerOS</strong> firmware, go to Kerlink’s <a href="http://wikikerlink.fr/wirnet-ibts/doku.php?id=wiki:resources#ibts_keros_firmware">Resources page</a>. The firmware can be updated via a USB key or over the Network.</p>
+<blockquote>
+  <p>You can also use the file <strong>Liveburner IPK</strong> for updating this Kerlink firmware, this will however erase the whole partition and resets the default password.</p>
+</blockquote>
+<p><strong>Option 1: Software update over USB</strong></p>
+<ol>
+  <li>Find an empty USB key (FAT-32 formatted) and add the 3 files:</li>
+</ol>
+<ul>
+  <li><code class="highlighter-rouge">usb.autorun</code></li>
+  <li><code class="highlighter-rouge">usbkey.txt</code></li>
+  <li><code class="highlighter-rouge">keros_x.y.z.ipk</code></li>
+</ul>
+<ol>
+  <li>
+    <p>Plug the USB key in the gateway, the firmware is automatically installed. Unplug the USB key when the yellow debug led starts blinking fast.</p>
+  </li>
+  <li>
+    <p>Reboot the gateway.</p>
+  </li>
+  <li>
+    <p>Check if the firmware is properly updated via the command <code class="highlighter-rouge">/tmp/sys_startup_status.json</code>, you can see the version after the line <code class="highlighter-rouge">sw_version</code>.</p>
+  </li>
+</ol>
+<p><strong>Option 2: Software update over Network</strong></p>
+<p><em>This example uses a package meant to upgrade the firmware, however the steps are the same for any other package.</em></p>
+<ol>
+  <li>Create the directory <code class="highlighter-rouge">.updates</code> under <code class="highlighter-rouge">/user</code>:</li>
+</ol>
+<div class="highlighter-rouge"><pre class="highlight"><code> mkdir -p /user/.updates
+</code></pre>
+</div>
+<ol>
+  <li>Transfer the KerOS package corresponding to the new firmware in this directory</li>
+</ol>
+<div class="highlighter-rouge"><pre class="highlight"><code> scp keros_2.0.4.ipk root@&lt;ip_address&gt;:/user/.updates/
+</code></pre>
+</div>
+<ol>
+  <li>Ensure file is correctly written:</li>
+</ol>
+<div class="highlighter-rouge"><pre class="highlight"><code> sync 
+</code></pre>
+</div>
+<ol>
+  <li>Trigger Update for next reboot:</li>
+</ol>
+<div class="highlighter-rouge"><pre class="highlight"><code> kerosd -u 
+</code></pre>
+</div>
+<ol>
+  <li>Restart:</li>
+</ol>
+<div class="highlighter-rouge"><pre class="highlight"><code> reboot
+</code></pre>
+</div>
+<ol>
+  <li>Check the firmware version in the file <code class="highlighter-rouge">/tmp/sys_startup_status.json</code> under the field <code class="highlighter-rouge">sw_version</code>.</li>
+</ol>
+<h3 id="3-fpga-update">3. FPGA update</h3>
+<p>To use the latest packet forwarder release, it is required to update the FPGA with the latest FPGA release available in <a href="http://wikikerlink.fr/wirnet-ibts/doku.php?id=wiki:resources#fpga_updater">resources</a> if not yet installed.</p>
+<p>To check the current FPGA version, run the command:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>cat /tmp/sys_startup_status.json | grep fpga_swver
+</code></pre>
+</div>
+<p>For the update you can again choose to install the latest version via the network or via USB. (If you install the file via USB, make sure to add the files <code class="highlighter-rouge">usb.autorun</code> and <code class="highlighter-rouge">usbkey.txt</code> to the USB key.)</p>
+<h3 id="4-connect-to-the-things-network">4. Connect to The Things Network</h3>
+<ol>
+  <li>Install Semtech’s latest packet forwarder which can be found under Kerlink’s <a href="http://wikikerlink.fr/wirnet-ibts/doku.php?id=wiki:resources#semtech_packet_forwarder_v2">Resources section</a>. Download the pre-compiled <code class="highlighter-rouge">.ipk</code> version which looks something like this: <code class="highlighter-rouge">spf2_5.1.0-klk4_5.1.0-klk5_klk_lpbs.ipk</code></li>
+</ol>
+<p>Install the packet forwarder over the network or USB and reboot the gateway.</p>
+<ol>
+  <li>Open the file <code class="highlighter-rouge">/user/spf2/etc/config.json</code> to fill in the settings to connect it to the right LoRaWAN Network Server. At the bottom of the file you can set the <code class="highlighter-rouge">gateway_conf</code> settings. The settings should eventually look something like:</li>
+</ol>
+<div class="highlighter-rouge"><pre class="highlight"><code> "gateway_conf": {         
+        "gateway_ID": "7276FF00XXXXXXXX",
+        "server_address": "router.eu.thethings.network",
+        "serv_port_up": 1700,                                                                                                                                 
+        "serv_port_down": 1700,
+        ...
+</code></pre>
+</div>
+<ul>
+  <li>Add a line with the <code class="highlighter-rouge">gateway_ID</code>. The ID always starts with: <code class="highlighter-rouge">7276FF00</code> and end with the 8 last characters of its serial number.
+    <blockquote>
+      <p>Write down the gateway_ID, you’ll need it later for registering the gateway in the Developer Console.</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>Check <a href="https://www.thethingsnetwork.org/docs/gateways/packet-forwarder/semtech-udp.html#router-addresses">this link</a> for the right <code class="highlighter-rouge">server_address</code>.</p>
+  </li>
+  <li>
+    <p>The UDP ports <code class="highlighter-rouge">1700</code> are used, both for outgoing and incoming traffic. You can set this UDP port in the lines <code class="highlighter-rouge">serv_port_up</code> and <code class="highlighter-rouge">serv_port_down</code>. (In some cases, firewalls block these UDP ports. Please contact your network administrator if you’re in doubt).</p>
+  </li>
+  <li>Reboot the gateway after setting the <strong>gateway_conf</strong>.</li>
+</ul>
+<ol>
+  <li>Register the gateway in the <a href="https://console.thethingsnetwork.org/">Developer Console</a>. You can find more information on how to register your gateway in the Console <a href="https://www.thethingsnetwork.org/docs/gateways/registration.html">here</a>. If all went well, you should see something like this:</li>
+</ol>
+<p><img src="ibts.png" alt="Kerlink iBTS Console" /></p>
+          </div>
+        </div>
+      </div>
+      <div class="hidden-xs col-sm-2">
+        <div class="page-toc page-affix"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="lightbox" tabindex="-1" role="dialog">
+  <div class="modal-dialog text-center" role="document" style="width:auto;padding:20px;">
+    <a href="https://ttnstaticfile.blob.core.windows.net/static/ttn/media/logo/ttn-logo.png"><img class="modal-content modal-body" src="https://ttnstaticfile.blob.core.windows.net/static/ttn/media/logo/ttn-logo.png" alt="Zoom" /></a>
+  </div>
+</div>
+<script src="/docs/assets/js/page.js"></script>
+    </div>
+    <div id="footer"></div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.min.js"></script>
+    <script src="https://ttnweb.azureedge.net/static/common/js/ttn-components.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill@7/dist/polyfill.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
+    <script src="https://ttnweb.azureedge.net/static/common/js/vue-navbar.js"></script>
+    <script src="https://ttnweb.azureedge.net/static/common/js/vue-footer.js"></script>
+    <script src="https://ttnweb.azureedge.net/static/common/js/ga.js"></script>
+  </body>
+</html>
