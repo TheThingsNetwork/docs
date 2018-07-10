@@ -31,12 +31,12 @@
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/gateways/kerlink-iBTS/image.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-07-10T14:05:59+00:00" />
+<meta property="article:published_time" content="2018-07-10T14:20:42+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"description":"iBTS","url":"https://www.thethingsnetwork.org/docs/gateways/kerlink-ibts/","headline":"Kerlink iBTS","dateModified":"2018-07-10T14:05:59+00:00","datePublished":"2018-07-10T14:05:59+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/gateways/kerlink-iBTS/image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/gateways/kerlink-ibts/"},"@context":"http://schema.org"}</script>
+{"description":"iBTS","url":"https://www.thethingsnetwork.org/docs/gateways/kerlink-ibts/","headline":"Kerlink iBTS","dateModified":"2018-07-10T14:20:42+00:00","datePublished":"2018-07-10T14:20:42+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/gateways/kerlink-iBTS/image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/gateways/kerlink-ibts/"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -165,10 +165,8 @@
     <h5 id="remote-lan-connection">Remote LAN connection</h5>
     <ul>
       <li><strong>Using SSH:</strong> Start an SSH client (typically Putty on Windows) using port 22 and the gateway’s IP address obtained from the DHCP server.</li>
+      <li><strong>Using SFTP:</strong> Start a SFTP client (typically WinSCP on Windows) using the gateway’s IP address obtained from the DHCP server.</li>
     </ul>
-  </li>
-  <li>
-    <p><strong>Using SFTP:</strong> Start a SFTP client (typically WinSCP on Windows) using the gateway’s IP address obtained from the DHCP server.</p>
   </li>
   <li>
     <h5 id="local-connection">Local connection</h5>
@@ -189,7 +187,7 @@
 
 </code></pre>
 </div>
-<p>It should respond something like:</p>
+<p>The response should look something like:</p>
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
     </span><span class="nt">"cpu"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="err">...</span><span class="w">
