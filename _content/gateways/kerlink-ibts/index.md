@@ -6,6 +6,8 @@ section: Hardware
 
 # iBTS
 
+![Kerlink iBTS](ibts-gw.png)
+
 The Wirnet iBTS is the successor of the Wirnet IoT Station. It is based on Semtech's gateway reference design and can be used for GPS-free geolocalization services.
 
 The Wirnet iBTS has a modular architecture allowing you to configure and upgrade the gateway to according to your needs. Thanks to the modularity you are able to choose:
@@ -126,7 +128,7 @@ To update the gateway firmware with the last **Wirnet iBTS KerOS** firmware, go 
 
 
 
-### 3. FPGA update
+## 3. FPGA update
 
 To use the latest packet forwarder release, it is required to update the FPGA with the latest FPGA release available in [resources](http://wikikerlink.fr/wirnet-ibts/doku.php?id=wiki:resources#fpga_updater) if not yet installed.
 
@@ -138,7 +140,7 @@ cat /tmp/sys_startup_status.json | grep fpga_swver
 
 For the update you can again choose to install the latest version via the network or via USB. (If you install the file via USB, make sure to add the files `usb.autorun` and `usbkey.txt` to the USB key.)
  
-### 4. Connect to The Things Network
+## 4. Connect to The Things Network
 
 1. Install Semtech's latest packet forwarder which can be found under Kerlink's [Resources section](http://wikikerlink.fr/wirnet-ibts/doku.php?id=wiki:resources#semtech_packet_forwarder_v2). Download the pre-compiled `.ipk` version which looks something like this: `spf2_5.1.0-klk4_5.1.0-klk5_klk_lpbs.ipk`
 
