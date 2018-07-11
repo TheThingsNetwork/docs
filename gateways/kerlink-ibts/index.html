@@ -31,12 +31,12 @@
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/gateways/kerlink-iBTS/image.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-07-10T14:20:42+00:00" />
+<meta property="article:published_time" content="2018-07-11T12:24:03+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"description":"iBTS","url":"https://www.thethingsnetwork.org/docs/gateways/kerlink-ibts/","headline":"Kerlink iBTS","dateModified":"2018-07-10T14:20:42+00:00","datePublished":"2018-07-10T14:20:42+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/gateways/kerlink-iBTS/image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/gateways/kerlink-ibts/"},"@context":"http://schema.org"}</script>
+{"description":"iBTS","url":"https://www.thethingsnetwork.org/docs/gateways/kerlink-ibts/","headline":"Kerlink iBTS","dateModified":"2018-07-11T12:24:03+00:00","datePublished":"2018-07-11T12:24:03+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/gateways/kerlink-iBTS/image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/gateways/kerlink-ibts/"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -143,6 +143,7 @@
         <div class="panel">
           <div class="panel-body page-content">
             <h1 id="ibts">iBTS</h1>
+<p><img src="ibts-gw.png" alt="Kerlink iBTS" /></p>
 <p>The Wirnet iBTS is the successor of the Wirnet IoT Station. It is based on Semtech’s gateway reference design and can be used for GPS-free geolocalization services.</p>
 <p>The Wirnet iBTS has a modular architecture allowing you to configure and upgrade the gateway to according to your needs. Thanks to the modularity you are able to choose:</p>
 <ul>
@@ -257,14 +258,14 @@
 <ol>
   <li>Check the firmware version in the file <code class="highlighter-rouge">/tmp/sys_startup_status.json</code> under the field <code class="highlighter-rouge">sw_version</code>.</li>
 </ol>
-<h3 id="3-fpga-update">3. FPGA update</h3>
+<h2 id="3-fpga-update">3. FPGA update</h2>
 <p>To use the latest packet forwarder release, it is required to update the FPGA with the latest FPGA release available in <a href="http://wikikerlink.fr/wirnet-ibts/doku.php?id=wiki:resources#fpga_updater">resources</a> if not yet installed.</p>
 <p>To check the current FPGA version, run the command:</p>
 <div class="highlighter-rouge"><pre class="highlight"><code>cat /tmp/sys_startup_status.json | grep fpga_swver
 </code></pre>
 </div>
 <p>For the update you can again choose to install the latest version via the network or via USB. (If you install the file via USB, make sure to add the files <code class="highlighter-rouge">usb.autorun</code> and <code class="highlighter-rouge">usbkey.txt</code> to the USB key.)</p>
-<h3 id="4-connect-to-the-things-network">4. Connect to The Things Network</h3>
+<h2 id="4-connect-to-the-things-network">4. Connect to The Things Network</h2>
 <ol>
   <li>Install Semtech’s latest packet forwarder which can be found under Kerlink’s <a href="http://wikikerlink.fr/wirnet-ibts/doku.php?id=wiki:resources#semtech_packet_forwarder_v2">Resources section</a>. Download the pre-compiled <code class="highlighter-rouge">.ipk</code> version which looks something like this: <code class="highlighter-rouge">spf2_5.1.0-klk4_5.1.0-klk5_klk_lpbs.ipk</code></li>
 </ol>
