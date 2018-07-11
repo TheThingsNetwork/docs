@@ -39,9 +39,9 @@ Once you are connected to the gateway, log in with `root` / `pdmk-$serialno` as 
 
 
 * ##### Local connection
- You can connect you laptop directly to the gateway via the LOCAL port. 
-  * If you have an DHCP server: Start an ssh client on port 22 and use the gateway’s IP address obtained from the DHCP server. 
-  * You don't have a DHCP server: Configure your PC Ethernet card to use `192.168.1.100` (netmask: 255.255.255.0) and start a ssh client on port 22 and using the gateway default LOCAL IP address which is `192.168.1.1`.
+  You can connect you laptop directly to the gateway via the LOCAL port. 
+    * If you have an DHCP server: Start an ssh client on port 22 and use the gateway’s IP address obtained from the DHCP server. 
+    * You don't have a DHCP server: Configure your PC Ethernet card to use `192.168.1.100` (netmask: 255.255.255.0) and start a ssh client on port 22 and using the gateway default LOCAL IP address which is `192.168.1.1`.
 
 
 ## 2. Update the firmware
