@@ -92,35 +92,25 @@ To update the gateway firmware with the last **Wirnet iBTS KerOS** firmware, go 
 *This example uses a package meant to upgrade the firmware, however the steps are the same for any other package.*
 
 1. Create the directory `.updates` under `/user`:
- 
  ```
  mkdir -p /user/.updates
  ```
-
 2. Transfer the KerOS package corresponding to the new firmware in this directory
-
  ```
  scp keros_2.0.4.ipk root@<ip_address>:/user/.updates/
  ```
-
 3. Ensure file is correctly written:
- 
  ```
  sync 
  ```
-
 4. Trigger Update for next reboot:
- 
  ```
  kerosd -u 
  ```
-
 5. Restart:
-
  ```
  reboot
  ```
-
 6. Check the firmware version in the file `/tmp/sys_startup_status.json` under the field `sw_version`.
 
 
