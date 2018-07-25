@@ -44,7 +44,7 @@ For discussions about the frequency plans in different countries, see the posts 
 | Bolivia | US902-928 | |
 | Bosnia and Herzegovina | EU863-870<br />EU433 | CEPT Rec. 70-03 |
 | Botswana | EU863-870<br />EU433 | CRASA follows CEPT Rec. 70-03 |
-| Brazil | US902-928 | [National Telecommunications Agency (ANATEL) Resolution No. 506, from July 1, 2008](http://www.americascompliance.com/wp-content/uploads/2011/08/506-English_1.pdf), Article 40 VI |
+| Brazil | AU915-928 | [National Telecommunications Agency (ANATEL) Resolution No. 680, from June 27, 2017 - Portuguese only](http://www.anatel.gov.br/legislacao/resolucoes/2017/936-resolucao-680),  Article 10 <br /> [National Telecommunications Agency (ANATEL) Act No. 14448, from December 4, 2017 - Portuguese only](http://www.anatel.gov.br/legislacao/atos-de-requisitos-tecnicos-de-certificacao/2017/1139-ato-14448) Section 10.2 |
 | Brunei | AS923-925 ("AS2") | |
 | Bulgaria | EU863-870<br />EU433 | CEPT Rec. 70-03 |
 | Burkina Faso
