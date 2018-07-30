@@ -88,8 +88,8 @@ Let's program your device with a so-called sketch.
     }
     ```
     
-    > Replace `REPLACE_ME` with either `TTN_FP_EU868` or `TTN_FP_US915` depending on the frequency plan of your device.
-    
+    > Replace `REPLACE_ME` with `TTN_FP_EU868`, `TTN_FP_US915`, `TTN_FP_AU915`, `TTN_FP_IN865_867`, `TTN_FP_KR920_923`, `TTN_FP_AS920_923`, `TTN_FP_AS923_925`, depending on the frequency plan of your device and your country. (Click [here](https://www.thethingsnetwork.org/docs/lorawan/frequencies-by-country.html) for an overview of all frequency plans per country)
+
     This will do a few things:
     
     1.  Use [`#define`](https://www.arduino.cc/en/Reference/Define) to create more meaningful aliases for the [`Serial`](https://www.arduino.cc/en/Reference/Serial) ports for the LoRa modem and the USB connection, as well as the frequency plan.
