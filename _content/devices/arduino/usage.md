@@ -53,6 +53,8 @@ void loop() {
 
 The actual streams you'd pass to the constructor depend on the board you use and the Serial Port you connected a LoRaWAN module to. For The Things Uno and Node use the Serial Ports and baud rates shown here. For other devices see the notes about serial ports at the end of this document.
 
+### Set the frequency plan
+
 The third argument for the constructor is a constant to set the frequency plan your device operates on. Replace `REPLACE_ME` with one of the lines below, depending on the frequency plan of your device and your country. (Click [here](https://www.thethingsnetwork.org/docs/lorawan/frequencies-by-country.html) for an overview of all frequency plans per country).
 
 * `TTN_FP_EU868` (Europe, Middle East, Africa)
