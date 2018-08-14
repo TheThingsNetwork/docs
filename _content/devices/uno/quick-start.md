@@ -88,7 +88,7 @@ Let's program your device with a so-called sketch.
     }
     ```
     
-    > Replace `REPLACE_ME` with `TTN_FP_EU868`, `TTN_FP_US915`, `TTN_FP_AU915`, `TTN_FP_IN865_867`, `TTN_FP_KR920_923`, `TTN_FP_AS920_923`, `TTN_FP_AS923_925`, depending on the frequency plan of your device and your country. (Click [here](https://www.thethingsnetwork.org/docs/lorawan/frequencies-by-country.html) for an overview of all frequency plans per country)
+    > Replace `REPLACE_ME` with `TTN_FP_EU868`, `TTN_FP_US915`, `TTN_FP_AU915` or `TTN_FP_IN865_867`, depending on the frequency plan of your device and your country. (Click [here](https://www.thethingsnetwork.org/docs/lorawan/frequencies-by-country.html) for an overview of all frequency plans per country).
 
     This will do a few things:
     
