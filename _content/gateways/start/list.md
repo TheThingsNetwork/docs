@@ -61,15 +61,15 @@ This is a list of commercial LoRaWAN gateways currently available for purchase. 
 
 ## Tektelic
 
-[Multiple gateways] (https://tektelic.com/iot/lorawan-gateways/)
+Tektelic lorawan gateways (https://tektelic.com/iot/lorawan-gateways/)
 
 + KONA Mega IoT Gateway: highly scalable, multiple Rx/Tx antennas, built-in bandpass filters, geolocation.
 
-+ KONA Macro IoT Gateway: this gateway is a 64 channel outdoor LoRa gateway.
++ KONA Macro IoT Gateway: 64 channel outdoor LoRa gateway.
 
-+ KONA Micro IoT Gateway: internal 3G/4G modem and a built-in four hour battery backup
++ KONA Micro IoT Gateway: internal 3G/4G modem and a built-in four hour battery backup.
 
-+ KONA Pico IoT Gateway: this gateway is an easy-to-configure gateway, advertised as a *plug-and-play pico gateway*.
++ KONA Pico IoT Gateway: easy-to-configure gateway, advertised as a *plug-and-play pico gateway*.
 
 ## Link Labs
 
