@@ -61,7 +61,7 @@ For discussions about the frequency plans in different countries, see the posts 
 | Canada | US902-928 | |
 | Central African Republic (CAR)
 | Chad
-| Chile | US902-928 | |
+| Chile | AU915-928 | [FIJA NORMA TECNICA DE EQUIPOS DE ALCANCE REDUCIDO](https://www.leychile.cl/Consulta/m/norma_plana?org=&idNorma=240404) |
 | China | CN470-510<br />CN779-787 | |
 | Colombia | US902-928 | |
 | Comoros
