@@ -35,4 +35,4 @@ Our public community network is run by the community. The best way to reach out 
 
 # Commercial support
 
-The Things Industries offers hosted solutions and commercial support. See [Pricing](https://wwww.thethingsindustries.com/technology/pricing) for plans and pricing.
+The Things Industries offers hosted solutions and commercial support. See [Pricing](https://www.thethingsindustries.com/technology/pricing) for plans and pricing.
