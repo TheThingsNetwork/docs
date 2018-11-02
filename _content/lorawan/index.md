@@ -9,7 +9,10 @@ zindex: 1100
 
 # LoRaWAN Overview
 
-LoRaWAN is a media access control (MAC) protocol for wide area networks. It is designed to allow low-powered devices to communicate with Internet-connected applications over long range wireless connections. LoRaWAN can be mapped to the second and third layer of the OSI model. It is implemented on top of LoRa or FSK modulation in industrial, scientific and medical (ISM) radio bands. The LoRaWAN protocols are defined by the [LoRa Alliance](https://www.lora-alliance.org/) and formalized in the LoRaWAN Specification which can be [requested](https://www.lora-alliance.org/lorawan-for-developers) on the LoRa Alliance website. 
+LoRaWAN is a media access control (MAC) protocol for wide area networks. It is designed to allow low-powered devices to communicate with Internet-connected applications over long range wireless connections. LoRaWAN can be mapped to the second and third layer of the OSI model. It is implemented on top of LoRa or FSK modulation in industrial, scientific and medical (ISM) radio bands. The LoRaWAN protocols are defined by the [LoRa Alliance](https://www.lora-alliance.org/) and formalized in the LoRaWAN Specification which can be [downloaded](https://www.lora-alliance.org/lorawan-for-developers) on the LoRa Alliance website. 
+
+![LoRaWAN Overview](LoRaWAN-Overview.png)
+*LoRaWAN Architecture*
 
 ## Terminology
 
