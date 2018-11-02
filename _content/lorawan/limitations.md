@@ -11,10 +11,9 @@ Suitable use-cases for LoRaWAN:
 * **Long range** - multiple kilometers
 * **Low power** - can last years on a battery
 * **Low cost** - less than 20€ CAPEX per node, almost no OPEX
-* **Low bandwidth** - something like 400 bytes per hour
+* **Low bandwidth** - between 250bit/s and 11kbit/s in Europe using LoRa modulation (depending on the spreading factor)
 * **Coverage everywhere** - you are the network! Just install your own gateways
 * **Secure** - 128bit end-to-end encrypted
-* **Geolocation / Triangulation** - you should probably use GPS for this, but we're doing our best to make it work with just LoRa. Check out [Collos](../applications/collos/index.md).
 
 Not Suitable for LoRaWAN:
 
