@@ -86,10 +86,20 @@ To send a message you will have to address a specific device by its **Device ID*
 }
 ```
 
+However we need to specify a port ID, so we nest the message. In the examples we use port 1.
+
+```json
+{
+  "port" : 1,
+  ...
+}
+```
+
 If you have followed [The Things Uno / Quick Start / Encode Messages](../../devices/uno/quick-start.md#encode-messages) you can send this as is using the `payload_fields` key:
 
 ```json
 {
+  "port" : 1,
   "payload_fields": {
     "led": true
   }
@@ -100,19 +110,21 @@ Otherwise, you'll have to use `payload_raw` and send a base64 encoded array of b
 
 ```json
 {
+  "port" : 1,
   "payload_raw": "AQ=="
 }
 ```
+Note that `AQ==` decodes to a single byte, `0x01`.
 
 1.  Open another terminal window and execute the following command:
 
     ```bash
-    mosquitto_pub -h <Region>.thethings.network -t '<AppID>/devices/<DevID>/down' -u '<AppID>' -P '<AppKey>' -m '{"payload_fields":{"led":true}}'
+    mosquitto_pub -h <Region>.thethings.network -t '<AppID>/devices/<DevID>/down' -u '<AppID>' -P '<AppKey>' -m '{"port" : 1, "payload_fields":{"led":true}}'
     ```
     When using Windows, extra quotation marks have to be added to make the above code work:
     
     ```bash
-    mosquitto_pub -h <Region>.thethings.network -t "<AppID>/devices/<DevID>/down" -u "<AppID>" -P "<AppKey>" -m "{""payload_fields"":{""led"":true}}"
+    mosquitto_pub -h <Region>.thethings.network -t "<AppID>/devices/<DevID>/down" -u "<AppID>" -P "<AppKey>" -m "{""port"" : 1,""payload_fields"":{""led"":true}}"
     ```
 
 2.  If you are running [The Things Uno / Quick Start](../../devices/uno/quick-start.md) sketch you should see something like:
