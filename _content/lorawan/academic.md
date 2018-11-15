@@ -12,6 +12,8 @@ A lot of research is conducted on LoRa and LoRaWAN. This page is created to bett
 
 Title | Author | Journal/Proceedings | Year |
 | -------------------- | ---------- | ---------- | ------ |
+[Throughput, coverage and scalability of LoRa LPWAN for Internet of Things](http://people.ucalgary.ca/~mghaderi/docs/iwqos18-lora.pdf) | A. M. Yousuf, E. M. Rochester, B. Ousat and M. Ghaderi | Proc. IEEE/ACM International Symposium on Quality of Service (IWQoS) | 2018 |
+[A low-cost LoRaWAN testbed for IoT: Implementation and measurements](https://ieeexplore.ieee.org/document/8355180) |  A. M. Yousuf, E. M. Rochester and M. Ghaderi. | Proc. IEEE World Forum on Internet of Things (WF-IoT), pp. 361-366 | 2018 |
 [Integration of LoRaWAN and 4G/5G for the Industrial Internet of Things](https://ieeexplore.ieee.org/document/8291115/) | Navarro-Ortiz, J., Sendra, S., Ameigeiras, P., Lopez-Soler, J.M. | IEEE Communications Magazine, Vol. 56(2), pp. 60-67 | 2018 | 
 [Resource Efficiency in Low-Power Wide-Area Networks for IoT Applications](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8254800) | Z. Qin and J. McCann. | IEEE Global Communications Conference (GLOBECOM), pp. 1-7.| 2017 |
 [Modelling and analysis of low-power wide-area networks](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7996589) | Z. Qin, y. Liu, G. Y. Li, and J. McCann. | IEEE International Conference on Communications (ICC), pp. 1-7.| 2017 |
