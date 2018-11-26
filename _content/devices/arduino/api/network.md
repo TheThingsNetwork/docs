@@ -20,7 +20,7 @@ TheThingsNetwork ttn(Stream& modemStream, Stream& debugStream, fp_ttn_t fp, uint
 
 - `Stream& modemStream`: Stream for the LoRa modem ([see notes](https://www.thethingsnetwork.org/docs/devices/arduino/usage.html)).
 - `Stream& debugStream`: Stream to write debug logs to ([see notes](https://www.thethingsnetwork.org/docs/devices/arduino/usage.html)).
-- `fp_ttn_fp fp`: The frequency plan: `TTN_FP_EU868`, `TTN_FP_US915`, `TTN_FP_AS920_923`, `TTN_FP_AS923_925` or `TTN_FP_KR920_923` depending on the region you deploy in. See [the Frequency Plans Overview](../../../lorawan/frequency-plans.md).
+- `fp_ttn_fp fp`: The frequency plan: `TTN_FP_EU868`, `TTN_FP_US915`, `TTN_FP_AS920_923`, `TTN_FP_AS923_925` or `TTN_FP_KR920_923` depending on the region you deploy in. See [the wiki](https://www.thethingsnetwork.org/wiki/LoRaWAN/Frequencies/Frequency-Plans).
 - `uint8_t sf = 7`: Optional custom spreading factor. Can be `7` to `10` for `TTN_FP_US915` and `7` to `12` for other frequency plans. Defaults to `7`.
 - `uint8_t fsb = 2`: Optional custom frequency subband. Can be `1` to `8`. Defaults to `2` (for US915).
 
@@ -121,7 +121,7 @@ Returns `true` or `false` depending on whether the activation was successful.
 
 Call the method with no arguments if the device's LoRa module comes with pre-flashed values.
 
-See the [ABP](https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/ABP/ABP.ino) example.
+See the [SendABP](https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/SendABP/SendABP.ino) example.
 
 ## Method: `sendBytes`
 
@@ -144,7 +144,7 @@ Returns a success or error code and logs the related error message:
 * `TTN_SUCCESSFUL_RECEIVE`: Successful transmission. Received \<N> bytes
 * `TTN_ERROR_UNEXPECTED_RESPONSE`: Unexpected response: \<Response>
 
-See the [Send](https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/Send/Send.ino) example.
+See the [SendOTAA](https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/SendOTAA/SendOTAA.ino) example.
 
 ## Method: `poll`
 
@@ -192,7 +192,7 @@ void wake();
 
 ## Method: `linkCheck`
 
-Sets the time interval for the link check process to be triggered.
+Sets the time interval for the link check process to be triggered. When the interval expires, the next uplink will include a Link Check Request MAC command. When using this method, it should be called after joining has completed.
 
 ```c
 void linkCheck(uint16_t seconds);
@@ -223,4 +223,3 @@ Returns the voltage in millivolt (mV) measured by the RN2xxx LoRa module. It's f
 ```c
 uint16_t getVDD();
 ```
-
