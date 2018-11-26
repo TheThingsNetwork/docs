@@ -31,12 +31,12 @@
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-11-21T16:47:45+00:00" />
+<meta property="article:published_time" content="2018-11-26T17:09:43+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"description":"API Reference","url":"https://www.thethingsnetwork.org/docs/devices/arduino/api/network.html","headline":"TheThingsNetwork","dateModified":"2018-11-21T16:47:45+00:00","datePublished":"2018-11-21T16:47:45+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/devices/arduino/api/network.html"},"@context":"http://schema.org"}</script>
+{"description":"API Reference","url":"https://www.thethingsnetwork.org/docs/devices/arduino/api/network.html","headline":"TheThingsNetwork","dateModified":"2018-11-26T17:09:43+00:00","datePublished":"2018-11-26T17:09:43+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/devices/arduino/api/network.html"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -163,7 +163,7 @@
 <ul>
   <li><code class="highlighter-rouge">Stream&amp; modemStream</code>: Stream for the LoRa modem (<a href="https://www.thethingsnetwork.org/docs/devices/arduino/usage.html">see notes</a>).</li>
   <li><code class="highlighter-rouge">Stream&amp; debugStream</code>: Stream to write debug logs to (<a href="https://www.thethingsnetwork.org/docs/devices/arduino/usage.html">see notes</a>).</li>
-  <li><code class="highlighter-rouge">fp_ttn_fp fp</code>: The frequency plan: <code class="highlighter-rouge">TTN_FP_EU868</code>, <code class="highlighter-rouge">TTN_FP_US915</code>, <code class="highlighter-rouge">TTN_FP_AS920_923</code>, <code class="highlighter-rouge">TTN_FP_AS923_925</code> or <code class="highlighter-rouge">TTN_FP_KR920_923</code> depending on the region you deploy in. See <a href="../../../lorawan/frequency-plans.html">the Frequency Plans Overview</a>.</li>
+  <li><code class="highlighter-rouge">fp_ttn_fp fp</code>: The frequency plan: <code class="highlighter-rouge">TTN_FP_EU868</code>, <code class="highlighter-rouge">TTN_FP_US915</code>, <code class="highlighter-rouge">TTN_FP_AS920_923</code>, <code class="highlighter-rouge">TTN_FP_AS923_925</code> or <code class="highlighter-rouge">TTN_FP_KR920_923</code> depending on the region you deploy in. See <a href="https://www.thethingsnetwork.org/wiki/LoRaWAN/Frequencies/Frequency-Plans">the wiki</a>.</li>
   <li><code class="highlighter-rouge">uint8_t sf = 7</code>: Optional custom spreading factor. Can be <code class="highlighter-rouge">7</code> to <code class="highlighter-rouge">10</code> for <code class="highlighter-rouge">TTN_FP_US915</code> and <code class="highlighter-rouge">7</code> to <code class="highlighter-rouge">12</code> for other frequency plans. Defaults to <code class="highlighter-rouge">7</code>.</li>
   <li><code class="highlighter-rouge">uint8_t fsb = 2</code>: Optional custom frequency subband. Can be <code class="highlighter-rouge">1</code> to <code class="highlighter-rouge">8</code>. Defaults to <code class="highlighter-rouge">2</code> (for US915).</li>
 </ul>
@@ -239,7 +239,7 @@ RX Delay 2: 2000
 </ul>
 <p>Returns <code class="highlighter-rouge">true</code> or <code class="highlighter-rouge">false</code> depending on whether the activation was successful.</p>
 <p>Call the method with no arguments if the device’s LoRa module comes with pre-flashed values.</p>
-<p>See the <a href="https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/ABP/ABP.ino">ABP</a> example.</p>
+<p>See the <a href="https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/SendABP/SendABP.ino">SendABP</a> example.</p>
 <h2 id="method-sendbytes">Method: <code class="highlighter-rouge">sendBytes</code></h2>
 <p>Send a message to the application using raw bytes.</p>
 <div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="n">ttn_response_t</span> <span class="n">sendBytes</span><span class="p">(</span><span class="k">const</span> <span class="n">byte</span><span class="o">*</span> <span class="n">payload</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">length</span><span class="p">,</span> <span class="n">port_t</span> <span class="n">port</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">bool</span> <span class="n">confirm</span> <span class="o">=</span> <span class="nb">false</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">sf</span> <span class="o">=</span> <span class="mi">0</span><span class="p">);</span>
@@ -259,7 +259,7 @@ RX Delay 2: 2000
   <li><code class="highlighter-rouge">TTN_SUCCESSFUL_RECEIVE</code>: Successful transmission. Received &lt;N&gt; bytes</li>
   <li><code class="highlighter-rouge">TTN_ERROR_UNEXPECTED_RESPONSE</code>: Unexpected response: &lt;Response&gt;</li>
 </ul>
-<p>See the <a href="https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/Send/Send.ino">Send</a> example.</p>
+<p>See the <a href="https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/SendOTAA/SendOTAA.ino">SendOTAA</a> example.</p>
 <h2 id="method-poll">Method: <code class="highlighter-rouge">poll</code></h2>
 <p>Calls <code class="highlighter-rouge">sendBytes()</code> with <code class="highlighter-rouge"><span class="p">{</span><span class="w"> </span><span class="err">0x00</span><span class="w"> </span><span class="p">}</span></code> as payload to poll for incoming messages.</p>
 <div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="kt">int8_t</span> <span class="n">poll</span><span class="p">(</span><span class="n">port_t</span> <span class="n">port</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">bool</span> <span class="n">confirm</span> <span class="o">=</span> <span class="nb">false</span><span class="p">);</span>
@@ -294,7 +294,7 @@ RX Delay 2: 2000
 </code></pre>
 </div>
 <h2 id="method-linkcheck">Method: <code class="highlighter-rouge">linkCheck</code></h2>
-<p>Sets the time interval for the link check process to be triggered.</p>
+<p>Sets the time interval for the link check process to be triggered. When the interval expires, the next uplink will include a Link Check Request MAC command. When using this method, it should be called after joining has completed.</p>
 <div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="kt">void</span> <span class="n">linkCheck</span><span class="p">(</span><span class="kt">uint16_t</span> <span class="n">seconds</span><span class="p">);</span>
 </code></pre>
 </div>
