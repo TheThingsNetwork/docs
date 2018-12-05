@@ -59,7 +59,9 @@ Activating the Gateway
 5. This will send the settings to the gateway and in the next few moments you will see the page with the status of the gateway. It takes from 30 seconds to 2 mins to get the configuration settings in place. The activation page will indicate what the LED’s lights on the gateway indicate. 
 6. Your browser will refresh the page to switch back to your WiFi connection and if everything done correctly you will see the first message being sent through your gateway. 
 
-Once the gateway is configured you can manage the rest of the settings through the [console](https://console.thethingsnetwork.org) and add other details such as location, altitude etc. It is recommended to remove the SSID of the gateway from your device as it will ensure your device does not goes into AP mode again.
+Once the gateway is configured you can manage the rest of the settings through the [console](https://console.thethingsnetwork.org) and add other details such as location, altitude etc. 
+
+If you want to prevent direct WiFi connections with the gateway running in AP mode, you should remove the corresponding WiFi connection information from your computer/tablet/smartphone. The procedure of removing depends on the OS.
 
 > There is a button inside the gateway. To open it, put it down with the antenna socket at the top and (gently) lift the left and right sides of the white shield. (To close align the lid and push firmly at the sides only you hear it snap in place)
 
