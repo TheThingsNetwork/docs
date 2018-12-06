@@ -31,12 +31,12 @@
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-12-07T02:08:15+00:00" />
+<meta property="article:published_time" content="2018-12-07T10:18:11+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"description":"Connect to a private back-end","url":"https://www.thethingsnetwork.org/docs/gateways/multitech/connect-private.html","headline":"Connect to a private back-end","dateModified":"2018-12-07T02:08:15+00:00","datePublished":"2018-12-07T02:08:15+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/gateways/multitech/connect-private.html"},"@context":"http://schema.org"}</script>
+{"description":"Connect to a private back-end","url":"https://www.thethingsnetwork.org/docs/gateways/multitech/connect-private.html","headline":"Connect to a private back-end","dateModified":"2018-12-07T10:18:11+00:00","datePublished":"2018-12-07T10:18:11+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/gateways/multitech/connect-private.html"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -158,6 +158,12 @@
           <div class="panel-body page-content">
             <h1 id="connect-to-a-private-back-end">Connect to a private back-end</h1>
 <p>If you’ve followed the <a href="https://github.com/kersing/multitech-installer">installer</a>, you’ve configured your gateway to connect to The Things Network. What if you want to connect your gateway to a private back-end, or to a specific router?</p>
+<p>Alternatively you can download the <a href="https://github.com/egourlao/multitech-installer">private network installer</a> and execute it like this:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>export ACCOUNT_SERVER_DOMAIN=myaccount.domain
+export ROUTER_MQTT_ADDRESS=mymqtt.domain:port
+https://raw.githubusercontent.com/egourlao/multitech-installer/master/installer.sh | bash
+</code></pre>
+</div>
 <h3 id="find-the-mqtt-address-of-the-bridge">Find the MQTT address of the bridge</h3>
 <p>First, you’ll need to figure out what’s the <strong>MQTT address and port of the bridge</strong>. Here are a few examples:</p>
 <ul>
