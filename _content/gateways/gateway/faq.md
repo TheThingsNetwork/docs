@@ -82,6 +82,7 @@ When connected to the same network, some information can be seen at http://thing
 
 #### Q. My gateway is in a reboot loop. How can I fix it?
 
-- Symptom: After booting the gateway, 2 LEDs are on and the 3rd LED is blinking. After ~1 minute without progress, the gateway suddenly reboots and the whole thing repeats...
-- Possible cause: The LoRa board is not fully pushed in in the connector. 
-- Fix: Open the lid and push the LoRa board in the connector. See also: https://github.com/TheThingsProducts/gateway/issues/1#issuecomment-405523207
+- Symptom: After booting the gateway, 2 LEDs are on and the 3rd LED is blinking. After ~1 minute without progress, the gateway suddenly reboots and the whole thing repeats.
+- Possible cause: The LoRa board is not fully pushed in in the socket. 
+- Fix: Open the lid and push the LoRa board in the socket. See also: https://github.com/TheThingsProducts/gateway/issues/1#issuecomment-405523207
+- Remark: If this fix does not work for you, the right place to look for other solutions is: https://github.com/TheThingsProducts/gateway/issues
