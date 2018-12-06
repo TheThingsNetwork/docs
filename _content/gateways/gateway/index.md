@@ -61,8 +61,6 @@ Activating the Gateway
 
 Once the gateway is configured you can manage the rest of the settings through the [console](https://console.thethingsnetwork.org) and add other details such as location, altitude etc. 
 
-If you want to prevent direct WiFi connections with the gateway running in AP mode, you should remove the corresponding WiFi connection information from your computer/tablet/smartphone. The procedure of removing depends on the OS.
-
 > There is a button inside the gateway. To open it, put it down with the antenna socket at the top and (gently) lift the left and right sides of the white shield. (To close align the lid and push firmly at the sides only you hear it snap in place)
 
 > To reset, power on while pressing the ‘Mode button’ shown in the picture above (it is the pink one in the middle of the PCB). All leds should flash for some time.]
