@@ -7,7 +7,7 @@ title: The Things Indoor Gateway
 The Things Indoor Gateway(TTIG) is designed to be a fully compliant, ultra low-cost LoRaWAN gateway, with WiFi as the backhaul. The gateway comes with a wall plug, and can be powered over USB-C on 900mA, making the gateway even suitable for applications that require dynamic coverage.
 
 
-![TTIG](TTIG.jpg)
+![TTIG](TTIG2.jpg)
 
 **Salient Features:**
 * An 8 channel LoRaWAN indoor gateway at a price of $69. 
