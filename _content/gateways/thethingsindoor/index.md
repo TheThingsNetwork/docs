@@ -10,7 +10,7 @@ The Things Indoor Gateway(TTIG) is designed to be a fully compliant, ultra low-c
 ![TTIG](TTIG.jpg)
 
 **Salient Features:**
-* An 8 channel LoRaWAN indoor gateway at an incredible price of $69. 
+* An 8 channel LoRaWAN indoor gateway at a price of $69. 
 * One of the first gateways to support the state-of-the-art [BasicStation](https://doc.sm.tc/station/) Protocol.
 * Supports LBT.
 * Simple setup steps taking lesser than 5 mins.
@@ -39,6 +39,7 @@ The Things Indoor Gateway(TTIG) is designed to be a fully compliant, ultra low-c
 
 
 ## Connection to the The Things Network Backend
+
 1. To connect this gateway to the The Things Network console, register the gateway using the *I'm using the Legacy Packet Forwarder* option. 
 2. The EUI of the gateway is NOT the WiFi MAC address printed on the back of the gateway but is derived from the first number on the top of the sticker below the QR code.
    * This number can also be obtained from the WiFi Setup Page
