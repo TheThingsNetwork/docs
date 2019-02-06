@@ -1,6 +1,9 @@
 ---
 title: The Things Indoor Gateway
+image: /gateways/thethingsindoor/TTIG2.jpg
+section: Hardware
 ---
+
 
 # The Things Indoor Gateway
 
