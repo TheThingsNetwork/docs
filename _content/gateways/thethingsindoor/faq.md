@@ -16,6 +16,9 @@ This page consolidates some of the most frequently asked questions on [The Thing
 Since this is a EUI based gateway, select the `I'm using the legacy packet forwarder` option while registering the gateway and add your 64bit (8byte) EUI in the `GatewayID` tab. The console automatically prepends lower case `eui-` to your ID. 
 If registering using `ttnctl`, please follow the convention of `eui-<your 64bit EUI in lower case for the hex alphabets>`.
 
+**Can I use any browser to configure the gateway?** 
+The WiFi config page has a small JS issue when working with Firefox. Chrome will work just fine. There will be an automatic firmware update soon that will fix this.
+
 **Q. I don't live in Europe or in the US, can I still use the gateway?**
 
 Currently, the gateway only supports the EU868 and US915 frequency plans. Near the end of Q1, all frequency plans will be supported.
