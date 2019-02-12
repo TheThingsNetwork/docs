@@ -229,7 +229,28 @@ client.register_device(dev_id, device)
 ```
 
 * `dev_id`: **string** the id of the device to be registered.
-* `device`: **dictionary** the dictionary with fields to be set as a new device of the application. See the [Device](#deviceobject) section to know the structure of the dictionary that should be passed and the name of the fields.
+* `device`: 
+```python
+devicetest = {
+    "description": "Description",
+    "appEui": "0011223344556677",
+    "devEui": "9988776655443322",
+    "devAddr": "11223344", # remove for OTAA
+    "nwkSKey": binascii.b2a_hex(os.urandom(16)).upper(), # remove for OTAA
+    "appSKey": binascii.b2a_hex(os.urandom(16)).upper(), # remove for OTAA
+    "appKey": binascii.b2a_hex(os.urandom(16)).upper(), # remove for ABP
+    "fCntUp": 10,
+    "fCntDown": 11,
+    "latitude": 100,
+    "longitude": 200,
+    "altitude": 300,
+    "attributes": {
+        "foo": "bar",
+    },
+    "disableFCntCheck": True,
+    "uses32BitFCnt": True,
+}
+```
 
 ### device
 
