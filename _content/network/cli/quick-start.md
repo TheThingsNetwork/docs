@@ -24,7 +24,7 @@ This document gives a quick introduction to `ttnctl`.
 
 2.  Decompress the file and make the executable globally available.
     
-    On Mac and Linux create an alias or copy the executable as `ttnctl` to `/usr/local/bin` (use `⇧⌘G` in Mac OS Finder) or any other value that is in your path. On Windows use any other folder you use for global executables and make sure that folder is part of your path.
+    On Mac and Linux create an alias or copy the executable as `ttnctl` to `/usr/local/bin` (use `⇧⌘G` in Mac OS Finder) or any other value that is in your path. Make it executable with `chmod +x ttnctl`. On Windows use any other folder you use for global executables and make sure that folder is part of your path.
 
 ## Updates
 
