@@ -132,8 +132,16 @@ payload[1] = lowByte(myVal);
 Decode (payload functions):
 
 ```js
+// For unsigned 16 bits number
 decoded.myVal = (bytes[0] << 8)
                + bytes[1];
+```
+
+Given [JavaScript's operator precendence](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence), the parentheses are not needed when using the bitwise OR instead of addition:
+
+```js
+// For unsigned 16 bits number
+decoded.myVal = bytes[0] << 8 | bytes[1];
 ```
 
 > Wondering what the `<<` is about? This [Left shifts](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Left_shift) the 8 bits of the first byte 8 positions to the left. Confused? Think about how we could encode the number 11 as two 1's and decode by shifting the first 1 up one position (making it 10) before adding the other. We'll talk more about bit shifting next.
@@ -158,14 +166,14 @@ int myVal = ((int)(payload[0]) << 8)
 
 ### 4. Shift bits
 
-If the range of expected values is bigger than 65536 we can use the same trick. The only difference is that we have to manually shift bits when we encode on Arduino, just like we did in the payload function.
+If the range of expected values is bigger than 65536 we can use the same trick. The only difference is that we have to manually shift bits when we encode on Arduino, just like we did in the payload function, and we need to be careful while decoding in JavaScript.
 
-Let's say we need to encode a [long](https://www.arduino.cc/en/Reference/Long) which uses 4 bytes for a range up to 4294967296.
+Let's say we need to encode an unsigned [long](https://www.arduino.cc/en/Reference/Long) which uses 4 bytes for a range of 0 up to 4294967296.
 
 Encode (Arduino):
 
 ```c
-long lng = 200000L;
+unsigned long lng = 200000L;
 byte payload[4];
 payload[0] = (byte) ((lng & 0xFF000000) >> 24 );
 payload[1] = (byte) ((lng & 0x00FF0000) >> 16 );
@@ -173,22 +181,57 @@ payload[2] = (byte) ((lng & 0x0000FF00) >> 8  );
 payload[3] = (byte) ((lng & 0X000000FF)       );
 ```
 
+For Arduino you will often see that the masks such as `0x00FF0000`, and the type casts to `(byte)`, are not used. That works when `payload` is defined as an array of `byte` as that will really only fit 8 bits, where only the 8 least significant bits are stored and all others are simply discarded. But it never hurts to be explicit, and other platforms might surely need the masks and casts.
+
 Decode (payload functions):
 
 ```js
-decoded.myVal = ((long)(bytes[0]) << 24)
-              + ((long)(bytes[1]) << 16)
-              + ((long)(bytes[2]) << 8)
-              + ((long)(bytes[3]));
+// For unsigned 32 bits number
+decoded.myVal = bytes[0] * 0x1000000
+              + bytes[1] * 0x10000
+              + bytes[2] * 0x100
+              + bytes[3];
 ```
+
+Note that in JavaScript, for _unsigned_ 32 bits numbers, we cannot use bitwise operators such as shifting or the bitwise OR, as those always assume a two's complement representation which might yield negative numbers.
 
 ## How to send negative numbers?
 
-To tell the difference between -100 and 100 you will need a [signed](https://en.wikipedia.org/wiki/Signed_number_representations) data type. These set the highest (left-most) bit to `1` to indicate it's a negative number. This does mean that for example in a word only 15 of the 16 bits are available for the actual number, limiting the range from 65536 to 32768.
+To tell the difference between -100 and 100 you will need a [signed](https://en.wikipedia.org/wiki/Signed_number_representations) data type. These limit the maximum values by half: where an unsigned word (16 bits) can hold values from 0 through 65536, a signed word ranges from -32768 through 32767. On many platforms, including Arduino, signed integers use a [two's complement representation](https://en.wikipedia.org/wiki/Two%27s_complement) in memory, in which negative numbers might seem to have little in common with their positive counterpart: where decimal 2348 is represented as hexadecimal 0x092C (or 0x0000092C for 32 bits), the negative -2348 would be 0xF6D4 (or 0xFFFFF6D4 for 32 bits).
 
 ### Index, round and shift
 
 The data types we used so far are all signed, which means all of the tricks work just as well for negative values. Just be aware of the maximum value.
+
+When decoding negative numbers using JavaScript, beware that JavaScript's bitwise operators always expect 32 bits, in a two's complement representation. When handling fewer bits, [sign extension](https://en.wikipedia.org/wiki/Sign_extension) is needed to support negative values, yielding code such as:
+
+```js
+// Sign-extend to support negative numbers: shifting
+// 24 bits leftwards, followed by shifting 16 bits
+// to the right, extends a "two's complement" negative
+// value such as 0xF6D4 into 0xFFFFF6D4.
+decoded.myVal = (bytes[0] << 24 >> 16)
+              + bytes[1];
+```
+
+Again, the parentheses are not needed when using the bitwise OR instead of addition:
+
+```js
+// For signed 16 bits number
+decoded.myVal = bytes[0] << 24 >> 16 | bytes[1];
+```
+
+> When decoding unsigned numbers, one should not apply the sign extension, as then a value such as 0xF6D4 is actually 0x0000F6D4 and represents decimal 63188, not decimal -2348.
+
+For 32 bits signed numbers, sign extension is not needed:
+
+```js
+// For signed 32 bits number
+decoded.myVal = (bytes[0] << 24)
+              + (bytes[1] << 16)
+              + (bytes[2] << 8)
+              + bytes[3];
+```
 
 ### Unsigned data types
 
@@ -228,7 +271,34 @@ float myVal = payload[0] / 100.00;
 
 ## How to send multiple numbers?
 
-In a lot of cases you'll want to send multiple values in a single message. Start off by encoding each individual number to a buffer of bytes and then combine them into a single buffer.
+In a lot of cases you'll want to send multiple values in a single message. Often one simply sees that each byte is explicitly mapped to a specific position in the payload:
+
+Encode (Arduino):
+
+```c
+byte payload[6];
+
+payload[0] = myValA;
+
+payload[1] = highByte(myValB);
+payload[2] = lowByte(myValB);
+
+payload[3] = (byte) ((myValC & 0xFF0000) >> 16);
+payload[4] = (byte) ((myValC & 0x00FF00) >> 8 );
+payload[5] = (byte) ((myValC & 0X0000FF)      );
+```
+
+Decode (payload functions)
+
+```js
+decoded.myValA = bytes[0];
+// Assuming unsigned 16 bits integer
+decoded.myValB = bytes[1] << 8 | bytes[2];
+// Assuming signed 24 bits integer
+decoded.myValC = bytes[3] << 24 >> 8 | bytes[4] << 8 | bytes[5];
+```
+
+Alternatively, start off by encoding each individual number to a buffer of bytes and then combine them into a single buffer:
 
 Encode (Arduino):
 
@@ -253,27 +323,38 @@ memcpy(payload + sizeofPayloadA + sizeofPayloadB, payloadC, sizeofPayloadC);
 Decode (payload functions)
 
 ```js
-decoded.myValA = bytes.slice(0, 2);
-decoded.myValB = bytes.slice(2, 5);
+// Take byte 0 (1 not included)
+var bytesA = bytes.slice(0, 1);
+// Take bytes 1 and 2 (3 not included):
+var bytesB = bytes.slice(1, 3);
+// Take bytes 3 through 5 (6 not included):
+var bytesC = bytes.slice(3, 6);
 
-// Decode both byte arrays as we did before
+// Decode the byte arrays as we did before
 ```
 
 Encode (payload function)
 
 ```js
-// Encode both values as we did before
+// Encode the values as we did before
 
-var bytes = bytesA.concat(bytesB);
+var bytes = bytesA.concat(bytesB).concat(bytesC);
 ```
 
 Decode (Arduino):
 
 ```c
-var payloadA[2];
-var payloadB[3];
+byte payloadA;
+byte payloadB[2];
+byte payloadC[3];
 
-memcpy(payloadA, 
+int sizeofPayloadA = sizeof(payloadA);
+int sizeofPayloadB = sizeof(payloadB);
+int sizeofPayloadC = sizeof(payloadC);
+
+memcpy(payloadA, payload, sizeofPayloadA);
+memcpy(payloadB, payload + sizeofPayloadA, sizeofPayloadB);
+memcpy(payloadC, payload + sizeofPayloadA + sizeofPayloadB, sizeofPayloadC);
 ```
 
 ## How to send text?
