@@ -6,6 +6,8 @@ This is a new super low-cost 8-channel LoRaWAN gateway that comes in the shape o
 
 Connect a WiPy3, LoPy4 or a GPy to this shield and then hook in all your other Pycom devices and you have yourself a nifty little decentralised IoT network in one go.
 
+![Pycom Pygate](Pygate-Front.png)
+
 ## Features
 
 + Dual SX1257 transceivers for a total of 8 channels support
@@ -29,3 +31,5 @@ Connect a WiPy3, LoPy4 or a GPy to this shield and then hook in all your other P
 + Plug and play compatibility with Pygate.
 + Works transparently using the TCP/IP stack embedded into our MicroPython modules.
 + Dimensions: 21 (W) x 55 (L) x 32 (H) mm
+
+![Ethernet Adapter](PoE-Side1.png)
