@@ -76,3 +76,8 @@ This is a list of commercial LoRaWAN gateways currently available for purchase. 
 ## Link Labs
 
 + LL-BST-8
+
+## Pycom
+
++ [Pygate](https://pycom.io/product/pygate/): 8-channel LoRaWAN gateway that lets you connect a WiPy3.0, LoPy4 or a GPy to this shield and then hook in all your other Pycom devices and you have yourself a nifty little decentralised IoT network in one go. Extensible with an Ethernet hat that also supports PoE (Power over Ethernet).
+
