@@ -12,6 +12,7 @@ A lot of research is conducted on LoRa and LoRaWAN. This page is created to bett
 
 Title | Author | Journal/Proceedings | Year |
 | -------------------- | ---------- | ---------- | ------ |
+[Analysis and assessment of LoRaWAN ](https://ieeexplore.ieee.org/document/8325799) |  Kieu-Ha Phung , Hieu Tran , Quan Nguyen , Truong Thu Huong , Thanh-Long Nguyen  | 2nd International Conference on Recent Advances in Signal Processing, Telecommunications & Computing (SigTelCom) | 2018 |
 [Throughput, coverage and scalability of LoRa LPWAN for Internet of Things](http://people.ucalgary.ca/~mghaderi/docs/iwqos18-lora.pdf) | A. M. Yousuf, E. M. Rochester, B. Ousat and M. Ghaderi | Proc. IEEE/ACM International Symposium on Quality of Service (IWQoS) | 2018 |
 [A low-cost LoRaWAN testbed for IoT: Implementation and measurements](https://ieeexplore.ieee.org/document/8355180) |  A. M. Yousuf, E. M. Rochester and M. Ghaderi. | Proc. IEEE World Forum on Internet of Things (WF-IoT), pp. 361-366 | 2018 |
 [Integration of LoRaWAN and 4G/5G for the Industrial Internet of Things](https://ieeexplore.ieee.org/document/8291115/) | Navarro-Ortiz, J., Sendra, S., Ameigeiras, P., Lopez-Soler, J.M. | IEEE Communications Magazine, Vol. 56(2), pp. 60-67 | 2018 | 
