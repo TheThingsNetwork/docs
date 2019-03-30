@@ -111,7 +111,7 @@ For discussions about the frequency plans in different countries, see the posts 
 | Gabon
 | Gambia
 | Georgia | unknown, limited CEPT | CEPT Rec. 70-03 |
-| Germany | EU863-870<br />EU433 | [Non-specific Short Range Devices (SRD) regulations](https://www.bundesnetzagentur.de/SharedDocs/Downloads/DE/Sachgebiete/Telekommunikation/Unternehmen_Institutionen/Frequenzen/Allgemeinzuteilungen/2014_69_SRD_pdf.pdf?__blob=publicationFile&v=1), CEPT Rec. 70-03 |
+| Germany | EU863-870<br />EU433 | [Non-specific Short Range Devices (SRD) regulations](http://www.bnetza.de/SharedDocs/Downloads/DE/Sachgebiete/Telekommunikation/Unternehmen_Institutionen/Frequenzen/Allgemeinzuteilungen/2018_05_SRD_pdf.html), CEPT Rec. 70-03 |
 | Ghana
 | Greece | EU863-870<br />EU433 | [Radio frequency regulations](http://www.eett.gr/opencms/export/sites/default/admin/downloads/Announcments/AP399_034.pdf), [433MHz SRD regulations](http://www.eett.gr/opencms/export/sites/default/EETT/Electronic_Communications/Radio_Communications/TelecommunicationsEquipment/104v2.pdf), [868MHz SRD regulations](http://www.eett.gr/opencms/export/sites/default/EETT/Electronic_Communications/Radio_Communications/TelecommunicationsEquipment/105v2.pdf), CEPT Rec. 70-03 |
 | Grenada
