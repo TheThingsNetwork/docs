@@ -45,9 +45,9 @@ The ODU GUI is a web interface to configure all network settings. The ODU GUI us
  ![GUI](GUI.png)
 2. Login with the username and password: `admin` / `admin`
  > Make sure to update the password the first time you login!
-3. Connect the gateway to The Things Network via: **Packet Forward** > **Module 1 Settings** and enter the following settings
- **Server Address:** [Router address for you region](https://www.thethingsnetwork.org/docs/gateways/packet-forwarder/semtech-udp.html#router-addresses) 
- **Server Uplink Port:** 1700
+3. Connect the gateway to The Things Network via: **Packet Forward** > **Module 1 Settings** and enter the following settings:
+ **Server Address:** [Router address for you region](https://www.thethingsnetwork.org/docs/gateways/packet-forwarder/semtech-udp.html#router-addresses); 
+ **Server Uplink Port:** 1700;
  **Server Downlink Port:** 1700
  ![Gateway Settings](gateway-info.png)
 4. Save the **Gateway ID**, you will need this later on when adding the gateway to the Developer Console of The Things Network.
