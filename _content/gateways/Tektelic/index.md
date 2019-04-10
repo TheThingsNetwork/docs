@@ -11,6 +11,8 @@ The KONA Micro IoT Gateway is designed for enterprise and lightweight industrial
 
 Simple to configure and cost effective, it is an ideal hub for deployment of enterprise-level applications in areas where LoRaWANô coverage is not yet readily available or for private networks where the operator requires unfettered access to the gateways regardless of their deployment location.
 
+![KONA_Micro_Gateway](KONA_Micro_Front.png)
+
 
 ## Provisioning on TTN Network Server
 
