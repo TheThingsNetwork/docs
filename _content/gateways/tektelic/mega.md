@@ -1,5 +1,5 @@
 ---
-title: Tektelic KONA Mega Gateway
+title: KONA Mega
 section: Hardware
 zindex: 300
 ---
