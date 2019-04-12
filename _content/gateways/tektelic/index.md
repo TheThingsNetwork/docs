@@ -9,7 +9,7 @@ section: Hardware
 
 The KONA Micro IoT Gateway is designed for enterprise and lightweight industrial applications that require &quot;Always On&quot; connectivity.  Configured with an internal 3G/4G modem and a built-in battery backup, the KONA Micro IoT gateway continues to operate and transmits sensor data to the network even when the main site has lost power.
 
-Simple to configure and cost effective, it is an ideal hub for deployment of enterprise-level applications in areas where LoRaWANô coverage is not yet readily available or for private networks where the operator requires unfettered access to the gateways regardless of their deployment location.
+Simple to configure and cost effective, it is an ideal hub for deployment of enterprise-level applications in areas where LoRaWAN coverage is not yet readily available or for private networks where the operator requires unfettered access to the gateways regardless of their deployment location.
 
 ![KONA_Micro_Gateway](KONA_Micro_Front.png)
 
