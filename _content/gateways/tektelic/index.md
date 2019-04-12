@@ -33,9 +33,10 @@ This application note outlines the procedure to provision a Kona Gateway on The 
  3. Apply power to the Kona Gateway (refer to product specific user&#39;s guide).  Boot up time of the Gateway is approximately 2 minutes. During boot up, the LED status is Flashing Green.
  4. The Kona Gateway supports DHCP on the Ethernet port. The Gateway MAC address is printed on the Gateway label. Using KonaFT and the MAC address determine the IP address of the Gateway.
  - In KonaFT select **Tools** , then select **Find My Gateway** , then press **Scan**. When scanning is complete click then entry that corresponds to the Gateway&#39;s MAC address and press **Select**.
+ ![KONA_setup](Screen_1.png)
  5. The Gateway&#39;s IP address should appear in the bottom left corner of the KonaFT GUI.  Ensure the port number is set to 161 (default), then select the Start button.
  6. Take note of the Gateway ID.  This information is required for registering the gateway on the Network Server.
-
+ ![KONA_setup2](Screen_2.png)
 
 ### 1.3 Registering the Gateway on TTN
 
@@ -48,6 +49,7 @@ This application note outlines the procedure to provision a Kona Gateway on The 
  7. Select a frequency plan from the dropdown box that corresponds to the frequency band supported by the Gateway.
  8. Select a router, picking the one that&#39;s closest to the physical location of the gateway to reduce latency.
  9. Add location and antenna placement if desired (optional).
+ ![KONA-to-TTN](TTN_Screen.png)
  10. Click **Register Gateway**.
 
 
@@ -56,9 +58,13 @@ This application note outlines the procedure to provision a Kona Gateway on The 
 
  1. From KonaFT select the **Configuration** tab.
  2. Press the **Refresh files** button and then select **config.json** from the drop down menu.
+ ![KONA_setup3](Screen_3.png)
  3. Press the **Read** button.
- 4. Edit the config.json file to update the server\_address (router address) to point the gateway to the correct router.  Refer to [https://www.thethingsnetwork.org/docs/gateways/packet-forwarder/semtech-udp.html](https://www.thethingsnetwork.org/docs/gateways/packet-forwarder/semtech-udp.html) .
+ ![KONA_setup4](Screen_4.png)
+ 4. Edit the config.json file to update the server\_address (router address) to point the gateway to the correct router.  Refer to [https://www.thethingsnetwork.org/docs/gateways/packet-forwarder/semtech-udp.html](https://www.thethingsnetwork.org/docs/gateways/packet-forwarder/semtech-udp.html).
+ ![KONA_setup5](Screen_5.png)
  5. Add the Gateway ID (EUI).
+ ![KONA_setup6](Screen_6.png)
  6. Press **Write** to save the changes to the config.json file.
  7. Reboot the Gateway.
  8. The Gateway should now connect to The Things Network.
