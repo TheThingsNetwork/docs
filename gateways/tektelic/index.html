@@ -17,26 +17,26 @@
       if (document.location.href.substr(0, document.location.href.length - document.location.hash.length) !== canonical) {
         window.location.replace(canonical);
       }
-    })('https://www.thethingsnetwork.org/docs/gateways/aaeon/connect.html');
+    })('https://www.thethingsnetwork.org/docs/gateways/tektelic/');
     </script>
     <!-- Begin Jekyll SEO tag v2.4.0 -->
-<title>Connect to TTN | The Things Network</title>
+<title>Tektelic KONA Micro Gateway | The Things Network</title>
 <meta name="generator" content="Jekyll v3.4.5" />
-<meta property="og:title" content="Connect to TTN" />
+<meta property="og:title" content="Tektelic KONA Micro Gateway" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Restore the pre-built OS image" />
-<meta property="og:description" content="Restore the pre-built OS image" />
-<link rel="canonical" href="https://www.thethingsnetwork.org/docs/gateways/aaeon/connect.html" />
-<meta property="og:url" content="https://www.thethingsnetwork.org/docs/gateways/aaeon/connect.html" />
+<meta name="description" content="KONA Micro IoT Gateway" />
+<meta property="og:description" content="KONA Micro IoT Gateway" />
+<link rel="canonical" href="https://www.thethingsnetwork.org/docs/gateways/tektelic/" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/gateways/tektelic/" />
 <meta property="og:site_name" content="The Things Network" />
-<meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
+<meta property="og:image" content="https://www.thethingsnetwork.org/docs/gateways/Tektelic/KONA_Micro_Front.png" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2019-04-12T07:02:33+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"description":"Restore the pre-built OS image","url":"https://www.thethingsnetwork.org/docs/gateways/aaeon/connect.html","headline":"Connect to TTN","dateModified":"2019-04-12T07:02:33+00:00","datePublished":"2019-04-12T07:02:33+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/gateways/aaeon/connect.html"},"@context":"http://schema.org"}</script>
+{"description":"KONA Micro IoT Gateway","url":"https://www.thethingsnetwork.org/docs/gateways/tektelic/","headline":"Tektelic KONA Micro Gateway","dateModified":"2019-04-12T07:02:33+00:00","datePublished":"2019-04-12T07:02:33+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/gateways/Tektelic/KONA_Micro_Front.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/gateways/tektelic/"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -88,7 +88,7 @@
         </ul>
       </div>
       <div class="hidden-xs col-sm-3 text-right">
-        <a href="https://github.com/TheThingsNetwork/docs/edit/master/_content/gateways/aaeon/connect.md" class="page-edit" data-proofer-ignore><i class="fa fa-github"></i> Edit <strong>connect.md</strong></a>
+        <a href="https://github.com/TheThingsNetwork/docs/edit/master/_content/gateways/tektelic/index.md" class="page-edit" data-proofer-ignore><i class="fa fa-github"></i> Edit <strong>index.md</strong></a>
       </div>
     </div>
     <div class="row">
@@ -122,10 +122,6 @@
                 <li class=""><a href="/docs/gateways/rak831/">RAK831</a>
                 </li>
                 <li class=""><a href="/docs/gateways/aaeon/">AAEON</a>
-            <ul>
-                <li class="active"><a href="/docs/gateways/aaeon/connect.html">Connect to TTN</a>
-                </li>
-            </ul>
                 </li>
                 <li class=""><a href="/docs/gateways/cisco/">Cisco LoRaWAN Gateway</a>
                 </li>
@@ -141,7 +137,7 @@
                 </li>
                 <li class=""><a href="/docs/gateways/Tektelic/">Tektelic KONA Micro Gateway</a>
                 </li>
-                <li class=""><a href="/docs/gateways/tektelic/">Tektelic KONA Micro Gateway</a>
+                <li class="active"><a href="/docs/gateways/tektelic/">Tektelic KONA Micro Gateway</a>
                 </li>
                 <li class=""><a href="/docs/gateways/thethingsindoor/">The Things Indoor Gateway</a>
                 </li>
@@ -156,40 +152,57 @@
       <div class="col-sm-7">
         <div class="panel">
           <div class="panel-body page-content">
-            <h1 id="restore-the-pre-built-os-image">Restore the pre-built OS image</h1>
-<p>You will need two USB flash drives. The first will be for the AIOT-ILRA01 TTN-ready image, and the second for the Clonezilla boot disk.</p>
-<p>First of all, get a copy of the latest image for your gateway. Unzip the directory on a FAT32 formatted USB key.</p>
-<p>You will also need to download the latest version of clonezilla to mount our image on your ILRA01. <a href="http://clonezilla.org/downloads/download.php?branch=stable">Download the latest AMD64, ZIP version of clonezilla here</a>. Getting clonezilla ready is different depending on what OS you are. For a detailed guide, please visit the official documentation page on how to burn a USB flash drive.</p>
-<p>Backup anything you need before you continue, as flashing the TTN-ready image will completely wipe your gateway.</p>
+            <h1 id="kona-micro-iot-gateway">KONA Micro IoT Gateway</h1>
+<p>The KONA Micro IoT Gateway is designed for enterprise and lightweight industrial applications that require "Always On" connectivity.  Configured with an internal 3G/4G modem and a built-in battery backup, the KONA Micro IoT gateway continues to operate and transmits sensor data to the network even when the main site has lost power.</p>
+<p>Simple to configure and cost effective, it is an ideal hub for deployment of enterprise-level applications in areas where LoRaWANô coverage is not yet readily available or for private networks where the operator requires unfettered access to the gateways regardless of their deployment location.</p>
+<p><img src="KONA_Micro_Front.png" alt="KONA_Micro_Gateway" /></p>
+<h2 id="provisioning-on-ttn-network-server">Provisioning on TTN Network Server</h2>
+<p>This application note outlines the procedure to provision a Kona Gateway on The Things Network (TTN) Network Server.</p>
+<h3 id="11-required-equipment">1.1 Required Equipment</h3>
 <ul>
-  <li>Make sure the clonezilla flash drive is plugged in the gateway</li>
-  <li>Make sure your clonezilla flash disk Boot your gateway, if it’s the first time you will automatically be in the BIOS setup configuration, otherwise choose the “Advanced system setup” page on the OS selection list. Go to the “boot” tab, a make sure your clonezilla USB key is set to boot before the hard disk of the gateway. Now you can save and exit.</li>
-  <li>The system will now reboot, and the clonezilla setup screen will appear. Select “Clonezilla Live (To RAM)”. When prompted, select the correct layout for your keyboard.</li>
-  <li>Select “Start Clonezilla”. When prompted, select the first option, “Device-Image”.</li>
-  <li>When prompted select a “local_dev” configuration.</li>
-  <li>Press enter</li>
-  <li>Now you can safely remove the clonezilla flash drive and enter the drive with the TTN-ready image</li>
-  <li>Press CTRL + C as asked</li>
-  <li>Now you can select your newly inserted USB device as the image source (usually sda1).</li>
-  <li>Select the folder where image has been copied</li>
-  <li>Choose BEGINNER mode as it’s the fastest option</li>
-  <li>When prompted, select the “Restore Disk” option</li>
-  <li>Select the folder with the TTN-ready image again</li>
-  <li>SELECT the hard disk of your gateway as the destination</li>
-  <li>You can ask clonezilla to verify the validity of the TTN-ready image you downloaded</li>
-  <li>Ask for a reboot when the mounting is finished</li>
-  <li>All partitions will be now copied. Whenever prompted, just say “y”</li>
+  <li>Computer running Windows XP/7/10</li>
+  <li>Kona Micro/Macro/Mega Gateway</li>
+  <li>Power source</li>
+  <li>KonaFT software self-extracting installer</li>
+  <li>Cat 5/5e/6 Network cable</li>
 </ul>
-<p>The machine will now reboot. Your gateway is now running a fresh installation of ubilinux with all set ready for The Things Network.</p>
-<p>Login of Ubilinux is:   user: ubilinux password: ubilinux</p>
-<h1 id="register-the-gateway-to-ttn-console">Register the gateway to TTN Console</h1>
-<p>Before to be able to connect the gateway to TTN, login to <a href="https://console.thethingsnetwork.org/">TTN console</a> and register a new gateway.</p>
-<p>Select “I’m using the legacy packet forwarder” (AAEON TTN-ready image use Semtech UDP packet forwarder) and enter the gateway EUI (ID) of 8 bytes.</p>
-<p>Complete the rest of the steps, then take note of Gateway EUI.</p>
-<p>Login into Ubilinux on the fresh restored gateway AIOT-ILRA01 and launch from desktop the script gateway_ID.sh by double clicking on it; select “Execute in terminal” when the dialog box pops-up, the terminal window will open a file editor.</p>
-<p>Replace TTN GATEWAY ID, with the Gateway EUI (example <code class="highlighter-rouge">AB01FFBBCC110011</code>), press CTRL+X, Save the file and exit.</p>
-<p>Restart the system and at the following reboot the gateway will connect to TTN console.
-There is no need o login Ubilinux to enable the connection.</p>
+<h3 id="12-gateway-setup">1.2 Gateway Setup</h3>
+<ol>
+  <li>Connect the Ethernet ports of the gateway and computer as illustrated below.</li>
+  <li>Copy the KonaFT self-extracting installer software onto the computer then double-click on the installer icon to start the installation process.</li>
+  <li>Apply power to the Kona Gateway (refer to product specific user's guide).  Boot up time of the Gateway is approximately 2 minutes. During boot up, the LED status is Flashing Green.</li>
+  <li>The Kona Gateway supports DHCP on the Ethernet port. The Gateway MAC address is printed on the Gateway label. Using KonaFT and the MAC address determine the IP address of the Gateway.
+    <ul>
+      <li>In KonaFT select <strong>Tools</strong> , then select <strong>Find My Gateway</strong> , then press <strong>Scan</strong>. When scanning is complete click then entry that corresponds to the Gateway's MAC address and press <strong>Select</strong>.</li>
+    </ul>
+  </li>
+  <li>The Gateway's IP address should appear in the bottom left corner of the KonaFT GUI.  Ensure the port number is set to 161 (default), then select the Start button.</li>
+  <li>Take note of the Gateway ID.  This information is required for registering the gateway on the Network Server.</li>
+</ol>
+<h3 id="13-registering-the-gateway-on-ttn">1.3 Registering the Gateway on TTN</h3>
+<ol>
+  <li>Create a new TTN account or login to your previously created TTN account.</li>
+  <li>Click the dropdown arrow next to the User, and select <strong>CONSOLE</strong>.</li>
+  <li>Select <strong>Gateways</strong> , and then select <strong>Register Gateway</strong>.</li>
+  <li>Under Gateway ID, check the Legacy Packet Forwarder checkbox.</li>
+  <li>Under Gateway EUI, enter the 8 byte gateway ID recorded in one of the previous steps.</li>
+  <li>Under Description add a human readable description of the gateway.</li>
+  <li>Select a frequency plan from the dropdown box that corresponds to the frequency band supported by the Gateway.</li>
+  <li>Select a router, picking the one that's closest to the physical location of the gateway to reduce latency.</li>
+  <li>Add location and antenna placement if desired (optional).</li>
+  <li>Click <strong>Register Gateway</strong>.</li>
+</ol>
+<h3 id="14-configuring-the-gateway-to-connect-to-ttn">1.4 Configuring the Gateway to connect to TTN</h3>
+<ol>
+  <li>From KonaFT select the <strong>Configuration</strong> tab.</li>
+  <li>Press the <strong>Refresh files</strong> button and then select <strong>config.json</strong> from the drop down menu.</li>
+  <li>Press the <strong>Read</strong> button.</li>
+  <li>Edit the config.json file to update the server_address (router address) to point the gateway to the correct router.  Refer to <a href="https://www.thethingsnetwork.org/docs/gateways/packet-forwarder/semtech-udp.html">https://www.thethingsnetwork.org/docs/gateways/packet-forwarder/semtech-udp.html</a> .</li>
+  <li>Add the Gateway ID (EUI).</li>
+  <li>Press <strong>Write</strong> to save the changes to the config.json file.</li>
+  <li>Reboot the Gateway.</li>
+  <li>The Gateway should now connect to The Things Network.</li>
+</ol>
           </div>
         </div>
       </div>
