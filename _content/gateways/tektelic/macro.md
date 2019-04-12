@@ -1,5 +1,5 @@
 ---
-title: Tektelic KONA Macro Gateway
+title: KONA Macro
 section: Hardware
 zindex: 200
 ---
