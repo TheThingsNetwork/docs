@@ -17,17 +17,17 @@
       if (document.location.href.substr(0, document.location.href.length - document.location.hash.length) !== canonical) {
         window.location.replace(canonical);
       }
-    })('https://www.thethingsnetwork.org/docs/gateways/packet-forwarder/');
+    })('https://www.thethingsnetwork.org/docs/gateways/tektelic/mega.html');
     </script>
     <!-- Begin Jekyll SEO tag v2.4.0 -->
-<title>Packet Forwarders | The Things Network</title>
+<title>Tektelic KONA Mega Gateway | The Things Network</title>
 <meta name="generator" content="Jekyll v3.4.5" />
-<meta property="og:title" content="Packet Forwarders" />
+<meta property="og:title" content="Tektelic KONA Mega Gateway" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Packet Forwarders" />
-<meta property="og:description" content="Packet Forwarders" />
-<link rel="canonical" href="https://www.thethingsnetwork.org/docs/gateways/packet-forwarder/" />
-<meta property="og:url" content="https://www.thethingsnetwork.org/docs/gateways/packet-forwarder/" />
+<meta name="description" content="KONA Mega IoT Gateway" />
+<meta property="og:description" content="KONA Mega IoT Gateway" />
+<link rel="canonical" href="https://www.thethingsnetwork.org/docs/gateways/tektelic/mega.html" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/gateways/tektelic/mega.html" />
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
@@ -36,7 +36,7 @@
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"description":"Packet Forwarders","url":"https://www.thethingsnetwork.org/docs/gateways/packet-forwarder/","headline":"Packet Forwarders","dateModified":"2019-04-12T07:53:36+00:00","datePublished":"2019-04-12T07:53:36+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/gateways/packet-forwarder/"},"@context":"http://schema.org"}</script>
+{"description":"KONA Mega IoT Gateway","url":"https://www.thethingsnetwork.org/docs/gateways/tektelic/mega.html","headline":"Tektelic KONA Mega Gateway","dateModified":"2019-04-12T07:53:36+00:00","datePublished":"2019-04-12T07:53:36+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/gateways/tektelic/mega.html"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -88,7 +88,7 @@
         </ul>
       </div>
       <div class="hidden-xs col-sm-3 text-right">
-        <a href="https://github.com/TheThingsNetwork/docs/edit/master/_content/gateways/packet-forwarder/index.md" class="page-edit" data-proofer-ignore><i class="fa fa-github"></i> Edit <strong>index.md</strong></a>
+        <a href="https://github.com/TheThingsNetwork/docs/edit/master/_content/gateways/tektelic/mega.md" class="page-edit" data-proofer-ignore><i class="fa fa-github"></i> Edit <strong>mega.md</strong></a>
       </div>
     </div>
     <div class="row">
@@ -105,15 +105,7 @@
                 </li>
                 <li class=""><a href="/docs/gateways/registration.html">Gateway Registration</a>
                 </li>
-                <li class="active"><a href="/docs/gateways/packet-forwarder/">Packet Forwarders</a>
-            <ul>
-                <li class=""><a href="/docs/gateways/packet-forwarder/basicstation.html">Basic Station</a>
-                </li>
-                <li class=""><a href="/docs/gateways/packet-forwarder/semtech-udp.html">Semtech UDP Packet Forwarder</a>
-                </li>
-                <li class=""><a href="/docs/gateways/packet-forwarder/ttn.html">TTN Packet Forwarder</a>
-                </li>
-            </ul>
+                <li class=""><a href="/docs/gateways/packet-forwarder/">Packet Forwarders</a>
                 </li>
                 <li class=""><a href="/docs/gateways/lightning-protection.html">Lightning Protection</a>
                 </li>
@@ -144,6 +136,12 @@
                 <li class=""><a href="/docs/gateways/lorrier/">Lorrier LR2</a>
                 </li>
                 <li class=""><a href="/docs/gateways/tektelic/">Tektelic KONA Micro Gateway</a>
+            <ul>
+                <li class="active"><a href="/docs/gateways/tektelic/mega.html">Tektelic KONA Mega Gateway</a>
+                </li>
+                <li class=""><a href="/docs/gateways/tektelic/macro.html">Tektelic KONA Macro Gateway</a>
+                </li>
+            </ul>
                 </li>
                 <li class=""><a href="/docs/gateways/thethingsindoor/">The Things Indoor Gateway</a>
                 </li>
@@ -158,17 +156,64 @@
       <div class="col-sm-7">
         <div class="panel">
           <div class="panel-body page-content">
-            <h1 id="packet-forwarders">Packet Forwarders</h1>
-<p>A Packet Forwarder is a program running on a gateway, that interacts:</p>
+            <h1 id="kona-mega-iot-gateway">KONA Mega IoT Gateway</h1>
+<p>TEKTELIC’s KONA Mega IoT Gateway provides network operators with a carrier grade product for the deployment of LoRaWANTM Internet of Things networks. The Gateway enables massive scalability in a compact form factor by supporting up to 12 million messages per day.</p>
+<p>It is ideal for public and private network operators that require Full Duplex, multiple Rx and Tx Channels, cost effective and reliable LoRaWANTM gateways to maximise their network investment for years to come.</p>
+<p><img src="KONA_Mega_Tilt.png" alt="KONA_Mega_Gateway" /></p>
+<h2 id="provisioning-on-ttn-network-server">Provisioning on TTN Network Server</h2>
+<p>This application note outlines the procedure to provision a Kona Gateway on The Things Network (TTN) Network Server.</p>
+<h3 id="11-required-equipment">1.1 Required Equipment</h3>
 <ul>
-  <li>
-    <p>with the <strong>LoRa chip</strong>, to receive and transmits LoRa packets ;</p>
-  </li>
-  <li>
-    <p>with the <strong>network</strong>, to transmit them for applications.</p>
-  </li>
+  <li>Computer running Windows XP/7/10</li>
+  <li>Kona Micro/Macro/Mega Gateway</li>
+  <li>Power source</li>
+  <li>KonaFT software self-extracting installer</li>
+  <li>Cat 5/5e/6 Network cable</li>
 </ul>
-<p><img src="scheme.png" alt="Packet forwarder" /></p>
+<h3 id="12-gateway-setup">1.2 Gateway Setup</h3>
+<ol>
+  <li>Connect the Ethernet ports of the gateway and computer as illustrated below.</li>
+  <li>Copy the KonaFT self-extracting installer software onto the computer then double-click on the installer icon to start the installation process.</li>
+  <li>Apply power to the Kona Gateway (refer to product specific user's guide).  Boot up time of the Gateway is approximately 2 minutes. During boot up, the LED status is Flashing Green.</li>
+  <li>The Kona Gateway supports DHCP on the Ethernet port. The Gateway MAC address is printed on the Gateway label. Using KonaFT and the MAC address determine the IP address of the Gateway.
+    <ul>
+      <li>In KonaFT select <strong>Tools</strong> , then select <strong>Find My Gateway</strong> , then press <strong>Scan</strong>. When scanning is complete click then entry that corresponds to the Gateway's MAC address and press <strong>Select</strong>.
+ <img src="Screen_1.png" alt="KONA_setup" /></li>
+    </ul>
+  </li>
+  <li>The Gateway's IP address should appear in the bottom left corner of the KonaFT GUI.  Ensure the port number is set to 161 (default), then select the Start button.</li>
+  <li>Take note of the Gateway ID.  This information is required for registering the gateway on the Network Server.
+ <img src="Screen_2.png" alt="KONA_setup2" /></li>
+</ol>
+<h3 id="13-registering-the-gateway-on-ttn">1.3 Registering the Gateway on TTN</h3>
+<ol>
+  <li>Create a new TTN account or login to your previously created TTN account.</li>
+  <li>Click the dropdown arrow next to the User, and select <strong>CONSOLE</strong>.</li>
+  <li>Select <strong>Gateways</strong> , and then select <strong>Register Gateway</strong>.</li>
+  <li>Under Gateway ID, check the Legacy Packet Forwarder checkbox.</li>
+  <li>Under Gateway EUI, enter the 8 byte gateway ID recorded in one of the previous steps.</li>
+  <li>Under Description add a human readable description of the gateway.</li>
+  <li>Select a frequency plan from the dropdown box that corresponds to the frequency band supported by the Gateway.</li>
+  <li>Select a router, picking the one that's closest to the physical location of the gateway to reduce latency.</li>
+  <li>Add location and antenna placement if desired (optional).
+ <img src="TTN_Screen.png" alt="KONA-to-TTN" /></li>
+  <li>Click <strong>Register Gateway</strong>.</li>
+</ol>
+<h3 id="14-configuring-the-gateway-to-connect-to-ttn">1.4 Configuring the Gateway to connect to TTN</h3>
+<ol>
+  <li>From KonaFT select the <strong>Configuration</strong> tab.</li>
+  <li>Press the <strong>Refresh files</strong> button and then select <strong>config.json</strong> from the drop down menu.
+ <img src="Screen_3.png" alt="KONA_setup3" /></li>
+  <li>Press the <strong>Read</strong> button.
+ <img src="Screen_4.png" alt="KONA_setup4" /></li>
+  <li>Edit the config.json file to update the server_address (router address) to point the gateway to the correct router.  Refer to <a href="https://www.thethingsnetwork.org/docs/gateways/packet-forwarder/semtech-udp.html">https://www.thethingsnetwork.org/docs/gateways/packet-forwarder/semtech-udp.html</a>.
+ <img src="Screen_5.png" alt="KONA_setup5" /></li>
+  <li>Add the Gateway ID (EUI).
+ <img src="Screen_6.png" alt="KONA_setup6" /></li>
+  <li>Press <strong>Write</strong> to save the changes to the config.json file.</li>
+  <li>Reboot the Gateway.</li>
+  <li>The Gateway should now connect to The Things Network.</li>
+</ol>
           </div>
         </div>
       </div>
