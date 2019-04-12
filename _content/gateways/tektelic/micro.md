@@ -1,5 +1,5 @@
 ---
-title: KONA Micro Gateway
+title: KONA Micro
 image: /gateways/Tektelic/KONA_Micro_Front.png
 section: Hardware
 zindex: 100
