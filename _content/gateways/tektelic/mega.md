@@ -1,7 +1,7 @@
 ---
 title: KONA Mega
 section: Hardware
-zindex: 300
+zindex: 100
 ---
 
 # KONA Mega IoT Gateway
@@ -11,6 +11,25 @@ TEKTELIC's KONA Mega IoT Gateway provides network operators with a carrier grade
 It is ideal for public and private network operators that require Full Duplex, multiple Rx and Tx Channels, cost effective and reliable LoRaWANTM gateways to maximise their network investment for years to come.
 
 ![KONA_Mega_Gateway](KONA_Mega_Tilt.png)
+![KONA_Mega_Gateway Filters](KONA_Mega_Filters.jpg)
+
+
+## Key Features
+
+- Frequency Division Duplex (FDD) 64+8 Rx & 2+2 Tx Channels
+- Time Division Duplex (TDD) 32 Rx / 2+2 Tx Channels
+- Global Frequency Bands: NA915, EU868, AS923, JP920, CH779, …
+- Dual Antenna Support for Rx Diversity and Tx Capacity
+- Integrated Highly Selective RF Cavity Duplexers or Bandpass Filters
+- Copper & Optical Ethernet & Global 3G/4G Backhaul Options
+- GPS Precise Network Synchronization with Hold-Over
+- Comprehensive & Customizable TDoA Geolocation Solution
+- Up to 30dBm (1 Watt) Tx Power 
+- Tier 1 Carrier Grade Design, System Integration & Verification
+- Superior Receiver & Transmitter RF Performance
+- Multiple Deployment & Mounting Options (Tower, Pole, Strand)
+- Comprehensive KonaFT OA&M Tool
+- Low Total Cost of Ownership Solution (Deployment and Maintenance)  
 
 
 ## Provisioning on TTN Network Server
