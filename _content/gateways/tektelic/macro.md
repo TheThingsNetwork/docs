@@ -10,6 +10,26 @@ The KONA Macro IoT Gateway is an ideal solution for operators and enterprises th
 
 ![KONA_Macro_Gateway](KONA_Macro_Tilt.PNG)
 
+
+## Key Features
+
+- Frequency Division Duplex (FDD) 16 Rx & 2 Tx Channels
+- Time Division Duplex (TDD) 16 Rx / 2 Tx Channels
+- Global Frequency Bands: NA915, EU868, AS923, JP920, CH779, …
+- Extremely Compact, Simple, Reliable and Fully Integrated System
+- Copper Ethernet & Global 3G/4G Backhaul Options
+- Integrated Highly Selective Duplexers or Bandpass Filters
+- GPS Precise Network Synchronization with Hold-Over
+- Optional Comprehensive & Customizable TDoA Geolocation Solution
+- Up to 30dBm Tx Power per Antenna
+- Superior Receiver & Transmitter RF Performance
+- Tier 1 Carrier Grade Design, IP-67 Enclosure, -40°C to +60°C
+- Multiple Deployment & Mounting Options (Tower, Pole, Wall)
+- Comprehensive KonaFT OA&M Tool 
+- Low Total Cost of Ownership Solution (Deployment and Maintenance)  
+
+
+
 ## Provisioning on TTN Network Server
 
 This application note outlines the procedure to provision a Kona Gateway on The Things Network (TTN) Network Server.
