@@ -2,7 +2,7 @@
 title: KONA Micro
 image: /gateways/Tektelic/KONA_Micro_Front.png
 section: Hardware
-zindex: 100
+zindex: 300
 ---
 
 # KONA Micro IoT Gateway
@@ -11,7 +11,22 @@ The KONA Micro IoT Gateway is designed for enterprise and lightweight industrial
 
 Simple to configure and cost effective, it is an ideal hub for deployment of enterprise-level applications in areas where LoRaWAN coverage is not yet readily available or for private networks where the operator requires unfettered access to the gateways regardless of their deployment location.
 
-![KONA_Micro_Gateway](KONA_Micro_Front.png)
+![KONA_Micro_Gateway](Micro_tilt.png)
+
+
+## Key Features
+
+- Time Division Duplex (TDD) 8 Rx / 1 Tx Channels
+- Global Frequency Bands: NA915, EU868, AS923, JP920, CH779
+- Extremely Compact, Simple, Reliable and Fully Integrated System
+- Copper Ethernet & Global 3G/4G Backhaul Options
+- Up to 27dBm Tx Power per Antenna
+- Superior Receiver & Transmitter RF Performance
+- Integrated 4 Hour Battery Back-up
+- Enterprise Design IP-31 Enclosure, 0°C to +40°C
+- Multiple Deployment & Mounting Options (Wall, Desk, Rack)
+- Comprehensive KonaFT OA&M Tool
+- Low Total Cost of Ownership Solution (Deployment and Maintenance)  
 
 
 ## Provisioning on TTN Network Server
