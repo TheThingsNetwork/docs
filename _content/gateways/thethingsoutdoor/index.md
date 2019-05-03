@@ -28,10 +28,10 @@ The Things Outdoor Gateway (TTOG) is an industrial, outdoor and fully compliant 
 ## Set up your gateway
 
 1. Connect all antennas:
- ANT 1 - GPS
- ANT 2 - LTE antenna
- ANT 3 - LoRaWAN antenna
- ANT 4 - LoRaWAN antenna (optional)
+ - ANT 1 - GPS
+ - ANT 2 - LTE antenna
+ - ANT 3 - LoRaWAN antenna
+ - ANT 4 - LoRaWAN antenna (optional)
 2. Connect the PoE Output cable to the Gateway Ethernet connector. Connect the PoE Input cable to the network connection device.
 
 
