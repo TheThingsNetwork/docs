@@ -24,6 +24,7 @@ The Things Outdoor Gateway (TTOG) is an industrial, outdoor and fully compliant 
 * Weight: 2.05kg
 * Power voltage: 55VDC/0.6A via PoE adapter
 
+The outdoor gateway is currently available from [Connected Things](https://connectedthings.store) store in both EU and US versions.
 
 ## Set up your gateway
 
