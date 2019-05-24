@@ -24,6 +24,14 @@ The Things Indoor Gateway(TTIG) is designed to be a fully compliant, ultra low-c
 * EU868, US915, AS923 and CN470 versions available.
 * Security via a range of [modes](https://doc.sm.tc/station/authmodes.html).
 
+## Buying The Things Indoor Gateway
+
+**Links:**
+* RS Components - [link](https://nl.rs-online.com/web/p/radio-frequency-development-kits/1843978/)
+* Connected Things - [link](https://connectedthings.store/gb/lorawan-gateways/the-things-indoor-gateway-868-mhz.html)
+* Allied Electronics - [link](https://www.alliedelec.com/product/rs-components-uk/ttig-915/71600476/)
+
+Need help or more info? Drop us a [line](mailto:hardware@thethingsindustries.com).
 
 ## Activate your gateway in under 5 min
 
