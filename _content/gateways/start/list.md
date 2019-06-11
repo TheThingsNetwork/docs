@@ -76,3 +76,9 @@ This is a list of commercial LoRaWAN gateways currently available for purchase. 
 ## Link Labs
 
 + LL-BST-8
+
+## Ursalink
+
++ [UG85 Indoor Gateway](https://www.ursalink.com/en/industrial-lorawan-gateway/): internal 3G/4G modem and a network server, palm-sized.
+
++ [UG87 Outdoor Gateway](https://www.ursalink.com/en/industrial-lorawan-gateway/): 16-channel, easy-to-configure, waterproof outdoor gateway*.
