@@ -77,5 +77,5 @@ The ODU GUI is a web interface to configure all network settings. The ODU GUI us
  * **System** > **System Firmware** 
  * Download [this file](https://drive.google.com/file/d/1PFQiRKUO-miSnt0cwnaf8qBb5GLEUvAi/view?usp=sharing)
  * Upload the file to and click **Upgrade**
-  ![Upgrade-page](upgrade-1.png)
+  ![Upgrade-page](upgrade_1.png)
  * The gateway will automatically reboot with the upgraded firmware
