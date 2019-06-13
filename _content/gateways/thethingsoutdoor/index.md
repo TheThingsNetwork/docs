@@ -47,10 +47,10 @@ The ODU GUI is a web interface to configure all network settings. The ODU GUI us
 2. Login with the username and password: `admin` / `admin`
  > Make sure to update the password the first time you login!
 3. Connect the gateway to The Things Network via: **Packet Forward** > **Module 1 Settings** and enter the following settings:
- **Server Address:** [Router address for you region](https://www.thethingsnetwork.org/docs/gateways/packet-forwarder/semtech-udp.html#router-addresses); 
- **Server Uplink Port:** 1700;
- **Server Downlink Port:** 1700
- ![Gateway Settings](gateway-info.png)
+ - **Server Address:** [Router address for you region](https://www.thethingsnetwork.org/docs/gateways/packet-forwarder/semtech-udp.html#router-addresses); 
+ - **Server Uplink Port:** 1700;
+ - **Server Downlink Port:** 1700
+  ![Gateway Settings](gateway-info.png)
 4. Save the **Gateway ID**, you will need this later on when adding the gateway to the Developer Console of The Things Network.
 5. Set the network settings via **Network** > **WAN**. You can choose to connect via Ethernet or 3G/LTE. Reboot the gateway after configuring the network settings.
  
@@ -62,7 +62,6 @@ The ODU GUI is a web interface to configure all network settings. The ODU GUI us
  > Now, you can access the web interface via: [192.168.11.10](http://192.168.11.10).
 
 
-
 ## Connecting to the The Things Network Backend
 
 1. To connect this gateway to the [The Things Network console](https://console.thethingsnetwork.org/), register the gateway using the **I'm using the Legacy Packet Forwarder** option. 
@@ -70,3 +69,13 @@ The ODU GUI is a web interface to configure all network settings. The ODU GUI us
 4. This is the value to be entered in the Gateway ID field on the [console](https://console.thethingsnetwork.org).
 5. Enter the other details such as location, frequency plan and router.
 6. If your configuration was successful, you should start receiving packets (if there are LoRaWAN nodes transmitting nearby).
+
+
+## Troubelshooting
+
+* When you cannot find a way to change the LoRaWAN settings, you might need to update the System Firmware. You can do so via:
+ - **System** > **System Firmware** 
+ - Download [this file](https://drive.google.com/file/d/1PFQiRKUO-miSnt0cwnaf8qBb5GLEUvAi/view?usp=sharing)
+ - Upload the file to and click **Upgrade**
+  ![Upgrade-page](upgrade-1.png)
+ - The gateway will automatically reboot with the upgraded firmware
