@@ -74,8 +74,8 @@ The ODU GUI is a web interface to configure all network settings. The ODU GUI us
 ## Troubelshooting
 
 * When you cannot find a way to change the LoRaWAN settings, you might need to update the System Firmware. You can do so via:
- - **System** > **System Firmware** 
- - Download [this file](https://drive.google.com/file/d/1PFQiRKUO-miSnt0cwnaf8qBb5GLEUvAi/view?usp=sharing)
- - Upload the file to and click **Upgrade**
+ * **System** > **System Firmware** 
+ * Download [this file](https://drive.google.com/file/d/1PFQiRKUO-miSnt0cwnaf8qBb5GLEUvAi/view?usp=sharing)
+ * Upload the file to and click **Upgrade**
   ![Upgrade-page](upgrade-1.png)
- - The gateway will automatically reboot with the upgraded firmware
+ * The gateway will automatically reboot with the upgraded firmware
