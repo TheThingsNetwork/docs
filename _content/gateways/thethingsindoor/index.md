@@ -27,7 +27,8 @@ The Things Indoor Gateway(TTIG) is designed to be a fully compliant, ultra low-c
 ## Buying The Things Indoor Gateway
 
 **Links:**
-* RS Components - [link](https://nl.rs-online.com/web/p/radio-frequency-development-kits/1843978/)
+* RS Components (qty. box of 100) - [link](https://nl.rs-online.com/web/p/radio-frequency-development-kits/1843978/)
+* RS Components (qty. 1) - [link](https://ch.rs-online.com/web/p/hf-entwicklungskits/1843981)
 * Connected Things - [link](https://connectedthings.store/gb/lorawan-gateways/the-things-indoor-gateway-868-mhz.html)
 * Allied Electronics - [link](https://www.alliedelec.com/product/rs-components-uk/ttig-915/71600476/)
 
