@@ -6,8 +6,8 @@ redirect_from:
 ambassador:
   name: Ryan Walmsley
   username: Ryanteck
-image: /gateways/pisupply-hat/images/pisupply-gateway.png
-zindex: 900
+image: /gateways/pisupply-hat/images/gatewayHat-assembled.png
+zindex: 850
 ---
 
 # Setup your Pi Supply IoT LoRa Gateway HAT
@@ -15,6 +15,7 @@ In this tutorial we will go over setting up the Pi Supply IoT LoRa Gateway HAT.
 
 The method we are using is with our Pre Built SD Card Image. However other methods are available at https://learn.pi-supply.com/make/category/lora/
 
+![](images/gatewayHat-assembled.png)
 
 <span style="color:red">Reminder: Make sure the antenna is connected before turning the Raspberry Pi on</span>
 
@@ -58,8 +59,8 @@ Once completed you should get this screen.
 ![](images/balena-screenshot3.png)
 
 
-#Step 3 – Configuring the SD Card
-##Step 3.1 – Adding the gateway to the TTN Console
+
+# Step 3 – Adding the gateway to the TTN Console
 
 Begin by going to https://console.thethingsnetwork.org/ and creating an account if not already signed up and then login.
 
@@ -102,10 +103,10 @@ Finally click update gateway and return to the main screen. The overview should 
 ![](images/ttn-console-3.png)
 
 
-
-
 # Step 4 – Plug it all in!
 Now we’re ready for assembly, start by putting the RAK833 module into the Gateway HAT and then push the Gateway HAT onto the Raspberry Pi’s GPIO Headers.
+
+![](images/gatewayHat-assembled2.png)
 
 Put the SD Card into the Raspberry Pi and connect it to Ethernet (if not using wireless) and finally connect a power adapter.
 
