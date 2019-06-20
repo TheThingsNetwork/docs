@@ -73,19 +73,19 @@ Now click gateways and then on the top right of the gateway box click register g
 
 On this window you need to fill out the following fields:
 
-Gateway ID: This has to be a unique ID, this can be anything you like but has to be unique.
+**Gateway ID:** This has to be a unique ID, this can be anything you like but has to be unique.
 
-Description: This can be anything you like for you to have a description of a gateway.
+**Description:** This can be anything you like for you to have a description of a gateway.
 
-Frequency Plan: This is the frequency of the gateway and should match your gateway. As we’re in Europe I’ve selected the Europe 868Mhz Plan.
+**Frequency Plan:** This is the frequency of the gateway and should match your gateway. As we’re in Europe I’ve selected the Europe 868Mhz Plan.
 
-Router: This is the closest server to your location, as we’re in Europe I’ve selected Europe but you might find there is a router closer to you.
+**Router:** This is the closest server to your location, as we’re in Europe I’ve selected Europe but you might find there is a router closer to you.
 
-Location: The location of the gateway is handy to put in, while not required it may be useful in the future and for signal coverage mapping.
+**Location:** The location of the gateway is handy to put in, while not required it may be useful in the future and for signal coverage mapping.
 
-Antenna Placement: If the gateway and antenna is indoors then select indoors, if the antenna is mounted externally select outdoors.
+**Antenna Placement:** If the gateway and antenna is indoors then select indoors, if the antenna is mounted externally select outdoors.
 
-All of these settings can be modified later except for the gateway ID
+**All of these settings can be modified later except for the gateway ID**
 
 
 ![](images/ttn-console-2.png)
