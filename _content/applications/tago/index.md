@@ -4,9 +4,11 @@ section: Integrations
 source: 'https://github.com/TheThingsNetwork/docs/blob/master/_content/applications/tago/index.md'
 ---
 
-# Tago
+# TagoIO
 
-In this article, you will be instructed on how to integrate TTN LoRaWAN devices with [TagoIO](https://tago.io/). You will be able to send data from your devices (uplink) to TagoIO and back to them (downlink).
+TagoIO is the best IoT platform to build nice dashboards, analytics, reports, and notifications easily and quickly. Also, you can manage devices and users, and add your own logo, colors, and url to deploy your solution in minutes.
+
+Here you will learn how to integrate TTN LoRaWAN devices with [TagoIO](https://tago.io/). You will be able to send data from your devices (uplink) to TagoIO and back to them (downlink).
 
 
 ## 1. TagoIO Setup
