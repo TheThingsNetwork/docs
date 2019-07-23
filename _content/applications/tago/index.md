@@ -8,13 +8,11 @@ source: 'https://github.com/TheThingsNetwork/docs/blob/master/_content/applicati
 
 [TagoIO](https://tago.io/) allows you to quickly store, visualize, and act on sensor data.
 
-Here you will learn how to integrate TTN LoRaWAN devices with [TagoIO](https://tago.io/). You will be able to send data from your devices (uplink) to TagoIO and back to them (downlink).
+Here you will learn how to integrate TTN LoRaWAN devices with [TagoIO](https://tago.io/). You will be able to send data from your devices (uplink) to TagoIO and back from TagoIO to the devices (downlink).
 
 
 ## 1. TagoIO Setup
-After creating an account on [Tago.io](https://tago.io/), go to Devices, click on *Add Devices*, and filter by LoRaWAN TTN. Then, search for the device that you want to add. If you don't find it, select the type *Custom TTN Device*.
-
-> When selecting Custom TTN Device connector, a payload parse will NOT be included on the new device. You will need to add your own parser to extract values. 
+After creating an account on [Tago.io](https://tago.io/), go to Devices, click on *Add Devices*, and filter by LoRaWAN TTN. Then, search for the device that you want to add. If you do not find it, select the type *Custom TTN Device*.
 
 Just give a name for the device, type the device EUI, and click on the **Create Device** button. 
 
@@ -24,7 +22,7 @@ For example, if you selected the **Custom TTN** type, you will be presented with
 
 After the device is created, a standard parser script is included in the **Payload Parser** tab based on the selected connector (unless you selected Custom TTN). Later, you can also add your own script to execute any calculation or to parse more data. 
 
-Then, you need to **create an Authorization** and use it in the TTN setup later. 
+Next you will need to create an Authorization for use in the TTN setup later. 
 
 ![Add-integration](Tago4.png)
 
@@ -34,17 +32,20 @@ Copy this Authorization to use it in the next step.
 
 ## 2. TTN Setup
 
-In The Things Network [The Things Network Console](https://console.thethingsnetwork.org/), go to your already created Application, select the **Integrations** tab, and click **+add integration**.
+On [The Things Network Console](https://console.thethingsnetwork.org/) go to your already created Application, select the **Integrations** tab, and click **+add integration**.
 
 Select **TagoIO** from the integration list.
 
 ![Add-integration](Tago1.png)
 
-Here you fill in your Process ID, your access key, and then paste the **Authorization** generated at TagoIO.
+You will be presented with a configuration screen to set the appropriate settings for the TagoIO integration.
+* Process ID: This can be any lowercase alphanumeric name which should be unique for your application. Something like `send-data-to-tago` would be a good process ID.
+* Access Key: Normally one would choose `default` from the list. If you want to limit the access that TagoIO has to your TTN application, you can create another access key with limited rights and choose that one here.
+* Authorization: Paste the authorization key that you copied earlier from TagoIO into this field.
 
 ![Create-integration](Tago3.png)
 
-If you have followed all the steps, as soon as your devices start to send data to TTN, the data packages will be forwarded to your TagoIO account.
+If you followed all the steps correctly, any data that is sent out by your device will be forwarded from TTN to your TagoIO account.
 
 
 ## Downlink
