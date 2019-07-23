@@ -55,7 +55,7 @@ To send data back to your device, just go to your device at Tago and visit the t
 
 Here you can add two parameters, for different data formats.
 
-**payload_raw** 
+**payload** 
 Will send the raw payload to your device.
 
 **payload_fields** 
