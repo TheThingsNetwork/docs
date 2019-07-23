@@ -6,23 +6,21 @@ source: 'https://github.com/TheThingsNetwork/docs/blob/master/_content/applicati
 
 # TagoIO
 
-TagoIO is the best IoT platform to build nice dashboards, analytics, reports, and notifications easily and quickly. Also, you can manage devices and users, and add your own logo, colors, and url to deploy your solution in minutes.
-
 Here you will learn how to integrate TTN LoRaWAN devices with [TagoIO](https://tago.io/). You will be able to send data from your devices (uplink) to TagoIO and back to them (downlink).
 
 
 ## 1. TagoIO Setup
-After creating an account on [Tago.io](https://tago.io/), go to Devices, click on *'Add Devices'*, and filter by LoRaWAN TTN. Then, search for the device that you want to add. If you don't find it, select the type *Custom TTN Device*.
+After creating an account on [Tago.io](https://tago.io/), go to Devices, click on *Add Devices*, and filter by LoRaWAN TTN. Then, search for the device that you want to add. If you don't find it, select the type *Custom TTN Device*.
 
 > When selecting Custom TTN Device connector, a payload parse will NOT be included on the new device. You will need to add your own parser to extract values. 
 
-Just give a name for the device, type the device EUI, and click on the **'Create Device'** button. 
+Just give a name for the device, type the device EUI, and click on the **Create Device** button. 
 
-For example, if you selected the 'Custom TTN' type, you will be presented with the following screen. 
+For example, if you selected the **Custom TTN** type, you will be presented with the following screen. 
 
 ![Add-integration](Tago2.png)
 
-After the device is created, a standard parser script is included in the 'Payload Parser' tab based on the selected connector (unless you selected Custom TTN). Later, you can also add your own script to execute any calculation or to parse more data. 
+After the device is created, a standard parser script is included in the **Payload Parser** tab based on the selected connector (unless you selected Custom TTN). Later, you can also add your own script to execute any calculation or to parse more data. 
 
 Then, you need to **create an Authorization** and use it in the TTN setup later. 
 
@@ -34,7 +32,7 @@ Copy this Authorization to use it in the next step.
 
 ## 2. TTN Setup
 
-In The Things Network [Developer Console](https://console.thethingsnetwork.org/), go to your already created Application, select the 'Integrations' tab, and click **+add integration**.
+In The Things Network [The Things Network Console](https://console.thethingsnetwork.org/), go to your already created Application, select the **Integrations** tab, and click **+add integration**.
 
 Select **TagoIO** from the integration list.
 
@@ -55,7 +53,7 @@ To send data back to your device, just go to your device at Tago and visit the t
 
 Here you can add two parameters, for different data formats.
 
-**payload** 
+**downlink** 
 Will send the raw payload to your device.
 
 **payload_fields** 
