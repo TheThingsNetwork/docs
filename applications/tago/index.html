@@ -24,19 +24,19 @@
 <meta name="generator" content="Jekyll v3.4.5" />
 <meta property="og:title" content="Tago" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Tago" />
-<meta property="og:description" content="Tago" />
+<meta name="description" content="TagoIO" />
+<meta property="og:description" content="TagoIO" />
 <link rel="canonical" href="https://www.thethingsnetwork.org/docs/applications/tago/" />
 <meta property="og:url" content="https://www.thethingsnetwork.org/docs/applications/tago/" />
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2019-07-15T08:14:43+00:00" />
+<meta property="article:published_time" content="2019-07-23T13:52:04+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"description":"Tago","url":"https://www.thethingsnetwork.org/docs/applications/tago/","headline":"Tago","dateModified":"2019-07-15T08:14:43+00:00","datePublished":"2019-07-15T08:14:43+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/applications/tago/"},"@context":"http://schema.org"}</script>
+{"description":"TagoIO","url":"https://www.thethingsnetwork.org/docs/applications/tago/","headline":"Tago","dateModified":"2019-07-23T13:52:04+00:00","datePublished":"2019-07-23T13:52:04+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/applications/tago/"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -164,30 +164,38 @@
       <div class="col-sm-7">
         <div class="panel">
           <div class="panel-body page-content">
-            <h1 id="tago">Tago</h1>
-<p><a href="https://tago.io/">Tago</a> allows you to quickly store, visualize, and act on sensor data.</p>
-<p>After creating an account on <a href="https://tago.io/">Tago.io</a>, activate the integration in The Things Network <a href="https://console.thethingsnetwork.org/">Developer Console</a> by going to your application and Select Tago from the integration options.</p>
-<p><img src="Tago1.png" alt="Add-integration" /></p>
-<p>Think of a Process ID, select your access key and add (optional) the Authorization.</p>
-<blockquote>
-  <p>The <strong>Authorization field</strong> is not required, but it adds security to your integration, to use it, just type any secret text there and type the same code when generating the token at Tago</p>
-</blockquote>
-<p><img src="Tago2.png" alt="Add-integration2" /></p>
-<h2 id="uplink">Uplink</h2>
-<p>For your application to authenticate to Tago, you need to register your device at Tago.</p>
-<p>Go to the <a href="https://admin.tago.io/">Tago admin</a>, then go to <strong>Device</strong> and create a new one</p>
-<p><img src="Tago3.png" alt="Uplink" /></p>
-<p>Go to tokens and type your <em>device EUI</em>.</p>
-<blockquote>
-  <p>If you use the Authorization at TTN, type the same secret text in the Verification Code</p>
-</blockquote>
+            <h1 id="tagoio">TagoIO</h1>
+<p><a href="https://tago.io/">TagoIO</a> allows you to quickly store, visualize, and act on sensor data.</p>
+<p>Here you will learn how to integrate TTN LoRaWAN devices with <a href="https://tago.io/">TagoIO</a>. You will be able to send data from your devices (uplink) to TagoIO and back from TagoIO to the devices (downlink).</p>
+<h2 id="1-tagoio-setup">1. TagoIO Setup</h2>
+<p>After creating an account on <a href="https://tago.io/">Tago.io</a>, go to Devices, click on <em>Add Devices</em>, and filter by LoRaWAN TTN. Then, search for the device that you want to add. If you do not find it, select the type <em>Custom TTN Device</em>.</p>
+<p>Just give a name for the device, type the device EUI, and click on the <strong>Create Device</strong> button.</p>
+<p>For example, if you selected the <strong>Custom TTN</strong> type, you will be presented with the following screen.</p>
+<p><img src="Tago2.png" alt="Add-integration" /></p>
+<p>After the device is created, a standard parser script is included in the <strong>Payload Parser</strong> tab based on the selected connector (unless you selected Custom TTN). Later, you can also add your own script to execute any calculation or to parse more data.</p>
+<p>Next you will need to create an Authorization for use in the TTN setup later.</p>
 <p><img src="Tago4.png" alt="Add-integration" /></p>
-<p>Now when your device sends data to The Things Network, it will automatically send it to Tago.</p>
+<blockquote>
+  <p>This <strong>Authorization</strong> should be generated by TagoIO <a href="https://admin.tago.io/devices/authorization">here</a>; no Additional Parameters are needed</p>
+</blockquote>
+<p>Copy this Authorization to use it in the next step.</p>
+<h2 id="2-ttn-setup">2. TTN Setup</h2>
+<p>On <a href="https://console.thethingsnetwork.org/">The Things Network Console</a> go to your already created Application, select the <strong>Integrations</strong> tab, and click <strong>+add integration</strong>.</p>
+<p>Select <strong>TagoIO</strong> from the integration list.</p>
+<p><img src="Tago1.png" alt="Add-integration" /></p>
+<p>You will be presented with a configuration screen to set the appropriate settings for the TagoIO integration.</p>
+<ul>
+  <li>Process ID: This can be any lowercase alphanumeric name which should be unique for your application. Something like <code class="highlighter-rouge">send-data-to-tago</code> would be a good process ID.</li>
+  <li>Access Key: Normally one would choose <code class="highlighter-rouge">default</code> from the list. If you want to limit the access that TagoIO has to your TTN application, you can create another access key with limited rights and choose that one here.</li>
+  <li>Authorization: Paste the authorization key that you copied earlier from TagoIO into this field.</li>
+</ul>
+<p><img src="Tago3.png" alt="Create-integration" /></p>
+<p>If you followed all the steps correctly, any data that is sent out by your device will be forwarded from TTN to your TagoIO account.</p>
 <h2 id="downlink">Downlink</h2>
 <p>To send data back to your device, just go to your device at Tago and visit the tab <strong>Configuration Parameters</strong>.</p>
 <p><img src="Tago5.png" alt="Downlink" /></p>
 <p>Here you can add two parameters, for different data formats.</p>
-<p><strong>payload_raw</strong> 
+<p><strong>downlink</strong> 
 Will send the raw payload to your device.</p>
 <p><strong>payload_fields</strong> 
 The payload fields value needs to be a <strong>valid JSON Object</strong>, and Tago will send that object to your device.</p>
