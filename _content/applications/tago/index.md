@@ -14,7 +14,7 @@ Here you will learn how to integrate TTN LoRaWAN devices with [TagoIO](https://t
 ## 1. TagoIO Setup
 After creating an account on [Tago.io](https://tago.io/), go to Devices, click on *'Add Devices'*, and filter by LoRaWAN TTN. Then, search for the device that you want to add. If you don't find it, select the type *Custom TTN Device*.
 
-> When selecting Custom TTN Device connector, a payload parse will NOT included on the new device. You will need to add your own parser to extract values. 
+> When selecting Custom TTN Device connector, a payload parse will NOT be included on the new device. You will need to add your own parser to extract values. 
 
 Just give a name for the device, type the device EUI, and click on the **'Create Device'** button. 
 
@@ -40,7 +40,7 @@ Select **TagoIO** from the integration list.
 
 ![Add-integration](Tago1.png)
 
-Here you fill in your Process ID, your access key, and the paste **Authorization** created at TagoIO.
+Here you fill in your Process ID, your access key, and then paste the **Authorization** generated at TagoIO.
 
 ![Create-integration](Tago3.png)
 
