@@ -6,6 +6,8 @@ source: 'https://github.com/TheThingsNetwork/docs/blob/master/_content/applicati
 
 # TagoIO
 
+[TagoIO](https://tago.io/) allows you to quickly store, visualize, and act on sensor data.
+
 Here you will learn how to integrate TTN LoRaWAN devices with [TagoIO](https://tago.io/). You will be able to send data from your devices (uplink) to TagoIO and back to them (downlink).
 
 
