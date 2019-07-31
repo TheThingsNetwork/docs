@@ -2,6 +2,7 @@
 title: The Things Indoor Gateway
 image: /gateways/thethingsindoor/TTIG2.jpg
 section: Hardware
+zindex: 1100
 ---
 
 

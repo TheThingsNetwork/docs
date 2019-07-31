@@ -2,6 +2,7 @@
 title: The Things Outdoor Gateway
 image: /gateways/thethingsoutdoor/TTOG.png
 section: Hardware
+zindex: 1100
 ---
 
 
