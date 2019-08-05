@@ -11,6 +11,7 @@ This is a configuration guide to connect the [MikroTik Routerboard wAP wAP LoRa8
 ## Connections
 ![Connections](./Connections.jpg)
 
+For adding an external antenna, open the case and use the SMA connector. 
 
 ## Configuration
 
