@@ -4,9 +4,9 @@ section: Hardware
 ---
 
 
-# MikroTik Routerboard wAP 60G AP
+# MikroTik Routerboard wAP LoRa8 kit
 
-This is a configuration guide to connect the [MikroTik Routerboard wAP 60G AP](https://mikrotik.com/product/wap_60g_ap) to The Things Network.
+This is a configuration guide to connect the [MikroTik Routerboard wAP wAP LoRa8 kit](https://mikrotik.com/product/wap_60g_ap) to The Things Network.
 
 ## Connections
 ![Connections](./Connections.jpg)
@@ -14,8 +14,7 @@ This is a configuration guide to connect the [MikroTik Routerboard wAP 60G AP](h
 
 ## Configuration
 
-1. Download the Official MicroTik Winbox [configuration tool for Windows](https://mikrotik.com/download).
-   a. Mac users can use the [unofficial ported application](https://splynx.com/3596/mikrotik-winbox-for-mac-os/).
+1. Download the Official MicroTik Winbox [configuration tool for Windows](https://mikrotik.com/download). Mac users can use the [unofficial ported application](https://splynx.com/3596/mikrotik-winbox-for-mac-os/). Alternatively, there is also a mobile app for configration - [link](https://mikrotik.com/mobile_app)
 2. Make the connections as shown the the section above.
 3. Connect your PC/laptop to the same network as the Ethernet connection to the routerboard.
 4. Open the Winbox app and select the _Refresh_ button. If the connections were successful, your device will be detected as shown below.
