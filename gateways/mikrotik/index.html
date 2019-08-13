@@ -31,12 +31,12 @@
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2019-08-13T11:51:22+00:00" />
+<meta property="article:published_time" content="2019-08-13T11:54:01+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"description":"MikroTik Routerboard wAP LoRa8 kit","url":"https://www.thethingsnetwork.org/docs/gateways/mikrotik/","headline":"MikroTik Routerboard","dateModified":"2019-08-13T11:51:22+00:00","datePublished":"2019-08-13T11:51:22+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/gateways/mikrotik/"},"@context":"http://schema.org"}</script>
+{"description":"MikroTik Routerboard wAP LoRa8 kit","url":"https://www.thethingsnetwork.org/docs/gateways/mikrotik/","headline":"MikroTik Routerboard","dateModified":"2019-08-13T11:54:01+00:00","datePublished":"2019-08-13T11:54:01+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/gateways/mikrotik/"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -159,15 +159,16 @@
 <h2 id="connections">Connections</h2>
 <p><img src="./Connections.jpg" alt="Connections" /></p>
 <p>For adding an external antenna, open the case and use the SMA connector. 
-<img src="./Antenna.png" alt="Antenna" /></p>
+<img src="./Antenna_Mikrotik.png" alt="Antenna" /></p>
 <h2 id="configuration">Configuration</h2>
 <ol>
   <li>Download the Official MicroTik Winbox <a href="https://mikrotik.com/download">configuration tool for Windows</a>. Mac users can use the <a href="https://splynx.com/3596/mikrotik-winbox-for-mac-os/">unofficial ported application</a>. Alternatively, there is also a mobile app for configration - <a href="https://mikrotik.com/mobile_app">link</a></li>
-  <li>Make the connections as shown the the section above.</li>
-  <li>Connect your PC/laptop to the same network as the Ethernet connection to the routerboard.</li>
+  <li>Make the connections as shown the the section above.
+3 Open network connections on your PC, mobile phone or other device and search for MikroTik wireless network and connect to it.</li>
   <li>Open the Winbox app and select the <em>Refresh</em> button. If the connections were successful, your device will be detected as shown below.
 <img src="./connected.png" alt="Connected" /></li>
-  <li>Enter the username and password (that would’ve been shared with you when you buy the device) and connect to the device.</li>
+  <li>Once connected to the wireless network, open http://192.168.88.1 in your web browser to start
+configuration, user name: <strong>Admin</strong> and there is <strong>no password</strong> by default.</li>
   <li>The dashboard that you now see provides many configuration options. But we are concerned only with the LoRa configuration. Select <code class="highlighter-rouge">IP -&gt; LoRa</code> from the option list.</li>
   <li>First add a LoRaWAN backend server configuration by selecting the <em>Servers</em> tab. Sample configuration to connect to The Things Network EU server is shown in the images below.
 <img src="./TTN_Server.png" alt="TTN" />
