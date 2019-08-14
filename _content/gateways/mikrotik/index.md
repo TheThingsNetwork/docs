@@ -18,7 +18,7 @@ For adding an external antenna, open the case and use the SMA connector.
 
 1. Download the Official MicroTik Winbox [configuration tool for Windows](https://mikrotik.com/download). Mac users can use the [unofficial ported application](https://splynx.com/3596/mikrotik-winbox-for-mac-os/). Alternatively, there is also a mobile app for configration - [link](https://mikrotik.com/mobile_app)
 2. Make the connections as shown the the section above.
-3 Open network connections on your PC, mobile phone or other device and search for MikroTik wireless network and connect to it.
+3. Open network connections on your PC, mobile phone or other device and search for MikroTik wireless network and connect to it.
 4. Open the Winbox app and select the _Refresh_ button. If the connections were successful, your device will be detected as shown below.
 ![Connected](./connected.png)
 5. Once connected to the wireless network, open http://192.168.88.1 in your web browser to start
