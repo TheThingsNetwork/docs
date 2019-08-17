@@ -5,7 +5,7 @@ zindex: 800
 
 # Configuration
 
-> If you bought one of these gateway directly from Kerlink, you can apply for access to the [Kerlink Wiki](http://wikikerlink.fr/lora-station) by sending an email to support@kerlink.fr mentioning the serial number of your gateway. 
+> If you bought one of these gateways directly from Kerlink, you can apply for access to the [Kerlink Wiki](http://wikikerlink.fr/lora-station) by sending an email to support@kerlink.fr mentioning the serial number of your gateway. 
 > 
 > If you have access to the Kerlink wiki it is recommended to follow the firmware upgrade and packet forwarder installation steps from there. This will ensure you are running the latest and most reliable version.
 
