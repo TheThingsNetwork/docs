@@ -5,6 +5,10 @@ zindex: 800
 
 # Configuration
 
+> If you bought one of these gateways directly from Kerlink, you can apply for access to the [Kerlink Wiki](http://wikikerlink.fr/lora-station) by sending an email to support@kerlink.fr mentioning the serial number of your gateway. 
+> 
+> If you have access to the Kerlink wiki it is recommended to follow the firmware upgrade and packet forwarder installation steps from there. This will ensure you are running the latest and most reliable version.
+
 ## Configuring packet forwarder
 
 To configure the gateway, you need to download either [The Things Network's packet forwarder (EU version)](https://github.com/TheThingsNetwork/kerlink-station-firmware/blob/master/dota/dota_thethingsnetwork_v1.3_EU.tar.gz) and [produsb.zip](https://github.com/TheThingsNetwork/kerlink-station-firmware/blob/master/dota/produsb.zip) from our Github.
