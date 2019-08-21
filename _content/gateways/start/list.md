@@ -9,7 +9,7 @@ This is a list of commercial LoRaWAN gateways currently available for purchase. 
 
 ## The Things Network
 
-+ [The Things Gateway](../gateway): Following a [successful Kickstarter](https://www.kickstarter.com/projects/419277966/the-things-network) our own LoRa Gateway will soon be available world-wide. At a price of just €300 and with its easy web-based setup, it is the best choice to help build The Things Network.
++ [The Things Gateway](../gateway): At a price of €300 and with its easy web-based setup, it is the best choice to help build The Things Network.
 
 ## Open Source
 
