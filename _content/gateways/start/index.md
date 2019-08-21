@@ -13,7 +13,7 @@ Are you looking to improve the coverage of the Things Network, either for your p
 
 ## The Things Gateway
 
-[The Things Gateway](../gateway/index.md) is The Things Network's official gateway, following a successful [Kickstarter campaign](https://www.kickstarter.com/projects/419277966/the-things-network). For €300, you can improve coverage in your area! This is the best option to get started with The Things Network.
+[The Things Gateway](../gateway/index.md) is The Things Network's official development gateway. For €300, you can improve coverage in your area! This is the best option to get started with The Things Network.
 
 ![The Things Gateway](gateway.jpg)
 
