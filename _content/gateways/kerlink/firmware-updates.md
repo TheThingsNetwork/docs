@@ -5,7 +5,22 @@ zindex: 750
 
 # Kerlink Station Firmware Updates
 
-Kerling Station firmware updates are installed from a USB drive. This needs to be a USB 1.1 device formatted as FAT32.
+Please read through this entire document before performing the firmware update. If the procedure is not done correctly you stand a chance to brick your gateway. A firmware upgrade will most likely result in a factory reset of the gateway.
+
+## Firmware update procedure summary
+
+* Format a USB flash drive as FAT32.
+* Download produsb_wirnet_v3.6.zip from [here](https://raw.githubusercontent.com/TheThingsNetwork/kerlink-station-firmware/master/dota/produsb_wirnet_v3.6.zip).
+* Extract produsb_wirnet_v3.6.zip to the flash drive so that the produsb.sh and produsb_wirnet_v3.6.md5 files are the only two files on the flash drive.
+* Download usbflashdrive_wirmav2_wirnet_v3.6.zip from [here](https://raw.githubusercontent.com/TheThingsNetwork/kerlink-station-firmware/master/dota/usbflashdrive_wirmav2_wirnet_v3.6.zip).
+* Extract usbflashdrive_wirmav2_wirnet_v3.6.zip to the root of the flash drive so that the content of this zip file is extracted to the same level as where produsb.sh is located.
+* Safely remove the flash drive from your computer.
+* Your Kerlink gateway should already be switched on and booted up. The safest is to power up the gateway and to wait two minutes for it to fully boot up.
+* Plug the flash drive into the USB port on the Kerlink. If the flash drive has a light it will start blinking. The gateway will detect the firmware file on the flash drive and start installing it. If you press the Test button on the gateway you will see the MOD1 and MOD2 lights flashing. When they stop flashing the firmware update is completeted and you can remove the flash drive from the USB port.
+
+## About the firmware
+
+Kerling Station firmware updates are installed from a USB drive. This needs to be a USB 1.1 compatible device formatted as FAT32.
 The firmware consists of two parts:
 
 - **System Firmware** (usually) from Kerlink
@@ -20,7 +35,7 @@ The update process is simple:
 - Wait for 5 minutes
 - A log file is written back to USB drive (`produsb.log`)
 
-## System Firmware (v3.1)
+## System Firmware (v3.1 and above)
 
 > ⚠️ WARNING: After installation of this firmware you will not be able to revert to v2.3.3 - an attempt will brick your gateway. Refer Kerlink Wiki.
 
@@ -36,9 +51,13 @@ Contents of USB drive:
 - `rootfs.tar.gz` - the root filesystem, will be extracted to `/` (`/dev/mtdblock5`)
 - `userfs.tar` - the user filesystem, will be extracted to `/mnt/fsuser-1` (`/dev/mtdblock6`)
 
-### Recovery
+## Recovery and/or factory reset
 
-The gateway automatically restores the "stock system firmware" from the rescue FS if it detects that it's unstable. The gateway is considered unstable if the u-boot `bootfail` variable is greater than `max_bootfail`. This `max_bootfail` is 20 by default. The `bootfail` variable is incremented on each boot and reset when the gateway successfully starts. Both `bootfail` and `max_bootfail` can be set with the `fw_setenv` tool (or with `setenv` and `saveenv` in the u-boot console). Forcing the recovery process can be done by pressing the reset button for at least `max_bootfail` times with intervals of 4-10 seconds. This does not overwrite the user filesystem `/mnt/fsuser-1` (`/dev/mtdblock6`).
+A factory reset can be performed by doing a firmware upgrade using a USB flash drive. This will only work if the currently running firmware is working. If it does not work, try the next option.
+
+The gateway automatically restores the "stock system firmware" from the rescue FS if it detects that it is unstable. The gateway is considered unstable if the u-boot `bootfail` variable is greater than `max_bootfail`. This `max_bootfail` is 20 by default. The `bootfail` variable is incremented on each boot and reset when the gateway successfully starts. Both `bootfail` and `max_bootfail` can be set with the `fw_setenv` tool (or with `setenv` and `saveenv` in the u-boot console). Forcing the recovery process can be done by pressing the reset button for at least `max_bootfail` times with intervals of 4-10 seconds. This does not overwrite the user filesystem `/mnt/fsuser-1` (`/dev/mtdblock6`).
+
+If pressing the reset button multiple times does not reset the gateway, you can try using the Wirgrid device to log into the gateway's boot loader and perform a reset from there. See [this forum topic](https://www.thethingsnetwork.org/forum/t/convert-actility-kerlink-gateway-to-ttn/24026).
 
 ## User Firmware and System Firmware Customizations
 
@@ -59,19 +78,18 @@ Contents of USB drive:
 
 After editing the contents of the `dota_XXXX.tar.gz` file, compress with `tar -cvzf dota_upgrade.tar.gz --owner root --group root mnt usr` (use `gtar` on macOS).
 
-### Recovery
-
-- Just flash again with correct `dota` file
-- Manually delete files/folders from `/mnt/fsuser-1`
-
 ## USB Firmware update security
 
 - Set a password in `/etc/usbkey.txt` on the gateway
 - The same password must be in `usbkey.txt` on the USB drive
 
+##  I still have problems or I am still unsure about the firmware update
+
+Have a look on the Kerlink Wiki: http://wikikerlink.fr/lora-station
+
 ## Resources
 
-- v2.3.3 firmware: [usbflashdrive_wirmav2_wirgrid_v2.3.3.zip](https://thethings.blob.core.windows.net/klkmirror/station/usbflashdrive_wirmav2_wirgrid_v2.3.3.zip) and [produsb_wirgrid_v2.3.3.zip](https://thethings.blob.core.windows.net/klkmirror/station/produsb_wirgrid_v2.3.3.zip)
-- v3.1 firmware: [usbflashdrive_wirmav2_wirnet_v3.1.zip](https://thethings.blob.core.windows.net/klkmirror/station/usbflashdrive_wirmav2_wirnet_v3.1.zip) and [produsb_wirnet_v3.1.zip](https://thethings.blob.core.windows.net/klkmirror/station/produsb_wirnet_v3.1.zip)
-- v4.1.3 custo for LBT: [custo_libloragw_4.1.3-klk3_wirnet.tar.gz](https://thethings.blob.core.windows.net/klkmirror/station/custo_libloragw_4.1.3-klk3_wirnet.tar.gz)
-- v4.1.3 dota: [dota_spf_3.1.0-klk11_4.1.3-klk3_wirnet_31_03_2017.tar.gz](https://thethings.blob.core.windows.net/klkmirror/station/dota_spf_3.1.0-klk11_4.1.3-klk3_wirnet_31_03_2017.tar.gz)
+- v3.6 produsb:  
+[produsb_wirnet_v3.6.zip](https://raw.githubusercontent.com/TheThingsNetwork/kerlink-station-firmware/master/dota/produsb_wirnet_v3.6.zip)
+- v3.6 firmware: [usbflashdrive_wirmav2_wirnet_v3.6.zip](https://raw.githubusercontent.com/TheThingsNetwork/kerlink-station-firmware/master/dota/usbflashdrive_wirmav2_wirnet_v3.6.zip)
+
