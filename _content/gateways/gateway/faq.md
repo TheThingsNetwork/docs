@@ -18,6 +18,11 @@ Getting started with The Things Gateway is a 3 step process:
 - Second step - Go to the website (https://ttn.fyi/activate)
 - Third step - Follow the instructions on the website
 
+#### Q. How can I open or close The Things Gateway?
+
+To open the gateway, put it down with the antenna socket at the top and (gently) lift the left and right sides of the white shield, right like [in the video instruction](https://youtu.be/cJNK4y1is2Q?t=45s).
+
+To close the gateway, align the lid and push firmly at the sides only you hear it snap in place.
 
 #### Q. How can I reset my gateway?
 
@@ -74,3 +79,10 @@ Connect to the gateways WiFi access point ``Things-Gateway-XXXX`` using the pass
 To check the status of the gateway, go to the console as directed afterwards in the activation process. Under the gateway section (https://console.thethingsnetwork.org/gateways), you can see the status. If any device sends data through your gateway, you can check it under the ‘traffic’ section.
 
 When connected to the same network, some information can be seen at http://things-gateway.local/info.
+
+#### Q. My gateway is in a reboot loop. How can I fix it?
+
+- Symptom: After booting the gateway, 2 LEDs are on and the 3rd LED is blinking. After ~1 minute without progress, the gateway suddenly reboots and the whole thing repeats.
+- Possible cause: The LoRa board is not fully pushed in in the socket. 
+- Fix: Open the lid and push the LoRa board in the socket. See also: https://github.com/TheThingsProducts/gateway/issues/1#issuecomment-405523207
+- Remark: If this fix does not work for you, the right place to look for other solutions is: https://github.com/TheThingsProducts/gateway/issues

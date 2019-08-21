@@ -11,6 +11,10 @@ This is a list of commercial LoRaWAN gateways currently available for purchase. 
 
 + [The Things Gateway](../gateway): Following a [successful Kickstarter](https://www.kickstarter.com/projects/419277966/the-things-network) our own LoRa Gateway will soon be available world-wide. At a price of just €300 and with its easy web-based setup, it is the best choice to help build The Things Network.
 
+## Open Source
+
++ [SX1301 and SX125X LoRa Gateway / Concentrator](https://github.com/will127534/LoRa-concentrator): A Real opensource LoRa Gateway using SX1301/SX1308 and SX1255/SX1257.
+
 ## Laird - RG1xx
 
 + [Laird RG1xx Series](https://www.lairdtech.com/products/rg1xx-lora-gateway): A cost effective 868 / 915MHz LoRa Gateway with dual band Wi-Fi, Ethernet and BT capabilities. Includes integrated presets for simple, one click configuration for The Things Network.
@@ -25,7 +29,7 @@ This is a list of commercial LoRaWAN gateways currently available for purchase. 
 
 + [Multitech Conduit](../multitech): The Multitech Conduit offers a very good price/quality compromise. It has recent software, with multiple programmation interface (SDK, Python environment...). It comes in multiple models: AEP, mLinux, cellular...
 
-+ [Multitech Conduit Access Point](http://www.multitech.net/developer/products/multiconnect-conduit-access-point/): The Access Point is the successor of the Multitech Conduit. It is very close to the Conduit, but offers an SPI interface to the LoRa concentrator, whereas the Conduit interfaced through USB.
++ [Multitech Conduit Access Point](http://www.multitech.net/developer/products/multiconnect-conduit-access-point/): The Access Point is the smaller sibling of the Multitech Conduit. It uses the same hardware components as the Conduit, but offers an SPI interface to the LoRa concentrator, whereas the Conduit interfaced through USB.
 
 ## Lorrier
 
@@ -39,9 +43,13 @@ This is a list of commercial LoRaWAN gateways currently available for purchase. 
 
 + [Lorank 8](https://webshop.ideetron.nl/LORANK-8): The device is built upon the radio board of IMST and the open source hardware BeagleBone Black.
 
-## Aaeon
+## AAEON AIOT-ILRA01
 
-+ [Aaeon UP](http://www.aaeon.com/en/p/intel-lora-gateway-system-server): The Aaeon UP is a powerful gateway, running Debian on an AMD64 processor. It's ideal to run a packet forwarder, and applications on the same machine.
++ [Aaeon UP](http://industrialgateways.eu/docs/): The AAEON AIOT-ILRA01 is a powerful gateway, running Debian on an AMD64 processor. It's ideal to run a packet forwarder, and applications on the same machine.
+
+## Cisco LoRaWAN Gateway
+
++ The [Cisco LoRaWAN Gateway](https://www.cisco.com/c/en/us/products/routers/wireless-gateway-lorawan/index.html) is carrier-grade solution suitable for users who have experience with Cisco software, and that are looking for an industrial-grade LoRaWAN gateway. It supports 16 channels, as well as geolocation.
 
 ## Gemtek
 
@@ -57,10 +65,20 @@ This is a list of commercial LoRaWAN gateways currently available for purchase. 
 
 ## Tektelic
 
-+ [KonaEdge Pico IoT Gateway](http://www.tektelic.com/konaedge-pico-iot-gateway-spec-sheet/): This gateway is an easy-to-configure gateway, advertised as a *plug-and-play pico gateway*.
++ [KONA Mega IoT Gateway](https://tektelic.com/iot/lorawan-gateways/): highly scalable, multiple Rx/Tx antennas, built-in bandpass filters, geolocation.
 
-+ [Kona Macro IoT Gateway](http://www.tektelic.com/kona-macro-iot-gateway-spec-sheet/): This gateway is a 64 channel LoRa gateway.
++ [KONA Macro IoT Gateway](https://tektelic.com/iot/lorawan-gateways/): 64 channel outdoor LoRa gateway.
+
++ [KONA Micro IoT Gateway](https://tektelic.com/iot/lorawan-gateways/): internal 3G/4G modem and a built-in four hour battery backup.
+
++ [KONA Pico IoT Gateway](https://tektelic.com/iot/lorawan-gateways/): easy-to-configure gateway, advertised as a *plug-and-play pico gateway*.
 
 ## Link Labs
 
 + LL-BST-8
+
+## Ursalink
+
++ [UG85 Indoor Gateway](https://www.ursalink.com/en/industrial-lorawan-gateway/): internal 3G/4G modem and a network server, palm-sized.
+
++ [UG87 Outdoor Gateway](https://www.ursalink.com/en/industrial-lorawan-gateway/): 16-channel, easy-to-configure, waterproof outdoor gateway*.

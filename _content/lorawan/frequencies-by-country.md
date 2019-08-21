@@ -44,7 +44,7 @@ For discussions about the frequency plans in different countries, see the posts 
 | Bolivia | US902-928 | |
 | Bosnia and Herzegovina | EU863-870<br />EU433 | CEPT Rec. 70-03 |
 | Botswana | EU863-870<br />EU433 | CRASA follows CEPT Rec. 70-03 |
-| Brazil | US902-928 | [National Telecommunications Agency (ANATEL) Resolution No. 506, from July 1, 2008](http://www.americascompliance.com/wp-content/uploads/2011/08/506-English_1.pdf), Article 40 VI |
+| Brazil | AU915-928 | [National Telecommunications Agency (ANATEL) Resolution No. 680, from June 27, 2017 - Portuguese only](http://www.anatel.gov.br/legislacao/resolucoes/2017/936-resolucao-680),  Article 10 <br /> [National Telecommunications Agency (ANATEL) Act No. 14448, from December 4, 2017 - Portuguese only](http://www.anatel.gov.br/legislacao/atos-de-requisitos-tecnicos-de-certificacao/2017/1139-ato-14448) Section 10.3 |
 | Brunei | AS923-925 ("AS2") | |
 | Bulgaria | EU863-870<br />EU433 | CEPT Rec. 70-03 |
 | Burkina Faso
@@ -61,7 +61,7 @@ For discussions about the frequency plans in different countries, see the posts 
 | Canada | US902-928 | |
 | Central African Republic (CAR)
 | Chad
-| Chile | US902-928 | |
+| Chile | AU915-928 | [FIJA NORMA TECNICA DE EQUIPOS DE ALCANCE REDUCIDO](https://www.leychile.cl/Consulta/m/norma_plana?org=&idNorma=240404) |
 | China | CN470-510<br />CN779-787 | |
 | Colombia | US902-928 | |
 | Comoros
@@ -111,7 +111,7 @@ For discussions about the frequency plans in different countries, see the posts 
 | Gabon
 | Gambia
 | Georgia | unknown, limited CEPT | CEPT Rec. 70-03 |
-| Germany | EU863-870<br />EU433 | [Non-specific Short Range Devices (SRD) regulations](https://www.bundesnetzagentur.de/SharedDocs/Downloads/DE/Sachgebiete/Telekommunikation/Unternehmen_Institutionen/Frequenzen/Allgemeinzuteilungen/2014_69_SRD_pdf.pdf?__blob=publicationFile&v=1), CEPT Rec. 70-03 |
+| Germany | EU863-870<br />EU433 | [Non-specific Short Range Devices (SRD) regulations](http://www.bnetza.de/SharedDocs/Downloads/DE/Sachgebiete/Telekommunikation/Unternehmen_Institutionen/Frequenzen/Allgemeinzuteilungen/2018_05_SRD_pdf.html), CEPT Rec. 70-03 |
 | Ghana
 | Greece | EU863-870<br />EU433 | [Radio frequency regulations](http://www.eett.gr/opencms/export/sites/default/admin/downloads/Announcments/AP399_034.pdf), [433MHz SRD regulations](http://www.eett.gr/opencms/export/sites/default/EETT/Electronic_Communications/Radio_Communications/TelecommunicationsEquipment/104v2.pdf), [868MHz SRD regulations](http://www.eett.gr/opencms/export/sites/default/EETT/Electronic_Communications/Radio_Communications/TelecommunicationsEquipment/105v2.pdf), CEPT Rec. 70-03 |
 | Grenada
@@ -231,7 +231,7 @@ For discussions about the frequency plans in different countries, see the posts 
 | Papua New Guinea
 | Paraguay | US902-928 | |
 | Peru | US902-928 | |
-| Philippines
+| Philippines | EU863-870<br />EU433 | **NOTE:** This is not a license free band. If you connect to a commercial telecoms operator you are however allowed to use thier frequencies. Please check the rules and obtain a license before running a gateway. |
 | Poland | EU863-870<br />EU433 | CEPT Rec. 70-03 |
 | Portugal | EU863-870<br />EU433 | CEPT Rec. 70-03 |
 | Puerto Rico | US902-928 | |

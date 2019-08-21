@@ -15,11 +15,6 @@ Set your APN settings in `/etc/sysconfig/network` (see [Provider Settings](#prov
 
 > *You can open the file via the terminal, type: `vi /etc/sysconfig/network`. Type `i` to start editing the file, after doing so, save and quit the file: press `esc` > `:w` > `esc` > `:q`*
 
-
-**Warning:** Tere is a bug in the software. When `GPRSUSER` and `GPRSPASSWORD` needs to stay empty the Kerlink does funny things and no connection is made. To resolve this problem, please apply [this patch](https://github.com/TheThingsNetwork/kerlink-station-firmware/blob/master/dota/dota_update_gprs_script.tar.gz?raw=true).
-
-
-
 ```plaintext
 # Selector operator APN
 GPRSAPN=m2minternet
@@ -56,7 +51,10 @@ Configure the autoconnect in `/knet/knetd.xml`
 </AREA>  
 ```
   
-> **Warning:** There is a bug in the software. When `GPRSUSER` and `GPRSPASSWORD` needs to stay empty the Kerlink does funny things and no connection is made. To resolve this problem, please apply [this patch](https://github.com/TheThingsNetwork/kerlink-station-firmware/blob/master/dota/dota_update_gprs_script.tar.gz?raw=true).
+**Warning:** There is a bug in the software. When `GPRSUSER` and `GPRSPASSWORD` needs to stay empty the Kerlink does funny things and no connection is made. To resolve this problem, please apply [this patch](https://github.com/TheThingsNetwork/kerlink-station-firmware/blob/master/dota/dota_update_gprs_script.tar.gz?raw=true).
+
+**Troubleshooting:** The gateway goes offline and doesn't restart automatically when the GPRS connection drops. A workaround is to restart the packet forwarder when this occurs. You can do so by adding the line: `/usr/bin/killall poly_pkt_fwd` at the bottom of the files `/etc/ppp/ip-up` and `/etc/ppp/ip-down`.
+
 
 ## Provider Settings
 

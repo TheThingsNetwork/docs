@@ -7,7 +7,7 @@ zindex: 1000
 
 # The Things Gateway
 
-Following a [successful Kickstarter](https://www.kickstarter.com/projects/419277966/the-things-network) our own LoRa Gateway is now available world-wide. At a price of just under €300 and its easy, web-based setup, it is the best choice to help build The Things Network.
+Following a [successful Kickstarter](https://www.kickstarter.com/projects/419277966/the-things-network) our own LoRa Gateway is now available world-wide. At a price of just under €300 and its easy, web-based setup, it is the best choice to help build The Things Network. Order The Things Gateway [here](http://thethingsproducts.com/#the-things-product-buy)
 
 
 ![Box, Casing and PCB](image.png)
@@ -28,8 +28,8 @@ The Things Gateway enables devices such as sensors and embedded computers to con
 * Can serve thousands of nodes (depending on traffic)
 
 
-> [Order your The Things Gateway now!](https://shop.thethingsnetwork.com/index.php/product/the-things-gateway/)
-> You can also place an order through our partner network to get next day delivery. At the moment this method of delivery is only available in Europe through [Farnell](http://uk.farnell.com/the-things-network/ttn-gw-868/the-things-gateway-eu/dp/2675813) and in US through [Newark](http://www.newark.com/the-things-network/ttn-gw-915/accessory-type-wireless-gateway/dp/05AC1807).
+## Order your The Things Gateway
+> You can place an order through our partner network to get next day delivery. At the moment this method of delivery is only available in Europe and in the US. Order your gateway [here](http://thethingsproducts.com/#the-things-product-buy).
 
 
 ## Activate your gateway in 5 min
@@ -59,7 +59,7 @@ Activating the Gateway
 5. This will send the settings to the gateway and in the next few moments you will see the page with the status of the gateway. It takes from 30 seconds to 2 mins to get the configuration settings in place. The activation page will indicate what the LED’s lights on the gateway indicate. 
 6. Your browser will refresh the page to switch back to your WiFi connection and if everything done correctly you will see the first message being sent through your gateway. 
 
-Once the gateway is configured you can manage the rest of the settings through the [console](https://console.thethingsnetwork.org) and add other details such as location, altitude etc. It is recommended to remove the SSID of the gateway from your device as it will ensure your device does not goes into AP mode again.
+Once the gateway is configured you can manage the rest of the settings through the [console](https://console.thethingsnetwork.org) and add other details such as location, altitude etc. 
 
 > There is a button inside the gateway. To open it, put it down with the antenna socket at the top and (gently) lift the left and right sides of the white shield. (To close align the lid and push firmly at the sides only you hear it snap in place)
 

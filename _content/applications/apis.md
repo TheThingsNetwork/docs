@@ -14,7 +14,7 @@ The most basic way to integrate your application with The Things Network is to u
 
 The Data API allow you to receive events and messages from devices as well as send messages to devices.
 
-You can work with the Data PI using [SDKs](./sdks.md) or directly through [MQTT](./mqtt/index.md).
+You can work with the Data API using [SDKs](./sdks.md) or directly through [MQTT](./mqtt/index.md).
 
 ### Application Manager API
 

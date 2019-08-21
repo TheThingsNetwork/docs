@@ -59,7 +59,7 @@ The integration will post data in the following format:
 }
 ```
 
-_Note: Note: Some values may be omitted if they are `null`, `false`, `""` or `0`._
+_Note: Some values may be omitted if they are `null`, `false`, `""` or `0`._
 
 ## Downlink
 
@@ -69,7 +69,7 @@ Your application can schedule a downlink message to a URL for your application i
 https://integrations.thethingsnetwork.org/ttn-eu/api/v2/down/my-app-id/my-process-id?key=ttn-account-v2.secret
 ```
 
-This URL is also provided in each uplink message for convenience. However, you can call this URL any time to schedule downlink. Note that `ttn-eu` refers to the region; other valid regions are `ttn-us-west`, `ttn-brazil` and `ttn-asia-se`.
+This URL is also provided in each uplink message for convenience. However, you can call this URL any time to schedule a downlink. Note that `ttn-eu` refers to the region; other valid regions are `ttn-us-west`, `ttn-brazil` and `ttn-asia-se`.
 
 Your application should `POST` or `PUT` a downlink message.
 
@@ -88,7 +88,7 @@ You can schedule a message with raw payload using this format:
 
 ### With payload fields
 
-You can also use payload fields if your application has a encoder payload function declared to encode JSON to binary:
+You can also use payload fields if your application has an encoder payload function declared to encode JSON to binary:
 
 ```js
 {
@@ -99,5 +99,20 @@ You can also use payload fields if your application has a encoder payload functi
     "on": true,
     "color": "blue"
   }
+}
+```
+
+### Downlink scheduling
+
+By default, the downlink will _replace_ the currently scheduled downlink, if any. It is also possible to schedule the
+downlink as the _first_ or _last_ item in the downlink queue.
+
+```js
+{
+  "dev_id": "my-dev-id",
+  "port": 1,
+  "confirmed": false,
+  // payload_raw or payload_fields
+  "schedule": "replace"  // Allowed values: "replace" (default), "first", "last"
 }
 ```

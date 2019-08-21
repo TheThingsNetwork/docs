@@ -76,6 +76,9 @@ Let's program your device with a so-called sketch.
     void setup() {
       loraSerial.begin(57600);
       debugSerial.begin(9600);
+      
+      // Initialize LED output pin
+      pinMode(LED_BUILTIN, OUTPUT);
     
       // Wait a maximum of 10s for Serial Monitor
       while (!debugSerial && millis() < 10000);
@@ -85,8 +88,8 @@ Let's program your device with a so-called sketch.
     }
     ```
     
-    > Replace `REPLACE_ME` with either `TTN_FP_EU868` or `TTN_FP_US915` depending on the frequency plan of your device.
-    
+    > Replace `REPLACE_ME` with `TTN_FP_EU868`, `TTN_FP_US915`, `TTN_FP_AU915` or `TTN_FP_IN865_867`, depending on the frequency plan of your device and your country. (Click [here](https://www.thethingsnetwork.org/docs/lorawan/frequencies-by-country.html) for an overview of all frequency plans per country).
+
     This will do a few things:
     
     1.  Use [`#define`](https://www.arduino.cc/en/Reference/Define) to create more meaningful aliases for the [`Serial`](https://www.arduino.cc/en/Reference/Serial) ports for the LoRa modem and the USB connection, as well as the frequency plan.
@@ -405,6 +408,8 @@ We'll prepare your device to receive a message in response.
     
     ![The Things Uno with LED on](led_on.jpg)
     
+    > Note: The LED is labelled `13` next to the power supply, in the image above. 
+
 5.  From the device screen, select **Data** from the top right menu and you should see that the next message the device sends indeed confirms the LED is now on:
 
     ![Message led:true](console-data-on.png)

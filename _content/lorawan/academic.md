@@ -12,10 +12,19 @@ A lot of research is conducted on LoRa and LoRaWAN. This page is created to bett
 
 Title | Author | Journal/Proceedings | Year |
 | -------------------- | ---------- | ---------- | ------ |
-[A Fair Adaptive Data Rate Algorithm for LoRaWAN](https://arxiv.org/abs/1801.05411) | Abdelfadeel, K.Q., Cionca, V. and Pesch, D. | arXiv preprint arXiv:1801.00522 | 2018 | 
+[LoRaWAN Network: Radio Propagation Models and Performance Evaluation in Various Environments in Lebanon](http://samer.lahoud.fr/pub-pdf/jiot-19.pdf) | R. El Chall, S. Lahoud, M. El Helou | IEEE Internet of Things Journal | 2019 |
+[Analysis and Performance Optimization of LoRa Networks With Time and Antenna Diversity](https://doi.org/10.1109/ACCESS.2018.2839064) | A. Hoeller-Jr, R.D. Souza, O.L. Alcaraz-López, H. Alves, M. Noronha-Neto, G. Brante | IEEE ACCESS Journal | 2018 |
+[Exploiting Time Diversity of LoRa Networks Through Optimum Message Replication](https://doi.org/10.1109/ISWCS.2018.8491203) | A. Hoeller-Jr, R.D. Souza, O.L. Alcaraz-López, H. Alves, M. Noronha-Neto, G. Brante | 15th International Symposium on Wireless Communication Systems (ISWCS) | 2018 |
+[Analysis and assessment of LoRaWAN ](https://ieeexplore.ieee.org/document/8325799) |  Kieu-Ha Phung , Hieu Tran , Quan Nguyen , Truong Thu Huong , Thanh-Long Nguyen  | 2nd International Conference on Recent Advances in Signal Processing, Telecommunications & Computing (SigTelCom) | 2018 |
+[Throughput, coverage and scalability of LoRa LPWAN for Internet of Things](http://people.ucalgary.ca/~mghaderi/docs/iwqos18-lora.pdf) | A. M. Yousuf, E. M. Rochester, B. Ousat and M. Ghaderi | Proc. IEEE/ACM International Symposium on Quality of Service (IWQoS) | 2018 |
+[A low-cost LoRaWAN testbed for IoT: Implementation and measurements](https://ieeexplore.ieee.org/document/8355180) |  A. M. Yousuf, E. M. Rochester and M. Ghaderi. | Proc. IEEE World Forum on Internet of Things (WF-IoT), pp. 361-366 | 2018 |
+[Integration of LoRaWAN and 4G/5G for the Industrial Internet of Things](https://ieeexplore.ieee.org/document/8291115/) | Navarro-Ortiz, J., Sendra, S., Ameigeiras, P., Lopez-Soler, J.M. | IEEE Communications Magazine, Vol. 56(2), pp. 60-67 | 2018 | 
+[Resource Efficiency in Low-Power Wide-Area Networks for IoT Applications](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8254800) | Z. Qin and J. McCann. | IEEE Global Communications Conference (GLOBECOM), pp. 1-7.| 2017 |
+[Modelling and analysis of low-power wide-area networks](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7996589) | Z. Qin, y. Liu, G. Y. Li, and J. McCann. | IEEE International Conference on Communications (ICC), pp. 1-7.| 2017 |
+[A Fair Adaptive Data Rate Algorithm for LoRaWAN](https://arxiv.org/abs/1801.00522) | Abdelfadeel, K.Q., Cionca, V. and Pesch, D. | arXiv preprint arXiv:1801.00522 | 2018 | 
 [Understanding the Limits of LoRaWAN](https://arxiv.org/pdf/1607.08011.pdf) | Adelantado, F., Vilajosana, X., Tuset-Peiro, P., Martinez, B., Melia-Segui, J. and Watteyne, T. | IEEE Communications Magazine Vol. 55(9), pp. 34-40 | 2017 |
-Comparison of 6LoWPAN and LPWAN for the Internet of Things | Al-Kashoash, H. and Kemp, A.H. | 	Australian Journal of Electrical and Electronics Engineering Vol. 13(4), pp. 268-274 | 2016 |
-LoRa protocol performance assessment in critical noise conditions | Angrisani, L., Arpaia, P., Bonavolontà, F., Conti, M. and Liccardo, A. | Research and Technologies for Society and Industry (RTSI), 2017 IEEE 3rd International Forum on, pp. 1-5 | 2017|
+[Comparison of 6LoWPAN and LPWAN for the Internet of Things](https://www.researchgate.net/publication/316236998_Comparison_of_6LoWPAN_and_LPWAN_for_the_Internet_of_Things) | Al-Kashoash, H. and Kemp, A.H. | 	Australian Journal of Electrical and Electronics Engineering Vol. 13(4), pp. 268-274 | 2016 |
+[LoRa protocol performance assessment in critical noise conditions](https://www.researchgate.net/publication/321462429_LoRa_Protocol_Performance_Assessment_in_Critical_Noise_Conditions) | Angrisani, L., Arpaia, P., Bonavolontà, F., Conti, M. and Liccardo, A. | Research and Technologies for Society and Industry (RTSI), 2017 IEEE 3rd International Forum on, pp. 1-5 | 2017|
 A study of LoRa: Long range & low power networks for the internet of things | Augustin, A., Yi, J., Clausen, T. and Townsley, W.M. | Sensors Vol. 16(9), pp. 1466 | 2016 |
 On the limits of lorawan channel access | Bankov, D., Khorov, E. and Lyakhov, A.	 | Engineering and Telecommunication (EnT), 2016 International Conference on, pp. 10-14 | 2016 |
 Mathematical model of LoRaWAN channel access | Bankov, D., Khorov, E. and Lyakhov, A.	 | A World of Wireless, Mobile and Multimedia Networks (WoWMoM), 2017 IEEE 18th International Symposium on, pp. 1-3  | 2017 |
@@ -27,8 +36,7 @@ LoRa for the Internet of Things | Bor, M., Vidler, J.E. and Roedig, U. |  | 2016
 An Experimental Evaluation of the Reliability of LoRa Long-Range Low-Power Wireless Communication | Cattani, M., Boano, C.A. and Römer, K. | Journal of Sensor and Actuator Networks Vol. 6(2), pp. 7 	 | 2017 |
 Long-range communications in unlicensed bands: The rising stars in the IoT and smart city scenarios | Centenaro, M., Vangelista, L., Zanella, A. and Zorzi, M. | IEEE Wireless Communications Vol. 23(5), pp. 60-67 | 2016 |
 Empowering Low-Power Wide Area Networks in Urban Settings | Eletreby, R., Zhang, D., Kumar, S. and Yağan, O. | Proceedings of the Conference of the ACM Special Interest Group on Data Communication, pp. 309-321 | 2017 |
-Low power wide area network analysis: Can lora scale? | Georgiou, O. and Raza, U.	 | IEEE Wireless Communications Letters
-Vol. 6(2), pp. 162-165 | 2017 |
+Low power wide area network analysis: Can lora scale? | Georgiou, O. and Raza, U.	 | IEEE Wireless Communications Letters Vol. 6(2), pp. 162-165 | 2017 |
 Indoor signal propagation of LoRa technology | Gregora, L., Vojtech, L. and Neruda, M. | Mechatronics-Mechatronika (ME), 2016 17th International Conference on, pp. 1-4 | 2016 |
 Effects of Shadowing on LoRa LPWAN Radio Links | Habaebi, M.H., Chowdhury, I.J., Islam, M.R. and Zainal, N.A.B.	 | International Journal of Electrical and Computer Engineering (IJECE) Vol. 7(6), pp. 2970-2976 	 | 2017 |
 [Experimental evaluation of LoRa(WAN) in indoor and outdoor environments](http://essay.utwente.nl/71133/) | Hakkenberg, C. | University of Twente | 2016 |

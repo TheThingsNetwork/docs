@@ -151,7 +151,7 @@ As you can see, the example sends all sensor data from the `interval()` callback
 ## Monitor & Decode Messages
 Let's see the messages come in.
 
-1.  From the application's screen in the console, select **Data** from the top right menu.
+1.  Since we are in the device overview, we need to return to the application's screen in the console. On the top left breadcrumb, click on your application name. Select **Data** from the top right menu.
 
     You should now see the messages come in. If you don't see anything you likely do not have network coverage at your location.
 

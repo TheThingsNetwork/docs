@@ -8,7 +8,7 @@ image: /network/icon.png
 zindex: 800
 ---
 
-# Network
+# LoRaWAN Network Server
 
 This section has general information on the architecture of The Things Network, managing it via the CLI and Console as well as how to deploy some or all components on your own servers.
 

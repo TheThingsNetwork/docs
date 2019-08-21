@@ -17,7 +17,7 @@ Before your device can communicate via The Things Network, you will need to [reg
 
 ## Hardware
 
-Currently, The Things Network supports [LoRaWAN](https://www.lora-alliance.org/) for long range (~5 to 15km), low power (months to years on battery), but also low bandwidth (51 bytes/message) communication. We plan to support [Bluetooth LE](https://www.bluetooth.com/what-is-bluetooth-technology/how-it-works/low-energy) and other networks as well.
+Currently, The Things Network supports [LoRaWAN](https://www.lora-alliance.org/) for long range (~5 to 15km), low power (months to years on battery), but also low bandwidth (51 bytes/message) communication. We plan to support [multiple Bluetooth Broadcast/Mesh networks](https://www.bluetooth.com/bluetooth-technology/topology-options) and other networks as well.
 
 You can of course use [The Things Node](node/) or [Uno](uno/), but The Things Network supports any certified LoRaWAN device. The ones you can find under **Hardware** have been tested and documented by us or our users.
 

@@ -7,6 +7,13 @@ zindex: -5000
 
 If you've followed the [installer](https://github.com/kersing/multitech-installer), you've configured your gateway to connect to The Things Network. What if you want to connect your gateway to a private back-end, or to a specific router?
 
+Alternatively you can download the [private network installer](https://github.com/egourlao/multitech-installer) and execute it like this:
+```
+export ACCOUNT_SERVER_DOMAIN=myaccount.domain
+export ROUTER_MQTT_ADDRESS=mymqtt.domain:port
+https://raw.githubusercontent.com/egourlao/multitech-installer/master/installer.sh | bash
+```
+
 ### Find the MQTT address of the bridge
 
 First, you'll need to figure out what's the **MQTT address and port of the bridge**. Here are a few examples:

@@ -5,15 +5,21 @@ zindex: 800
 
 # Configuration
 
+> If you bought one of these gateways directly from Kerlink, you can apply for access to the [Kerlink Wiki](http://wikikerlink.fr/lora-station) by sending an email to support@kerlink.fr mentioning the serial number of your gateway. 
+> 
+> If you have access to the Kerlink wiki it is recommended to follow the firmware upgrade and packet forwarder installation steps from there. This will ensure you are running the latest and most reliable version.
+
 ## Configuring packet forwarder
 
 To configure the gateway, you need to download either [The Things Network's packet forwarder (EU version)](https://github.com/TheThingsNetwork/kerlink-station-firmware/blob/master/dota/dota_thethingsnetwork_v1.3_EU.tar.gz) and [produsb.zip](https://github.com/TheThingsNetwork/kerlink-station-firmware/blob/master/dota/produsb.zip) from our Github.
 
-A [debug version of the packet forwarder](https://github.com/TheThingsNetwork/kerlink-station-firmware/blob/master/dota/dota_thethingsnetwork_v1.4_EU.tar.gz), that include logging, is available. If you encounter unexpected behavior you can install this one instead and start troubleshooting. We don't recommend using it for extented period of time since it can fill up the disk memory of the gateway.
+> You can find [at this link](https://github.com/TheThingsNetwork/kerlink-station-firmware/blob/master/dota/dota_thethingsnetwork_v1.4_EU.tar.gz) a debug version of the packet forwarder. With this debug version, the packet forwarder saves its logs on disk. You can access then access them by connecting to the Kerlink over serial or SSH, and by executing `tail -f /mnt/fsuser-1/thethingsnetwork/poly_pkt_fwd.log`.
+> 
+> If you encounter unexpected behaviours, you can use the debug version to troubleshoot problems. However, we don't recommend using it for extended periods of time or production settings. Indeed, since there is no log rotation mechanism, it can fill up the disk memory of the gateway.
 
-Install the update the following way:
+Follow this procedure to update or replace the packet forwarder:
 
-- Copy `produsb.sh` (from extracting `produsb.zip`) and `dota_thethingsnetwork_v1.4_EU.tar.gz` onto an empty USB flash drive formatted in FAT-32. Make sure there is no `.log` file.
+- Copy `produsb.sh` (from extracting `produsb.zip`) and the `dota_thethingsnetwork_<version>_EU.tar.gz` onto an empty USB flash drive formatted in FAT-32. Make sure there is no `.log` file.
 - Plug the USB flash drive into the gateway.
 - Wait for 5 min. During this time the gateway will reboot itself.
 - Unplug the key and check that a `.log` file has appeared. The file should contain  `WirmaV2 0x080XXXXX updated`. This log file prevents any further installation on the gateways to avoid cyclic reboots.
@@ -121,3 +127,7 @@ When using the wirnet_v3.1 firmware, the firewall is activated by default. This 
 ### On the Console
 
 When the packet forwarder is running, it reports to the TTN network. The activity of all the gateways on the network can be checked in [the Console](https://console.thethingsnetwork.org/gateways).
+
+### Troubleshooting
+
+If you still encounter problems with the packet forwarder, head to the [Troubleshooting page](../../troubleshooting/semtech-udp.md) of the packet forwarder.
