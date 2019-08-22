@@ -31,12 +31,12 @@
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2019-08-21T15:50:53+00:00" />
+<meta property="article:published_time" content="2019-08-22T10:28:32+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"description":"Kerlink Station Firmware Updates","url":"https://www.thethingsnetwork.org/docs/gateways/kerlink/firmware-updates.html","headline":"Firmware Updates","dateModified":"2019-08-21T15:50:53+00:00","datePublished":"2019-08-21T15:50:53+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/gateways/kerlink/firmware-updates.html"},"@context":"http://schema.org"}</script>
+{"description":"Kerlink Station Firmware Updates","url":"https://www.thethingsnetwork.org/docs/gateways/kerlink/firmware-updates.html","headline":"Firmware Updates","dateModified":"2019-08-22T10:28:32+00:00","datePublished":"2019-08-22T10:28:32+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/gateways/kerlink/firmware-updates.html"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -169,7 +169,20 @@
         <div class="panel">
           <div class="panel-body page-content">
             <h1 id="kerlink-station-firmware-updates">Kerlink Station Firmware Updates</h1>
-<p>Kerling Station firmware updates are installed from a USB drive. This needs to be a USB 1.1 device formatted as FAT32.
+<p>Please read through this entire document before performing the firmware update. If the procedure is not done correctly you stand a chance to brick your gateway. A firmware upgrade will most likely result in a factory reset of the gateway.</p>
+<h2 id="firmware-update-procedure-summary">Firmware update procedure summary</h2>
+<ul>
+  <li>Format a USB flash drive as FAT32.</li>
+  <li>Download produsb_wirnet_v3.6.zip from <a href="https://raw.githubusercontent.com/TheThingsNetwork/kerlink-station-firmware/master/dota/produsb_wirnet_v3.6.zip">here</a>.</li>
+  <li>Extract produsb_wirnet_v3.6.zip to the flash drive so that the produsb.sh and produsb_wirnet_v3.6.md5 files are the only two files on the flash drive.</li>
+  <li>Download usbflashdrive_wirmav2_wirnet_v3.6.zip from <a href="https://raw.githubusercontent.com/TheThingsNetwork/kerlink-station-firmware/master/dota/usbflashdrive_wirmav2_wirnet_v3.6.zip">here</a>.</li>
+  <li>Extract usbflashdrive_wirmav2_wirnet_v3.6.zip to the root of the flash drive so that the content of this zip file is extracted to the same level as where produsb.sh is located.</li>
+  <li>Safely remove the flash drive from your computer.</li>
+  <li>Your Kerlink gateway should already be switched on and booted up. The safest is to power up the gateway and to wait two minutes for it to fully boot up.</li>
+  <li>Plug the flash drive into the USB port on the Kerlink. If the flash drive has a light it will start blinking. The gateway will detect the firmware file on the flash drive and start installing it. If you press the Test button on the gateway you will see the MOD1 and MOD2 lights flashing. When they stop flashing the firmware update is completeted and you can remove the flash drive from the USB port.</li>
+</ul>
+<h2 id="about-the-firmware">About the firmware</h2>
+<p>Kerling Station firmware updates are installed from a USB drive. This needs to be a USB 1.1 compatible device formatted as FAT32.
 The firmware consists of two parts:</p>
 <ul>
   <li><strong>System Firmware</strong> (usually) from Kerlink
@@ -190,7 +203,7 @@ The firmware consists of two parts:</p>
   <li>Wait for 5 minutes</li>
   <li>A log file is written back to USB drive (<code class="highlighter-rouge">produsb.log</code>)</li>
 </ul>
-<h2 id="system-firmware-v31">System Firmware (v3.1)</h2>
+<h2 id="system-firmware-v31-and-above">System Firmware (v3.1 and above)</h2>
 <blockquote>
   <p>⚠️ WARNING: After installation of this firmware you will not be able to revert to v2.3.3 - an attempt will brick your gateway. Refer Kerlink Wiki.</p>
 </blockquote>
@@ -205,8 +218,10 @@ The firmware consists of two parts:</p>
   <li><code class="highlighter-rouge">rootfs.tar.gz</code> - the root filesystem, will be extracted to <code class="highlighter-rouge">/</code> (<code class="highlighter-rouge">/dev/mtdblock5</code>)</li>
   <li><code class="highlighter-rouge">userfs.tar</code> - the user filesystem, will be extracted to <code class="highlighter-rouge">/mnt/fsuser-1</code> (<code class="highlighter-rouge">/dev/mtdblock6</code>)</li>
 </ul>
-<h3 id="recovery">Recovery</h3>
-<p>The gateway automatically restores the “stock system firmware” from the rescue FS if it detects that it’s unstable. The gateway is considered unstable if the u-boot <code class="highlighter-rouge">bootfail</code> variable is greater than <code class="highlighter-rouge">max_bootfail</code>. This <code class="highlighter-rouge">max_bootfail</code> is 20 by default. The <code class="highlighter-rouge">bootfail</code> variable is incremented on each boot and reset when the gateway successfully starts. Both <code class="highlighter-rouge">bootfail</code> and <code class="highlighter-rouge">max_bootfail</code> can be set with the <code class="highlighter-rouge">fw_setenv</code> tool (or with <code class="highlighter-rouge">setenv</code> and <code class="highlighter-rouge">saveenv</code> in the u-boot console). Forcing the recovery process can be done by pressing the reset button for at least <code class="highlighter-rouge">max_bootfail</code> times with intervals of 4-10 seconds. This does not overwrite the user filesystem <code class="highlighter-rouge">/mnt/fsuser-1</code> (<code class="highlighter-rouge">/dev/mtdblock6</code>).</p>
+<h2 id="recovery-andor-factory-reset">Recovery and/or factory reset</h2>
+<p>A factory reset can be performed by doing a firmware upgrade using a USB flash drive. This will only work if the currently running firmware is working. If it does not work, try the next option.</p>
+<p>The gateway automatically restores the “stock system firmware” from the rescue FS if it detects that it is unstable. The gateway is considered unstable if the u-boot <code class="highlighter-rouge">bootfail</code> variable is greater than <code class="highlighter-rouge">max_bootfail</code>. This <code class="highlighter-rouge">max_bootfail</code> is 20 by default. The <code class="highlighter-rouge">bootfail</code> variable is incremented on each boot and reset when the gateway successfully starts. Both <code class="highlighter-rouge">bootfail</code> and <code class="highlighter-rouge">max_bootfail</code> can be set with the <code class="highlighter-rouge">fw_setenv</code> tool (or with <code class="highlighter-rouge">setenv</code> and <code class="highlighter-rouge">saveenv</code> in the u-boot console). Forcing the recovery process can be done by pressing the reset button for at least <code class="highlighter-rouge">max_bootfail</code> times with intervals of 4-10 seconds. This does not overwrite the user filesystem <code class="highlighter-rouge">/mnt/fsuser-1</code> (<code class="highlighter-rouge">/dev/mtdblock6</code>).</p>
+<p>If pressing the reset button multiple times does not reset the gateway, you can try using the Wirgrid device to log into the gateway’s boot loader and perform a reset from there. See <a href="https://www.thethingsnetwork.org/forum/t/convert-actility-kerlink-gateway-to-ttn/24026">this forum topic</a>.</p>
 <h2 id="user-firmware-and-system-firmware-customizations">User Firmware and System Firmware Customizations</h2>
 <p>The Gateway is usually shipped without or with outdated user firmware. The user firmware can be updated with <code class="highlighter-rouge">dota_XXXX.tar.gz</code> and <code class="highlighter-rouge">custo_XXXX.tar.gz</code> files.</p>
 <p>Contents of USB drive:</p>
@@ -229,22 +244,18 @@ The firmware consists of two parts:</p>
   </li>
 </ul>
 <p>After editing the contents of the <code class="highlighter-rouge">dota_XXXX.tar.gz</code> file, compress with <code class="highlighter-rouge">tar -cvzf dota_upgrade.tar.gz --owner root --group root mnt usr</code> (use <code class="highlighter-rouge">gtar</code> on macOS).</p>
-<h3 id="recovery-1">Recovery</h3>
-<ul>
-  <li>Just flash again with correct <code class="highlighter-rouge">dota</code> file</li>
-  <li>Manually delete files/folders from <code class="highlighter-rouge">/mnt/fsuser-1</code></li>
-</ul>
 <h2 id="usb-firmware-update-security">USB Firmware update security</h2>
 <ul>
   <li>Set a password in <code class="highlighter-rouge">/etc/usbkey.txt</code> on the gateway</li>
   <li>The same password must be in <code class="highlighter-rouge">usbkey.txt</code> on the USB drive</li>
 </ul>
+<h2 id="i-still-have-problems-or-i-am-still-unsure-about-the-firmware-update">I still have problems or I am still unsure about the firmware update</h2>
+<p>Have a look on the Kerlink Wiki: http://wikikerlink.fr/lora-station</p>
 <h2 id="resources">Resources</h2>
 <ul>
-  <li>v2.3.3 firmware: <a href="https://thethings.blob.core.windows.net/klkmirror/station/usbflashdrive_wirmav2_wirgrid_v2.3.3.zip">usbflashdrive_wirmav2_wirgrid_v2.3.3.zip</a> and <a href="https://thethings.blob.core.windows.net/klkmirror/station/produsb_wirgrid_v2.3.3.zip">produsb_wirgrid_v2.3.3.zip</a></li>
-  <li>v3.1 firmware: <a href="https://thethings.blob.core.windows.net/klkmirror/station/usbflashdrive_wirmav2_wirnet_v3.1.zip">usbflashdrive_wirmav2_wirnet_v3.1.zip</a> and <a href="https://thethings.blob.core.windows.net/klkmirror/station/produsb_wirnet_v3.1.zip">produsb_wirnet_v3.1.zip</a></li>
-  <li>v4.1.3 custo for LBT: <a href="https://thethings.blob.core.windows.net/klkmirror/station/custo_libloragw_4.1.3-klk3_wirnet.tar.gz">custo_libloragw_4.1.3-klk3_wirnet.tar.gz</a></li>
-  <li>v4.1.3 dota: <a href="https://thethings.blob.core.windows.net/klkmirror/station/dota_spf_3.1.0-klk11_4.1.3-klk3_wirnet_31_03_2017.tar.gz">dota_spf_3.1.0-klk11_4.1.3-klk3_wirnet_31_03_2017.tar.gz</a></li>
+  <li>v3.6 produsb:<br />
+<a href="https://raw.githubusercontent.com/TheThingsNetwork/kerlink-station-firmware/master/dota/produsb_wirnet_v3.6.zip">produsb_wirnet_v3.6.zip</a></li>
+  <li>v3.6 firmware: <a href="https://raw.githubusercontent.com/TheThingsNetwork/kerlink-station-firmware/master/dota/usbflashdrive_wirmav2_wirnet_v3.6.zip">usbflashdrive_wirmav2_wirnet_v3.6.zip</a></li>
 </ul>
           </div>
         </div>
