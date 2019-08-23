@@ -11,8 +11,6 @@ Before starting the gateway, you'll need to set it up. If you've never used Cisc
 
 * Attach the **antennas** that you have for the gateway. If you have 2 antennas, plug in the both of them.
 
-![](antenna.jpg)
-
 * Plug in the **GPS antenna** for the gateway.
 
 ![](gps.jpg)
