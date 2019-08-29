@@ -7,9 +7,9 @@ zindex: 100
 
 This is a list of commercial LoRaWAN gateways currently available for purchase. If you notice one isn't listed, [add it to our documentation](https://github.com/TheThingsNetwork/docs/edit/master/_content/gateways/start/list.md)!
 
-## The Things Network
+## The Things Indoor Gateway
 
-+ [The Things Gateway](../gateway): At a price of €300 and with its easy web-based setup, it is the best choice to help build The Things Network.
++ [The Things Indoor Gateway](../gateway): A fully compliant, ultra low-cost, 8 channel LoRaWAN gateway, with WiFi as the backhaul. 
 
 ## Open Source
 
@@ -18,6 +18,11 @@ This is a list of commercial LoRaWAN gateways currently available for purchase. 
 ## Laird - RG1xx
 
 + [Laird RG1xx Series](https://www.lairdtech.com/products/rg1xx-lora-gateway): A cost effective 868 / 915MHz LoRa Gateway with dual band Wi-Fi, Ethernet and BT capabilities. Includes integrated presets for simple, one click configuration for The Things Network.
+
+## The Things Network Gateway
+
++ [The Things Gateway](../gateway): At a price of €300 and with its easy web-based setup, it is the best choice to help build The Things Network.
+
 
 ## Kerlink
 
