@@ -9,7 +9,7 @@ This is a list of commercial LoRaWAN gateways currently available for purchase. 
 
 ## The Things Indoor Gateway
 
-+ [The Things Indoor Gateway](../gateway): A fully compliant, ultra low-cost, 8 channel LoRaWAN gateway, with WiFi as the backhaul. 
++ [The Things Indoor Gateway](https://www.thethingsnetwork.org/docs/gateways/thethingsindoor/): A fully compliant, ultra low-cost, 8 channel LoRaWAN gateway, with WiFi as the backhaul. 
 
 ## Open Source
 
