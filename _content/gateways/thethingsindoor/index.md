@@ -93,3 +93,6 @@ There are three possible button actions on the TTIG
 * RESET Button pressed for 5s:
   * Factory reset (wipe out WiFi and LNS credentials, though CUPS credentials are retained).
 
+
+Find the getting started in PDF [here](Getting_Started_TTIG.pdf)
+Find the datasheet in PDF [here](TTIG_datasheet.pdf)
