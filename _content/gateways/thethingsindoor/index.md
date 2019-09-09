@@ -97,3 +97,5 @@ There are three possible button actions on the TTIG
 Find the getting started in PDF [here](Getting_Started_TTIG.pdf)
 
 Find the datasheet in PDF [here](TTIG_datasheet.pdf)
+
+Find the getting started in PDF for AWS [here](Getting_Started_TTIG_AWS.pdf)
