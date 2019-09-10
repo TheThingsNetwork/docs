@@ -11,6 +11,6 @@ TEKTELIC is a supplier of LoRaWAN IoT Gateways, Sensors and custom applications.
 
 
 Find the documentation on how to connect:
-- Tektelic KONA Micro Gateway
-- Tektelic KONA Macro Gateway
-- Tektelic KONA Mega Gateway
+- [Tektelic KONA Micro Gateway](https://www.thethingsnetwork.org/docs/gateways/tektelic/micro.html)
+- [Tektelic KONA Macro Gateway](https://www.thethingsnetwork.org/docs/gateways/tektelic/macro.html)
+- [Tektelic KONA Mega Gateway](https://www.thethingsnetwork.org/docs/gateways/tektelic/mega.html)
