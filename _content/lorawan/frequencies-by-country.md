@@ -1,6 +1,6 @@
 ---
-title: By Country
-section: Frequency Plans
+title: Frequency Plan by Country
+section: Additional Informations
 zindex: 0
 --- 
 

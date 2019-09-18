@@ -1,5 +1,7 @@
 ---
 title: Limitations
+section: Specifications
+zindex: 11
 ---
 
 # Limitations of LoRaWAN
