@@ -6,7 +6,7 @@ section: Hardware
 
 # MikroTik Routerboard wAP LoRa8 kit
 
-This is a configuration guide to connect the [MikroTik Routerboard wAP wAP LoRa8 kit](https://mikrotik.com/product/wap_60g_ap) to The Things Network.
+This is a configuration guide to connect the [MikroTik Routerboard wAP wAP LoRa8 kit](https://mikrotik.com/product/wap_lora8_kit) to The Things Network.
 
 ## Connections
 ![Connections](./Connections.jpg)
