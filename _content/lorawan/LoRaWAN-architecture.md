@@ -1,6 +1,6 @@
 ---
-title: LoRaWAN architecture
-section: Fundamentals
+title: LoRaWAN Architecture
+section: Fundamental
 zindex: 4
 redirect_from:
  - current/#terminology/

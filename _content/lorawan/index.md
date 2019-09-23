@@ -2,21 +2,20 @@
 title: LoRaWAN 
 image: /lorawan/icon.png
 sections:
- - Fundamentals
+ - Fundamental
  - Specifications
- - Step by step guides
- - Additional Informations
+ - Additional Information
 zindex: 1100
 ---
 
 # LoRaWAN
 
-## Fundamentals  
+## Fundamental  
 Background information about LoRaWAN  
 
 <!-- * LoRa & LoRaWAN -->
 
-* LoRaWAN architecture
+* LoRaWAN Architecture
 
 * Frequency Bands
 

@@ -1,6 +1,6 @@
 ---
 title: Prefix assignment
-section: Additional Informations
+section: Additional Information
 redirect_from:
  - current/address-space/#prefix-assignments
 ---
