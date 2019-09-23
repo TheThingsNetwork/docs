@@ -31,12 +31,12 @@
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2019-09-23T10:51:15+00:00" />
+<meta property="article:published_time" content="2019-09-23T10:54:00+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"description":"ThingSpeak","url":"https://www.thethingsnetwork.org/docs/applications/thingspeak/","headline":"ThingSpeak","dateModified":"2019-09-23T10:51:15+00:00","datePublished":"2019-09-23T10:51:15+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/applications/thingspeak/"},"@context":"http://schema.org"}</script>
+{"description":"ThingSpeak","url":"https://www.thethingsnetwork.org/docs/applications/thingspeak/","headline":"ThingSpeak","dateModified":"2019-09-23T10:54:00+00:00","datePublished":"2019-09-23T10:54:00+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/applications/thingspeak/"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -168,25 +168,28 @@
           <div class="panel-body page-content">
             <h1 id="thingspeak">ThingSpeak</h1>
 <p>ThingSpeak™ is an IoT analytics platform service that allows you to aggregate, visualize, and analyze live data streams. Once you send data to ThingSpeak from your devices, you can create instant visualizations of live data without having to write any code. With MATLAB® analytics inside ThingSpeak, you can write and execute MATLAB code to perform more advanced preprocessing, visualizations, and analyses. Get started with building your IoT systems without setting up servers or developing web software. Visit <a href="https://www.thingspeak.com">ThingSpeak.com</a> for more information.</p>
-<p>The integration with The Things Network allows seamless forwarding of data from The Things Network ThingSpeak for analysis and visualization.</p>
+<p>The Integration with The Things Network allows you to seamlessly forward data from The Things Network to ThingSpeak for analysis and visualization.</p>
 <h2 id="setup-thingspeak">Setup ThingSpeak</h2>
 <ol>
-  <li>Create a free MathWorks account or <a href="https://thingspeak.com/users/sign_up">sign into ThingSpeak</a> using an existing one.</li>
+  <li>Create a free MathWorks account or <a href="https://thingspeak.com/users/sign_up">sign into ThingSpeak</a> using an existing account.</li>
   <li>Select the ThingSpeak channel you want your data to stream into. See <a href="https://www.mathworks.com/help/thingspeak/collect-data-in-a-new-channel.html">Collect Data in a New Channel</a> for help creating a new channel.</li>
   <li>Record the following for the selected channel:
- a. <strong>Channel ID</strong>, which is listed at the top of the channel view.
- b. <strong>Write API key</strong>, which can be found on the API Keys tab of your channel view.</li>
+    <ul>
+      <li>Channel ID, which is listed at the top of the channel view.</li>
+      <li>Write API key, which can be found on the API Keys tab of your channel view.</li>
+    </ul>
+  </li>
 </ol>
 <h2 id="create-integration-on-the-things-network">Create Integration on The Things Network</h2>
 <ol>
-  <li>In <a href="https://console.thethingsnetwork.org">The Things Network Console</a>, navigate to your application, click on <strong>Integrations</strong> -&gt; <strong>add an integration</strong> -&gt; <strong>ThingSpeak</strong></li>
-  <li>Enter your <strong>Write API key</strong> in the Authorization field and your <strong>channel ID</strong></li>
+  <li>In <a href="https://console.thethingsnetwork.org">The Things Network Console</a>, go to your application and click on Integrations &gt; add an integration &gt; ThingSpeak.</li>
+  <li>Enter your write API key in the Authorization field and your channel ID in the Channel ID field.</li>
 </ol>
 <h2 id="payload-format">Payload Format</h2>
-<p>Use the Payload format tab in the application for The Things Network to control the payload sent to ThingSpeak. ThingSpeak can accept up to 8 fields of data per channel, a status field, and three position fields including latitude, longitude, and elevation. Your payload must be a JSON formatted object with at least one of the allowed fields.</p>
-<p>A sample decoder code is provided below. This examples decodes a 20-character packet and converts it to the format compatible with data stored in a ThingSpeak channel.</p>
+<p>In The Things Network Console use the <strong>Payload Formats</strong> tab in the application for The Things Network to control the payload sent to ThingSpeak. ThingSpeak can accept up to 8 fields of data per channel, a status field, and three position fields including latitude, longitude, and elevation. Your payload must be a JSON formatted object with at least one of the allowed fields.</p>
+<p>As an example of how to work with payload formats, see the sample code for a decoder provided below. This examples decodes a 20-character packet and converts it to the format compatible with a ThingSpeak channel.</p>
 <h2 id="visualize-analyze-and-act">Visualize, Analyze, and Act</h2>
-<p>Use your channel view to display a summary of the channel fields.  Add specialized Visualizations using MATLAB Visualizations App or use the pre-built widgets. Use MATLAB analysis, React, Talkback, and TimeControl to act on your data.</p>
+<p>Use your channel view to display a summary of the channel fields.  Add specialized visualizations using the MATLAB Visualizations App or pre-built widgets. Use MATLAB analysis, React, TalkBack, and TimeControl to act on your data.</p>
 <p>![thingspeak1.png]</p>
 <h2 id="sample-decoder-function">Sample Decoder Function</h2>
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Decoder</span><span class="p">(</span><span class="nx">b</span><span class="p">,</span> <span class="nx">port</span><span class="p">)</span> <span class="p">{</span> 
