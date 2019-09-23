@@ -2,6 +2,8 @@
 title: Academic Research
 section: Additional Informations
 zindex: 0
+redirect_from:
+ - current/academic/
 ---
 
 # Academic Research

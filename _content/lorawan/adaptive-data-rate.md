@@ -2,6 +2,8 @@
 title: Adaptive Data Rate
 section: Specifications
 zindex: 7
+redirect_from:
+ - current/adr/
 ---
 
 # Adaptive Data Rate

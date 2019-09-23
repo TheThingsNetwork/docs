@@ -2,6 +2,8 @@
 title: Frequency Plan by Country
 section: Additional Informations
 zindex: 0
+redirect_from:
+ - current/frequencies-by-country/
 --- 
 
 # LoRaWAN Frequency Plans and Regulations by Country.

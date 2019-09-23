@@ -29,9 +29,7 @@ Everything you need to know about LoRaWAN is here.
 
 * Classes
 
-* Addressing
-
-* Activation
+* Addressing & Activation
 
 * Modulation & Data Rate
 

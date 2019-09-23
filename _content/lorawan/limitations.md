@@ -2,6 +2,8 @@
 title: Limitations
 section: Specifications
 zindex: 11
+redirect_from:
+ - current/limitations/
 ---
 
 # Limitations of LoRaWAN

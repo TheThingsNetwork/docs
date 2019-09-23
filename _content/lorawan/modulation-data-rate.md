@@ -2,6 +2,8 @@
 title: Modulation & Data Rate
 section: Specifications
 zindex: 8
+redirect_from:
+ - current/#modulation-and-data-rate/
 ---
 
 # Modulation and Data Rate

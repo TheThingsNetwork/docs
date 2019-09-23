@@ -2,6 +2,8 @@
 title: Frequency Bands
 section: Fundamentals
 zindex: 3
+redirect_from:
+ - current/#frequency-bands/
 ---
 
 # Frequency Bands
