@@ -1,5 +1,6 @@
 ---
-title: P-NUCLEO-LRWAN2 
+title: P-NUCLEO-LRWAN2
+image: /gateways/st/STM32-nucleo-pack.png
 section: Hardware
 ---
 
