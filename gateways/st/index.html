@@ -17,17 +17,17 @@
       if (document.location.href.substr(0, document.location.href.length - document.location.hash.length) !== canonical) {
         window.location.replace(canonical);
       }
-    })('https://www.thethingsnetwork.org/docs/gateways/lorrier/winbox.html');
+    })('https://www.thethingsnetwork.org/docs/gateways/st/');
     </script>
     <!-- Begin Jekyll SEO tag v2.4.0 -->
-<title>Connect via Winbox | The Things Network</title>
+<title>P-NUCLEO-LRWAN2 | The Things Network</title>
 <meta name="generator" content="Jekyll v3.4.5" />
-<meta property="og:title" content="Connect via Winbox" />
+<meta property="og:title" content="P-NUCLEO-LRWAN2" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Connect via Winbox Tools While most configuration can be done via the LR2 web interface, some things like changing its static IP address or password need to be done via Winbox Tools." />
-<meta property="og:description" content="Connect via Winbox Tools While most configuration can be done via the LR2 web interface, some things like changing its static IP address or password need to be done via Winbox Tools." />
-<link rel="canonical" href="https://www.thethingsnetwork.org/docs/gateways/lorrier/winbox.html" />
-<meta property="og:url" content="https://www.thethingsnetwork.org/docs/gateways/lorrier/winbox.html" />
+<meta name="description" content="P-NUCLEO-LRWAN2 The user manual describes how to get started with the P-NUCLEO starter packs. Hardware and software setups are discussed in detail, together with the setup of network and application servers." />
+<meta property="og:description" content="P-NUCLEO-LRWAN2 The user manual describes how to get started with the P-NUCLEO starter packs. Hardware and software setups are discussed in detail, together with the setup of network and application servers." />
+<link rel="canonical" href="https://www.thethingsnetwork.org/docs/gateways/st/" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/gateways/st/" />
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
@@ -36,7 +36,7 @@
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"description":"Connect via Winbox Tools While most configuration can be done via the LR2 web interface, some things like changing its static IP address or password need to be done via Winbox Tools.","url":"https://www.thethingsnetwork.org/docs/gateways/lorrier/winbox.html","headline":"Connect via Winbox","dateModified":"2019-10-16T13:01:55+00:00","datePublished":"2019-10-16T13:01:55+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/gateways/lorrier/winbox.html"},"@context":"http://schema.org"}</script>
+{"description":"P-NUCLEO-LRWAN2 The user manual describes how to get started with the P-NUCLEO starter packs. Hardware and software setups are discussed in detail, together with the setup of network and application servers.","url":"https://www.thethingsnetwork.org/docs/gateways/st/","headline":"P-NUCLEO-LRWAN2","dateModified":"2019-10-16T13:01:55+00:00","datePublished":"2019-10-16T13:01:55+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/gateways/st/"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -88,7 +88,7 @@
         </ul>
       </div>
       <div class="hidden-xs col-sm-3 text-right">
-        <a href="https://github.com/TheThingsNetwork/docs/edit/master/_content/gateways/lorrier/winbox.md" class="page-edit" data-proofer-ignore><i class="fa fa-github"></i> Edit <strong>winbox.md</strong></a>
+        <a href="https://github.com/TheThingsNetwork/docs/edit/master/_content/gateways/st/index.md" class="page-edit" data-proofer-ignore><i class="fa fa-github"></i> Edit <strong>index.md</strong></a>
       </div>
     </div>
     <div class="row">
@@ -140,18 +140,10 @@
                 <li class=""><a href="/docs/gateways/laird/">Laird RG1xx</a>
                 </li>
                 <li class=""><a href="/docs/gateways/lorrier/">Lorrier LR2</a>
-            <ul>
-                <li class=""><a href="/docs/gateways/lorrier/setup.html">Setup</a>
-                </li>
-                <li class=""><a href="/docs/gateways/lorrier/ip.html">Change IP Address</a>
-                </li>
-                <li class="active"><a href="/docs/gateways/lorrier/winbox.html">Connect via Winbox</a>
-                </li>
-            </ul>
                 </li>
                 <li class=""><a href="/docs/gateways/mikrotik/">MikroTik Routerboard</a>
                 </li>
-                <li class=""><a href="/docs/gateways/st/">P-NUCLEO-LRWAN2</a>
+                <li class="active"><a href="/docs/gateways/st/">P-NUCLEO-LRWAN2</a>
                 </li>
                 <li class=""><a href="/docs/gateways/tektelic/">Tektelic</a>
                 </li>
@@ -164,21 +156,10 @@
       <div class="col-sm-7">
         <div class="panel">
           <div class="panel-body page-content">
-            <h1 id="connect-via-winbox-tools">Connect via Winbox Tools</h1>
-<p>While most configuration can be done via the LR2 web interface, some things like changing its static IP address or password need to be done via Winbox Tools.</p>
-<ol>
-  <li>Download the Winbox tools via the links in the <a href="https://github.com/lorriercom/lorrier-lr2/blob/master/routeros/routerboard_configuration.md#routerboard-configuration">Routerboard configuration guide</a>.</li>
-  <li>
-    <p>Use the <strong>Neighbors</strong> tab to find your LR2:</p>
-    <p><img src="neighbors.png" alt="Neighbors" /></p>
-  </li>
-  <li>
-    <p>Enter your login as password and <strong>Connect</strong>.</p>
-    <blockquote>
-      <p>The default login is <code class="highlighter-rouge">admin</code> and the default password is <code class="highlighter-rouge">lorrier</code>.</p>
-    </blockquote>
-  </li>
-</ol>
+            <h1 id="p-nucleo-lrwan2">P-NUCLEO-LRWAN2</h1>
+<p>The user manual describes how to get started with the P-NUCLEO starter packs. Hardware and software setups are discussed in detail, together with the setup of network and application servers.</p>
+<h1 id="data-brief">Data Brief</h1>
+<p>The P-NUCLEO-LRWAN2 STM32 Nucleo starter pack is a development tool to learn and quickly develop LoRaWAN solutions. The pack contains both an end-node and a gateway.</p>
           </div>
         </div>
       </div>
