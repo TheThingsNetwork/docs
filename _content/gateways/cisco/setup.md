@@ -153,6 +153,8 @@ gps ubx enable # Enable GPS
 exit # Exit global configuration mode
 ```
 
+> 📜 This command may return the message `packet-forwarder firmware is not installed` this is totally normal and should be ignored.
+
 #### Enable radio
 
 As a final step before setting up the packet forwarder software, we're going to **enable the radio**. You can see radio information with the `show radio` command:
@@ -185,9 +187,9 @@ To enable this secret system, you can use the following commands:
 
 + `configure terminal` to enter global configuration mode.
 + To set the secret, you can use different commands:
-	+ `enable secret <secret>` to enter in plaintext the secret you wish to set, instead of `<secret>`. *Note*: Special characters cannot be used in plain secrets.
-	+ `enable secret 5 <secret>` to enter the secret **md5-encrypted**, instead of `<secret>`.
-	+ `enable secret 8 <secret>` to enter the secret **SHA512-encrypted**, instead of `<secret>`.
+  + `enable secret <secret>` to enter in plaintext the secret you wish to set, instead of `<secret>`. *Note*: Special characters cannot be used in plain secrets.
+  + `enable secret 5 <secret>` to enter the secret **md5-encrypted**, instead of `<secret>`.
+  + `enable secret 8 <secret>` to enter the secret **SHA512-encrypted**, instead of `<secret>`.
 + `exit` to exit global configuration mode.
 + `copy running-config startup-config` to save the configuration.
 
@@ -215,19 +217,40 @@ When in standalone mode, enter the container:
 ```bash
 request shell container-console
 ```
+You will be requested to enter the System Password. By default this is `admin`.
 
-Move to the directory where the packet forwarder configuration is located, and show the list of available frequency plans:
+Create the directory to store the Packet Forwarder configuration:
 
 ```bash
-cd /etc/pktfwd
-ls -la
+mkdir /etc/pktfwd
+```
+Copy the packet forwarder to `/etc/pktfwd`:
+
+```bash
+cp /tools/pkt_forwarder /etc/pktfwd/pkt_forwarder
 ```
 
-Depending on your frequency plan, or on your specific setup, you'll want to use the most appropriate frequency plan. Once you've decided on a frequency plan, set it as your current configuration:
+Cisco provides a list of configuration templates. To list the available templates:
 
 ```bash
-mv config.json config_old.json
-mv <your config> config.json
+ls -l /tools/templates
+total 136
+-rwxr-xr-x    1 65534    65534        11323 Oct  8 13:30 config_loc_dual_antenna_8ch_full_diversity_EU868.json
+-rwxr-xr-x    1 65534    65534        11248 Oct  8 13:30 config_loc_dual_antenna_8ch_full_diversity_JP920.json
+-rwxr-xr-x    1 65534    65534        11323 Oct  8 13:30 config_loc_dual_antenna_8ch_partial_diversity_EU868.json
+-rwxr-xr-x    1 65534    65534         7993 Oct  8 13:30 config_loc_single_antenna_16ch_EU868.json
+-rwxr-xr-x    1 65534    65534         7080 Oct  8 13:30 config_loc_single_antenna_16ch_US915.json
+-rwxr-xr-x    1 65534    65534        13519 Oct  8 13:30 config_loc_single_antenna_64ch_US915.json
+-rwxr-xr-x    1 65534    65534        13635 Oct  8 13:30 config_loc_single_antenna_full_duplex_64ch_US915.json
+-rwxr-xr-x    1 65534    65534        17478 Oct  8 13:30 config_test_dual_antenna_56ch_partial_diversity_EU868.json
+-rwxr-xr-x    1 65534    65534        14148 Oct  8 13:30 config_test_single_antenna_64ch_64x1_EU868.json
+-rwxr-xr-x    1 65534    65534        14148 Oct  8 13:30 config_test_single_antenna_64ch_8x8_EU868.json
+```
+
+Copy the configuration template `config_loc_dual_antenna_8ch_full_diversity_EU868.json` as `config.json` to `/etc/pktfwd`:
+
+```bash
+cp /tools/templates/config_loc_dual_antenna_8ch_full_diversity_EU868.json /etc/pktfwd/config.json
 ```
 
 We're now going to modify the configuration to point the packet forwarder to The Things Network. Select the [router address](../packet-forwarder/semtech-udp.md#router-addresses) the most appropriate for your location.
@@ -235,14 +258,16 @@ We're now going to modify the configuration to point the packet forwarder to The
 Edit the configuration using a text editor, such as `vi`:
 
 ```bash
-vi config.json
+vi /etc/pktfwd/config.json
 ```
 
 You'll need to change the following settings:
 
 * `server_address` to **the router address** (such as `router.eu.thethings.network`)
 
-* `serv_port_up` and `serv_port_down` to `1700`
+* `serv_port_up`: `1700`
+
+* `serv_port_down`: `1700`
 
 Write down the value written for `gateway_ID`. Save the file, and exit your text editor.
 
@@ -257,7 +282,7 @@ Don't close the shell yet, but open a Web browser and head to your the Things Ne
 You can now test the packet forwarder by executing:
 
 ```bash
-pktfwd -c config.json -g/dev/ttyS1
+/etc/pktfwd/pkt_forwarder -c /etc/pktfwd/config.json -g /dev/ttyS1
 ```
 
 You should now see packets flowing in the logs of the packet forwarder - and see gateway activity on the gateway's package on the console!
@@ -268,49 +293,46 @@ You should now see packets flowing in the logs of the packet forwarder - and see
 
 Now that we know the packet forwarder is running, let's make it run permanently.
 
-Save the following script as `/etc/init.d/S90_pkt_forwarder.sh`:
+Save the following script as `/etc/init.d/S60pkt_forwarder`:
 
 ```bash
 #!/bin/sh
 
 SCRIPT_DIR=/etc/pktfwd
-SCRIPT=pkt_forwarder
-RUNAS=root
+SCRIPT=$SCRIPT_DIR/pkt_forwarder
+CONFIG=$SCRIPT_DIR/config.json
 
-PIDFILE=$SCRIPT_DIR/pkt_forwarder.pid
+PIDFILE=/var/run/pkt_forwarder.pid
+LOGFILE=/var/log/pkt_forwarder.log
+
+export NETWORKIP=$(nslookup rijkswaterstaat.thethings.industries | grep -E -o "([0-9]{1,3}[\.]){3}[0-9]{1,3}" | tail -1)
+sed -i 's/[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}/'$NETWORKIP'/g' "$CONFIG"
 
 start() {
-  if [ -f /var/run/$PIDNAME ] && kill -0 $(cat /var/run/$PIDNAME); then
-    echo 'Service already running' >&2
-    return 1
-  fi
-  echo 'Starting service…' >&2
+  echo "Starting pkt_forwarder"
   cd $SCRIPT_DIR
-  start-stop-daemon -S -q -b -p "$PIDFILE" --exec "$SCRIPT" -- -c config.json -g/dev/ttyS1
-  echo 'Service started' >&2
+  start-stop-daemon \
+        --start \
+        --make-pidfile \
+        --pidfile "$PIFDILE" \
+        --background \
+        --startas /bin/bash -- -c "exec $SCRIPT -- -c $CONFIG -g /dev/ttyS1 >> $LOGFILE 2>&1"
+  echo $?
 }
 
 stop() {
-  if [ ! -f "$PIDFILE" ] || ! kill -0 $(cat "$PIDFILE"); then
-    echo 'Service not running' >&2
-    return 1
-  fi
-  echo 'Stopping service…' >&2
-  kill -15 $(cat "$PIDFILE") && rm -f "$PIDFILE"
-  echo 'Service stopped' >&2
+  echo "Stopping pkt_forwarder"
+  start-stop-daemon \
+        --stop \
+        --oknodo \
+        --quiet \
+        --pidfile "$PIDFILE"
 }
 
-uninstall() {
-  echo -n "Are you really sure you want to uninstall this service? That cannot be undone. [yes|No] "
-  local SURE
-  read SURE
-  if [ "$SURE" = "yes" ]; then
-    stop
-    rm -f "$PIDFILE"
-    echo "Notice: log file is not be removed: '$LOGFILE'" >&2
-    update-rc.d -f <NAME> remove
-    rm -fv "$0"
-  fi
+restart() {
+  stop
+  sleep 1
+  start
 }
 
 case "$1" in
@@ -320,19 +342,25 @@ case "$1" in
   stop)
     stop
     ;;
-  uninstall)
-    uninstall
-    ;;
-  restart)
-    stop
-    start
+  restart|reload)
+    restart
     ;;
   *)
-    echo "Usage: $0 {start|stop|restart|uninstall}"
+    echo "Usage: $0 {start|stop|restart}"
+    exit 1
 esac
+
+exit $?
 ```
 
-This script will be called at every startup of the container. To enable it immediately, execute `./S90_pkt_forwarder.sh start`.
+Then make the init script executable:
+
+```bash
+chmod +x /etc/init.d/S60pkt_forwarder
+```
+
+To enable it immediately, execute `/etc/init.d/S60pkt_forwarder start`.
+This script will be called at every startup of the container. 
 
 ### Exit container shell
 
