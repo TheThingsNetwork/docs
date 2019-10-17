@@ -1,7 +1,7 @@
 ---
-title: Frequency Plan by Country
+title: Frequency Plans by Country
 section: Additional Information
-zindex: 0
+zindex: 2
 redirect_from:
  - current/frequencies-by-country/
 --- 

@@ -1,5 +1,5 @@
 ---
-title: Prefix assignment
+title: Prefix assignments
 section: Additional Information
 redirect_from:
  - current/address-space/#prefix-assignments

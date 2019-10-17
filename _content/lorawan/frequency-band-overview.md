@@ -15,3 +15,8 @@ LoRaWAN uses lower radio frequencies with a longer range. The fact that frequenc
 + LoRaWAN has official regional specifications, called **Regional Parameters**, that you can download from the [LoRa Alliance website](https://lora-alliance.org/lorawan-for-developers).
 
 + These LoRaWAN regional specifications do not specify everything either. They only cover a region by specifying the common denominator. For example, the LoRaWAN regional parameters for Asia only specify a common subset of channels - but there are variations between regulations in Asian countries. Furthermore, each network server operator is free to select additional parameters, such as additional emission channels. We call these parameters **Other**. For The Things Network, they are defined in [this GitHub repository](https://github.com/TheThingsNetwork/gateway-conf).
+
+More informations can be found here:
+
+* [Frequency Plans](./frequency-plans.md)
+* [Frequency Plan by Country](./frequencies-by-country.md)

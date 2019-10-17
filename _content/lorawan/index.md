@@ -11,32 +11,33 @@ zindex: 1100
 # LoRaWAN
 
 ## Fundamental  
-Background information about LoRaWAN  
+Background information to get you started with LoRaWAN.  
 
 <!-- * LoRa & LoRaWAN -->
 
-* LoRaWAN Architecture
+* [LoRaWAN Architecture](./LoRaWAN-architecture.md)
+ 
+* [Frequency Bands](./frequency-band-overview.md)
 
-* Frequency Bands
+* [Limitations](./limitations.md)
 
 <!-- * Getting Started -->
 
 
 ## Specifications  
 Everything you need to know about LoRaWAN is here.  
-* Limitations
 
-* Classes
+* [Classes](./classes.md)
 
-* Addressing & Activation
+* [Addressing & Activation](./addressing.md)
 
-* Modulation & Data Rate
+* [Modulation & Data Rate](./modulation-data-rate.md)
 
-* Adaptive Data rate
+* [Adaptive Data rate](./adaptive-data-rate.md)
 
-* Duty cycle
+* [Duty cycle](./duty-cycle.md)
 <!-- * FUTOA -->
 <!-- * Roaming -->
 
-* Security
+* [Security](./security.md)
 <!-- * LoRaWAN 1.0.x & LoRaWAN 1.1.x -->
