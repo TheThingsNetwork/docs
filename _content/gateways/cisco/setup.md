@@ -305,6 +305,9 @@ CONFIG=$SCRIPT_DIR/config.json
 PIDFILE=/var/run/pkt_forwarder.pid
 LOGFILE=/var/log/pkt_forwarder.log
 
+export NETWORKIP=$(nslookup router.eu.thethings.network | grep -E -o "([0-9]{1,3}[\.]){3}[0-9]{1,3}" | tail -1)
+sed -i 's/[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}/'$NETWORKIP'/g' "$CONFIG"
+
 start() {
   echo "Starting pkt_forwarder"
   cd $SCRIPT_DIR
@@ -358,6 +361,8 @@ chmod +x /etc/init.d/S60pkt_forwarder
 
 To enable it immediately, execute `/etc/init.d/S60pkt_forwarder start`.
 This script will be called at every startup of the container. 
+
+> 📜 If you are using another network than `router.eu.thethings.network` replace it with the name of your network after `nslookup`.
 
 ### Exit container shell
 
