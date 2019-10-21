@@ -153,7 +153,7 @@ gps ubx enable # Enable GPS
 exit # Exit global configuration mode
 ```
 
-> 📜 This command may return the message `packet-forwarder firmware is not installed` this is totally normal and should be ignored.
+> 📜 This command may return the message `packet-forwarder firmware is not installed`, this message can be ignored.
 
 #### Enable radio
 
