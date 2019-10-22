@@ -12,8 +12,10 @@ A lot of research is conducted on LoRa and LoRaWAN. This page is created to bett
 
 Title | Author | Journal/Proceedings | Year |
 | -------------------- | ---------- | ---------- | ------ |
+[Collision Resolution Protocol for Delay and Energy Efficient LoRa Networks](https://ieeexplore.ieee.org/document/8678478) | N. El Rachkidy, A. Guitton and M. Kaneko | IEEE Transactions on Green Communications and Networking | 2019 |
 [On the LoRa Modulation for IoT: Waveform Properties and Spectral Analysis](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8723130) | M. Chiani and A. Elzanaty | IEEE Internet of Things Journal | 2019 |
 [LoRaWAN Network: Radio Propagation Models and Performance Evaluation in Various Environments in Lebanon](http://samer.lahoud.fr/pub-pdf/jiot-19.pdf) | R. El Chall, S. Lahoud, M. El Helou | IEEE Internet of Things Journal | 2019 |
+[How Agile is the Adaptive Data Rate Mechanism of LoRaWAN?](https://ieeexplore.ieee.org/document/8647469) | S. Li, U. Raza, A. Khan | IEEE Global Communications Conference (GLOBECOM) | 2018 |
 [Analysis and Performance Optimization of LoRa Networks With Time and Antenna Diversity](https://doi.org/10.1109/ACCESS.2018.2839064) | A. Hoeller-Jr, R.D. Souza, O.L. Alcaraz-López, H. Alves, M. Noronha-Neto, G. Brante | IEEE ACCESS Journal | 2018 |
 [Exploiting Time Diversity of LoRa Networks Through Optimum Message Replication](https://doi.org/10.1109/ISWCS.2018.8491203) | A. Hoeller-Jr, R.D. Souza, O.L. Alcaraz-López, H. Alves, M. Noronha-Neto, G. Brante | 15th International Symposium on Wireless Communication Systems (ISWCS) | 2018 |
 [Analysis and assessment of LoRaWAN ](https://ieeexplore.ieee.org/document/8325799) |  Kieu-Ha Phung , Hieu Tran , Quan Nguyen , Truong Thu Huong , Thanh-Long Nguyen  | 2nd International Conference on Recent Advances in Signal Processing, Telecommunications & Computing (SigTelCom) | 2018 |
