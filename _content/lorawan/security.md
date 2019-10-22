@@ -3,7 +3,7 @@ title: Security
 section: Specifications
 zindex: 2
 redirect_from:
- - current//#security/
+ - ./index/#security/
  - current/security/
 ---
 
