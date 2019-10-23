@@ -3,7 +3,7 @@ title: Duty Cycle
 section: Specifications
 zindex: 6
 redirect_from:
- - current/duty-cycle/
+ - /lorawan/duty-cycle
 ---
 
 # Duty Cycle

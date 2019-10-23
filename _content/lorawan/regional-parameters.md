@@ -3,7 +3,7 @@ title: Regional Parameters
 section: Fundamental
 zindex: 3
 redirect_from:
- - current/#frequency-bands/
+ - /lorawan/#frequency-bands
 ---
 
 # Regional Parameters

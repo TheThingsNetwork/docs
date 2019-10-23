@@ -3,7 +3,7 @@ title: Academic Research
 section: Additional Information
 zindex: 10
 redirect_from:
- - current/academic/
+ - /lorawan/academic
 ---
 
 # Academic Research

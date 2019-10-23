@@ -3,7 +3,7 @@ title: Adaptive Data Rate
 section: Specifications
 zindex: 7
 redirect_from:
- - current/adr/
+ - /lorawan/adr
 ---
 
 # LoRaWAN Adaptive Data Rate

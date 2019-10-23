@@ -3,10 +3,11 @@ title: Addressing & Activation
 section: Specifications
 zindex: 9
 redirect_from:
- - current/address-space/
+ - /lorawan/address-space
+ - /lorawan/#addressing
 ---
 
-# Addressing & Activation
+# Addressing and Activation
 
 ## Addressing
 

@@ -3,7 +3,7 @@ title: Classes
 section: Specifications
 zindex: 10
 redirect_from:
- - current/#end-devices/
+ - /lorawan/#end-devices
 ---
 
 # Classes
