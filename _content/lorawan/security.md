@@ -4,7 +4,6 @@ section: Specifications
 zindex: 2
 redirect_from:
  - /lorawan/#security
- - /lorawan/security
 ---
 
 # LoRaWAN Security
