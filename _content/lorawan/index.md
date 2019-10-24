@@ -17,7 +17,7 @@ Background information to get you started with LoRaWAN.
 
 * [LoRaWAN Architecture](./LoRaWAN-architecture.md)
  
-* [Frequency Bands](./frequency-band-overview.md)
+* [Regional Parameters](./regional-parameters.md)
 
 * [Limitations](./limitations.md)
 

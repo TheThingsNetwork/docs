@@ -4,7 +4,6 @@ section: Specifications
 zindex: 9
 redirect_from:
  - /lorawan/address-space
- - /lorawan/#addressing
 ---
 
 # Addressing and Activation

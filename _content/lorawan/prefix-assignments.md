@@ -2,7 +2,6 @@
 title: Prefix assignments
 section: Additional Information
 redirect_from:
- - /lorawan/address-space/#prefix-assignments
 ---
 
 # Prefix assignments
