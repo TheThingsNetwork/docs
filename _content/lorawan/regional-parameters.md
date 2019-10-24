@@ -2,7 +2,6 @@
 title: Regional Parameters
 section: Fundamental
 zindex: 3
-redirect_from:
 ---
 
 # Regional Parameters

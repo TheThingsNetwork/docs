@@ -1,7 +1,6 @@
 ---
 title: Prefix assignments
 section: Additional Information
-redirect_from:
 ---
 
 # Prefix assignments

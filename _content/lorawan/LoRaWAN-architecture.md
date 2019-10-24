@@ -2,7 +2,6 @@
 title: LoRaWAN Architecture
 section: Fundamental
 zindex: 4
-redirect_from:
 ---
 
 # LoRaWAN Architecture

@@ -2,7 +2,6 @@
 title: Classes
 section: Specifications
 zindex: 10
-redirect_from:
 ---
 
 # Classes
