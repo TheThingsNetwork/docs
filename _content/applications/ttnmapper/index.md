@@ -36,7 +36,7 @@ Click on "Add integration" and your application is now ready to contribute to TT
 
 ## Verify the integration is working correctly
 
-In order to verify whether the integration has been configured correctly, go to the Data tab for your device on the TTN Console. Switch on your device and make sure you see data appearing on the Data tab. Now go to the TTN Mapper website and in the menu select "[Advanced map options](https://ttnmapper.org/special_maps.php)". In the "Specific node" section fill in the Device ID in the "Node address" field. Leave the "Date" field as is - it is automatically set to today. Click on "View map" and you should see the data points sent by your end device.
+In order to verify whether the integration has been configured correctly, go to the Data tab for your device on the TTN Console. Switch on your device and make sure you see data appearing on the Data tab. Now go to the TTN Mapper website and in the menu select "[Advanced map options](https://ttnmapper.org/advanced-maps/)". In the "Specific node" section fill in the Device ID in the "Node address" field. Leave the "Date" field as is - it is automatically set to today. Click on "View map" and you should see the data points sent by your end device.
 
 For troubleshooting please post your question in the #ttn-mapper channel on Slack.
 
