@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <link rel="stylesheet" href="/docs/assets/css/main.css" />
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script>
+    (function(canonical) {
+      if (document.location.href.substr(0, document.location.href.length - document.location.hash.length) !== canonical) {
+        window.location.replace(canonical);
+      }
+    })('https://www.thethingsnetwork.org/docs/gateways/rak2245/accesing-gateway.html');
+    </script>
+    <!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>Accessing Your Gateway | The Things Network</title>
+<meta name="generator" content="Jekyll v3.4.5" />
+<meta property="og:title" content="Accessing Your Gateway" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Accessing Your Gateway" />
+<meta property="og:description" content="Accessing Your Gateway" />
+<link rel="canonical" href="https://www.thethingsnetwork.org/docs/gateways/rak2245/accesing-gateway.html" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/gateways/rak2245/accesing-gateway.html" />
+<meta property="og:site_name" content="The Things Network" />
+<meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-10-24T07:26:49+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@thethingsnetwrk" />
+<meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
+<script type="application/ld+json">
+{"description":"Accessing Your Gateway","url":"https://www.thethingsnetwork.org/docs/gateways/rak2245/accesing-gateway.html","headline":"Accessing Your Gateway","dateModified":"2019-10-24T07:26:49+00:00","datePublished":"2019-10-24T07:26:49+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/gateways/rak2245/accesing-gateway.html"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+    <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png">
+    <meta name="application-name" content="The Things Network">
+    <meta name="msapplication-tooltip" content="Tooltip">
+    <meta name="msapplication-config" content="https://ttnweb.azureedge.net/static/common/favicon/ieconfig.54334a5ee30c.xml">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-32.61b30f85680a.png" sizes="32x32">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-57.83b86c64dc82.png" sizes="57x57">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-76.7dcf8fa36dfc.png" sizes="76x76">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-96.27ac17adaa8b.png" sizes="96x96">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-120.e1526731335e.png" sizes="120x120">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-128.fabea041224c.png" sizes="128x128">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png" sizes="144x144">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png" sizes="152x152">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-180.fcd414307ca3.png" sizes="180x180">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-195.c55ce09d66da.png" sizes="195x195">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-228.bea53ec4b10b.png" sizes="228x228">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/smalltile.fabea041224c.png" sizes="128x128">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/mediumtile.3d42f7faac82.png" sizes="270x270">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
+    <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
+    <script src="/docs/assets/js/main.js"></script>
+  </head>
+  <body>
+    <div id="header"></div>
+    <div id="content">
+<div class="layout-page">
+  <div class="ttn-header ttn-header-small">
+    <div class="ttn-container container-fluid">
+      <h1>
+        <img src="/docs/assets/images/the-things-white.png" alt="⛅ The Things Network" />
+        <span>Learn</span>
+      </h1>
+    </div>
+  </div>
+  <div class="container-fluid ttn-container">
+    <div class="row page-top-nav">
+      <div class="col-sm-9">
+        <ul>
+          <li class="page-top-nav-crumb"><a href="http://www.thethingsnetwork.org/">Home</a></li>
+          <li class="page-top-nav-crumb"><a href="/docs/">Learn</a></li>
+                <li class=""><a href="/docs/lorawan/">LoRaWAN</a></li>
+                <li class=""><a href="/docs/devices/">Devices</a></li>
+                <li class="active"><a href="/docs/gateways/">Gateways</a></li>
+                <li class=""><a href="/docs/network/">Network</a></li>
+                <li class=""><a href="/docs/applications/">Applications</a></li>
+        </ul>
+      </div>
+      <div class="hidden-xs col-sm-3 text-right">
+        <a href="https://github.com/TheThingsNetwork/docs/edit/master/_content/gateways/rak2245/accesing-gateway.md" class="page-edit" data-proofer-ignore><i class="fa fa-github"></i> Edit <strong>accesing-gateway.md</strong></a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="panel page-side-nav page-affix">
+          <div class="panel-body">
+            <h5>Gateways</h5>
+            <ul>
+              <li class=""><a href="/docs/gateways/index.html">Overview</a>
+              </li>
+            <li class="page-side-nav-section"><span>Running a gateway</span>
+            <ul>
+                <li class=""><a href="/docs/gateways/start/">Where to start</a>
+                </li>
+                <li class=""><a href="/docs/gateways/registration.html">Gateway Registration</a>
+                </li>
+                <li class=""><a href="/docs/gateways/packet-forwarder/">Packet Forwarders</a>
+                </li>
+                <li class=""><a href="/docs/gateways/lightning-protection.html">Lightning Protection</a>
+                </li>
+                <li class=""><a href="/docs/gateways/troubleshooting/">Troubleshooting</a>
+                </li>
+            </ul>
+            </li>
+            <li class="page-side-nav-section"><span>Hardware</span>
+            <ul>
+                <li class=""><a href="/docs/gateways/thethingsindoor/">The Things Indoor Gateway</a>
+                </li>
+                <li class=""><a href="/docs/gateways/thethingsoutdoor/">The Things Outdoor Gateway</a>
+                </li>
+                <li class=""><a href="/docs/gateways/gateway/">The Things Gateway</a>
+                </li>
+                <li class=""><a href="/docs/gateways/multitech/">MultiTech Conduit</a>
+                </li>
+                <li class=""><a href="/docs/gateways/rak2245/">RAK2245 Pi Hat</a>
+            <ul>
+                <li class=""><a href="/docs/gateways/rak2245/device-firmware-setup.html">Device Firmware Setup</a>
+                </li>
+                <li class="active"><a href="/docs/gateways/rak2245/accesing-gateway.html">Accessing Your Gateway</a>
+                </li>
+                <li class=""><a href="/docs/gateways/rak2245/configuring-gateway.html">Configuring Your Gateway</a>
+                </li>
+                <li class=""><a href="/docs/gateways/rak2245/connecting-to-ttn.html">Connecting to The Things Network (TTN)</a>
+                </li>
+            </ul>
+                </li>
+                <li class=""><a href="/docs/gateways/rak831/">RAK831</a>
+                </li>
+                <li class=""><a href="/docs/gateways/pisupply-hat/">Pi Supply LoRa Gateway HAT</a>
+                </li>
+                <li class=""><a href="/docs/gateways/aaeon/">AAEON</a>
+                </li>
+                <li class=""><a href="/docs/gateways/cisco/">Cisco LoRaWAN Gateway</a>
+                </li>
+                <li class=""><a href="/docs/gateways/kerlink/">Kerlink LoRa IoT Station</a>
+                </li>
+                <li class=""><a href="/docs/gateways/kerlink-ibts/">Kerlink iBTS</a>
+                </li>
+                <li class=""><a href="/docs/gateways/kerlink-ifemtocell/">Kerlink iFemtoCell</a>
+                </li>
+                <li class=""><a href="/docs/gateways/laird/">Laird RG1xx</a>
+                </li>
+                <li class=""><a href="/docs/gateways/lorrier/">Lorrier LR2</a>
+                </li>
+                <li class=""><a href="/docs/gateways/mikrotik/">MikroTik Routerboard</a>
+                </li>
+                <li class=""><a href="/docs/gateways/st/">P-NUCLEO-LRWAN2</a>
+                </li>
+                <li class=""><a href="/docs/gateways/tektelic/">Tektelic</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-7">
+        <div class="panel">
+          <div class="panel-body page-content">
+            <h2 id="accessing-your-gateway">Accessing Your Gateway</h2>
+<p>After burning the image into the SD Card, make sure to have the RAK2245 Pi Hat and the Raspberry Pi stacked and the SD Card inserted. After which, you can now safely power on the gateway. In this document, several ways in accessing the gateway are provided to have different alternatives for you to choose depending on the availability of the requirements needed.</p>
+<blockquote>
+  <p><strong>Warning</strong>: Before Powering the Raspberry Pi, you should install the LoRa and GPS Antennas. Not doing so might damage the boards.</p>
+</blockquote>
+<h3 id="1-wi-fi-ap-mode">1. Wi-Fi AP Mode</h3>
+<p>By default, the LoRa Gateway will work in Wi-Fi AP Mode which means that you can find an SSID named like “Rakwireless_XXXX” on your PC Wi-Fi Network List.</p>
+<p><img src="images/access-point-wifi.png" alt="Figure 1: RAKWireless Access Point" /></p>
+<blockquote>
+  <p>Note: Connect to this Wi-Fi SSID by using “rakwireless” as the default password. The default IP address of the LoRa Gateway’s Wi-Fi is <code class="highlighter-rouge">192.168.12.1</code> . Take note of this IP address as this will be needed in connecting via SSH.</p>
+</blockquote>
+<h3 id="2-via-the-ethernet-port-on-the-raspberry-pi">2. Via the Ethernet Port on the Raspberry Pi</h3>
+<p>You can also connect your PC with the LoRa Gateway through an Ethernet Cable via the Raspberry Pi port. By default, the IP Address of the LoRa Gateway’s Ethernet is <code class="highlighter-rouge">192.168.10.10</code></p>
+<h2 id="log-into-the-lora-gateway-via-ssh">Log into the LoRa Gateway via SSH</h2>
+<h3 id="1-windows-os">1. Windows OS</h3>
+<p>SSH (Secure Shell) is typically used to log in to a remote machine and execute commands. There are a lot of free and good SSH Clients out there namely <a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">Putty</a>, <a href="https://www.bitvise.com/ssh-client-download">BitVise SSH Client</a>, <a href="https://mobaxterm.mobatek.net/">MobaXterm</a> and many more. Feel free to choose one that fits your needs, you will be using Putty for this guide.</p>
+<p><img src="images/putty.jpg" alt="Figure 2: Putty Software for SSH in Windows" /></p>
+<ul>
+  <li>If you have connected to the LoRa Gateway through Wi-Fi AP Mode, the IP Address is <code class="highlighter-rouge">192.168.12.1</code></li>
+  <li>If you have connected to the LoRa Gateway through Ethernet, the IP Address is <code class="highlighter-rouge">192.168.10.10</code></li>
+  <li>It will then prompt you to enter the username and password. The default username is “pi” and the default password is “raspberry”</li>
+</ul>
+<p><img src="images/cmd.png" alt="Figure 3: Command line after log in" /></p>
+<h3 id="2-mac-os">2. Mac OS</h3>
+<p><img src="images/ssh-mac.png" alt="Figure 4: SSH in Mac OS" /></p>
+<ul>
+  <li>
+    <p>Open the terminal of Mac OS. Enter root mode by typing the following command: <code class="highlighter-rouge">sudo -i</code></p>
+  </li>
+  <li>
+    <p>Enter <code class="highlighter-rouge">ssh pi@192.168.12.1</code> in the terminal to login to your LoRa Gateway, the default password is “raspberry”.
+If you connect your PC with the LoRa Gateway through Ethernet Cable, you should enter <code class="highlighter-rouge">ssh pi@192.168.10.10</code>, the default password is “raspberry”.</p>
+  </li>
+</ul>
+<h3 id="3-linux-os">3. Linux OS</h3>
+<p>If the OS of your PC is Linux, you should do the same as the Mac OS, except the root mode.</p>
+          </div>
+        </div>
+      </div>
+      <div class="hidden-xs col-sm-2">
+        <div class="page-toc page-affix"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="lightbox" tabindex="-1" role="dialog">
+  <div class="modal-dialog text-center" role="document" style="width:auto;padding:20px;">
+    <a href="https://ttnstaticfile.blob.core.windows.net/static/ttn/media/logo/ttn-logo.png"><img class="modal-content modal-body" src="https://ttnstaticfile.blob.core.windows.net/static/ttn/media/logo/ttn-logo.png" alt="Zoom" /></a>
+  </div>
+</div>
+<script src="/docs/assets/js/page.js"></script>
+    </div>
+    <div id="footer"></div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.min.js"></script>
+    <script src="https://ttnweb.azureedge.net/static/common/js/ttn-components.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill@7/dist/polyfill.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
+    <script src="https://ttnweb.azureedge.net/static/common/js/vue-navbar.js"></script>
+    <script src="https://ttnweb.azureedge.net/static/common/js/vue-footer.js"></script>
+    <script src="https://ttnweb.azureedge.net/static/common/js/ga.js"></script>
+  </body>
+</html>
