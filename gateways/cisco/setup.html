@@ -31,12 +31,12 @@
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2019-10-24T09:10:36+00:00" />
+<meta property="article:published_time" content="2019-10-24T14:38:27+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"description":"Setup","url":"https://www.thethingsnetwork.org/docs/gateways/cisco/setup.html","headline":"Setup","dateModified":"2019-10-24T09:10:36+00:00","datePublished":"2019-10-24T09:10:36+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/gateways/cisco/setup.html"},"@context":"http://schema.org"}</script>
+{"description":"Setup","url":"https://www.thethingsnetwork.org/docs/gateways/cisco/setup.html","headline":"Setup","dateModified":"2019-10-24T14:38:27+00:00","datePublished":"2019-10-24T14:38:27+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/gateways/cisco/setup.html"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -288,6 +288,9 @@ gps ubx <span class="nb">enable</span> <span class="c"># Enable GPS</span>
 <span class="nb">exit</span> <span class="c"># Exit global configuration mode</span>
 </code></pre>
 </div>
+<blockquote>
+  <p>📜 This command may return the message <code class="highlighter-rouge">packet-forwarder firmware is not installed</code>, this message can be ignored.</p>
+</blockquote>
 <h4 id="enable-radio">Enable radio</h4>
 <p>As a final step before setting up the packet forwarder software, we’re going to <strong>enable the radio</strong>. You can see radio information with the <code class="highlighter-rouge">show radio</code> command:</p>
 <div class="highlighter-rouge"><pre class="highlight"><code>Gateway#show radio 
@@ -343,19 +346,37 @@ on
 <div class="language-bash highlighter-rouge"><pre class="highlight"><code>request shell container-console
 </code></pre>
 </div>
-<p>Move to the directory where the packet forwarder configuration is located, and show the list of available frequency plans:</p>
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="nb">cd</span> /etc/pktfwd
-ls -la
+<p>You will be requested to enter the System Password. By default this is <code class="highlighter-rouge">admin</code>.</p>
+<p>Create the directory to store the Packet Forwarder configuration:</p>
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>mkdir /etc/pktfwd
 </code></pre>
 </div>
-<p>Depending on your frequency plan, or on your specific setup, you’ll want to use the most appropriate frequency plan. Once you’ve decided on a frequency plan, set it as your current configuration:</p>
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code>mv config.json config_old.json
-mv &lt;your config&gt; config.json
+<p>Copy the packet forwarder to <code class="highlighter-rouge">/etc/pktfwd</code>:</p>
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>cp /tools/pkt_forwarder /etc/pktfwd/pkt_forwarder
+</code></pre>
+</div>
+<p>Cisco provides a list of configuration templates. To list the available templates:</p>
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>ls -l /tools/templates
+total 136
+-rwxr-xr-x    1 65534    65534        11323 Oct  8 13:30 config_loc_dual_antenna_8ch_full_diversity_EU868.json
+-rwxr-xr-x    1 65534    65534        11248 Oct  8 13:30 config_loc_dual_antenna_8ch_full_diversity_JP920.json
+-rwxr-xr-x    1 65534    65534        11323 Oct  8 13:30 config_loc_dual_antenna_8ch_partial_diversity_EU868.json
+-rwxr-xr-x    1 65534    65534         7993 Oct  8 13:30 config_loc_single_antenna_16ch_EU868.json
+-rwxr-xr-x    1 65534    65534         7080 Oct  8 13:30 config_loc_single_antenna_16ch_US915.json
+-rwxr-xr-x    1 65534    65534        13519 Oct  8 13:30 config_loc_single_antenna_64ch_US915.json
+-rwxr-xr-x    1 65534    65534        13635 Oct  8 13:30 config_loc_single_antenna_full_duplex_64ch_US915.json
+-rwxr-xr-x    1 65534    65534        17478 Oct  8 13:30 config_test_dual_antenna_56ch_partial_diversity_EU868.json
+-rwxr-xr-x    1 65534    65534        14148 Oct  8 13:30 config_test_single_antenna_64ch_64x1_EU868.json
+-rwxr-xr-x    1 65534    65534        14148 Oct  8 13:30 config_test_single_antenna_64ch_8x8_EU868.json
+</code></pre>
+</div>
+<p>Copy the configuration template <code class="highlighter-rouge">config_loc_dual_antenna_8ch_full_diversity_EU868.json</code> as <code class="highlighter-rouge">config.json</code> to <code class="highlighter-rouge">/etc/pktfwd</code>:</p>
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>cp /tools/templates/config_loc_dual_antenna_8ch_full_diversity_EU868.json /etc/pktfwd/config.json
 </code></pre>
 </div>
 <p>We’re now going to modify the configuration to point the packet forwarder to The Things Network. Select the <a href="../packet-forwarder/semtech-udp.html#router-addresses">router address</a> the most appropriate for your location.</p>
 <p>Edit the configuration using a text editor, such as <code class="highlighter-rouge">vi</code>:</p>
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code>vi config.json
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>vi /etc/pktfwd/config.json
 </code></pre>
 </div>
 <p>You’ll need to change the following settings:</p>
@@ -364,7 +385,10 @@ mv &lt;your config&gt; config.json
     <p><code class="highlighter-rouge">server_address</code> to <strong>the router address</strong> (such as <code class="highlighter-rouge">router.eu.thethings.network</code>)</p>
   </li>
   <li>
-    <p><code class="highlighter-rouge">serv_port_up</code> and <code class="highlighter-rouge">serv_port_down</code> to <code class="highlighter-rouge">1700</code></p>
+    <p><code class="highlighter-rouge">serv_port_up</code>: <code class="highlighter-rouge">1700</code></p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">serv_port_down</code>: <code class="highlighter-rouge">1700</code></p>
   </li>
 </ul>
 <p>Write down the value written for <code class="highlighter-rouge">gateway_ID</code>. Save the file, and exit your text editor.</p>
@@ -375,7 +399,7 @@ mv &lt;your config&gt; config.json
 </blockquote>
 <h3 id="testing-the-packet-forwarder">Testing the packet forwarder</h3>
 <p>You can now test the packet forwarder by executing:</p>
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code>pktfwd -c config.json -g/dev/ttyS1
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>/etc/pktfwd/pkt_forwarder -c /etc/pktfwd/config.json -g /dev/ttyS1
 </code></pre>
 </div>
 <p>You should now see packets flowing in the logs of the packet forwarder - and see gateway activity on the gateway’s package on the console!</p>
@@ -384,47 +408,44 @@ mv &lt;your config&gt; config.json
 </blockquote>
 <h3 id="installing-the-packet-forwarder-1">Installing the packet forwarder</h3>
 <p>Now that we know the packet forwarder is running, let’s make it run permanently.</p>
-<p>Save the following script as <code class="highlighter-rouge">/etc/init.d/S90_pkt_forwarder.sh</code>:</p>
+<p>Save the following script as <code class="highlighter-rouge">/etc/init.d/S60pkt_forwarder</code>:</p>
 <div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="c">#!/bin/sh</span>
 
 <span class="nv">SCRIPT_DIR</span><span class="o">=</span>/etc/pktfwd
-<span class="nv">SCRIPT</span><span class="o">=</span>pkt_forwarder
-<span class="nv">RUNAS</span><span class="o">=</span>root
+<span class="nv">SCRIPT</span><span class="o">=</span><span class="nv">$SCRIPT_DIR</span>/pkt_forwarder
+<span class="nv">CONFIG</span><span class="o">=</span><span class="nv">$SCRIPT_DIR</span>/config.json
 
-<span class="nv">PIDFILE</span><span class="o">=</span><span class="nv">$SCRIPT_DIR</span>/pkt_forwarder.pid
+<span class="nv">PIDFILE</span><span class="o">=</span>/var/run/pkt_forwarder.pid
+<span class="nv">LOGFILE</span><span class="o">=</span>/var/log/pkt_forwarder.log
+
+<span class="nb">export </span><span class="nv">NETWORKIP</span><span class="o">=</span><span class="k">$(</span>nslookup router.eu.thethings.network | grep -E -o <span class="s2">"([0-9]{1,3}[</span><span class="se">\.</span><span class="s2">]){3}[0-9]{1,3}"</span> | tail -1<span class="k">)</span>
+sed -i <span class="s1">'s/[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}/'</span><span class="nv">$NETWORKIP</span><span class="s1">'/g'</span> <span class="s2">"</span><span class="nv">$CONFIG</span><span class="s2">"</span>
 
 start<span class="o">()</span> <span class="o">{</span>
-  <span class="k">if</span> <span class="o">[</span> -f /var/run/<span class="nv">$PIDNAME</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="nb">kill</span> -0 <span class="k">$(</span>cat /var/run/<span class="nv">$PIDNAME</span><span class="k">)</span>; <span class="k">then
-    </span><span class="nb">echo</span> <span class="s1">'Service already running'</span> &gt;&amp;2
-    <span class="k">return </span>1
-  <span class="k">fi
-  </span><span class="nb">echo</span> <span class="s1">'Starting service…'</span> &gt;&amp;2
+  <span class="nb">echo</span> <span class="s2">"Starting pkt_forwarder"</span>
   <span class="nb">cd</span> <span class="nv">$SCRIPT_DIR</span>
-  start-stop-daemon -S -q -b -p <span class="s2">"</span><span class="nv">$PIDFILE</span><span class="s2">"</span> --exec <span class="s2">"</span><span class="nv">$SCRIPT</span><span class="s2">"</span> -- -c config.json -g/dev/ttyS1
-  <span class="nb">echo</span> <span class="s1">'Service started'</span> &gt;&amp;2
+  start-stop-daemon <span class="se">\</span>
+        --start <span class="se">\</span>
+        --make-pidfile <span class="se">\</span>
+        --pidfile <span class="s2">"</span><span class="nv">$PIFDILE</span><span class="s2">"</span> <span class="se">\</span>
+        --background <span class="se">\</span>
+        --startas /bin/bash -- -c <span class="s2">"exec </span><span class="nv">$SCRIPT</span><span class="s2"> -- -c </span><span class="nv">$CONFIG</span><span class="s2"> -g /dev/ttyS1 &gt;&gt; </span><span class="nv">$LOGFILE</span><span class="s2"> 2&gt;&amp;1"</span>
+  <span class="nb">echo</span> <span class="nv">$?</span>
 <span class="o">}</span>
 
 stop<span class="o">()</span> <span class="o">{</span>
-  <span class="k">if</span> <span class="o">[</span> ! -f <span class="s2">"</span><span class="nv">$PIDFILE</span><span class="s2">"</span> <span class="o">]</span> <span class="o">||</span> ! <span class="nb">kill</span> -0 <span class="k">$(</span>cat <span class="s2">"</span><span class="nv">$PIDFILE</span><span class="s2">"</span><span class="k">)</span>; <span class="k">then
-    </span><span class="nb">echo</span> <span class="s1">'Service not running'</span> &gt;&amp;2
-    <span class="k">return </span>1
-  <span class="k">fi
-  </span><span class="nb">echo</span> <span class="s1">'Stopping service…'</span> &gt;&amp;2
-  <span class="nb">kill</span> -15 <span class="k">$(</span>cat <span class="s2">"</span><span class="nv">$PIDFILE</span><span class="s2">"</span><span class="k">)</span> <span class="o">&amp;&amp;</span> rm -f <span class="s2">"</span><span class="nv">$PIDFILE</span><span class="s2">"</span>
-  <span class="nb">echo</span> <span class="s1">'Service stopped'</span> &gt;&amp;2
+  <span class="nb">echo</span> <span class="s2">"Stopping pkt_forwarder"</span>
+  start-stop-daemon <span class="se">\</span>
+        --stop <span class="se">\</span>
+        --oknodo <span class="se">\</span>
+        --quiet <span class="se">\</span>
+        --pidfile <span class="s2">"</span><span class="nv">$PIDFILE</span><span class="s2">"</span>
 <span class="o">}</span>
 
-uninstall<span class="o">()</span> <span class="o">{</span>
-  <span class="nb">echo</span> -n <span class="s2">"Are you really sure you want to uninstall this service? That cannot be undone. [yes|No] "</span>
-  <span class="nb">local </span>SURE
-  <span class="nb">read </span>SURE
-  <span class="k">if</span> <span class="o">[</span> <span class="s2">"</span><span class="nv">$SURE</span><span class="s2">"</span> <span class="o">=</span> <span class="s2">"yes"</span> <span class="o">]</span>; <span class="k">then
-    </span>stop
-    rm -f <span class="s2">"</span><span class="nv">$PIDFILE</span><span class="s2">"</span>
-    <span class="nb">echo</span> <span class="s2">"Notice: log file is not be removed: '</span><span class="nv">$LOGFILE</span><span class="s2">'"</span> &gt;&amp;2
-    update-rc.d -f &lt;NAME&gt; remove
-    rm -fv <span class="s2">"</span><span class="nv">$0</span><span class="s2">"</span>
-  <span class="k">fi</span>
+restart<span class="o">()</span> <span class="o">{</span>
+  stop
+  sleep 1
+  start
 <span class="o">}</span>
 
 <span class="k">case</span> <span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span> <span class="k">in
@@ -434,19 +455,26 @@ uninstall<span class="o">()</span> <span class="o">{</span>
   stop<span class="p">)</span>
     stop
     <span class="p">;;</span>
-  uninstall<span class="p">)</span>
-    uninstall
-    <span class="p">;;</span>
-  restart<span class="p">)</span>
-    stop
-    start
+  restart|reload<span class="p">)</span>
+    restart
     <span class="p">;;</span>
   <span class="k">*</span><span class="p">)</span>
-    <span class="nb">echo</span> <span class="s2">"Usage: </span><span class="nv">$0</span><span class="s2"> {start|stop|restart|uninstall}"</span>
-<span class="k">esac</span>
+    <span class="nb">echo</span> <span class="s2">"Usage: </span><span class="nv">$0</span><span class="s2"> {start|stop|restart}"</span>
+    <span class="nb">exit </span>1
+<span class="k">esac
+
+</span><span class="nb">exit</span> <span class="nv">$?</span>
 </code></pre>
 </div>
-<p>This script will be called at every startup of the container. To enable it immediately, execute <code class="highlighter-rouge">./S90_pkt_forwarder.sh start</code>.</p>
+<p>Then make the init script executable:</p>
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>chmod +x /etc/init.d/S60pkt_forwarder
+</code></pre>
+</div>
+<p>To enable it immediately, execute <code class="highlighter-rouge">/etc/init.d/S60pkt_forwarder start</code>.
+This script will be called at every startup of the container.</p>
+<blockquote>
+  <p>📜 If you are using another network than <code class="highlighter-rouge">router.eu.thethings.network</code> replace it with the name of your network after <code class="highlighter-rouge">nslookup</code>.</p>
+</blockquote>
 <h3 id="exit-container-shell">Exit container shell</h3>
 <p>If you are done with configuration, you can now safely remove the serial cable between your computer.</p>
           </div>
