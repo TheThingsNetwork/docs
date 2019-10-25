@@ -31,12 +31,12 @@
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2019-10-24T14:38:27+00:00" />
+<meta property="article:published_time" content="2019-10-25T11:20:39+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"description":"LoRaWAN Security","url":"https://www.thethingsnetwork.org/docs/lorawan/security.html","headline":"Security","dateModified":"2019-10-24T14:38:27+00:00","datePublished":"2019-10-24T14:38:27+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/lorawan/security.html"},"@context":"http://schema.org"}</script>
+{"description":"LoRaWAN Security","url":"https://www.thethingsnetwork.org/docs/lorawan/security.html","headline":"Security","dateModified":"2019-10-25T11:20:39+00:00","datePublished":"2019-10-25T11:20:39+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/lorawan/security.html"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -95,45 +95,66 @@
       <div class="col-sm-3">
         <div class="panel page-side-nav page-affix">
           <div class="panel-body">
-            <h5>LoRaWAN</h5>
             <ul>
-              <li class=""><a href="/docs/lorawan/index.html">Overview</a>
+              <li class=""><a href="/docs/lorawan/index.html"><h5>LoRaWAN</h5></a>
+              </li>
+            <li class="page-side-nav-section"><span>Fundamental</span>
             <ul>
-                <li class=""><a href="/docs/lorawan/academic.html">Academic Research</a>
+                <li class=""><a href="/docs/lorawan/architecture.html">LoRaWAN Architecture</a>
                 </li>
-                <li class=""><a href="/docs/lorawan/adr.html">Adaptive Data Rate</a>
-                </li>
-                <li class=""><a href="/docs/lorawan/address-space.html">Address Space</a>
-                </li>
-                <li class=""><a href="/docs/lorawan/duty-cycle.html">Duty Cycle</a>
+                <li class=""><a href="/docs/lorawan/regional-parameters.html">Regional Parameters</a>
                 </li>
                 <li class=""><a href="/docs/lorawan/limitations.html">Limitations</a>
+                </li>
+            </ul>
+            </li>
+            <li class="page-side-nav-section"><span>Specifications</span>
+            <ul>
+                <li class=""><a href="/docs/lorawan/classes.html">Classes</a>
+                </li>
+                <li class=""><a href="/docs/lorawan/addressing.html">Addressing & Activation</a>
+                </li>
+                <li class=""><a href="/docs/lorawan/modulation-data-rate.html">Modulation & Data Rate</a>
+                </li>
+                <li class=""><a href="/docs/lorawan/adaptive-data-rate.html">Adaptive Data Rate</a>
+                </li>
+                <li class=""><a href="/docs/lorawan/duty-cycle.html">Duty Cycle</a>
                 </li>
                 <li class="active"><a href="/docs/lorawan/security.html">Security</a>
                 </li>
             </ul>
-              </li>
-            <li class="page-side-nav-section"><span>Frequency Plans</span>
+            </li>
+            <li class="page-side-nav-section"><span>Additional Information</span>
             <ul>
-                <li class=""><a href="/docs/lorawan/frequency-plans.html">Overview</a>
+                <li class=""><a href="/docs/lorawan/academic.html">Academic Research</a>
                 </li>
-                <li class=""><a href="/docs/lorawan/frequencies-by-country.html">By Country</a>
+                <li class=""><a href="/docs/lorawan/frequency-plans.html">Frequency Plans</a>
+                </li>
+                <li class=""><a href="/docs/lorawan/frequencies-by-country.html">Frequency Plans by Country</a>
+                </li>
+                <li class=""><a href="/docs/lorawan/prefix-assignments.html">Prefix assignments</a>
                 </li>
             </ul>
             </li>
             </ul>
+            <!-- <li class="hidden-xs col-sm-2 page-toc page-affix"></li> --> 
           </div>
-        </div>
+        </div> 
       </div>
       <div class="col-sm-7">
         <div class="panel">
           <div class="panel-body page-content">
             <h1 id="lorawan-security">LoRaWAN Security</h1>
-<p>LoRaWAN 1.0 specifies a number of security keys: <code class="highlighter-rouge">NwkSKey</code>, <code class="highlighter-rouge">AppSKey</code> and <code class="highlighter-rouge">AppKey</code>. All keys have a length of 128 bits.</p>
-<p>The <strong>Network Session Key</strong> (<code class="highlighter-rouge">NwkSKey</code>) is used for interaction between the Node and the Network Server. This key is used to check the validity of messages (MIC check). In the backend of The Things Network this validation is also used to map a non-unique device address (<code class="highlighter-rouge">DevAddr</code>) to a unique <code class="highlighter-rouge">DevEUI</code> and <code class="highlighter-rouge">AppEUI</code>.</p>
+<h2 id="security-keys">Security Keys</h2>
+<p>LoRaWAN 1.0 specifies a number of security keys: <code class="highlighter-rouge">NwkSKey</code>, <code class="highlighter-rouge">AppSKey</code> and <code class="highlighter-rouge">AppKey</code>. All keys have a length of 128 bits.
+The algorithm used for this is AES-128, similar to the algorithm used in the 802.15.4 standard.</p>
+<h3 id="session-keys">Session Keys</h3>
+<p>When a device joins the network (this is called a join or activation), an application session key <code class="highlighter-rouge">AppSKey</code> and a network session key <code class="highlighter-rouge">NwkSKey</code> are generated. The <code class="highlighter-rouge">NwkSKey</code> is shared with the network, while the <code class="highlighter-rouge">AppSKey</code> is kept private. These session keys will be used for the duration of the session.</p>
+<p>The <strong>Network Session Key</strong> (<code class="highlighter-rouge">NwkSKey</code>) is used for interaction between the Node and the Network Server. This key is used to validate the integrity of each message by its Message Integrity Code (MIC check). This MIC is similar to a checksum, except that it prevents intentional tampering with a message. For this, LoRaWAN uses AES-CMAC. In the backend of The Things Network this validation is also used to map a non-unique device address (<code class="highlighter-rouge">DevAddr</code>) to a unique <code class="highlighter-rouge">DevEUI</code> and <code class="highlighter-rouge">AppEUI</code>.</p>
 <p>The <strong>Application Session Key</strong> (<code class="highlighter-rouge">AppSKey</code>) is used for encryption and decryption of the payload. The payload is fully encrypted between the Node and the Handler/Application Server component of The Things Network (which you will be able to run on your own server). This means that nobody except you is able to read the contents of messages you send or receive.</p>
 <p>These two session keys (<code class="highlighter-rouge">NwkSKey</code> and <code class="highlighter-rouge">AppSKey</code>) are unique per device, per session. If you dynamically activate your device (OTAA), these keys are re-generated on every activation. If you statically activate your device (ABP), these keys stay the same until you change them.</p>
-<p>Dynamically activated devices (OTAA) use the <strong>Application Key</strong> (<code class="highlighter-rouge">AppKey</code>) to derive the two session keys during the activation procedure. In The Things Network you can have a <em>default</em> <code class="highlighter-rouge">AppKey</code> which will be used to activate all devices, or customize the <code class="highlighter-rouge">AppKey</code> per device.</p>
+<h3 id="application-key">Application Key</h3>
+<p>The application key (<code class="highlighter-rouge">AppKey</code>) is only known by the device and by the application. Dynamically activated devices (OTAA) use the <strong>Application Key</strong> (<code class="highlighter-rouge">AppKey</code>) to derive the two session keys during the activation procedure. In The Things Network you can have a <em>default</em> <code class="highlighter-rouge">AppKey</code> which will be used to activate all devices, or customize the <code class="highlighter-rouge">AppKey</code> per device.</p>
 <h2 id="frame-counters">Frame Counters</h2>
 <p>Because we’re working with a radio protocol, anyone will be able to capture and store messages. It’s not possible to read these messages without the <code class="highlighter-rouge">AppSKey</code>, because they’re encrypted. Nor is it possible to tamper with them without the <code class="highlighter-rouge">NwkSKey</code>, because this will make the MIC check fail. It is however possible to re-transmit the messages. These so-called replay attacks can be detected and blocked using frame counters.</p>
 <p>When a device is activated, these frame counters (<code class="highlighter-rouge">FCntUp</code> and <code class="highlighter-rouge">FCntDown</code>) are both set to <code class="highlighter-rouge">0</code>. Every time the device transmits an uplink message, the <code class="highlighter-rouge">FCntUp</code> is incremented and every time the network sends a downlink message, the <code class="highlighter-rouge">FCntDown</code> is incremented. If either the device or the network receives a message with a frame counter that is lower than the last one, the message is ignored.</p>
@@ -143,9 +164,6 @@
 <p>The technique used in LoRa is ‘<a href="https://youtu.be/dxYY097QNs0">CHIRP</a>’: Compressed High Intensity Radar Pulse.  It is even more complex but simple with current technology. As the name may suggest, the background design requirement, it is not used to hide the radio signal but is employed because of other factors, not just processing gain but interference immunity, channel sharing and resistance to radio reflections (amongst others).  It is therefore employed as security against operating conditions not for surveillance resistance. (Hedy Lamarr was a co-inventor and holds a patent for FHSS).</p>
           </div>
         </div>
-      </div>
-      <div class="hidden-xs col-sm-2">
-        <div class="page-toc page-affix"></div>
       </div>
     </div>
   </div>

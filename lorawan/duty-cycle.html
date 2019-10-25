@@ -24,19 +24,19 @@
 <meta name="generator" content="Jekyll v3.4.5" />
 <meta property="og:title" content="Duty Cycle" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Duty Cycle for LoRaWAN Devices" />
-<meta property="og:description" content="Duty Cycle for LoRaWAN Devices" />
+<meta name="description" content="Duty Cycle" />
+<meta property="og:description" content="Duty Cycle" />
 <link rel="canonical" href="https://www.thethingsnetwork.org/docs/lorawan/duty-cycle.html" />
 <meta property="og:url" content="https://www.thethingsnetwork.org/docs/lorawan/duty-cycle.html" />
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2019-10-24T14:38:27+00:00" />
+<meta property="article:published_time" content="2019-10-25T11:20:39+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"description":"Duty Cycle for LoRaWAN Devices","url":"https://www.thethingsnetwork.org/docs/lorawan/duty-cycle.html","headline":"Duty Cycle","dateModified":"2019-10-24T14:38:27+00:00","datePublished":"2019-10-24T14:38:27+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/lorawan/duty-cycle.html"},"@context":"http://schema.org"}</script>
+{"description":"Duty Cycle","url":"https://www.thethingsnetwork.org/docs/lorawan/duty-cycle.html","headline":"Duty Cycle","dateModified":"2019-10-25T11:20:39+00:00","datePublished":"2019-10-25T11:20:39+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/lorawan/duty-cycle.html"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -95,47 +95,63 @@
       <div class="col-sm-3">
         <div class="panel page-side-nav page-affix">
           <div class="panel-body">
-            <h5>LoRaWAN</h5>
             <ul>
-              <li class=""><a href="/docs/lorawan/index.html">Overview</a>
+              <li class=""><a href="/docs/lorawan/index.html"><h5>LoRaWAN</h5></a>
+              </li>
+            <li class="page-side-nav-section"><span>Fundamental</span>
             <ul>
-                <li class=""><a href="/docs/lorawan/academic.html">Academic Research</a>
+                <li class=""><a href="/docs/lorawan/architecture.html">LoRaWAN Architecture</a>
                 </li>
-                <li class=""><a href="/docs/lorawan/adr.html">Adaptive Data Rate</a>
-                </li>
-                <li class=""><a href="/docs/lorawan/address-space.html">Address Space</a>
-                </li>
-                <li class="active"><a href="/docs/lorawan/duty-cycle.html">Duty Cycle</a>
+                <li class=""><a href="/docs/lorawan/regional-parameters.html">Regional Parameters</a>
                 </li>
                 <li class=""><a href="/docs/lorawan/limitations.html">Limitations</a>
+                </li>
+            </ul>
+            </li>
+            <li class="page-side-nav-section"><span>Specifications</span>
+            <ul>
+                <li class=""><a href="/docs/lorawan/classes.html">Classes</a>
+                </li>
+                <li class=""><a href="/docs/lorawan/addressing.html">Addressing & Activation</a>
+                </li>
+                <li class=""><a href="/docs/lorawan/modulation-data-rate.html">Modulation & Data Rate</a>
+                </li>
+                <li class=""><a href="/docs/lorawan/adaptive-data-rate.html">Adaptive Data Rate</a>
+                </li>
+                <li class="active"><a href="/docs/lorawan/duty-cycle.html">Duty Cycle</a>
                 </li>
                 <li class=""><a href="/docs/lorawan/security.html">Security</a>
                 </li>
             </ul>
-              </li>
-            <li class="page-side-nav-section"><span>Frequency Plans</span>
+            </li>
+            <li class="page-side-nav-section"><span>Additional Information</span>
             <ul>
-                <li class=""><a href="/docs/lorawan/frequency-plans.html">Overview</a>
+                <li class=""><a href="/docs/lorawan/academic.html">Academic Research</a>
                 </li>
-                <li class=""><a href="/docs/lorawan/frequencies-by-country.html">By Country</a>
+                <li class=""><a href="/docs/lorawan/frequency-plans.html">Frequency Plans</a>
+                </li>
+                <li class=""><a href="/docs/lorawan/frequencies-by-country.html">Frequency Plans by Country</a>
+                </li>
+                <li class=""><a href="/docs/lorawan/prefix-assignments.html">Prefix assignments</a>
                 </li>
             </ul>
             </li>
             </ul>
+            <!-- <li class="hidden-xs col-sm-2 page-toc page-affix"></li> --> 
           </div>
-        </div>
+        </div> 
       </div>
       <div class="col-sm-7">
         <div class="panel">
           <div class="panel-body page-content">
-            <h1 id="duty-cycle-for-lorawan-devices">Duty Cycle for LoRaWAN Devices</h1>
-<p><strong>Duty Cycle indicates the fraction of time a resource is busy.</strong></p>
-<p>When a single device transmits on a channel for 2 <em>time units</em> every 10 <em>time units</em>, this device has a duty cycle of 20%.</p>
-<p><img src="duty-cycle-single-channel.png" alt="Single Channel Duty Cycle" /></p>
-<p>However, if we also consider <em>channels</em>, things get a bit more complicated. When we have a device that transmits on 3 channels instead of one, each individual <em>channel</em> is still occupied for 2 <em>time units</em> every 10 <em>time units</em> (so 20%). However, the <em>device</em> is now transmitting for 6 <em>time units</em> every 10 <em>time units</em>, giving it a duty cycle of 60%.</p>
-<p><img src="duty-cycle-multi-channel.png" alt="Multiple Channel Duty Cycle" /></p>
-<p>In our European frequency plan, we have channels in different <em>sub-bands</em>, so when considering the duty cycle, we also have to consider these. Let’s say the 3 channels we used before, are in 2 different <em>sub-bands</em>. Each separate <em>channel</em> still has a duty cycle of 20%, the <em>device</em> still has a duty cycle of 60%, but we now see that <em>Band 1</em> is in use for 2 <em>time units</em> every 10 <em>time units</em> (20%), while <em>Band 2</em> is in use for 4 <em>time units</em> every 10 <em>time units</em> (40%).</p>
-<p><img src="duty-cycle-multi-band.png" alt="Multiple Band Duty Cycle" /></p>
+            <h1 id="duty-cycle">Duty Cycle</h1>
+<p><strong>Duty Cycle indicates the fraction of time a resource is busy.</strong><br />
+When a single device transmits on a channel for 2 <em>time units</em> every 10 <em>time units</em>, this device has a duty cycle of 20%.<br />
+<img src="duty-cycle-single-channel.png" alt="Single Channel Duty Cycle" /></p>
+<p>However, if we also consider <em>channels</em>, things get a bit more complicated. When we have a device that transmits on 3 channels instead of one, each individual <em>channel</em> is still occupied for 2 <em>time units</em> every 10 <em>time units</em> (so 20%). However, the <em>device</em> is now transmitting for 6 <em>time units</em> every 10 <em>time units</em>, giving it a duty cycle of 60%.<br />
+<img src="duty-cycle-multi-channel.png" alt="Multiple Channel Duty Cycle" /></p>
+<p>In our European frequency plan, we have channels in different <em>sub-bands</em>, so when considering the duty cycle, we also have to consider these. Let’s say the 3 channels we used before, are in 2 different <em>sub-bands</em>. Each separate <em>channel</em> still has a duty cycle of 20%, the <em>device</em> still has a duty cycle of 60%, but we now see that <em>Band 1</em> is in use for 2 <em>time units</em> every 10 <em>time units</em> (20%), while <em>Band 2</em> is in use for 4 <em>time units</em> every 10 <em>time units</em> (40%).<br />
+<img src="duty-cycle-multi-band.png" alt="Multiple Band Duty Cycle" /></p>
 <h2 id="maximum-duty-cycle">Maximum Duty Cycle</h2>
 <p>The duty cycle of radio devices is often regulated by government. If this is the case, the duty cycle is commonly set to 1%, but make sure to check the regulations of your local government to be sure.</p>
 <p>In Europe, duty cycles are regulated by section 7.2.3 of the ETSI EN300.220 standard. This standard defines the following sub-bands and their duty cycles:</p>
@@ -152,21 +168,18 @@
 <p>Every radio device must be compliant with the regulated duty cycle limits. This applies to <strong>both nodes and gateways</strong>.</p>
 <p>In practice, this means that you should program your nodes in such a way, that they stay within the limits. The easiest way to do this, is to calculate how much <em>airtime</em> each message consumes using one of the many <a href="https://docs.google.com/spreadsheets/d/1QvcKsGeTTPpr9icj4XkKXq4r2zTc2j0gsHLrnplzM3I/edit">airtime calculators</a> and use that information to choose a good transmit interval.</p>
 <p>Some radio modules (such as the RN2483) also enforce the duty cycle limits. If you exceed the limits, the module will complain with a message <code class="highlighter-rouge">no_free_ch</code>. Specifically, the RN2483 limits the duty cycle on a per-channel basis. This means that if you only have 1 channel configured, the module will start enforcing the duty cycle after the first message.</p>
-<p><em>The figure below shows enforcement on a resource with a 20% duty cycle limit</em></p>
-<p><img src="duty-cycle-single-channel-off-air.png" alt="Single Channel Off-air" /></p>
+<p><em>The figure below shows enforcement on a resource with a 20% duty cycle limit</em><br />
+<img src="duty-cycle-single-channel-off-air.png" alt="Single Channel Off-air" /></p>
 <p>In the European band, a transmission on a channel within a frequency band, also influences the other frequencies in that band.</p>
-<p><em>The figure below shows enforcement on two bands, each with a 20% duty cycle limit</em></p>
-<p><img src="duty-cycle-multi-band-off-air.png" alt="Multiple Band Off-air" /></p>
+<p><em>The figure below shows enforcement on two bands, each with a 20% duty cycle limit</em><br />
+<img src="duty-cycle-multi-band-off-air.png" alt="Multiple Band Off-air" /></p>
 <p>As a per-channel duty cycle limit is easier to implement, you can also divide the sub-band duty cycle over the number of channels in that sub-band. So for example, in a sub-band with 8 channels and a duty cycle of 1%, each channel has a duty cycle of 1/8% (that’s 0.125%).</p>
 <p>This method is also implemented by the RN2483 module, and as a result, instead of seeing the <code class="highlighter-rouge">no_free_ch</code> when you send too quickly after the first message you can send multiple messages before all 8 channels are “blocked” and the duty cycle is enforced.</p>
-<p><em>The figure below shows enforcement on those same two bands, but enforced per channel</em></p>
-<p><img src="duty-cycle-multi-channel-off-air-2.png" alt="Multiple Band Off-air" /></p>
+<p><em>The figure below shows enforcement on those same two bands, but enforced per channel</em><br />
+<img src="duty-cycle-multi-channel-off-air-2.png" alt="Multiple Band Off-air" /></p>
 <p><em>(note: channel 3 is blocked until slot 11)</em></p>
           </div>
         </div>
-      </div>
-      <div class="hidden-xs col-sm-2">
-        <div class="page-toc page-affix"></div>
       </div>
     </div>
   </div>
