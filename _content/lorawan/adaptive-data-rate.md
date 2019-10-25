@@ -1,5 +1,9 @@
 ---
 title: Adaptive Data Rate
+section: Specifications
+zindex: 7
+redirect_from:
+ - /lorawan/adr
 ---
 
 # LoRaWAN Adaptive Data Rate

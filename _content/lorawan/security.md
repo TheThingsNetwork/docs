@@ -1,18 +1,29 @@
 ---
 title: Security
+section: Specifications
+zindex: 2
 ---
 
 # LoRaWAN Security
 
-LoRaWAN 1.0 specifies a number of security keys: `NwkSKey`, `AppSKey` and `AppKey`. All keys have a length of 128 bits.
+## Security Keys
 
-The **Network Session Key** (`NwkSKey`) is used for interaction between the Node and the Network Server. This key is used to check the validity of messages (MIC check). In the backend of The Things Network this validation is also used to map a non-unique device address (`DevAddr`) to a unique `DevEUI` and `AppEUI`.
+LoRaWAN 1.0 specifies a number of security keys: `NwkSKey`, `AppSKey` and `AppKey`. All keys have a length of 128 bits.
+The algorithm used for this is AES-128, similar to the algorithm used in the 802.15.4 standard.
+
+### Session Keys
+
+When a device joins the network (this is called a join or activation), an application session key `AppSKey` and a network session key `NwkSKey` are generated. The `NwkSKey` is shared with the network, while the `AppSKey` is kept private. These session keys will be used for the duration of the session.
+
+The **Network Session Key** (`NwkSKey`) is used for interaction between the Node and the Network Server. This key is used to validate the integrity of each message by its Message Integrity Code (MIC check). This MIC is similar to a checksum, except that it prevents intentional tampering with a message. For this, LoRaWAN uses AES-CMAC. In the backend of The Things Network this validation is also used to map a non-unique device address (`DevAddr`) to a unique `DevEUI` and `AppEUI`.
 
 The **Application Session Key** (`AppSKey`) is used for encryption and decryption of the payload. The payload is fully encrypted between the Node and the Handler/Application Server component of The Things Network (which you will be able to run on your own server). This means that nobody except you is able to read the contents of messages you send or receive.
 
 These two session keys (`NwkSKey` and `AppSKey`) are unique per device, per session. If you dynamically activate your device (OTAA), these keys are re-generated on every activation. If you statically activate your device (ABP), these keys stay the same until you change them.
 
-Dynamically activated devices (OTAA) use the **Application Key** (`AppKey`) to derive the two session keys during the activation procedure. In The Things Network you can have a _default_ `AppKey` which will be used to activate all devices, or customize the `AppKey` per device.
+### Application Key
+
+The application key (`AppKey`) is only known by the device and by the application. Dynamically activated devices (OTAA) use the **Application Key** (`AppKey`) to derive the two session keys during the activation procedure. In The Things Network you can have a _default_ `AppKey` which will be used to activate all devices, or customize the `AppKey` per device.
 
 ## Frame Counters
 

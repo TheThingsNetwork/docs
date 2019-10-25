@@ -1,5 +1,7 @@
 ---
 title: Academic Research
+section: Additional Information
+zindex: 10
 ---
 
 # Academic Research

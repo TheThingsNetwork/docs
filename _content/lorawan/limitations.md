@@ -1,12 +1,13 @@
 ---
 title: Limitations
+section: Fundamental
 ---
 
 # Limitations of LoRaWAN
 
 LoRaWAN is not suitable for every use-case, so it is important that you understand the limitations. Here's a quick overview:
 
-Suitable use-cases for LoRaWAN:
+#### Suitable use-cases for LoRaWAN:
 
 * **Long range** - multiple kilometers
 * **Low power** - can last years on a battery
@@ -15,7 +16,7 @@ Suitable use-cases for LoRaWAN:
 * **Coverage everywhere** - you are the network! Just install your own gateways
 * **Secure** - 128bit end-to-end encrypted
 
-Not Suitable for LoRaWAN:
+#### Not Suitable for LoRaWAN:
 
 * **Realtime data** - you can only send small packets every couple of minutes
 * **Phone calls** - you can do that with GPRS/3G/LTE
