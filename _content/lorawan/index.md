@@ -15,7 +15,7 @@ Background information to get you started with LoRaWAN.
 
 <!-- * LoRa & LoRaWAN -->
 
-* [LoRaWAN Architecture](./LoRaWAN-architecture.md)
+* [LoRaWAN Architecture](./architecture.md)
  
 * [Regional Parameters](./regional-parameters.md)
 
