@@ -27,7 +27,7 @@ It is advised to always have the antenna connected when switching on the gateway
 
 ## UTP cable
 
-After unpacking the Kerlink IoT Station, open the case by putting a screwdriver in the bottom notch (where the antenna connector is located).
+After unpacking the Kerlink Wirnet Station, open the case by putting a screwdriver in the bottom notch (where the antenna connector is located).
 
 ![Open the case](utp-1.jpg)
 
@@ -35,7 +35,7 @@ Connect a UTP network cable to the green screw terminal. Cable colors are noted 
 
 ![Attach ethernet cable](kerlink-ethernet-connection.jpg)
 
-Attach the UTP cable attached to the Kerlink IoT Station to the “data & power Out” port of the power adapter. Connect the “data IN” port of the power adapter to your existing network. If you use PoE switches, the power adapter is not needed.
+Attach the UTP cable attached to the Kerlink Wirnet Station to the “data & power Out” port of the power adapter. Connect the “data IN” port of the power adapter to your existing network. If you use PoE switches, the power adapter is not needed.
 
 ![Attach the PoE injector](utp-2.jpg)
 
@@ -57,9 +57,9 @@ The debug port can be used to attach to the Linux console of the gateway. See [C
 
 If you'd like to use a GPRS/3G connection, insert the SIM-card now. The gateway uses a "standard SIM" / "regular SIM" / "Mini-SIM" / 2FF sized sim card.
 
-1. Remove the SIM card holder of the Lora IoT Station by pressing the extraction button with a little screwdriver.
+1. Remove the SIM card holder of the Kerlink Wirnet Station by pressing the extraction button with a little screwdriver.
 2. Place the SIM card in the SIM card holder.
-3. Carefully insert the SIM card holder with the SIM card in the LoRa IoT Station.
+3. Carefully insert the SIM card holder with the SIM card in the Kerlink Wirnet Station.
 4. Configure the settings for the SIM card.
 
 ![SIM card holder](sim.png)

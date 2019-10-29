@@ -3,7 +3,7 @@ title: Firmware Updates
 zindex: 750
 ---
 
-# Kerlink Station Firmware Updates
+# Kerlink Wirnet Station Firmware Updates
 
 Please read through this entire document before performing the firmware update. If the procedure is not done correctly you stand a chance to brick your gateway. A firmware upgrade will most likely result in a factory reset of the gateway.
 
@@ -20,7 +20,7 @@ Please read through this entire document before performing the firmware update. 
 
 ## About the firmware
 
-Kerling Station firmware updates are installed from a USB drive. This needs to be a USB 1.1 compatible device formatted as FAT32.
+Kerlink Wirnet Station firmware updates are installed from a USB drive. This needs to be a USB 1.1 compatible device formatted as FAT32.
 The firmware consists of two parts:
 
 - **System Firmware** (usually) from Kerlink

@@ -8,7 +8,7 @@ section: Hardware
 
 ![Kerlink iBTS](ibts-gw.png)
 
-The Wirnet iBTS is the successor of the Wirnet IoT Station. It is based on Semtech's gateway reference design and can be used for GPS-free geolocalization services.
+The Wirnet iBTS is the successor of the Wirnet Station. It is based on Semtech's gateway reference design and can be used for GPS-free geolocalization services.
 
 The Wirnet iBTS has a modular architecture allowing you to configure and upgrade the gateway to according to your needs. Thanks to the modularity you are able to choose:
 
