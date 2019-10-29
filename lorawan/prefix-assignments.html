@@ -20,23 +20,23 @@
     })('https://www.thethingsnetwork.org/docs/lorawan/prefix-assignments.html');
     </script>
     <!-- Begin Jekyll SEO tag v2.4.0 -->
-<title>Prefix assignments | The Things Network</title>
+<title>NetID and DevAddr Prefix Assignments | The Things Network</title>
 <meta name="generator" content="Jekyll v3.4.5" />
-<meta property="og:title" content="Prefix assignments" />
+<meta property="og:title" content="NetID and DevAddr Prefix Assignments" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Prefix assignments" />
-<meta property="og:description" content="Prefix assignments" />
+<meta name="description" content="NetID and DevAddr Prefix Assignments" />
+<meta property="og:description" content="NetID and DevAddr Prefix Assignments" />
 <link rel="canonical" href="https://www.thethingsnetwork.org/docs/lorawan/prefix-assignments.html" />
 <meta property="og:url" content="https://www.thethingsnetwork.org/docs/lorawan/prefix-assignments.html" />
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2019-10-28T15:51:18+00:00" />
+<meta property="article:published_time" content="2019-10-29T08:17:16+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"description":"Prefix assignments","url":"https://www.thethingsnetwork.org/docs/lorawan/prefix-assignments.html","headline":"Prefix assignments","dateModified":"2019-10-28T15:51:18+00:00","datePublished":"2019-10-28T15:51:18+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/lorawan/prefix-assignments.html"},"@context":"http://schema.org"}</script>
+{"description":"NetID and DevAddr Prefix Assignments","url":"https://www.thethingsnetwork.org/docs/lorawan/prefix-assignments.html","headline":"NetID and DevAddr Prefix Assignments","dateModified":"2019-10-29T08:17:16+00:00","datePublished":"2019-10-29T08:17:16+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/lorawan/prefix-assignments.html"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -132,7 +132,7 @@
                 </li>
                 <li class=""><a href="/docs/lorawan/frequencies-by-country.html">Frequency Plans by Country</a>
                 </li>
-                <li class="active"><a href="/docs/lorawan/prefix-assignments.html">Prefix assignments</a>
+                <li class="active"><a href="/docs/lorawan/prefix-assignments.html">NetID and DevAddr Prefix Assignments</a>
                 </li>
             </ul>
             </li>
@@ -144,131 +144,1056 @@
       <div class="col-sm-7">
         <div class="panel">
           <div class="panel-body page-content">
-            <h1 id="prefix-assignments">Prefix assignments</h1>
-<p><code class="highlighter-rouge">Prefixes</code> Region: Name (NetID)</p>
-<p><code class="highlighter-rouge">0x00/0x01</code> Local: Experimental nodes (0x00)<br />
-<code class="highlighter-rouge">0x02/0x03</code> Local: Experimental nodes (0x01)<br />
-<code class="highlighter-rouge">0x04/0x05</code> World: Actility (0x02)<br />
-<code class="highlighter-rouge">0x06/0x07</code> Europe: Proximus (0x03)<br />
-<code class="highlighter-rouge">0x08/0x09</code> Europe: Swisscom (0x04)<br />
-<code class="highlighter-rouge">0x0a/0x0b</code> Singapore, indonesia , Australia, Africa , India: SingTel (0x05)<br />
-<code class="highlighter-rouge">0x0c/0x0d</code> Europe: La Poste (0x06)<br />
-<code class="highlighter-rouge">0x0e/0x0f</code> Europe: Bouygues Telecom (0x07)<br />
-<code class="highlighter-rouge">0x10/0x11</code> World: Orbiwise (0x08)<br />
-<code class="highlighter-rouge">0x12/0x13</code> U.S: SENET (0x09)<br />
-<code class="highlighter-rouge">0x14/0x15</code> Europe: KPN (0x0a)<br />
-<code class="highlighter-rouge">0x16/0x17</code> Russia: EveryNet (0x0b)<br />
-<code class="highlighter-rouge">0x18/0x19</code> Africa: FastNet (0x0c)<br />
-<code class="highlighter-rouge">0x1a/0x1b</code> World: SK Telecom (0x0d)<br />
-<code class="highlighter-rouge">0x1c/0x1d</code> World: SagemCom (0x0e)<br />
-<code class="highlighter-rouge">0x1e/0x1f</code> Europe: Orange France (0x0f)<br />
-<code class="highlighter-rouge">0x20/0x21</code> Italy: A2A Smart City (0x10)<br />
-<code class="highlighter-rouge">0x22/0x23</code> India, Sri Lanka, Nepal, Bangladesh and the Maldives Islands: TATA Communication (0x11)<br />
-<code class="highlighter-rouge">0x24/0x25</code> World: Kerlink (0x12)<br />
-<code class="highlighter-rouge">0x26/0x27</code> <strong>World: The Things Network</strong> (0x13)<br />
-<code class="highlighter-rouge">0x28/0x29</code> Germany, Switzerland, China: DIGIMONDO GmbH (0x14)<br />
-<code class="highlighter-rouge">0x2a/0x2b</code> World: Cisco Systems (0x15)<br />
-<code class="highlighter-rouge">0x2c/0x2d</code> China: Computer Network Information Center &amp; Chinese of Sciences Guangzhou Sub-center (CNIC) (0x16)<br />
-<code class="highlighter-rouge">0x2e/0x2f</code> World: MultiTech Systems (0x17)<br />
-<code class="highlighter-rouge">0x30/0x31</code> World: Loriot (0x18)<br />
-<code class="highlighter-rouge">0x32/0x33</code> World: NNNCo (0x19)<br />
-<code class="highlighter-rouge">0x34/0x35</code> World: Flashnet (0x1a)<br />
-<code class="highlighter-rouge">0x36/0x37</code> World: TrackNet (0x1b)<br />
-<code class="highlighter-rouge">0x38/0x39</code> World: Lar.Tech (0x1c)<br />
-<code class="highlighter-rouge">0x3a/0x3b</code> World: Swiss Led (0x1d)<br />
-<code class="highlighter-rouge">0x3c/0x3d</code> CIS, Europe: Net868 (0x1e)<br />
-<code class="highlighter-rouge">0x3e/0x3f</code> Italy: Axatel (0x1f)<br />
-<code class="highlighter-rouge">0x40/0x41</code> Germany: Telent (Netzikon) (0x20)<br />
-<code class="highlighter-rouge">0x42/0x43</code> World: Patavina Technologies (0x21)<br />
-<code class="highlighter-rouge">0x44/0x45</code> North America: Comcast (0x22)<br />
-<code class="highlighter-rouge">0x46/0x47</code> Australia, New Zealand: Ventia (0x23)<br />
-<code class="highlighter-rouge">0x48/0x49</code> World: Gimasi (0x24)<br />
-<code class="highlighter-rouge">0x4a/0x4b</code> World: Talkpool (0x25)<br />
-<code class="highlighter-rouge">0x4c/0x4d</code> Italy: Telemar (0x26)<br />
-<code class="highlighter-rouge">0x4e/0x4f</code> World: MCF88 SRL (0x27)<br />
-<code class="highlighter-rouge">0x50/0x51</code> Malaysia: VADSLYFE (0x28)<br />
-<code class="highlighter-rouge">0x52/0x53</code> World: GIoT (0x29)<br />
-<code class="highlighter-rouge">0x54/0x55</code> World: M2B Communications (0x2a)<br />
-<code class="highlighter-rouge">0x56/0x57</code> China: ZTE (0x2b)<br />
-<code class="highlighter-rouge">0x58/0x59</code> Australia: Airlora (0x2c)<br />
-<code class="highlighter-rouge">0x5a/0x5b</code> World: Rai Way (0x2d)<br />
-<code class="highlighter-rouge">0x5c/0x5d</code> World: Levikom (0x2e)<br />
-<code class="highlighter-rouge">0x5e/0x5f</code> South Africa: Comsol Networks (0x2f)<br />
-<code class="highlighter-rouge">0x60/0x61</code> World: SoftBank (0x30)<br />
-<code class="highlighter-rouge">0x62/0x63</code> World: Inmarsat (0x31)<br />
-<code class="highlighter-rouge">0x64/0x65</code> World: Gemalto (0x32)<br />
-<code class="highlighter-rouge">0x66/0x67</code> China: Alibaba Iot BU (0x33)<br />
-<code class="highlighter-rouge">0x68/0x69</code> Russian Federation: ER-Telecom Holding (0x34)<br />
-<code class="highlighter-rouge">0x6a/0x6b</code> China: Shenzhen Tencent Computer Systems Company Limited (0x35)<br />
-<code class="highlighter-rouge">0xe000/0xe001</code>  RESERVED (0x600000)<br />
-<code class="highlighter-rouge">0xe002/0xe003</code>  Finland: Digita (0x600001)<br />
-<code class="highlighter-rouge">0xe004/0xe005</code>  Swden, Norway: Blink (0x600002)<br />
-<code class="highlighter-rouge">0xe006/0xe007</code>  World: IOTCAN (0x600003)<br />
-<code class="highlighter-rouge">0xe008/0xe009</code>  North and South America: eleven-x (0x600004)<br />
-<code class="highlighter-rouge">0xe00a/0xe00b</code>  World: IoT Network AS (0x600005)<br />
-<code class="highlighter-rouge">0xe00c/0xe00d</code>  Asia, Middle East: Senra Tech (0x600006)<br />
-<code class="highlighter-rouge">0xe00e/0xe00f</code>  World: EDF (0x600007)<br />
-<code class="highlighter-rouge">0xe010/0xe011</code>  Italy: Unidata (0x600008)<br />
-<code class="highlighter-rouge">0xe012/0xe013</code>  Scandinavia: SEAS-NVE	 (0x600009)<br />
-<code class="highlighter-rouge">0xe014/0xe015</code>  Scandinavia: Öresundskraft (0x60000a)<br />
-<code class="highlighter-rouge">0xe016/0xe017</code>  Romania: Ad Net Market Media (0x60000b)<br />
-<code class="highlighter-rouge">0xe018/0xe019</code>  World: SenSys (0x60000c)<br />
-<code class="highlighter-rouge">0xe01a/0xe01b</code>  Thailand: CAT Telecom (0x60000d)<br />
-<code class="highlighter-rouge">0xe01c/0xe01d</code>  World: Spark (0x60000e)<br />
-<code class="highlighter-rouge">0xe01e/0xe01f</code>  China: ThingPark China (0x60000f)<br />
-<code class="highlighter-rouge">0xe020/0xe021</code>  World: Senet (0x600010)<br />
-<code class="highlighter-rouge">0xe022/0xe023</code>  Japan: SenseWay (0x600011)<br />
-<code class="highlighter-rouge">0xe024/0xe025</code>  Philippines: Packetworx (0x600012)<br />
-<code class="highlighter-rouge">0xe026/0xe027</code>  World: Actility (0x600013)<br />
-<code class="highlighter-rouge">0xe028/0xe029</code>  China: Alibaba IoT BU (0x600014)<br />
-<code class="highlighter-rouge">0xe02a/0xe02b</code>  World: Kerlink (0x600015)<br />
-<code class="highlighter-rouge">0xe02c/0xe02d</code>  World: Cisco (0x600016)<br />
-<code class="highlighter-rouge">0xe02e/0xe02f</code>  World: Schneider Electric (0x600017)<br />
-<code class="highlighter-rouge">0xe030/0xe031</code>  World: ZENNER (0x600018)<br />
-<code class="highlighter-rouge">0xe032/0xe033</code>  Europe: Boston Networks Limited (0x600019)<br />
-<code class="highlighter-rouge">0xe034/0xe035</code>  Japan: NEC Corporation (0x60001a)<br />
-<code class="highlighter-rouge">0xe036/0xe037</code>  China: Shenzhen Tencent Computer Systems Company Limited (0x60001b)<br />
-<code class="highlighter-rouge">0xe038/0xe039</code>  World: MachineQ/Comcast (0x60001c)<br />
-<code class="highlighter-rouge">0xe03a/0xe03b</code>  Japan: NTT (Nippon Telephone and Telegraph) (0x60001d)<br />
-<code class="highlighter-rouge">0xfc0000/0xfc0001/0xfc0002/0xfc0003</code>  RESERVED (0xc00000)<br />
-<code class="highlighter-rouge">0xfc0004/0xfc0005/0xfc0006/0xfc0007</code>  World: Nordic Automation Systems (0xc00001)<br />
-<code class="highlighter-rouge">0xfc0008/0xfc0009/0xfc000a/0xfc000b</code>  World: ResIOT (0xc00002)<br />
-<code class="highlighter-rouge">0xfc000c/0xfc000d/0xfc000e/0xfc000f</code>  World: SYSDEV (0xc00003)<br />
-<code class="highlighter-rouge">0xfc0010/0xfc0011/0xfc0012/0xfc0013</code>  China, Canada: Appropolis (0xc00004)<br />
-<code class="highlighter-rouge">0xfc0014/0xfc0015/0xfc0016/0xfc0017</code>  Japan: Macnica (0xc00005)<br />
-<code class="highlighter-rouge">0xfc0018/0xfc0019/0xfc001a/0xfc001b</code>  Sweden, Finland, Norway, Denmark: IP-Only	(0xc00006)<br />
-<code class="highlighter-rouge">0xfc001c/0xfc001d/0xfc001e/0xfc001f</code>  Russian Federation: Thingenix LLC (0xc00007)<br />
-<code class="highlighter-rouge">0xfc0020/0xfc0021/0xfc0022/0xfc0023</code>  World: Definium Technologies (0xc00008)<br />
-<code class="highlighter-rouge">0xfc0024/0xfc0025/0xfc0026/0xfc0027</code>  Germany (only Darmstadt Region): ENTEGA AG (0xc00009)<br />
-<code class="highlighter-rouge">0xfc0028/0xfc0029/0xfc002a/0xfc002b</code>  Japan: SenseWay (0xc0000a)<br />
-<code class="highlighter-rouge">0xfc002c/0xfc002d/0xfc002e/0xfc002f</code>  Tunisia: 3S (0xc0000b)<br />
-<code class="highlighter-rouge">0xfc0030/0xfc0031/0xfc0032/0xfc0033</code>  World: nFore Technology (0xc0000c)<br />
-<code class="highlighter-rouge">0xfc0034/0xfc0035/0xfc0036/0xfc0037</code>  Philippines: Packetworx (0xc0000d)<br />
-<code class="highlighter-rouge">0xfc0038/0xfc0039/0xfc003a/0xfc003b</code>  Sultanate of Oman: Omani Qatari Telecommunications (Ooredoo) (0xc0000e)<br />
-<code class="highlighter-rouge">0xfc003c/0xfc003d/0xfc003e/0xfc003f</code>  Hungary: Antenna Hungaria Co (0xc0000f)<br />
-<code class="highlighter-rouge">0xfc0040/0xfc0041/0xfc0042/0xfc0043</code>  Europe: Trinity College Dublin (0xc00010)<br />
-<code class="highlighter-rouge">0xfc0044/0xfc0045/0xfc0046/0xfc0047</code>  World: Digital Nordix AB (DNX) (0xc00011)<br />
-<code class="highlighter-rouge">0xfc0048/0xfc0049/0xfc004a/0xfc004b</code>  Sweden, Norway: Blink Services (0xc00012)<br />
-<code class="highlighter-rouge">0xfc004c/0xfc004d/0xfc004e/0xfc004f</code>  Norway: Lyse AS (0xc00013)<br />
-<code class="highlighter-rouge">0xfc0050/0xfc0051/0xfc0052/0xfc0053</code>  Vietnam: VTC Digicom (0xc00014)<br />
-<code class="highlighter-rouge">0xfc0054/0xfc0055/0xfc0056/0xfc0057</code>  Saudi Arabia: Machines Talk (0xc00015)<br />
-<code class="highlighter-rouge">0xfc0058/0xfc0059/0xfc005a/0xfc005b</code>  World: Schneider Electric (0xc00016)<br />
-<code class="highlighter-rouge">0xfc005c/0xfc005d/0xfc005e/0xfc005f</code>  UK: Connexin (0xc00017)<br />
-<code class="highlighter-rouge">0xfc0060/0xfc0061/0xfc0062/0xfc0063</code>  World: ZENNER  (0xc00018)<br />
-<code class="highlighter-rouge">0xfc0064/0xfc0065/0xfc0066/0xfc0067</code>  Serbia: Telekom Srbija (0xc00019)<br />
-<code class="highlighter-rouge">0xfc0068/0xfc0069/0xfc006a/0xfc006b</code>  World: REQUEA (0xc0001a)<br />
-<code class="highlighter-rouge">0xfc006c/0xfc006d/0xfc006e/0xfc006f</code>  Austria: Sensor Network Services (0xc0001b)<br />
-<code class="highlighter-rouge">0xfc0070/0xfc0071/0xfc0072/0xfc0073</code>  Europe: Getraline (0xc0001c)<br />
-<code class="highlighter-rouge">0xfc0074/0xfc0075/0xfc0076/0xfc0077</code>  Europe: Boston Networks Limited (0xc0001d)<br />
-<code class="highlighter-rouge">0xfc0078/0xfc0079/0xfc007a/0xfc007b</code>  Italy: Telemar (0xc0001e)<br />
-<code class="highlighter-rouge">0xfc007c/0xfc007d/0xfc007e/0xfc007f</code>  World: mcf88 SRL (0xc0001f)<br />
-<code class="highlighter-rouge">0xfc0080/0xfc0081/0xfc0082/0xfc0083</code>  Japan: NEC Corporation (0xc00020)<br />
-<code class="highlighter-rouge">0xfc0084/0xfc0085/0xfc0086/0xfc0087</code>  World: Hiber (0xc00021)<br />
-<code class="highlighter-rouge">0xfc0088/0xfc0089/0xfc008a/0xfc008b</code>  North America: Milandr, Inc. (0xc00022)<br />
-<code class="highlighter-rouge">0xfc008c/0xfc008d/0xfc008e/0xfc008f</code>  Japan: Green House Co., Ltd. (0xc00023)<br />
-<code class="highlighter-rouge">0xfc0090/0xfc0091/0xfc0092/0xfc0093</code>  Japan: NTT (Nippon Telephone and Telegraph) (0xc00024)<br />
-<code class="highlighter-rouge">0xfc0094/0xfc0095/0xfc0096/0xfc0097</code>  India: International Centre for Free and Open Source Software (ICFOSS) (0xc00025)<br />
-<code class="highlighter-rouge">0xfc0098/0xfc0099/0xfc009a/0xfc009b</code>  World: Mirakonta (0xc00026)</p>
+            <h1 id="netid-and-devaddr-prefix-assignments">NetID and DevAddr Prefix Assignments</h1>
+<div class="table-responsive"><table class="table">
+  <thead>
+    <tr>
+      <th><strong>NetID</strong></th>
+      <th><strong>DevAddr Prefix</strong></th>
+      <th><strong>DevAddr Range</strong></th>
+      <th><strong>Operator</strong></th>
+      <th><strong>Region</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">000000</code></td>
+      <td><code class="highlighter-rouge">00000000/7</code></td>
+      <td><code class="highlighter-rouge">00000000</code> - <code class="highlighter-rouge">01FFFFFF</code></td>
+      <td>Private/experimental nodes</td>
+      <td>Local</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">000001</code></td>
+      <td><code class="highlighter-rouge">02000000/7</code></td>
+      <td><code class="highlighter-rouge">02000000</code> - <code class="highlighter-rouge">03FFFFFF</code></td>
+      <td>Private/experimental nodes</td>
+      <td>Local</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">000002</code></td>
+      <td><code class="highlighter-rouge">04000000/7</code></td>
+      <td><code class="highlighter-rouge">04000000</code> - <code class="highlighter-rouge">05FFFFFF</code></td>
+      <td>Actility</td>
+      <td>World</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">000003</code></td>
+      <td><code class="highlighter-rouge">06000000/7</code></td>
+      <td><code class="highlighter-rouge">06000000</code> - <code class="highlighter-rouge">07FFFFFF</code></td>
+      <td>Proximus</td>
+      <td>Europe</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">000004</code></td>
+      <td><code class="highlighter-rouge">08000000/7</code></td>
+      <td><code class="highlighter-rouge">08000000</code> - <code class="highlighter-rouge">09FFFFFF</code></td>
+      <td>Swisscom</td>
+      <td>Europe</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">000005</code></td>
+      <td><code class="highlighter-rouge">0A000000/7</code></td>
+      <td><code class="highlighter-rouge">0A000000</code> - <code class="highlighter-rouge">0BFFFFFF</code></td>
+      <td><em>unassigned</em></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">000006</code></td>
+      <td><code class="highlighter-rouge">0C000000/7</code></td>
+      <td><code class="highlighter-rouge">0C000000</code> - <code class="highlighter-rouge">0DFFFFFF</code></td>
+      <td>La Poste</td>
+      <td>Europe</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">000007</code></td>
+      <td><code class="highlighter-rouge">0E000000/7</code></td>
+      <td><code class="highlighter-rouge">0E000000</code> - <code class="highlighter-rouge">0FFFFFFF</code></td>
+      <td>Bouygues Telecom</td>
+      <td>World</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">000008</code></td>
+      <td><code class="highlighter-rouge">10000000/7</code></td>
+      <td><code class="highlighter-rouge">10000000</code> - <code class="highlighter-rouge">11FFFFFF</code></td>
+      <td>Orbiwise</td>
+      <td>World</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">000009</code></td>
+      <td><code class="highlighter-rouge">12000000/7</code></td>
+      <td><code class="highlighter-rouge">12000000</code> - <code class="highlighter-rouge">13FFFFFF</code></td>
+      <td>SENET</td>
+      <td>World</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">00000A</code></td>
+      <td><code class="highlighter-rouge">14000000/7</code></td>
+      <td><code class="highlighter-rouge">14000000</code> - <code class="highlighter-rouge">15FFFFFF</code></td>
+      <td>KPN</td>
+      <td>Europe</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">00000B</code></td>
+      <td><code class="highlighter-rouge">16000000/7</code></td>
+      <td><code class="highlighter-rouge">16000000</code> - <code class="highlighter-rouge">17FFFFFF</code></td>
+      <td>EveryNet</td>
+      <td>Russia</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">00000C</code></td>
+      <td><code class="highlighter-rouge">18000000/7</code></td>
+      <td><code class="highlighter-rouge">18000000</code> - <code class="highlighter-rouge">19FFFFFF</code></td>
+      <td><em>unassigned</em></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">00000D</code></td>
+      <td><code class="highlighter-rouge">1A000000/7</code></td>
+      <td><code class="highlighter-rouge">1A000000</code> - <code class="highlighter-rouge">1BFFFFFF</code></td>
+      <td>SK Telecom</td>
+      <td>World</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">00000E</code></td>
+      <td><code class="highlighter-rouge">1C000000/7</code></td>
+      <td><code class="highlighter-rouge">1C000000</code> - <code class="highlighter-rouge">1DFFFFFF</code></td>
+      <td>SagemCom</td>
+      <td>World</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">00000F</code></td>
+      <td><code class="highlighter-rouge">1E000000/7</code></td>
+      <td><code class="highlighter-rouge">1E000000</code> - <code class="highlighter-rouge">1FFFFFFF</code></td>
+      <td>Orange</td>
+      <td>World</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">000010</code></td>
+      <td><code class="highlighter-rouge">20000000/7</code></td>
+      <td><code class="highlighter-rouge">20000000</code> - <code class="highlighter-rouge">21FFFFFF</code></td>
+      <td>A2A Smart City</td>
+      <td>World</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">000011</code></td>
+      <td><code class="highlighter-rouge">22000000/7</code></td>
+      <td><code class="highlighter-rouge">22000000</code> - <code class="highlighter-rouge">23FFFFFF</code></td>
+      <td>TATA Communication</td>
+      <td>India</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">000012</code></td>
+      <td><code class="highlighter-rouge">24000000/7</code></td>
+      <td><code class="highlighter-rouge">24000000</code> - <code class="highlighter-rouge">25FFFFFF</code></td>
+      <td>Kerlink</td>
+      <td>World</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">000013</code></td>
+      <td><code class="highlighter-rouge">26000000/7</code></td>
+      <td><code class="highlighter-rouge">26000000</code> - <code class="highlighter-rouge">27FFFFFF</code></td>
+      <td><strong>The Things Network</strong></td>
+      <td>World</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">000014</code></td>
+      <td><code class="highlighter-rouge">28000000/7</code></td>
+      <td><code class="highlighter-rouge">28000000</code> - <code class="highlighter-rouge">29FFFFFF</code></td>
+      <td>DIGIMONDO GmbH</td>
+      <td>Germany, Switzerland, China</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">000015</code></td>
+      <td><code class="highlighter-rouge">2A000000/7</code></td>
+      <td><code class="highlighter-rouge">2A000000</code> - <code class="highlighter-rouge">2BFFFFFF</code></td>
+      <td>Cisco Systems</td>
+      <td>World</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">000016</code></td>
+      <td><code class="highlighter-rouge">2C000000/7</code></td>
+      <td><code class="highlighter-rouge">2C000000</code> - <code class="highlighter-rouge">2DFFFFFF</code></td>
+      <td><em>unassigned</em></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">000017</code></td>
+      <td><code class="highlighter-rouge">2E000000/7</code></td>
+      <td><code class="highlighter-rouge">2E000000</code> - <code class="highlighter-rouge">2FFFFFFF</code></td>
+      <td>MultiTech Systems</td>
+      <td>World</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">000018</code></td>
+      <td><code class="highlighter-rouge">30000000/7</code></td>
+      <td><code class="highlighter-rouge">30000000</code> - <code class="highlighter-rouge">31FFFFFF</code></td>
+      <td>Loriot</td>
+      <td>World</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">000019</code></td>
+      <td><code class="highlighter-rouge">32000000/7</code></td>
+      <td><code class="highlighter-rouge">32000000</code> - <code class="highlighter-rouge">33FFFFFF</code></td>
+      <td>NNNCo</td>
+      <td>World</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">00001A</code></td>
+      <td><code class="highlighter-rouge">34000000/7</code></td>
+      <td><code class="highlighter-rouge">34000000</code> - <code class="highlighter-rouge">35FFFFFF</code></td>
+      <td><em>unassigned</em></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">00001B</code></td>
+      <td><code class="highlighter-rouge">36000000/7</code></td>
+      <td><code class="highlighter-rouge">36000000</code> - <code class="highlighter-rouge">37FFFFFF</code></td>
+      <td>TrackNet</td>
+      <td>World</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">00001C</code></td>
+      <td><code class="highlighter-rouge">38000000/7</code></td>
+      <td><code class="highlighter-rouge">38000000</code> - <code class="highlighter-rouge">39FFFFFF</code></td>
+      <td>Lar.Tech</td>
+      <td>World</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">00001D</code></td>
+      <td><code class="highlighter-rouge">3A000000/7</code></td>
+      <td><code class="highlighter-rouge">3A000000</code> - <code class="highlighter-rouge">3BFFFFFF</code></td>
+      <td><em>unassigned</em></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">00001E</code></td>
+      <td><code class="highlighter-rouge">3C000000/7</code></td>
+      <td><code class="highlighter-rouge">3C000000</code> - <code class="highlighter-rouge">3DFFFFFF</code></td>
+      <td><em>unassigned</em></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">00001F</code></td>
+      <td><code class="highlighter-rouge">3E000000/7</code></td>
+      <td><code class="highlighter-rouge">3E000000</code> - <code class="highlighter-rouge">3FFFFFFF</code></td>
+      <td>Axatel</td>
+      <td>Italy</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">000020</code></td>
+      <td><code class="highlighter-rouge">40000000/7</code></td>
+      <td><code class="highlighter-rouge">40000000</code> - <code class="highlighter-rouge">41FFFFFF</code></td>
+      <td>Telent (Netzikon)</td>
+      <td>Germany</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">000021</code></td>
+      <td><code class="highlighter-rouge">42000000/7</code></td>
+      <td><code class="highlighter-rouge">42000000</code> - <code class="highlighter-rouge">43FFFFFF</code></td>
+      <td><em>unassigned</em></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">000022</code></td>
+      <td><code class="highlighter-rouge">44000000/7</code></td>
+      <td><code class="highlighter-rouge">44000000</code> - <code class="highlighter-rouge">45FFFFFF</code></td>
+      <td>Comcast</td>
+      <td>World</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">000023</code></td>
+      <td><code class="highlighter-rouge">46000000/7</code></td>
+      <td><code class="highlighter-rouge">46000000</code> - <code class="highlighter-rouge">47FFFFFF</code></td>
+      <td>Ventia</td>
+      <td>World</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">000024</code></td>
+      <td><code class="highlighter-rouge">48000000/7</code></td>
+      <td><code class="highlighter-rouge">48000000</code> - <code class="highlighter-rouge">49FFFFFF</code></td>
+      <td><em>unassigned</em></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">000025</code></td>
+      <td><code class="highlighter-rouge">4A000000/7</code></td>
+      <td><code class="highlighter-rouge">4A000000</code> - <code class="highlighter-rouge">4BFFFFFF</code></td>
+      <td><em>unassigned</em></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">000026</code></td>
+      <td><code class="highlighter-rouge">4C000000/7</code></td>
+      <td><code class="highlighter-rouge">4C000000</code> - <code class="highlighter-rouge">4DFFFFFF</code></td>
+      <td><em>unassigned</em></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">000027</code></td>
+      <td><code class="highlighter-rouge">4E000000/7</code></td>
+      <td><code class="highlighter-rouge">4E000000</code> - <code class="highlighter-rouge">4FFFFFFF</code></td>
+      <td><em>unassigned</em></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">000028</code></td>
+      <td><code class="highlighter-rouge">50000000/7</code></td>
+      <td><code class="highlighter-rouge">50000000</code> - <code class="highlighter-rouge">51FFFFFF</code></td>
+      <td>VADSLYFE</td>
+      <td>Malaysia</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">000029</code></td>
+      <td><code class="highlighter-rouge">52000000/7</code></td>
+      <td><code class="highlighter-rouge">52000000</code> - <code class="highlighter-rouge">53FFFFFF</code></td>
+      <td><em>unassigned</em></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">00002A</code></td>
+      <td><code class="highlighter-rouge">54000000/7</code></td>
+      <td><code class="highlighter-rouge">54000000</code> - <code class="highlighter-rouge">55FFFFFF</code></td>
+      <td>M2B Communications</td>
+      <td>World</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">00002B</code></td>
+      <td><code class="highlighter-rouge">56000000/7</code></td>
+      <td><code class="highlighter-rouge">56000000</code> - <code class="highlighter-rouge">57FFFFFF</code></td>
+      <td>ZTE</td>
+      <td>China</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">00002C</code></td>
+      <td><code class="highlighter-rouge">58000000/7</code></td>
+      <td><code class="highlighter-rouge">58000000</code> - <code class="highlighter-rouge">59FFFFFF</code></td>
+      <td><em>unassigned</em></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">00002D</code></td>
+      <td><code class="highlighter-rouge">5A000000/7</code></td>
+      <td><code class="highlighter-rouge">5A000000</code> - <code class="highlighter-rouge">5BFFFFFF</code></td>
+      <td><em>unassigned</em></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">00002E</code></td>
+      <td><code class="highlighter-rouge">5C000000/7</code></td>
+      <td><code class="highlighter-rouge">5C000000</code> - <code class="highlighter-rouge">5DFFFFFF</code></td>
+      <td><em>unassigned</em></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">00002F</code></td>
+      <td><code class="highlighter-rouge">5E000000/7</code></td>
+      <td><code class="highlighter-rouge">5E000000</code> - <code class="highlighter-rouge">5FFFFFFF</code></td>
+      <td><em>unassigned</em></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">000030</code></td>
+      <td><code class="highlighter-rouge">60000000/7</code></td>
+      <td><code class="highlighter-rouge">60000000</code> - <code class="highlighter-rouge">61FFFFFF</code></td>
+      <td>SoftBank</td>
+      <td>World</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">000031</code></td>
+      <td><code class="highlighter-rouge">62000000/7</code></td>
+      <td><code class="highlighter-rouge">62000000</code> - <code class="highlighter-rouge">63FFFFFF</code></td>
+      <td>Inmarsat</td>
+      <td>World</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">000032</code></td>
+      <td><code class="highlighter-rouge">64000000/7</code></td>
+      <td><code class="highlighter-rouge">64000000</code> - <code class="highlighter-rouge">65FFFFFF</code></td>
+      <td>Gemalto</td>
+      <td>World</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">000033</code></td>
+      <td><code class="highlighter-rouge">66000000/7</code></td>
+      <td><code class="highlighter-rouge">66000000</code> - <code class="highlighter-rouge">67FFFFFF</code></td>
+      <td>Alibaba Iot BU</td>
+      <td>China</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">000034</code></td>
+      <td><code class="highlighter-rouge">68000000/7</code></td>
+      <td><code class="highlighter-rouge">68000000</code> - <code class="highlighter-rouge">69FFFFFF</code></td>
+      <td>ER-Telecom Holding</td>
+      <td>Russian Federation</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">000035</code></td>
+      <td><code class="highlighter-rouge">6A000000/7</code></td>
+      <td><code class="highlighter-rouge">6A000000</code> - <code class="highlighter-rouge">6BFFFFFF</code></td>
+      <td>Shenzhen Tencent Computer Systems Company Limited</td>
+      <td>China</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">000036</code></td>
+      <td><code class="highlighter-rouge">6C000000/7</code></td>
+      <td><code class="highlighter-rouge">6C000000</code> - <code class="highlighter-rouge">6DFFFFFF</code></td>
+      <td>Netze BW GmbH</td>
+      <td>World</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">000037</code></td>
+      <td><code class="highlighter-rouge">6E000000/7</code></td>
+      <td><code class="highlighter-rouge">6E000000</code> - <code class="highlighter-rouge">6FFFFFFF</code></td>
+      <td>Tektelic</td>
+      <td>World</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">600000</code></td>
+      <td><code class="highlighter-rouge">E0000000/14</code></td>
+      <td><code class="highlighter-rouge">E0000000</code> - <code class="highlighter-rouge">E003FFFF</code></td>
+      <td>RESERVED</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">600001</code></td>
+      <td><code class="highlighter-rouge">E0040000/14</code></td>
+      <td><code class="highlighter-rouge">E0040000</code> - <code class="highlighter-rouge">E007FFFF</code></td>
+      <td>Digita</td>
+      <td>Finland</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">600002</code></td>
+      <td><code class="highlighter-rouge">E0080000/14</code></td>
+      <td><code class="highlighter-rouge">E0080000</code> - <code class="highlighter-rouge">E00BFFFF</code></td>
+      <td>Blink</td>
+      <td>Sweden, Norway</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">600003</code></td>
+      <td><code class="highlighter-rouge">E00C0000/14</code></td>
+      <td><code class="highlighter-rouge">E00C0000</code> - <code class="highlighter-rouge">E00FFFFF</code></td>
+      <td>QuaeNet Inc.</td>
+      <td>World</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">600004</code></td>
+      <td><code class="highlighter-rouge">E0100000/14</code></td>
+      <td><code class="highlighter-rouge">E0100000</code> - <code class="highlighter-rouge">E013FFFF</code></td>
+      <td>eleven-x</td>
+      <td>North and South America</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">600005</code></td>
+      <td><code class="highlighter-rouge">E0140000/14</code></td>
+      <td><code class="highlighter-rouge">E0140000</code> - <code class="highlighter-rouge">E017FFFF</code></td>
+      <td>IoT Network AS</td>
+      <td>World</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">600006</code></td>
+      <td><code class="highlighter-rouge">E0180000/14</code></td>
+      <td><code class="highlighter-rouge">E0180000</code> - <code class="highlighter-rouge">E01BFFFF</code></td>
+      <td>Senra Tech</td>
+      <td>Asia, Middle East</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">600007</code></td>
+      <td><code class="highlighter-rouge">E01C0000/14</code></td>
+      <td><code class="highlighter-rouge">E01C0000</code> - <code class="highlighter-rouge">E01FFFFF</code></td>
+      <td>EDF</td>
+      <td>World</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">600008</code></td>
+      <td><code class="highlighter-rouge">E0200000/14</code></td>
+      <td><code class="highlighter-rouge">E0200000</code> - <code class="highlighter-rouge">E023FFFF</code></td>
+      <td>Unidata</td>
+      <td>Italy</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">600009</code></td>
+      <td><code class="highlighter-rouge">E0240000/14</code></td>
+      <td><code class="highlighter-rouge">E0240000</code> - <code class="highlighter-rouge">E027FFFF</code></td>
+      <td>SEAS-NVE</td>
+      <td>Scandinavia</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">60000A</code></td>
+      <td><code class="highlighter-rouge">E0280000/14</code></td>
+      <td><code class="highlighter-rouge">E0280000</code> - <code class="highlighter-rouge">E02BFFFF</code></td>
+      <td>Öresundskraft</td>
+      <td>Scandinavia</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">60000B</code></td>
+      <td><code class="highlighter-rouge">E02C0000/14</code></td>
+      <td><code class="highlighter-rouge">E02C0000</code> - <code class="highlighter-rouge">E02FFFFF</code></td>
+      <td>Ad Net Market Media</td>
+      <td>Romania</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">60000C</code></td>
+      <td><code class="highlighter-rouge">E0300000/14</code></td>
+      <td><code class="highlighter-rouge">E0300000</code> - <code class="highlighter-rouge">E033FFFF</code></td>
+      <td>CAT Telecom</td>
+      <td>Thailand</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">60000D</code></td>
+      <td><code class="highlighter-rouge">E0340000/14</code></td>
+      <td><code class="highlighter-rouge">E0340000</code> - <code class="highlighter-rouge">E037FFFF</code></td>
+      <td>SenSys</td>
+      <td>World</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">60000E</code></td>
+      <td><code class="highlighter-rouge">E0380000/14</code></td>
+      <td><code class="highlighter-rouge">E0380000</code> - <code class="highlighter-rouge">E03BFFFF</code></td>
+      <td>Spark</td>
+      <td>World</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">60000F</code></td>
+      <td><code class="highlighter-rouge">E03C0000/14</code></td>
+      <td><code class="highlighter-rouge">E03C0000</code> - <code class="highlighter-rouge">E03FFFFF</code></td>
+      <td>ThingPark China</td>
+      <td>China</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">600010</code></td>
+      <td><code class="highlighter-rouge">E0400000/14</code></td>
+      <td><code class="highlighter-rouge">E0400000</code> - <code class="highlighter-rouge">E043FFFF</code></td>
+      <td>Senet</td>
+      <td>World</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">600011</code></td>
+      <td><code class="highlighter-rouge">E0440000/14</code></td>
+      <td><code class="highlighter-rouge">E0440000</code> - <code class="highlighter-rouge">E047FFFF</code></td>
+      <td>SenseWay</td>
+      <td>Japan</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">600012</code></td>
+      <td><code class="highlighter-rouge">E0480000/14</code></td>
+      <td><code class="highlighter-rouge">E0480000</code> - <code class="highlighter-rouge">E04BFFFF</code></td>
+      <td>Packetworx</td>
+      <td>Philippines</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">600013</code></td>
+      <td><code class="highlighter-rouge">E04C0000/14</code></td>
+      <td><code class="highlighter-rouge">E04C0000</code> - <code class="highlighter-rouge">E04FFFFF</code></td>
+      <td>Actility</td>
+      <td>World</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">600014</code></td>
+      <td><code class="highlighter-rouge">E0500000/14</code></td>
+      <td><code class="highlighter-rouge">E0500000</code> - <code class="highlighter-rouge">E053FFFF</code></td>
+      <td>Kerlink</td>
+      <td>World</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">600015</code></td>
+      <td><code class="highlighter-rouge">E0540000/14</code></td>
+      <td><code class="highlighter-rouge">E0540000</code> - <code class="highlighter-rouge">E057FFFF</code></td>
+      <td>Alibaba IoT BU</td>
+      <td>China</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">600016</code></td>
+      <td><code class="highlighter-rouge">E0580000/14</code></td>
+      <td><code class="highlighter-rouge">E0580000</code> - <code class="highlighter-rouge">E05BFFFF</code></td>
+      <td>Cisco</td>
+      <td>World</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">600017</code></td>
+      <td><code class="highlighter-rouge">E05C0000/14</code></td>
+      <td><code class="highlighter-rouge">E05C0000</code> - <code class="highlighter-rouge">E05FFFFF</code></td>
+      <td>Schneider Electric</td>
+      <td>Global</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">600018</code></td>
+      <td><code class="highlighter-rouge">E0600000/14</code></td>
+      <td><code class="highlighter-rouge">E0600000</code> - <code class="highlighter-rouge">E063FFFF</code></td>
+      <td>ZENNER</td>
+      <td>Global</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">600019</code></td>
+      <td><code class="highlighter-rouge">E0640000/14</code></td>
+      <td><code class="highlighter-rouge">E0640000</code> - <code class="highlighter-rouge">E067FFFF</code></td>
+      <td>Boston Networks Limited</td>
+      <td>Europe</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">60001A</code></td>
+      <td><code class="highlighter-rouge">E0680000/14</code></td>
+      <td><code class="highlighter-rouge">E0680000</code> - <code class="highlighter-rouge">E06BFFFF</code></td>
+      <td>NEC Corporation</td>
+      <td>Japan</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">60001B</code></td>
+      <td><code class="highlighter-rouge">E06C0000/14</code></td>
+      <td><code class="highlighter-rouge">E06C0000</code> - <code class="highlighter-rouge">E06FFFFF</code></td>
+      <td>Shenzhen Tencent Computer Systems Company Limited</td>
+      <td>China</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">60001C</code></td>
+      <td><code class="highlighter-rouge">E0700000/14</code></td>
+      <td><code class="highlighter-rouge">E0700000</code> - <code class="highlighter-rouge">E073FFFF</code></td>
+      <td>MachineQ/Comcast</td>
+      <td>World</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">60001D</code></td>
+      <td><code class="highlighter-rouge">E0740000/14</code></td>
+      <td><code class="highlighter-rouge">E0740000</code> - <code class="highlighter-rouge">E077FFFF</code></td>
+      <td>NTT (Nippon Telephone and Telegraph)</td>
+      <td>Japan</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">60001E</code></td>
+      <td><code class="highlighter-rouge">E0780000/14</code></td>
+      <td><code class="highlighter-rouge">E0780000</code> - <code class="highlighter-rouge">E07BFFFF</code></td>
+      <td>Carnegie Technologies, LLC</td>
+      <td>North America, South America</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">60001F</code></td>
+      <td><code class="highlighter-rouge">E07C0000/14</code></td>
+      <td><code class="highlighter-rouge">E07C0000</code> - <code class="highlighter-rouge">E07FFFFF</code></td>
+      <td>KPN</td>
+      <td>Europe</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">600020</code></td>
+      <td><code class="highlighter-rouge">E0800000/14</code></td>
+      <td><code class="highlighter-rouge">E0800000</code> - <code class="highlighter-rouge">E083FFFF</code></td>
+      <td>Spectrum</td>
+      <td>USA</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">600021</code></td>
+      <td><code class="highlighter-rouge">E0840000/14</code></td>
+      <td><code class="highlighter-rouge">E0840000</code> - <code class="highlighter-rouge">E087FFFF</code></td>
+      <td>Microshare Inc.</td>
+      <td>World</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">600022</code></td>
+      <td><code class="highlighter-rouge">E0880000/14</code></td>
+      <td><code class="highlighter-rouge">E0880000</code> - <code class="highlighter-rouge">E08BFFFF</code></td>
+      <td>Unitymedia</td>
+      <td>Germany</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">600023</code></td>
+      <td><code class="highlighter-rouge">E08C0000/14</code></td>
+      <td><code class="highlighter-rouge">E08C0000</code> - <code class="highlighter-rouge">E08FFFFF</code></td>
+      <td>Paige Wireless</td>
+      <td>World</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">600024</code></td>
+      <td><code class="highlighter-rouge">E0900000/14</code></td>
+      <td><code class="highlighter-rouge">E0900000</code> - <code class="highlighter-rouge">E093FFFF</code></td>
+      <td>Netze BW GmbH</td>
+      <td>World</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">600025</code></td>
+      <td><code class="highlighter-rouge">E0940000/14</code></td>
+      <td><code class="highlighter-rouge">E0940000</code> - <code class="highlighter-rouge">E097FFFF</code></td>
+      <td>Tektelic</td>
+      <td>World</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">C00000</code></td>
+      <td><code class="highlighter-rouge">FC000000/22</code></td>
+      <td><code class="highlighter-rouge">FC000000</code> - <code class="highlighter-rouge">FC0003FF</code></td>
+      <td>RESERVED</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">C00001</code></td>
+      <td><code class="highlighter-rouge">FC000400/22</code></td>
+      <td><code class="highlighter-rouge">FC000400</code> - <code class="highlighter-rouge">FC0007FF</code></td>
+      <td>Nordic Automation Systems</td>
+      <td>World</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">C00002</code></td>
+      <td><code class="highlighter-rouge">FC000800/22</code></td>
+      <td><code class="highlighter-rouge">FC000800</code> - <code class="highlighter-rouge">FC000BFF</code></td>
+      <td>ResIOT</td>
+      <td>World</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">C00003</code></td>
+      <td><code class="highlighter-rouge">FC000C00/22</code></td>
+      <td><code class="highlighter-rouge">FC000C00</code> - <code class="highlighter-rouge">FC000FFF</code></td>
+      <td>SYSDEV</td>
+      <td>World</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">C00004</code></td>
+      <td><code class="highlighter-rouge">FC001000/22</code></td>
+      <td><code class="highlighter-rouge">FC001000</code> - <code class="highlighter-rouge">FC0013FF</code></td>
+      <td>Appropolis</td>
+      <td>China, Canada</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">C00005</code></td>
+      <td><code class="highlighter-rouge">FC001400/22</code></td>
+      <td><code class="highlighter-rouge">FC001400</code> - <code class="highlighter-rouge">FC0017FF</code></td>
+      <td>Macnica</td>
+      <td>Japan</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">C00006</code></td>
+      <td><code class="highlighter-rouge">FC001800/22</code></td>
+      <td><code class="highlighter-rouge">FC001800</code> - <code class="highlighter-rouge">FC001BFF</code></td>
+      <td>IP-Only</td>
+      <td>Sweden, Finland, Norway, Denmark</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">C00007</code></td>
+      <td><code class="highlighter-rouge">FC001C00/22</code></td>
+      <td><code class="highlighter-rouge">FC001C00</code> - <code class="highlighter-rouge">FC001FFF</code></td>
+      <td>Thingenix LLC</td>
+      <td>Russian Federation</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">C00008</code></td>
+      <td><code class="highlighter-rouge">FC002000/22</code></td>
+      <td><code class="highlighter-rouge">FC002000</code> - <code class="highlighter-rouge">FC0023FF</code></td>
+      <td>Definium Technologies</td>
+      <td>World</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">C00009</code></td>
+      <td><code class="highlighter-rouge">FC002400/22</code></td>
+      <td><code class="highlighter-rouge">FC002400</code> - <code class="highlighter-rouge">FC0027FF</code></td>
+      <td>ENTEGA AG</td>
+      <td>Germany (only Darmstadt Region)</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">C0000A</code></td>
+      <td><code class="highlighter-rouge">FC002800/22</code></td>
+      <td><code class="highlighter-rouge">FC002800</code> - <code class="highlighter-rouge">FC002BFF</code></td>
+      <td>SenseWay</td>
+      <td>Japan</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">C0000B</code></td>
+      <td><code class="highlighter-rouge">FC002C00/22</code></td>
+      <td><code class="highlighter-rouge">FC002C00</code> - <code class="highlighter-rouge">FC002FFF</code></td>
+      <td>3S</td>
+      <td>Tunisia</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">C0000C</code></td>
+      <td><code class="highlighter-rouge">FC003000/22</code></td>
+      <td><code class="highlighter-rouge">FC003000</code> - <code class="highlighter-rouge">FC0033FF</code></td>
+      <td>nFore Technology</td>
+      <td>World</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">C0000D</code></td>
+      <td><code class="highlighter-rouge">FC003400/22</code></td>
+      <td><code class="highlighter-rouge">FC003400</code> - <code class="highlighter-rouge">FC0037FF</code></td>
+      <td>Packetworx</td>
+      <td>Philippines</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">C0000E</code></td>
+      <td><code class="highlighter-rouge">FC003800/22</code></td>
+      <td><code class="highlighter-rouge">FC003800</code> - <code class="highlighter-rouge">FC003BFF</code></td>
+      <td>Omani Qatari Telecommunications (Ooredoo)</td>
+      <td>Sultanate of Oman</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">C0000F</code></td>
+      <td><code class="highlighter-rouge">FC003C00/22</code></td>
+      <td><code class="highlighter-rouge">FC003C00</code> - <code class="highlighter-rouge">FC003FFF</code></td>
+      <td>Antenna Hungaria Co</td>
+      <td>Hungary</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">C00010</code></td>
+      <td><code class="highlighter-rouge">FC004000/22</code></td>
+      <td><code class="highlighter-rouge">FC004000</code> - <code class="highlighter-rouge">FC0043FF</code></td>
+      <td>Trinity College Dublin</td>
+      <td>Europe</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">C00011</code></td>
+      <td><code class="highlighter-rouge">FC004400/22</code></td>
+      <td><code class="highlighter-rouge">FC004400</code> - <code class="highlighter-rouge">FC0047FF</code></td>
+      <td>Digital Nordix AB (DNX)</td>
+      <td>World</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">C00012</code></td>
+      <td><code class="highlighter-rouge">FC004800/22</code></td>
+      <td><code class="highlighter-rouge">FC004800</code> - <code class="highlighter-rouge">FC004BFF</code></td>
+      <td>Blink Services</td>
+      <td>Sweden, Norway</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">C00013</code></td>
+      <td><code class="highlighter-rouge">FC004C00/22</code></td>
+      <td><code class="highlighter-rouge">FC004C00</code> - <code class="highlighter-rouge">FC004FFF</code></td>
+      <td>Lyse AS</td>
+      <td>Norway</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">C00014</code></td>
+      <td><code class="highlighter-rouge">FC005000/22</code></td>
+      <td><code class="highlighter-rouge">FC005000</code> - <code class="highlighter-rouge">FC0053FF</code></td>
+      <td>VTC Digicom</td>
+      <td>Vietnam</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">C00015</code></td>
+      <td><code class="highlighter-rouge">FC005400/22</code></td>
+      <td><code class="highlighter-rouge">FC005400</code> - <code class="highlighter-rouge">FC0057FF</code></td>
+      <td>Machines Talk</td>
+      <td>Saudi Arabia</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">C00016</code></td>
+      <td><code class="highlighter-rouge">FC005800/22</code></td>
+      <td><code class="highlighter-rouge">FC005800</code> - <code class="highlighter-rouge">FC005BFF</code></td>
+      <td>Schneider Electric</td>
+      <td>Global</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">C00017</code></td>
+      <td><code class="highlighter-rouge">FC005C00/22</code></td>
+      <td><code class="highlighter-rouge">FC005C00</code> - <code class="highlighter-rouge">FC005FFF</code></td>
+      <td>Connexin</td>
+      <td>UK</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">C00018</code></td>
+      <td><code class="highlighter-rouge">FC006000/22</code></td>
+      <td><code class="highlighter-rouge">FC006000</code> - <code class="highlighter-rouge">FC0063FF</code></td>
+      <td>ZENNER</td>
+      <td>Global</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">C00019</code></td>
+      <td><code class="highlighter-rouge">FC006400/22</code></td>
+      <td><code class="highlighter-rouge">FC006400</code> - <code class="highlighter-rouge">FC0067FF</code></td>
+      <td>Telekom Srbija</td>
+      <td>Serbia</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">C0001A</code></td>
+      <td><code class="highlighter-rouge">FC006800/22</code></td>
+      <td><code class="highlighter-rouge">FC006800</code> - <code class="highlighter-rouge">FC006BFF</code></td>
+      <td>REQUEA</td>
+      <td>World</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">C0001B</code></td>
+      <td><code class="highlighter-rouge">FC006C00/22</code></td>
+      <td><code class="highlighter-rouge">FC006C00</code> - <code class="highlighter-rouge">FC006FFF</code></td>
+      <td>Sensor Network Services</td>
+      <td>Austria</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">C0001C</code></td>
+      <td><code class="highlighter-rouge">FC007000/22</code></td>
+      <td><code class="highlighter-rouge">FC007000</code> - <code class="highlighter-rouge">FC0073FF</code></td>
+      <td>Getraline</td>
+      <td>Europe</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">C0001D</code></td>
+      <td><code class="highlighter-rouge">FC007400/22</code></td>
+      <td><code class="highlighter-rouge">FC007400</code> - <code class="highlighter-rouge">FC0077FF</code></td>
+      <td>Boston Networks Limited</td>
+      <td>Europe</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">C0001E</code></td>
+      <td><code class="highlighter-rouge">FC007800/22</code></td>
+      <td><code class="highlighter-rouge">FC007800</code> - <code class="highlighter-rouge">FC007BFF</code></td>
+      <td>Telemar</td>
+      <td>Italy</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">C0001F</code></td>
+      <td><code class="highlighter-rouge">FC007C00/22</code></td>
+      <td><code class="highlighter-rouge">FC007C00</code> - <code class="highlighter-rouge">FC007FFF</code></td>
+      <td>mcf88 SRL</td>
+      <td>World</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">C00020</code></td>
+      <td><code class="highlighter-rouge">FC008000/22</code></td>
+      <td><code class="highlighter-rouge">FC008000</code> - <code class="highlighter-rouge">FC0083FF</code></td>
+      <td>NEC Corporation</td>
+      <td>Japan</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">C00021</code></td>
+      <td><code class="highlighter-rouge">FC008400/22</code></td>
+      <td><code class="highlighter-rouge">FC008400</code> - <code class="highlighter-rouge">FC0087FF</code></td>
+      <td>Hiber</td>
+      <td>World</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">C00022</code></td>
+      <td><code class="highlighter-rouge">FC008800/22</code></td>
+      <td><code class="highlighter-rouge">FC008800</code> - <code class="highlighter-rouge">FC008BFF</code></td>
+      <td>Milandr, Inc.</td>
+      <td>North America</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">C00023</code></td>
+      <td><code class="highlighter-rouge">FC008C00/22</code></td>
+      <td><code class="highlighter-rouge">FC008C00</code> - <code class="highlighter-rouge">FC008FFF</code></td>
+      <td>Green House Co., Ltd.</td>
+      <td>Japan</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">C00024</code></td>
+      <td><code class="highlighter-rouge">FC009000/22</code></td>
+      <td><code class="highlighter-rouge">FC009000</code> - <code class="highlighter-rouge">FC0093FF</code></td>
+      <td>NTT (Nippon Telephone and Telegraph)</td>
+      <td>Japan</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">C00025</code></td>
+      <td><code class="highlighter-rouge">FC009400/22</code></td>
+      <td><code class="highlighter-rouge">FC009400</code> - <code class="highlighter-rouge">FC0097FF</code></td>
+      <td>International Centre for Free and Open Source Software (ICFOSS)</td>
+      <td>India</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">C00026</code></td>
+      <td><code class="highlighter-rouge">FC009800/22</code></td>
+      <td><code class="highlighter-rouge">FC009800</code> - <code class="highlighter-rouge">FC009BFF</code></td>
+      <td>Mirakonta</td>
+      <td>World</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">C00027</code></td>
+      <td><code class="highlighter-rouge">FC009C00/22</code></td>
+      <td><code class="highlighter-rouge">FC009C00</code> - <code class="highlighter-rouge">FC009FFF</code></td>
+      <td>Redexia</td>
+      <td>Europe &amp; Latin America</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">C00028</code></td>
+      <td><code class="highlighter-rouge">FC00A000/22</code></td>
+      <td><code class="highlighter-rouge">FC00A000</code> - <code class="highlighter-rouge">FC00A3FF</code></td>
+      <td>Lacuna Space</td>
+      <td>World</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">C00029</code></td>
+      <td><code class="highlighter-rouge">FC00A400/22</code></td>
+      <td><code class="highlighter-rouge">FC00A400</code> - <code class="highlighter-rouge">FC00A7FF</code></td>
+      <td>Andorra Telecom</td>
+      <td>Principality of Andorra</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">C0002A</code></td>
+      <td><code class="highlighter-rouge">FC00A800/22</code></td>
+      <td><code class="highlighter-rouge">FC00A800</code> - <code class="highlighter-rouge">FC00ABFF</code></td>
+      <td>Ursalink</td>
+      <td>World</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">C0002B</code></td>
+      <td><code class="highlighter-rouge">FC00AC00/22</code></td>
+      <td><code class="highlighter-rouge">FC00AC00</code> - <code class="highlighter-rouge">FC00AFFF</code></td>
+      <td>Grenoble Alps University</td>
+      <td>France</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">C0002C</code></td>
+      <td><code class="highlighter-rouge">FC00B000/22</code></td>
+      <td><code class="highlighter-rouge">FC00B000</code> - <code class="highlighter-rouge">FC00B3FF</code></td>
+      <td>Carnegie Technologies, LLC</td>
+      <td>North America, South America</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">C0002D</code></td>
+      <td><code class="highlighter-rouge">FC00B400/22</code></td>
+      <td><code class="highlighter-rouge">FC00B400</code> - <code class="highlighter-rouge">FC00B7FF</code></td>
+      <td>IoTech</td>
+      <td>Greece</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">C0002E</code></td>
+      <td><code class="highlighter-rouge">FC00B800/22</code></td>
+      <td><code class="highlighter-rouge">FC00B800</code> - <code class="highlighter-rouge">FC00BBFF</code></td>
+      <td>Spectrum</td>
+      <td>USA</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">C0002F</code></td>
+      <td><code class="highlighter-rouge">FC00BC00/22</code></td>
+      <td><code class="highlighter-rouge">FC00BC00</code> - <code class="highlighter-rouge">FC00BFFF</code></td>
+      <td>Afnic</td>
+      <td>France</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">C00030</code></td>
+      <td><code class="highlighter-rouge">FC00C000/22</code></td>
+      <td><code class="highlighter-rouge">FC00C000</code> - <code class="highlighter-rouge">FC00C3FF</code></td>
+      <td>Nerospec</td>
+      <td>South Africa, Europe,America</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">C00031</code></td>
+      <td><code class="highlighter-rouge">FC00C400/22</code></td>
+      <td><code class="highlighter-rouge">FC00C400</code> - <code class="highlighter-rouge">FC00C7FF</code></td>
+      <td>Sehaj Synergy Technologies Pvt Ltd</td>
+      <td>India, ASEAN &amp; SAARC Region</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">C00032</code></td>
+      <td><code class="highlighter-rouge">FC00C800/22</code></td>
+      <td><code class="highlighter-rouge">FC00C800</code> - <code class="highlighter-rouge">FC00CBFF</code></td>
+      <td>Microshare Inc.</td>
+      <td>World</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">C00033</code></td>
+      <td><code class="highlighter-rouge">FC00CC00/22</code></td>
+      <td><code class="highlighter-rouge">FC00CC00</code> - <code class="highlighter-rouge">FC00CFFF</code></td>
+      <td>HEIG-VD</td>
+      <td>Switzerland</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">C00034</code></td>
+      <td><code class="highlighter-rouge">FC00D000/22</code></td>
+      <td><code class="highlighter-rouge">FC00D000</code> - <code class="highlighter-rouge">FC00D3FF</code></td>
+      <td>Unitymedia</td>
+      <td>Germany</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">C00035</code></td>
+      <td><code class="highlighter-rouge">FC00D400/22</code></td>
+      <td><code class="highlighter-rouge">FC00D400</code> - <code class="highlighter-rouge">FC00D7FF</code></td>
+      <td>Paige Wireless</td>
+      <td>World</td>
+    </tr>
+  </tbody>
+</table></div>
           </div>
         </div>
       </div>
