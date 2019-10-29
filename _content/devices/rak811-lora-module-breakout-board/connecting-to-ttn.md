@@ -6,7 +6,7 @@ zindex: 500
 
 The Things Network is about enabling low power devices to use long range gateways to connect to an open-source, decentralized network to exchange data with Application. Learn more about the Things Network here.
 
-* First, connect RAK811 Breakout Board with your PC and open the serial port tool on your PC.
+* First, connect RAK811 WisDuo LoRa Module with your PC and open the serial port tool on your PC.
 * Second, open the serial port by clicking the following button: 
 
 ![Figure 1: RAK811 Serial Port](images/serialportttn.png)
@@ -60,11 +60,11 @@ From the previous section, it can be seen that the default activation for TTN is
 
 ![Figure 11: Join OOTA](images/joinoota.jpg)
 
-* Joined Successfully! Now, try sending data from our RAK811 Breakout Board to TTN.
+* Joined Successfully! Now, try sending data from our RAK811 WisDuo LoRa Module to TTN.
 
 ![Figure 12: OOTA Sending Data](images/ootasendingdata.jpg)
 
-* We can view the data sent from the Breakout Board to our The Things Network Application Data
+* We can view the data sent from the RAK811 WisDuo LoRa Module to our The Things Network Application Data
 
 ![Figure 13: OOTA Data Viewing](images/ootadataviewing.jpg)
 
@@ -74,7 +74,7 @@ To join the ABP mode, go to device settings and switch the activation method to 
 
 ![Figure 14: ABP Switching](images/abpswitching.jpg)
 
-* Set the Device Address, Network Session Key and App Session Key. These three parameters will be used on RAK811 Breakout Board:
+* Set the Device Address, Network Session Key and App Session Key. These three parameters will be used on RAK811 WisDuo LoRa Module:
 
 ![Figure 15: ABP Parameters](images/abpparameters.jpg)
 
@@ -96,10 +96,15 @@ Type the following AT command to set the: **Frequency/Region to EU868, Device Ad
 
 >**Note:** Actually, it is not necessary to join in ABP mode. But, you still need to set this ATcommand to validate the parameters set for ABP Mode.
 
-* Joined Successfully. Now, try sending data from our RAK811 Breakout Board to TTN.
+* Joined Successfully. Now, try sending data from our RAK811 WisDuo LoRa Module to TTN.
 
 ![Figure 20: ABP Send Data](images/abpsend.jpg)
 
-* We can view the data sent from the Breakout Board to our The Things Network Application Data
+* We can view the data sent from the RAK811 WisDuo LoRa Module to our The Things Network Application Data
 
 ![Figure 21: ABP View Data](images/abpdataview.jpg)
+
+### Optional Configurations
+You can also try other configurations which is supported in RAK811 WisDuo Module. Click through the guides provided below to learn more. Enjoy!
+* Connecting to [LoRaServer](https://doc.rakwireless.com/rak811-wisduo-lora-module/connecting-to-loraserver)
+* LoRa [P2P Mode](https://doc.rakwireless.com/rak811-wisduo-lora-module/lora-p2p-mode)

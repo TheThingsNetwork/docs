@@ -20,36 +20,36 @@ zindex: 800
 
 ![Figure 3: Device Manager](images/devicemanager.jpg)
 
-* Open the “STM32CubeProgrammer” tool.
+* Open the “**STM32CubeProgrammer**” tool.
 
-*  Select UART type; go to COM Port and look for your RAK811 Breakout Board COM Port (ex. COM5).
+*  Select UART type; go to COM Port and look for your RAK811 WisDuo LoRa Module COM Port (ex. COM5).
 
-*  Configure the Baud rate and Parity.
+*  Configure the Baud Rate and Parity.
 
 ![Figure 4: SMT32Cubeprogrammer](images/smt.png)
 
-* Then, press the “Connect” button at the top right corner.
->**Note:** If there are some errors in the Log box or it can't connect, just close SMT32Cubeprogrammer, and reinsert the RAK811 Breakout Board again and reopen the SMT32Cubeprogrammer and connect.
+* Then, press the “**Connect**” button at the top right corner.
+>**Note:** If there are some errors in the Log box or it can't connect, just close SMT32Cubeprogrammer, and reinsert the RAK811 WisDuo LoRa Module again and reopen the SMT32Cubeprogrammer and connect.
 
-Now, let’s start burning the bootloader into the RAK811 Breakout Board.
+Now, let’s start burning the bootloader into the RAK811 WisDuo LoRa Module.
 
-* First, erase all data on the RAK811 Breakout Board referred from the following picture below:
+* First, **ERASE** all data on the RAK811 WisDuo LoRa Module referred from the following picture below:
 
 ![Figure 5: Erase Data](images/erasedata.jpg)
 
-* Press “Open file” and select the bootloader file in the pop-up window.
-* Click the “Download” button to start the burning process.
+* Press “**Open file**” and select the bootloader file in the pop-up window.
+* Click the “**Download**” button to start the burning process.
 
 ![Figure 6: Firmware Downloading](images/downloadfirmware.jpg)
 
-* OK, you have burned the firmware into RAK811 Breakout Board successfully!
+* OK, you have burned the firmware into RAK811 WisDuo LoRa Module successfully!
 
 ![Figure 7: Firmware Download Complete](images/downloadcomplete.jpg)
 
-* "Disconnect” and close the “STM32CubeProgrammer” tool. Then, disconnect BOOT pin and VCC pin to let RAK811 Breakout Board work in normal mode.
+* "**Disconnect**” and close the “STM32CubeProgrammer” tool. Then, disconnect BOOT pin and VCC pin to let RAK811 WisDuo LoRa Module work in normal mode.
 * Pull out and reinsert the USB interface into your PC.
 If you have opened the serial port tool, you can see some content like this:
 
 ![Figure 8: Serial Boot](images/serialbootmode.jpg)
 
-Alright! You can now start burning the upgraded firmware into RAK811 Breakout Board.
+Alright! You can now start burning the upgraded firmware into the RAK811 WisDuo LoRa Module.
