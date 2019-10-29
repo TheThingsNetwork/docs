@@ -10,6 +10,8 @@ env:
   - SOURCE_BRANCH="master"
   - secure: VmR8MwyYzr37ndcNvXCOqmr+ZTZ2SLM+S4PfBMKjpzWG/B8rwAxiO4u2PrXmMB2MHGuhc4YjNZWn0PIFxLIIAue69OSqokI7a5YLQqzLLy2Vz590uZizWnd3yhndUioBdD3MZZEtqee+QpLlkp8oONKVB1++bs3Dq96xF6j+lxgTBqcMbRyU0mEy5pPU6UIvp2R4nr/VhUn42kzTnoGwoGq31aUTi7UDeslnvlBDEs50b0wdr/mLJkN5mQQ3IcH4IfWnI7H4PZXnwsZ5xFrcFjIU0A1LJDJQt4ve7GNJJfwWOUTtvk598CR2L5SSvmBdE60VfuxUcwxn+cz6gENyMW2B5VFCRHU1VEvZypFB5vvUZwv4LrHu6hs0KY7lImF86E5SFe8RZXALBCzLOJkHUk1teA8RoKhlVkqTUFg3LiFVPSdSe4CiZtxDvseoBKQato3oJOKpoCvjuIsQBw56+eldrO1/DS+rrmDqdaZsX7xCCdS7+DTzJ8EnbGFlAyplyDSfZH/2swMAkDsZJa0GhRADGXIxKkzCVKLn8A8K7PoM04a4hcQN1ieafRYti0glepThoggQyqfAx3xMdqxXE2a753BO+SiGjqa/tsQEf0/TKD4vN8T2l4kMb6i+BUVryBWOss1upaCzZVvS1rEB740b58XlllGky+Du8+Tzf/Y=
 install:
+- bundle update --bundler
+- bundle update
 - bundle install
 - rm -rf ~/.nvm && git clone https://github.com/creationix/nvm.git ~/.nvm && (cd ~/.nvm
   && git checkout `git describe --abbrev=0 --tags`) && source ~/.nvm/nvm.sh && nvm
