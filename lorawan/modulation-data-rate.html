@@ -31,14 +31,14 @@
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2019-10-30T15:51:11+00:00" />
+<meta property="article:published_time" content="2019-11-04T10:01:26+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="twitter:title" content="Modulation &amp; Data Rate" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"description":"Modulation and Data Rate","@type":"BlogPosting","headline":"Modulation &amp; Data Rate","dateModified":"2019-10-30T15:51:11+00:00","datePublished":"2019-10-30T15:51:11+00:00","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"url":"https://www.thethingsnetwork.org/docs/lorawan/modulation-data-rate.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/lorawan/modulation-data-rate.html"},"image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","@context":"https://schema.org"}</script>
+{"description":"Modulation and Data Rate","@type":"BlogPosting","headline":"Modulation &amp; Data Rate","dateModified":"2019-11-04T10:01:26+00:00","datePublished":"2019-11-04T10:01:26+00:00","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"url":"https://www.thethingsnetwork.org/docs/lorawan/modulation-data-rate.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/lorawan/modulation-data-rate.html"},"image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -150,8 +150,11 @@
 <p>In most cases LoRaWAN uses LoRa modulation. LoRa modulation is based on Chirp spread- spectrum technology, which makes it work well with channel noise, multipath fading and the Doppler effect, even at low power.</p>
 <p>The data rate depends on the used bandwidth and spreading factor. LoRaWAN can use channels with a bandwidth of either 125 kHz, 250 kHz or 500 kHz, depending on the region or the frequency plan. The spreading factor is chosen by the end-device and influences the time it takes to transmit a frame.</p>
 <blockquote>
-  <p><strong>The Data Rate Story</strong>: There are three knobs you can turn: transmission power, bandwidth and spreading factor. If you lower the tx power, you’ll save battery, but the range of the signal will obviously be shorter. The other two knobs combined form the data rate. This determines how fast bytes are transmitted. If you increase the data rate (make the bandwidth wider or the spreading factor lower) you can transmit those bytes in a shorter time. For those, the calculation is approximately as follows: Making the bandwidth 2x wider (from BW125 to BW250) allows you to send 2x more bytes in the same time. Making the spreading factor 1 step lower (from SF10 to SF9) allows you to send 2x more bytes in the same time. Lowering the spreading factor makes it more difficult for the gateway to receive a transmission, as it will be more sensitive to noise. You could compare this to two people taking in a noisy place (a bar for example). If you’re far from each other, you have to talk slow (SF10), but if you’re close, you can talk faster (SF7)</p>
+  <p><strong>The Data Rate Story</strong>: There are three knobs you can turn: <strong>transmission power</strong>, <strong>bandwidth</strong> and <strong>spreading factor</strong>. If you lower the tx power, you’ll save battery, but the range of the signal will obviously be shorter. The other two knobs combined form the data rate. This determines how fast bytes are transmitted. If you increase the data rate (make the bandwidth wider or the spreading factor lower) you can transmit those bytes in a shorter time. For those, the calculation is approximately as follows: Making the bandwidth 2x wider (from BW125 to BW250) allows you to send 2x more bytes in the same time. Making the spreading factor 1 step lower (from SF10 to SF9) allows you to send 2x more bytes in the same time. Lowering the spreading factor makes it more difficult for the gateway to receive a transmission, as it will be more sensitive to noise. You could compare this to two people taking in a noisy place (a bar for example). If you’re far from each other, you have to talk slow (SF10), but if you’re close, you can talk faster (SF7)</p>
 </blockquote>
+<h1 id="airtime-calculator">Airtime Calculator</h1>
+<p>Don’t waste your airtime. Be mindful about the spreading factors and aim for a high transmission speed as this leads to longer battery life and less gateway utilization.</p>
+<p>Visit the <a href="https://www.thethingsnetwork.org/airtime-calculator"><strong>Airtime Calculator</strong></a></p>
           </div>
         </div>
       </div>
