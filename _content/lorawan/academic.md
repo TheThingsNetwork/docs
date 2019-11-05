@@ -15,6 +15,7 @@ A lot of research is conducted on LoRa and LoRaWAN. This page is created to bett
 Title | Author | Journal/Proceedings | Year |
 | -------------------- | ---------- | ---------- | ------ |
 [Collision Resolution Protocol for Delay and Energy Efficient LoRa Networks](https://ieeexplore.ieee.org/document/8678478) | N. El Rachkidy, A. Guitton and M. Kaneko | IEEE Transactions on Green Communications and Networking | 2019 |
+[A Survey on LoRa Networking: Research Problems, Current Solutions and Open Issues](https://ieeexplore.ieee.org/document/8883217) |Jothi Prasanna Shanmuga Sundaram, Wan Du, Zhiwei Zhao| IEEE Communications Surveys and Tutorials | 2019 |
 [On the LoRa Modulation for IoT: Waveform Properties and Spectral Analysis](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8723130) | M. Chiani and A. Elzanaty | IEEE Internet of Things Journal | 2019 |
 [LoRaWAN Network: Radio Propagation Models and Performance Evaluation in Various Environments in Lebanon](http://samer.lahoud.fr/pub-pdf/jiot-19.pdf) | R. El Chall, S. Lahoud, M. El Helou | IEEE Internet of Things Journal | 2019 |
 [Emerging Distributed Programming Paradigm for Cyber-Physical Systems Over LoRaWANs](https://doi.org/10.1109/glocomw.2018.8644518) | D. Pianini, A. Elzanaty, A. Giorgetti, M. Chiani | 2018 IEEE Globecom Workshops (GC Wkshps) | 2018 |
