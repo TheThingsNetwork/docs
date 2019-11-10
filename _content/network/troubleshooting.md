@@ -26,7 +26,7 @@ If your application is not receiving data anymore, please check the following:
 
 If the network does not receive data from your device, i.e. the **Last seen** date and time of a device is longer ago than expected, please check the following:
 
-1. If your device is configured as ABP, the frame counters may be reset because of a power cycle. Please program devices as OTAA as soon as you can. In the meantime, you can go to a device in the Console, and click **reset frame counters** next to the device's frame counters
+1. If your device is configured as ABP, the [frame counters](https://www.thethingsnetwork.org/docs/lorawan/security.html#frame-counters) may be reset because of a power cycle, leading to blocked messages. Please program devices as OTAA as soon as you can. In the meantime, you can go to a device in the Console, and click **reset frame counters** next to the device's frame counters
 2. Check one or more gateways covering your device are online, see the [community map](https://www.thethingsnetwork.org/map), or the **Gateways** section in the Console. For issues specifically with gateways, see [Gateway Troubleshooting](../gateways/troubleshooting/index.md)
 
 ## Other issues
