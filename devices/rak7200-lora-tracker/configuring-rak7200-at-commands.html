@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <link rel="stylesheet" href="/docs/assets/css/main.css" />
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script>
+    (function(canonical) {
+      if (document.location.href.substr(0, document.location.href.length - document.location.hash.length) !== canonical) {
+        window.location.replace(canonical);
+      }
+    })('https://www.thethingsnetwork.org/docs/devices/rak7200-lora-tracker/configuring-rak7200-at-commands.html');
+    </script>
+    <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Configuring your RAK7200 Using AT Commands | The Things Network</title>
+<meta name="generator" content="Jekyll v3.4.5" />
+<meta property="og:title" content="Configuring your RAK7200 Using AT Commands" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Configuring your RAK7200 Using AT Commands" />
+<meta property="og:description" content="Configuring your RAK7200 Using AT Commands" />
+<link rel="canonical" href="https://www.thethingsnetwork.org/docs/devices/rak7200-lora-tracker/configuring-rak7200-at-commands.html" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/devices/rak7200-lora-tracker/configuring-rak7200-at-commands.html" />
+<meta property="og:site_name" content="The Things Network" />
+<meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-11-12T08:29:11+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
+<meta property="twitter:title" content="Configuring your RAK7200 Using AT Commands" />
+<meta name="twitter:site" content="@thethingsnetwrk" />
+<meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
+<script type="application/ld+json">
+{"description":"Configuring your RAK7200 Using AT Commands","@type":"BlogPosting","headline":"Configuring your RAK7200 Using AT Commands","dateModified":"2019-11-12T08:29:11+00:00","datePublished":"2019-11-12T08:29:11+00:00","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"url":"https://www.thethingsnetwork.org/docs/devices/rak7200-lora-tracker/configuring-rak7200-at-commands.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/devices/rak7200-lora-tracker/configuring-rak7200-at-commands.html"},"image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+    <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png">
+    <meta name="application-name" content="The Things Network">
+    <meta name="msapplication-tooltip" content="Tooltip">
+    <meta name="msapplication-config" content="https://ttnweb.azureedge.net/static/common/favicon/ieconfig.54334a5ee30c.xml">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-32.61b30f85680a.png" sizes="32x32">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-57.83b86c64dc82.png" sizes="57x57">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-76.7dcf8fa36dfc.png" sizes="76x76">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-96.27ac17adaa8b.png" sizes="96x96">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-120.e1526731335e.png" sizes="120x120">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-128.fabea041224c.png" sizes="128x128">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png" sizes="144x144">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png" sizes="152x152">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-180.fcd414307ca3.png" sizes="180x180">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-195.c55ce09d66da.png" sizes="195x195">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-228.bea53ec4b10b.png" sizes="228x228">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/smalltile.fabea041224c.png" sizes="128x128">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/mediumtile.3d42f7faac82.png" sizes="270x270">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
+    <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
+    <script src="/docs/assets/js/main.js"></script>
+  </head>
+  <body>
+    <div id="header"></div>
+    <div id="content">
+<div class="layout-page">
+  <div class="ttn-header ttn-header-small">
+    <div class="ttn-container container-fluid">
+      <h1>
+        <img src="/docs/assets/images/the-things-white.png" alt="⛅ The Things Network" />
+        <span>Learn</span>
+      </h1>
+    </div>
+  </div>
+  <div class="container-fluid ttn-container">
+    <div class="row page-top-nav">
+      <div class="col-sm-9">
+        <ul>
+          <li class="page-top-nav-crumb"><a href="http://www.thethingsnetwork.org/">Home</a></li>
+          <li class="page-top-nav-crumb"><a href="/docs/">Learn</a></li>
+                <li class=""><a href="/docs/lorawan/">LoRaWAN</a></li>
+                <li class="active"><a href="/docs/devices/">Devices</a></li>
+                <li class=""><a href="/docs/gateways/">Gateways</a></li>
+                <li class=""><a href="/docs/network/">Network</a></li>
+                <li class=""><a href="/docs/applications/">Applications</a></li>
+        </ul>
+      </div>
+      <div class="hidden-xs col-sm-3 text-right">
+        <a href="https://github.com/TheThingsNetwork/docs/edit/master/_content/devices/rak7200-lora-tracker/configuring-rak7200-at-commands.md" class="page-edit" data-proofer-ignore><i class="fa fa-github"></i> Edit <strong>configuring-rak7200-at-commands.md</strong></a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="panel page-side-nav page-affix">
+          <div class="panel-body">
+            <ul>
+              <li class=""><a href="/docs/devices/index.html"><h5>Devices</h5></a>
+            <ul>
+                <li class=""><a href="/docs/devices/registration.html">Device Registration</a>
+                </li>
+                <li class=""><a href="/docs/devices/bytes.html">Working with Bytes</a>
+                </li>
+                <li class=""><a href="/docs/devices/bestpractices.html">Best Practices</a>
+                </li>
+            </ul>
+              </li>
+            <li class="page-side-nav-section"><span>SDKs & Libraries</span>
+            <ul>
+                <li class=""><a href="/docs/devices/arduino/">Arduino</a>
+                </li>
+            </ul>
+            </li>
+            <li class="page-side-nav-section"><span>Hardware</span>
+            <ul>
+                <li class=""><a href="/docs/devices/uno/">The Things Uno</a>
+                </li>
+                <li class=""><a href="/docs/devices/rak5205-wistrio-lora-tracker/">RAK5205 WisTrio LoRa Tracker</a>
+                </li>
+                <li class=""><a href="/docs/devices/rak7200-lora-tracker/">RAK7200 LoRa Tracker</a>
+            <ul>
+                <li class=""><a href="/docs/devices/rak7200-lora-tracker/device-firmware-setup.html">Device Firmware Setup</a>
+                </li>
+                <li class=""><a href="/docs/devices/rak7200-lora-tracker/device-firmware-upgrading.html">Device Firmware Upgrading</a>
+                </li>
+                <li class="active"><a href="/docs/devices/rak7200-lora-tracker/configuring-rak7200-at-commands.html">Configuring your RAK7200 Using AT Commands</a>
+                </li>
+                <li class=""><a href="/docs/devices/rak7200-lora-tracker/connecting-to-ttn.html">Connecting to The Things Network (TTN)</a>
+                </li>
+            </ul>
+                </li>
+                <li class=""><a href="/docs/devices/rak811-lora-module-breakout-board/">RAK811 WisDuo LoRa Module</a>
+                </li>
+                <li class=""><a href="/docs/devices/rak811-wisnode-lora-module/">RAK811 WisNode LoRa Module</a>
+                </li>
+                <li class=""><a href="/docs/devices/node/">The Things Node</a>
+                </li>
+                <li class=""><a href="/docs/devices/lopy/">LoPy</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+            <!-- <li class="hidden-xs col-sm-2 page-toc page-affix"></li> --> 
+          </div>
+        </div> 
+      </div>
+      <div class="col-sm-7">
+        <div class="panel">
+          <div class="panel-body page-content">
+            <h1 id="configuring-your-rak7200-using-at-commands">Configuring your RAK7200 Using AT Commands</h1>
+<p>The purpose of this document is to demonstrate on how to configure the RAK7200 LoRa Tracker thru the use of AT Commands via a Serial Port Tool running in your Windows PC. The list below shows the AT Commands available for use:</p>
+<div class="table-responsive"><table class="table">
+  <thead>
+    <tr>
+      <th>AT Command</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>at+help</td>
+      <td>Get all available AT Commands</td>
+    </tr>
+    <tr>
+      <td>at+version</td>
+      <td>Get the current firmware version number.</td>
+    </tr>
+    <tr>
+      <td>at+get_config=device:status</td>
+      <td>Get all information about the device’s hardware components and their current status.</td>
+    </tr>
+    <tr>
+      <td>at+set_config=device:restart</td>
+      <td>After set, the device will restart.</td>
+    </tr>
+    <tr>
+      <td>at+set_config=device:boot</td>
+      <td>Let the device work in boot mode</td>
+    </tr>
+    <tr>
+      <td>at+run</td>
+      <td>Stop boot mode and run as normal. It is valid when the device works in boot mode.</td>
+    </tr>
+    <tr>
+      <td>at+set_config=device:sleep:X</td>
+      <td>After Setting, the device will go to sleep mode or wake up imediately X: 0 - Wake Up, 1- Sleep</td>
+    </tr>
+    <tr>
+      <td>at+join</td>
+      <td>Start the join procedure for the LoRaWAN network</td>
+    </tr>
+    <tr>
+      <td>at+send=lora:X:YYY</td>
+      <td>Send an uplink with a custom payload: X : LoRa Frame Port Y : The data which you want to send. (Length limit is 50 bytes and the data must be in Hex Format)</td>
+    </tr>
+    <tr>
+      <td>at+set_config=lora:work_mode:X</td>
+      <td>Set the Working Mode: X :  0 - LoRaWan, 1: LoRaP2P,  2: Test Mode</td>
+    </tr>
+    <tr>
+      <td>at+set_config=lora:join_mode:X</td>
+      <td>Set the join mode for LoRaWAN. X definition: 0: OTAA, 1: ABP</td>
+    </tr>
+    <tr>
+      <td>at+set_config=lora:class:X</td>
+      <td>Set the class for LoRa. X definition: 0: Class A, 1: Class B, 2: Class C</td>
+    </tr>
+    <tr>
+      <td>at+set_config=lora:region:XXX</td>
+      <td>Set the Region for LoRa: X : Options - IN865, EU868, AU915, US915, KR920, AS923</td>
+    </tr>
+    <tr>
+      <td>at+set_config=lora:confirm:X</td>
+      <td>Set the type of messages which will be sent out through LoRa. X definition: 0: unconfirm, 1: confirm</td>
+    </tr>
+    <tr>
+      <td>at+set_config=lora:dev_eui:XXXX</td>
+      <td>Set the device EUI X : The Device EUI</td>
+    </tr>
+    <tr>
+      <td>at+set_config=lora:app_eui:XXXX</td>
+      <td>Set the application EUI (for OTAA) X : The Application EUI</td>
+    </tr>
+    <tr>
+      <td>at+set_config=lora:app_key:XXXX</td>
+      <td>Set the Application key for (for OTAA) X : The Application Key</td>
+    </tr>
+    <tr>
+      <td>at+set_config=lora:dev_addr:XXXX</td>
+      <td>Set the Device Address (for ABP) X : The Device Address</td>
+    </tr>
+    <tr>
+      <td>at+set_config=lora:apps_key:XXXX</td>
+      <td>Set the Application session key (for ABP) X : The Application Session Session Key</td>
+    </tr>
+    <tr>
+      <td>at+set_config=lora:nwks_key:XXXX</td>
+      <td>Set the network session key (for ABP) X : The Network Session Key</td>
+    </tr>
+    <tr>
+      <td>at+set_config=lora:ch_mask:X:Y</td>
+      <td>Turn a certain channel on/off X : The Channel Number you want to toggle. You can check the channel number using the command : at+get_config=lora:channel Y : 0 - Off , 1 - On</td>
+    </tr>
+    <tr>
+      <td>at+set_config=lora:dr:X</td>
+      <td>Set the DR of LoRa Node X : the number of DR. Generally, the value of X can be 0~5. More details, please check the LoRaWAN 1.0.2 specification.</td>
+    </tr>
+    <tr>
+      <td>at+set_config=lora:tx_power:X</td>
+      <td>Set the TX Power Level X : : The level of TX power. If you want to know the relationship between TX power level and dbm, please have a look at LoRaWAN 1.0.2 region specification</td>
+    </tr>
+    <tr>
+      <td>at+setconfig=lora:send_interval:X:Y</td>
+      <td>Set the time interval for sending data X : Enable/disable the mechanism for sending data in intervals. If X is set to 0, the device will not send data automatically. If X is set to 1, the device will send data every Y seconds. Y : Interval time in seconds. This parameter is only valid if X is set to 1.</td>
+    </tr>
+    <tr>
+      <td>at+get_config=lora:status</td>
+      <td>It will return all of the current information of LoRa, except the LoRa Channel</td>
+    </tr>
+    <tr>
+      <td>at+get_config=lora:channel</td>
+      <td>It will return the state of all LoRa channels, then you can see which channel is closed and which channel is open very clearly</td>
+    </tr>
+    <tr>
+      <td>at+set_config=lorap2p:XXX:Y:Z:A:B:C</td>
+      <td>Set the Parameters for LoRa P2P mode. This AT Command is valid when the work ode is LoRaP2P XXX : Frequency in Hz. Y : Spreading Factor, [6,7,8,9,10,11,12] Z : Bandwidth, 0 - 125kHz, 1 - 250kHz, 2 - 500kHz A : Coding Rate , 1 - 4/5, 2 - 4/6, 3 - 4/7, 4 - 4/8 B : Preamble Length, 5 - 65535 C : Power in dBm, 5-20</td>
+    </tr>
+    <tr>
+      <td>at+send=lorap2p:XXX</td>
+      <td>Send data through LoRaP2P. This AT command is valid when it works in LoRaP2P mode. XXX : Data in HEX</td>
+    </tr>
+    <tr>
+      <td>at+set_config=device:gps:X</td>
+      <td>Turn on or turn off GPS X : 0 - close, 1 - open, 2 - sleep, 3 - standby</td>
+    </tr>
+    <tr>
+      <td>at+set_config=device:gps_timeout:X</td>
+      <td>Set the timeout of searching GPS satellite X : Time in seconds</td>
+    </tr>
+  </tbody>
+</table></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="lightbox" tabindex="-1" role="dialog">
+  <div class="modal-dialog text-center" role="document" style="width:auto;padding:20px;">
+    <a href="https://ttnstaticfile.blob.core.windows.net/static/ttn/media/logo/ttn-logo.png"><img class="modal-content modal-body" src="https://ttnstaticfile.blob.core.windows.net/static/ttn/media/logo/ttn-logo.png" alt="Zoom" /></a>
+  </div>
+</div>
+<script src="/docs/assets/js/page.js"></script>
+    </div>
+    <div id="footer"></div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.min.js"></script>
+    <script src="https://ttnweb.azureedge.net/static/common/js/ttn-components.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill@7/dist/polyfill.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
+    <script src="https://ttnweb.azureedge.net/static/common/js/vue-navbar.js"></script>
+    <script src="https://ttnweb.azureedge.net/static/common/js/vue-footer.js"></script>
+    <script src="https://ttnweb.azureedge.net/static/common/js/ga.js"></script>
+  </body>
+</html>
