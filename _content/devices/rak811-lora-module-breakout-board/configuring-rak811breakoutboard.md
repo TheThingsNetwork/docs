@@ -1,8 +1,8 @@
 ---
-title: Configuring your RAK811 LoRa Module Breakout Board
+title: Configuring your RAK811 WisDuo LoRa Module
 zindex: 600
 ---
-# Configuring your RAK811 LoRa Module Breakout Board
+# Configuring your RAK811 WisDuo LoRa Module
 
 The purpose of this document is to demonstrate on how to configure the RAK811 thru the use of AT Commands via a Serial Port Tool running in your Windows PC. The list below shows the AT Commands available for use:
 
