@@ -32,7 +32,20 @@ Downlink:
 
 ## EU433
 
-> No frequency plan yet. Submit a proposal!
+Uplink: 
+
+1. **433.175** - SF7BW125 to SF12BW125
+2. **433.375** - SF7BW125 to SF12BW125
+3. **433.575** - SF7BW125 to SF12BW125
+4. **433.975** - SF7BW125 to SF12BW125
+5. **434.175** - SF7BW125 to SF12BW125
+6. **434.375** - SF7BW125 to SF12BW125
+7. **434.575** - SF7BW125 to SF12BW125
+8. **434.775** - SF7BW125 to SF12BW125
+
+Downlink:
+
+- Uplink channels 1-8 (RX1)
 
 ## US902-928
 
