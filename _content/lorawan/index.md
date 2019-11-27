@@ -1,6 +1,7 @@
 ---
 title: LoRaWAN 
 image: /lorawan/icon.png
+description: Learn everything you need to know about the LoRaWAN technology
 sections:
  - Fundamental
  - Specifications
@@ -9,35 +10,6 @@ zindex: 1100
 ---
 
 # LoRaWAN
+This section covers background as well as in depth informations to get you started with LoRaWAN and improve your knowledge of the technology.
 
-## Fundamental  
-Background information to get you started with LoRaWAN.  
-
-<!-- * LoRa & LoRaWAN -->
-
-* [LoRaWAN Architecture](./architecture.md)
- 
-* [Regional Parameters](./regional-parameters.md)
-
-* [Limitations](./limitations.md)
-
-<!-- * Getting Started -->
-
-
-## Specifications  
-Everything you need to know about LoRaWAN is here.  
-
-* [Classes](./classes.md)
-
-* [Addressing & Activation](./addressing.md)
-
-* [Modulation & Data Rate](./modulation-data-rate.md)
-
-* [Adaptive Data rate](./adaptive-data-rate.md)
-
-* [Duty cycle](./duty-cycle.md)
-<!-- * FUTOA -->
-<!-- * Roaming -->
-
-* [Security](./security.md)
-<!-- * LoRaWAN 1.0.x & LoRaWAN 1.1.x -->
+   ![LoRaWAN icon](icon.png)
