@@ -14,14 +14,14 @@ layout: default
  
 <div class="layout-page">
 
-  <div class="ttn-header ttn-header-small">
+  <!-- <div class="ttn-header ttn-header-small">
     <div class="ttn-container container-fluid">
       <h1>
         <img src="{{ site.baseurl }}/assets/images/the-things-white.png" alt="⛅ The Things Network" />
         <span>Learn</span>
       </h1>
     </div>
-  </div>
+  </div> -->
 
   <div class="container-fluid ttn-container">
 
@@ -47,9 +47,9 @@ layout: default
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-sm-3">
-        <div class="panel page-side-nav page-affix">
+    <div class="row wrapper">
+      <div class="col-sm-3 side-nav">
+        <div class="panel page-side-nav">
           <div class="panel-body">
             <ul>
               <li class="{% if top.url == page.url %}active{% endif %}"><a href="{{ top.url | prepend:site.baseurl}}"><h5>{{ top.title }}</h5></a>
@@ -73,7 +73,7 @@ layout: default
         </div> 
       </div>
       
-      <div class="col-sm-7">
+      <div class="col-sm-9 page-body">
         {% if page.ambassador %}
           <section class="panel page-ambassador">
             <div class="panel-body">
@@ -105,7 +105,12 @@ layout: default
 
             {{ content | docs_content }}
 
-          </div>
+          </div>  
+        </div>
+        <div>
+          {% for link in top.links %}
+                      <li class=""><a href="{% if link.href contains ':' %}{{ link.href }}{% else %}{{ link.href | prepend:top.url | prepend:site.baseurl | remove:'index.html' }}{% endif %}">{{ link.title }}</a></li>
+                    {% endfor %}
         </div>
       </div>
     </div>
