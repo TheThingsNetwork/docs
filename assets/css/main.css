@@ -8820,13 +8820,13 @@ body {
       color: #333333; }
 .layout-page .side-nav {
   position: sticky;
-  top: 146px; }
+  top: 146px;
+  margin-bottom: 0; }
   @media (max-width: 768px) {
     .layout-page .side-nav {
       position: static;
       margin-top: 81px; } }
   .layout-page .side-nav .page-side-nav .panel-body {
-    margin-bottom: 0;
     overflow-y: scroll;
     max-height: calc(95vh - 146px);
     font-size: 0.9em; }
