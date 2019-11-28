@@ -31,14 +31,14 @@
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2019-11-27T10:19:51+00:00" />
+<meta property="article:published_time" content="2019-11-28T13:53:10+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="twitter:title" content="TTN Mapper" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"description":"TTN Mapper The TTN Mapper integration allows you to upload coverage information (location, rssi and snr) to TTN Mapper directly from the TTN backend.","@type":"BlogPosting","headline":"TTN Mapper","dateModified":"2019-11-27T10:19:51+00:00","datePublished":"2019-11-27T10:19:51+00:00","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"url":"https://www.thethingsnetwork.org/docs/applications/ttnmapper/","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/applications/ttnmapper/"},"image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","@context":"https://schema.org"}</script>
+{"description":"TTN Mapper The TTN Mapper integration allows you to upload coverage information (location, rssi and snr) to TTN Mapper directly from the TTN backend.","@type":"BlogPosting","headline":"TTN Mapper","dateModified":"2019-11-28T13:53:10+00:00","datePublished":"2019-11-28T13:53:10+00:00","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"url":"https://www.thethingsnetwork.org/docs/applications/ttnmapper/","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/applications/ttnmapper/"},"image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -68,14 +68,14 @@
     <div id="header"></div>
     <div id="content">
 <div class="layout-page">
-  <div class="ttn-header ttn-header-small">
+  <!-- <div class="ttn-header ttn-header-small">
     <div class="ttn-container container-fluid">
       <h1>
         <img src="/docs/assets/images/the-things-white.png" alt="⛅ The Things Network" />
         <span>Learn</span>
       </h1>
     </div>
-  </div>
+  </div> -->
   <div class="container-fluid ttn-container">
     <div class="row page-top-nav">
       <div class="col-sm-9">
@@ -93,9 +93,9 @@
         <a href="https://github.com/TheThingsNetwork/docs/edit/master/_content/applications/ttnmapper/index.md" class="page-edit" data-proofer-ignore><i class="fa fa-github"></i> Edit <strong>index.md</strong></a>
       </div>
     </div>
-    <div class="row">
-      <div class="col-sm-3">
-        <div class="panel page-side-nav page-affix">
+    <div class="row wrapper">
+      <div class="col-sm-3 side-nav">
+        <div class="panel page-side-nav">
           <div class="panel-body">
             <ul>
               <li class=""><a href="/docs/applications/index.html"><h5>Applications</h5></a>
@@ -165,7 +165,7 @@
           </div>
         </div> 
       </div>
-      <div class="col-sm-7">
+      <div class="col-sm-9 page-body">
           <section class="panel page-ambassador">
             <div class="panel-body">
               <div class="media">
@@ -205,7 +205,9 @@
 <h2 id="verify-the-integration-is-working-correctly">Verify the integration is working correctly</h2>
 <p>In order to verify whether the integration has been configured correctly, go to the Data tab for your device on the TTN Console. Switch on your device and make sure you see data appearing on the Data tab. Now go to the TTN Mapper website and in the menu select “<a href="https://ttnmapper.org/advanced-maps/">Advanced map options</a>”. In the “Specific node” section fill in the Device ID in the “Node address” field. Leave the “Date” field as is - it is automatically set to today. Click on “View map” and you should see the data points sent by your end device.</p>
 <p>For troubleshooting please post your question in the #ttn-mapper channel on Slack.</p>
-          </div>
+          </div>  
+        </div>
+        <div>
         </div>
       </div>
     </div>

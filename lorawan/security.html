@@ -31,14 +31,14 @@
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2019-11-27T10:19:51+00:00" />
+<meta property="article:published_time" content="2019-11-28T13:53:10+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="twitter:title" content="Security" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"description":"LoRaWAN Security","@type":"BlogPosting","headline":"Security","dateModified":"2019-11-27T10:19:51+00:00","datePublished":"2019-11-27T10:19:51+00:00","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"url":"https://www.thethingsnetwork.org/docs/lorawan/security.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/lorawan/security.html"},"image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","@context":"https://schema.org"}</script>
+{"description":"LoRaWAN Security","@type":"BlogPosting","headline":"Security","dateModified":"2019-11-28T13:53:10+00:00","datePublished":"2019-11-28T13:53:10+00:00","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"url":"https://www.thethingsnetwork.org/docs/lorawan/security.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/lorawan/security.html"},"image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -68,14 +68,14 @@
     <div id="header"></div>
     <div id="content">
 <div class="layout-page">
-  <div class="ttn-header ttn-header-small">
+  <!-- <div class="ttn-header ttn-header-small">
     <div class="ttn-container container-fluid">
       <h1>
         <img src="/docs/assets/images/the-things-white.png" alt="⛅ The Things Network" />
         <span>Learn</span>
       </h1>
     </div>
-  </div>
+  </div> -->
   <div class="container-fluid ttn-container">
     <div class="row page-top-nav">
       <div class="col-sm-9">
@@ -93,9 +93,9 @@
         <a href="https://github.com/TheThingsNetwork/docs/edit/master/_content/lorawan/security.md" class="page-edit" data-proofer-ignore><i class="fa fa-github"></i> Edit <strong>security.md</strong></a>
       </div>
     </div>
-    <div class="row">
-      <div class="col-sm-3">
-        <div class="panel page-side-nav page-affix">
+    <div class="row wrapper">
+      <div class="col-sm-3 side-nav">
+        <div class="panel page-side-nav">
           <div class="panel-body">
             <ul>
               <li class=""><a href="/docs/lorawan/index.html"><h5>LoRaWAN</h5></a>
@@ -143,7 +143,7 @@
           </div>
         </div> 
       </div>
-      <div class="col-sm-7">
+      <div class="col-sm-9 page-body">
         <div class="panel">
           <div class="panel-body page-content">
             <h1 id="lorawan-security">LoRaWAN Security</h1>
@@ -164,7 +164,9 @@ The algorithm used for this is AES-128, similar to the algorithm used in the 802
 <h2 id="spread-spectrum">Spread Spectrum</h2>
 <p>Spread Spectrum Radio Transmission was traditionally used, during WW2, to make military communications difficult to monitor - either by using a technique called ‘frequency hopping’ (FHSS) - skipping the transmission frequency around in a prearranged manner, causing the enemy to constantly retune (very rapidly) or ‘direct sequence’ (DSSS) where the digital message is added to a much higher bit-rate, pseudo random (PR) sequence.  The code spreads the radio signal over a much wider bandwidth.  In fact, so wide that the power may well be dispersed so that the total signal falls down into the background radio noise - and becomes invisible.  Recovery is therefore a matter of i) knowing the original radio frequency ii) the pseudo random code and iii) and the PR code bit rate.  Knowing these details means that synchronising receivers is not as difficult as may at first appear.  The signal will just ‘pop up’ out of the noise when the correct values are achieved. (‘Processing Gain’)</p>
 <p>The technique used in LoRa is ‘<a href="https://youtu.be/dxYY097QNs0">CHIRP</a>’: Compressed High Intensity Radar Pulse.  It is even more complex but simple with current technology. As the name may suggest, the background design requirement, it is not used to hide the radio signal but is employed because of other factors, not just processing gain but interference immunity, channel sharing and resistance to radio reflections (amongst others).  It is therefore employed as security against operating conditions not for surveillance resistance. (Hedy Lamarr was a co-inventor and holds a patent for FHSS).</p>
-          </div>
+          </div>  
+        </div>
+        <div>
         </div>
       </div>
     </div>
