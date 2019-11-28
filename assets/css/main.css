@@ -8820,44 +8820,45 @@ body {
       color: #333333; }
 .layout-page .side-nav {
   position: sticky;
-  top: 146px;
-  margin-bottom: 0; }
+  top: 146px; }
   @media (max-width: 768px) {
     .layout-page .side-nav {
       position: static;
       margin-top: 81px; } }
-  .layout-page .side-nav .page-side-nav .panel-body {
-    overflow-y: scroll;
-    max-height: calc(95vh - 146px);
-    font-size: 0.9em; }
-    @media (max-width: 768px) {
-      .layout-page .side-nav .page-side-nav .panel-body {
-        overflow-y: unset;
-        max-height: none; } }
-    .layout-page .side-nav .page-side-nav .panel-body > ul a {
-      color: #333333;
-      text-decoration: none; }
-    .layout-page .side-nav .page-side-nav .panel-body > ul .active > a, .layout-page .side-nav .page-side-nav .panel-body > ul a:hover {
-      color: #0071BC; }
-    .layout-page .side-nav .page-side-nav .panel-body > ul > li > ul > li ul {
-      margin-left: 1em;
-      font-weight: 0.9em; }
-    .layout-page .side-nav .page-side-nav .panel-body > ul .page-side-nav-section {
-      margin-top: 1em; }
-      .layout-page .side-nav .page-side-nav .panel-body > ul .page-side-nav-section > span {
-        font-weight: bold;
-        color: #9c9999; }
-  .layout-page .side-nav .page-side-nav .panel-body::-webkit-scrollbar {
-    -webkit-appearance: none; }
-  .layout-page .side-nav .page-side-nav .panel-body::-webkit-scrollbar:vertical {
-    width: 11px; }
-  .layout-page .side-nav .page-side-nav .panel-body::-webkit-scrollbar:horizontal {
-    height: 11px; }
-  .layout-page .side-nav .page-side-nav .panel-body::-webkit-scrollbar-thumb {
-    border-radius: 8px;
-    border: 2px solid white;
-    /* should match background, can't be transparent */
-    background-color: rgba(0, 0, 0, 0.2); }
+  .layout-page .side-nav .page-side-nav {
+    margin-bottom: 0; }
+    .layout-page .side-nav .page-side-nav .panel-body {
+      overflow-y: scroll;
+      max-height: calc(95vh - 146px);
+      font-size: 0.9em; }
+      @media (max-width: 768px) {
+        .layout-page .side-nav .page-side-nav .panel-body {
+          overflow-y: unset;
+          max-height: none; } }
+      .layout-page .side-nav .page-side-nav .panel-body > ul a {
+        color: #333333;
+        text-decoration: none; }
+      .layout-page .side-nav .page-side-nav .panel-body > ul .active > a, .layout-page .side-nav .page-side-nav .panel-body > ul a:hover {
+        color: #0071BC; }
+      .layout-page .side-nav .page-side-nav .panel-body > ul > li > ul > li ul {
+        margin-left: 1em;
+        font-weight: 0.9em; }
+      .layout-page .side-nav .page-side-nav .panel-body > ul .page-side-nav-section {
+        margin-top: 1em; }
+        .layout-page .side-nav .page-side-nav .panel-body > ul .page-side-nav-section > span {
+          font-weight: bold;
+          color: #9c9999; }
+    .layout-page .side-nav .page-side-nav .panel-body::-webkit-scrollbar {
+      -webkit-appearance: none; }
+    .layout-page .side-nav .page-side-nav .panel-body::-webkit-scrollbar:vertical {
+      width: 11px; }
+    .layout-page .side-nav .page-side-nav .panel-body::-webkit-scrollbar:horizontal {
+      height: 11px; }
+    .layout-page .side-nav .page-side-nav .panel-body::-webkit-scrollbar-thumb {
+      border-radius: 8px;
+      border: 2px solid white;
+      /* should match background, can't be transparent */
+      background-color: rgba(0, 0, 0, 0.2); }
 .layout-page .page-ambassador {
   font-weight: 0.9em; }
   .layout-page .page-ambassador img {
