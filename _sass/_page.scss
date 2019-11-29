@@ -71,12 +71,14 @@
         top: 146px;
         margin-top: 81px; /*sticky work properly*/
 
+
         @media (max-width: 768px) {
             position: static;
             margin-top: 81px;
         }
 
         .page-side-nav {
+
             /*margin-bottom: 0;*/
 
             .panel-body {
