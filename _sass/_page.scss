@@ -69,6 +69,8 @@
     .side-nav {
         position: sticky;
         top: 146px;
+        margin-top: 81px; /*sticky work properly*/
+
 
         @media (max-width: 768px) {
             position: static;
@@ -76,11 +78,12 @@
         }
 
         .page-side-nav {
-            margin-bottom: 0;
-            
+
+            /*margin-bottom: 0;*/
+
             .panel-body {
                 overflow-y: scroll;
-                max-height: calc(95vh - 146px);
+                max-height: calc(95vh - 166px); /* 166px = navbar+tree s*/
 
                 @media (max-width: 768px) {
                     overflow-y: unset;
@@ -92,6 +95,11 @@
 
                     &, ul {
                         @extend .list-unstyled;
+                    }
+
+                    h5 {
+                        font-weight: bold;
+                        font-family: Lato bold, "Helvetica Neue", Helvetica, Arial, sans-serif;
                     }
 
                     a {
@@ -118,6 +126,7 @@
                     }
                 }
             }
+            /*scroll bar always visible*/
             .panel-body::-webkit-scrollbar {
                 -webkit-appearance: none;
             }
@@ -135,6 +144,7 @@
                 border: 2px solid white; /* should match background, can't be transparent */
                 background-color: rgba(0, 0, 0, .2);
             }
+            /*scroll bar always visible*/
         }
     }
 
@@ -291,11 +301,12 @@
         }
     }
 
-    .ttn-container {
+    /* footer at end of viewport*/
+    /*.ttn-container {
         min-height: calc(100vh - 95px);
     }
 
     .wrapper {
         min-height: inherit;
-    }
+    }*/
 }
