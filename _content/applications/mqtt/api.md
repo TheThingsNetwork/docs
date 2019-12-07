@@ -93,6 +93,8 @@ func main() {
 
 ### Uplink Fields
 
+>**Warning**: subscribing to specific fields has been temporarily disabled for the EU region; see [the TTN Status Page](https://status.thethings.network/incidents/z25436h9zxwq) for details.
+
 Each uplink field will be published to its own topic `my-app-id/devices/my-dev-id/up/<field>`. The payload will be a string with the value in a JSON-style encoding. 
 
 If your fields look like the following:
