@@ -69,6 +69,8 @@ Now let's listen for actual messages coming in from devices.
     
 ### Subscribe to a specific field
 
+>**Warning**: subscribing to specific fields has been temporarily disabled for the EU region; see [the TTN Status Page](https://status.thethings.network/incidents/z25436h9zxwq) for details.
+
 You can also subscribe to a specific field. Building on [The Things Uno / Quick Start](../../devices/uno/quick-start.md) you could subscribe to get just the `led` field:
 
 ```bash
