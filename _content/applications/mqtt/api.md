@@ -93,6 +93,8 @@ func main() {
 
 ### Uplink Fields
 
+> **Warning**: not every cluster publishes uplink fields to individual topics. See [status.thethings.network](https://status.thethings.network) for details.
+
 Each uplink field will be published to its own topic `my-app-id/devices/my-dev-id/up/<field>`. The payload will be a string with the value in a JSON-style encoding. 
 
 If your fields look like the following:
