@@ -31,14 +31,14 @@
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2019-12-09T08:28:59+00:00" />
+<meta property="article:published_time" content="2019-12-12T13:52:48+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="twitter:title" content="Quick Start" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"description":"Quick Start This guide will walk you through subscribing to an application’s activations and messages as well as send a response to a specific device, using Eclipse Mosquitto’s CLIs to subscribe and to publish messages.","@type":"BlogPosting","headline":"Quick Start","dateModified":"2019-12-09T08:28:59+00:00","datePublished":"2019-12-09T08:28:59+00:00","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"url":"https://www.thethingsnetwork.org/docs/applications/mqtt/quick-start.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/applications/mqtt/quick-start.html"},"image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","@context":"https://schema.org"}</script>
+{"description":"Quick Start This guide will walk you through subscribing to an application’s activations and messages as well as send a response to a specific device, using Eclipse Mosquitto’s CLIs to subscribe and to publish messages.","@type":"BlogPosting","headline":"Quick Start","dateModified":"2019-12-12T13:52:48+00:00","datePublished":"2019-12-12T13:52:48+00:00","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"url":"https://www.thethingsnetwork.org/docs/applications/mqtt/quick-start.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/applications/mqtt/quick-start.html"},"image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -239,6 +239,9 @@
   </li>
 </ol>
 <h3 id="subscribe-to-a-specific-field">Subscribe to a specific field</h3>
+<blockquote>
+  <p><strong>Warning</strong>: not every cluster publishes uplink fields to individual topics. See <a href="https://status.thethings.network">status.thethings.network</a> for details.</p>
+</blockquote>
 <p>You can also subscribe to a specific field. Building on <a href="../../devices/uno/quick-start.html">The Things Uno / Quick Start</a> you could subscribe to get just the <code class="highlighter-rouge">led</code> field:</p>
 <div class="language-bash highlighter-rouge"><pre class="highlight"><code>mosquitto_sub -h &lt;Region&gt;.thethings.network -t <span class="s1">'+/devices/+/up/led'</span> -u <span class="s1">'&lt;AppID&gt;'</span> -P <span class="s1">'&lt;AppKey&gt;'</span> -v
 
