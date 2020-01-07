@@ -31,14 +31,14 @@
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-01-07T12:23:55+00:00" />
+<meta property="article:published_time" content="2020-01-07T14:05:34+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="twitter:title" content="Setup" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"description":"Setup","headline":"Setup","dateModified":"2020-01-07T12:23:55+00:00","datePublished":"2020-01-07T12:23:55+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/gateways/cisco/setup.html"},"url":"https://www.thethingsnetwork.org/docs/gateways/cisco/setup.html","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"@context":"https://schema.org"}</script>
+{"description":"Setup","headline":"Setup","dateModified":"2020-01-07T14:05:34+00:00","datePublished":"2020-01-07T14:05:34+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/gateways/cisco/setup.html"},"url":"https://www.thethingsnetwork.org/docs/gateways/cisco/setup.html","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -388,6 +388,10 @@ total 136
 <p>You’ll need to change the following settings:</p>
 <ul>
   <li>
+    <p><code class="highlighter-rouge">gateway_ID</code>: The gateway ID is derived from the <code class="highlighter-rouge">mac address</code> printed under the gateway, example 5B:A0:CB:80:04:2B.<br />
+To derive it insert <code class="highlighter-rouge">FFFE</code> after the first 6 characters to make it a 64bit EUI such as 5BA0CBFFFE80042B.</p>
+  </li>
+  <li>
     <p><code class="highlighter-rouge">server_address</code> to <strong>the router address</strong> (such as <code class="highlighter-rouge">router.eu.thethings.network</code>)</p>
   </li>
   <li>
@@ -399,10 +403,10 @@ total 136
 </ul>
 <p>Write down the value written for <code class="highlighter-rouge">gateway_ID</code>. Save the file, and exit your text editor.</p>
 <h3 id="gateway-registration">Gateway registration</h3>
-<p>Don’t close the shell yet, but open a Web browser and head to your the Things Network console. Click on <strong>Gateways</strong> &gt; <strong>Register gateway</strong>. Check the <em>I’m using legacy packet forwarder</em> box, and enter the gateway EUI that was indicated as <code class="highlighter-rouge">gateway_ID</code> in the configuration. Fill in the rest of the form, and click on <strong>Register gateway</strong>.</p>
-<blockquote>
-  <p>⚠️ If the gateway EUI is already marked as used, you’ll need to change the <code class="highlighter-rouge">gateway_ID</code> value in the configuration of the gateway. The value must be an 8 bytes hexadecimal value.</p>
-</blockquote>
+<p>Don’t close the shell yet, but open a Web browser and head to your the Things Network console.<br />
+Click on <strong>Gateways</strong> &gt; <strong>Register gateway</strong>.<br />
+Check the <em>I’m using legacy packet forwarder</em> box, and enter the <code class="highlighter-rouge">gateway_EUI</code> that was indicated as <code class="highlighter-rouge">gateway_ID</code> in the configuration.<br />
+Fill in the rest of the form, and click on <strong>Register gateway</strong>.</p>
 <h3 id="testing-the-packet-forwarder">Testing the packet forwarder</h3>
 <p>You can now test the packet forwarder by executing:</p>
 <div class="language-bash highlighter-rouge"><pre class="highlight"><code>/etc/pktfwd/pkt_forwarder -c /etc/pktfwd/config.json -g /dev/ttyS1
