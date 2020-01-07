@@ -31,14 +31,14 @@
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/gateways/thethingsoutdoor/TTOG.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2019-12-12T13:52:48+00:00" />
+<meta property="article:published_time" content="2020-01-07T12:23:55+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:image" content="https://www.thethingsnetwork.org/docs/gateways/thethingsoutdoor/TTOG.png" />
 <meta property="twitter:title" content="The Things Outdoor Gateway" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"description":"The Things Outdoor Gateway","@type":"BlogPosting","headline":"The Things Outdoor Gateway","dateModified":"2019-12-12T13:52:48+00:00","datePublished":"2019-12-12T13:52:48+00:00","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"url":"https://www.thethingsnetwork.org/docs/gateways/thethingsoutdoor/","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/gateways/thethingsoutdoor/"},"image":"https://www.thethingsnetwork.org/docs/gateways/thethingsoutdoor/TTOG.png","@context":"https://schema.org"}</script>
+{"description":"The Things Outdoor Gateway","headline":"The Things Outdoor Gateway","dateModified":"2020-01-07T12:23:55+00:00","datePublished":"2020-01-07T12:23:55+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/gateways/thethingsoutdoor/TTOG.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/gateways/thethingsoutdoor/"},"url":"https://www.thethingsnetwork.org/docs/gateways/thethingsoutdoor/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -165,22 +165,21 @@
         <div class="panel">
           <div class="panel-body page-content">
             <h1 id="the-things-outdoor-gateway">The Things Outdoor Gateway</h1>
-<p>The Things Outdoor Gateway (TTOG) is an industrial, outdoor and fully compliant gateway.</p>
+<p>The Things Outdoor Gateway (TTOG) is an industrial, outdoor and fully compliant gateway at a very low cost.</p>
 <p><img src="TTOG.png" alt="TTOG" /></p>
 <p><strong>Salient Features:</strong></p>
 <ul>
   <li>LoRaWAN 1.0.2 compliant</li>
-  <li>Supports up to 16 channels</li>
-  <li>3G/4G backhaul supported</li>
-  <li>Option support wide frequency range from 470MHz to 928MHz</li>
+  <li>Supports eight channels for EU868 and US915 bands</li>
+  <li>3G/4G backhaul via built in modem</li>
   <li>Supports LBT (Listen Before Talk)</li>
-  <li>EU868, US915, AS923 and CN470 versions available.</li>
-  <li>IP67 waterproof</li>
+  <li>EU868, US915, AS923 and CN470 versions available</li>
+  <li>IP67 waterproof enclosure</li>
   <li>Dimensions: 230 x 200 x 68mm</li>
   <li>Weight: 2.05kg</li>
-  <li>Power voltage: 55VDC/0.6A via PoE adapter</li>
+  <li>Power voltage: 55VDC/0.6A via included PoE adapter</li>
 </ul>
-<p>The outdoor gateway is currently available from <a href="https://connectedthings.store">Connected Things</a> store in both EU and US versions.</p>
+<p>The outdoor gateway is currently available from <a href="https://connectedthings.store">Connected Things Store</a> in both EU and US versions.</p>
 <h2 id="set-up-your-gateway">Set up your gateway</h2>
 <ol>
   <li>Connect all antennas:
@@ -188,17 +187,17 @@
       <li>ANT 1 - GPS</li>
       <li>ANT 2 - LTE antenna</li>
       <li>ANT 3 - LoRaWAN antenna</li>
-      <li>ANT 4 - LoRaWAN antenna (optional)</li>
+      <li>ANT 4 - (not used)</li>
     </ul>
   </li>
-  <li>Connect the PoE Output cable to the Gateway Ethernet connector. Connect the PoE Input cable to the network connection device.</li>
+  <li>Connect the PoE injector output cable to the Gateway Ethernet connector. Connect the PoE input cable to your network.</li>
 </ol>
 <h2 id="activate-your-gateway">Activate your gateway</h2>
 <p>The ODU GUI is a web interface to configure all network settings. The ODU GUI uses the IP address assigned by the Gateway to enter the network setting page.</p>
 <ol>
-  <li>Enter the IP Address assigned by the Gateway into the web browser to acquire access to the ODU GUI interface. The IP address is likely <code class="highlighter-rouge">192.168.2.13</code>. The configuration page should look like this:
+  <li>Connect and power the gateway as above. The gateway will use DHCP to request an IP address from the network. Find this IP address from your router and enter the IP address assigned to the Gateway into the web browser to access the ODU GUI interface. The configuration page should look like this:
  <img src="GUI.png" alt="GUI" /></li>
-  <li>Login with the username and password: <code class="highlighter-rouge">admin</code> / <code class="highlighter-rouge">admin</code>
+  <li>Login with the username and password: <code class="highlighter-rouge">admin</code> / and the password from the label on the back of your unit (older firmware versions used the password <code class="highlighter-rouge">admin</code>)
     <blockquote>
       <p>Make sure to update the password the first time you login!</p>
     </blockquote>
@@ -211,16 +210,16 @@
   <img src="gateway-info.png" alt="Gateway Settings" /></li>
     </ul>
   </li>
-  <li>Save the <strong>Gateway ID</strong>, you will need this later on when adding the gateway to the Developer Console of The Things Network.</li>
+  <li>Save the <strong>Gateway ID</strong>, you will need this later on when adding the gateway The Things Network using the console.</li>
   <li>Set the network settings via <strong>Network</strong> &gt; <strong>WAN</strong>. You can choose to connect via Ethernet or 3G/LTE. Reboot the gateway after configuring the network settings.</li>
 </ol>
 <blockquote>
   <p>Did you connect the gateway via 3G/LTE? It will take a few minutes before the gateway will start routing messages. 
-To open the ODU GUI again, you should manually set the IP address:
+To open the ODU GUI again, you can access the web interface via the fallback IP address: <a href="http://192.168.11.10">192.168.11.10</a>.
+You will need to set your PC’s IP address in the same range, e.g.:
 IP address: <code class="highlighter-rouge">192.168.11.100</code>
 Subnet Mask: <code class="highlighter-rouge">255.255.255.0</code>
-Router: <code class="highlighter-rouge">192.168.11.10</code>
-Now, you can access the web interface via: <a href="http://192.168.11.10">192.168.11.10</a>.</p>
+Router: <code class="highlighter-rouge">192.168.11.10</code></p>
 </blockquote>
 <h2 id="connecting-to-the-the-things-network-backend">Connecting to the The Things Network Backend</h2>
 <ol>
@@ -230,11 +229,11 @@ Now, you can access the web interface via: <a href="http://192.168.11.10">192.16
   <li>Enter the other details such as location, frequency plan and router.</li>
   <li>If your configuration was successful, you should start receiving packets (if there are LoRaWAN nodes transmitting nearby).</li>
 </ol>
-<h2 id="troubelshooting">Troubelshooting</h2>
+<h2 id="troubleshooting">Troubleshooting</h2>
 <ul>
   <li>When you cannot find a way to change the LoRaWAN settings, you might need to update the System Firmware. You can do so via:</li>
   <li><strong>System</strong> &gt; <strong>System Firmware</strong></li>
-  <li>Download <a href="https://drive.google.com/file/d/1PFQiRKUO-miSnt0cwnaf8qBb5GLEUvAi/view?usp=sharing">this file</a></li>
+  <li>Download <a href="https://connectedthings.store/files/WAPS-232N_LW_OPDK_GUI_1.01.09_3416004962.tar.gz">this file</a>, making sure to keep the file name exactly the same (don’t try to unzip this file)</li>
   <li>Upload the file to and click <strong>Upgrade</strong>
   <img src="upgrade_1.png" alt="Upgrade-page" /></li>
   <li>The gateway will automatically reboot with the upgraded firmware</li>
