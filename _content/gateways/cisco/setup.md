@@ -263,6 +263,9 @@ vi /etc/pktfwd/config.json
 
 You'll need to change the following settings:
 
+* `gateway_ID`: The gateway ID is derived from the `mac address` printed under the gateway, example 5B:A0:CB:80:04:2B.  
+To derive it insert `FFFE` after the first 6 characters to make it a 64bit EUI such as 5BA0CBFFFE80042B.
+
 * `server_address` to **the router address** (such as `router.eu.thethings.network`)
 
 * `serv_port_up`: `1700`
@@ -273,9 +276,10 @@ Write down the value written for `gateway_ID`. Save the file, and exit your text
 
 ### Gateway registration
 
-Don't close the shell yet, but open a Web browser and head to your the Things Network console. Click on **Gateways** > **Register gateway**. Check the *I'm using legacy packet forwarder* box, and enter the gateway EUI that was indicated as `gateway_ID` in the configuration. Fill in the rest of the form, and click on **Register gateway**.
-
-> ⚠️ If the gateway EUI is already marked as used, you'll need to change the `gateway_ID` value in the configuration of the gateway. The value must be an 8 bytes hexadecimal value.
+Don't close the shell yet, but open a Web browser and head to your the Things Network console.  
+Click on **Gateways** > **Register gateway**.  
+Check the *I'm using legacy packet forwarder* box, and enter the `gateway_EUI` that was indicated as `gateway_ID` in the configuration.  
+Fill in the rest of the form, and click on **Register gateway**.
 
 ### Testing the packet forwarder
 
