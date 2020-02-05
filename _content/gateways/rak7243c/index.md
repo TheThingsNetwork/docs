@@ -22,7 +22,7 @@ The RAK7243C Pilot Gateway is ideal for prototyping, proof-of concept evaluation
 * Support optional Cellular module (Quectel BG96 or EG95) for NB-IOT / LTE CAT-M1 / LTE CAT1 / LTE CAT4.
 * Built-in the Ublox MAX-7Q GPS Module.
 * TX power up to 27dBm, RX sensitivity down to -139dBm@SF12, BW 125KHz.
-* Full LoRa Global bans support (EU433, CN470, IN865, EU868, US915, AU915, AS920, KR920, and AS923 ).
+* Full LoRa Global band support (EU433, CN470, IN865, EU868, US915, AU915, AS920, KR920, and AS923).
 * Housing with top cover, body, bottom cover with riveted motherboard standoff (the top acts as a heat-sink).
 * Includes Pi ready 'ID EEPROM', GPIO setup and device tree can be automatically configured from vendor information.
 
