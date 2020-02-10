@@ -11,7 +11,7 @@ section: Additional Information
 | `000001` | `02000000/7` | `02000000` - `03FFFFFF` | Private/experimental nodes | Local |
 | `000002` | `04000000/7` | `04000000` - `05FFFFFF` | Actility | World |
 | `000003` | `06000000/7` | `06000000` - `07FFFFFF` | Proximus | Europe |
-| `000004` | `08000000/7` | `08000000` - `09FFFFFF` | Swisscom | Europe |
+| `000004` | `08000000/7` | `08000000` - `09FFFFFF` | Swisscom | World |
 | `000005` | `0A000000/7` | `0A000000` - `0BFFFFFF` | _unassigned_ |  |
 | `000006` | `0C000000/7` | `0C000000` - `0DFFFFFF` | La Poste | Europe |
 | `000007` | `0E000000/7` | `0E000000` - `0FFFFFFF` | Bouygues Telecom | World |
@@ -155,3 +155,6 @@ section: Additional Information
 | `C00033` | `FC00CC00/22` | `FC00CC00` - `FC00CFFF` | HEIG-VD | Switzerland |
 | `C00034` | `FC00D000/22` | `FC00D000` - `FC00D3FF` | Unitymedia | Germany |
 | `C00035` | `FC00D400/22` | `FC00D400` - `FC00D7FF` | Paige Wireless | World |
+| `C00036` | `FC00D800/22` | `FC00D800` - `FC00DBFF` | Desarrollo de Infraestructura de Telecomunicaciones Peru (Infratel Peru) | Peru |
+| `C00037` | `FC00DC00/22` | `FC00DC00` - `FC00DFFF` | Alperia Fiber | Italy |
+| `C00038` | `FC00E000/22` | `FC00E000` - `FC00E3FF` | First Snow Co., Ltd | Republic of Korea |
