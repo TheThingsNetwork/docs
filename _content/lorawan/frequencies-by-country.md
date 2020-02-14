@@ -94,6 +94,7 @@ For discussions about the frequency plans in different countries, see the posts 
 | Equatorial Guinea
 | Eritrea
 | Estonia | EU863-870<br />EU433 | CEPT Rec. 70-03 |
+| Eswatini (formerly Swaziland) | EU863-870<br />EU433 | CRASA follows CEPT Rec. 70-03 |
 | Ethiopia
 
 ### F
@@ -277,7 +278,6 @@ For discussions about the frequency plans in different countries, see the posts 
 | Sri Lanka
 | Sudan
 | Suriname | US902-928 | |
-| Swaziland | EU863-870<br />EU433 | CRASA follows CEPT Rec. 70-03 |
 | Sweden | EU433 (CEPT 868MHz not implemented) | CEPT Rec. 70-03 |
 | Switzerland | EU863-870<br />EU433 | CEPT Rec. 70-03 |
 | Syria
