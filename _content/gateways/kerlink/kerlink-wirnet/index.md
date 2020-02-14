@@ -13,4 +13,4 @@ The [Kerlink Wirnet Station](http://www.kerlink.fr/en/products) is an industrial
 
 We have tested the device and although we have remarks about the somewhat older software that is being used, this device will do the job. A trained software engineer will be able to update the device using the software from The Things Network.
 
-![Kerlink LoRa IoT Station](image.png)
+![../Kerlink LoRa IoT Station](image.png)
