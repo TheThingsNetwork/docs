@@ -4,7 +4,7 @@ image: /gateways/kerlink/image.png
 section: Hardware
 redirect_from:
  - /draft/kerlink/
- - /kerlink/
+ - /kerlink/kerlink-wirnet
 ---
 
 # Kerlink Wirnet Station
