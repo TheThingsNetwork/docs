@@ -14,6 +14,9 @@ A lot of research is conducted on LoRa and LoRaWAN. This page is created to bett
 
 Title | Author | Journal/Proceedings | Year |
 | -------------------- | ---------- | ---------- | ------ |
+[Characterization of LoRa Point-to-Point Path-Loss: Measurement Campaigns and Modeling Considering Censored Data](https://ieeexplore.ieee.org/document/8902126) | G. Callebaut, and L. van der Perre | IEEE Internet of Things Journal | 2019 |
+[Cross-layer framework and optimization for efficient use of the energy budget of IoT Nodes](https://ieeexplore.ieee.org/document/8885739) | G. Callebaut, G. Ottoy and L. van der Perre | IEEE Wireless Communications and Networking Conference (WCNC), Marrakesh, Morocco, 2019, pp. 1-6 | 2019 |
+[A Deployable LPWAN Platform for Low-Cost and Energy-Constrained IoT Applications](https://www.mdpi.com/1424-8220/19/3/585) | B. Thoen, G. Callebaut, G. Luus and S. Wielandt |  Sensors - Internet of Things and Ubiquitous Sensing | 2019 |
 [Collision Resolution Protocol for Delay and Energy Efficient LoRa Networks](https://ieeexplore.ieee.org/document/8678478) | N. El Rachkidy, A. Guitton and M. Kaneko | IEEE Transactions on Green Communications and Networking | 2019 |
 [A Survey on LoRa Networking: Research Problems, Current Solutions and Open Issues](https://ieeexplore.ieee.org/document/8883217) |Jothi Prasanna Shanmuga Sundaram, Wan Du, Zhiwei Zhao| IEEE Communications Surveys and Tutorials | 2019 |
 [On the LoRa Modulation for IoT: Waveform Properties and Spectral Analysis](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8723130) | M. Chiani and A. Elzanaty | IEEE Internet of Things Journal | 2019 |
