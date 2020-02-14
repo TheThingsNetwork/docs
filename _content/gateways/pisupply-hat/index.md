@@ -1,5 +1,5 @@
 ---
-title: Pi Supply LoRa Gateway HAT
+title: Pi Supply Gateway HAT
 section: Hardware
 redirect_from:
  - /pisupply-hat/
