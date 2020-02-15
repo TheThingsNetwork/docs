@@ -60,3 +60,15 @@ This is definitely not recommended since you cannot recreate a gateway with the 
 
 If the TTIG is reset, only the WiFi and the LNS credentials will be deleted. It will retain its EUI and CUPS creds and will contact the CUPS server to obtain the LNS creds once the WiFi if configured.
 So reseting it (with the reset button) *will not affect* your registration of the gateway on the network.
+
+#### Q. I want to operate the gateway behind a firewall
+
+The following connections must be permitted in the firewall, the router address depends on your selected router in the Gateway configuration. 
+
+| IP Version | Protocol | Destination                                                  | Port | Description                  |
+| ---------- | -------- | :----------------------------------------------------------- | ---- | ---------------------------- |
+| IPv4       | UDP      | See [Router addresses](/docs/gateways/packet-forwarder/semtech-udp.html#router-addresses) for your region | 1700 | Semtech UDP Packet Forwarder |
+| IPv4       | TCP      | lns.eu.thethings.network<br />lns.us.thethings.network       | 443  | LNS                          |
+| IPv4       | TCP      | rjs.sm.tc                                                    | 9191 | CUPS                         |
+| IPv4       | TCP      | mh.sm.tc                                                     | 7007 | CUPS Backup                  |
+
