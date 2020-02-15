@@ -65,11 +65,10 @@ So reseting it (with the reset button) *will not affect* your registration of th
 
 The following connections must be permitted in the firewall, the router address depends on your selected router in the Gateway configuration. 
 
-| IP Version | Protocol | Destination                                                  | Port | Description                  |
-| ---------- | -------- | :----------------------------------------------------------- | ---- | ---------------------------- |
-| IPv4       | UDP      | See [Router addresses](/docs/gateways/packet-forwarder/semtech-udp.html#router-addresses) for your region | 1700 | Semtech UDP Packet Forwarder |
-| IPv4       | TCP      | lns.eu.thethings.network<br />lns.us.thethings.network       | 443  | LNS                          |
-| IPv4       | TCP      | rjs.sm.tc                                                    | 9191 | CUPS                         |
-| IPv4       | TCP      | mh.sm.tc                                                     | 7007 | CUPS Backup                  |
-| IPv4       | UDP      | your DNS server(s)                                           | 53   | DNS                          |
+| IP Version | Protocol | Destination                                            | Port | Description |
+| ---------- | -------- | :----------------------------------------------------- | ---- | ----------- |
+| IPv4       | TCP      | lns.eu.thethings.network<br />lns.us.thethings.network | 443  | LNS         |
+| IPv4       | TCP      | rjs.sm.tc                                              | 9191 | CUPS        |
+| IPv4       | TCP      | mh.sm.tc                                               | 7007 | CUPS Backup |
+| IPv4       | UDP      | your DNS server(s)                                     | 53   | DNS         |
 
