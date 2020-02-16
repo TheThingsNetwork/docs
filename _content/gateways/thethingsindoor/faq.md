@@ -63,7 +63,7 @@ So reseting it (with the reset button) *will not affect* your registration of th
 
 #### Q. I want to operate the gateway behind a firewall
 
-The following connections must be permitted in the firewall, the router address depends on your selected router in the Gateway configuration. 
+The following connections must be permitted in the firewall, the LNS address depends on your selected router in the Gateway configuration. 
 
 | IP Version | Protocol | Destination                                            | Port | Description |
 | ---------- | -------- | :----------------------------------------------------- | ---- | ----------- |
