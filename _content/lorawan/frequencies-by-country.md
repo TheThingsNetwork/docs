@@ -179,7 +179,6 @@ For discussions about the frequency plans in different countries, see the posts 
 
 | Country | Frequency Plan | Regulatory document |
 | --- | --- | --- |
-| Macedonia (FYROM) | EU863-870<br />EU433 | CEPT Rec. 70-03 |
 | Madagascar | EU863-870<br />EU433 | CRASA follows CEPT Rec. 70-03 |
 | Malawi | EU863-870<br />EU433 | CRASA follows CEPT Rec. 70-03 |
 | Malaysia | AS920-923 ("AS1") | |
@@ -211,6 +210,7 @@ For discussions about the frequency plans in different countries, see the posts 
 | Nicaragua
 | Niger
 | Nigeria
+| North Macedonia | EU863-870<br />EU433 | CEPT Rec. 70-03 |
 | North Korea
 | Norway | unknown, limited CEPT | CEPT Rec. 70-03 |
 
