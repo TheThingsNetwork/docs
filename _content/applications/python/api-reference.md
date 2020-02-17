@@ -111,7 +111,7 @@ client.set_close_callback(close_callback)
 Sends a downlink to the device.
 
 ```python
-client.send(dev_id, payload, port=1, confirmation=False, schedule="replace")
+client.send(dev_id, payload, port=1, conf=False, sched="replace")
 ```
 
 * `dev_id`: **string** the ID of the device which will receive the message.
@@ -125,8 +125,8 @@ In case it's a **dictionary** with fields, please make sure the **encoder** func
 ![Screenshot of an encoder function in the console](3-encoder-function.png)
 
 * `port`: **int** the port of the device to which the message will be sent.
-* `confirmation`: **boolean** this boolean indicates if you wish to receive a confirmation after sending the downlink message.
-* `schedule`: **string** this string provides the type of schedule on which the message should be sent. It can take the following values: `first`, `last`, `replace`.
+* `conf`: **boolean** this boolean indicates if you wish to receive a confirmation after sending the downlink message.
+* `sched`: **string** this string provides the type of schedule on which the message should be sent. It can take the following values: `first`, `last`, `replace`.
 
 ### UplinkMessage
 
