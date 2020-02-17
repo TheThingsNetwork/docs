@@ -31,14 +31,14 @@
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-02-14T12:47:56+00:00" />
+<meta property="article:published_time" content="2020-02-17T08:25:44+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="twitter:title" content="API Reference" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"description":"API Reference","headline":"API Reference","dateModified":"2020-02-14T12:47:56+00:00","datePublished":"2020-02-14T12:47:56+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/applications/python/api-reference.html"},"url":"https://www.thethingsnetwork.org/docs/applications/python/api-reference.html","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"@context":"https://schema.org"}</script>
+{"description":"API Reference","headline":"API Reference","dateModified":"2020-02-17T08:25:44+00:00","datePublished":"2020-02-17T08:25:44+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/applications/python/api-reference.html"},"url":"https://www.thethingsnetwork.org/docs/applications/python/api-reference.html","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -268,7 +268,7 @@
 </ul>
 <h3 id="send">send</h3>
 <p>Sends a downlink to the device.</p>
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">client</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">dev_id</span><span class="p">,</span> <span class="n">payload</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">confirmation</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">schedule</span><span class="o">=</span><span class="s">"replace"</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">client</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">dev_id</span><span class="p">,</span> <span class="n">payload</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">conf</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">sched</span><span class="o">=</span><span class="s">"replace"</span><span class="p">)</span>
 </code></pre>
 </div>
 <ul>
@@ -282,8 +282,8 @@
 <img src="3-encoder-function.png" alt="Screenshot of an encoder function in the console" /></p>
 <ul>
   <li><code class="highlighter-rouge">port</code>: <strong>int</strong> the port of the device to which the message will be sent.</li>
-  <li><code class="highlighter-rouge">confirmation</code>: <strong>boolean</strong> this boolean indicates if you wish to receive a confirmation after sending the downlink message.</li>
-  <li><code class="highlighter-rouge">schedule</code>: <strong>string</strong> this string provides the type of schedule on which the message should be sent. It can take the following values: <code class="highlighter-rouge">first</code>, <code class="highlighter-rouge">last</code>, <code class="highlighter-rouge">replace</code>.</li>
+  <li><code class="highlighter-rouge">conf</code>: <strong>boolean</strong> this boolean indicates if you wish to receive a confirmation after sending the downlink message.</li>
+  <li><code class="highlighter-rouge">sched</code>: <strong>string</strong> this string provides the type of schedule on which the message should be sent. It can take the following values: <code class="highlighter-rouge">first</code>, <code class="highlighter-rouge">last</code>, <code class="highlighter-rouge">replace</code>.</li>
 </ul>
 <h3 id="uplinkmessage">UplinkMessage</h3>
 <p>This type of object is constructed dynamically from the message received by the client, so this means some attributes can change from one message to another. Here are some constant attributes usually found in UplinkMessage objects:</p>
