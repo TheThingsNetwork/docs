@@ -6,7 +6,7 @@ section: Hardware
 
 # iBTS
 
-![Kerlink iBTS](ibts-gw.png =200x)
+<img src="ibts-gw.png" alt="Kerlink iBTS" width="200"/>
 
 The Wirnet iBTS is the successor of the Wirnet Station. It is based on Semtech's gateway reference design and can be used for GPS-free geolocalization services.
 
