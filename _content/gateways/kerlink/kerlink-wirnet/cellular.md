@@ -11,8 +11,8 @@ It is possible to connect the Kerlink to a GPRS/3G connection. This may be usefu
 
 It is possible to configure the GPRS/3G connection without logging into the gateway. This can be done in the same way as the packet forwarder was installed. An example dota file which should be copied to a flash drive is provided here. This dota will configure the gateway to use the `internet` APN and use a blank username and a blank password. This dota also applies the fix to allow blank login details for gprs.
 
-* Download [dota_gprs_apn_internet_nopw.tar.gz](https://raw.githubusercontent.com/TheThingsNetwork/kerlink-station-firmware/master/dota/dota_gprs_apn_internet_nopw.tar.gz) and copy it to a USB flash drive without extracting it.
-* Dowload [produsb_wirnet_v3.6.zip](https://raw.githubusercontent.com/TheThingsNetwork/kerlink-station-firmware/master/dota/produsb_wirnet_v3.6.zip) and extract it to the flash drive.
+* Download [dota_gprs_apn_internet_nopw.tar.gz](https://raw.githubusercontent.com/TheThingsNetwork/kerlink-station-firmware/legacy/dota/dota_gprs_apn_internet_nopw.tar.gz) and copy it to a USB flash drive without extracting it.
+* Dowload [produsb_wirnet_v3.6.zip](https://raw.githubusercontent.com/TheThingsNetwork/kerlink-station-firmware/legacy/dota/produsb_wirnet_v3.6.zip) and extract it to the flash drive.
 * Plug the USB flash drive into the gateway and wait for the dota to be installed.
 
 The configuration files needed to get gprs/3G to work are inside the dota archive. You can modify them with your settings before installing the dota on the gateway.
