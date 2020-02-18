@@ -12,8 +12,8 @@ zindex: 800
 ## Packet forwarders
 
 Multiple packet forwarders are supported by the Kerlink gateway to forward data to TTN:
-* [Kerlink Semtech Packet Forwarder (SPF)](https://raw.githubusercontent.com/TheThingsNetwork/kerlink-station-firmware/master/dota/dota_spf_3.1.0-klk16_4.1.3-klk8_wirnet_ttn.tar.gz) - uses UDP to forward data to a single LoRaWAN network server
-* [Poly Packet Forwarder](https://github.com/TheThingsNetwork/kerlink-station-firmware/blob/master/dota/dota_thethingsnetwork_v1.3_EU.tar.gz) - can forward to multiple LoRaWAN network servers using UDP
+* [Kerlink Semtech Packet Forwarder (SPF)](https://github.com/TheThingsNetwork/kerlink-wirnet-firmware/tree/legacy/dota) - uses UDP to forward data to a single LoRaWAN network server
+* [Poly Packet Forwarder](https://github.com/TheThingsNetwork/kerlink-wirnet-firmware/blob/legacy/dota/dota_thethingsnetwork_v1.3_EU.tar.gz) - can forward to multiple LoRaWAN network servers using UDP
 * [Multi-protocol Packet Forwarder](https://github.com/kersing/packet_forwarder) - can forward to multiple LoRaWAN network servers using either UDP or MQTT
 * Kerlink Common Packet Forwarder - uses UDP to forward packets to the LoRaWAN network server, but stores a buffer of packets on the gateway when the internet connection to the network server is unavailable. It sends these buffered packets when the connection is restored. This can cause downlink messages from the network server to be late and confuse application layer algorithms as well as Adaptive Data Rate.
 
@@ -24,9 +24,9 @@ The recommended packet forwarder is the Kerlink SPF one as this is the most wide
 You must be running Kerlink firmware v3.1 or later. If you are unsure, follow the steps to upgrade the firmware.
 
 * Format a USB flash drive as FAT32.
-* Download `produsb_wirnet_v3.6.zip` from [here](https://raw.githubusercontent.com/TheThingsNetwork/kerlink-station-firmware/master/dota/produsb_wirnet_v3.6.zip).
+* Download `produsb_wirnet_v3.6.zip` from [here](https://raw.githubusercontent.com/TheThingsNetwork/kerlink-station-firmware/legacy/dota/produsb_wirnet_v3.6.zip).
 * Extract `produsb_wirnet_v3.6.zip` to the flash drive, making sure the only files on the flash drive is `produsb.sh` and `produsb_wirnet_v3.6.md5`.
-* Download `dota_spf_3.1.0-klk16_4.1.3-klk8_wirnet_ttn.tar.gz` from [here](https://raw.githubusercontent.com/TheThingsNetwork/kerlink-station-firmware/master/dota/dota_spf_3.1.0-klk16_4.1.3-klk8_wirnet_ttn.tar.gz).
+* Download `dota_spf_3.1.0-klk16_4.1.3-klk8_wirnet_ttn.tar.gz` from [here](https://raw.githubusercontent.com/TheThingsNetwork/kerlink-station-firmware/legacy/dota/dota_spf_3.1.0-klk16_4.1.3-klk8_wirnet_ttn.tar.gz).
 * Copy `dota_spf_3.1.0-klk16_4.1.3-klk8_wirnet_ttn.tar.gz` to the flash drive without extracting it.
 * Safely remove the USB flash drive from your computer.
 * Make sure your Kerlink gateway is booted up. The safest is to wait two minutes after you powered it up.
