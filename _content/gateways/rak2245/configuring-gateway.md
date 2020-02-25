@@ -117,7 +117,7 @@ Once Wi-Fi AP Mode has been disabled by choosing Item 2, you can now then connec
 * Enter also the password. Just leave it empty if None.
 ![Figure 18: Password of the Wi-Fi](images/18_wifi_password.png)
 
-> Please ensure to input the correct Wi-Fi SSID and Password or you will not be able to connect to the gateway again via SSH in Wi-Fi AP Mode. If stuck in this situation, please follow this procedure listed in the FAQs document applicable for all Raspberry Pi based gateways to work again in Wi-Fi AP mode.
+> Please ensure to input the correct Wi-Fi SSID and password or you will not be able to connect to the RAK7244C again via SSH in Wi-Fi AP Mode. If stuck in this situation, please follow the procedure list [here](https://doc.rakwireless.com/rak7244c-lorawan----developer-gateway/configuring-the-gateway#reverting-to-wi-fi-ap-mode)
 
 ### Connect through Ethernet
 If you want to connect to router through Ethernet Cable, do the following steps:
