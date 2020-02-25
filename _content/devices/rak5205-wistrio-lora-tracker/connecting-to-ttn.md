@@ -14,7 +14,7 @@ The Things Network is about enabling low power devices to be used in long range 
 
 ### Registering Device
 
->**Note** In this section, it is assumed that you have already successfully connected your RAK LoRa® Gateways to The Things Network (TTN). If not, refer to the individual documentations of all the RAK LoRAWAN™ Gateways through [here](https://doc.rakwireless.com/).
+>**Note** In this section, it is assumed that you have already successfully connected your RAK LoRa® Gateways to The Things Network (TTN). If not, refer to the individual documentation of all the RAK LoRAWAN™ Gateways through [here](https://doc.rakwireless.com/).
 
 **3**.Now, go to the [**The Things Network (TTN) Website**](https://www.thethingsnetwork.org/) and log on.
 
@@ -58,7 +58,7 @@ at+set_config=lora:dev eui:XXXX
 
 ![Figure 9: Device Overview in TTN](images/ttndeviceoverview.png)
 
-Depending on which authentication method you want to use please proceed to either the **OTAA mode** or **ABP mode** section.
+When you connect the RAK5205 Wistrio LoRa® Tracker to a LoRaWAN Gateway, we need some amount of security and trust to be established amongst them. There are two connection modes, and we distinguish between them using the criteria of security and ease of implementation. These are the **Over-The-Air Activation (OTAA)** and **Activation By Personalization (ABP)**.
 
 ### OTAA Mode
 
@@ -135,7 +135,7 @@ at+set_config=lora:region:XXX
 ```
 at+set_config=lora:join_mode:1
 ```
-![Figure 18: Setting of LoRa® Mode and Device Address](images/ttnabpfreqmode.png)
+![Figure 18: Setting of Region LoRa® Mode](images/ttnabpfreqmode.png)
 ```
 at+set_config=lora:dev_addr:XXXX
 ```
@@ -152,6 +152,8 @@ at+set_config=lora:apps_key:XXXX
 at+join
 ```
 ![Figure 20: Joining in ABP Mode](images/tnnabpjoin.png)
+
+>**Note:** It is actually unnecessary to join in ABP mode. But, it is a good practice to set this AT Command to validate the parameters set for ABP Mode.
 
 **5**.You can test the connection by sending an uplink frame. Use the following as an example:
 ```
