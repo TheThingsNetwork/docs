@@ -6,6 +6,8 @@ zindex: 600
 
 The purpose of this document is to demonstrate on how to configure the RAK811 thru the use of AT Commands via a Serial Port Tool running in your Windows PC. The list below shows the AT Commands available for use:
 
+>Note: It is highly recommended to use our own RAK Serial Port Tool for its built-in AT Commands for your convenience.
+
 | AT Command | Description |
 | --- | --- |
 | at+version | Get the current firmware version number. |

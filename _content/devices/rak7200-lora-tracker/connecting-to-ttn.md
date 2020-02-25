@@ -4,145 +4,168 @@ zindex: 500
 ---
 # Connecting to The Things Network (TTN)
 
-In this section, we will be connecting the RAK7200 LoRa Tracker to The Things Network (TTN). If you don't have an account yet, head on to [**The Things Network**] (https://www.thethingsnetwork.org/) website and create one. Once done, Log in to your account and go to the console which can be found here:
+The Things Network is about enabling low power devices to be used in long range gateways that connect to an open-source, decentralized network and exchange data with Applications. Learn more about the Things Network [**here**](https://www.thethingsnetwork.org/docs/). In this section, we’ll show how to connect the RAK7200 Lora® Tracker to The Things Network (TTN).
 
-![Figure 1: The Things Network Home Page](images/ttnwelcome.jpg)
+**1**.First, connect the RAK7200 Lora® Tracker to your PC and open the **RAK Serial Port Tool**.
 
-### Adding Application
+**2**."**Select**" the appropriate COM port and click "**OPEN**" button same with the image shown below. Read more on how to interface your RAK7200 Lora® Tracker with your computer in this [document](https://doc.rakwireless.com/rak7200-lora---tracker/interfacing-with-rak7200-lora---tracker).
 
-**1**- Upon logging-in, choose **Application** and click "**add application**" as shown in the image below:
-
-![Figure 2: Application Page](images/addapplication.jpg)
-
-**2**- You should see a new window which asks for device credentials as seen in the image below. Fill in with the details with individual guides as follows:
-
-* **Application ID** - this will be the unique id of your application in the Network. Please note that characters should be in lower case, no spaces are allowed.
-* **Description** - this is a short and concise human readable description of your application.
-* **Application EUI** - this will be generated automatically by The Things Network for convenience.
-* **Handler Registration** - handler you want to register this application to.
-
-![Figure 3: Adding an Application](images/applicationdetails.jpg)
-
-**3**- After you fill in the necessary information, press the "Add application" button at the bottom of this page. If you see the following page, this means that you have successfully registered your application.
-
-
-![Figure 4: Application Overview](images/applicationoverview.jpg)
+![Figure 1: RAK7200 Serial Port Tool](images/rak7200serialport.jpg)
 
 ### Registering Device
 
-**1**- Scroll down until you see the Devices section, or you can also click the "**Devices**" button at the top. Then, click "**register device**".
+>**Note** In this section, it is assumed that you have already successfully connected your RAK LoRa® Gateways to The Things Network (TTN). If not, refer to the individual documentation of all the RAK LoRAWAN™ Gateways through [here](https://doc.rakwireless.com/).
 
-![Figure 5: Device Section](images/registerdevice.jpg)
+**3**.Now, go to the [**The Things Network (TTN) Website**](https://www.thethingsnetwork.org/) and log on.
 
-**2**- Fill-in the necessary details for the registration in the sample form in the image below together with the guide in each of the parameter needed.
+![Figure 2: The Things Network Homepage](images/ttnwelcome.jpg)
 
-![Figure 6: Add your Device](images/addingdevice.jpg)
+**4**.Choose "**Console**" located at the top right corner. Then, Click "**Application**".
 
-Here are the things that you should take note in registering your device:
+![Figure 3: TTN Console page](images/ttnconsole.png)
 
-* **Device ID** - this is the unique identifier for your RAK7200 LoRa Tracker in your application. You need to enter this manually.
-* **Device EUI** - this is the unique identifier for your device in the network. You can change it later, if you want.
->**Note:** Click the following icon and the Device EUI will be automatically generated. The App Key should be in auto generation mode by default.
+**5**.Press the "**add application**" button.
 
-**3**- Lastly, click the Register button. Now, your device is registered under the corresponding application.
+![Figure 4: TTN Applications Page](images/ttnaddapplication.png)
 
-![Figure 7: Device Overview](images/deviceoverview.jpg)
+**6**.Create your own Application by filling in the correct parameters.
+
+>**Note**: The Application ID is a unique combination of lower case, alphanumeric characters and nonconsecutive "-" and "_".
+
+![Figure 5: TTN Applications Page](images/ttnaddapplicationpage.png)
+
+**7**.Then, press the “**Add application**” button at the bottom of this page, and you can see the following page:
+
+![Figure 6: TTN Application Information Page](images/ttnapplicationinfo.png)
+
+**8**.At the middle of this page, you can find the box named “**DEVICES**” and click “**register device**”.
+
+![Figure 7: Registering Device in TTN](images/ttnregisterdevice.jpg)
+
+**9**.Fill in the "**Device ID**" . Click the icon in the “**Device EUI**”, then a code is generated automatically.
+* You can get the “**Device EUI**” of your RAK7200 Lora® Tracker with the following command, which will display all node parameters:
+```
+at+get_config=lora:status
+```
+* In case you have had The Things Network (TTN) generate a new “**Device EUI**”, you can use the command below to import it into the RAK7200 Lora® Tracker configuration parameters (XXXX is the Device_EUI you want to update):
+```
+at+set_config=lora:dev eui:XXXX
+```
+
+![Figure 8: Filling in the Device Information](images/ttndeviceinfo.png)
+
+**10**.Then press the “**Register**” button at the bottom of this page to finish.
+
+![Figure 9: Device Overview in TTN](images/ttndeviceoverview.png)
+
+When you connect the RAK7200 Lora® Tracker to a LoRaWAN Gateway, we need some amount of security and trust to be established amongst them. There are two connection modes, and we distinguish between them using the criteria of security and ease of implementation. These are the **Over-The-Air Activation (OTAA)** and **Activation By Personalization (ABP)**.
 
 ### OTAA Mode
 
-According to The Things Network, **Over-the-Air Activation (OTAA)** is the preferred and most secure way to connect with The Things Network. Thus it is chosen as the default method when registering a device.
+According to The Things Network (TTN), **Over-the-Air Activation (OTAA)** is the preferred and most secure way to connect with The Things Network (TTN). Thus, it is chosen as the default method when registering a device. For configuring it you need the following three parameters: **Device EUI, Application EUI and App Key**. You can get them all from the **Overview page**.
 
-![Figure 8: TTN OTAA Mode](images/ttn-otaa.jpg)
+![Figure 10: Device OTAA Parameters](images/ttnotaaparam.png)
 
-**1**- Take note of the **Device EUI**, **Application EUI** and the **App Key**
+Now, let us configure the RAK7200 Lora® Tracker to work in OTAA mode in the EU868 band, as an example.
 
-![Figure 9: TTN OTAA Parameters](images/otaa-param.jpg)
+>**Note** The default LoRa® working mode for the RAK7200 Lora® Tracker is LoRaWAN™ 1.0.2, while the default LoRa® join mode is OTAA, and the default LoRa® class is Class A.
 
->**Note:**Make sure your LoRa Tracker is still Connected to the RAK Serial Port Tool.
-
-**2**- Now, let's join in OTAA Mode and set your device to AU915 Frequency for example. The default LoRa work mode is LoRaWAN 1.0.2, the default LoRa join mode is OTAA, and the default LoRa class is Class A. For the full list of AT Commands [**here**](/quick-start/rak7200-lora-tracker/configuring-the-rak7200-lora-tracker-using-at-commands).
-
-* at+set_config=lora:join_mode:0 - set the join mode in OTAA.
-* at+set_config=lora:class:0 -set the LoRa Class to Class A.
-* at+set_config=lora:region:AU915 -this will set the frequency band to the 915Mhz for the AU region, you need to enter the corresponding frequency band for your location ( Check the corresponding frequency plan by country [**here**](https://www.thethingsnetwork.org/docs/lorawan/frequencies-by-country.html).
-
-![Figure 10: TTN OTAA Class and Frequency](images/otaaclassfreq.jpg)
-
-**3**- After , we need to set the Device EUI, Application EUI and the Application Key to our RAK7200. To do this, enter the following commands:
-
-* at+set_config=lora:dev_eui:XXX- where XXX is your Device EUI copied from TTN.
-* at+set_config=lora:app_eui:XXX- where XXX is your Application EUI copied from TTN.
-
-![Figure 11: TTN OTAA Device and App EUI](images/otaadevapp.jpg)
-
-** at+set_config=lora:app_key:XXX - where XXX is your Application Key copied from TTN.
-
-![Figure 12: TTN OTAA App Key](images/otaaappkey.jpg)
-
-**4**- This will perform OTAA (Over the air activation) and authenticate the node with TTN. It should now be registered and you can send and receive data. Finally reset the node via the Reset button. If there are no issues you should see a the following information in the Receiving window:
-
-![Figure 13: TTN OTAA Success](images/otaasuccess.jpg)
-
-**5**- Go to the Device Overview in the TTN and you can see that the status is now Green (Online). Now your RAK7200 is transmitting sensor data to TTN. You can see it in its raw form in TTN, by going to the Data tab:
-
-![Figure 14: TTN OTAA Data](images/ttnotaadata.jpg)
-
-### ABP Mode
-
-**1**- To join the ABP mode, go to device settings and switch the activation method to ABP.
-
-**2**- The Device Address, Network Session Key and App Session Key will be generated automatically by default.
-
-![Figure 15: TTN ABP](images/ttnabp.jpg)
-
-**3**- Save the mode change and return to the Device Overview page. You can copy the keys by pressing the button after the value fields marked red below:
-
-![Figure 16: TTN ABP Parameters](images/ttnabpparam.jpg)
-
-**4**- Now we need to update the RAK7200 configuration (mode and parameters). Open the Serial Tool and type the command below to change the region (in case you have not done so already):
+**1**.Using the RAK Serial Port Tool, set mode to **OTAA**, device class to **Class A** and your **LoRaWAN™ Region** to your correct frequency band, with the following set of commands below. Remember to replace XXX with the your LoRaWAN™ region, see this [link](https://www.thethingsnetwork.org/docs/lorawan/frequencies-by-country.html) for your frequency plan.
 ```
-at+set_config=lora:region:EU868
+at+set_config=lora:join_mode:0
 ```
-As you can see in Figure 3, as we were in the same region (EU868), there was no change.
-
-![Figure 17: TTN ABP Region Setup](images/abpregion.jpg)
-
-**5**- Change the mode to ABP with the command:
 ```
-at+set_config=lora:join_mode:1
+at+set_config=lora:class:0
+```
+```
+at+set_config=lora:region:XXX
+```
+![Figure 11: Setting of LoRa® Mode and Class](images/otaamodeclassfreq.png)
+
+**2**.Now that the modes are set, enter the parameters: : **Device EUI, Application EUI and App Key**. Use the commands below. Remember to replace the "**XXXX**" with the corresponding parameter value for your particular case:
+```
+at+set_config=lora:dev_eui:XXXX
+```
+```
+at+set_config=lora:app_eui:XXXX
+```
+```
+at+set_config=lora:app_key:XXXX
 ```
 
-![Figure 18: TTN ABP Join Mode Setup](images/abpjoinmode.jpg)
+![Figure 12: Setting of Frequency and Device EUI](images/otaadeveuiappeuiappkey.png)
 
-**6**- Now that the mode has been changed, enter the parameters: Device Address, Network Session Key, and Application Session Key. Use the commands below. Remember to replace the "X" with the corresponding parameter value for your particular case.
-```
-at+set_config=lora:dev_addr:X
-at+set_config=lora:nwks_key:X
-at+set_config=lora:apps_key:X
-```
-
-![Figure 19: RAK7200 ABP Parameters](images/rak7200abpparam.jpg)
-
-**7**- Finally execute the join command:
+**3**.Finally, execute the join command:
 ```
 at+join
 ```
 
-![Figure 20: TTN ABP Join Command](images/ttabpjoin.jpg)
+![Figure 13: Joining OTAA Mode](images/otaajoinmode.png)
 
-
-**8**- You can test the connection by sending an uplink frame. Use the following for example:
+**4**.Test the connection by sending an uplink frame. Use the following as an example:
 ```
 at+send=lora:1:12345678
 ```
+![Figure 14: Sending an Uplink Frame](images/otaasenddata.png)
 
-![Figure 21: TTN ABP Send Sample Frame](images/abptestsendfram.jpg)
+**5**.If you get a response in your TTN live data feed as in the figure below, then you are all set!
 
-If you get a response in your TTN live data feed as in the image below, then you are all set!
+![Figure 15: View Transmitted Data through TTN](images/otaadatatransmitted.png)
 
-![Figure 22: TTN ABP Data Sample View](images/ttnabpdataview.jpg)
+Great! That’s all about OTAA mode.
+
+### ABP Mode
+
+**Authentication By Personalisation (ABP)** is a LoRaWAN™ activation mode that enables manual configuration of encryption keys on the device and is capable of sending frames to RAK gateways without needing a 'handshake' procedure in exchanging keys unlike OTAA.
+
+This is a mode best used for testing environments.However, it is not recommended for production, as it is less secure. In this section, we will go through the steps in connecting to TTN using ABP mode.
+
+**1**.To start with, join the ABP mode by going to device settings then switch the activation method to ABP.
+
+![Figure 16: Switching the Activation Method to ABP](images/ttnabpmode.png)
+
+**2**.The **Device Address, Network Session Key** and **App Session Key** will be generated automatically by default.Save the mode change and return to the **Device Overview page**. You can copy the keys by pressing the button after the value fields marked in red in the image below:
+
+![Figure 17: Setting the ABP Parameters](images/ttnabpparam.png)
+
+**3**.Now, we need to update the RAK7200 Lora® Tracker configuration. Open the RAK Serial Port Tool and type the command below to set these parameters: **Activation Mode** to **ABP, Device Address, Network Session Key** and **Applicatio Session Key** and your **LoRaWAN™ Region** to your correct frequency band. Remember to replace XXX with the your LoRaWAN™ region, see this [link](https://www.thethingsnetwork.org/docs/lorawan/frequencies-by-country.html) for your frequency plan.
+```
+at+set_config=lora:region:XXX
+```
+```
+at+set_config=lora:join_mode:1
+```
+![Figure 18: Setting of Region LoRa® Mode](images/ttnabpfreqmode.png)
+```
+at+set_config=lora:dev_addr:XXXX
+```
+```
+at+set_config=lora:nwks_key:XXXX
+```
+```
+at+set_config=lora:apps_key:XXXX
+```
+![Figure 19: Setting of Network and Application Key](images/ttnabpdevaddrnwkskeyappskey.png)
+
+**4**.Then, join in ABP mode.
+```
+at+join
+```
+![Figure 20: Joining in ABP Mode](images/tnnabpjoin.png)
+
+>**Note:** It is actually unnecessary to join in ABP mode. But, it is a good practice to set this AT Command to validate the parameters set for ABP Mode.
+
+**5**.You can test the connection by sending an uplink frame. Use the following as an example:
+```
+at+send=lora:1:12345678
+```
+![Figure 21: Sending an Uplink Frame](images/ttnabpsenddata.png)
+
+Great! Your node should now work in ABP mode.
+
+![Figure 22: Sending Data to TTN from RAK7200 Lora® Tracker](images/ttnabpreceivedata.png)
 
 ### Optional Configurations
 You can also try other configurations which is supported in RAK7200 LoRa Tracker. Click through the guides provided below to learn more. Enjoy!
-* Connecting to [LoRaServer](https://doc.rakwireless.com/rak7200-lora-tracker/connect-to-loraserver)
-* [RAK7200 Data Analyzing](https://doc.rakwireless.com/rak7200-lora-tracker/analyzing-the-data-from-rak7200)
+* Connecting to [Chirpstack](https://doc.rakwireless.com/rak7200-lora---tracker/connect-to-chirpstack)
+* [RAK7200 Data Analyzing](https://doc.rakwireless.com/rak7200-lora---tracker/analyzing-the-data-from-rak7200)
