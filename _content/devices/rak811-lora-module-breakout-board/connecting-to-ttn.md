@@ -10,7 +10,7 @@ The Things Network (TTN) is about enabling low power devices to use long range g
 
 **2**.”**Select**” the appropriate COM port and click “**OPEN**” button same with the image shown below. Read more on how to interface your RAK811 LoRa Breakout Module with your computer in this [document](https://doc.rakwireless.com/rak811-lora---breakout-module/interfacing-with-rak811-lora-breakout-module). 
 
-![Figure 1: RAK811 Serial Port](images/serialportttn.png)
+![Figure 1: RAK811 Serial Port](images/serialportttn.jpg)
 
 >**Note:** In this section, it is assumed that you have connected your LoRa gateway with TTN correctly. If not, refer to the individual documentation of all the RAK LoRAWAN™ Gateways through [here](https://doc.rakwireless.com/).
 
