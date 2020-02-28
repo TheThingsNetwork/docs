@@ -7,8 +7,13 @@ section: Hardware
 # Kerlink
 
 Find the documentation on how to connect:
-- [Kerlink Wirnet Station](https://www.thethingsnetwork.org/docs/gateways/kerlink/kerlink-wirnet/)
-- [Kerlink iBTS](https://www.thethingsnetwork.org/docs/gateways/kerlink/kerlink-ibts/)
-- [Kerlink iFemtocell](https://www.thethingsnetwork.org/docs/gateways/kerlink/kerlink-ifemtocell/)
+- [Kerlink iStation](istation/)
+- [Kerlink iBTS](ibts/)
+- [Kerlink iFemtoCell](ifemtocell/)
+- [Kerlink iFemtoCell Evolution](ifemtocell-evolution/)
+
+Find the documentation on how to install and configure all KerOS gateways: [KerOS installation and configuration](keros/).
+
+Legacy product: [Kerlink Wirnet Station](station/)
 
 ![Kerlink logo](Kerlink_logo.jpg)
