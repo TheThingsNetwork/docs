@@ -38,6 +38,7 @@ Now, let’s start burning the bootloader into the RAK811 LoRa® Evaluation Boar
 ![Figure 4: Erase Data](images/erasedata.jpg)
 
 **9**.Press “**Open file**” and select the bootloader file in the pop-up window.
+
 **10**.Click the “**Download**” button to start the burning process.
 
 ![Figure 5: Firmware Downloading](images/downloadfirmware.jpg)
