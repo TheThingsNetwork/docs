@@ -6,7 +6,9 @@ zindex: 800
 # Device Firmware Setup
 
 **1**.Download the latest bootloader [here](https://downloads.rakwireless.com/en/LoRa/RAK7200-Tracker/Firmware/) in order to avoid potential problems.
+
 **2**.To start with the bootloader burning, download and install the **STM32CubeProgrammer** tool [here](https://www.st.com/content/st_com/en/products/development-tools/software-development-tools/stm32-software-development-tools/stm32-programmers/stm32cubeprog.html#overview)
+
 **3**.Plug in the provided Micro-USB cable into the RAK7200 LoRa® Tracker and insert it in your PC. We need to set the RAK7200 first to work in **Boot Mode**. Refer to the image below and do the following: Hold down the BOOT0 Button, then press the Reset Button for a couple of seconds. Release the Reset and the BOOT0 Button.
 
 ![Figure 1: RAK7200 Side Panel](images/rak7200buttonandusb.jpg)
