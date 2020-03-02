@@ -16,7 +16,6 @@ When using an outdoor antenna, please consider installing surge protection devic
 ## WiMood
 
 * [Ubiquiti Gigabit Ethernet Surge Protector](https://www.wimoodshop.nl/product/1095/Ubiquiti-Ethernet-Surge-Protector-Gen2)
-* [Lightning protection for antenna](http://www.wimoodshop.nl/product/82/Bliksembeveiliging-tot-2,4-GHz)
 
 ## Huber+Suhner
 
