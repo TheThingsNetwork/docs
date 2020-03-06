@@ -1,5 +1,5 @@
 ---
-title: Kerlink Wirnet Station
+title: Wirnet Station
 image: /gateways/kerlink/image.png
 section: Hardware
 redirect_from:
