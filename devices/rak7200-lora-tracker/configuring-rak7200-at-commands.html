@@ -31,14 +31,14 @@
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-03-02T17:06:30+00:00" />
+<meta property="article:published_time" content="2020-03-06T10:20:57+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="twitter:title" content="Configuring your RAK7200 Using AT Commands" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"description":"Configuring your RAK7200 Using AT Commands","headline":"Configuring your RAK7200 Using AT Commands","dateModified":"2020-03-02T17:06:30+00:00","datePublished":"2020-03-02T17:06:30+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/devices/rak7200-lora-tracker/configuring-rak7200-at-commands.html"},"url":"https://www.thethingsnetwork.org/docs/devices/rak7200-lora-tracker/configuring-rak7200-at-commands.html","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"@context":"https://schema.org"}</script>
+{"description":"Configuring your RAK7200 Using AT Commands","headline":"Configuring your RAK7200 Using AT Commands","dateModified":"2020-03-06T10:20:57+00:00","datePublished":"2020-03-06T10:20:57+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/devices/rak7200-lora-tracker/configuring-rak7200-at-commands.html"},"url":"https://www.thethingsnetwork.org/docs/devices/rak7200-lora-tracker/configuring-rak7200-at-commands.html","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -118,9 +118,9 @@
             <ul>
                 <li class=""><a href="/docs/devices/uno/">The Things Uno</a>
                 </li>
-                <li class=""><a href="/docs/devices/rak5205-wistrio-lora-tracker/">RAK5205 WisTrio LoRa Tracker</a>
+                <li class=""><a href="/docs/devices/rak5205-wistrio-lora-tracker/">RAK5205 WisTrio LoRa® Tracker</a>
                 </li>
-                <li class=""><a href="/docs/devices/rak7200-lora-tracker/">RAK7200 LoRa Tracker</a>
+                <li class=""><a href="/docs/devices/rak7200-lora-tracker/">RAK7200 LoRa® Tracker</a>
             <ul>
                 <li class=""><a href="/docs/devices/rak7200-lora-tracker/device-firmware-setup.html">Device Firmware Setup</a>
                 </li>
@@ -132,7 +132,9 @@
                 </li>
             </ul>
                 </li>
-                <li class=""><a href="/docs/devices/rak811-lora-module-breakout-board/">RAK811 WisDuo LoRa Module</a>
+                <li class=""><a href="/docs/devices/rak811-lora-module-breakout-board/">RAK811 LoRa® Breakout Module</a>
+                </li>
+                <li class=""><a href="/docs/devices/rak811-lora-evaluation-board/">RAK811 LoRa® Evaluation Board</a>
                 </li>
                 <li class=""><a href="/docs/devices/rak811-wisnode-lora-module/">RAK811 WisNode LoRa Module</a>
                 </li>
@@ -151,7 +153,10 @@
         <div class="panel">
           <div class="panel-body page-content">
             <h1 id="configuring-your-rak7200-using-at-commands">Configuring your RAK7200 Using AT Commands</h1>
-<p>The purpose of this document is to demonstrate on how to configure the RAK7200 LoRa Tracker thru the use of AT Commands via a Serial Port Tool running in your Windows PC. The list below shows the AT Commands available for use:</p>
+<p>The purpose of this document is to demonstrate on how to configure the RAK7200 LoRa® Tracker thru the use of AT Commands via a Serial Port Tool running in your Windows PC. The list below shows the AT Commands available for use:</p>
+<blockquote>
+  <p>Note: It is highly recommended to use our own RAK Serial Port Tool for its built-in AT Commands for your convenience.</p>
+</blockquote>
 <div class="table-responsive"><table class="table">
   <thead>
     <tr>
@@ -185,100 +190,100 @@
       <td>Stop boot mode and run as normal. It is valid when the device works in boot mode.</td>
     </tr>
     <tr>
-      <td>at+set_config=device:sleep:X</td>
-      <td>After Setting, the device will go to sleep mode or wake up imediately X: 0 - Wake Up, 1- Sleep</td>
+      <td>at+set_config=device:sleep:<strong>X</strong></td>
+      <td>After Setting, the device will go to sleep mode or wake up imediately<ul><li>X - 0: Wake-up, 1: Sleep</li></ul></td>
     </tr>
     <tr>
       <td>at+join</td>
-      <td>Start the join procedure for the LoRaWAN network</td>
+      <td>Start the join procedure for the LoRaWAN™ network</td>
     </tr>
     <tr>
-      <td>at+send=lora:X:YYY</td>
-      <td>Send an uplink with a custom payload: X : LoRa Frame Port Y : The data which you want to send. (Length limit is 50 bytes and the data must be in Hex Format)</td>
+      <td>at+send=lora:<strong>X</strong>:<strong>YYY</strong></td>
+      <td>Send an uplink with a custom payload: <ul><li>X: LoRa® Frame Port</li></ul><ul><li>Y: The data which you want to send. (Length limit is 50 bytes and the data must be in Hex Format)</li></ul></td>
     </tr>
     <tr>
-      <td>at+set_config=lora:work_mode:X</td>
-      <td>Set the Working Mode: X :  0 - LoRaWan, 1: LoRaP2P,  2: Test Mode</td>
+      <td>at+set_config=lora:work_mode:<strong>X</strong></td>
+      <td>Set the Working Mode:<ul><li>X -  0: LoRaWan™, 1: LoRaP2P,2: Test Mode</li></ul></td>
     </tr>
     <tr>
-      <td>at+set_config=lora:join_mode:X</td>
-      <td>Set the join mode for LoRaWAN. X definition: 0: OTAA, 1: ABP</td>
+      <td>at+set_config=lora:join_mode:<strong>X</strong></td>
+      <td>Set the join mode for LoRaWAN™.<ul><li>X - 0: OTAA, 1: ABP</li></ul></td>
     </tr>
     <tr>
-      <td>at+set_config=lora:class:X</td>
-      <td>Set the class for LoRa. X definition: 0: Class A, 1: Class B, 2: Class C</td>
+      <td>at+set_config=lora:class:<strong>X</strong></td>
+      <td>Set the class for LoRa®.<ul><li>X - 0: Class A, 1: Class B, 2: Class C</li></ul></td>
     </tr>
     <tr>
-      <td>at+set_config=lora:region:XXX</td>
-      <td>Set the Region for LoRa: X : Options - IN865, EU868, AU915, US915, KR920, AS923</td>
+      <td>at+set_config=lora:region:<strong>XXX</strong></td>
+      <td>Set the Region for LoRa®:<ul><li>X - Options: IN865, EU868, AU915, US915, KR920, AS923</li></ul></td>
     </tr>
     <tr>
-      <td>at+set_config=lora:confirm:X</td>
-      <td>Set the type of messages which will be sent out through LoRa. X definition: 0: unconfirm, 1: confirm</td>
+      <td>at+set_config=lora:confirm:<strong>X</strong></td>
+      <td>Set the type of messages which will be sent out through LoRa®.<ul><li>X - 0: unconfirm, 1: confirm</li></ul></td>
     </tr>
     <tr>
-      <td>at+set_config=lora:dev_eui:XXXX</td>
-      <td>Set the device EUI X : The Device EUI</td>
+      <td>at+set_config=lora:dev_eui:<strong>XXXX</strong></td>
+      <td>Set the device EUI <ul><li>XXXX - The Device EUI</li></ul></td>
     </tr>
     <tr>
-      <td>at+set_config=lora:app_eui:XXXX</td>
-      <td>Set the application EUI (for OTAA) X : The Application EUI</td>
+      <td>at+set_config=lora:app_eui:<strong>XXXX</strong></td>
+      <td>Set the application EUI (for OTAA) <ul><li>XXXX - The Application EUI</li></ul></td>
     </tr>
     <tr>
-      <td>at+set_config=lora:app_key:XXXX</td>
-      <td>Set the Application key for (for OTAA) X : The Application Key</td>
+      <td>at+set_config=lora:app_key:<strong>XXXX</strong></td>
+      <td>Set the Application key for (for OTAA) <ul><li>XXXX - The Application Key</li></ul></td>
     </tr>
     <tr>
-      <td>at+set_config=lora:dev_addr:XXXX</td>
-      <td>Set the Device Address (for ABP) X : The Device Address</td>
+      <td>at+set_config=lora:dev_addr:<strong>XXXX</strong></td>
+      <td>Set the Device Address (for ABP) <ul><li>XXXX - The Device Address</li></ul></td>
     </tr>
     <tr>
-      <td>at+set_config=lora:apps_key:XXXX</td>
-      <td>Set the Application session key (for ABP) X : The Application Session Session Key</td>
+      <td>at+set_config=lora:apps_key:<strong>XXXX</strong></td>
+      <td>Set the Application session key (for ABP) <ul><li>XXXX - The Application Session Session Key</li></ul></td>
     </tr>
     <tr>
-      <td>at+set_config=lora:nwks_key:XXXX</td>
-      <td>Set the network session key (for ABP) X : The Network Session Key</td>
+      <td>at+set_config=lora:nwks_key:<strong>XXXX</strong></td>
+      <td>Set the network session key (for ABP) <ul><li>XXXX - The Network Session Key</li></ul></td>
     </tr>
     <tr>
-      <td>at+set_config=lora:ch_mask:X:Y</td>
-      <td>Turn a certain channel on/off X : The Channel Number you want to toggle. You can check the channel number using the command : at+get_config=lora:channel Y : 0 - Off , 1 - On</td>
+      <td>at+set_config=lora:ch_mask:<strong>X</strong>:<strong>Y</strong></td>
+      <td>Turn a certain channel on/off <ul><li>X - The Channel Number you want to toggle. You can check the channel number using the command : at+get_config=lora:channel</li></ul><ul><li>Y - 0: Off, 1: On</li></ul></td>
     </tr>
     <tr>
-      <td>at+set_config=lora:dr:X</td>
-      <td>Set the DR of LoRa Node X : the number of DR. Generally, the value of X can be 0~5. More details, please check the LoRaWAN 1.0.2 specification.</td>
+      <td>at+set_config=lora:dr:<strong>X</strong></td>
+      <td>Set the DR of LoRa® Node <ul><li>X - the number of DR. Generally, the value of X can be 0~5. More details, please check the LoRaWAN™ 1.0.2 specification.</li></ul></td>
     </tr>
     <tr>
-      <td>at+set_config=lora:tx_power:X</td>
-      <td>Set the TX Power Level X : : The level of TX power. If you want to know the relationship between TX power level and dbm, please have a look at LoRaWAN 1.0.2 region specification</td>
+      <td>at+set_config=lora:tx_power:<strong>X</strong></td>
+      <td>Set the TX Power Level <ul><li>X - The level of TX power. If you want to know the relationship between TX power level and dbm, please have a look at LoRaWAN™ 1.0.2 region specification</li></ul></td>
     </tr>
     <tr>
-      <td>at+setconfig=lora:send_interval:X:Y</td>
-      <td>Set the time interval for sending data X : Enable/disable the mechanism for sending data in intervals. If X is set to 0, the device will not send data automatically. If X is set to 1, the device will send data every Y seconds. Y : Interval time in seconds. This parameter is only valid if X is set to 1.</td>
+      <td>at+setconfig=lora:send_interval:<strong>X</strong>:<strong>Y</strong></td>
+      <td>Set the time interval for sending data <ul><li>X - Enable/disable the mechanism for sending data in intervals. 0: the device will not send data automatically. 1: the device will send data every Y seconds.</li></ul><ul><li>Y - Interval time in seconds. This parameter is only valid if X is set to 1.</li></ul></td>
     </tr>
     <tr>
       <td>at+get_config=lora:status</td>
-      <td>It will return all of the current information of LoRa, except the LoRa Channel</td>
+      <td>It will return all of the current information of LoRa®, except the LoRa® Channel</td>
     </tr>
     <tr>
       <td>at+get_config=lora:channel</td>
-      <td>It will return the state of all LoRa channels, then you can see which channel is closed and which channel is open very clearly</td>
+      <td>It will return the state of all LoRa® channels, then you can see which channel is closed and which channel is open very clearly</td>
     </tr>
     <tr>
-      <td>at+set_config=lorap2p:XXX:Y:Z:A:B:C</td>
-      <td>Set the Parameters for LoRa P2P mode. This AT Command is valid when the work ode is LoRaP2P XXX : Frequency in Hz. Y : Spreading Factor, [6,7,8,9,10,11,12] Z : Bandwidth, 0 - 125kHz, 1 - 250kHz, 2 - 500kHz A : Coding Rate , 1 - 4/5, 2 - 4/6, 3 - 4/7, 4 - 4/8 B : Preamble Length, 5 - 65535 C : Power in dBm, 5-20</td>
+      <td>at+set_config=lorap2p:<strong>XXX</strong>:<strong>Y</strong>:<strong>Z</strong>:<strong>A</strong>:<strong>B</strong>:<strong>C</strong></td>
+      <td>Set the Parameters for LoRa® P2P mode. This AT Command is valid when the work ode is LoRaP2P <ul><li>XXX - Frequency in Hz.</li></ul><ul><li>Y - Spreading Factor, [6,7,8,9,10,11,12]</li></ul><ul><li>Z - Bandwidth, 0: 125kHz,1: 250kHz,2: 500kHz</li></ul><ul><li>A - Coding Rate, 1: 4/5,2: 4/6, 3: 4/7,4: 4/8</li></ul><ul><li>B - Preamble Length, 5 - 65535</li></ul><ul><li>C - Power in dBm, 5-20</li></ul></td>
     </tr>
     <tr>
-      <td>at+send=lorap2p:XXX</td>
-      <td>Send data through LoRaP2P. This AT command is valid when it works in LoRaP2P mode. XXX : Data in HEX</td>
+      <td>at+send=lorap2p:<strong>XXX</strong></td>
+      <td>Send data through LoRaP2P. This AT command is valid when it works in LoRaP2P mode.<ul><li>XXX - Data in HEX</li></ul></td>
     </tr>
     <tr>
-      <td>at+set_config=device:gps:X</td>
-      <td>Turn on or turn off GPS X : 0 - close, 1 - open, 2 - sleep, 3 - standby</td>
+      <td>at+set_config=device:gps:<strong>X</strong></td>
+      <td>Turn on or turn off GPS <ul><li>X - 0: close, 1: open, 2: sleep, 3: standby</li></ul></td>
     </tr>
     <tr>
-      <td>at+set_config=device:gps_timeout:X</td>
-      <td>Set the timeout of searching GPS satellite X : Time in seconds</td>
+      <td>at+set_config=device:gps_timeout:<strong>X</strong></td>
+      <td>Set the timeout of searching GPS satellite <ul><li>X - Time in seconds</li></ul></td>
     </tr>
   </tbody>
 </table></div>

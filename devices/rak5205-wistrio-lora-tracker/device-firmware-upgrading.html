@@ -31,14 +31,14 @@
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-03-02T17:06:30+00:00" />
+<meta property="article:published_time" content="2020-03-06T10:20:57+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="twitter:title" content="Device Firmware Upgrading" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"description":"Device Firmware Upgrading","headline":"Device Firmware Upgrading","dateModified":"2020-03-02T17:06:30+00:00","datePublished":"2020-03-02T17:06:30+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/devices/rak5205-wistrio-lora-tracker/device-firmware-upgrading.html"},"url":"https://www.thethingsnetwork.org/docs/devices/rak5205-wistrio-lora-tracker/device-firmware-upgrading.html","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"@context":"https://schema.org"}</script>
+{"description":"Device Firmware Upgrading","headline":"Device Firmware Upgrading","dateModified":"2020-03-06T10:20:57+00:00","datePublished":"2020-03-06T10:20:57+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/devices/rak5205-wistrio-lora-tracker/device-firmware-upgrading.html"},"url":"https://www.thethingsnetwork.org/docs/devices/rak5205-wistrio-lora-tracker/device-firmware-upgrading.html","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -118,7 +118,7 @@
             <ul>
                 <li class=""><a href="/docs/devices/uno/">The Things Uno</a>
                 </li>
-                <li class=""><a href="/docs/devices/rak5205-wistrio-lora-tracker/">RAK5205 WisTrio LoRa Tracker</a>
+                <li class=""><a href="/docs/devices/rak5205-wistrio-lora-tracker/">RAK5205 WisTrio LoRa® Tracker</a>
             <ul>
                 <li class=""><a href="/docs/devices/rak5205-wistrio-lora-tracker/device-firmware-setup.html">Device Firmware Setup</a>
                 </li>
@@ -130,9 +130,11 @@
                 </li>
             </ul>
                 </li>
-                <li class=""><a href="/docs/devices/rak7200-lora-tracker/">RAK7200 LoRa Tracker</a>
+                <li class=""><a href="/docs/devices/rak7200-lora-tracker/">RAK7200 LoRa® Tracker</a>
                 </li>
-                <li class=""><a href="/docs/devices/rak811-lora-module-breakout-board/">RAK811 WisDuo LoRa Module</a>
+                <li class=""><a href="/docs/devices/rak811-lora-module-breakout-board/">RAK811 LoRa® Breakout Module</a>
+                </li>
+                <li class=""><a href="/docs/devices/rak811-lora-evaluation-board/">RAK811 LoRa® Evaluation Board</a>
                 </li>
                 <li class=""><a href="/docs/devices/rak811-wisnode-lora-module/">RAK811 WisNode LoRa Module</a>
                 </li>
@@ -151,8 +153,8 @@
         <div class="panel">
           <div class="panel-body page-content">
             <h1 id="device-firmware-upgrading">Device Firmware Upgrading</h1>
-<p>If the firmware version of your RAK5205 WisTrio LoRa Tracker is newer than V3.0.0.0 or you have just burned the bootloader into RAK5205 WisTrio LoRa Tracker according to the Burning Bootloader into the Device section, you just need to burn the upgrade firmware according to the following steps now:</p>
-<p><strong>1</strong>- First, type the command to let the RAK5205 WisTrio LoRa Tracker work in boot mode.</p>
+<p>If the firmware version of your RAK5205 WisTrio LoRa Tracker is newer than V3.0.0.0 or you have just burned the bootloader into RAK5205 WisTrio LoRa Tracker according to the Burning Bootloader into the Device section, you just need to burn the upgraded firmware according to the following steps now:</p>
+<p><strong>1</strong>.First, type the command to let the RAK5205 WisTrio LoRa Tracker work in boot mode.</p>
 <div class="highlighter-rouge"><pre class="highlight"><code>at+set_config=device:boot
 </code></pre>
 </div>
@@ -160,18 +162,18 @@
   <p><strong>Note</strong> If you have just burned the bootloader by yourself according to the section 2, it works in boot mode now. If the current version of the RAK5205’s firmware is newer than V3.0.0.0, you need to set an AT command &lt;at+set_config=device:boot&gt; to let it work in boot mode</p>
 </blockquote>
 <p><img src="images/bootmode.jpg" alt="Figure 1: Entering Boot Mode" /></p>
-<p><strong>2</strong>- Download the RAK Upgrade Tool from the RAKwireless website <a href="https://downloads.rakwireless.com/en/LoRa/RAK612-LoRaButton/Tools/RAK%20LoRaButton%20Upgrade%20Tool%20V1.0.zip"><strong>here</strong></a> then, open the tool. Again, don’t forget to choose the correct port!</p>
+<p><strong>2</strong>.Download the RAK Upgrade Tool from the RAKwireless website <a href="https://downloads.rakwireless.com/en/LoRa/RAK612-LoRaButton/Tools/RAK%20LoRaButton%20Upgrade%20Tool%20V1.0.zip"><strong>here</strong></a> then, open the tool. Again, don’t forget to choose the correct port!</p>
 <p><img src="images/upgradetool.jpg" alt="Figure 2: RAK Upgrade Tool" /></p>
-<p><strong>3</strong>- Download the latest RAK7200 Firmware <a href="https://downloads.rakwireless.com/en/LoRa/WisTrio-LoRa-RAK5205/Firmware/"><strong>here</strong></a>. Click “<strong>Choose File</strong>” and choose the firmware you have just downloaded. Make sure you choose the one for your particular band:</p>
+<p><strong>3</strong>.Download the latest RAK7200 Firmware <a href="https://downloads.rakwireless.com/en/LoRa/WisTrio-LoRa-RAK5205/Firmware/"><strong>here</strong></a>. Click “<strong>Choose File</strong>” and choose the firmware you have just downloaded. Make sure you choose the one for your particular band:</p>
 <p><img src="images/firmwarechoosing.jpg" alt="Figure 3: Choosing the Correct Firmware file" /></p>
-<p><strong>4</strong>- Click <strong>“Start”</strong> to upload the Firmware and wait for a confirmation as shown in the image below. Uploading may take minutes.</p>
+<p><strong>4</strong>.Click <strong>“Start”</strong> to upload the Firmware and wait for a confirmation as shown in the image below. Uploading may take minutes.</p>
 <p><img src="images/success.jpg" alt="Figure 4: Successfully Upgraded Firmware" /></p>
 <h2 id="testing-the-installed-firmware">Testing the Installed Firmware</h2>
-<p><strong>1</strong>- Now, close the upgrade tool and open a serial port tool.</p>
+<p><strong>1</strong>.Now, close the upgrade tool and open a serial port tool.</p>
 <ul>
-  <li>We recommend you to use RAK serial port tool, because there are some ready AT commands in this tool and this will be very useful for you. You can get it from RAK website available for free at this <a href="http://docs.rakwireless.com/en/LoRa/RAK811/Tools/RAK_SERIAL_PORT_TOOL_V1.%202.1.zip"><strong>RAK directory</strong></a>.</li>
+  <li>We recommend you to use RAK Serial Port Tool, because there are some ready AT commands in this tool and this will be very useful for you. You can get it from RAK website available for free at this <a href="https://downloads.rakwireless.com/en/LoRa/Tools/"><strong>RAK directory</strong></a>.</li>
 </ul>
-<p><strong>2</strong>- Choose the correct COM port and set the baud rate to 115200. Then open the serial port and enter the AT command &lt;at+set_config=device:restart&gt; to restart.</p>
+<p><strong>2</strong>.Choose the correct COM port and set the baud rate to 115200. Then open the serial port and enter the AT command &lt;at+set_config=device:restart&gt; to restart.</p>
 <div class="highlighter-rouge"><pre class="highlight"><code>at+set_config=device:restart
 </code></pre>
 </div>
@@ -180,7 +182,7 @@
 <h3 id="optional-configurations">Optional Configurations</h3>
 <p>Aside from all the default processes done in the Device Firmware Setup and Device Firmware Upgrading, you can have the full liberty in customizing your own firmware by following the steps in the document linked below:</p>
 <ul>
-  <li><a href="https://doc.rakwireless.com/rak5205-wistrio-lora-tracker/customizing-firmware">Firmware Customizing</a></li>
+  <li><a href="https://doc.rakwireless.com/rak5205-rak7205-wistrio-lora-tracker/customizing-firmware">Firmware Customizing</a></li>
 </ul>
           </div>  
         </div>

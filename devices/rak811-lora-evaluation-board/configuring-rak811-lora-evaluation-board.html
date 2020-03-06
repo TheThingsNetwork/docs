@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <link rel="stylesheet" href="/docs/assets/css/main.css" />
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script>
+    (function(canonical) {
+      if (document.location.href.substr(0, document.location.href.length - document.location.hash.length) !== canonical) {
+        window.location.replace(canonical);
+      }
+    })('https://www.thethingsnetwork.org/docs/devices/rak811-lora-evaluation-board/configuring-rak811-lora-evaluation-board.html');
+    </script>
+    <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Configuring your RAK811 LoRa® Evaluation Board | The Things Network</title>
+<meta name="generator" content="Jekyll v3.4.5" />
+<meta property="og:title" content="Configuring your RAK811 LoRa® Evaluation Board" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Configuring your RAK811 LoRa® Evaluation Board" />
+<meta property="og:description" content="Configuring your RAK811 LoRa® Evaluation Board" />
+<link rel="canonical" href="https://www.thethingsnetwork.org/docs/devices/rak811-lora-evaluation-board/configuring-rak811-lora-evaluation-board.html" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/devices/rak811-lora-evaluation-board/configuring-rak811-lora-evaluation-board.html" />
+<meta property="og:site_name" content="The Things Network" />
+<meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-03-06T10:20:57+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
+<meta property="twitter:title" content="Configuring your RAK811 LoRa® Evaluation Board" />
+<meta name="twitter:site" content="@thethingsnetwrk" />
+<meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
+<script type="application/ld+json">
+{"description":"Configuring your RAK811 LoRa® Evaluation Board","headline":"Configuring your RAK811 LoRa® Evaluation Board","dateModified":"2020-03-06T10:20:57+00:00","datePublished":"2020-03-06T10:20:57+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/devices/rak811-lora-evaluation-board/configuring-rak811-lora-evaluation-board.html"},"url":"https://www.thethingsnetwork.org/docs/devices/rak811-lora-evaluation-board/configuring-rak811-lora-evaluation-board.html","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+    <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png">
+    <meta name="application-name" content="The Things Network">
+    <meta name="msapplication-tooltip" content="Tooltip">
+    <meta name="msapplication-config" content="https://ttnweb.azureedge.net/static/common/favicon/ieconfig.54334a5ee30c.xml">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-32.61b30f85680a.png" sizes="32x32">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-57.83b86c64dc82.png" sizes="57x57">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-76.7dcf8fa36dfc.png" sizes="76x76">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-96.27ac17adaa8b.png" sizes="96x96">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-120.e1526731335e.png" sizes="120x120">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-128.fabea041224c.png" sizes="128x128">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png" sizes="144x144">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png" sizes="152x152">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-180.fcd414307ca3.png" sizes="180x180">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-195.c55ce09d66da.png" sizes="195x195">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-228.bea53ec4b10b.png" sizes="228x228">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/smalltile.fabea041224c.png" sizes="128x128">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/mediumtile.3d42f7faac82.png" sizes="270x270">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
+    <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
+    <script src="/docs/assets/js/main.js"></script>
+  </head>
+  <body>
+    <div id="header"></div>
+    <div id="content">
+<div class="layout-page">
+  <!-- <div class="ttn-header ttn-header-small">
+    <div class="ttn-container container-fluid">
+      <h1>
+        <img src="/docs/assets/images/the-things-white.png" alt="⛅ The Things Network" />
+        <span>Learn</span>
+      </h1>
+    </div>
+  </div> -->
+  <div class="container-fluid ttn-container">
+    <div class="row page-top-nav">
+      <div class="col-sm-9">
+        <ul>
+          <li class="page-top-nav-crumb"><a href="http://www.thethingsnetwork.org/">Home</a></li>
+          <li class="page-top-nav-crumb"><a href="/docs/">Learn</a></li>
+                <li class=""><a href="/docs/lorawan/">LoRaWAN</a></li>
+                <li class="active"><a href="/docs/devices/">Devices</a></li>
+                <li class=""><a href="/docs/gateways/">Gateways</a></li>
+                <li class=""><a href="/docs/network/">Network</a></li>
+                <li class=""><a href="/docs/applications/">Applications</a></li>
+        </ul>
+      </div>
+      <div class="hidden-xs col-sm-3 text-right">
+        <a href="https://github.com/TheThingsNetwork/docs/edit/master/_content/devices/rak811-lora-evaluation-board/configuring-rak811-lora-evaluation-board.md" class="page-edit" data-proofer-ignore><i class="fa fa-github"></i> Edit <strong>configuring-rak811-lora-evaluation-board.md</strong></a>
+      </div>
+    </div>
+    <div class="row wrapper">
+      <div class="col-sm-3 side-nav">
+        <div class="panel page-side-nav">
+          <div class="panel-body">
+            <ul>
+              <li class=""><a href="/docs/devices/index.html"><h5>Devices</h5></a>
+            <ul>
+                <li class=""><a href="/docs/devices/registration.html">Device Registration</a>
+                </li>
+                <li class=""><a href="/docs/devices/bytes.html">Working with Bytes</a>
+                </li>
+                <li class=""><a href="/docs/devices/bestpractices.html">Best Practices</a>
+                </li>
+            </ul>
+              </li>
+            <li class="page-side-nav-section"><span>SDKs & Libraries</span>
+            <ul>
+                <li class=""><a href="/docs/devices/arduino/">Arduino</a>
+                </li>
+            </ul>
+            </li>
+            <li class="page-side-nav-section"><span>Hardware</span>
+            <ul>
+                <li class=""><a href="/docs/devices/uno/">The Things Uno</a>
+                </li>
+                <li class=""><a href="/docs/devices/rak5205-wistrio-lora-tracker/">RAK5205 WisTrio LoRa® Tracker</a>
+                </li>
+                <li class=""><a href="/docs/devices/rak7200-lora-tracker/">RAK7200 LoRa® Tracker</a>
+                </li>
+                <li class=""><a href="/docs/devices/rak811-lora-module-breakout-board/">RAK811 LoRa® Breakout Module</a>
+                </li>
+                <li class=""><a href="/docs/devices/rak811-lora-evaluation-board/">RAK811 LoRa® Evaluation Board</a>
+            <ul>
+                <li class=""><a href="/docs/devices/rak811-lora-evaluation-board/device-firmware-setup.html">Device Firmware Setup</a>
+                </li>
+                <li class=""><a href="/docs/devices/rak811-lora-evaluation-board/device-firmware-upgrading.html">Device Firmware Upgrading</a>
+                </li>
+                <li class="active"><a href="/docs/devices/rak811-lora-evaluation-board/configuring-rak811-lora-evaluation-board.html">Configuring your RAK811 LoRa® Evaluation Board</a>
+                </li>
+                <li class=""><a href="/docs/devices/rak811-lora-evaluation-board/connecting-to-ttn.html">Connecting to The Things Network (TTN)</a>
+                </li>
+            </ul>
+                </li>
+                <li class=""><a href="/docs/devices/rak811-wisnode-lora-module/">RAK811 WisNode LoRa Module</a>
+                </li>
+                <li class=""><a href="/docs/devices/node/">The Things Node</a>
+                </li>
+                <li class=""><a href="/docs/devices/lopy/">LoPy</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+            <!-- <li class="hidden-xs col-sm-2 page-toc page-affix"></li> --> 
+          </div>
+        </div> 
+      </div>
+      <div class="col-sm-9 page-body">
+        <div class="panel">
+          <div class="panel-body page-content">
+            <h1 id="configuring-your-rak811-lora-evaluation-board">Configuring your RAK811 LoRa® Evaluation Board</h1>
+<p>The purpose of this document is to demonstrate on how to configure the RAK811 thru the use of AT Commands via a Serial Port Tool running in your Windows PC. The list below shows the AT Commands available for use:</p>
+<blockquote>
+  <p>Note: It is highly recommended to use our own RAK Serial Port Tool for its built-in AT Commands for your convenience.</p>
+</blockquote>
+<div class="table-responsive"><table class="table">
+  <thead>
+    <tr>
+      <th>AT Command</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>at+help</td>
+      <td>This AT command can show all available AT commands of this module/product for you</td>
+    </tr>
+    <tr>
+      <td>at+version</td>
+      <td>Get the current firmware version number.</td>
+    </tr>
+    <tr>
+      <td>at+get_config=device:status</td>
+      <td>Get all information about the device’s hardware components and their current status.</td>
+    </tr>
+    <tr>
+      <td>at+set_config=device:restart</td>
+      <td>After set, the device will restart.</td>
+    </tr>
+    <tr>
+      <td>at+set_config=device:boot</td>
+      <td>Let the device work in boot mode</td>
+    </tr>
+    <tr>
+      <td>at+run</td>
+      <td>Stop boot mode and run as normal. It is valid when the device works in boot mode.</td>
+    </tr>
+    <tr>
+      <td>at+set_config=device:sleep:<strong>X</strong></td>
+      <td>After setting, the device will go to sleep mode or wake up immediately.<ul><li>X - 0: sleep, 1: wake-up</li></ul></td>
+    </tr>
+    <tr>
+      <td>at+set_config=device:gpio:<strong>X</strong>:<strong>Y</strong></td>
+      <td>Set a certain GPIO pin to high/low level. <ul><li>X - the pin number of a certain GPIO on RAK811 module.</li></ul><ul><li>Y - 0: low level, 1: high level.</li></ul></td>
+    </tr>
+    <tr>
+      <td>at+get_config=device:gpio:<strong>X</strong></td>
+      <td>Get a certain GPIO’s level. <ul><li>X - the pin number of a certain GPIO on RAK811 module.</li></ul></td>
+    </tr>
+    <tr>
+      <td>at+get_config=device:adc:<strong>X</strong></td>
+      <td>Get the ADC value. <ul><li>X - the pin number of the ADC on RAK811 module.</li></ul></td>
+    </tr>
+    <tr>
+      <td>at+set_config=device:iic:<strong>X</strong>:<strong>YY</strong>:<strong>ZZ</strong>:<strong>AAA</strong></td>
+      <td>Read data from I2C or write a data to I2C. <ul><li>X - 0: read, 1: write.</li></ul><ul><li>YY - device address, in HEX format.</li></ul><ul><li>ZZ - sensor’s register address, in HEX format.</li></ul><ul><li>AAA - if read, this parameter means the length you want to read. If write, this parameter means the data you want to write. It must be in HEX format too.</li></ul></td>
+    </tr>
+    <tr>
+      <td>at+set_config=device:uart_mode:<strong>X</strong>:<strong>Y</strong></td>
+      <td>Set the UART work mode. <ul><li>X - UART number on RAK811 module.</li></ul><ul><li> Y - 1: Passthrough mode.</li></ul><ul><li>Note: If you want to go back to configuration mode, enter +++in the serial port.</li></ul></td>
+    </tr>
+    <tr>
+      <td>at+set_config=device:uart:<strong>X</strong>:<strong>Y</strong></td>
+      <td>Set a certain UART’s Baud rate. <ul><li>X - the UART number</li></ul><ul><li>Y - the Baud rate value.</li></ul></td>
+    </tr>
+    <tr>
+      <td>at+send=uart:<strong>X</strong>:<strong>YYY</strong></td>
+      <td>Send data through UART. <ul><li>X - the UART number of RAK811 module</li></ul><ul><li>YYY - the data you want to send through UART</li></ul></td>
+    </tr>
+    <tr>
+      <td>at+join</td>
+      <td>Start to join LoRa® network</td>
+    </tr>
+    <tr>
+      <td>at+send=lora:<strong>X</strong>:<strong>YYY</strong></td>
+      <td>Send a customized data.<ul><li>X - LoRa® port </li></ul><ul><li>YYY - the data which you want to send. The limited length is 50 Bytes, and the data must be in HEX format.</li></ul></td>
+    </tr>
+    <tr>
+      <td>at+set_config=lora:work_mode:<strong>X</strong></td>
+      <td>Set the work mode for LoRa®.<ul><li>X - 0: LoRaWAN™, 1: LoRaP2P, 2: Test Mode.</li></ul></td>
+    </tr>
+    <tr>
+      <td>at+set_config=lora:join_mode:<strong>X</strong></td>
+      <td>Set the join mode for LoRaWAN™.<ul><li>X - 0: OTAA, 1: ABP</li></ul></td>
+    </tr>
+    <tr>
+      <td>at+set_config=lora:class:<strong>X</strong></td>
+      <td>Set the class for LoRa®.<ul><li>X - 0: Class A,1: Class B,2: Class C</li></ul></td>
+    </tr>
+    <tr>
+      <td>at+set_config=lora:region:<strong>XXX</strong></td>
+      <td>Set the region for LoRa®.<ul><li>XXX - one of the following items: EU868 EU433, CN470, IN865, EU868, AU915, US915, KR920, AS923.</li></ul></td>
+    </tr>
+    <tr>
+      <td>at+set_config=lora:confirm:<strong>X</strong></td>
+      <td>Set the type of messages which will be sent out through LoRa®.<ul><li>X - 0: unconfirm, 1: confirm</li></ul></td>
+    </tr>
+    <tr>
+      <td>at+set_config=lora:dev_eui:<strong>XXXX</strong></td>
+      <td>Set the device EUI for OTAA.<ul><li>XXXX - the device EUI.</li></ul></td>
+    </tr>
+    <tr>
+      <td>at+set_config=lora:app_eui:<strong>XXXX</strong></td>
+      <td>Set the application EUI for OTAA.<ul><li>XXXX - the application EUI.</li></ul></td>
+    </tr>
+    <tr>
+      <td>at+set_config=lora:app_key:<strong>XXXX</strong></td>
+      <td>Set the application key for OTAA.<ul><li>XXXX - the application key.</li></ul></td>
+    </tr>
+    <tr>
+      <td>at+set_config=lora:dev_addr:<strong>XXXX</strong></td>
+      <td>Set the device address for ABP.<ul><li>XXXX - the device address.</li></ul></td>
+    </tr>
+    <tr>
+      <td>at+set_config=lora:apps_key:<strong>XXXX</strong></td>
+      <td>Set the application session key for ABP.<ul><li>XXXX - the application session key.</li></ul></td>
+    </tr>
+    <tr>
+      <td>at+set_config=lora:nwks_key:<strong>XXXX</strong></td>
+      <td>Set the network session key for ABP.<ul><li>XXXX - the network session key.</li></ul></td>
+    </tr>
+    <tr>
+      <td>at+set_config=lora:ch_mask:<strong>X</strong>:<strong>Y</strong></td>
+      <td>Set a certain channel on or off.<ul><li>X - the channel number, and you can check which channel can be set before you set it.</li></ul><ul><li>Y - 0: off, 1: on</li></ul></td>
+    </tr>
+    <tr>
+      <td>at+set_config=lora:adr:<strong>X</strong></td>
+      <td>Open or close the ADR function of LoRa® Node.<ul><li>X - 0: Close ADR, 1: Open ADR.</li></ul></td>
+    </tr>
+    <tr>
+      <td>at+set_config=lora:dr:<strong>X</strong></td>
+      <td>Set the DR of LoRa® Node.<ul><li>X - the number of DR. Generally, the value of X can be 0~5. More details, please check the LoRaWAN™ 1.0.2 specification.</li></ul></td>
+    </tr>
+    <tr>
+      <td>at+set_config=lora:tx_power:<strong>X</strong></td>
+      <td>Set the TX power level.<ul><li>X - The level of TX power.</li></ul>If you want to know the relationship between TX power level and dbm, please have a look at LoRaWAN™ 1.0.2 region specification on this <a href="https://github.com/RAKWireless/Update-File/blob/master/LoRaWANRegionalParametersv1.0.2.pdf">link</a></td>
+    </tr>
+    <tr>
+      <td>at+get_config=lora:status</td>
+      <td>It will return all of the current information of LoRa®, except LoRa® channel.</td>
+    </tr>
+    <tr>
+      <td>at+get_config=lora:channel</td>
+      <td>It will return the state of all LoRa® channels, then you can see which channel is closed and which channel is open very clearly</td>
+    </tr>
+    <tr>
+      <td>at+set_config=lorap2p:<strong>XXX</strong>:<strong>Y</strong>:<strong>Z</strong>:<strong>A</strong>:<strong>B</strong>:<strong>C</strong></td>
+      <td>Set the parameters for LoRa® P2P mode. This AT command is valid when the work mode is ·LoRaP2P.<ul><li>XXX - Frequency in Hz.</li></ul><ul><li>Y - Spreading factor, [6, 7, 8, 9, 10, 11, 12].</li></ul><ul><li>Z - Bandwidth, 0: 125 kHz, 1: 250 kHz, 2: 500kHz.</li></ul><ul><li>A - Coding Rate, 1: 4/5, 2: 4/6, 3: 4/7, 4: 4/8.</li></ul><ul><li>B - Preamble Length, 5~65535.</li></ul><ul><li>C - Power in dbm, 5~20.</li></ul></td>
+    </tr>
+    <tr>
+      <td>at+send=lorap2p:<strong>XXX</strong></td>
+      <td>Send data through LoRaP2P. This AT command is valid when it works in LoRaP2P mode.<ul><li>XXX - the data in HEX.</li></ul></td>
+    </tr>
+  </tbody>
+</table></div>
+          </div>  
+        </div>
+        <div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="lightbox" tabindex="-1" role="dialog">
+  <div class="modal-dialog text-center" role="document" style="width:auto;padding:20px;">
+    <a href="https://ttnstaticfile.blob.core.windows.net/static/ttn/media/logo/ttn-logo.png"><img class="modal-content modal-body" src="https://ttnstaticfile.blob.core.windows.net/static/ttn/media/logo/ttn-logo.png" alt="Zoom" /></a>
+  </div>
+</div>
+<script src="/docs/assets/js/page.js"></script>
+    </div>
+    <div id="footer"></div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.min.js"></script>
+    <script src="https://ttnweb.azureedge.net/static/common/js/ttn-components.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill@7/dist/polyfill.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
+    <script src="https://ttnweb.azureedge.net/static/common/js/vue-navbar.js"></script>
+    <script src="https://ttnweb.azureedge.net/static/common/js/vue-footer.js"></script>
+    <script src="https://ttnweb.azureedge.net/static/common/js/ga.js"></script>
+  </body>
+</html>

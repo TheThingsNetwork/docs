@@ -31,14 +31,14 @@
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-03-02T17:06:30+00:00" />
+<meta property="article:published_time" content="2020-03-06T10:20:57+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="twitter:title" content="Connecting to The Things Network (TTN)" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"description":"Connecting to The Things Network (TTN)","headline":"Connecting to The Things Network (TTN)","dateModified":"2020-03-02T17:06:30+00:00","datePublished":"2020-03-02T17:06:30+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/devices/rak811-lora-module-breakout-board/connecting-to-ttn.html"},"url":"https://www.thethingsnetwork.org/docs/devices/rak811-lora-module-breakout-board/connecting-to-ttn.html","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"@context":"https://schema.org"}</script>
+{"description":"Connecting to The Things Network (TTN)","headline":"Connecting to The Things Network (TTN)","dateModified":"2020-03-06T10:20:57+00:00","datePublished":"2020-03-06T10:20:57+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/devices/rak811-lora-module-breakout-board/connecting-to-ttn.html"},"url":"https://www.thethingsnetwork.org/docs/devices/rak811-lora-module-breakout-board/connecting-to-ttn.html","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -118,21 +118,23 @@
             <ul>
                 <li class=""><a href="/docs/devices/uno/">The Things Uno</a>
                 </li>
-                <li class=""><a href="/docs/devices/rak5205-wistrio-lora-tracker/">RAK5205 WisTrio LoRa Tracker</a>
+                <li class=""><a href="/docs/devices/rak5205-wistrio-lora-tracker/">RAK5205 WisTrio LoRa® Tracker</a>
                 </li>
-                <li class=""><a href="/docs/devices/rak7200-lora-tracker/">RAK7200 LoRa Tracker</a>
+                <li class=""><a href="/docs/devices/rak7200-lora-tracker/">RAK7200 LoRa® Tracker</a>
                 </li>
-                <li class=""><a href="/docs/devices/rak811-lora-module-breakout-board/">RAK811 WisDuo LoRa Module</a>
+                <li class=""><a href="/docs/devices/rak811-lora-module-breakout-board/">RAK811 LoRa® Breakout Module</a>
             <ul>
                 <li class=""><a href="/docs/devices/rak811-lora-module-breakout-board/device-firmware-setup.html">Device Firmware Setup</a>
                 </li>
                 <li class=""><a href="/docs/devices/rak811-lora-module-breakout-board/device-firmware-upgrading.html">Device Firmware Upgrading</a>
                 </li>
-                <li class=""><a href="/docs/devices/rak811-lora-module-breakout-board/configuring-rak811breakoutboard.html">Configuring your RAK811 WisDuo LoRa Module</a>
+                <li class=""><a href="/docs/devices/rak811-lora-module-breakout-board/configuring-rak811breakoutboard.html">Configuring your RAK811 LoRa® Breakout Module</a>
                 </li>
                 <li class="active"><a href="/docs/devices/rak811-lora-module-breakout-board/connecting-to-ttn.html">Connecting to The Things Network (TTN)</a>
                 </li>
             </ul>
+                </li>
+                <li class=""><a href="/docs/devices/rak811-lora-evaluation-board/">RAK811 LoRa® Evaluation Board</a>
                 </li>
                 <li class=""><a href="/docs/devices/rak811-wisnode-lora-module/">RAK811 WisNode LoRa Module</a>
                 </li>
@@ -151,103 +153,131 @@
         <div class="panel">
           <div class="panel-body page-content">
             <h1 id="connecting-to-the-things-network-ttn">Connecting to The Things Network (TTN)</h1>
-<p>The Things Network is about enabling low power devices to use long range gateways to connect to an open-source, decentralized network to exchange data with Application. Learn more about the Things Network here.</p>
-<ul>
-  <li>First, connect RAK811 WisDuo LoRa Module with your PC and open the serial port tool on your PC.</li>
-  <li>Second, open the serial port by clicking the following button:</li>
-</ul>
-<p><img src="images/serialportttn.png" alt="Figure 1: RAK811 Serial Port" /></p>
+<p>The Things Network (TTN) is about enabling low power devices to use long range gateways to connect to an open-source, decentralized network to exchange data with Application. Learn more about the Things Network <a href="https://www.thethingsnetwork.org/">here</a>.</p>
+<p><strong>1</strong>. First, connect RAK811 LoRa Breakout Module to your PC and open the <strong>RAK Serial Port Tool</strong>.</p>
+<p><strong>2</strong>.”<strong>Select</strong>” the appropriate COM port and click “<strong>OPEN</strong>” button same with the image shown below. Read more on how to interface your RAK811 LoRa Breakout Module with your computer in this <a href="https://doc.rakwireless.com/rak811-lora---breakout-module/interfacing-with-rak811-lora-breakout-module">document</a>.</p>
+<p><img src="images/serialportttn.jpg" alt="Figure 1: RAK811 Serial Port" /></p>
 <blockquote>
-  <p><strong>Note:</strong> In this section, it is assumed that you have connected your LoRa gateway with TTN correctly. If not, please have a look  at the document of RAK LoRa Gateway.</p>
+  <p><strong>Note:</strong> In this section, it is assumed that you have connected your LoRa gateway with TTN correctly. If not, refer to the individual documentation of all the RAK LoRAWAN™ Gateways through <a href="https://doc.rakwireless.com/">here</a>.</p>
 </blockquote>
+<p><strong>3</strong>.Now, go to the <a href="https://www.thethingsnetwork.org/">The Things Network (TTN)</a> website ang click login.</p>
+<p><img src="images/ttnhomepage.jpg" alt="Figure 1: TTN Homepage Login" /></p>
+<p><strong>4</strong>.Choose “<strong>Console</strong>” located at the top right corner. Then, Click “<strong>Application</strong>”.</p>
+<p><img src="images/ttnlogin.png" alt="Figure 2: TTN Login" /></p>
+<p><strong>5</strong>.Press the “<strong>add application</strong>” button.
+<img src="images/ttnapplicationpage.png" alt="Figure 3: TTN Application Page" /></p>
+<p><strong>6</strong>.Create your own Application by filling in the correct parameters.</p>
+<blockquote>
+  <p><strong>Note:</strong> Your Device ID is a unique ID of lower case, alphanumeric characters and nonconsecutive - and _.</p>
+</blockquote>
+<p><img src="images/ttnparamaters.png" alt="Figure 4: TTN Parameters" /></p>
+<p><strong>7</strong>.Then, press the “<strong>Add application</strong>” button at the bottom of this page, and you can see the following page:</p>
+<p><img src="images/addapplication.png" alt="Figure 5: TTN Add Application" /></p>
+<p><strong>8</strong>.At the middle of this page, you can find the box named “<strong>DEVICES</strong>” and click “<strong>register device</strong>”.</p>
+<p><img src="images/adddevice.jpg" alt="Figure 5: TTN Add Device" /></p>
+<p><strong>9</strong>.Fill in the “<strong>Device ID</strong>” . Click the icon in the “<strong>Device EUI</strong>”, then a code is generated automatically.</p>
 <ul>
-  <li>Now go to the <a href="https://www.thethingsnetwork.org/">The Things Network</a> website ang click login. Fill in the necessary credentials and in the “<strong>Console</strong>” tab, pick “<strong>Application</strong>” as shown in the image below.</li>
-</ul>
-<p><img src="images/ttnlogin.jpg" alt="Figure 2: TTN Login" /></p>
-<ul>
-  <li>Press the “<strong>add application</strong>” button.</li>
-  <li>Create your own Application by filling up with correct contents.
-    <blockquote>
-      <p><strong>Note:</strong> Your Device ID is a unique ID of lower case, alphanumeric characters and nonconsecutive - and _.</p>
-    </blockquote>
+  <li>You can get the “<strong>Device EUI</strong>” of your RAK811 LoRa Breakout Module with the following command, which will display all node parameters:
+    <div class="highlighter-rouge"><pre class="highlight"><code>at+get_config=lora:status
+</code></pre>
+    </div>
+  </li>
+  <li>In case you have had The Things Network (TTN) generate a new “<strong>Device EUI</strong>”, you can use the command below to import it into the RAK811 LoRa Breakout Module configuration parameters (XXXX is the Device_EUI you want to update):
+    <div class="highlighter-rouge"><pre class="highlight"><code>at+set_config=lora:dev eui:XXXX
+</code></pre>
+    </div>
+    <p><img src="images/deviceEUI.png" alt="Figure 6: TTN DeviceEUI" /></p>
   </li>
 </ul>
-<p><img src="images/ttnparamaters.jpg" alt="Figure 3: TTN Parameters" /></p>
-<ul>
-  <li>Then press the “Add application” button at the bottom of this page, and you can see the following page:</li>
-</ul>
-<p><img src="images/addapplication.jpg" alt="Figure 4: TTN Add Application" /></p>
-<ul>
-  <li>At the middle of this page, you can find the box named “<strong>DEVICES</strong>”. Then, click “<strong>Register Device</strong>”.</li>
-</ul>
-<p><img src="images/adddevice.jpg" alt="Figure 5: TTN Add Device" /></p>
-<ul>
-  <li>Fill in the “<strong>Device ID</strong>” . Click the icon in the “<strong>Device EUI</strong>”, then a code is generated automatically. Then press the “<strong>Register</strong>” button at the bottom of this page to finish.</li>
-</ul>
-<p><img src="images/deviceEUI.jpg" alt="Figure 6: TTN DeviceEUI" /></p>
-<p>When you connect the RAK811 to a LoRa Gateway, we need some amount of security and trust to be established amongst them. There are two connection modes, and we distinguish between them using the criteria of security and ease of implementation. These are the Over-The-Air Activation (OTAA) and Activation By Personalization (ABP).</p>
-<h2 id="join-in-otaa-mode">Join in OTAA Mode</h2>
-<p>From the previous section, it can be seen that the default activation for TTN is OTAA. In joining OTAA, these three parameters are necessary: Device EUI, Application EUI and App Key.</p>
-<p><img src="images/ootaparameters.jpg" alt="Figure 7: OOTA Parameters" /></p>
+<p><strong>10</strong>.Then press the “<strong>Register</strong>” button at the bottom of this page to finish.</p>
+<p><img src="images/deviceoverview.png" alt="Figure 7: Device Overview" /></p>
+<p>When you connect the RAK811 LoRa Breakout Module to a LoRaWAN Gateway, we need some amount of security and trust to be established amongst them. There are two connection modes, and we distinguish between them using the criteria of security and ease of implementation. These are the <strong>Over-The-Air Activation (OTAA)</strong> and <strong>Activation By Personalization (ABP)</strong>.</p>
+<h3 id="otaa-mode">OTAA Mode</h3>
+<p>According to The Things Network (TTN), <strong>Over-the-Air Activation (OTAA)</strong> is the preferred and most secure way to connect with The Things Network (TTN). Thus, it is chosen as the default method when registering a device. For configuring it you need the following three parameters: <strong>Device EUI, Application EUI and App Key</strong>. You can get them all from the <strong>Overview page</strong>.</p>
+<p><img src="images/ootaparameters.png" alt="Figure 8: OOTA Parameters" /></p>
 <blockquote>
   <p><strong>Note:</strong> The default LoRa work mode is LoRaWAN 1.0.2, while the default LoRa join mode is OOTA, and the default LoRa Class is A.</p>
 </blockquote>
-<ul>
-  <li>If the join mode is not in OTAA, just set the LoRa join mode to OTAA and LoRa class to Class A. Open your RAK811 Firmware and type the following commands.</li>
-</ul>
-<p><img src="images/ootamodeandclass.jpg" alt="Figure 8: OOTA Mode and Class" /></p>
-<ul>
-  <li>Type the following AT command to set the: <strong>Frequency/Region to EU868, Device EUI, Application EUI and Application Key</strong>:</li>
-</ul>
-<p><img src="images/ootafrequencyanddeviceeui.jpg" alt="Figure 9: OOTA Frequency and DeviceEUI" /></p>
-<p><img src="images/ootaappkeyappeui.jpg" alt="Figure 10: OOTA Appkey and AppEUI" /></p>
-<ul>
-  <li>Then, join in OTAA mode.</li>
-</ul>
-<p><img src="images/joinoota.jpg" alt="Figure 11: Join OOTA" /></p>
-<ul>
-  <li>Joined Successfully! Now, try sending data from our RAK811 WisDuo LoRa Module to TTN.</li>
-</ul>
-<p><img src="images/ootasendingdata.jpg" alt="Figure 12: OOTA Sending Data" /></p>
-<ul>
-  <li>We can view the data sent from the RAK811 WisDuo LoRa Module to our The Things Network Application Data</li>
-</ul>
-<p><img src="images/ootadataviewing.jpg" alt="Figure 13: OOTA Data Viewing" /></p>
-<h2 id="join-in-abp-mode">Join in ABP Mode</h2>
-<p>To join the ABP mode, go to device settings and switch the activation method to ABP.</p>
-<p><img src="images/abpswitching.jpg" alt="Figure 14: ABP Switching" /></p>
-<ul>
-  <li>Set the Device Address, Network Session Key and App Session Key. These three parameters will be used on RAK811 WisDuo LoRa Module:</li>
-</ul>
-<p><img src="images/abpparameters.jpg" alt="Figure 15: ABP Parameters" /></p>
-<p>OK! Now, let’s join in ABP mode and set EU868 frequency as an example.</p>
-<ul>
-  <li>If the join mode is not in ABP, just set the LoRa join mode to ABP and LoRa class to Class A. Open your RAK811 Firmware and type the following commands</li>
-</ul>
-<p><img src="images/abpmodeclass.jpg" alt="Figure 16: ABP Mode and Class" /></p>
-<p>Type the following AT command to set the: <strong>Frequency/Region to EU868, Device Address, Network Session Key and App Session Key</strong>:</p>
-<p><img src="images/abpfreqanddevadd.jpg" alt="Figure 17: ABP Frequency and Device Address" /></p>
-<p><img src="images/abpnetworkandapplicationkey.jpg" alt="Figure 18: ABP Network and AppKey" /></p>
-<ul>
-  <li>Then, join in ABP mode.</li>
-</ul>
-<p><img src="images/abpjoin.jpg" alt="Figure 19: ABP Join" /></p>
+<p><strong>1</strong>.Using the RAK Serial Port Tool, set mode to <strong>OTAA</strong>, device class to <strong>Class A</strong> and your <strong>LoRaWAN™ Region</strong> to your correct frequency band, with the following set of commands below. Remember to replace <strong>XXX</strong> with the your LoRaWAN™ region, see this <a href="https://www.thethingsnetwork.org/docs/lorawan/frequencies-by-country.html">link</a> for your frequency plan.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>at+set_config=lora:join_mode:0
+</code></pre>
+</div>
+<div class="highlighter-rouge"><pre class="highlight"><code>at+set_config=lora:class:0
+</code></pre>
+</div>
+<div class="highlighter-rouge"><pre class="highlight"><code>at+set_config=lora:region:XXX
+</code></pre>
+</div>
+<p><img src="images/otaamodeclassfreq.png" alt="Figure 9 : OOTA Mode, Class and Frequency" /></p>
+<p><strong>2</strong>.Now that the modes are set, enter the parameters: : <strong>Device EUI, Application EUI and App Key</strong>. Use the commands below. Remember to replace the “<strong>XXXX</strong>” with the corresponding parameter value for your particular case:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>at+set_config=lora:dev_eui:XXXX
+</code></pre>
+</div>
+<div class="highlighter-rouge"><pre class="highlight"><code>at+set_config=lora:app_eui:XXXX
+</code></pre>
+</div>
+<div class="highlighter-rouge"><pre class="highlight"><code>at+set_config=lora:app_key:XXXX
+</code></pre>
+</div>
+<p><img src="images/otaadeveuiappeuiappkey.png" alt="Figure 10: OOTA Dev EUI, App EUI and App Key" /></p>
+<p><strong>3</strong>.Finally, execute the join command:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>at+join
+</code></pre>
+</div>
+<p><img src="images/otaajoinmode.png" alt="Figure 11: Join OOTA" /></p>
+<p><strong>4</strong>.Test the connection by sending an uplink frame. Use the following as an example:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>at+send=lora:1:12345678
+</code></pre>
+</div>
+<p><img src="images/otaasenddata.png" alt="Figure 12: OOTA Sending Data" /></p>
+<p><strong>5</strong>.If you get a response in your TTN live data feed as in the figure below, then you are all set!</p>
+<p><img src="images/ootadataviewing.png" alt="Figure 13: OOTA Data Viewing" /></p>
+<h3 id="abp-mode">ABP Mode</h3>
+<p><strong>Authentication By Personalisation (ABP)</strong> is a LoRaWAN™ activation mode that enables manual configuration of encryption keys on the device and is capable of sending frames to RAK gateways without needing a ‘handshake’ procedure in exchanging keys unlike OTAA.</p>
+<p>This is a mode best used for testing environments.However, it is not recommended for production, as it is less secure. In this section, we will go through the steps in connecting to TTN using ABP mode.</p>
+<p><strong>1</strong>.To start with, join the ABP mode by going to device settings then switch the activation method to ABP.</p>
+<p><img src="images/abpswitching.png" alt="Figure 14: ABP Switching" /></p>
+<p><strong>2</strong>.The <strong>Device Address, Network Session Key</strong> and <strong>App Session Key</strong> will be generated automatically by default.Save the mode change and return to the <strong>Device Overview page</strong>. You can copy the keys by pressing the button after the value fields marked in red in the image below:</p>
+<p><img src="images/abpparameters.png" alt="Figure 15: ABP Parameters" /></p>
+<p><strong>3</strong>.Now, we need to update the RAK811 LoRa Breakout Module configuration. Open the RAK Serial Port Tool and type the command below to set these parameters: <strong>Activation Mode</strong> to <strong>ABP, Device Address, Network Session Key</strong> and <strong>Applicatio Session Key</strong> and your <strong>LoRaWAN™ Region</strong> to your correct frequency band. Remember to replace XXX with the your LoRaWAN™ region, see this <a href="https://www.thethingsnetwork.org/docs/lorawan/frequencies-by-country.html">link</a> for your frequency plan.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>at+set_config=lora:region:XXX
+</code></pre>
+</div>
+<div class="highlighter-rouge"><pre class="highlight"><code>at+set_config=lora:join_mode:1
+</code></pre>
+</div>
+<p><img src="images/ttnabpfreqmode.png" alt="Figure 16: Setting of Region LoRa® Mode" /></p>
+<div class="highlighter-rouge"><pre class="highlight"><code>at+set_config=lora:dev_addr:XXXX
+</code></pre>
+</div>
+<div class="highlighter-rouge"><pre class="highlight"><code>at+set_config=lora:nwks_key:XXXX
+</code></pre>
+</div>
+<div class="highlighter-rouge"><pre class="highlight"><code>at+set_config=lora:apps_key:XXXX
+</code></pre>
+</div>
+<p><img src="images/ttnabpdevaddrnwkskeyappskey.png" alt="Figure 17: Setting of Network and Application Key" />
+Type the following AT command to set the: <strong>Frequency/Region to EU868, Device Address, Network Session Key and App Session Key</strong>:
+<strong>4</strong>.Then, join in ABP mode.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>at+join
+</code></pre>
+</div>
+<p><img src="images/tnnabpjoin.png" alt="Figure 18: Joining in ABP Mode" /></p>
 <blockquote>
-  <p><strong>Note:</strong> Actually, it is not necessary to join in ABP mode. But, you still need to set this ATcommand to validate the parameters set for ABP Mode.</p>
+  <p><strong>Note:</strong> It is actually unnecessary to join in ABP mode. But, it is a good practice to set this AT Command to validate the parameters set for ABP Mode.</p>
 </blockquote>
-<ul>
-  <li>Joined Successfully. Now, try sending data from our RAK811 WisDuo LoRa Module to TTN.</li>
-</ul>
-<p><img src="images/abpsend.jpg" alt="Figure 20: ABP Send Data" /></p>
-<ul>
-  <li>We can view the data sent from the RAK811 WisDuo LoRa Module to our The Things Network Application Data</li>
-</ul>
-<p><img src="images/abpdataview.jpg" alt="Figure 21: ABP View Data" /></p>
+<p><strong>5</strong>.You can test the connection by sending an uplink frame. Use the following as an example:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>at+send=lora:1:12345678
+</code></pre>
+</div>
+<p><img src="images/ttnabpsenddata.png" alt="Figure 19: Sending an Uplink Frame" /></p>
+<p>Great! Your node should now work in ABP mode.</p>
+<p><img src="images/ttnabpreceivedata.png" alt="Figure 20: Sending Data to TTN from RAK811" /></p>
 <h3 id="optional-configurations">Optional Configurations</h3>
-<p>You can also try other configurations which is supported in RAK811 WisDuo Module. Click through the guides provided below to learn more. Enjoy!</p>
+<p>You can also try other configurations which is supported in RAK811 LoRa Breakout Module. Click through the guides provided below to learn more. Enjoy!</p>
 <ul>
-  <li>Connecting to <a href="https://doc.rakwireless.com/rak811-wisduo-lora-module/connecting-to-loraserver">LoRaServer</a></li>
-  <li>LoRa <a href="https://doc.rakwireless.com/rak811-wisduo-lora-module/lora-p2p-mode">P2P Mode</a></li>
+  <li>Connecting to <a href="https://doc.rakwireless.com/rak811-lora---breakout-module/connecting-to-chirpstack">Chirpstack</a></li>
+  <li>LoRa <a href="https://doc.rakwireless.com/rak811-lora---breakout-module/lora-p2p-mode">P2P Mode</a></li>
 </ul>
           </div>  
         </div>

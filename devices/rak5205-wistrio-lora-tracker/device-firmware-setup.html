@@ -31,14 +31,14 @@
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-03-02T17:06:30+00:00" />
+<meta property="article:published_time" content="2020-03-06T10:20:57+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="twitter:title" content="Device Firmware Setup" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"description":"Device Firmware Setup","headline":"Device Firmware Setup","dateModified":"2020-03-02T17:06:30+00:00","datePublished":"2020-03-02T17:06:30+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/devices/rak5205-wistrio-lora-tracker/device-firmware-setup.html"},"url":"https://www.thethingsnetwork.org/docs/devices/rak5205-wistrio-lora-tracker/device-firmware-setup.html","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"@context":"https://schema.org"}</script>
+{"description":"Device Firmware Setup","headline":"Device Firmware Setup","dateModified":"2020-03-06T10:20:57+00:00","datePublished":"2020-03-06T10:20:57+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/devices/rak5205-wistrio-lora-tracker/device-firmware-setup.html"},"url":"https://www.thethingsnetwork.org/docs/devices/rak5205-wistrio-lora-tracker/device-firmware-setup.html","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -118,7 +118,7 @@
             <ul>
                 <li class=""><a href="/docs/devices/uno/">The Things Uno</a>
                 </li>
-                <li class=""><a href="/docs/devices/rak5205-wistrio-lora-tracker/">RAK5205 WisTrio LoRa Tracker</a>
+                <li class=""><a href="/docs/devices/rak5205-wistrio-lora-tracker/">RAK5205 WisTrio LoRa® Tracker</a>
             <ul>
                 <li class="active"><a href="/docs/devices/rak5205-wistrio-lora-tracker/device-firmware-setup.html">Device Firmware Setup</a>
                 </li>
@@ -130,9 +130,11 @@
                 </li>
             </ul>
                 </li>
-                <li class=""><a href="/docs/devices/rak7200-lora-tracker/">RAK7200 LoRa Tracker</a>
+                <li class=""><a href="/docs/devices/rak7200-lora-tracker/">RAK7200 LoRa® Tracker</a>
                 </li>
-                <li class=""><a href="/docs/devices/rak811-lora-module-breakout-board/">RAK811 WisDuo LoRa Module</a>
+                <li class=""><a href="/docs/devices/rak811-lora-module-breakout-board/">RAK811 LoRa® Breakout Module</a>
+                </li>
+                <li class=""><a href="/docs/devices/rak811-lora-evaluation-board/">RAK811 LoRa® Evaluation Board</a>
                 </li>
                 <li class=""><a href="/docs/devices/rak811-wisnode-lora-module/">RAK811 WisNode LoRa Module</a>
                 </li>
@@ -151,23 +153,23 @@
         <div class="panel">
           <div class="panel-body page-content">
             <h1 id="device-firmware-setup">Device Firmware Setup</h1>
-<p><strong>1</strong>- Download the latest bootloader <a href="https://downloads.rakwireless.com/en/LoRa/WisTrio-LoRa-RAK5205/Firmware/">here</a> in order to avoid potential problems.</p>
+<p><strong>1</strong>.Download the latest bootloader <a href="https://downloads.rakwireless.com/en/LoRa/WisTrio-LoRa-RAK5205/Firmware/">here</a> in order to avoid potential problems.</p>
 <blockquote>
   <p><strong>Note:</strong> Skip this section if you have a RAK5205 V3.0.0.0 firmware or newer, for it has already a bootloader.</p>
 </blockquote>
-<p><strong>2</strong>- To start with the bootloader burning, download and install the <strong>STM32CubeProgrammer</strong> tool <a href="https://www.st.com/content/st_com/en/products/development-tools/software-development-tools/stm32-software-development-tools/stm32-programmers/stm32cubeprog.html#overview">here</a>.</p>
-<p><strong>3</strong>- Then, configure your RAK5205 by jumping the “<strong>BOOT</strong>” pin and “<strong>VCC</strong>” pin for boot mode as the following pictures shown below:</p>
+<p><strong>2</strong>.To start with the bootloader burning, download and install the <strong>STM32CubeProgrammer</strong> tool <a href="https://www.st.com/content/st_com/en/products/development-tools/software-development-tools/stm32-software-development-tools/stm32-programmers/stm32cubeprog.html#overview">here</a>.</p>
+<p><strong>3</strong>.Then, configure your RAK5205 by jumping the “<strong>BOOT</strong>” pin and “<strong>VCC</strong>” pin for boot mode as the following pictures shown below:</p>
 <p><img src="images/bootvcc.jpg" alt="Figure 1: RAK5205 Boot and VCC " /></p>
 <p><img src="images/bootvccjumper.jpg" alt="Figure 2: RAK5205 Boot and VCC Jumpered " /></p>
-<p><strong>4</strong>- Connect your RAK5205 to your PC using the USB cable as follow:</p>
+<p><strong>4</strong>.Connect your RAK5205 to your PC using the USB cable as follow:</p>
 <p><img src="images/rak5205topc.jpg" alt="Figure 3: RAK5205 To Computer " /></p>
-<p><strong>5</strong>- Choose the correct port number in the COM Port field. You can check this in the Device Manager.</p>
+<p><strong>5</strong>.Choose the correct port number in the COM Port field. You can check this in the Device Manager. You can also check this <a href="https://doc.rakwireless.com/rak5205-rak7205-wistrio-lora-tracker/interfacing-with-the-rak7205-rak5205-wistrio-lora-tracker">document</a> to learn on how to interface your RAK5205 with your computer properly.</p>
 <p><img src="images/devicemanager.jpg" alt="Figure 4: Computer Device Manager" /></p>
-<p><strong>6</strong>- Open the “<strong>STM32CubeProgrammer</strong>” tool.</p>
-<p><strong>7</strong>- Select <strong>UART type</strong>; go to COM Port and look for your RAK5205 Breakout Board COM Port (ex. COM5).</p>
-<p><strong>8</strong>- Configure the <strong>Baud rate</strong> and <strong>Parity</strong>.</p>
+<p><strong>6</strong>.Open the “<strong>STM32CubeProgrammer</strong>” tool.</p>
+<p><strong>7</strong>.Select <strong>UART type</strong>; go to COM Port and look for your RAK5205 Breakout Board COM Port (ex. COM5).</p>
+<p><strong>8</strong>.Configure the <strong>Baud rate</strong> and <strong>Parity</strong>.</p>
 <p><img src="images/STM32parameter.jpg" alt="Figure 5: UART Settings in STM32CubeProgrammer" /></p>
-<p><strong>9</strong>- Then, press the “<strong>Connect</strong>” button at the top right corner.</p>
+<p><strong>9</strong>.Then, press the “<strong>Connect</strong>” button at the top right corner.</p>
 <blockquote>
   <p><strong>Warning:</strong>If there are some errors in the Log box or it can’t connect, please close the STM32CubeProgrammer and reset RAK5205, then open the STM32CubeProgrammer and connect again.</p>
 </blockquote>
@@ -175,23 +177,23 @@
   <li>The correct Log you should see is the information like the following picture shows:</li>
 </ul>
 <p><img src="images/STM32ConnectSuccess.jpg" alt="Figure 6: Successful Connection Log to your Device" /></p>
-<p>Now, let’s start burning the bootloader into the RAK5205 WisTrio LoRa Tracker.</p>
-<p><strong>10</strong>- First, erase all data on the RAK5205 WisTrio LoRa Tracker referred from the following picture below:</p>
+<p>Now, let’s start burning the bootloader into the RAK5205 WisTrio LoRa® Tracker.</p>
+<p><strong>10</strong>.First, erase all data on the RAK5205 WisTrio LoRa® Tracker referred from the following picture below:</p>
 <p><img src="images/erase.jpg" alt="Figure 7: Erasing the Data in the Chip" /></p>
-<p><strong>11</strong>- Press “<strong>Open file</strong>” and select the bootloader file in the pop-up window as follows:</p>
+<p><strong>11</strong>.Press “<strong>Open file</strong>” and select the bootloader file in the pop-up window as follows:</p>
 <p><img src="images/openingbootloaderfile.jpg" alt="Figure 8: Opening the Bootloader File" /></p>
-<p><strong>12</strong>- Click the “<strong>Download</strong>” button to start the burning process.</p>
+<p><strong>12</strong>.Click the “<strong>Download</strong>” button to start the burning process.</p>
 <p><img src="images/bootloaderdownload.jpg" alt="Figure 9: Downloading of Bootloader to the Device" /></p>
-<p><strong>13</strong>- OK, you have successfully burned the firmware into RAK5205 WisTrio LoRa Tracker! You should see the same notification as shown in the image below:</p>
+<p><strong>13</strong>.OK, you have successfully burned the firmware into RAK5205 WisTrio LoRa® Tracker! You should see the same notification as shown in the image below:</p>
 <p><img src="images/bootloaderloadsuccess.jpg" alt="Figure 10: Successfully Burned the Bootloader to the device" /></p>
-<p><strong>14</strong>- “<strong>Disconnect</strong>” and close the “<strong>STM32CubeProgramme</strong>r” tool. Then, power down and remove the connection between BOOT pin and VCC pin to let RAK5205 WisTrio LoRa Tracker work in normal mode.</p>
+<p><strong>14</strong>.”<strong>Disconnect</strong>” and close the “<strong>STM32CubeProgramme</strong>r” tool. Then, power down and remove the connection between BOOT pin and VCC pin to let RAK5205 WisTrio LoRa® Tracker work in normal mode.</p>
 <p><img src="images/bootvccjumperremoved.jpg" alt="Figure 11: Jumper Connection Removed" /></p>
-<p><strong>15</strong>- Then, connect RAK5205 with your PC’s USB interface again.</p>
+<p><strong>15</strong>.Then, connect RAK5205 with your PC’s USB interface again.</p>
 <ul>
   <li>If you have opened the serial port tool, you can see some content like this:</li>
 </ul>
 <p><img src="images/serialbootmode.jpg" alt="Figure 11: Serial Burning Success Boot Mode" /></p>
-<p>Alright! You can now start burning the firmware into RAK5205 WisTrio LoRa Tracker.</p>
+<p>Alright! You can now start burning the firmware into RAK5205 WisTrio LoRa® Tracker.</p>
           </div>  
         </div>
         <div>

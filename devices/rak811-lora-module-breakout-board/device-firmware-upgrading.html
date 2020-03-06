@@ -31,14 +31,14 @@
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-03-02T17:06:30+00:00" />
+<meta property="article:published_time" content="2020-03-06T10:20:57+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="twitter:title" content="Device Firmware Upgrading" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"description":"Device Firmware Upgrading","headline":"Device Firmware Upgrading","dateModified":"2020-03-02T17:06:30+00:00","datePublished":"2020-03-02T17:06:30+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/devices/rak811-lora-module-breakout-board/device-firmware-upgrading.html"},"url":"https://www.thethingsnetwork.org/docs/devices/rak811-lora-module-breakout-board/device-firmware-upgrading.html","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"@context":"https://schema.org"}</script>
+{"description":"Device Firmware Upgrading","headline":"Device Firmware Upgrading","dateModified":"2020-03-06T10:20:57+00:00","datePublished":"2020-03-06T10:20:57+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/devices/rak811-lora-module-breakout-board/device-firmware-upgrading.html"},"url":"https://www.thethingsnetwork.org/docs/devices/rak811-lora-module-breakout-board/device-firmware-upgrading.html","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -118,21 +118,23 @@
             <ul>
                 <li class=""><a href="/docs/devices/uno/">The Things Uno</a>
                 </li>
-                <li class=""><a href="/docs/devices/rak5205-wistrio-lora-tracker/">RAK5205 WisTrio LoRa Tracker</a>
+                <li class=""><a href="/docs/devices/rak5205-wistrio-lora-tracker/">RAK5205 WisTrio LoRa® Tracker</a>
                 </li>
-                <li class=""><a href="/docs/devices/rak7200-lora-tracker/">RAK7200 LoRa Tracker</a>
+                <li class=""><a href="/docs/devices/rak7200-lora-tracker/">RAK7200 LoRa® Tracker</a>
                 </li>
-                <li class=""><a href="/docs/devices/rak811-lora-module-breakout-board/">RAK811 WisDuo LoRa Module</a>
+                <li class=""><a href="/docs/devices/rak811-lora-module-breakout-board/">RAK811 LoRa® Breakout Module</a>
             <ul>
                 <li class=""><a href="/docs/devices/rak811-lora-module-breakout-board/device-firmware-setup.html">Device Firmware Setup</a>
                 </li>
                 <li class="active"><a href="/docs/devices/rak811-lora-module-breakout-board/device-firmware-upgrading.html">Device Firmware Upgrading</a>
                 </li>
-                <li class=""><a href="/docs/devices/rak811-lora-module-breakout-board/configuring-rak811breakoutboard.html">Configuring your RAK811 WisDuo LoRa Module</a>
+                <li class=""><a href="/docs/devices/rak811-lora-module-breakout-board/configuring-rak811breakoutboard.html">Configuring your RAK811 LoRa® Breakout Module</a>
                 </li>
                 <li class=""><a href="/docs/devices/rak811-lora-module-breakout-board/connecting-to-ttn.html">Connecting to The Things Network (TTN)</a>
                 </li>
             </ul>
+                </li>
+                <li class=""><a href="/docs/devices/rak811-lora-evaluation-board/">RAK811 LoRa® Evaluation Board</a>
                 </li>
                 <li class=""><a href="/docs/devices/rak811-wisnode-lora-module/">RAK811 WisNode LoRa Module</a>
                 </li>
@@ -151,26 +153,28 @@
         <div class="panel">
           <div class="panel-body page-content">
             <h1 id="device-firmware-upgrading">Device Firmware Upgrading</h1>
-<p>If the firmware version of your RAK811 WisDuo LoRa Module is newer than V3.0.0.0 or you have just burned the bootloader into RAK811 WisDuo LoRa Module according to the Burning Bootloader into the Device section, you just need to burn the upgrade firmware according to the following steps now:</p>
+<p>If the firmware version of your RAK811 LoRa® Breakout Module is newer than V3.0.0.0 or you have just burned the bootloader into RAK811 LoRa® Breakout Module according to the Burning Bootloader into the Device section, you just need to burn the upgrade firmware according to the following steps now:</p>
 <ul>
-  <li>First, type the command below to let the RAK811 WisDuo LoRa Module work in boot mode.
+  <li>Using the RAK Serial Port Tool, type the command below to let the RAK811 LoRa® Breakout Module work in boot mode.
     <div class="highlighter-rouge"><pre class="highlight"><code>at+set_config=device:boot
 </code></pre>
     </div>
   </li>
 </ul>
 <p><img src="images/firmwarebootmode.jpg" alt="Figure 1: Boot Mode" /></p>
-<p>Next, close the serial port tool and download the RAK Upgrade Tool from this <a href="https://www.rakwireless.com/en/download/LoRa/RAK612-LoRaButton">website</a>. Then, open the tool.</p>
+<ul>
+  <li>Next, close the RAK Serial Port Tool and download the RAK Upgrade Tool from this <a href="https://downloads.rakwireless.com/en/LoRa/RAK612-LoRaButton/Tools/">website</a>. Then, open the tool.</li>
+</ul>
 <p><img src="images/filechoosing.jpg" alt="Figure 2: File Choosing" /></p>
 <ul>
   <li>Click “<strong>Choose File</strong>” button to choose the correct upgrade file:</li>
   <li>Click “<strong>Start</strong>” to upgrade, this may take a minute:</li>
 </ul>
 <p><img src="images/start.jpg" alt="Figure 3: Upgrade Start" /></p>
-<p><img src="upgradesuccess.jpg" alt="Figure 4: Upgrade Success" /></p>
+<p><img src="images/upgradesuccess.jpg" alt="Figure 4: Upgrade Success" /></p>
 <ul>
-  <li>Now, close the upgrade tool and open a serial port tool.</li>
-  <li>We recommend you to use RAK serial port tool, because there are some ready AT commands in this tool and this will be very useful for you. You can get it from RAK website available for free at this RAK <a href="http://docs.rakwireless.com/en/LoRa/RAK811/Tools/RAK_SERIAL_PORT_TOOL_V1.%202.1.zip">directory</a>.</li>
+  <li>Now, close the Upgrade Tool and open your chosen Serial Port Tool.</li>
+  <li>We recommend you to use RAK serial port tool, because there are built-in AT commands in this tool and this will be very useful for you. You can get it from RAK website available for free at this RAK <a href="https://downloads.rakwireless.com/en/LoRa/Tools/">directory</a>.</li>
   <li>Choose the correct <strong>COM port</strong> and set the baud rate to <strong>115200</strong>. Then open the serial port and enter the AT command provided below to restart.
     <div class="highlighter-rouge"><pre class="highlight"><code>at+set_config=device:restart
 </code></pre>

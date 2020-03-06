@@ -31,14 +31,14 @@
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-03-02T17:06:30+00:00" />
+<meta property="article:published_time" content="2020-03-06T10:20:57+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="twitter:title" content="Device Firmware Setup" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"description":"Device Firmware Setup","headline":"Device Firmware Setup","dateModified":"2020-03-02T17:06:30+00:00","datePublished":"2020-03-02T17:06:30+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/devices/rak811-lora-module-breakout-board/device-firmware-setup.html"},"url":"https://www.thethingsnetwork.org/docs/devices/rak811-lora-module-breakout-board/device-firmware-setup.html","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"@context":"https://schema.org"}</script>
+{"description":"Device Firmware Setup","headline":"Device Firmware Setup","dateModified":"2020-03-06T10:20:57+00:00","datePublished":"2020-03-06T10:20:57+00:00","@type":"BlogPosting","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/devices/rak811-lora-module-breakout-board/device-firmware-setup.html"},"url":"https://www.thethingsnetwork.org/docs/devices/rak811-lora-module-breakout-board/device-firmware-setup.html","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -118,21 +118,23 @@
             <ul>
                 <li class=""><a href="/docs/devices/uno/">The Things Uno</a>
                 </li>
-                <li class=""><a href="/docs/devices/rak5205-wistrio-lora-tracker/">RAK5205 WisTrio LoRa Tracker</a>
+                <li class=""><a href="/docs/devices/rak5205-wistrio-lora-tracker/">RAK5205 WisTrio LoRa® Tracker</a>
                 </li>
-                <li class=""><a href="/docs/devices/rak7200-lora-tracker/">RAK7200 LoRa Tracker</a>
+                <li class=""><a href="/docs/devices/rak7200-lora-tracker/">RAK7200 LoRa® Tracker</a>
                 </li>
-                <li class=""><a href="/docs/devices/rak811-lora-module-breakout-board/">RAK811 WisDuo LoRa Module</a>
+                <li class=""><a href="/docs/devices/rak811-lora-module-breakout-board/">RAK811 LoRa® Breakout Module</a>
             <ul>
                 <li class="active"><a href="/docs/devices/rak811-lora-module-breakout-board/device-firmware-setup.html">Device Firmware Setup</a>
                 </li>
                 <li class=""><a href="/docs/devices/rak811-lora-module-breakout-board/device-firmware-upgrading.html">Device Firmware Upgrading</a>
                 </li>
-                <li class=""><a href="/docs/devices/rak811-lora-module-breakout-board/configuring-rak811breakoutboard.html">Configuring your RAK811 WisDuo LoRa Module</a>
+                <li class=""><a href="/docs/devices/rak811-lora-module-breakout-board/configuring-rak811breakoutboard.html">Configuring your RAK811 LoRa® Breakout Module</a>
                 </li>
                 <li class=""><a href="/docs/devices/rak811-lora-module-breakout-board/connecting-to-ttn.html">Connecting to The Things Network (TTN)</a>
                 </li>
             </ul>
+                </li>
+                <li class=""><a href="/docs/devices/rak811-lora-evaluation-board/">RAK811 LoRa® Evaluation Board</a>
                 </li>
                 <li class=""><a href="/docs/devices/rak811-wisnode-lora-module/">RAK811 WisNode LoRa Module</a>
                 </li>
@@ -163,31 +165,27 @@
 <p><img src="images/rak811pin.jpg" alt="Figure 1: RAK811 Pinout" /></p>
 <p><img src="images/usbtouart.jpg" alt="Figure 2: USB-UART" /></p>
 <ul>
-  <li>Choose the correct port number in the COM Port field. You can check this in the Device Manager.</li>
+  <li>Choose the correct port number in the COM Port field. You can check this in the Device Manager. You can also check this <a href="https://doc.rakwireless.com/rak811-lora---breakout-module/interfacing-with-rak811-lora-breakout-module">document</a> on how to properly interface your RAK811 Breakout Board with your Computer.</li>
 </ul>
 <p><img src="images/devicemanager.jpg" alt="Figure 3: Device Manager" /></p>
 <ul>
+  <li>Open the “<strong>STM32CubeProgrammer</strong>” tool.</li>
   <li>
-    <p>Open the “<strong>STM32CubeProgrammer</strong>” tool.</p>
+    <p>Select UART type; go to COM Port and look for your RAK811 LoRa® Breakout Module COM Port (ex. COM5).</p>
   </li>
-  <li>
-    <p>Select UART type; go to COM Port and look for your RAK811 WisDuo LoRa Module COM Port (ex. COM5).</p>
-  </li>
-  <li>
-    <p>Configure the Baud Rate and Parity.</p>
-  </li>
+  <li>Configure the Baud Rate and Parity.</li>
 </ul>
 <p><img src="images/smt.png" alt="Figure 4: SMT32Cubeprogrammer" /></p>
 <ul>
   <li>Then, press the “<strong>Connect</strong>” button at the top right corner.
     <blockquote>
-      <p><strong>Note:</strong> If there are some errors in the Log box or it can’t connect, just close SMT32Cubeprogrammer, and reinsert the RAK811 WisDuo LoRa Module again and reopen the SMT32Cubeprogrammer and connect.</p>
+      <p><strong>Note:</strong> If there are some errors in the Log box or it can’t connect, just close SMT32Cubeprogrammer, and reinsert the RAK811 LoRa® Breakout Module again and reopen the SMT32Cubeprogrammer and connect.</p>
     </blockquote>
   </li>
 </ul>
-<p>Now, let’s start burning the bootloader into the RAK811 WisDuo LoRa Module.</p>
+<p>Now, let’s start burning the bootloader into the RAK811 LoRa® Breakout Module.</p>
 <ul>
-  <li>First, <strong>ERASE</strong> all data on the RAK811 WisDuo LoRa Module referred from the following picture below:</li>
+  <li>First, <strong>ERASE</strong> all data on the RAK811 LoRa® Breakout Module referred from the following picture below:</li>
 </ul>
 <p><img src="images/erasedata.jpg" alt="Figure 5: Erase Data" /></p>
 <ul>
@@ -196,16 +194,16 @@
 </ul>
 <p><img src="images/downloadfirmware.jpg" alt="Figure 6: Firmware Downloading" /></p>
 <ul>
-  <li>OK, you have burned the firmware into RAK811 WisDuo LoRa Module successfully!</li>
+  <li>OK, you have burned the firmware into RAK811 LoRa® Breakout Module successfully!</li>
 </ul>
 <p><img src="images/downloadcomplete.jpg" alt="Figure 7: Firmware Download Complete" /></p>
 <ul>
-  <li>“<strong>Disconnect</strong>” and close the “STM32CubeProgrammer” tool. Then, disconnect BOOT pin and VCC pin to let RAK811 WisDuo LoRa Module work in normal mode.</li>
+  <li>“<strong>Disconnect</strong>” and close the “STM32CubeProgrammer” tool. Then, disconnect BOOT pin and VCC pin to let RAK811 LoRa® Breakout Module work in normal mode.</li>
   <li>Pull out and reinsert the USB interface into your PC.
 If you have opened the serial port tool, you can see some content like this:</li>
 </ul>
 <p><img src="images/serialbootmode.jpg" alt="Figure 8: Serial Boot" /></p>
-<p>Alright! You can now start burning the upgraded firmware into the RAK811 WisDuo LoRa Module.</p>
+<p>Alright! You can now start burning the upgraded firmware into the RAK811 LoRa® Breakout Module.</p>
           </div>  
         </div>
         <div>
