@@ -23,7 +23,7 @@ For adding an external antenna, open the case and use the SMA connector.
 ![Connected](./connected.png)
 5. Once connected to the wireless network, open http://192.168.88.1 in your web browser to start
 configuration, user name: **Admin** and there is **no password** by default.
-6. The dashboard that you now see provides many configuration options. But we are concerned only with the LoRa configuration. Select `IP -> LoRa` from the option list.
+6. The dashboard that you now see provides many configuration options. We are concerned only with the LoRa configuration. Select `LoRa` from the menu list on the left.
 7. First add a LoRaWAN backend server configuration by selecting the _Servers_ tab. Sample configuration to connect to The Things Network EU server is shown in the images below.
 ![TTN](./TTN_Server.png)
 ![TTN_Config](./TTN_Server2.png)
