@@ -22,7 +22,7 @@ For discussions about the frequency plans in different countries, see the posts 
 | Andorra | EU863-870<br />EU433 | CEPT Rec. 70-03 |
 | Angola | EU863-870<br />EU433 | CRASA follows CEPT Rec. 70-03 |
 | Antigua and Barbuda | | |
-| Argentina | AU915-928 | RESOL-2018-581-APN-MM |
+| Argentina | AU915-928 | [RESOL-2018-581-APN-MM](https://www.enacom.gob.ar/multimedia/normativas/2018/res581MM.pdf) |
 | Armenia | | EN 302 208  |
 | Australia | AU915-928 | |
 | Austria | EU863-870<br />EU433 | CEPT Rec. 70-03 |
