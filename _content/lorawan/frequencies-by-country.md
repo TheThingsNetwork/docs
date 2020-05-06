@@ -278,7 +278,7 @@ For discussions about the frequency plans in different countries, see the posts 
 | Sri Lanka
 | Sudan
 | Suriname | US902-928 | |
-| Sweden | EU433 (CEPT 868MHz not implemented) | CEPT Rec. 70-03 |
+| Sweden | EU863-870<br />EU433 | [Svenska frekvensplanen](https://etjanster.pts.se/radio/frekvensplanen), CEPT Rec. 70-03 |
 | Switzerland | EU863-870<br />EU433 | CEPT Rec. 70-03 |
 | Syria
 
@@ -339,11 +339,11 @@ _[Country list source](https://www.countries-ofthe-world.com/all-countries.html)
 
 **[CEPT/ERC Recommendation 70-03 relating to the use of short range devices (SRD)](http://www.erodocdb.dk/docs/doc98/official/pdf/rec7003e.pdf)**
 
-Already implemented in: Albania, Andorra, Austria, Belgium, Bosnia & Herzegovina, Bulgaria, Cyprus, Czech Republic, Germany, Denmark, Spain, Estonia, France, Finland, United Kingdom, Hungary, Netherlands, Croatia, Italy, Ireland, Iceland, Liechtenstein, Lithuania, Luxembourg, Latvia, Moldova, Former Yugoslav Republic of Macedonia, Malta, Montenegro, Poland, Portugal, Romania, Sweden(433), Serbia, Switzerland, Slovak Republic, Slovenia, Turkey
+Already implemented in: Albania, Andorra, Austria, Belgium, Bosnia & Herzegovina, Bulgaria, Cyprus, Czech Republic, Germany, Denmark, Spain, Estonia, France, Finland, United Kingdom, Hungary, Netherlands, Croatia, Italy, Ireland, Iceland, Liechtenstein, Lithuania, Luxembourg, Latvia, Moldova, Former Yugoslav Republic of Macedonia, Malta, Montenegro, Poland, Portugal, Romania, Sweden, Serbia, Switzerland, Slovak Republic, Slovenia, Turkey
 
 Limited implementation: Belarus, Georgia(433), Greece, Norway, Russian Federation, Ukrain
 
-Not implemented in: Azerbaijan, Georgia(868), Sweden(868)
+Not implemented in: Azerbaijan, Georgia(868)
 
 ---
 
