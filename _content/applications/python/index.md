@@ -14,6 +14,7 @@ is Open.
 
 The Python Application SDK for The Things Network allows you to send and receive messages to and from IoT devices.
 
+*⚠️ The support and maintenance for this SDK has been discontinued, it is not recommended to use the SDK for new projects.*
 
 ## Installation
 
