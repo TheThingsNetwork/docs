@@ -125,7 +125,7 @@ We use two frequency plans, depending on the country. OTAA devices use two commo
 
 ### AS920-923
 
-Used in Japan, Malaysia, Singapore, Indonesia
+Used in Japan, Malaysia, Singapore
 
 Uplink:
 
@@ -147,7 +147,7 @@ Downlink:
 
 ### AS923-925
 
-Used in Brunei, Cambodia, Hong Kong, Laos, Taiwan, Thailand, Vietnam
+Used in Brunei, Cambodia, Hong Kong, Laos, Taiwan, Thailand, Vietnam, Indonesia
 
 Uplink:
 
