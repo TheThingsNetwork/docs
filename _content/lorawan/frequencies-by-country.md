@@ -136,7 +136,7 @@ For discussions about the frequency plans in different countries, see the posts 
 | --- | --- | --- |
 | Iceland | EU863-870<br />EU433 | CEPT Rec. 70-03 |
 | India | IN865-867 | [Use of low power wireless equipments in the frequency band 865-867MHz for RFID](http://www.wpc.gov.in/WriteReadData/userfiles/file/RFID%20Delicensing.doc)
-| Indonesia | AS923-925 ("AS2") | |
+| Indonesia | AS920-923 ("AS1") | | [PERMENKOMINFO No. 1/2019] (https://jdih.kominfo.go.id/produk_hukum/view/id/676/t/peraturan+menteri+komunikasi+dan+informatika+nomor+1+tahun+2019+tanggal+24+april+2019)
 | Iran | | EN 302 208 |
 | Iraq
 | Ireland | EU863-870<br />EU433 | CEPT Rec. 70-03 |
