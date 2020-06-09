@@ -17,6 +17,10 @@ This guide will walk you through subscribing to an application's activations and
 
 On [console.thethingsnetwork.org](https://console.thethingsnetwork.org/), navigate to the application you'd like to use. Here you can find the **Application ID** and an **Access Key** needed to authenticate over MQTT. Under **Handler** you will also find the region the application is registered to. You will need the part that follows `ttn-handler-`, e.g. `eu`.
     
+## Single or double quotes
+
+On many systems, including Linux and macOS, quotes might not be needed or single quotes are used. On Windows, use double quotes.
+
 ## Receive Activations
 Let's listen for new device activations first.
 
@@ -25,7 +29,7 @@ Let's listen for new device activations first.
     ```bash
     mosquitto_sub -h <Region>.thethings.network -t '+/devices/+/events/activations' -u '<AppID>' -P '<AppKey>' -v
     ```
-    When using Windows, extra quotation marks have to be added to make the above code work:
+    When using Windows, use double quotes to make the above code work:
     
     ```bash
     mosquitto_sub -h <Region>.thethings.network -t "+/devices/+/events/activations" -u "<AppID>" -P "<AppKey>" -v
