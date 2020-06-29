@@ -63,6 +63,7 @@ section: Additional Information
 | `000035` | `6A000000/7` | `6A000000` - `6BFFFFFF` | Shenzhen Tencent Computer Systems Company Limited | China |
 | `000036` | `6C000000/7` | `6C000000` - `6DFFFFFF` | Netze BW GmbH | World |
 | `000037` | `6E000000/7` | `6E000000` - `6FFFFFFF` | Tektelic | World |
+| `000038` | `70000000/7` | `70000000` - `71FFFFFF` | Charter Communicaton | USA |
 | `600000` | `E0000000/14` | `E0000000` - `E003FFFF` | RESERVED |  |
 | `600001` | `E0040000/14` | `E0040000` - `E007FFFF` | Digita | Finland |
 | `600002` | `E0080000/14` | `E0080000` - `E00BFFFF` | Blink | Sweden, Norway |
@@ -101,6 +102,9 @@ section: Additional Information
 | `600023` | `E08C0000/14` | `E08C0000` - `E08FFFFF` | Paige Wireless | World |
 | `600024` | `E0900000/14` | `E0900000` - `E093FFFF` | Netze BW GmbH | World |
 | `600025` | `E0940000/14` | `E0940000` - `E097FFFF` | Tektelic | World |
+| `600026` | `E0980000/14` | `E0980000` - `E09BFFFF` | Acklio | World |
+| `600027` | `E09C0000/14` | `E09C0000` - `E09FFFFF` | Birdz | World |
+| `600028` | `E0A00000/14` | `E0A00000` - `E0A3FFFF` | Charter Communication | USA |
 | `C00000` | `FC000000/22` | `FC000000` - `FC0003FF` | RESERVED |  |
 | `C00001` | `FC000400/22` | `FC000400` - `FC0007FF` | Nordic Automation Systems | World |
 | `C00002` | `FC000800/22` | `FC000800` - `FC000BFF` | ResIOT | World |
@@ -158,3 +162,9 @@ section: Additional Information
 | `C00036` | `FC00D800/22` | `FC00D800` - `FC00DBFF` | Desarrollo de Infraestructura de Telecomunicaciones Peru (Infratel Peru) | Peru |
 | `C00037` | `FC00DC00/22` | `FC00DC00` - `FC00DFFF` | Alperia Fiber | Italy |
 | `C00038` | `FC00E000/22` | `FC00E000` - `FC00E3FF` | First Snow Co., Ltd | Republic of Korea |
+| `C00039` | `FC00E400/22` | `FC00E400` - `FC00E7FF` | Acklio | World |
+| `C0003A` | `FC00E800/22` | `FC00E800` - `FC00EBFF` | Vutiliti | World |
+| `C0003B` | `FC00EC00/22` | `FC00EC00` - `FC00EFFF` | Meshed Pty Ltd | Australia, New Zealand |
+| `C0003C` | `FC00F000/22` | `FC00F000` - `FC00F3FF` | Birdz | World |
+| `C0003D` | `FC00F400/22` | `FC00F400` - `FC00F7FF` | Arthur D Riley & Co Ltd | Asia Pacific |
+| `C0003E` | `FC00F800/22` | `FC00F800` - `FC00FBFF` | Komro GmbH | Germany, Austria, Switzerland |
