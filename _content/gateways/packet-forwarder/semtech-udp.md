@@ -62,7 +62,7 @@ Unless you're running the network yourself on specific ports, the **ports** will
 | `router.as2.thethings.network`      | Southeast Asia 923-925 MHz                       |
 | `router.kr.thethings.network`       | Korea 920-923 MHz                                |
 | `router.jp.thethings.network`       | Japan 923-925 MHz (with EIRP cap according to Japanese regulations)|
-| `thethings.meshed.com.au`           | Australia 915-928 MHz                            |
+| `au915.thethings.meshed.com.au`     | Australia 915-928 MHz                            |
 | `as923.thethings.meshed.com.au`     | Australia (Southeast Asia 923MHz frequency plan) |
 | `ttn.opennetworkinfrastructure.org` | Switzerland (EU 433 and EU 863-870)              |
 
