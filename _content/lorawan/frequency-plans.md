@@ -25,7 +25,7 @@ Uplink:
 Downlink:
 
 - Uplink channels 1-9 (RX1)
-- **869.525** - SF9BW125 (RX2 downlink only)
+- **869.525** - SF9BW125 (RX2)
 
 > Note that The Things Network uses the non-standard SF9BW125 data rate for RX2 in Europe.
 > If your devices use OTAA, this will be configured automatically when they join. If your devices use ABP, you'll need to program this RX2 data rate into the devices in order to make them work with TTN.
@@ -52,14 +52,15 @@ Uplink:
 
 Downlink:
 
-1. **923.3** - SF7BW500 to SF12BW500
-2. **923.9** - SF7BW500 to SF12BW500
-3. **924.5** - SF7BW500 to SF12BW500
-4. **925.1** - SF7BW500 to SF12BW500
-5. **925.7** - SF7BW500 to SF12BW500
-6. **926.3** - SF7BW500 to SF12BW500
-7. **926.9** - SF7BW500 to SF12BW500
-8. **927.5** - SF7BW500 to SF12BW500
+1. **923.3** - SF7BW500 to SF12BW500 (RX1)
+2. **923.9** - SF7BW500 to SF12BW500 (RX1)
+3. **924.5** - SF7BW500 to SF12BW500 (RX1)
+4. **925.1** - SF7BW500 to SF12BW500 (RX1)
+5. **925.7** - SF7BW500 to SF12BW500 (RX1)
+6. **926.3** - SF7BW500 to SF12BW500 (RX1)
+7. **926.9** - SF7BW500 to SF12BW500 (RX1)
+8. **927.5** - SF7BW500 to SF12BW500 (RX1)
+9. **923.3** - SF12BW500 (RX2)
 
 ## CN470-510
 
@@ -78,15 +79,15 @@ Uplink:
 
 Downlink:
 
-1. **506.7** - SF7BW125 to SF12BW125
-2. **506.9** - SF7BW125 to SF12BW125
-3. **507.1** - SF7BW125 to SF12BW125
-4. **507.3** - SF7BW125 to SF12BW125
-5. **507.5** - SF7BW125 to SF12BW125
-6. **507.7** - SF7BW125 to SF12BW125
-7. **507.9** - SF7BW125 to SF12BW125
-8. **508.1** - SF7BW125 to SF12BW125
-9. **505.3** - SF12BW125 (RX2 downlink only)
+1. **506.7** - SF7BW125 to SF12BW125 (RX1)
+2. **506.9** - SF7BW125 to SF12BW125 (RX1)
+3. **507.1** - SF7BW125 to SF12BW125 (RX1)
+4. **507.3** - SF7BW125 to SF12BW125 (RX1)
+5. **507.5** - SF7BW125 to SF12BW125 (RX1)
+6. **507.7** - SF7BW125 to SF12BW125 (RX1)
+7. **507.9** - SF7BW125 to SF12BW125 (RX1)
+8. **508.1** - SF7BW125 to SF12BW125 (RX1)
+9. **505.3** - SF12BW125 (RX2)
 
 ## CN779-787
 
@@ -96,26 +97,27 @@ Not used by The Things Network
 
 Uplink:
 
-1. **916.8** - SF7BW125 to SF10BW125
-2. **917.0** - SF7BW125 to SF10BW125
-3. **917.2** - SF7BW125 to SF10BW125
-4. **917.4** - SF7BW125 to SF10BW125
-5. **917.6** - SF7BW125 to SF10BW125
-6. **917.8** - SF7BW125 to SF10BW125
-7. **918.0** - SF7BW125 to SF10BW125
-8. **918.2** - SF7BW125 to SF10BW125
-9. **917.5** SF8BW500
+1. **916.8** - SF7BW125 to SF12BW125
+2. **917.0** - SF7BW125 to SF12BW125
+3. **917.2** - SF7BW125 to SF12BW125
+4. **917.4** - SF7BW125 to SF12BW125
+5. **917.6** - SF7BW125 to SF12BW125
+6. **917.8** - SF7BW125 to SF12BW125
+7. **918.0** - SF7BW125 to SF12BW125
+8. **918.2** - SF7BW125 to SF12BW125
+9. **917.5** - SF8BW500
 
 Downlink:
 
-1. **923.3** - SF7BW500 to SF12BW500
-2. **923.9** - SF7BW500 to SF12BW500
-3. **924.5** - SF7BW500 to SF12BW500
-4. **925.1** - SF7BW500 to SF12BW500
-5. **925.7** - SF7BW500 to SF12BW500
-6. **926.3** - SF7BW500 to SF12BW500
-7. **926.9** - SF7BW500 to SF12BW500
-8. **927.5** - SF7BW500 to SF12BW500
+1. **923.3** - SF7BW500 to SF12BW500 (RX1)
+2. **923.9** - SF7BW500 to SF12BW500 (RX1)
+3. **924.5** - SF7BW500 to SF12BW500 (RX1)
+4. **925.1** - SF7BW500 to SF12BW500 (RX1)
+5. **925.7** - SF7BW500 to SF12BW500 (RX1)
+6. **926.3** - SF7BW500 to SF12BW500 (RX1)
+7. **926.9** - SF7BW500 to SF12BW500 (RX1)
+8. **927.5** - SF7BW500 to SF12BW500 (RX1)
+9. **923.3** - SF12BW500 (RX2)
 
 > Note that The Things Network uses 2nd Sub-Band only (channels 8 to 15 and 65). You'll need to program the specific channels into the devices in order to make them work with TTN.
 
@@ -123,7 +125,7 @@ Downlink:
 
 We use two frequency plans, depending on the country. OTAA devices use two common channels: 923.2MHz and 923.4MHz. They will receive the additional channels on a successful join.
 
-### AS920-923
+### AS920-923 ("AS1")
 
 Used in Japan, Malaysia, Singapore
 
@@ -145,9 +147,9 @@ Downlink:
 - Uplink channels 1-10 (RX1)
 - **923.2** - SF10BW125 (RX2)
 
-### AS923-925
+### AS923-925 ("AS2")
 
-Used in Brunei, Cambodia, Hong Kong, Laos, Taiwan, Thailand, Vietnam, Indonesia
+Used in Brunei, Cambodia, Hong Kong, Indonesia, Laos, Taiwan, Thailand, Vietnam
 
 Uplink:
 
@@ -183,7 +185,7 @@ Uplink:
 Downlink:
 
 - Uplink channels 1-7
-- **921.9** - SF12BW125 (RX2 downlink only; SF12BW125 might be changed to SF9BW125)
+- **921.9** - SF12BW125 (RX2; SF12BW125 might be changed to SF9BW125)
 
 ## IN865-867
 
