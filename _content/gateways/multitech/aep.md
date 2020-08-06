@@ -50,7 +50,7 @@ If you changed the IP Address or selected DHCP a popup will appear warning you t
 
 ## Update firmware
 
-Before you continue, verify that the Conduit AEP runs Firmware 1.3.2 or later. This is display in the header of the web interface. If it is out-dated, follow the [instructions to upgrade](http://www.multitech.net/developer/software/aep/upgrading-the-aep-firmware/) to the latest version. The ttn-packer-forwarder might not work otherwise.
+Before you continue, verify that the Conduit AEP runs Firmware 5.3 or later. This is displayed in the header of the web interface. If it is out-dated, follow the [instructions to upgrade](http://www.multitech.net/developer/software/aep/upgrading-the-aep-firmware/) to the latest version. 
 
 ## Access & Network Configuration
 
@@ -102,32 +102,20 @@ Disconnect the temporary network cable and connect the Conduit to the target net
 
 ## TTN Configuration {#ttn-configuration-aep}
 
-Once the Conduit has finished restarting and is connected to the target network, connect a computer to the same network and login to the Conduit.
+Once the Conduit has finished restarting and is connected to the target network, connect a computer to the same network and login to the Conduit by entering its IP in a browser.
 
 > If you have not configured your Conduit with a static IP, you will have to [find out which IP the DHCP assigned to it](http://apple.stackexchange.com/questions/19783/how-do-i-know-the-ip-addresses-of-other-computers-in-my-network).
 
-* For Windows use a terminal program like Putty to connect to `admin@<IP>`:
+Click the LoRaWAN tab on the left.
 
-  ![PuTTY Configuration](putty-aep.png)
+In the **Mode** dropdown, choose **Basic Station**.
 
-  You will get a security alert concerning the host key. Accept the new key with **Yes**.
+![LBS Menu](lbs-menu.png)
 
-  ![PuTTY Security Alert](putty-warning.png)
+Select **LNS** in the **Credentials** dropdown.
 
-* For Linux/OSX open terminal and connect via `ssh admin@<IP>`.
+See the [Basics Station guide](../basics-station) for the **Server Certificate** and **Server Address**.
 
-Download the [installer](https://github.com/kersing/multitech-installer/raw/master/installer.sh) by entering the next command:
+After entering the LNS configuration, click the **Submit** button, and then click **Save and Apply**. The gateway will apply the changes.
 
-```bash
-wget https://github.com/kersing/multitech-installer/raw/master/installer.sh --no-check-certificate
-```
-
-![wget](wget.png)
-
-Now run the installer and provide the prompted information. (Answer **Yes** to the first question, since we've already set up the conduit network etc in the previous steps.
-
-```bash
-sh installer.sh
-```
-
-![installer](installer-aep.png)
+![LBS Save](lbs-save.png)
