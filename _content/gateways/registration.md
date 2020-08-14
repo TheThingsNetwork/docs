@@ -6,45 +6,16 @@ zindex: 900
 
 # Gateway Registration
 
-There are mainly two types of packet forwarders that can be running on your gateway, depending on the kind of [network protocol](start/connection.md) they use:
+The main packet forwarders used in the LoRaWAN market, is Semtech's UDP Packet Forwarder (also referred to as the Legacy Forwarder). 
 
-* Packet forwarders that connect using the Semtech UDP protocol (such as the [Semtech UDP Packet Forwarder](packet-forwarder/semtech-udp.md)). This protocol is not encrypted, less reliable (UDP-based), but its simplicity makes it work on a large number of gateways.
-
-* Packet forwarders that connect using the new TTN Gateway Connector protocol (such as the [TTN Packet Forwarder](packet-forwarder/ttn.md)). This protocol is more secure, reliable and safer.
+* Packet forwarders that connect using the Semtech UDP protocol (such as the [Semtech UDP Packet Forwarder](packet-forwarder/semtech-udp.md)). This protocol is not encrypted, but its simplicity makes it work on a large number of gateways.
 
 Please read this guide carefully to understand how to register your gateway with The Things Network.
 
 > If you have an off-the-shelf gateway with the default software, it most likely uses the Semtech UDP protocol. Follow the steps for connecting using the [UDP Packet Forwarder](#via-udp-packet-forwarder).
 
-## Via TTN Packet Forwarder
-
-The Things Network Packet Forwarder uses an authenticated and encrypted TCP connection to our network server and has support for Kerlink, Multitech and other Linux based gateways. This is the preferred packet forwarder to use with The Things Network.
-
-### Start with Registration
-
-You start by [registering your gateway](https://console.thethingsnetwork.org/gateways/register) in the Console.
-
-![Registration for Gateway Connector](registration-connector.png)
-
-* For **Protocol**, leave **gateway connector** selected.
-* For **Gateway ID**, choose a unique ID of lower case, alphanumeric characters and nonconsecutive `-` and `_`.
-* Select the frequency plan ([determined by your region](../lorawan/frequencies-by-country.md)) the gateway uses.
-* Click to drop the pin at the exact location (pan and zoom in before you drop).
-* Click **Register Gateway** to finish.
-
-  This will take you to the Gateway's screen where you'll find the generated **Gateway Key** you need next.
-
-> After registering the gateway, select **Settings** from the top right menu on the Gateway screen so set the gateway description, location altitude, privacy settings and other information.
-
-### Configure gateway with TTN Packet Forwarder
-
-Make sure your gateway runs [The Things Network Packet Forwarder](https://github.com/TheThingsNetwork/packet_forwarder/tree/master) before you continue. Then configure it with the ID and Key from the registration on the console. This allows you to manage most of the gateway's configuration from the Console, without having to log on to the gateway.
-
-> If your gateway does not have a GPS module we advise you not to configure a manual location in the gateway. Do this in the Console instead so that you can change it without accessing the gateway.
 
 ## Via Semtech UDP Packet Forwarder
-
-The UDP Packet Forwarder is deprecated, but will still be supported by TTN. We advise you to upgrade to the TTN Packet Forwarder.
 
 ### Start with Configuration
 
@@ -83,8 +54,4 @@ If you return to the Gateways screen without seeing the newly registered gateway
 
 ![Registration Error](registration-error.png)
 
-This means someone else already registered this Gateway ID or EUI. If you registered to use TTN Packet Forwarder, simply think of a new ID. If you registered to use the UDP Packet Forwarder, check the manual of your gateway to see if you can configure it with a [different (random) EUI](https://www.randomlists.com/string?length=16).
-
-### How can I switch from the UDP Packet Forwarder to TTN Packet Forwarder?
-
-You just need to install [TTN Packet Forwarder](https://github.com/TheThingsNetwork/packet_forwarder/tree/master) on your gateway and configure it with the gateway ID and Key as listed on the console.
+This means someone else already registered this Gateway ID or EUI. If you registered to use the UDP Packet Forwarder, check the manual of your gateway to see if you can configure it with a [different (random) EUI](https://www.randomlists.com/string?length=16).
