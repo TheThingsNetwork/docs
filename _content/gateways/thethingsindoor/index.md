@@ -32,6 +32,7 @@ The Things Indoor Gateway(TTIG) is designed to be a fully compliant, ultra low-c
 * Connected Things - [link](https://connectedthings.store/gb/lorawan-gateways/the-things-indoor-gateway-868-mhz.html)
 * IoT Shop - DE - [link](https://iot-shop.de/produkt/the-things-indoor-gateway)
 * Allied Electronics - [link](https://www.alliedelec.com/product/rs-components-uk/ttig-915/71600476/)
+* Antratek Electronics - EU - [link](https://www.antratek.com/the-things-indoor-gateway)
 
 Need help or more info? Drop us a [line](mailto:hardware@thethingsindustries.com).
 
