@@ -1,5 +1,6 @@
 ---
 title: What is LoRa
+section: Getting Started
 ---
 
 # What is LoRa
