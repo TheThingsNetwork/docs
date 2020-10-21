@@ -18,6 +18,9 @@ If you do a lot of edits please use a local build to preview and test.
 ## Build local for preview and design
 
 1. [Install Ruby 2.0.0 or higher](https://www.ruby-lang.org/en/downloads/)
+
+> The version of Ruby that comes preinstalled on MacOS may cause problems with Bundler. We recommend using Homebrew to install the latest version of Ruby.
+
 2. Install [Bundler](http://bundler.io/):
 	
 	```bash
