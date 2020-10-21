@@ -17,7 +17,7 @@ The Data API allow you to receive events and messages from devices as well as se
 * AMQP (coming)
 
 ### Application Manager API
-The Application Manager API let you manage applications and devices registered to it. You can use the Data API via:
+The Application Manager API let you manage applications and devices registered to it. You can use the Application Manager API via:
 
 * gRPC (to be documented)
 * [HTTP](manager/index.md)
