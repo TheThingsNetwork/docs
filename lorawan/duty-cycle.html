@@ -31,14 +31,14 @@
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-10-21T12:34:19+00:00" />
+<meta property="article:published_time" content="2020-10-21T12:35:45+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="twitter:title" content="Duty Cycle" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","description":"Duty Cycle","headline":"Duty Cycle","datePublished":"2020-10-21T12:34:19+00:00","dateModified":"2020-10-21T12:34:19+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/lorawan/duty-cycle.html"},"url":"https://www.thethingsnetwork.org/docs/lorawan/duty-cycle.html","@context":"https://schema.org"}</script>
+{"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","description":"Duty Cycle","headline":"Duty Cycle","datePublished":"2020-10-21T12:35:45+00:00","dateModified":"2020-10-21T12:35:45+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/lorawan/duty-cycle.html"},"url":"https://www.thethingsnetwork.org/docs/lorawan/duty-cycle.html","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -166,7 +166,7 @@ When a single device transmits on a channel for 2 <em>time units</em> every 10 <
 <p>Finally, on The Things Network’s public community network, we have a <strong>Fair Access Policy</strong> that limits the <strong>uplink airtime</strong> to <strong>30 seconds per day (24 hours) per node</strong> and the <strong>downlink messages</strong> to <strong>10 messages per day (24 hours) per node</strong>. If you use a private network, these limits do not apply, but you still have to be compliant with the governmental and LoRaWAN limits.</p>
 <h2 id="compliance">Compliance</h2>
 <p>Every radio device must be compliant with the regulated duty cycle limits. This applies to <strong>both nodes and gateways</strong>.</p>
-<p>In practice, this means that you should program your nodes in such a way, that they stay within the limits. The easiest way to do this, is to calculate how much <em>airtime</em> each message consumes using one of the many <a href="https://docs.google.com/spreadsheets/d/1QvcKsGeTTPpr9icj4XkKXq4r2zTc2j0gsHLrnplzM3I/edit">airtime calculators</a> and use that information to choose a good transmit interval.</p>
+<p>In practice, this means that you should program your nodes in such a way, that they stay within the limits. The easiest way to do this, is to calculate how much <em>airtime</em> each message consumes using one of the many <a href="https://avbentem.github.io/airtime-calculator/ttn/eu868">airtime calculators</a> and use that information to choose a good transmit interval.</p>
 <p>Some radio modules (such as the RN2483) also enforce the duty cycle limits. If you exceed the limits, the module will complain with a message <code class="highlighter-rouge">no_free_ch</code>. Specifically, the RN2483 limits the duty cycle on a per-channel basis. This means that if you only have 1 channel configured, the module will start enforcing the duty cycle after the first message.</p>
 <p><em>The figure below shows enforcement on a resource with a 20% duty cycle limit</em><br />
 <img src="duty-cycle-single-channel-off-air.png" alt="Single Channel Off-air" /></p>
