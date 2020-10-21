@@ -36,7 +36,7 @@ Finally, on The Things Network's public community network, we have a **Fair Acce
 
 Every radio device must be compliant with the regulated duty cycle limits. This applies to **both nodes and gateways**.
 
-In practice, this means that you should program your nodes in such a way, that they stay within the limits. The easiest way to do this, is to calculate how much _airtime_ each message consumes using one of the many [airtime calculators](https://docs.google.com/spreadsheets/d/1QvcKsGeTTPpr9icj4XkKXq4r2zTc2j0gsHLrnplzM3I/edit) and use that information to choose a good transmit interval.
+In practice, this means that you should program your nodes in such a way, that they stay within the limits. The easiest way to do this, is to calculate how much _airtime_ each message consumes using one of the many [airtime calculators](https://avbentem.github.io/airtime-calculator/ttn/eu868) and use that information to choose a good transmit interval.
 
 Some radio modules (such as the RN2483) also enforce the duty cycle limits. If you exceed the limits, the module will complain with a message `no_free_ch`. Specifically, the RN2483 limits the duty cycle on a per-channel basis. This means that if you only have 1 channel configured, the module will start enforcing the duty cycle after the first message.
 
