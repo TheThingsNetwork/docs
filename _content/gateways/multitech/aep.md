@@ -127,7 +127,7 @@ wget https://github.com/kersing/multitech-installer/raw/master/installer.sh --no
 Now run the installer and provide the prompted information. (Answer **Yes** to the first question, since we've already set up the conduit network etc in the previous steps.
 
 ```bash
-sh installer.sh
+sudo sh installer.sh
 ```
 
 ![installer](installer-aep.png)
