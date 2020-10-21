@@ -17,28 +17,28 @@
       if (document.location.href.substr(0, document.location.href.length - document.location.hash.length) !== canonical) {
         window.location.replace(canonical);
       }
-    })('https://www.thethingsnetwork.org/docs/gateways/start/single-channel.html');
+    })('https://www.thethingsnetwork.org/docs/gateways/rak2245/deploy-balena-basics-station-gateway.html');
     </script>
     <!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Single-channel gateways | The Things Network</title>
+<title>Deploy Balena Basics™ Station | The Things Network</title>
 <meta name="generator" content="Jekyll v3.4.5" />
-<meta property="og:title" content="Single-channel gateways" />
+<meta property="og:title" content="Deploy Balena Basics™ Station" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Single-channel gateways" />
-<meta property="og:description" content="Single-channel gateways" />
-<link rel="canonical" href="https://www.thethingsnetwork.org/docs/gateways/start/single-channel.html" />
-<meta property="og:url" content="https://www.thethingsnetwork.org/docs/gateways/start/single-channel.html" />
+<meta name="description" content="Deploy a LoRa Basics™ Station using balena.io and RAK2245 Pi Hat" />
+<meta property="og:description" content="Deploy a LoRa Basics™ Station using balena.io and RAK2245 Pi Hat" />
+<link rel="canonical" href="https://www.thethingsnetwork.org/docs/gateways/rak2245/deploy-balena-basics-station-gateway.html" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/gateways/rak2245/deploy-balena-basics-station-gateway.html" />
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-10-21T12:34:19+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
-<meta property="twitter:title" content="Single-channel gateways" />
+<meta property="twitter:title" content="Deploy Balena Basics™ Station" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","description":"Single-channel gateways","headline":"Single-channel gateways","datePublished":"2020-10-21T12:34:19+00:00","dateModified":"2020-10-21T12:34:19+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/gateways/start/single-channel.html"},"url":"https://www.thethingsnetwork.org/docs/gateways/start/single-channel.html","@context":"https://schema.org"}</script>
+{"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","description":"Deploy a LoRa Basics™ Station using balena.io and RAK2245 Pi Hat","headline":"Deploy Balena Basics™ Station","datePublished":"2020-10-21T12:34:19+00:00","dateModified":"2020-10-21T12:34:19+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/gateways/rak2245/deploy-balena-basics-station-gateway.html"},"url":"https://www.thethingsnetwork.org/docs/gateways/rak2245/deploy-balena-basics-station-gateway.html","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -90,7 +90,7 @@
         </ul>
       </div>
       <div class="hidden-xs col-sm-3 text-right">
-        <a href="https://github.com/TheThingsNetwork/docs/edit/master/_content/gateways/start/single-channel.md" class="page-edit" data-proofer-ignore><i class="fa fa-github"></i> Edit <strong>single-channel.md</strong></a>
+        <a href="https://github.com/TheThingsNetwork/docs/edit/master/_content/gateways/rak2245/deploy-balena-basics-station-gateway.md" class="page-edit" data-proofer-ignore><i class="fa fa-github"></i> Edit <strong>deploy-balena-basics-station-gateway.md</strong></a>
       </div>
     </div>
     <div class="row wrapper">
@@ -103,16 +103,6 @@
             <li class="page-side-nav-section"><span>Running a gateway</span>
             <ul>
                 <li class=""><a href="/docs/gateways/start/">Where to start</a>
-            <ul>
-                <li class=""><a href="/docs/gateways/start/build.html">Build your own gateway</a>
-                </li>
-                <li class=""><a href="/docs/gateways/start/connection.html">Gateway connection to TTN</a>
-                </li>
-                <li class=""><a href="/docs/gateways/start/list.html">List of commercial gateways</a>
-                </li>
-                <li class="active"><a href="/docs/gateways/start/single-channel.html">Single-channel gateways</a>
-                </li>
-            </ul>
                 </li>
                 <li class=""><a href="/docs/gateways/registration.html">Gateway Registration</a>
                 </li>
@@ -135,6 +125,18 @@
                 <li class=""><a href="/docs/gateways/multitech/">MultiTech Conduit</a>
                 </li>
                 <li class=""><a href="/docs/gateways/rak2245/">RAK2245 Pi Hat</a>
+            <ul>
+                <li class=""><a href="/docs/gateways/rak2245/device-firmware-setup.html">Device Firmware Setup</a>
+                </li>
+                <li class=""><a href="/docs/gateways/rak2245/accesing-gateway.html">Accessing Your Gateway</a>
+                </li>
+                <li class=""><a href="/docs/gateways/rak2245/configuring-gateway.html">Configuring Your Gateway</a>
+                </li>
+                <li class=""><a href="/docs/gateways/rak2245/connecting-to-ttn.html">Connecting to The Things Network (TTN)</a>
+                </li>
+                <li class="active"><a href="/docs/gateways/rak2245/deploy-balena-basics-station-gateway.html">Deploy Balena Basics™ Station</a>
+                </li>
+            </ul>
                 </li>
                 <li class=""><a href="/docs/gateways/rak7243c/">RAK7243C Pilot Gateway</a>
                 </li>
@@ -170,10 +172,38 @@
       <div class="col-sm-9 page-body">
         <div class="panel">
           <div class="panel-body page-content">
-            <h1 id="single-channel-gateways">Single-channel gateways</h1>
-<p>Single-channel gateways are low-cost devices that can be used to start exploring the LoRa world. They can receive LoRa packets on a specific spreading factor and channel, and exchange them back and forth with the network. Because they’re financially accessible, many users have started to build their own single-channel gateways to experiment with LoRa.</p>
-<p>We <strong>do not recommend</strong> starting to set up gateways by setting up single-channel gateways. Single-channel gateways are not LoRaWAN-compliant and only offer poor coverage. For this reason, we have chosen to hide single-channel gateways from our gateway map. If you want to start exploring the LoRaWAN world without investing too much, we would rather recommend investing in a <a href="../gateway/">Things Gateway</a> or <a href="build.html">building your own gateway</a>, which are beneficial to the whole community!</p>
-<p>For more information, read the debate on <a href="https://www.thethingsnetwork.org/forum/t/the-future-of-single-channel-gateways/6590">the forum</a>!</p>
+            <h2 id="deploy-a-lora-basics-station-using-balenaio-and-rak2245-pi-hat">Deploy a LoRa Basics™ Station using balena.io and RAK2245 Pi Hat</h2>
+<p>Deploy a TTN or TTI LoRa gateway running the newest Basics Station Semtech Packet Forward protocol. With a Raspberry Pi 3/4, the RAK2245 Pi Hat and balena.io it’s easy to deploy DIY fleet of gateways.</p>
+<p>The Basics Station protocol enables the LoRa gateways with a reliable and secure communication between the gateways and the cloud and it is becoming the standard Packet Forward protocol used by most of the LoRaWAN operators. It’s the standard packet forward protocol on The Things Industries.</p>
+<h2 id="deploy-the-ttn-gateway">Deploy the TTN gateway</h2>
+<p>Running this project is as simple as deploying it to a balenaCloud application. You can do it in just one click <a href="https://dashboard.balena-cloud.com/deploy?repoUrl=https://github.com/balenalabs/basicstation">here</a>.</p>
+<p>Follow instructions, click <strong>Add a Device</strong> and flash an SD card with that OS image dowloaded from balenaCloud.</p>
+<h3 id="create-the-balena-application">Create the balena Application</h3>
+<p>Once you click the Deploy with Balena button, you have to create a balena Application.</p>
+<p><img src="https://www.balena.io/blog/content/images/2020/07/create-deploy.png" alt="Create Deploy" /></p>
+<p>After that, just click <strong>Add Device</strong> while the release is being built inside the balena Application.</p>
+<p><img src="https://www.balena.io/blog/content/images/2020/07/add-device.png" alt="Add Device" /></p>
+<p>It’s time to download the OS image that will have your LoRa gateway. Introduce your WiFi credentials if you are going to use WiFi.</p>
+<p><img src="https://www.balena.io/blog/content/images/2020/07/add-device-2.png" alt="Add Device" /></p>
+<p>Once you have the balenaOS image that will run your Basics Station LoRa gateway, open <a href="https://www.balena.io/etcher/">balenaEtcher</a> (if you don’t have it, download it) and flash your SD card with Etcher. Once flashed, insert the SD in your Raspberry Pi and power it up.</p>
+<h3 id="before-configuring-your-ttn-lora-gateway">Before configuring your TTN LoRa gateway</h3>
+<p><img src="https://www.balena.io/blog/content/images/2020/07/new-app.png" alt="" /></p>
+<p>After some minutes, the containers of the release will be deployed on the Raspberry Pi with the RAK2245. If everything gets successfully installed, on the <strong>TAGS</strong> of your balenaCloud you should see the EUI of your gateway. You will need this EUI to register the gateway on TTN. Double click on the TAG to copy it.</p>
+<p>If that does not work, go to the terminal box and click <strong>Select a target</strong>, then <strong>HostOS</strong>. Once you are inside the shell, type:</p>
+<p><code class="highlighter-rouge">cat /sys/class/net/eth0/address | sed -r 's/[:]+//g' | sed -e 's#\(.\{6\}\)\(.*\)#\1FFFE\2#g'</code></p>
+<p>Copy the result and you are ready to register your gateway with this EUI.</p>
+<h2 id="configure-the-gateway-on-ttn">Configure the gateway on TTN</h2>
+<p>Go to the <a href="https://console.thethingsnetwork.org/">TTN console</a> and <strong>Register a Gateway</strong>.</p>
+<p><img src="https://www.balena.io/blog/content/images/2020/07/TTN-register-gateway.png" alt="Register Gateway" /></p>
+<blockquote>
+  <p>During registration, check “I’m using the legacy packet forwarder”, even though you are using Basics Station. This is a “won’t fix” issue in TTN. Paste the EUI and register the gateway.</p>
+</blockquote>
+<h3 id="set-up-the-lora-gateway-variables-on-balenacloud">Set up the LoRa gateway variables on balenaCloud</h3>
+<p>At that moment, your gateway will be registered at TTN and now it’s time to copy the <strong>Gateway ID</strong> and the <strong>Gateway Key</strong> from the TTN console and introduce them as balena Device Variables.</p>
+<p><img src="https://www.balena.io/blog/content/images/2020/07/add-device-variable.png" alt="" /></p>
+<p>Actually some variables are added during the deployment, but you need to introduce the most important for TTN, the <code class="highlighter-rouge">GW_ID</code> and the <code class="highlighter-rouge">GW_KEY</code> that are the Gateway ID and the Gateway Key.</p>
+<p>Having said that, the gateway is created with European frequency, de facto. If you live in another LoRaWAN region, feel free to change the TC_URI with another LNS <code class="highlighter-rouge">wss://lns.{eu-us-in-au}.thethings.network:443</code> depending on your LoRaWAN frequencies.</p>
+<p>Now your device will be completely configured and ready to receive uplinks and downlinks.</p>
           </div>  
         </div>
         <div>
