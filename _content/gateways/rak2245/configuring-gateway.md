@@ -11,14 +11,14 @@ sudo gateway-config
 You will now then see a page like the following picture below
 
 ![Figure 1: Configuration Options for the Gateway](images/config-options.png)
-1. **Set pi password** - used to set/change the password of the LoRaWAN™ Gateway.
-2. **Set up RAK Gateway LoRa® Concentrator** - used to configure the frequency, which the LoRaWAN™ Gateway will operate on, and the LoRaWAN™ Server which the LoRaWAN™ Gateway will work with.
+1. **Set pi password** - used to set/change the password of the LoRaWAN® Gateway.
+2. **Set up RAK Gateway LoRa® Concentrator** - used to configure the frequency, which the LoRaWAN® Gateway will operate on, and the LoRaWAN® Server which the LoRaWAN® Gateway will work with.
 3. **Restart packet-forwarder** - used to restart the LoRa® packet forwarded process.
-4. **Edit packet-forwarder config**- used to open the global_conf.json file, in order to edit LoRaWAN™ parameters manually.
+4. **Edit packet-forwarder config**- used to open the global_conf.json file, in order to edit LoRaWAN® parameters manually.
 5. **Configure Wifi** - used to configure the Wi-Fi settings in order to connect to a network.
 6. **Configure LAN** - used to configure the Ethernet adapter settings.
 
->**Note:** A unique ID will be generated in for LoRaWAN™ Gateway. This is also called Gateway EUI squared in red in the figure above and is essential for registering the gateway with any LoRa® Network Server (TTN, ChirpStack)
+>**Note:** A unique ID will be generated in for LoRaWAN® Gateway. This is also called Gateway EUI squared in red in the figure above and is essential for registering the gateway with any LoRa® Network Server (TTN, ChirpStack)
 
 There is also another way to get your "Gateway ID", just enter the command below in the command line:
 
@@ -74,7 +74,7 @@ First, select option 1 for configuring your Regional Frequency Band
 
 ![Figure 11: Regional Frequency Band Option](images/11.5_select_chirpstack.png)
 
-Then, set the IP address of the ChirpStack which you want your LoRaWAN™ Gateway to work with:
+Then, set the IP address of the ChirpStack which you want your LoRaWAN® Gateway to work with:
 
 ![Figure 12: Default LoRaServer IP Address](images/12_defaul_loraserver.png)
 
@@ -85,9 +85,9 @@ Then, set the IP address of the ChirpStack which you want your LoRaWAN™ Gatewa
 
 ![Figure 13: Chirpstack ADR Enable/Disable](images/13_enable_adr.png)
 
-## Connect the LoRaWAN™ Gateway to a Router
+## Connect the LoRaWAN® Gateway to a Router
 
-If you want to use TTN or an independent LoRaServer which may be deployed in Local area network or Internet, you need to connect your LoRaWAN™ Gateway to a router first.
+If you want to use TTN or an independent LoRaServer which may be deployed in Local area network or Internet, you need to connect your LoRaWAN® Gateway to a router first.
 
 ### Connect through Wi-Fi
 If you want to connect through Wi-Fi, it can easily be done with the Wireless capabilities of the Raspberry Pi 3B+ or Raspberry Pi 4.
@@ -96,8 +96,8 @@ If you want to connect through Wi-Fi, it can easily be done with the Wireless ca
 
 There are 5 options to choose from in the Wi-Fi configuration menu:
 
-1. **Enable AP Mode/Disable Client Mode** - the LoRaWAN™ Gateway will work in Wi-Fi Access Point Mode after rebooting while the Wi-Fi Client Mode will be disabled (this is the default mode).
-2. **Enable Client Mode/Disable AP Mode** - the LoRaWAN™ Gateway will work in Wi-Fi Client mode after rebooting, while Wi-FI AP Mode will be disabled.
+1. **Enable AP Mode/Disable Client Mode** - the LoRaWAN® Gateway will work in Wi-Fi Access Point Mode after rebooting while the Wi-Fi Client Mode will be disabled (this is the default mode).
+2. **Enable Client Mode/Disable AP Mode** - the LoRaWAN® Gateway will work in Wi-Fi Client mode after rebooting, while Wi-FI AP Mode will be disabled.
 3. **Modify SSID and pwd for AP Mode** - used to modify the SSID and password of the Wi-Fi AP. Only works if the Wi-Fi AP Mode is enabled.
 4. **Add New SSID for Client** - this is used if you want to connect to a new Wi-Fi Network. Only works in Wi-Fi Client mode.
 5. **Change Wi-Fi Country** - this is used to modify the Resident Country to match with Wi-Fi standards.
@@ -123,12 +123,12 @@ Once Wi-Fi AP Mode has been disabled by choosing Item 2, you can now then connec
 If you want to connect to router through Ethernet Cable, do the following steps:
 
 * In the main configuration menu, choose “6 Configure LAN”. This will let you set up a static IP address for the Gateway’s Ethernet adapter.
-* Just fill a static IP Address according to the IP address of the router you want to connect. Please note that the LoRaWAN™ gateway and the router must be in the same network segment, otherwise the connection will fail.
-* By default, the IP Address of the LoRaWAN™ Gateway's Ethernet is `192.168.10.10`
-![Figure 19: Default LoRaWAN™ Gateway Ethernet IP Address](images/19_ethernet_ip.png)
+* Just fill a static IP Address according to the IP address of the router you want to connect. Please note that the LoRaWAN® gateway and the router must be in the same network segment, otherwise the connection will fail.
+* By default, the IP Address of the LoRaWAN® Gateway's Ethernet is `192.168.10.10`
+![Figure 19: Default LoRaWAN® Gateway Ethernet IP Address](images/19_ethernet_ip.png)
 
 * Then configure the IP address of the Router. This is the LAN Interface IP address of the router:
 ![Figure 20: LAN Interface IP Address of the Router](images/20_lan_interface.png)
 
 * Press OK then the success message will appear.
-* Lastly, reboot the LoRaWAN™ Gateway using the command `sudo reboot` in the command line and it will connect to the router successfully through Ethernet.
+* Lastly, reboot the LoRaWAN® Gateway using the command `sudo reboot` in the command line and it will connect to the router successfully through Ethernet.
