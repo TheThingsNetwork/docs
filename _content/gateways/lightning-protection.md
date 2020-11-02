@@ -10,8 +10,8 @@ When using an outdoor antenna, please consider installing surge protection devic
 
 ## Citel
 
-* Coax: [P8AX09](http://www.citel.fr/en/produit/citel-radiocommunication-surge-protectors/citel-coaxial-gdt/gamme-coaxial-P8AX/p8ax09-nmf.html)
-* Ethernet: [MJ8-POE-B](http://www.citel.fr/en/produit/citel-surge-protector-for-dataline-network/poe-surge-protector/surge-protectors-MJ8-POE/mj8-poe-b.html)
+* Coax: [P8AX09](https://citel.fr/en/radiocommunication/gas-tube-technology/p8ax09-nmf)
+* Ethernet: [MJ8-POE-B](https://citel.fr/en/dataline/poe-surge-protector/mj8-poe-b)
 
 ## WiMood
 

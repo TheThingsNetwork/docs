@@ -63,7 +63,7 @@ After encoding data with CayenneLPP, have a look at the console to change the **
 
 ## Add the myDevices Cayenne integration in the Console
 
-1. Go to your application in the [**Console**](https://console.thethingsnetwork.org/applications) and add the Cayenne integration via **Add Integration**
+1. Go to your application in the [**Console**](https://console.thethingsnetwork.org/applications) and add the MyDevices integration via **Add Integration**
    ![myDevices-dashboard](integrations.png)
 
 2. Think of a name for your **Process ID**

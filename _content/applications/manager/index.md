@@ -22,6 +22,7 @@ Use the following endpoints for the community network:
 
 - [gRPC](http://www.grpc.io/): `<region>.thethings.network:1904`
 - HTTP: `http://<region>.thethings.network:8084`
+- HTTPS: `https://<region>.thethings.network:8094`
 
 Replace `<region>` with the last part of the handler you registered your application to, e.g. `eu`, `us-west`, `asia-se` or `brazil`.
 

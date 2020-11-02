@@ -17,7 +17,7 @@ The Data API allow you to receive events and messages from devices as well as se
 * AMQP (coming)
 
 ### Application Manager API
-The Application Manager API let you manage applications and devices registered to it. You can use the Data API via:
+The Application Manager API let you manage applications and devices registered to it. You can use the Application Manager API via:
 
 * gRPC (to be documented)
 * [HTTP](manager/index.md)
@@ -38,7 +38,7 @@ Integrations are the easiest way to connect your devices to an applications. An 
 
 ![Platform Integration](options-integration.png)
 
-Platform Integrations completely you from any code and even The Things Network Console or CLI. A good example is an integration for Azure IoT Hub or AWS IoT, where the user could manage his application and devices from there, while the integration takes care of synchronizing with The Things Network.
+Platform Integrations completely frees you from any code and even The Things Network Console or CLI. A good example is an integration for Azure IoT Hub or AWS IoT, where the user could manage his application and devices from there, while the integration takes care of synchronizing with The Things Network.
 
 ### Messaging Integration
 
