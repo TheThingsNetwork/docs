@@ -31,14 +31,14 @@
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-10-22T13:57:15+00:00" />
+<meta property="article:published_time" content="2020-11-02T13:56:27+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="twitter:title" content="Configure AEP model" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","description":"Configure AEP model","headline":"Configure AEP model","datePublished":"2020-10-22T13:57:15+00:00","dateModified":"2020-10-22T13:57:15+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/gateways/multitech/aep.html"},"url":"https://www.thethingsnetwork.org/docs/gateways/multitech/aep.html","@context":"https://schema.org"}</script>
+{"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","description":"Configure AEP model","headline":"Configure AEP model","datePublished":"2020-11-02T13:56:27+00:00","dateModified":"2020-11-02T13:56:27+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/gateways/multitech/aep.html"},"url":"https://www.thethingsnetwork.org/docs/gateways/multitech/aep.html","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -99,6 +99,12 @@
           <div class="panel-body">
             <ul>
               <li class=""><a href="/docs/gateways/index.html"><h5>Gateways</h5></a>
+            <ul>
+                <li class=""><a href="/docs/gateways/basics-station/">LoRa Basics™ Station</a>
+                </li>
+                <li class=""><a href="/docs/gateways/certificates/">Root Certificates</a>
+                </li>
+            </ul>
               </li>
             <li class="page-side-nav-section"><span>Running a gateway</span>
             <ul>
@@ -201,7 +207,7 @@
 <p>If you changed the IP Address or selected DHCP a popup will appear warning you that the DHCP Server of the Conduit itself will be disabled. This is fine, so click <strong>OK</strong> to continue.</p>
 <p><img src="dhcp.png" alt="DHCP" /></p>
 <h2 id="update-firmware">Update firmware</h2>
-<p>Before you continue, verify that the Conduit AEP runs Firmware 1.3.2 or later. This is display in the header of the web interface. If it is out-dated, follow the <a href="http://www.multitech.net/developer/software/aep/upgrading-the-aep-firmware/">instructions to upgrade</a> to the latest version. The ttn-packer-forwarder might not work otherwise.</p>
+<p>Before you continue, verify that the Conduit AEP runs Firmware 5.3 or later. This is displayed in the header of the web interface. If it is out-dated, follow the <a href="http://www.multitech.net/developer/software/aep/upgrading-the-aep-firmware/">instructions to upgrade</a> to the latest version.</p>
 <h2 id="access--network-configuration">Access &amp; Network Configuration</h2>
 <p>As the LAN interfaces do not allow specifying a DNS server and we need DNS to work later on we will now change to network to WAN. However as this would lock us out we need to allow remote access for the management first.</p>
 <blockquote>
@@ -231,31 +237,17 @@
 <p>You will be prompted to confirm the restart. Choose <strong>OK</strong> to proceed.</p>
 <p>Disconnect the temporary network cable and connect the Conduit to the target network while it is restarting.</p>
 <h2 id="ttn-configuration-aep">TTN Configuration</h2>
-<p>Once the Conduit has finished restarting and is connected to the target network, connect a computer to the same network and login to the Conduit.</p>
+<p>Once the Conduit has finished restarting and is connected to the target network, connect a computer to the same network and login to the Conduit by entering its IP in a browser.</p>
 <blockquote>
   <p>If you have not configured your Conduit with a static IP, you will have to <a href="http://apple.stackexchange.com/questions/19783/how-do-i-know-the-ip-addresses-of-other-computers-in-my-network">find out which IP the DHCP assigned to it</a>.</p>
 </blockquote>
-<ul>
-  <li>
-    <p>For Windows use a terminal program like Putty to connect to <code class="highlighter-rouge">admin@&lt;IP&gt;</code>:</p>
-    <p><img src="putty-aep.png" alt="PuTTY Configuration" /></p>
-    <p>You will get a security alert concerning the host key. Accept the new key with <strong>Yes</strong>.</p>
-    <p><img src="putty-warning.png" alt="PuTTY Security Alert" /></p>
-  </li>
-  <li>
-    <p>For Linux/OSX open terminal and connect via <code class="highlighter-rouge">ssh admin@&lt;IP&gt;</code>.</p>
-  </li>
-</ul>
-<p>Download the <a href="https://github.com/kersing/multitech-installer/raw/master/installer.sh">installer</a> by entering the next command:</p>
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code>wget https://github.com/kersing/multitech-installer/raw/master/installer.sh --no-check-certificate
-</code></pre>
-</div>
-<p><img src="wget.png" alt="wget" /></p>
-<p>Now run the installer and provide the prompted information. (Answer <strong>Yes</strong> to the first question, since we’ve already set up the conduit network etc in the previous steps.</p>
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code>sudo sh installer.sh
-</code></pre>
-</div>
-<p><img src="installer-aep.png" alt="installer" /></p>
+<p>Click the LoRaWAN tab on the left.</p>
+<p>In the <strong>Mode</strong> dropdown, choose <strong>Basic Station</strong>.</p>
+<p><img src="lbs-menu.png" alt="LBS Menu" /></p>
+<p>Select <strong>LNS</strong> in the <strong>Credentials</strong> dropdown.</p>
+<p>See the <a href="../basics-station">Basics Station guide</a> for the <strong>Server Certificate</strong> and <strong>Server Address</strong>.</p>
+<p>After entering the LNS configuration, click the <strong>Submit</strong> button, and then click <strong>Save and Apply</strong>. The gateway will apply the changes.</p>
+<p><img src="lbs-save.png" alt="LBS Save" /></p>
           </div>  
         </div>
         <div>
