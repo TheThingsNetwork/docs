@@ -11,11 +11,11 @@ This section contains links to common root SSL certificates used in TTN, issued 
 
 ## Which Certificate Is Right For My Device?
 
-The [complete certificate list](https://curl.haxx.se/ca/cacert.pem) contains all CA certificates trusted by modern browsers, so if you use certificates issued by a popular CA, you should be covered by this one.
+The [complete certificate list](https://curl.haxx.se/ca/cacert.pem) contains all CA certificates trusted by modern browsers, so if your device supports this file, you should be covered by this one.
 
 The <a href="ca.pem" download>minimal certificate list</a> contains a tailored list of certificates for devices which do not support the larger list due to memory constraints.
 
-Unfortunately, some gateways do not support concatenated certificate lists at all. If your device will not connect using the complete or minimal certificate lists, you must use the specific certificate you use to configure TLS for your domain. If you use Let's Encrypt, use the [Let's Encrypt ISRG Root X1 or DST Root X3](#lets-encrypt).
+Unfortunately, some gateways do not support concatenated certificate lists at all. If your device will not connect using the complete or minimal certificate lists, you must use the specific certificate TTN uses. This is currently the Let's Encrypt DST Root X3, but is transitioning to the ISRG Root X1. See [below](#lets-encrypt).
 
 ## Complete Certificate List
 
@@ -39,6 +39,5 @@ TTN is transitioning from DST Root X3 to the Let's Encrypt ISRG Root X1 Trust. D
 
 TTN will continue to use the Let's Encrypt DST Root X3 Trust until it expires in 2021. Download it [here](https://letsencrypt.org/certs/lets-encrypt-x3-cross-signed.pem).
 
-> Unfortunately, if you use a single certificate and that certificate expires, your gateway will stop connecting until you update the certificate. The minimal and complete certificate lists contain the ISRG Root X1 and DST Root X3 certificates, but some gateways do not support concatenated certificate lists, even though they are part of the [ietf spec](https://tools.ietf.org/html/rfc1421) :( If you know you are using Let's Encrypt to secure your domain, use one of these `.pem` files as your gateway's Server Certificate for maximum compatibility.
-
+> Unfortunately, if you use a single certificate and that certificate expires, your gateway will stop connecting until you update the certificate. The minimal and complete certificate lists contain the ISRG Root X1 and DST Root X3 certificates, but some gateways do not support concatenated certificate lists, even though they are part of the [ietf spec](https://tools.ietf.org/html/rfc1421) :(
 
