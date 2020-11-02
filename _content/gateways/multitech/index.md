@@ -21,7 +21,7 @@ This guide will help you set up the gateway to communicate over The Things Netwo
 
 * MultiTech Conduit [AEP](http://www.multitech.net/developer/software/aep/) or [mLinux](http://www.multitech.net/developer/software/mlinux/) model.
 
-  > There is no need to update any of the MultiTech software on the conduit.
+  > Update the Conduit to [5.30 firmware or later](http://www.multitech.net/developer/downloads/) to use LoRa Basics Station, which supports channel plan configuration from the Network Server.
 
 * MultiTech [MTAC-LoRa LoRa accessory card](http://www.multitech.net/developer/products/accessory-cards/mtac-lora/), installed as [instructed](http://www.multitech.net/developer/products/accessory-cards/installing-an-accessory-card/).
 
