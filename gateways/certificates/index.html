@@ -31,14 +31,14 @@
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-11-02T13:56:27+00:00" />
+<meta property="article:published_time" content="2020-11-04T17:02:06+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="twitter:title" content="Root Certificates" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","description":"We are building a global open free crowdsourced long range low power IoT data network.","headline":"Root Certificates","datePublished":"2020-11-02T13:56:27+00:00","dateModified":"2020-11-02T13:56:27+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/gateways/certificates/"},"url":"https://www.thethingsnetwork.org/docs/gateways/certificates/","@context":"https://schema.org"}</script>
+{"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","description":"We are building a global open free crowdsourced long range low power IoT data network.","headline":"Root Certificates","datePublished":"2020-11-04T17:02:06+00:00","dateModified":"2020-11-04T17:02:06+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/gateways/certificates/"},"url":"https://www.thethingsnetwork.org/docs/gateways/certificates/","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -171,9 +171,9 @@
 <p>This section contains links to common root SSL certificates used in TTN, issued by trusted certificate authorities (CAs).</p>
 <!--more-->
 <h2 id="which-certificate-is-right-for-my-device">Which Certificate Is Right For My Device?</h2>
-<p>The <a href="https://curl.haxx.se/ca/cacert.pem">complete certificate list</a> contains all CA certificates trusted by modern browsers, so if you use certificates issued by a popular CA, you should be covered by this one.</p>
+<p>The <a href="https://curl.haxx.se/ca/cacert.pem">complete certificate list</a> contains all CA certificates trusted by modern browsers, so if your device supports this file, you should be covered by this one.</p>
 <p>The <a href="ca.pem" download="">minimal certificate list</a> contains a tailored list of certificates for devices which do not support the larger list due to memory constraints.</p>
-<p>Unfortunately, some gateways do not support concatenated certificate lists at all. If your device will not connect using the complete or minimal certificate lists, you must use the specific certificate you use to configure TLS for your domain. If you use Let’s Encrypt, use the <a href="#lets-encrypt">Let’s Encrypt ISRG Root X1 or DST Root X3</a>.</p>
+<p>Unfortunately, some gateways do not support concatenated certificate lists at all. If your device will not connect using the complete or minimal certificate lists, you must use the specific certificate TTN uses. This is currently the Let’s Encrypt DST Root X3, but is transitioning to the ISRG Root X1. See <a href="#lets-encrypt">below</a>.</p>
 <h2 id="complete-certificate-list">Complete Certificate List</h2>
 <p>This <code class="highlighter-rouge">.pem</code> file contains all common CA certificates trusted by Mozilla, and is extracted and hosted by <a href="https://curl.haxx.se/docs/caextract.html">curl</a>.</p>
 <p>Download the complete certificate list from curl <a href="https://curl.haxx.se/ca/cacert.pem">here</a>.</p>
@@ -186,7 +186,7 @@
 <h3 id="dst-root-x3">DST Root X3</h3>
 <p>TTN will continue to use the Let’s Encrypt DST Root X3 Trust until it expires in 2021. Download it <a href="https://letsencrypt.org/certs/lets-encrypt-x3-cross-signed.pem">here</a>.</p>
 <blockquote>
-  <p>Unfortunately, if you use a single certificate and that certificate expires, your gateway will stop connecting until you update the certificate. The minimal and complete certificate lists contain the ISRG Root X1 and DST Root X3 certificates, but some gateways do not support concatenated certificate lists, even though they are part of the <a href="https://tools.ietf.org/html/rfc1421">ietf spec</a> :( If you know you are using Let’s Encrypt to secure your domain, use one of these <code class="highlighter-rouge">.pem</code> files as your gateway’s Server Certificate for maximum compatibility.</p>
+  <p>Unfortunately, if you use a single certificate and that certificate expires, your gateway will stop connecting until you update the certificate. The minimal and complete certificate lists contain the ISRG Root X1 and DST Root X3 certificates, but some gateways do not support concatenated certificate lists, even though they are part of the <a href="https://tools.ietf.org/html/rfc1421">ietf spec</a> :(</p>
 </blockquote>
           </div>  
         </div>
