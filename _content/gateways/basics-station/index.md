@@ -19,3 +19,9 @@ To connect your device, use the following settings:
 
 - Server Address: `wss://lns.{eu|us|in|au}.thethings.network:443`
 - Server Certificate: see the [certificates section](../certificates)
+
+Check the **I'm using the legacy packet forwarder button** when registering your gateway in the console.
+
+![Legacy Packet Forwarder](legacy.png)
+
+> NOTE: This is not the legacy packet forwarder, but internally this setting is correct.

@@ -1,9 +1,11 @@
 ---
-title: Basic Station
+title: Basics Station
 ---
 
-# BasicStation
+# Basics Station
 
-BasicStation is Semtech's new state-of-the-art gateway packet-forwarder based on WebSockets.
+Basics Station is Semtech's new state-of-the-art gateway packet-forwarder based on WebSockets.
 For more details, refer to the detailed docs [here](https://doc.sm.tc/station/).
+
+See instructions for connecting Basics Station gateways [here](../basics-station).
 
