@@ -64,47 +64,47 @@ section: Additional Information
 | `000036` | `6C000000/7` | `6C000000` - `6DFFFFFF` | Netze BW GmbH | World |
 | `000037` | `6E000000/7` | `6E000000` - `6FFFFFFF` | Tektelic | World |
 | `000038` | `70000000/7` | `70000000` - `71FFFFFF` | Charter Communicaton | USA |
-| `600000` | `E0000000/14` | `E0000000` - `E003FFFF` | RESERVED |  |
-| `600001` | `E0040000/14` | `E0040000` - `E007FFFF` | Digita | Finland |
-| `600002` | `E0080000/14` | `E0080000` - `E00BFFFF` | Blink | Sweden, Norway |
-| `600003` | `E00C0000/14` | `E00C0000` - `E00FFFFF` | QuaeNet Inc. | World |
-| `600004` | `E0100000/14` | `E0100000` - `E013FFFF` | eleven-x | North and South America |
-| `600005` | `E0140000/14` | `E0140000` - `E017FFFF` | IoT Network AS | World |
-| `600006` | `E0180000/14` | `E0180000` - `E01BFFFF` | Senra Tech | Asia, Middle East |
-| `600007` | `E01C0000/14` | `E01C0000` - `E01FFFFF` | EDF | World |
-| `600008` | `E0200000/14` | `E0200000` - `E023FFFF` | Unidata | Italy |
-| `600009` | `E0240000/14` | `E0240000` - `E027FFFF` | SEAS-NVE | Scandinavia |
-| `60000A` | `E0280000/14` | `E0280000` - `E02BFFFF` | Öresundskraft | Scandinavia |
-| `60000B` | `E02C0000/14` | `E02C0000` - `E02FFFFF` | Ad Net Market Media | Romania |
-| `60000C` | `E0300000/14` | `E0300000` - `E033FFFF` | CAT Telecom | Thailand |
-| `60000D` | `E0340000/14` | `E0340000` - `E037FFFF` | SenSys | World |
-| `60000E` | `E0380000/14` | `E0380000` - `E03BFFFF` | Spark | World |
-| `60000F` | `E03C0000/14` | `E03C0000` - `E03FFFFF` | ThingPark China | China |
-| `600010` | `E0400000/14` | `E0400000` - `E043FFFF` | Senet | World |
-| `600011` | `E0440000/14` | `E0440000` - `E047FFFF` | SenseWay | Japan |
-| `600012` | `E0480000/14` | `E0480000` - `E04BFFFF` | Packetworx | Philippines |
-| `600013` | `E04C0000/14` | `E04C0000` - `E04FFFFF` | Actility | World |
-| `600014` | `E0500000/14` | `E0500000` - `E053FFFF` | Kerlink | World |
-| `600015` | `E0540000/14` | `E0540000` - `E057FFFF` | Alibaba IoT BU | China |
-| `600016` | `E0580000/14` | `E0580000` - `E05BFFFF` | Cisco | World |
-| `600017` | `E05C0000/14` | `E05C0000` - `E05FFFFF` | Schneider Electric | Global |
-| `600018` | `E0600000/14` | `E0600000` - `E063FFFF` | ZENNER | Global |
-| `600019` | `E0640000/14` | `E0640000` - `E067FFFF` | Boston Networks Limited | Europe |
-| `60001A` | `E0680000/14` | `E0680000` - `E06BFFFF` | NEC Corporation | Japan |
-| `60001B` | `E06C0000/14` | `E06C0000` - `E06FFFFF` | Shenzhen Tencent Computer Systems Company Limited | China |
-| `60001C` | `E0700000/14` | `E0700000` - `E073FFFF` | MachineQ/Comcast | World |
-| `60001D` | `E0740000/14` | `E0740000` - `E077FFFF` | NTT (Nippon Telephone and Telegraph) | Japan |
-| `60001E` | `E0780000/14` | `E0780000` - `E07BFFFF` | Carnegie Technologies, LLC | North America, South America |
-| `60001F` | `E07C0000/14` | `E07C0000` - `E07FFFFF` | KPN | Europe |
-| `600020` | `E0800000/14` | `E0800000` - `E083FFFF` | Spectrum | USA |
-| `600021` | `E0840000/14` | `E0840000` - `E087FFFF` | Microshare Inc. | World |
-| `600022` | `E0880000/14` | `E0880000` - `E08BFFFF` | Unitymedia | Germany |
-| `600023` | `E08C0000/14` | `E08C0000` - `E08FFFFF` | Paige Wireless | World |
-| `600024` | `E0900000/14` | `E0900000` - `E093FFFF` | Netze BW GmbH | World |
-| `600025` | `E0940000/14` | `E0940000` - `E097FFFF` | Tektelic | World |
-| `600026` | `E0980000/14` | `E0980000` - `E09BFFFF` | Acklio | World |
-| `600027` | `E09C0000/14` | `E09C0000` - `E09FFFFF` | Birdz | World |
-| `600028` | `E0A00000/14` | `E0A00000` - `E0A3FFFF` | Charter Communication | USA |
+| `600000` | `E0000000/15` | `E0000000` - `E001FFFF` | RESERVED |  |
+| `600001` | `E0020000/15` | `E0020000` - `E003FFFF` | Digita | Finland |
+| `600002` | `E0040000/15` | `E0040000` - `E005FFFF` | Blink | Sweden, Norway |
+| `600003` | `E0060000/15` | `E0060000` - `E007FFFF` | QuaeNet Inc. | World |
+| `600004` | `E0080000/15` | `E0080000` - `E009FFFF` | eleven-x | North and South America |
+| `600005` | `E00A0000/15` | `E00A0000` - `E00BFFFF` | IoT Network AS | World |
+| `600006` | `E00C0000/15` | `E00C0000` - `E00DFFFF` | Senra Tech | Asia, Middle East |
+| `600007` | `E00E0000/15` | `E00E0000` - `E00FFFFF` | EDF | World |
+| `600008` | `E0100000/15` | `E0100000` - `E011FFFF` | Unidata | Italy |
+| `600009` | `E0120000/15` | `E0120000` - `E013FFFF` | SEAS-NVE | Scandinavia |
+| `60000A` | `E0140000/15` | `E0140000` - `E015FFFF` | Öresundskraft | Scandinavia |
+| `60000B` | `E0160000/15` | `E0160000` - `E017FFFF` | Ad Net Market Media | Romania |
+| `60000C` | `E0180000/15` | `E0180000` - `E019FFFF` | CAT Telecom | Thailand |
+| `60000D` | `E01A0000/15` | `E01A0000` - `E01BFFFF` | SenSys | World |
+| `60000E` | `E01C0000/15` | `E01C0000` - `E01DFFFF` | Spark | World |
+| `60000F` | `E01E0000/15` | `E01E0000` - `E01FFFFF` | ThingPark China | China |
+| `600010` | `E0200000/15` | `E0200000` - `E021FFFF` | Senet | World |
+| `600011` | `E0220000/15` | `E0220000` - `E023FFFF` | SenseWay | Japan |
+| `600012` | `E0240000/15` | `E0240000` - `E025FFFF` | Packetworx | Philippines |
+| `600013` | `E0260000/15` | `E0260000` - `E027FFFF` | Actility | World |
+| `600014` | `E0280000/15` | `E0280000` - `E029FFFF` | Kerlink | World |
+| `600015` | `E02A0000/15` | `E02A0000` - `E02BFFFF` | Alibaba IoT BU | China |
+| `600016` | `E02C0000/15` | `E02C0000` - `E02DFFFF` | Cisco | World |
+| `600017` | `E02E0000/15` | `E02E0000` - `E02FFFFF` | Schneider Electric | Global |
+| `600018` | `E0300000/15` | `E0300000` - `E031FFFF` | ZENNER | Global |
+| `600019` | `E0320000/15` | `E0320000` - `E033FFFF` | Boston Networks Limited | Europe |
+| `60001A` | `E0340000/15` | `E0340000` - `E035FFFF` | NEC Corporation | Japan |
+| `60001B` | `E0360000/15` | `E0360000` - `E037FFFF` | Shenzhen Tencent Computer Systems Company Limited | China |
+| `60001C` | `E0380000/15` | `E0380000` - `E039FFFF` | MachineQ/Comcast | World |
+| `60001D` | `E03A0000/15` | `E03A0000` - `E03BFFFF` | NTT (Nippon Telephone and Telegraph) | Japan |
+| `60001E` | `E03C0000/15` | `E03C0000` - `E03DFFFF` | Carnegie Technologies, LLC | North America, South America |
+| `60001F` | `E03E0000/15` | `E03E0000` - `E03FFFFF` | KPN | Europe |
+| `600020` | `E0400000/15` | `E0400000` - `E041FFFF` | Spectrum | USA |
+| `600021` | `E0420000/15` | `E0420000` - `E043FFFF` | Microshare Inc. | World |
+| `600022` | `E0440000/15` | `E0440000` - `E045FFFF` | Unitymedia | Germany |
+| `600023` | `E0460000/15` | `E0460000` - `E047FFFF` | Paige Wireless | World |
+| `600024` | `E0480000/15` | `E0480000` - `E049FFFF` | Netze BW GmbH | World |
+| `600025` | `E04A0000/15` | `E04A0000` - `E04BFFFF` | Tektelic | World |
+| `600026` | `E04C0000/15` | `E04C0000` - `E04DFFFF` | Acklio | World |
+| `600027` | `E04E0000/15` | `E04E0000` - `E04FFFFF` | Birdz | World |
+| `600028` | `E0500000/15` | `E0500000` - `E051FFFF` | Charter Communication | USA |
 | `C00000` | `FC000000/22` | `FC000000` - `FC0003FF` | RESERVED |  |
 | `C00001` | `FC000400/22` | `FC000400` - `FC0007FF` | Nordic Automation Systems | World |
 | `C00002` | `FC000800/22` | `FC000800` - `FC000BFF` | ResIOT | World |
