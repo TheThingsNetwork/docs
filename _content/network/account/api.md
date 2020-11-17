@@ -1,7 +1,7 @@
 ---
 title: API Reference
 zindex: -1000
-source: 'https://github.com/TheThingsNetwork/docs/blob/master/_content/network/account/api.md'
+source: 'https://github.com/TheThingsIndustries/account-server/blob/master/apidocs.md'
 ---
 
 # The Things Network Account Server API, version 2.0.0
@@ -636,7 +636,7 @@ collaborator.
 **Request Body**
 
 - (object)
-  - id (string) The ID of the new gateway.
+  - id (string) The ID if the new gateway.
   - frequency_plan (string) The frequency plan the new gateway will use.
   - location (object) (optional)
     - longitude (number) (optional) The longitude.
