@@ -31,14 +31,14 @@
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-11-17T10:11:34+00:00" />
+<meta property="article:published_time" content="2020-11-17T12:26:36+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="twitter:title" content="Connecting to The Things Network (TTN)" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","description":"The Things Network is about enabling low power devices to use long range gateways to connect to an open-source, decentralized network to exchange data with Application. Learn more about the Things Network here.","headline":"Connecting to The Things Network (TTN)","datePublished":"2020-11-17T10:11:34+00:00","dateModified":"2020-11-17T10:11:34+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/gateways/rak2245/connecting-to-ttn.html"},"url":"https://www.thethingsnetwork.org/docs/gateways/rak2245/connecting-to-ttn.html","@context":"https://schema.org"}</script>
+{"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","description":"The Things Network is about enabling low power devices to use long range gateways to connect to an open-source, decentralized network to exchange data with Application. Learn more about the Things Network here.","headline":"Connecting to The Things Network (TTN)","datePublished":"2020-11-17T12:26:36+00:00","dateModified":"2020-11-17T12:26:36+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/gateways/rak2245/connecting-to-ttn.html"},"url":"https://www.thethingsnetwork.org/docs/gateways/rak2245/connecting-to-ttn.html","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -133,7 +133,7 @@
                 </li>
                 <li class=""><a href="/docs/gateways/multitech/">MultiTech Conduit</a>
                 </li>
-                <li class=""><a href="/docs/gateways/rak2245/">RAK2245 Pi Hat</a>
+                <li class=""><a href="/docs/gateways/rak2245/">RAK2245 Pi Hat Edition - LoRaWAN® Gateway Concentrator Module</a>
             <ul>
                 <li class=""><a href="/docs/gateways/rak2245/device-firmware-setup.html">Device Firmware Setup</a>
                 </li>
@@ -183,31 +183,34 @@
           <div class="panel-body page-content">
             <p>The Things Network is about enabling low power devices to use long range gateways to connect to an open-source, decentralized network to exchange data with Application. Learn more about the Things Network here.</p>
 <ul>
-  <li>First, you should have connected your LoRa Gateway to the router in order to access the internet according to the method which has been introduced in the “Configure your LoRa Gateway” section of this document.</li>
-  <li>Second, config your LoRa Gateway and choose TTN as the LoRa Server and choose a correct frequency according to the method which has been introduced in the Configuring the Gateway section.
-Now go to the TTN Website: https://www.thethingsnetwork.org/ and Login. You will then see the following page:</li>
-</ul>
-<p><img src="images/ttn-index.png" alt="Figure 1: The Things Network Home Page" /></p>
-<ul>
+  <li>First, you should have connected your LoRaWAN® Gateway to the router in order to access the internet according to the method which has been introduced in the “Configure your LoRaWAN® Gateway” section of this document.</li>
+  <li>
+    <p>Second, config your LoRaWAN® Gateway and choose TTN as the LoRa® Server and choose a correct frequency according to the method which has been introduced in the Configuring the Gateway section.
+Now go to the TTN Website: https://www.thethingsnetwork.org/ and Login. You will then see the following page:
+<img src="images/ttn-index.png" alt="Figure 1: The Things Network Home Page" /></p>
+  </li>
   <li>Choose Console then Click Gateway.</li>
 </ul>
-<p><img src="images/console.png" alt="Figure 2: The Things Network Console Page" />
-<img src="images/gateway-add.png" alt="Figure 3: Adding a Gateway to TTN" /></p>
+<p><img src="images/console.png" alt="Figure 2: The Things Network Console Page" /></p>
 <ul>
   <li>All of your Registered Gateways will be displayed here in this page. Click <strong>“register gateway”</strong></li>
 </ul>
+<p><img src="images/gateway-add.png" alt="Figure 3: Adding a Gateway to TTN" /></p>
 <p><img src="images/register-gateway.png" alt="Figure 4: Registering your Gateway" /></p>
 <ul>
-  <li><strong>Gateway EUI</strong> - this is your Gateway ID that you obtained in the previous step. If you forgot, just type <code class="highlighter-rouge">gateway-version</code> in the command line. This must be the same with the LoRa Gateway’s True Gateway ID otherwise you will fail to register your LoRa Gateway on TTN.</li>
-  <li>Make sure to select the “I’m using the legacy packet forwarder” check box.</li>
+  <li><strong>Gateway EUI</strong> - refers to the Gatway ID you obtained from the previous step. In case you forgot, just type <code class="highlighter-rouge">gateway-version</code> in the command line. This must be the same with the LoRaWAN® Gateway’s True Gateway ID otherwise you will fail to register your LoRaWAN® Gateway on TTN.
+    <blockquote>
+      <p>Make sure to select the “I’m using the legacy packet forwarder” check box.</p>
+    </blockquote>
+  </li>
   <li><strong>Description</strong> - A human readable description of your LoRa Gateway.</li>
-  <li><strong>Frequency Plan</strong> - This is the frequency you want to use and it must be the same with LoRa Gateway and the LoRa Node.</li>
+  <li><strong>Frequency Plan</strong> - This is the frequency you want to use and it must be the same with LoRaWAN® Gateway and the LoRaWAN® Node.</li>
   <li><strong>Router</strong> - The router this gateway will connect to. To reduce latency, pick a router that is in a region which is close to the location of the gateway.</li>
-  <li><strong>Location</strong> - Choose the location of the Gateway by entering its coordinates. This is reflected on the Gateway World Map!</li>
+  <li><strong>Location</strong> - Choose the location of the Gateway by entering its coordinates. This is reflected on the Gateway World Map.</li>
   <li><strong>Antenna Placement</strong> - Where is your antenna placed? Is it placed indoors or outdoors?</li>
 </ul>
-<p>Click <strong>Register Gateway</strong> and wait for a couple of minutes . If the status of your gateway is Connected, Congratulations! Your LoRa Gateway is now connected to the The Things Network (TTN).</p>
-<p>You have also the option to connect your LoRa Gateway with <strong>LoRaServer.</strong> Go to this <a href="https://doc.rakwireless.com/rak2245-pi-hat/connect-the-lora-gateway-with-loraserver">guide</a> to learn how!</p>
+<p>Click <strong>Register Gateway</strong> and wait for a couple of minutes . If the status of your gateway is Connected, Congratulations! Your LoRaWAN® Gateway is now connected to the The Things Network (TTN).</p>
+<p>You have also the option to connect your LoRaWAN® Gateway with <strong>Chirpstack.</strong> Go to this <a href="https://doc.rakwireless.com/rak2245-pi-hat-edition---lorawan----gateway-concentrator-module/connect-the-lora-gateway-with-chirpstack">guide</a> to learn how!</p>
           </div>  
         </div>
         <div>

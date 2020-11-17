@@ -31,14 +31,14 @@
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-11-17T10:11:34+00:00" />
+<meta property="article:published_time" content="2020-11-17T12:26:36+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="twitter:title" content="Accessing Your Gateway" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","description":"Accessing Your Gateway","headline":"Accessing Your Gateway","datePublished":"2020-11-17T10:11:34+00:00","dateModified":"2020-11-17T10:11:34+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/gateways/rak2245/accesing-gateway.html"},"url":"https://www.thethingsnetwork.org/docs/gateways/rak2245/accesing-gateway.html","@context":"https://schema.org"}</script>
+{"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","description":"Accessing Your Gateway","headline":"Accessing Your Gateway","datePublished":"2020-11-17T12:26:36+00:00","dateModified":"2020-11-17T12:26:36+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/gateways/rak2245/accesing-gateway.html"},"url":"https://www.thethingsnetwork.org/docs/gateways/rak2245/accesing-gateway.html","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -133,7 +133,7 @@
                 </li>
                 <li class=""><a href="/docs/gateways/multitech/">MultiTech Conduit</a>
                 </li>
-                <li class=""><a href="/docs/gateways/rak2245/">RAK2245 Pi Hat</a>
+                <li class=""><a href="/docs/gateways/rak2245/">RAK2245 Pi Hat Edition - LoRaWAN® Gateway Concentrator Module</a>
             <ul>
                 <li class=""><a href="/docs/gateways/rak2245/device-firmware-setup.html">Device Firmware Setup</a>
                 </li>
@@ -182,39 +182,52 @@
         <div class="panel">
           <div class="panel-body page-content">
             <h2 id="accessing-your-gateway">Accessing Your Gateway</h2>
-<p>After burning the image into the SD Card, make sure to have the RAK2245 Pi Hat and the Raspberry Pi stacked and the SD Card inserted. After which, you can now safely power on the gateway. In this document, several ways in accessing the gateway are provided to have different alternatives for you to choose depending on the availability of the requirements needed.</p>
+<p>After burning the image into the SD Card, make sure you have inserted the SD Card with the Latest Firmware installed to the Raspberry Pi 3B+ / 4 with the RAK2245 Pi Hat LoRaWAN® Concentrator Module and the LoRa® and GPS Antenna attached to it. After which, you can now safely power on the gateway. In this document, several ways in accessing the gateway are provided to have different alternatives for you to choose depending on the availability of the requirements needed.</p>
 <blockquote>
-  <p><strong>Warning</strong>: Before Powering the Raspberry Pi, you should install the LoRa and GPS Antennas. Not doing so might damage the boards.</p>
+  <p><strong>Warning</strong>: Before Powering the Raspberry Pi, you should install the LoRa® and GPS Antennas. Not doing so might damage the boards.</p>
 </blockquote>
 <h3 id="1-wi-fi-ap-mode">1. Wi-Fi AP Mode</h3>
-<p>By default, the LoRa Gateway will work in Wi-Fi AP Mode which means that you can find an SSID named like “Rakwireless_XXXX” on your PC Wi-Fi Network List.</p>
+<p>By default, the LoRaWAN® Gateway will work in Wi-Fi AP Mode which means that you can find an SSID named like “Rakwireless_XXXX” on your PC Wi-Fi Network List.</p>
 <p><img src="images/access-point-wifi.png" alt="Figure 1: RAKWireless Access Point" /></p>
 <blockquote>
-  <p>Note: Connect to this Wi-Fi SSID by using “rakwireless” as the default password. The default IP address of the LoRa Gateway’s Wi-Fi is <code class="highlighter-rouge">192.168.12.1</code> . Take note of this IP address as this will be needed in connecting via SSH.</p>
+  <p><strong>Note:</strong> Connect to this Wi-Fi SSID by using “rakwireless” as the default password. The default IP address of the LoRaWAN® Gateway’s Wi-Fi is <code class="highlighter-rouge">192.168.230.1</code> . Take note of this IP address as this will be needed in connecting via SSH.</p>
 </blockquote>
 <h3 id="2-via-the-ethernet-port-on-the-raspberry-pi">2. Via the Ethernet Port on the Raspberry Pi</h3>
-<p>You can also connect your PC with the LoRa Gateway through an Ethernet Cable via the Raspberry Pi port. By default, the IP Address of the LoRa Gateway’s Ethernet is <code class="highlighter-rouge">192.168.10.10</code></p>
+<p>You can also connect your PC with the LoRaWAN® Gateway through an Ethernet cable. By default, the IP address of the LoRaWAN® Gateway’s Ethernet interface is <code class="highlighter-rouge">192.168.10.10</code>, so you need to set the IP address of your PC’s Ethernet to the same network segment, for example, <code class="highlighter-rouge">192.168.10.20</code>.</p>
+<ul>
+  <li>To do this in Windows, go to Control Panel -&gt; Network and Internet -&gt; Network and Sharing Center and Click Ethernet</li>
+</ul>
+<p><img src="images/network_sharing_center.png" alt="Figure 2: Network and Sharing Center" /></p>
+<ul>
+  <li>Click Properties then Choose Internet Protocol Version 4 (TCP/IPv4).</li>
+</ul>
+<p><img src="images/ethernet_properties.jpg" alt="Figure 3: Ethernet Properties" /></p>
+<ul>
+  <li>By default, it will obtain an IP Address automatically. Click the Option “Use the following IP Address” and enter the IP Address: <code class="highlighter-rouge">192.168.10.20</code> and press OK.</li>
+</ul>
+<p><img src="images/tcp_ipv4_properties.jpg" alt="Figure 4: TCP/IPv4 Properties" /></p>
+<p>Now , you should be able to access your LoRaWAN® Gateway from your PC successfully using the IP Address <code class="highlighter-rouge">192.168.10.10</code> through SSH.</p>
 <h2 id="log-into-the-lora-gateway-via-ssh">Log into the LoRa Gateway via SSH</h2>
 <h3 id="1-windows-os">1. Windows OS</h3>
 <p>SSH (Secure Shell) is typically used to log in to a remote machine and execute commands. There are a lot of free and good SSH Clients out there namely <a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">Putty</a>, <a href="https://www.bitvise.com/ssh-client-download">BitVise SSH Client</a>, <a href="https://mobaxterm.mobatek.net/">MobaXterm</a> and many more. Feel free to choose one that fits your needs, you will be using Putty for this guide.</p>
-<p><img src="images/putty.jpg" alt="Figure 2: Putty Software for SSH in Windows" /></p>
+<p><img src="images/ssh.png" alt="Figure 5: Putty Software for SSH in Windows" /></p>
 <ul>
-  <li>If you have connected to the LoRa Gateway through Wi-Fi AP Mode, the IP Address is <code class="highlighter-rouge">192.168.12.1</code></li>
-  <li>If you have connected to the LoRa Gateway through Ethernet, the IP Address is <code class="highlighter-rouge">192.168.10.10</code></li>
-  <li>It will then prompt you to enter the username and password. The default username is “pi” and the default password is “raspberry”</li>
+  <li>If you have connected to the LoRaWAN® Gateway through Wi-Fi AP Mode, the IP Address is <code class="highlighter-rouge">192.168.230.1</code></li>
+  <li>If you have connected to the LoRaWAN® Gateway through Ethernet, the IP Address is <code class="highlighter-rouge">192.168.10.10</code></li>
+  <li>It will then prompt you to enter the username and password. The default username is “<strong>pi</strong>” and the default password is “<strong>raspberry</strong>”</li>
 </ul>
-<p><img src="images/cmd.png" alt="Figure 3: Command line after log in" /></p>
+<p><img src="images/cmd.png" alt="Figure 6: Command line after log in" /></p>
 <h3 id="2-mac-os">2. Mac OS</h3>
-<p><img src="images/ssh-mac.png" alt="Figure 4: SSH in Mac OS" /></p>
+<p>Open the Terminal of Mac OS. Launch the Terminal application, which is found in “/Applications/Utilities/” directory but you can also launch it from Spotlight by hitting Command + Spacebar and typing “Terminal” and then return:</p>
+<p><img src="images/mac_os_terminal.jpg" alt="Figure 7: SSH in Mac OS" /></p>
 <ul>
   <li>
     <p>Open the terminal of Mac OS. Enter root mode by typing the following command: <code class="highlighter-rouge">sudo -i</code></p>
   </li>
-  <li>
-    <p>Enter <code class="highlighter-rouge">ssh pi@192.168.12.1</code> in the terminal to login to your LoRa Gateway, the default password is “raspberry”.
-If you connect your PC with the LoRa Gateway through Ethernet Cable, you should enter <code class="highlighter-rouge">ssh pi@192.168.10.10</code>, the default password is “raspberry”.</p>
-  </li>
+  <li>If you are not in root mode, enter <code class="highlighter-rouge">ssh pi@192.168.230.1</code> in the terminal to login to your LoRaWAN® Gateway, the default username is “<strong>pi</strong>” and the default password is “<strong>raspberry</strong>”.</li>
+  <li>If you connect your PC with the LoRaWAN® Gateway through Ethernet Cable, you should enter <code class="highlighter-rouge">ssh pi@192.168.10.10</code>, the default username is “<strong>pi</strong>” and the default password is “<strong>raspberry</strong>”.</li>
 </ul>
+<p><img src="images/mac_terminal.jpg" alt="Figure 8: SSH in Mac OS" /></p>
 <h3 id="3-linux-os">3. Linux OS</h3>
 <p>If the OS of your PC is Linux, you should do the same as the Mac OS, except the root mode.</p>
           </div>  
