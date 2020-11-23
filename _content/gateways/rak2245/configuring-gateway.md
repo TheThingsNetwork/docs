@@ -62,29 +62,6 @@ After choosing the correct frequency, the success message will appear as shown b
 
 ![Figure 9: Successfully Changed the Frequency](images/9_success_change_frequency.png)
 
-### Server is Chirpstack
-![Figure 10: Server Is Chirpstack](images/10_chirpstack.png)
-
-**ChirpStack** - If you choose Chirpstack as your LoRa® Server, you will see the following page with two options available:
-
-* **ChirpStack Channel Plan Configuration** - used to configure your Regional Frequency Band.
-* **ChirpStack ADR Configure** - used to enable/disable the Adaptive Data Rate (ADR) functionality.
-
-First, select option 1 for configuring your Regional Frequency Band
-
-![Figure 11: Regional Frequency Band Option](images/11.5_select_chirpstack.png)
-
-Then, set the IP address of the ChirpStack which you want your LoRaWAN® Gateway to work with:
-
-![Figure 12: Default LoRaServer IP Address](images/12_defaul_loraserver.png)
-
->**Note**: The default IP Address is `127.0.0.1` which means you will be using the Built-in LoRa® Server. If you want to use an independent LoRa® Server running on another device or a cloud based LoRa® Server, you need to set it to the corresponding IP address
-
-
-* If you have instead selected "Chirpstack ADR Configure" you can enable/disable the Adaptive Data Rate (ADR) functionality:
-
-![Figure 13: Chirpstack ADR Enable/Disable](images/13_enable_adr.png)
-
 ## Connect the LoRaWAN® Gateway to a Router
 
 If you want to use TTN or an independent LoRaServer which may be deployed in Local area network or Internet, you need to connect your LoRaWAN® Gateway to a router first.
