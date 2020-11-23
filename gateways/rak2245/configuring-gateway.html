@@ -31,14 +31,14 @@
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-11-18T09:18:42+00:00" />
+<meta property="article:published_time" content="2020-11-23T12:46:53+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="twitter:title" content="Configuring Your Gateway" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","description":"Configuring the Gateway Assuming you have successfully logged into your LoRa Gateway using SSH. Enter the following command in the command line: sudo gateway-config","headline":"Configuring Your Gateway","datePublished":"2020-11-18T09:18:42+00:00","dateModified":"2020-11-18T09:18:42+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/gateways/rak2245/configuring-gateway.html"},"url":"https://www.thethingsnetwork.org/docs/gateways/rak2245/configuring-gateway.html","@context":"https://schema.org"}</script>
+{"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","description":"Configuring the Gateway Assuming you have successfully logged into your LoRa Gateway using SSH. Enter the following command in the command line: sudo gateway-config","headline":"Configuring Your Gateway","datePublished":"2020-11-23T12:46:53+00:00","dateModified":"2020-11-23T12:46:53+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/gateways/rak2245/configuring-gateway.html"},"url":"https://www.thethingsnetwork.org/docs/gateways/rak2245/configuring-gateway.html","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -230,24 +230,6 @@
 <p><img src="images/8_select_ttn.png" alt="Figure 8: Selecting the TTN Channel Plan" /></p>
 <p>After choosing the correct frequency, the success message will appear as shown below.</p>
 <p><img src="images/9_success_change_frequency.png" alt="Figure 9: Successfully Changed the Frequency" /></p>
-<h3 id="server-is-chirpstack">Server is Chirpstack</h3>
-<p><img src="images/10_chirpstack.png" alt="Figure 10: Server Is Chirpstack" /></p>
-<p><strong>ChirpStack</strong> - If you choose Chirpstack as your LoRa® Server, you will see the following page with two options available:</p>
-<ul>
-  <li><strong>ChirpStack Channel Plan Configuration</strong> - used to configure your Regional Frequency Band.</li>
-  <li><strong>ChirpStack ADR Configure</strong> - used to enable/disable the Adaptive Data Rate (ADR) functionality.</li>
-</ul>
-<p>First, select option 1 for configuring your Regional Frequency Band</p>
-<p><img src="images/11.5_select_chirpstack.png" alt="Figure 11: Regional Frequency Band Option" /></p>
-<p>Then, set the IP address of the ChirpStack which you want your LoRaWAN® Gateway to work with:</p>
-<p><img src="images/12_defaul_loraserver.png" alt="Figure 12: Default LoRaServer IP Address" /></p>
-<blockquote>
-  <p><strong>Note</strong>: The default IP Address is <code class="highlighter-rouge">127.0.0.1</code> which means you will be using the Built-in LoRa® Server. If you want to use an independent LoRa® Server running on another device or a cloud based LoRa® Server, you need to set it to the corresponding IP address</p>
-</blockquote>
-<ul>
-  <li>If you have instead selected “Chirpstack ADR Configure” you can enable/disable the Adaptive Data Rate (ADR) functionality:</li>
-</ul>
-<p><img src="images/13_enable_adr.png" alt="Figure 13: Chirpstack ADR Enable/Disable" /></p>
 <h2 id="connect-the-lorawan-gateway-to-a-router">Connect the LoRaWAN® Gateway to a Router</h2>
 <p>If you want to use TTN or an independent LoRaServer which may be deployed in Local area network or Internet, you need to connect your LoRaWAN® Gateway to a router first.</p>
 <h3 id="connect-through-wi-fi">Connect through Wi-Fi</h3>
