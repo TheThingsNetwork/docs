@@ -168,3 +168,8 @@ section: Additional Information
 | `C0003C` | `FC00F000/22` | `FC00F000` - `FC00F3FF` | Birdz | World |
 | `C0003D` | `FC00F400/22` | `FC00F400` - `FC00F7FF` | Arthur D Riley & Co Ltd | Asia Pacific |
 | `C0003E` | `FC00F800/22` | `FC00F800` - `FC00FBFF` | Komro GmbH | Germany, Austria, Switzerland |
+| `C0003F` | `FC00FC00/22` | `FC00FC00` - `FC00FFFF` | RSAWEB | South Africa |
+| `C00040` | `FC010000/22` | `FC010000` - `FC0103FF` | Ceske Radiokomunikace | Czech Republic |
+| `C00041` | `FC010400/22` | `FC010400` - `FC0107FF` | CM Systems LLC | World |
+| `C00042` | `FC010800/22` | `FC010800` - `FC010BFF` | MIOT Melita.io Technology GmbH | Germany |
+| `C00043` | `FC010C00/22` | `FC010C00` - `FC010FFF` | PROESYS S.r.l. | World |
