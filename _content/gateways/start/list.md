@@ -91,3 +91,7 @@ This is a list of commercial LoRaWAN gateways currently available for purchase. 
 ## Robustel
 
 + [Robustel R3000 LG LoRaWAN Gateway](https://www.robustel.com/product/r3000-lg-industrial-lorawan-gateway/): industrial-grade 8 channel LoRaWAN gateway, with Ethernet and Cellular 4G LTE backhaul.
+
+## MikroTik
+
++ [Mikrotik wAP LR8 / LR9 kit](https://mikrotik.com/product/wap_lr8_kit) industrial-grade 8 channel LoRaWAN gateway, with Ethernet, wifi and Cellular 4G LTE backhaul, PoE.
