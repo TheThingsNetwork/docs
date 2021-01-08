@@ -1,0 +1,35 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+    - 'master'
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v2
+    - name: Set up node
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+    - name: Install js packages
+      run: yarn install
+    - name: Set up ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 2.7.2
+        bundler-cache: true
+    - name: Generate website
+      run: bundle exec jekyll build
+    - name: Push to gh-pages
+      uses: JamesIves/github-pages-deploy-action@3.7.1
+      with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        BRANCH: gh-pages
+        FOLDER: _site
+        CLEAN: true
