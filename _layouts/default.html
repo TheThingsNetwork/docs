@@ -22,7 +22,7 @@ layout: compress
     {% unless site.url contains '://localhost:' %}
     <script>
     (function(canonical) {
-      if (document.location.href.substr(0, document.location.href.length - document.location.hash.length) !== canonical) {
+      if (!document.location.href.substr(0, document.location.href.length - document.location.hash.length).startsWith(canonical)) {
         window.location.replace(canonical);
       }
     })('{{ page.url | prepend: site.baseurl | prepend: site.url | replace:"/index.html", "/" }}');
