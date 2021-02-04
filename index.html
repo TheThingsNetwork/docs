@@ -14,7 +14,7 @@
     <![endif]-->
     <script>
     (function(canonical) {
-      if (document.location.href.substr(0, document.location.href.length - document.location.hash.length) !== canonical) {
+      if (!document.location.href.substr(0, document.location.href.length - document.location.hash.length).startsWith(canonical)) {
         window.location.replace(canonical);
       }
     })('https://www.thethingsnetwork.org/docs/');
