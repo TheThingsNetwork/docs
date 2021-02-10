@@ -6,14 +6,9 @@ title: Configure AEP model
 
 ## Login to web interface
 
-To start configuring your conduit connect a computer to its LAN interface and open a browser to `http://192.168.2.1/`. This opens the login dialog for the configuration interface of the conduit:
+To start configuring your conduit connect a computer to its LAN interface and open a browser to `http://192.168.2.1/`. This opens the login dialog for the configuration interface of the conduit. If it is your first time configuring the conduit, you will be prompted to create a username and password.
 
 ![Login](login-aep.png)
-
-The default credentials are:
-
-* **Username**: `admin`
-* **Password**: `admin`
 
 ## First-Time Setup Wizard
 After login (be patient, it takes a while) the **First-Time Setup Wizard** opens:
