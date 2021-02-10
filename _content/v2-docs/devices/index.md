@@ -6,7 +6,9 @@ sections:
  - SDKs & Libraries
  - Hardware
 image: /devices/icon.png
-zindex: 1000
+redirect_from:
+ - /devices
+zindex: 600
 ---
 
 # Devices

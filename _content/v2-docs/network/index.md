@@ -5,7 +5,9 @@ sections:
  - Manage
  - Components
 image: /network/icon.png
-zindex: 800
+redirect_from:
+ - /network
+zindex: 400
 ---
 
 # LoRaWAN Network Server

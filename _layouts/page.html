@@ -30,9 +30,15 @@ layout: default
         <ul>
           <li class="page-top-nav-crumb"><a href="http://www.thethingsnetwork.org/">Home</a></li>
           <li class="page-top-nav-crumb"><a href="{{ site.baseurl }}/">Learn</a></li>
+<!-----
+          <li class="page-top-nav-crumb"><a href="{{ site.baseurl }}/">The Things Stack</a></li>
+          <li class="page-top-nav-crumb"><a href="{{ site.baseurl }}/">Devices</a></li>
+          <li class="page-top-nav-crumb"><a href="{{ site.baseurl }}/">Gateways</a></li>
+          <li class="page-top-nav-crumb"><a href="devices/index.html">V2 Docs</a></li>
+--->
           {% for apage in pages %}
             {% unless apage.hidden %}
-              {% assign apage_depth = apage.url | remove:'/index.html' | split:'/' | size %}
+              {% assign apage_depth = apage.url | remove:'/index.html' | remove:'/_content/lorawan/index.html' | split:'/' | size %}
               {% if apage_depth == 2 %}
                 <li class="{% if top.url == apage.url %}active{% endif %}"><a href="{{ site.baseurl }}{{ apage.url | remove:'index.html' }}">{{ apage.title }}</a></li>
               {% endif %}
@@ -43,10 +49,6 @@ layout: default
 
       <div class="hidden-xs col-sm-3 text-right">
         <a href="{% if page.source %}{{ page.source }}{% else %}{{ site.github.repository_url }}/edit/master/{{ page.path | downcase }}{% endif %}" class="page-edit" data-proofer-ignore><i class="fa fa-github"></i> Edit <strong>{{ page.path | split:'/' | last }}</strong></a>
-      </div>
-
-      <div class="col-12">
-        This documentation page applies to the legacy Things Network Stack V2. Documentation for The Things Stack V3 is available <a href="https://thethingsstack.io">here</a>
       </div>
 
     </div>
