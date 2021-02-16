@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <link rel="stylesheet" href="/docs/assets/css/main.css" />
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script>
+    (function(canonical) {
+      if (!document.location.href.substr(0, document.location.href.length - document.location.hash.length).startsWith(canonical)) {
+        window.location.replace(canonical);
+      }
+    })('https://www.thethingsnetwork.org/docs/the-things-stack-v3/');
+    </script>
+    <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>The Things Stack V3 | The Things Network</title>
+<meta name="generator" content="Jekyll v3.4.5" />
+<meta property="og:title" content="The Things Stack V3" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="As announced during The Things Conference held in January 2021, The Things Network software is upgrading to The Things Stack V3. This upgrade comes with a set of brand new features, out-of-the-box integrations, extended coverage and improved user experience." />
+<meta property="og:description" content="As announced during The Things Conference held in January 2021, The Things Network software is upgrading to The Things Stack V3. This upgrade comes with a set of brand new features, out-of-the-box integrations, extended coverage and improved user experience." />
+<link rel="canonical" href="https://www.thethingsnetwork.org/docs/the-things-stack-v3/" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/the-things-stack-v3/" />
+<meta property="og:site_name" content="The Things Network" />
+<meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-02-16T07:39:00+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
+<meta property="twitter:title" content="The Things Stack V3" />
+<meta name="twitter:site" content="@thethingsnetwrk" />
+<meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
+<script type="application/ld+json">
+{"datePublished":"2021-02-16T07:39:00+00:00","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","description":"As announced during The Things Conference held in January 2021, The Things Network software is upgrading to The Things Stack V3. This upgrade comes with a set of brand new features, out-of-the-box integrations, extended coverage and improved user experience.","url":"https://www.thethingsnetwork.org/docs/the-things-stack-v3/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/the-things-stack-v3/"},"headline":"The Things Stack V3","dateModified":"2021-02-16T07:39:00+00:00","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+    <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png">
+    <meta name="application-name" content="The Things Network">
+    <meta name="msapplication-tooltip" content="Tooltip">
+    <meta name="msapplication-config" content="https://ttnweb.azureedge.net/static/common/favicon/ieconfig.54334a5ee30c.xml">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-32.61b30f85680a.png" sizes="32x32">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-57.83b86c64dc82.png" sizes="57x57">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-76.7dcf8fa36dfc.png" sizes="76x76">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-96.27ac17adaa8b.png" sizes="96x96">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-120.e1526731335e.png" sizes="120x120">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-128.fabea041224c.png" sizes="128x128">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png" sizes="144x144">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png" sizes="152x152">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-180.fcd414307ca3.png" sizes="180x180">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-195.c55ce09d66da.png" sizes="195x195">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-228.bea53ec4b10b.png" sizes="228x228">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/smalltile.fabea041224c.png" sizes="128x128">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/mediumtile.3d42f7faac82.png" sizes="270x270">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
+    <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
+    <script src="/docs/assets/js/main.js"></script>
+  </head>
+  <body>
+    <div id="header"></div>
+    <div id="content">
+<div class="layout-page">
+  <!-- <div class="ttn-header ttn-header-small">
+    <div class="ttn-container container-fluid">
+      <h1>
+        <img src="/docs/assets/images/the-things-white.png" alt="⛅ The Things Network" />
+        <span>Learn</span>
+      </h1>
+    </div>
+  </div> -->
+  <div class="container-fluid ttn-container">
+    <div class="row page-top-nav">
+      <div class="col-sm-9">
+        <ul>
+          <li class="page-top-nav-crumb"><a href="http://www.thethingsnetwork.org/">Home</a></li>
+          <li class="page-top-nav-crumb"><a href="/docs/">Learn</a></li>
+                <li class=""><a href="/docs/lorawan/">LoRaWAN</a></li>
+                <li class=""><a href="/docs/devices/">Devices</a></li>
+                <li class=""><a href="/docs/gateways/">Gateways</a></li>
+                <li class=""><a href="/docs/network/">Network</a></li>
+                <li class=""><a href="/docs/applications/">Applications</a></li>
+                <li class="active"><a href="/docs/the-things-stack-v3/">The Things Stack V3</a></li>
+        </ul>
+      </div>
+      <div class="hidden-xs col-sm-3 text-right">
+        <a href="https://github.com/TheThingsNetwork/docs/edit/master/_content/the-things-stack-v3/index.md" class="page-edit" data-proofer-ignore><i class="fa fa-github"></i> Edit <strong>index.md</strong></a>
+      </div>
+      <div class="col-12">
+        This documentation page applies to the legacy Things Network Stack V2. Documentation for The Things Stack V3 is available <a href="https://thethingsstack.io">here</a>
+      </div>
+    </div>
+    <div class="row wrapper">
+      <div class="col-sm-3 side-nav">
+        <div class="panel page-side-nav">
+          <div class="panel-body">
+            <ul>
+              <li class="active"><a href="/docs/the-things-stack-v3/index.html"><h5>The Things Stack V3</h5></a>
+            <ul>
+                <li class=""><a href="/docs/the-things-stack-v3/migrate-to-v3.html">How do I migrate to The Things Stack V3?</a>
+                </li>
+            </ul>
+              </li>
+            </ul>
+            <!-- <li class="hidden-xs col-sm-2 page-toc page-affix"></li> --> 
+          </div>
+        </div> 
+      </div>
+      <div class="col-sm-9 page-body">
+        <div class="panel">
+          <div class="panel-body page-content">
+            <p>As announced during The Things Conference held in January 2021, The Things Network software is upgrading to The Things Stack V3. This upgrade comes with a set of brand new features, out-of-the-box integrations, extended coverage and improved user experience.</p>
+<h1 id="what-is-the-things-stack-v3">What is The Things Stack V3?</h1>
+<p>The Things Stack V3 is a user-friendly, complete, enterprise grade LoRaWAN network server, built on top of an open source stack. Comparing to The Things Network Stack V2, The Things Stack V3 is not just an update, but a completely new solution built from scratch.</p>
+<p><strong>For a detailed info on The Things Stack V3, visit <a href="https://www.thethingsindustries.com/docs/">The Things Stack official documentation page</a>.</strong></p>
+<h1 id="how-can-i-access-v3">How can I access V3?</h1>
+<p>The (free) Community Edition of The Things Stack V3 is available via <a href="https://eu1.cloud.thethings.network/">cloud hosted service</a> and via <a href="https://github.com/TheThingsNetwork/lorawan-stack">DIY open source stack</a>. <strong>Note:</strong> Only eu1 cluster of The Things Network is currently deployed, but The Things Industries is going to operate all clusters of The Things Network soon!</p>
+<h1 id="why-should-i-migrate-from-v2-to-v3">Why should I migrate from V2 to V3?</h1>
+<p>The first reason to migrate to The Things Stack V3 is because you will do yourself a favor and the second reason is because The Things Network V2 clusters will be shut down later in 2021! Now let’s see what are the major upgrades coming with The Things Stack V3.</p>
+<p>The Things Stack V3 <a href="https://www.thethingsindustries.com/docs/reference/components/">architecture</a> shown below follows the LoRaWAN Network Reference Model.</p>
+<p><img src="architecture.png" alt="Network Architecture" /></p>
+<p>Architecture based on micro services allows the distribution of services, better scaling and interoperability with other network solutions. Your network can be a single gateway, private network or a commercial, carrier grade, globally distributed public network. You can deploy it on premises or on cloud. Either way, it will be a highly available LoRaWAN network, capable of handling massive amounts of traffic.</p>
+<p>The Things Stack V3 supports all LoRaWAN classes (A, B, C) and multicast device groups, all existing LoRaWAN versions (including v1.0.4 and v1.1) and all regional parameters. By being standards compliant, The Things Stack V3 allows passive roaming, and will allow a handover roaming in the future. Firmware updates over the air, advanced clustering and load balancing tehchniques also come along with this upgrade.</p>
+<p>You will be able to reuse your username and password from The Things Network Stack V2 to log in, thanks to The Things ID feature. Users can use the <a href="https://www.thethingsindustries.com/docs/getting-started/console/">Console</a> with improved user interface, or <a href="https://www.thethingsindustries.com/docs/getting-started/cli/">Command-Line Interface</a> to manage <a href="https://www.thethingsindustries.com/docs/gateways/">gateways</a>, <a href="https://www.thethingsindustries.com/docs/devices/">devices</a>, <a href="https://www.thethingsindustries.com/docs/integrations/adding-applications/">applications</a>, <a href="https://www.thethingsindustries.com/docs/getting-started/user-management/">users and organizations</a>, as well as to interact with uplink and downlink events in real-time.</p>
+<p>The advanced APIs offer gRPC, HTTP and MQTT <a href="https://www.thethingsindustries.com/docs/integrations/">integrations</a>. For debugging purposes, there are API-based event streams that can help you trace issues, monitor device behaviour and get useful alerts. <a href="https://www.thethingsindustries.com/docs/reference/data-formats/">Data formats</a> used by The Things Stack V3 have a different schema and have a much richer metadata support. For storing data, a <a href="https://www.thethingsindustries.com/docs/integrations/storage/">Storage Integration</a> is also available.</p>
+<p>Besides support of any gateway with a standard packet forwarder, the V3 Gateway Agent allows the remote configuration and establishing a secure connectivity with gateways. Another feature is a low bandwidth mode that can be used to reduce costs when using gateways with cellular and satellite backhauls.</p>
+<p>Users of The Things Stack V3 will now have an opportunity to use the Global Join Server for storing and issuing security keys, and in that way, highly improve the security of their network. Since this network architecture is fully standards compliant, users can also use a join server operated by a trusted third party.</p>
+<p>One of the most important features is the connection to Packet Broker, allowing the <a href="https://www.thethingsindustries.com/docs/reference/peering/">exchange of traffic</a> between The Things Network and private LoRaWAN networks, which increases LoRaWAN network coverage, performance and capacity, and prolongs the end device battery life.</p>
+<p><strong>For more detailed comparison between V2 and V3, check out the <a href="https://www.thethingsindustries.com/docs/getting-started/migrating/major-changes/">Major Changes in The Things Stack</a> page.</strong></p>
+          </div>  
+        </div>
+        <div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="lightbox" tabindex="-1" role="dialog">
+  <div class="modal-dialog text-center" role="document" style="width:auto;padding:20px;">
+    <a href="https://ttnstaticfile.blob.core.windows.net/static/ttn/media/logo/ttn-logo.png"><img class="modal-content modal-body" src="https://ttnstaticfile.blob.core.windows.net/static/ttn/media/logo/ttn-logo.png" alt="Zoom" /></a>
+  </div>
+</div>
+<script src="/docs/assets/js/page.js"></script>
+    </div>
+    <div id="footer"></div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.min.js"></script>
+    <script src="https://ttnweb.azureedge.net/static/common/js/ttn-components.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill@7/dist/polyfill.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
+    <script src="https://ttnweb.azureedge.net/static/common/js/vue-navbar.js"></script>
+    <script src="https://ttnweb.azureedge.net/static/common/js/vue-footer.js"></script>
+    <script src="https://ttnweb.azureedge.net/static/common/js/ga.js"></script>
+  </body>
+</html>
