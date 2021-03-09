@@ -31,14 +31,14 @@
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2021-02-16T07:39:00+00:00" />
+<meta property="article:published_time" content="2021-03-09T10:35:44+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="twitter:title" content="Duty Cycle" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"datePublished":"2021-02-16T07:39:00+00:00","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","description":"Duty Cycle","url":"https://www.thethingsnetwork.org/docs/lorawan/duty-cycle.html","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/lorawan/duty-cycle.html"},"headline":"Duty Cycle","dateModified":"2021-02-16T07:39:00+00:00","@context":"https://schema.org"}</script>
+{"datePublished":"2021-03-09T10:35:44+00:00","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","description":"Duty Cycle","url":"https://www.thethingsnetwork.org/docs/lorawan/duty-cycle.html","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/lorawan/duty-cycle.html"},"headline":"Duty Cycle","dateModified":"2021-03-09T10:35:44+00:00","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -167,7 +167,8 @@ When a single device transmits on a channel for 2 <em>time units</em> every 10 <
   <li><strong>g4</strong> (869.7 – 870.0 MHz): 1%</li>
 </ul>
 <p>Additionally, the LoRaWAN specification dictates duty cycles for the <em>join frequencies</em>, the frequencies devices of all LoRaWAN-compliant networks use for over-the-air activations (OTAA) of devices. In most regions this duty cycle is set to <strong>1%</strong>.</p>
-<p>Finally, on The Things Network’s public community network, we have a <strong>Fair Access Policy</strong> that limits the <strong>uplink airtime</strong> to <strong>30 seconds per day (24 hours) per node</strong> and the <strong>downlink messages</strong> to <strong>10 messages per day (24 hours) per node</strong>. If you use a private network, these limits do not apply, but you still have to be compliant with the governmental and LoRaWAN limits.</p>
+<h4 id="fair-use-policy">Fair Use Policy</h4>
+<p>On The Things Network’s public community network a <strong>Fair Use Policy</strong> applies which limits the <strong>uplink airtime</strong> to <strong>30 seconds per day (24 hours) per node</strong> and the <strong>downlink messages</strong> to <strong>10 messages per day (24 hours) per node</strong>. If you use a private network, these limits do not apply, but you still have to be compliant with the governmental and LoRaWAN limits.</p>
 <h2 id="compliance">Compliance</h2>
 <p>Every radio device must be compliant with the regulated duty cycle limits. This applies to <strong>both nodes and gateways</strong>.</p>
 <p>In practice, this means that you should program your nodes in such a way, that they stay within the limits. The easiest way to do this, is to calculate how much <em>airtime</em> each message consumes using one of the many <a href="https://avbentem.github.io/airtime-calculator/ttn/eu868">airtime calculators</a> and use that information to choose a good transmit interval.</p>
