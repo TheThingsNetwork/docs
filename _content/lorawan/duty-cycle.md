@@ -30,7 +30,8 @@ In Europe, duty cycles are regulated by section 7.2.3 of the ETSI EN300.220 stan
 
 Additionally, the LoRaWAN specification dictates duty cycles for the _join frequencies_, the frequencies devices of all LoRaWAN-compliant networks use for over-the-air activations (OTAA) of devices. In most regions this duty cycle is set to **1%**.
 
-Finally, on The Things Network's public community network, we have a **Fair Access Policy** that limits the **uplink airtime** to **30 seconds per day (24 hours) per node** and the **downlink messages** to **10 messages per day (24 hours) per node**. If you use a private network, these limits do not apply, but you still have to be compliant with the governmental and LoRaWAN limits.
+#### Fair Use Policy
+On The Things Network's public community network a **Fair Use Policy** applies which limits the **uplink airtime** to **30 seconds per day (24 hours) per node** and the **downlink messages** to **10 messages per day (24 hours) per node**. If you use a private network, these limits do not apply, but you still have to be compliant with the governmental and LoRaWAN limits.
 
 ## Compliance
 
