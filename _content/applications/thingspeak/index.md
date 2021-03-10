@@ -26,7 +26,7 @@ The Integration with The Things Network allows you to seamlessly forward data fr
 
 In The Things Network Console use the **Payload Formats** tab in the application for The Things Network to control the payload sent to ThingSpeak. ThingSpeak can accept up to 8 fields of data per channel, a status field, and three position fields including latitude, longitude, and elevation. Your payload must be a JSON formatted object with at least one of the allowed fields.  
 
-As an example of how to work with payload formats, see the sample code for a decoder provided below. This examples decodes a 20-character packet and converts it to the format compatible with a ThingSpeak channel. 
+As an example of how to work with payload formats, see the sample code for a decoder provided below. This examples decodes a 20-character packet and converts it to the format compatible with a ThingSpeak channel. The names of the payload fields must be field1, field2, ... as in the sample code else ThingSpeak will get null values.
 
 ## Visualize, Analyze, and Act
 
