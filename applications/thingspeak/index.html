@@ -31,14 +31,14 @@
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2021-03-09T10:35:44+00:00" />
+<meta property="article:published_time" content="2021-03-10T16:57:22+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="twitter:title" content="ThingSpeak" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"datePublished":"2021-03-09T10:35:44+00:00","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","description":"ThingSpeak","url":"https://www.thethingsnetwork.org/docs/applications/thingspeak/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/applications/thingspeak/"},"headline":"ThingSpeak","dateModified":"2021-03-09T10:35:44+00:00","@context":"https://schema.org"}</script>
+{"datePublished":"2021-03-10T16:57:22+00:00","image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","description":"ThingSpeak","url":"https://www.thethingsnetwork.org/docs/applications/thingspeak/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/applications/thingspeak/"},"headline":"ThingSpeak","dateModified":"2021-03-10T16:57:22+00:00","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -193,7 +193,7 @@
 </ol>
 <h2 id="payload-format">Payload Format</h2>
 <p>In The Things Network Console use the <strong>Payload Formats</strong> tab in the application for The Things Network to control the payload sent to ThingSpeak. ThingSpeak can accept up to 8 fields of data per channel, a status field, and three position fields including latitude, longitude, and elevation. Your payload must be a JSON formatted object with at least one of the allowed fields.</p>
-<p>As an example of how to work with payload formats, see the sample code for a decoder provided below. This examples decodes a 20-character packet and converts it to the format compatible with a ThingSpeak channel.</p>
+<p>As an example of how to work with payload formats, see the sample code for a decoder provided below. This examples decodes a 20-character packet and converts it to the format compatible with a ThingSpeak channel. The names of the payload fields must be field1, field2, … as in the sample code else ThingSpeak will get null values.</p>
 <h2 id="visualize-analyze-and-act">Visualize, Analyze, and Act</h2>
 <p>Use your channel view to display a summary of the channel fields.  Add specialized visualizations using the MATLAB Visualizations App or pre-built widgets. Use MATLAB analysis, React, TalkBack, and TimeControl to act on your data.</p>
 <p>![thingspeak1.png]</p>
