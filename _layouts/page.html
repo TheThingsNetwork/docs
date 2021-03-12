@@ -28,14 +28,8 @@ layout: default
     <div class="row page-top-nav">
       <div class="col-sm-9">
         <ul>
-          <li class="page-top-nav-crumb"><a href="http://www.thethingsnetwork.org/">Home</a></li>
+          <!--<li class="page-top-nav-crumb"><a href="http://www.thethingsnetwork.org/">Home</a></li>-->
           <li class="page-top-nav-crumb"><a href="{{ site.baseurl }}/">Learn</a></li>
-<!-----
-          <li class="page-top-nav-crumb"><a href="{{ site.baseurl }}/">The Things Stack</a></li>
-          <li class="page-top-nav-crumb"><a href="{{ site.baseurl }}/">Devices</a></li>
-          <li class="page-top-nav-crumb"><a href="{{ site.baseurl }}/">Gateways</a></li>
-          <li class="page-top-nav-crumb"><a href="devices/index.html">V2 Docs</a></li>
---->
           {% for apage in pages %}
             {% unless apage.hidden %}
               {% assign apage_depth = apage.url | remove:'/index.html' | remove:'/_content/lorawan/index.html' | split:'/' | size %}

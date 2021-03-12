@@ -1,5 +1,5 @@
 ---
-title: V2 documentation
+title: V2 docs
 description: Documentation for The Things Network Stack (V2)
 zindex: 1
 ---

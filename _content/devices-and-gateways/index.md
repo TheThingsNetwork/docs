@@ -21,10 +21,10 @@ A LoRaWAN gateway is an intermediary that allows LoRaWAN end devices to transmit
 
 A single gateway is capable of serving thousands of devices. When an end device transmits a message, all gateways in the range will recieve that message and forward it to The Things Network. The network is in charge of deduplicating those messages and selecting the best gateway for downlink communication. 
 
-Gateways can usually connected to The Things Network in two ways:
+Gateways can connect to The Things Network in two ways:
 
-- using [**Semtech UDP Packet Forwarder**](https://www.thethingsindustries.com/docs/gateways/semtech-udp-packet-forwarder/)
-- via [**LoRa Basics Station**](https://www.thethingsindustries.com/docs/gateways/lora-basics-station/)
+- Using the [**Semtech UDP Packet Forwarder**](https://www.thethingsindustries.com/docs/gateways/semtech-udp-packet-forwarder/)
+- Using [**LoRa Basics Station**](https://www.thethingsindustries.com/docs/gateways/lora-basics-station/)
 
 Start by [adding your gateway](adding-gateways.md) to The Things Network! Check [how to configure the most popular gateways to connect to The Things Network](https://www.thethingsindustries.com/docs/gateways/).
 
