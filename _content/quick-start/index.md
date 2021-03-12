@@ -37,7 +37,7 @@ The main building blocks of The Things Network are **gateways**. Thousands of ga
 
 > See the [global coverage map](https://www.thethingsnetwork.org/map)
 
-Although you might already have a coverage in your area, we still recommend you to get your hands on a gateway to ensure reliable coverage. There are a lot of gateways with extensive features on the market, so make sure you choose the one that fits your needs best. For example, here is a short list of some popular indoor gateways:
+Although you might already have coverage in your area, we still recommend you to get your hands on a gateway to ensure reliable coverage. There are a lot of gateways with extensive features on the market, so make sure you choose the one that fits your needs best. For example, here is a short list of some popular indoor gateways:
 
 |   |  Gateway | Link  |
 | ------------- |:-------------:| -----:|
