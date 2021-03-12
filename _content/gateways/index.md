@@ -6,9 +6,8 @@ sections:
  - Running a gateway
  - Hardware
 image: /gateways/icon.png
-redirect_from:
- - /gateways
 zindex: 500
+hidden: true
 ---
 
 # Gateways

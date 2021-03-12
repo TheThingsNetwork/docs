@@ -1,5 +1,7 @@
 ---
 title: The Things Stack
+redirect_from:
+ - /the-things-stack-v3/
 zindex: 700
 ---
 
