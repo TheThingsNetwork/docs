@@ -1,6 +1,8 @@
 ---
 title: Migrate to The Things Stack V3
 zindex: 100
+redirect_from:
+ - /the-things-stack-v3/migrate-to-v3
 ---
 
 This guide was written to explain the overall migration process of migrating from The Things Network Stack V2 to The Things Stack V3 in a few easy-to-follow steps.

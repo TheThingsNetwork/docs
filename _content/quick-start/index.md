@@ -73,7 +73,7 @@ To learn more about getting started with The Things Stack, have a look at the vi
 
 ## Build your end-to-end application
 
-Once you have your LoRaWAN network setup, you can use available integrations to build your end-to-end IoT solution. Integrations allow you to process data and act on it by triggering events. Visit our documentation to [find out more about integrations](https://www.thethingsindustries.com/docs/integrations/).
+Once you have your LoRaWAN network setup, you can use available integrations to build your end-to-end IoT solution. Integrations allow you to process data and act on it by triggering events. Learn [how to create integrations](../applications-and-integrations/).
 
 
 ### Other useful links:

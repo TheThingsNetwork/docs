@@ -5,7 +5,7 @@ section: Devices
 
 # Adding devices
 
-To perform uplink and/or downlink communication between your end device and The Things Network, you first need to register/add your device on The Things Network.
+To perform uplink and/or downlink communication between your end device and The Things Network, you first need to register/add your device on The Things Network. Devices are added within [applications](../applications-and-integrations/).
 
 Registering your device can be done in two ways, via [Console](https://www.thethingsindustries.com/docs/getting-started/console/) or via [CLI](https://www.thethingsindustries.com/docs/getting-started/cli/installing-cli/).
 
@@ -25,6 +25,6 @@ If your end device is a part of the [LoRaWAN Device Repository](https://github.c
 
 To add a device using CLI, you need to have the CLI installed on your system. [Learn how to install and login with the CLI](https://www.thethingsindustries.com/docs/getting-started/cli/).
 
-You can add both ABP and OTAA devices by manually providing the end device information through commands in your terminal. [See details about adding devices using the CLI](https://www.thethingsindustries.com/docs/devices/adding-devices.
+You can add both ABP and OTAA devices by manually providing the end device information through commands in your terminal. [See details about adding devices using the CLI](https://www.thethingsindustries.com/docs/devices/adding-devices).
 
 > If you are experiencing issues while adding devices to The Things Network, see [Troubleshooting](https://www.thethingsindustries.com/docs/devices/adding-devices/troubleshooting/).

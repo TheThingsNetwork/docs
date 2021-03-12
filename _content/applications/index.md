@@ -6,9 +6,8 @@ sections:
  - SDKs & Libraries
  - Integrations
 image: /applications/icon.png
-redirect_from:
- - /applications
 zindex: 300
+hidden: true
 ---
 
 # Applications
