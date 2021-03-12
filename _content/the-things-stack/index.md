@@ -1,6 +1,6 @@
 ---
 title: The Things Stack
-zindex: 900
+zindex: 700
 ---
 
 As announced during The Things Conference held in January 2021, The Things Network software is upgrading to The Things Stack V3. This upgrade comes with a set of brand new features, out-of-the-box integrations, extended coverage and improved user experience. 
