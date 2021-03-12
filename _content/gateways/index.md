@@ -6,7 +6,8 @@ sections:
  - Running a gateway
  - Hardware
 image: /gateways/icon.png
-zindex: 900
+zindex: 500
+hidden: true
 ---
 
 # Gateways
