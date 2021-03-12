@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <link rel="stylesheet" href="/docs/assets/css/main.css" />
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script>
+    (function(canonical) {
+      if (!document.location.href.substr(0, document.location.href.length - document.location.hash.length).startsWith(canonical)) {
+        window.location.replace(canonical);
+      }
+    })('https://www.thethingsnetwork.org/docs/the-things-stack/migrate-to-v3.html');
+    </script>
+    <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Migrate to The Things Stack V3 | The Things Network</title>
+<meta name="generator" content="Jekyll v3.4.5" />
+<meta property="og:title" content="Migrate to The Things Stack V3" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="This guide was written to explain the overall migration process of migrating from The Things Network Stack V2 to The Things Stack V3 in a few easy-to-follow steps." />
+<meta property="og:description" content="This guide was written to explain the overall migration process of migrating from The Things Network Stack V2 to The Things Stack V3 in a few easy-to-follow steps." />
+<link rel="canonical" href="https://www.thethingsnetwork.org/docs/the-things-stack/migrate-to-v3.html" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/the-things-stack/migrate-to-v3.html" />
+<meta property="og:site_name" content="The Things Network" />
+<meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-03-12T16:50:41+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
+<meta property="twitter:title" content="Migrate to The Things Stack V3" />
+<meta name="twitter:site" content="@thethingsnetwrk" />
+<meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
+<script type="application/ld+json">
+{"headline":"Migrate to The Things Stack V3","dateModified":"2021-03-12T16:50:41+00:00","datePublished":"2021-03-12T16:50:41+00:00","description":"This guide was written to explain the overall migration process of migrating from The Things Network Stack V2 to The Things Stack V3 in a few easy-to-follow steps.","url":"https://www.thethingsnetwork.org/docs/the-things-stack/migrate-to-v3.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/the-things-stack/migrate-to-v3.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+    <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png">
+    <meta name="application-name" content="The Things Network">
+    <meta name="msapplication-tooltip" content="Tooltip">
+    <meta name="msapplication-config" content="https://ttnweb.azureedge.net/static/common/favicon/ieconfig.54334a5ee30c.xml">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-32.61b30f85680a.png" sizes="32x32">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-57.83b86c64dc82.png" sizes="57x57">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-76.7dcf8fa36dfc.png" sizes="76x76">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-96.27ac17adaa8b.png" sizes="96x96">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-120.e1526731335e.png" sizes="120x120">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-128.fabea041224c.png" sizes="128x128">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png" sizes="144x144">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png" sizes="152x152">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-180.fcd414307ca3.png" sizes="180x180">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-195.c55ce09d66da.png" sizes="195x195">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-228.bea53ec4b10b.png" sizes="228x228">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/smalltile.fabea041224c.png" sizes="128x128">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/mediumtile.3d42f7faac82.png" sizes="270x270">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
+    <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
+    <script src="/docs/assets/js/main.js"></script>
+  </head>
+  <body>
+    <div id="header"></div>
+    <div id="content">
+<div class="layout-page">
+  <!-- <div class="ttn-header ttn-header-small">
+    <div class="ttn-container container-fluid">
+      <h1>
+        <img src="/docs/assets/images/the-things-white.png" alt="⛅ The Things Network" />
+        <span>Learn</span>
+      </h1>
+    </div>
+  </div> -->
+  <div class="container-fluid ttn-container">
+    <div class="row page-top-nav">
+      <div class="col-sm-9">
+        <ul>
+          <!--<li class="page-top-nav-crumb"><a href="http://www.thethingsnetwork.org/">Home</a></li>-->
+          <li class="page-top-nav-crumb"><a href="/docs/">Learn</a></li>
+                <li class=""><a href="/docs/quick-start/">Quick Start</a></li>
+                <li class=""><a href="/docs/lorawan/">LoRaWAN</a></li>
+                <li class=""><a href="/docs/devices-and-gateways/">Devices & Gateways</a></li>
+                <li class=""><a href="/docs/applications-and-integrations/">Applications</a></li>
+                <li class="active"><a href="/docs/the-things-stack/">The Things Stack</a></li>
+                <li class=""><a href="/docs/v2-docs/">V2 docs</a></li>
+        </ul>
+      </div>
+      <div class="hidden-xs col-sm-3 text-right">
+        <a href="https://github.com/TheThingsNetwork/docs/edit/master/_content/the-things-stack/migrate-to-v3.md" class="page-edit" data-proofer-ignore><i class="fa fa-github"></i> Edit <strong>migrate-to-v3.md</strong></a>
+      </div>
+    </div>
+    <div class="row wrapper">
+      <div class="col-sm-3 side-nav">
+        <div class="panel page-side-nav">
+          <div class="panel-body">
+            <ul>
+              <li class=""><a href="/docs/the-things-stack/index.html"><h5>The Things Stack</h5></a>
+            <ul>
+                <li class="active"><a href="/docs/the-things-stack/migrate-to-v3.html">Migrate to The Things Stack V3</a>
+                </li>
+            </ul>
+              </li>
+            </ul>
+            <!-- <li class="hidden-xs col-sm-2 page-toc page-affix"></li> --> 
+          </div>
+        </div> 
+      </div>
+      <div class="col-sm-9 page-body">
+        <div class="panel">
+          <div class="panel-body page-content">
+            <p>This guide was written to explain the overall migration process of migrating from The Things Network Stack V2 to The Things Stack V3 in a few easy-to-follow steps.</p>
+<p>Let’s assume that your gateway and device are still connected to The Things Network, operating on The Things Network Stack V2. We will first consider migrating your end device, then your gateway. You will also need to add your applications, integrations and payload formatters to The Things Stack V3.</p>
+<blockquote>
+  <p>We highly recommend to test the migration on a single end device or a small batch of end devices, just to make sure the migration process is succesfull and that you are getting an expected result.</p>
+</blockquote>
+<blockquote>
+  <p>Migrating a single end device can be easily done through The Things Stack V3 Console. Migrating end devices in bulk can be performed with the <code class="highlighter-rouge">ttn-lw-migrate</code> tool.</p>
+</blockquote>
+<h4 id="video-migrate-from-v2-to-v3">Video Migrate from V2 to V3</h4>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/JUEJ_9LdnuI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+<h2 id="v3-login">V3 login</h2>
+<p>To be able to continue following steps below, you first need to log in to <a href="https://console.cloud.thethings.network/">The Things Stack development console</a>. You can do so by using your credentials after registering, or via The Things ID feature and use your known username and password.</p>
+<h2 id="add-an-application-in-v3">Add an application in V3</h2>
+<p>To migrate your end device, you first need to <a href="https://www.thethingsindustries.com/docs/integrations/adding-applications/">add an application</a> in your V3 instance. The <code class="highlighter-rouge">Application ID</code> does not neccessarily have to be the same as the one in V2.</p>
+<h2 id="add-your-payload-formatters-and-integrations">Add your payload formatters and integrations</h2>
+<p>After adding an application in V3, you also need to re-add the associated elements, like payload formatters (known as coders and decoders in V2) and integrations. The concept remained the same as in V2, with slight improvements.</p>
+<blockquote>
+  <p>The format of payload coders and decoders from the V2 is still supported in V3.</p>
+</blockquote>
+<p>See more info on how to <a href="https://www.thethingsindustries.com/docs/integrations/payload-formatters/">write payload formatters</a> and <a href="https://www.thethingsindustries.com/docs/integrations/adding-integrations/">add integrations</a> in The Things Stack V3.</p>
+<p>Next, you need to migrate your end device(s). Depending on if it is one or more devices, choose the right method for migration.</p>
+<h2 id="method-1-migrate-an-end-device-using-the-v3-console">Method 1: Migrate an end device using the V3 Console</h2>
+<h3 id="add-an-end-device-in-v3">Add an end device in V3</h3>
+<p>First, <a href="https://www.thethingsindustries.com/docs/devices/adding-devices/">add a device</a> in your V3 instance. You can do it manually for both ABP and OTAA devices. For OTAA devices, you can also do it by submitting the type of your device if it is available in the <a href="https://thethingsindustries.com/docs/integrations/payload-formatters/device-repo/">Device Repository</a>.</p>
+<p>When manually adding an OTAA device, make sure you follow these steps correctly:</p>
+<ul>
+  <li>Select <strong>Over the air actiovation (OTAA)</strong></li>
+  <li>Choose <strong>LoRaWAN version</strong> <code class="highlighter-rouge">MAC V1.0.2</code> (this is probably your version, since this has been the most stable and most commonly used version for a long time)</li>
+  <li>Create an <strong>End device ID</strong> (does not have to match the <code class="highlighter-rouge">Device ID</code> in V2)</li>
+  <li>Enter your end device’s <strong>AppEUI</strong> and <strong>DevEUI</strong> (these have to be the same as the ones in the V2)</li>
+  <li>Select your frequency plan</li>
+  <li>Select <strong>Regional Parameters version</strong> <code class="highlighter-rouge">PHY V1.0.2 REV B</code> (this is most probably your version)</li>
+  <li><strong>Do not</strong> check the boxes <strong>Supports class B/C</strong></li>
+  <li><strong>Advanced settings</strong> probably do not have to be set</li>
+  <li>Enter your end device’s <strong>AppKey</strong> (has to match the one in V2)</li>
+</ul>
+<blockquote>
+  <p>We highly recommend using OTAA! See <em>[link to ABP vs OTAA doc when merged]</em> to learn why OTAA is better than ABP.</p>
+</blockquote>
+<p>If you have a <strong>really good reason</strong> to use ABP, you can add an ABP device to V3 by following next steps:</p>
+<ul>
+  <li>Select <strong>Activation by personalization (ABP)</strong></li>
+  <li>Choose <strong>LoRaWAN version</strong> <code class="highlighter-rouge">MAC V1.0.2</code> (this is probably your version, since this has been the most stable and most commonly used version for a long time)</li>
+  <li>Create an <strong>End device ID</strong> (does not have to match the <code class="highlighter-rouge">Device ID</code> in V2)</li>
+  <li>The <strong>DevEUI</strong> field is optional</li>
+  <li>Select your frequency plan</li>
+  <li>Select <strong>Regional Parameters version</strong> <code class="highlighter-rouge">PHY V1.0.2 REV B</code> (this is most probably your version)</li>
+  <li><strong>Do not</strong> check the boxes <strong>Supports class B/C</strong></li>
+  <li>Enter your device’s <strong>DevAddr</strong> and <strong>NwkSKey</strong> (these have to be the same as the ones in V2)</li>
+  <li><strong>Advanced settings</strong> must be set on registration (beware that changing these settings might not work later)
+    <ul>
+      <li>Set <strong>Frame counter width</strong> to <code class="highlighter-rouge">32 bit</code> (this is probably your value)</li>
+      <li>Set <strong>RX1 Delay</strong> to <code class="highlighter-rouge">1</code> (set in seconds)</li>
+      <li>Set <strong>RX1 Data Rate Offset</strong> to <code class="highlighter-rouge">0</code></li>
+      <li>Your device probably resets frame counters, so check the <strong>Resets Frame Counters</strong> box</li>
+      <li>Set <strong>RX2 Data Rate Index</strong> to <code class="highlighter-rouge">3</code> if your frequency plan is EU868</li>
+      <li>Set <strong>RX2 Frequency</strong> to <code class="highlighter-rouge">869525000</code> if your frequency plan is EU868</li>
+      <li>Set <strong>Factory Preset Frequencies</strong> for EU868 devices to <code class="highlighter-rouge">868100000, 868300000, 868500000</code> for all devices, or to <code class="highlighter-rouge">867100000, 867300000, 867500000, 867700000, 867900000, 868100000, 868300000, 868500000</code> for 8-channel devices</li>
+    </ul>
+  </li>
+</ul>
+<h3 id="prevent-your-end-device-from-performing-a-v2-join">Prevent your end device from performing a V2 join</h3>
+<p>When you have registered your device in your V3 instance, you should prevent your device from joining the V2 network.</p>
+<p>For OTAA device, you can simply do it by deleting your device from V2, however, this is <strong>not recommended</strong> - you might loose some data. The recommended practice is to change the <code class="highlighter-rouge">AppKey</code> in V2. This way, your existing session would not be terminated yet, but new Join requests sent by your end device would not be accepted by the V2 cluster.</p>
+<blockquote>
+  <p>If the migration process does not go as expected, you can return the old value of your <code class="highlighter-rouge">AppKey</code> and reconnect it to V2.</p>
+</blockquote>
+<p>For ABP device, you will have to delete it from the V2 instance, since these devices can establish only one session during their lifetime. Having the same session in two places would introduce serious conflicts.</p>
+<h3 id="force-your-otaa-end-device-to-perform-a-v3-join">Force your OTAA end device to perform a V3 join</h3>
+<p>Your OTAA end device will now need to perform a new join, to your V3 cluster.</p>
+<p>How to do this is largely depends on your device’s firmware:</p>
+<ul>
+  <li>If your end device does a new join occasionally (every week, month or so), you can only wait for it to happen</li>
+  <li>If your end device lets you send a downlink message to trigger a new join - send the command from the V2 Console</li>
+  <li>If your end device does a new join when it loses the connection - delete that device from the V2 Console</li>
+  <li>If your end device does a new join when it is power cycled - power cycle it</li>
+</ul>
+<p>Since you have not migrated your gateway from V2 cluster yet, the new Join request sent by your end device will be received by the V2 cluster. This request will not be accepted if you changed your end device’s <code class="highlighter-rouge">AppKey</code> (as recommended above) or if you have deleted it.</p>
+<p>Interesting thing is that your end device’s new Join request will be received by the V3 cluster too! You can thank for this to <a href="https://www.thethingsindustries.com/docs/reference/peering/#packet-broker">Packet Broker</a> (you can verify this by observing the uplinks metadata in V3). Now, V3 cluster will accept this Join request, so your end device will get a new V3 <code class="highlighter-rouge">DevAddr</code>, channel settings and other MAC parameters. Based on a newly assigned <code class="highlighter-rouge">DevAddr</code>, Packet Broker will route the traffic to your V3 network.</p>
+<h3 id="what-to-do-with-abp-end-device">What to do with ABP end device?</h3>
+<p>If you are using an ABP device, that means your end device is still associated with the V2 <code class="highlighter-rouge">DevAddr</code>, so the Packet Broker will not be able to route its traffic to your V3 cluster if you have not connected your gateway to V3. In order to route this traffic correctly, follow the steps in <strong>Migrate your gateway</strong> section at the end of this page.</p>
+<h2 id="method-2-migrate-end-devices-using-the-migration-tool">Method 2: Migrate end devices using the migration tool</h2>
+<p>To complete the migration this way, you need to have  <a href="https://github.com/TheThingsNetwork/lorawan-stack-migrate"><code class="highlighter-rouge">ttn-lw-migrate</code> tool</a> installed.</p>
+<p><code class="highlighter-rouge">ttn-lw-migrate</code> is used to export end devices and applications from The Things Network Stack V2 cluster to a <a href="https://www.thethingsindustries.com/docs/getting-started/migrating/device-json/">JSON file</a>. This JSON file can later be <a href="https://www.thethingsindustries.com/docs/getting-started/migrating/import-devices/">imported</a> in The Things Stack V3 via Console or via CLI.</p>
+<h3 id="note-about-migrating-an-active-session">Note about migrating an active session</h3>
+<p>If your The Things Stack instance version is <code class="highlighter-rouge">3.10</code> or higher, you may transfer the active device session as well. This means:</p>
+<ul>
+  <li>Your device will continue working on The Things Stack V3 cluster.</li>
+  <li>Your OTAA device will not have to perform a new join on V3 network and you will not have to delete this device manually from V2 cluster.</li>
+  <li>You will not have to delete your ABP device manually from V2 cluster.</li>
+</ul>
+<p>When migrating an active session, after exporting an end device from V2 cluster by using the migration tool, session and root keys will be cleared from The Things Network Stack V2 cluster by default. This means this device will no longer work in the V2 cluster.</p>
+<p>You can disable this behavior by using the <code class="highlighter-rouge">--ttnv2.with-session=false</code> flag when running <code class="highlighter-rouge">ttn-lw-migrate</code>. In that case, you have to prevent your end device from rejoining the V2 network - for OTAA device this means changing the <code class="highlighter-rouge">AppKey</code> in V2 and performing a new join on V3 network, and for ABP device this means deleting it from the V2 cluster completely.</p>
+<h3 id="configure-the-environment">Configure the environment</h3>
+<p>After installing the migration tool, you need to configure the environmental variables:</p>
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span><span class="nb">export </span><span class="nv">TTNV2_APP_ID</span><span class="o">=</span><span class="s2">"ttn-v2-application-ID"</span>
+<span class="gp">$ </span><span class="nb">export </span><span class="nv">TTNV2_APP_ACCESS_KEY</span><span class="o">=</span><span class="s2">"access-key-of-your-ttn-v2-application"</span> 
+<span class="gp">$ </span><span class="nb">export </span><span class="nv">FREQUENCY_PLAN_ID</span><span class="o">=</span><span class="s2">"EU_863_870_TTN"</span>
+</code></pre>
+</div>
+<blockquote>
+  <p>See <a href="https://www.thethingsindustries.com/docs/reference/frequency-plans/">supported frequency plans</a> list, and adjust the <code class="highlighter-rouge">FREQUENCY_PLAN_ID</code> according to your setup.</p>
+</blockquote>
+<p>If you own a private The Things Stack V2 cluster, you can still use the migration tool, but with an extra variable configured:</p>
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span><span class="nb">export </span><span class="nv">TTNV2_DISCOVERY_SERVER_ADDRESS</span><span class="o">=</span><span class="s2">"&lt;instance-id&gt;.thethings.industries:1900"</span>
+</code></pre>
+</div>
+<blockquote>
+  <p>If the Discovery Server of your private V2 cluster does not use TLS, you will need to use the <code class="highlighter-rouge">ttnv2.discovery-server-insecure</code> flag when running the <code class="highlighter-rouge">ttn-lw-migrate</code> tool.</p>
+</blockquote>
+<h3 id="export-a-single-end-device-from-v2">Export a single end device from V2</h3>
+<p>Before exporting an end device from The Things Network Stack V2, test the export with:</p>
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>ttn-lw-migrate devices --dry-run --verbose --source ttnv2 <span class="s2">"v2-end-device-ID"</span> &gt; devices.json
+</code></pre>
+</div>
+<p>If this goes without errors, use the following command in order to export the end device for real and clear the security keys:</p>
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>ttn-lw-migrate device --source ttnv2 <span class="s2">"v2-end-device-ID"</span> &gt; devices.json
+</code></pre>
+</div>
+<h3 id="export-more-than-one-end-device-from-v2">Export more than one end device from V2</h3>
+<p>To export more than one device, create a file named <code class="highlighter-rouge">device_ids.txt</code> that will contain one <code class="highlighter-rouge">Device ID</code> per line:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>dev1
+dev2
+dev3
+</code></pre>
+</div>
+<p>Then, test the export with:</p>
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>ttn-lw-migrate devices --dry-run --verbose --source ttnv2 &lt; device_ids.txt &gt; devices.json
+</code></pre>
+</div>
+<p>If this goes without errors, use the following command in order to export end devices:</p>
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>ttn-lw-migrate device --source ttnv2 &lt; device_ids.txt &gt; devices.json
+</code></pre>
+</div>
+<h3 id="export-all-end-devices-associated-with-your-v2-application">Export all end devices associated with your V2 application</h3>
+<p>To export all devices that your The Things Network Stack application contains to a file named <code class="highlighter-rouge">all-devices.json</code>, use the following commands:</p>
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>ttn-lw-migrate application --verbose --dry-run --source ttnv2 <span class="s2">"ttn-v2-application-ID"</span> &gt; all-devices.json <span class="c"># testing export - make sure it goes without errors</span>
+<span class="gp">$ </span>ttn-lw-migrate application --source ttnv2 <span class="s2">"ttn-v2-application-ID"</span> &gt; all-devices.json
+</code></pre>
+</div>
+<h3 id="import-end-devices-in-the-v3-application">Import end device(s) in the V3 application</h3>
+<p>When you have exported your end devices to a JSON file (let’s use <code class="highlighter-rouge">devices.json</code>), you can import those devices in The Things Stack V3 application via Console or via CLI.</p>
+<p>If you want to import via Console, just head over to your V3 application and click the <strong>Import end devices</strong> button available under <strong>End devices</strong>. Choose <strong>The Things Stack JSON</strong> format and upload the <code class="highlighter-rouge">devices.json</code> under <strong>File</strong>. Hit the <strong>Create end devices</strong> button, et voilà!</p>
+<p>If you want to use the CLI to import end devices, just run the following command:</p>
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>ttn-lw-cli end-devices create --application-id <span class="s2">"v3-application-id"</span> &lt; devices.json
+</code></pre>
+</div>
+<blockquote>
+  <p>Which ever method you are using for importing end devices, in case of any failure you will see a relevant error message.</p>
+</blockquote>
+<h3 id="adjust-mac-settings-for-imported-devices-in-v3">Adjust MAC settings for imported devices in V3</h3>
+<p>If you have migrated an OTAA end device without preserving the existing session, i.e. your device performed a new join to the The Things Stack V3, the MAC settings will be automatically configured correctly by the Network Server.</p>
+<p>Hovewer, if you have migrated an ABP device, or if you have migrated an OTAA device with preserving the existing session (i.e. your device did not perform a new join), you might want to configure the MAC settings manually.</p>
+<p>This is needed because some recommended settings used by the V2 and V3 Network Server are different. For example, <code class="highlighter-rouge">RxDelay</code> parameter used by the V2 is 1 second by default, while the recommended value for the V3 is 5 seconds. The V3 Network Server will try to automatically change this for you, but it might take some time until the MAC command reaches the end device.</p>
+<p>See the official The Things Stack documentation to learn how to <a href="https://www.thethingsindustries.com/docs/devices/mac-settings/">configure MAC settings</a>.</p>
+<h2 id="migrate-your-gateway">Migrate your gateway</h2>
+<p><a href="https://www.thethingsindustries.com/docs/getting-started/migrating/gateway-migration/">Migrating your gateway</a> from The Things Network Stack V2 to The Things Stack V3 cluster is a really easy process.</p>
+<p>First, you need to <a href="https://www.thethingsindustries.com/docs/gateways/adding-gateways/">add a gateway to the V3 instance</a>.</p>
+<p>Then, you need change the address of the V3 cluster you are using - this will depend on which type of gateway you are using, <a href="https://www.thethingsindustries.com/docs/gateways/semtech-udp-packet-forwarder/">Semtech UDP Packet Forwarder</a> or <a href="https://www.thethingsindustries.com/docs/gateways/lora-basics-station/">LoRa Basics Station</a>. Let’s assume you are using <code class="highlighter-rouge">eu1.cloud.thethings.network</code>.</p>
+<ul>
+  <li>If you are using a Semtech UDP Packet Forwarder, change the <code class="highlighter-rouge">server_address</code> in your <code class="highlighter-rouge">global_conf.json</code> to <code class="highlighter-rouge">eu1.cloud.thethings.network</code></li>
+  <li>If you are using LoRa Basics Station with LNS subprotocol, change the LNS server address to <code class="highlighter-rouge">wss://eu1.cloud.thethings.network:8887</code></li>
+  <li>If you are using LoRa Basics Station with CUPS subprotocol, change the CUPS server address to <code class="highlighter-rouge">https://eu1.cloud.thethings.network:443</code></li>
+</ul>
+<p>Once you update the cluster address, the data that reaches your gateway will be routed to your The Things Stack V3 cluster.</p>
+          </div>  
+        </div>
+        <div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="lightbox" tabindex="-1" role="dialog">
+  <div class="modal-dialog text-center" role="document" style="width:auto;padding:20px;">
+    <a href="https://ttnstaticfile.blob.core.windows.net/static/ttn/media/logo/ttn-logo.png"><img class="modal-content modal-body" src="https://ttnstaticfile.blob.core.windows.net/static/ttn/media/logo/ttn-logo.png" alt="Zoom" /></a>
+  </div>
+</div>
+<script src="/docs/assets/js/page.js"></script>
+    </div>
+    <div id="footer"></div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.min.js"></script>
+    <script src="https://ttnweb.azureedge.net/static/common/js/ttn-components.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill@7/dist/polyfill.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
+    <script src="https://ttnweb.azureedge.net/static/common/js/vue-navbar.js"></script>
+    <script src="https://ttnweb.azureedge.net/static/common/js/vue-footer.js"></script>
+    <script src="https://ttnweb.azureedge.net/static/common/js/ga.js"></script>
+  </body>
+</html>

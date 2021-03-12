@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <link rel="stylesheet" href="/docs/assets/css/main.css" />
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script>
+    (function(canonical) {
+      if (!document.location.href.substr(0, document.location.href.length - document.location.hash.length).startsWith(canonical)) {
+        window.location.replace(canonical);
+      }
+    })('https://www.thethingsnetwork.org/docs/quick-start/');
+    </script>
+    <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Quick Start | The Things Network</title>
+<meta name="generator" content="Jekyll v3.4.5" />
+<meta property="og:title" content="Quick Start" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Quick Start" />
+<meta property="og:description" content="Quick Start" />
+<link rel="canonical" href="https://www.thethingsnetwork.org/docs/quick-start/" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/quick-start/" />
+<meta property="og:site_name" content="The Things Network" />
+<meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-03-12T16:50:41+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
+<meta property="twitter:title" content="Quick Start" />
+<meta name="twitter:site" content="@thethingsnetwrk" />
+<meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
+<script type="application/ld+json">
+{"headline":"Quick Start","dateModified":"2021-03-12T16:50:41+00:00","datePublished":"2021-03-12T16:50:41+00:00","description":"Quick Start","url":"https://www.thethingsnetwork.org/docs/quick-start/","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/quick-start/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+    <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png">
+    <meta name="application-name" content="The Things Network">
+    <meta name="msapplication-tooltip" content="Tooltip">
+    <meta name="msapplication-config" content="https://ttnweb.azureedge.net/static/common/favicon/ieconfig.54334a5ee30c.xml">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-32.61b30f85680a.png" sizes="32x32">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-57.83b86c64dc82.png" sizes="57x57">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-76.7dcf8fa36dfc.png" sizes="76x76">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-96.27ac17adaa8b.png" sizes="96x96">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-120.e1526731335e.png" sizes="120x120">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-128.fabea041224c.png" sizes="128x128">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png" sizes="144x144">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png" sizes="152x152">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-180.fcd414307ca3.png" sizes="180x180">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-195.c55ce09d66da.png" sizes="195x195">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-228.bea53ec4b10b.png" sizes="228x228">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/smalltile.fabea041224c.png" sizes="128x128">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/mediumtile.3d42f7faac82.png" sizes="270x270">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
+    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
+    <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
+    <script src="/docs/assets/js/main.js"></script>
+  </head>
+  <body>
+    <div id="header"></div>
+    <div id="content">
+<div class="layout-page">
+  <!-- <div class="ttn-header ttn-header-small">
+    <div class="ttn-container container-fluid">
+      <h1>
+        <img src="/docs/assets/images/the-things-white.png" alt="⛅ The Things Network" />
+        <span>Learn</span>
+      </h1>
+    </div>
+  </div> -->
+  <div class="container-fluid ttn-container">
+    <div class="row page-top-nav">
+      <div class="col-sm-9">
+        <ul>
+          <!--<li class="page-top-nav-crumb"><a href="http://www.thethingsnetwork.org/">Home</a></li>-->
+          <li class="page-top-nav-crumb"><a href="/docs/">Learn</a></li>
+                <li class="active"><a href="/docs/quick-start/">Quick Start</a></li>
+                <li class=""><a href="/docs/lorawan/">LoRaWAN</a></li>
+                <li class=""><a href="/docs/devices-and-gateways/">Devices & Gateways</a></li>
+                <li class=""><a href="/docs/applications-and-integrations/">Applications</a></li>
+                <li class=""><a href="/docs/the-things-stack/">The Things Stack</a></li>
+                <li class=""><a href="/docs/v2-docs/">V2 docs</a></li>
+        </ul>
+      </div>
+      <div class="hidden-xs col-sm-3 text-right">
+        <a href="https://github.com/TheThingsNetwork/docs/edit/master/_content/quick-start/index.md" class="page-edit" data-proofer-ignore><i class="fa fa-github"></i> Edit <strong>index.md</strong></a>
+      </div>
+    </div>
+    <div class="row wrapper">
+      <div class="col-sm-3 side-nav">
+        <div class="panel page-side-nav">
+          <div class="panel-body">
+            <ul>
+              <li class="active"><a href="/docs/quick-start/index.html"><h5>Quick Start</h5></a>
+              </li>
+            </ul>
+            <!-- <li class="hidden-xs col-sm-2 page-toc page-affix"></li> --> 
+          </div>
+        </div> 
+      </div>
+      <div class="col-sm-9 page-body">
+        <div class="panel">
+          <div class="panel-body page-content">
+            <h1 id="quick-start">Quick Start</h1>
+<p>The Things Network offers a free and developer-friendly way to get familiar with LoRaWAN technology. The Things Network provides a public community LoRaWAN network, initiated by <a href="https://thethingsindustries.com/">The Things Industries</a>, and supported by 100k+ community members from more than 100 countries around the world.</p>
+<blockquote>
+  <p>Join The Things Network <a href="https://www.thethingsnetwork.org/forum/">Forum</a> or <a href="https://ttn.fyi/slack-invite">Slack</a> for community support.</p>
+</blockquote>
+<blockquote>
+  <p>For commercial solutions, we recommend using an SLA-backed network provided by The Things Industries. Learn more about <a href="https://thethingsindustries.com/">The Things Industries</a>.</p>
+</blockquote>
+<blockquote>
+  <p>The Things Network runs on open source code, actively maintained by The Things Industries. If you would like to explore or contribute, visit our <a href="https://github.com/TheThingsNetwork/lorawan-stack">open source LoRaWAN stack repository</a>.</p>
+</blockquote>
+<h4 id="useful-links">Useful links:</h4>
+<ul>
+  <li><a href="https://console.cloud.thethings.network/">The Things Network development environment</a></li>
+  <li><a href="https://www.youtube.com/watch?v=rK8oJHZ9Q7U">The Things Stack Introduction video</a></li>
+  <li><a href="https://www.thethingsindustries.com/docs">Visit the official The Things Stack documentation page.</a></li>
+  <li><a href="https://www.thethingsindustries.com/docs/getting-started/what-is-tts/">What is The Things Industries, The Things Network and The Things Stack?</a></li>
+</ul>
+<blockquote>
+  <p><strong>Important note:</strong> In 2021, The Things Network will be upgraded to use <a href="../the-things-stack"><strong>The Things Stack</strong></a>, the third version of the LoRaWAN network stack. <strong>The Things Network Stack</strong> (version 2) will no longer be actively maintained. If you have been using The Things Network, you will need to learn how to <a href="../the-things-stack/migrate-to-v3.html">migrate your gateways and devices to The Things Stack</a>.</p>
+</blockquote>
+<h2 id="learn-more-about-lorawan">Learn more about LoRaWAN</h2>
+<p>LoRaWAN is a radio frequency protocol that allows devices to connect to the Internet over a long range with incredibly low power consumption. Visit our documentation to <a href="../lorawan">learn more about LoRaWAN</a>.</p>
+<p>Watch the video below on <em>Everything you need to know about LoRaWAN in 60 minutes</em> by Johan Stokking (tech lead of The Things Network):</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ZsVhYiX4_6o" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+<p>Read along to learn how you can implement your end-to-end IoT prototype within a day.</p>
+<h2 id="set-up-your-lorawan-network">Set up your LoRaWAN network</h2>
+<p>The main building blocks of The Things Network are <strong>gateways</strong>. Thousands of gateways across the globe are already connected to The Things Network, making the community LoRaWAN network available for a free usage.</p>
+<blockquote>
+  <p>See the <a href="https://www.thethingsnetwork.org/map">global coverage map</a></p>
+</blockquote>
+<p>Although you might already have a coverage in your area, we still recommend you to get your hands on a gateway to ensure reliable coverage. There are a lot of gateways with extensive features on the market, so make sure you choose the one that fits your needs best. For example, here is a short list of some popular indoor gateways:</p>
+<div class="table-responsive"><table class="table">
+  <thead>
+    <tr>
+      <th> </th>
+      <th style="text-align: center">Gateway</th>
+      <th style="text-align: right">Link</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><img src="mikrotik_wap_l8.jpg" alt="Mikrotik wAP LR8" style="width:200px" /></td>
+      <td style="text-align: center"><strong>Mikrotik wAP LR8</strong></td>
+      <td style="text-align: right"><a href="https://mikrotik.com/product/wap_lr8_kit">More info</a></td>
+    </tr>
+    <tr>
+      <td><img src="sentrius-rg1xx.png" alt="Laird Sentrius RG1xx" style="width:200px" /></td>
+      <td style="text-align: center"><strong>Laird Sentrius RG1xx</strong></td>
+      <td style="text-align: right"><a href="https://www.lairdconnect.com/wireless-modules/lorawan-solutions/sentrius-rg1xx-lorawan-gateway-wi-fi-ethernet-optional-lte-us-only">More info</a></td>
+    </tr>
+    <tr>
+      <td><img src="kona-micro-light-gateway.png" alt="Tektelic Kona Micro Lite" style="width:200px" /></td>
+      <td style="text-align: center"><strong>Tektelic Kona Micro Lite</strong></td>
+      <td style="text-align: right"><a href="https://tektelic.com/catalog/kona-micro-lite-lorawan-gateway">More info</a></td>
+    </tr>
+    <tr>
+      <td><img src="multitech-conduit-ap.png" alt="Multitech Conduit AP" style="width:200px" /></td>
+      <td style="text-align: center"><strong>Multitech Conduit AP</strong></td>
+      <td style="text-align: right"><a href="https://www.multitech.com/brands/multiconnect-conduit-ap">More info</a></td>
+    </tr>
+  </tbody>
+</table></div>
+<p>Once you have your hands on a gateway, <a href="../devices-and-gateways/adding-gateways.html">learn how to connect your gateway to The Things Stack</a>.</p>
+<blockquote>
+  <p><strong>Important note:</strong> Different world regions use different <a href="https://www.thethingsindustries.com/docs/reference/frequency-plans/">frequency plans</a>, e.g. 863-870 MHz for Europe, 902-928 MHz for North America, etc. Make sure you double check that the hardware aligns with your region’s radio frequency before purchasing!</p>
+</blockquote>
+<p>To learn more about gateways, have a look at the review video by Ben Olayinka:</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/h_6dIte_IxI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+<h2 id="get-your-development-board-and-activate-it">Get your development board and activate it</h2>
+<p>To build a prototype of your end-to-end IoT solution, you will need a development board. Here is a short list of popular development boards that can help you build your IoT app in no-time:</p>
+<div class="table-responsive"><table class="table">
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th style="text-align: center">Development board</th>
+      <th style="text-align: right">Webshop</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><img src="TheThingsUno.png" alt="The Things Uno" style="width:200px" /></td>
+      <td style="text-align: center"><strong>The Things Uno</strong></td>
+      <td style="text-align: right"><a href="https://connectedthings.store/gb/lorawan-development/the-things-uno-development-board.html">Buy</a></td>
+    </tr>
+    <tr>
+      <td><img src="Arduino-MKR-WAN-1300.jpg" alt="Arduino MKR WAN 1300" style="width:200px" /></td>
+      <td style="text-align: center"><strong>Arduino MKR WAN 1300</strong></td>
+      <td style="text-align: right"><a href="https://store.arduino.cc/arduino-mkr-wan-1300-lora-connectivity-1414">Buy</a></td>
+    </tr>
+    <tr>
+      <td><img src="Pycom-lopy4.png" alt="Pycom lopy4" style="width:200px" /></td>
+      <td style="text-align: center"><strong>Pycom LoPy4</strong></td>
+      <td style="text-align: right"><a href="https://pycom.io/product/lopy4/">Buy</a></td>
+    </tr>
+    <tr>
+      <td><img src="stm32L0-discover-kit.jpg" alt="stm32L0 discover kit" style="width:200px" /></td>
+      <td style="text-align: center"><strong>STM32L0 Discovery Kit</strong></td>
+      <td style="text-align: right"><a href="https://www.st.com/en/evaluation-tools/b-l072z-lrwan1.html">Buy</a></td>
+    </tr>
+  </tbody>
+</table></div>
+<p>Did you set up your gateway and created a free account on The Things Network? Great, now it is time to activate your development board! <a href="../devices-and-gateways/adding-devices.html">Learn how to connect your device to The Things Stack</a>.</p>
+<p>To learn more about getting started with The Things Stack, have a look at the video by Bogdans Afonins:</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/rK8oJHZ9Q7U" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+<h2 id="build-your-end-to-end-application">Build your end-to-end application</h2>
+<p>Once you have your LoRaWAN network setup, you can use available integrations to build your end-to-end IoT solution. Integrations allow you to process data and act on it by triggering events. Learn <a href="../applications-and-integrations/">how to create integrations</a>.</p>
+<h3 id="other-useful-links">Other useful links:</h3>
+<ul>
+  <li><a href="https://www.thethingsindustries.com/docs">Official The Things Stack documentation page</a></li>
+  <li><a href="https://www.thethingsindustries.com/docs/getting-started/what-is-tts/">What is The Things Industries, The Things Network and The Things Stack?</a></li>
+  <li><a href="https://www.youtube.com/playlist?list=PLM8eOeiKY7JWTf-d4XmRuRjK1ZFaoinwM">The Things Stack Getting Started playlist</a></li>
+  <li><a href="https://www.thethingsnetwork.org/forum/">The Things Network Forum</a></li>
+</ul>
+          </div>  
+        </div>
+        <div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="lightbox" tabindex="-1" role="dialog">
+  <div class="modal-dialog text-center" role="document" style="width:auto;padding:20px;">
+    <a href="https://ttnstaticfile.blob.core.windows.net/static/ttn/media/logo/ttn-logo.png"><img class="modal-content modal-body" src="https://ttnstaticfile.blob.core.windows.net/static/ttn/media/logo/ttn-logo.png" alt="Zoom" /></a>
+  </div>
+</div>
+<script src="/docs/assets/js/page.js"></script>
+    </div>
+    <div id="footer"></div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.min.js"></script>
+    <script src="https://ttnweb.azureedge.net/static/common/js/ttn-components.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill@7/dist/polyfill.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
+    <script src="https://ttnweb.azureedge.net/static/common/js/vue-navbar.js"></script>
+    <script src="https://ttnweb.azureedge.net/static/common/js/vue-footer.js"></script>
+    <script src="https://ttnweb.azureedge.net/static/common/js/ga.js"></script>
+  </body>
+</html>
