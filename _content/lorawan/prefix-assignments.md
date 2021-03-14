@@ -173,3 +173,4 @@ section: Additional Information
 | `C00041` | `FC010400/22` | `FC010400` - `FC0107FF` | CM Systems LLC | World |
 | `C00042` | `FC010800/22` | `FC010800` - `FC010BFF` | MIOT Melita.io Technology GmbH | Germany |
 | `C00043` | `FC010C00/22` | `FC010C00` - `FC010FFF` | PROESYS S.r.l. | World |
+| `C00044` | `FC011000/22` | `FC011000` - `FC011FFF` | GPO OU | World |
