@@ -1,0 +1,128 @@
+{{ define "main" }}
+<section class="hero is-medium">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1 class="title is-size-1">
+        Learn
+      </h1>
+      <p class="subtitle">
+        Learn all about LoRaWAN and The Things Network!
+      </p>
+    </div>
+  </div>
+</section>
+
+{{ with .Site.GetPage "/lorawan" }}
+<section class="section">
+  <div class="container">
+    <div class="card has-radius is-fullwidth">
+      <div class="card-content">
+        <h3 class="title is-size-5 has-text-centered is-uppercase"><a href="{{ .Permalink }}">{{ .Title }}</a>
+        </h3>
+        <div class="content has-text-centered has-text-grey">
+          {{ .Description | plainify }}
+        </div>
+        <div class="has-text-centered">
+          <a href="{{ .Permalink }}" class="button is-primary is-outlined">Read</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-desktop is-multiline">
+      {{- range .Site.Menus.main }}
+        {{- with .Page}}
+        <div class="column is-one-third-desktop is-flex">
+          <div class="card has-radius is-fullwidth">
+            <div class="card-content">
+              <h3 class="title is-size-5 has-text-centered is-uppercase"><a href="{{ .Permalink }}">{{ .Title }}</a>
+              </h3>
+              <div class="content has-text-centered has-text-grey">
+                {{ .Description | plainify }}
+              </div>
+              <div class="has-text-centered">
+                <a href="{{ .Permalink }}" class="button is-primary is-outlined">Read</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        {{- end }}
+      {{- end }}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-desktop is-multiline">
+      <div class="column is-one-quarter-desktop is-flex">
+        <div class="card has-radius is-fullwidth">
+          <div class="card-content">
+            <h2 class="title is-size-5 has-text-centered is-uppercase">Join</h2>
+            <div class="content">
+              <p class="has-text-grey">
+                Find The Things Network communities nearby or start a new community.
+              </p>
+            </div>
+            <div class="buttons is-centered">
+              <a href="" class="button is-primary is-outlined">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column is-flex">
+        <div class="card has-radius is-fullwidth">
+          <div class="card-content">
+            <h2 class="title is-size-5 has-text-centered is-uppercase">Forum</h2>
+            <div class="content">
+              <p class="has-text-grey">
+                Ask and answer questions about IoT, LoRa, and other related topics.
+              </p>
+            </div>
+            <div class="buttons is-centered">
+              <a href="" class="button is-primary is-outlined">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column is-flex">
+        <div class="card has-radius is-fullwidth">
+          <div class="card-content">
+            <h2 class="title is-size-5 has-text-centered is-uppercase">Slack</h2>
+            <div class="content">
+              <p class="has-text-grey">
+                Invite yourself to the community chat to talk about The Things Network.
+              </p>
+            </div>
+            <div class="buttons is-centered">
+              <a href="" class="button is-primary is-outlined">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column is-flex">
+        <div class="card has-radius is-fullwidth">
+          <div class="card-content">
+            <h2 class="title is-size-5 has-text-centered is-uppercase">Labs</h2>
+            <div class="content">
+              <p class="has-text-grey">
+                Inspire and get inspired by community contributed use cases.
+              </p>
+            </div>
+            <div class="buttons is-centered">
+              <a href="" class="button is-primary is-outlined">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ .Content }}
+
+{{ end }}
