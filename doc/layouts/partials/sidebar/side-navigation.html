@@ -1,0 +1,55 @@
+{{ $currentPage := . }}
+{{ $firstSection := .FirstSection }}
+
+<nav class="side-navigation" aria-label="Main navigation">
+
+<h2 class="title is-size-5">{{ $firstSection.Name }}</h2>
+
+<div class="menu">
+  <ul class="menu-list">
+  <a href="{{ $firstSection.Permalink }}" class="{{ if eq $currentPage .FirstSection }}is-active{{ end }}">Overview</a>
+  {{- range where $firstSection.Pages.ByWeight "Params.section" nil }}
+  <li>
+      <a href="{{ .Permalink }}" class="{{ if eq $currentPage . }}is-active{{ end }}">{{ .Name }}</a>
+      {{- if .IsAncestor $currentPage }}
+      {{ template "expandifancestor" (dict "section" . "goal" $currentPage ) }}
+      {{ end }}
+    </li>
+  {{- end }}
+  {{ range $firstSection.Params.Sections }}
+    <p class="menu-label">
+      {{ . }}
+    </p>
+    {{ range where $firstSection.Pages.ByWeight "Params.section" . }}
+      {{ template "tree" (dict "page" . "currentPage" $currentPage) }}
+    {{- end }}
+  {{ end }}
+  </ul>
+</div>
+
+{{ define "tree" }}
+<li>
+  <a href="{{ .page.Permalink }}" class="{{ if eq .currentPage .page }}is-active{{ end }}">{{ .page.Name }}</a>
+  {{- if .page.IsAncestor .currentPage }}
+  {{ template "expandifancestor" (dict "section" .page "goal" .currentPage ) }}
+  {{ end }}
+</li>
+{{ end }}
+
+{{ define "expandifancestor" }}
+{{ $goal := .goal }}
+{{ with .section.Pages }}
+<ul class="menu-list">
+{{ range . }}
+  <li>
+    <a href="{{ .Permalink }}" class="{{ if eq $goal . }}is-active{{ end }}">{{ .Name }}</a>
+    {{ if .IsAncestor $goal }}
+    {{ template "expandifancestor" (dict "section" . "goal" $goal ) }}
+    {{ end }}
+  </li>
+{{ end }}
+</ul>
+{{ end }}
+{{ end }}
+
+</nav>

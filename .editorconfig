@@ -1,6 +1,64 @@
-# editorconfig.org
 root = true
 
 [*]
+max_line_length = 120
 indent_style = space
 indent_size = 2
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+charset = utf-8
+
+[{*.{json,yml,html,css,scss,sass,svg,drawio,md},go.mod,go.sum}]
+max_line_length = unset
+
+[*.go]
+indent_style = tab
+
+[Makefile]
+indent_style = tab
+indent_size = 2
+
+[*.drawio]
+insert_final_newline = false
+
+[{*.go,*.md,*.svg}]
+trim_trailing_whitespace = false
+
+[{*.json,*.svg,LICENSE}]
+insert_final_newline = unset
+
+[{*.svg}]
+end_of_line = unset
+
+[{*.go,*.svg,LICENSE}]
+indent_size = unset
+indent_style = unset
+
+[*.{go,js}]
+# Allow C-style doc comments
+block_comment_start = /*
+block_comment = *
+block_comment_end = */
+
+[{go.mod,go.sum}]
+indent_style = tab
+
+[doc/data/*]
+indent_style = unset
+indent_size = unset
+
+[doc/themes/the-things-stack/layouts/shortcodes/*.html]
+indent_size = unset
+indent_style = unset
+insert_final_newline = false
+
+[{doc/themes/the-things-stack/node_modules,doc/themes/the-things-stack/yarn.lock}]
+# Ignore packages and generated files
+max_line_length = unset
+indent_style = unset
+indent_size = unset
+end_of_line = unset
+insert_final_newline = unset
+trim_trailing_whitespace = unset
+charset = unset

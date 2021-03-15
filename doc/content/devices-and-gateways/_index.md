@@ -1,9 +1,12 @@
 ---
 title: Devices & Gateways
 description: Learn to connect your devices and gateways to The Things Network
+image: /gateways/icon.png
 menu:
   main:
     weight: 3
+    params:
+      hideOnHome: true
 ---
 
 # Devices

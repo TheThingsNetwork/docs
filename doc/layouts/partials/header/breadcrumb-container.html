@@ -1,0 +1,24 @@
+<!-- https://discourse.gohugo.io/t/breadcrumb-navigation-for-highly-nested-content/27359/6 -->
+<section class="section">
+  <div class="container">
+    <nav class="breadcrumb has-dot-separator" aria-label="breadcrumbs">
+      <ul>
+        <li><a href="{{ .Site.BaseURL }}">Learn</a></li>
+        {{ $currentPage := . }}
+        {{ $menuPages := slice (.Site.GetPage "/lorawan") }}
+        {{ range .Site.Menus.main }}
+          {{ with .Page }}
+            {{ $menuPages = $menuPages | append . }}
+          {{ end }}
+        {{ end }}
+        {{- range $menuPages }}
+          {{- with .Page}}
+            <li class="{{ if eq . $currentPage.FirstSection -}} is-active {{- end }}">
+              <a href="{{ .Permalink }}">{{ .Title }}</a>
+            </li>
+          {{ end }}
+        {{ end }}
+      </ul>
+    </nav>
+  </div>
+</section>

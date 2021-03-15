@@ -1,28 +1,109 @@
-# Generated site
-/_site
-/_test
-/_scp
 
-# Logs
-logs
-*.log
-npm-debug.log*
+# Created by https://www.toptal.com/developers/gitignore/api/hugo,go,macos,windows,linux
+# Edit at https://www.toptal.com/developers/gitignore?templates=hugo,go,macos,windows,linux
 
-# Dependencies
-node_modules
+### Go ###
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
 
-# Do include Sass since GitHub Pages needs it to build the Jekyll site
-!/node_modules/font-awesome
-!/node_modules/stylebook
+# Test binary, built with `go test -c`
+*.test
 
-# Cache
-.npm
-.sass-cache
-.jekyll-metadata
+# Output of the go coverage tool, specifically when used with LiteIDE
+*.out
 
-# OS X
+# Dependency directories (remove the comment below to include it)
+# vendor/
+
+### Go Patch ###
+/vendor/
+/Godeps/
+
+### Hugo ###
+# Generated files by hugo
+/public/
+/resources/_gen/
+hugo_stats.json
+
+# Executable may be added to repository
+hugo.exe
+hugo.darwin
+hugo.linux
+
+### Linux ###
+*~
+
+# temporary files which can be created if a process still has a handle open of a deleted file
+.fuse_hidden*
+
+# KDE directory preferences
+.directory
+
+# Linux trash folder which might appear on any partition or disk
+.Trash-*
+
+# .nfs files are created when an open file is removed but is still being accessed
+.nfs*
+
+### macOS ###
+# General
 .DS_Store
+.AppleDouble
+.LSOverride
 
-# Private
-/.env
-/_local
+# Icon must end with two \r
+Icon
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+### Windows ###
+# Windows thumbnail cache files
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+
+# Dump file
+*.stackdump
+
+# Folder config file
+[Dd]esktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+# End of https://www.toptal.com/developers/gitignore/api/hugo,go,macos,windows,linux
+
+### Internal docs build
+/internal/

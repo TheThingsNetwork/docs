@@ -1,0 +1,15 @@
+.footer {
+  background-size: cover;
+  .title {
+    color: $graphite;
+  }
+  .p {
+    color: $graphite;
+  }
+  a {
+    color: $graphite;
+    &:hover {
+      color: $blue;
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{{ if ne .Params.toc false -}}
+  <nav class="toc" aria-label="Page navigation">
+    <h2 class="title is-size-6">On this page</h2>
+    {{ partial "sidebar/headers" . }}
+  </nav>
+{{ end -}}

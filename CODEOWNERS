@@ -1,0 +1,16 @@
+# Root
+/ @benolayinka @laurensslats
+/CODEOWNERS @benolayinka @johanstokking
+/LICENSE @benolayinka
+
+# Build pipeline and tooling
+/Makefile @benolayinka @htdvisser @johanstokking
+/.github/workflows @benolayinka @htdvisser @michalborkowski96
+
+# Hugo
+/doc/assets/css @kschiffer @benolayinka @pierrephz
+/doc/assets/js @kschiffer @benolayinka
+/doc/layouts @kschiffer @benolayinka @pierrephz
+
+# Clear generated code
+/doc/data/api/*/*.yml

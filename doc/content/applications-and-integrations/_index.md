@@ -4,6 +4,8 @@ description: Create applications and use The Things Network integrations to buil
 menu:
   main:
     weight: 2
+    params:
+      hideOnHome: true
 ---
 
 # Applications

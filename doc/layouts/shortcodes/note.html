@@ -1,0 +1,4 @@
+<div class="notification is-info is-light has-text-dark">
+  <h5 class="title is-family-sans-serif has-text-dark mb-1">Note:</h5>
+  {{ markdownify (or (.Get 0) .Inner) }}
+</div>

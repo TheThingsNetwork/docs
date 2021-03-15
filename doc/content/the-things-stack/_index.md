@@ -4,6 +4,7 @@ description: The Things Network is upgrading to The Things Stack V3
 redirect_from:
  - /the-things-stack-v3/
 weight: 700
+image: "network/icon.png"
 menu:
   main
 ---
