@@ -17,7 +17,7 @@ The Things Stack V3 [architecture](https://www.thethingsindustries.com/docs/refe
 
 > For a detailed info on The Things Stack V3, visit [The Things Stack official documentation page](https://www.thethingsindustries.com/docs/).
 
-> **To learn more about migration to The Things Stack V3, [click here](the-things-stack/migrate-to-v3.html)**
+> **To learn more about migration to The Things Stack V3, [click here](migrate-to-v3.html)**
 
 
 # How can I access V3?
