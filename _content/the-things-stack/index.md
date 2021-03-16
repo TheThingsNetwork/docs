@@ -17,6 +17,9 @@ The Things Stack V3 [architecture](https://www.thethingsindustries.com/docs/refe
 
 > For a detailed info on The Things Stack V3, visit [The Things Stack official documentation page](https://www.thethingsindustries.com/docs/).
 
+> **To learn more about migration to The Things Stack V3, [click here](the-things-stack/migrate-to-v3.html)**
+
+
 # How can I access V3?
 
 The (free) community edition of The Things Stack V3 can be accessed via the [**Development Console**](https://console.cloud.thethings.network/). Make sure to select the cluster which is closest to you geographically.
