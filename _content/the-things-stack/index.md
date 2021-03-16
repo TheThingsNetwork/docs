@@ -17,7 +17,7 @@ The Things Stack V3 [architecture](https://www.thethingsindustries.com/docs/refe
 
 > For a detailed info on The Things Stack V3, visit [The Things Stack official documentation page](https://www.thethingsindustries.com/docs/).
 
-> **To learn more about migration to The Things Stack V3, [click here](migrate-to-v3.html)**
+> **To learn more about migration to The Things Stack V3, [click here](https://www.thethingsnetwork.org/docs/the-things-stack/migrate-to-v3.html)**
 
 
 # How can I access V3?
@@ -45,3 +45,6 @@ Users of The Things Stack V3 will now have an opportunity to use the Global Join
 One of the most important features is the connection to Packet Broker, allowing the [exchange of traffic](https://www.thethingsindustries.com/docs/reference/peering/) between The Things Network and private LoRaWAN networks which increases LoRaWAN network coverage, performance and capacity, and prolongs the end device battery life. 
 
 > **For more detailed comparison between V2 and V3, check out the [Major Changes in The Things Stack](https://www.thethingsindustries.com/docs/getting-started/migrating/major-changes/) page.**
+
+> **Continue reading to learn about [migrating your devices to The Things Stack V3](https://www.thethingsnetwork.org/docs/the-things-stack/migrate-to-v3.html)**
+
