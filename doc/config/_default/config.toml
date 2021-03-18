@@ -49,6 +49,26 @@ pygmentsUseClasses = true
     url = "https://www.thethingsindustries.com"
     weight = 2
 
+  [[menu.community]]
+    name = "Join"
+    pre = "Find The Things Network communities nearby or start a new community."
+    url = "https://www.thethingsnetwork.org/community"
+
+  [[menu.community]]
+    name = "Forum"
+    pre = "Ask and answer questions about IoT, LoRa, and other related topics."
+    url = "https://www.thethingsnetwork.org/forum"
+
+  [[menu.community]]
+    name = "Slack"
+    pre = "Invite yourself to the community chat to talk about The Things Network."
+    url = "https://account.thethingsnetwork.org/"
+
+  [[menu.community]]
+    name = "Labs"
+    pre = "Inspire and get inspired by community contributed use cases."
+    url = "https://www.thethingsnetwork.org/labs"
+
 [module]
   [[module.mounts]]
     source = "assets"
