@@ -1,6 +1,6 @@
-title = "The Things Network Learn"
+title = "The Things Network"
 
-baseURL = "http://localhost/"
+baseURL = "http://localhost"
 
 disableKinds = [
   "taxonomy",
@@ -17,8 +17,9 @@ pygmentsCodeFences = true
 pygmentsUseClasses = true
 
 [params]
-  description = "The Things Network Learn"
-  keywords = []
+  title = "The Things Network"
+  description = "We are building a global open free crowdsourced long range low power IoT data network"
+  images = ["img/og-image.png"]
   github_repository = "https://github.com/TheThingsNetwork/docs"
   github_repository_edit = "https://github.com/TheThingsNetwork/docs/blob/master/doc/content"
   tts_github_repository = "https://github.com/TheThingsNetwork/lorawan-stack"
