@@ -8,7 +8,7 @@ This document is only a summary of radio regulations, and the appropriate freque
 
 For discussions about the frequency plans in different countries, see the posts on the forum tagged with [Country/Frequency-Plan](https://www.thethingsnetwork.org/forum/c/country/frequency-plan).
 
-![Map of Frequency Plans](frequency-plans-map.svg)
+![Map of Frequency Plans](../frequency-plans-map.svg)
 
 ### A
 

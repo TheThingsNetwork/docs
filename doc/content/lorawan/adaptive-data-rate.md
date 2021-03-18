@@ -23,4 +23,4 @@ ADR requests are no longer scheduled or sent if the device refused several ADR r
 
 The algorithm used in The Things Network is based on Semtech's recommended algorithm for rate adaptation. The following diagram outlines the ADR flow as implemented in The Things Network's NetworkServer:
 
-![ADR Overview](adr.png)
+![ADR Overview](../adr.png)

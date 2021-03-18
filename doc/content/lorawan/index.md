@@ -1,7 +1,7 @@
 ---
 title: LoRaWAN 
 image: /lorawan/icon.png
-description: Get started with LoRaWAN
+description: "Learn about LoRaWAN: the secure messaging protocol used by The Things Network"
 sections:
  - Fundamental
  - Specifications
