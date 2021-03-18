@@ -1,12 +1,11 @@
 ---
 title: RAK2245 Pi Hat Edition - LoRaWAN® Gateway Concentrator Module
 section: Hardware
-redirect_from:
+aliases:
  - /rak2245/
 image: /gateways/rak2245/images/rak2245.jpg
 weight: 900
 ---
-# RAK2245 Pi Hat Edition - LoRaWAN® Gateway Concentrator Module
 
 ![Figure 1: RAK2245](images/rak2245.jpg)
 

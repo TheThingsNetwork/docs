@@ -4,8 +4,6 @@ weight: 1000
 source: 'https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/docs/TheThingsNetwork.md'
 ---
 
-# API Reference
-
 The `TheThingsNetwork` class enables Arduino devices with supported LoRaWAN modules to communicate via The Things Network. Currently supported LoRaWAN modules are the Microchip RN2483 and the RN2903.
 
 ## Class: `TheThingsNetwork`

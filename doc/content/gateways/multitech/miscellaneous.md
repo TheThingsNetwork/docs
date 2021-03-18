@@ -3,8 +3,6 @@ title: Miscellaneous
 weight: -10000
 ---
 
-# Miscellaneous
-
 ## Configuration
 
 > What `clksrc` value should I use?

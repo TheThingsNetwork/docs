@@ -2,8 +2,6 @@
 title: Device Registration
 ---
 
-# Device Registration
-
 Before a device can communicate via The Things Network you need to register it with an application.
 
 To use the default **Over The Air Activation** (OTAA) you will need to register your device with its Device EUI. See the documentation of your device for instructions, as for example that of [The Things Uno](uno/quick-start.md#get-your-device-eui).

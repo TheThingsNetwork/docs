@@ -3,8 +3,6 @@ title: HTTP
 section: Integrations
 ---
 
-# HTTP Integration
-
 The HTTP Integration allows you to send uplink data to an endpoint and receive downlink data over HTTP.
 
 ## Getting started video

@@ -3,8 +3,6 @@ title: Build your own gateway
 weight: 100
 ---
 
-# Build your own gateway
-
 Building your own gateway is a fun and easy way to discover the LoRa world!
 
 ![Raspberry Pi-based gateway](build.jpg)

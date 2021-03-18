@@ -3,8 +3,6 @@ title: Update
 weight: 50
 ---
 
-# Update the Integration
-
 Since the integration runs in your AWS account and within your security context, it is not being updated automatically. This guide walks you through updating the integration that runs as an AWS Elastic Beanstalk application.
 
 1. Log in to the [AWS Management Console](http://console.aws.amazon.com)

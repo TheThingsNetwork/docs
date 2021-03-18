@@ -2,11 +2,9 @@
 title: Wirnet iBTS
 image: /gateways/kerlink/ibts/image.png
 section: Hardware
-redirect_from:
+aliases:
  - /kerlink/kerlink-ibts
 ---
-
-# Wirnet iBTS
 
 <img src="ibts-gw.png" alt="Kerlink iBTS" width="200"/>
 

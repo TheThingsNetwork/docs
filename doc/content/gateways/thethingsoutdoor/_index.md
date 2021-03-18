@@ -5,9 +5,6 @@ section: Hardware
 weight: 1100
 ---
 
-
-# The Things Outdoor Gateway
-
 The Things Outdoor Gateway (TTOG) is an industrial, outdoor and fully compliant gateway at a very low cost.
 
 ![TTOG](TTOG.png)

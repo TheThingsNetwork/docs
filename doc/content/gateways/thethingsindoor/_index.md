@@ -5,9 +5,6 @@ section: Hardware
 weight: 1100
 ---
 
-
-# The Things Indoor Gateway
-
 The Things Indoor Gateway(TTIG) is designed to be a fully compliant, ultra low-cost LoRaWAN gateway, with WiFi as the backhaul. The gateway comes with a wall plug, and can be powered over USB-C on 900mA, making the gateway even suitable for applications that require dynamic coverage.
 
 

@@ -4,8 +4,6 @@ weight: -1000
 source: 'https://github.com/TheThingsNetwork/docs/blob/master/_content/network/account/api.md'
 ---
 
-# The Things Network Account Server API, version 2.0.0
-
 Base URL: https://account.thethingsnetwork.org/api/v2
 
 - [Endpoints](#endpoints)

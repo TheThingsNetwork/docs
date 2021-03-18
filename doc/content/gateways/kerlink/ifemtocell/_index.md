@@ -2,11 +2,9 @@
 title: Wirnet iFemtoCell
 image: /gateways/kerlink/ifemtocell/image.png
 section: Hardware
-redirect_from:
+aliases:
  - /kerlink/kerlink-ifemtocell
 ---
-
-# Kerlink Wirnet iFemtoCell
 
 The wirnet iFemtoCell is a low-cost, indoor LoRaWAN nano gateway that can be easily connected through WiFi or ethernet.
 

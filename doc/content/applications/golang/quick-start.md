@@ -3,8 +3,6 @@ title: Quick Start
 weight: 1000
 ---
 
-# Quick Start
-
 ## Setup
 
 Let's install Go, create a new project and install the TTN Client.

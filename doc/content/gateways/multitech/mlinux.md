@@ -1,8 +1,6 @@
 ---
 title: Configure mLinux model
 ---
-
-# Configure mLinux model
 mLinux is an open source embedded Linux distribution for the MultiConnect Conduit and is the next generation version of CoreCDP.
 
 ## Prepare USB stick

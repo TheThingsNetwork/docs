@@ -3,8 +3,6 @@ title: Troubleshooting
 weight: 200
 ---
 
-# Network Troubleshooting
-
 Is something not working like it should? This section is here to help you find out the issue might come from.
 
 >If you have issues specifically with a gateway, see [Gateway Troubleshooting](../gateways/troubleshooting/index.md).

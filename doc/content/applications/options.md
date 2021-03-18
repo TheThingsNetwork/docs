@@ -2,7 +2,6 @@
 title: Build an Application
 ---
 
-# Build an Application
 An application can connect to The Things Network in different ways:
 
 ## 1. [APIs](apis.md)

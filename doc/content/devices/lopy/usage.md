@@ -1,8 +1,6 @@
 ---
 title: Usage
 ---
-
-# Usage
 This is how you perform common tasks to use The Things Network on the LoPy. This assumes you are familiar with [MicroPython for LoPy](https://docs.pycom.io/lopy/) documentation.
 
 ## Register your Device EUI

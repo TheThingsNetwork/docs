@@ -4,8 +4,6 @@ section: Specifications
 weight: 2
 ---
 
-# LoRaWAN Security
-
 ## Security Keys
 
 LoRaWAN 1.0 specifies a number of security keys: `NwkSKey`, `AppSKey` and `AppKey`. All keys have a length of 128 bits.

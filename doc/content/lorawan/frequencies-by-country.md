@@ -2,9 +2,7 @@
 title: Frequency Plans by Country
 section: Additional Information
 weight: 2
---- 
-
-# LoRaWAN Frequency Plans and Regulations by Country.
+---
 
 This document is only a summary of radio regulations, and the appropriate frequency plans that should be used for The Things Network in the respective countries. **This is in no way an official document; gateway owners are still obliged to find, study and adhere to their own country's regulations.** Some countries also expect you to register your gateway, or obtain a license. In that case you are using a "free band", not a "license free band". In some countries it is also necessary that the gateway is certified (CE, FCC, ...) if you allow other people to also communicate via it.
 

@@ -3,8 +3,6 @@ title: API Reference
 weight: 1000
 ---
 
-# API Reference
-
 This package provides you an easy way to exchange traffic with The Things Network via MQTT and manage your applications.
 
 ## MQTTClient

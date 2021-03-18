@@ -3,8 +3,6 @@ title: Smart Office Kit
 section: Integrations
 ---
 
-# Smart Office Kit
-
 Connect your office and optimize the work performance.
 
 The smart building package enables the transformation of any building or facility into a smart connected asset, that can be remotely managed and controlled. The sensors included in the kit provide the means of monitoring the most important indicators in a smart building solution. 

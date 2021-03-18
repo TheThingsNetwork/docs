@@ -3,8 +3,6 @@ title: Device Firmware Upgrading
 weight: 700
 ---
 
-# Device Firmware Upgrading
-
 If the firmware version of your RAK7200 LoRa® Tracker is newer than V3.0.0.0 or you have just burned the bootloader into the board according to the Burning the Bootloader section, proceed to Step 2.
 
 **1**.In case you have not just burned the bootloader, as instructed in the previous section you need to manually go into boot mode. Open and download the RAK Serial Port Tool Here. Connect your board via the USB interface and enter the following AT command:

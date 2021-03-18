@@ -3,8 +3,6 @@ title: Gateway connection to TTN
 weight: 100
 ---
 
-# Gateway connection to TTN
-
 This page explains **how packet forwarders exchange data with TTN**. You don't need to understand all of this to make a gateway work, but if you're curious of how packet forwarders work, this can help you!
 
 ## The Things Network Router

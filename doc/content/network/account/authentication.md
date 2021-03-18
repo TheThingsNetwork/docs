@@ -3,8 +3,6 @@ title: Authentication
 source: 'https://github.com/TheThingsIndustries/account-server/blob/master/AUTHENTICATION.md'
 ---
 
-# Authentication
-
 This document describes the various aspects of authentication using this
 authentication server.
 

@@ -2,7 +2,6 @@
 title: Configuring your RAK7200 Using AT Commands
 weight: 600
 ---
-# Configuring your RAK7200 Using AT Commands
 
 The purpose of this document is to demonstrate on how to configure the RAK7200 LoRa® Tracker thru the use of AT Commands via a Serial Port Tool running in your Windows PC. The list below shows the AT Commands available for use:
 

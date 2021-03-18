@@ -4,8 +4,6 @@ weight: -1000
 source: 'https://github.com/TheThingsNetwork/api/blob/master/handler/ApplicationManager.md'
 ---
 
-# API Reference
-
 ## .handler.ApplicationManager
 
 ApplicationManager manages application and device registrations on the Handler

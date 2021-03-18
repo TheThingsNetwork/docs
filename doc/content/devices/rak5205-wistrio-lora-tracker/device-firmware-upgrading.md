@@ -3,8 +3,6 @@ title: Device Firmware Upgrading
 weight: 700
 ---
 
-# Device Firmware Upgrading
-
 If the firmware version of your RAK5205 WisTrio LoRa Tracker is newer than V3.0.0.0 or you have just burned the bootloader into RAK5205 WisTrio LoRa Tracker according to the Burning Bootloader into the Device section, you just need to burn the upgraded firmware according to the following steps now:
 
 **1**.First, type the command to let the RAK5205 WisTrio LoRa Tracker work in boot mode.

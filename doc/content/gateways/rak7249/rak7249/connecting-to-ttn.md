@@ -3,8 +3,6 @@ title: Connecting the Gateway to The Things Network (TTN)
 weight: 600
 ---
 
-# Connecting the Gateway to The Things Network (TTN)
-
 The Things Network is about enabling low power devices to use long range gateways to connect to an open-source, decentralized network to exchange data with Application. Learn more about the Things Network [here](https://www.thethingsnetwork.org/docs/).
 
 * First, you should have connected your LoRa Gateway to the router in order to access the internet according to the method which has been introduced in the “Assembly Guide” in the previous section.

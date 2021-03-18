@@ -3,8 +3,6 @@ title: WiFi Localization
 weight: 900
 ---
 
-# WiFi Localization
-
 To use the **LoRa TDOA + WiFi** lookup, you must pass WiFi access points in a specific format from your decoder payload function:
 
 ```json

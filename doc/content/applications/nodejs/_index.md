@@ -1,14 +1,12 @@
 ---
 title: Node.js
 section: SDKs & Libraries
-redirect_from:
+aliases:
  - /refactor/node-js/
  - /current/node-js/
  - /v2-preview/node-js/
  - /node-js/
 ---
-
-# Node.js SDK
 
 [Node.js](https://nodejs.org/) is a JavaScript run-time built on Chrome's V8 JavaScript engine.
 

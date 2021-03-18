@@ -4,8 +4,6 @@ weight: -1000
 source: 'https://github.com/TheThingsNetwork/java-app-sdk/blob/master/data/data-mqtt/API.md'
 ---
 
-# API Reference
-
 Require the TTN Client module:
 
 ```java

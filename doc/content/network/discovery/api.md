@@ -4,8 +4,6 @@ weight: -1000
 source: 'https://github.com/TheThingsNetwork/api/blob/master/discovery/Discovery.md'
 ---
 
-# API Reference
-
 ## .discovery.Discovery
 
 The Discovery service is used to discover services within The Things Network.

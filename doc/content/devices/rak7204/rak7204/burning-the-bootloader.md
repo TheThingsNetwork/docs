@@ -3,8 +3,6 @@ title: Burning Bootloader into the Device
 weight: 800
 ---
 
-# Burning Bootloader into the Device
-
 Please use the the latest firmware for the RAK7204 LoRa Environmental Sensor accessible in this [directory](https://downloads.rakwireless.com/en/LoRa/RAK7204/Firmware/) in order to avoid potential problems. Burning the Bootloader into the device is done as follows:
 
 >**Note:** Skip this section if you have a RAK7204 with V3.0.0.0 firmware or newer, for it has already a bootloader.

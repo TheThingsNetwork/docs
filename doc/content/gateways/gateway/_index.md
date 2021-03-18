@@ -5,8 +5,6 @@ section: Hardware
 weight: 1000
 ---
 
-# The Things Gateway
-
 Following a [successful Kickstarter](https://www.kickstarter.com/projects/419277966/the-things-network) our own LoRa Gateway is now available world-wide. At a price of just under €300 and its easy, web-based setup, it is the best choice to help build The Things Network. Order The Things Gateway [here](http://thethingsproducts.com/#the-things-product-buy)
 
 

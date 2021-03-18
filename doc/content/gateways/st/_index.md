@@ -3,8 +3,6 @@ title: P-NUCLEO-LRWAN2
 image: /gateways/st/STM32-nucleo-pack.png
 section: Hardware
 ---
-
-# P-NUCLEO-LRWAN2
 The user manual describes how to get started with the P-NUCLEO starter packs. Hardware and software setups are discussed in detail, together with the setup of network and application servers.
 
 # Data Brief

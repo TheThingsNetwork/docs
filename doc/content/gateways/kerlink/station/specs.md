@@ -3,8 +3,6 @@ title: Specifications
 weight: 1000
 ---
 
-# Specifications
-
 Name | Kerlink Wirnet Station
 :----|:------
 Price | On request, 1.200 Euro EXW incoterms (approx. 1.500 EUR final)

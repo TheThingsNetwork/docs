@@ -3,8 +3,6 @@ title: Configuring the RAK811 WisNode LoRa Module
 weight: 600
 ---
 
-# Configuring the RAK811 WisNode LoRa Module
-
 You can configure your WisNode by sending AT Commands via a Serial port tool running on your PC.The list below shows the AT Commands available for use:
 
 | AT Command | Description |

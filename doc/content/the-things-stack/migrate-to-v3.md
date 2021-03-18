@@ -1,7 +1,7 @@
 ---
 title: Migrate to The Things Stack V3
 weight: 100
-redirect_from:
+aliases:
  - /the-things-stack-v3/migrate-to-v3
 ---
 

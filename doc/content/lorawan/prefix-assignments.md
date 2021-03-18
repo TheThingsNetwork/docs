@@ -3,8 +3,6 @@ title: NetID and DevAddr Prefix Assignments
 section: Additional Information
 ---
 
-# NetID and DevAddr Prefix Assignments
-
 | **NetID** | **DevAddr Prefix** | **DevAddr Range** | **Operator** | **Region** |
 | --------- | ------------------ | ----------------- | ------------ | ---------- |
 | `000000` | `00000000/7` | `00000000` - `01FFFFFF` | Private/experimental nodes | Local |

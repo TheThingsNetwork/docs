@@ -3,8 +3,6 @@ title: Act on Data
 weight: 400
 ---
 
-# Act on Data
-
 AWS IoT rules allow for filtering and routing uplink messages to many AWS services, including storing S3 files, sending push notifications through SNS, sending to SQS queues, invoking Lambda functions and many more. [See Rules for AWS IoT](https://docs.aws.amazon.com/iot/latest/developerguide/iot-rules.html) for more information.
 
 This guide walks you through storing uplink messages in AWS DynamoDB.

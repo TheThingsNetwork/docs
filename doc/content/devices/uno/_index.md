@@ -10,8 +10,6 @@ image: /devices/uno/image.png
 weight: 1000
 ---
 
-# The Things Uno
-
 The Things Uno is the perfect board to start prototyping your IoT ideas or make an existing project wireless with up to 10km range by simply swapping boards.
 
 ![The Things Uno](image.png)

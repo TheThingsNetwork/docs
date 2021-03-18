@@ -1,8 +1,6 @@
 ---
 title: Configure Wi-Fi
 ---
-
-# Configure Wi-Fi
 New models of Multitech Conduit now support Wi-Fi connectivity: ideal for environments where it is difficult to pass over an Ethernet cable.
 
 ## Connect to the Multitech Conduit

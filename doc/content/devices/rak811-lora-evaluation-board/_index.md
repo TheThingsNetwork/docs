@@ -1,12 +1,11 @@
 ---
 title: RAK811 LoRa® Evaluation Board
 section: Hardware
-redirect_from:
+aliases:
  - /rak811-lora-evaluation-board/
 image: /gateways/rak811-lora-evalution-board/images/rak811.png
 weight: 900
 ---
-# RAK811 LoRa® Evaluation Board
 
 ![Figure 1: RAK811 LoRa® Breakout Module](images/rak811loraevaluationboard.jpg)
 

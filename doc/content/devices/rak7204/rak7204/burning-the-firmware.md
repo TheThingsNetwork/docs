@@ -3,8 +3,6 @@ title: Device Firmware Upgrading
 weight: 700
 ---
 
-# Burning the Firmware
-
 If the firmware version of your RAK7204 LoRa Environmental Sensor is newer than V3.0.0.0 or you have just burned the bootloader into RAK7204 according to the Burning Bootloader into the Device section, you just need to burn the upgrade firmware according to the following steps now:
 
 1 . First, open and download the RAK Serial Port Tool [here](https://downloads.rakwireless.com/en/LoRa/WisTrio-LoRa-RAK5205/Tools/RAK_SERIAL_PORT_TOOL_V1.2.1.zip). Then, connect the board to your PC and enter AT command  below at the serial terminal to let it work in boot mode.

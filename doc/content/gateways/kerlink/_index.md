@@ -4,8 +4,6 @@ image: /gateways/kerlink/Kerlink_logo.jpg
 section: Hardware
 ---
 
-# Kerlink
-
 Find the documentation on how to connect:
 - [Kerlink iStation](istation/)
 - [Kerlink iBTS](ibts/)

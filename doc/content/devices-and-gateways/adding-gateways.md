@@ -3,8 +3,6 @@ title: Adding gateways
 section: Gateways
 ---
 
-# Adding gateways
-
 To connect your gateway to The Things Network, it has to be configured to properly forward the traffic to it, and it also has to be added/registered on The Things Network.
 
 > It is recommended to use [LoRa Basics Station protocol](https://www.thethingsindustries.com/docs/gateways/lora-basics-station/), due to number of security and scalability issues related to [UDP Packet Forwarder](https://www.thethingsindustries.com/docs/gateways/semtech-udp-packet-forwarder/).

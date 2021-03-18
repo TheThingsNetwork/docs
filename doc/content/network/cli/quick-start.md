@@ -3,8 +3,6 @@ title: Quick Start
 weight: 1000
 ---
 
-# Quick Start
-
 This document gives a quick introduction to `ttnctl`.
 
 ## Installation

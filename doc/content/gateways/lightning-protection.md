@@ -4,8 +4,6 @@ section: Running a gateway
 weight: 300
 ---
 
-# Lightning protection
-
 When using an outdoor antenna, please consider installing surge protection devices on the antenna and/or ethernet cables. Even the electrical field of a nearby lightning strike can destroy all connected equipment (also inside the building).
 
 ## Citel

@@ -1,12 +1,11 @@
 ---
 title: RAK7204 LoRa Environmental Sensor
 section: Hardware
-redirect_from:
+aliases:
  - /rak7204/
 image: /devices/rak7204/images
 weight: 900
 ---
-# RAK7204 LoRa Environmental Sensor
 
 ![Figure 1: RAK7204 LoRa Environmental Sensor](images/RAK7204_product.jpg)
 

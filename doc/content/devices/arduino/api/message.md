@@ -4,8 +4,6 @@ weight: 900
 source: 'https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/docs/TheThingsMessage.md'
 ---
 
-# API Reference
-
 ## Class: `TheThingsMessage`
 The `TheThingsMessage` class provides structs for sensor and application data you can encode and decode as bytes.
 

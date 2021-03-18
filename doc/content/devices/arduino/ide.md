@@ -3,8 +3,6 @@ title: IDE Setup & Usage
 weight: 1000
 ---
 
-# IDE Setup & Usage
-
 We'll not reproduce the [Arduino Software Guide](https://www.arduino.cc/en/Guide/Environment#toc1) here, but here's how you install the Arduino IDE, The Things Network library and perform some common tasks.
 
 ## Setup

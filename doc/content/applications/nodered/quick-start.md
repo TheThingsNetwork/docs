@@ -2,8 +2,6 @@
 title: Quick Start
 ---
 
-# Quick Start
-
 This guide will walk you through setting up a Node-RED flow that listens to device activations and messages and responds with a message in return.
 
 > This guide assumes the sketch and payload functions of [The Things Uno / Quick Start](../../devices/uno/quick-start.md), but can be easily applied to any other.

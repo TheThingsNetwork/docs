@@ -2,8 +2,6 @@
 title: Troubleshooting
 weight: -1100
 ---
-
-# Troubleshooting
 The Things Node is based on the [SparkFun Pro Micro - 3.3V/8Mhz](https://www.sparkfun.com/products/12587). A lot of their resources apply to our board as well. In this section we'll discuss some common issues and link to relevant resources from SparkFun.
 
 ## Serial Port not showing up (Mac OS)

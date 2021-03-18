@@ -4,8 +4,6 @@ section: Integrations
 weight: 1000
 ---
 
-# Integrations
-
 Integrations are the easiest way to connect your devices to an applications. An integration uses the same APIs or SDKs an application could use directly. Together with the private or public APIs of the platform it ties up the application running on the platform with The Things Network:
 
 ![Platform Integration](options-integration.png)

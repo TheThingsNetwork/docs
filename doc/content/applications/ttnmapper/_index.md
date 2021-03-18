@@ -5,8 +5,6 @@ ambassador:
   name: Timothy Sealy
   username: timothy
 ---
-
-# TTN Mapper
 The TTN Mapper integration allows you to upload coverage information (location, rssi and snr) to TTN Mapper directly from the TTN backend.
 
 The goal of TTN Mapper is to provide a map of the actual coverage of the TTN gateways. Contributors to TTN Mapper measure the performance of gateways in their vicinity and upload this information to the TTN Mapper website. Here the information is aggregated and shared with the TTN community.

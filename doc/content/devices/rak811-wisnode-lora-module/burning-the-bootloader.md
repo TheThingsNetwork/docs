@@ -3,8 +3,6 @@ title: Burning the Bootloader into the Device
 weight: 800
 ---
 
-# Burning the Bootloader into the Device
-
 An easy and quick way to have a fully functional gateway is by using a Precompiled Firmware Image provided in this [**directory**](https://downloads.rakwireless.com/en/LoRa/WisNode/Firmware/). In this document are the step by step instructions of the bootloader’s burning process into the RAK811 WisNode.
 
 1 . To start with, download and install the “STM32CubeProgrammer” tool in your PC through this [link](https://www.st.com/content/st_com/en/products/development-tools/software-development-tools/stm32-software-development-tools/stm32-programmers/stm32cubeprog.html#overview) or through this [RAK directory](https://downloads.rakwireless.com/en/LoRa/RAK811/Tools/SetupSTM32CubeProgrammer-2.1.0.rar).

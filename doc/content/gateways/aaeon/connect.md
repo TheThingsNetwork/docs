@@ -3,9 +3,6 @@ title: Connect to TTN
 weight: 800
 ---
 
-
-# Restore the pre-built OS image
-
 You will need two USB flash drives. The first will be for the AIOT-ILRA01 TTN-ready image, and the second for the Clonezilla boot disk.
 
 First of all, get a copy of the latest image for your gateway. Unzip the directory on a FAT32 formatted USB key.

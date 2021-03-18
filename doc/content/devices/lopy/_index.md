@@ -5,12 +5,10 @@ ambassador:
   username: Batilan
 section: Hardware
 image: /devices/lopy/image.jpg
-redirect_from:
+aliases:
  - /draft/lopy/
  - /lopy/
 ---
-
-# LoPy
 
 With LoRa, Wifi and BLE, the the [LoPy](https://pycom.io/product/lopy/) is the only triple bearer MicroPython enabled micro controller on the market today – the perfect enterprise grade IoT platform for your connected Things.
 

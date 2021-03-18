@@ -3,8 +3,6 @@ title: ThingSpeak
 section: Integrations
 ---
 
-# ThingSpeak
-
 ThingSpeak™ is an IoT analytics platform service that allows you to aggregate, visualize, and analyze live data streams. Once you send data to ThingSpeak from your devices, you can create instant visualizations of live data without having to write any code. With MATLAB® analytics inside ThingSpeak, you can write and execute MATLAB code to perform more advanced preprocessing, visualizations, and analyses. Get started with building your IoT systems without setting up servers or developing web software. Visit [ThingSpeak.com](https://www.thingspeak.com) for more information.
 
 The Integration with The Things Network allows you to seamlessly forward data from The Things Network to ThingSpeak for analysis and visualization.

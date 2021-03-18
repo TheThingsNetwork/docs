@@ -3,8 +3,6 @@ title: Programming hex files
 section: Running a gateway
 weight: 200
 ---
-
-# Programming hex files using MPLABX IPE
 In this section, we briefly walk through the process of Programming [The Things Gateway](../gateway/index.md) using the [MPLAB IPE](http://microchipdeveloper.com/ipe:start) integrated programming environment
 
 #### 1. Connecting the Programmer

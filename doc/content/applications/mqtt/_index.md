@@ -1,14 +1,12 @@
 ---
 title: Data API (MQTT)
 section: APIs
-redirect_from:
+aliases:
  - /refactor/mqtt/
  - /v2-preview/mqtt/
  - /current/mqtt/
  - /mqtt/
 ---
-
-# MQTT
 
 [MQTT](http://mqtt.org) is a machine-to-machine (M2M)/"Internet of Things" connectivity protocol. It was designed as an extremely lightweight publish/subscribe messaging transport.
 

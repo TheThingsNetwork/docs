@@ -3,8 +3,6 @@ title: Troubleshooting
 weight: 0
 ---
 
-# Troubleshooting
-
 Are you encountering issues with the AWS IoT integration? This guide walks you through viewing health and getting log files of the integration that may help resolving issues.
 
 ## Check Health

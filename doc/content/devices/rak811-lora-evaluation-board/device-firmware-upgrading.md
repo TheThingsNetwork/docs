@@ -3,8 +3,6 @@ title: Device Firmware Upgrading
 weight: 800
 ---
 
-# Device Firmware Upgrading
-
 If the firmware version of your RAK811 LoRa® Evaluation Board is newer than V3.0.0.0 or you have just burned the bootloader into RAK811 LoRa® Evaluation Board according to the Burning Bootloader into the Device section, you just need to burn the upgrade firmware according to the following steps now:
 
 **1**.Using the RAK Serial Port Tool, type the command below to let the RAK811 LoRa® Evaluation Board work in boot mode.

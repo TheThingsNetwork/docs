@@ -3,8 +3,6 @@ title: Best Practices
 weight: -100
 ---
 
-# Best practices for device development
-
 If you've been using development devices, you might want at some point to transition to production-grade device development. Here are best practices for you to build devices that will last in the long-term, and that will help you achieve [LoRaWAN compliancy](https://www.lora-alliance.org/lorawan-for-developers).
 
 ## Device activation

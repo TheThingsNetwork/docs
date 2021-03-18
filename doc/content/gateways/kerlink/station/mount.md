@@ -2,8 +2,6 @@
 title: Mount
 weight: 100
 ---
-
-# Mount
 The gateway comes standard with a mounting system which both supports a wall and pole mount option. 
 
 It is recommended to mount the gateway outside as it’ll improve the coverage. This should also be quite easy as the gateway is water proof and can have an offsite power supply dude to the PoE integration. 

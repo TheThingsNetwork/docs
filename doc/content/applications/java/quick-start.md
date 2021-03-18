@@ -2,8 +2,6 @@
 title: Quick Start
 weight: 1000
 ---
-
-# Quick Start
 This guide will walk you through setting up a Java project that listens to device activations and messages and responds to every 3rd message.
 
 > This guide assumes the sketch and payload functions of [The Things Uno / Quick Start](../../devices/uno/quick-start.md), but can be easily applied to any other.

@@ -4,8 +4,6 @@ section: Specifications
 weight: 6
 ---
 
-# Duty Cycle
-
 **Duty Cycle indicates the fraction of time a resource is busy.**  
 When a single device transmits on a channel for 2 _time units_ every 10 _time units_, this device has a duty cycle of 20%.  
 ![Single Channel Duty Cycle](duty-cycle-single-channel.png)

@@ -3,8 +3,6 @@ title: Device Firmware Setup
 weight: 800
 ---
 
-# Device Firmware Setup
-
 **1**.Download the latest bootloader [here](https://downloads.rakwireless.com/en/LoRa/RAK7200-Tracker/Firmware/) in order to avoid potential problems.
 
 **2**.To start with the bootloader burning, download and install the **STM32CubeProgrammer** tool [here](https://www.st.com/content/st_com/en/products/development-tools/software-development-tools/stm32-software-development-tools/stm32-programmers/stm32cubeprog.html#overview)

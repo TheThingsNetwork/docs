@@ -1,7 +1,7 @@
 ---
 title: Pi Supply Gateway HAT
 section: Hardware
-redirect_from:
+aliases:
  - /pisupply-hat/
 ambassador:
   name: Ryan Walmsley
@@ -9,8 +9,6 @@ ambassador:
 image: /gateways/pisupply-hat/images/gatewayHat-assembled.png
 weight: 850
 ---
-
-# Setup your Pi Supply IoT LoRa Gateway HAT
 In this tutorial we will go over setting up the Pi Supply IoT LoRa Gateway HAT.
 
 The method we are using is with our Pre Built SD Card Image. However other methods are available at https://learn.pi-supply.com/make/category/lora/

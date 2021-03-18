@@ -1,14 +1,12 @@
 ---
 title: The Things Node
 section: Hardware
-redirect_from:
+aliases:
  - /draft/node/
  - /node/
 image: /devices/node/image.png
 weight: 900
 ---
-
-# The Things Node
 
 The Things Node is the perfect LoRa node to start prototyping your ideas without having to deal with bread boards, wires and sensors.
 

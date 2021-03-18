@@ -1,7 +1,7 @@
 ---
 title: The Things Stack
 description: The Things Network is upgrading to The Things Stack V3
-redirect_from:
+aliases:
  - /the-things-stack-v3/
 weight: 700
 image: "network/icon.png"
@@ -11,7 +11,7 @@ menu:
 
 As announced during The Things Conference held in January 2021, The Things Network software is upgrading to The Things Stack V3. This upgrade comes with a set of brand new features, out-of-the-box integrations, extended coverage and improved user experience. 
 
-# What is The Things Stack V3?
+## What is The Things Stack V3?
 
 The Things Stack V3 is a user-friendly, enterprise-grade LoRaWAN network server built on top of an open source stack. Comparing to The Things Network Stack V2, The Things Stack V3 is not just an update but a completely new solution built from scratch. 
 
@@ -21,13 +21,13 @@ The Things Stack V3 [architecture](https://www.thethingsindustries.com/docs/refe
 
 > For a detailed info on The Things Stack V3, visit [The Things Stack official documentation page](https://www.thethingsindustries.com/docs/).
 
-# How can I access V3?
+## How can I access V3?
 
 The (free) community edition of The Things Stack V3 can be accessed via the [**Development Console**](https://console.cloud.thethings.network/). Make sure to select the cluster which is closest to you geographically.
 
 [![The Things Network Console](TTN-V3-console.png "The Things Network Console")](https://console.cloud.thethings.network/)
 
-# Why should I migrate from V2 to V3?
+## Why should I migrate from V2 to V3?
 
 > Here, we assume you have experience using The Things Network running The Things Network Stack V2. If you have not been using The Things Network yet, you can visit the [The Things Stack Quickstart]({{ site.baseurl }}/quick-start).
 

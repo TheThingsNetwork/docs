@@ -1,12 +1,11 @@
 ---
 title: RAK5205 WisTrio LoRa® Tracker
 section: Hardware
-redirect_from:
+aliases:
  - /rak5205-wistrio-lora-tracker/
 image: /devices/rak5205-wistrio-lora-tracker/images/rak5205.jpg
 weight: 900
 ---
-# RAK7200 LoRa® Tracker
 
 ![Figure 1: RAK5205 WisTrio LoRa® Tracker](images/rak5205.jpg)
 

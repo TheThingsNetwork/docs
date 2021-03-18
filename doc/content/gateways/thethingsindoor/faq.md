@@ -4,8 +4,6 @@ section: Frequently Asked Questions
 weight: 200
 ---
 
-# Frequently Asked Questions
-
 This page consolidates some of the most frequently asked questions on [The Things Indoor Gateway](./index.md).
 
 > This section contains the most frequent issues and queries pertaining to the The Things Indoor Gateway. If you find issues that are not covered in this page, feel free to reach out to [The Things Network community forum](https://www.thethingsnetwork.org/forum).

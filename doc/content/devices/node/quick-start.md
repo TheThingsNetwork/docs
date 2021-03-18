@@ -1,8 +1,6 @@
 ---
 title: Quick Start
 ---
-
-# Quick Start
 This guide will walk you through programming your The Things Node with your first sketch to send its measurements over The Things Network.
 
 ## Setup Arduino IDE

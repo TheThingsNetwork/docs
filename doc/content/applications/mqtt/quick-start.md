@@ -2,8 +2,6 @@
 title: Quick Start
 weight: 1000
 ---
-
-# Quick Start
 This guide will walk you through subscribing to an application's activations and messages as well as send a response to a specific device, using [Eclipse Mosquitto](https://mosquitto.org)'s CLIs to [subscribe](https://mosquitto.org/man/mosquitto_sub-1.html) and to [publish](https://mosquitto.org/man/mosquitto_pub-1.html) messages.
 
 > This guide assumes the sketch and payload functions of [The Things Uno / Quick Start](../../devices/uno/quick-start.md), but can be easily applied to any other.

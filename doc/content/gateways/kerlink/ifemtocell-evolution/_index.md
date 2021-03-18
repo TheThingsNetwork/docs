@@ -4,8 +4,6 @@ image: /gateways/kerlink/ifemtocell-evolution/image.png
 section: Hardware
 ---
 
-# Kerlink Wirnet iFemtoCell Evolution
-
 The wirnet iFemtoCell Evolution is a low-cost, indoor LoRaWAN nano gateway that can be easily connected through GSM cellular or ethernet.
 
 ![Kerlink iFemtoCell](image.png)

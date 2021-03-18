@@ -3,8 +3,6 @@ title: List of commercial gateways
 weight: 100
 ---
 
-# List of gateways
-
 This is a list of commercial LoRaWAN gateways currently available for purchase. If you notice one isn't listed, [add it to our documentation](https://github.com/TheThingsNetwork/docs/edit/master/_content/gateways/start/list.md)!
 
 ## The Things Indoor Gateway

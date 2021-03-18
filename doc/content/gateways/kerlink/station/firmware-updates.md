@@ -3,8 +3,6 @@ title: Firmware Updates
 weight: 750
 ---
 
-# Kerlink Wirnet Station Firmware Updates
-
 Please read through this entire document before performing the firmware update. If the procedure is not done correctly you stand a chance to brick your gateway. A firmware upgrade will most likely result in a factory reset of the gateway.
 
 ## Firmware update procedure summary

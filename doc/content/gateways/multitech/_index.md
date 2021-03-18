@@ -1,7 +1,7 @@
 ---
 title: MultiTech Conduit
 section: Hardware
-redirect_from:
+aliases:
  - /current/multitech/
  - /multitech/
 ambassador:

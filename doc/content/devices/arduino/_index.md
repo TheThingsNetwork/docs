@@ -1,14 +1,12 @@
 ---
 title: Arduino
 section: SDKs & Libraries
-redirect_from:
+aliases:
  - /refactor/arduino/
  - /v2-preview/arduino/
  - /current/arduino/
  - /arduino/
 ---
-
-# Arduino
 
 [Arduino](https://www.arduino.cc/en/Guide/Introduction) is an open-source electronics platform based on easy-to-use hardware and software. It's intended for anyone making interactive projects.
 

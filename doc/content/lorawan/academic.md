@@ -5,8 +5,6 @@ section: Additional Information
 weight: 10
 ---
 
-# Academic Research
-
 A lot of research is conducted on LoRa and LoRaWAN. This page is created to better share the conducted academic research and created scientific articles. 
 
 *Please help to extend this list by adding new relevant papers and articles, and by adding the right links to all sources [update this file](https://github.com/TheThingsNetwork/docs/edit/master/_content/lorawan/academic.md).* 

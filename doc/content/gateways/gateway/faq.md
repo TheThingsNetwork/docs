@@ -4,8 +4,6 @@ section: Running a gateway
 weight: 200
 ---
 
-# Gateway FAQ
-
 This page consolidates some of the most frequently asked questions on [The Things Gateway](../gateway/index.md).
 
 > This section contains the most frequent issues and queries pertaining to the The Things Gateway. If you find issues that are not covered in this page, feel free to reach out to [The Things Network community forum](https://www.thethingsnetwork.org/forum).

@@ -2,8 +2,6 @@
 title: Quick Start
 ---
 
-# Quick Start
-
 This guide will walk you through programming The Things Uno to send and receive your first message via The Things Network. We'll use the [Hello, World!](https://en.wikipedia.org/wiki/%22Hello,_World!%22_program) of Arduino: [`LED_BUILTIN`](https://www.arduino.cc/en/Reference/Constants). 💡
 
 The full sketch of this Quick Start is also included in TheThingsNetwork library for the Arduino IDE. You can find it under **File > Examples > TheThingsNetwork > [QuickStart](https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/QuickStart/QuickStart.ino)**.

@@ -2,11 +2,9 @@
 title: Addressing & Activation
 section: Specifications
 weight: 9
-redirect_from:
+aliases:
  - /lorawan/address-space
 ---
-
-# Addressing and Activation
 
 ## Addressing
 

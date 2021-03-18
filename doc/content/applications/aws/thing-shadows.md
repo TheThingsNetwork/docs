@@ -3,8 +3,6 @@ title: Thing Shadows
 weight: 450
 ---
 
-# Thing Shadows
-
 A very powerful feature of AWS IoT are [Thing Shadows](https://docs.aws.amazon.com/iot/latest/developerguide/iot-thing-shadows.html): a JSON document that is used to store and retrieve current state information.
 
 The integration supports reporting shadow state on uplink messages, and send shadow delta updates as downlink messages.

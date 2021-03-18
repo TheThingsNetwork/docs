@@ -4,8 +4,6 @@ weight: -1000
 source: 'https://github.com/TheThingsIndustries/integration-storage/blob/master/api/README.md'
 ---
 
-# API Reference
-
 The Storage API allows you to query data and list devices for which data is stored by the Storage Integration.
 
 The API is available over HTTPS and serves data in JSON format. The base URL for the Storage API is:

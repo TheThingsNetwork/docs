@@ -3,8 +3,6 @@ title: Device Firmware Setup
 weight: 800
 ---
 
-# Device Firmware Setup
-
 **1**.Download the latest bootloader [here](https://downloads.rakwireless.com/en/LoRa/WisTrio-LoRa-RAK5205/Firmware/) in order to avoid potential problems.
 
 >**Note:** Skip this section if you have a RAK5205 V3.0.0.0 firmware or newer, for it has already a bootloader.

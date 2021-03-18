@@ -2,7 +2,6 @@
 title: Configuring the RAK7204 Environmental Sensor 
 weight: 600
 ---
-# Configuring the RAK7204 Environmental Sensor 
 
 You can configure your Environmental Sensor by sending AT Commands via a Serial port tool running on your PC.The list below shows the AT Commands available for use:
 

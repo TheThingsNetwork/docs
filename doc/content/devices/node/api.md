@@ -4,8 +4,6 @@ weight: -1000
 source: 'https://github.com/TheThingsNetwork/arduino-node-lib/blob/master/docs/TheThingsNode.md'
 ---
 
-# API Reference
-
 ## Class: TheThingsNode
 Include TheThingsNode class and create a pointer to the singleton instance like this:
 

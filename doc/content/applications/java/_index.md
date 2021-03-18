@@ -1,7 +1,7 @@
 ---
 title: Java
 section: SDKs & Libraries
-redirect_from:
+aliases:
  - /refactor/java/
  - /v2-preview/java/
  - /current/java/
@@ -10,8 +10,6 @@ ambassador:
   name: Romain Cambier
   username: cambierr
 ---
-
-# Java SDK
 
 [Java](https://www.java.com) is a complete ecosystem that provides tools for developing software and deploying it in a cross-platform environment.
 

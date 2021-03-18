@@ -4,8 +4,6 @@ section: Integrations
 weight: -1000
 source: 'https://github.com/TheThingsIndustries/integration-messaging/blob/master/evrythng/README.md'
 ---
-
-# EVRYTHNG Integration
 EVRYTHNG is an online platform for managing IoT devices and using their data to enhance business operations. See [www.evrythng.com](https://www.evrythng.com) for more information.
  
 This integration enables LoRaWAN with THNGs through The Things Network. See also [integration documentation](https://developers.evrythng.com/docs/the-things-network) by EVRYTHNG.

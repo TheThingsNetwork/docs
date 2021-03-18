@@ -4,8 +4,6 @@ weight: -1000
 source: 'https://github.com/TheThingsNetwork/go-app-sdk/blob/master/API.md'
 ---
 
-# API Reference
-
     import ttnsdk "github.com/TheThingsNetwork/go-app-sdk"
 
 Package ttnsdk implements the Go SDK for The Things Network.

@@ -9,8 +9,6 @@ menu:
       hideOnHome: true
 ---
 
-# Devices
-
 A LoRaWAN-enabled end device is a sensor or an actuator which can be connected to a LoRaWAN network through a LoRaWAN-enabled gateway. The Things Network supports **any LoRaWAN compliant device**. We highly recommend using **certified** LoRaWAN devices.
 
 Start by [adding your device]({{< relref "adding-devices" >}}) to The Things Network! When operating these end devices, make sure you are following the [best practices]({{< relref "best-practices" >}}) recommended by The Things Network.

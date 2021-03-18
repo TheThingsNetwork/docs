@@ -5,8 +5,6 @@ redirect-from:
 weight: 200
 ---
 
-# Troubleshooting the Semtech UDP Packet Forwarder
-
 If the Semtech UDP Packet Forwarder does not seem to be working, these steps should help you identify the issue.
 
 > This section contains the most frequent issues with packet forwarders. If you find issues that are not covered in this guide, feel free to reach out to [The Things Network community forum](https://www.thethingsnetwork.org/forum).

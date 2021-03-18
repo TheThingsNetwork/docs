@@ -3,8 +3,6 @@ title: Authentication
 source: 'https://github.com/TheThingsNetwork/ttn/blob/master/api/API_AUTHENTICATION.md'
 ---
 
-# Authentication
-
 Currently, there are two methods of authenticating to the gRPC and HTTP APIs:
 
 - Bearer token: OAuth 2.0 Bearer JSON Web Tokens (preferred)

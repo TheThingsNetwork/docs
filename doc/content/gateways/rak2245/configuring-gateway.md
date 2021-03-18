@@ -2,7 +2,6 @@
 title: Configuring Your Gateway
 weight: 600
 ---
-# Configuring the Gateway
 Assuming you have successfully logged into your LoRa Gateway using SSH. Enter the following command in the command line:
 ```
 sudo gateway-config

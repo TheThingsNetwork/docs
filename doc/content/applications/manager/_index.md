@@ -1,13 +1,11 @@
 ---
 title: Application Manager API
 section: APIs
-redirect_from:
+aliases:
  - /draft/application-manager/
  - /manager/
 image: /draft/application-manager/handler.png
 ---
-
-# Application Manager API
 
 The Application Manager API offers methods manage applications and devices registered to The Things Network. The Application Manager API is exposed by the Handler. To use the API you need an Application Access Key or JWT. You can use either the [gRPC API or the HTTP API](usage.md#grpc-or-http) which wraps it.
 

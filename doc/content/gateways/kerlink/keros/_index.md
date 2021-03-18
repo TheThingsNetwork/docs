@@ -4,8 +4,6 @@ image: /gateways/kerlink-iBTS/image.png
 section: Hardware
 ---
 
-# KerOS unified firmware for Wirnet gateways
-
 The Kerlink Wirnet product family share the same firmware and software architecture (for Wirnet iBTS, Wirnet iFemtoCell, Wirnet iFemtoCell-Evolution, Wirnet iStation).
 
 This page describes how to install and configure any of these gateways.

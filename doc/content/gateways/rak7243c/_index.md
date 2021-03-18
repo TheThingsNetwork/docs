@@ -1,12 +1,11 @@
 ---
 title: RAK7243C Pilot Gateway
 section: Hardware
-redirect_from:
+aliases:
  - /rak7243c/
 image: /gateways/rak7243c/images/rak7243c.jpg
 weight: 900
 ---
-# RAK7243C Pilot Gateway
 
 ![Figure 1: RAK7243C Pilot Gateway](images/rak7243c.jpg)
 

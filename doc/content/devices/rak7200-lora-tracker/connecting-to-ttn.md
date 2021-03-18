@@ -2,7 +2,6 @@
 title: Connecting to The Things Network (TTN)
 weight: 500
 ---
-# Connecting to The Things Network (TTN)
 
 The Things Network is about enabling low power devices to be used in long range gateways that connect to an open-source, decentralized network and exchange data with Applications. Learn more about the Things Network [**here**](https://www.thethingsnetwork.org/docs/). In this section, we’ll show how to connect the RAK7200 Lora® Tracker to The Things Network (TTN).
 

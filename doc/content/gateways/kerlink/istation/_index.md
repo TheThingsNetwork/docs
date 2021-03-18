@@ -4,8 +4,6 @@ image: /gateways/kerlink/istation/istation.jpg
 section: Hardware
 ---
 
-# Kerlink Wirnet iStation
-
 The wirnet iStation is the replacement of the legacy Wirnet Station gateway. It is an outdoor LoRaWAN nano gateway that can be easily connected through Ethernet or cellular, with a built-in LoRa 2.6 dBi antenna..
 
 ![Kerlink iStation](istation.jpg)

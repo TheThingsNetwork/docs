@@ -3,8 +3,6 @@ title: Map your Device!
 weight: 1000
 hidden: true
 ---
-
-# Map your Device!
 The Things Uno comes with a preinstalled Arduino Sketch that pings home on setup and every following minute.
 
 > As soon as you upload your first sketch it will overwrite the preinstalled one!

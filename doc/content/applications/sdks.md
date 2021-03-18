@@ -4,8 +4,6 @@ section: SDKs & Libraries
 weight: 1000
 ---
 
-# SDKs & Libraries
-
 You can use Software Developer Kits (SDKs) for development platforms to use The Things Network APIs in your application.
 
 ![SDK](options-sdks.png)

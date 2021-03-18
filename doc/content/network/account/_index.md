@@ -1,12 +1,10 @@
 ---
 title: Account Server
 section: Components
-redirect_from:
+aliases:
  - /draft/account/
  - /account/
 ---
-
-# Account Server
 
 The Account Server manages the applications, gateways, users and rights for The Things Network. The current V2 Account Server is closed source and hosted at `https://account.thethingsnetwork.org`. The future V3 Identity Server will be open source.
 

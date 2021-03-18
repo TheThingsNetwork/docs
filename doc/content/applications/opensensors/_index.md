@@ -3,8 +3,6 @@ title: OpenSensors
 section: Integrations
 ---
 
-# OpenSensors Integration
-
 The OpenSensors integration allows you to publish uplink data to the OpenSensors broker.
 
 OpenSensors is a real time data exchange for the internet of things, called ‘Twitter for Sensors’ by wired.com. Their mission is to make data generated from IoT useful and accessible.

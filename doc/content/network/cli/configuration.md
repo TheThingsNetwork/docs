@@ -2,8 +2,6 @@
 title: Configuration
 ---
 
-# Configuration
-
 The `ttnctl` program can be configured with command line options described in the [API Reference](api.md), with environment variables or with a configuration file.
 
 ## Environment

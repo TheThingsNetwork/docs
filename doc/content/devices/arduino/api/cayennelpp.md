@@ -4,8 +4,6 @@ weight: 800
 source: 'https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/docs/CayenneLPP.md'
 ---
 
-# API Reference
-
 The `CayenneLPP` class enables Arduino devices to encode data with the Cayenne Low Power Payload (LPP). [Read more about Cayenne LPP](https://mydevices.com/cayenne/docs/lora/#lora-cayenne-low-power-payload)
 
 ## Class: `CayenneLPP`

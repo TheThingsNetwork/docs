@@ -1,12 +1,11 @@
 ---
 title: RAK7249 - Macro Outdoor Gateway
 section: Hardware
-redirect_from:
+aliases:
  - /rak7249/
 image: /gateways/rak7249/images
 weight: 900
 ---
-# RAK7249 - Macro Outdoor Gateway
 
 ![Figure 1: RAK7249 Macro Outdoor Gateway](images/rak7249.jpg)
 

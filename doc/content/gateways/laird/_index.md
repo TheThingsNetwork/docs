@@ -4,8 +4,6 @@ image: /gateways/laird-rg1xx/RG1xx.png
 section: Hardware
 ---
 
-# Laird RG1xx
-
 The Sentrius RG1xx LoRa-Enabled Gateway from Laird is the ultimate in secure, scalable, robust LoRa solutions for end-to-end control of your private LoRaWAN network. Leveraging Laird's field-proven and reliable 50 Series "Wireless Bridge" certified module, it also offers enterprise dual-band Wi-Fi, BT v4.0 (BLE and Classic) and wired Ethernet for complete design freedom. Based on the Semtech SX1301/SX1257 chipset designs, it offers a LoRa range up to 10 miles and pre-loaded LoRa Packet Forwarder software, perfect for highly scalable, flexible IoT networks. The Sentrius RG1xx Gateway works with Laird's Sentrius RM1xx Series LoRa+BLE certified modules for simple out-of-the-box integration and is compatible with 3rd party Cloud and LoRa partners, as well as any LoRaWAN certified client devices.
 ![Laird RG1xx](RG1xx.png)
 

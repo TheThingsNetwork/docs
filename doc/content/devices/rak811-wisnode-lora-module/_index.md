@@ -1,12 +1,11 @@
 ---
 title: RAK811 WisNode LoRa Module
 section: Hardware
-redirect_from:
+aliases:
  - /rak811-wisnode-lora-module/
 image: /gateways/rak811-wisnode-lora-module/images
 weight: 900
 ---
-# RAK811 WisNode LoRa Module
 
 ![Figure 1: RAK811 WisNode LoRa Module](images/rak811_wisnode.png)
 

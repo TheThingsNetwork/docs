@@ -3,8 +3,6 @@ title: Map your Device!
 weight: 1000
 hidden: true
 ---
-
-# Map your Device!
 The Things Node comes with a preinstalled Arduino Sketch that pings home and sends the sensor data on setup as well as every minute, when you release its button or start moving the device.
 
 > As soon as you upload your first sketch it will overwrite the preinstalled one!

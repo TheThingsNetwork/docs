@@ -4,8 +4,6 @@ section: Running a gateway
 weight: 900
 ---
 
-# Gateway Registration
-
 The main packet forwarders used in the LoRaWAN market, is Semtech's UDP Packet Forwarder (also referred to as the Legacy Forwarder). 
 
 * Packet forwarders that connect using the Semtech UDP protocol (such as the [Semtech UDP Packet Forwarder](packet-forwarder/semtech-udp.md)). This protocol is not encrypted, but its simplicity makes it work on a large number of gateways.

@@ -1,14 +1,12 @@
 ---
 title: Go
 section: SDKs & Libraries
-redirect_from:
+aliases:
  - /current/go/
  - /go/
  - /current/golang/
  - /golang/
 ---
-
-# Go SDK
 
 [Go](https://golang.org) is an open source programming language that makes it easy to build simple, reliable, and efficient software.
 

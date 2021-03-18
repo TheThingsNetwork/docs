@@ -3,8 +3,6 @@ title: View Metrics
 weight: 300
 ---
 
-# View Metrics
-
 The integration process reports metrics to AWS CloudWatch. These metrics include thing registry synchronization numbers, uplink and downlink messages, reported thing shadow states and sent shadow deltas. This guide walks you through viewing these metrics in AWS CloudWatch.
 
 1. Log in to the [AWS Management Console](http://console.aws.amazon.com)

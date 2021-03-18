@@ -1,12 +1,11 @@
 ---
 title: RAK811 LoRa® Breakout Module
 section: Hardware
-redirect_from:
+aliases:
  - /rak811-lora-module-breakout-board/
 image: /gateways/rak811-lora-module-breakout-board/images/rak811.png
 weight: 900
 ---
-# RAK811 LoRa® Breakout Module
 
 ![Figure 1: RAK811 LoRa® Breakout Module](images/wisduo.jpg)
 

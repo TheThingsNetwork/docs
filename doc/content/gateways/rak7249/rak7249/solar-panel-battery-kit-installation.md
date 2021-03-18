@@ -3,8 +3,6 @@ title: Solar Panel and Battery Kit Installation
 weight: 700
 ---
 
-# Solar Panel and Battery Kit Installation
-
 This document shows the step-by-step guide on how to set-up the Solar Panel and Battery Kit used for the RAK7249 - Macro Outdoor Gateway. Such steps must be thoroughly read and understood to avoid damaging the device.
 
 

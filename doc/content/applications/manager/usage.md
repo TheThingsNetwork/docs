@@ -2,8 +2,6 @@
 title: Usage
 ---
 
-# Usage
-
 ## Get an Access Token
 
 To use these APIs you need a JSON Web Access Token with a proper scope. Alternatively, you can use an Application Access Key. The APIs will then exchange this for a token.

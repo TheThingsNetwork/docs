@@ -4,8 +4,6 @@ section: APIs
 weight: 1000
 ---
 
-# APIs
-
 The most basic way to integrate your application with The Things Network is to use standard protocol libraries to connect directly to The Things Network's Handler APIs:
 
 ![APIs](options-apis.png)

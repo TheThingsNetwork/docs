@@ -3,8 +3,6 @@ title: Quick Start
 weight: 1000
 ---
 
-# Quick Start
-
 This guide walks you through applying for Collos membership, subscribing to the APIs and configuring the Collos integration in The Things Network Console.
 
 ## Subscribe to APIs

@@ -3,8 +3,6 @@ title: Device Firmware Setup
 weight: 800
 ---
 
-# Device Firmware Setup
-
 >**Note:** If you are planning to use the newly released Raspberry Pi 4 with the RAK2245, use the firmware which can be downloaded [here](https://downloads.rakwireless.com/LoRa/RAK2245-Pi-HAT/Firmware/)
 
 An easy and quick way to have a fully functional gateway is by using a Precompiled Firmware Image provided. In this document, is the step by step instructions on how to install the Image into your SD Card used for the gateway.

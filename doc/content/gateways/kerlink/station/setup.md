@@ -3,8 +3,6 @@ title: Setup
 weight: 900
 ---
 
-# Setup
-
 ## Main functions
 
 ### Power

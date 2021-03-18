@@ -4,8 +4,6 @@ weight: -1000
 source: 'https://github.com/TheThingsNetwork/ttn/blob/master/ttnctl/cmd/docs/README.md'
 ---
 
-# API Reference
-
 Control The Things Network from the command line.
 
 **Options**

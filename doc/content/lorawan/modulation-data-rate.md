@@ -4,8 +4,6 @@ section: Specifications
 weight: 8
 ---
 
-# Modulation and Data Rate
-
 In most cases LoRaWAN uses LoRa modulation. LoRa modulation is based on Chirp spread- spectrum technology, which makes it work well with channel noise, multipath fading and the Doppler effect, even at low power.
 
 The data rate depends on the used bandwidth and spreading factor. LoRaWAN can use channels with a bandwidth of either 125 kHz, 250 kHz or 500 kHz, depending on the region or the frequency plan. The spreading factor is chosen by the end-device and influences the time it takes to transmit a frame.

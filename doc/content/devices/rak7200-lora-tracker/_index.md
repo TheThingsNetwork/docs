@@ -1,12 +1,11 @@
 ---
 title: RAK7200 LoRa® Tracker
 section: Hardware
-redirect_from:
+aliases:
  - /rak7200-lora-tracker/
 image: /devices/rak7200-lora-tracker/images/rak7200.jpg
 weight: 900
 ---
-# RAK7200 LoRa® Tracker
 
 ![Figure 1: RAK7200 LoRa® Tracker](images/rak7200.jpg)
 

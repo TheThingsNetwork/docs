@@ -3,8 +3,6 @@ title: Python
 section: SDKs & Libraries
 ---
 
-# Python SDK
-
 [Python](https://www.python.org/) is powerful, and fast; 
 plays well with others; 
 runs everywhere; 

@@ -4,8 +4,6 @@ section: Running a gateway
 weight: 200
 ---
 
-# Gateway Troubleshooting
-
 Your gateway doesn't seem to send data to The Things Network? This section is here to help you find out the issue might come from. We'll give you a few leads to help you troubleshoot your gateway.
 
 > This section contains the most frequent issues with packet forwarders. If you find issues that are not covered in this guide, feel free to reach out to [The Things Network community forum](https://www.thethingsnetwork.org/forum).

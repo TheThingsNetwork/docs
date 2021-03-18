@@ -4,8 +4,6 @@ section: Integrations
 source: 'https://github.com/TheThingsNetwork/docs/blob/master/_content/applications/cayenne/index.md'
 ---
 
-# myDevices Cayenne
-
 [myDevices Cayenne](https://mydevices.com/) allows you to quickly design, prototype, and visualize IoT solutions. You can use Cayenne as a tool to visualize real-time and historical data, sent over The Things Network.
 
 ## Change the payload to Cayenne LPP

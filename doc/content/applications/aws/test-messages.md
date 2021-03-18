@@ -3,8 +3,6 @@ title: Test Messages
 weight: 500
 ---
 
-# Test Messages
-
 The integration publishes uplink messages to AWS IoT MQTT and subscribes to downlink messages. The integration uses the same [MQTT topic and payload format](..mqtt/api.html#uplink-messages) as The Things Network MQTT.
 
 This guide walks you through subscribing and storing uplink messages and publishing a downlink message.

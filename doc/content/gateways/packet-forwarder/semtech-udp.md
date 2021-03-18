@@ -4,8 +4,6 @@ redirect-from:
   - /gateways/packet-forwarder/legacy
 ---
 
-# Semtech UDP Packet Forwarder
-
 The Semtech UDP Packet Forwarder is the **first packet forwarder**, connecting to servers through the [Semtech UDP protocol](../start/connection.md#semtech-udp-protocol). Although this protocol has several flaws, many gateways include a pre-compiled version of the packet forwarder, which makes it easy to test a gateway with this protocol.
 
 ## Installation

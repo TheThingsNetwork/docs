@@ -2,7 +2,6 @@
 title: Add an Application
 ---
 
-# Add an Application
 Devices can communicate with applications that they've been registered to. To register a device, you'll first need to add an application.
 
 1.  In the console, click [add application](https://console.thethingsnetwork.org/applications/add).

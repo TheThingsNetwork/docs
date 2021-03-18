@@ -3,8 +3,6 @@ title: Assembly Guide
 weight: 800
 ---
 
-# Configuration Setup
-
 ![Figure 1: RAK7249 Macro Outdoor Gateway with the Antennas installed](images/rak7249_gateway.jpg)
 
 This document describes the details of the parts and functions of each of the components provided upon purchase of the RAK7249. Included also within the document are the necessary Gateway configuration steps to be followed. Take the warnings and notes into strict consideration to avoid damaging the device.

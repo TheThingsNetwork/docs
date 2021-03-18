@@ -8,13 +8,13 @@ menu:
       hideOnHome: true
 ---
 
-# Applications
+## Applications
 
 To establish the communication with a LoRaWAN device, you need to [add the device](../devices-and-gateways/adding-devices.md) within an application.
 
 An application can be created via the [Console](https://www.thethingsindustries.com/docs/getting-started/console/) or via the [CLI](https://www.thethingsindustries.com/docs/getting-started/cli/installing-cli/). You create an application in no-time by providing an **Application ID** and setting its **Owner**. [See details about creating an application using the Console or commands for using the CLI](https://www.thethingsindustries.com/docs/integrations/adding-applications/).
 
-# Integrations
+## Integrations
 
 Within your application, you can also create integrations to help you with processing data and acting on it by triggering events. This way, you can implement a solution e.g. to monitor or visualize your sensor data using some cloud IoT platform, to schedule commands to be sent to your end device, etc. Integrations are added within applications.
 

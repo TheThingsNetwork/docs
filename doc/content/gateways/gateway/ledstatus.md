@@ -4,8 +4,6 @@ weight: 200
 source: 'https://github.com/TheThingsProducts/gateway/blob/master/doc/LEDs.md'
 ---
 
-# Gateway LEDs
-
 | **LED 1** | **LED 2**  | **LED 3**  | **LED 4**  | **Status** |
 | --------- | ---------- | ---------- | ---------- | ---------- |
 | On        | Slow blink |            |            | Connecting to the internet |

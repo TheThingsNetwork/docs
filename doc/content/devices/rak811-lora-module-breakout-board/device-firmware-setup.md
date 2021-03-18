@@ -3,8 +3,6 @@ title: Device Firmware Setup
 weight: 800
 ---
 
-# Device Firmware Setup
-
 >**Note:** Skip this section if you have a V3.0.0.0 RAK811 Firmware or newer, for it has a bootloader preloaded already. 
 
 ## Burn the latest firmware

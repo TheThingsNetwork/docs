@@ -4,8 +4,6 @@ section: Hardware
 weight: 200
 ---
 
-# KONA Macro IoT Gateway
-
 The KONA Macro IoT Gateway is an ideal solution for operators and enterprises that require a very scalable low cost LoRaWAN gateway that minimizes network TCO while improving coverage and capacity. In order to facilitate rapid deployment, the gateway is designed to be extremely compact and light weight. With both the cellular modem and GPS antennas embedded internally the KONA Macro is targeted at network sites that dictate a small form factor and low power consumption. Rated IP67 it is designed for the most demanding outdoor installations. The KONA Macro can be installed in various locations reducing site and deployment costs while addressing different vertical IoT applications.
 
 ![KONA_Macro_Gateway](KONA_Macro_Tilt.PNG)

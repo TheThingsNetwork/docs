@@ -2,12 +2,10 @@
 title: Where to start
 section: Running a gateway
 weight: 1000
-redirect_from:
+aliases:
  - /start/
  - /draft/start/
 ---
-
-# Where to start
 
 Are you looking to improve the coverage of the Things Network, either for your personal use or to benefit others? You can purchase your own gateway, or start building yours.
 

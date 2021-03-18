@@ -3,8 +3,6 @@ title: Setup
 weight: 800
 ---
 
-# Setup
-
 Before starting the gateway, you'll need to set it up. If you've never used Cisco equipment before, we're providing you with basic instructions to set up the gateway, and basic system and network configuration.
 
 ## Gateway setup

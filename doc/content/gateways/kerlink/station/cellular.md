@@ -3,8 +3,6 @@ title: Cellular Connection
 weight: 700
 ---
 
-# Cellular Connection
-
 It is possible to connect the Kerlink to a GPRS/3G connection. This may be useful in locations where there is no ethernet network access, or where access to the local/company network is not allowed.
 
 ## Configure using a dota file and USB flash drive

@@ -1,7 +1,7 @@
 ---
 title: RAK831
 section: Hardware
-redirect_from:
+aliases:
  - /rak831/
 ambassador:
   name: Jac Kersing
@@ -9,8 +9,6 @@ ambassador:
 image: /gateways/rak831/images/rak831-gateway.png
 weight: 900
 ---
-
-# Build your own RAK831 based gateway
 This document is based on a workshop held during The Things Network Conference 2018.
 
 [The slides used during that workshop.](TheThingsNetworkConference2018GatewayWorkshop.pdf)

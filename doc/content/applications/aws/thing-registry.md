@@ -3,8 +3,6 @@ title: Thing Registry
 weight: 900
 ---
 
-# Thing Registry
-
 A key feature of the integration is synchronizing the thing registries of AWS IoT and The Things Network.
 
 Synchronization happens in two ways: devices on The Things Network are created as things on AWS IoT, and things on AWS IoT are created as devices on The Things Network. In addition, changes to AWS IoT things are applied to The Things Network devices.

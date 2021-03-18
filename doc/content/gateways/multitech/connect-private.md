@@ -3,8 +3,6 @@ title: Connect to a private back-end
 weight: -5000
 ---
 
-# Connect to a private back-end
-
 If you've followed the [installer](https://github.com/kersing/multitech-installer), you've configured your gateway to connect to The Things Network. What if you want to connect your gateway to a private back-end, or to a specific router?
 
 Alternatively you can download the [private network installer](https://github.com/egourlao/multitech-installer) and execute it like this:

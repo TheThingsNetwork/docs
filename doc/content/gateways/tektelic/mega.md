@@ -4,8 +4,6 @@ section: Hardware
 weight: 100
 ---
 
-# KONA Mega IoT Gateway
-
 TEKTELIC's KONA Mega IoT Gateway provides network operators with a carrier grade product for the deployment of LoRaWANTM Internet of Things networks. The Gateway enables massive scalability in a compact form factor by supporting up to 12 million messages per day.  
 
 It is ideal for public and private network operators that require Full Duplex, multiple Rx and Tx Channels, cost effective and reliable LoRaWANTM gateways to maximise their network investment for years to come.

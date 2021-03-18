@@ -3,8 +3,6 @@ title: Quick Start
 weight: 1000
 ---
 
-# Quick Start
-
 In this Quick Start, you'll learn how to initialize a new Node.js application, install the Node.js Application SDK and receive uplink messages from your application.
 
 ## Setup

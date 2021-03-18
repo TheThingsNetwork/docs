@@ -2,7 +2,6 @@
 title: Connecting to The Things Network (TTN)
 weight: 500
 ---
-# Connecting to The Things Network (TTN)
 
 The Things Network is about enabling low power devices to use long range gateways to connect to an open-source, decentralized network to exchange data with Application. Learn more about the Things Network here.
 

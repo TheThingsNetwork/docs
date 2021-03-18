@@ -1,8 +1,6 @@
 ---
 title: Library Usage
 ---
-
-# Library Usage
 Here's how you include and use The Things Network library. Also have a look at the examples bundled with the library. You can find them in the Arduino IDE under **File > Examples > [TheThingsNetwork](https://github.com/TheThingsNetwork/arduino-device-lib/tree/master/examples)**.
 
 ## Include

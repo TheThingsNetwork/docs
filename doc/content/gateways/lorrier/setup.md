@@ -2,8 +2,6 @@
 title: Setup
 weight: 1000
 ---
-
-# Setup
 Here's how you setup the Lorrier LR2 for The Things Network.
 
 ## General Setup
