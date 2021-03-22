@@ -6,7 +6,7 @@ weight: 1000
 Name | Kerlink Wirnet Station
 :----|:------
 Price | On request, 1.200 Euro EXW incoterms (approx. 1.500 EUR final)
-Availability | Send inquiry to [Kerlink Sales](../mailto:sales@kerlink.fr)
+Availability | Send inquiry to [Kerlink Sales](mailto:sales@kerlink.fr)
 Capacity | 8 band
 Casing | IP67 (Suitable for outdoor mounting)
 Installation | requires a skilled technician

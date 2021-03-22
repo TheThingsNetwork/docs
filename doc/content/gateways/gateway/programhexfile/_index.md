@@ -3,7 +3,7 @@ title: Programming hex files
 section: Running a gateway
 weight: 200
 ---
-In this section, we briefly walk through the process of Programming [The Things Gateway](../../gateway/index.md) using the [MPLAB IPE](http://microchipdeveloper.com/ipe:start) integrated programming environment
+In this section, we briefly walk through the process of Programming [The Things Gateway]({{< relref "../../gateway" >}}) using the [MPLAB IPE](http://microchipdeveloper.com/ipe:start) integrated programming environment
 
 #### 1. Connecting the Programmer
 Connect the programmer to the `MCU_PROG` port of the gateway as shown below
@@ -43,4 +43,4 @@ Once the program is complete, the checksums are verified.
    **Verification**
     ![verification](../ipe_5_progging_complete.png)
 
-> Issues with the reprogramming? Please check [The Things Gateway FAQ](../faq.md) or reach out to us via [The Things Network community forum](https://www.thethingsnetwork.org/forum) 
+> Issues with the reprogramming? Please check [The Things Gateway FAQ]({{< relref "../faq" >}}) or reach out to us via [The Things Network community forum](https://www.thethingsnetwork.org/forum) 

@@ -7,7 +7,7 @@ Are you encountering issues with the AWS IoT integration? This guide walks you t
 
 ## Check Health
 
-1. [Update the integration](.././update.md) to the latest version
+1. [Update the integration]({{< relref ".././update" >}}) to the latest version
 2. Log in to the [AWS Management Console](http://console.aws.amazon.com)
 3. In **Services** under **Compute**, go to **Elastic Beanstalk**
 4. Find your application
@@ -19,7 +19,7 @@ Are you encountering issues with the AWS IoT integration? This guide walks you t
 
 ## Get Log Files
 
-1. Go to the Elastic Beanstalk environment of your application (see [above](../#check-health))
+1. Go to the Elastic Beanstalk environment of your application (see [above]({{< relref "../#check-health" >}}))
 2. Click **Logs** in the menu on the left
 3. Click **Request Logs** and click **Last 100 Lines**
 

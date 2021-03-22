@@ -170,7 +170,7 @@ etQ54MyIOWtwYlxG+blnxT4PWCgas5rPiaK6VP/Z
 
 ### get
 
-Gives back the [**Application**](../#application).
+Gives back the [**Application**]({{< relref "../#application" >}}).
 
 ```python
 client.get()
@@ -252,7 +252,7 @@ devicetest = {
 
 ### device
 
-Gives back the [**Device**](../#deviceobject) object of the given id.
+Gives back the [**Device**]({{< relref "../#deviceobject" >}}) object of the given id.
 
 ```python
 client.device(dev_id)
@@ -340,23 +340,23 @@ HandlerClient(app_id, access_key, discovery_address="discovery.thethings.network
 
 ### data
 
-Creates an [**MQTTClient**](../#mqttclient) object.
+Creates an [**MQTTClient**]({{< relref "../#mqttclient" >}}) object.
 
 ```python
 handler.data()
 ```
 
-Returns an [**MQTTClient**](../#mqttclient) object.
+Returns an [**MQTTClient**]({{< relref "../#mqttclient" >}}) object.
 
 ### application
 
-Creates an [**ApplicationClient**](../#applicationclient) object
+Creates an [**ApplicationClient**]({{< relref "../#applicationclient" >}}) object
 
 ```python
 handler.application()
 ```
 
-Returns an [**ApplicationClient**](../#applicationclient) object.
+Returns an [**ApplicationClient**]({{< relref "../#applicationclient" >}}) object.
 
 ## Troubleshooting
 

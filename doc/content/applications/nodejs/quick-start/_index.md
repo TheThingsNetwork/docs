@@ -106,4 +106,4 @@ Next, we will write the script that requires the Node.js Application SDK and use
     Error: Connection refused: Not authorized
     ```
 
-🎉 Congratulations! Now you know how to receive messages in a Node.js script. Go build something! See [API](.././api.html) for all the functionality
+🎉 Congratulations! Now you know how to receive messages in a Node.js script. Go build something! See [API]({{< relref "../api" >}}) for all the functionality

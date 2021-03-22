@@ -18,7 +18,7 @@ Let's start by setting up the software we'll need to program your device.
 
 The Arduino IDE will notify you of updates for the IDE and library automagically. :open_mouth:
 
-> See the [Arduino Guide](../../arduino/index.md) for more details.
+> See the [Arduino Guide]({{< relref "../../arduino" >}}) for more details.
 
 ## Connect your Device
 Next, connect your device to the IDE over USB.
@@ -104,7 +104,7 @@ To communicate via The Things Network, you need to register your device. For thi
 
 1.  In the Arduino IDE, select **Sketch > Upload** `Ctrl/⌘ U` to upload the sketch.
 
-    > Uploads might fail if the Serial Monitor is open or if the IDE lost track of [the port you selected](../#connect-your-device). Close the monitor, check the port selection and try again. If it still fails, check [Arduino Troubleshooting](https://www.arduino.cc/en/Guide/Troubleshooting#toc1).
+    > Uploads might fail if the Serial Monitor is open or if the IDE lost track of [the port you selected]({{< relref "../#connect-your-device" >}}). Close the monitor, check the port selection and try again. If it still fails, check [Arduino Troubleshooting](https://www.arduino.cc/en/Guide/Troubleshooting#toc1).
 
 2.  Within 10 seconds, select **Tools > Serial Monitor** `Ctrl/⌘ Shift M` to open the [Serial Monitor](https://www.arduino.cc/en/Guide/Environment#toc12).
 
@@ -163,7 +163,7 @@ You are now ready to register your device to the application.
 2.  In the **Devices** box, click **register device**.
 
     * For **Device ID**, choose a - for this application - unique ID of lower case, alphanumeric characters and nonconsecutive `-` and `_`.
-    * For **Device EUI**, copy-paste the **DevEUI** [you retrieved from your device](../#get-your-device-eui).
+    * For **Device EUI**, copy-paste the **DevEUI** [you retrieved from your device]({{< relref "../#get-your-device-eui" >}}).
     * Leave the **App Key** to be randomly generated.
     * Leave the default **App EUI** selected.
 
@@ -176,7 +176,7 @@ You are now ready to register your device to the application.
 ## Activate your Device
 Now that we have registered the device, we can activate the connection from our device itself.
 
-> Activation means that the device will use the generated App Key to negotiate session keys for further communication. This is also known as Over The Air Activation or OTAA. There's also [Activation By Personalization](../../registration.md#personalize-device-for-abp) (ABP) where you set or generate the session keys via the console and hard-code them on your device.
+> Activation means that the device will use the generated App Key to negotiate session keys for further communication. This is also known as Over The Air Activation or OTAA. There's also [Activation By Personalization]({{< relref "../../registration/#personalize-device-for-abp" >}}) (ABP) where you set or generate the session keys via the console and hard-code them on your device.
 
 1.  In the console, scroll down the device's screen to **Example Code** and copy the keys:
 
@@ -242,7 +242,7 @@ Let's say hello! Most Arduino boards have an on-board LED and the constant [`LED
     
     1.  Create an [array](https://www.arduino.cc/en/Reference/Array) of [bytes](https://www.arduino.cc/en/Reference/byte) to hold our message.
 
-        > With LoRaWAN, airtime is expensive. The bigger the message, the more airtime it will cost. Encode any message you need to send in as little bytes as you can. See [Working with Bytes](../../bytes.md) to learn more.
+        > With LoRaWAN, airtime is expensive. The bigger the message, the more airtime it will cost. Encode any message you need to send in as little bytes as you can. See [Working with Bytes]({{< relref "../../bytes" >}}) to learn more.
         
     2.  Use [`digitalRead`](https://www.arduino.cc/en/Reference/DigitalRead) to get the current value of the LED pin. This will be either [constants](https://www.arduino.cc/en/Reference/Constants) `HIGH` or `LOW`, which we translate to `1` and `0`.
 
@@ -349,7 +349,7 @@ Let's see the messages come in.
     
 🎉 You can now decode cryptic byte messages to meaningful payloads!    
 
-> Would you like to learn how to receive and further process these messages? Head over to the [MQTT](../../../applications/mqtt/index.md) guide!
+> Would you like to learn how to receive and further process these messages? Head over to the [MQTT]({{< relref "../../../applications/mqtt" >}}) guide!
 
 ## Message your device
 Now let's send a message to your device in return.
@@ -454,7 +454,7 @@ What would be cooler than turning a LED on by sending `00`? Sending `{ "led": tr
 
 Next, you'll want to:
 
-1.  Learn how to receive and send messages from anywhere using [MQTT](../../../applications/mqtt/index.md) or our [Node-RED](../../../applications/nodered/quick-start.md) or [Node.js](../../../applications/nodejs/quick-start.md) library.
+1.  Learn how to receive and send messages from anywhere using [MQTT]({{< relref "../../../applications/mqtt" >}}) or our [Node-RED]({{< relref "../../../applications/nodered/quick-start" >}}) or [Node.js]({{< relref "../../../applications/nodejs/quick-start" >}}) library.
 2.  Learn how to add sensors and actuators to your device to harvest data and trigger actions anywhere, thanks to the long range, low power The Things Network.
 
     Let [The Things Lab](https://www.thethingsnetwork.org/labs/stories?search=&c2=on&c3=on&c4=on&c5=on) inspire you!

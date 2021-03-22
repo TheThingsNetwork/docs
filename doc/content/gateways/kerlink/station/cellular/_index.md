@@ -19,7 +19,7 @@ The configuration files needed to get gprs/3G to work are inside the dota archiv
 
 Log into the gateway using SSH or a Wirgrid device.
 
-Set your APN settings in `/etc/sysconfig/network` (see [Provider Settings](../#provider-settings)):
+Set your APN settings in `/etc/sysconfig/network` (see [Provider Settings]({{< relref "../#provider-settings" >}})):
 
 > *You can open the file via the terminal, type: `vi /etc/sysconfig/network`. Type `i` to start editing the file, after doing so, save and quit the file: press `esc` > `:w` > `esc` > `:q`*
 

@@ -4,7 +4,7 @@ section: Running a gateway
 weight: 200
 ---
 
-This page consolidates some of the most frequently asked questions on [The Things Gateway](../../gateway/index.md).
+This page consolidates some of the most frequently asked questions on [The Things Gateway]({{< relref "../../gateway" >}}).
 
 > This section contains the most frequent issues and queries pertaining to the The Things Gateway. If you find issues that are not covered in this page, feel free to reach out to [The Things Network community forum](https://www.thethingsnetwork.org/forum).
 
@@ -59,7 +59,7 @@ The gateway has a UART port on which it prints debug messages. To see these mess
 
 #### Q. What do the LED lights on the gateway indicate?
 
-The LED lights are a great way of understanding the current state of the gateway. Click [here](../ledstatus.md) for the complete list.
+The LED lights are a great way of understanding the current state of the gateway. Click [here]({{< relref "../ledstatus" >}}) for the complete list.
 
 
 #### Q. What steps do I need to take if I want to relocate my gateway?

@@ -21,7 +21,7 @@ $ pip install ttn
 ```
 
 ## Documentation
-* See the [API Reference](./api-reference.md) to learn how to start using the Python SDK.
+* See the [API Reference]({{< relref "./api-reference" >}}) to learn how to start using the Python SDK.
 
 ## Example
 

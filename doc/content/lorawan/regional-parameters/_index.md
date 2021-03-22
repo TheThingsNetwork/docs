@@ -14,5 +14,5 @@ LoRaWAN uses lower radio frequencies with a longer range. The fact that frequenc
 
 More informations can be found here:
 
-* [Frequency Plans](.././frequency-plans.md)
-* [Frequency Plan by Country](.././frequencies-by-country.md)
+* [Frequency Plans]({{< relref ".././frequency-plans" >}})
+* [Frequency Plan by Country]({{< relref ".././frequencies-by-country" >}})

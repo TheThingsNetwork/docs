@@ -32,6 +32,6 @@ LoRaWAN operates on unlicensed bands, so in most countries, running your own gat
 
 No coverage where your device lives? Need more bandwidth? Simply add another Gateway to extend the network for both your own use and anyone else's.
 
-We're offering the affordable [The Things Gateway](https://www.kickstarter.com/projects/419277966/the-things-network). But you can use any standard LoRa gateway with The Things Network. Under [Where to start](start/), you can find how to buy or build your own gateway to extend the network!
+We're offering the affordable [The Things Gateway](https://www.kickstarter.com/projects/419277966/the-things-network). But you can use any standard LoRa gateway with The Things Network. Under [Where to start]({{< relref "start/" >}}), you can find how to buy or build your own gateway to extend the network!
 
 > If you'd like to document and promote another gateway, [contact us](mailto:johan@thethingsnetwork.org) for our Ambassador & Partner programs.

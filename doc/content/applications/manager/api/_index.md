@@ -18,8 +18,8 @@ receive an error response.
 
 DeleteApplication deletes the application with the given identifier (app_id)
 
-- Request: [`ApplicationIdentifier`](../#handlerapplicationidentifier)
-- Response: [`Empty`](../#googleprotobufempty)
+- Request: [`ApplicationIdentifier`]({{< relref "../#handlerapplicationidentifier" >}})
+- Response: [`Empty`]({{< relref "../#googleprotobufempty" >}})
 
 Available HTTP Endpoints:
 
@@ -43,8 +43,8 @@ Output:
 
 DeleteDevice deletes the device with the given identifier (app_id and dev_id)
 
-- Request: [`DeviceIdentifier`](../#handlerdeviceidentifier)
-- Response: [`Empty`](../#googleprotobufempty)
+- Request: [`DeviceIdentifier`]({{< relref "../#handlerdeviceidentifier" >}})
+- Response: [`Empty`]({{< relref "../#googleprotobufempty" >}})
 
 Available HTTP Endpoints:
 
@@ -69,22 +69,22 @@ Output:
 
 DryUplink simulates processing a downlink message and returns the result
 
-- Request: [`DryDownlinkMessage`](../#handlerdrydownlinkmessage)
-- Response: [`DryDownlinkResult`](../#handlerdrydownlinkresult)
+- Request: [`DryDownlinkMessage`]({{< relref "../#handlerdrydownlinkmessage" >}})
+- Response: [`DryDownlinkResult`]({{< relref "../#handlerdrydownlinkresult" >}})
 
 #### `DryUplink`
 
 DryUplink simulates processing an uplink message and returns the result
 
-- Request: [`DryUplinkMessage`](../#handlerdryuplinkmessage)
-- Response: [`DryUplinkResult`](../#handlerdryuplinkresult)
+- Request: [`DryUplinkMessage`]({{< relref "../#handlerdryuplinkmessage" >}})
+- Response: [`DryUplinkResult`]({{< relref "../#handlerdryuplinkresult" >}})
 
 #### `GetApplication`
 
 GetApplication returns the application with the given identifier (app_id)
 
-- Request: [`ApplicationIdentifier`](../#handlerapplicationidentifier)
-- Response: [`Application`](../#handlerapplication)
+- Request: [`ApplicationIdentifier`]({{< relref "../#handlerapplicationidentifier" >}})
+- Response: [`Application`]({{< relref "../#handlerapplication" >}})
 
 Available HTTP Endpoints:
 
@@ -116,8 +116,8 @@ Output:
 
 GetDevice returns the device with the given identifier (app_id and dev_id)
 
-- Request: [`DeviceIdentifier`](../#handlerdeviceidentifier)
-- Response: [`Device`](../#handlerdevice)
+- Request: [`DeviceIdentifier`]({{< relref "../#handlerdeviceidentifier" >}})
+- Response: [`Device`]({{< relref "../#handlerdevice" >}})
 
 Available HTTP Endpoints:
 
@@ -169,8 +169,8 @@ Output:
 
 GetDevicesForApplication returns all devices that belong to the application with the given identifier (app_id)
 
-- Request: [`ApplicationIdentifier`](../#handlerapplicationidentifier)
-- Response: [`DeviceList`](../#handlerdevicelist)
+- Request: [`ApplicationIdentifier`]({{< relref "../#handlerapplicationidentifier" >}})
+- Response: [`DeviceList`]({{< relref "../#handlerdevicelist" >}})
 
 Available HTTP Endpoints:
 
@@ -223,8 +223,8 @@ Output:
 
 Applications should first be registered to the Handler with the `RegisterApplication` method
 
-- Request: [`ApplicationIdentifier`](../#handlerapplicationidentifier)
-- Response: [`Empty`](../#googleprotobufempty)
+- Request: [`ApplicationIdentifier`]({{< relref "../#handlerapplicationidentifier" >}})
+- Response: [`Empty`]({{< relref "../#googleprotobufempty" >}})
 
 Available HTTP Endpoints:
 
@@ -248,8 +248,8 @@ Output:
 
 SetApplication updates the settings for the application. All fields must be supplied.
 
-- Request: [`Application`](../#handlerapplication)
-- Response: [`Empty`](../#googleprotobufempty)
+- Request: [`Application`]({{< relref "../#handlerapplication" >}})
+- Response: [`Empty`]({{< relref "../#googleprotobufempty" >}})
 
 Available HTTP Endpoints:
 
@@ -280,8 +280,8 @@ Output:
 
 SetDevice creates or updates a device. All fields must be supplied.
 
-- Request: [`Device`](../#handlerdevice)
-- Response: [`Empty`](../#googleprotobufempty)
+- Request: [`Device`]({{< relref "../#handlerdevice" >}})
+- Response: [`Empty`]({{< relref "../#googleprotobufempty" >}})
 
 Available HTTP Endpoints:
 
@@ -333,8 +333,8 @@ Output:
 
 SimulateUplink simulates an uplink message
 
-- Request: [`SimulatedUplinkMessage`](../#handlersimulateduplinkmessage)
-- Response: [`Empty`](../#googleprotobufempty)
+- Request: [`SimulatedUplinkMessage`]({{< relref "../#handlersimulateduplinkmessage" >}})
+- Response: [`Empty`]({{< relref "../#googleprotobufempty" >}})
 
 ## Messages
 
@@ -371,12 +371,12 @@ The Device settings
 | -------- | -------- | --------------- |
 | `altitude` | `int32` |  |
 | `app_id` | `string` |  |
-| `attributes` | _repeated_ [`AttributesEntry`](../#handlerdeviceattributesentry) |  |
+| `attributes` | _repeated_ [`AttributesEntry`]({{< relref "../#handlerdeviceattributesentry" >}}) |  |
 | `description` | `string` |  |
 | `dev_id` | `string` |  |
 | `latitude` | `float` |  |
 | `longitude` | `float` |  |
-| `lorawan_device` | [`Device`](../#lorawandevice) |  |
+| `lorawan_device` | [`Device`]({{< relref "../#lorawandevice" >}}) |  |
 
 ### `.handler.Device.AttributesEntry`
 
@@ -396,7 +396,7 @@ The Device settings
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
-| `devices` | _repeated_ [`Device`](../#handlerdevice) |  |
+| `devices` | _repeated_ [`Device`]({{< relref "../#handlerdevice" >}}) |  |
 
 ### `.handler.DryDownlinkMessage`
 
@@ -404,7 +404,7 @@ DryDownlinkMessage is a simulated message to test downlink processing
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
-| `app` | [`Application`](../#handlerapplication) | The Application containing the payload functions that should be executed |
+| `app` | [`Application`]({{< relref "../#handlerapplication" >}}) | The Application containing the payload functions that should be executed |
 | `fields` | `string` | JSON-encoded object with fields to encode |
 | `payload` | `bytes` | The binary payload to use |
 | `port` | `uint32` | The port number that should be passed to the payload function |
@@ -415,7 +415,7 @@ DryDownlinkResult is the result from a downlink simulation
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
-| `logs` | _repeated_ [`LogEntry`](../#handlerlogentry) | Logs that have been generated while processing |
+| `logs` | _repeated_ [`LogEntry`]({{< relref "../#handlerlogentry" >}}) | Logs that have been generated while processing |
 | `payload` | `bytes` | The payload that was encoded |
 
 ### `.handler.DryUplinkMessage`
@@ -424,7 +424,7 @@ DryUplinkMessage is a simulated message to test uplink processing
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
-| `app` | [`Application`](../#handlerapplication) | The Application containing the payload functions that should be executed |
+| `app` | [`Application`]({{< relref "../#handlerapplication" >}}) | The Application containing the payload functions that should be executed |
 | `payload` | `bytes` | The binary payload to use |
 | `port` | `uint32` | The port number that should be passed to the payload function |
 
@@ -435,7 +435,7 @@ DryUplinkResult is the result from an uplink simulation
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
 | `fields` | `string` | The decoded fields |
-| `logs` | _repeated_ [`LogEntry`](../#handlerlogentry) | Logs that have been generated while processing |
+| `logs` | _repeated_ [`LogEntry`]({{< relref "../#handlerlogentry" >}}) | Logs that have been generated while processing |
 | `payload` | `bytes` | The binary payload |
 | `valid` | `bool` | Was validation of the message successful |
 

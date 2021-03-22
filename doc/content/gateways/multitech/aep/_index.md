@@ -107,7 +107,7 @@ In the **Mode** dropdown, choose **Basic Station**.
 
 Select **LNS** in the **Credentials** dropdown.
 
-See the [Basics Station guide](../../basics-station) for the **Server Certificate** and **Server Address**.
+See the [Basics Station guide]({{< relref "../../basics-station" >}}) for the **Server Certificate** and **Server Address**.
 
 After entering the LNS configuration, click the **Submit** button, and then click **Save and Apply**. The gateway will apply the changes.
 

@@ -34,12 +34,12 @@ void loop() {
 This will:
 
 1. Restore USB communication, if the Node has a USB data connection.
-2. Call the function set via [`onWake()`](../#method-onwake).
+2. Call the function set via [`onWake()`]({{< relref "../#method-onwake" >}}).
 3. Find out why the device woke up and call the function set via the related `on*()` method.
-4. Call the function set via [`onSleep()`](../#method-onsleep).
+4. Call the function set via [`onSleep()`]({{< relref "../#method-onsleep" >}}).
 5. Sleep the Node, unless the Node has a USB data connection and hasn't been configured to also sleep in that case.
 
-> Don't add any other code in your `loop()` function, but use [`onWake()`](../#method-onwake), [`onInterval()`](../#method-oninterval) and [`onSleep()`](../#method-onsleep) instead, to prevent unpredictable behavior.
+> Don't add any other code in your `loop()` function, but use [`onWake()`]({{< relref "../#method-onwake" >}}), [`onInterval()`]({{< relref "../#method-oninterval" >}}) and [`onSleep()`]({{< relref "../#method-onsleep" >}}) instead, to prevent unpredictable behavior.
 
 ## Method: onWake
 Set a callback that will run first thing every time the Node wakes up, which is when an interrupt changes because of interaction with the button, motion sensor or temperature sensor. The device also wakes up every 8 seconds, which is the longest we can make it sleep.
@@ -457,7 +457,7 @@ void configUSB(bool deepSleep);
 
 - `bool deepSleep`: Set to `true` to sleep the Node even if a USB data connection is active. Defaults to `false`.
 
-When disabled, the [`loop()`](../#method-loop) method will delay 100ms until an interrupt has changed or configured interval has been reached. When enabled, it will sleep until woken up by an interrupt change or every 8s.
+When disabled, the [`loop()`]({{< relref "../#method-loop" >}}) method will delay 100ms until an interrupt has changed or configured interval has been reached. When enabled, it will sleep until woken up by an interrupt change or every 8s.
 
 > When the Node goes into sleep, the Serial Monitor will loose its connection. The Node will try to reopen the connection when it wakes up, but Serial Monitor might not always be able to pick it up.
 

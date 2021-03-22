@@ -9,10 +9,10 @@ LoRaWAN is a media access control (MAC) protocol for wide area networks. It is d
 ![LoRaWAN Overview](../LoRaWAN-Overview.png)
 *Image: LoRaWAN Architecture*
 
-* **[End Device, Node, Mote](../../devices/index.md)** - an object with an embedded low-power communication device.
+* **[End Device, Node, Mote]({{< relref "../../devices" >}})** - an object with an embedded low-power communication device.
 
-* **[Gateway](../../gateways/index.md)** - antennas that receive broadcasts from End Devices and send data back to End Devices.
+* **[Gateway]({{< relref "../../gateways" >}})** - antennas that receive broadcasts from End Devices and send data back to End Devices.
 
-* **[Network Server](../../network/index.md)** - servers that route messages from End Devices to the right Application, and back.
+* **[Network Server]({{< relref "../../network" >}})** - servers that route messages from End Devices to the right Application, and back.
 
-* **[Application](../../Applications/index.md)** - a piece of software, running on a server.
+* **[Application]({{< relref "../../Applications" >}})** - a piece of software, running on a server.

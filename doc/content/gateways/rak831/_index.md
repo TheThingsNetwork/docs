@@ -22,10 +22,10 @@ In this workshop we will build a gateway based on the RAK831 and a Raspberry Pi 
 The workshop requires some tools to be available on you system. Check the list below and
 follow the link to the installation instructions if you do not have the tool installed.
 
-* GIT commandline client. [windows](git-windows.md), [OSX](git-osx.md), for Linux use the tools from your distribution to install.
-* For Windows and OSX: Etcher, SDcard writing software. [windows](etcher-windows.md), [OSX](etcher-osx.md)
+* GIT commandline client. [windows]({{< relref "git-windows" >}}), [OSX]({{< relref "git-osx" >}}), for Linux use the tools from your distribution to install.
+* For Windows and OSX: Etcher, SDcard writing software. [windows]({{< relref "etcher-windows" >}}), [OSX]({{< relref "etcher-osx" >}})
 
-You will also need a SSH public/private key pair, [generate a key pair](ssh.md) if you do not have it.
+You will also need a SSH public/private key pair, [generate a key pair]({{< relref "ssh" >}}) if you do not have it.
 
 ## Create resin.io account
 If you do not have a resin.io account, now is the time to create it. Go to [signup](https://dashboard.resin.io/signup) to create it. (If you have an account skip to the next step)

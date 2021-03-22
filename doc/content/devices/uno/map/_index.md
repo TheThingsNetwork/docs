@@ -25,7 +25,7 @@ The Uno does not have a GPS sensor, but we do know the location of most gateways
 
 If you can't tell by the location, you will need your unique Device EUI. The preinstalled sketch prints this to USB port every time it sends data. You can read it using the Arduino IDE's Serial Monitor.
 
-1.  Follow [Arduino / IDE Setup & Usage](../../arduino/ide.md) to setup the IDE.
+1.  Follow [Arduino / IDE Setup & Usage]({{< relref "../../arduino/ide" >}}) to setup the IDE.
 2.  Make sure your device is connected to your computer with a Micro-USB cable.    
 
     > Make sure you use a cable that supports data, not just power. The one we ship with the Uno should work.
@@ -60,4 +60,4 @@ If you can't tell by the location, you will need your unique Device EUI. The pre
 
     ![Filter](../../node/filter.png)
     
-🎉 Congrats! Continue to the [Quick Start](../quick-start.md) to learn how to upload your own sketch.
+🎉 Congrats! Continue to the [Quick Start]({{< relref "../quick-start" >}}) to learn how to upload your own sketch.

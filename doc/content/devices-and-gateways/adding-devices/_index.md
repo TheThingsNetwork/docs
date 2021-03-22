@@ -3,7 +3,7 @@ title: Adding devices
 section: Devices
 ---
 
-To perform uplink and/or downlink communication between your end device and The Things Network, you first need to register/add your device on The Things Network. Devices are added within [applications](../{{< ref "applications-and-integrations" >}}).
+To perform uplink and/or downlink communication between your end device and The Things Network, you first need to register/add your device on The Things Network. Devices are added within [applications]({{< ref "applications-and-integrations" >}}).
 
 Registering your device can be done in two ways, via [Console](https://www.thethingsindustries.com/docs/getting-started/console/) or via [CLI](https://www.thethingsindustries.com/docs/getting-started/cli/installing-cli/).
 

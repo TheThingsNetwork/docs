@@ -25,7 +25,7 @@ LoRaWAN is not suitable for every use-case, so it is important that you understa
 
 We want you to create products that are as efficient as possible. This will get the most out of your battery, and doesn't require you to buy many gateways. If you follow these recommendations, you'll definitely build an amazing product!
 
-* **Payload** should be as small as possible. This means that you **should not send JSON or plain (ASCII) text**, but instead encode your data as binary data. This is made really easy with the [Cayenne Low Power Payload](../../devices/arduino/api/cayennelpp.md) format which is fully supported by The Things Network.
+* **Payload** should be as small as possible. This means that you **should not send JSON or plain (ASCII) text**, but instead encode your data as binary data. This is made really easy with the [Cayenne Low Power Payload]({{< relref "../../devices/arduino/api/cayennelpp" >}}) format which is fully supported by The Things Network.
 * **Interval** between messages should be in the range of **several minutes**, so be smart with your data. You could for example transmit a `min|avg|max` every 5 minutes, or you could only transmit when you sensor value changed more than a certain threshold or have it triggered by motion or another event.
 * **Data Rate** should be as fast as possible to minimize your airtime. `SF7BW125` is usually a good place to start, as it consumes the least power and airtime. If you need more range, you can slowly increase until you have enough. You can also enable adaptive data rate (ADR), the network will then be able to automatically optimize your data rate.
 

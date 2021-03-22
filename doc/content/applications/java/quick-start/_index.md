@@ -4,7 +4,7 @@ weight: 1000
 ---
 This guide will walk you through setting up a Java project that listens to device activations and messages and responds to every 3rd message.
 
-> This guide assumes the sketch and payload functions of [The Things Uno / Quick Start](../../../devices/uno/quick-start.md), but can be easily applied to any other.
+> This guide assumes the sketch and payload functions of [The Things Uno / Quick Start]({{< relref "../../../devices/uno/quick-start" >}}), but can be easily applied to any other.
 
 The full script that we will build is also included as [example](https://github.com/TheThingsNetwork/java-app-sdk/blob/master/samples/mqtt/src/main/java/org/thethingsnetwork/samples/mqtt/App.java) in the Java SDK.
 

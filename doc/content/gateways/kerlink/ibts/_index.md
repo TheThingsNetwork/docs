@@ -45,6 +45,6 @@ Once you are connected to the gateway, log in with `root` / `pdmk-$serialno` as 
 
 ### Install and configure the gateway
 
-Follow the [unified generic KerOS guide](../keros) to install and configure your gateway.
+Follow the [unified generic KerOS guide]({{< relref "../keros" >}}) to install and configure your gateway.
 
 

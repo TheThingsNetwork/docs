@@ -4,7 +4,7 @@ title: Request a Client ID
 
 In order to use the Account Server API, you need to register a client on the Account Server.
 
-You can register a client using [ttnctl](../../cli/index.md):
+You can register a client using [ttnctl]({{< relref "../../cli" >}}):
 
 ```
 $ ttnctl clients request my-gateway-editor "Client used to consult and edit gateway information" --uri "https://mygatewayclient.org/oauth/callback" --scope "profile,gateways" --grants "authorization_code,refresh_token"

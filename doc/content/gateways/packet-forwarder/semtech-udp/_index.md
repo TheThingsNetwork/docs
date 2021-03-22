@@ -4,7 +4,7 @@ redirect-from:
   - /gateways/packet-forwarder/legacy
 ---
 
-The Semtech UDP Packet Forwarder is the **first packet forwarder**, connecting to servers through the [Semtech UDP protocol](../../start/connection.md#semtech-udp-protocol). Although this protocol has several flaws, many gateways include a pre-compiled version of the packet forwarder, which makes it easy to test a gateway with this protocol.
+The Semtech UDP Packet Forwarder is the **first packet forwarder**, connecting to servers through the [Semtech UDP protocol]({{< relref "../../start/connection/#semtech-udp-protocol" >}}). Although this protocol has several flaws, many gateways include a pre-compiled version of the packet forwarder, which makes it easy to test a gateway with this protocol.
 
 ## Installation
 
@@ -16,7 +16,7 @@ When the packet forwarder starts, it looks in the current directory for a `globa
 
 ### Registration
 
-Before starting the packet forwarder, it is wiser to [register the gateway in the console](../../registration.md#via-udp-packet-forwarder) first, using its **unique EUI**.
+Before starting the packet forwarder, it is wiser to [register the gateway in the console]({{< relref "../../registration/#via-udp-packet-forwarder" >}}) first, using its **unique EUI**.
 
 ### EUI configuration
 
@@ -66,4 +66,4 @@ Unless you're running the network yourself on specific ports, the **ports** will
 
 ## Troubleshooting
 
-Click [here](../../troubleshooting/semtech-udp.md) to see troubleshooting steps for the Semtech UDP Packet Forwarder!
+Click [here]({{< relref "../../troubleshooting/semtech-udp" >}}) to see troubleshooting steps for the Semtech UDP Packet Forwarder!

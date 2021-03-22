@@ -38,11 +38,11 @@ This can be due, for example:
 
 * To a communication error with the LoRa concentrator. This highly depends on your gateway. Some gateways do not require any configuration to communicate with the LoRa concentrator ; other gateways require executing actions before communicating with the concentrator. For example, the Kerlink IoT Station requires executing a script called `modem_on.sh` to communicate with the concentrator after starting the OS. There are also edge cases for some gateways that prevent communication with the concentrator in specific circumstances.
 
-This usually manifests by a `failed to start the concentrator` error when starting the packet forwarder - to confirm this, check the [logs of the packet forwarder](../#logs).
+This usually manifests by a `failed to start the concentrator` error when starting the packet forwarder - to confirm this, check the [logs of the packet forwarder]({{< relref "../#logs" >}}).
 
 ### Unexpected stop
 
-The packet forwarder could have **quit unexpectedly, and did not restart**. The Semtech UDP Packet Forwarder is usually stable, and this situation does not happen often - however, some circumstances can lead to this, for example if you have other processes on the gateway consuming a lot of resources. If this happens often, you will want to look at the **root causes** of why the packet forwarder is quitting - the [logs](../#logs) might help you to isolate it. You might also want to look at **mitigation strategies** - such as, wrapping the packet forwarder process in a managing process that will restart it when it quits.
+The packet forwarder could have **quit unexpectedly, and did not restart**. The Semtech UDP Packet Forwarder is usually stable, and this situation does not happen often - however, some circumstances can lead to this, for example if you have other processes on the gateway consuming a lot of resources. If this happens often, you will want to look at the **root causes** of why the packet forwarder is quitting - the [logs]({{< relref "../#logs" >}}) might help you to isolate it. You might also want to look at **mitigation strategies** - such as, wrapping the packet forwarder process in a managing process that will restart it when it quits.
 
 ## Logs
 
@@ -61,7 +61,7 @@ If you cannot find where the logs are being saved, you can also troubleshoot by 
 
 To retrieve the logs in the shell by starting the packet forwarder yourself:
 
-1. Stop the running packet forwarder process, by using `kill -9 <packet forwarder PID>`. You can find the PID of the packet forwarder with the `ps` command, see [above](../#ensuring-the-packet-forwarder-is-running).
+1. Stop the running packet forwarder process, by using `kill -9 <packet forwarder PID>`. You can find the PID of the packet forwarder with the `ps` command, see [above]({{< relref "../#ensuring-the-packet-forwarder-is-running" >}}).
 
 2. Find the directory in which the **binary** of the packet forwarder is located. For example, for Kerlink packet forwarders, it will be in `/mnt/fsuser-1/thethingsnetwork`; for Multitech packet forwarders, it is often located in `/opt/lora`.
 
@@ -75,7 +75,7 @@ The packet forwarder is running, however you are still having issues with it - i
 
 ### Network issue
 
-It could be that your gateway is not connected to the network server. To check this, look at this line of the [status logs](../#logs):
+It could be that your gateway is not connected to the network server. To check this, look at this line of the [status logs]({{< relref "../#logs" >}}):
 
 ```
 ##### 2016-01-05 18:17:08 GMT #####
@@ -91,7 +91,7 @@ It could be that your gateway is not connected to the network server. To check t
 
 * If there is a firewall, that the firewall allows outgoing packets on UDP port 1700.
 
-* The network server address and ports are correctly set in the packet forwarder configuration. For example, for the EU region of The Things Network, you will find [here](../../packet-forwarder/semtech-udp.html) the server addresses - such as `router.eu.thethings.network` or `router.kr.thethings.network`.
+* The network server address and ports are correctly set in the packet forwarder configuration. For example, for the EU region of The Things Network, you will find [here]({{< relref "../../packet-forwarder/semtech-udp" >}}) the server addresses - such as `router.eu.thethings.network` or `router.kr.thethings.network`.
 
 There is also a possibility that the network itself is down. Check our [status page](https://status.thethings.network/) for more information on the status of The Things Network.
 
@@ -99,7 +99,7 @@ There is also a possibility that the network itself is down. Check our [status p
 
 If the logs of your gateway indicate a 100% acknowledgement of `PULL_DATA` but the Console still does not show your gateway as connected:
 
-* Check that in your gateway configuration, `server_address` is set on a [The Things Network](../../packet-forwarder/semtech-udp) router. If you are using a **private network**, make sure that `server_address` is not pointing to The Things Network, but to your own router.
+* Check that in your gateway configuration, `server_address` is set on a [The Things Network]({{< relref "../../packet-forwarder/semtech-udp" >}}) router. If you are using a **private network**, make sure that `server_address` is not pointing to The Things Network, but to your own router.
 
 * When registering the gateway on the Console, you should have checked **I'm using the Semtech UDP Packet Forwarder**, and have entered the **same EUI** as `gateway_ID` in your configuration file. At the end of the registration, this will create a gateway on TTN of which the ID will be `eui-<eui>` For example, if `gateway_ID` is equal to `AA555A0000000101`, the registration will create a gateway with the ID `eui-aa555a0000000101` on the Console.
 
@@ -111,7 +111,7 @@ If the logs of your gateway indicate a 100% acknowledgement of `PULL_DATA` but t
 
 ### CRC issues
 
-In the [logs](../#logs), you can see statistics regarding CRC checks of the packets received by the gateway:
+In the [logs]({{< relref "../#logs" >}}), you can see statistics regarding CRC checks of the packets received by the gateway:
 
 ```
 [...]
@@ -149,13 +149,13 @@ If you notice that your gateway is not being sent any downlink, it could be that
 
 * There's a gateway nearby with better coverage and signal, that is prioritized by TTN
 
-* Your gateway is not recognized by TTN. Make sure that you have [registered](../../packet-forwarder/semtech-udp#registration) your gateway on the Console, and that the gateway ID on the Console matches the EUI entered in the configuration of the gateway.
+* Your gateway is not recognized by TTN. Make sure that you have [registered]({{< relref "../../packet-forwarder/semtech-udp#registration" >}}) your gateway on the Console, and that the gateway ID on the Console matches the EUI entered in the configuration of the gateway.
 
 ### Downlinks are not transmitted by the gateway
 
 It can happen that a gateway is indicated as connected in the Console, transmits uplinks, but does not transmit any of the downlinks it receives from the Things Network. This is usually due to latency issues between the gateway and the network server.
 
-If you have isolated the issue, and are confident that the issue comes from the gateway, check in the [logs](../#logs) the time in which `PULL_ACK` messages are being received by the network server:
+If you have isolated the issue, and are confident that the issue comes from the gateway, check in the [logs]({{< relref "../#logs" >}}) the time in which `PULL_ACK` messages are being received by the network server:
 
 ```
 INFO: [down] for server 54.72.145.119 PULL_ACK received in 105 ms
@@ -166,4 +166,4 @@ If the delay in which `PULL_ACK` messages are received is too long (e.g. >300ms)
 
 You can detect downlinks being received too late in two places in the logs: either if `TOO_LATE` messages appear in the logs, or if there is a line in the status logs indicating `TX rejected (too late)` messages.
 
-If you often encounter downlink arriving too late at the gateway, you might want to check your internet connection. One way to mitigate this effect is to [use the router closest to your location](../../packet-forwarder/semtech-udp.html). Other reasons for high latency are cellular or satellite backhauls for gateways.
+If you often encounter downlink arriving too late at the gateway, you might want to check your internet connection. One way to mitigate this effect is to [use the router closest to your location]({{< relref "../../packet-forwarder/semtech-udp" >}}). Other reasons for high latency are cellular or satellite backhauls for gateways.

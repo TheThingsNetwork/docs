@@ -18,7 +18,7 @@ Some of the advantages of Basics Station over the legacy UDP Packet Forwarder ar
 To connect your device, use the following settings:
 
 - Server Address: `wss://lns.{eu|us|in|au}.thethings.network:443`
-- Server Certificate: see the [certificates section](../certificates)
+- Server Certificate: see the [certificates section]({{< relref "../certificates" >}})
 
 Check the **I'm using the legacy packet forwarder button** when registering your gateway in the console.
 

@@ -7,7 +7,7 @@ Here's how you include and use The Things Network library. Also have a look at t
 
 To use the library:
 
-1.  Follow [setup](../ide.md#setup) to install the library in Arduino IDE.
+1.  Follow [setup]({{< relref "../ide/#setup" >}}) to install the library in Arduino IDE.
 2.  Select **Sketch > Include Library > TheThingsNetwork** to include it.
 
 	Or simply copy and paste:
@@ -140,7 +140,7 @@ void loop() {
 }
 ```
 
-To minimise your use of the limited daily airtime try to use as little bytes as possible. See [Working with Bytes](../../bytes.md) for more information.
+To minimise your use of the limited daily airtime try to use as little bytes as possible. See [Working with Bytes]({{< relref "../../bytes" >}}) for more information.
 
 Also see **File > Examples > TheThingsNetwork > [Send](https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/Send/Send.ino)**.
 

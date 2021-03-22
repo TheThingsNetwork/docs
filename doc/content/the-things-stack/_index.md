@@ -29,7 +29,7 @@ The (free) community edition of The Things Stack V3 can be accessed via the [**D
 
 ## Why should I migrate from V2 to V3?
 
-> Here, we assume you have experience using The Things Network running The Things Network Stack V2. If you have not been using The Things Network yet, you can visit the [The Things Stack Quickstart]({{ site.baseurl }}/quick-start).
+> Here, we assume you have experience using The Things Network running The Things Network Stack V2. If you have not been using The Things Network yet, you can visit the [The Things Stack Quickstart]({{< ref "quick-start" >}}).
 
 The Things Stack (V3) is more scalable, more secure and support all the latest LoRaWAN developments like the latest LoRaWAN versions 1.1 and 1.0.4. Near the end of 2021, The Things Network V2 clusters will be shut down. 
 

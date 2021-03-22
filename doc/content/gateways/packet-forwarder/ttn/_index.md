@@ -2,13 +2,13 @@
 title: TTN Packet Forwarder
 ---
 
-**⚠️ The development of this packet forwarder has been put on hold. We're currently working on new tools to make gateways easier to manage, that we will make public when ready. In the meanwhile, we recommend to use other packet forwarders (e.g. the [Semtech UDP Packet Forwarder](../semtech-udp.md)). To learn more, join the discussion on [the forum](https://www.thethingsnetwork.org/forum/t/new-ttn-packet-forwarder-available/7644/46).**
+**⚠️ The development of this packet forwarder has been put on hold. We're currently working on new tools to make gateways easier to manage, that we will make public when ready. In the meanwhile, we recommend to use other packet forwarders (e.g. the [Semtech UDP Packet Forwarder]({{< relref "../semtech-udp" >}})). To learn more, join the discussion on [the forum](https://www.thethingsnetwork.org/forum/t/new-ttn-packet-forwarder-available/7644/46).**
 
 The TTN Packet Forwarder is a new packet forwarder, developed by the Things Network Core Team in Go. Builds for a selection of gateways, and documentation on how it is built, is available [on GitHub](https://github.com/TheThingsNetwork/packet_forwarder). Among the features of this packet forwarder:
 
 * Built in [Golang](https://golang.org) and open-source
 
-* Connects with the [Gateway Connector protocol](../../start/connection.html#gateway-connector-protocol): authentified, reliable and encrypted
+* Connects with the [Gateway Connector protocol]({{< relref "../../start/connection/#gateway-connector-protocol" >}}): authentified, reliable and encrypted
 
 * Pre-built for multiple gateways, and build instructions available for all SPI LoRa gateways
 

@@ -7,11 +7,11 @@ aliases:
 image: /draft/application-manager/handler.png
 ---
 
-The Application Manager API offers methods manage applications and devices registered to The Things Network. The Application Manager API is exposed by the Handler. To use the API you need an Application Access Key or JWT. You can use either the [gRPC API or the HTTP API](usage.md#grpc-or-http) which wraps it.
+The Application Manager API offers methods manage applications and devices registered to The Things Network. The Application Manager API is exposed by the Handler. To use the API you need an Application Access Key or JWT. You can use either the [gRPC API or the HTTP API]({{< relref "usage/#grpc-or-http" >}}) which wraps it.
 
 ## Use and Context
 
-The Application Manager API is mostly used to integrate The Things Network stack in applications for device management. You can use the [Data API](../mqtt/index.md) to send and receive messages.
+The Application Manager API is mostly used to integrate The Things Network stack in applications for device management. You can use the [Data API]({{< relref "../mqtt" >}}) to send and receive messages.
 
 ![Handler APIs](handler.png)
 
@@ -26,4 +26,4 @@ Replace `<region>` with the last part of the handler you registered your applica
 
 ## SDKs
 
-See [SDKs](../sdks.md) for ready-to-use software developer kits for key programming languages.
+See [SDKs]({{< relref "../sdks" >}}) for ready-to-use software developer kits for key programming languages.

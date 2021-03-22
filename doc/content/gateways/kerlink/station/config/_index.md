@@ -149,4 +149,4 @@ The SPF config files are located in `/mnt/fsuser-1/spf/etc`. The `local_conf.jso
 
 ## Troubleshooting
 
-If you still encounter problems with the packet forwarder, head to the [Troubleshooting page](../../../troubleshooting/semtech-udp.md) of the packet forwarder. You can also try the TTN Forum and the Kerlink Wiki.
+If you still encounter problems with the packet forwarder, head to the [Troubleshooting page]({{< relref "../../../troubleshooting/semtech-udp" >}}) of the packet forwarder. You can also try the TTN Forum and the Kerlink Wiki.

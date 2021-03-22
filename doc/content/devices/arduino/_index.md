@@ -10,7 +10,7 @@ aliases:
 
 [Arduino](https://www.arduino.cc/en/Guide/Introduction) is an open-source electronics platform based on easy-to-use hardware and software. It's intended for anyone making interactive projects.
 
-With [The Things Network Library](https://github.com/thethingsnetwork/arduino-device-lib) Arduino Boards can communicate via The Things Network. Both [The Things Uno](../uno/index.md) and The Things Node are Arduino Boards that include a LoRaWAN module.
+With [The Things Network Library](https://github.com/thethingsnetwork/arduino-device-lib) Arduino Boards can communicate via The Things Network. Both [The Things Uno]({{< relref "../uno" >}}) and The Things Node are Arduino Boards that include a LoRaWAN module.
 
 ## Resources
 To learn more about Arduino and start prototyping with it we recommend:

@@ -15,7 +15,7 @@ The [complete certificate list](https://curl.haxx.se/ca/cacert.pem) contains all
 
 The <a href="ca.pem" download>minimal certificate list</a> contains a tailored list of certificates for devices which do not support the larger list due to memory constraints.
 
-Unfortunately, some gateways do not support concatenated certificate lists at all. If your device will not connect using the complete or minimal certificate lists, you must use the specific certificate TTN uses. This is currently the Let's Encrypt DST Root X3, but is transitioning to the ISRG Root X1. See [below](#lets-encrypt).
+Unfortunately, some gateways do not support concatenated certificate lists at all. If your device will not connect using the complete or minimal certificate lists, you must use the specific certificate TTN uses. This is currently the Let's Encrypt DST Root X3, but is transitioning to the ISRG Root X1. See [below]({{< relref "#lets-encrypt" >}}).
 
 ## Complete Certificate List
 

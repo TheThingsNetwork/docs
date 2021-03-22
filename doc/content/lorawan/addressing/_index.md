@@ -17,9 +17,9 @@ LoRaWAN knows a number of identifiers for devices, applications and gateways.
 
 ### Devices
 
-The Things Network Foundation has received a 7-bit device address prefix from the LoRa Alliance. This means that all TTN device addresses will start with `0x26` or `0x27` (although addresses that start with these might also belong to other networks with the same prefix). Within TTN, we assign device [address prefixes](.././prefix-assignments.md) to "regions" (for example, device addresses in the `eu` region start with `0x2601`). Within a region, the NetworkServer is responsible for assigning device addresses. We are using prefixes here too for different device classes (for example, [ABP](../#activation-by-personalization-abp) devices in the `eu` region start with `0x26011`) or to shard devices over different servers, see .  
+The Things Network Foundation has received a 7-bit device address prefix from the LoRa Alliance. This means that all TTN device addresses will start with `0x26` or `0x27` (although addresses that start with these might also belong to other networks with the same prefix). Within TTN, we assign device [address prefixes]({{< relref ".././prefix-assignments" >}}) to "regions" (for example, device addresses in the `eu` region start with `0x2601`). Within a region, the NetworkServer is responsible for assigning device addresses. We are using prefixes here too for different device classes (for example, [ABP]({{< relref "../#activation-by-personalization-abp" >}}) devices in the `eu` region start with `0x26011`) or to shard devices over different servers, see .  
 
-The NetworkServer assigns device addresses to devices (based on configuration). For [ABP](../#activation-by-personalization-abp) devices you have to request an address from the NetworkServer (the console or `ttnctl` will do this for you). For [OTAA](../#over-the-air-activation-otaa) devices, the NetworkServer will assign an address when the device joins.
+The NetworkServer assigns device addresses to devices (based on configuration). For [ABP]({{< relref "../#activation-by-personalization-abp" >}}) devices you have to request an address from the NetworkServer (the console or `ttnctl` will do this for you). For [OTAA]({{< relref "../#over-the-air-activation-otaa" >}}) devices, the NetworkServer will assign an address when the device joins.
 
 When a device joins the network, it receives a dynamic (non-unique) 32-bit address (`DevAddr`). It's good to keep in mind that device addresses are not unique. We can (and probably will) give hundreds of devices the same address. Finding the actual device that belongs to that address is done by matching the cryptographic signature (MIC) of the message to a device in the database.
 
@@ -37,8 +37,8 @@ LoRaWAN devices have a 64 bit unique identifier (`DevEUI`) that is assigned to t
 
 ### Over-the-Air Activation (OTAA)
 
-Over-the-Air Activation (OTAA) is the preferred and most secure way to connect with The Things Network. Devices perform a join-procedure with the network, during which a dynamic `DevAddr` is assigned and [security keys](.././security.md#security-keys) are negotiated with the device.
+Over-the-Air Activation (OTAA) is the preferred and most secure way to connect with The Things Network. Devices perform a join-procedure with the network, during which a dynamic `DevAddr` is assigned and [security keys]({{< relref ".././security/#security-keys" >}}) are negotiated with the device.
 
 ### Activation by Personalization (ABP)
 
-In some cases you might need to hardcode the `DevAddr` as well as the [security keys](.././security.md#security-keys) in the device. This means activating a device by personalization (ABP). This strategy might seem simpler, because you skip the join procedure, but it has some downsides related to security.
+In some cases you might need to hardcode the `DevAddr` as well as the [security keys]({{< relref ".././security/#security-keys" >}}) in the device. This means activating a device by personalization (ABP). This strategy might seem simpler, because you skip the join procedure, but it has some downsides related to security.

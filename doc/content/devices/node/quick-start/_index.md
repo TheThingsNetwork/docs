@@ -5,7 +5,7 @@ This guide will walk you through programming your The Things Node with your firs
 
 ## Setup Arduino IDE
 
-1.  Follow [Arduino / IDE Setup & Usage](../../arduino/ide.md) to setup the IDE.
+1.  Follow [Arduino / IDE Setup & Usage]({{< relref "../../arduino/ide" >}}) to setup the IDE.
 2.  Download the `TheThingsNetwork` and `TheThingsNode` libraries via **Sketch > Include Library v Manage Libraries...**. Search for `TheThings` in the search bar. Install the latest versions of both `TheThingsNetwork` and `TheThingsNode`.
 3.  Follow SparkFun's [Installation Instructions](https://github.com/sparkfun/Arduino_Boards#installation-instructions) to add the additional board manager and install the **SparkFun AVR Boards**.
 
@@ -28,7 +28,7 @@ This guide will walk you through programming your The Things Node with your firs
 
     > Unlike The Things Uno, which the Arduino IDE recognizes as *Arduino Leonardo*, it does not always recognize the Node as *SparkFun Pro Micro*. You will have to see what `/dev/*usb*` (Mac/Linux) or `COM` (Windows) option appears in the menu after connecting the Node.
     
-    > Another [common issue](../troubleshooting.md#serial-port-not-showing) is that on recent Macs the Node may not appear at all. We suggest to connect via a USB hub.
+    > Another [common issue]({{< relref "../troubleshooting/#serial-port-not-showing" >}}) is that on recent Macs the Node may not appear at all. We suggest to connect via a USB hub.
     
 ## Get your Device EUI
 To communicate via The Things Network, you need to register your device. For this, we'll need its unique **Device EUI**. This is a unique address, hard coded into the LoRa module.
@@ -39,7 +39,7 @@ To communicate via The Things Network, you need to register your device. For thi
 
 2.  Select **Sketch > Upload** to upload the sketch.
 
-    > Uploads may fail if the Serial Monitor is open or if the IDE lost track of [the port you selected](../#connect-your-device). Close the serial monitor, check the port selection and try again. If it still fails, check [Arduino Troubleshooting](https://www.arduino.cc/en/Guide/Troubleshooting#toc1), or [the troubleshooting page](../troubleshooting.html).
+    > Uploads may fail if the Serial Monitor is open or if the IDE lost track of [the port you selected]({{< relref "../#connect-your-device" >}}). Close the serial monitor, check the port selection and try again. If it still fails, check [Arduino Troubleshooting](https://www.arduino.cc/en/Guide/Troubleshooting#toc1), or [the troubleshooting page]({{< relref "../troubleshooting" >}}).
 
 2.  Within 10 seconds, select **Tools > Serial Monitor** to open the [Serial Monitor](https://www.arduino.cc/en/Guide/Environment#toc12).
 
@@ -96,7 +96,7 @@ You are now ready to register your device to the application.
 2.  In the **Devices** box, click **register device**.
 
     * For **Device ID**, choose an ID of lower case, alphanumeric characters and nonconsecutive `-` and `_`. A device ID needs to be unique per application, but can be reused in another application.
-    * For **Device EUI**, copy-paste the **DevEUI** [you retrieved from your device](../#get-your-device-eui).
+    * For **Device EUI**, copy-paste the **DevEUI** [you retrieved from your device]({{< relref "../#get-your-device-eui" >}}).
     * Leave the **App Key** on "this field will be generated".
     * Leave the default **App EUI** selected.
 
@@ -107,7 +107,7 @@ You are now ready to register your device to the application.
     You will be redirected to the newly registered device, where you can find the generated **Example Code** which we'll need next.
 
 ## The Things Node example
-The The Things Network [Arduino Library](../../arduino/index.md) comes with a class dedicated to The Things Node. It wraps the commands to work with the various sensors in simple APIs.
+The The Things Network [Arduino Library]({{< relref "../../arduino" >}}) comes with a class dedicated to The Things Node. It wraps the commands to work with the various sensors in simple APIs.
 
 The library also comes with an example demonstrating most of these APIs. Let's get started by uploading the basic example.
 
@@ -141,7 +141,7 @@ Any code you want to run regularly should be put in a function registered using 
 > Since the device only wakes up every 8 seconds or when a sensor triggers it, it makes no sense to set the interval to less than 8000ms.
 
 ### Callbacks
-In the callbacks you can use the [API](../api.md)'s getters and setters to read sensors, change the LED's color, reconfigure or temporarily disable sensors etc. And of course you can use TheThingsNetwork class to send the sensor data over The Things Network.
+In the callbacks you can use the [API]({{< relref "../api" >}})'s getters and setters to read sensors, change the LED's color, reconfigure or temporarily disable sensors etc. And of course you can use TheThingsNetwork class to send the sensor data over The Things Network.
 
 ### Send Data
 As you can see, the example sends all sensor data from the `interval()` callback, which is configured to run every 20 seconds. In addition, it will send the temperature when it exceeds the configured limits as well as the duration of any detected motion or the press of a button.
@@ -198,4 +198,4 @@ Let's see the messages come in.
     
 🎉 You are now decoding cryptic byte messages to meaningful payloads!    
 
-> Would you like to learn how to receive and further process these messages? Head over to the [MQTT](../../../applications/mqtt/index.md) guide!
+> Would you like to learn how to receive and further process these messages? Head over to the [MQTT]({{< relref "../../../applications/mqtt" >}}) guide!

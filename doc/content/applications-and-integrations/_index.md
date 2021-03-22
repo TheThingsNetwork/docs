@@ -10,7 +10,7 @@ menu:
 
 ## Applications
 
-To establish the communication with a LoRaWAN device, you need to [add the device](../devices-and-gateways/adding-devices.md) within an application.
+To establish the communication with a LoRaWAN device, you need to [add the device]({{< relref "../devices-and-gateways/adding-devices" >}}) within an application.
 
 An application can be created via the [Console](https://www.thethingsindustries.com/docs/getting-started/console/) or via the [CLI](https://www.thethingsindustries.com/docs/getting-started/cli/installing-cli/). You create an application in no-time by providing an **Application ID** and setting its **Owner**. [See details about creating an application using the Console or commands for using the CLI](https://www.thethingsindustries.com/docs/integrations/adding-applications/).
 

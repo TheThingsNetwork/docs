@@ -73,10 +73,10 @@ Type: {decoder: [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript
 
 -   `appID` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** The ID of the application you want to manage.
 -   `accessKerOrToken` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** 
--   `opts` **[DiscoveryOptions](../#discoveryoptions)?** Optional options to pass to the Discovery client.
+-   `opts` **[DiscoveryOptions]({{< relref "../#discoveryoptions" >}})?** Optional options to pass to the Discovery client.
 -   `tokenOrKey`  The Access Token or Access Key used to authenticate.
 
-Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;[HandlerClient](../#handlerclient)>** 
+Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;[HandlerClient]({{< relref "../#handlerclient" >}})>** 
 
 ## AccountClient
 
@@ -100,7 +100,7 @@ Example:
 Gets metadata about all applications that are accessible with
 the given accessToken
 
-Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[AccountApplication](../#accountapplication)>>** 
+Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[AccountApplication]({{< relref "../#accountapplication" >}})>>** 
 
 ### getApplication
 
@@ -113,7 +113,7 @@ the used authorization mechanism.
 
 -   `appID` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** 
 
-Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;[AccountApplication](../#accountapplication)>** 
+Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;[AccountApplication]({{< relref "../#accountapplication" >}})>** 
 
 ### createApplication
 
@@ -121,7 +121,7 @@ Creates a new application on the account server.
 
 **Parameters**
 
--   `app` **[MinimalAccApplication](../#minimalaccapplication)** 
+-   `app` **[MinimalAccApplication]({{< relref "../#minimalaccapplication" >}})** 
 
 Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;any>** 
 
@@ -143,7 +143,7 @@ Adds a collaborator with a set of access rights to the given application.
 
 -   `appID` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** 
 -   `collaborator` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** 
--   `rights` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[AppAccessRights](../#appaccessrights)>** 
+-   `rights` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[AppAccessRights]({{< relref "../#appaccessrights" >}})>** 
 
 Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;any>** 
 
@@ -193,26 +193,26 @@ Example:
 
 -   `appID` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** 
 -   `appAccessKey` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** 
--   `opts` **[DiscoveryOptions](../#discoveryoptions)?** 
+-   `opts` **[DiscoveryOptions]({{< relref "../#discoveryoptions" >}})?** 
 
 ### open
 
 `open` opens the client to the handler.
 
-Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;[HandlerClient](../#handlerclient)>** 
+Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;[HandlerClient]({{< relref "../#handlerclient" >}})>** 
 
 ### data
 
 Open a data client that can be used to receive live application data
 
-Returns **[DataClient](../#dataclient)** 
+Returns **[DataClient]({{< relref "../#dataclient" >}})** 
 
 ### application
 
 Open a application manager that can be used to manage the settings and devices of the
 application.
 
-Returns **[ApplicationClient](../#applicationclient)** 
+Returns **[ApplicationClient]({{< relref "../#applicationclient" >}})** 
 
 ## DiscoveryOptions
 
@@ -253,7 +253,7 @@ Returns **void**
 
 Get the application
 
-Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;[Application](../#application)>** 
+Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;[Application]({{< relref "../#application" >}})>** 
 
 ### setPayloadFormat
 
@@ -272,7 +272,7 @@ to custom.
 
 **Parameters**
 
--   `fns` **[PayloadFunctions](../#payloadfunctions)**  (optional, default `{}`)
+-   `fns` **[PayloadFunctions]({{< relref "../#payloadfunctions" >}})**  (optional, default `{}`)
 
 Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;void>** 
 
@@ -519,9 +519,9 @@ Type: (`"router"` \| `"broker"` \| `"handler"`)
 
 -   `appID` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** The ID of the application you want to manage
 -   `accessKeyOrToken` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** The Access Token or Access Key used to authenticate
--   `opts` **[DiscoveryOptions](../#discoveryoptions)?** 
+-   `opts` **[DiscoveryOptions]({{< relref "../#discoveryoptions" >}})?** 
 
-Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;[ApplicationClient](../#applicationclient)>** 
+Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;[ApplicationClient]({{< relref "../#applicationclient" >}})>** 
 
 ## app
 
@@ -535,12 +535,12 @@ Settings for the discovery server
 
 Announcement is an announcement on the discovery server.
 
-Type: {id: [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String), serviceName: [Service](../#service), serviceVersion: [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String), description: [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String), pb_public: [boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean), url: [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String), netAddress: [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String), mqttAddress: [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String), apiAddress: [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String), publicKey: [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)?, certificate: [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)?, metadataList: [Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;any>?}
+Type: {id: [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String), serviceName: [Service]({{< relref "../#service" >}}), serviceVersion: [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String), description: [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String), pb_public: [boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean), url: [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String), netAddress: [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String), mqttAddress: [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String), apiAddress: [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String), publicKey: [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)?, certificate: [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)?, metadataList: [Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;any>?}
 
 **Properties**
 
 -   `id` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** 
--   `serviceName` **[Service](../#service)** 
+-   `serviceName` **[Service]({{< relref "../#service" >}})** 
 -   `serviceVersion` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** 
 -   `description` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** 
 -   `pb_public` **[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** 
@@ -560,9 +560,9 @@ Type: {id: [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 -   `appID` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** The ID of the application you want to manage
 -   `accessKeyOrToken` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** The Access Token or Access Key used to authenticate
--   `opts` **[DiscoveryOptions](../#discoveryoptions)?** 
+-   `opts` **[DiscoveryOptions]({{< relref "../#discoveryoptions" >}})?** 
 
-Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;[DataClient](../#dataclient)>** 
+Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;[DataClient]({{< relref "../#dataclient" >}})>** 
 
 ## 
 
@@ -577,7 +577,7 @@ Settings for the handler
 -   `accessKeyOrToken` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** The Access Token or Access Key used to authenticate
 -   `serverAddress` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** The URL to the account server to use. Defaults to "<https://account.thethingsnetwork.org>"
 
-Returns **[AccountClient](../#accountclient)** 
+Returns **[AccountClient]({{< relref "../#accountclient" >}})** 
 
 ## Discovery
 
@@ -585,7 +585,7 @@ Discovery is a client for The Things Network discovery API
 
 **Parameters**
 
--   `opts` **[DiscoveryOptions](../#discoveryoptions)**  (optional, default `{}`)
+-   `opts` **[DiscoveryOptions]({{< relref "../#discoveryoptions" >}})**  (optional, default `{}`)
 
 ### constructor
 
@@ -593,7 +593,7 @@ Create a new Discovery client.
 
 **Parameters**
 
--   `opts` **[DiscoveryOptions](../#discoveryoptions)**  (optional, default `{}`)
+-   `opts` **[DiscoveryOptions]({{< relref "../#discoveryoptions" >}})**  (optional, default `{}`)
 
 Returns **void** 
 
@@ -604,9 +604,9 @@ the discovery server that match the service name.
 
 **Parameters**
 
--   `serviceName` **[Service](../#service)** The name of the services to look for, eg. `"handler"`
+-   `serviceName` **[Service]({{< relref "../#service" >}})** The name of the services to look for, eg. `"handler"`
 
-Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[Announcement](../#announcement)>>** 
+Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[Announcement]({{< relref "../#announcement" >}})>>** 
 
 ### get
 
@@ -615,10 +615,10 @@ specified service name and id.
 
 **Parameters**
 
--   `serviceName` **[Service](../#service)** The name of the services to look for, eg. `"handler"`
+-   `serviceName` **[Service]({{< relref "../#service" >}})** The name of the services to look for, eg. `"handler"`
 -   `id` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** The id of the service to look for, eg. `"ttn-handler-eu"`
 
-Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;[Announcement](../#announcement)>** 
+Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;[Announcement]({{< relref "../#announcement" >}})>** 
 
 ### getByAppID
 
@@ -629,7 +629,7 @@ It looks up the handler the application is registered to.
 
 -   `appID` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** 
 
-Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;[Announcement](../#announcement)>** 
+Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;[Announcement]({{< relref "../#announcement" >}})>** 
 
 ## AppAccessRights
 
@@ -671,6 +671,6 @@ Type: {id: [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 AccountApplication contains the metadata of an application
 returned by the account server. Presence of optional fields
-depends on the [access rights](../#appaccessrights) of the used accessKey / -token.
+depends on the [access rights]({{< relref "../#appaccessrights" >}}) of the used accessKey / -token.
 
 Type: any

@@ -19,24 +19,24 @@ This is a list of commercial LoRaWAN gateways currently available for purchase. 
 
 ## The Things Network Gateway
 
-+ [The Things Gateway](../../gateway): At a price of €300 and with its easy web-based setup, it is the best choice to help build The Things Network.
++ [The Things Gateway]({{< relref "../../gateway" >}}): At a price of €300 and with its easy web-based setup, it is the best choice to help build The Things Network.
 
 
 ## Kerlink
 
-+ [Kerlink IoT Station](../../kerlink): The Kerlink IoT Station was one of the first commercially available gateways, running a Linux OS. Although the software is outdated and will required a trained engineer, it is a suitable industrial solution. Our documentation explains how to connect it to The Things Network.
++ [Kerlink IoT Station]({{< relref "../../kerlink" >}}): The Kerlink IoT Station was one of the first commercially available gateways, running a Linux OS. Although the software is outdated and will required a trained engineer, it is a suitable industrial solution. Our documentation explains how to connect it to The Things Network.
 
 + [Kerlink iBTS](http://www.kerlink.com/en/products/lora-iot-station-2/wirnet-ibts): The Kerlink iBTS is the successor of the IoT Station. Its hardware and software offer multi-antenna setups, giving more precise device data.
 
 ## Multitech
 
-+ [Multitech Conduit](../../multitech): The Multitech Conduit offers a very good price/quality compromise. It has recent software, with multiple programmation interface (SDK, Python environment...). It comes in multiple models: AEP, mLinux, cellular...
++ [Multitech Conduit]({{< relref "../../multitech" >}}): The Multitech Conduit offers a very good price/quality compromise. It has recent software, with multiple programmation interface (SDK, Python environment...). It comes in multiple models: AEP, mLinux, cellular...
 
 + [Multitech Conduit Access Point](http://www.multitech.net/developer/products/multiconnect-conduit-access-point/): The Access Point is the smaller sibling of the Multitech Conduit. It uses the same hardware components as the Conduit, but offers an SPI interface to the LoRa concentrator, whereas the Conduit interfaced through USB.
 
 ## Lorrier
 
-+ [Lorrier LR2](../../lorrier) is a fully outdoor device intended to establish a wide coverage network by telecommunications operators and local network by individuals or IoT connectivity service providers. Our documentation explains how to connect it to The Things Network.
++ [Lorrier LR2]({{< relref "../../lorrier" >}}) is a fully outdoor device intended to establish a wide coverage network by telecommunications operators and local network by individuals or IoT connectivity service providers. Our documentation explains how to connect it to The Things Network.
 
 ## Lorix
 

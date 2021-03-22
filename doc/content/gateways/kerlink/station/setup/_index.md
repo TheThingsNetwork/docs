@@ -21,7 +21,7 @@ The antenna comes with a 1m of RG58 coax cable with N-type male connectors on ea
 
 ![Antenna bracket](../kerlink-antenna.jpg)
 
-It is advised to always have the antenna connected when switching on the gateway. Booting the gateway without an external antenna my result in damage to the low noise amplifier. Depending on the environment where the gateway is placed, earthing and [surge protection](../../lightning-protection.md) is recommended.
+It is advised to always have the antenna connected when switching on the gateway. Booting the gateway without an external antenna my result in damage to the low noise amplifier. Depending on the environment where the gateway is placed, earthing and surge protection is recommended.
 
 ## UTP cable
 
@@ -49,7 +49,7 @@ The USB 1.1 Type-A port is used for flashing gateway firmware.
 
 ## Debug port
 
-The debug port can be used to attach to the Linux console of the gateway. See [Configuration](../config.md) for more information.
+The debug port can be used to attach to the Linux console of the gateway. See [Configuration]({{< relref "../config" >}}) for more information.
 
 ## SIM-card
 

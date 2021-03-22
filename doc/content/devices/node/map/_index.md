@@ -34,7 +34,7 @@ The Node does not have a GPS sensor, but we do know the location of most gateway
 
 If you can't tell by the location, you will need your unique Device EUI. The preinstalled sketch prints this to USB port every time it sends data. You can read it using the Arduino IDE's Serial Monitor.
 
-1.  Follow [Arduino / IDE Setup & Usage](../../arduino/ide.md) to setup the IDE.
+1.  Follow [Arduino / IDE Setup & Usage]({{< relref "../../arduino/ide" >}}) to setup the IDE.
 2.  Follow SparkFun's [Installation Instructions](https://github.com/sparkfun/Arduino_Boards#installation-instructions) to add the additional board manager and install the **SparkFun AVR Boards**.
 3.  Make sure your device is connected to your computer with a Micro-USB cable.    
 
@@ -46,7 +46,7 @@ If you can't tell by the location, you will need your unique Device EUI. The pre
 
     > Unlike The Things Uno, which the Arduino IDE recognizes as *Arduino Leonardo*, it does not always recognize the Node as *SparkFun Pro Micro*. You will have to see what `/dev/*usb*` (Mac/Linux) or `COM` (Windows) option appears in the menu after connecting the Node.
     
-    > Another [common issue](../troubleshooting.md#serial-port-not-showing) is that on recent Macs the Node may not appear at all. We suggest to connect via an USB hub.
+    > Another [common issue]({{< relref "../troubleshooting/#serial-port-not-showing" >}}) is that on recent Macs the Node may not appear at all. We suggest to connect via an USB hub.
     
 7.  Select **Tools > Serial Monitor** `Ctrl/⌘ Shift M` to open the Serial Monitor.
 
@@ -81,4 +81,4 @@ If you can't tell by the location, you will need your unique Device EUI. The pre
 
     ![Filter](../filter.png)
     
-🎉 Congrats! When you are done playing with the temperature, motion and button sensor, continue to the [Quick Start](../quick-start.md) to learn how to upload your own sketch.
+🎉 Congrats! When you are done playing with the temperature, motion and button sensor, continue to the [Quick Start]({{< relref "../quick-start" >}}) to learn how to upload your own sketch.

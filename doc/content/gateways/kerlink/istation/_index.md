@@ -44,6 +44,6 @@ Password: pdmk-010001
 
 ### Install and configure the gateway
 
-Follow the [unified generic KerOS guide](../keros) to install and configure your gateway.
+Follow the [unified generic KerOS guide]({{< relref "../keros" >}}) to install and configure your gateway.
 
 

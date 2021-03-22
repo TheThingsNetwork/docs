@@ -251,7 +251,7 @@ Copy the configuration template `config_loc_dual_antenna_8ch_full_diversity_EU86
 cp /tools/templates/config_loc_dual_antenna_8ch_full_diversity_EU868.json /etc/pktfwd/config.json
 ```
 
-We're now going to modify the configuration to point the packet forwarder to The Things Network. Select the [router address](../../packet-forwarder/semtech-udp.md#router-addresses) the most appropriate for your location.
+We're now going to modify the configuration to point the packet forwarder to The Things Network. Select the [router address]({{< relref "../../packet-forwarder/semtech-udp/#router-addresses" >}}) the most appropriate for your location.
 
 Edit the configuration using a text editor, such as `vi`:
 
@@ -289,7 +289,7 @@ You can now test the packet forwarder by executing:
 
 You should now see packets flowing in the logs of the packet forwarder - and see gateway activity on the gateway's package on the console!
 
-> Having issues making the packet forwarder run? Head over to our [packet forwarder troubleshooting section](../../troubleshooting/semtech-udp.md).
+> Having issues making the packet forwarder run? Head over to our [packet forwarder troubleshooting section]({{< relref "../../troubleshooting/semtech-udp" >}}).
 
 ### Installing the packet forwarder
 

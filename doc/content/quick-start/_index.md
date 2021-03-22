@@ -26,11 +26,11 @@ The Things Network provides a public community LoRaWAN network, initiated by [Th
 - [Visit the official The Things Stack documentation page.](https://www.thethingsindustries.com/docs)
 - [What is The Things Industries, The Things Network and The Things Stack?](https://www.thethingsindustries.com/docs/getting-started/what-is-tts/)
 
-> **Important note:** In 2021, The Things Network will be upgraded to use [**The Things Stack**](../the-things-stack), the third version of the LoRaWAN network stack. **The Things Network Stack** (version 2) will no longer be actively maintained. If you have been using The Things Network, you will need to learn how to [migrate your gateways and devices to The Things Stack](../the-things-stack/migrate-to-v3.md).
+> **Important note:** In 2021, The Things Network will be upgraded to use [**The Things Stack**]({{< relref "../the-things-stack" >}}), the third version of the LoRaWAN network stack. **The Things Network Stack** (version 2) will no longer be actively maintained. If you have been using The Things Network, you will need to learn how to [migrate your gateways and devices to The Things Stack]({{< relref "../the-things-stack/migrate-to-v3" >}}).
 
 ## Learn more about LoRaWAN
 
-LoRaWAN is a radio frequency protocol that allows devices to connect to the Internet over a long range with incredibly low power consumption. Visit our documentation to [learn more about LoRaWAN](../lorawan).
+LoRaWAN is a radio frequency protocol that allows devices to connect to the Internet over a long range with incredibly low power consumption. Visit our documentation to [learn more about LoRaWAN]({{< relref "../lorawan" >}}).
 
 Watch the video below on *Everything you need to know about LoRaWAN in 60 minutes* by Johan Stokking (tech lead of The Things Network):
 
@@ -53,7 +53,7 @@ Although you might already have coverage in your area, we still recommend you to
 | <img src="kona-micro-light-gateway.png" alt="Tektelic Kona Micro Lite" style="width:200px"/> | **Tektelic Kona Micro Lite** | [More info](https://tektelic.com/catalog/kona-micro-lite-lorawan-gateway) |
 | <img src="multitech-conduit-ap.png" alt="Multitech Conduit AP" style="width:200px"/> | **Multitech Conduit AP** | [More info](https://www.multitech.com/brands/multiconnect-conduit-ap) |
 
-Once you have your hands on a gateway, [learn how to connect your gateway to The Things Stack](../devices-and-gateways/adding-gateways.md).
+Once you have your hands on a gateway, [learn how to connect your gateway to The Things Stack]({{< relref "../devices-and-gateways/adding-gateways" >}}).
 
 > **Important note:** Different world regions use different [frequency plans](https://www.thethingsindustries.com/docs/reference/frequency-plans/), e.g. 863-870 MHz for Europe, 902-928 MHz for North America, etc. Make sure you double check that the hardware aligns with your region’s radio frequency before purchasing!
 
@@ -73,7 +73,7 @@ To build a prototype of your end-to-end IoT solution, you will need a developmen
 | <img src="stm32L0-discover-kit.jpg" alt="stm32L0 discover kit" style="width:200px"/> | **STM32L0 Discovery Kit** | [Buy](https://www.st.com/en/evaluation-tools/b-l072z-lrwan1.html) |
 
 
-Did you set up your gateway and created a free account on The Things Network? Great, now it is time to activate your development board! [Learn how to connect your device to The Things Stack](../devices-and-gateways/adding-devices.md).
+Did you set up your gateway and created a free account on The Things Network? Great, now it is time to activate your development board! [Learn how to connect your device to The Things Stack]({{< relref "../devices-and-gateways/adding-devices" >}}).
 
 To learn more about getting started with The Things Stack, have a look at the video by Bogdans Afonins:
 
@@ -81,7 +81,7 @@ To learn more about getting started with The Things Stack, have a look at the vi
 
 ## Build your end-to-end application
 
-Once you have your LoRaWAN network setup, you can use available integrations to build your end-to-end IoT solution. Integrations allow you to process data and act on it by triggering events. Learn [how to create integrations](../applications-and-integrations/).
+Once you have your LoRaWAN network setup, you can use available integrations to build your end-to-end IoT solution. Integrations allow you to process data and act on it by triggering events. Learn [how to create integrations]({{< relref "../applications-and-integrations/" >}}).
 
 
 ### Other useful links:

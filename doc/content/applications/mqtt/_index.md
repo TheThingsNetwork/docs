@@ -21,7 +21,7 @@ You can find MQTT Client libraries for any language or platform:
 * [Eclipse Mosquitto](https://mosquitto.org) providers a CLI to [subscribe](https://mosquitto.org/man/mosquitto_sub-1.html) and to [publish](https://mosquitto.org/man/mosquitto_pub-1.html) messages.
 * [MQTTBox](http://workswithweb.com/mqttbox.html) is a cross-platform client with a nice GUI.
 
-We'll use Mosquitto as example in the [API Reference](api.md).
+We'll use Mosquitto as example in the [API Reference]({{< relref "api" >}}).
 
 ## SDKs
 
@@ -29,9 +29,9 @@ To hide the complexity of parsing and composing the message payloads from you, T
 
 At the moment, we offer clients for:
 
-* [Go](../golang/index.md)
-* [Java](../java/index.md)
-* [Node-RED](../nodered/index.md)
-* [Node.js](../nodejs/index.md)
+* [Go]({{< relref "../golang" >}})
+* [Java]({{< relref "../java" >}})
+* [Node-RED]({{< relref "../nodered" >}})
+* [Node.js]({{< relref "../nodejs" >}})
 
 If you'd like to create and maintain a client for another language or platform, let us know! We'd like to support you and look after achieving consistent APIs across libraries.

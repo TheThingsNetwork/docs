@@ -14,8 +14,8 @@ The Discovery service is used to discover services within The Things Network.
 
 Add metadata to an announement
 
-- Request: [`MetadataRequest`](../#discoverymetadatarequest)
-- Response: [`Empty`](../#googleprotobufempty)
+- Request: [`MetadataRequest`]({{< relref "../#discoverymetadatarequest" >}})
+- Response: [`Empty`]({{< relref "../#googleprotobufempty" >}})
 
 #### `Announce`
 
@@ -23,22 +23,22 @@ Announce a component to the Discovery server.
 A call to `Announce` does not processes the `metadata` field, so you can safely leave this field empty.
 Adding or removing Metadata should be done with the `AddMetadata` and `DeleteMetadata` methods.
 
-- Request: [`Announcement`](../#discoveryannouncement)
-- Response: [`Empty`](../#googleprotobufempty)
+- Request: [`Announcement`]({{< relref "../#discoveryannouncement" >}})
+- Response: [`Empty`]({{< relref "../#googleprotobufempty" >}})
 
 #### `DeleteMetadata`
 
 Delete metadata from an announcement
 
-- Request: [`MetadataRequest`](../#discoverymetadatarequest)
-- Response: [`Empty`](../#googleprotobufempty)
+- Request: [`MetadataRequest`]({{< relref "../#discoverymetadatarequest" >}})
+- Response: [`Empty`]({{< relref "../#googleprotobufempty" >}})
 
 #### `Get`
 
 Get a specific announcement
 
-- Request: [`GetRequest`](../#discoverygetrequest)
-- Response: [`Announcement`](../#discoveryannouncement)
+- Request: [`GetRequest`]({{< relref "../#discoverygetrequest" >}})
+- Response: [`Announcement`]({{< relref "../#discoveryannouncement" >}})
 
 Available HTTP Endpoints:
 
@@ -82,8 +82,8 @@ Output:
 
 Get all announcements for a specific service type
 
-- Request: [`GetServiceRequest`](../#discoverygetservicerequest)
-- Response: [`AnnouncementsResponse`](../#discoveryannouncementsresponse)
+- Request: [`GetServiceRequest`]({{< relref "../#discoverygetservicerequest" >}})
+- Response: [`AnnouncementsResponse`]({{< relref "../#discoveryannouncementsresponse" >}})
 
 Available HTTP Endpoints:
 
@@ -126,18 +126,18 @@ Output:
 
 #### `GetByAppEUI`
 
-- Request: [`GetByAppEUIRequest`](../#discoverygetbyappeuirequest)
-- Response: [`Announcement`](../#discoveryannouncement)
+- Request: [`GetByAppEUIRequest`]({{< relref "../#discoverygetbyappeuirequest" >}})
+- Response: [`Announcement`]({{< relref "../#discoveryannouncement" >}})
 
 #### `GetByAppID`
 
-- Request: [`GetByAppIDRequest`](../#discoverygetbyappidrequest)
-- Response: [`Announcement`](../#discoveryannouncement)
+- Request: [`GetByAppIDRequest`]({{< relref "../#discoverygetbyappidrequest" >}})
+- Response: [`Announcement`]({{< relref "../#discoveryannouncement" >}})
 
 #### `GetByGatewayID`
 
-- Request: [`GetByGatewayIDRequest`](../#discoverygetbygatewayidrequest)
-- Response: [`Announcement`](../#discoveryannouncement)
+- Request: [`GetByGatewayIDRequest`]({{< relref "../#discoverygetbygatewayidrequest" >}})
+- Response: [`Announcement`]({{< relref "../#discoveryannouncement" >}})
 
 ## Messages
 
@@ -152,7 +152,7 @@ The Announcement of a service (also called component)
 | `certificate` | `string` | TLS Certificate for gRPC on net_address (if TLS is enabled) |
 | `description` | `string` | Description of the component |
 | `id` | `string` | The ID of the component |
-| `metadata` | _repeated_ [`Metadata`](../#discoverymetadata) | Metadata for this component |
+| `metadata` | _repeated_ [`Metadata`]({{< relref "../#discoverymetadata" >}}) | Metadata for this component |
 | `mqtt_address` | `string` | Contains the address where the MQTT API is exposed (if there is one) Format of mqtt_address: `(mqtt(s)://)host(:port)` default mqtt port is 1883, default mqtts port is 8883. Examples: if `host:port` then `mqtt://host:port` if `host:8883` then `mqtts://host:8883` if `host` then `mqtt://host:1883` and `mqtts://host:8883` if `mqtt://host` then `mqtt://host:1883` if `mqtts://host` then `mqtt://host:1883` and `mqtts://host:8883` |
 | `net_address` | `string` | Comma-separated network addresses in the form "domain1:port,domain2:port,domain3:port" (currently we only use the first) |
 | `public` | `bool` | Indicates whether this service is part of The Things Network (the public community network) |
@@ -167,7 +167,7 @@ A list of announcements
 
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
-| `services` | _repeated_ [`Announcement`](../#discoveryannouncement) |  |
+| `services` | _repeated_ [`Announcement`]({{< relref "../#discoveryannouncement" >}}) |  |
 
 ### `.discovery.GetByAppEUIRequest`
 
@@ -218,7 +218,7 @@ The metadata to add or remove from an announement
 | **Name** | **Type** | **Description** |
 | -------- | -------- | --------------- |
 | `id` | `string` | The ID of the service that should be modified |
-| `metadata` | [`Metadata`](../#discoverymetadata) | Metadata to add or remove |
+| `metadata` | [`Metadata`]({{< relref "../#discoverymetadata" >}}) | Metadata to add or remove |
 | `service_name` | `string` | The name of the service (router/broker/handler) that should be modified |
 
 ### `.google.protobuf.Empty`

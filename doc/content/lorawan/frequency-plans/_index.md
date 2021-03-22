@@ -4,7 +4,7 @@ section: Additional Information
 weight: 5
 ---
 
-This is a list of frequency plan definitions used in The Things Network. These frequency plans are based on what is specified in the LoRaWAN regional parameters document. To know which frequency plan to use in your country, see the list of [frequency plans by country list](.././frequencies-by-country.md).
+This is a list of frequency plan definitions used in The Things Network. These frequency plans are based on what is specified in the LoRaWAN regional parameters document. To know which frequency plan to use in your country, see the list of [frequency plans by country list]({{< relref ".././frequencies-by-country" >}}).
 
 ## EU863-870
 
