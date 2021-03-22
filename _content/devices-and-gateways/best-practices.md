@@ -9,8 +9,8 @@ The goal of defining best practices for LoRaWAN devices which use The Things Net
 
 To make sure you are exploiting device's capabilities in the most efficient way, follow these recommendations:
 
-- Your device should be compliant to the [LoRaWAN specification](https://lora-alliance.org/about-lorawan/).
-- Prefer using OTAA over ABP. See details about [why using OTAA is recommended](https://www.thethingsindustries.com/docs/devices/abp-vs-otaa/).
+- Your device should be compliant to the <a href="https://lora-alliance.org/about-lorawan/" target="_blank">LoRaWAN specification</a>.
+- Prefer using OTAA over ABP. See details about <a href="https://www.thethingsindustries.com/docs/devices/abp-vs-otaa/" target="_blank">why using OTAA is recommended</a>.
 - Eliminate unnecessary Join Requests to prevent network bloating in cases of a temporary connection loss.
 - Sample your data as rarely as possible. 
 - Reduce the payload size to the minimum possible. 
@@ -23,4 +23,4 @@ To make sure you are exploiting device's capabilities in the most efficient way,
 - Use 32 bit frame counters that increment after each uplink/downlink to prevent replay attacks.
 - Do not assume link loss if at least 3 ACKs are not missed. 
 
-[Follow this link to read more details about best practices](https://www.thethingsindustries.com/docs/devices/best-practices/).
+<a href="https://www.thethingsindustries.com/docs/devices/best-practices/" target="_blank">Follow this link to read more details about best practices</a>.

@@ -18,11 +18,11 @@ Let's assume that your gateway and device are still connected to The Things Netw
 
 ## V3 login
 
-To be able to continue following steps below, you first need to log in to [The Things Stack development console](https://console.cloud.thethings.network/). You can do so by using your credentials after registering, or via The Things ID feature and use your known username and password.
+To be able to continue following steps below, you first need to log in to <a href="https://console.cloud.thethings.network/" target="_blank">The Things Stack development console</a>. You can do so by using your credentials after registering, or via The Things ID feature and use your known username and password.
 
 ## Add an application in V3
 
-To migrate your end device, you first need to [add an application](https://www.thethingsindustries.com/docs/integrations/adding-applications/) in your V3 instance. The `Application ID` does not neccessarily have to be the same as the one in V2.
+To migrate your end device, you first need to <a href="https://www.thethingsindustries.com/docs/integrations/adding-applications/" target="_blank">add an application</a> in your V3 instance. The `Application ID` does not neccessarily have to be the same as the one in V2.
 
 ## Add your payload formatters and integrations
 
@@ -30,7 +30,7 @@ After adding an application in V3, you also need to re-add the associated elemen
 
 > The format of payload coders and decoders from the V2 is still supported in V3.
 
-See more info on how to [write payload formatters](https://www.thethingsindustries.com/docs/integrations/payload-formatters/) and [add integrations](https://www.thethingsindustries.com/docs/integrations/adding-integrations/) in The Things Stack V3. 
+See more info on how to <a href="https://www.thethingsindustries.com/docs/integrations/payload-formatters/" target="_blank">write payload formatters</a> and <a href="https://www.thethingsindustries.com/docs/integrations/adding-integrations/" target="_blank">add integrations</a> in The Things Stack V3. 
 
 Next, you need to migrate your end device(s). Depending on if it is one or more devices, choose the right method for migration.
 
@@ -38,7 +38,7 @@ Next, you need to migrate your end device(s). Depending on if it is one or more 
 
 ### Add an end device in V3
 
-First, [add a device](https://www.thethingsindustries.com/docs/devices/adding-devices/) in your V3 instance. You can do it manually for both ABP and OTAA devices. For OTAA devices, you can also do it by submitting the type of your device if it is available in the [Device Repository](https://thethingsindustries.com/docs/integrations/payload-formatters/device-repo/). 
+First, <a href="https://www.thethingsindustries.com/docs/devices/adding-devices/" target="_blank">add a device</a> in your V3 instance. You can do it manually for both ABP and OTAA devices. For OTAA devices, you can also do it by submitting the type of your device if it is available in the <a href="https://thethingsindustries.com/docs/integrations/payload-formatters/device-repo/" target="_blank">Device Repository</a>. 
 
 When manually adding an OTAA device, make sure you follow these steps correctly:
 
@@ -52,7 +52,7 @@ When manually adding an OTAA device, make sure you follow these steps correctly:
 - **Advanced settings** probably do not have to be set
 - Enter your end device's **AppKey** (has to match the one in V2)
 
-> We highly recommend using OTAA! See *[link to ABP vs OTAA doc when merged]* to learn why OTAA is better than ABP.
+> We highly recommend using OTAA! See <a href="https://www.thethingsindustries.com/docs/devices/abp-vs-otaa/" target="_blank">why OTAA is better than ABP</a>.
 
 If you have a **really good reason** to use ABP, you can add an ABP device to V3 by following next steps:
 
@@ -96,7 +96,7 @@ How to do this is largely depends on your device's firmware:
 
 Since you have not migrated your gateway from V2 cluster yet, the new Join request sent by your end device will be received by the V2 cluster. This request will not be accepted if you changed your end device's `AppKey` (as recommended above) or if you have deleted it.
 
-Interesting thing is that your end device's new Join request will be received by the V3 cluster too! You can thank for this to [Packet Broker](https://www.thethingsindustries.com/docs/reference/peering/#packet-broker) (you can verify this by observing the uplinks metadata in V3). Now, V3 cluster will accept this Join request, so your end device will get a new V3 `DevAddr`, channel settings and other MAC parameters. Based on a newly assigned `DevAddr`, Packet Broker will route the traffic to your V3 network.
+Interesting thing is that your end device's new Join request will be received by the V3 cluster too! You can thank for this to <a href="https://www.thethingsindustries.com/docs/reference/peering/#packet-broker" target="_blank">Packet Broker</a> (you can verify this by observing the uplinks metadata in V3). Now, V3 cluster will accept this Join request, so your end device will get a new V3 `DevAddr`, channel settings and other MAC parameters. Based on a newly assigned `DevAddr`, Packet Broker will route the traffic to your V3 network.
 
 ### What to do with ABP end device?
 
@@ -104,9 +104,9 @@ If you are using an ABP device, that means your end device is still associated w
 
 ## Method 2: Migrate end devices using the migration tool
 
-To complete the migration this way, you need to have  [`ttn-lw-migrate` tool](https://github.com/TheThingsNetwork/lorawan-stack-migrate) installed. 
+To complete the migration this way, you need to have  <a href="https://github.com/TheThingsNetwork/lorawan-stack-migrate" target="_blank">`ttn-lw-migrate` tool</a>. 
 
-`ttn-lw-migrate` is used to export end devices and applications from The Things Network Stack V2 cluster to a [JSON file](https://www.thethingsindustries.com/docs/getting-started/migrating/device-json/). This JSON file can later be [imported](https://www.thethingsindustries.com/docs/getting-started/migrating/import-devices/) in The Things Stack V3 via Console or via CLI.
+`ttn-lw-migrate` is used to export end devices and applications from The Things Network Stack V2 cluster to a <a href="https://www.thethingsindustries.com/docs/getting-started/migrating/device-json/" target="_blank">JSON file</a>. This JSON file can later be <a href="https://www.thethingsindustries.com/docs/getting-started/migrating/import-devices/" target="_blank">imported</a> in The Things Stack V3 via Console or via CLI.
 
 ### Note about migrating an active session
 
@@ -130,7 +130,7 @@ $ export TTNV2_APP_ACCESS_KEY="access-key-of-your-ttn-v2-application"
 $ export FREQUENCY_PLAN_ID="EU_863_870_TTN"
 ```
 
-> See [supported frequency plans](https://www.thethingsindustries.com/docs/reference/frequency-plans/) list, and adjust the `FREQUENCY_PLAN_ID` according to your setup.
+> See <a href="https://www.thethingsindustries.com/docs/reference/frequency-plans/" target="_blank">supported frequency plans</a> list, and adjust the `FREQUENCY_PLAN_ID` according to your setup.
 
 If you own a private The Things Stack V2 cluster, you can still use the migration tool, but with an extra variable configured:
 
@@ -207,15 +207,15 @@ Hovewer, if you have migrated an ABP device, or if you have migrated an OTAA dev
 
 This is needed because some recommended settings used by the V2 and V3 Network Server are different. For example, `RxDelay` parameter used by the V2 is 1 second by default, while the recommended value for the V3 is 5 seconds. The V3 Network Server will try to automatically change this for you, but it might take some time until the MAC command reaches the end device. 
 
-See the official The Things Stack documentation to learn how to [configure MAC settings](https://www.thethingsindustries.com/docs/devices/mac-settings/).
+See the official The Things Stack documentation to learn how to <a href="https://www.thethingsindustries.com/docs/devices/mac-settings/" target="_blank">configure MAC settings</a>.
 
 ## Migrate your gateway
 
-[Migrating your gateway](https://www.thethingsindustries.com/docs/getting-started/migrating/gateway-migration/) from The Things Network Stack V2 to The Things Stack V3 cluster is a really easy process. 
+<a href="https://www.thethingsindustries.com/docs/getting-started/migrating/gateway-migration/" target="_blank">Migrating your gateway</a> from The Things Network Stack V2 to The Things Stack V3 cluster is a really easy process. 
 
-First, you need to [add a gateway to the V3 instance](https://www.thethingsindustries.com/docs/gateways/adding-gateways/).
+First, you need to <a href="https://www.thethingsindustries.com/docs/gateways/adding-gateways/" target="_blank">add a gateway to the V3 instance</a>.
 
-Then, you need change the address of the V3 cluster you are using - this will depend on which type of gateway you are using, [Semtech UDP Packet Forwarder](https://www.thethingsindustries.com/docs/gateways/semtech-udp-packet-forwarder/) or [LoRa Basics Station](https://www.thethingsindustries.com/docs/gateways/lora-basics-station/). Let's assume you are using `eu1.cloud.thethings.network`.
+Then, you need change the address of the V3 cluster you are using - this will depend on which type of gateway you are using, <a href="https://www.thethingsindustries.com/docs/gateways/semtech-udp-packet-forwarder/" target="_blank">Semtech UDP Packet Forwarder</a> or <a href="https://www.thethingsindustries.com/docs/gateways/lora-basics-station/" target="_blank">LoRa Basics Station</a>. Let's assume you are using `eu1.cloud.thethings.network`.
 
 - If you are using a Semtech UDP Packet Forwarder, change the `server_address` in your `global_conf.json` to `eu1.cloud.thethings.network`
 - If you are using LoRa Basics Station with LNS subprotocol, change the LNS server address to `wss://eu1.cloud.thethings.network:8887` 
