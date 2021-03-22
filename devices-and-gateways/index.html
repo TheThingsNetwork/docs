@@ -31,14 +31,14 @@
 <meta property="og:site_name" content="The Things Network" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2021-03-22T15:51:07+00:00" />
+<meta property="article:published_time" content="2021-03-22T16:09:16+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
 <meta property="twitter:title" content="Devices &amp; Gateways" />
 <meta name="twitter:site" content="@thethingsnetwrk" />
 <meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
 <script type="application/ld+json">
-{"headline":"Devices &amp; Gateways","dateModified":"2021-03-22T15:51:07+00:00","datePublished":"2021-03-22T15:51:07+00:00","description":"Learn to connect your devices and gateways to The Things Network","url":"https://www.thethingsnetwork.org/docs/devices-and-gateways/","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/devices-and-gateways/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","@context":"https://schema.org"}</script>
+{"headline":"Devices &amp; Gateways","dateModified":"2021-03-22T16:09:16+00:00","datePublished":"2021-03-22T16:09:16+00:00","description":"Learn to connect your devices and gateways to The Things Network","url":"https://www.thethingsnetwork.org/docs/devices-and-gateways/","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/devices-and-gateways/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
     <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -125,18 +125,22 @@
           <div class="panel-body page-content">
               <p class="lead">Learn to connect your devices and gateways to The Things Network</p>
             <h1 id="devices">Devices</h1>
-<p>A LoRaWAN-enabled end device is a sensor or an actuator which can be connected to a LoRaWAN network through a LoRaWAN-enabled gateway. The Things Network supports <strong>any LoRaWAN compliant device</strong>. We highly recommend using <strong>certified</strong> LoRaWAN devices.</p>
+<p>A LoRaWAN-enabled end device is a sensor or an actuator that can be connected to a LoRaWAN network through a LoRaWAN-enabled gateway.</p>
+<p>End-devices are often battery-operated. However, some end devices operate with mains power. These end-devices transmit small data packets (e.g. sensor data) over very long distances and consume low power. They often use compact antennas (e.g. wire antennas, coil antennas, etc).</p>
+<p>The Things Network supports <strong>any LoRaWAN compliant device</strong>. We highly recommend using <strong>certified</strong> LoRaWAN devices.</p>
 <p>Start by <a href="adding-devices.html">adding your device</a> to The Things Network! When operating these end devices, make sure you are following the <a href="best-practices.html">best practices</a> recommended by The Things Network.</p>
-<p>If you would like to enhance the security in your LoRaWAN network, one way is to use Hardware Secured Elements. Learn more about the <a href="https://www.thethingsindustries.com/docs/devices/claim-atecc608a/">ATECC608A security solution</a> developed by <a href="https://www.microchip.com/">Microchip</a> and The Things Industries.</p>
+<p>If you would like to enhance the security in your LoRaWAN network, one way is to use Hardware Secure Elements. Learn more about the <a href="https://www.thethingsindustries.com/docs/devices/claim-atecc608a/" target="_blank">ATECC608A security solution</a> developed by <a href="https://www.microchip.com/" target="_blank">Microchip</a> and The Things Industries.</p>
 <h1 id="gateways">Gateways</h1>
-<p>A LoRaWAN gateway is an intermediary that allows LoRaWAN end devices to transmit data to The Things Network. The communication between devices and gateways is done via LoRaWAN protocol, while gateways use high bandwidth (WiFi, Ethernet, cellular, satellite) backhauls to connect to The Things Network.</p>
-<p>A single gateway is capable of serving thousands of devices. When an end device transmits a message, all gateways in the range will recieve that message and forward it to The Things Network. The network is in charge of deduplicating those messages and selecting the best gateway for downlink communication.</p>
+<p>A LoRaWAN gateway is an intermediary that allows LoRaWAN end devices to transmit data to The Things Network.</p>
+<p>Gateways are often mains-powered and some can have backup batteries or solar panels. A gateway can be indoor or outdoor, and they have various antenna options.</p>
+<p>The communication between devices and gateways is done via LoRaWAN protocol, while gateways use high bandwidth (WiFi, Ethernet, cellular, satellite) backhauls to connect to The Things Network.</p>
+<p>A single gateway is capable of serving thousands of devices. When an end device transmits a message, all gateways in the range will receive that message and forward it to The Things Network. The network is in charge of deduplicating those messages and selecting the best gateway for downlink communication.</p>
 <p>Gateways can connect to The Things Network in two ways:</p>
 <ul>
-  <li>Using the <a href="https://www.thethingsindustries.com/docs/gateways/semtech-udp-packet-forwarder/"><strong>Semtech UDP Packet Forwarder</strong></a></li>
-  <li>Using <a href="https://www.thethingsindustries.com/docs/gateways/lora-basics-station/"><strong>LoRa Basics Station</strong></a></li>
+  <li>Using the <a href="https://www.thethingsindustries.com/docs/gateways/semtech-udp-packet-forwarder/" target="_blank"><strong>Semtech UDP Packet Forwarder</strong></a></li>
+  <li>Using <a href="https://www.thethingsindustries.com/docs/gateways/lora-basics-station/" target="_blank"><strong>LoRa Basics Station</strong></a></li>
 </ul>
-<p>Start by <a href="adding-gateways.html">adding your gateway</a> to The Things Network! Check <a href="https://www.thethingsindustries.com/docs/gateways/">how to configure the most popular gateways to connect to The Things Network</a>.</p>
+<p>Start by <a href="adding-gateways.html">adding your gateway</a> to The Things Network! Check <a href="https://www.thethingsindustries.com/docs/gateways/" target="_blank">how to configure the most popular gateways to connect to The Things Network</a>.</p>
 <h3 id="connecting-gateways-and-devices">Connecting Gateways and Devices</h3>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/rK8oJHZ9Q7U" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
           </div>  
