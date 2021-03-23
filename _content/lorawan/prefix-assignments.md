@@ -66,7 +66,7 @@ section: Additional Information
 | `000038` | `70000000/7` | `70000000` - `71FFFFFF` | Charter Communicaton | USA |
 | `600000` | `E0000000/15` | `E0000000` - `E001FFFF` | RESERVED |  |
 | `600001` | `E0020000/15` | `E0020000` - `E003FFFF` | Digita | Finland |
-| `600002` | `E0040000/15` | `E0040000` - `E005FFFF` | Blink | Sweden, Norway |
+| `600002` | `E0040000/15` | `E0040000` - `E005FFFF` | Netmore | Sweden, Norway |
 | `600003` | `E0060000/15` | `E0060000` - `E007FFFF` | QuaeNet Inc. | World |
 | `600004` | `E0080000/15` | `E0080000` - `E009FFFF` | eleven-x | North and South America |
 | `600005` | `E00A0000/15` | `E00A0000` - `E00BFFFF` | IoT Network AS | World |
@@ -88,7 +88,7 @@ section: Additional Information
 | `600015` | `E02A0000/15` | `E02A0000` - `E02BFFFF` | Alibaba IoT BU | China |
 | `600016` | `E02C0000/15` | `E02C0000` - `E02DFFFF` | Cisco | World |
 | `600017` | `E02E0000/15` | `E02E0000` - `E02FFFFF` | Schneider Electric | Global |
-| `600018` | `E0300000/15` | `E0300000` - `E031FFFF` | ZENNER | Global |
+| `600018` | `E0300000/15` | `E0300000` - `E031FFFF` | Minol ZENNER Connect GmbH | Global |
 | `600019` | `E0320000/15` | `E0320000` - `E033FFFF` | Boston Networks Limited | Europe |
 | `60001A` | `E0340000/15` | `E0340000` - `E035FFFF` | NEC Corporation | Japan |
 | `60001B` | `E0360000/15` | `E0360000` - `E037FFFF` | Shenzhen Tencent Computer Systems Company Limited | China |
@@ -123,13 +123,13 @@ section: Additional Information
 | `C0000F` | `FC003C00/22` | `FC003C00` - `FC003FFF` | Antenna Hungaria Co | Hungary |
 | `C00010` | `FC004000/22` | `FC004000` - `FC0043FF` | Trinity College Dublin | Europe |
 | `C00011` | `FC004400/22` | `FC004400` - `FC0047FF` | Digital Nordix AB (DNX) | World |
-| `C00012` | `FC004800/22` | `FC004800` - `FC004BFF` | Blink Services | Sweden, Norway |
+| `C00012` | `FC004800/22` | `FC004800` - `FC004BFF` | Netmore | Sweden, Norway |
 | `C00013` | `FC004C00/22` | `FC004C00` - `FC004FFF` | Lyse AS | Norway |
 | `C00014` | `FC005000/22` | `FC005000` - `FC0053FF` | VTC Digicom | Vietnam |
 | `C00015` | `FC005400/22` | `FC005400` - `FC0057FF` | Machines Talk | Saudi Arabia |
 | `C00016` | `FC005800/22` | `FC005800` - `FC005BFF` | Schneider Electric | Global |
 | `C00017` | `FC005C00/22` | `FC005C00` - `FC005FFF` | Connexin | UK |
-| `C00018` | `FC006000/22` | `FC006000` - `FC0063FF` | ZENNER | Global |
+| `C00018` | `FC006000/22` | `FC006000` - `FC0063FF` | Minol ZENNER Connect GmbH | Global |
 | `C00019` | `FC006400/22` | `FC006400` - `FC0067FF` | Telekom Srbija | Serbia |
 | `C0001A` | `FC006800/22` | `FC006800` - `FC006BFF` | REQUEA | World |
 | `C0001B` | `FC006C00/22` | `FC006C00` - `FC006FFF` | Sensor Network Services | Austria |
@@ -173,3 +173,6 @@ section: Additional Information
 | `C00041` | `FC010400/22` | `FC010400` - `FC0107FF` | CM Systems LLC | World |
 | `C00042` | `FC010800/22` | `FC010800` - `FC010BFF` | MIOT Melita.io Technology GmbH | Germany |
 | `C00043` | `FC010C00/22` | `FC010C00` - `FC010FFF` | PROESYS S.r.l. | World |
+| `C00044` | `FC011000/22` | `FC011000` - `FC0113FF` | MeWe, Inc | World |
+| `C00045` | `FC011400/22` | `FC011400` - `FC0117FF` | Alpha-Omega Technology GmbH & Co. KG | Europe |
+
