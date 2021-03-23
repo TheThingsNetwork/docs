@@ -2,6 +2,9 @@
 title: Devices & Gateways
 description: Learn to connect your devices and gateways to The Things Network
 image: /gateways/icon.png
+sections:
+ - Devices
+ - Gateways
 menu:
   main:
     weight: 3

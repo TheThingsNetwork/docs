@@ -1,5 +1,5 @@
 ---
-title: Best practices
+title: Best Practices
 section: Devices
 ---
 

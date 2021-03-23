@@ -1,5 +1,5 @@
 ---
-title: Adding gateways
+title: Adding Gateways
 section: Gateways
 ---
 

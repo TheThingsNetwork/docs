@@ -1,5 +1,5 @@
 ---
-title: Adding devices
+title: Adding Devices
 section: Devices
 ---
 
