@@ -14,7 +14,7 @@ The Things Indoor Gateway(TTIG) is designed to be a fully compliant, ultra low-c
 * An 8 channel LoRaWAN indoor gateway at a price of $69. 
 * One of the first gateways to support the state-of-the-art [BasicStation](https://doc.sm.tc/station/) Protocol.
 * Supports LBT.
-* Simple setup steps taking lesser than 5 mins.
+* Simple setup steps taking less than 5 mins.
 * Can connect to any network backend of choice.
 * Setup and Connectivity over WiFi.
 * Can be powered up via a USB-C cable or via an elegant connector to the power outlet.

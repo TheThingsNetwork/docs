@@ -1,7 +1,7 @@
 ---
 title: API Reference
 weight: -1000
-source: 'https://github.com/TheThingsNetwork/docs/blob/master/_content/network/account/api.md'
+source: 'https://github.com/TheThingsIndustries/account-server/blob/master/apidocs.md'
 ---
 
 Base URL: https://account.thethingsnetwork.org/api/v2
