@@ -15,7 +15,7 @@ http://www.pc-freak.net/blog/reverse-ssh-tunnel/
 
 You will need a server or other computer running Linux or any other operating system which can be accessed via SSH. This server needs to be accesible via a public IP address on the internet. You should create a hostname to point to this server and use the hostname to ssh to the server. This will allow you to connect to the server even when the IP address changes.
 
-For the next step you will need to know the hostname of this server. As an example let's say the hsotname is `sshgateway.example.com`. We will also need to know the username you use to log into this server. We'll use `serveruser` as example.
+For the next step you will need to know the hostname of this server. As an example let's say the hostname is `sshgateway.example.com`. We will also need to know the username you use to log into this server. We'll use `serveruser` as example.
 
 ## Setup the gateway to dial SSH on startup
 
