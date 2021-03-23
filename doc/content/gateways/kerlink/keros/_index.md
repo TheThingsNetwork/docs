@@ -118,13 +118,12 @@ To use the gateway, you need to install the packet forwarder.
         #
         service.downlink = 1700
 
-   * The gateway EUI can be found by using the command `grep EUI /tmp/board_info.json`
+  * The gateway EUI can be found by using the command `grep EUI /tmp/board_info.json`
  > Write down the gateway EUI, you'll need it later for registering the gateway in the Developer Console.
-   * Check [this link](https://www.thethingsnetwork.org/docs/gateways/packet-forwarder/semtech-udp.html#router-addresses) for the right `node`.
-   * The UDP ports `1700` are used, both for outgoing and incoming traffic. You can set this UDP port in the lines `service.uplink` and `service.downlink`. (In some cases, firewalls block these UDP ports. Please contact your network administrator if you’re in doubt).
-   * Don't forget to uncomment the `node`, `service.uplink` and `service.downlink` lines, and ensure the `node` value (server address) is between double quotes.
-   * Restart the packet forwarder with `killall lorad lorafwd`
+  * Check [this link](https://www.thethingsnetwork.org/docs/gateways/packet-forwarder/semtech-udp.html#router-addresses) for the right `node`.
+  * The UDP ports `1700` are used, both for outgoing and incoming traffic. You can set this UDP port in the lines `service.uplink` and `service.downlink`. (In some cases, firewalls block these UDP ports. Please contact your network administrator if you’re in doubt).
+  * Don't forget to uncomment the `node`, `service.uplink` and `service.downlink` lines, and ensure the `node` value (server address) is between double quotes.
+  * Restart the packet forwarder with `killall lorad lorafwd`
 5. Register the gateway in the [Developer Console](https://console.thethingsnetwork.org/). You can find more information on how to register your gateway in the Console [here](https://www.thethingsnetwork.org/docs/gateways/registration.html). If all went well, you should see something like this:
 
  ![Kerlink iBTS Console](ibts.png)
-

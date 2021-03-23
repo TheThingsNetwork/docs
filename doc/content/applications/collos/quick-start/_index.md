@@ -22,9 +22,9 @@ Once your subscription has been approved, you can find your Collos subscription 
 3. Click **Profile**
 4. Click **Show** to show your Collos subscription keys
 
-   ![Subscriptions](../subscriptions.png)
+  ![Subscriptions](../subscriptions.png)
 
-   >You can use both **Primary key** and **Secondary key** for the Collos integration.
+  >You can use both **Primary key** and **Secondary key** for the Collos integration.
 
 ## Configuring the integration
 
@@ -35,18 +35,18 @@ Once your subscription has been approved, you can find your Collos subscription 
 5. Enter a **Process ID**, for example `rssi` or `tdoa`
 6. Select an **Access Key**. This key should have at least the `devices` rights to update the location in the device registry
 7. In **URL**, enter one of the Collos API endpoints:
-   - LoRa TDOA + WiFi:
-     ```
-     https://api.preview.collos.org/localization-lora-recipes/v1/loraWifi
-     ```
-   - LoRa TDOA:
-     ```
-     https://api.preview.collos.org/semtech-localization-algorithms/v1/tdoa
-     ```
-   - LoRa RSSI:
-     ```
-     https://api.preview.collos.org/semtech-localization-algorithms/v1/rssi
-     ```
+  - LoRa TDOA + WiFi:
+    ```
+    https://api.preview.collos.org/localization-lora-recipes/v1/loraWifi
+    ```
+  - LoRa TDOA:
+    ```
+    https://api.preview.collos.org/semtech-localization-algorithms/v1/tdoa
+    ```
+  - LoRa RSSI:
+    ```
+    https://api.preview.collos.org/semtech-localization-algorithms/v1/rssi
+    ```
 8. Enter your **Collos subscription key**
 9. Enter the **Cayenne channel**. If provided, the integration will send the location of your devices to [myDevices Cayenne](https://cayenne.mydevices.com) as GPS on the specified channel
 10. Click **Add integration**

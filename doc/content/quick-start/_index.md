@@ -90,4 +90,3 @@ Once you have your LoRaWAN network setup, you can use available integrations to 
 - [What is The Things Industries, The Things Network and The Things Stack?](https://www.thethingsindustries.com/docs/getting-started/what-is-tts/)
 - [The Things Stack Getting Started playlist](https://www.youtube.com/playlist?list=PLM8eOeiKY7JWTf-d4XmRuRjK1ZFaoinwM)
 - [The Things Network Forum](https://www.thethingsnetwork.org/forum/)
-

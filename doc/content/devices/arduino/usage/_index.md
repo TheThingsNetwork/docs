@@ -10,11 +10,11 @@ To use the library:
 1.  Follow [setup]({{< relref "../ide/#setup" >}}) to install the library in Arduino IDE.
 2.  Select **Sketch > Include Library > TheThingsNetwork** to include it.
 
-	Or simply copy and paste:
+  Or simply copy and paste:
   
-	```c
-	#include <TheThingsNetwork.h>
-	```
+  ```c
+  #include <TheThingsNetwork.h>
+  ```
 
 ## Initialize
 

@@ -18,24 +18,24 @@ A common reason to use IoT platforms such as AWS IoT is to store uplink messages
 5. Enter a name for the rule, e.g. `store`
 6. Under **Message source**, you can query JSON messages that are published on MQTT in a SQL-like format
 
-   * In **Attribute**, enter `dev_id, metadata.time, payload_raw` to query the device ID, the time and the raw payload. You can add payload fields too, for example `payload_fields.temperature`
-   * In **Topic filter**, enter `+/devices/+/up` (see [messages]({{< relref "../test-messages/#uplink-messages" >}}))
-   * Optionally, in **Condition**, enter a filter. Leave blank to store everything
+  * In **Attribute**, enter `dev_id, metadata.time, payload_raw` to query the device ID, the time and the raw payload. You can add payload fields too, for example `payload_fields.temperature`
+  * In **Topic filter**, enter `+/devices/+/up` (see [messages]({{< relref "../test-messages/#uplink-messages" >}}))
+  * Optionally, in **Condition**, enter a filter. Leave blank to store everything
 
-   ![Act message source](../act-message-source.png)
+  ![Act message source](../act-message-source.png)
 
 7. Click **Add action**
 8. Select **Split messages into multiple columns of a database table (DynamoDBv2)**
 9. Under **Table name**, click **Create a new resource**. A new browser tab opens
 
-   1. Click **Create table**
-   2. Enter any **Table name**, for example `my-app`
-   3. As **Partition key**, enter `dev_id`
-   4. Optionally, check **Add sort key** and enter `time` to sort by time
+  1. Click **Create table**
+  2. Enter any **Table name**, for example `my-app`
+  3. As **Partition key**, enter `dev_id`
+  4. Optionally, check **Add sort key** and enter `time` to sort by time
 
       ![Create table](../create-table.png)
 
-   5. Click **Create** and leave this tab open
+  5. Click **Create** and leave this tab open
 
 10. Go back to the AWS IoT tab, and click refresh next to **Table name**
 11. Select your newly created table

@@ -40,4 +40,3 @@ TTN is transitioning from DST Root X3 to the Let's Encrypt ISRG Root X1 Trust. D
 TTN will continue to use the Let's Encrypt DST Root X3 Trust until it expires in 2021. Download it [here](https://letsencrypt.org/certs/lets-encrypt-x3-cross-signed.pem).
 
 > Unfortunately, if you use a single certificate and that certificate expires, your gateway will stop connecting until you update the certificate. The minimal and complete certificate lists contain the ISRG Root X1 and DST Root X3 certificates, but some gateways do not support concatenated certificate lists, even though they are part of the [ietf spec](https://tools.ietf.org/html/rfc1421) :(
-

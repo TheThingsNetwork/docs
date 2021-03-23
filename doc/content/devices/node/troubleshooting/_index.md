@@ -24,13 +24,13 @@ SparkFun has a [guide](https://learn.sparkfun.com/tutorials/pro-micro--fio-v3-ho
 1. Prepare by opening the Arduino IDE. Open a new blank sketch, go to **Tools > Boards > SparkFun Pro Micro** and then **Tools > Processor > ATmega32U4 (3.3V, 8Mhz)** for The Things Node (choose Arduino Leonardo if you are using The Things Uno). Click on verify.
 
 2. Open up the back of The Things Node using a Phillips screw driver.
-   ![](../node-open-case.jpg)
+  ![](../node-open-case.jpg)
 
 3. Remove the batteries, and remove the two Torx screws inside the battery holder. You will need a Torx #10 screw driver for this.
-   ![](../node-remove-pcb.jpg)
+  ![](../node-remove-pcb.jpg)
 
 4. Remove the PCB from the case. On the rear side you will see the Reset button (marked as **S2**) and the LED (marked as **D2**).
-   ![](../node-reset-led.jpg)
+  ![](../node-reset-led.jpg)
 
 5. Plug in a USB cable between the Node and your computer. The Node should power up and the LED should blink or stay on, depending on what code is on it. Press the reset button twice, with about a second between presses. If you were successful, the LED should start fading on and off.
 
@@ -38,7 +38,7 @@ SparkFun has a [guide](https://learn.sparkfun.com/tutorials/pro-micro--fio-v3-ho
 
 7. While the device is in bootloader mode, inside the Arduino IDE open a blank sketch and click on upload. If this takes too long and the Node exits bootloader mode before the Arduino IDE can upload the new blank sketch, try first clicking on **Upload**, and then put the device into bootloader mode.
 
-   Alternatively you can also use **avrdude** to perform an erase of the microcontroller. This is much quicker than using the Arduino IDE to upload a new sketch, but needs some more knowledge of avrdude and AVR microcontrollers.
-   `avrdude -patmega32u4 -cavr109 -P/dev/ttyACM0 -b57600 -e`
+  Alternatively you can also use **avrdude** to perform an erase of the microcontroller. This is much quicker than using the Arduino IDE to upload a new sketch, but needs some more knowledge of avrdude and AVR microcontrollers.
+  `avrdude -patmega32u4 -cavr109 -P/dev/ttyACM0 -b57600 -e`
 
 8. After you have programmed the device with a blank sketch, or erased it, you should be able to program it normally.

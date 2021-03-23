@@ -130,8 +130,8 @@ s.setblocking(False)
 s.send(bytes([1, 2, 3]))
 s.settimeout(3.0) # configure a timeout value of 3 seconds
 try:
-   rx_pkt = s.recv(64)   # get the packet received (if any)
-   print(rx_pkt)
+  rx_pkt = s.recv(64)   # get the packet received (if any)
+  print(rx_pkt)
 except socket.timeout:
   print('No packet received')
 ```

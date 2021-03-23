@@ -79,11 +79,11 @@ Devices need to be registered with an application to communicate with. Let's add
 
 1.  On [console.thethingsnetwork.org](https://console.thethingsnetwork.org/), click [add application](https://console.thethingsnetwork.org/applications/add).
 
-	* For **Application ID**, choose a unique ID of lower case, alphanumeric characters and nonconsecutive `-` and `_`.
-	* For **Description**, enter anything you like.
-	* Leave the **Handler registration** on the default selected value, unless you are going to use this application in a different region than your default region.
+  * For **Application ID**, choose a unique ID of lower case, alphanumeric characters and nonconsecutive `-` and `_`.
+  * For **Description**, enter anything you like.
+  * Leave the **Handler registration** on the default selected value, unless you are going to use this application in a different region than your default region.
 
-	![Add Application](../../../applications/add-application.png)
+  ![Add Application](../../../applications/add-application.png)
 
 2.  Click **Add application** to finish.
 

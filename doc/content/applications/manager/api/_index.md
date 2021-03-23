@@ -475,4 +475,3 @@ SimulatedUplinkMessage is a simulated uplink message
 | `last_seen` | `int64` | When the device was last seen (Unix nanoseconds) |
 | `nwk_s_key` | `bytes` | The NwkSKey is a 16 byte session key that is known by the device and the network. It is used for routing and MAC related functionality. This key is negotiated during the OTAA join procedure, or statically configured using ABP. |
 | `uses32_bit_f_cnt` | `bool` | The Uses32BitFCnt option indicates that the device keeps track of full 32 bit frame counters. As only the 16 lsb are actually transmitted, the 16 msb will have to be inferred. |
-

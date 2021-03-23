@@ -225,14 +225,14 @@ To configure our gateway we need to add it in the TTN console.
 
 4. In the form enter the following values:
 
-	* For 'Gateway ID', choose a unique name for the gateway, allowed A-Z, a-z, 0-9 and -
-	* Do **not** check 'legacy packet forwarder'
-	* For 'Description', enter a human read-able description
-	* For 'Frequency Plan', choose the one appropriate for your location, for Amsterdam use Europe 868MHz
-	* For 'Router', choose the one closest to you. Routers prefixed with 'ttn-' are public ones operated by The Things Network. 
-	switch-router is based in Switzerland and meshed-router is Australian.
-	* For 'Location', choose your location on the map
-	* For 'Antenna Placement', choose Indoor/Outdoor as appropriate
+  * For 'Gateway ID', choose a unique name for the gateway, allowed A-Z, a-z, 0-9 and -
+  * Do **not** check 'legacy packet forwarder'
+  * For 'Description', enter a human read-able description
+  * For 'Frequency Plan', choose the one appropriate for your location, for Amsterdam use Europe 868MHz
+  * For 'Router', choose the one closest to you. Routers prefixed with 'ttn-' are public ones operated by The Things Network. 
+  switch-router is based in Switzerland and meshed-router is Australian.
+  * For 'Location', choose your location on the map
+  * For 'Antenna Placement', choose Indoor/Outdoor as appropriate
 
 ![](images/image00085.png)
 

@@ -24,4 +24,3 @@ The RAK7243C Pilot Gateway is ideal for prototyping, proof-of concept evaluation
 * Full LoRa Global band support (EU433, CN470, IN865, EU868, US915, AU915, AS920, KR920, and AS923).
 * Housing with top cover, body, bottom cover with riveted motherboard standoff (the top acts as a heat-sink).
 * Includes Pi ready 'ID EEPROM', GPIO setup and device tree can be automatically configured from vendor information.
-

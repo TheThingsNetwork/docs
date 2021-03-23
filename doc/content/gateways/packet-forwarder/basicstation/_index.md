@@ -6,4 +6,3 @@ Basics Station is Semtech's new state-of-the-art gateway packet-forwarder based 
 For more details, refer to the detailed docs [here](https://doc.sm.tc/station/).
 
 See instructions for connecting Basics Station gateways [here]({{< relref "../../basics-station" >}}).
-

@@ -11,7 +11,7 @@ weight: 1000
 
 This section covers everything you need to know to get started with LoRaWAN and improve your knowledge of the technology.
 
-   ![LoRaWAN icon](icon.png)
+  ![LoRaWAN icon](icon.png)
 
 ### Everything you need to know about LoRaWAN in 60 minutes
 

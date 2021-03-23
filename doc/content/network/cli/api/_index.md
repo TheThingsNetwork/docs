@@ -86,16 +86,16 @@ $ ttnctl applications info
 AppID:   test
 Name:    Test application
 EUIs:
-       - 0000000000000000
+      - 0000000000000000
 
 Access Keys:
-       - Name: default key
-         Key:  FZYr01cUhdhY1KBiMghUl+/gXyqXhrF6y+1ww7+DzHg=
-         Rights: messages:up:r, messages:down:w
+      - Name: default key
+        Key:  FZYr01cUhdhY1KBiMghUl+/gXyqXhrF6y+1ww7+DzHg=
+        Rights: messages:up:r, messages:down:w
 
 Collaborators:
-       - Name: yourname
-         Rights: settings, delete, collaborators
+      - Name: yourname
+        Rights: settings, delete, collaborators
 ```
 
 ### ttnctl applications list
@@ -110,7 +110,7 @@ ttnctl applications list can be used to list applications.
 $ ttnctl applications list
   INFO Found one application:
 
- 	ID  	Description     	EUIs	Access Keys	Collaborators
+  ID  	Description     	EUIs	Access Keys	Collaborators
 1	test	Test application	1   	1          	1
 ```
 
@@ -297,19 +297,19 @@ $ ttnctl devices info test
   INFO Found device
 
   Application ID: test
-       Device ID: test
-       Last Seen: never
+      Device ID: test
+      Last Seen: never
 
     LoRaWAN Info:
 
-     AppEUI: 70B3D57EF0000024
-     DevEUI: 0001D544B2936FCE
+    AppEUI: 70B3D57EF0000024
+    DevEUI: 0001D544B2936FCE
     DevAddr: 26001ADA
-     AppKey: <nil>
+    AppKey: <nil>
     AppSKey: D8DD37B4B709BA76C6FEC62CAD0CCE51
     NwkSKey: 3382A3066850293421ED8D392B9BF4DF
-     FCntUp: 0
-   FCntDown: 0
+    FCntUp: 0
+  FCntDown: 0
     Options:
 ```
 
@@ -539,7 +539,7 @@ ttnctl gateways list can be used to list the gateways you have access to
 
 ```
 $ ttnctl gateways list
- 	ID  	Activated	Frequency Plan	Coordinates
+  ID  	Activated	Frequency Plan	Coordinates
 1	test	true		US				(52.3740, 4.8896)
 ```
 
@@ -588,7 +588,7 @@ $ ttnctl user
 
             Username: yourname
                 Name: Your Name
-               Email: your@email.org
+              Email: your@email.org
 
   INFO Login credentials valid until Sep 20 09:04:12
 ```
@@ -635,4 +635,3 @@ Password: <entering password>
 ttnctl version gets the build and version information of ttnctl
 
 **Usage:** `ttnctl version`
-

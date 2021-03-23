@@ -13,4 +13,3 @@ At Ursalink we are passionate about the connectivity of “things” to the clou
 Find the documentation on how to connect:
 - [Ursalink UG85 Indoor Gateway](https://www.thethingsnetwork.org/docs/gateways/ursalink/ug85.html)
 - [Ursalink UG87 Outdoor Gateway](https://www.thethingsnetwork.org/docs/gateways/ursalink/ug87.html)
-

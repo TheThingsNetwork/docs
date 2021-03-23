@@ -166,12 +166,12 @@ Now that we are connected, let's listen for new device activations.
       dev_eui: '0004A30B001B7AD2',
       dev_addr: '2601205D',
       metadata:
-       { time: '2016-09-08T13:57:03.415027706Z',
-         frequency: 868.1,
-         modulation: 'LORA',
-         data_rate: 'SF7BW125',
-         coding_rate: '4/5',
-         gateways: [ [Object] ] } }
+      { time: '2016-09-08T13:57:03.415027706Z',
+        frequency: 868.1,
+        modulation: 'LORA',
+        data_rate: 'SF7BW125',
+        coding_rate: '4/5',
+        gateways: [ [Object] ] } }
     ```
 
     Use `Ctrl C` to terminate the script.    
@@ -237,9 +237,9 @@ The most common [Class A](https://www.lora-alliance.org/What-Is-LoRa/Technology)
                 JSONObject response = new JSONObject().put("led", !_data.equals("true"));
 
                 /**
-                 * If you don't have an encoder payload function:
-                 * client.send(_devId, _data.equals("true") ? new byte[]{0x00} : new byte[]{0x01}, 0);
-                 */
+                * If you don't have an encoder payload function:
+                * client.send(_devId, _data.equals("true") ? new byte[]{0x00} : new byte[]{0x01}, 0);
+                */
                 System.out.println("Sending: " + response);
                 client.send(_devId, response, 0);
             } catch (Exception ex) {

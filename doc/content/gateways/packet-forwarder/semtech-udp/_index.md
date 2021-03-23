@@ -39,10 +39,10 @@ Unless you're running the network yourself on specific ports, the **ports** will
 ```json
 {
   [...]
-	"gateway_conf": {
-		"server_address": "router.eu.thethings.network",
-		"serv_port_up": 1700,
-		"serv_port_down": 1700,
+  "gateway_conf": {
+    "server_address": "router.eu.thethings.network",
+    "serv_port_up": 1700,
+    "serv_port_down": 1700,
     [...]
   }
 }

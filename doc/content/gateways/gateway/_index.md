@@ -62,7 +62,3 @@ Once the gateway is configured you can manage the rest of the settings through t
 > There is a button inside the gateway. To open it, put it down with the antenna socket at the top and (gently) lift the left and right sides of the white shield. (To close align the lid and push firmly at the sides only you hear it snap in place)
 
 > To reset, power on while pressing the ‘Mode button’ shown in the picture above (it is the pink one in the middle of the PCB). All leds should flash for some time.]
-
-
-
-

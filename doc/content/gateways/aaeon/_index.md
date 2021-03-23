@@ -12,4 +12,3 @@ Waiting for the TTN V3 stack, we have included into this image the Semtech UDP p
 
 
 ![AAEON AIOT-ILRA01](aaeon.jpg)
-

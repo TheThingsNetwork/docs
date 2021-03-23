@@ -53,7 +53,7 @@ indent_size = unset
 indent_style = unset
 insert_final_newline = false
 
-[{doc/themes/the-things-stack/node_modules,doc/themes/the-things-stack/yarn.lock}]
+[{doc/themes/the-things-stack/node_modules,doc/themes/the-things-stack/yarn.lock, *.bin}]
 # Ignore packages and generated files
 max_line_length = unset
 indent_style = unset

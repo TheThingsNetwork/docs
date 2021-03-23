@@ -360,4 +360,3 @@ Where `<basic_auth>` is the basic auth digest for your client (`client_id` and
 `client_secret`) and `<auth_code>` is the authorization code received from step 1.
 
 [jwt]: https://jwt.io
-

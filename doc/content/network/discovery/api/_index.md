@@ -225,4 +225,3 @@ The metadata to add or remove from an announement
 
 A generic empty message that you can re-use to avoid defining duplicated
 empty messages in your APIs.
-

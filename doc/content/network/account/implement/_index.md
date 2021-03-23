@@ -53,7 +53,7 @@ server.  To implement these, you need a couple of things:
 1. A public-private key pair to sign the JWTs
 2. An endpoint where the handler can fetch the public key.
 3. JWTs that are signed using the private key, and have claims that adhere to
-   the correct schema.
+  the correct schema.
 
 The handler fetches the public key on startup by performing the HTTP request:
 
@@ -116,4 +116,3 @@ The available rights for an application access token are the following:
 - `settings`: Manage application settings on the handler
 - `delete`: Unregister/delete the application on the handler
 - `devices`: View and edit devices of the application on the handler
-

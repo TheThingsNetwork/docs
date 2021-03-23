@@ -205,7 +205,7 @@ client.set_custom_payload_functions(encoder="", decoder="", validator="", conver
 
 ```python
 decoder_fn = """function Decoder(payload) {
-   return { led: 1 };
+  return { led: 1 };
 }"""
 client.set_custom_payload_functions(decoder=decoder_fn)
 ```

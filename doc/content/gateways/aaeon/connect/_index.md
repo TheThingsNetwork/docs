@@ -48,4 +48,3 @@ Replace TTN GATEWAY ID, with the Gateway EUI (example `AB01FFBBCC110011`), press
 
 Restart the system and at the following reboot the gateway will connect to TTN console.
 There is no need o login Ubilinux to enable the connection.
-

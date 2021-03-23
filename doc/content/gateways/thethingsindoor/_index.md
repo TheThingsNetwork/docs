@@ -47,8 +47,8 @@ Need help or more info? Drop us a [line](mailto:hardware@thethingsindustries.com
 6. Select the WiFi network and enter the password if it's a closed network.
 7. Select the "Save and Reboot" option.
 8. If your config is right, 
-   * The gateway will blink GREEN for a few seconds while it connects to this network.
-   * Then, it will blink GREEN<->RED for a few seconds while it connects to the [CUPS](https://doc.sm.tc/station/cupsproto.html) endpoint and fetches the necessary information to connect to the [LNS](https://doc.sm.tc/station/tcproto.html) traffic endpoint.
+  * The gateway will blink GREEN for a few seconds while it connects to this network.
+  * Then, it will blink GREEN<->RED for a few seconds while it connects to the [CUPS](https://doc.sm.tc/station/cupsproto.html) endpoint and fetches the necessary information to connect to the [LNS](https://doc.sm.tc/station/tcproto.html) traffic endpoint.
 9.  If your configuration was successful, the LED will be solid GREEN which means that the gateway is connected to the LoRaWAN network and is ready to handle packets.
 
 
@@ -56,7 +56,7 @@ Need help or more info? Drop us a [line](mailto:hardware@thethingsindustries.com
 
 1. To connect this gateway to the The Things Network console, register the gateway using the *I'm using the Legacy Packet Forwarder* option. 
 2. The EUI of the gateway is NOT the WiFi MAC address printed on the back of the gateway but is derived from the first number on the top of the sticker below the QR code.
-   * This number can also be obtained from the WiFi Setup Page
+  * This number can also be obtained from the WiFi Setup Page
     ![TTIG_EUI](TTIG_EUI.jpg)
 3. To derive this take the code for example *5BA0CB80042B* and insert *FFFE* to after the first 6 characters to make it a 64bit EUI such as *5BA0CBFFFE80042B*
 4. This is the value to be entered in the Gateway ID field on the [console](https://console.thethingsnetwork.org).

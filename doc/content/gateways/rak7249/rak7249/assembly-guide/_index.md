@@ -54,5 +54,3 @@ UI password: **root**
 ![Figure 4: RAK7249 Macro Outdoor Gateway Panel 1](../images/rak7249_panel1.png)
 
 ![Figure 5: RAK7249 Macro Outdoor Gateway Panel 2](../images/rak7249_panel2.png)
-
-

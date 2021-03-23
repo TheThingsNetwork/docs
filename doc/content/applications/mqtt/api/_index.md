@@ -65,27 +65,27 @@ Note: Some values may be omitted if they are `null`, `false`, `""` or `0`.
 
 ```go
 import (
-	"github.com/TheThingsNetwork/go-utils/log"
-	"github.com/TheThingsNetwork/go-utils/log/apex"
-	"github.com/TheThingsNetwork/ttn/core/types"
-	"github.com/TheThingsNetwork/ttn/mqtt"
+  "github.com/TheThingsNetwork/go-utils/log"
+  "github.com/TheThingsNetwork/go-utils/log/apex"
+  "github.com/TheThingsNetwork/ttn/core/types"
+  "github.com/TheThingsNetwork/ttn/mqtt"
 )
 
 func main() {
-	ctx := apex.Stdout().WithField("Example", "Go Client")
-	log.Set(ctx)
+  ctx := apex.Stdout().WithField("Example", "Go Client")
+  log.Set(ctx)
 
-	client := mqtt.NewClient(ctx, "ttnctl", "my-app-id", "my-access-key", "<Region>.thethings.network:1883")
-	if err := client.Connect(); err != nil {
-		ctx.WithError(err).Fatal("Could not connect")
-	}
-	token := client.SubscribeDeviceUplink("my-app-id", "my-dev-id", func(client mqtt.Client, appID string, devID string, req types.UplinkMessage) {
-		// Do something with the uplink message
-	})
-	token.Wait()
-	if err := token.Error(); err != nil {
-		ctx.WithError(err).Fatal("Could not subscribe")
-	}
+  client := mqtt.NewClient(ctx, "ttnctl", "my-app-id", "my-access-key", "<Region>.thethings.network:1883")
+  if err := client.Connect(); err != nil {
+    ctx.WithError(err).Fatal("Could not connect")
+  }
+  token := client.SubscribeDeviceUplink("my-app-id", "my-dev-id", func(client mqtt.Client, appID string, devID string, req types.UplinkMessage) {
+    // Do something with the uplink message
+  })
+  token.Wait()
+  if err := token.Error(); err != nil {
+    ctx.WithError(err).Fatal("Could not subscribe")
+  }
 }
 ```
 

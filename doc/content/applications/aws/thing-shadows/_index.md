@@ -35,7 +35,7 @@ This function returns `light` and `temperature` as **telemetry** and `color` as 
 4. Go to a thing that reports shadow state
 5. Click **Shadow** to see its shadow:
 
-   ![Reported shadow](../reported-shadow.png)
+  ![Reported shadow](../reported-shadow.png)
 
 ## Send Shadow Delta Updates
 
@@ -57,17 +57,17 @@ This function returns the color index of the specified color in `state`.
 1. Still in the AWS IoT thing's **Shadow**, click **Edit** next to **Shadow Document**
 2. Add a `desired` object:
 
-   ![Desired state](../desired-state.png)
+  ![Desired state](../desired-state.png)
 
 3. Click **Save**. This triggers a shadow delta update
 4. When this happens, you will see the following in The Things Network Console's **Data** of your application:
 
-   ![Shadow delta update](../shadow-delta-update.png)
+  ![Shadow delta update](../shadow-delta-update.png)
 
-   The integration schedules a downlink message with the shadow delta, to set the `color` to `blue` (row 3). This is sent to the device (row 2). The device changes its color and sends `blue` in the next message (row 1).
+  The integration schedules a downlink message with the shadow delta, to set the `color` to `blue` (row 3). This is sent to the device (row 2). The device changes its color and sends `blue` in the next message (row 1).
 
 5. The thing shadow is automatically updated in AWS IoT:
 
-   ![Reported shadow](../reported-desired-shadow.png)
+  ![Reported shadow](../reported-desired-shadow.png)
 
 > AWS IoT has extensive documentation on reported, desired and delta thing shadow states. In this guide, we use manual interaction. Programmatic interaction is easy and highly scalable by using the AWS IoT HTTP API and MQTT protocols. [See Using Thing Shadows](https://docs.aws.amazon.com/iot/latest/developerguide/using-thing-shadows.html)

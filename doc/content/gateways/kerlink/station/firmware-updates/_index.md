@@ -90,4 +90,3 @@ Have a look on the Kerlink Wiki: http://wikikerlink.fr/lora-station
 - v3.6 produsb:  
 [produsb_wirnet_v3.6.zip](https://raw.githubusercontent.com/TheThingsNetwork/kerlink-station-firmware/legacy/dota/produsb_wirnet_v3.6.zip)
 - v3.6 firmware: [usbflashdrive_wirmav2_wirnet_v3.6.zip](https://raw.githubusercontent.com/TheThingsNetwork/kerlink-station-firmware/legacy/dota/usbflashdrive_wirmav2_wirnet_v3.6.zip)
-

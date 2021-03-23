@@ -17,7 +17,7 @@ Synchronization happens in two ways: devices on The Things Network are created a
 4. Here you see all devices of your application in The Things Network
 5. Click on one device to see its attributes:
 
-   ![Device Attributes](../device-attributes.png)
+  ![Device Attributes](../device-attributes.png)
 
 ## Create Thing in AWS IoT
 
@@ -29,14 +29,14 @@ Synchronization happens in two ways: devices on The Things Network are created a
 6. Enter the searchable attributes **app_id**, **dev_eui** and **dev_id**
 7. Add the attributes **app_eui** and **app_key** to enable Over The Air Activation (OTAA)
 
-   > The **app_eui** and **dev_eui** are 8 byte hex values and **app_key** is a 16 byte hex value.
+  > The **app_eui** and **dev_eui** are 8 byte hex values and **app_key** is a 16 byte hex value.
 
-   ![Create Thing](../create-thing.png)
+  ![Create Thing](../create-thing.png)
 
 8. Click **Next**
 9. Click **Create thing without certificate**
 
-   > The integration has full access to AWS IoT; there is no need for a certificate per thing.
+  > The integration has full access to AWS IoT; there is no need for a certificate per thing.
 
 10. Log in to **The Things Network Console**
 11. Under your application, go to **Devices**

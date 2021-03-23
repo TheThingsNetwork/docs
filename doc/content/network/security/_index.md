@@ -13,4 +13,3 @@ Users need an account to use The Things Network. On the public community network
 ## Applications
 
 Users can create applications and they can authorize other users access to applications. Applications are identified by a unique Application ID. Each Application has one or more Access Keys to access application data and/or to manage devices.
-

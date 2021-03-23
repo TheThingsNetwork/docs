@@ -231,5 +231,3 @@ function Decoder(bytes, port) {
 * Create a public dashboard with all devices combined and share the public dashboard 
 
 > Having difficulties with creating this dashboard? Have a look at the detailed documentation on [myDevices Cayenne](https://www.thethingsnetwork.org/docs/applications/cayenne/)
-
-

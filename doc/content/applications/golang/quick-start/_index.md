@@ -32,17 +32,17 @@ We declare the package `main` and import a number of dependencies that we'll use
 package main
 
 import (
-	"encoding/hex"
-	"encoding/json"
-	"fmt"
-	"io/ioutil"
-	"os"
+  "encoding/hex"
+  "encoding/json"
+  "fmt"
+  "io/ioutil"
+  "os"
 
-	ttnsdk "github.com/TheThingsNetwork/go-app-sdk"
-	ttnlog "github.com/TheThingsNetwork/go-utils/log"
-	"github.com/TheThingsNetwork/go-utils/log/apex"
-	"github.com/TheThingsNetwork/go-utils/random"
-	"github.com/TheThingsNetwork/ttn/core/types"
+  ttnsdk "github.com/TheThingsNetwork/go-app-sdk"
+  ttnlog "github.com/TheThingsNetwork/go-utils/log"
+  "github.com/TheThingsNetwork/go-utils/log/apex"
+  "github.com/TheThingsNetwork/go-utils/random"
+  "github.com/TheThingsNetwork/ttn/core/types"
 )
 ```
 
@@ -50,7 +50,7 @@ Next, we declare the name of our application as a constant:
 
 ```go
 const (
-	sdkClientName = "my-amazing-app"
+  sdkClientName = "my-amazing-app"
 )
 ```
 

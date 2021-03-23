@@ -19,7 +19,7 @@ admin@gateway:/# ps -A
     1 ??       00:00:00 init
     6 ??       00:00:00 poly_pkt_fwd
     8 pts/0    00:00:00 sh
-   10 pts/0    00:00:00 ps
+  10 pts/0    00:00:00 ps
 ```
 
 You will usually identify the packet forwarder process with the `pkt_fwd` keyword: common names for the process are `poly_pkt_fwd`, `mp_pkt_fwd`, `basic_pkt_fwd` or `gps_pkt_fwd`.

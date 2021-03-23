@@ -25,9 +25,3 @@ It is recommended to mount the gateway outside as it’ll improve the coverage. 
 - The antenna rests upon the gateway frame in this case.
 
 ![Poll (with u-bolt)](../mount-ubolt.png)
-
-
-
-
-
-

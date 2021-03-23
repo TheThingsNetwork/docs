@@ -54,15 +54,15 @@ After encoding data with CayenneLPP, have a look at the console to change the **
 1. Create an account on [myDevices](https://mydevices.com/)
 2. Log-in and click on **LoRa**
 
-   <img src="myDevices-lora.png" width="130">
+  <img src="myDevices-lora.png" width="130">
 
 3. Select **The Things Network** at the bottom of the left menu bar, click on **Cayenne LPP** and fill in your **DevEUI** of your device (which you can find in the [**Console**](https://console.thethingsnetwork.org/applications))
-   ![add-device](cayenne-add-device.png)
+  ![add-device](cayenne-add-device.png)
 
 ## Add the myDevices Cayenne integration in the Console
 
 1. Go to your application in the [**Console**](https://console.thethingsnetwork.org/applications) and add the MyDevices integration via **Add Integration**
-   ![myDevices-dashboard](integrations.png)
+  ![myDevices-dashboard](integrations.png)
 
 2. Think of a name for your **Process ID**
 3. Add the integration

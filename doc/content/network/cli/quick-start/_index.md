@@ -67,7 +67,7 @@ Show your applications with [`ttnctl applications list`]({{< relref "../api/#ttn
 ```bash
 ❯ ttnctl applications list
   INFO Found 1 application(s)
-   ID           Description      EUIs  Access Keys  Collaborators
+  ID           Description      EUIs  Access Keys  Collaborators
 1  hello-world  Hello World App  1     1            1
 ```
 
@@ -90,7 +90,7 @@ The newly added application has been selected for further commands automatically
 ❯ ttnctl applications select
   INFO Found 2 applications:
 
-  	ID                  	Description
+    ID                  	Description
 1	hello-world        	Hello World App
 2	bye-world        	Bye World App
 
@@ -153,19 +153,19 @@ You can also get information about a specific device with [`ttnctl devices info`
   INFO Found device
 
   Application ID: bye-world
-       Device ID: my-device
-       Last Seen: never
+      Device ID: my-device
+      Last Seen: never
 
     LoRaWAN Info:
 
-     AppEUI: 70B3D57EF000002E
-     DevEUI: 00995D884BEBBAB9
+    AppEUI: 70B3D57EF000002E
+    DevEUI: 00995D884BEBBAB9
     DevAddr: 160115EB
-     AppKey: <nil>
+    AppKey: <nil>
     AppSKey: 48F41F0491B23C804AEB9826162EB9AD
     NwkSKey: D7A883537558946974B8DE31D4671617
-     FCntUp: 0
-   FCntDown: 0
+    FCntUp: 0
+  FCntDown: 0
     Options: FCntCheckEnabled, 32BitFCnt
 ```
 

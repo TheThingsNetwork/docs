@@ -63,4 +63,3 @@ The payload fields value needs to be a **valid JSON Object**, and Tago will send
 You can choose between these two data formats, or you can send both.
 
 When your data is sent to The Things Network and scheduled to send to your device, your parameter will be **marked as sent**, to **send it again**, mark the parameter as not sent.
-

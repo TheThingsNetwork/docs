@@ -12,7 +12,7 @@ The integration process reports metrics to AWS CloudWatch. These metrics include
 5. Click **AppID, DiscoveryServer** to view the metrics from the integration
 6. Selecting the metrics of interest adds them to the chart
 
-   ![metrics](../metrics.png)
+  ![metrics](../metrics.png)
 
 7. In **Graphed metrics** change the **Statistic** to **Sum** to view count per time interval.
 

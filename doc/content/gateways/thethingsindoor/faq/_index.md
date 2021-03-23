@@ -69,4 +69,3 @@ The following connections must be permitted in the firewall.
 | IPv4       | TCP      | rjs.sm.tc                                    | 9191 | CUPS        |
 | IPv4       | TCP      | mh.sm.tc                                     | 7007 | CUPS Backup |
 | IPv4       | UDP      | your DNS server(s)                           | 53   | DNS         |
-
