@@ -1,0 +1,159 @@
+.container {
+  @media (max-width: $desktop) {
+  padding-left: $content-padding-side;
+  padding-right: $content-padding-side;
+  }
+}
+
+.is-not-wrapped {
+  white-space: nowrap;
+}
+
+.is-borderless {
+  border: 0 !important
+}
+
+.table.has-text-in-td-centered td {
+  text-align: center;
+}
+
+.schema {
+  margin: 100px 0px;
+}
+
+.content-intro, .title-intro {
+  display: flex;
+  margin: auto;
+  max-width: 650px;
+  text-align: center;
+}
+
+.has-vertical-space {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.content {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $title-family;
+    color: $title-color;
+  }
+  figure {
+    cursor: pointer;
+    transition: transform ease-out 150ms 150ms;
+
+    &:hover {
+      transform: scale(1.01);
+    }
+
+    &.float {
+      @media (max-width: 620px) {
+        max-width: none;
+      }
+      float: right;
+      @media (min-width: 621px) {
+        max-width: 40%;
+      }
+    }
+
+    & > img {
+      max-height: 500px;
+      object-fit: contain;
+    }
+
+    &:not(.plain) > img {
+      box-shadow: $card-shadow;
+    }
+  }
+
+  table {
+    display: block;
+    overflow: auto;
+  }
+
+}
+
+details + p {
+  margin-top: 1em;
+}
+
+details + blockquote {
+  margin-top: 1em;
+}
+
+.glossary {
+  .term, .term-abbr, .term-alt{
+    background-color: #ececec;
+    padding: 0.25rem;
+    font-weight: bold;
+  }
+  dd {
+    margin: 0.5em 0 0.5em 0;
+  }
+}
+
+.frequency-plan {
+  .id {
+    background-color: $white-ter;
+    padding: 0.25rem;
+    font-weight: bold;
+  }
+  dd {
+    margin: 0.5em 0 0.5em 0;
+  }
+}
+
+.feedback {
+  text-align: center;
+  background-color: $white-ter;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+table.fixed { table-layout:fixed; }
+table.fixed td { overflow: auto; }
+
+// Fix for anchor link headbutting https://css-tricks.com/hash-tag-links-padding/
+.content {
+  h2::before, h3::before, h4::before {
+    display: block;
+    content: " ";
+    margin-top: -$navbar-height - 1rem;
+    height: $navbar-height + 1rem;
+    visibility: hidden;
+    pointer-events: none;
+    z-index: -1;
+  }
+}
+
+.has-ttn-navbar-top {
+  padding-top: 65px;
+}
+
+.is-fullwidth {
+  width: 100%;
+}
+
+.learn-header {
+  display: table;
+  width: 100%;
+  .text, .span {
+    vertical-align: middle;
+    display: table-cell;
+  }
+  span {
+    font-size: 120px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}
+
+.lorawan-image {
+  width: 300px;
+}
+
+.section-lorawan {
+  @media (min-width: $tablet) {
+  margin-top: -6rem;
+  }
+}

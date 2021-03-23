@@ -1,0 +1,10 @@
+{
+  "name": "hugo-theme-the-things-stack",
+  "version": "3.10.0-dev",
+  "private": true,
+  "description": "Hugo Theme for The Things Stack",
+  "dependencies": {
+    "bulma": "^0.9.1"
+  },
+  "devDependencies": {}
+}

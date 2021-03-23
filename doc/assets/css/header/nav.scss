@@ -1,0 +1,39 @@
+#migration-text {
+  color: $white;
+  font-weight: bold;
+  padding-right: 30px;
+}
+
+#migration-button {
+  border: 1px $white;
+  border-style: solid;
+}
+
+#migration-info {
+  width: 100vw;
+  height: $banner-height;
+  font-size: 15px;
+  justify-content: center;
+  align-items: center;
+  background-color: $blue;
+  display: none; // or `flex`
+}
+
+.navbar {
+  display: block;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.navbar.is-fixed-top {
+  background-color: $white;
+}
+
+a.navbar-item {
+  font-family: $family-sans-serif;
+  border-radius: 5px;
+  margin: 10px 5px;
+}
+
+.has-navbar-banner-top {
+  padding-top: $navbar-height + $banner-height!important;
+}

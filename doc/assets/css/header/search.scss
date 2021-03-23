@@ -1,0 +1,20 @@
+.search-container {
+  margin: none;
+  padding-top: $content-padding-top;
+  padding-bottom: $content-padding-top;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.search-bar {
+  border: solid 1px #888888;
+  background-color: white;
+  width: 55vw;
+  padding: 28px;
+  border-radius: 5px;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.1));
+  font-size: 20px;
+  left: -1px; // Hack for left-justified dropdown
+}

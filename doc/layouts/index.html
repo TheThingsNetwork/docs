@@ -1,0 +1,107 @@
+{{ define "main" }}
+<section class="hero is-medium" style="background-image: url({{ "img/header-img-learn.png" | relURL }})">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1 class="title is-size-1 has-text-white">
+        Learn
+      </h1>
+      <p class="subtitle has-text-white">
+        Learn all about LoRaWAN and The Things Network!
+      </p>
+    </div>
+  </div>
+</section>
+
+{{ with .Site.GetPage "/lorawan" }}
+<section class="section section-lorawan">
+  <div class="container">
+    <div class="card has-radius is-fullwidth">
+      <div class="card-content">
+        <a href="{{ .Permalink }}" class="is-flex is-justify-content-center">
+        {{ with .Params.image }}
+        <div class="lorawan-image">
+          <figure class="image plain">
+            <img src="{{ . | relURL }}">
+          </figure>
+        </div>
+        {{ end }}
+        </a>
+        <div class="content has-text-centered has-text-grey">
+          {{ .Description | plainify }}
+        </div>
+        <div class="has-text-centered">
+          <a href="{{ .Permalink }}" class="button is-primary is-outlined">Read</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-desktop is-multiline">
+      {{- range .Site.Menus.main }}
+        {{ if not .Params.hideOnHome }}
+          {{- with .Page }}
+          <div class="column is-one-third-desktop is-flex">
+            <div class="card has-radius is-fullwidth">
+              <div class="card-content">
+                <h3 class="title is-size-5 has-text-centered is-uppercase"><a href="{{ .Permalink }}">{{ .Title }}</a>
+                </h3>
+                <div class="content has-text-centered has-text-grey">
+                  {{ with .Params.image }}
+                    <div class="is-flex is-justify-content-center">
+                      <figure class="image plain">
+                        <img src="{{ . | relURL }}">
+                      </figure>
+                    </div>
+                  {{ end }}
+                  {{ .Description | plainify }}
+                </div>
+                <div class="has-text-centered">
+                  <a href="{{ .Permalink }}" class="button is-primary is-outlined">Read</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          {{- end }}
+        {{- end }}
+      {{- end }}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-desktop is-multiline">
+      {{- range .Site.Menus.community }}
+          <div class="column is-one-quarter-desktop is-flex">
+            <div class="card has-radius is-fullwidth">
+              <div class="card-content">
+                <h3 class="title is-size-5 has-text-centered is-uppercase"><a href="{{ .URL }}">{{ .Name }}</a>
+                </h3>
+                <div class="content has-text-centered has-text-grey">
+                  {{ with .Params.image }}
+                    <div class="is-flex is-justify-content-center">
+                      <figure class="image plain">
+                        <img src="{{ . | relURL }}">
+                      </figure>
+                    </div>
+                  {{ end }}
+                  {{ .Pre | plainify }}
+                </div>
+                <div class="has-text-centered">
+                  <a href="{{ .URL }}" class="button is-primary is-outlined">Learn More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+      {{- end }}
+    </div>
+  </div>
+</section>
+
+{{ .Content }}
+
+{{ end }}

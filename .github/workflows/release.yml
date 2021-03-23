@@ -1,0 +1,70 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  release:
+    name: Release docs
+    runs-on: ubuntu-18.04
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+    - name: Set up Go
+      uses: actions/setup-go@v2
+      with:
+        go-version: '~1.15'
+    - name: Get Go module cache directory path
+      id: go-module-cache-dir-path
+      run: echo "::set-output name=dir::$(go env GOMODCACHE)"
+    - name: Initialize Go module cache
+      uses: actions/cache@v2
+      with:
+        path: ${{ steps.go-module-cache-dir-path.outputs.dir }}
+        key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
+        restore-keys: |
+          ${{ runner.os }}-go-
+    - name: Download Go dependencies
+      run: make go.deps
+    - name: Set up Node
+      uses: actions/setup-node@v2-beta
+      with:
+        node-version: '~14'
+    - name: Get Yarn cache directory path
+      id: yarn-cache-dir-path
+      run: echo "::set-output name=dir::$(npx yarn cache dir)"
+    - name: Initialize Yarn module cache
+      uses: actions/cache@v2
+      with:
+        path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+        key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-yarn-
+    - name: Download Yarn dependencies
+      run: make js.deps
+    - name: Initialize Hugo binary cache
+      id: cache-hugo
+      uses: actions/cache@v2
+      with:
+        path: hugo.linux
+        key: ${{ runner.os }}-hugo-${{ hashFiles('**/go.sum') }}
+        restore-keys: |
+          ${{ runner.os }}-hugo-
+    - name: Build Hugo binary
+      if: steps.cache-hugo.outputs.cache-hit != 'true'
+      run: make hugo.linux
+    - name: Build docs
+      run: make build.public
+      env:
+        HUGO: ./hugo.linux
+        HUGO_BASE_URL: https://www.thethingsnetwork.org/docs
+    - name: Deploy documentation to Github pages
+      uses: JamesIves/github-pages-deploy-action@releases/v3
+      with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        BRANCH: gh-pages
+        FOLDER: public

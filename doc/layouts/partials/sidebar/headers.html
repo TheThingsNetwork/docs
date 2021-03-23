@@ -1,0 +1,9 @@
+<!-- https://discourse.gohugo.io/t/sections-wrapped-in-a-shortcode-do-not-appear-in-the-toc/21304/2 -->
+{{ $headers := findRE "<h[2].*?>(.|\n])+?</h[2]>" .Content   }}
+{{ if and (ge (len $headers) 1) (ne $.Params.toc "none") }}
+  <ul class="menu-list">
+    {{ range $headers }}
+      <li><a href='#{{ replaceRE  "\\s" "-" (. | plainify | lower) | replaceRE "[,.!?;:]" "" }}'>{{ . | plainify }}</a></li>
+    {{ end }}
+  </ul>
+{{ end }}

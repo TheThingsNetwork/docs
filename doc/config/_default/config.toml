@@ -1,0 +1,82 @@
+title = "The Things Network"
+
+baseURL = "http://localhost"
+
+disableKinds = [
+  "taxonomy",
+  "taxonomyTerm",
+  "RSS",
+]
+
+enableGitInfo = true
+
+languageCode = "en-us"
+languageName = "English"
+
+pygmentsCodeFences = true
+pygmentsUseClasses = true
+
+[params]
+  title = "The Things Network"
+  description = "We are building a global open free crowdsourced long range low power IoT data network"
+  images = ["img/og-image.png"]
+  github_repository = "https://github.com/TheThingsNetwork/docs"
+  github_repository_edit = "https://github.com/TheThingsNetwork/docs/blob/master/doc/content"
+  tts_github_repository = "https://github.com/TheThingsNetwork/lorawan-stack"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[menu]
+  [[menu.contributing]]
+    name = "GitHub"
+    url = "https://github.com/TheThingsNetwork/docs"
+    weight = 1
+
+  [[menu.contributing]]
+    name = "Forum"
+    url = "https://www.thethingsnetwork.org/forum"
+    weight = 2
+
+  [[menu.about_us]]
+    name = "The Things Network"
+    url = "https://www.thethingsnetwork.org"
+    weight = 1
+
+  [[menu.about_us]]
+    name = "The Things Industries"
+    url = "https://www.thethingsindustries.com"
+    weight = 2
+
+  [[menu.community]]
+    name = "Join"
+    pre = "Find The Things Network communities nearby or start a new community."
+    url = "https://www.thethingsnetwork.org/community"
+
+  [[menu.community]]
+    name = "Forum"
+    pre = "Ask and answer questions about IoT, LoRa, and other related topics."
+    url = "https://www.thethingsnetwork.org/forum"
+
+  [[menu.community]]
+    name = "Slack"
+    pre = "Invite yourself to the community chat to talk about The Things Network."
+    url = "https://account.thethingsnetwork.org/"
+
+  [[menu.community]]
+    name = "Labs"
+    pre = "Inspire and get inspired by community contributed use cases."
+    url = "https://www.thethingsnetwork.org/labs"
+
+[module]
+  [[module.mounts]]
+    source = "assets"
+    target = "assets"
+  [[module.mounts]]
+    source = "static"
+    target = "static"
+  [[module.mounts]]
+    source = "node_modules/bulma"
+    target = "assets/css/vendor/bulma"
