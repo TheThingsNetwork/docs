@@ -16,10 +16,6 @@ GO = go
 HUGO_BUILD_FLAGS = -tags extended
 HUGO_MODULE = github.com/gohugoio/hugo
 HUGO ?= $(GO) run $(HUGO_BUILD_FLAGS) $(HUGO_MODULE)
-YARN_DEPS = doc/themes/the-things-stack/node_modules
-FREQUENCY_PLAN_URL ?= \
-https://raw.githubusercontent.com/TheThingsNetwork/lorawan-frequency-plans/master/frequency-plans.yml
-FREQUENCY_PLAN_DEST = doc/data/frequency-plans.yml
 DOC_ROOT = doc
 PUBLIC_DEST = ../public # Relative to DOC_ROOT
 INTERNAL_DEST = ../internal # Relative to DOC_ROOT
@@ -61,10 +57,7 @@ new:
 	@:
 
 .PHONY: deps
-deps: hooks $(FREQUENCY_PLAN_DEST) | go.deps js.deps
-
-$(FREQUENCY_PLAN_DEST):
-	curl -o $(FREQUENCY_PLAN_DEST) $(FREQUENCY_PLAN_URL)
+deps: hooks | go.deps js.deps
 
 .PHONY: go.deps
 go.deps:
@@ -72,7 +65,7 @@ go.deps:
 
 .PHONY: js.deps
 js.deps:
-	yarn --cwd doc
+	yarn --cwd $(DOC_ROOT)
 
 hugo.exe: go.mod go.sum
 	GOOS=windows go build -o $@ $(HUGO_BUILD_FLAGS) $(HUGO_MODULE)
