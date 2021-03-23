@@ -21,7 +21,7 @@ The Things Stack V3 <a href="https://www.thethingsindustries.com/docs/reference/
 
 > For detailed information on The Things Stack V3, visit <a href="https://www.thethingsindustries.com/docs/" target="_blank">The Things Stack official documentation page</a>.
 
-> **To learn more about migration to The Things Stack V3, [click here](https://www.thethingsnetwork.org/docs/the-things-stack/migrate-to-v3.html)**.
+> **To learn more about migration to The Things Stack V3, [click here]({{< relref "migrate-to-v3" >}})**.
 
 
 ## How can I access V3?
@@ -50,5 +50,5 @@ One of the most important features is the connection to <a href="https://www.the
 
 > **For a more detailed comparison between V2 and V3, check out the <a href="https://www.thethingsindustries.com/docs/getting-started/migrating/major-changes/" target="_blank">Major Changes in The Things Stack</a> page.**
 
-> **Continue reading to learn about [migrating your devices to The Things Stack V3](https://www.thethingsnetwork.org/docs/the-things-stack/migrate-to-v3.html)**.
+> **Continue reading to learn about [migrating your devices to The Things Stack V3]({{< relref "migrate-to-v3" >}})**.
 
