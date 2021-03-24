@@ -7,7 +7,7 @@ sections:
  - Gateways
 menu:
   main:
-    weight: 3
+    weight: 20
     params:
       hideOnHome: true
 ---

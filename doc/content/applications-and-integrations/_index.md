@@ -3,7 +3,7 @@ title: "Applications & Integrations"
 description: Create applications and use The Things Network integrations to build an end-to-end IoT solution
 menu:
   main:
-    weight: 2
+    weight: 20
     params:
       hideOnHome: true
 ---

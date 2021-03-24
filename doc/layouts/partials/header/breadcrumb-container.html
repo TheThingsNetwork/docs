@@ -6,7 +6,7 @@
         <li><a href="{{ .Site.BaseURL }}">Learn</a></li>
         {{ $currentPage := . }}
         {{ $menuPages := slice (.Site.GetPage "/lorawan") }}
-        {{ range .Site.Menus.main }}
+        {{ range .Site.Menus.main.ByWeight }}
           {{ with .Page }}
             {{ $menuPages = $menuPages | append . }}
           {{ end }}

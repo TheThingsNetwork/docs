@@ -6,7 +6,6 @@ sections:
  - Fundamental
  - Specifications
  - Additional Information
-weight: 1000
 ---
 
 This section covers everything you need to know to get started with LoRaWAN and improve your knowledge of the technology.

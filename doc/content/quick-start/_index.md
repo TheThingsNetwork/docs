@@ -4,7 +4,7 @@ description: "Get started with The Things Network"
 image: /devices/icon.png
 menu:
   main:
-    weight: 1
+    weight: 10
 ---
 
 
