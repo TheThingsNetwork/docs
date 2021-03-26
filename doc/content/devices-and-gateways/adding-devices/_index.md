@@ -3,11 +3,15 @@ title: Adding Devices
 section: Devices
 ---
 
-To perform uplink and/or downlink communication between your end device and The Things Network, you first need to register/add your device on The Things Network. Devices are added within [applications]({{< ref "applications-and-integrations" >}}).
+To perform uplink and/or downlink communication between your end device and The Things Stack Community Edition, you first need to register/add your device on The Things Community Edition. 
+
+> Devices are added within [applications]({{< ref "applications-and-integrations" >}}).
 
 Registering your device can be done in two ways, via <a href="https://www.thethingsindustries.com/docs/getting-started/console/" target="_blank">Console</a> or via <a href="https://www.thethingsindustries.com/docs/getting-started/cli/" target="_blank">CLI</a>.
 
-Before adding your end device, make sure you know of which type your device is - ABP or OTAA. Depending on the type, some steps differ during the registration procedure. <a href="https://www.thethingsindustries.com/docs/devices/abp-vs-otaa/" target="_blank">Learn why using OTAA devices is recommended</a>.
+Before adding your end device, make sure you know of which type your device is - **ABP** (Activation By Personalization) or **OTAA** (Over-The-Air-Activation). Depending on the type, some steps differ during the registration procedure. 
+
+> <a href="https://www.thethingsindustries.com/docs/devices/abp-vs-otaa/" target="_blank">Learn why using OTAA devices is highly recommended</a>.
 
 ## Adding a device using Console
 
