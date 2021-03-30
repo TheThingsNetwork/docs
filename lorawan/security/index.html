@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+<html lang="en-us" class="has-ttn-navbar-top">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <meta name="generator" content="Hugo 0.79.0" />
+
+  <title>Security | The Things Network</title>
+  <link rel="canonical" href="https://www.thethingsnetwork.org/docs/lorawan/security/" />
+  
+
+  <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
+
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+  <meta name="msapplication-TileImage" content="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png">
+
+  <meta name="application-name" content="The Things Network">
+  <meta name="msapplication-tooltip" content="Tooltip">
+  <meta name="msapplication-config" content="https://ttnweb.azureedge.net/static/common/favicon/ieconfig.54334a5ee30c.xml">
+
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-32.61b30f85680a.png" sizes="32x32">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-57.83b86c64dc82.png" sizes="57x57">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-76.7dcf8fa36dfc.png" sizes="76x76">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-96.27ac17adaa8b.png" sizes="96x96">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-120.e1526731335e.png" sizes="120x120">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-128.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png" sizes="144x144">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png" sizes="152x152">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-180.fcd414307ca3.png" sizes="180x180">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-195.c55ce09d66da.png" sizes="195x195">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-228.bea53ec4b10b.png" sizes="228x228">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/smalltile.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/mediumtile.3d42f7faac82.png" sizes="270x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
+  <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+
+  <meta property="og:title" content="Security" />
+<meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/lorawan/security/" />
+<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
+<meta property="og:site_name" content="The Things Network" />
+
+
+  <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
+
+<meta name="twitter:title" content="Security"/>
+<meta name="twitter:description" content="We are building a global open free crowdsourced long range low power IoT data network"/>
+
+
+</head>
+
+
+<body>
+
+<div id="header"></div>
+<section class="section">
+  <div class="container">
+    <nav class="breadcrumb has-dot-separator" aria-label="breadcrumbs">
+      <ul>
+        <li><a href="https://www.thethingsnetwork.org/docs">Learn</a></li>
+        
+        
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+            <li class="is-active">
+              <a href="https://www.thethingsnetwork.org/docs/lorawan/">LoRaWAN</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/quick-start/">Quick Start</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/applications-and-integrations/">Applications &amp; Integrations</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/">Devices &amp; Gateways</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/the-things-stack/">The Things Stack</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/v2-docs/">V2 Docs (Outdated)</a>
+            </li>
+          
+        
+      </ul>
+    </nav>
+  </div>
+</section>
+<div class="container" role="document">
+  <div class="columns my-0 is-desktop">
+    <div class="column is-3-desktop sidebar-left">
+      
+
+
+<nav class="side-navigation" aria-label="Main navigation">
+
+<h2 class="title is-size-5">LoRaWAN</h2>
+
+<div class="menu">
+  <ul class="menu-list">
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/" class="">Overview</a>
+  
+    <p class="menu-label">
+      Fundamental
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/regional-parameters/" class="">Regional Parameters</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/architecture/" class="">LoRaWAN Architecture</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/limitations/" class="">Limitations</a>
+</li>
+
+  
+    <p class="menu-label">
+      Specifications
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/security/" class="is-active">Security</a>
+  
+
+
+
+  
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/duty-cycle/" class="">Duty Cycle</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/adaptive-data-rate/" class="">Adaptive Data Rate</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/modulation-data-rate/" class="">Modulation &amp; Data Rate</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/addressing/" class="">Addressing &amp; Activation</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/classes/" class="">Classes</a>
+</li>
+
+  
+    <p class="menu-label">
+      Additional Information
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/frequencies-by-country/" class="">Frequency Plans by Country</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/frequency-plans/" class="">Frequency Plans</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/academic/" class="">Academic Research</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/prefix-assignments/" class="">NetID and DevAddr Prefix Assignments</a>
+</li>
+
+  
+  </ul>
+</div>
+
+
+
+
+
+</nav>
+
+    </div>
+    <div class="column is-9-desktop sidebar-middle">
+      <div class="docs-content">
+        <h1 class="title is-size-2">
+          Security
+        </h1>
+        <div class="content">
+          <h2 id="security-keys">Security Keys</h2>
+<p>LoRaWAN 1.0 specifies a number of security keys: <code>NwkSKey</code>, <code>AppSKey</code> and <code>AppKey</code>. All keys have a length of 128 bits.
+The algorithm used for this is AES-128, similar to the algorithm used in the 802.15.4 standard.</p>
+<h3 id="session-keys">Session Keys</h3>
+<p>When a device joins the network (this is called a join or activation), an application session key <code>AppSKey</code> and a network session key <code>NwkSKey</code> are generated. The <code>NwkSKey</code> is shared with the network, while the <code>AppSKey</code> is kept private. These session keys will be used for the duration of the session.</p>
+<p>The <strong>Network Session Key</strong> (<code>NwkSKey</code>) is used for interaction between the Node and the Network Server. This key is used to validate the integrity of each message by its Message Integrity Code (MIC check). This MIC is similar to a checksum, except that it prevents intentional tampering with a message. For this, LoRaWAN uses AES-CMAC. In the backend of The Things Network this validation is also used to map a non-unique device address (<code>DevAddr</code>) to a unique <code>DevEUI</code> and <code>AppEUI</code>.</p>
+<p>The <strong>Application Session Key</strong> (<code>AppSKey</code>) is used for encryption and decryption of the payload. The payload is fully encrypted between the Node and the Handler/Application Server component of The Things Network (which you will be able to run on your own server). This means that nobody except you is able to read the contents of messages you send or receive.</p>
+<p>These two session keys (<code>NwkSKey</code> and <code>AppSKey</code>) are unique per device, per session. If you dynamically activate your device (OTAA), these keys are re-generated on every activation. If you statically activate your device (ABP), these keys stay the same until you change them.</p>
+<h3 id="application-key">Application Key</h3>
+<p>The application key (<code>AppKey</code>) is only known by the device and by the application. Dynamically activated devices (OTAA) use the <strong>Application Key</strong> (<code>AppKey</code>) to derive the two session keys during the activation procedure. In The Things Network you can have a <em>default</em> <code>AppKey</code> which will be used to activate all devices, or customize the <code>AppKey</code> per device.</p>
+<h2 id="frame-counters">Frame Counters</h2>
+<p>Because we&rsquo;re working with a radio protocol, anyone will be able to capture and store messages. It&rsquo;s not possible to read these messages without the <code>AppSKey</code>, because they&rsquo;re encrypted. Nor is it possible to tamper with them without the <code>NwkSKey</code>, because this will make the MIC check fail. It is however possible to re-transmit the messages. These so-called replay attacks can be detected and blocked using frame counters.</p>
+<p>When a device is activated, these frame counters (<code>FCntUp</code> and <code>FCntDown</code>) are both set to <code>0</code>. Every time the device transmits an uplink message, the <code>FCntUp</code> is incremented and every time the network sends a downlink message, the <code>FCntDown</code> is incremented. If either the device or the network receives a message with a frame counter that is lower than the last one, the message is ignored.</p>
+<p>This security measure has consequences for development devices, which often are statically activated (ABP). When you do this, you should realize that these frame counters reset to <code>0</code> every time the device restarts (when you flash the firmware or when you unplug it). As a result, The Things Network will block all messages from the device until the <code>FCntUp</code> becomes higher than the previous <code>FCntUp</code>. Therefore, you should re-register your device in the backend every time you reset it.</p>
+<h2 id="spread-spectrum">Spread Spectrum</h2>
+<p>Spread Spectrum Radio Transmission was traditionally used, during WW2, to make military communications difficult to monitor - either by using a technique called &lsquo;frequency hopping&rsquo; (FHSS) - skipping the transmission frequency around in a prearranged manner, causing the enemy to constantly retune (very rapidly) or &lsquo;direct sequence&rsquo; (DSSS) where the digital message is added to a much higher bit-rate, pseudo random (PR) sequence.  The code spreads the radio signal over a much wider bandwidth.  In fact, so wide that the power may well be dispersed so that the total signal falls down into the background radio noise - and becomes invisible.  Recovery is therefore a matter of i) knowing the original radio frequency ii) the pseudo random code and iii) and the PR code bit rate.  Knowing these details means that synchronising receivers is not as difficult as may at first appear.  The signal will just ‘pop up’ out of the noise when the correct values are achieved. (‘Processing Gain’)</p>
+<p>The technique used in LoRa is ‘<a href="https://youtu.be/dxYY097QNs0">CHIRP</a>’: Compressed High Intensity Radar Pulse.  It is even more complex but simple with current technology. As the name may suggest, the background design requirement, it is not used to hide the radio signal but is employed because of other factors, not just processing gain but interference immunity, channel sharing and resistance to radio reflections (amongst others).  It is therefore employed as security against operating conditions not for surveillance resistance. (Hedy Lamarr was a co-inventor and holds a patent for FHSS).</p>
+
+        </div>
+      
+      <div class="is-clearfix">
+</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="footer"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ttn-components.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/promise-polyfill@7/dist/polyfill.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-navbar.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-footer.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ga.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/vendor/basicLightbox.min.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/theme.min.00ace5d667ca108a93b8a0d385569f7c7bb9f46ed32eefe3f5fb39105763cccd.js" integrity="sha256-AKzl1mfKEIqTuKDThVaffHu59G7TLu/j9fs5EFdjzM0=" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+
+<html lang="en-us" class="has-ttn-navbar-top">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <meta name="generator" content="Hugo 0.79.0" />
+
+  <title>Burning Bootloader into the Device | The Things Network</title>
+  <link rel="canonical" href="https://www.thethingsnetwork.org/docs/devices/rak7204/rak7204/burning-the-bootloader/" />
+  
+
+  <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
+
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+  <meta name="msapplication-TileImage" content="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png">
+
+  <meta name="application-name" content="The Things Network">
+  <meta name="msapplication-tooltip" content="Tooltip">
+  <meta name="msapplication-config" content="https://ttnweb.azureedge.net/static/common/favicon/ieconfig.54334a5ee30c.xml">
+
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-32.61b30f85680a.png" sizes="32x32">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-57.83b86c64dc82.png" sizes="57x57">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-76.7dcf8fa36dfc.png" sizes="76x76">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-96.27ac17adaa8b.png" sizes="96x96">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-120.e1526731335e.png" sizes="120x120">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-128.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png" sizes="144x144">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png" sizes="152x152">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-180.fcd414307ca3.png" sizes="180x180">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-195.c55ce09d66da.png" sizes="195x195">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-228.bea53ec4b10b.png" sizes="228x228">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/smalltile.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/mediumtile.3d42f7faac82.png" sizes="270x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
+  <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+
+  <meta property="og:title" content="Burning Bootloader into the Device" />
+<meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/devices/rak7204/rak7204/burning-the-bootloader/" />
+<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
+<meta property="og:site_name" content="The Things Network" />
+
+
+  <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
+
+<meta name="twitter:title" content="Burning Bootloader into the Device"/>
+<meta name="twitter:description" content="We are building a global open free crowdsourced long range low power IoT data network"/>
+
+
+</head>
+
+
+<body>
+
+<div id="header"></div>
+<section class="section">
+  <div class="container">
+    <nav class="breadcrumb has-dot-separator" aria-label="breadcrumbs">
+      <ul>
+        <li><a href="https://www.thethingsnetwork.org/docs">Learn</a></li>
+        
+        
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/lorawan/">LoRaWAN</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/quick-start/">Quick Start</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/applications-and-integrations/">Applications &amp; Integrations</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/">Devices &amp; Gateways</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/the-things-stack/">The Things Stack</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/v2-docs/">V2 Docs (Outdated)</a>
+            </li>
+          
+        
+      </ul>
+    </nav>
+  </div>
+</section>
+<div class="container" role="document">
+  <div class="columns my-0 is-desktop">
+    <div class="column is-3-desktop sidebar-left">
+      
+
+
+<nav class="side-navigation" aria-label="Main navigation">
+
+<h2 class="title is-size-5">Devices</h2>
+
+<div class="menu">
+  <ul class="menu-list">
+  <a href="https://www.thethingsnetwork.org/docs/devices/" class="">Overview</a>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/devices/bestpractices/" class="">Best Practices</a>
+    </li>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/devices/registration/" class="">Device Registration</a>
+    </li>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/devices/bytes/" class="">Working with Bytes</a>
+    </li>
+  
+    <p class="menu-label">
+      SDKs &amp; Libraries
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/devices/arduino/" class="">Arduino</a>
+</li>
+
+  
+    <p class="menu-label">
+      Hardware
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/devices/rak5205-wistrio-lora-tracker/" class="">RAK5205 WisTrio LoRa® Tracker</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/devices/rak7200-lora-tracker/" class="">RAK7200 LoRa® Tracker</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/devices/rak811-lora-module-breakout-board/" class="">RAK811 LoRa® Breakout Module</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/devices/rak811-lora-evaluation-board/" class="">RAK811 LoRa® Evaluation Board</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/devices/rak811-wisnode-lora-module/" class="">RAK811 WisNode LoRa Module</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/devices/node/" class="">The Things Node</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/devices/uno/" class="">The Things Uno</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/devices/lopy/" class="">LoPy</a>
+</li>
+
+  
+  </ul>
+</div>
+
+
+
+
+
+</nav>
+
+    </div>
+    <div class="column is-9-desktop sidebar-middle">
+      <div class="docs-content">
+        <h1 class="title is-size-2">
+          Burning Bootloader into the Device
+        </h1>
+        <div class="content">
+          <p>Please use the the latest firmware for the RAK7204 LoRa Environmental Sensor accessible in this <a href="https://downloads.rakwireless.com/en/LoRa/RAK7204/Firmware/">directory</a> in order to avoid potential problems. Burning the Bootloader into the device is done as follows:</p>
+<blockquote>
+<p><strong>Note:</strong> Skip this section if you have a RAK7204 with V3.0.0.0 firmware or newer, for it has already a bootloader.</p>
+</blockquote>
+<p>1 . To start with, download and install the “STM32CubeProgrammer” tool in your PC through this <a href="https://www.st.com/content/st_com/en/products/development-tools/software-development-tools/stm32-software-development-tools/stm32-programmers/stm32cubeprog.html#overview">link</a> or through this <a href="https://downloads.rakwireless.com/en/LoRa/RAK811/Tools/SetupSTM32CubeProgrammer-2.1.0.rar">RAK directory</a>.</p>
+<p>2 . Then, configure your RAK7204 by jumping the “BOOT” pin and “VCC” pin for boot mode as the following pictures shown below:</p>
+<p><img src="../images/boot_short.jpg" alt="Figure 1: Boot Line shorted using the Jumper Pins"></p>
+<p>3 . Connect your RAK7204 to your PC using the USB cable as follow:</p>
+<p><img src="../images/interface.jpg" alt="Figure 2: RAK7204 connected to your PC via USB cable"></p>
+<p>4 . Choose the correct port number in the COM Port field. You can check this in the Device Manager.</p>
+<p><img src="../images/ComPort.jpg" alt="Figure 3: Checking COM Port through Device Manager"></p>
+<p>5 . Open the “STM32CubeProgrammer” tool.</p>
+<p>6 . Select UART type; go to COM Port and look for your RAK7204 LoRa Environmental Sensor COM Port (ex. COM5).</p>
+<p>7 . Configure the Baud rate and Parity.</p>
+<p><img src="../images/uart_settings.jpg" alt="Figure 4: UART Settings in STM32CubeProgrammer"></p>
+<p>8 . Then, press the “Connect” button at the top right corner.</p>
+<blockquote>
+<p><strong>Warning:</strong> If there are some errors in the Log box or it can’t connect, please close the STM32CubeProgrammer and reset
+RAK7204, then open the STM32CubeProgrammer and connect again.</p>
+</blockquote>
+<p><img src="../images/errors_stm32.jpg" alt="Figure 5: Errors Occurred During Connecting"></p>
+<ul>
+<li>The correct Log you should see is the information like the following picture shows:</li>
+</ul>
+<p><img src="../images/success_con.jpg" alt="Figure 6: Successful Connection Log to your Device"></p>
+<p>Now, let’s start burning the bootloader into the RAK7204 LoRa Environmental Sensor.</p>
+<p>9 . First, erase all data on the RAK7204 LoRa Environmental Sensor referred from the following picture below:</p>
+<p><img src="../images/erasing_data.jpg" alt="Figure 7: Erasing the Data in the Chip"></p>
+<p>10 . Download the bootloader file accessible to this <a href="https://downloads.rakwireless.com/en/LoRa/RAK7204/Firmware/">link</a>. Then, press “Open file” and select the bootloader file:</p>
+<p><img src="../images/erasing_data.jpg" alt="Figure 8: Opening the Bootloader file"></p>
+<p>11 . Click the “Download” button to start the burning process</p>
+<p><img src="../images/download_bootload.jpg" alt="Figure 9: Downloading of Bootloader to the device"></p>
+<p>12 . OK, you have successfully burned the firmware into RAK7204 LoRa Environmental Sensor!</p>
+<p><img src="../images/success_burned.jpg" alt="Figure 10: Successfully Burned the Bootloader to the device"></p>
+<p>13 . &ldquo;Disconnect” and close the “STM32CubeProgrammer” tool. Then, power down and remove the connection between BOOT pin and VCC pin to let RAK7204 LoRa Environmental Sensor work in normal mode.</p>
+<p>14 . Then, connect RAK7204 with your PC’s USB interface again.</p>
+<p>Alright! You can now start burning the firmware into RAK7204 WisTrio LoRa Tracker.</p>
+
+        </div>
+      
+      <div class="is-clearfix">
+</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="footer"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ttn-components.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/promise-polyfill@7/dist/polyfill.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-navbar.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-footer.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ga.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/vendor/basicLightbox.min.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/theme.min.00ace5d667ca108a93b8a0d385569f7c7bb9f46ed32eefe3f5fb39105763cccd.js" integrity="sha256-AKzl1mfKEIqTuKDThVaffHu59G7TLu/j9fs5EFdjzM0=" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

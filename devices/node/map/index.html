@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+
+<html lang="en-us" class="has-ttn-navbar-top">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <meta name="generator" content="Hugo 0.79.0" />
+
+  <title>Map your Device! | The Things Network</title>
+  <link rel="canonical" href="https://www.thethingsnetwork.org/docs/devices/node/map/" />
+  
+
+  <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
+
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+  <meta name="msapplication-TileImage" content="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png">
+
+  <meta name="application-name" content="The Things Network">
+  <meta name="msapplication-tooltip" content="Tooltip">
+  <meta name="msapplication-config" content="https://ttnweb.azureedge.net/static/common/favicon/ieconfig.54334a5ee30c.xml">
+
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-32.61b30f85680a.png" sizes="32x32">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-57.83b86c64dc82.png" sizes="57x57">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-76.7dcf8fa36dfc.png" sizes="76x76">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-96.27ac17adaa8b.png" sizes="96x96">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-120.e1526731335e.png" sizes="120x120">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-128.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png" sizes="144x144">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png" sizes="152x152">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-180.fcd414307ca3.png" sizes="180x180">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-195.c55ce09d66da.png" sizes="195x195">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-228.bea53ec4b10b.png" sizes="228x228">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/smalltile.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/mediumtile.3d42f7faac82.png" sizes="270x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
+  <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+
+  <meta property="og:title" content="Map your Device!" />
+<meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/devices/node/map/" />
+<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
+<meta property="og:site_name" content="The Things Network" />
+
+
+  <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
+
+<meta name="twitter:title" content="Map your Device!"/>
+<meta name="twitter:description" content="We are building a global open free crowdsourced long range low power IoT data network"/>
+
+
+</head>
+
+
+<body>
+
+<div id="header"></div>
+<section class="section">
+  <div class="container">
+    <nav class="breadcrumb has-dot-separator" aria-label="breadcrumbs">
+      <ul>
+        <li><a href="https://www.thethingsnetwork.org/docs">Learn</a></li>
+        
+        
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/lorawan/">LoRaWAN</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/quick-start/">Quick Start</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/applications-and-integrations/">Applications &amp; Integrations</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/">Devices &amp; Gateways</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/the-things-stack/">The Things Stack</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/v2-docs/">V2 Docs (Outdated)</a>
+            </li>
+          
+        
+      </ul>
+    </nav>
+  </div>
+</section>
+<div class="container" role="document">
+  <div class="columns my-0 is-desktop">
+    <div class="column is-3-desktop sidebar-left">
+      
+
+
+<nav class="side-navigation" aria-label="Main navigation">
+
+<h2 class="title is-size-5">Devices</h2>
+
+<div class="menu">
+  <ul class="menu-list">
+  <a href="https://www.thethingsnetwork.org/docs/devices/" class="">Overview</a>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/devices/bestpractices/" class="">Best Practices</a>
+    </li>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/devices/registration/" class="">Device Registration</a>
+    </li>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/devices/bytes/" class="">Working with Bytes</a>
+    </li>
+  
+    <p class="menu-label">
+      SDKs &amp; Libraries
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/devices/arduino/" class="">Arduino</a>
+</li>
+
+  
+    <p class="menu-label">
+      Hardware
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/devices/rak5205-wistrio-lora-tracker/" class="">RAK5205 WisTrio LoRa® Tracker</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/devices/rak7200-lora-tracker/" class="">RAK7200 LoRa® Tracker</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/devices/rak811-lora-module-breakout-board/" class="">RAK811 LoRa® Breakout Module</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/devices/rak811-lora-evaluation-board/" class="">RAK811 LoRa® Evaluation Board</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/devices/rak811-wisnode-lora-module/" class="">RAK811 WisNode LoRa Module</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/devices/node/" class="">The Things Node</a>
+  
+
+
+<ul class="menu-list">
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/devices/node/troubleshooting/" class="">Troubleshooting</a>
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/devices/node/api/" class="">API Reference</a>
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/devices/node/map/" class="is-active">Map your Device!</a>
+    
+    
+
+
+
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/devices/node/quick-start/" class="">Quick Start</a>
+    
+  </li>
+
+</ul>
+
+
+  
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/devices/uno/" class="">The Things Uno</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/devices/lopy/" class="">LoPy</a>
+</li>
+
+  
+  </ul>
+</div>
+
+
+
+
+
+</nav>
+
+    </div>
+    <div class="column is-9-desktop sidebar-middle">
+      <div class="docs-content">
+        <h1 class="title is-size-2">
+          Map your Device!
+        </h1>
+        <div class="content">
+          <p>The Things Node comes with a preinstalled Arduino Sketch that pings home and sends the sensor data on setup as well as every minute, when you release its button or start moving the device.</p>
+<blockquote>
+<p>As soon as you upload your first sketch it will overwrite the preinstalled one!</p>
+</blockquote>
+<p>Simply insert batteries or connect it to a power source via USB and you&rsquo;ll see it appear on the map at <a href="http://ttn.fyi/activate">ttn.fyi/activate</a>:</p>
+<p><img src="../map.png" alt="Map"></p>
+<h2 id="power-your-device">Power your Device</h2>
+<p>While you keep an eye on the map at <a href="http://ttn.fyi/activate">ttn.fyi/activate</a>, follow these steps:</p>
+<ol>
+<li>
+<p>Open the case using a double-slot (cross) screw drive.</p>
+</li>
+<li>
+<p>Either insert 3 AAA batteries or use a Micro-USB cable to connect the device to your computer or a power adapter.</p>
+<p>You can find the connector between the battery compartment and the top side of the case:</p>
+<p><img src="../cable.png" alt="Cable"></p>
+<blockquote>
+<p>Some Micro-USB connectors may not fit the limited space between the batteries compartment and casing. The one we ship with the Uno should.</p>
+</blockquote>
+</li>
+</ol>
+<p>Soon, you should see your device appear on the map.</p>
+<h3 id="how-do-we-get-your-location">How do we get your location?</h3>
+<p>The Node does not have a GPS sensor, but we do know the location of most gateways. Your device will appear in the center of all gateways that forwarded its message.</p>
+<h2 id="identify-your-device">Identify your Device</h2>
+<p>If you can&rsquo;t tell by the location, you will need your unique Device EUI. The preinstalled sketch prints this to USB port every time it sends data. You can read it using the Arduino IDE&rsquo;s Serial Monitor.</p>
+<ol>
+<li>
+<p>Follow <a href="/docs/devices/arduino/ide/">Arduino / IDE Setup &amp; Usage</a> to setup the IDE.</p>
+</li>
+<li>
+<p>Follow SparkFun&rsquo;s <a href="https://github.com/sparkfun/Arduino_Boards#installation-instructions">Installation Instructions</a> to add the additional board manager and install the <strong>SparkFun AVR Boards</strong>.</p>
+</li>
+<li>
+<p>Make sure your device is connected to your computer with a Micro-USB cable.</p>
+<blockquote>
+<p>Make sure you use a cable that supports data, not just power. The one we ship with the Uno should work.</p>
+</blockquote>
+</li>
+<li>
+<p>In the Arduino IDE, select <strong>Tools &gt; Boards &gt; SparkFun Pro Micro</strong>.</p>
+</li>
+<li>
+<p>Select <strong>Tools &gt; Processor &gt; ATmega32U4 (3.3V, 8Mhz)</strong>.</p>
+</li>
+<li>
+<p>Select the Node&rsquo;s Serial Port under <strong>Tools &gt; Port</strong>.</p>
+<blockquote>
+<p>Unlike The Things Uno, which the Arduino IDE recognizes as <em>Arduino Leonardo</em>, it does not always recognize the Node as <em>SparkFun Pro Micro</em>. You will have to see what <code>/dev/*usb*</code> (Mac/Linux) or <code>COM</code> (Windows) option appears in the menu after connecting the Node.</p>
+</blockquote>
+<blockquote>
+<p>Another <a href="/docs/devices/node/troubleshooting/#serial-port-not-showing">common issue</a> is that on recent Macs the Node may not appear at all. We suggest to connect via an USB hub.</p>
+</blockquote>
+</li>
+<li>
+<p>Select <strong>Tools &gt; Serial Monitor</strong> <code>Ctrl/⌘ Shift M</code> to open the Serial Monitor.</p>
+<p>Press the Node&rsquo;s button and it should print a list of information:</p>
+<pre><code>EUI: 0004A30B001B7AD2
+Battery: 3223
+AppEUI: 70B3D57EF000001C
+DevEUI: 0004A30B001B7AD2
+Band: 868
+Data Rate: 5
+RX Delay 1: 1000
+RX Delay 2: 2000
+Total airtime: 0.00 s
+Light: 25
+Temperature: 23.16 C
+Temperature alert: No
+Moving: No
+Button pressed: No
+Color: Yellow
+USB connected: Yes
+Battery voltage: 4704 MV
+</code></pre><p>The first <code>EUI</code> value is what we&rsquo;re looking for.</p>
+</li>
+<li>
+<p>Switch back to <a href="http://ttn.fyi/activate">ttn.fyi/activate</a> and scroll to the filter input.</p>
+</li>
+<li>
+<p>Enter the EUI and click <strong>Filter</strong>.</p>
+<p>The map will now show your device only:</p>
+<p><img src="../filter.png" alt="Filter"></p>
+</li>
+</ol>
+<p>🎉 Congrats! When you are done playing with the temperature, motion and button sensor, continue to the <a href="/docs/devices/node/quick-start/">Quick Start</a> to learn how to upload your own sketch.</p>
+
+        </div>
+      
+      <div class="is-clearfix">
+</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="footer"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ttn-components.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/promise-polyfill@7/dist/polyfill.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-navbar.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-footer.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ga.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/vendor/basicLightbox.min.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/theme.min.00ace5d667ca108a93b8a0d385569f7c7bb9f46ed32eefe3f5fb39105763cccd.js" integrity="sha256-AKzl1mfKEIqTuKDThVaffHu59G7TLu/j9fs5EFdjzM0=" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

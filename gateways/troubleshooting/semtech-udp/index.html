@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+
+<html lang="en-us" class="has-ttn-navbar-top">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <meta name="generator" content="Hugo 0.79.0" />
+
+  <title>Semtech UDP Packet Forwarder | The Things Network</title>
+  <link rel="canonical" href="https://www.thethingsnetwork.org/docs/gateways/troubleshooting/semtech-udp/" />
+  
+
+  <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
+
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+  <meta name="msapplication-TileImage" content="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png">
+
+  <meta name="application-name" content="The Things Network">
+  <meta name="msapplication-tooltip" content="Tooltip">
+  <meta name="msapplication-config" content="https://ttnweb.azureedge.net/static/common/favicon/ieconfig.54334a5ee30c.xml">
+
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-32.61b30f85680a.png" sizes="32x32">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-57.83b86c64dc82.png" sizes="57x57">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-76.7dcf8fa36dfc.png" sizes="76x76">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-96.27ac17adaa8b.png" sizes="96x96">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-120.e1526731335e.png" sizes="120x120">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-128.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png" sizes="144x144">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png" sizes="152x152">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-180.fcd414307ca3.png" sizes="180x180">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-195.c55ce09d66da.png" sizes="195x195">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-228.bea53ec4b10b.png" sizes="228x228">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/smalltile.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/mediumtile.3d42f7faac82.png" sizes="270x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
+  <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+
+  <meta property="og:title" content="Semtech UDP Packet Forwarder" />
+<meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/gateways/troubleshooting/semtech-udp/" />
+<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
+<meta property="og:site_name" content="The Things Network" />
+
+
+  <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
+
+<meta name="twitter:title" content="Semtech UDP Packet Forwarder"/>
+<meta name="twitter:description" content="We are building a global open free crowdsourced long range low power IoT data network"/>
+
+
+</head>
+
+
+<body>
+
+<div id="header"></div>
+<section class="section">
+  <div class="container">
+    <nav class="breadcrumb has-dot-separator" aria-label="breadcrumbs">
+      <ul>
+        <li><a href="https://www.thethingsnetwork.org/docs">Learn</a></li>
+        
+        
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/lorawan/">LoRaWAN</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/quick-start/">Quick Start</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/applications-and-integrations/">Applications &amp; Integrations</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/">Devices &amp; Gateways</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/the-things-stack/">The Things Stack</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/v2-docs/">V2 Docs (Outdated)</a>
+            </li>
+          
+        
+      </ul>
+    </nav>
+  </div>
+</section>
+<div class="container" role="document">
+  <div class="columns my-0 is-desktop">
+    <div class="column is-3-desktop sidebar-left">
+      
+
+
+<nav class="side-navigation" aria-label="Main navigation">
+
+<h2 class="title is-size-5">Gateways</h2>
+
+<div class="menu">
+  <ul class="menu-list">
+  <a href="https://www.thethingsnetwork.org/docs/gateways/" class="">Overview</a>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/gateways/basics-station/" class="">LoRa Basics™ Station</a>
+    </li>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/gateways/certificates/" class="">Root Certificates</a>
+    </li>
+  
+    <p class="menu-label">
+      SDKs
+    </p>
+    
+  
+    <p class="menu-label">
+      Running a gateway
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/troubleshooting/" class="">Troubleshooting</a>
+  
+
+
+<ul class="menu-list">
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/gateways/troubleshooting/status/" class="">Network status</a>
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/gateways/troubleshooting/semtech-udp/" class="is-active">Semtech UDP Packet Forwarder</a>
+    
+    
+
+
+
+    
+  </li>
+
+</ul>
+
+
+  
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/lightning-protection/" class="">Lightning Protection</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/packet-forwarder/" class="">Packet Forwarders</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/registration/" class="">Gateway Registration</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/start/" class="">Where to start</a>
+</li>
+
+  
+    <p class="menu-label">
+      Hardware
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/pisupply-hat/" class="">Pi Supply Gateway HAT</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/multitech/" class="">MultiTech Conduit</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/rak2245/" class="">RAK2245 Pi Hat Edition - LoRaWAN® Gateway Concentrator Module</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/rak7243c/" class="">RAK7243C Pilot Gateway</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/rak831/" class="">RAK831</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/gateway/" class="">The Things Gateway</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/thethingsindoor/" class="">The Things Indoor Gateway</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/thethingsoutdoor/" class="">The Things Outdoor Gateway</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/aaeon/" class="">AAEON</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/cisco/" class="">Cisco LoRaWAN Gateway</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/kerlink/" class="">Kerlink</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/laird/" class="">Laird RG1xx</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/lorrier/" class="">Lorrier LR2</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/mikrotik/" class="">MikroTik Routerboard</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/st/" class="">P-NUCLEO-LRWAN2</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/tektelic/" class="">Tektelic</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/ursalink/" class="">Ursalink</a>
+</li>
+
+  
+  </ul>
+</div>
+
+
+
+
+
+</nav>
+
+    </div>
+    <div class="column is-9-desktop sidebar-middle">
+      <div class="docs-content">
+        <h1 class="title is-size-2">
+          Semtech UDP Packet Forwarder
+        </h1>
+        <div class="content">
+          <p>If the Semtech UDP Packet Forwarder does not seem to be working, these steps should help you identify the issue.</p>
+<blockquote>
+<p>This section contains the most frequent issues with packet forwarders. If you find issues that are not covered in this guide, feel free to reach out to <a href="https://www.thethingsnetwork.org/forum">The Things Network community forum</a>.</p>
+</blockquote>
+<h2 id="ensure-the-packet-forwarder-is-running">Ensure the packet forwarder is running</h2>
+<p>You will first want to ensure that the process is correctly running. Depending on your system, you can use <code>ps</code>, <code>ps -a</code> or <code>ps -A</code> to display all the running processes. It will return a list of processes, with their PIDs:</p>
+<pre><code>admin@gateway:/# ps -A
+  PID TTY          TIME CMD
+    1 ??       00:00:00 init
+    6 ??       00:00:00 poly_pkt_fwd
+    8 pts/0    00:00:00 sh
+  10 pts/0    00:00:00 ps
+</code></pre><p>You will usually identify the packet forwarder process with the <code>pkt_fwd</code> keyword: common names for the process are <code>poly_pkt_fwd</code>, <code>mp_pkt_fwd</code>, <code>basic_pkt_fwd</code> or <code>gps_pkt_fwd</code>.</p>
+<p>If the process is not in the list, it is likely that the packet forwarder is not running. This could be due to several reasons:</p>
+<h3 id="improper-installation">Improper installation</h3>
+<p>The packet forwarder could <strong>be installed improperly</strong>, and never started. Look at the documentation you used to ensure the packet forwarder is correctly installed. If you did not install anything yourself, please contact the gateway manufacturer or vendor that installed the gateway.</p>
+<h3 id="the-packet-forwarder-did-not-start">The packet forwarder did not start</h3>
+<p>This can be due, for example:</p>
+<ul>
+<li>
+<p>To an invalid configuration.</p>
+</li>
+<li>
+<p>To a communication error with the LoRa concentrator. This highly depends on your gateway. Some gateways do not require any configuration to communicate with the LoRa concentrator ; other gateways require executing actions before communicating with the concentrator. For example, the Kerlink IoT Station requires executing a script called <code>modem_on.sh</code> to communicate with the concentrator after starting the OS. There are also edge cases for some gateways that prevent communication with the concentrator in specific circumstances.</p>
+</li>
+</ul>
+<p>This usually manifests by a <code>failed to start the concentrator</code> error when starting the packet forwarder - to confirm this, check the <a href="/docs/gateways/troubleshooting/#logs">logs of the packet forwarder</a>.</p>
+<h3 id="unexpected-stop">Unexpected stop</h3>
+<p>The packet forwarder could have <strong>quit unexpectedly, and did not restart</strong>. The Semtech UDP Packet Forwarder is usually stable, and this situation does not happen often - however, some circumstances can lead to this, for example if you have other processes on the gateway consuming a lot of resources. If this happens often, you will want to look at the <strong>root causes</strong> of why the packet forwarder is quitting - the <a href="/docs/gateways/troubleshooting/#logs">logs</a> might help you to isolate it. You might also want to look at <strong>mitigation strategies</strong> - such as, wrapping the packet forwarder process in a managing process that will restart it when it quits.</p>
+<h2 id="logs">Logs</h2>
+<h3 id="find-log-file">Find log file</h3>
+<p>In some gateways, you will have access to the logs in the filesystem. Once you find the file in which the logs are being saved, you can read and follow them as they are being written by executing <code>tail -f &lt;filename&gt;</code> (see <a href="http://man7.org/linux/man-pages/man1/tail.1.html">man tail</a>). Here are known log file locations:</p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Multitech Conduit</td>
+<td><code>/var/log/lora_pkt_fwd.log</code></td>
+</tr>
+<tr>
+<td>Kerlink IoT Station</td>
+<td><code>/mnt/fsuser-1/thethingsnetwork/poly_pkt_fwd.log</code> starting from DOTA V1.4 (January 2018)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="manually-start-the-packet-forwarder">Manually start the packet forwarder</h3>
+<p>If you cannot find where the logs are being saved, you can also troubleshoot by <strong>starting the packet forwarder in your terminal</strong>.</p>
+<p>To retrieve the logs in the shell by starting the packet forwarder yourself:</p>
+<ol>
+<li>
+<p>Stop the running packet forwarder process, by using <code>kill -9 &lt;packet forwarder PID&gt;</code>. You can find the PID of the packet forwarder with the <code>ps</code> command, see <a href="/docs/gateways/troubleshooting/#ensuring-the-packet-forwarder-is-running">above</a>.</p>
+</li>
+<li>
+<p>Find the directory in which the <strong>binary</strong> of the packet forwarder is located. For example, for Kerlink packet forwarders, it will be in <code>/mnt/fsuser-1/thethingsnetwork</code>; for Multitech packet forwarders, it is often located in <code>/opt/lora</code>.</p>
+</li>
+<li>
+<p>Find the directory in which the <strong>configuration file</strong> of the packet forwarder is located. Depending on the installation, it is sometimes located in the same directory (e.g. for Kerlink gateways), and sometimes in a different directory (e.g. Multitech gateways, where it is located at <code>/var/config/lora</code>).</p>
+</li>
+<li>
+<p>From the directory where the configuration is located, <strong>execute the packet forwarder</strong>. The packet forwarder will look for configuration in the directory of execution. In the logs of the packet forwarder, you will be able to see if the packet forwarder is able to start or not. You may also specify the folder with configuration by passing the <code>-c &lt;folder&gt;</code> flag to the packet forwarder.</p>
+</li>
+</ol>
+<h2 id="common-issues">Common issues</h2>
+<p>The packet forwarder is running, however you are still having issues with it - it does not show up in the Console, or it seems that your specific gateway has an unexpected behavior.</p>
+<h3 id="network-issue">Network issue</h3>
+<p>It could be that your gateway is not connected to the network server. To check this, look at this line of the <a href="/docs/gateways/troubleshooting/#logs">status logs</a>:</p>
+<pre><code>##### 2016-01-05 18:17:08 GMT #####
+[...]
+### [DOWNSTREAM] ###
+# PULL_DATA sent: 3 (100.00% acknowledged)
+[...]
+</code></pre><p><strong>100% of the <code>PULL_DATA</code> should be acknowledged</strong>. If 0% is acknowledged, it means the gateway is not connected. Check that:</p>
+<ul>
+<li>
+<p>Your gateway is connected to Internet. This can be checked by using <code>ping 8.8.8.8</code>, and seeing if you receive a response.</p>
+</li>
+<li>
+<p>If there is a firewall, that the firewall allows outgoing packets on UDP port 1700.</p>
+</li>
+<li>
+<p>The network server address and ports are correctly set in the packet forwarder configuration. For example, for the EU region of The Things Network, you will find <a href="/docs/gateways/packet-forwarder/semtech-udp/">here</a> the server addresses - such as <code>router.eu.thethings.network</code> or <code>router.kr.thethings.network</code>.</p>
+</li>
+</ul>
+<p>There is also a possibility that the network itself is down. Check our <a href="https://status.thethings.network/">status page</a> for more information on the status of The Things Network.</p>
+<h3 id="gateway-not-detected">Gateway not detected</h3>
+<p>If the logs of your gateway indicate a 100% acknowledgement of <code>PULL_DATA</code> but the Console still does not show your gateway as connected:</p>
+<ul>
+<li>
+<p>Check that in your gateway configuration, <code>server_address</code> is set on a <a href="/docs/gateways/packet-forwarder/semtech-udp/">The Things Network</a> router. If you are using a <strong>private network</strong>, make sure that <code>server_address</code> is not pointing to The Things Network, but to your own router.</p>
+</li>
+<li>
+<p>When registering the gateway on the Console, you should have checked <strong>I&rsquo;m using the Semtech UDP Packet Forwarder</strong>, and have entered the <strong>same EUI</strong> as <code>gateway_ID</code> in your configuration file. At the end of the registration, this will create a gateway on TTN of which the ID will be <code>eui-&lt;eui&gt;</code> For example, if <code>gateway_ID</code> is equal to <code>AA555A0000000101</code>, the registration will create a gateway with the ID <code>eui-aa555a0000000101</code> on the Console.</p>
+<p><img src="../gateway-id.png" alt="Gateway with EUI 0000024b08030c5f"></p>
+<p>For example, this gateway should have <code>&quot;gateway_ID&quot;: &quot;0000024B08030C5F&quot;</code> in its configuration.</p>
+</li>
+</ul>
+<h2 id="uplink-issues">Uplink issues</h2>
+<h3 id="crc-issues">CRC issues</h3>
+<p>In the <a href="/docs/gateways/troubleshooting/#logs">logs</a>, you can see statistics regarding CRC checks of the packets received by the gateway:</p>
+<pre><code>[...]
+### [UPSTREAM] ###
+# RF packets received by concentrator: 4
+# CRC_OK: 100.00%, CRC_FAIL: 0.00%, NO_CRC: 0.00%
+[...]
+</code></pre><p>A CRC check is a verification made by the gateway to ensure that an uplink has not been altered during transmission. If a packet is transmitted successfully to the gateway, the CRC check <strong>will pass</strong>. If the packet was altered (because of e.g. interferences), CRC check <strong>will fail</strong>. Even if a packet that failed CRC check is transmitted to the network server, it is often unparsable and wo not be sent to the application.</p>
+<p>Reasons why a gateway can have a high rate of CRC failures are:</p>
+<ul>
+<li>
+<p>If one or multiple devices nearby is faulty.</p>
+</li>
+<li>
+<p>If there is a lot of noise on the reception band, the concentrator might interpret random signals as LoRa packets, which will fail CRC check.</p>
+</li>
+<li>
+<p>If the configuration of the gateway does not match the concentrator used ; for example, if a 868MHz concentrator is configured for a 915MHz frequency plan.</p>
+</li>
+<li>
+<p>If the antenna of the gateway is faulty, preventing correct reception of messages.</p>
+</li>
+</ul>
+<h3 id="filtering-packets">Filtering packets</h3>
+<p>In LoRaWAN, there&rsquo;s no concept of devices connecting to gateways - a device <strong>joins a network</strong>, and a gateway only relays RF packets received to the configured network server, which then handles activating devices and transmitting messages regardless of the gateway it was transmitted through.</p>
+<p>The Semtech UDP Packet Forwarder does not filter received uplinks based on the network, and transmits all received packets to the Things Network (which will then filter packets, and drop packets from other networks). It is not possible to select which packets the packet forwarder should transmit.</p>
+<h2 id="downlinks-issues">Downlinks issues</h2>
+<h3 id="the-gateway-does-not-receive-any-downlink">The gateway does not receive any downlink</h3>
+<p>If a gateway that is not registered on the Things Network connects anyway using the Semtech UDP Packet Forwarder, the Things Network will accept upcoming uplinks - however, the Things Network wo not use that gateway for downlink transmission.</p>
+<p>If you notice that your gateway is not being sent any downlink, it could be that:</p>
+<ul>
+<li>
+<p>There&rsquo;s a gateway nearby with better coverage and signal, that is prioritized by TTN</p>
+</li>
+<li>
+<p>Your gateway is not recognized by TTN. Make sure that you have <a href="/docs/gateways/packet-forwarder/semtech-udp/#registration">registered</a> your gateway on the Console, and that the gateway ID on the Console matches the EUI entered in the configuration of the gateway.</p>
+</li>
+</ul>
+<h3 id="downlinks-are-not-transmitted-by-the-gateway">Downlinks are not transmitted by the gateway</h3>
+<p>It can happen that a gateway is indicated as connected in the Console, transmits uplinks, but does not transmit any of the downlinks it receives from the Things Network. This is usually due to latency issues between the gateway and the network server.</p>
+<p>If you have isolated the issue, and are confident that the issue comes from the gateway, check in the <a href="/docs/gateways/troubleshooting/#logs">logs</a> the time in which <code>PULL_ACK</code> messages are being received by the network server:</p>
+<pre><code>INFO: [down] for server 54.72.145.119 PULL_ACK received in 105 ms
+INFO: [down] for server 54.72.145.119 PULL_ACK received in 104 ms
+</code></pre><p>If the delay in which <code>PULL_ACK</code> messages are received is too long (e.g. &gt;300ms), it means that there&rsquo;s a high latency between the gateway and the network server - it can then happen that the downlink is received too late by the gateway.</p>
+<p>You can detect downlinks being received too late in two places in the logs: either if <code>TOO_LATE</code> messages appear in the logs, or if there is a line in the status logs indicating <code>TX rejected (too late)</code> messages.</p>
+<p>If you often encounter downlink arriving too late at the gateway, you might want to check your internet connection. One way to mitigate this effect is to <a href="/docs/gateways/packet-forwarder/semtech-udp/">use the router closest to your location</a>. Other reasons for high latency are cellular or satellite backhauls for gateways.</p>
+
+        </div>
+      
+      <div class="is-clearfix">
+</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="footer"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ttn-components.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/promise-polyfill@7/dist/polyfill.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-navbar.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-footer.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ga.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/vendor/basicLightbox.min.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/theme.min.00ace5d667ca108a93b8a0d385569f7c7bb9f46ed32eefe3f5fb39105763cccd.js" integrity="sha256-AKzl1mfKEIqTuKDThVaffHu59G7TLu/j9fs5EFdjzM0=" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

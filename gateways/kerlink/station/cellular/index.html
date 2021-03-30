@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+
+<html lang="en-us" class="has-ttn-navbar-top">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <meta name="generator" content="Hugo 0.79.0" />
+
+  <title>Cellular Connection | The Things Network</title>
+  <link rel="canonical" href="https://www.thethingsnetwork.org/docs/gateways/kerlink/station/cellular/" />
+  
+
+  <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
+
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+  <meta name="msapplication-TileImage" content="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png">
+
+  <meta name="application-name" content="The Things Network">
+  <meta name="msapplication-tooltip" content="Tooltip">
+  <meta name="msapplication-config" content="https://ttnweb.azureedge.net/static/common/favicon/ieconfig.54334a5ee30c.xml">
+
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-32.61b30f85680a.png" sizes="32x32">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-57.83b86c64dc82.png" sizes="57x57">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-76.7dcf8fa36dfc.png" sizes="76x76">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-96.27ac17adaa8b.png" sizes="96x96">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-120.e1526731335e.png" sizes="120x120">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-128.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png" sizes="144x144">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png" sizes="152x152">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-180.fcd414307ca3.png" sizes="180x180">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-195.c55ce09d66da.png" sizes="195x195">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-228.bea53ec4b10b.png" sizes="228x228">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/smalltile.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/mediumtile.3d42f7faac82.png" sizes="270x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
+  <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+
+  <meta property="og:title" content="Cellular Connection" />
+<meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/gateways/kerlink/station/cellular/" />
+<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
+<meta property="og:site_name" content="The Things Network" />
+
+
+  <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
+
+<meta name="twitter:title" content="Cellular Connection"/>
+<meta name="twitter:description" content="We are building a global open free crowdsourced long range low power IoT data network"/>
+
+
+</head>
+
+
+<body>
+
+<div id="header"></div>
+<section class="section">
+  <div class="container">
+    <nav class="breadcrumb has-dot-separator" aria-label="breadcrumbs">
+      <ul>
+        <li><a href="https://www.thethingsnetwork.org/docs">Learn</a></li>
+        
+        
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/lorawan/">LoRaWAN</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/quick-start/">Quick Start</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/applications-and-integrations/">Applications &amp; Integrations</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/">Devices &amp; Gateways</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/the-things-stack/">The Things Stack</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/v2-docs/">V2 Docs (Outdated)</a>
+            </li>
+          
+        
+      </ul>
+    </nav>
+  </div>
+</section>
+<div class="container" role="document">
+  <div class="columns my-0 is-desktop">
+    <div class="column is-3-desktop sidebar-left">
+      
+
+
+<nav class="side-navigation" aria-label="Main navigation">
+
+<h2 class="title is-size-5">Gateways</h2>
+
+<div class="menu">
+  <ul class="menu-list">
+  <a href="https://www.thethingsnetwork.org/docs/gateways/" class="">Overview</a>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/gateways/basics-station/" class="">LoRa Basics™ Station</a>
+    </li>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/gateways/certificates/" class="">Root Certificates</a>
+    </li>
+  
+    <p class="menu-label">
+      SDKs
+    </p>
+    
+  
+    <p class="menu-label">
+      Running a gateway
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/troubleshooting/" class="">Troubleshooting</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/lightning-protection/" class="">Lightning Protection</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/packet-forwarder/" class="">Packet Forwarders</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/registration/" class="">Gateway Registration</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/start/" class="">Where to start</a>
+</li>
+
+  
+    <p class="menu-label">
+      Hardware
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/pisupply-hat/" class="">Pi Supply Gateway HAT</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/multitech/" class="">MultiTech Conduit</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/rak2245/" class="">RAK2245 Pi Hat Edition - LoRaWAN® Gateway Concentrator Module</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/rak7243c/" class="">RAK7243C Pilot Gateway</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/rak831/" class="">RAK831</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/gateway/" class="">The Things Gateway</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/thethingsindoor/" class="">The Things Indoor Gateway</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/thethingsoutdoor/" class="">The Things Outdoor Gateway</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/aaeon/" class="">AAEON</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/cisco/" class="">Cisco LoRaWAN Gateway</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/kerlink/" class="">Kerlink</a>
+  
+
+
+<ul class="menu-list">
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/gateways/kerlink/reverse-ssh/" class="">Reverse SSH</a>
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/gateways/kerlink/keros/" class="">KerOS installation and configuration</a>
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/gateways/kerlink/ibts/" class="">Wirnet iBTS</a>
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/gateways/kerlink/ifemtocell/" class="">Wirnet iFemtoCell</a>
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/gateways/kerlink/ifemtocell-evolution/" class="">Wirnet iFemtoCell Evolution</a>
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/gateways/kerlink/istation/" class="">Wirnet iStation</a>
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/gateways/kerlink/station/" class="">Wirnet Station</a>
+    
+    
+
+
+<ul class="menu-list">
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/gateways/kerlink/station/mount/" class="">Mount</a>
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/gateways/kerlink/station/cellular/" class="is-active">Cellular Connection</a>
+    
+    
+
+
+
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/gateways/kerlink/station/firmware-updates/" class="">Firmware Updates</a>
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/gateways/kerlink/station/config/" class="">Configuration</a>
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/gateways/kerlink/station/setup/" class="">Setup</a>
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/gateways/kerlink/station/specs/" class="">Specifications</a>
+    
+  </li>
+
+</ul>
+
+
+    
+  </li>
+
+</ul>
+
+
+  
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/laird/" class="">Laird RG1xx</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/lorrier/" class="">Lorrier LR2</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/mikrotik/" class="">MikroTik Routerboard</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/st/" class="">P-NUCLEO-LRWAN2</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/tektelic/" class="">Tektelic</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/ursalink/" class="">Ursalink</a>
+</li>
+
+  
+  </ul>
+</div>
+
+
+
+
+
+</nav>
+
+    </div>
+    <div class="column is-9-desktop sidebar-middle">
+      <div class="docs-content">
+        <h1 class="title is-size-2">
+          Cellular Connection
+        </h1>
+        <div class="content">
+          <p>It is possible to connect the Kerlink to a GPRS/3G connection. This may be useful in locations where there is no ethernet network access, or where access to the local/company network is not allowed.</p>
+<h2 id="configure-using-a-dota-file-and-usb-flash-drive">Configure using a dota file and USB flash drive</h2>
+<p>It is possible to configure the GPRS/3G connection without logging into the gateway. This can be done in the same way as the packet forwarder was installed. An example dota file which should be copied to a flash drive is provided here. This dota will configure the gateway to use the <code>internet</code> APN and use a blank username and a blank password. This dota also applies the fix to allow blank login details for gprs.</p>
+<ul>
+<li>Download <a href="https://raw.githubusercontent.com/TheThingsNetwork/kerlink-station-firmware/legacy/dota/dota_gprs_apn_internet_nopw.tar.gz">dota_gprs_apn_internet_nopw.tar.gz</a> and copy it to a USB flash drive without extracting it.</li>
+<li>Dowload <a href="https://raw.githubusercontent.com/TheThingsNetwork/kerlink-station-firmware/legacy/dota/produsb_wirnet_v3.6.zip">produsb_wirnet_v3.6.zip</a> and extract it to the flash drive.</li>
+<li>Plug the USB flash drive into the gateway and wait for the dota to be installed.</li>
+</ul>
+<p>The configuration files needed to get gprs/3G to work are inside the dota archive. You can modify them with your settings before installing the dota on the gateway.</p>
+<h2 id="configure-by-manually-editing-config-files">Configure by manually editing config files</h2>
+<p>Log into the gateway using SSH or a Wirgrid device.</p>
+<p>Set your APN settings in <code>/etc/sysconfig/network</code> (see <a href="/docs/gateways/kerlink/station/#provider-settings">Provider Settings</a>):</p>
+<blockquote>
+<p><em>You can open the file via the terminal, type: <code>vi /etc/sysconfig/network</code>. Type <code>i</code> to start editing the file, after doing so, save and quit the file: press <code>esc</code> &gt; <code>:w</code> &gt; <code>esc</code> &gt; <code>:q</code></em></p>
+</blockquote>
+<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext"># Selector operator APN
+GPRSAPN=internet
+# Enter pin code if activated
+GPRSPIN=
+# Update /etc/resolv.conf to get dns facilities
+GPSDNS=yes
+# PAP authentication
+GPRSUSER=myusername
+GPRSPASSWORD=mypassword
+
+# Bearers priority order
+BEARERS_PRIORITY=&#34;eth0,ppp0&#34;
+</code></pre></div><p>Configure the autoconnect in <code>/knet/knetd.xml</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-xml" data-lang="xml"><span class="c">&lt;!-- ############## connection parameters ############## --&gt;</span>
+<span class="c">&lt;!-- enable the autoconnect feature (YES/NO) --&gt;</span>
+<span class="nt">&lt;CONNECT</span> <span class="na">auto_connection=</span><span class="s">&#34;YES&#34;</span> <span class="nt">/&gt;</span>
+
+<span class="c">&lt;!-- ############## default area for connection policy ############## --&gt;</span>
+
+<span class="nt">&lt;AREA</span> <span class="na">id=</span><span class="s">&#34;default&#34;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;ACCESS_POINT</span> <span class="na">bearer=</span><span class="s">&#34;gprs&#34;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/AREA&gt;</span>  
+</code></pre></div><p><strong>Warning:</strong> There is a bug in the software. When <code>GPRSUSER</code> and <code>GPRSPASSWORD</code> needs to stay empty the Kerlink does funny things and no connection is made. To resolve this problem, please apply <a href="https://github.com/TheThingsNetwork/kerlink-station-firmware/blob/master/dota/dota_update_gprs_script.tar.gz?raw=true">this patch</a>.</p>
+<p><strong>Troubleshooting:</strong> If you are using the Kerlink SPF packet forwarder it will automatically restart when the internet connection changes. For other packet forwarders it might be necessary to restart the packet forwarder when this occurs. You can do so by adding the line: <code>/usr/bin/killall poly_pkt_fwd</code> at the bottom of the files <code>/etc/ppp/ip-up</code> and <code>/etc/ppp/ip-down</code>.</p>
+<h2 id="provider-settings">Provider Settings</h2>
+<h3 id="kpn">KPN</h3>
+<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext"># Selector operator APN
+GPRSAPN=portalmmm.nl
+# Enter pin code if activated
+GPRSPIN=
+# Update /etc/resolv.conf to get dns facilities
+GPSDNS=yes
+# PAP authentication
+GPRSUSER=internet
+GPRSPASSWORD=internet
+</code></pre></div><h3 id="vodafone">Vodafone</h3>
+<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext"># Selector operator APN
+GPRSAPN=live.vodafone.com
+# Enter pin code if activated
+GPRSPIN=
+# Update /etc/resolv.conf to get dns facilities
+GPSDNS=yes
+# PAP authentication
+GPRSUSER=vodafone
+GPRSPASSWORD=vodafone
+</code></pre></div><h3 id="ben">Ben</h3>
+<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext"># Selector operator APN
+GPRSAPN=internet.ben
+# Enter pin code if activated
+GPRSPIN=
+# Update /etc/resolv.conf to get dns facilities
+GPSDNS=yes
+# PAP authentication
+GPRSUSER=
+GPRSPASSWORD=
+</code></pre></div>
+        </div>
+      
+      <div class="is-clearfix">
+</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="footer"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ttn-components.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/promise-polyfill@7/dist/polyfill.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-navbar.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-footer.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ga.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/vendor/basicLightbox.min.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/theme.min.00ace5d667ca108a93b8a0d385569f7c7bb9f46ed32eefe3f5fb39105763cccd.js" integrity="sha256-AKzl1mfKEIqTuKDThVaffHu59G7TLu/j9fs5EFdjzM0=" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

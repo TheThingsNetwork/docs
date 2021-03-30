@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+
+<html lang="en-us" class="has-ttn-navbar-top">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <meta name="generator" content="Hugo 0.79.0" />
+
+  <title>Configuring the RAK811 WisNode LoRa Module | The Things Network</title>
+  <link rel="canonical" href="https://www.thethingsnetwork.org/docs/devices/rak811-wisnode-lora-module/configuring-wisnode/" />
+  
+
+  <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
+
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+  <meta name="msapplication-TileImage" content="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png">
+
+  <meta name="application-name" content="The Things Network">
+  <meta name="msapplication-tooltip" content="Tooltip">
+  <meta name="msapplication-config" content="https://ttnweb.azureedge.net/static/common/favicon/ieconfig.54334a5ee30c.xml">
+
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-32.61b30f85680a.png" sizes="32x32">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-57.83b86c64dc82.png" sizes="57x57">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-76.7dcf8fa36dfc.png" sizes="76x76">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-96.27ac17adaa8b.png" sizes="96x96">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-120.e1526731335e.png" sizes="120x120">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-128.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png" sizes="144x144">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png" sizes="152x152">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-180.fcd414307ca3.png" sizes="180x180">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-195.c55ce09d66da.png" sizes="195x195">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-228.bea53ec4b10b.png" sizes="228x228">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/smalltile.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/mediumtile.3d42f7faac82.png" sizes="270x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
+  <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+
+  <meta property="og:title" content="Configuring the RAK811 WisNode LoRa Module" />
+<meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/devices/rak811-wisnode-lora-module/configuring-wisnode/" />
+<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
+<meta property="og:site_name" content="The Things Network" />
+
+
+  <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
+
+<meta name="twitter:title" content="Configuring the RAK811 WisNode LoRa Module"/>
+<meta name="twitter:description" content="We are building a global open free crowdsourced long range low power IoT data network"/>
+
+
+</head>
+
+
+<body>
+
+<div id="header"></div>
+<section class="section">
+  <div class="container">
+    <nav class="breadcrumb has-dot-separator" aria-label="breadcrumbs">
+      <ul>
+        <li><a href="https://www.thethingsnetwork.org/docs">Learn</a></li>
+        
+        
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/lorawan/">LoRaWAN</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/quick-start/">Quick Start</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/applications-and-integrations/">Applications &amp; Integrations</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/">Devices &amp; Gateways</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/the-things-stack/">The Things Stack</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/v2-docs/">V2 Docs (Outdated)</a>
+            </li>
+          
+        
+      </ul>
+    </nav>
+  </div>
+</section>
+<div class="container" role="document">
+  <div class="columns my-0 is-desktop">
+    <div class="column is-3-desktop sidebar-left">
+      
+
+
+<nav class="side-navigation" aria-label="Main navigation">
+
+<h2 class="title is-size-5">Devices</h2>
+
+<div class="menu">
+  <ul class="menu-list">
+  <a href="https://www.thethingsnetwork.org/docs/devices/" class="">Overview</a>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/devices/bestpractices/" class="">Best Practices</a>
+    </li>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/devices/registration/" class="">Device Registration</a>
+    </li>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/devices/bytes/" class="">Working with Bytes</a>
+    </li>
+  
+    <p class="menu-label">
+      SDKs &amp; Libraries
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/devices/arduino/" class="">Arduino</a>
+</li>
+
+  
+    <p class="menu-label">
+      Hardware
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/devices/rak5205-wistrio-lora-tracker/" class="">RAK5205 WisTrio LoRa® Tracker</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/devices/rak7200-lora-tracker/" class="">RAK7200 LoRa® Tracker</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/devices/rak811-lora-module-breakout-board/" class="">RAK811 LoRa® Breakout Module</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/devices/rak811-lora-evaluation-board/" class="">RAK811 LoRa® Evaluation Board</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/devices/rak811-wisnode-lora-module/" class="">RAK811 WisNode LoRa Module</a>
+  
+
+
+<ul class="menu-list">
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/devices/rak811-wisnode-lora-module/connecting-to-ttn/" class="">Connecting to The Things Network (TTN)</a>
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/devices/rak811-wisnode-lora-module/configuring-wisnode/" class="is-active">Configuring the RAK811 WisNode LoRa Module</a>
+    
+    
+
+
+
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/devices/rak811-wisnode-lora-module/burning-the-firmware/" class="">Burning the Firmware</a>
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/devices/rak811-wisnode-lora-module/burning-the-bootloader/" class="">Burning the Bootloader into the Device</a>
+    
+  </li>
+
+</ul>
+
+
+  
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/devices/node/" class="">The Things Node</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/devices/uno/" class="">The Things Uno</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/devices/lopy/" class="">LoPy</a>
+</li>
+
+  
+  </ul>
+</div>
+
+
+
+
+
+</nav>
+
+    </div>
+    <div class="column is-9-desktop sidebar-middle">
+      <div class="docs-content">
+        <h1 class="title is-size-2">
+          Configuring the RAK811 WisNode LoRa Module
+        </h1>
+        <div class="content">
+          <p>You can configure your WisNode by sending AT Commands via a Serial port tool running on your PC.The list below shows the AT Commands available for use:</p>
+<table>
+<thead>
+<tr>
+<th>AT Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>at+help</td>
+<td>This AT command can show all available AT commands of this module/product for you</td>
+</tr>
+<tr>
+<td>at+version</td>
+<td>Get the current firmware version number.</td>
+</tr>
+<tr>
+<td>at+get_config=device:status</td>
+<td>Get all information about the device’s hardware components and their current status.</td>
+</tr>
+<tr>
+<td>at+set_config=device:restart</td>
+<td>After set, the device will restart.</td>
+</tr>
+<tr>
+<td>at+set_config=device:boot</td>
+<td>Let the device work in boot mode</td>
+</tr>
+<tr>
+<td>at+run</td>
+<td>Stop boot mode and run as normal. It is valid when the device works in boot mode.</td>
+</tr>
+<tr>
+<td>at+set_config=device:sleep:X</td>
+<td>Get all information about the device’s hardware components and their current status.</td>
+</tr>
+<tr>
+<td>at+set_config=device:gpio:X:Y</td>
+<td>Set a certain GPIO pin to high/low level.<br/>X definition: the pin number of a certain GPIO on RAK811 module.<br/>Y definition: 0: low level, 1: high level.</td>
+</tr>
+<tr>
+<td>at+get_config=device:gpio:X</td>
+<td>Get a certain GPIO’s level.<br/>X definition: the pin number of the GPIO on RAK811 module.</td>
+</tr>
+<tr>
+<td>at+get_config=device:adc:X</td>
+<td>Get the ADC value.<br/>X definition: the pin number of the ADC on RAK811 module.</td>
+</tr>
+<tr>
+<td>at+set_config=device:iic:X:YY:ZZ:AAA</td>
+<td>Read data from I2C or write a data to I2C.<br/>X definition: 0: read, 1: write.<br/>YY definition: device address, in HEX format.<br/>ZZ definition: sensor’s register address, in HEX format.<br/>AAA definition: if read, this parameter means the length you want to read. If write, this parameter means the data you want to write. It must be in HEX format too.</td>
+</tr>
+<tr>
+<td>at+set_config=device:uart_mode:X:Y</td>
+<td>Set the UART work mode.<br/>X definition: UART number on RAK811 module.<br/>Y definition:  0: Configuration mode; 1: Passthrough mode.</td>
+</tr>
+<tr>
+<td>at+send=uart:X:YYY</td>
+<td>Set a certain UART’s Baud rate.<br/>X definition: the UART number.<br/>Y definition: the Baud rate value.</td>
+</tr>
+<tr>
+<td>at+set_config=device:uart:X:Y</td>
+<td>Send data through UART.<br/>X definition: the UART number of RAK811 module.<br/>YYY definition: the data you want to send through UART.</td>
+</tr>
+<tr>
+<td>at+join</td>
+<td>Start to join LoRa network</td>
+</tr>
+<tr>
+<td>at+send=lora:X:YYY</td>
+<td>Send a customized data. <br/> X definition: LoRa port <br/> YYY definition: the data which you want to send. The limited length is 50 Bytes, and the data must be in HEX format.</td>
+</tr>
+<tr>
+<td>at+set_config=lora:work_mode:X</td>
+<td>Set the work mode for LoRa. <br/>X definition: 0: LoRaWAN, 1: LoRaP2P, 2: Test Mode.</td>
+</tr>
+<tr>
+<td>at+set_config=lora:join_mode:X</td>
+<td>Set the join mode for LoRaWAN. <br/>X definition: 0: OTAA, 1: ABP</td>
+</tr>
+<tr>
+<td>at+set_config=lora:class:X</td>
+<td>Set the class for LoRa. <br/>X definition: 0: Class A, 1: Class B, 2: Class C</td>
+</tr>
+<tr>
+<td>at+set_config=lora:region:XXX</td>
+<td>Set the region for LoRa. <br/>XXX define: one of the following items: EU868 EU433, CN470, IN865, EU868, AU915, US915, KR920, AS923.</td>
+</tr>
+<tr>
+<td>at+set_config=lora:confirm:X</td>
+<td>Set the type of messages which will be sent out through LoRa. <br/>X definition: 0: unconfirm, 1: confirm</td>
+</tr>
+<tr>
+<td>at+set_config=lora:dev_eui:XXXX</td>
+<td>Set the device EUI for OTAA. <br/>XXXX definition: the device EUI.</td>
+</tr>
+<tr>
+<td>at+set_config=lora:app_eui:XXXX</td>
+<td>Set the application EUI for OTAA. <br/>XXXX definition: the application EUI.</td>
+</tr>
+<tr>
+<td>at+set_config=lora:app_key:XXXX</td>
+<td>Set the application key for OTAA. <br/>XXXX definition: the application key.</td>
+</tr>
+<tr>
+<td>at+set_config=lora:dev_addr:XXXX</td>
+<td>Set the device address for ABP. <br/>XXXX definition: the device address.</td>
+</tr>
+<tr>
+<td>at+set_config=lora:apps_key:XXXX</td>
+<td>Set the application session key for ABP. <br/>XXXX definition: the application session key.</td>
+</tr>
+<tr>
+<td>at+set_config=lora:nwks_key:XXXX</td>
+<td>Set the network session key for ABP. <br/>XXXX definition: the network session key.</td>
+</tr>
+<tr>
+<td>at+set_config=lora:ch_mask:X:Y</td>
+<td>Set a certain channel on or off. <br/>X definition: the channel number, and you can check which channel can be set before you set it.<br/>Y definition: 0: off, 1: on</td>
+</tr>
+<tr>
+<td>at+set_config=lora:adr:X</td>
+<td>Open or close the ADR function of LoRa Node.<br/>X definition: 0: Close ADR; 1: Open ADR.</td>
+</tr>
+<tr>
+<td>at+set_config=lora:dr:X</td>
+<td>Set the DR of LoRa Node.<br/>X definition: the number of DR. Generally, the value of X can be 0~5. More details, please check the LoRaWAN 1.0.2 specification.</td>
+</tr>
+<tr>
+<td>at+set_config=lora:tx_power:X</td>
+<td>Set the TX power level.<br/>X definition: The level of TX power. If you want to know the relationship between TX power level and dbm, please have a look at LoRaWAN 1.0.2 region specification on this <a href="https://github.com/RAKWireless/Update-File/blob/master/LoRaWANRegionalParametersv1.0.2.pdf">link</a>.</td>
+</tr>
+<tr>
+<td>at+get_config=lora:status</td>
+<td>Returns all of the current information of LoRa, except LoRa channel.</td>
+</tr>
+<tr>
+<td>at+get_config=lora:channel</td>
+<td>It will return the state of all LoRa channels, then you can see which channel is closed and which channel is open very clearly</td>
+</tr>
+<tr>
+<td>at+set_config=lorap2p:XXX:Y:Z:A:B: C</td>
+<td>Set the parameters for LoRa P2P mode. This AT command is valid when the work mode is ·LoRaP2P. <br/>XXX definition: Frequency in Hz. <br/>Y definition: Spreading factor, [6, 7, 8, 9, 10, 11, 12]. <br/>Z definition: Bandwidth, 0: 125 kHz, 1: 250 kHz, 2: 500kHz. <br/>A definition: Coding Rate, 1: 4/5, 2: 4/6, 3: 4/7, 4: 4/8. <br/>B definition: Preamble Length, 5~65535. <br/>C definition: Power in dbm, 5~20.</td>
+</tr>
+<tr>
+<td>at+send=lorap2p:XXX</td>
+<td>Send data through LoRaP2P. This AT command is valid when it works in LoRaP2P mode. <br/>XXX definition: the data in HEX.</td>
+</tr>
+</tbody>
+</table>
+
+        </div>
+      
+      <div class="is-clearfix">
+</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="footer"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ttn-components.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/promise-polyfill@7/dist/polyfill.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-navbar.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-footer.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ga.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/vendor/basicLightbox.min.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/theme.min.00ace5d667ca108a93b8a0d385569f7c7bb9f46ed32eefe3f5fb39105763cccd.js" integrity="sha256-AKzl1mfKEIqTuKDThVaffHu59G7TLu/j9fs5EFdjzM0=" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

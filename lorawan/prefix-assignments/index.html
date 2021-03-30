@@ -1,0 +1,1456 @@
+<!DOCTYPE html>
+
+<html lang="en-us" class="has-ttn-navbar-top">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <meta name="generator" content="Hugo 0.79.0" />
+
+  <title>NetID and DevAddr Prefix Assignments | The Things Network</title>
+  <link rel="canonical" href="https://www.thethingsnetwork.org/docs/lorawan/prefix-assignments/" />
+  
+
+  <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
+
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+  <meta name="msapplication-TileImage" content="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png">
+
+  <meta name="application-name" content="The Things Network">
+  <meta name="msapplication-tooltip" content="Tooltip">
+  <meta name="msapplication-config" content="https://ttnweb.azureedge.net/static/common/favicon/ieconfig.54334a5ee30c.xml">
+
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-32.61b30f85680a.png" sizes="32x32">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-57.83b86c64dc82.png" sizes="57x57">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-76.7dcf8fa36dfc.png" sizes="76x76">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-96.27ac17adaa8b.png" sizes="96x96">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-120.e1526731335e.png" sizes="120x120">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-128.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png" sizes="144x144">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png" sizes="152x152">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-180.fcd414307ca3.png" sizes="180x180">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-195.c55ce09d66da.png" sizes="195x195">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-228.bea53ec4b10b.png" sizes="228x228">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/smalltile.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/mediumtile.3d42f7faac82.png" sizes="270x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
+  <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+
+  <meta property="og:title" content="NetID and DevAddr Prefix Assignments" />
+<meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/lorawan/prefix-assignments/" />
+<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
+<meta property="og:site_name" content="The Things Network" />
+
+
+  <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
+
+<meta name="twitter:title" content="NetID and DevAddr Prefix Assignments"/>
+<meta name="twitter:description" content="We are building a global open free crowdsourced long range low power IoT data network"/>
+
+
+</head>
+
+
+<body>
+
+<div id="header"></div>
+<section class="section">
+  <div class="container">
+    <nav class="breadcrumb has-dot-separator" aria-label="breadcrumbs">
+      <ul>
+        <li><a href="https://www.thethingsnetwork.org/docs">Learn</a></li>
+        
+        
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+            <li class="is-active">
+              <a href="https://www.thethingsnetwork.org/docs/lorawan/">LoRaWAN</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/quick-start/">Quick Start</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/applications-and-integrations/">Applications &amp; Integrations</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/">Devices &amp; Gateways</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/the-things-stack/">The Things Stack</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/v2-docs/">V2 Docs (Outdated)</a>
+            </li>
+          
+        
+      </ul>
+    </nav>
+  </div>
+</section>
+<div class="container" role="document">
+  <div class="columns my-0 is-desktop">
+    <div class="column is-3-desktop sidebar-left">
+      
+
+
+<nav class="side-navigation" aria-label="Main navigation">
+
+<h2 class="title is-size-5">LoRaWAN</h2>
+
+<div class="menu">
+  <ul class="menu-list">
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/" class="">Overview</a>
+  
+    <p class="menu-label">
+      Fundamental
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/regional-parameters/" class="">Regional Parameters</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/architecture/" class="">LoRaWAN Architecture</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/limitations/" class="">Limitations</a>
+</li>
+
+  
+    <p class="menu-label">
+      Specifications
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/security/" class="">Security</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/duty-cycle/" class="">Duty Cycle</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/adaptive-data-rate/" class="">Adaptive Data Rate</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/modulation-data-rate/" class="">Modulation &amp; Data Rate</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/addressing/" class="">Addressing &amp; Activation</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/classes/" class="">Classes</a>
+</li>
+
+  
+    <p class="menu-label">
+      Additional Information
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/frequencies-by-country/" class="">Frequency Plans by Country</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/frequency-plans/" class="">Frequency Plans</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/academic/" class="">Academic Research</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/prefix-assignments/" class="is-active">NetID and DevAddr Prefix Assignments</a>
+  
+
+
+
+  
+</li>
+
+  
+  </ul>
+</div>
+
+
+
+
+
+</nav>
+
+    </div>
+    <div class="column is-9-desktop sidebar-middle">
+      <div class="docs-content">
+        <h1 class="title is-size-2">
+          NetID and DevAddr Prefix Assignments
+        </h1>
+        <div class="content">
+          <table>
+<thead>
+<tr>
+<th><strong>NetID</strong></th>
+<th><strong>DevAddr Prefix</strong></th>
+<th><strong>DevAddr Range</strong></th>
+<th><strong>Operator</strong></th>
+<th><strong>Region</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>000000</code></td>
+<td><code>00000000/7</code></td>
+<td><code>00000000</code> - <code>01FFFFFF</code></td>
+<td>Private/experimental nodes</td>
+<td>Local</td>
+</tr>
+<tr>
+<td><code>000001</code></td>
+<td><code>02000000/7</code></td>
+<td><code>02000000</code> - <code>03FFFFFF</code></td>
+<td>Private/experimental nodes</td>
+<td>Local</td>
+</tr>
+<tr>
+<td><code>000002</code></td>
+<td><code>04000000/7</code></td>
+<td><code>04000000</code> - <code>05FFFFFF</code></td>
+<td>Actility</td>
+<td>World</td>
+</tr>
+<tr>
+<td><code>000003</code></td>
+<td><code>06000000/7</code></td>
+<td><code>06000000</code> - <code>07FFFFFF</code></td>
+<td>Proximus</td>
+<td>Europe</td>
+</tr>
+<tr>
+<td><code>000004</code></td>
+<td><code>08000000/7</code></td>
+<td><code>08000000</code> - <code>09FFFFFF</code></td>
+<td>Swisscom</td>
+<td>World</td>
+</tr>
+<tr>
+<td><code>000005</code></td>
+<td><code>0A000000/7</code></td>
+<td><code>0A000000</code> - <code>0BFFFFFF</code></td>
+<td><em>unassigned</em></td>
+<td></td>
+</tr>
+<tr>
+<td><code>000006</code></td>
+<td><code>0C000000/7</code></td>
+<td><code>0C000000</code> - <code>0DFFFFFF</code></td>
+<td>La Poste</td>
+<td>Europe</td>
+</tr>
+<tr>
+<td><code>000007</code></td>
+<td><code>0E000000/7</code></td>
+<td><code>0E000000</code> - <code>0FFFFFFF</code></td>
+<td>Bouygues Telecom</td>
+<td>World</td>
+</tr>
+<tr>
+<td><code>000008</code></td>
+<td><code>10000000/7</code></td>
+<td><code>10000000</code> - <code>11FFFFFF</code></td>
+<td>Orbiwise</td>
+<td>World</td>
+</tr>
+<tr>
+<td><code>000009</code></td>
+<td><code>12000000/7</code></td>
+<td><code>12000000</code> - <code>13FFFFFF</code></td>
+<td>SENET</td>
+<td>World</td>
+</tr>
+<tr>
+<td><code>00000A</code></td>
+<td><code>14000000/7</code></td>
+<td><code>14000000</code> - <code>15FFFFFF</code></td>
+<td>KPN</td>
+<td>Europe</td>
+</tr>
+<tr>
+<td><code>00000B</code></td>
+<td><code>16000000/7</code></td>
+<td><code>16000000</code> - <code>17FFFFFF</code></td>
+<td>EveryNet</td>
+<td>Russia</td>
+</tr>
+<tr>
+<td><code>00000C</code></td>
+<td><code>18000000/7</code></td>
+<td><code>18000000</code> - <code>19FFFFFF</code></td>
+<td><em>unassigned</em></td>
+<td></td>
+</tr>
+<tr>
+<td><code>00000D</code></td>
+<td><code>1A000000/7</code></td>
+<td><code>1A000000</code> - <code>1BFFFFFF</code></td>
+<td>SK Telecom</td>
+<td>World</td>
+</tr>
+<tr>
+<td><code>00000E</code></td>
+<td><code>1C000000/7</code></td>
+<td><code>1C000000</code> - <code>1DFFFFFF</code></td>
+<td>SagemCom</td>
+<td>World</td>
+</tr>
+<tr>
+<td><code>00000F</code></td>
+<td><code>1E000000/7</code></td>
+<td><code>1E000000</code> - <code>1FFFFFFF</code></td>
+<td>Orange</td>
+<td>World</td>
+</tr>
+<tr>
+<td><code>000010</code></td>
+<td><code>20000000/7</code></td>
+<td><code>20000000</code> - <code>21FFFFFF</code></td>
+<td>A2A Smart City</td>
+<td>World</td>
+</tr>
+<tr>
+<td><code>000011</code></td>
+<td><code>22000000/7</code></td>
+<td><code>22000000</code> - <code>23FFFFFF</code></td>
+<td>TATA Communication</td>
+<td>India</td>
+</tr>
+<tr>
+<td><code>000012</code></td>
+<td><code>24000000/7</code></td>
+<td><code>24000000</code> - <code>25FFFFFF</code></td>
+<td>Kerlink</td>
+<td>World</td>
+</tr>
+<tr>
+<td><code>000013</code></td>
+<td><code>26000000/7</code></td>
+<td><code>26000000</code> - <code>27FFFFFF</code></td>
+<td><strong>The Things Network</strong></td>
+<td>World</td>
+</tr>
+<tr>
+<td><code>000014</code></td>
+<td><code>28000000/7</code></td>
+<td><code>28000000</code> - <code>29FFFFFF</code></td>
+<td>DIGIMONDO GmbH</td>
+<td>Germany, Switzerland, China</td>
+</tr>
+<tr>
+<td><code>000015</code></td>
+<td><code>2A000000/7</code></td>
+<td><code>2A000000</code> - <code>2BFFFFFF</code></td>
+<td>Cisco Systems</td>
+<td>World</td>
+</tr>
+<tr>
+<td><code>000016</code></td>
+<td><code>2C000000/7</code></td>
+<td><code>2C000000</code> - <code>2DFFFFFF</code></td>
+<td><em>unassigned</em></td>
+<td></td>
+</tr>
+<tr>
+<td><code>000017</code></td>
+<td><code>2E000000/7</code></td>
+<td><code>2E000000</code> - <code>2FFFFFFF</code></td>
+<td>MultiTech Systems</td>
+<td>World</td>
+</tr>
+<tr>
+<td><code>000018</code></td>
+<td><code>30000000/7</code></td>
+<td><code>30000000</code> - <code>31FFFFFF</code></td>
+<td>Loriot</td>
+<td>World</td>
+</tr>
+<tr>
+<td><code>000019</code></td>
+<td><code>32000000/7</code></td>
+<td><code>32000000</code> - <code>33FFFFFF</code></td>
+<td>NNNCo</td>
+<td>World</td>
+</tr>
+<tr>
+<td><code>00001A</code></td>
+<td><code>34000000/7</code></td>
+<td><code>34000000</code> - <code>35FFFFFF</code></td>
+<td><em>unassigned</em></td>
+<td></td>
+</tr>
+<tr>
+<td><code>00001B</code></td>
+<td><code>36000000/7</code></td>
+<td><code>36000000</code> - <code>37FFFFFF</code></td>
+<td>TrackNet</td>
+<td>World</td>
+</tr>
+<tr>
+<td><code>00001C</code></td>
+<td><code>38000000/7</code></td>
+<td><code>38000000</code> - <code>39FFFFFF</code></td>
+<td>Lar.Tech</td>
+<td>World</td>
+</tr>
+<tr>
+<td><code>00001D</code></td>
+<td><code>3A000000/7</code></td>
+<td><code>3A000000</code> - <code>3BFFFFFF</code></td>
+<td><em>unassigned</em></td>
+<td></td>
+</tr>
+<tr>
+<td><code>00001E</code></td>
+<td><code>3C000000/7</code></td>
+<td><code>3C000000</code> - <code>3DFFFFFF</code></td>
+<td><em>unassigned</em></td>
+<td></td>
+</tr>
+<tr>
+<td><code>00001F</code></td>
+<td><code>3E000000/7</code></td>
+<td><code>3E000000</code> - <code>3FFFFFFF</code></td>
+<td>Axatel</td>
+<td>Italy</td>
+</tr>
+<tr>
+<td><code>000020</code></td>
+<td><code>40000000/7</code></td>
+<td><code>40000000</code> - <code>41FFFFFF</code></td>
+<td>Telent (Netzikon)</td>
+<td>Germany</td>
+</tr>
+<tr>
+<td><code>000021</code></td>
+<td><code>42000000/7</code></td>
+<td><code>42000000</code> - <code>43FFFFFF</code></td>
+<td><em>unassigned</em></td>
+<td></td>
+</tr>
+<tr>
+<td><code>000022</code></td>
+<td><code>44000000/7</code></td>
+<td><code>44000000</code> - <code>45FFFFFF</code></td>
+<td>Comcast</td>
+<td>World</td>
+</tr>
+<tr>
+<td><code>000023</code></td>
+<td><code>46000000/7</code></td>
+<td><code>46000000</code> - <code>47FFFFFF</code></td>
+<td>Ventia</td>
+<td>World</td>
+</tr>
+<tr>
+<td><code>000024</code></td>
+<td><code>48000000/7</code></td>
+<td><code>48000000</code> - <code>49FFFFFF</code></td>
+<td><em>unassigned</em></td>
+<td></td>
+</tr>
+<tr>
+<td><code>000025</code></td>
+<td><code>4A000000/7</code></td>
+<td><code>4A000000</code> - <code>4BFFFFFF</code></td>
+<td><em>unassigned</em></td>
+<td></td>
+</tr>
+<tr>
+<td><code>000026</code></td>
+<td><code>4C000000/7</code></td>
+<td><code>4C000000</code> - <code>4DFFFFFF</code></td>
+<td><em>unassigned</em></td>
+<td></td>
+</tr>
+<tr>
+<td><code>000027</code></td>
+<td><code>4E000000/7</code></td>
+<td><code>4E000000</code> - <code>4FFFFFFF</code></td>
+<td><em>unassigned</em></td>
+<td></td>
+</tr>
+<tr>
+<td><code>000028</code></td>
+<td><code>50000000/7</code></td>
+<td><code>50000000</code> - <code>51FFFFFF</code></td>
+<td>VADSLYFE</td>
+<td>Malaysia</td>
+</tr>
+<tr>
+<td><code>000029</code></td>
+<td><code>52000000/7</code></td>
+<td><code>52000000</code> - <code>53FFFFFF</code></td>
+<td><em>unassigned</em></td>
+<td></td>
+</tr>
+<tr>
+<td><code>00002A</code></td>
+<td><code>54000000/7</code></td>
+<td><code>54000000</code> - <code>55FFFFFF</code></td>
+<td>M2B Communications</td>
+<td>World</td>
+</tr>
+<tr>
+<td><code>00002B</code></td>
+<td><code>56000000/7</code></td>
+<td><code>56000000</code> - <code>57FFFFFF</code></td>
+<td>ZTE</td>
+<td>China</td>
+</tr>
+<tr>
+<td><code>00002C</code></td>
+<td><code>58000000/7</code></td>
+<td><code>58000000</code> - <code>59FFFFFF</code></td>
+<td><em>unassigned</em></td>
+<td></td>
+</tr>
+<tr>
+<td><code>00002D</code></td>
+<td><code>5A000000/7</code></td>
+<td><code>5A000000</code> - <code>5BFFFFFF</code></td>
+<td><em>unassigned</em></td>
+<td></td>
+</tr>
+<tr>
+<td><code>00002E</code></td>
+<td><code>5C000000/7</code></td>
+<td><code>5C000000</code> - <code>5DFFFFFF</code></td>
+<td><em>unassigned</em></td>
+<td></td>
+</tr>
+<tr>
+<td><code>00002F</code></td>
+<td><code>5E000000/7</code></td>
+<td><code>5E000000</code> - <code>5FFFFFFF</code></td>
+<td><em>unassigned</em></td>
+<td></td>
+</tr>
+<tr>
+<td><code>000030</code></td>
+<td><code>60000000/7</code></td>
+<td><code>60000000</code> - <code>61FFFFFF</code></td>
+<td>SoftBank</td>
+<td>World</td>
+</tr>
+<tr>
+<td><code>000031</code></td>
+<td><code>62000000/7</code></td>
+<td><code>62000000</code> - <code>63FFFFFF</code></td>
+<td>Inmarsat</td>
+<td>World</td>
+</tr>
+<tr>
+<td><code>000032</code></td>
+<td><code>64000000/7</code></td>
+<td><code>64000000</code> - <code>65FFFFFF</code></td>
+<td>Gemalto</td>
+<td>World</td>
+</tr>
+<tr>
+<td><code>000033</code></td>
+<td><code>66000000/7</code></td>
+<td><code>66000000</code> - <code>67FFFFFF</code></td>
+<td>Alibaba Iot BU</td>
+<td>China</td>
+</tr>
+<tr>
+<td><code>000034</code></td>
+<td><code>68000000/7</code></td>
+<td><code>68000000</code> - <code>69FFFFFF</code></td>
+<td>ER-Telecom Holding</td>
+<td>Russian Federation</td>
+</tr>
+<tr>
+<td><code>000035</code></td>
+<td><code>6A000000/7</code></td>
+<td><code>6A000000</code> - <code>6BFFFFFF</code></td>
+<td>Shenzhen Tencent Computer Systems Company Limited</td>
+<td>China</td>
+</tr>
+<tr>
+<td><code>000036</code></td>
+<td><code>6C000000/7</code></td>
+<td><code>6C000000</code> - <code>6DFFFFFF</code></td>
+<td>Netze BW GmbH</td>
+<td>World</td>
+</tr>
+<tr>
+<td><code>000037</code></td>
+<td><code>6E000000/7</code></td>
+<td><code>6E000000</code> - <code>6FFFFFFF</code></td>
+<td>Tektelic</td>
+<td>World</td>
+</tr>
+<tr>
+<td><code>000038</code></td>
+<td><code>70000000/7</code></td>
+<td><code>70000000</code> - <code>71FFFFFF</code></td>
+<td>Charter Communicaton</td>
+<td>USA</td>
+</tr>
+<tr>
+<td><code>600000</code></td>
+<td><code>E0000000/15</code></td>
+<td><code>E0000000</code> - <code>E001FFFF</code></td>
+<td>RESERVED</td>
+<td></td>
+</tr>
+<tr>
+<td><code>600001</code></td>
+<td><code>E0020000/15</code></td>
+<td><code>E0020000</code> - <code>E003FFFF</code></td>
+<td>Digita</td>
+<td>Finland</td>
+</tr>
+<tr>
+<td><code>600002</code></td>
+<td><code>E0040000/15</code></td>
+<td><code>E0040000</code> - <code>E005FFFF</code></td>
+<td>Netmore</td>
+<td>Sweden, Norway</td>
+</tr>
+<tr>
+<td><code>600003</code></td>
+<td><code>E0060000/15</code></td>
+<td><code>E0060000</code> - <code>E007FFFF</code></td>
+<td>QuaeNet Inc.</td>
+<td>World</td>
+</tr>
+<tr>
+<td><code>600004</code></td>
+<td><code>E0080000/15</code></td>
+<td><code>E0080000</code> - <code>E009FFFF</code></td>
+<td>eleven-x</td>
+<td>North and South America</td>
+</tr>
+<tr>
+<td><code>600005</code></td>
+<td><code>E00A0000/15</code></td>
+<td><code>E00A0000</code> - <code>E00BFFFF</code></td>
+<td>IoT Network AS</td>
+<td>World</td>
+</tr>
+<tr>
+<td><code>600006</code></td>
+<td><code>E00C0000/15</code></td>
+<td><code>E00C0000</code> - <code>E00DFFFF</code></td>
+<td>Senra Tech</td>
+<td>Asia, Middle East</td>
+</tr>
+<tr>
+<td><code>600007</code></td>
+<td><code>E00E0000/15</code></td>
+<td><code>E00E0000</code> - <code>E00FFFFF</code></td>
+<td>EDF</td>
+<td>World</td>
+</tr>
+<tr>
+<td><code>600008</code></td>
+<td><code>E0100000/15</code></td>
+<td><code>E0100000</code> - <code>E011FFFF</code></td>
+<td>Unidata</td>
+<td>Italy</td>
+</tr>
+<tr>
+<td><code>600009</code></td>
+<td><code>E0120000/15</code></td>
+<td><code>E0120000</code> - <code>E013FFFF</code></td>
+<td>SEAS-NVE</td>
+<td>Scandinavia</td>
+</tr>
+<tr>
+<td><code>60000A</code></td>
+<td><code>E0140000/15</code></td>
+<td><code>E0140000</code> - <code>E015FFFF</code></td>
+<td>Öresundskraft</td>
+<td>Scandinavia</td>
+</tr>
+<tr>
+<td><code>60000B</code></td>
+<td><code>E0160000/15</code></td>
+<td><code>E0160000</code> - <code>E017FFFF</code></td>
+<td>Ad Net Market Media</td>
+<td>Romania</td>
+</tr>
+<tr>
+<td><code>60000C</code></td>
+<td><code>E0180000/15</code></td>
+<td><code>E0180000</code> - <code>E019FFFF</code></td>
+<td>CAT Telecom</td>
+<td>Thailand</td>
+</tr>
+<tr>
+<td><code>60000D</code></td>
+<td><code>E01A0000/15</code></td>
+<td><code>E01A0000</code> - <code>E01BFFFF</code></td>
+<td>SenSys</td>
+<td>World</td>
+</tr>
+<tr>
+<td><code>60000E</code></td>
+<td><code>E01C0000/15</code></td>
+<td><code>E01C0000</code> - <code>E01DFFFF</code></td>
+<td>Spark</td>
+<td>World</td>
+</tr>
+<tr>
+<td><code>60000F</code></td>
+<td><code>E01E0000/15</code></td>
+<td><code>E01E0000</code> - <code>E01FFFFF</code></td>
+<td>ThingPark China</td>
+<td>China</td>
+</tr>
+<tr>
+<td><code>600010</code></td>
+<td><code>E0200000/15</code></td>
+<td><code>E0200000</code> - <code>E021FFFF</code></td>
+<td>Senet</td>
+<td>World</td>
+</tr>
+<tr>
+<td><code>600011</code></td>
+<td><code>E0220000/15</code></td>
+<td><code>E0220000</code> - <code>E023FFFF</code></td>
+<td>SenseWay</td>
+<td>Japan</td>
+</tr>
+<tr>
+<td><code>600012</code></td>
+<td><code>E0240000/15</code></td>
+<td><code>E0240000</code> - <code>E025FFFF</code></td>
+<td>Packetworx</td>
+<td>Philippines</td>
+</tr>
+<tr>
+<td><code>600013</code></td>
+<td><code>E0260000/15</code></td>
+<td><code>E0260000</code> - <code>E027FFFF</code></td>
+<td>Actility</td>
+<td>World</td>
+</tr>
+<tr>
+<td><code>600014</code></td>
+<td><code>E0280000/15</code></td>
+<td><code>E0280000</code> - <code>E029FFFF</code></td>
+<td>Kerlink</td>
+<td>World</td>
+</tr>
+<tr>
+<td><code>600015</code></td>
+<td><code>E02A0000/15</code></td>
+<td><code>E02A0000</code> - <code>E02BFFFF</code></td>
+<td>Alibaba IoT BU</td>
+<td>China</td>
+</tr>
+<tr>
+<td><code>600016</code></td>
+<td><code>E02C0000/15</code></td>
+<td><code>E02C0000</code> - <code>E02DFFFF</code></td>
+<td>Cisco</td>
+<td>World</td>
+</tr>
+<tr>
+<td><code>600017</code></td>
+<td><code>E02E0000/15</code></td>
+<td><code>E02E0000</code> - <code>E02FFFFF</code></td>
+<td>Schneider Electric</td>
+<td>Global</td>
+</tr>
+<tr>
+<td><code>600018</code></td>
+<td><code>E0300000/15</code></td>
+<td><code>E0300000</code> - <code>E031FFFF</code></td>
+<td>Minol ZENNER Connect GmbH</td>
+<td>Global</td>
+</tr>
+<tr>
+<td><code>600019</code></td>
+<td><code>E0320000/15</code></td>
+<td><code>E0320000</code> - <code>E033FFFF</code></td>
+<td>Boston Networks Limited</td>
+<td>Europe</td>
+</tr>
+<tr>
+<td><code>60001A</code></td>
+<td><code>E0340000/15</code></td>
+<td><code>E0340000</code> - <code>E035FFFF</code></td>
+<td>NEC Corporation</td>
+<td>Japan</td>
+</tr>
+<tr>
+<td><code>60001B</code></td>
+<td><code>E0360000/15</code></td>
+<td><code>E0360000</code> - <code>E037FFFF</code></td>
+<td>Shenzhen Tencent Computer Systems Company Limited</td>
+<td>China</td>
+</tr>
+<tr>
+<td><code>60001C</code></td>
+<td><code>E0380000/15</code></td>
+<td><code>E0380000</code> - <code>E039FFFF</code></td>
+<td>MachineQ/Comcast</td>
+<td>World</td>
+</tr>
+<tr>
+<td><code>60001D</code></td>
+<td><code>E03A0000/15</code></td>
+<td><code>E03A0000</code> - <code>E03BFFFF</code></td>
+<td>NTT (Nippon Telephone and Telegraph)</td>
+<td>Japan</td>
+</tr>
+<tr>
+<td><code>60001E</code></td>
+<td><code>E03C0000/15</code></td>
+<td><code>E03C0000</code> - <code>E03DFFFF</code></td>
+<td>Carnegie Technologies, LLC</td>
+<td>North America, South America</td>
+</tr>
+<tr>
+<td><code>60001F</code></td>
+<td><code>E03E0000/15</code></td>
+<td><code>E03E0000</code> - <code>E03FFFFF</code></td>
+<td>KPN</td>
+<td>Europe</td>
+</tr>
+<tr>
+<td><code>600020</code></td>
+<td><code>E0400000/15</code></td>
+<td><code>E0400000</code> - <code>E041FFFF</code></td>
+<td>Spectrum</td>
+<td>USA</td>
+</tr>
+<tr>
+<td><code>600021</code></td>
+<td><code>E0420000/15</code></td>
+<td><code>E0420000</code> - <code>E043FFFF</code></td>
+<td>Microshare Inc.</td>
+<td>World</td>
+</tr>
+<tr>
+<td><code>600022</code></td>
+<td><code>E0440000/15</code></td>
+<td><code>E0440000</code> - <code>E045FFFF</code></td>
+<td>Unitymedia</td>
+<td>Germany</td>
+</tr>
+<tr>
+<td><code>600023</code></td>
+<td><code>E0460000/15</code></td>
+<td><code>E0460000</code> - <code>E047FFFF</code></td>
+<td>Paige Wireless</td>
+<td>World</td>
+</tr>
+<tr>
+<td><code>600024</code></td>
+<td><code>E0480000/15</code></td>
+<td><code>E0480000</code> - <code>E049FFFF</code></td>
+<td>Netze BW GmbH</td>
+<td>World</td>
+</tr>
+<tr>
+<td><code>600025</code></td>
+<td><code>E04A0000/15</code></td>
+<td><code>E04A0000</code> - <code>E04BFFFF</code></td>
+<td>Tektelic</td>
+<td>World</td>
+</tr>
+<tr>
+<td><code>600026</code></td>
+<td><code>E04C0000/15</code></td>
+<td><code>E04C0000</code> - <code>E04DFFFF</code></td>
+<td>Acklio</td>
+<td>World</td>
+</tr>
+<tr>
+<td><code>600027</code></td>
+<td><code>E04E0000/15</code></td>
+<td><code>E04E0000</code> - <code>E04FFFFF</code></td>
+<td>Birdz</td>
+<td>World</td>
+</tr>
+<tr>
+<td><code>600028</code></td>
+<td><code>E0500000/15</code></td>
+<td><code>E0500000</code> - <code>E051FFFF</code></td>
+<td>Charter Communication</td>
+<td>USA</td>
+</tr>
+<tr>
+<td><code>C00000</code></td>
+<td><code>FC000000/22</code></td>
+<td><code>FC000000</code> - <code>FC0003FF</code></td>
+<td>RESERVED</td>
+<td></td>
+</tr>
+<tr>
+<td><code>C00001</code></td>
+<td><code>FC000400/22</code></td>
+<td><code>FC000400</code> - <code>FC0007FF</code></td>
+<td>Nordic Automation Systems</td>
+<td>World</td>
+</tr>
+<tr>
+<td><code>C00002</code></td>
+<td><code>FC000800/22</code></td>
+<td><code>FC000800</code> - <code>FC000BFF</code></td>
+<td>ResIOT</td>
+<td>World</td>
+</tr>
+<tr>
+<td><code>C00003</code></td>
+<td><code>FC000C00/22</code></td>
+<td><code>FC000C00</code> - <code>FC000FFF</code></td>
+<td>SYSDEV</td>
+<td>World</td>
+</tr>
+<tr>
+<td><code>C00004</code></td>
+<td><code>FC001000/22</code></td>
+<td><code>FC001000</code> - <code>FC0013FF</code></td>
+<td>Appropolis</td>
+<td>China, Canada</td>
+</tr>
+<tr>
+<td><code>C00005</code></td>
+<td><code>FC001400/22</code></td>
+<td><code>FC001400</code> - <code>FC0017FF</code></td>
+<td>Macnica</td>
+<td>Japan</td>
+</tr>
+<tr>
+<td><code>C00006</code></td>
+<td><code>FC001800/22</code></td>
+<td><code>FC001800</code> - <code>FC001BFF</code></td>
+<td>IP-Only</td>
+<td>Sweden, Finland, Norway, Denmark</td>
+</tr>
+<tr>
+<td><code>C00007</code></td>
+<td><code>FC001C00/22</code></td>
+<td><code>FC001C00</code> - <code>FC001FFF</code></td>
+<td>Thingenix LLC</td>
+<td>Russian Federation</td>
+</tr>
+<tr>
+<td><code>C00008</code></td>
+<td><code>FC002000/22</code></td>
+<td><code>FC002000</code> - <code>FC0023FF</code></td>
+<td>Definium Technologies</td>
+<td>World</td>
+</tr>
+<tr>
+<td><code>C00009</code></td>
+<td><code>FC002400/22</code></td>
+<td><code>FC002400</code> - <code>FC0027FF</code></td>
+<td>ENTEGA AG</td>
+<td>Germany (only Darmstadt Region)</td>
+</tr>
+<tr>
+<td><code>C0000A</code></td>
+<td><code>FC002800/22</code></td>
+<td><code>FC002800</code> - <code>FC002BFF</code></td>
+<td>SenseWay</td>
+<td>Japan</td>
+</tr>
+<tr>
+<td><code>C0000B</code></td>
+<td><code>FC002C00/22</code></td>
+<td><code>FC002C00</code> - <code>FC002FFF</code></td>
+<td>3S</td>
+<td>Tunisia</td>
+</tr>
+<tr>
+<td><code>C0000C</code></td>
+<td><code>FC003000/22</code></td>
+<td><code>FC003000</code> - <code>FC0033FF</code></td>
+<td>nFore Technology</td>
+<td>World</td>
+</tr>
+<tr>
+<td><code>C0000D</code></td>
+<td><code>FC003400/22</code></td>
+<td><code>FC003400</code> - <code>FC0037FF</code></td>
+<td>Packetworx</td>
+<td>Philippines</td>
+</tr>
+<tr>
+<td><code>C0000E</code></td>
+<td><code>FC003800/22</code></td>
+<td><code>FC003800</code> - <code>FC003BFF</code></td>
+<td>Omani Qatari Telecommunications (Ooredoo)</td>
+<td>Sultanate of Oman</td>
+</tr>
+<tr>
+<td><code>C0000F</code></td>
+<td><code>FC003C00/22</code></td>
+<td><code>FC003C00</code> - <code>FC003FFF</code></td>
+<td>Antenna Hungaria Co</td>
+<td>Hungary</td>
+</tr>
+<tr>
+<td><code>C00010</code></td>
+<td><code>FC004000/22</code></td>
+<td><code>FC004000</code> - <code>FC0043FF</code></td>
+<td>Trinity College Dublin</td>
+<td>Europe</td>
+</tr>
+<tr>
+<td><code>C00011</code></td>
+<td><code>FC004400/22</code></td>
+<td><code>FC004400</code> - <code>FC0047FF</code></td>
+<td>Digital Nordix AB (DNX)</td>
+<td>World</td>
+</tr>
+<tr>
+<td><code>C00012</code></td>
+<td><code>FC004800/22</code></td>
+<td><code>FC004800</code> - <code>FC004BFF</code></td>
+<td>Netmore</td>
+<td>Sweden, Norway</td>
+</tr>
+<tr>
+<td><code>C00013</code></td>
+<td><code>FC004C00/22</code></td>
+<td><code>FC004C00</code> - <code>FC004FFF</code></td>
+<td>Lyse AS</td>
+<td>Norway</td>
+</tr>
+<tr>
+<td><code>C00014</code></td>
+<td><code>FC005000/22</code></td>
+<td><code>FC005000</code> - <code>FC0053FF</code></td>
+<td>VTC Digicom</td>
+<td>Vietnam</td>
+</tr>
+<tr>
+<td><code>C00015</code></td>
+<td><code>FC005400/22</code></td>
+<td><code>FC005400</code> - <code>FC0057FF</code></td>
+<td>Machines Talk</td>
+<td>Saudi Arabia</td>
+</tr>
+<tr>
+<td><code>C00016</code></td>
+<td><code>FC005800/22</code></td>
+<td><code>FC005800</code> - <code>FC005BFF</code></td>
+<td>Schneider Electric</td>
+<td>Global</td>
+</tr>
+<tr>
+<td><code>C00017</code></td>
+<td><code>FC005C00/22</code></td>
+<td><code>FC005C00</code> - <code>FC005FFF</code></td>
+<td>Connexin</td>
+<td>UK</td>
+</tr>
+<tr>
+<td><code>C00018</code></td>
+<td><code>FC006000/22</code></td>
+<td><code>FC006000</code> - <code>FC0063FF</code></td>
+<td>Minol ZENNER Connect GmbH</td>
+<td>Global</td>
+</tr>
+<tr>
+<td><code>C00019</code></td>
+<td><code>FC006400/22</code></td>
+<td><code>FC006400</code> - <code>FC0067FF</code></td>
+<td>Telekom Srbija</td>
+<td>Serbia</td>
+</tr>
+<tr>
+<td><code>C0001A</code></td>
+<td><code>FC006800/22</code></td>
+<td><code>FC006800</code> - <code>FC006BFF</code></td>
+<td>REQUEA</td>
+<td>World</td>
+</tr>
+<tr>
+<td><code>C0001B</code></td>
+<td><code>FC006C00/22</code></td>
+<td><code>FC006C00</code> - <code>FC006FFF</code></td>
+<td>Sensor Network Services</td>
+<td>Austria</td>
+</tr>
+<tr>
+<td><code>C0001C</code></td>
+<td><code>FC007000/22</code></td>
+<td><code>FC007000</code> - <code>FC0073FF</code></td>
+<td>Getraline</td>
+<td>Europe</td>
+</tr>
+<tr>
+<td><code>C0001D</code></td>
+<td><code>FC007400/22</code></td>
+<td><code>FC007400</code> - <code>FC0077FF</code></td>
+<td>Boston Networks Limited</td>
+<td>Europe</td>
+</tr>
+<tr>
+<td><code>C0001E</code></td>
+<td><code>FC007800/22</code></td>
+<td><code>FC007800</code> - <code>FC007BFF</code></td>
+<td>Telemar</td>
+<td>Italy</td>
+</tr>
+<tr>
+<td><code>C0001F</code></td>
+<td><code>FC007C00/22</code></td>
+<td><code>FC007C00</code> - <code>FC007FFF</code></td>
+<td>mcf88 SRL</td>
+<td>World</td>
+</tr>
+<tr>
+<td><code>C00020</code></td>
+<td><code>FC008000/22</code></td>
+<td><code>FC008000</code> - <code>FC0083FF</code></td>
+<td>NEC Corporation</td>
+<td>Japan</td>
+</tr>
+<tr>
+<td><code>C00021</code></td>
+<td><code>FC008400/22</code></td>
+<td><code>FC008400</code> - <code>FC0087FF</code></td>
+<td>Hiber</td>
+<td>World</td>
+</tr>
+<tr>
+<td><code>C00022</code></td>
+<td><code>FC008800/22</code></td>
+<td><code>FC008800</code> - <code>FC008BFF</code></td>
+<td>Milandr, Inc.</td>
+<td>North America</td>
+</tr>
+<tr>
+<td><code>C00023</code></td>
+<td><code>FC008C00/22</code></td>
+<td><code>FC008C00</code> - <code>FC008FFF</code></td>
+<td>Green House Co., Ltd.</td>
+<td>Japan</td>
+</tr>
+<tr>
+<td><code>C00024</code></td>
+<td><code>FC009000/22</code></td>
+<td><code>FC009000</code> - <code>FC0093FF</code></td>
+<td>NTT (Nippon Telephone and Telegraph)</td>
+<td>Japan</td>
+</tr>
+<tr>
+<td><code>C00025</code></td>
+<td><code>FC009400/22</code></td>
+<td><code>FC009400</code> - <code>FC0097FF</code></td>
+<td>International Centre for Free and Open Source Software (ICFOSS)</td>
+<td>India</td>
+</tr>
+<tr>
+<td><code>C00026</code></td>
+<td><code>FC009800/22</code></td>
+<td><code>FC009800</code> - <code>FC009BFF</code></td>
+<td>Mirakonta</td>
+<td>World</td>
+</tr>
+<tr>
+<td><code>C00027</code></td>
+<td><code>FC009C00/22</code></td>
+<td><code>FC009C00</code> - <code>FC009FFF</code></td>
+<td>Redexia</td>
+<td>Europe &amp; Latin America</td>
+</tr>
+<tr>
+<td><code>C00028</code></td>
+<td><code>FC00A000/22</code></td>
+<td><code>FC00A000</code> - <code>FC00A3FF</code></td>
+<td>Lacuna Space</td>
+<td>World</td>
+</tr>
+<tr>
+<td><code>C00029</code></td>
+<td><code>FC00A400/22</code></td>
+<td><code>FC00A400</code> - <code>FC00A7FF</code></td>
+<td>Andorra Telecom</td>
+<td>Principality of Andorra</td>
+</tr>
+<tr>
+<td><code>C0002A</code></td>
+<td><code>FC00A800/22</code></td>
+<td><code>FC00A800</code> - <code>FC00ABFF</code></td>
+<td>Ursalink</td>
+<td>World</td>
+</tr>
+<tr>
+<td><code>C0002B</code></td>
+<td><code>FC00AC00/22</code></td>
+<td><code>FC00AC00</code> - <code>FC00AFFF</code></td>
+<td>Grenoble Alps University</td>
+<td>France</td>
+</tr>
+<tr>
+<td><code>C0002C</code></td>
+<td><code>FC00B000/22</code></td>
+<td><code>FC00B000</code> - <code>FC00B3FF</code></td>
+<td>Carnegie Technologies, LLC</td>
+<td>North America, South America</td>
+</tr>
+<tr>
+<td><code>C0002D</code></td>
+<td><code>FC00B400/22</code></td>
+<td><code>FC00B400</code> - <code>FC00B7FF</code></td>
+<td>IoTech</td>
+<td>Greece</td>
+</tr>
+<tr>
+<td><code>C0002E</code></td>
+<td><code>FC00B800/22</code></td>
+<td><code>FC00B800</code> - <code>FC00BBFF</code></td>
+<td>Spectrum</td>
+<td>USA</td>
+</tr>
+<tr>
+<td><code>C0002F</code></td>
+<td><code>FC00BC00/22</code></td>
+<td><code>FC00BC00</code> - <code>FC00BFFF</code></td>
+<td>Afnic</td>
+<td>France</td>
+</tr>
+<tr>
+<td><code>C00030</code></td>
+<td><code>FC00C000/22</code></td>
+<td><code>FC00C000</code> - <code>FC00C3FF</code></td>
+<td>Nerospec</td>
+<td>South Africa, Europe,America</td>
+</tr>
+<tr>
+<td><code>C00031</code></td>
+<td><code>FC00C400/22</code></td>
+<td><code>FC00C400</code> - <code>FC00C7FF</code></td>
+<td>Sehaj Synergy Technologies Pvt Ltd</td>
+<td>India, ASEAN &amp; SAARC Region</td>
+</tr>
+<tr>
+<td><code>C00032</code></td>
+<td><code>FC00C800/22</code></td>
+<td><code>FC00C800</code> - <code>FC00CBFF</code></td>
+<td>Microshare Inc.</td>
+<td>World</td>
+</tr>
+<tr>
+<td><code>C00033</code></td>
+<td><code>FC00CC00/22</code></td>
+<td><code>FC00CC00</code> - <code>FC00CFFF</code></td>
+<td>HEIG-VD</td>
+<td>Switzerland</td>
+</tr>
+<tr>
+<td><code>C00034</code></td>
+<td><code>FC00D000/22</code></td>
+<td><code>FC00D000</code> - <code>FC00D3FF</code></td>
+<td>Unitymedia</td>
+<td>Germany</td>
+</tr>
+<tr>
+<td><code>C00035</code></td>
+<td><code>FC00D400/22</code></td>
+<td><code>FC00D400</code> - <code>FC00D7FF</code></td>
+<td>Paige Wireless</td>
+<td>World</td>
+</tr>
+<tr>
+<td><code>C00036</code></td>
+<td><code>FC00D800/22</code></td>
+<td><code>FC00D800</code> - <code>FC00DBFF</code></td>
+<td>Desarrollo de Infraestructura de Telecomunicaciones Peru (Infratel Peru)</td>
+<td>Peru</td>
+</tr>
+<tr>
+<td><code>C00037</code></td>
+<td><code>FC00DC00/22</code></td>
+<td><code>FC00DC00</code> - <code>FC00DFFF</code></td>
+<td>Alperia Fiber</td>
+<td>Italy</td>
+</tr>
+<tr>
+<td><code>C00038</code></td>
+<td><code>FC00E000/22</code></td>
+<td><code>FC00E000</code> - <code>FC00E3FF</code></td>
+<td>First Snow Co., Ltd</td>
+<td>Republic of Korea</td>
+</tr>
+<tr>
+<td><code>C00039</code></td>
+<td><code>FC00E400/22</code></td>
+<td><code>FC00E400</code> - <code>FC00E7FF</code></td>
+<td>Acklio</td>
+<td>World</td>
+</tr>
+<tr>
+<td><code>C0003A</code></td>
+<td><code>FC00E800/22</code></td>
+<td><code>FC00E800</code> - <code>FC00EBFF</code></td>
+<td>Vutiliti</td>
+<td>World</td>
+</tr>
+<tr>
+<td><code>C0003B</code></td>
+<td><code>FC00EC00/22</code></td>
+<td><code>FC00EC00</code> - <code>FC00EFFF</code></td>
+<td>Meshed Pty Ltd</td>
+<td>Australia, New Zealand</td>
+</tr>
+<tr>
+<td><code>C0003C</code></td>
+<td><code>FC00F000/22</code></td>
+<td><code>FC00F000</code> - <code>FC00F3FF</code></td>
+<td>Birdz</td>
+<td>World</td>
+</tr>
+<tr>
+<td><code>C0003D</code></td>
+<td><code>FC00F400/22</code></td>
+<td><code>FC00F400</code> - <code>FC00F7FF</code></td>
+<td>Arthur D Riley &amp; Co Ltd</td>
+<td>Asia Pacific</td>
+</tr>
+<tr>
+<td><code>C0003E</code></td>
+<td><code>FC00F800/22</code></td>
+<td><code>FC00F800</code> - <code>FC00FBFF</code></td>
+<td>Komro GmbH</td>
+<td>Germany, Austria, Switzerland</td>
+</tr>
+<tr>
+<td><code>C0003F</code></td>
+<td><code>FC00FC00/22</code></td>
+<td><code>FC00FC00</code> - <code>FC00FFFF</code></td>
+<td>RSAWEB</td>
+<td>South Africa</td>
+</tr>
+<tr>
+<td><code>C00040</code></td>
+<td><code>FC010000/22</code></td>
+<td><code>FC010000</code> - <code>FC0103FF</code></td>
+<td>Ceske Radiokomunikace</td>
+<td>Czech Republic</td>
+</tr>
+<tr>
+<td><code>C00041</code></td>
+<td><code>FC010400/22</code></td>
+<td><code>FC010400</code> - <code>FC0107FF</code></td>
+<td>CM Systems LLC</td>
+<td>World</td>
+</tr>
+<tr>
+<td><code>C00042</code></td>
+<td><code>FC010800/22</code></td>
+<td><code>FC010800</code> - <code>FC010BFF</code></td>
+<td>MIOT Melita.io Technology GmbH</td>
+<td>Germany</td>
+</tr>
+<tr>
+<td><code>C00043</code></td>
+<td><code>FC010C00/22</code></td>
+<td><code>FC010C00</code> - <code>FC010FFF</code></td>
+<td>PROESYS S.r.l.</td>
+<td>World</td>
+</tr>
+<tr>
+<td><code>C00044</code></td>
+<td><code>FC011000/22</code></td>
+<td><code>FC011000</code> - <code>FC0113FF</code></td>
+<td>MeWe, Inc</td>
+<td>World</td>
+</tr>
+<tr>
+<td><code>C00045</code></td>
+<td><code>FC011400/22</code></td>
+<td><code>FC011400</code> - <code>FC0117FF</code></td>
+<td>Alpha-Omega Technology GmbH &amp; Co. KG</td>
+<td>Europe</td>
+</tr>
+</tbody>
+</table>
+
+        </div>
+      
+      <div class="is-clearfix">
+</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="footer"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ttn-components.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/promise-polyfill@7/dist/polyfill.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-navbar.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-footer.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ga.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/vendor/basicLightbox.min.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/theme.min.00ace5d667ca108a93b8a0d385569f7c7bb9f46ed32eefe3f5fb39105763cccd.js" integrity="sha256-AKzl1mfKEIqTuKDThVaffHu59G7TLu/j9fs5EFdjzM0=" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

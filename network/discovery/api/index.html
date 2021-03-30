@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+
+<html lang="en-us" class="has-ttn-navbar-top">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <meta name="generator" content="Hugo 0.79.0" />
+
+  <title>API Reference | The Things Network</title>
+  <link rel="canonical" href="https://www.thethingsnetwork.org/docs/network/discovery/api/" />
+  
+
+  <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
+
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+  <meta name="msapplication-TileImage" content="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png">
+
+  <meta name="application-name" content="The Things Network">
+  <meta name="msapplication-tooltip" content="Tooltip">
+  <meta name="msapplication-config" content="https://ttnweb.azureedge.net/static/common/favicon/ieconfig.54334a5ee30c.xml">
+
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-32.61b30f85680a.png" sizes="32x32">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-57.83b86c64dc82.png" sizes="57x57">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-76.7dcf8fa36dfc.png" sizes="76x76">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-96.27ac17adaa8b.png" sizes="96x96">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-120.e1526731335e.png" sizes="120x120">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-128.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png" sizes="144x144">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png" sizes="152x152">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-180.fcd414307ca3.png" sizes="180x180">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-195.c55ce09d66da.png" sizes="195x195">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-228.bea53ec4b10b.png" sizes="228x228">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/smalltile.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/mediumtile.3d42f7faac82.png" sizes="270x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
+  <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+
+  <meta property="og:title" content="API Reference" />
+<meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/network/discovery/api/" />
+<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
+<meta property="og:site_name" content="The Things Network" />
+
+
+  <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
+
+<meta name="twitter:title" content="API Reference"/>
+<meta name="twitter:description" content="We are building a global open free crowdsourced long range low power IoT data network"/>
+
+
+</head>
+
+
+<body>
+
+<div id="header"></div>
+<section class="section">
+  <div class="container">
+    <nav class="breadcrumb has-dot-separator" aria-label="breadcrumbs">
+      <ul>
+        <li><a href="https://www.thethingsnetwork.org/docs">Learn</a></li>
+        
+        
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/lorawan/">LoRaWAN</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/quick-start/">Quick Start</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/applications-and-integrations/">Applications &amp; Integrations</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/">Devices &amp; Gateways</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/the-things-stack/">The Things Stack</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/v2-docs/">V2 Docs (Outdated)</a>
+            </li>
+          
+        
+      </ul>
+    </nav>
+  </div>
+</section>
+<div class="container" role="document">
+  <div class="columns my-0 is-desktop">
+    <div class="column is-3-desktop sidebar-left">
+      
+
+
+<nav class="side-navigation" aria-label="Main navigation">
+
+<h2 class="title is-size-5">Network</h2>
+
+<div class="menu">
+  <ul class="menu-list">
+  <a href="https://www.thethingsnetwork.org/docs/network/" class="">Overview</a>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/network/troubleshooting/" class="">Troubleshooting</a>
+    </li>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/network/architecture/" class="">Network Architecture</a>
+    </li>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/network/security/" class="">Network Security</a>
+    </li>
+  
+    <p class="menu-label">
+      Manage
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/network/console/" class="">The Things Network Console</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/network/cli/" class="">The Things Network CLI</a>
+</li>
+
+  
+    <p class="menu-label">
+      Components
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/network/account/" class="">Account Server</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/network/discovery/" class="">Discovery Server</a>
+  
+
+
+<ul class="menu-list">
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/network/discovery/api/" class="is-active">API Reference</a>
+    
+    
+
+
+
+    
+  </li>
+
+</ul>
+
+
+  
+</li>
+
+  
+  </ul>
+</div>
+
+
+
+
+
+</nav>
+
+    </div>
+    <div class="column is-9-desktop sidebar-middle">
+      <div class="docs-content">
+        <h1 class="title is-size-2">
+          API Reference
+        </h1>
+        <div class="content">
+          <h2 id="discoverydiscovery">.discovery.Discovery</h2>
+<p>The Discovery service is used to discover services within The Things Network.</p>
+<h3 id="methods">Methods</h3>
+<h4 id="addmetadata"><code>AddMetadata</code></h4>
+<p>Add metadata to an announement</p>
+<ul>
+<li>Request: <a href="/docs/network/discovery/#discoverymetadatarequest"><code>MetadataRequest</code></a></li>
+<li>Response: <a href="/docs/network/discovery/#googleprotobufempty"><code>Empty</code></a></li>
+</ul>
+<h4 id="announce"><code>Announce</code></h4>
+<p>Announce a component to the Discovery server.
+A call to <code>Announce</code> does not processes the <code>metadata</code> field, so you can safely leave this field empty.
+Adding or removing Metadata should be done with the <code>AddMetadata</code> and <code>DeleteMetadata</code> methods.</p>
+<ul>
+<li>Request: <a href="/docs/network/discovery/#discoveryannouncement"><code>Announcement</code></a></li>
+<li>Response: <a href="/docs/network/discovery/#googleprotobufempty"><code>Empty</code></a></li>
+</ul>
+<h4 id="deletemetadata"><code>DeleteMetadata</code></h4>
+<p>Delete metadata from an announcement</p>
+<ul>
+<li>Request: <a href="/docs/network/discovery/#discoverymetadatarequest"><code>MetadataRequest</code></a></li>
+<li>Response: <a href="/docs/network/discovery/#googleprotobufempty"><code>Empty</code></a></li>
+</ul>
+<h4 id="get"><code>Get</code></h4>
+<p>Get a specific announcement</p>
+<ul>
+<li>Request: <a href="/docs/network/discovery/#discoverygetrequest"><code>GetRequest</code></a></li>
+<li>Response: <a href="/docs/network/discovery/#discoveryannouncement"><code>Announcement</code></a></li>
+</ul>
+<p>Available HTTP Endpoints:</p>
+<ul>
+<li><code>GET</code> <code>/announcements/{service_name}/{id}</code></li>
+</ul>
+<p>Input:</p>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="s2">&#34;ttn-handler-eu&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;service_name&#34;</span><span class="p">:</span> <span class="s2">&#34;handler&#34;</span>
+<span class="p">}</span>
+</code></pre></div><p>Output:</p>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&#34;amqp_address&#34;</span><span class="p">:</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;api_address&#34;</span><span class="p">:</span> <span class="s2">&#34;http://eu.thethings.network:8084&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;certificate&#34;</span><span class="p">:</span> <span class="s2">&#34;-----BEGIN CERTIFICATE-----\n...&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;description&#34;</span><span class="p">:</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="s2">&#34;ttn-handler-eu&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;metadata&#34;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&#34;app_eui&#34;</span><span class="p">:</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;app_id&#34;</span><span class="p">:</span> <span class="s2">&#34;some-app-id&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;dev_addr_prefix&#34;</span><span class="p">:</span> <span class="s2">&#34;AAAAAAA=&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;gateway_id&#34;</span><span class="p">:</span> <span class="s2">&#34;&#34;</span>
+  <span class="p">},</span>
+  <span class="nt">&#34;mqtt_address&#34;</span><span class="p">:</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;net_address&#34;</span><span class="p">:</span> <span class="s2">&#34;eu.thethings.network:1904&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;public&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nt">&#34;public_key&#34;</span><span class="p">:</span> <span class="s2">&#34;-----BEGIN PUBLIC KEY-----\n...&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;service_name&#34;</span><span class="p">:</span> <span class="s2">&#34;handler&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;service_version&#34;</span><span class="p">:</span> <span class="s2">&#34;2.0.0-abcdef...&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;url&#34;</span><span class="p">:</span> <span class="s2">&#34;&#34;</span>
+<span class="p">}</span>
+</code></pre></div><h4 id="getall"><code>GetAll</code></h4>
+<p>Get all announcements for a specific service type</p>
+<ul>
+<li>Request: <a href="/docs/network/discovery/#discoverygetservicerequest"><code>GetServiceRequest</code></a></li>
+<li>Response: <a href="/docs/network/discovery/#discoveryannouncementsresponse"><code>AnnouncementsResponse</code></a></li>
+</ul>
+<p>Available HTTP Endpoints:</p>
+<ul>
+<li><code>GET</code> <code>/announcements/{service_name}</code></li>
+</ul>
+<p>Input:</p>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&#34;service_name&#34;</span><span class="p">:</span> <span class="s2">&#34;handler&#34;</span>
+<span class="p">}</span>
+</code></pre></div><p>Output:</p>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&#34;services&#34;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&#34;amqp_address&#34;</span><span class="p">:</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;api_address&#34;</span><span class="p">:</span> <span class="s2">&#34;http://eu.thethings.network:8084&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;certificate&#34;</span><span class="p">:</span> <span class="s2">&#34;-----BEGIN CERTIFICATE-----\n...&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;description&#34;</span><span class="p">:</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="s2">&#34;ttn-handler-eu&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;metadata&#34;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&#34;app_eui&#34;</span><span class="p">:</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
+      <span class="nt">&#34;app_id&#34;</span><span class="p">:</span> <span class="s2">&#34;some-app-id&#34;</span><span class="p">,</span>
+      <span class="nt">&#34;dev_addr_prefix&#34;</span><span class="p">:</span> <span class="s2">&#34;AAAAAAA=&#34;</span><span class="p">,</span>
+      <span class="nt">&#34;gateway_id&#34;</span><span class="p">:</span> <span class="s2">&#34;&#34;</span>
+    <span class="p">},</span>
+    <span class="nt">&#34;mqtt_address&#34;</span><span class="p">:</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;net_address&#34;</span><span class="p">:</span> <span class="s2">&#34;eu.thethings.network:1904&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;public&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&#34;public_key&#34;</span><span class="p">:</span> <span class="s2">&#34;-----BEGIN PUBLIC KEY-----\n...&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;service_name&#34;</span><span class="p">:</span> <span class="s2">&#34;handler&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;service_version&#34;</span><span class="p">:</span> <span class="s2">&#34;2.0.0-abcdef...&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;url&#34;</span><span class="p">:</span> <span class="s2">&#34;&#34;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div><h4 id="getbyappeui"><code>GetByAppEUI</code></h4>
+<ul>
+<li>Request: <a href="/docs/network/discovery/#discoverygetbyappeuirequest"><code>GetByAppEUIRequest</code></a></li>
+<li>Response: <a href="/docs/network/discovery/#discoveryannouncement"><code>Announcement</code></a></li>
+</ul>
+<h4 id="getbyappid"><code>GetByAppID</code></h4>
+<ul>
+<li>Request: <a href="/docs/network/discovery/#discoverygetbyappidrequest"><code>GetByAppIDRequest</code></a></li>
+<li>Response: <a href="/docs/network/discovery/#discoveryannouncement"><code>Announcement</code></a></li>
+</ul>
+<h4 id="getbygatewayid"><code>GetByGatewayID</code></h4>
+<ul>
+<li>Request: <a href="/docs/network/discovery/#discoverygetbygatewayidrequest"><code>GetByGatewayIDRequest</code></a></li>
+<li>Response: <a href="/docs/network/discovery/#discoveryannouncement"><code>Announcement</code></a></li>
+</ul>
+<h2 id="messages">Messages</h2>
+<h3 id="discoveryannouncement"><code>.discovery.Announcement</code></h3>
+<p>The Announcement of a service (also called component)</p>
+<table>
+<thead>
+<tr>
+<th><strong>Name</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>amqp_address</code></td>
+<td><code>string</code></td>
+<td>Contains the address where the AMQP API is exposed (if there is one) Format of amqp_address: <code>(amqp(s)://)host(:port)</code> default amqp port is 5672, default amqps port is 5671. Examples: if <code>host:port</code> then <code>amqp://host:port</code> if <code>host:5671</code> then <code>amqps://host:5671</code> if <code>host</code> then <code>amqp://host:5672</code> and <code>amqps://host:5671</code> if <code>amqp://host</code> then <code>amqp://host:5672</code> if <code>amqps://host</code> then <code>amqp://host:5672</code> and <code>amqps://host:5671</code></td>
+</tr>
+<tr>
+<td><code>api_address</code></td>
+<td><code>string</code></td>
+<td>Contains the address where the HTTP API is exposed (if there is one). Format of api_address: <code>http(s)://domain(:port)</code> default http port is 80, default https port is 443.</td>
+</tr>
+<tr>
+<td><code>certificate</code></td>
+<td><code>string</code></td>
+<td>TLS Certificate for gRPC on net_address (if TLS is enabled)</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><code>string</code></td>
+<td>Description of the component</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td><code>string</code></td>
+<td>The ID of the component</td>
+</tr>
+<tr>
+<td><code>metadata</code></td>
+<td><em>repeated</em> <a href="/docs/network/discovery/#discoverymetadata"><code>Metadata</code></a></td>
+<td>Metadata for this component</td>
+</tr>
+<tr>
+<td><code>mqtt_address</code></td>
+<td><code>string</code></td>
+<td>Contains the address where the MQTT API is exposed (if there is one) Format of mqtt_address: <code>(mqtt(s)://)host(:port)</code> default mqtt port is 1883, default mqtts port is 8883. Examples: if <code>host:port</code> then <code>mqtt://host:port</code> if <code>host:8883</code> then <code>mqtts://host:8883</code> if <code>host</code> then <code>mqtt://host:1883</code> and <code>mqtts://host:8883</code> if <code>mqtt://host</code> then <code>mqtt://host:1883</code> if <code>mqtts://host</code> then <code>mqtt://host:1883</code> and <code>mqtts://host:8883</code></td>
+</tr>
+<tr>
+<td><code>net_address</code></td>
+<td><code>string</code></td>
+<td>Comma-separated network addresses in the form &ldquo;domain1:port,domain2:port,domain3:port&rdquo; (currently we only use the first)</td>
+</tr>
+<tr>
+<td><code>public</code></td>
+<td><code>bool</code></td>
+<td>Indicates whether this service is part of The Things Network (the public community network)</td>
+</tr>
+<tr>
+<td><code>public_key</code></td>
+<td><code>string</code></td>
+<td>ECDSA public key of this component</td>
+</tr>
+<tr>
+<td><code>service_name</code></td>
+<td><code>string</code></td>
+<td>The name of the component (router/broker/handler)</td>
+</tr>
+<tr>
+<td><code>service_version</code></td>
+<td><code>string</code></td>
+<td>Service version in the form &ldquo;[version]-[commit] ([build date])&rdquo;</td>
+</tr>
+<tr>
+<td><code>url</code></td>
+<td><code>string</code></td>
+<td>URL with documentation or more information about this component</td>
+</tr>
+</tbody>
+</table>
+<h3 id="discoveryannouncementsresponse"><code>.discovery.AnnouncementsResponse</code></h3>
+<p>A list of announcements</p>
+<table>
+<thead>
+<tr>
+<th><strong>Name</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>services</code></td>
+<td><em>repeated</em> <a href="/docs/network/discovery/#discoveryannouncement"><code>Announcement</code></a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="discoverygetbyappeuirequest"><code>.discovery.GetByAppEUIRequest</code></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Name</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>app_eui</code></td>
+<td><code>bytes</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="discoverygetbyappidrequest"><code>.discovery.GetByAppIDRequest</code></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Name</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>app_id</code></td>
+<td><code>string</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="discoverygetbygatewayidrequest"><code>.discovery.GetByGatewayIDRequest</code></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Name</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>gateway_id</code></td>
+<td><code>string</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="discoverygetrequest"><code>.discovery.GetRequest</code></h3>
+<p>The identifier of the service that should be returned</p>
+<table>
+<thead>
+<tr>
+<th><strong>Name</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>string</code></td>
+<td>The ID of the service</td>
+</tr>
+<tr>
+<td><code>service_name</code></td>
+<td><code>string</code></td>
+<td>The name of the service (router/broker/handler)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="discoverygetservicerequest"><code>.discovery.GetServiceRequest</code></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Name</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>service_name</code></td>
+<td><code>string</code></td>
+<td>The name of the service (router/broker/handler)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="discoverymetadata"><code>.discovery.Metadata</code></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Name</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>app_eui</code></td>
+<td><code>bytes</code></td>
+<td>AppEUI that is registered to this Join Handler Only authorized Join Handlers can announce APP_EUI metadata (and we don&rsquo;t have any of those yet).</td>
+</tr>
+<tr>
+<td><code>app_id</code></td>
+<td><code>string</code></td>
+<td>AppID that is registered to this Handler This metadata can only be added if the requesting client is authorized to manage this AppID.</td>
+</tr>
+<tr>
+<td><code>dev_addr_prefix</code></td>
+<td><code>bytes</code></td>
+<td>DevAddr prefix that is routed by this Broker 5 bytes; the first byte is the prefix length, the following 4 bytes are the address. Only authorized Brokers can announce PREFIX metadata.</td>
+</tr>
+<tr>
+<td><code>gateway_id</code></td>
+<td><code>string</code></td>
+<td>GatewayID that is registered to this Router This metadata can only be added if the requesting client is authorized to manage this GatewayID.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="discoverymetadatarequest"><code>.discovery.MetadataRequest</code></h3>
+<p>The metadata to add or remove from an announement</p>
+<table>
+<thead>
+<tr>
+<th><strong>Name</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>string</code></td>
+<td>The ID of the service that should be modified</td>
+</tr>
+<tr>
+<td><code>metadata</code></td>
+<td><a href="/docs/network/discovery/#discoverymetadata"><code>Metadata</code></a></td>
+<td>Metadata to add or remove</td>
+</tr>
+<tr>
+<td><code>service_name</code></td>
+<td><code>string</code></td>
+<td>The name of the service (router/broker/handler) that should be modified</td>
+</tr>
+</tbody>
+</table>
+<h3 id="googleprotobufempty"><code>.google.protobuf.Empty</code></h3>
+<p>A generic empty message that you can re-use to avoid defining duplicated
+empty messages in your APIs.</p>
+
+        </div>
+      
+      <div class="is-clearfix">
+</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="footer"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ttn-components.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/promise-polyfill@7/dist/polyfill.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-navbar.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-footer.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ga.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/vendor/basicLightbox.min.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/theme.min.00ace5d667ca108a93b8a0d385569f7c7bb9f46ed32eefe3f5fb39105763cccd.js" integrity="sha256-AKzl1mfKEIqTuKDThVaffHu59G7TLu/j9fs5EFdjzM0=" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

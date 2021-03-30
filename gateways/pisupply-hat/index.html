@@ -1,216 +1,325 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <link rel="stylesheet" href="/docs/assets/css/main.css" />
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    <script>
-    (function(canonical) {
-      if (!document.location.href.substr(0, document.location.href.length - document.location.hash.length).startsWith(canonical)) {
-        window.location.replace(canonical);
-      }
-    })('https://www.thethingsnetwork.org/docs/gateways/pisupply-hat/');
-    </script>
-    <!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Pi Supply Gateway HAT | The Things Network</title>
-<meta name="generator" content="Jekyll v3.4.5" />
-<meta property="og:title" content="Pi Supply Gateway HAT" />
-<meta property="og:locale" content="en_US" />
-<meta name="description" content="Setup your Pi Supply IoT LoRa Gateway HAT In this tutorial we will go over setting up the Pi Supply IoT LoRa Gateway HAT." />
-<meta property="og:description" content="Setup your Pi Supply IoT LoRa Gateway HAT In this tutorial we will go over setting up the Pi Supply IoT LoRa Gateway HAT." />
-<link rel="canonical" href="https://www.thethingsnetwork.org/docs/gateways/pisupply-hat/" />
+
+<html lang="en-us" class="has-ttn-navbar-top">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <meta name="generator" content="Hugo 0.79.0" />
+
+  <title>Pi Supply Gateway HAT | The Things Network</title>
+  <link rel="canonical" href="https://www.thethingsnetwork.org/docs/gateways/pisupply-hat/" />
+  
+
+  <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
+
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+  <meta name="msapplication-TileImage" content="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png">
+
+  <meta name="application-name" content="The Things Network">
+  <meta name="msapplication-tooltip" content="Tooltip">
+  <meta name="msapplication-config" content="https://ttnweb.azureedge.net/static/common/favicon/ieconfig.54334a5ee30c.xml">
+
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-32.61b30f85680a.png" sizes="32x32">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-57.83b86c64dc82.png" sizes="57x57">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-76.7dcf8fa36dfc.png" sizes="76x76">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-96.27ac17adaa8b.png" sizes="96x96">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-120.e1526731335e.png" sizes="120x120">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-128.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png" sizes="144x144">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png" sizes="152x152">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-180.fcd414307ca3.png" sizes="180x180">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-195.c55ce09d66da.png" sizes="195x195">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-228.bea53ec4b10b.png" sizes="228x228">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/smalltile.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/mediumtile.3d42f7faac82.png" sizes="270x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
+  <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+
+  <meta property="og:title" content="Pi Supply Gateway HAT" />
+<meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
+<meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.thethingsnetwork.org/docs/gateways/pisupply-hat/" />
+<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
 <meta property="og:site_name" content="The Things Network" />
-<meta property="og:image" content="https://www.thethingsnetwork.org/docs/gateways/pisupply-hat/images/gatewayHat-assembled.png" />
-<meta property="og:type" content="article" />
-<meta property="article:published_time" content="2021-03-23T12:55:33+00:00" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta property="twitter:image" content="https://www.thethingsnetwork.org/docs/gateways/pisupply-hat/images/gatewayHat-assembled.png" />
-<meta property="twitter:title" content="Pi Supply Gateway HAT" />
-<meta name="twitter:site" content="@thethingsnetwrk" />
-<meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
-<script type="application/ld+json">
-{"headline":"Pi Supply Gateway HAT","dateModified":"2021-03-23T12:55:33+00:00","datePublished":"2021-03-23T12:55:33+00:00","description":"Setup your Pi Supply IoT LoRa Gateway HAT In this tutorial we will go over setting up the Pi Supply IoT LoRa Gateway HAT.","url":"https://www.thethingsnetwork.org/docs/gateways/pisupply-hat/","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/gateways/pisupply-hat/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"image":"https://www.thethingsnetwork.org/docs/gateways/pisupply-hat/images/gatewayHat-assembled.png","@context":"https://schema.org"}</script>
-<!-- End Jekyll SEO tag -->
-    <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
-    <meta name="msapplication-TileColor" content="#FFFFFF">
-    <meta name="msapplication-TileImage" content="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png">
-    <meta name="application-name" content="The Things Network">
-    <meta name="msapplication-tooltip" content="Tooltip">
-    <meta name="msapplication-config" content="https://ttnweb.azureedge.net/static/common/favicon/ieconfig.54334a5ee30c.xml">
-    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-32.61b30f85680a.png" sizes="32x32">
-    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-57.83b86c64dc82.png" sizes="57x57">
-    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-76.7dcf8fa36dfc.png" sizes="76x76">
-    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-96.27ac17adaa8b.png" sizes="96x96">
-    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-120.e1526731335e.png" sizes="120x120">
-    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-128.fabea041224c.png" sizes="128x128">
-    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png" sizes="144x144">
-    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png" sizes="152x152">
-    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-180.fcd414307ca3.png" sizes="180x180">
-    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-195.c55ce09d66da.png" sizes="195x195">
-    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-228.bea53ec4b10b.png" sizes="228x228">
-    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/smalltile.fabea041224c.png" sizes="128x128">
-    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/mediumtile.3d42f7faac82.png" sizes="270x270">
-    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
-    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
-    <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-    <script src="/docs/assets/js/main.js"></script>
-  </head>
-  <body>
-    <div id="header"></div>
-    <div id="content">
-<div class="layout-page">
-  <!-- <div class="ttn-header ttn-header-small">
-    <div class="ttn-container container-fluid">
-      <h1>
-        <img src="/docs/assets/images/the-things-white.png" alt="⛅ The Things Network" />
-        <span>Learn</span>
-      </h1>
-    </div>
-  </div> -->
-  <div class="container-fluid ttn-container">
-    <div class="row page-top-nav">
-      <div class="col-sm-9">
-        <ul>
-          <!--<li class="page-top-nav-crumb"><a href="http://www.thethingsnetwork.org/">Home</a></li>-->
-          <li class="page-top-nav-crumb"><a href="/docs/">Learn</a></li>
-                <li class=""><a href="/docs/quick-start/">Quick Start</a></li>
-                <li class=""><a href="/docs/lorawan/">LoRaWAN</a></li>
-                <li class=""><a href="/docs/devices-and-gateways/">Devices & Gateways</a></li>
-                <li class=""><a href="/docs/applications-and-integrations/">Applications</a></li>
-                <li class=""><a href="/docs/the-things-stack/">The Things Stack</a></li>
-                <li class=""><a href="/docs/v2-docs/">V2 docs</a></li>
-        </ul>
-      </div>
-      <div class="hidden-xs col-sm-3 text-right">
-        <a href="https://github.com/TheThingsNetwork/docs/edit/master/_content/gateways/pisupply-hat/index.md" class="page-edit" data-proofer-ignore><i class="fa fa-github"></i> Edit <strong>index.md</strong></a>
-      </div>
-    </div>
-    <div class="row wrapper">
-      <div class="col-sm-3 side-nav">
-        <div class="panel page-side-nav">
-          <div class="panel-body">
-            <ul>
-              <li class=""><a href="/docs/gateways/index.html"><h5>Gateways</h5></a>
-            <ul>
-                <li class=""><a href="/docs/gateways/basics-station/">LoRa Basics™ Station</a>
-                </li>
-                <li class=""><a href="/docs/gateways/certificates/">Root Certificates</a>
-                </li>
-            </ul>
-              </li>
-            <li class="page-side-nav-section"><span>Running a gateway</span>
-            <ul>
-                <li class=""><a href="/docs/gateways/start/">Where to start</a>
-                </li>
-                <li class=""><a href="/docs/gateways/registration.html">Gateway Registration</a>
-                </li>
-                <li class=""><a href="/docs/gateways/packet-forwarder/">Packet Forwarders</a>
-                </li>
-                <li class=""><a href="/docs/gateways/lightning-protection.html">Lightning Protection</a>
-                </li>
-                <li class=""><a href="/docs/gateways/troubleshooting/">Troubleshooting</a>
-                </li>
-            </ul>
+
+
+  <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
+
+<meta name="twitter:title" content="Pi Supply Gateway HAT"/>
+<meta name="twitter:description" content="We are building a global open free crowdsourced long range low power IoT data network"/>
+
+
+</head>
+
+
+<body>
+
+<div id="header"></div>
+<section class="section">
+  <div class="container">
+    <nav class="breadcrumb has-dot-separator" aria-label="breadcrumbs">
+      <ul>
+        <li><a href="https://www.thethingsnetwork.org/docs">Learn</a></li>
+        
+        
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/lorawan/">LoRaWAN</a>
             </li>
-            <li class="page-side-nav-section"><span>Hardware</span>
-            <ul>
-                <li class=""><a href="/docs/gateways/thethingsindoor/">The Things Indoor Gateway</a>
-                </li>
-                <li class=""><a href="/docs/gateways/thethingsoutdoor/">The Things Outdoor Gateway</a>
-                </li>
-                <li class=""><a href="/docs/gateways/gateway/">The Things Gateway</a>
-                </li>
-                <li class=""><a href="/docs/gateways/multitech/">MultiTech Conduit</a>
-                </li>
-                <li class=""><a href="/docs/gateways/rak2245/">RAK2245 Pi Hat Edition - LoRaWAN® Gateway Concentrator Module</a>
-                </li>
-                <li class=""><a href="/docs/gateways/rak7243c/">RAK7243C Pilot Gateway</a>
-                </li>
-                <li class=""><a href="/docs/gateways/rak831/">RAK831</a>
-                </li>
-                <li class="active"><a href="/docs/gateways/pisupply-hat/">Pi Supply Gateway HAT</a>
-                </li>
-                <li class=""><a href="/docs/gateways/aaeon/">AAEON</a>
-                </li>
-                <li class=""><a href="/docs/gateways/cisco/">Cisco LoRaWAN Gateway</a>
-                </li>
-                <li class=""><a href="/docs/gateways/kerlink/">Kerlink</a>
-                </li>
-                <li class=""><a href="/docs/gateways/laird/">Laird RG1xx</a>
-                </li>
-                <li class=""><a href="/docs/gateways/lorrier/">Lorrier LR2</a>
-                </li>
-                <li class=""><a href="/docs/gateways/mikrotik/">MikroTik Routerboard</a>
-                </li>
-                <li class=""><a href="/docs/gateways/st/">P-NUCLEO-LRWAN2</a>
-                </li>
-                <li class=""><a href="/docs/gateways/tektelic/">Tektelic</a>
-                </li>
-                <li class=""><a href="/docs/gateways/ursalink/">Ursalink</a>
-                </li>
-            </ul>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/quick-start/">Quick Start</a>
             </li>
-            </ul>
-            <!-- <li class="hidden-xs col-sm-2 page-toc page-affix"></li> --> 
-          </div>
-        </div> 
-      </div>
-      <div class="col-sm-9 page-body">
-          <section class="panel page-ambassador">
-            <div class="panel-body">
-              <div class="media">
-                <div class="media-left">
-                  <a href="https://www.thethingsnetwork.org/u/Ryanteck/"><img src="https://account.thethingsnetwork.org/api/users/Ryanteck/picture.jpg" alt="Ryan Walmsley" class="img-circle" /></a>
-                </div>
-                <div class="media-body">
-                    <p>This is a community effort led by The Things Network Ambassador <a href="https://www.thethingsnetwork.org/u/Ryanteck/">Ryan Walmsley</a>. <a href="mailto:fokke@thethingsnetwork.org">Become an ambassador.</a></p>
-                </div>
-              </div>
-            </div>
-          </section>
-        <div class="panel">
-          <div class="panel-body page-content">
-            <h1 id="setup-your-pi-supply-iot-lora-gateway-hat">Setup your Pi Supply IoT LoRa Gateway HAT</h1>
-<p>In this tutorial we will go over setting up the Pi Supply IoT LoRa Gateway HAT.</p>
-<p>The method we are using is with our Pre Built SD Card Image. However other methods are available at https://learn.pi-supply.com/make/category/lora/</p>
-<p><img src="images/gatewayHat-assembled.png" alt="" /></p>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/applications-and-integrations/">Applications &amp; Integrations</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/">Devices &amp; Gateways</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/the-things-stack/">The Things Stack</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/v2-docs/">V2 Docs (Outdated)</a>
+            </li>
+          
+        
+      </ul>
+    </nav>
+  </div>
+</section>
+<div class="container" role="document">
+  <div class="columns my-0 is-desktop">
+    <div class="column is-3-desktop sidebar-left">
+      
+
+
+<nav class="side-navigation" aria-label="Main navigation">
+
+<h2 class="title is-size-5">Gateways</h2>
+
+<div class="menu">
+  <ul class="menu-list">
+  <a href="https://www.thethingsnetwork.org/docs/gateways/" class="">Overview</a>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/gateways/basics-station/" class="">LoRa Basics™ Station</a>
+    </li>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/gateways/certificates/" class="">Root Certificates</a>
+    </li>
+  
+    <p class="menu-label">
+      SDKs
+    </p>
+    
+  
+    <p class="menu-label">
+      Running a gateway
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/troubleshooting/" class="">Troubleshooting</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/lightning-protection/" class="">Lightning Protection</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/packet-forwarder/" class="">Packet Forwarders</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/registration/" class="">Gateway Registration</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/start/" class="">Where to start</a>
+</li>
+
+  
+    <p class="menu-label">
+      Hardware
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/pisupply-hat/" class="is-active">Pi Supply Gateway HAT</a>
+  
+
+
+
+  
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/multitech/" class="">MultiTech Conduit</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/rak2245/" class="">RAK2245 Pi Hat Edition - LoRaWAN® Gateway Concentrator Module</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/rak7243c/" class="">RAK7243C Pilot Gateway</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/rak831/" class="">RAK831</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/gateway/" class="">The Things Gateway</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/thethingsindoor/" class="">The Things Indoor Gateway</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/thethingsoutdoor/" class="">The Things Outdoor Gateway</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/aaeon/" class="">AAEON</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/cisco/" class="">Cisco LoRaWAN Gateway</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/kerlink/" class="">Kerlink</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/laird/" class="">Laird RG1xx</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/lorrier/" class="">Lorrier LR2</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/mikrotik/" class="">MikroTik Routerboard</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/st/" class="">P-NUCLEO-LRWAN2</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/tektelic/" class="">Tektelic</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/ursalink/" class="">Ursalink</a>
+</li>
+
+  
+  </ul>
+</div>
+
+
+
+
+
+</nav>
+
+    </div>
+    <div class="column is-9-desktop sidebar-middle">
+      <div class="docs-content">
+        <h1 class="title is-size-2">
+          Pi Supply Gateway HAT
+        </h1>
+        <div class="content">
+          <p>In this tutorial we will go over setting up the Pi Supply IoT LoRa Gateway HAT.</p>
+<p>The method we are using is with our Pre Built SD Card Image. However other methods are available at <a href="https://learn.pi-supply.com/make/category/lora/">https://learn.pi-supply.com/make/category/lora/</a></p>
+<p><img src="images/gatewayHat-assembled.png" alt=""></p>
 <p><span style="color:red">Reminder: Make sure the antenna is connected before turning the Raspberry Pi on</span></p>
 <h2 id="what-you-need">What you need</h2>
 <p>To be able to follow this tutorial you will need:</p>
 <ul>
-  <li>Raspberry Pi, Most models will work but ideally with an Ethernet Connection such as B+, Pi 2 B, Pi 3 B, Pi 3 B+</li>
-  <li>Pi Supply IoT LoRa Gateway Hat</li>
-  <li>SD Card – Preferably at least 8GB Class 10</li>
-  <li>SD Card Reader</li>
-  <li>Power Supply, At least 2A</li>
+<li>Raspberry Pi, Most models will work but ideally with an Ethernet Connection such as B+, Pi 2 B, Pi 3 B, Pi 3 B+</li>
+<li>Pi Supply IoT LoRa Gateway Hat</li>
+<li>SD Card – Preferably at least 8GB Class 10</li>
+<li>SD Card Reader</li>
+<li>Power Supply, At least 2A</li>
 </ul>
 <h1 id="step-1---download-the-sd-card-image">Step 1 - Download the SD Card image</h1>
-<p>Begin by downloading the SD Card image form our Google Drive, do this by going to http://pisupp.ly/iotsd and clicking on the Zip File to download.</p>
+<p>Begin by downloading the SD Card image form our Google Drive, do this by going to <a href="http://pisupp.ly/iotsd">http://pisupp.ly/iotsd</a> and clicking on the Zip File to download.</p>
 <p>The version of the SD Card image may change over time with all previous verisons avialble in the archive folder. However the one in the main folder should be used.</p>
 <p>After it has downloaded you do not need to extract the file.</p>
 <h1 id="step-2--image-the-sd-card">Step 2- Image the SD Card</h1>
 <p>Next we need to write the SD card, before we can do this we need to first download a tool to write the data to the SD Card. For this we recommend balenaEtcher (Previously Resin) as it’s compatible with most Operating Systems and is easy to use.</p>
-<p>Download Etcher from https://www.balena.io/etcher &amp; install it on your computer and then run it.</p>
+<p>Download Etcher from <a href="https://www.balena.io/etcher">https://www.balena.io/etcher</a> &amp; install it on your computer and then run it.</p>
 <p>Next select the SD Card image by clicking Select Image, and navigating to where the zip file downloaded on your computer (Usually in your downloads folder).</p>
 <p>Then select the SD Card you wish to have the image written to, this is usually the only one that shows up if you only have one SD card plugged in.</p>
 <p>And then click flash! The software will now write the data to the SD Card and present you with this screen when completed.</p>
-<p><img src="images/balena-screenshot.png" alt="" /></p>
+<p><img src="images/balena-screenshot.png" alt=""></p>
 <p>If you have it where it says validation error then the image may not have been written correctly. Try removing the SD Card, plugging it back into your computer and repeating the process. If this then still fails you may have a faulty SD Card. The process can take 5-10 minutes depending on the speed of the SD Card, writer and computer.</p>
 <p>Once completed you should get this screen.</p>
-<p><img src="images/balena-screenshot3.png" alt="" /></p>
+<p><img src="images/balena-screenshot3.png" alt=""></p>
 <h1 id="step-3--adding-the-gateway-to-the-ttn-console">Step 3 – Adding the gateway to the TTN Console</h1>
-<p>Begin by going to https://console.thethingsnetwork.org/ and creating an account if not already signed up and then login.</p>
+<p>Begin by going to <a href="https://console.thethingsnetwork.org/">https://console.thethingsnetwork.org/</a> and creating an account if not already signed up and then login.</p>
 <p>You should be presented with a page like this.</p>
-<p><img src="images/ttn-console-1.png" alt="" /></p>
+<p><img src="images/ttn-console-1.png" alt=""></p>
 <p>Now click gateways and then on the top right of the gateway box click register gateway.</p>
 <p>On this window you need to fill out the following fields:</p>
 <p><strong>Gateway ID:</strong> This has to be a unique ID, this can be anything you like but has to be unique.</p>
@@ -220,16 +329,16 @@
 <p><strong>Location:</strong> The location of the gateway is handy to put in, while not required it may be useful in the future and for signal coverage mapping.</p>
 <p><strong>Antenna Placement:</strong> If the gateway and antenna is indoors then select indoors, if the antenna is mounted externally select outdoors.</p>
 <p><strong>All of these settings can be modified later except for the gateway ID</strong></p>
-<p><img src="images/ttn-console-2.png" alt="" /></p>
+<p><img src="images/ttn-console-2.png" alt=""></p>
 <p><strong>Next we want to modify a few settings.</strong></p>
 <p>Click on the settings tab and you should be able to see the settings we configured and then on the information tab to the left.</p>
 <p>Then in brand type in <strong>Multi-channel Raspberry Pi gateway</strong>, it should auto complete.</p>
 <p>And for model select <strong>Raspberry Pi with Pi Supply Gateway HAT</strong>.</p>
 <p>Finally click update gateway and return to the main screen. The overview should look similar to this.</p>
-<p><img src="images/ttn-console-3.png" alt="" /></p>
+<p><img src="images/ttn-console-3.png" alt=""></p>
 <h1 id="step-4--plug-it-all-in">Step 4 – Plug it all in!</h1>
 <p>Now we’re ready for assembly, start by putting the RAK833 module into the Gateway HAT and then push the Gateway HAT onto the Raspberry Pi’s GPIO Headers.</p>
-<p><img src="images/gatewayHat-assembled2.png" alt="" /></p>
+<p><img src="images/gatewayHat-assembled2.png" alt=""></p>
 <p>Put the SD Card into the Raspberry Pi and connect it to Ethernet (if not using wireless) and finally connect a power adapter.</p>
 <p>You should see the Red light turn on on your Raspberry Pi and the Green LED Blink.
 If your Red light doesn’t turn on or blinks intermittently then try a different power supply. If the Green LED Doesn’t blink at all repeat Step 2.</p>
@@ -237,42 +346,44 @@ If your Red light doesn’t turn on or blinks intermittently then try a differen
 <h1 id="step-5--gateway-configuration">Step 5 – Gateway Configuration</h1>
 <p>Finally we need to configure our gateway. To begin you will need to connect to your gateway from a computer on the same network.</p>
 <p>Open a web browser, we have tested this in Google Chrome.</p>
-<p>If you are on Mac OS or Linux you should be able to connect to your gateway by visiting  <strong>http://iotloragateway.local</strong> , on Windows you will have to find the IP Address of your gateway. This can usually be done by looking at your router’s list of devices on the network and looking for the device with iotloragateway.</p>
-<p><img src="images/sdimage-1.png" alt="" /></p>
+<p>If you are on Mac OS or Linux you should be able to connect to your gateway by visiting  <strong><a href="http://iotloragateway.local">http://iotloragateway.local</a></strong> , on Windows you will have to find the IP Address of your gateway. This can usually be done by looking at your router’s list of devices on the network and looking for the device with iotloragateway.</p>
+<p><img src="images/sdimage-1.png" alt=""></p>
 <p>This is the home page for our IoT LoRa Gateway Mangement software. We want to configure our gateway so we visit the Change Configuration Page.</p>
 <p>On this page you will need to type in your email address in the first box. The gateway ID in the second box and copy and paste the Gateway Key from the TTN Console into the TTN Gateway Key Box.</p>
 <p>You can see this side by side completed.</p>
-<p><img src="images/sdimage-2.png" alt="" /></p>
+<p><img src="images/sdimage-2.png" alt=""></p>
 <p><strong>Now Click Update Configuration</strong></p>
 <p>To get the gateway to start we now need to go to the system controls tab at the top and click the restart button.</p>
-<p><img src="images/sdimage-3.png" alt="" /></p>
+<p><img src="images/sdimage-3.png" alt=""></p>
 <p>Once you click this button you will see a progress bar go across the screen and by the end the blue light should now be showing on the LoRa module and you will be re-directed to the homepage.</p>
 <p><strong>You should now be able to see your gateway’s ID, how many packet’s it has received and other handy information!</strong></p>
-<p><img src="images/sdimage-4.png" alt="" /></p>
+<p><img src="images/sdimage-4.png" alt=""></p>
 <p>You can also use the Things Network Console to view packets live as they are received by your gateway. However for this to work a node must be transmitting LoRa Packets nearby!</p>
-<p><strong><img src="images/ttn-console-4.png" alt="" /></strong></p>
-          </div>  
+<p><strong><img src="images/ttn-console-4.png" alt=""></strong></p>
+
         </div>
-        <div>
-        </div>
+      
+      <div class="is-clearfix">
+</div>
+
       </div>
     </div>
   </div>
 </div>
-<div class="modal fade" id="lightbox" tabindex="-1" role="dialog">
-  <div class="modal-dialog text-center" role="document" style="width:auto;padding:20px;">
-    <a href="https://ttnstaticfile.blob.core.windows.net/static/ttn/media/logo/ttn-logo.png"><img class="modal-content modal-body" src="https://ttnstaticfile.blob.core.windows.net/static/ttn/media/logo/ttn-logo.png" alt="Zoom" /></a>
-  </div>
-</div>
-<script src="/docs/assets/js/page.js"></script>
-    </div>
-    <div id="footer"></div>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.min.js"></script>
-    <script src="https://ttnweb.azureedge.net/static/common/js/ttn-components.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill@7/dist/polyfill.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
-    <script src="https://ttnweb.azureedge.net/static/common/js/vue-navbar.js"></script>
-    <script src="https://ttnweb.azureedge.net/static/common/js/vue-footer.js"></script>
-    <script src="https://ttnweb.azureedge.net/static/common/js/ga.js"></script>
-  </body>
+
+
+<div id="footer"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ttn-components.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/promise-polyfill@7/dist/polyfill.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-navbar.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-footer.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ga.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/vendor/basicLightbox.min.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/theme.min.00ace5d667ca108a93b8a0d385569f7c7bb9f46ed32eefe3f5fb39105763cccd.js" integrity="sha256-AKzl1mfKEIqTuKDThVaffHu59G7TLu/j9fs5EFdjzM0=" crossorigin="anonymous"></script>
+
+</body>
+
 </html>

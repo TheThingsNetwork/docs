@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+
+<html lang="en-us" class="has-ttn-navbar-top">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <meta name="generator" content="Hugo 0.79.0" />
+
+  <title>Quick Start | The Things Network</title>
+  <link rel="canonical" href="https://www.thethingsnetwork.org/docs/devices/node/quick-start/" />
+  
+
+  <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
+
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+  <meta name="msapplication-TileImage" content="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png">
+
+  <meta name="application-name" content="The Things Network">
+  <meta name="msapplication-tooltip" content="Tooltip">
+  <meta name="msapplication-config" content="https://ttnweb.azureedge.net/static/common/favicon/ieconfig.54334a5ee30c.xml">
+
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-32.61b30f85680a.png" sizes="32x32">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-57.83b86c64dc82.png" sizes="57x57">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-76.7dcf8fa36dfc.png" sizes="76x76">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-96.27ac17adaa8b.png" sizes="96x96">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-120.e1526731335e.png" sizes="120x120">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-128.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png" sizes="144x144">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png" sizes="152x152">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-180.fcd414307ca3.png" sizes="180x180">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-195.c55ce09d66da.png" sizes="195x195">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-228.bea53ec4b10b.png" sizes="228x228">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/smalltile.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/mediumtile.3d42f7faac82.png" sizes="270x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
+  <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+
+  <meta property="og:title" content="Quick Start" />
+<meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/devices/node/quick-start/" />
+<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
+<meta property="og:site_name" content="The Things Network" />
+
+
+  <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
+
+<meta name="twitter:title" content="Quick Start"/>
+<meta name="twitter:description" content="We are building a global open free crowdsourced long range low power IoT data network"/>
+
+
+</head>
+
+
+<body>
+
+<div id="header"></div>
+<section class="section">
+  <div class="container">
+    <nav class="breadcrumb has-dot-separator" aria-label="breadcrumbs">
+      <ul>
+        <li><a href="https://www.thethingsnetwork.org/docs">Learn</a></li>
+        
+        
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/lorawan/">LoRaWAN</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/quick-start/">Quick Start</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/applications-and-integrations/">Applications &amp; Integrations</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/">Devices &amp; Gateways</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/the-things-stack/">The Things Stack</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/v2-docs/">V2 Docs (Outdated)</a>
+            </li>
+          
+        
+      </ul>
+    </nav>
+  </div>
+</section>
+<div class="container" role="document">
+  <div class="columns my-0 is-desktop">
+    <div class="column is-3-desktop sidebar-left">
+      
+
+
+<nav class="side-navigation" aria-label="Main navigation">
+
+<h2 class="title is-size-5">Devices</h2>
+
+<div class="menu">
+  <ul class="menu-list">
+  <a href="https://www.thethingsnetwork.org/docs/devices/" class="">Overview</a>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/devices/bestpractices/" class="">Best Practices</a>
+    </li>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/devices/registration/" class="">Device Registration</a>
+    </li>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/devices/bytes/" class="">Working with Bytes</a>
+    </li>
+  
+    <p class="menu-label">
+      SDKs &amp; Libraries
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/devices/arduino/" class="">Arduino</a>
+</li>
+
+  
+    <p class="menu-label">
+      Hardware
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/devices/rak5205-wistrio-lora-tracker/" class="">RAK5205 WisTrio LoRa® Tracker</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/devices/rak7200-lora-tracker/" class="">RAK7200 LoRa® Tracker</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/devices/rak811-lora-module-breakout-board/" class="">RAK811 LoRa® Breakout Module</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/devices/rak811-lora-evaluation-board/" class="">RAK811 LoRa® Evaluation Board</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/devices/rak811-wisnode-lora-module/" class="">RAK811 WisNode LoRa Module</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/devices/node/" class="">The Things Node</a>
+  
+
+
+<ul class="menu-list">
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/devices/node/troubleshooting/" class="">Troubleshooting</a>
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/devices/node/api/" class="">API Reference</a>
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/devices/node/map/" class="">Map your Device!</a>
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/devices/node/quick-start/" class="is-active">Quick Start</a>
+    
+    
+
+
+
+    
+  </li>
+
+</ul>
+
+
+  
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/devices/uno/" class="">The Things Uno</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/devices/lopy/" class="">LoPy</a>
+</li>
+
+  
+  </ul>
+</div>
+
+
+
+
+
+</nav>
+
+    </div>
+    <div class="column is-9-desktop sidebar-middle">
+      <div class="docs-content">
+        <h1 class="title is-size-2">
+          Quick Start
+        </h1>
+        <div class="content">
+          <p>This guide will walk you through programming your The Things Node with your first sketch to send its measurements over The Things Network.</p>
+<h2 id="setup-arduino-ide">Setup Arduino IDE</h2>
+<ol>
+<li>Follow <a href="/docs/devices/arduino/ide/">Arduino / IDE Setup &amp; Usage</a> to setup the IDE.</li>
+<li>Download the <code>TheThingsNetwork</code> and <code>TheThingsNode</code> libraries via <strong>Sketch &gt; Include Library v Manage Libraries&hellip;</strong>. Search for <code>TheThings</code> in the search bar. Install the latest versions of both <code>TheThingsNetwork</code> and <code>TheThingsNode</code>.</li>
+<li>Follow SparkFun&rsquo;s <a href="https://github.com/sparkfun/Arduino_Boards#installation-instructions">Installation Instructions</a> to add the additional board manager and install the <strong>SparkFun AVR Boards</strong>.</li>
+</ol>
+<h2 id="connect-your-device">Connect your Device</h2>
+<ol>
+<li>
+<p>Open the case using a Phillips (cross) screw driver.</p>
+<blockquote>
+<p>You do not need to insert batteries while we program it, since the Node will be powered via USB. Using both batteries and USB at the same time is also ok, as the device will then switch to using USB.</p>
+</blockquote>
+</li>
+<li>
+<p>Connect a micro-USB cable to the connector found between the battery compartment and the top side of the case.</p>
+<p><img src="../cable.png" alt="Cable"></p>
+<blockquote>
+<p>Some Micro-USB cables might not fit the limited space between the battery compartment and the casing. Also make sure you use a cable that supports data, not just power. The one we ship with The Things Uno should work.</p>
+</blockquote>
+</li>
+<li>
+<p>Connect the USB cable to your computer.</p>
+</li>
+<li>
+<p>In the Arduino IDE, select <strong>Tools &gt; Boards &gt; SparkFun Pro Micro</strong>.</p>
+</li>
+<li>
+<p>Select <strong>Tools &gt; Processor &gt; ATmega32U4 (3.3V, 8Mhz)</strong>.</p>
+</li>
+<li>
+<p>Select the Node&rsquo;s Serial Port under <strong>Tools &gt; Port</strong>.</p>
+<blockquote>
+<p>Unlike The Things Uno, which the Arduino IDE recognizes as <em>Arduino Leonardo</em>, it does not always recognize the Node as <em>SparkFun Pro Micro</em>. You will have to see what <code>/dev/*usb*</code> (Mac/Linux) or <code>COM</code> (Windows) option appears in the menu after connecting the Node.</p>
+</blockquote>
+<blockquote>
+<p>Another <a href="/docs/devices/node/troubleshooting/#serial-port-not-showing">common issue</a> is that on recent Macs the Node may not appear at all. We suggest to connect via a USB hub.</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="get-your-device-eui">Get your Device EUI</h2>
+<p>To communicate via The Things Network, you need to register your device. For this, we&rsquo;ll need its unique <strong>Device EUI</strong>. This is a unique address, hard coded into the LoRa module.</p>
+<ol>
+<li>
+<p>In the Arduino IDE, select <strong>File &gt; Examples &gt; TheThingsNetwork &gt; <a href="https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/DeviceInfo/DeviceInfo.ino">DeviceInfo</a></strong>.</p>
+<blockquote>
+<p>Replace <code>REPLACE_ME</code> with either <code>TTN_FP_EU868</code> or <code>TTN_FP_US915</code> depending on the frequency plan of your device.</p>
+</blockquote>
+</li>
+<li>
+<p>Select <strong>Sketch &gt; Upload</strong> to upload the sketch.</p>
+<blockquote>
+<p>Uploads may fail if the Serial Monitor is open or if the IDE lost track of <a href="/docs/devices/node/#connect-your-device">the port you selected</a>. Close the serial monitor, check the port selection and try again. If it still fails, check <a href="https://www.arduino.cc/en/Guide/Troubleshooting#toc1">Arduino Troubleshooting</a>, or <a href="/docs/devices/node/troubleshooting/">the troubleshooting page</a>.</p>
+</blockquote>
+</li>
+<li>
+<p>Within 10 seconds, select <strong>Tools &gt; Serial Monitor</strong> to open the <a href="https://www.arduino.cc/en/Guide/Environment#toc12">Serial Monitor</a>.</p>
+<p>Soon, it should print a list of information:</p>
+<pre><code>-- STATUS
+EUI: 0004A30B001B7AD2
+Battery: 3223
+AppEUI: 70B3D57EF000001C
+DevEUI: 0004A30B001B7AD2
+Band: 868
+Data Rate: 5
+RX Delay 1: 1000
+RX Delay 2: 2000
+Total airtime: 0.00 s
+</code></pre><p>Use the first <code>EUI</code> value to register your device.</p>
+</li>
+</ol>
+<p>🎉 You have connected your device, written your first sketch, uploaded it to your device and monitored your device logs to retrieve its Device EUI.</p>
+<h2 id="create-an-account">Create an Account</h2>
+<p>To register your device you&rsquo;ll need a The Things Network account.</p>
+<ol>
+<li>
+<p>Go to <a href="https://account.thethingsnetwork.org">account.thethingsnetwork.org</a> and click <a href="https://account.thethingsnetwork.org/register">create an account</a>.</p>
+<p>You will receive an email to confirm your email address. You have 24 hours to do so, so let&rsquo;s wait for the mail and carry on! 🚀</p>
+<blockquote>
+<p>You can change all but your username later via your <a href="https://account.thethingsnetwork.org/users/profile">Profile</a>.</p>
+</blockquote>
+</li>
+<li>
+<p>Select <a href="https://console.thethingsnetwork.org">Console</a> from the top menu.</p>
+</li>
+<li>
+<p>From the top right menu, select your name and then <a href="https://console.thethingsnetwork.org/settings">Settings</a>. Then change the default Handler if the one currently selected is not where you&rsquo;ll be deploying most of your devices.</p>
+</li>
+</ol>
+<h2 id="add-an-application">Add an Application</h2>
+<p>Devices need to be registered with an application to communicate with. Let&rsquo;s add one.</p>
+<ol>
+<li>On <a href="https://console.thethingsnetwork.org/">console.thethingsnetwork.org</a>, click <a href="https://console.thethingsnetwork.org/applications/add">add application</a>.</li>
+</ol>
+<ul>
+<li>For <strong>Application ID</strong>, choose a unique ID of lower case, alphanumeric characters and nonconsecutive <code>-</code> and <code>_</code>.</li>
+<li>For <strong>Description</strong>, enter anything you like.</li>
+<li>Leave the <strong>Handler registration</strong> on the default selected value, unless you are going to use this application in a different region than your default region.</li>
+</ul>
+<p><img src="../../../applications/add-application.png" alt="Add Application"></p>
+<ol start="2">
+<li>
+<p>Click <strong>Add application</strong> to finish.</p>
+<p>You will be redirected to the newly added application.</p>
+</li>
+</ol>
+<h2 id="register-your-device">Register your Device</h2>
+<p>You are now ready to register your device to the application.</p>
+<ol>
+<li>
+<p>On the application&rsquo;s page, scroll down to <strong>Devices</strong> or select <strong>Devices</strong> from the top right menu.</p>
+</li>
+<li>
+<p>In the <strong>Devices</strong> box, click <strong>register device</strong>.</p>
+<ul>
+<li>For <strong>Device ID</strong>, choose an ID of lower case, alphanumeric characters and nonconsecutive <code>-</code> and <code>_</code>. A device ID needs to be unique per application, but can be reused in another application.</li>
+<li>For <strong>Device EUI</strong>, copy-paste the <strong>DevEUI</strong> <a href="/docs/devices/node/#get-your-device-eui">you retrieved from your device</a>.</li>
+<li>Leave the <strong>App Key</strong> on &ldquo;this field will be generated&rdquo;.</li>
+<li>Leave the default <strong>App EUI</strong> selected.</li>
+</ul>
+<p><img src="../../register-device.png" alt="Register Device (OTAA)"></p>
+</li>
+<li>
+<p>Click <strong>Register</strong> to finish.</p>
+<p>You will be redirected to the newly registered device, where you can find the generated <strong>Example Code</strong> which we&rsquo;ll need next.</p>
+</li>
+</ol>
+<h2 id="the-things-node-example">The Things Node example</h2>
+<p>The The Things Network <a href="/docs/devices/arduino/">Arduino Library</a> comes with a class dedicated to The Things Node. It wraps the commands to work with the various sensors in simple APIs.</p>
+<p>The library also comes with an example demonstrating most of these APIs. Let&rsquo;s get started by uploading the basic example.</p>
+<ol>
+<li>
+<p>Still in the console, scroll down the device&rsquo;s screen to <strong>Example Code</strong> and copy the keys:</p>
+<p><img src="../../uno/keys-otaa.png" alt="OTAA Keys"></p>
+</li>
+<li>
+<p>In the Arduino IDE, select <strong>File &gt; Examples &gt; TheThingsNode &gt; <a href="https://github.com/TheThingsNetwork/arduino-node-lib/tree/master/examples/Basic">Basic</a></strong>.</p>
+<ul>
+<li>Replace the lines following the comment <strong>Set your AppEUI and AppKey</strong> with the keys you copied from the Console.</li>
+<li>Replace <code>REPLACE_ME</code> with the appropriate frequency plan for your device (listed in the comments in the line above it).</li>
+</ul>
+</li>
+<li>
+<p>Select <strong>Sketch &gt; Upload</strong> to upload the sketch.</p>
+</li>
+<li>
+<p>Within 10 seconds, select <strong>Tools &gt; Serial Monitor</strong> to open the <a href="https://www.arduino.cc/en/Guide/Environment#toc12">Serial Monitor</a>.</p>
+<p>Shortly after this you will see the current temperature and values from the other sensors on the Things Node.</p>
+</li>
+</ol>
+<p>Let&rsquo;s run through the Sketch together to understand what it does.</p>
+<h3 id="setup">Setup</h3>
+<p>In <code>setup()</code>, after the part where we initialize TheThingsNetwork class to communicate with The Things Network, we get the singleton of TheThingsNode class. Here, we can configure the sensors and register callback functions that should be run when a sensor is triggered.</p>
+<h3 id="loop">Loop</h3>
+<p>The only code you should have in <code>loop()</code> is a call to <code>node-&gt;loop()</code>.</p>
+<p>TheThingsNode will optimize the battery efficiency of the device by putting it into sleep. It will wake up every 8 seconds or when a sensor triggers it. In both scenarios, the <code>loop()</code> function will run. What <code>node-&gt;loop()</code> will do is figure out why it woke up and call the relevant handler registered in <code>setup()</code>.</p>
+<h3 id="interval">Interval</h3>
+<p>Any code you want to run regularly should be put in a function registered using <code>node-&gt;onInterval()</code>. You can use <code>node-&gt;configInterval(bool enabled, uint32_t ms)</code> to set an interval in milliseconds when <code>ttn-&gt;loop()</code> should call this function.</p>
+<blockquote>
+<p>Since the device only wakes up every 8 seconds or when a sensor triggers it, it makes no sense to set the interval to less than 8000ms.</p>
+</blockquote>
+<h3 id="callbacks">Callbacks</h3>
+<p>In the callbacks you can use the <a href="/docs/devices/node/api/">API</a>&rsquo;s getters and setters to read sensors, change the LED&rsquo;s color, reconfigure or temporarily disable sensors etc. And of course you can use TheThingsNetwork class to send the sensor data over The Things Network.</p>
+<h3 id="send-data">Send Data</h3>
+<p>As you can see, the example sends all sensor data from the <code>interval()</code> callback, which is configured to run every 20 seconds. In addition, it will send the temperature when it exceeds the configured limits as well as the duration of any detected motion or the press of a button.</p>
+<h2 id="monitor--decode-messages">Monitor &amp; Decode Messages</h2>
+<p>Let&rsquo;s see the messages come in.</p>
+<ol>
+<li>
+<p>Since we are in the device overview, we need to return to the application&rsquo;s screen in the console. On the top left breadcrumb, click on your application name. Select <strong>Data</strong> from the top right menu.</p>
+<p>You should now see the messages come in. If you don&rsquo;t see anything you likely do not have network coverage at your location.</p>
+<p>What you see on the data page is the raw payload in hex-formatted, space-separated bytes. Let&rsquo;s decode that to meaningful fields.</p>
+</li>
+<li>
+<p>Select <strong>Payload Formats</strong> from the top right menu.</p>
+</li>
+<li>
+<p>Select <strong>custom</strong> under Payload Format. Then make sure <strong>decoder</strong> is selected on the next line. Now copy-paste the following JavaScript code into the text field, replacing all exiting text inside it.</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">Decoder</span><span class="p">(</span><span class="nx">bytes</span><span class="p">,</span> <span class="nx">port</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">decoded</span> <span class="o">=</span> <span class="p">{};</span>
+  <span class="kd">var</span> <span class="nx">events</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="mi">1</span><span class="o">:</span> <span class="s1">&#39;setup&#39;</span><span class="p">,</span>
+    <span class="mi">2</span><span class="o">:</span> <span class="s1">&#39;interval&#39;</span><span class="p">,</span>
+    <span class="mi">3</span><span class="o">:</span> <span class="s1">&#39;motion&#39;</span><span class="p">,</span>
+    <span class="mi">4</span><span class="o">:</span> <span class="s1">&#39;button&#39;</span>
+  <span class="p">};</span>
+  <span class="nx">decoded</span><span class="p">.</span><span class="nx">event</span> <span class="o">=</span> <span class="nx">events</span><span class="p">[</span><span class="nx">port</span><span class="p">];</span>
+  <span class="nx">decoded</span><span class="p">.</span><span class="nx">battery</span> <span class="o">=</span> <span class="p">(</span><span class="nx">bytes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="mi">8</span><span class="p">)</span> <span class="o">+</span> <span class="nx">bytes</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+  <span class="nx">decoded</span><span class="p">.</span><span class="nx">light</span> <span class="o">=</span> <span class="p">(</span><span class="nx">bytes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="mi">8</span><span class="p">)</span> <span class="o">+</span> <span class="nx">bytes</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span>
+  <span class="nx">decoded</span><span class="p">.</span><span class="nx">temperature</span> <span class="o">=</span> <span class="p">((</span><span class="nx">bytes</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="mi">8</span><span class="p">)</span> <span class="o">+</span> <span class="nx">bytes</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span> <span class="o">/</span> <span class="mi">100</span><span class="p">;</span>
+  <span class="k">return</span> <span class="nx">decoded</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></li>
+<li>
+<p>Use the input field and <strong>Test</strong> button to see how various payloads of hex-formatted, space-separated bytes are decoded.</p>
+<p>For example, <code>01 12 8E 00 21 09 5A 03 04</code> will become:</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="p">{</span>
+  <span class="s2">&#34;battery&#34;</span><span class="o">:</span> <span class="mi">4750</span><span class="p">,</span>
+  <span class="s2">&#34;event&#34;</span><span class="o">:</span> <span class="s2">&#34;interval&#34;</span><span class="p">,</span>
+  <span class="s2">&#34;isButtonPressed&#34;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">&#34;isMoving&#34;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">&#34;isUSBConnected&#34;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">&#34;light&#34;</span><span class="o">:</span> <span class="mi">33</span><span class="p">,</span>
+  <span class="s2">&#34;temperature&#34;</span><span class="o">:</span> <span class="mf">23.94</span>
+<span class="p">}</span>
+</code></pre></div></li>
+<li>
+<p>Click <strong>Save Payload Functions</strong> to save.</p>
+</li>
+<li>
+<p>Select <strong>Data</strong> from the top right menu.</p>
+</li>
+<li>
+<p>New messages should now show their decoded payload.</p>
+</li>
+</ol>
+<p>🎉 You are now decoding cryptic byte messages to meaningful payloads!</p>
+<blockquote>
+<p>Would you like to learn how to receive and further process these messages? Head over to the <a href="/docs/applications/mqtt/">MQTT</a> guide!</p>
+</blockquote>
+
+        </div>
+      
+      <div class="is-clearfix">
+</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="footer"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ttn-components.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/promise-polyfill@7/dist/polyfill.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-navbar.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-footer.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ga.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/vendor/basicLightbox.min.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/theme.min.00ace5d667ca108a93b8a0d385569f7c7bb9f46ed32eefe3f5fb39105763cccd.js" integrity="sha256-AKzl1mfKEIqTuKDThVaffHu59G7TLu/j9fs5EFdjzM0=" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

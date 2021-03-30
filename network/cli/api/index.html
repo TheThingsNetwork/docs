@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+
+<html lang="en-us" class="has-ttn-navbar-top">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <meta name="generator" content="Hugo 0.79.0" />
+
+  <title>API Reference | The Things Network</title>
+  <link rel="canonical" href="https://www.thethingsnetwork.org/docs/network/cli/api/" />
+  
+
+  <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
+
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+  <meta name="msapplication-TileImage" content="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png">
+
+  <meta name="application-name" content="The Things Network">
+  <meta name="msapplication-tooltip" content="Tooltip">
+  <meta name="msapplication-config" content="https://ttnweb.azureedge.net/static/common/favicon/ieconfig.54334a5ee30c.xml">
+
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-32.61b30f85680a.png" sizes="32x32">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-57.83b86c64dc82.png" sizes="57x57">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-76.7dcf8fa36dfc.png" sizes="76x76">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-96.27ac17adaa8b.png" sizes="96x96">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-120.e1526731335e.png" sizes="120x120">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-128.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png" sizes="144x144">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png" sizes="152x152">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-180.fcd414307ca3.png" sizes="180x180">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-195.c55ce09d66da.png" sizes="195x195">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-228.bea53ec4b10b.png" sizes="228x228">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/smalltile.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/mediumtile.3d42f7faac82.png" sizes="270x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
+  <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+
+  <meta property="og:title" content="API Reference" />
+<meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/network/cli/api/" />
+<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
+<meta property="og:site_name" content="The Things Network" />
+
+
+  <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
+
+<meta name="twitter:title" content="API Reference"/>
+<meta name="twitter:description" content="We are building a global open free crowdsourced long range low power IoT data network"/>
+
+
+</head>
+
+
+<body>
+
+<div id="header"></div>
+<section class="section">
+  <div class="container">
+    <nav class="breadcrumb has-dot-separator" aria-label="breadcrumbs">
+      <ul>
+        <li><a href="https://www.thethingsnetwork.org/docs">Learn</a></li>
+        
+        
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/lorawan/">LoRaWAN</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/quick-start/">Quick Start</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/applications-and-integrations/">Applications &amp; Integrations</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/">Devices &amp; Gateways</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/the-things-stack/">The Things Stack</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/v2-docs/">V2 Docs (Outdated)</a>
+            </li>
+          
+        
+      </ul>
+    </nav>
+  </div>
+</section>
+<div class="container" role="document">
+  <div class="columns my-0 is-desktop">
+    <div class="column is-3-desktop sidebar-left">
+      
+
+
+<nav class="side-navigation" aria-label="Main navigation">
+
+<h2 class="title is-size-5">Network</h2>
+
+<div class="menu">
+  <ul class="menu-list">
+  <a href="https://www.thethingsnetwork.org/docs/network/" class="">Overview</a>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/network/troubleshooting/" class="">Troubleshooting</a>
+    </li>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/network/architecture/" class="">Network Architecture</a>
+    </li>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/network/security/" class="">Network Security</a>
+    </li>
+  
+    <p class="menu-label">
+      Manage
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/network/console/" class="">The Things Network Console</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/network/cli/" class="">The Things Network CLI</a>
+  
+
+
+<ul class="menu-list">
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/network/cli/api/" class="is-active">API Reference</a>
+    
+    
+
+
+
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/network/cli/quick-start/" class="">Quick Start</a>
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/network/cli/configuration/" class="">Configuration</a>
+    
+  </li>
+
+</ul>
+
+
+  
+</li>
+
+  
+    <p class="menu-label">
+      Components
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/network/account/" class="">Account Server</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/network/discovery/" class="">Discovery Server</a>
+</li>
+
+  
+  </ul>
+</div>
+
+
+
+
+
+</nav>
+
+    </div>
+    <div class="column is-9-desktop sidebar-middle">
+      <div class="docs-content">
+        <h1 class="title is-size-2">
+          API Reference
+        </h1>
+        <div class="content">
+          <p>Control The Things Network from the command line.</p>
+<p><strong>Options</strong></p>
+<pre><code>      --allow-insecure             Allow insecure fallback if TLS unavailable
+      --auth-server string         The address of the OAuth 2.0 server (default &quot;https://account.thethingsnetwork.org&quot;)
+      --config string              config file (default is $HOME/.ttnctl.yml)
+      --data string                directory where ttnctl stores data (default is $HOME/.ttnctl)
+      --discovery-address string   The address of the Discovery server (default &quot;discover.thethingsnetwork.org:1900&quot;)
+      --handler-id string          The ID of the TTN Handler as announced in the Discovery server (default &quot;ttn-handler-eu&quot;)
+      --mqtt-address string        The address of the MQTT broker (default &quot;eu.thethings.network:1883&quot;)
+      --mqtt-password string       The password for the MQTT broker
+      --mqtt-username string       The username for the MQTT broker
+      --router-id string           The ID of the TTN Router as announced in the Discovery server (default &quot;ttn-router-eu&quot;)
+</code></pre><h2 id="ttnctl-applications">ttnctl applications</h2>
+<p>ttnctl applications can be used to manage applications.</p>
+<h3 id="ttnctl-applications-add">ttnctl applications add</h3>
+<p>ttnctl applications add can be used to add a new application to your account.</p>
+<p><strong>Usage:</strong> <code>ttnctl applications add [AppID] [Description] [flags]</code></p>
+<p><strong>Options</strong></p>
+<pre><code>      --app-eui strings   LoRaWAN AppEUI to register with application
+      --skip-register     Do not register application with the Handler
+      --skip-select       Do not select this application (also adds --skip-register)
+</code></pre><p><strong>Example</strong></p>
+<pre><code>$ ttnctl applications add test &quot;Test application&quot;
+  INFO Added Application
+  INFO Selected Current Application
+</code></pre><h3 id="ttnctl-applications-collaborators">ttnctl applications collaborators</h3>
+<p>applications collaborators can be used to manage the collaborators of an application.</p>
+<h4 id="ttnctl-applications-collaborators-add">ttnctl applications collaborators add</h4>
+<p>applications collaborators add can be used to add a collaborator to an application.
+Available rights are: settings, collaborators, delete, devices</p>
+<p><strong>Usage:</strong> <code>ttnctl applications collaborators add [AppID] [Username] [Rights...]</code></p>
+<h4 id="ttnctl-applications-collaborators-delete">ttnctl applications collaborators delete</h4>
+<p>applications collaborators delete can be used to delete a collaborator from an application.</p>
+<p><strong>Usage:</strong> <code>ttnctl applications collaborators delete [AppID] [Username]</code></p>
+<h3 id="ttnctl-applications-delete">ttnctl applications delete</h3>
+<p>ttnctl devices delete can be used to delete an application.</p>
+<p><strong>Usage:</strong> <code>ttnctl applications delete [AppID]</code></p>
+<h3 id="ttnctl-applications-info">ttnctl applications info</h3>
+<p>ttnctl applications info can be used to info applications.</p>
+<p><strong>Usage:</strong> <code>ttnctl applications info [AppID]</code></p>
+<p><strong>Example</strong></p>
+<pre><code>$ ttnctl applications info
+  INFO Found application
+
+AppID:   test
+Name:    Test application
+EUIs:
+      - 0000000000000000
+
+Access Keys:
+      - Name: default key
+        Key:  FZYr01cUhdhY1KBiMghUl+/gXyqXhrF6y+1ww7+DzHg=
+        Rights: messages:up:r, messages:down:w
+
+Collaborators:
+      - Name: yourname
+        Rights: settings, delete, collaborators
+</code></pre><h3 id="ttnctl-applications-list">ttnctl applications list</h3>
+<p>ttnctl applications list can be used to list applications.</p>
+<p><strong>Usage:</strong> <code>ttnctl applications list</code></p>
+<p><strong>Example</strong></p>
+<pre><code>$ ttnctl applications list
+  INFO Found one application:
+
+  ID  	Description     	EUIs	Access Keys	Collaborators
+1	test	Test application	1   	1          	1
+</code></pre><h3 id="ttnctl-applications-pf">ttnctl applications pf</h3>
+<p>ttnctl applications pf shows the payload format to handle
+binary payload.</p>
+<p><strong>Usage:</strong> <code>ttnctl applications pf</code></p>
+<p><strong>Example</strong></p>
+<pre><code>$ ttnctl applications pf
+  INFO Discovering Handler...
+  INFO Connecting with Handler...
+  INFO Found application
+  INFO Custom decoder function
+function Decoder(bytes, port) {
+  var decoded = {};
+  if (port === 1) {
+    decoded.led = bytes[0];
+  }
+  return decoded;
+}
+  INFO No custom converter function
+  INFO No custom validator function
+  INFO No custom encoder function
+</code></pre><h4 id="ttnctl-applications-pf-set">ttnctl applications pf set</h4>
+<p>ttnctl pf set can be used to get or set the payload format and functions of an application.
+When using payload functions, you can load a file or provide them through stdin.</p>
+<p><strong>Usage:</strong> <code>ttnctl applications pf set [decoder/converter/validator/encoder/cayennelpp] [file.js] [flags]</code></p>
+<p><strong>Options</strong></p>
+<pre><code>      --skip-test   skip payload format test
+</code></pre><p><strong>Example</strong></p>
+<pre><code>$ ttnctl applications pf set decoder
+  INFO Discovering Handler...
+  INFO Connecting with Handler...
+function Decoder(bytes, port) {
+  // Decode an uplink message from a buffer
+  // (array) of bytes to an object of fields.
+  var decoded = {};
+
+  // if (port === 1) {
+  //   decoded.led = bytes[0];
+  // }
+
+  return decoded;
+}
+########## Write your Decoder here and end with Ctrl+D (EOF):
+function Decoder(bytes, port) {
+  var decoded = {};
+
+  // if (port === 1) {
+  //   decoded.led = bytes[0];
+  // }
+
+  return decoded;
+}
+
+Do you want to test the payload functions? (Y/n)
+Y
+
+Payload: 12 34
+Port: 1
+
+  INFO Function tested successfully
+
+  INFO Updated application                      AppID=test
+</code></pre><h3 id="ttnctl-applications-register">ttnctl applications register</h3>
+<p>ttnctl applications register can be used to register this application with the handler.</p>
+<p><strong>Usage:</strong> <code>ttnctl applications register</code></p>
+<p><strong>Example</strong></p>
+<pre><code>$ ttnctl applications register
+  INFO Discovering Handler...
+  INFO Connecting with Handler...
+  INFO Registered application                   AppID=test
+</code></pre><h3 id="ttnctl-applications-select">ttnctl applications select</h3>
+<p>ttnctl applications select can be used to select the application to use in next commands.</p>
+<p><strong>Usage:</strong> <code>ttnctl applications select [AppID [AppEUI]]</code></p>
+<p><strong>Example</strong></p>
+<pre><code>$ ttnctl applications select
+  INFO Found one application &quot;test&quot;, selecting that one.
+  INFO Found one EUI &quot;0000000000000000&quot;, selecting that one.
+  INFO Updated configuration
+</code></pre><h3 id="ttnctl-applications-unregister">ttnctl applications unregister</h3>
+<p>ttnctl unregister can be used to unregister this application from the handler.</p>
+<p><strong>Usage:</strong> <code>ttnctl applications unregister</code></p>
+<p><strong>Example</strong></p>
+<pre><code>$ ttnctl applications unregister
+Are you sure you want to unregister application test?
+&gt; yes
+  INFO Discovering Handler...
+  INFO Connecting with Handler...
+  INFO Unregistered application                 AppID=test
+</code></pre><h2 id="ttnctl-config">ttnctl config</h2>
+<p>ttnctl config prints the configuration that is used</p>
+<p><strong>Usage:</strong> <code>ttnctl config</code></p>
+<h2 id="ttnctl-devices">ttnctl devices</h2>
+<p>ttnctl devices can be used to manage devices.</p>
+<p><strong>Options</strong></p>
+<pre><code>      --app-eui string   The app EUI to use
+      --app-id string    The app ID to use
+</code></pre><h3 id="ttnctl-devices-delete">ttnctl devices delete</h3>
+<p>ttnctl devices delete can be used to delete a device.</p>
+<p><strong>Usage:</strong> <code>ttnctl devices delete [Device ID]</code></p>
+<p><strong>Example</strong></p>
+<pre><code>$ ttnctl devices delete test
+  INFO Using Application                        AppID=test
+Are you sure you want to delete device test from application test?
+&gt; yes
+  INFO Discovering Handler...
+  INFO Connecting with Handler...
+  INFO Deleted device                           AppID=test DevID=test
+</code></pre><h3 id="ttnctl-devices-info">ttnctl devices info</h3>
+<p>ttnctl devices info can be used to get information about a device.</p>
+<p><strong>Usage:</strong> <code>ttnctl devices info [Device ID] [flags]</code></p>
+<p><strong>Options</strong></p>
+<pre><code>      --format string   Formatting: hex/msb/lsb (default &quot;hex&quot;)
+</code></pre><p><strong>Example</strong></p>
+<pre><code>$ ttnctl devices info test
+  INFO Using Application                        AppEUI=70B3D57EF0000024 AppID=test
+  INFO Discovering Handler...
+  INFO Connecting with Handler...
+  INFO Found device
+
+  Application ID: test
+      Device ID: test
+      Last Seen: never
+
+    LoRaWAN Info:
+
+    AppEUI: 70B3D57EF0000024
+    DevEUI: 0001D544B2936FCE
+    DevAddr: 26001ADA
+    AppKey: &lt;nil&gt;
+    AppSKey: D8DD37B4B709BA76C6FEC62CAD0CCE51
+    NwkSKey: 3382A3066850293421ED8D392B9BF4DF
+    FCntUp: 0
+  FCntDown: 0
+    Options:
+</code></pre><h3 id="ttnctl-devices-list">ttnctl devices list</h3>
+<p>ttnctl devices list can be used to list all devices for the current application.</p>
+<p><strong>Usage:</strong> <code>ttnctl devices list</code></p>
+<p><strong>Example</strong></p>
+<pre><code>$ ttnctl devices list
+  INFO Using Application                        AppID=test
+  INFO Discovering Handler...
+  INFO Connecting with Handler...
+
+DevID	AppEUI          	DevEUI          	DevAddr
+test 	70B3D57EF0000024	0001D544B2936FCE	26001ADA
+
+  INFO Listed 1 devices                         AppID=test
+</code></pre><h3 id="ttnctl-devices-personalize">ttnctl devices personalize</h3>
+<p>ttnctl devices personalize can be used to personalize a device (ABP).</p>
+<p><strong>Usage:</strong> <code>ttnctl devices personalize [Device ID] [NwkSKey] [AppSKey]</code></p>
+<p><strong>Example</strong></p>
+<pre><code>$ ttnctl devices personalize test
+  INFO Using Application                        AppEUI=70B3D57EF0000024 AppID=test
+  INFO Generating random NwkSKey...
+  INFO Generating random AppSKey...
+  INFO Discovering Handler...                   Handler=ttn-handler-eu
+  INFO Connecting with Handler...               Handler=eu.thethings.network:1904
+  INFO Requesting DevAddr for device...
+  INFO Personalized device                      AppID=test AppSKey=D8DD37B4B709BA76C6FEC62CAD0CCE51 DevAddr=26001ADA DevID=test NwkSKey=3382A3066850293421ED8D392B9BF4DF
+</code></pre><h3 id="ttnctl-devices-register">ttnctl devices register</h3>
+<p>ttnctl devices register can be used to register a new device.</p>
+<p><strong>Usage:</strong> <code>ttnctl devices register [Device ID] [DevEUI] [AppKey] [Lat,Long]</code></p>
+<p><strong>Example</strong></p>
+<pre><code>$ ttnctl devices register test
+  INFO Using Application                        AppEUI=70B3D57EF0000024 AppID=test
+  INFO Generating random DevEUI...
+  INFO Generating random AppKey...
+  INFO Discovering Handler...
+  INFO Connecting with Handler...
+  INFO Registered device                        AppEUI=70B3D57EF0000024 AppID=test AppKey=EBD2E2810A4307263FE5EF78E2EF589D DevEUI=0001D544B2936FCE DevID=test
+</code></pre><h4 id="ttnctl-devices-register-on-join">ttnctl devices register on-join</h4>
+<p>ttnctl devices register on-join can be used to register a device template for on-join registrations.</p>
+<p><strong>Usage:</strong> <code>ttnctl devices register on-join [Device ID Prefix] [AppKey]</code></p>
+<h3 id="ttnctl-devices-set">ttnctl devices set</h3>
+<p>ttnctl devices set can be used to set properties of a device.</p>
+<p><strong>Usage:</strong> <code>ttnctl devices set [Device ID] [flags]</code></p>
+<p><strong>Options</strong></p>
+<pre><code>      --16-bit-fcnt           Use 16 bit FCnt
+      --32-bit-fcnt           Use 32 bit FCnt (default)
+      --altitude int32        Set altitude
+      --app-key string        Set AppKey
+      --app-s-key string      Set AppSKey
+      --attr-remove strings   Remove device attribute
+      --attr-set strings      Add a device attribute (key:value)
+      --description string    Set Description
+      --dev-addr string       Set DevAddr
+      --dev-eui string        Set DevEUI
+      --disable-fcnt-check    Disable FCnt check
+      --enable-fcnt-check     Enable FCnt check (default)
+      --fcnt-down int         Set FCnt Down (default -1)
+      --fcnt-up int           Set FCnt Up (default -1)
+      --latitude float32      Set latitude
+      --longitude float32     Set longitude
+      --nwk-s-key string      Set NwkSKey
+      --override              Override protection against breaking changes
+</code></pre><p><strong>Example</strong></p>
+<pre><code>$ ttnctl devices set test --fcnt-up 0 --fcnt-down 0
+  INFO Using Application                        AppID=test
+  INFO Discovering Handler...
+  INFO Connecting with Handler...
+  INFO Updated device                           AppID=test DevID=test
+</code></pre><h3 id="ttnctl-devices-simulate">ttnctl devices simulate</h3>
+<p>ttnctl devices simulate can be used to simulate an uplink message for a device.</p>
+<p><strong>Usage:</strong> <code>ttnctl devices simulate [Device ID] [Payload] [flags]</code></p>
+<p><strong>Options</strong></p>
+<pre><code>      --port uint32   Port number (default 1)
+</code></pre><h2 id="ttnctl-downlink">ttnctl downlink</h2>
+<p>ttnctl downlink can be used to send a downlink message to a device.</p>
+<p><strong>Usage:</strong> <code>ttnctl downlink [DevID] [Payload] [flags]</code></p>
+<p><strong>Options</strong></p>
+<pre><code>      --access-key string   The access key to use
+      --confirmed           Confirmed downlink
+      --fport int           FPort for downlink (default 1)
+      --json                Provide the payload as JSON
+</code></pre><p><strong>Example</strong></p>
+<pre><code>$ ttnctl downlink test aabc
+  INFO Connecting to MQTT...
+  INFO Connected to MQTT
+  INFO Enqueued downlink                        AppID=test DevID=test
+
+$ ttnctl downlink test --json '{&quot;led&quot;:&quot;on&quot;}'
+  INFO Connecting to MQTT...
+  INFO Connected to MQTT
+  INFO Enqueued downlink                        AppID=test DevID=test
+</code></pre><h2 id="ttnctl-gateways">ttnctl gateways</h2>
+<p>ttnctl gateways can be used to manage gateways.</p>
+<h3 id="ttnctl-gateways-collaborators">ttnctl gateways collaborators</h3>
+<p>gateways collaborators can be used to manage the collaborators of a gateway.</p>
+<h4 id="ttnctl-gateways-collaborators-add">ttnctl gateways collaborators add</h4>
+<p>gateways collaborators add can be used to add a collaborator to a gateway.
+Available rights are: gateway:settings, gateway:collaborators, gateway:delete, gateway:location, gateway:status, gateway:owner, gateway:messages</p>
+<p><strong>Usage:</strong> <code>ttnctl gateways collaborators add [AppID] [Username] [Rights...]</code></p>
+<h4 id="ttnctl-gateways-collaborators-delete">ttnctl gateways collaborators delete</h4>
+<p>gateways collaborators delete can be used to delete a collaborator from a gateway.</p>
+<p><strong>Usage:</strong> <code>ttnctl gateways collaborators delete [AppID] [Username]</code></p>
+<h3 id="ttnctl-gateways-delete">ttnctl gateways delete</h3>
+<p>ttnctl gateways delete can be used to delete a gateway</p>
+<p><strong>Usage:</strong> <code>ttnctl gateways delete [GatewayID]</code></p>
+<p><strong>Example</strong></p>
+<pre><code>$ ttnctl gateways delete test
+  INFO Deleted gateway                          Gateway ID=test
+</code></pre><h3 id="ttnctl-gateways-edit">ttnctl gateways edit</h3>
+<p>ttnctl gateways edit can be used to edit settings of a gateway</p>
+<p><strong>Usage:</strong> <code>ttnctl gateways edit [GatewayID] [flags]</code></p>
+<p><strong>Options</strong></p>
+<pre><code>      --antenna-model string    The antenna model of the gateway
+      --antenna-type string     The antenna type of the gateway
+      --brand string            The brand of the gateway
+      --description string      The description of the gateway
+      --frequency-plan string   The frequency plan to use on the gateway
+      --location string         The location of the gateway
+      --location-private        Make the location of the gateway private
+      --location-public         Make the location of the gateway public
+      --model string            The model of the gateway
+      --owner string            The owner of the gateway
+      --owner-private           Make the owner of the gateway private
+      --owner-public            Make the owner of the gateway public
+      --router string           The router of the gateway
+      --status-private          Make the status of the gateway private
+      --status-public           Make the status of the gateway public
+</code></pre><p><strong>Example</strong></p>
+<pre><code>$ ttnctl gateways edit test --location 52.37403,4.88968 --frequency-plan EU
+  INFO Edited gateway                          Gateway ID=test
+</code></pre><h3 id="ttnctl-gateways-info">ttnctl gateways info</h3>
+<p>ttnctl gateways info can be used to get information about a gateway</p>
+<p><strong>Usage:</strong> <code>ttnctl gateways info [GatewayID]</code></p>
+<h3 id="ttnctl-gateways-list">ttnctl gateways list</h3>
+<p>ttnctl gateways list can be used to list the gateways you have access to</p>
+<p><strong>Usage:</strong> <code>ttnctl gateways list</code></p>
+<p><strong>Example</strong></p>
+<pre><code>$ ttnctl gateways list
+  ID  	Activated	Frequency Plan	Coordinates
+1	test	true		US				(52.3740, 4.8896)
+</code></pre><h3 id="ttnctl-gateways-register">ttnctl gateways register</h3>
+<p>ttnctl gateways register can be used to register a gateway</p>
+<p><strong>Usage:</strong> <code>ttnctl gateways register [GatewayID] [FrequencyPlan] [Location]</code></p>
+<p><strong>Example</strong></p>
+<pre><code>$ ttnctl gateways register test US 52.37403,4.88968
+  INFO Registered gateway                          Gateway ID=test
+</code></pre><h2 id="ttnctl-selfupdate">ttnctl selfupdate</h2>
+<p>ttnctl selfupdate updates the current ttnctl to the latest version</p>
+<p><strong>Usage:</strong> <code>ttnctl selfupdate</code></p>
+<h2 id="ttnctl-subscribe">ttnctl subscribe</h2>
+<p>ttnctl subscribe can be used to subscribe to events for this application.</p>
+<p><strong>Usage:</strong> <code>ttnctl subscribe [flags]</code></p>
+<p><strong>Options</strong></p>
+<pre><code>      --access-key string   The access key to use
+</code></pre><h2 id="ttnctl-user">ttnctl user</h2>
+<p>ttnctl user shows the current logged on user&rsquo;s profile</p>
+<p><strong>Usage:</strong> <code>ttnctl user</code></p>
+<p><strong>Example</strong></p>
+<pre><code>$ ttnctl user
+  INFO Found user profile:
+
+            Username: yourname
+                Name: Your Name
+              Email: your@email.org
+
+  INFO Login credentials valid until Sep 20 09:04:12
+</code></pre><h3 id="ttnctl-user-login">ttnctl user login</h3>
+<p>ttnctl user login allows you to log in to your TTN account.</p>
+<p><strong>Usage:</strong> <code>ttnctl user login [access code]</code></p>
+<p><strong>Example</strong></p>
+<pre><code>First get an access code from your TTN profile by going to
+https://account.thethingsnetwork.org and clicking &quot;ttnctl access code&quot;.
+
+$ ttnctl user login [paste the access code you requested above]
+  INFO Successfully logged in as yourname (your@email.org)
+</code></pre><h3 id="ttnctl-user-logout">ttnctl user logout</h3>
+<p>ttnctl user logout logs out the current user</p>
+<p><strong>Usage:</strong> <code>ttnctl user logout</code></p>
+<h3 id="ttnctl-user-register">ttnctl user register</h3>
+<p>ttnctl user register allows you to register a new user in the account server</p>
+<p><strong>Usage:</strong> <code>ttnctl user register [username] [e-mail]</code></p>
+<p><strong>Example</strong></p>
+<pre><code>$ ttnctl user register yourname your@email.org
+Password: &lt;entering password&gt;
+  INFO Registered user
+  WARN You might have to verify your email before you can login
+</code></pre><h2 id="ttnctl-version">ttnctl version</h2>
+<p>ttnctl version gets the build and version information of ttnctl</p>
+<p><strong>Usage:</strong> <code>ttnctl version</code></p>
+
+        </div>
+      
+      <div class="is-clearfix">
+</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="footer"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ttn-components.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/promise-polyfill@7/dist/polyfill.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-navbar.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-footer.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ga.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/vendor/basicLightbox.min.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/theme.min.00ace5d667ca108a93b8a0d385569f7c7bb9f46ed32eefe3f5fb39105763cccd.js" integrity="sha256-AKzl1mfKEIqTuKDThVaffHu59G7TLu/j9fs5EFdjzM0=" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

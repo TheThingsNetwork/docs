@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+
+<html lang="en-us" class="has-ttn-navbar-top">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <meta name="generator" content="Hugo 0.79.0" />
+
+  <title>TTN Packet Forwarder | The Things Network</title>
+  <link rel="canonical" href="https://www.thethingsnetwork.org/docs/gateways/packet-forwarder/ttn/" />
+  
+
+  <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
+
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+  <meta name="msapplication-TileImage" content="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png">
+
+  <meta name="application-name" content="The Things Network">
+  <meta name="msapplication-tooltip" content="Tooltip">
+  <meta name="msapplication-config" content="https://ttnweb.azureedge.net/static/common/favicon/ieconfig.54334a5ee30c.xml">
+
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-32.61b30f85680a.png" sizes="32x32">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-57.83b86c64dc82.png" sizes="57x57">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-76.7dcf8fa36dfc.png" sizes="76x76">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-96.27ac17adaa8b.png" sizes="96x96">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-120.e1526731335e.png" sizes="120x120">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-128.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png" sizes="144x144">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png" sizes="152x152">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-180.fcd414307ca3.png" sizes="180x180">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-195.c55ce09d66da.png" sizes="195x195">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-228.bea53ec4b10b.png" sizes="228x228">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/smalltile.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/mediumtile.3d42f7faac82.png" sizes="270x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
+  <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+
+  <meta property="og:title" content="TTN Packet Forwarder" />
+<meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/gateways/packet-forwarder/ttn/" />
+<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
+<meta property="og:site_name" content="The Things Network" />
+
+
+  <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
+
+<meta name="twitter:title" content="TTN Packet Forwarder"/>
+<meta name="twitter:description" content="We are building a global open free crowdsourced long range low power IoT data network"/>
+
+
+</head>
+
+
+<body>
+
+<div id="header"></div>
+<section class="section">
+  <div class="container">
+    <nav class="breadcrumb has-dot-separator" aria-label="breadcrumbs">
+      <ul>
+        <li><a href="https://www.thethingsnetwork.org/docs">Learn</a></li>
+        
+        
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/lorawan/">LoRaWAN</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/quick-start/">Quick Start</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/applications-and-integrations/">Applications &amp; Integrations</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/">Devices &amp; Gateways</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/the-things-stack/">The Things Stack</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/v2-docs/">V2 Docs (Outdated)</a>
+            </li>
+          
+        
+      </ul>
+    </nav>
+  </div>
+</section>
+<div class="container" role="document">
+  <div class="columns my-0 is-desktop">
+    <div class="column is-3-desktop sidebar-left">
+      
+
+
+<nav class="side-navigation" aria-label="Main navigation">
+
+<h2 class="title is-size-5">Gateways</h2>
+
+<div class="menu">
+  <ul class="menu-list">
+  <a href="https://www.thethingsnetwork.org/docs/gateways/" class="">Overview</a>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/gateways/basics-station/" class="">LoRa Basics™ Station</a>
+    </li>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/gateways/certificates/" class="">Root Certificates</a>
+    </li>
+  
+    <p class="menu-label">
+      SDKs
+    </p>
+    
+  
+    <p class="menu-label">
+      Running a gateway
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/troubleshooting/" class="">Troubleshooting</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/lightning-protection/" class="">Lightning Protection</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/packet-forwarder/" class="">Packet Forwarders</a>
+  
+
+
+<ul class="menu-list">
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/gateways/packet-forwarder/basicstation/" class="">Basics Station</a>
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/gateways/packet-forwarder/semtech-udp/" class="">Semtech UDP Packet Forwarder</a>
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/gateways/packet-forwarder/ttn/" class="is-active">TTN Packet Forwarder</a>
+    
+    
+
+
+
+    
+  </li>
+
+</ul>
+
+
+  
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/registration/" class="">Gateway Registration</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/start/" class="">Where to start</a>
+</li>
+
+  
+    <p class="menu-label">
+      Hardware
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/pisupply-hat/" class="">Pi Supply Gateway HAT</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/multitech/" class="">MultiTech Conduit</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/rak2245/" class="">RAK2245 Pi Hat Edition - LoRaWAN® Gateway Concentrator Module</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/rak7243c/" class="">RAK7243C Pilot Gateway</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/rak831/" class="">RAK831</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/gateway/" class="">The Things Gateway</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/thethingsindoor/" class="">The Things Indoor Gateway</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/thethingsoutdoor/" class="">The Things Outdoor Gateway</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/aaeon/" class="">AAEON</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/cisco/" class="">Cisco LoRaWAN Gateway</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/kerlink/" class="">Kerlink</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/laird/" class="">Laird RG1xx</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/lorrier/" class="">Lorrier LR2</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/mikrotik/" class="">MikroTik Routerboard</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/st/" class="">P-NUCLEO-LRWAN2</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/tektelic/" class="">Tektelic</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/ursalink/" class="">Ursalink</a>
+</li>
+
+  
+  </ul>
+</div>
+
+
+
+
+
+</nav>
+
+    </div>
+    <div class="column is-9-desktop sidebar-middle">
+      <div class="docs-content">
+        <h1 class="title is-size-2">
+          TTN Packet Forwarder
+        </h1>
+        <div class="content">
+          <p><strong>⚠️ The development of this packet forwarder has been put on hold. We&rsquo;re currently working on new tools to make gateways easier to manage, that we will make public when ready. In the meanwhile, we recommend to use other packet forwarders (e.g. the <a href="/docs/gateways/packet-forwarder/semtech-udp/">Semtech UDP Packet Forwarder</a>). To learn more, join the discussion on <a href="https://www.thethingsnetwork.org/forum/t/new-ttn-packet-forwarder-available/7644/46">the forum</a>.</strong></p>
+<p>The TTN Packet Forwarder is a new packet forwarder, developed by the Things Network Core Team in Go. Builds for a selection of gateways, and documentation on how it is built, is available <a href="https://github.com/TheThingsNetwork/packet_forwarder">on GitHub</a>. Among the features of this packet forwarder:</p>
+<ul>
+<li>
+<p>Built in <a href="https://golang.org">Golang</a> and open-source</p>
+</li>
+<li>
+<p>Connects with the <a href="/docs/gateways/start/connection/#gateway-connector-protocol">Gateway Connector protocol</a>: authentified, reliable and encrypted</p>
+</li>
+<li>
+<p>Pre-built for multiple gateways, and build instructions available for all SPI LoRa gateways</p>
+</li>
+</ul>
+<h2 id="installation">Installation</h2>
+<p>Currently, we have installation guides available to install the packet forwarder for <a href="https://github.com/TheThingsNetwork/packet_forwarder/blob/master/docs/INSTALL_INSTRUCTIONS/MULTITECH.md">Multitech Conduit</a>, <a href="https://github.com/TheThingsNetwork/packet_forwarder/blob/master/docs/INSTALL_INSTRUCTIONS/KERLINK.md">Kerlink IoT Station</a> and <a href="https://github.com/TheThingsNetwork/packet_forwarder/blob/master/docs/INSTALL_INSTRUCTIONS/IMST_RPI.md">Raspberry Pi + iC880a</a> setups.</p>
+<p>We will be adding more gateways over time. In the meantime, if you have a different gateway, we have documentation available to help you <a href="https://github.com/TheThingsNetwork/packet_forwarder/blob/master/docs/INSTALL_INSTRUCTIONS/SPI.md">build the packet forwarder</a> for your own gateway. The TTN Packet Forwarder being open-source, please feel free to contribute with new documentation!</p>
+<h2 id="configuration">Configuration</h2>
+<p>The TTN Packet Forwarder is configured through a configuration file. The location file&rsquo;s default location is <code>$HOME/.pktfwd.yml</code>, but can be located in different locations in our pre-built packages:</p>
+<ul>
+<li>
+<p>In the Multitech Conduit package, it is located at the <code>/usr/cfg/config.yml</code> path.</p>
+</li>
+<li>
+<p>In the Kerlink IoT Station package, it is located at the <code>/mnt/fsuser-1/ttn-pkt-fwd/config.yml</code> path.</p>
+</li>
+</ul>
+<p>For in-depth configuration, all the paths are available <a href="https://github.com/TheThingsNetwork/packet_forwarder#run">in the GitHub documentation</a>.</p>
+<h3 id="change-gateway-id-and-key">Change Gateway ID and key</h3>
+<p>To change the gateway&rsquo;s ID and key, edit the configuration file, and set those values:</p>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l">&lt;New gateway ID&gt;</span><span class="w">
+</span><span class="w"></span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l">&lt;New gateway key&gt;</span><span class="w">
+</span></code></pre></div><h3 id="configure-on-a-private-network">Configure on a private network</h3>
+<p>To configure the gateway to connect on a network that is <strong>not</strong> the public community network, set those values in the configuration:</p>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">discovery-server</span><span class="p">:</span><span class="w"> </span><span class="l">&lt;Hostname of the private network&gt;:&lt;Port of the discovery server&gt;</span><span class="w">
+</span><span class="w"></span><span class="nt">auth-server</span><span class="p">:</span><span class="w"> </span><span class="l">&lt;URL of the account server&gt;</span><span class="w">
+</span></code></pre></div><p>For example, if you have a private network at <code>&lt;privatenetwork&gt;.thethings.industries</code> with a default configuration, you will configure the packet forwarder on:</p>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">discovery-server</span><span class="p">:</span><span class="w"> </span><span class="l">&lt;privatenetwork&gt;.thethings.industries:1900</span><span class="w">
+</span><span class="w"></span><span class="nt">auth-server</span><span class="p">:</span><span class="w"> </span><span class="l">https://account.&lt;privatenetwork&gt;.thethings.industries</span><span class="w">
+</span></code></pre></div><h3 id="configure-on-a-specific-router">Configure on a specific router</h3>
+<p>If you want your packet forwarder to connect to a specific router, you can specify it in the packet forwarder&rsquo;s configuration:</p>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">router</span><span class="p">:</span><span class="w"> </span><span class="l">&lt;ID of the router&gt;</span><span class="w">
+</span></code></pre></div><h2 id="troubleshooting">Troubleshooting</h2>
+<p>Here are some common errors that can happen with the TTN Packet Forwarder, and tips on how to solve them:</p>
+<h3 id="dial-tcp-lookup-error"><code>dial tcp: lookup</code> error</h3>
+<pre><code>FATAL Couldn't read configuration              error=Get https://account.thethingsnetwork.org/api/v2/gateways/test-gateway: dial tcp: lookup account.thethingsnetwork.org on [::1]:53: read udp [::1]:46876-&gt;[::1]:53: read: connection refused
+</code></pre><p><em>Example of this error happening</em></p>
+<p>This error happens when the gateway fails to complete a DNS lookup for the account server. It can happen for these reasons:</p>
+<ul>
+<li>
+<p>Your gateway <strong>doesn&rsquo;t have access to Internet</strong> or to its DNS server. To verify if your gateway has access to Internet, the easiest way is to execute <code>ping 8.8.8.8</code>. If there is an answer, your gateway is certainly connected. You&rsquo;ll also want to make sure that if you&rsquo;re behind a firewall, it isn&rsquo;t blocking DNS resolutions.</p>
+</li>
+<li>
+<p>There is <strong>no DNS server configured</strong> on the gateway. The resolution method for this issue varies from gateway to gateway - for most Linux-based gateways, it can be resolved by configuring Google&rsquo;s DNS servers. Edit the <code>/etc/resolv.conf</code> file, and fill it with this:</p>
+</li>
+</ul>
+<pre><code>nameserver 8.8.8.8
+nameserver 8.8.4.4
+</code></pre><h3 id="failed-to-load-system-roots-and-no-roots-provided">Failed to load system roots and no roots provided</h3>
+<p>This error can happen to gateways that <strong>aren&rsquo;t provisioned with any <a href="https://www.globalsign.com/en/ssl-information-center/what-are-certification-authorities-trust-hierarchies/">root SSL certificates</a></strong>. Root certificates are used by the system to verify the identity of websites and servers that use SSL certificates to identify themselves. If your system doesn&rsquo;t have any root certificate, the packet forwarder <strong>cannot verify the identity of the servers</strong> you&rsquo;re communicating with, and fails as a <strong>security measure</strong>.</p>
+<p>To fix this issue, make sure that your gateway&rsquo;s firmware is up to date. You&rsquo;ll then need to download to your system the right root certificate. In the case of The Things Network, you will need to download the <strong>latest active <a href="https://letsencrypt.org/certificates/">Let&rsquo;s Encrypt root certificate</a></strong>.</p>
+<p>Once you&rsquo;ve downloaded it, you&rsquo;ll need to register it in your system. For most Linux-based gateways, you&rsquo;ll just need to copy the root certificate inside the root certificates directory <code>/etc/ssl/certs</code>. It can however vary - for example, the procedure is different for <a href="http://wiki.cacert.org/FAQ/ImportRootCert#Debian">Debian-based Linux distributions</a>.</p>
+<h3 id="certificate-is-valid-for--not-for-">Certificate is valid for [&hellip;], not for [&hellip;]</h3>
+<p>This is another SSL certificates error, which can happen if you&rsquo;re setting up your own routing services. SSL certificates is valid for a given <strong>domain</strong> - if you&rsquo;re trying to use it for a different domain, the verification of the certificate will fail. Make sure that the domain you&rsquo;ve configured your network at matches the domain of your certificate.</p>
+<h3 id="failed-to-start-concentrator">Failed to start concentrator</h3>
+<p>A <strong>failed to start concentrator</strong> error means that the <strong>start procedure of the LoRa concentrator has failed</strong>. It can be due to several errors:</p>
+<ul>
+<li>The <strong>communication with the device failed</strong>. This can happen, for example:
+<ul>
+<li>if you&rsquo;re using a build for the wrong gateway ;</li>
+<li>if you&rsquo;ve made your own build, and that the communication interface (SPI-based, or FTDI-based) was not set up properly ;</li>
+<li>if some obstacle is preventing communication between the process and the concentrator. For example, if your concentrator needs a <a href="https://github.com/TheThingsNetwork/packet_forwarder/blob/develop/docs/INSTALL_INSTRUCTIONS/IMST_RPI.md#pin-reset">reset before usage</a>, or if the interface needs to be <a href="https://www.thethingsnetwork.org/forum/t/pause-or-stop-packet-forwarding-on-kerlink/5352/2">enabled before usage</a>.</li>
+</ul>
+</li>
+<li>The LoRa concentrator is not <strong>configured properly</strong>. For examlpe, some gateways require additional <a href="https://github.com/TheThingsNetwork/packet_forwarder/blob/dd535444e02f5ddd3ca379f2de715d417bde0f0c/pktfwd/configuration.go#L18-L21">configuration steps</a> - consult your gateway&rsquo;s documentation to know if the packet forwarder needs adaptation steps for this gateway.</li>
+</ul>
+
+        </div>
+      
+      <div class="is-clearfix">
+</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="footer"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ttn-components.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/promise-polyfill@7/dist/polyfill.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-navbar.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-footer.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ga.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/vendor/basicLightbox.min.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/theme.min.00ace5d667ca108a93b8a0d385569f7c7bb9f46ed32eefe3f5fb39105763cccd.js" integrity="sha256-AKzl1mfKEIqTuKDThVaffHu59G7TLu/j9fs5EFdjzM0=" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

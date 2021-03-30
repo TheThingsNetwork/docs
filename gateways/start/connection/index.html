@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+
+<html lang="en-us" class="has-ttn-navbar-top">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <meta name="generator" content="Hugo 0.79.0" />
+
+  <title>Gateway connection to TTN | The Things Network</title>
+  <link rel="canonical" href="https://www.thethingsnetwork.org/docs/gateways/start/connection/" />
+  
+
+  <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
+
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+  <meta name="msapplication-TileImage" content="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png">
+
+  <meta name="application-name" content="The Things Network">
+  <meta name="msapplication-tooltip" content="Tooltip">
+  <meta name="msapplication-config" content="https://ttnweb.azureedge.net/static/common/favicon/ieconfig.54334a5ee30c.xml">
+
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-32.61b30f85680a.png" sizes="32x32">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-57.83b86c64dc82.png" sizes="57x57">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-76.7dcf8fa36dfc.png" sizes="76x76">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-96.27ac17adaa8b.png" sizes="96x96">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-120.e1526731335e.png" sizes="120x120">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-128.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png" sizes="144x144">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png" sizes="152x152">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-180.fcd414307ca3.png" sizes="180x180">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-195.c55ce09d66da.png" sizes="195x195">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-228.bea53ec4b10b.png" sizes="228x228">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/smalltile.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/mediumtile.3d42f7faac82.png" sizes="270x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
+  <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+
+  <meta property="og:title" content="Gateway connection to TTN" />
+<meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/gateways/start/connection/" />
+<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
+<meta property="og:site_name" content="The Things Network" />
+
+
+  <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
+
+<meta name="twitter:title" content="Gateway connection to TTN"/>
+<meta name="twitter:description" content="We are building a global open free crowdsourced long range low power IoT data network"/>
+
+
+</head>
+
+
+<body>
+
+<div id="header"></div>
+<section class="section">
+  <div class="container">
+    <nav class="breadcrumb has-dot-separator" aria-label="breadcrumbs">
+      <ul>
+        <li><a href="https://www.thethingsnetwork.org/docs">Learn</a></li>
+        
+        
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/lorawan/">LoRaWAN</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/quick-start/">Quick Start</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/applications-and-integrations/">Applications &amp; Integrations</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/">Devices &amp; Gateways</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/the-things-stack/">The Things Stack</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/v2-docs/">V2 Docs (Outdated)</a>
+            </li>
+          
+        
+      </ul>
+    </nav>
+  </div>
+</section>
+<div class="container" role="document">
+  <div class="columns my-0 is-desktop">
+    <div class="column is-3-desktop sidebar-left">
+      
+
+
+<nav class="side-navigation" aria-label="Main navigation">
+
+<h2 class="title is-size-5">Gateways</h2>
+
+<div class="menu">
+  <ul class="menu-list">
+  <a href="https://www.thethingsnetwork.org/docs/gateways/" class="">Overview</a>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/gateways/basics-station/" class="">LoRa Basics™ Station</a>
+    </li>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/gateways/certificates/" class="">Root Certificates</a>
+    </li>
+  
+    <p class="menu-label">
+      SDKs
+    </p>
+    
+  
+    <p class="menu-label">
+      Running a gateway
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/troubleshooting/" class="">Troubleshooting</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/lightning-protection/" class="">Lightning Protection</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/packet-forwarder/" class="">Packet Forwarders</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/registration/" class="">Gateway Registration</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/start/" class="">Where to start</a>
+  
+
+
+<ul class="menu-list">
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/gateways/start/build/" class="">Build your own gateway</a>
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/gateways/start/connection/" class="is-active">Gateway connection to TTN</a>
+    
+    
+
+
+
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/gateways/start/list/" class="">List of commercial gateways</a>
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/gateways/start/single-channel/" class="">Single-channel gateways</a>
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/gateways/start/purchasing/" class=""></a>
+    
+  </li>
+
+</ul>
+
+
+  
+</li>
+
+  
+    <p class="menu-label">
+      Hardware
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/pisupply-hat/" class="">Pi Supply Gateway HAT</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/multitech/" class="">MultiTech Conduit</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/rak2245/" class="">RAK2245 Pi Hat Edition - LoRaWAN® Gateway Concentrator Module</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/rak7243c/" class="">RAK7243C Pilot Gateway</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/rak831/" class="">RAK831</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/gateway/" class="">The Things Gateway</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/thethingsindoor/" class="">The Things Indoor Gateway</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/thethingsoutdoor/" class="">The Things Outdoor Gateway</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/aaeon/" class="">AAEON</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/cisco/" class="">Cisco LoRaWAN Gateway</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/kerlink/" class="">Kerlink</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/laird/" class="">Laird RG1xx</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/lorrier/" class="">Lorrier LR2</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/mikrotik/" class="">MikroTik Routerboard</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/st/" class="">P-NUCLEO-LRWAN2</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/tektelic/" class="">Tektelic</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/ursalink/" class="">Ursalink</a>
+</li>
+
+  
+  </ul>
+</div>
+
+
+
+
+
+</nav>
+
+    </div>
+    <div class="column is-9-desktop sidebar-middle">
+      <div class="docs-content">
+        <h1 class="title is-size-2">
+          Gateway connection to TTN
+        </h1>
+        <div class="content">
+          <p>This page explains <strong>how packet forwarders exchange data with TTN</strong>. You don&rsquo;t need to understand all of this to make a gateway work, but if you&rsquo;re curious of how packet forwarders work, this can help you!</p>
+<h2 id="the-things-network-router">The Things Network Router</h2>
+<p>Packet forwarders connect to The Things Network through the <strong>router</strong> component. This component is tasked with <a href="https://github.com/TheThingsNetwork/ttn/tree/develop/core/router">handling gateway data and status</a>, and to transfer data to the rest of the network.</p>
+<p><img src="../connectors.png" alt="TTN Router"></p>
+<ul>
+<li>
+<p>For <strong>uplinks</strong>: the router receives uplinks from gateways, parses the uplink content for MAC payload and activations, computes new downlink windows, finds a broker to transmit the packet to, and transmits the uplink.</p>
+</li>
+<li>
+<p>For <strong>status messages</strong>: the router uses them to keep track of active gateways.</p>
+</li>
+<li>
+<p>For <strong>downlinks</strong>: the router receives a downlink from upstream, waits for a gateway to be available near the device, builds downlink options from the gateway options, and transmits it.</p>
+</li>
+</ul>
+<h2 id="protocols">Protocols</h2>
+<p>Messages can be transmitted from a gateway to TTN through two protocols: the legacy Semtech UDP protocol, and our new Gateway Connector protocol.</p>
+<h3 id="semtech-udp-protocol">Semtech UDP protocol</h3>
+<p>The Semtech UDP protocol is, historically, the first gateway protocol that was developed for LoRaWAN. It was built by Semtech, who <a href="https://github.com/Lora-net/packet_forwarder">still maintain</a> it.</p>
+<p>With this protocol, uplinks, statuses and downlinks are exchanged in a pseudo-JSON format, through UDP, between the gateway and the network server. Because of the simplicity of the messages and of the protocol, it is easy to reproduce this protocol, for testing purposes or for bootstrapping.</p>
+<p>Because this protocol was implemented in the first packet forwarder publicly available, most gateways include a basic packet forwarder running this protocol.</p>
+<h4 id="example">Example</h4>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&#34;rxpk&#34;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&#34;tmst&#34;</span><span class="p">:</span><span class="mi">20900514000</span><span class="p">,</span>
+    <span class="nt">&#34;chan&#34;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span>
+    <span class="nt">&#34;rfch&#34;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+    <span class="nt">&#34;freq&#34;</span><span class="p">:</span><span class="mf">866.349812</span><span class="p">,</span>
+    <span class="nt">&#34;stat&#34;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+    <span class="nt">&#34;modu&#34;</span><span class="p">:</span><span class="s2">&#34;LORA&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;datr&#34;</span><span class="p">:</span><span class="s2">&#34;SF7BW125&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;codr&#34;</span><span class="p">:</span><span class="s2">&#34;4/6&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;rssi&#34;</span><span class="p">:</span><span class="mi">-35</span><span class="p">,</span>
+    <span class="nt">&#34;lsnr&#34;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span>
+    <span class="nt">&#34;size&#34;</span><span class="p">:</span><span class="mi">23</span><span class="p">,</span>
+    <span class="nt">&#34;data&#34;</span><span class="p">:</span><span class="s2">&#34;AMy7qgAAAAAATYMmmnj6AADl6YP1Jrw&#34;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div><p><em>Excerpt of a Semtech UDP message, with an uplink message - for example, <code>data</code> holds the payload, <code>tmst</code> the gateway time of reception, <code>rssi</code> the RSSI value&hellip;</em></p>
+<h4 id="drawbacks-of-the-udp-protocol">Drawbacks of the UDP protocol</h4>
+<p>However, this protocol lacks features for production-ready networks:</p>
+<ul>
+<li>
+<p>It does not provide <strong>authentication</strong>. Gateways are supposed to identify themselves with their EUI - but anyone can usurpate another gateway.</p>
+</li>
+<li>
+<p>There is no <strong>encryption</strong> available. Gateway messages can be intercepted - and modified - during transport.</p>
+</li>
+<li>
+<p>Message exchange is not <strong>reliable</strong>, since the exchange is over 2-way UDP.</p>
+</li>
+<li>
+<p>The UDP protocol is based on a format close to JSON, but not fully compliant ; for example, the specs specify that an object can hold multiple properties with the same index. This makes it easy to write by hand for testing purposes, but difficult to parse in some situations.</p>
+</li>
+</ul>
+<h3 id="gateway-connector-protocol">Gateway connector protocol</h3>
+<p>Because of the reasons above, we&rsquo;ve developed a new protocol, solving these issues: the <strong>gateway connector protocol</strong>. With this protocol:</p>
+<ul>
+<li>
+<p>Gateways are identified by an <strong>ID</strong> and by a <strong>key</strong>. Sending a message to a router requires to know the combination.</p>
+</li>
+<li>
+<p>Messages are sent encoded in <strong><a href="https://developers.google.com/protocol-buffers/">protocol buffers</a></strong>. This serialisation technology allows transfer of data from a program to another, in native types, <strong>regardless of the language</strong>.</p>
+</li>
+</ul>
+<p>With the gateway connector protocol, messages can be exchanged through two network protocols:</p>
+<ul>
+<li>
+<p>If your hardware and software supports it, through <a href="https://grpc.io">gRPC</a>, which supports protocol buffers natively. gRPC supports TLS encryption natively.</p>
+</li>
+<li>
+<p>Otherwise, protocol buffer-encoded messages can be sent through MQTT. MQTTS, a variant of MQTT, enforces TLS encryption.</p>
+</li>
+</ul>
+<h4 id="using-the-gateway-connector-protocol">Using the gateway connector protocol</h4>
+<p>Using the gateway connector protocol to send messages happens in two steps:</p>
+<ul>
+<li>
+<p>First, you need to obtain the <strong>type files</strong>, in your programming language, generated from the protocol buffer files. Both the protocol buffer files and pre-generated files for some languages can be found <a href="https://github.com/TheThingsNetwork/api">here</a> - if your language isn&rsquo;t in the repository, you can look up how to generate code for your language <a href="https://developers.google.com/protocol-buffers/docs/reference/overview">in the official protocol buffer documentation</a>. With these type files, you can start building messages in these types.</p>
+</li>
+<li>
+<p>The second step is sending them over to The Things Network. You&rsquo;ll need to identify yourself (using the gateway ID and gateway key) to the account server to obtain a token, then send messages to the router with this token.</p>
+</li>
+</ul>
+<h4 id="example-using-grpc">Example using gRPC</h4>
+<p>In this example built in the Go language, we&rsquo;ll show two functions:</p>
+<ul>
+<li>The first one, <code>createUplinkMessage</code>, <strong>builds an uplink message</strong> in the protocol-buffer generated types ;</li>
+<li>The second function, <code>connectAndSendUplink</code>, <strong>sends an uplink</strong> to The Things Network over <strong>gRPC</strong>.</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">import</span> <span class="p">(</span>
+  <span class="s">&#34;github.com/TheThingsNetwork/go-account-lib/account&#34;</span>
+  <span class="s">&#34;github.com/TheThingsNetwork/api/discovery&#34;</span>
+  <span class="s">&#34;github.com/TheThingsNetwork/api/gateway&#34;</span>
+  <span class="s">&#34;github.com/TheThingsNetwork/api/protocol&#34;</span>
+  <span class="s">&#34;github.com/TheThingsNetwork/api/protocol/lorawan&#34;</span>
+  <span class="s">&#34;github.com/TheThingsNetwork/api/router&#34;</span>
+<span class="p">)</span>
+
+<span class="kd">const</span> <span class="p">(</span>
+  <span class="nx">gatewayID</span> <span class="p">=</span> <span class="s">&#34;INSERT_GATEWAY_ID&#34;</span>
+  <span class="nx">gatewayKey</span> <span class="p">=</span> <span class="s">&#34;INSERT_GATEWAY_KEY&#34;</span>
+
+  <span class="nx">accountServer</span> <span class="p">=</span> <span class="s">&#34;https://account.thethingsnetwork.org&#34;</span>
+  <span class="nx">discoveryServer</span> <span class="p">=</span> <span class="s">&#34;discovery.thethings.network:1900&#34;</span>
+  <span class="nx">routerID</span> <span class="p">=</span> <span class="s">&#34;ttn-router-eu&#34;</span>
+<span class="p">)</span>
+
+<span class="kd">func</span> <span class="nf">createUplinkMessage</span><span class="p">(</span><span class="nx">payload</span> <span class="p">[]</span><span class="kt">byte</span><span class="p">)</span> <span class="o">*</span><span class="nx">router</span><span class="p">.</span><span class="nx">UplinkMessage</span> <span class="p">{</span>
+  <span class="c1">// Creating a dummy uplink message, using the protocol buffer-generated types
+</span><span class="c1"></span>  <span class="k">return</span> <span class="o">&amp;</span><span class="nx">router</span><span class="p">.</span><span class="nx">UplinkMessage</span><span class="p">{</span>
+    <span class="nx">GatewayMetadata</span><span class="p">:</span> <span class="o">&amp;</span><span class="nx">gateway</span><span class="p">.</span><span class="nx">RxMetadata</span><span class="p">{</span>
+      <span class="nx">Rssi</span><span class="p">:</span> <span class="o">-</span><span class="mi">35</span><span class="p">,</span>
+      <span class="nx">Snr</span><span class="p">:</span>  <span class="mi">5</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="nx">Payload</span><span class="p">:</span> <span class="nx">payload</span><span class="p">,</span>
+    <span class="nx">ProtocolMetadata</span><span class="p">:</span> <span class="o">&amp;</span><span class="nx">protocol</span><span class="p">.</span><span class="nx">RxMetadata</span><span class="p">{</span>
+      <span class="nx">Protocol</span><span class="p">:</span> <span class="o">&amp;</span><span class="nx">protocol</span><span class="p">.</span><span class="nx">RxMetadata_Lorawan</span><span class="p">{</span>
+        <span class="nx">Lorawan</span><span class="p">:</span> <span class="o">&amp;</span><span class="nx">lorawan</span><span class="p">.</span><span class="nx">Metadata</span><span class="p">{</span>
+          <span class="nx">CodingRate</span><span class="p">:</span> <span class="s">&#34;4/5&#34;</span><span class="p">,</span>
+          <span class="nx">DataRate</span><span class="p">:</span>   <span class="s">&#34;SF7BW125&#34;</span><span class="p">,</span>
+          <span class="nx">Modulation</span><span class="p">:</span> <span class="nx">lorawan</span><span class="p">.</span><span class="nx">Modulation_LORA</span><span class="p">,</span>
+        <span class="p">},</span>
+      <span class="p">},</span>
+    <span class="p">},</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">connectAndSendUplink</span><span class="p">(</span><span class="nx">uplink</span> <span class="o">*</span><span class="nx">router</span><span class="p">.</span><span class="nx">UplinkMessage</span><span class="p">)</span> <span class="kt">error</span> <span class="p">{</span>
+  <span class="c1">// Connecting to the TTN account server to fetch a token
+</span><span class="c1"></span>  <span class="nx">gwAccount</span> <span class="o">:=</span> <span class="nx">account</span><span class="p">.</span><span class="nf">NewWithKey</span><span class="p">(</span><span class="nx">accountServer</span><span class="p">,</span> <span class="nx">gatewayKey</span><span class="p">)</span>
+  <span class="nx">gw</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">gwAccount</span><span class="p">.</span><span class="nf">FindGateway</span><span class="p">(</span><span class="nx">gatewayID</span><span class="p">)</span>
+  <span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">err</span>
+  <span class="p">}</span>
+  <span class="nx">token</span> <span class="o">:=</span> <span class="nx">gw</span><span class="p">.</span><span class="nx">Token</span><span class="p">.</span><span class="nx">AccessToken</span>
+
+  <span class="c1">// Connecting to the TTN discovery server to get a connection to the router
+</span><span class="c1"></span>  <span class="nx">discoveryClient</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">discovery</span><span class="p">.</span><span class="nf">NewClient</span><span class="p">(</span><span class="nx">discoveryServer</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">discovery</span><span class="p">.</span><span class="nx">Announcement</span><span class="p">{</span><span class="nx">Id</span><span class="p">:</span> <span class="nx">gatewayID</span><span class="p">},</span> <span class="kd">func</span><span class="p">()</span> <span class="kt">string</span> <span class="p">{</span> <span class="k">return</span> <span class="s">&#34;&#34;</span> <span class="p">})</span>
+  <span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">err</span>
+  <span class="p">}</span>
+
+  <span class="c1">// Connecting to the router
+</span><span class="c1"></span>  <span class="nx">routerAccess</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">discoveryClient</span><span class="p">.</span><span class="nf">Get</span><span class="p">(</span><span class="s">&#34;router&#34;</span><span class="p">,</span> <span class="nx">routerID</span><span class="p">)</span>
+  <span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">err</span>
+  <span class="p">}</span>
+
+  <span class="nx">routerConn</span> <span class="o">:=</span> <span class="nx">routerAccess</span><span class="p">.</span><span class="nf">Dial</span><span class="p">()</span>
+  <span class="nx">routerClient</span> <span class="o">:=</span> <span class="nx">router</span><span class="p">.</span><span class="nf">NewRouterClientForGateway</span><span class="p">(</span><span class="nx">router</span><span class="p">.</span><span class="nf">NewRouterClient</span><span class="p">(</span><span class="nx">c</span><span class="p">.</span><span class="nx">routerConn</span><span class="p">),</span> <span class="nx">gatewayID</span><span class="p">,</span> <span class="nx">token</span><span class="p">)</span>
+  <span class="nx">uplinkStream</span> <span class="o">:=</span> <span class="nx">router</span><span class="p">.</span><span class="nf">NewMonitoredUplinkStream</span><span class="p">(</span><span class="nx">routerClient</span><span class="p">)</span>
+
+  <span class="c1">// Sending the uplink
+</span><span class="c1"></span>  <span class="k">if</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">uplinkStream</span><span class="p">.</span><span class="nf">Send</span><span class="p">(</span><span class="nx">uplink</span><span class="p">);</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">err</span>
+  <span class="p">}</span>
+  <span class="c1">// Uplink sent successfully!
+</span><span class="c1"></span>  <span class="k">return</span> <span class="kc">nil</span>
+<span class="p">}</span>
+</code></pre></div>
+        </div>
+      
+      <div class="is-clearfix">
+</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="footer"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ttn-components.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/promise-polyfill@7/dist/polyfill.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-navbar.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-footer.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ga.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/vendor/basicLightbox.min.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/theme.min.00ace5d667ca108a93b8a0d385569f7c7bb9f46ed32eefe3f5fb39105763cccd.js" integrity="sha256-AKzl1mfKEIqTuKDThVaffHu59G7TLu/j9fs5EFdjzM0=" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

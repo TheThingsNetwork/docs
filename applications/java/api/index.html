@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+
+<html lang="en-us" class="has-ttn-navbar-top">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <meta name="generator" content="Hugo 0.79.0" />
+
+  <title>API Reference | The Things Network</title>
+  <link rel="canonical" href="https://www.thethingsnetwork.org/docs/applications/java/api/" />
+  
+
+  <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
+
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+  <meta name="msapplication-TileImage" content="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png">
+
+  <meta name="application-name" content="The Things Network">
+  <meta name="msapplication-tooltip" content="Tooltip">
+  <meta name="msapplication-config" content="https://ttnweb.azureedge.net/static/common/favicon/ieconfig.54334a5ee30c.xml">
+
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-32.61b30f85680a.png" sizes="32x32">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-57.83b86c64dc82.png" sizes="57x57">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-76.7dcf8fa36dfc.png" sizes="76x76">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-96.27ac17adaa8b.png" sizes="96x96">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-120.e1526731335e.png" sizes="120x120">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-128.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png" sizes="144x144">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png" sizes="152x152">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-180.fcd414307ca3.png" sizes="180x180">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-195.c55ce09d66da.png" sizes="195x195">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-228.bea53ec4b10b.png" sizes="228x228">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/smalltile.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/mediumtile.3d42f7faac82.png" sizes="270x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
+  <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+
+  <meta property="og:title" content="API Reference" />
+<meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/applications/java/api/" />
+<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
+<meta property="og:site_name" content="The Things Network" />
+
+
+  <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
+
+<meta name="twitter:title" content="API Reference"/>
+<meta name="twitter:description" content="We are building a global open free crowdsourced long range low power IoT data network"/>
+
+
+</head>
+
+
+<body>
+
+<div id="header"></div>
+<section class="section">
+  <div class="container">
+    <nav class="breadcrumb has-dot-separator" aria-label="breadcrumbs">
+      <ul>
+        <li><a href="https://www.thethingsnetwork.org/docs">Learn</a></li>
+        
+        
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/lorawan/">LoRaWAN</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/quick-start/">Quick Start</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/applications-and-integrations/">Applications &amp; Integrations</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/">Devices &amp; Gateways</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/the-things-stack/">The Things Stack</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/v2-docs/">V2 Docs (Outdated)</a>
+            </li>
+          
+        
+      </ul>
+    </nav>
+  </div>
+</section>
+<div class="container" role="document">
+  <div class="columns my-0 is-desktop">
+    <div class="column is-3-desktop sidebar-left">
+      
+
+
+<nav class="side-navigation" aria-label="Main navigation">
+
+<h2 class="title is-size-5">Applications</h2>
+
+<div class="menu">
+  <ul class="menu-list">
+  <a href="https://www.thethingsnetwork.org/docs/applications/" class="">Overview</a>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/applications/add/" class="">Add an Application</a>
+    </li>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/applications/options/" class="">Build an Application</a>
+    </li>
+  
+    <p class="menu-label">
+      APIs
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/apis/" class="">Overview</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/manager/" class="">Application Manager API</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/mqtt/" class="">Data API (MQTT)</a>
+</li>
+
+  
+    <p class="menu-label">
+      SDKs &amp; Libraries
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/sdks/" class="">Overview</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/golang/" class="">Go</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/java/" class="">Java</a>
+  
+
+
+<ul class="menu-list">
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/applications/java/javadoc/" class="">Javadoc</a>
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/applications/java/api/" class="is-active">API Reference</a>
+    
+    
+
+
+
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/applications/java/quick-start/" class="">Quick Start</a>
+    
+  </li>
+
+</ul>
+
+
+  
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/nodered/" class="">Node-RED</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/nodejs/" class="">Node.js</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/python/" class="">Python</a>
+</li>
+
+  
+    <p class="menu-label">
+      Integrations
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/evrythng/" class="">EVRYTHNG</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/integrations/" class="">Overview</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/att/" class="">AllThingsTalk</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/aws/" class="">AWS IoT</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/cayenne/" class="">Cayenne</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/collos/" class="">Collos</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/http/" class="">HTTP</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/opensensors/" class="">OpenSensors</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/smart-office/" class="">Smart Office Kit</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/storage/" class="">Storage</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/tago/" class="">Tago</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/thingspeak/" class="">ThingSpeak</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/ttnmapper/" class="">TTN Mapper</a>
+</li>
+
+  
+  </ul>
+</div>
+
+
+
+
+
+</nav>
+
+    </div>
+    <div class="column is-9-desktop sidebar-middle">
+      <div class="docs-content">
+        <h1 class="title is-size-2">
+          API Reference
+        </h1>
+        <div class="content">
+          <p>Require the TTN Client module:</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">org.thethingsnetwork.data.mqtt.Client</span><span class="o">;</span>
+</code></pre></div><h2 id="class-client">Class: Client</h2>
+<p>Creates an instance of the client:</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Client</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Client</span><span class="o">(</span><span class="n">region</span><span class="o">,</span> <span class="n">appId</span><span class="o">,</span> <span class="n">accessKey</span> <span class="o">[,</span> <span class="n">connOpts</span><span class="o">]);</span>
+</code></pre></div><ul>
+<li><code>region [String]</code>: The region (e.g. <code>eu</code>) or full hostname (e.g. <code>eu.thethings.network</code>) of the handler to connect to.</li>
+<li><code>appId [String]</code>: The ID of the application to connect to (e.g. <code>hello-world</code>).</li>
+<li><code>appAccessKey [String]</code>: An access key for the application, formatted as base64 (e.g. <code>'2Z+MU0T5xZCaqsD0bPqOhzA6iygGFoi4FAgMFgBfXSo='</code>).</li>
+<li><code>connOpts [MqttConnectOptions]</code>: Some custom configuration of the MQTT connection. This parameter is optional. For example to use TLS download <a href="https://console.thethingsnetwork.org/mqtt-ca.pem">mqtt-ca.pem</a> and trust it following this guide: <a href="http://howardism.org/Technical/Java/SelfSignedCerts.html">Trust self-signed certificates</a>:</li>
+</ul>
+<h2 id="event-connect">Event: connect</h2>
+<p>Emitted on successful connection.</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">client</span><span class="o">.</span><span class="na">onConnected</span><span class="o">((</span><span class="n">Connection</span> <span class="n">_client</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;connected !&#34;</span><span class="o">));</span>
+</code></pre></div><ul>
+<li><code>cb.client [Connection]</code>: MQTT connection wrapper. See <a href="http://www.eclipse.org/paho/files/javadoc/org/eclipse/paho/client/mqttv3/MqttClient.html">MQTT</a>.</li>
+</ul>
+<h2 id="event-error">Event: error</h2>
+<p>Emitted when the client cannot connect or when a parsing error occurs.</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">client</span><span class="o">.</span><span class="na">onError</span><span class="o">((</span><span class="n">Throwable</span> <span class="n">_error</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">err</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;error: &#34;</span> <span class="o">+</span> <span class="n">_error</span><span class="o">.</span><span class="na">getMessage</span><span class="o">()));</span>
+</code></pre></div><ul>
+<li><code>cb.error [Throwable]</code>: Error object. See <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Exception.html">MQTT</a>.</li>
+</ul>
+<h2 id="event-message">Event: message</h2>
+<p>Emitted when TTN forwards a message addressed to your application.</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">client</span><span class="o">.</span><span class="na">onMessage</span><span class="o">((</span><span class="n">String</span> <span class="n">devId</span><span class="o">,</span> <span class="n">Object</span> <span class="n">data</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Message: &#34;</span> <span class="o">+</span> <span class="n">devId</span> <span class="o">+</span> <span class="s">&#34; &#34;</span> <span class="o">+</span> <span class="n">data</span><span class="o">));</span>
+</code></pre></div><ul>
+<li>
+<p><code>cb.devId [String]</code>: Device ID, e.g.: <code>my-uno</code>.</p>
+</li>
+<li>
+<p><code>cb.data [Object]</code>: Message data, e.g.:</p>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&#34;port&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="nt">&#34;counter&#34;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+  <span class="nt">&#34;payload_raw&#34;</span><span class="p">:</span> <span class="s2">&#34;MQ==&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;payload_fields&#34;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&#34;led&#34;</span><span class="p">:</span> <span class="kc">true</span>
+  <span class="p">},</span>
+  <span class="nt">&#34;metadata&#34;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&#34;time&#34;</span><span class="p">:</span> <span class="s2">&#34;2016-09-07T12:50:07.068771281Z&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;frequency&#34;</span><span class="p">:</span> <span class="mf">868.1</span><span class="p">,</span>
+    <span class="nt">&#34;modulation&#34;</span><span class="p">:</span> <span class="s2">&#34;LORA&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;data_rate&#34;</span><span class="p">:</span> <span class="s2">&#34;SF7BW125&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;coding_rate&#34;</span><span class="p">:</span> <span class="s2">&#34;4/5&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;gateways&#34;</span><span class="p">:</span> <span class="p">[{</span>
+      <span class="nt">&#34;gtw_id&#34;</span><span class="p">:</span> <span class="s2">&#34;0000024B08060112&#34;</span><span class="p">,</span>
+      <span class="nt">&#34;timestamp&#34;</span><span class="p">:</span> <span class="mi">3955426155</span><span class="p">,</span>
+      <span class="nt">&#34;time&#34;</span><span class="p">:</span> <span class="s2">&#34;2016-09-07T12:50:07.053048Z&#34;</span><span class="p">,</span>
+      <span class="nt">&#34;channel&#34;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+      <span class="nt">&#34;rssi&#34;</span><span class="p">:</span> <span class="mi">-109</span><span class="p">,</span>
+      <span class="nt">&#34;snr&#34;</span><span class="p">:</span> <span class="mf">5.8</span><span class="p">,</span>
+      <span class="nt">&#34;rf_chain&#34;</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="p">}]</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></li>
+</ul>
+<p>When no field is specified, <code>cb.data</code> holds a <code>Message</code>. It&rsquo;s a <code>JsonObject</code> with an additional method: <code>getBinary(String key)</code>, base64-decoding the requested field:</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">client</span><span class="o">.</span><span class="na">onMessage</span><span class="o">((</span><span class="n">String</span> <span class="n">devId</span><span class="o">,</span> <span class="n">Object</span> <span class="n">data</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="o">{</span>
+    <span class="kt">byte</span><span class="o">[]</span> <span class="n">payload</span> <span class="o">=</span> <span class="o">((</span><span class="n">Message</span><span class="o">)</span> <span class="n">data</span><span class="o">).</span><span class="na">getBinary</span><span class="o">(</span><span class="s">&#34;payload_raw&#34;</span><span class="o">);</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Message: &#34;</span> <span class="o">+</span> <span class="n">devId</span> <span class="o">+</span> <span class="s">&#34; &#34;</span> <span class="o">+</span> <span class="n">payload</span><span class="o">[</span><span class="n">0</span><span class="o">]);</span>
+<span class="o">});</span>
+</code></pre></div><p>Should give you:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">Message: my-uno <span class="m">0</span>
+</code></pre></div><h3 id="listen-for-a-specific-device">Listen for a specific device</h3>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">client</span><span class="o">.</span><span class="na">onMessage</span><span class="o">(</span><span class="s">&#34;my-uno&#34;</span><span class="o">,</span> <span class="o">(</span><span class="n">String</span> <span class="n">devId</span><span class="o">,</span> <span class="n">Object</span> <span class="n">data</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Message: &#34;</span> <span class="o">+</span> <span class="n">devId</span> <span class="o">+</span> <span class="s">&#34; &#34;</span> <span class="o">+</span> <span class="n">data</span><span class="o">));</span>
+</code></pre></div><h3 id="listen-for-a-specific-field-and-device">Listen for a specific field (and device)</h3>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">client</span><span class="o">.</span><span class="na">onMessage</span><span class="o">(</span><span class="s">&#34;my-uno&#34;</span><span class="o">,</span> <span class="s">&#34;led&#34;</span><span class="o">,</span> <span class="o">(</span><span class="n">String</span> <span class="n">devId</span><span class="o">,</span> <span class="n">Object</span> <span class="n">data</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Message: &#34;</span> <span class="o">+</span> <span class="n">devId</span> <span class="o">+</span> <span class="s">&#34; &#34;</span> <span class="o">+</span> <span class="n">data</span><span class="o">));</span>
+</code></pre></div><blockquote>
+<p>When a field is specified, <code>cb.data</code> holds the <code>String</code> representation of the field value.</p>
+</blockquote>
+<h2 id="event-activation">Event: activation</h2>
+<p>Emitted when a device registered to the application activates.</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">client</span><span class="o">.</span><span class="na">onActivation</span><span class="o">((</span><span class="n">String</span> <span class="n">_devId</span><span class="o">,</span> <span class="n">JSONObject</span> <span class="n">_data</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Activation: &#34;</span> <span class="o">+</span> <span class="n">_devId</span> <span class="o">+</span> <span class="s">&#34;, data: &#34;</span> <span class="o">+</span> <span class="n">_data</span><span class="o">));</span>
+</code></pre></div><ul>
+<li>
+<p><code>cb.devId [String]</code>: Device ID, e.g.: <code>my-uno</code>.</p>
+</li>
+<li>
+<p><code>cb.data [Object]</code>: Activation data, e.g.:</p>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&#34;app_eui&#34;</span><span class="p">:</span> <span class="s2">&#34;70B3D57ED0000AFB&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;dev_eui&#34;</span><span class="p">:</span> <span class="s2">&#34;0004A30B001B7AD2&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;dev_addr&#34;</span><span class="p">:</span> <span class="s2">&#34;260023BB&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;metadata&#34;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&#34;time&#34;</span><span class="p">:</span> <span class="s2">&#34;2016-09-07T12:43:17.97454032Z&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;frequency&#34;</span><span class="p">:</span> <span class="mf">867.1</span><span class="p">,</span>
+    <span class="nt">&#34;modulation&#34;</span><span class="p">:</span> <span class="s2">&#34;LORA&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;data_rate&#34;</span><span class="p">:</span> <span class="s2">&#34;SF7BW125&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;coding_rate&#34;</span><span class="p">:</span> <span class="s2">&#34;4/5&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;gateways&#34;</span><span class="p">:</span> <span class="p">[{</span>
+      <span class="nt">&#34;gtw_id&#34;</span><span class="p">:</span> <span class="s2">&#34;0000024B08060112&#34;</span><span class="p">,</span>
+      <span class="nt">&#34;timestamp&#34;</span><span class="p">:</span> <span class="mi">3546311603</span><span class="p">,</span>
+      <span class="nt">&#34;time&#34;</span><span class="p">:</span> <span class="s2">&#34;2016-09-07T12:43:17.938537Z&#34;</span><span class="p">,</span>
+      <span class="nt">&#34;channel&#34;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="nt">&#34;rssi&#34;</span><span class="p">:</span> <span class="mi">-107</span><span class="p">,</span>
+      <span class="nt">&#34;snr&#34;</span><span class="p">:</span> <span class="mf">1.2</span>
+    <span class="p">}]</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></li>
+</ul>
+<h2 id="event-device">Event: device</h2>
+<p>Emitted when a device event is published.</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">client</span><span class="o">.</span><span class="na">onDevice</span><span class="o">(</span><span class="kc">null</span><span class="o">,</span> <span class="s">&#34;down/scheduled&#34;</span><span class="o">,</span> <span class="o">(</span><span class="n">String</span> <span class="n">devId</span><span class="o">,</span> <span class="n">String</span> <span class="n">event</span><span class="o">,</span> <span class="n">JSONObject</span> <span class="n">data</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Received event &#34;</span> <span class="o">+</span> <span class="n">event</span> <span class="o">+</span> <span class="s">&#34;for device &#34;</span> <span class="o">+</span> <span class="n">devId</span><span class="o">));</span>
+</code></pre></div><ul>
+<li>
+<p><code>cb.devId [String]</code>: Device ID, e.g.: <code>my-uno</code>.</p>
+</li>
+<li>
+<p><code>cb.event [String]</code>: Event name, e.g.: <code>down/scheduled</code>.</p>
+</li>
+<li>
+<p><code>cb.data [Object]</code>: Event data, e.g. for <code>down/scheduled</code>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&#34;port&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="nt">&#34;payload_raw&#34;</span><span class="p">:</span> <span class="s2">&#34;MQ==&#34;</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre></div></li>
+</ul>
+<h2 id="method-send">Method: send</h2>
+<p>Send a message to a specific device.</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">client</span><span class="o">.</span><span class="na">send</span><span class="o">(</span><span class="n">devId</span><span class="o">,</span> <span class="n">payload</span><span class="o">,</span> <span class="n">port</span><span class="o">);</span>
+</code></pre></div><ul>
+<li>
+<p><code>deviceId [String]</code>: The ID of the device to address, e.g. <code>my-uno</code></p>
+</li>
+<li>
+<p><code>payload [mixed]</code>: Message to send, either:</p>
+<ul>
+<li>
+<p>Byte array, e.g. <code>[1]</code></p>
+</li>
+<li>
+<p>ByteBuffer, e.g. <code>ByteBuffer.allocate(2).put(0x00)</code></p>
+</li>
+<li>
+<p>JsonObject, e.g. <code>{ led: true }</code></p>
+<blockquote>
+<p>This requires your application to be configured with an encoder payload function to encode the object in bytes.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>
+<p><code>port [Integer]</code>: Optional port to address. Default: <code>1</code>.</p>
+</li>
+</ul>
+<blockquote>
+<p>See the <a href="https://docs.oracle.com/javase/8/docs/api/java/nio/ByteBuffer.html">Java ByteBuffer reference</a> for different ways to create a buffer. The client will rewind the buffer before publishing the message to The Things Network&rsquo;s MQTT broker.</p>
+</blockquote>
+<h2 id="method-end">Method: end</h2>
+<p>Close the client via <a href="http://www.eclipse.org/paho/files/javadoc/org/eclipse/paho/client/mqttv3/MqttClient.html#close--"><code>client.close()</code></a>.</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">client</span><span class="o">.</span><span class="na">end</span><span class="o">([</span><span class="n">timeout</span><span class="o">]);</span>
+</code></pre></div><ul>
+<li><code>timeout [Integer]</code>: The time you give to the client to close the connection. This parameter is optional. Default is 5000 ms.</li>
+</ul>
+
+        </div>
+      
+      <div class="is-clearfix">
+</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="footer"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ttn-components.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/promise-polyfill@7/dist/polyfill.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-navbar.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-footer.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ga.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/vendor/basicLightbox.min.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/theme.min.00ace5d667ca108a93b8a0d385569f7c7bb9f46ed32eefe3f5fb39105763cccd.js" integrity="sha256-AKzl1mfKEIqTuKDThVaffHu59G7TLu/j9fs5EFdjzM0=" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

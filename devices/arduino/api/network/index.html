@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+
+<html lang="en-us" class="has-ttn-navbar-top">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <meta name="generator" content="Hugo 0.79.0" />
+
+  <title>TheThingsNetwork | The Things Network</title>
+  <link rel="canonical" href="https://www.thethingsnetwork.org/docs/devices/arduino/api/network/" />
+  
+
+  <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
+
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+  <meta name="msapplication-TileImage" content="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png">
+
+  <meta name="application-name" content="The Things Network">
+  <meta name="msapplication-tooltip" content="Tooltip">
+  <meta name="msapplication-config" content="https://ttnweb.azureedge.net/static/common/favicon/ieconfig.54334a5ee30c.xml">
+
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-32.61b30f85680a.png" sizes="32x32">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-57.83b86c64dc82.png" sizes="57x57">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-76.7dcf8fa36dfc.png" sizes="76x76">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-96.27ac17adaa8b.png" sizes="96x96">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-120.e1526731335e.png" sizes="120x120">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-128.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png" sizes="144x144">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png" sizes="152x152">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-180.fcd414307ca3.png" sizes="180x180">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-195.c55ce09d66da.png" sizes="195x195">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-228.bea53ec4b10b.png" sizes="228x228">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/smalltile.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/mediumtile.3d42f7faac82.png" sizes="270x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
+  <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+
+  <meta property="og:title" content="TheThingsNetwork" />
+<meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/devices/arduino/api/network/" />
+<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
+<meta property="og:site_name" content="The Things Network" />
+
+
+  <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
+
+<meta name="twitter:title" content="TheThingsNetwork"/>
+<meta name="twitter:description" content="We are building a global open free crowdsourced long range low power IoT data network"/>
+
+
+</head>
+
+
+<body>
+
+<div id="header"></div>
+<section class="section">
+  <div class="container">
+    <nav class="breadcrumb has-dot-separator" aria-label="breadcrumbs">
+      <ul>
+        <li><a href="https://www.thethingsnetwork.org/docs">Learn</a></li>
+        
+        
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/lorawan/">LoRaWAN</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/quick-start/">Quick Start</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/applications-and-integrations/">Applications &amp; Integrations</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/">Devices &amp; Gateways</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/the-things-stack/">The Things Stack</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/v2-docs/">V2 Docs (Outdated)</a>
+            </li>
+          
+        
+      </ul>
+    </nav>
+  </div>
+</section>
+<div class="container" role="document">
+  <div class="columns my-0 is-desktop">
+    <div class="column is-3-desktop sidebar-left">
+      
+
+
+<nav class="side-navigation" aria-label="Main navigation">
+
+<h2 class="title is-size-5">Devices</h2>
+
+<div class="menu">
+  <ul class="menu-list">
+  <a href="https://www.thethingsnetwork.org/docs/devices/" class="">Overview</a>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/devices/bestpractices/" class="">Best Practices</a>
+    </li>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/devices/registration/" class="">Device Registration</a>
+    </li>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/devices/bytes/" class="">Working with Bytes</a>
+    </li>
+  
+    <p class="menu-label">
+      SDKs &amp; Libraries
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/devices/arduino/" class="">Arduino</a>
+  
+
+
+<ul class="menu-list">
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/devices/arduino/api/" class="">API Reference</a>
+    
+    
+
+
+<ul class="menu-list">
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/devices/arduino/api/cayennelpp/" class="">CayenneLPP</a>
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/devices/arduino/api/node/" class="">TheThingsNode</a>
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/devices/arduino/api/message/" class="">TheThingsMessage</a>
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/devices/arduino/api/network/" class="is-active">TheThingsNetwork</a>
+    
+    
+
+
+
+    
+  </li>
+
+</ul>
+
+
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/devices/arduino/ide/" class="">IDE Setup &amp; Usage</a>
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/devices/arduino/usage/" class="">Library Usage</a>
+    
+  </li>
+
+</ul>
+
+
+  
+</li>
+
+  
+    <p class="menu-label">
+      Hardware
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/devices/rak5205-wistrio-lora-tracker/" class="">RAK5205 WisTrio LoRa® Tracker</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/devices/rak7200-lora-tracker/" class="">RAK7200 LoRa® Tracker</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/devices/rak811-lora-module-breakout-board/" class="">RAK811 LoRa® Breakout Module</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/devices/rak811-lora-evaluation-board/" class="">RAK811 LoRa® Evaluation Board</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/devices/rak811-wisnode-lora-module/" class="">RAK811 WisNode LoRa Module</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/devices/node/" class="">The Things Node</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/devices/uno/" class="">The Things Uno</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/devices/lopy/" class="">LoPy</a>
+</li>
+
+  
+  </ul>
+</div>
+
+
+
+
+
+</nav>
+
+    </div>
+    <div class="column is-9-desktop sidebar-middle">
+      <div class="docs-content">
+        <h1 class="title is-size-2">
+          TheThingsNetwork
+        </h1>
+        <div class="content">
+          <p>The <code>TheThingsNetwork</code> class enables Arduino devices with supported LoRaWAN modules to communicate via The Things Network. Currently supported LoRaWAN modules are the Microchip RN2483 and the RN2903.</p>
+<h2 id="class-thethingsnetwork">Class: <code>TheThingsNetwork</code></h2>
+<p>Include and instantiate the TheThingsNetwork class. The constructor initialize the library with the Streams it should communicate with. It also sets the value of the spreading factor, the frequency plan and the frequency sub-band.</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="cp">#include</span> <span class="cpf">&lt;TheThingsNetwork.h&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="n">TheThingsNetwork</span> <span class="nf">ttn</span><span class="p">(</span><span class="n">Stream</span><span class="o">&amp;</span> <span class="n">modemStream</span><span class="p">,</span> <span class="n">Stream</span><span class="o">&amp;</span> <span class="n">debugStream</span><span class="p">,</span> <span class="n">fp_ttn_t</span> <span class="n">fp</span><span class="p">,</span> <span class="n">uint8_t</span> <span class="n">sf</span> <span class="o">=</span> <span class="mi">7</span><span class="p">,</span> <span class="n">uint8_t</span> <span class="n">fsb</span> <span class="o">=</span> <span class="mi">2</span><span class="p">);</span>
+</code></pre></div><ul>
+<li><code>Stream&amp; modemStream</code>: Stream for the LoRa modem (<a href="https://www.thethingsnetwork.org/docs/devices/arduino/usage.html">see notes</a>).</li>
+<li><code>Stream&amp; debugStream</code>: Stream to write debug logs to (<a href="https://www.thethingsnetwork.org/docs/devices/arduino/usage.html">see notes</a>).</li>
+<li><code>fp_ttn_fp fp</code>: The frequency plan: <code>TTN_FP_EU868</code>, <code>TTN_FP_US915</code>, <code>TTN_FP_AS920_923</code>, <code>TTN_FP_AS923_925</code> or <code>TTN_FP_KR920_923</code> depending on the region you deploy in. See <a href="https://www.thethingsnetwork.org/wiki/LoRaWAN/Frequencies/Frequency-Plans">the wiki</a>.</li>
+<li><code>uint8_t sf = 7</code>: Optional custom spreading factor. Can be <code>7</code> to <code>10</code> for <code>TTN_FP_US915</code> and <code>7</code> to <code>12</code> for other frequency plans. Defaults to <code>7</code>.</li>
+<li><code>uint8_t fsb = 2</code>: Optional custom frequency subband. Can be <code>1</code> to <code>8</code>. Defaults to <code>2</code> (for US915).</li>
+</ul>
+<h2 id="method-reset">Method: <code>reset</code></h2>
+<p>Performs a software reset of the RN module. This does not clear saved state, e.g. provisioned keys.</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">reset</span><span class="p">(</span><span class="kt">bool</span> <span class="n">adr</span><span class="p">);</span>
+</code></pre></div><ul>
+<li><code>bool adr</code>: Enable/disable Adaptive Data Rate.</li>
+</ul>
+<h2 id="method-gethardwareeui">Method: <code>getHardwareEui</code></h2>
+<p>Gets the unique hardware EUI, often used as the DevEUI.</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="n">size_t</span> <span class="nf">getHardwareEui</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">buffer</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">size</span><span class="p">);</span>
+</code></pre></div><h2 id="method-getappeui">Method: <code>getAppEui</code></h2>
+<p>Gets the provisioned AppEUI. The AppEUI is set using <code>provision()</code> or <code>join()</code>.</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="n">size_t</span> <span class="nf">getAppEui</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">buffer</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">size</span><span class="p">);</span>
+</code></pre></div><h2 id="method-showstatus">Method: <code>showStatus</code></h2>
+<p>Writes information about the device and LoRa module to <code>debugStream</code>.</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">showStatus</span><span class="p">();</span>
+</code></pre></div><p>Will write something like:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">EUI: 0004A30B001B7AD2
+Battery: <span class="m">3223</span>
+AppEUI: 70B3D57EF000001C
+DevEUI: 0004A30B001B7AD2
+Data Rate: <span class="m">5</span>
+RX Delay 1: <span class="m">1000</span>
+RX Delay 2: <span class="m">2000</span>
+</code></pre></div><p>See the <a href="https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/DeviceInfo/DeviceInfo.ino">DeviceInfo</a> example.</p>
+<h2 id="method-onmessage">Method: <code>onMessage</code></h2>
+<p>Sets a function which will be called to process incoming messages. You&rsquo;ll want to do this in your <code>setup()</code> function and then define a <code>void (*cb)(const byte* payload, size_t length, port_t port)</code> function somewhere else in your sketch.</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">onMessage</span><span class="p">(</span><span class="kt">void</span> <span class="p">(</span><span class="o">*</span><span class="n">cb</span><span class="p">)(</span><span class="k">const</span> <span class="n">byte</span><span class="o">*</span> <span class="n">payload</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">length</span><span class="p">,</span> <span class="n">port_t</span> <span class="n">port</span><span class="p">));</span>
+</code></pre></div><ul>
+<li><code>const byte* payload</code>: Bytes received.</li>
+<li><code>size_t length</code>: Number of bytes.</li>
+<li><code>port_t port</code>: The port addressed.</li>
+</ul>
+<p>See the <a href="https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/Receive/Receive.ino">Receive</a> example.</p>
+<h2 id="method-join">Method: <code>join</code></h2>
+<p>Activate the device via OTAA (default).</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">bool</span> <span class="nf">join</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">appEui</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">appKey</span><span class="p">,</span> <span class="n">int8_t</span> <span class="n">retries</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">uint32_t</span> <span class="n">retryDelay</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">);</span>
+<span class="kt">bool</span> <span class="nf">join</span><span class="p">(</span><span class="n">int8_t</span> <span class="n">retries</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">uint32_t</span> <span class="n">retryDelay</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">);</span>
+</code></pre></div><ul>
+<li><code>const char *appEui</code>: Application EUI the device is registered to.</li>
+<li><code>const char *appKey</code>: Application Key assigned to the device.</li>
+<li><code>int8_t retries = -1</code>: Number of times to retry after failed or unconfirmed join. Defaults to <code>-1</code> which means infinite.</li>
+<li><code>uint32_t retryDelay = 10000</code>: Delay in ms between attempts. Defaults to 10 seconds.</li>
+</ul>
+<p>Returns <code>true</code> or <code>false</code> depending on whether it received confirmation that the activation was successful before the maximum number of attempts.</p>
+<p>Call the method without the first two arguments if the device&rsquo;s LoRa module comes with pre-flashed values.</p>
+<h2 id="method-personalize">Method: <code>personalize</code></h2>
+<p>Activate the device via ABP.</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">bool</span> <span class="nf">personalize</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">devAddr</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">nwkSKey</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">appSKey</span><span class="p">);</span>
+<span class="kt">bool</span> <span class="nf">personalize</span><span class="p">();</span>
+</code></pre></div><ul>
+<li><code>const char *devAddr</code>: Device Address assigned to the device.</li>
+<li><code>const char *nwkSKey</code>: Network Session Key assigned to the device for identification.</li>
+<li><code>const char *appSKey</code>: Application Session Key assigned to the device for encryption.</li>
+</ul>
+<p>Returns <code>true</code> or <code>false</code> depending on whether the activation was successful.</p>
+<p>Call the method with no arguments if the device&rsquo;s LoRa module comes with pre-flashed values.</p>
+<p>See the <a href="https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/SendABP/SendABP.ino">SendABP</a> example.</p>
+<h2 id="method-sendbytes">Method: <code>sendBytes</code></h2>
+<p>Send a message to the application using raw bytes.</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="n">ttn_response_t</span> <span class="nf">sendBytes</span><span class="p">(</span><span class="k">const</span> <span class="n">byte</span><span class="o">*</span> <span class="n">payload</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">length</span><span class="p">,</span> <span class="n">port_t</span> <span class="n">port</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">confirm</span> <span class="o">=</span> <span class="nb">false</span><span class="p">,</span> <span class="n">uint8_t</span> <span class="n">sf</span> <span class="o">=</span> <span class="mi">0</span><span class="p">);</span>
+</code></pre></div><ul>
+<li><code>const byte* payload </code>: Bytes to send.</li>
+<li><code>size_t length</code>: The number of bytes. Use <code>sizeof(payload)</code> to get it.</li>
+<li><code>port_t port = 1</code>: The port to address. Defaults to <code>1</code>.</li>
+<li><code>bool confirm = false</code>: Whether to ask for confirmation. Defaults to <code>false</code>. If confirmation fails, the method will return error code <code>TTN_ERROR_UNEXPECTED_RESPONSE</code>.</li>
+<li><code>uint8_t sf = 0</code>: Override the spreading factor (SF). If the default value <code>0</code> is passed, the SF is not changed from the constructor or previous value.</li>
+</ul>
+<p>Returns a success or error code and logs the related error message:</p>
+<ul>
+<li><code>TTN_ERROR_SEND_COMMAND_FAILED</code>: Send command failed.</li>
+<li><code>TTN_SUCCESSFUL_TRANSMISSION</code>: Successful transmission.</li>
+<li><code>TTN_SUCCESSFUL_RECEIVE</code>: Successful transmission. Received &lt;N&gt; bytes</li>
+<li><code>TTN_ERROR_UNEXPECTED_RESPONSE</code>: Unexpected response: &lt;Response&gt;</li>
+</ul>
+<p>See the <a href="https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/SendOTAA/SendOTAA.ino">SendOTAA</a> example.</p>
+<h2 id="method-poll">Method: <code>poll</code></h2>
+<p>Calls <code>sendBytes()</code> with <code>{ 0x00 }</code> as payload to poll for incoming messages.</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="n">int8_t</span> <span class="nf">poll</span><span class="p">(</span><span class="n">port_t</span> <span class="n">port</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">confirm</span> <span class="o">=</span> <span class="nb">false</span><span class="p">);</span>
+</code></pre></div><ul>
+<li><code>port_t port = 1</code>: The port to address. Defaults to <code>1</code>.</li>
+<li><code>bool confirm = false</code>: Whether to ask for confirmation.</li>
+</ul>
+<p>Returns the result of <code>sendBytes()</code>.</p>
+<p>See the <a href="https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/Receive/Receive.ino">Receive</a> example.</p>
+<h2 id="method-provision">Method: <code>provision</code></h2>
+<p>Sets the information needed to activate the device via OTAA, without actually activating. Call join() without the first 2 arguments to activate.</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">bool</span> <span class="nf">provision</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">appEui</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">appKey</span><span class="p">);</span>
+</code></pre></div><ul>
+<li><code>const char *appEui</code>: Application Identifier for the device.</li>
+<li><code>const char *appKey</code>: Application Key assigned to the device.</li>
+</ul>
+<h2 id="method-sleep">Method: <code>sleep</code></h2>
+<p>Sleep the LoRa module for a specified number of milliseconds.</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">sleep</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">mseconds</span><span class="p">);</span>
+</code></pre></div><ul>
+<li><code>unsigned long mseconds</code>: number of milliseconds to sleep.</li>
+</ul>
+<h2 id="method-wake">Method: <code>wake</code></h2>
+<p>Wake up the LoRa module from sleep before the expiration of the defined time.</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">wake</span><span class="p">();</span>
+</code></pre></div><h2 id="method-linkcheck">Method: <code>linkCheck</code></h2>
+<p>Sets the time interval for the link check process to be triggered. When the interval expires, the next uplink will include a Link Check Request MAC command. When using this method, it should be called after joining has completed.</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">linkCheck</span><span class="p">(</span><span class="n">uint16_t</span> <span class="n">seconds</span><span class="p">);</span>
+</code></pre></div><ul>
+<li><code>uint16_t seconds</code>: the time interval in seconds. A value of 0 will disable the link check process.</li>
+</ul>
+<h2 id="method-getlinkcheckgateways">Method: <code>getLinkCheckGateways</code></h2>
+<p>Gets the number of gateways that successfully received the last Link Check Request frame.</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="n">uint8_t</span> <span class="nf">getLinkCheckGateways</span><span class="p">();</span>
+</code></pre></div><h2 id="method-getlinkcheckmargin">Method: <code>getLinkCheckMargin</code></h2>
+<p>Gets the demodulation margin as received in the last Link Check Answer frame.</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="n">uint8_t</span> <span class="nf">getLinkCheckMargin</span><span class="p">();</span>
+</code></pre></div><h2 id="method-getvdd">Method: <code>getVDD</code></h2>
+<p>Returns the voltage in millivolt (mV) measured by the RN2xxx LoRa module. It&rsquo;s for information only since we don&rsquo;t know how it&rsquo;s measured but looks like accurate.</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="n">uint16_t</span> <span class="nf">getVDD</span><span class="p">();</span>
+</code></pre></div>
+        </div>
+      
+      <div class="is-clearfix">
+</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="footer"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ttn-components.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/promise-polyfill@7/dist/polyfill.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-navbar.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-footer.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ga.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/vendor/basicLightbox.min.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/theme.min.00ace5d667ca108a93b8a0d385569f7c7bb9f46ed32eefe3f5fb39105763cccd.js" integrity="sha256-AKzl1mfKEIqTuKDThVaffHu59G7TLu/j9fs5EFdjzM0=" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

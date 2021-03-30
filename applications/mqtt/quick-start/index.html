@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+
+<html lang="en-us" class="has-ttn-navbar-top">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <meta name="generator" content="Hugo 0.79.0" />
+
+  <title>Quick Start | The Things Network</title>
+  <link rel="canonical" href="https://www.thethingsnetwork.org/docs/applications/mqtt/quick-start/" />
+  
+
+  <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
+
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+  <meta name="msapplication-TileImage" content="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png">
+
+  <meta name="application-name" content="The Things Network">
+  <meta name="msapplication-tooltip" content="Tooltip">
+  <meta name="msapplication-config" content="https://ttnweb.azureedge.net/static/common/favicon/ieconfig.54334a5ee30c.xml">
+
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-32.61b30f85680a.png" sizes="32x32">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-57.83b86c64dc82.png" sizes="57x57">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-76.7dcf8fa36dfc.png" sizes="76x76">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-96.27ac17adaa8b.png" sizes="96x96">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-120.e1526731335e.png" sizes="120x120">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-128.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png" sizes="144x144">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png" sizes="152x152">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-180.fcd414307ca3.png" sizes="180x180">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-195.c55ce09d66da.png" sizes="195x195">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-228.bea53ec4b10b.png" sizes="228x228">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/smalltile.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/mediumtile.3d42f7faac82.png" sizes="270x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
+  <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+
+  <meta property="og:title" content="Quick Start" />
+<meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/applications/mqtt/quick-start/" />
+<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
+<meta property="og:site_name" content="The Things Network" />
+
+
+  <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
+
+<meta name="twitter:title" content="Quick Start"/>
+<meta name="twitter:description" content="We are building a global open free crowdsourced long range low power IoT data network"/>
+
+
+</head>
+
+
+<body>
+
+<div id="header"></div>
+<section class="section">
+  <div class="container">
+    <nav class="breadcrumb has-dot-separator" aria-label="breadcrumbs">
+      <ul>
+        <li><a href="https://www.thethingsnetwork.org/docs">Learn</a></li>
+        
+        
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/lorawan/">LoRaWAN</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/quick-start/">Quick Start</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/applications-and-integrations/">Applications &amp; Integrations</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/">Devices &amp; Gateways</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/the-things-stack/">The Things Stack</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/v2-docs/">V2 Docs (Outdated)</a>
+            </li>
+          
+        
+      </ul>
+    </nav>
+  </div>
+</section>
+<div class="container" role="document">
+  <div class="columns my-0 is-desktop">
+    <div class="column is-3-desktop sidebar-left">
+      
+
+
+<nav class="side-navigation" aria-label="Main navigation">
+
+<h2 class="title is-size-5">Applications</h2>
+
+<div class="menu">
+  <ul class="menu-list">
+  <a href="https://www.thethingsnetwork.org/docs/applications/" class="">Overview</a>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/applications/add/" class="">Add an Application</a>
+    </li>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/applications/options/" class="">Build an Application</a>
+    </li>
+  
+    <p class="menu-label">
+      APIs
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/apis/" class="">Overview</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/manager/" class="">Application Manager API</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/mqtt/" class="">Data API (MQTT)</a>
+  
+
+
+<ul class="menu-list">
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/applications/mqtt/api/" class="">API Reference</a>
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/applications/mqtt/quick-start/" class="is-active">Quick Start</a>
+    
+    
+
+
+
+    
+  </li>
+
+</ul>
+
+
+  
+</li>
+
+  
+    <p class="menu-label">
+      SDKs &amp; Libraries
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/sdks/" class="">Overview</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/golang/" class="">Go</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/java/" class="">Java</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/nodered/" class="">Node-RED</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/nodejs/" class="">Node.js</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/python/" class="">Python</a>
+</li>
+
+  
+    <p class="menu-label">
+      Integrations
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/evrythng/" class="">EVRYTHNG</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/integrations/" class="">Overview</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/att/" class="">AllThingsTalk</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/aws/" class="">AWS IoT</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/cayenne/" class="">Cayenne</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/collos/" class="">Collos</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/http/" class="">HTTP</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/opensensors/" class="">OpenSensors</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/smart-office/" class="">Smart Office Kit</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/storage/" class="">Storage</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/tago/" class="">Tago</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/thingspeak/" class="">ThingSpeak</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/ttnmapper/" class="">TTN Mapper</a>
+</li>
+
+  
+  </ul>
+</div>
+
+
+
+
+
+</nav>
+
+    </div>
+    <div class="column is-9-desktop sidebar-middle">
+      <div class="docs-content">
+        <h1 class="title is-size-2">
+          Quick Start
+        </h1>
+        <div class="content">
+          <p>This guide will walk you through subscribing to an application&rsquo;s activations and messages as well as send a response to a specific device, using <a href="https://mosquitto.org">Eclipse Mosquitto</a>&rsquo;s CLIs to <a href="https://mosquitto.org/man/mosquitto_sub-1.html">subscribe</a> and to <a href="https://mosquitto.org/man/mosquitto_pub-1.html">publish</a> messages.</p>
+<blockquote>
+<p>This guide assumes the sketch and payload functions of <a href="https://www.thethingsnetwork.org/docs/devices/uno/quick-start/">The Things Uno / Quick Start</a>, but can be easily applied to any other.</p>
+</blockquote>
+<h2 id="setup">Setup</h2>
+<ul>
+<li>Install or <a href="https://mosquitto.org/download/">download</a> Mosquitto.</li>
+<li>Download and save the <a href="https://console.thethingsnetwork.org/mqtt-ca.pem">PEM encoded CA certificate</a> if you&rsquo;d like to use TLS.</li>
+</ul>
+<h2 id="credentials">Credentials</h2>
+<p>On <a href="https://console.thethingsnetwork.org/">console.thethingsnetwork.org</a>, navigate to the application you&rsquo;d like to use. Here you can find the <strong>Application ID</strong> and an <strong>Access Key</strong> needed to authenticate over MQTT. Under <strong>Handler</strong> you will also find the region the application is registered to. You will need the part that follows <code>ttn-handler-</code>, e.g. <code>eu</code>.</p>
+<h2 id="single-or-double-quotes">Single or double quotes</h2>
+<p>On many systems, including Linux and macOS, quotes might not be needed or single quotes are used. On Windows, use double quotes.</p>
+<h2 id="receive-activations">Receive Activations</h2>
+<p>Let&rsquo;s listen for new device activations first.</p>
+<ol>
+<li>
+<p>Open a terminal window and execute the following command:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">mosquitto_sub -h &lt;Region&gt;.thethings.network -t <span class="s1">&#39;+/devices/+/events/activations&#39;</span> -u <span class="s1">&#39;&lt;AppID&gt;&#39;</span> -P <span class="s1">&#39;&lt;AppKey&gt;&#39;</span> -v
+</code></pre></div><p>When using Windows, use double quotes to make the above code work:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">mosquitto_sub -h &lt;Region&gt;.thethings.network -t <span class="s2">&#34;+/devices/+/events/activations&#34;</span> -u <span class="s2">&#34;&lt;AppID&gt;&#34;</span> -P <span class="s2">&#34;&lt;AppKey&gt;&#34;</span> -v
+</code></pre></div><ul>
+<li>Replace <code>&lt;Region&gt;</code> with the region you looked up.</li>
+<li>Replace <code>&lt;AppID&gt;</code> with your <strong>Application ID</strong>.</li>
+<li>Replace <code>&lt;AppKey&gt;</code> with your <strong>Access Key</strong> (base64).</li>
+</ul>
+<blockquote>
+<p>We add <code>-v</code> to also see the topics of the incoming messages.</p>
+</blockquote>
+<p>For TLS - assuming <a href="https://console.thethingsnetwork.org/mqtt-ca.pem">mqtt-ca.pem</a> is in the same folder - append:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">--cafile mqtt-ca.pem -p <span class="m">8883</span>
+</code></pre></div></li>
+<li>
+<p>Power up, reset or upload a new sketch to a device to force it to activate and you should see something like:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">hello-world/devices/my-uno/events/activations <span class="o">{</span><span class="s2">&#34;app_eui&#34;</span>:<span class="s2">&#34;70B3D57EF000001C&#34;</span>,<span class="s2">&#34;dev_eui&#34;</span>:<span class="s2">&#34;0004A30B001B7AD2&#34;</span>,<span class="s2">&#34;dev_addr&#34;</span>:<span class="s2">&#34;26012723&#34;</span>,<span class="s2">&#34;metadata&#34;</span>:<span class="o">{</span><span class="s2">&#34;time&#34;</span>:<span class="s2">&#34;2016-09-13T09:59:02.90329585Z&#34;</span>,<span class="s2">&#34;frequency&#34;</span>:868.5,<span class="s2">&#34;modulation&#34;</span>:<span class="s2">&#34;LORA&#34;</span>,<span class="s2">&#34;data_rate&#34;</span>:<span class="s2">&#34;SF7BW125&#34;</span>,<span class="s2">&#34;coding_rate&#34;</span>:<span class="s2">&#34;4/5&#34;</span>,<span class="s2">&#34;gateways&#34;</span>:<span class="o">[{</span><span class="s2">&#34;eui&#34;</span>:<span class="s2">&#34;B827EBFFFE87BD22&#34;</span>,<span class="s2">&#34;timestamp&#34;</span>:1484146403,<span class="s2">&#34;time&#34;</span>:<span class="s2">&#34;2016-09-13T09:59:02.867283Z&#34;</span>,<span class="s2">&#34;channel&#34;</span>:2,<span class="s2">&#34;rssi&#34;</span>:-49,<span class="s2">&#34;snr&#34;</span>:7,<span class="s2">&#34;rf_chain&#34;</span>:1<span class="o">}]}}</span>
+</code></pre></div><p>Use <code>Ctrl C</code> to exit.</p>
+</li>
+</ol>
+<h2 id="receive-messages-up">Receive Messages (up)</h2>
+<p>Now let&rsquo;s listen for actual messages coming in from devices.</p>
+<ol>
+<li>
+<p>Open another terminal window and execute the following command:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">mosquitto_sub -h &lt;Region&gt;.thethings.network -t <span class="s1">&#39;+/devices/+/up&#39;</span> -u <span class="s1">&#39;&lt;AppID&gt;&#39;</span> -P <span class="s1">&#39;&lt;AppKey&gt;&#39;</span> -v
+</code></pre></div><blockquote>
+<p>Don&rsquo;t forget to replace <code>&lt;Region&gt;</code>, <code>&lt;AppID&gt;</code>, <code>&lt;AppKey&gt;</code> and append the options for TLS if you used that.</p>
+</blockquote>
+</li>
+<li>
+<p>If you uploaded the <a href="https://www.thethingsnetwork.org/docs/devices/uno/quick-start/">The Things Uno / Quick Start</a> sketch you should see something like:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">hello-world/devices/my-uno/up <span class="o">{</span><span class="s2">&#34;port&#34;</span>:1,<span class="s2">&#34;counter&#34;</span>:5,<span class="s2">&#34;payload_raw&#34;</span>:<span class="s2">&#34;AQ==&#34;</span>,<span class="s2">&#34;payload_fields&#34;</span>:<span class="o">{</span><span class="s2">&#34;led&#34;</span>:true<span class="o">}</span>,<span class="s2">&#34;metadata&#34;</span>:<span class="o">{</span><span class="s2">&#34;time&#34;</span>:<span class="s2">&#34;2016-09-14T14:19:20.272552952Z&#34;</span>,<span class="s2">&#34;frequency&#34;</span>:868.1,<span class="s2">&#34;modulation&#34;</span>:<span class="s2">&#34;LORA&#34;</span>,<span class="s2">&#34;data_rate&#34;</span>:<span class="s2">&#34;SF7BW125&#34;</span>,<span class="s2">&#34;coding_rate&#34;</span>:<span class="s2">&#34;4/5&#34;</span>,<span class="s2">&#34;gateways&#34;</span>:<span class="o">[{</span><span class="s2">&#34;eui&#34;</span>:<span class="s2">&#34;B827EBFFFE87BD22&#34;</span>,<span class="s2">&#34;timestamp&#34;</span>:1960494347,<span class="s2">&#34;time&#34;</span>:<span class="s2">&#34;2016-09-14T14:19:20.258723Z&#34;</span>,<span class="s2">&#34;rssi&#34;</span>:-49,<span class="s2">&#34;snr&#34;</span>:9.5,<span class="s2">&#34;rf_chain&#34;</span>:1<span class="o">}]}}</span>
+</code></pre></div></li>
+</ol>
+<h3 id="subscribe-to-a-specific-field">Subscribe to a specific field</h3>
+<blockquote>
+<p><strong>Warning</strong>: not every cluster publishes uplink fields to individual topics. See <a href="https://status.thethings.network">status.thethings.network</a> for details.</p>
+</blockquote>
+<p>You can also subscribe to a specific field. Building on <a href="https://www.thethingsnetwork.org/docs/devices/uno/quick-start/">The Things Uno / Quick Start</a> you could subscribe to get just the <code>led</code> field:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">mosquitto_sub -h &lt;Region&gt;.thethings.network -t <span class="s1">&#39;+/devices/+/up/led&#39;</span> -u <span class="s1">&#39;&lt;AppID&gt;&#39;</span> -P <span class="s1">&#39;&lt;AppKey&gt;&#39;</span> -v
+
+hello-world/devices/my-uno/up/led <span class="nb">true</span>
+</code></pre></div><h2 id="send-messages-down">Send Messages (down)</h2>
+<p>To send a message you will have to address a specific device by its <strong>Device ID</strong>. Let&rsquo;s send the same message used in the <a href="https://www.thethingsnetwork.org/docs/devices/uno/quick-start/#message-your-device">The Things Uno / Quick Start</a>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">{</span>
+  <span class="s2">&#34;led&#34;</span>: <span class="nb">true</span>
+<span class="o">}</span>
+</code></pre></div><p>If you have followed <a href="https://www.thethingsnetwork.org/docs/devices/uno/quick-start/#encode-messages">The Things Uno / Quick Start / Encode Messages</a> you can send this as is using the <code>payload_fields</code> key:</p>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&#34;payload_fields&#34;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&#34;led&#34;</span><span class="p">:</span> <span class="kc">true</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div><p>Otherwise, you&rsquo;ll have to use <code>payload_raw</code> and send a base64 encoded array of bytes, e.g.:</p>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&#34;payload_raw&#34;</span><span class="p">:</span> <span class="s2">&#34;AQ==&#34;</span>
+<span class="p">}</span>
+</code></pre></div><ol>
+<li>
+<p>Open another terminal window and execute the following command:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">mosquitto_pub -h &lt;Region&gt;.thethings.network -t <span class="s1">&#39;&lt;AppID&gt;/devices/&lt;DevID&gt;/down&#39;</span> -u <span class="s1">&#39;&lt;AppID&gt;&#39;</span> -P <span class="s1">&#39;&lt;AppKey&gt;&#39;</span> -m <span class="s1">&#39;{&#34;payload_fields&#34;:{&#34;led&#34;:true}}&#39;</span>
+</code></pre></div><p>When using Windows, extra quotation marks have to be added to make the above code work:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">mosquitto_pub -h &lt;Region&gt;.thethings.network -t <span class="s2">&#34;&lt;AppID&gt;/devices/&lt;DevID&gt;/down&#34;</span> -u <span class="s2">&#34;&lt;AppID&gt;&#34;</span> -P <span class="s2">&#34;&lt;AppKey&gt;&#34;</span> -m <span class="s2">&#34;{&#34;&#34;payload_fields&#34;&#34;:{&#34;&#34;led&#34;&#34;:true}}&#34;</span>
+</code></pre></div></li>
+<li>
+<p>If you are running <a href="https://www.thethingsnetwork.org/docs/devices/uno/quick-start/">The Things Uno / Quick Start</a> sketch you should see something like:</p>
+<pre><code>-- LOOP
+Sending: mac tx uncnf 1 with 1 bytes
+Successful transmission. Received 1 bytes
+LED: on
+</code></pre></li>
+</ol>
+<p>🎉 Congratulations! Now you know how to monitor and send messages via MQTT. Go build something awesome!</p>
+
+        </div>
+      
+      <div class="is-clearfix">
+</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="footer"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ttn-components.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/promise-polyfill@7/dist/polyfill.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-navbar.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-footer.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ga.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/vendor/basicLightbox.min.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/theme.min.00ace5d667ca108a93b8a0d385569f7c7bb9f46ed32eefe3f5fb39105763cccd.js" integrity="sha256-AKzl1mfKEIqTuKDThVaffHu59G7TLu/j9fs5EFdjzM0=" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

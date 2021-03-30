@@ -1,1 +1,0 @@
-Sitemap: https://www.thethingsnetwork.org/docs/sitemap.xml

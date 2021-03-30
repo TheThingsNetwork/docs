@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+
+<html lang="en-us" class="has-ttn-navbar-top">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <meta name="generator" content="Hugo 0.79.0" />
+
+  <title>Implementing Your Own | The Things Network</title>
+  <link rel="canonical" href="https://www.thethingsnetwork.org/docs/network/account/implement/" />
+  
+
+  <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
+
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+  <meta name="msapplication-TileImage" content="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png">
+
+  <meta name="application-name" content="The Things Network">
+  <meta name="msapplication-tooltip" content="Tooltip">
+  <meta name="msapplication-config" content="https://ttnweb.azureedge.net/static/common/favicon/ieconfig.54334a5ee30c.xml">
+
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-32.61b30f85680a.png" sizes="32x32">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-57.83b86c64dc82.png" sizes="57x57">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-76.7dcf8fa36dfc.png" sizes="76x76">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-96.27ac17adaa8b.png" sizes="96x96">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-120.e1526731335e.png" sizes="120x120">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-128.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png" sizes="144x144">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png" sizes="152x152">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-180.fcd414307ca3.png" sizes="180x180">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-195.c55ce09d66da.png" sizes="195x195">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-228.bea53ec4b10b.png" sizes="228x228">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/smalltile.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/mediumtile.3d42f7faac82.png" sizes="270x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
+  <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+
+  <meta property="og:title" content="Implementing Your Own" />
+<meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/network/account/implement/" />
+<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
+<meta property="og:site_name" content="The Things Network" />
+
+
+  <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
+
+<meta name="twitter:title" content="Implementing Your Own"/>
+<meta name="twitter:description" content="We are building a global open free crowdsourced long range low power IoT data network"/>
+
+
+</head>
+
+
+<body>
+
+<div id="header"></div>
+<section class="section">
+  <div class="container">
+    <nav class="breadcrumb has-dot-separator" aria-label="breadcrumbs">
+      <ul>
+        <li><a href="https://www.thethingsnetwork.org/docs">Learn</a></li>
+        
+        
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/lorawan/">LoRaWAN</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/quick-start/">Quick Start</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/applications-and-integrations/">Applications &amp; Integrations</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/">Devices &amp; Gateways</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/the-things-stack/">The Things Stack</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/v2-docs/">V2 Docs (Outdated)</a>
+            </li>
+          
+        
+      </ul>
+    </nav>
+  </div>
+</section>
+<div class="container" role="document">
+  <div class="columns my-0 is-desktop">
+    <div class="column is-3-desktop sidebar-left">
+      
+
+
+<nav class="side-navigation" aria-label="Main navigation">
+
+<h2 class="title is-size-5">Network</h2>
+
+<div class="menu">
+  <ul class="menu-list">
+  <a href="https://www.thethingsnetwork.org/docs/network/" class="">Overview</a>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/network/troubleshooting/" class="">Troubleshooting</a>
+    </li>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/network/architecture/" class="">Network Architecture</a>
+    </li>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/network/security/" class="">Network Security</a>
+    </li>
+  
+    <p class="menu-label">
+      Manage
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/network/console/" class="">The Things Network Console</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/network/cli/" class="">The Things Network CLI</a>
+</li>
+
+  
+    <p class="menu-label">
+      Components
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/network/account/" class="">Account Server</a>
+  
+
+
+<ul class="menu-list">
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/network/account/api/" class="">API Reference</a>
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/network/account/authentication/" class="">Authentication</a>
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/network/account/implement/" class="is-active">Implementing Your Own</a>
+    
+    
+
+
+
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/network/account/clientid/" class="">Request a Client ID</a>
+    
+  </li>
+
+</ul>
+
+
+  
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/network/discovery/" class="">Discovery Server</a>
+</li>
+
+  
+  </ul>
+</div>
+
+
+
+
+
+</nav>
+
+    </div>
+    <div class="column is-9-desktop sidebar-middle">
+      <div class="docs-content">
+        <h1 class="title is-size-2">
+          Implementing Your Own
+        </h1>
+        <div class="content">
+          <p>To implement your own account server, you need to implement a couple of things:</p>
+<ol>
+<li>An access key validation endpoint</li>
+<li>Endpoints to generate and validate application access tokens</li>
+</ol>
+<h1 id="1-access-key-validation">1. Access Key validation</h1>
+<p>To validate access keys, MQTT needs to know what rights the access key provides.
+Since the access keys are opaque, it consults an endpoint to fetch those rights:</p>
+<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">GET /api/v2/applications/{app_id}/rights
+Authorization: Key {app_access_key}
+</code></pre></div><p>If the app id or access key is invalid, it should return <code>401</code>.</p>
+<p>When successful, the enpoint should return:</p>
+<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">200 OK
+Content-Type: application/json
+
+[
+  &#34;messages:up:r&#34;,
+  &#34;messages:down:w&#34;
+]
+</code></pre></div><p>The meaning of rights returned here are:</p>
+<ul>
+<li><code>messages:up:r</code>:  The right to read the uplink messages from devices an application</li>
+<li><code>messages:down:w</code>: The right to send the downlink messages to devices of an application</li>
+</ul>
+<p>The presence of these rights tells the MQTT plugin what type of messages allow
+the client to see or send.</p>
+<blockquote>
+<p>Important Note: due to the limited right management of our MQTT  auhtentication implementation, make
+sure to always return either both rights or none, only returning one will have
+the same result as returning no rights.</p>
+</blockquote>
+<h1 id="2-jwt-access-token-generation">2. JWT access token generation</h1>
+<p>All management features of the handler require application access tokens. These
+are JWT tokens that the handler can validate without contacting the account
+server.  To implement these, you need a couple of things:</p>
+<ol>
+<li>A public-private key pair to sign the JWTs</li>
+<li>An endpoint where the handler can fetch the public key.</li>
+<li>JWTs that are signed using the private key, and have claims that adhere to
+the correct schema.</li>
+</ol>
+<p>The handler fetches the public key on startup by performing the HTTP request:</p>
+<pre><code>GET /key
+</code></pre><p>which should return:</p>
+<pre><code>200 OK
+Content-Type: application/json
+
+{
+  &quot;algorithm&quot;: &quot;RS256&quot;,
+  &quot;key&quot;: &quot;------- BEGIN PUBLIC KEY ------ ....&quot;
+}
+</code></pre><p>The schema of the token claims should be:</p>
+<pre><code>{
+  &quot;iss&quot;    : string                  issuer ID of your account server
+  &quot;iat&quot;    : number                  seconds since unix epoch from when the token should be considered valid
+  &quot;exp&quot;    : number                  seconds since unix epoch till when the token will be considered valid
+  &quot;type&quot;   : &quot;user&quot;                  denotes that the token is for a user
+  &quot;scope&quot;  : [ string ]              the list of entities this token is valid for
+  &quot;apps&quot;   : { string: [ string ] }  an object that maps app id to the respective rights this token has for that app
+}
+</code></pre><p>So for instance, the following token:</p>
+<pre><code>{
+  &quot;iss&quot;: &quot;my-account-server&quot;,
+  &quot;iat&quot;: 1489678139,
+  &quot;exp&quot;: 1489688139,
+  &quot;type&quot;: &quot;user&quot;,
+  &quot;scope&quot;: [ &quot;apps:foo&quot; ],
+  &quot;apps&quot;: {
+    &quot;foo&quot;: [
+      &quot;settings&quot;,
+      &quot;devices&quot;
+    ]
+  }
+}
+</code></pre><p>gives the token the right to edit settings and manage devices for application
+with id <code>foo</code>. The token is valid from <code>2017-03-16T15:28:59Z</code> until <code>2017-03-16T18:15:39Z</code>.</p>
+<p>To validate it, the handler will consult it&rsquo;s configuration and look if it knows
+an account server with the ID <code>my-account-server</code>, and validate the token with
+the public key it got from its <code>/key</code> endpoint.</p>
+<p>The available rights for an application access token are the following:</p>
+<ul>
+<li><code>settings</code>: Manage application settings on the handler</li>
+<li><code>delete</code>: Unregister/delete the application on the handler</li>
+<li><code>devices</code>: View and edit devices of the application on the handler</li>
+</ul>
+
+        </div>
+      
+      <div class="is-clearfix">
+</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="footer"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ttn-components.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/promise-polyfill@7/dist/polyfill.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-navbar.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-footer.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ga.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/vendor/basicLightbox.min.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/theme.min.00ace5d667ca108a93b8a0d385569f7c7bb9f46ed32eefe3f5fb39105763cccd.js" integrity="sha256-AKzl1mfKEIqTuKDThVaffHu59G7TLu/j9fs5EFdjzM0=" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

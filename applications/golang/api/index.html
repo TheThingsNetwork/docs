@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+
+<html lang="en-us" class="has-ttn-navbar-top">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <meta name="generator" content="Hugo 0.79.0" />
+
+  <title>API Reference | The Things Network</title>
+  <link rel="canonical" href="https://www.thethingsnetwork.org/docs/applications/golang/api/" />
+  
+
+  <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
+
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+  <meta name="msapplication-TileImage" content="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png">
+
+  <meta name="application-name" content="The Things Network">
+  <meta name="msapplication-tooltip" content="Tooltip">
+  <meta name="msapplication-config" content="https://ttnweb.azureedge.net/static/common/favicon/ieconfig.54334a5ee30c.xml">
+
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-32.61b30f85680a.png" sizes="32x32">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-57.83b86c64dc82.png" sizes="57x57">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-76.7dcf8fa36dfc.png" sizes="76x76">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-96.27ac17adaa8b.png" sizes="96x96">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-120.e1526731335e.png" sizes="120x120">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-128.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png" sizes="144x144">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png" sizes="152x152">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-180.fcd414307ca3.png" sizes="180x180">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-195.c55ce09d66da.png" sizes="195x195">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-228.bea53ec4b10b.png" sizes="228x228">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/smalltile.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/mediumtile.3d42f7faac82.png" sizes="270x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
+  <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+
+  <meta property="og:title" content="API Reference" />
+<meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/applications/golang/api/" />
+<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
+<meta property="og:site_name" content="The Things Network" />
+
+
+  <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
+
+<meta name="twitter:title" content="API Reference"/>
+<meta name="twitter:description" content="We are building a global open free crowdsourced long range low power IoT data network"/>
+
+
+</head>
+
+
+<body>
+
+<div id="header"></div>
+<section class="section">
+  <div class="container">
+    <nav class="breadcrumb has-dot-separator" aria-label="breadcrumbs">
+      <ul>
+        <li><a href="https://www.thethingsnetwork.org/docs">Learn</a></li>
+        
+        
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/lorawan/">LoRaWAN</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/quick-start/">Quick Start</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/applications-and-integrations/">Applications &amp; Integrations</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/">Devices &amp; Gateways</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/the-things-stack/">The Things Stack</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/v2-docs/">V2 Docs (Outdated)</a>
+            </li>
+          
+        
+      </ul>
+    </nav>
+  </div>
+</section>
+<div class="container" role="document">
+  <div class="columns my-0 is-desktop">
+    <div class="column is-3-desktop sidebar-left">
+      
+
+
+<nav class="side-navigation" aria-label="Main navigation">
+
+<h2 class="title is-size-5">Applications</h2>
+
+<div class="menu">
+  <ul class="menu-list">
+  <a href="https://www.thethingsnetwork.org/docs/applications/" class="">Overview</a>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/applications/add/" class="">Add an Application</a>
+    </li>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/applications/options/" class="">Build an Application</a>
+    </li>
+  
+    <p class="menu-label">
+      APIs
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/apis/" class="">Overview</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/manager/" class="">Application Manager API</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/mqtt/" class="">Data API (MQTT)</a>
+</li>
+
+  
+    <p class="menu-label">
+      SDKs &amp; Libraries
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/sdks/" class="">Overview</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/golang/" class="">Go</a>
+  
+
+
+<ul class="menu-list">
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/applications/golang/godoc/" class="">Godoc</a>
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/applications/golang/api/" class="is-active">API Reference</a>
+    
+    
+
+
+
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/applications/golang/quick-start/" class="">Quick Start</a>
+    
+  </li>
+
+</ul>
+
+
+  
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/java/" class="">Java</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/nodered/" class="">Node-RED</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/nodejs/" class="">Node.js</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/python/" class="">Python</a>
+</li>
+
+  
+    <p class="menu-label">
+      Integrations
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/evrythng/" class="">EVRYTHNG</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/integrations/" class="">Overview</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/att/" class="">AllThingsTalk</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/aws/" class="">AWS IoT</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/cayenne/" class="">Cayenne</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/collos/" class="">Collos</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/http/" class="">HTTP</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/opensensors/" class="">OpenSensors</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/smart-office/" class="">Smart Office Kit</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/storage/" class="">Storage</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/tago/" class="">Tago</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/thingspeak/" class="">ThingSpeak</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/ttnmapper/" class="">TTN Mapper</a>
+</li>
+
+  
+  </ul>
+</div>
+
+
+
+
+
+</nav>
+
+    </div>
+    <div class="column is-9-desktop sidebar-middle">
+      <div class="docs-content">
+        <h1 class="title is-size-2">
+          API Reference
+        </h1>
+        <div class="content">
+          <pre><code>import ttnsdk &quot;github.com/TheThingsNetwork/go-app-sdk&quot;
+</code></pre>
+<p>Package ttnsdk implements the Go SDK for The Things Network.</p>
+<p>This package wraps The Things Network&rsquo;s application and device management APIs
+(github.com/TheThingsNetwork/api) and the publish/subscribe API
+(github.com/TheThingsNetwork/ttn/mqtt). It works with the Discovery Server to
+retrieve the addresses of the Handler and MQTT server.</p>
+<h2 id="variables">Variables</h2>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">var</span> <span class="nx">ClientVersion</span> <span class="p">=</span> <span class="s">&#34;2.x.x&#34;</span>
+</code></pre></div><p>ClientVersion to use</p>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">var</span> <span class="nx">DialOptions</span> <span class="p">=</span> <span class="p">[]</span><span class="nx">grpc</span><span class="p">.</span><span class="nx">DialOption</span><span class="p">{</span>
+  <span class="nx">grpc</span><span class="p">.</span><span class="nf">WithUnaryInterceptor</span><span class="p">(</span><span class="nx">grpc_middleware</span><span class="p">.</span><span class="nf">ChainUnaryClient</span><span class="p">(</span>
+    <span class="nx">rpclog</span><span class="p">.</span><span class="nf">UnaryClientInterceptor</span><span class="p">(</span><span class="kc">nil</span><span class="p">),</span>
+  <span class="p">)),</span>
+  <span class="nx">grpc</span><span class="p">.</span><span class="nf">WithStreamInterceptor</span><span class="p">(</span><span class="nx">grpc_middleware</span><span class="p">.</span><span class="nf">ChainStreamClient</span><span class="p">(</span>
+    <span class="nx">restartstream</span><span class="p">.</span><span class="nf">Interceptor</span><span class="p">(</span><span class="nx">restartstream</span><span class="p">.</span><span class="nx">DefaultSettings</span><span class="p">),</span>
+    <span class="nx">rpclog</span><span class="p">.</span><span class="nf">StreamClientInterceptor</span><span class="p">(</span><span class="kc">nil</span><span class="p">),</span>
+  <span class="p">)),</span>
+  <span class="nx">grpc</span><span class="p">.</span><span class="nf">WithBlock</span><span class="p">(),</span>
+<span class="p">}</span>
+</code></pre></div><p>DialOptions to use when connecting to components</p>
+<h2 id="func--movedevice">func  MoveDevice</h2>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="nf">MoveDevice</span><span class="p">(</span><span class="nx">devID</span> <span class="kt">string</span><span class="p">,</span> <span class="nx">from</span><span class="p">,</span> <span class="nx">to</span> <span class="nx">DeviceManager</span><span class="p">)</span> <span class="p">(</span><span class="nx">err</span> <span class="kt">error</span><span class="p">)</span>
+</code></pre></div><p>MoveDevice moves a device to another application</p>
+<h2 id="type-applicationmanager">type ApplicationManager</h2>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">type</span> <span class="nx">ApplicationManager</span> <span class="kd">interface</span> <span class="p">{</span>
+  <span class="c1">// Get the payload format used in this application. If the payload format is &#34;custom&#34;, you can get the custom JS
+</span><span class="c1"></span>  <span class="c1">// payload functions with the GetCustomPayloadFunctions() function.
+</span><span class="c1"></span>  <span class="nf">GetPayloadFormat</span><span class="p">()</span> <span class="p">(</span><span class="kt">string</span><span class="p">,</span> <span class="kt">error</span><span class="p">)</span>
+
+  <span class="c1">// Set the payload format to use in this application. If you want to use custom JS payload functions, use the
+</span><span class="c1"></span>  <span class="c1">// SetCustomPayloadFunctions() function instead. If you want to disable payload conversion, pass an empty string.
+</span><span class="c1"></span>  <span class="nf">SetPayloadFormat</span><span class="p">(</span><span class="nx">format</span> <span class="kt">string</span><span class="p">)</span> <span class="kt">error</span>
+
+  <span class="c1">// Get the custom JS payload functions.
+</span><span class="c1"></span>  <span class="nf">GetCustomPayloadFunctions</span><span class="p">()</span> <span class="p">(</span><span class="nx">jsDecoder</span><span class="p">,</span> <span class="nx">jsConverter</span><span class="p">,</span> <span class="nx">jsValidator</span><span class="p">,</span> <span class="nx">jsEncoder</span> <span class="kt">string</span><span class="p">,</span> <span class="nx">err</span> <span class="kt">error</span><span class="p">)</span>
+
+  <span class="c1">// Set the custom JS payload functions.
+</span><span class="c1"></span>  <span class="c1">//
+</span><span class="c1"></span>  <span class="c1">// Example Decoder:
+</span><span class="c1"></span>  <span class="c1">//
+</span><span class="c1"></span>  <span class="c1">// // Decoder (Array&lt;byte&gt;, uint8) returns (Object)
+</span><span class="c1"></span>  <span class="c1">// function Decoder(bytes, port) {
+</span><span class="c1"></span>  <span class="c1">//   var decoded = {};
+</span><span class="c1"></span>  <span class="c1">//   return decoded;
+</span><span class="c1"></span>  <span class="c1">// }
+</span><span class="c1"></span>  <span class="c1">//
+</span><span class="c1"></span>  <span class="c1">// Example Converter:
+</span><span class="c1"></span>  <span class="c1">//
+</span><span class="c1"></span>  <span class="c1">// // Converter (Object, uint8) returns (Object)
+</span><span class="c1"></span>  <span class="c1">// function Converter(decoded, port) {
+</span><span class="c1"></span>  <span class="c1">//   var converted = decoded;
+</span><span class="c1"></span>  <span class="c1">//   return converted;
+</span><span class="c1"></span>  <span class="c1">// }
+</span><span class="c1"></span>  <span class="c1">//
+</span><span class="c1"></span>  <span class="c1">// Example Validator:
+</span><span class="c1"></span>  <span class="c1">// // Validator (Object, uint8) returns (Boolean)
+</span><span class="c1"></span>  <span class="c1">// function Validator(converted, port) {
+</span><span class="c1"></span>  <span class="c1">//   return true;
+</span><span class="c1"></span>  <span class="c1">// }
+</span><span class="c1"></span>  <span class="c1">//
+</span><span class="c1"></span>  <span class="c1">// Example Encoder:
+</span><span class="c1"></span>  <span class="c1">//
+</span><span class="c1"></span>  <span class="c1">// // Validator (Object, uint8) returns (Array&lt;byte&gt;)
+</span><span class="c1"></span>  <span class="c1">// function Encoder(object, port) {
+</span><span class="c1"></span>  <span class="c1">//   var bytes = [];
+</span><span class="c1"></span>  <span class="c1">//   return bytes;
+</span><span class="c1"></span>  <span class="c1">// }
+</span><span class="c1"></span>  <span class="nf">SetCustomPayloadFunctions</span><span class="p">(</span><span class="nx">jsDecoder</span><span class="p">,</span> <span class="nx">jsConverter</span><span class="p">,</span> <span class="nx">jsValidator</span><span class="p">,</span> <span class="nx">jsEncoder</span> <span class="kt">string</span><span class="p">)</span> <span class="kt">error</span>
+<span class="p">}</span>
+</code></pre></div><p>ApplicationManager manages an application.</p>
+<h2 id="type-applicationpubsub">type ApplicationPubSub</h2>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">type</span> <span class="nx">ApplicationPubSub</span> <span class="kd">interface</span> <span class="p">{</span>
+  <span class="nf">Publish</span><span class="p">(</span><span class="nx">devID</span> <span class="kt">string</span><span class="p">,</span> <span class="nx">downlink</span> <span class="o">*</span><span class="nx">types</span><span class="p">.</span><span class="nx">DownlinkMessage</span><span class="p">)</span> <span class="kt">error</span>
+  <span class="nf">Device</span><span class="p">(</span><span class="nx">devID</span> <span class="kt">string</span><span class="p">)</span> <span class="nx">DevicePubSub</span>
+  <span class="nf">AllDevices</span><span class="p">()</span> <span class="nx">DeviceSub</span>
+  <span class="nf">Close</span><span class="p">()</span>
+<span class="p">}</span>
+</code></pre></div><p>ApplicationPubSub interface for publishing and subscribing to devices in an
+application</p>
+<h2 id="type-client">type Client</h2>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">type</span> <span class="nx">Client</span> <span class="kd">interface</span> <span class="p">{</span>
+  <span class="c1">// Close the client and clean up all connections
+</span><span class="c1"></span>  <span class="nf">Close</span><span class="p">()</span> <span class="kt">error</span>
+
+  <span class="c1">// Subscribe to uplink and events, publish downlink
+</span><span class="c1"></span>  <span class="nf">PubSub</span><span class="p">()</span> <span class="p">(</span><span class="nx">ApplicationPubSub</span><span class="p">,</span> <span class="kt">error</span><span class="p">)</span>
+
+  <span class="c1">// Manage the application
+</span><span class="c1"></span>  <span class="nf">ManageApplication</span><span class="p">()</span> <span class="p">(</span><span class="nx">ApplicationManager</span><span class="p">,</span> <span class="kt">error</span><span class="p">)</span>
+
+  <span class="c1">// Manage devices in the application
+</span><span class="c1"></span>  <span class="nf">ManageDevices</span><span class="p">()</span> <span class="p">(</span><span class="nx">DeviceManager</span><span class="p">,</span> <span class="kt">error</span><span class="p">)</span>
+
+  <span class="c1">// Simulate uplink messages for a device (for testing)
+</span><span class="c1"></span>  <span class="nf">Simulate</span><span class="p">(</span><span class="nx">devID</span> <span class="kt">string</span><span class="p">)</span> <span class="p">(</span><span class="nx">Simulator</span><span class="p">,</span> <span class="kt">error</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div><p>Client interface for The Things Network&rsquo;s API.</p>
+<h2 id="type-clientconfig">type ClientConfig</h2>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">type</span> <span class="nx">ClientConfig</span> <span class="kd">struct</span> <span class="p">{</span>
+  <span class="nx">Logger</span> <span class="nx">log</span><span class="p">.</span><span class="nx">Interface</span>
+
+  <span class="c1">// The name of this client
+</span><span class="c1"></span>  <span class="nx">ClientName</span> <span class="kt">string</span>
+
+  <span class="c1">// The version of this client (in the default config, this is the value of ttnsdk.ClientVersion)
+</span><span class="c1"></span>  <span class="nx">ClientVersion</span> <span class="kt">string</span>
+
+  <span class="c1">// TLS Configuration only has to be set if connecting with servers that do not have trusted certificates.
+</span><span class="c1"></span>  <span class="nx">TLSConfig</span> <span class="o">*</span><span class="nx">tls</span><span class="p">.</span><span class="nx">Config</span>
+
+  <span class="c1">// Address of the Account Server (in the default config, this is https://account.thethingsnetwork.org)
+</span><span class="c1"></span>  <span class="nx">AccountServerAddress</span> <span class="kt">string</span>
+
+  <span class="c1">// Client ID for the account server (if you registered your client)
+</span><span class="c1"></span>  <span class="nx">AccountServerClientID</span> <span class="kt">string</span>
+
+  <span class="c1">// Client Secret for the account server (if you registered your client)
+</span><span class="c1"></span>  <span class="nx">AccountServerClientSecret</span> <span class="kt">string</span>
+
+  <span class="c1">// Address of the Discovery Server (in the default config, this is discovery.thethings.network:1900)
+</span><span class="c1"></span>  <span class="nx">DiscoveryServerAddress</span> <span class="kt">string</span>
+
+  <span class="c1">// Set this to true if the Discovery Server is insecure (not recommended)
+</span><span class="c1"></span>  <span class="nx">DiscoveryServerInsecure</span> <span class="kt">bool</span>
+
+  <span class="c1">// Address of the Handler (optional)
+</span><span class="c1"></span>  <span class="nx">HandlerAddress</span> <span class="kt">string</span>
+
+  <span class="c1">// Timeout for requests (in the default config, this is 10 seconds)
+</span><span class="c1"></span>  <span class="nx">RequestTimeout</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Duration</span>
+<span class="p">}</span>
+</code></pre></div><p>ClientConfig contains the configuration for the API client. Use the NewConfig()
+or NewCommunityConfig() functions to initialize your configuration, otherwise
+NewClient will panic.</p>
+<h2 id="func--newcommunityconfig">func  NewCommunityConfig</h2>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="nf">NewCommunityConfig</span><span class="p">(</span><span class="nx">clientName</span> <span class="kt">string</span><span class="p">)</span> <span class="nx">ClientConfig</span>
+</code></pre></div><p>NewCommunityConfig creates a new configuration for the API client that is
+pre-configured for the Public Community Network.</p>
+<h2 id="func--newconfig">func  NewConfig</h2>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="nf">NewConfig</span><span class="p">(</span><span class="nx">clientName</span><span class="p">,</span> <span class="nx">accountServerAddress</span><span class="p">,</span> <span class="nx">discoveryServerAddress</span> <span class="kt">string</span><span class="p">)</span> <span class="nx">ClientConfig</span>
+</code></pre></div><p>NewConfig creates a new configuration for the API client.</p>
+<h2 id="func-clientconfig-newclient">func (ClientConfig) NewClient</h2>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="p">(</span><span class="nx">c</span> <span class="nx">ClientConfig</span><span class="p">)</span> <span class="nf">NewClient</span><span class="p">(</span><span class="nx">appID</span><span class="p">,</span> <span class="nx">appAccessKey</span> <span class="kt">string</span><span class="p">)</span> <span class="nx">Client</span>
+</code></pre></div><p>NewClient creates a new API client from the configuration, using the given
+Application ID and Application access key.</p>
+<h2 id="type-device">type Device</h2>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">type</span> <span class="nx">Device</span> <span class="kd">struct</span> <span class="p">{</span>
+  <span class="nx">SparseDevice</span>
+  <span class="nx">FCntUp</span>                <span class="kt">uint32</span>    <span class="s">`json:&#34;f_cnt_up&#34;`</span>
+  <span class="nx">FCntDown</span>              <span class="kt">uint32</span>    <span class="s">`json:&#34;f_cnt_down&#34;`</span>
+  <span class="nx">DisableFCntCheck</span>      <span class="kt">bool</span>      <span class="s">`json:&#34;disable_f_cnt_check&#34;`</span>
+  <span class="nx">Uses32BitFCnt</span>         <span class="kt">bool</span>      <span class="s">`json:&#34;uses32_bit_f_cnt&#34;`</span>
+  <span class="nx">ActivationConstraints</span> <span class="kt">string</span>    <span class="s">`json:&#34;activation_constraints&#34;`</span>
+  <span class="nx">LastSeen</span>              <span class="nx">time</span><span class="p">.</span><span class="nx">Time</span> <span class="s">`json:&#34;last_seen&#34;`</span>
+<span class="p">}</span>
+</code></pre></div><p>Device in an application</p>
+<h2 id="func-device-delete">func (*Device) Delete</h2>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="p">(</span><span class="nx">d</span> <span class="o">*</span><span class="nx">Device</span><span class="p">)</span> <span class="nf">Delete</span><span class="p">()</span> <span class="kt">error</span>
+</code></pre></div><p>Delete the device. This function panics if this is a new device.</p>
+<h2 id="func-device-isnew">func (*Device) IsNew</h2>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="p">(</span><span class="nx">d</span> <span class="o">*</span><span class="nx">Device</span><span class="p">)</span> <span class="nf">IsNew</span><span class="p">()</span> <span class="kt">bool</span>
+</code></pre></div><p>IsNew indicates whether the device is new.</p>
+<h2 id="func-device-personalize">func (*Device) Personalize</h2>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="p">(</span><span class="nx">d</span> <span class="o">*</span><span class="nx">Device</span><span class="p">)</span> <span class="nf">Personalize</span><span class="p">(</span><span class="nx">nwkSKey</span> <span class="nx">types</span><span class="p">.</span><span class="nx">NwkSKey</span><span class="p">,</span> <span class="nx">appSKey</span> <span class="nx">types</span><span class="p">.</span><span class="nx">AppSKey</span><span class="p">)</span> <span class="kt">error</span>
+</code></pre></div><p>Personalize a device by requesting a DevAddr from the network, and setting the
+NwkSKey and AppSKey to the given values. This function panics if this is a new
+device, so make sure you Get() the device first.</p>
+<h2 id="func-device-personalizefunc">func (*Device) PersonalizeFunc</h2>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="p">(</span><span class="nx">d</span> <span class="o">*</span><span class="nx">Device</span><span class="p">)</span> <span class="nf">PersonalizeFunc</span><span class="p">(</span><span class="nx">personalizeFunc</span> <span class="kd">func</span><span class="p">(</span><span class="nx">types</span><span class="p">.</span><span class="nx">DevAddr</span><span class="p">)</span> <span class="p">(</span><span class="nx">types</span><span class="p">.</span><span class="nx">NwkSKey</span><span class="p">,</span> <span class="nx">types</span><span class="p">.</span><span class="nx">AppSKey</span><span class="p">))</span> <span class="kt">error</span>
+</code></pre></div><p>PersonalizeFunc personalizes a device by requesting a DevAddr from the network,
+and setting the NwkSKey and AppSKey to the result of the personalizeFunc. This
+function panics if this is a new device, so make sure you Get() the device
+first.</p>
+<h2 id="func-device-personalizerandom">func (*Device) PersonalizeRandom</h2>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="p">(</span><span class="nx">d</span> <span class="o">*</span><span class="nx">Device</span><span class="p">)</span> <span class="nf">PersonalizeRandom</span><span class="p">()</span> <span class="kt">error</span>
+</code></pre></div><p>PersonalizeRandom personalizes a device by requesting a DevAddr from the
+network, and setting the NwkSKey and AppSKey to randomly generated values. This
+function panics if this is a new device, so make sure you Get() the device
+first.</p>
+<h2 id="func-device-setmanager">func (*Device) SetManager</h2>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="p">(</span><span class="nx">d</span> <span class="o">*</span><span class="nx">Device</span><span class="p">)</span> <span class="nf">SetManager</span><span class="p">(</span><span class="nx">manager</span> <span class="nx">DeviceManager</span><span class="p">)</span>
+</code></pre></div><p>SetManager sets the manager of the device. This function panics if this is not a
+new device.</p>
+<h2 id="func-device-update">func (*Device) Update</h2>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="p">(</span><span class="nx">d</span> <span class="o">*</span><span class="nx">Device</span><span class="p">)</span> <span class="nf">Update</span><span class="p">()</span> <span class="kt">error</span>
+</code></pre></div><p>Update the device. This function panics if this is a new device.</p>
+<h2 id="type-devicelist">type DeviceList</h2>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">type</span> <span class="nx">DeviceList</span> <span class="p">[]</span><span class="o">*</span><span class="nx">SparseDevice</span>
+</code></pre></div><p>DeviceList is a slice of *SparseDevice.</p>
+<h2 id="func-devicelist-asdevices">func (DeviceList) AsDevices</h2>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="p">(</span><span class="nx">d</span> <span class="nx">DeviceList</span><span class="p">)</span> <span class="nf">AsDevices</span><span class="p">()</span> <span class="p">[]</span><span class="o">*</span><span class="nx">Device</span>
+</code></pre></div><p>AsDevices returns the DeviceList as a slice of *Device instead of *SparseDevice</p>
+<h2 id="type-devicemanager">type DeviceManager</h2>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">type</span> <span class="nx">DeviceManager</span> <span class="kd">interface</span> <span class="p">{</span>
+  <span class="c1">// List devices in an application. Use the limit and offset for pagination. Requests that fetch many devices will be
+</span><span class="c1"></span>  <span class="c1">// very slow, which is often not necessary. If you use this function too often, the response will be cached by the
+</span><span class="c1"></span>  <span class="c1">// server, and you might receive outdated data.
+</span><span class="c1"></span>  <span class="nf">List</span><span class="p">(</span><span class="nx">limit</span><span class="p">,</span> <span class="nx">offset</span> <span class="kt">uint64</span><span class="p">)</span> <span class="p">(</span><span class="nx">DeviceList</span><span class="p">,</span> <span class="kt">error</span><span class="p">)</span>
+
+  <span class="c1">// Get details for a device
+</span><span class="c1"></span>  <span class="nf">Get</span><span class="p">(</span><span class="nx">devID</span> <span class="kt">string</span><span class="p">)</span> <span class="p">(</span><span class="o">*</span><span class="nx">Device</span><span class="p">,</span> <span class="kt">error</span><span class="p">)</span>
+
+  <span class="c1">// Create or Update a device.
+</span><span class="c1"></span>  <span class="nf">Set</span><span class="p">(</span><span class="o">*</span><span class="nx">Device</span><span class="p">)</span> <span class="kt">error</span>
+
+  <span class="c1">// Delete a device
+</span><span class="c1"></span>  <span class="nf">Delete</span><span class="p">(</span><span class="nx">devID</span> <span class="kt">string</span><span class="p">)</span> <span class="kt">error</span>
+<span class="p">}</span>
+</code></pre></div><p>DeviceManager manages devices within an application</p>
+<h2 id="type-devicepub">type DevicePub</h2>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">type</span> <span class="nx">DevicePub</span> <span class="kd">interface</span> <span class="p">{</span>
+  <span class="nf">Publish</span><span class="p">(</span><span class="o">*</span><span class="nx">types</span><span class="p">.</span><span class="nx">DownlinkMessage</span><span class="p">)</span> <span class="kt">error</span>
+<span class="p">}</span>
+</code></pre></div><p>DevicePub interface for publishing downlink messages to the device</p>
+<h2 id="type-devicepubsub">type DevicePubSub</h2>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">type</span> <span class="nx">DevicePubSub</span> <span class="kd">interface</span> <span class="p">{</span>
+  <span class="nx">DevicePub</span>
+  <span class="nx">DeviceSub</span>
+<span class="p">}</span>
+</code></pre></div><p>DevicePubSub combines the DevicePub and DeviceSub interfaces</p>
+<h2 id="type-devicesub">type DeviceSub</h2>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">type</span> <span class="nx">DeviceSub</span> <span class="kd">interface</span> <span class="p">{</span>
+  <span class="nf">SubscribeUplink</span><span class="p">()</span> <span class="p">(</span><span class="o">&lt;-</span><span class="kd">chan</span> <span class="o">*</span><span class="nx">types</span><span class="p">.</span><span class="nx">UplinkMessage</span><span class="p">,</span> <span class="kt">error</span><span class="p">)</span>
+  <span class="nf">UnsubscribeUplink</span><span class="p">()</span> <span class="kt">error</span>
+  <span class="nf">SubscribeEvents</span><span class="p">()</span> <span class="p">(</span><span class="o">&lt;-</span><span class="kd">chan</span> <span class="o">*</span><span class="nx">types</span><span class="p">.</span><span class="nx">DeviceEvent</span><span class="p">,</span> <span class="kt">error</span><span class="p">)</span>
+  <span class="nf">UnsubscribeEvents</span><span class="p">()</span> <span class="kt">error</span>
+  <span class="nf">SubscribeActivations</span><span class="p">()</span> <span class="p">(</span><span class="o">&lt;-</span><span class="kd">chan</span> <span class="o">*</span><span class="nx">types</span><span class="p">.</span><span class="nx">Activation</span><span class="p">,</span> <span class="kt">error</span><span class="p">)</span>
+  <span class="nf">UnsubscribeActivations</span><span class="p">()</span> <span class="kt">error</span>
+  <span class="nf">Close</span><span class="p">()</span>
+<span class="p">}</span>
+</code></pre></div><p>DeviceSub interface for subscribing to uplink messages and events from the
+device</p>
+<h2 id="type-simulator">type Simulator</h2>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">type</span> <span class="nx">Simulator</span> <span class="kd">interface</span> <span class="p">{</span>
+  <span class="nf">Uplink</span><span class="p">(</span><span class="nx">port</span> <span class="kt">uint8</span><span class="p">,</span> <span class="nx">payload</span> <span class="p">[]</span><span class="kt">byte</span><span class="p">)</span> <span class="kt">error</span>
+<span class="p">}</span>
+</code></pre></div><p>Simulator simulates messages for devices</p>
+<h2 id="type-sparsedevice">type SparseDevice</h2>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">type</span> <span class="nx">SparseDevice</span> <span class="kd">struct</span> <span class="p">{</span>
+  <span class="nx">AppID</span>       <span class="kt">string</span>            <span class="s">`json:&#34;app_id&#34;`</span>
+  <span class="nx">DevID</span>       <span class="kt">string</span>            <span class="s">`json:&#34;dev_id&#34;`</span>
+  <span class="nx">AppEUI</span>      <span class="nx">types</span><span class="p">.</span><span class="nx">AppEUI</span>      <span class="s">`json:&#34;app_eui&#34;`</span>
+  <span class="nx">DevEUI</span>      <span class="nx">types</span><span class="p">.</span><span class="nx">DevEUI</span>      <span class="s">`json:&#34;dev_eui&#34;`</span>
+  <span class="nx">Description</span> <span class="kt">string</span>            <span class="s">`json:&#34;description,omitempty&#34;`</span>
+  <span class="nx">DevAddr</span>     <span class="o">*</span><span class="nx">types</span><span class="p">.</span><span class="nx">DevAddr</span>    <span class="s">`json:&#34;dev_addr,omitempty&#34;`</span>
+  <span class="nx">NwkSKey</span>     <span class="o">*</span><span class="nx">types</span><span class="p">.</span><span class="nx">NwkSKey</span>    <span class="s">`json:&#34;nwk_s_key,omitempty&#34;`</span>
+  <span class="nx">AppSKey</span>     <span class="o">*</span><span class="nx">types</span><span class="p">.</span><span class="nx">AppSKey</span>    <span class="s">`json:&#34;app_s_key,omitempty&#34;`</span>
+  <span class="nx">AppKey</span>      <span class="o">*</span><span class="nx">types</span><span class="p">.</span><span class="nx">AppKey</span>     <span class="s">`json:&#34;app_key,omitempty&#34;`</span>
+  <span class="nx">Latitude</span>    <span class="kt">float32</span>           <span class="s">`json:&#34;latitude,omitempty&#34;`</span>
+  <span class="nx">Longitude</span>   <span class="kt">float32</span>           <span class="s">`json:&#34;longitude,omitempty&#34;`</span>
+  <span class="nx">Altitude</span>    <span class="kt">int32</span>             <span class="s">`json:&#34;altitude,omitempty&#34;`</span>
+  <span class="nx">Attributes</span>  <span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">string</span> <span class="s">`json:&#34;attributes,omitempty&#34;`</span>
+<span class="p">}</span>
+</code></pre></div><p>SparseDevice contains most, but not all fields of the device. It&rsquo;s returned by
+List operations to save server resources</p>
+<h2 id="func-sparsedevice-asdevice">func (*SparseDevice) AsDevice</h2>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="p">(</span><span class="nx">d</span> <span class="o">*</span><span class="nx">SparseDevice</span><span class="p">)</span> <span class="nf">AsDevice</span><span class="p">()</span> <span class="o">*</span><span class="nx">Device</span>
+</code></pre></div><p>AsDevice wraps the *SparseDevice and returns a *Device containing that sparse
+device</p>
+
+        </div>
+      
+      <div class="is-clearfix">
+</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="footer"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ttn-components.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/promise-polyfill@7/dist/polyfill.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-navbar.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-footer.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ga.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/vendor/basicLightbox.min.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/theme.min.00ace5d667ca108a93b8a0d385569f7c7bb9f46ed32eefe3f5fb39105763cccd.js" integrity="sha256-AKzl1mfKEIqTuKDThVaffHu59G7TLu/j9fs5EFdjzM0=" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

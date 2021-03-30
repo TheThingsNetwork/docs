@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+
+<html lang="en-us" class="has-ttn-navbar-top">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <meta name="generator" content="Hugo 0.79.0" />
+
+  <title>API Reference | The Things Network</title>
+  <link rel="canonical" href="https://www.thethingsnetwork.org/docs/applications/python/api-reference/" />
+  
+
+  <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
+
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+  <meta name="msapplication-TileImage" content="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png">
+
+  <meta name="application-name" content="The Things Network">
+  <meta name="msapplication-tooltip" content="Tooltip">
+  <meta name="msapplication-config" content="https://ttnweb.azureedge.net/static/common/favicon/ieconfig.54334a5ee30c.xml">
+
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-32.61b30f85680a.png" sizes="32x32">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-57.83b86c64dc82.png" sizes="57x57">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-76.7dcf8fa36dfc.png" sizes="76x76">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-96.27ac17adaa8b.png" sizes="96x96">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-120.e1526731335e.png" sizes="120x120">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-128.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png" sizes="144x144">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png" sizes="152x152">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-180.fcd414307ca3.png" sizes="180x180">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-195.c55ce09d66da.png" sizes="195x195">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-228.bea53ec4b10b.png" sizes="228x228">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/smalltile.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/mediumtile.3d42f7faac82.png" sizes="270x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
+  <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+
+  <meta property="og:title" content="API Reference" />
+<meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/applications/python/api-reference/" />
+<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
+<meta property="og:site_name" content="The Things Network" />
+
+
+  <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
+
+<meta name="twitter:title" content="API Reference"/>
+<meta name="twitter:description" content="We are building a global open free crowdsourced long range low power IoT data network"/>
+
+
+</head>
+
+
+<body>
+
+<div id="header"></div>
+<section class="section">
+  <div class="container">
+    <nav class="breadcrumb has-dot-separator" aria-label="breadcrumbs">
+      <ul>
+        <li><a href="https://www.thethingsnetwork.org/docs">Learn</a></li>
+        
+        
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/lorawan/">LoRaWAN</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/quick-start/">Quick Start</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/applications-and-integrations/">Applications &amp; Integrations</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/">Devices &amp; Gateways</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/the-things-stack/">The Things Stack</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/v2-docs/">V2 Docs (Outdated)</a>
+            </li>
+          
+        
+      </ul>
+    </nav>
+  </div>
+</section>
+<div class="container" role="document">
+  <div class="columns my-0 is-desktop">
+    <div class="column is-3-desktop sidebar-left">
+      
+
+
+<nav class="side-navigation" aria-label="Main navigation">
+
+<h2 class="title is-size-5">Applications</h2>
+
+<div class="menu">
+  <ul class="menu-list">
+  <a href="https://www.thethingsnetwork.org/docs/applications/" class="">Overview</a>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/applications/add/" class="">Add an Application</a>
+    </li>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/applications/options/" class="">Build an Application</a>
+    </li>
+  
+    <p class="menu-label">
+      APIs
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/apis/" class="">Overview</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/manager/" class="">Application Manager API</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/mqtt/" class="">Data API (MQTT)</a>
+</li>
+
+  
+    <p class="menu-label">
+      SDKs &amp; Libraries
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/sdks/" class="">Overview</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/golang/" class="">Go</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/java/" class="">Java</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/nodered/" class="">Node-RED</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/nodejs/" class="">Node.js</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/python/" class="">Python</a>
+  
+
+
+<ul class="menu-list">
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/applications/python/api-reference/" class="is-active">API Reference</a>
+    
+    
+
+
+
+    
+  </li>
+
+</ul>
+
+
+  
+</li>
+
+  
+    <p class="menu-label">
+      Integrations
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/evrythng/" class="">EVRYTHNG</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/integrations/" class="">Overview</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/att/" class="">AllThingsTalk</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/aws/" class="">AWS IoT</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/cayenne/" class="">Cayenne</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/collos/" class="">Collos</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/http/" class="">HTTP</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/opensensors/" class="">OpenSensors</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/smart-office/" class="">Smart Office Kit</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/storage/" class="">Storage</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/tago/" class="">Tago</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/thingspeak/" class="">ThingSpeak</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/ttnmapper/" class="">TTN Mapper</a>
+</li>
+
+  
+  </ul>
+</div>
+
+
+
+
+
+</nav>
+
+    </div>
+    <div class="column is-9-desktop sidebar-middle">
+      <div class="docs-content">
+        <h1 class="title is-size-2">
+          API Reference
+        </h1>
+        <div class="content">
+          <p>This package provides you an easy way to exchange traffic with The Things Network via MQTT and manage your applications.</p>
+<h2 id="mqttclient">MQTTClient</h2>
+<p>The class constructor can be called following this scheme:</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">MQTTClient</span><span class="p">(</span><span class="n">app_id</span><span class="p">,</span> <span class="n">access_key</span><span class="p">,</span> <span class="n">mqtt_address</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">,</span> <span class="n">discovery_address</span><span class="o">=</span><span class="s2">&#34;discovery.thethings.network:1900&#34;</span><span class="p">)</span>
+</code></pre></div><ul>
+<li>
+<p><code>app_id</code>: <strong>string</strong> this the name given to the application when it was created.
+<img src="../1-app-console.png" alt="Screenshot of the console with app section"></p>
+</li>
+<li>
+<p><code>access_key</code>: <strong>string</strong> this can be found at the bottom of the application page under <strong>ACCESS KEYS</strong>.
+<img src="../2-accesskey-console.png" alt="Screenshot of the console with accesskey section"></p>
+</li>
+<li>
+<p><code>mqtt_address</code>: <strong>string</strong> this is the address of the handler to which the application was registered, in the <code>{hostname}:{port}</code> format.</p>
+</li>
+<li>
+<p><code>discovery_address</code>: <strong>string</strong> this is the address of the discovery server to use in order to find back the address of the MQTT handler, in the <code>{hostname}:{port}</code> format.</p>
+<p>If the <code>mqtt_address</code> is set, the <code>discovery_address</code> doesn&rsquo;t need to be set as it is only used to retrieve the <code>mqtt_address</code> from the discovery server.
+The constructor returns an <strong>MQTTClient object</strong> set up with the application informations, ready to be connected to The Things Network.</p>
+</li>
+</ul>
+<h3 id="connect">connect</h3>
+<p>Connects and starts the client in the background. This function also re-establishes the client&rsquo;s connection in case it was closed.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+</code></pre></div><h3 id="close">close</h3>
+<p>Disconnects and stops the client from which the method is called.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">client</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div><h3 id="using-callbacks">Using Callbacks</h3>
+<p>The callback functions are functions which are executed when a trigger event happens.</p>
+<h4 id="set_uplink_callback">set_uplink_callback</h4>
+<p>Add a callback function, to be called when an uplink message is received.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">client</span><span class="o">.</span><span class="n">set_uplink_callback</span><span class="p">(</span><span class="n">uplink_callback</span><span class="p">)</span>
+</code></pre></div><h5 id="uplink_callback">uplink_callback</h5>
+<p>The callback function must be declared in the script following this structure:</p>
+<ul>
+<li><code>uplink_callback(msg, client)</code>
+<ul>
+<li><code>msg</code>: <strong>UplinkMessage object</strong> the message received by the client.</li>
+<li><code>client</code>: <strong>MQTTClient object</strong> the client from which the callback is executed.</li>
+</ul>
+</li>
+</ul>
+<h4 id="set_connect_callback">set_connect_callback</h4>
+<p>Add a connection callback function to be executed when the client connects to the broker.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">client</span><span class="o">.</span><span class="n">set_connect_callback</span><span class="p">(</span><span class="n">connect_callback</span><span class="p">)</span>
+</code></pre></div><h5 id="connect_callback">connect_callback</h5>
+<ul>
+<li><code>connect_callback(res, client)</code>: the function which will be executed on connection to the broker.
+<ul>
+<li><code>res</code>: <strong>boolean</strong> the result of the connection. If it&rsquo;s true, the connection succeeded. If not, it means the connection failed.</li>
+<li><code>client</code>: <strong>MQTTClient object</strong> the TTN client from which the callback is called.</li>
+</ul>
+</li>
+</ul>
+<h4 id="set_downlink_callback">set_downlink_callback</h4>
+<p>Add a downlink callback function, with actions to execute when a downlink message is sent.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">client</span><span class="o">.</span><span class="n">set_downlink_callback</span><span class="p">(</span><span class="n">downlinkCallback</span><span class="p">)</span>
+</code></pre></div><h5 id="downlink_callback">downlink_callback</h5>
+<ul>
+<li><code>downlink_callback(mid, client)</code>: the function which will be a new publish behavior for our MQTT client.
+<ul>
+<li><code>mid</code>: <strong>int</strong> this is the message ID for the downlink request. It can be used to track the request.</li>
+<li><code>client</code>: <strong>MQTTClient object</strong> the TTN client from which the callback is called.</li>
+</ul>
+</li>
+</ul>
+<h4 id="set_close_callback">set_close_callback</h4>
+<p>Add a callback to be executed when the connection to the TTN broker is closed.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">client</span><span class="o">.</span><span class="n">set_close_callback</span><span class="p">(</span><span class="n">close_callback</span><span class="p">)</span>
+</code></pre></div><h5 id="close_callback">close_callback</h5>
+<ul>
+<li><code>close_callback(res, client)</code>: the function which will be executed when the connection is closed.
+<ul>
+<li><code>res</code>: <strong>boolean</strong> the result of the disconnection. If it&rsquo;s true, it went all as expected. If not, it means the disconnection was unexpected.</li>
+<li><code>client</code>: <strong>MQTTClient object</strong> the TTN client from which we call the callback.</li>
+</ul>
+</li>
+</ul>
+<h3 id="send">send</h3>
+<p>Sends a downlink to the device.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">client</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">dev_id</span><span class="p">,</span> <span class="n">payload</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">conf</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">sched</span><span class="o">=</span><span class="s2">&#34;replace&#34;</span><span class="p">)</span>
+</code></pre></div><ul>
+<li><code>dev_id</code>: <strong>string</strong> the ID of the device which will receive the message.</li>
+<li><code>payload</code>: the payload of the message to be published to the broker. It can be an hexadecimal <strong>string</strong>, a base64 <strong>string</strong> like <code>AQ==</code> (this will send the raw payload <code>01</code> to your device) or a <strong>dictionary</strong> of JSON nature. Here is an example of a <strong>dictionary</strong> argument that could be passed to the method:</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span> <span class="nt">&#34;led_state&#34;</span><span class="p">:</span> <span class="s2">&#34;on&#34;</span><span class="p">,</span> <span class="nt">&#34;counter&#34;</span><span class="p">:</span> <span class="mi">1</span> <span class="p">}</span>
+</code></pre></div><p>In case it&rsquo;s a <strong>dictionary</strong> with fields, please make sure the <strong>encoder</strong> function (Payload Formats section) of the application is set to make sense of the informations transmitted in each field.
+<img src="../3-encoder-function.png" alt="Screenshot of an encoder function in the console"></p>
+<ul>
+<li><code>port</code>: <strong>int</strong> the port of the device to which the message will be sent.</li>
+<li><code>conf</code>: <strong>boolean</strong> this boolean indicates if you wish to receive a confirmation after sending the downlink message.</li>
+<li><code>sched</code>: <strong>string</strong> this string provides the type of schedule on which the message should be sent. It can take the following values: <code>first</code>, <code>last</code>, <code>replace</code>.</li>
+</ul>
+<h3 id="uplinkmessage">UplinkMessage</h3>
+<p>This type of object is constructed dynamically from the message received by the client, so this means some attributes can change from one message to another. Here are some constant attributes usually found in UplinkMessage objects:</p>
+<ul>
+<li><code>app_id</code>: the application ID to which the device is registered</li>
+<li><code>dev_id</code>: the ID of the device</li>
+<li><code>port</code>: the port number on which the message was sent</li>
+<li><code>payload_raw</code>: a buffer which contains the payload in hexadecimal</li>
+<li><code>metadata</code>: this field is another object which contains all the metadata of the message. Such as: the date, the frequency, the data rate and the list of gateways.</li>
+</ul>
+<h2 id="applicationclient">ApplicationClient</h2>
+<p>The class constructor can be called following this scheme:</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">ApplicationClient</span><span class="p">(</span><span class="n">app_id</span><span class="p">,</span> <span class="n">access_key</span><span class="p">,</span> <span class="n">handler_address</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">,</span> <span class="n">cert_content</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">,</span> <span class="n">discovery_address</span><span class="o">=</span><span class="s2">&#34;discovery.thethings.network:1900&#34;</span><span class="p">)</span>
+</code></pre></div><ul>
+<li><code>app_id</code>: <strong>string</strong> this the name given to the application when it was created.
+<img src="../4-app-console.png" alt="Screenshot of the console with app section"></li>
+<li><code>access_key</code>: <strong>string</strong> this can be found at the bottom of the application page under <strong>ACCESS KEYS</strong>. You will need a key allowing you to change the settings if you wish to update your application.</li>
+<li><code>handler_address</code>: <strong>string</strong> this is the address of the handler to which the application was registered, in the <code>{hostname}:{port}</code> format. Example: <code>handler.eu.thethings.network:1904</code>.</li>
+<li><code>cert_content</code>: <strong>string</strong> this is the content of the certificate used to connect in a secure way to the handler. Here is a certificate example:</li>
+</ul>
+<pre><code>-----BEGIN CERTIFICATE-----
+MIIBmjCCAUCgAwIBAgIRANKKhUVFRXhyx0gCX2h7EFwwCgYIKoZIzj0EAwIwHTEb
+MBkGA1UEChMSVGhlIFRoaW5ncyBOZXR3b3JrMB4XDTE3MDgwMTA4MzQxMloXDTE4
+MDgwMTA4MzQxMlowHTEbMBkGA1UEChMSVGhlIFRoaW5ncyBOZXR3b3JrMFkwEwYH
+KoZIzj0CAQYIKoZIzj0DAQcDQgAEiXbWvyYjOMP4ebTYtVvdIsBwS+U3laWltR7V
+ox4+kQWcGLLEg+suI9SRZyKK+frhw9JPKbVNIgEv/S50YKfMEaNhMF8wDgYDVR0P
+AQH/BAQDAgKkMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjAPBgNVHRMB
+Af8EBTADAQH/MB0GA1UdEQQWMBSCB2hhbmRsZXKCCWxvY2FsaG9zdDAKBggqhkjO
+PQQDAgNIADBFAiEA+vajlz7HDZ7x6KKi/uMlrwCePEcchZRYJPc/6kPyYogCIFSy
+etQ54MyIOWtwYlxG+blnxT4PWCgas5rPiaK6VP/Z
+-----END CERTIFICATE-----
+</code></pre><ul>
+<li>
+<p><code>discovery_address</code>: <strong>string</strong> this is the address of the discovery server to use in order to find back the address of the handler to which the application in registered, in the <code>{hostname}:{port}</code> format. Example: <code>discovery.thethings.network:1900</code>.</p>
+<p>The constructor returns an <strong>ApplicationClient</strong> object set up with the application informations, ready to get the application registered on The Things Network.</p>
+</li>
+</ul>
+<h3 id="get">get</h3>
+<p>Gives back the <a href="/docs/applications/python/#application"><strong>Application</strong></a>.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+</code></pre></div><h3 id="set_payload_format">set_payload_format</h3>
+<p>Sets the payload format of the application.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">client</span><span class="o">.</span><span class="n">set_payload_format</span><span class="p">(</span><span class="n">payload_format</span><span class="p">)</span>
+</code></pre></div><ul>
+<li>payload_format: <strong>string</strong> the new payload format.
+Example: <code>custom</code></li>
+</ul>
+<h3 id="set_custom_payload_functions">set_custom_payload_functions</h3>
+<p>Sets the payload functions of the application.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">client</span><span class="o">.</span><span class="n">set_custom_payload_functions</span><span class="p">(</span><span class="n">encoder</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">,</span> <span class="n">decoder</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">,</span> <span class="n">validator</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">,</span> <span class="n">converter</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
+</code></pre></div><ul>
+<li>
+<p><code>decoder</code>: <strong>string</strong> Javascript decoder function.</p>
+</li>
+<li>
+<p><code>encoder</code>: <strong>string</strong> Javascript encoder function.</p>
+</li>
+<li>
+<p><code>validator</code>: <strong>string</strong> Javascript validator function.</p>
+</li>
+<li>
+<p><code>converter</code>: <strong>string</strong> Javascript converter function.</p>
+<p>Arguments left empty are ignored and won&rsquo;t be updated.
+Example:</p>
+</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">decoder_fn</span> <span class="o">=</span> <span class="s2">&#34;&#34;&#34;function Decoder(payload) {
+</span><span class="s2">  return { led: 1 };
+</span><span class="s2">}&#34;&#34;&#34;</span>
+<span class="n">client</span><span class="o">.</span><span class="n">set_custom_payload_functions</span><span class="p">(</span><span class="n">decoder</span><span class="o">=</span><span class="n">decoder_fn</span><span class="p">)</span>
+</code></pre></div><h3 id="unregister">unregister</h3>
+<p>Unregisters the application.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">client</span><span class="o">.</span><span class="n">unregister</span><span class="p">()</span>
+</code></pre></div><h3 id="register_device">register_device</h3>
+<p>Registers a new device to the application.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">client</span><span class="o">.</span><span class="n">register_device</span><span class="p">(</span><span class="n">dev_id</span><span class="p">,</span> <span class="n">device</span><span class="p">)</span>
+</code></pre></div><ul>
+<li><code>dev_id</code>: <strong>string</strong> the id of the device to be registered.</li>
+<li><code>device</code>:</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">devicetest</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&#34;description&#34;</span><span class="p">:</span> <span class="s2">&#34;Description&#34;</span><span class="p">,</span>
+    <span class="s2">&#34;appEui&#34;</span><span class="p">:</span> <span class="s2">&#34;0011223344556677&#34;</span><span class="p">,</span>
+    <span class="s2">&#34;devEui&#34;</span><span class="p">:</span> <span class="s2">&#34;9988776655443322&#34;</span><span class="p">,</span>
+    <span class="s2">&#34;devAddr&#34;</span><span class="p">:</span> <span class="s2">&#34;11223344&#34;</span><span class="p">,</span> <span class="c1"># remove for OTAA</span>
+    <span class="s2">&#34;nwkSKey&#34;</span><span class="p">:</span> <span class="n">binascii</span><span class="o">.</span><span class="n">b2a_hex</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">urandom</span><span class="p">(</span><span class="mi">16</span><span class="p">))</span><span class="o">.</span><span class="n">upper</span><span class="p">(),</span> <span class="c1"># remove for OTAA</span>
+    <span class="s2">&#34;appSKey&#34;</span><span class="p">:</span> <span class="n">binascii</span><span class="o">.</span><span class="n">b2a_hex</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">urandom</span><span class="p">(</span><span class="mi">16</span><span class="p">))</span><span class="o">.</span><span class="n">upper</span><span class="p">(),</span> <span class="c1"># remove for OTAA</span>
+    <span class="s2">&#34;appKey&#34;</span><span class="p">:</span> <span class="n">binascii</span><span class="o">.</span><span class="n">b2a_hex</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">urandom</span><span class="p">(</span><span class="mi">16</span><span class="p">))</span><span class="o">.</span><span class="n">upper</span><span class="p">(),</span> <span class="c1"># remove for ABP</span>
+    <span class="s2">&#34;fCntUp&#34;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="s2">&#34;fCntDown&#34;</span><span class="p">:</span> <span class="mi">11</span><span class="p">,</span>
+    <span class="s2">&#34;latitude&#34;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+    <span class="s2">&#34;longitude&#34;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+    <span class="s2">&#34;altitude&#34;</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span>
+    <span class="s2">&#34;attributes&#34;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&#34;foo&#34;</span><span class="p">:</span> <span class="s2">&#34;bar&#34;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&#34;disableFCntCheck&#34;</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
+    <span class="s2">&#34;uses32BitFCnt&#34;</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre></div><h3 id="device">device</h3>
+<p>Gives back the <a href="/docs/applications/python/#deviceobject"><strong>Device</strong></a> object of the given id.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">client</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="n">dev_id</span><span class="p">)</span>
+</code></pre></div><ul>
+<li><code>dev_id</code>: <strong>string</strong> the id of the device.</li>
+</ul>
+<h3 id="devices">devices</h3>
+<p>Gives back the list of all the devices registered to the application.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">client</span><span class="o">.</span><span class="n">devices</span><span class="p">()</span>
+</code></pre></div><h3 id="update_device">update_device</h3>
+<p>Updates an already existing device of the application.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">client</span><span class="o">.</span><span class="n">update_device</span><span class="p">(</span><span class="n">dev_id</span><span class="p">,</span> <span class="n">updates</span><span class="p">)</span>
+</code></pre></div><ul>
+<li><code>dev_id</code>: <strong>string</strong> the id of the device to be updated.</li>
+<li><code>updates</code>: <strong>dictionary</strong> a dictionary with the fields to be updated in the device.</li>
+</ul>
+<h3 id="delete_device">delete_device</h3>
+<p>Deletes the device with the given id.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">client</span><span class="o">.</span><span class="n">delete_device</span><span class="p">(</span><span class="n">dev_id</span><span class="p">)</span>
+</code></pre></div><ul>
+<li><code>dev_id</code>: <strong>string</strong> the id of the device to be deleted.</li>
+</ul>
+<h3 id="a-namedeviceobjectadevice"><a name="deviceobject"></a>Device</h3>
+<p>This objet is returned by the method <code>device()</code> of the ApplicationClient class. Here are its attributes:</p>
+<ul>
+<li><code>app_id</code>: <strong>string</strong></li>
+<li><code>dev_id</code>: <strong>string</strong></li>
+<li><code>latitude</code>: <strong>float</strong></li>
+<li><code>longitude</code>: <strong>float</strong></li>
+<li><code>altitude</code>: <strong>float</strong></li>
+<li><code>description</code>: <strong>string</strong></li>
+<li><code>attributes</code>: <strong>dictionary</strong></li>
+<li><code>lorawan_device</code>: <strong>dictionary</strong>
+<ul>
+<li><code>app_eui</code>: <strong>string</strong> 8 bytes in hexadecimal</li>
+<li><code>dev_eui</code>: <strong>string</strong> 8 bytes in hexadecimal</li>
+<li><code>dev_addr</code>: <strong>string</strong> 4 bytes in hexadecimal</li>
+<li><code>nwk_s_key</code>: <strong>string</strong> 16 bytes in hexadecimal</li>
+<li><code>app_s_key</code>: <strong>string</strong> 16 bytes in hexadecimal</li>
+<li><code>app_key</code>: <strong>string</strong> 16 bytes in hexadecimal</li>
+<li><code>f_cnt_up</code>: <strong>int</strong></li>
+<li><code>f_cnt_down</code>: <strong>int</strong></li>
+<li><code>disable_f_cnt_check</code>: <strong>boolean</strong></li>
+<li><code>uses32_bit_f_cnt</code>: <strong>boolean</strong></li>
+</ul>
+</li>
+</ul>
+<h3 id="application">Application</h3>
+<p>This object is returned by the method <code>get()</code> of the ApplicationClient class. Here are its attributes:</p>
+<ul>
+<li><code>app_id</code>: <strong>string</strong></li>
+<li><code>payload_format</code>: <strong>string</strong></li>
+<li><code>decoder</code>: <strong>string</strong></li>
+<li><code>encoder</code>: <strong>string</strong></li>
+<li><code>converter</code>: <strong>string</strong></li>
+<li><code>validator</code>: <strong>string</strong></li>
+<li><code>register_on_join_access_key</code>: <strong>string</strong></li>
+</ul>
+<h2 id="handlerclient">HandlerClient</h2>
+<p>The class constructor can be called following this scheme:</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">HandlerClient</span><span class="p">(</span><span class="n">app_id</span><span class="p">,</span> <span class="n">access_key</span><span class="p">,</span> <span class="n">discovery_address</span><span class="o">=</span><span class="s2">&#34;discovery.thethings.network:1900&#34;</span><span class="p">,</span> <span class="n">cert_path</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
+</code></pre></div><ul>
+<li><code>app_id</code>: <strong>string</strong> this the name given to the application when it was created.
+<img src="../5-app-console.png" alt="Screenshot of the console with app section"></li>
+<li><code>access_key</code>: <strong>string</strong> this can be found at the bottom of the application page under <strong>ACCESS KEYS</strong>. The key needs the <code>settings</code> authorization.</li>
+<li><code>discovery_address</code>: <strong>string</strong> this is the address of the discovery server to use in order to find back the address of the handler to which the application in registered, in the <code>{hostname}:{port}</code> format.</li>
+<li><code>cert_path</code>: <strong>string</strong> this is the path to the certificate used to connect in a secure way to the discovery server.</li>
+</ul>
+<h3 id="data">data</h3>
+<p>Creates an <a href="/docs/applications/python/#mqttclient"><strong>MQTTClient</strong></a> object.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">handler</span><span class="o">.</span><span class="n">data</span><span class="p">()</span>
+</code></pre></div><p>Returns an <a href="/docs/applications/python/#mqttclient"><strong>MQTTClient</strong></a> object.</p>
+<h3 id="application-1">application</h3>
+<p>Creates an <a href="/docs/applications/python/#applicationclient"><strong>ApplicationClient</strong></a> object</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">handler</span><span class="o">.</span><span class="n">application</span><span class="p">()</span>
+</code></pre></div><p>Returns an <a href="/docs/applications/python/#applicationclient"><strong>ApplicationClient</strong></a> object.</p>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<p>Errors can happen on connection or on some ApplicationClient&rsquo;s methods call, for different reasons:</p>
+<ul>
+<li>Wrong <code>app_id</code>, <code>access_key</code> or <code>mqtt_address</code> were provided to the constructor.</li>
+<li>The machine may not have access to the network/The MQTT server could be down/Firewall restrictions could prevent connection.</li>
+<li>The client process doesn&rsquo;t have system capabilities to open a socket</li>
+<li>The MQTT server uses MQTTS, but the client won&rsquo;t accept the TLS certificate.</li>
+<li>The Application client is not able to get the application or a device.
+Errors could also happen when closing connection, in case the disconnection is unexpected. This errors are the most common ones, there are also edges cases not mentioned in this section.</li>
+</ul>
+
+        </div>
+      
+      <div class="is-clearfix">
+</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="footer"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ttn-components.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/promise-polyfill@7/dist/polyfill.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-navbar.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-footer.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ga.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/vendor/basicLightbox.min.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/theme.min.00ace5d667ca108a93b8a0d385569f7c7bb9f46ed32eefe3f5fb39105763cccd.js" integrity="sha256-AKzl1mfKEIqTuKDThVaffHu59G7TLu/j9fs5EFdjzM0=" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

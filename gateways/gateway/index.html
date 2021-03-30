@@ -1,248 +1,387 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <link rel="stylesheet" href="/docs/assets/css/main.css" />
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    <script>
-    (function(canonical) {
-      if (!document.location.href.substr(0, document.location.href.length - document.location.hash.length).startsWith(canonical)) {
-        window.location.replace(canonical);
-      }
-    })('https://www.thethingsnetwork.org/docs/gateways/gateway/');
-    </script>
-    <!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>The Things Gateway | The Things Network</title>
-<meta name="generator" content="Jekyll v3.4.5" />
-<meta property="og:title" content="The Things Gateway" />
-<meta property="og:locale" content="en_US" />
-<meta name="description" content="The Things Gateway" />
-<meta property="og:description" content="The Things Gateway" />
-<link rel="canonical" href="https://www.thethingsnetwork.org/docs/gateways/gateway/" />
+
+<html lang="en-us" class="has-ttn-navbar-top">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <meta name="generator" content="Hugo 0.79.0" />
+
+  <title>The Things Gateway | The Things Network</title>
+  <link rel="canonical" href="https://www.thethingsnetwork.org/docs/gateways/gateway/" />
+  
+
+  <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
+
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+  <meta name="msapplication-TileImage" content="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png">
+
+  <meta name="application-name" content="The Things Network">
+  <meta name="msapplication-tooltip" content="Tooltip">
+  <meta name="msapplication-config" content="https://ttnweb.azureedge.net/static/common/favicon/ieconfig.54334a5ee30c.xml">
+
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-32.61b30f85680a.png" sizes="32x32">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-57.83b86c64dc82.png" sizes="57x57">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-76.7dcf8fa36dfc.png" sizes="76x76">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-96.27ac17adaa8b.png" sizes="96x96">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-120.e1526731335e.png" sizes="120x120">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-128.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png" sizes="144x144">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png" sizes="152x152">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-180.fcd414307ca3.png" sizes="180x180">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-195.c55ce09d66da.png" sizes="195x195">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-228.bea53ec4b10b.png" sizes="228x228">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/smalltile.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/mediumtile.3d42f7faac82.png" sizes="270x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
+  <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+
+  <meta property="og:title" content="The Things Gateway" />
+<meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
+<meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.thethingsnetwork.org/docs/gateways/gateway/" />
+<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
 <meta property="og:site_name" content="The Things Network" />
-<meta property="og:image" content="https://www.thethingsnetwork.org/docs/gateways/gateway/image.png" />
-<meta property="og:type" content="article" />
-<meta property="article:published_time" content="2021-03-23T12:55:33+00:00" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta property="twitter:image" content="https://www.thethingsnetwork.org/docs/gateways/gateway/image.png" />
-<meta property="twitter:title" content="The Things Gateway" />
-<meta name="twitter:site" content="@thethingsnetwrk" />
-<meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
-<script type="application/ld+json">
-{"headline":"The Things Gateway","dateModified":"2021-03-23T12:55:33+00:00","datePublished":"2021-03-23T12:55:33+00:00","description":"The Things Gateway","url":"https://www.thethingsnetwork.org/docs/gateways/gateway/","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/gateways/gateway/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"image":"https://www.thethingsnetwork.org/docs/gateways/gateway/image.png","@context":"https://schema.org"}</script>
-<!-- End Jekyll SEO tag -->
-    <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
-    <meta name="msapplication-TileColor" content="#FFFFFF">
-    <meta name="msapplication-TileImage" content="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png">
-    <meta name="application-name" content="The Things Network">
-    <meta name="msapplication-tooltip" content="Tooltip">
-    <meta name="msapplication-config" content="https://ttnweb.azureedge.net/static/common/favicon/ieconfig.54334a5ee30c.xml">
-    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-32.61b30f85680a.png" sizes="32x32">
-    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-57.83b86c64dc82.png" sizes="57x57">
-    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-76.7dcf8fa36dfc.png" sizes="76x76">
-    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-96.27ac17adaa8b.png" sizes="96x96">
-    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-120.e1526731335e.png" sizes="120x120">
-    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-128.fabea041224c.png" sizes="128x128">
-    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png" sizes="144x144">
-    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png" sizes="152x152">
-    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-180.fcd414307ca3.png" sizes="180x180">
-    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-195.c55ce09d66da.png" sizes="195x195">
-    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-228.bea53ec4b10b.png" sizes="228x228">
-    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/smalltile.fabea041224c.png" sizes="128x128">
-    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/mediumtile.3d42f7faac82.png" sizes="270x270">
-    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
-    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
-    <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-    <script src="/docs/assets/js/main.js"></script>
-  </head>
-  <body>
-    <div id="header"></div>
-    <div id="content">
-<div class="layout-page">
-  <!-- <div class="ttn-header ttn-header-small">
-    <div class="ttn-container container-fluid">
-      <h1>
-        <img src="/docs/assets/images/the-things-white.png" alt="⛅ The Things Network" />
-        <span>Learn</span>
-      </h1>
-    </div>
-  </div> -->
-  <div class="container-fluid ttn-container">
-    <div class="row page-top-nav">
-      <div class="col-sm-9">
-        <ul>
-          <!--<li class="page-top-nav-crumb"><a href="http://www.thethingsnetwork.org/">Home</a></li>-->
-          <li class="page-top-nav-crumb"><a href="/docs/">Learn</a></li>
-                <li class=""><a href="/docs/quick-start/">Quick Start</a></li>
-                <li class=""><a href="/docs/lorawan/">LoRaWAN</a></li>
-                <li class=""><a href="/docs/devices-and-gateways/">Devices & Gateways</a></li>
-                <li class=""><a href="/docs/applications-and-integrations/">Applications</a></li>
-                <li class=""><a href="/docs/the-things-stack/">The Things Stack</a></li>
-                <li class=""><a href="/docs/v2-docs/">V2 docs</a></li>
-        </ul>
-      </div>
-      <div class="hidden-xs col-sm-3 text-right">
-        <a href="https://github.com/TheThingsNetwork/docs/edit/master/_content/gateways/gateway/index.md" class="page-edit" data-proofer-ignore><i class="fa fa-github"></i> Edit <strong>index.md</strong></a>
-      </div>
-    </div>
-    <div class="row wrapper">
-      <div class="col-sm-3 side-nav">
-        <div class="panel page-side-nav">
-          <div class="panel-body">
-            <ul>
-              <li class=""><a href="/docs/gateways/index.html"><h5>Gateways</h5></a>
-            <ul>
-                <li class=""><a href="/docs/gateways/basics-station/">LoRa Basics™ Station</a>
-                </li>
-                <li class=""><a href="/docs/gateways/certificates/">Root Certificates</a>
-                </li>
-            </ul>
-              </li>
-            <li class="page-side-nav-section"><span>Running a gateway</span>
-            <ul>
-                <li class=""><a href="/docs/gateways/start/">Where to start</a>
-                </li>
-                <li class=""><a href="/docs/gateways/registration.html">Gateway Registration</a>
-                </li>
-                <li class=""><a href="/docs/gateways/packet-forwarder/">Packet Forwarders</a>
-                </li>
-                <li class=""><a href="/docs/gateways/lightning-protection.html">Lightning Protection</a>
-                </li>
-                <li class=""><a href="/docs/gateways/troubleshooting/">Troubleshooting</a>
-                </li>
-            </ul>
+
+
+  <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
+
+<meta name="twitter:title" content="The Things Gateway"/>
+<meta name="twitter:description" content="We are building a global open free crowdsourced long range low power IoT data network"/>
+
+
+</head>
+
+
+<body>
+
+<div id="header"></div>
+<section class="section">
+  <div class="container">
+    <nav class="breadcrumb has-dot-separator" aria-label="breadcrumbs">
+      <ul>
+        <li><a href="https://www.thethingsnetwork.org/docs">Learn</a></li>
+        
+        
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/lorawan/">LoRaWAN</a>
             </li>
-            <li class="page-side-nav-section"><span>Hardware</span>
-            <ul>
-                <li class=""><a href="/docs/gateways/thethingsindoor/">The Things Indoor Gateway</a>
-                </li>
-                <li class=""><a href="/docs/gateways/thethingsoutdoor/">The Things Outdoor Gateway</a>
-                </li>
-                <li class="active"><a href="/docs/gateways/gateway/">The Things Gateway</a>
-            <ul>
-                <li class=""><a href="/docs/gateways/gateway/faq.html">FAQ</a>
-                </li>
-                <li class=""><a href="/docs/gateways/gateway/programhexfile.html">Programming hex files</a>
-                </li>
-                <li class=""><a href="/docs/gateways/gateway/ledstatus.html">Status LEDs</a>
-                </li>
-            </ul>
-                </li>
-                <li class=""><a href="/docs/gateways/multitech/">MultiTech Conduit</a>
-                </li>
-                <li class=""><a href="/docs/gateways/rak2245/">RAK2245 Pi Hat Edition - LoRaWAN® Gateway Concentrator Module</a>
-                </li>
-                <li class=""><a href="/docs/gateways/rak7243c/">RAK7243C Pilot Gateway</a>
-                </li>
-                <li class=""><a href="/docs/gateways/rak831/">RAK831</a>
-                </li>
-                <li class=""><a href="/docs/gateways/pisupply-hat/">Pi Supply Gateway HAT</a>
-                </li>
-                <li class=""><a href="/docs/gateways/aaeon/">AAEON</a>
-                </li>
-                <li class=""><a href="/docs/gateways/cisco/">Cisco LoRaWAN Gateway</a>
-                </li>
-                <li class=""><a href="/docs/gateways/kerlink/">Kerlink</a>
-                </li>
-                <li class=""><a href="/docs/gateways/laird/">Laird RG1xx</a>
-                </li>
-                <li class=""><a href="/docs/gateways/lorrier/">Lorrier LR2</a>
-                </li>
-                <li class=""><a href="/docs/gateways/mikrotik/">MikroTik Routerboard</a>
-                </li>
-                <li class=""><a href="/docs/gateways/st/">P-NUCLEO-LRWAN2</a>
-                </li>
-                <li class=""><a href="/docs/gateways/tektelic/">Tektelic</a>
-                </li>
-                <li class=""><a href="/docs/gateways/ursalink/">Ursalink</a>
-                </li>
-            </ul>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/quick-start/">Quick Start</a>
             </li>
-            </ul>
-            <!-- <li class="hidden-xs col-sm-2 page-toc page-affix"></li> --> 
-          </div>
-        </div> 
-      </div>
-      <div class="col-sm-9 page-body">
-        <div class="panel">
-          <div class="panel-body page-content">
-            <h1 id="the-things-gateway">The Things Gateway</h1>
-<p>Following a <a href="https://www.kickstarter.com/projects/419277966/the-things-network">successful Kickstarter</a> our own LoRa Gateway is now available world-wide. At a price of just under €300 and its easy, web-based setup, it is the best choice to help build The Things Network. Order The Things Gateway <a href="http://thethingsproducts.com/#the-things-product-buy">here</a></p>
-<p><img src="image.png" alt="Box, Casing and PCB" /></p>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/applications-and-integrations/">Applications &amp; Integrations</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/">Devices &amp; Gateways</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/the-things-stack/">The Things Stack</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/v2-docs/">V2 Docs (Outdated)</a>
+            </li>
+          
+        
+      </ul>
+    </nav>
+  </div>
+</section>
+<div class="container" role="document">
+  <div class="columns my-0 is-desktop">
+    <div class="column is-3-desktop sidebar-left">
+      
+
+
+<nav class="side-navigation" aria-label="Main navigation">
+
+<h2 class="title is-size-5">Gateways</h2>
+
+<div class="menu">
+  <ul class="menu-list">
+  <a href="https://www.thethingsnetwork.org/docs/gateways/" class="">Overview</a>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/gateways/basics-station/" class="">LoRa Basics™ Station</a>
+    </li>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/gateways/certificates/" class="">Root Certificates</a>
+    </li>
+  
+    <p class="menu-label">
+      SDKs
+    </p>
+    
+  
+    <p class="menu-label">
+      Running a gateway
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/troubleshooting/" class="">Troubleshooting</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/lightning-protection/" class="">Lightning Protection</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/packet-forwarder/" class="">Packet Forwarders</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/registration/" class="">Gateway Registration</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/start/" class="">Where to start</a>
+</li>
+
+  
+    <p class="menu-label">
+      Hardware
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/pisupply-hat/" class="">Pi Supply Gateway HAT</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/multitech/" class="">MultiTech Conduit</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/rak2245/" class="">RAK2245 Pi Hat Edition - LoRaWAN® Gateway Concentrator Module</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/rak7243c/" class="">RAK7243C Pilot Gateway</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/rak831/" class="">RAK831</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/gateway/" class="is-active">The Things Gateway</a>
+  
+
+
+<ul class="menu-list">
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/gateways/gateway/faq/" class="">FAQ</a>
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/gateways/gateway/programhexfile/" class="">Programming hex files</a>
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/gateways/gateway/ledstatus/" class="">Status LEDs</a>
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/gateways/gateway/activate/" class="">Activate</a>
+    
+  </li>
+
+</ul>
+
+
+  
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/thethingsindoor/" class="">The Things Indoor Gateway</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/thethingsoutdoor/" class="">The Things Outdoor Gateway</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/aaeon/" class="">AAEON</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/cisco/" class="">Cisco LoRaWAN Gateway</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/kerlink/" class="">Kerlink</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/laird/" class="">Laird RG1xx</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/lorrier/" class="">Lorrier LR2</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/mikrotik/" class="">MikroTik Routerboard</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/st/" class="">P-NUCLEO-LRWAN2</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/tektelic/" class="">Tektelic</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/ursalink/" class="">Ursalink</a>
+</li>
+
+  
+  </ul>
+</div>
+
+
+
+
+
+</nav>
+
+    </div>
+    <div class="column is-9-desktop sidebar-middle">
+      <div class="docs-content">
+        <h1 class="title is-size-2">
+          The Things Gateway
+        </h1>
+        <div class="content">
+          <p>Following a <a href="https://www.kickstarter.com/projects/419277966/the-things-network">successful Kickstarter</a> our own LoRa Gateway is now available world-wide. At a price of just under €300 and its easy, web-based setup, it is the best choice to help build The Things Network. Order The Things Gateway <a href="http://thethingsproducts.com/#the-things-product-buy">here</a></p>
+<p><img src="image.png" alt="Box, Casing and PCB"></p>
 <p>The Things Gateway enables devices such as sensors and embedded computers to connect to the internet. With an easy to connect process, you are creating the most substantial aspect of your IoT data network. Activate the gateway in just 5 minutes and create your own local network. With the capacity to serve thousands of nodes, the gateway is the main building block of your connected network. This version operates at 868MHz for use in the EU and 915Mhz for use in US.</p>
 <p><strong>Salient Features:</strong></p>
 <ul>
-  <li>Fastest way to get started with LoRaWAN (Long Range WAN)</li>
-  <li>Set up your own LoRaWAN network in as little as 5 minutes</li>
-  <li>Connects easily to your WiFi or Ethernet connection</li>
-  <li>Wireless range of up to 10 km (6 miles)</li>
-  <li>Engage with a global community of IoT developers</li>
-  <li>Easy cloud integration with popular IoT platforms</li>
-  <li>Based on open source hardware and software standards</li>
-  <li>Devices can freely communicate over all gateways connected to The Things Network</li>
-  <li>XBEE slot for future connectivity protocols or homebrew add-ons.</li>
-  <li>Security through the https connection and embedded in the LoRaWAN protocol</li>
-  <li>Can serve thousands of nodes (depending on traffic)</li>
+<li>Fastest way to get started with LoRaWAN (Long Range WAN)</li>
+<li>Set up your own LoRaWAN network in as little as 5 minutes</li>
+<li>Connects easily to your WiFi or Ethernet connection</li>
+<li>Wireless range of up to 10 km (6 miles)</li>
+<li>Engage with a global community of IoT developers</li>
+<li>Easy cloud integration with popular IoT platforms</li>
+<li>Based on open source hardware and software standards</li>
+<li>Devices can freely communicate over all gateways connected to The Things Network</li>
+<li>XBEE slot for future connectivity protocols or homebrew add-ons.</li>
+<li>Security through the https connection and embedded in the LoRaWAN protocol</li>
+<li>Can serve thousands of nodes (depending on traffic)</li>
 </ul>
 <h2 id="order-your-the-things-gateway">Order your The Things Gateway</h2>
 <blockquote>
-  <p>You can place an order through our partner network to get next day delivery. At the moment this method of delivery is only available in Europe and in the US. Order your gateway <a href="http://thethingsproducts.com/#the-things-product-buy">here</a>.</p>
+<p>You can place an order through our partner network to get next day delivery. At the moment this method of delivery is only available in Europe and in the US. Order your gateway <a href="http://thethingsproducts.com/#the-things-product-buy">here</a>.</p>
 </blockquote>
 <h2 id="activate-your-gateway-in-5-min">Activate your gateway in 5 min</h2>
-<p><a href="https://www.youtube.com/watch?v=cJNK4y1is2Q"><img src="http://img.youtube.com/vi/cJNK4y1is2Q/0.jpg" alt="Getting started with The Things Gateway" /></a></p>
+<p><a href="https://www.youtube.com/watch?v=cJNK4y1is2Q"><img src="http://img.youtube.com/vi/cJNK4y1is2Q/0.jpg" alt="Getting started with The Things Gateway"></a></p>
 <h1 id="general-setup">General Setup</h1>
 <p>The Things Gateway is quite an easy device to get started with. Upon receiving the box, instructions for activating the gateway will be printed on the cover itself.</p>
-<p><img src="https://ttnstaticfile.blob.core.windows.net/media/md_editor/image-1515136719063.large.png" alt="Box Content2" /></p>
-<p><img src="https://ttnstaticfile.blob.core.windows.net/media/md_editor/image-1515136983327.large.png" alt="Box Content1" /></p>
+<p><img src="https://ttnstaticfile.blob.core.windows.net/media/md_editor/image-1515136719063.large.png" alt="Box Content2"></p>
+<p><img src="https://ttnstaticfile.blob.core.windows.net/media/md_editor/image-1515136983327.large.png" alt="Box Content1"></p>
 <p>On opening the box, you will find the gateway unit along with an antenna and a power cable. Make sure the antenna is connected to the gateway before powering it on as it may damage it otherwise. Once the antenna is connected, connect the gateway to the power source. There are two ways of activating the gateway - *(a) Ethernet, (b) WiFi</p>
 <h2 id="activating-the-gateway">Activating the Gateway</h2>
 <p>Activating the Gateway</p>
 <ol>
-  <li>Goto the <a href="https://activate.thethingsnetwork.org">activation page</a> where you will be asked to log in with your The Things Network account. In case you don’t have an account you can register first and then get back to this same page to continue with the activation process.</li>
-  <li>The next step is where you enter your gateway id and select the frequency plan which the gateway will use. Please note that once you enter the gateway id, you would not be able to change it. Based on which region you live in, select the frequency plan and move to the next step. Keep in mind that the 868Mhz model of the gateway would not be compatible with the Asia 923 or US 915 Mhz plan and vice versa.</li>
-  <li>Moving further, we will be connecting to the WiFi access point of the gateway. To do this, select the WiFi point named ‘Things Gateway - xxxx’ from your device and connect to it. The password for this access point is ‘thethings’. Once you are connected to the gateway’s wifi, the ‘continue’ button will turn blue and you can click on it to move to the next step.</li>
-  <li>This is where you can select how you want your gateway to be connected to the internet. In case you select WiFi, enter the SSID of the network in the fields below followed by the security mode and password and click on ‘Configure Gateway’. For those who want to connect it over Ethernet and select that option and click on the next option.</li>
-  <li>This will send the settings to the gateway and in the next few moments you will see the page with the status of the gateway. It takes from 30 seconds to 2 mins to get the configuration settings in place. The activation page will indicate what the LED’s lights on the gateway indicate.</li>
-  <li>Your browser will refresh the page to switch back to your WiFi connection and if everything done correctly you will see the first message being sent through your gateway.</li>
+<li>Goto the <a href="https://activate.thethingsnetwork.org">activation page</a> where you will be asked to log in with your The Things Network account. In case you don’t have an account you can register first and then get back to this same page to continue with the activation process.</li>
+<li>The next step is where you enter your gateway id and select the frequency plan which the gateway will use. Please note that once you enter the gateway id, you would not be able to change it. Based on which region you live in, select the frequency plan and move to the next step. Keep in mind that the 868Mhz model of the gateway would not be compatible with the Asia 923 or US 915 Mhz plan and vice versa.</li>
+<li>Moving further, we will be connecting to the WiFi access point of the gateway. To do this, select the WiFi point named ‘Things Gateway - xxxx’ from your device and connect to it. The password for this access point is ‘thethings’. Once you are connected to the gateway’s wifi, the ‘continue’ button will turn blue and you can click on it to move to the next step.</li>
+<li>This is where you can select how you want your gateway to be connected to the internet. In case you select WiFi, enter the SSID of the network in the fields below followed by the security mode and password and click on ‘Configure Gateway’. For those who want to connect it over Ethernet and select that option and click on the next option.</li>
+<li>This will send the settings to the gateway and in the next few moments you will see the page with the status of the gateway. It takes from 30 seconds to 2 mins to get the configuration settings in place. The activation page will indicate what the LED’s lights on the gateway indicate.</li>
+<li>Your browser will refresh the page to switch back to your WiFi connection and if everything done correctly you will see the first message being sent through your gateway.</li>
 </ol>
 <p>Once the gateway is configured you can manage the rest of the settings through the <a href="https://console.thethingsnetwork.org">console</a> and add other details such as location, altitude etc.</p>
 <blockquote>
-  <p>There is a button inside the gateway. To open it, put it down with the antenna socket at the top and (gently) lift the left and right sides of the white shield. (To close align the lid and push firmly at the sides only you hear it snap in place)</p>
+<p>There is a button inside the gateway. To open it, put it down with the antenna socket at the top and (gently) lift the left and right sides of the white shield. (To close align the lid and push firmly at the sides only you hear it snap in place)</p>
 </blockquote>
 <blockquote>
-  <p>To reset, power on while pressing the ‘Mode button’ shown in the picture above (it is the pink one in the middle of the PCB). All leds should flash for some time.]</p>
+<p>To reset, power on while pressing the ‘Mode button’ shown in the picture above (it is the pink one in the middle of the PCB). All leds should flash for some time.]</p>
 </blockquote>
-          </div>  
+
         </div>
-        <div>
-        </div>
+      
+      <div class="is-clearfix">
+</div>
+
       </div>
     </div>
   </div>
 </div>
-<div class="modal fade" id="lightbox" tabindex="-1" role="dialog">
-  <div class="modal-dialog text-center" role="document" style="width:auto;padding:20px;">
-    <a href="https://ttnstaticfile.blob.core.windows.net/static/ttn/media/logo/ttn-logo.png"><img class="modal-content modal-body" src="https://ttnstaticfile.blob.core.windows.net/static/ttn/media/logo/ttn-logo.png" alt="Zoom" /></a>
-  </div>
-</div>
-<script src="/docs/assets/js/page.js"></script>
-    </div>
-    <div id="footer"></div>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.min.js"></script>
-    <script src="https://ttnweb.azureedge.net/static/common/js/ttn-components.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill@7/dist/polyfill.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
-    <script src="https://ttnweb.azureedge.net/static/common/js/vue-navbar.js"></script>
-    <script src="https://ttnweb.azureedge.net/static/common/js/vue-footer.js"></script>
-    <script src="https://ttnweb.azureedge.net/static/common/js/ga.js"></script>
-  </body>
+
+
+<div id="footer"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ttn-components.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/promise-polyfill@7/dist/polyfill.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-navbar.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-footer.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ga.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/vendor/basicLightbox.min.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/theme.min.00ace5d667ca108a93b8a0d385569f7c7bb9f46ed32eefe3f5fb39105763cccd.js" integrity="sha256-AKzl1mfKEIqTuKDThVaffHu59G7TLu/j9fs5EFdjzM0=" crossorigin="anonymous"></script>
+
+</body>
+
 </html>

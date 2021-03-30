@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+
+<html lang="en-us" class="has-ttn-navbar-top">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <meta name="generator" content="Hugo 0.79.0" />
+
+  <title>Setup | The Things Network</title>
+  <link rel="canonical" href="https://www.thethingsnetwork.org/docs/gateways/cisco/setup/" />
+  
+
+  <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
+
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+  <meta name="msapplication-TileImage" content="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png">
+
+  <meta name="application-name" content="The Things Network">
+  <meta name="msapplication-tooltip" content="Tooltip">
+  <meta name="msapplication-config" content="https://ttnweb.azureedge.net/static/common/favicon/ieconfig.54334a5ee30c.xml">
+
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-32.61b30f85680a.png" sizes="32x32">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-57.83b86c64dc82.png" sizes="57x57">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-76.7dcf8fa36dfc.png" sizes="76x76">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-96.27ac17adaa8b.png" sizes="96x96">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-120.e1526731335e.png" sizes="120x120">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-128.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png" sizes="144x144">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png" sizes="152x152">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-180.fcd414307ca3.png" sizes="180x180">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-195.c55ce09d66da.png" sizes="195x195">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-228.bea53ec4b10b.png" sizes="228x228">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/smalltile.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/mediumtile.3d42f7faac82.png" sizes="270x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
+  <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+
+  <meta property="og:title" content="Setup" />
+<meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/gateways/cisco/setup/" />
+<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
+<meta property="og:site_name" content="The Things Network" />
+
+
+  <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
+
+<meta name="twitter:title" content="Setup"/>
+<meta name="twitter:description" content="We are building a global open free crowdsourced long range low power IoT data network"/>
+
+
+</head>
+
+
+<body>
+
+<div id="header"></div>
+<section class="section">
+  <div class="container">
+    <nav class="breadcrumb has-dot-separator" aria-label="breadcrumbs">
+      <ul>
+        <li><a href="https://www.thethingsnetwork.org/docs">Learn</a></li>
+        
+        
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/lorawan/">LoRaWAN</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/quick-start/">Quick Start</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/applications-and-integrations/">Applications &amp; Integrations</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/">Devices &amp; Gateways</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/the-things-stack/">The Things Stack</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/v2-docs/">V2 Docs (Outdated)</a>
+            </li>
+          
+        
+      </ul>
+    </nav>
+  </div>
+</section>
+<div class="container" role="document">
+  <div class="columns my-0 is-desktop">
+    <div class="column is-3-desktop sidebar-left">
+      
+
+
+<nav class="side-navigation" aria-label="Main navigation">
+
+<h2 class="title is-size-5">Gateways</h2>
+
+<div class="menu">
+  <ul class="menu-list">
+  <a href="https://www.thethingsnetwork.org/docs/gateways/" class="">Overview</a>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/gateways/basics-station/" class="">LoRa Basics™ Station</a>
+    </li>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/gateways/certificates/" class="">Root Certificates</a>
+    </li>
+  
+    <p class="menu-label">
+      SDKs
+    </p>
+    
+  
+    <p class="menu-label">
+      Running a gateway
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/troubleshooting/" class="">Troubleshooting</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/lightning-protection/" class="">Lightning Protection</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/packet-forwarder/" class="">Packet Forwarders</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/registration/" class="">Gateway Registration</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/start/" class="">Where to start</a>
+</li>
+
+  
+    <p class="menu-label">
+      Hardware
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/pisupply-hat/" class="">Pi Supply Gateway HAT</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/multitech/" class="">MultiTech Conduit</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/rak2245/" class="">RAK2245 Pi Hat Edition - LoRaWAN® Gateway Concentrator Module</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/rak7243c/" class="">RAK7243C Pilot Gateway</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/rak831/" class="">RAK831</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/gateway/" class="">The Things Gateway</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/thethingsindoor/" class="">The Things Indoor Gateway</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/thethingsoutdoor/" class="">The Things Outdoor Gateway</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/aaeon/" class="">AAEON</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/cisco/" class="">Cisco LoRaWAN Gateway</a>
+  
+
+
+<ul class="menu-list">
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/gateways/cisco/setup/" class="is-active">Setup</a>
+    
+    
+
+
+
+    
+  </li>
+
+</ul>
+
+
+  
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/kerlink/" class="">Kerlink</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/laird/" class="">Laird RG1xx</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/lorrier/" class="">Lorrier LR2</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/mikrotik/" class="">MikroTik Routerboard</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/st/" class="">P-NUCLEO-LRWAN2</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/tektelic/" class="">Tektelic</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/ursalink/" class="">Ursalink</a>
+</li>
+
+  
+  </ul>
+</div>
+
+
+
+
+
+</nav>
+
+    </div>
+    <div class="column is-9-desktop sidebar-middle">
+      <div class="docs-content">
+        <h1 class="title is-size-2">
+          Setup
+        </h1>
+        <div class="content">
+          <p>Before starting the gateway, you&rsquo;ll need to set it up. If you&rsquo;ve never used Cisco equipment before, we&rsquo;re providing you with basic instructions to set up the gateway, and basic system and network configuration.</p>
+<h2 id="gateway-setup">Gateway setup</h2>
+<ul>
+<li>
+<p>Attach the <strong>antennas</strong> that you have for the gateway. If you have 2 antennas, plug in the both of them.</p>
+</li>
+<li>
+<p>Plug in the <strong>GPS antenna</strong> for the gateway.</p>
+</li>
+</ul>
+<p><img src="../gps.jpg" alt=""></p>
+<ul>
+<li>Plug in the <strong>Ethernet cable</strong> of the gateway to your own switch or point of entry.</li>
+</ul>
+<p><img src="../ethernet.jpg" alt=""></p>
+<ul>
+<li>
+<p>Plug in the <strong>power cable</strong> for the gateway. The Cisco LoRaWAN gateway supports two power methods:</p>
+<ul>
+<li>
+<p>Using a 48 VDC adapter, to plug in the <em>Power</em> port ;</p>
+</li>
+<li>
+<p>Using Power over Ethernet if you have a PoE adapter. In that case, use the adapter on the Ethernet port of the gateway.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Finally, to access the Cisco console, you&rsquo;ll need a console cable from USB to RJ45. Plug the RJ45 end in the <em>Console</em> port of the gateway, and the USB port to your computer.</p>
+</li>
+</ul>
+<p>Your gateway is now up and running, and connected to your computer!</p>
+<h2 id="configuration">Configuration</h2>
+<h3 id="connect-to-the-cisco-gateway-console">Connect to the Cisco gateway console</h3>
+<p>You now have a serial connection to the Cisco gateway&rsquo;s console.</p>
+<p>To open up a terminal, you have several approaches available:</p>
+<ul>
+<li>
+<p>Either use specialized serial connection software, such as <a href="https://www.decisivetactics.com/products/serial/">Serial</a> for macOS.</p>
+</li>
+<li>
+<p>Either use your operating system&rsquo;s native serial connection software. For example, on macOS and Linux, open a Terminal, and type the following commands:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">ls /dev/tty.usb*
+</code></pre></div><p>You&rsquo;ll see the list of available USB serial devices. Once you&rsquo;ve found the once matching the Cisco console, connect using the following command:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">screen &lt;device&gt; <span class="m">115200</span> <span class="c1"># e.g. screen /dev/tty.usbserial-AO001X6M 115200</span>
+</code></pre></div></li>
+</ul>
+<h3 id="system-setup">System setup</h3>
+<p>This part covers <strong>setting up basic system and network parameters</strong>: updating it, connecting it to a local network, setting up <code>ntp</code> and the GPS. If you have specific network constraints, check with your system or network administrator how to set up the system for your network.</p>
+<p>You&rsquo;ll notice that the user shell is quite different from Unix-based shells. This shell is called <strong>standalone mode</strong>, and is meant for a basic usage of the gateway. In many cases, the standalone mode shell won&rsquo;t let you input unexpected characters and entries. In any shell, you can use the <code>?</code> command to show the list of available commands.</p>
+<p>First, type <code>root</code> to login as the privileged user, and enter <code>enable</code> to turn on privileged commands. To verify that privileged commands are enabled, check that the prompt is <code>Gateway#</code> and not <code>Gateway&gt;</code>.</p>
+<h4 id="update">Update</h4>
+<p>To update your Cisco gateway, you can download the latest <a href="https://software.cisco.com/download/home/286311296/type/286311234/release/2.0.30?imageguid=A74F81D27FD3C1DF311D59849D054C10468D338E">firmware update here</a> - at least version 2.0.30. You will need a Cisco account with the right permissions to download the update file. If your account does not have those permissions, get in touch with your Cisco representative or with Cisco support.</p>
+<p>Once you&rsquo;ve retrieved the update file, you can update your gateway by several ways: USB, FTP or TFTP. We&rsquo;ll cover in this guide how to update over USB. You will need for this a USB stick formatted in FAT. The USB port of the Cisco IXM being tiny, you&rsquo;ll want to use the tiniest USB stick that you own.</p>
+<ol>
+<li>
+<p>Copy the update <code>*.tar.gz</code> file as <code>cisco_update.tar.gz</code> file at the root of the USB stick.</p>
+</li>
+<li>
+<p>Plug the USB stick in the Cisco gateway.</p>
+</li>
+<li>
+<p>Execute the following commands:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">usb <span class="nb">enable</span>
+archive download-sw firmware /normal /save-reload usb:cisco_update.tar.gz
+</code></pre></div></li>
+</ol>
+<p>This will update your Cisco firmware. After the operation, you can verify the installed version with <code>show version</code>.</p>
+<h4 id="network-setup">Network setup</h4>
+<p>To configure your Cisco Gateway to your network, type the following commands:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">configure terminal <span class="c1"># Enter global configuration mode</span>
+interface FastEthernet 0/1 <span class="c1"># Enter Ethernet configuration</span>
+</code></pre></div><p>If your local network has a <strong>DHCP server</strong> attributing IPs:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">ip address dhcp
+</code></pre></div><p>Otherwise, if you know the <strong>static IP address</strong> of your gateway:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">ip address &lt;ip-address&gt; &lt;subnet-mask&gt;
+</code></pre></div><p>Next, type the following to save the network configuration of your gateway:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">description Ethernet <span class="c1"># Replace &#34;Ethernet&#34; by any description you want</span>
+<span class="nb">exit</span> <span class="c1"># Exit Ethernet configuration</span>
+<span class="nb">exit</span> <span class="c1"># Exit global configuration mode</span>
+copy running-config startup-config <span class="c1"># Save the configuration</span>
+</code></pre></div><p>You can test your Internet configuration with the <code>ping</code> command, for example:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">ping ip 8.8.8.8 <span class="c1"># Ping Google&#39;s DNS server</span>
+</code></pre></div><p>To see more information about the gateway&rsquo;s IP and the network, you can use <code>show interfaces FastEthernet 0/1</code>, <code>show ip interfaces FastEthernet 0/1</code> or <code>show ip route</code>.</p>
+<h4 id="date-and-time">Date and time</h4>
+<p>To configure your system&rsquo;s date and time, you can use <code>ntp</code>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">configure terminal <span class="c1"># Enter global configuration mode</span>
+ntp server address &lt;NTP server address&gt; <span class="c1"># Configure ntp on an ntp address</span>
+<span class="c1"># OR</span>
+ntp server ip &lt;NTP server IP&gt; <span class="c1"># Configure ntp on an IP</span>
+
+<span class="nb">exit</span> <span class="c1"># Exit global configuration mode</span>
+</code></pre></div><p>If you don&rsquo;t have production-grade <code>ntp</code> servers available, you can use <a href="http://www.pool.ntp.org/en/use.html"><code>pool.ntp.org</code></a>&rsquo;s servers.</p>
+<h4 id="fpga">FPGA</h4>
+<p>If you needed to update your gateway firmware previously, your FPGA will need ~20 minutes to update once the new firmware is installed. The packet forwarder will not work until then, so we recommend at this point waiting until the FPGA is upgraded.</p>
+<p>To show the status of the FPGA, you can use the following command:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">show inventory
+</code></pre></div><p>When the <code>FPGAStatus</code> line indicates <code>Ready</code>, this means you can go forward with this guide.</p>
+<h4 id="gps">GPS</h4>
+<p>If you have a GPS connected to your Cisco gateway, enable it with the following commands:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">configure terminal <span class="c1"># Enter global configuration mode</span>
+gps ubx <span class="nb">enable</span> <span class="c1"># Enable GPS</span>
+<span class="nb">exit</span> <span class="c1"># Exit global configuration mode</span>
+</code></pre></div><blockquote>
+<p>📜 This command may return the message <code>packet-forwarder firmware is not installed</code>, this message can be ignored.</p>
+</blockquote>
+<h4 id="enable-radio">Enable radio</h4>
+<p>As a final step before setting up the packet forwarder software, we&rsquo;re going to <strong>enable the radio</strong>. You can see radio information with the <code>show radio</code> command:</p>
+<pre><code>Gateway#show radio 
+LORA_SN: FOC21028R8S
+LORA_PN: 95.1602T01
+LORA_SKU: 915
+LORA_CALC: &lt;NA,NA,NA,50,31,106,97,88,80,71,63,53,44,34,25,16-NA,NA,NA,54,36,109,100,91,83,74,66,57,48,39,30,21&gt;
+CAL_TEMP_CELSIUS: 31
+CAL_TEMP_CODE_AD9361: 87
+RSSI_OFFSET: -204.00,-204.40
+LORA_REVISION_NUM: C0
+RSSI_OFFSET_AUS: -203.00,-204.00
+
+radio status: 
+on
+</code></pre><p>If the radio is off, enable with it <code>no radio off</code>.</p>
+<blockquote>
+<p>📜 The <code>show radio</code> command also shows you more information about the LoRa concentrator powering the gateway. For example, <code>LORA_SKU</code> indicates the base frequency of the concentrator.</p>
+</blockquote>
+<h3 id="enable-authentication">Enable authentication</h3>
+<p>To prevent unauthorized access to the gateway, you&rsquo;ll want to set up user authentication. The Cisco gateway has a <strong>secret</strong> system, that requires users to enter a secret to access privileged commands.</p>
+<p>To enable this secret system, you can use the following commands:</p>
+<ul>
+<li><code>configure terminal</code> to enter global configuration mode.</li>
+<li>To set the secret, you can use different commands:
+<ul>
+<li><code>enable secret &lt;secret&gt;</code> to enter in plaintext the secret you wish to set, instead of <code>&lt;secret&gt;</code>. <em>Note</em>: Special characters cannot be used in plain secrets.</li>
+<li><code>enable secret 5 &lt;secret&gt;</code> to enter the secret <strong>md5-encrypted</strong>, instead of <code>&lt;secret&gt;</code>.</li>
+<li><code>enable secret 8 &lt;secret&gt;</code> to enter the secret <strong>SHA512-encrypted</strong>, instead of <code>&lt;secret&gt;</code>.</li>
+</ul>
+</li>
+<li><code>exit</code> to exit global configuration mode.</li>
+<li><code>copy running-config startup-config</code> to save the configuration.</li>
+</ul>
+<h3 id="verifications">Verifications</h3>
+<p>Before we install the packet forwarder, let&rsquo;s run verifications to ensure that the gateway is ready.</p>
+<ul>
+<li>Type <code>show radio</code> to verify that the <strong>radio is enabled</strong>. The result should indicate <code>radio status: on</code>.</li>
+<li>Type <code>show inventory</code> to verify that the <strong><code>FPGAStatus</code> is <code>Ready</code></strong>.</li>
+<li>Type <code>show gps status</code> to verify that the <strong>GPS is correctly connected</strong>. You can get additional GPS metadata by typing <code>show gps info</code>.</li>
+<li>Verify that the <strong>network connection is working</strong>. You can test this by pinging common ping servers with <code>ping ip &lt;IP&gt;</code>, if your local network does not block ping commands. For example, you can ping Google&rsquo;s servers with <code>ping ip 8.8.8.8</code>.</li>
+</ul>
+<p>If some of those checks fail, go back to the appropriate section earlier in order to fix it.</p>
+<h2 id="installing-the-packet-forwarder">Installing the packet forwarder</h2>
+<blockquote>
+<p>⚠️ Keep in mind that the pre-installed packet forwarder is not supported by Cisco for production purposes.</p>
+</blockquote>
+<p>To run the packet forwarder, we&rsquo;ll make use of the <strong>container</strong> that is running on the gateway at all times.</p>
+<h3 id="packet-forwarder-configuration">Packet forwarder configuration</h3>
+<p>When in standalone mode, enter the container:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">request shell container-console
+</code></pre></div><p>You will be requested to enter the System Password. By default this is <code>admin</code>.</p>
+<p>Create the directory to store the Packet Forwarder configuration:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">mkdir /etc/pktfwd
+</code></pre></div><p>Copy the packet forwarder to <code>/etc/pktfwd</code>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">cp /tools/pkt_forwarder /etc/pktfwd/pkt_forwarder
+</code></pre></div><p>Cisco provides a list of configuration templates. To list the available templates:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">ls -l /tools/templates
+total <span class="m">136</span>
+-rwxr-xr-x    <span class="m">1</span> <span class="m">65534</span>    <span class="m">65534</span>        <span class="m">11323</span> Oct  <span class="m">8</span> 13:30 config_loc_dual_antenna_8ch_full_diversity_EU868.json
+-rwxr-xr-x    <span class="m">1</span> <span class="m">65534</span>    <span class="m">65534</span>        <span class="m">11248</span> Oct  <span class="m">8</span> 13:30 config_loc_dual_antenna_8ch_full_diversity_JP920.json
+-rwxr-xr-x    <span class="m">1</span> <span class="m">65534</span>    <span class="m">65534</span>        <span class="m">11323</span> Oct  <span class="m">8</span> 13:30 config_loc_dual_antenna_8ch_partial_diversity_EU868.json
+-rwxr-xr-x    <span class="m">1</span> <span class="m">65534</span>    <span class="m">65534</span>         <span class="m">7993</span> Oct  <span class="m">8</span> 13:30 config_loc_single_antenna_16ch_EU868.json
+-rwxr-xr-x    <span class="m">1</span> <span class="m">65534</span>    <span class="m">65534</span>         <span class="m">7080</span> Oct  <span class="m">8</span> 13:30 config_loc_single_antenna_16ch_US915.json
+-rwxr-xr-x    <span class="m">1</span> <span class="m">65534</span>    <span class="m">65534</span>        <span class="m">13519</span> Oct  <span class="m">8</span> 13:30 config_loc_single_antenna_64ch_US915.json
+-rwxr-xr-x    <span class="m">1</span> <span class="m">65534</span>    <span class="m">65534</span>        <span class="m">13635</span> Oct  <span class="m">8</span> 13:30 config_loc_single_antenna_full_duplex_64ch_US915.json
+-rwxr-xr-x    <span class="m">1</span> <span class="m">65534</span>    <span class="m">65534</span>        <span class="m">17478</span> Oct  <span class="m">8</span> 13:30 config_test_dual_antenna_56ch_partial_diversity_EU868.json
+-rwxr-xr-x    <span class="m">1</span> <span class="m">65534</span>    <span class="m">65534</span>        <span class="m">14148</span> Oct  <span class="m">8</span> 13:30 config_test_single_antenna_64ch_64x1_EU868.json
+-rwxr-xr-x    <span class="m">1</span> <span class="m">65534</span>    <span class="m">65534</span>        <span class="m">14148</span> Oct  <span class="m">8</span> 13:30 config_test_single_antenna_64ch_8x8_EU868.json
+</code></pre></div><p>Copy the configuration template <code>config_loc_dual_antenna_8ch_full_diversity_EU868.json</code> as <code>config.json</code> to <code>/etc/pktfwd</code>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">cp /tools/templates/config_loc_dual_antenna_8ch_full_diversity_EU868.json /etc/pktfwd/config.json
+</code></pre></div><p>We&rsquo;re now going to modify the configuration to point the packet forwarder to The Things Network. Select the <a href="/docs/gateways/packet-forwarder/semtech-udp/#router-addresses">router address</a> the most appropriate for your location.</p>
+<p>Edit the configuration using a text editor, such as <code>vi</code>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">vi /etc/pktfwd/config.json
+</code></pre></div><p>You&rsquo;ll need to change the following settings:</p>
+<ul>
+<li>
+<p><code>gateway_ID</code>: The gateway ID is derived from the <code>mac address</code> printed under the gateway, example 5B:A0:CB:80:04:2B.<br>
+To derive it insert <code>FFFE</code> after the first 6 characters to make it a 64bit EUI such as 5BA0CBFFFE80042B.</p>
+</li>
+<li>
+<p><code>server_address</code> to <strong>the router address</strong> (such as <code>router.eu.thethings.network</code>)</p>
+</li>
+<li>
+<p><code>serv_port_up</code>: <code>1700</code></p>
+</li>
+<li>
+<p><code>serv_port_down</code>: <code>1700</code></p>
+</li>
+</ul>
+<p>Write down the value written for <code>gateway_ID</code>. Save the file, and exit your text editor.</p>
+<h3 id="gateway-registration">Gateway registration</h3>
+<p>Don&rsquo;t close the shell yet, but open a Web browser and head to your the Things Network console.<br>
+Click on <strong>Gateways</strong> &gt; <strong>Register gateway</strong>.<br>
+Check the <em>I&rsquo;m using legacy packet forwarder</em> box, and enter the <code>gateway_EUI</code> that was indicated as <code>gateway_ID</code> in the configuration.<br>
+Fill in the rest of the form, and click on <strong>Register gateway</strong>.</p>
+<h3 id="testing-the-packet-forwarder">Testing the packet forwarder</h3>
+<p>You can now test the packet forwarder by executing:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">/etc/pktfwd/pkt_forwarder -c /etc/pktfwd/config.json -g /dev/ttyS1
+</code></pre></div><p>You should now see packets flowing in the logs of the packet forwarder - and see gateway activity on the gateway&rsquo;s package on the console!</p>
+<blockquote>
+<p>Having issues making the packet forwarder run? Head over to our <a href="/docs/gateways/troubleshooting/semtech-udp/">packet forwarder troubleshooting section</a>.</p>
+</blockquote>
+<h3 id="installing-the-packet-forwarder-1">Installing the packet forwarder</h3>
+<p>Now that we know the packet forwarder is running, let&rsquo;s make it run permanently.</p>
+<p>Save the following script as <code>/etc/init.d/S60pkt_forwarder</code>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="cp">#!/bin/sh
+</span><span class="cp"></span>
+<span class="nv">SCRIPT_DIR</span><span class="o">=</span>/etc/pktfwd
+<span class="nv">SCRIPT</span><span class="o">=</span><span class="nv">$SCRIPT_DIR</span>/pkt_forwarder
+<span class="nv">CONFIG</span><span class="o">=</span><span class="nv">$SCRIPT_DIR</span>/config.json
+
+<span class="nv">PIDFILE</span><span class="o">=</span>/var/run/pkt_forwarder.pid
+<span class="nv">LOGFILE</span><span class="o">=</span>/var/log/pkt_forwarder.log
+
+<span class="nb">export</span> <span class="nv">NETWORKIP</span><span class="o">=</span><span class="k">$(</span>nslookup router.eu.thethings.network <span class="p">|</span> grep -E -o <span class="s2">&#34;([0-9]{1,3}[\.]){3}[0-9]{1,3}&#34;</span> <span class="p">|</span> tail -1<span class="k">)</span>
+sed -i <span class="s1">&#39;s/[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}/&#39;</span><span class="nv">$NETWORKIP</span><span class="s1">&#39;/g&#39;</span> <span class="s2">&#34;</span><span class="nv">$CONFIG</span><span class="s2">&#34;</span>
+
+start<span class="o">()</span> <span class="o">{</span>
+  <span class="nb">echo</span> <span class="s2">&#34;Starting pkt_forwarder&#34;</span>
+  <span class="nb">cd</span> <span class="nv">$SCRIPT_DIR</span>
+  start-stop-daemon <span class="se">\
+</span><span class="se"></span>        --start <span class="se">\
+</span><span class="se"></span>        --make-pidfile <span class="se">\
+</span><span class="se"></span>        --pidfile <span class="s2">&#34;</span><span class="nv">$PIFDILE</span><span class="s2">&#34;</span> <span class="se">\
+</span><span class="se"></span>        --background <span class="se">\
+</span><span class="se"></span>        --startas /bin/bash -- -c <span class="s2">&#34;exec </span><span class="nv">$SCRIPT</span><span class="s2"> -- -c </span><span class="nv">$CONFIG</span><span class="s2"> -g /dev/ttyS1 &gt;&gt; </span><span class="nv">$LOGFILE</span><span class="s2"> 2&gt;&amp;1&#34;</span>
+  <span class="nb">echo</span> <span class="nv">$?</span>
+<span class="o">}</span>
+
+stop<span class="o">()</span> <span class="o">{</span>
+  <span class="nb">echo</span> <span class="s2">&#34;Stopping pkt_forwarder&#34;</span>
+  start-stop-daemon <span class="se">\
+</span><span class="se"></span>        --stop <span class="se">\
+</span><span class="se"></span>        --oknodo <span class="se">\
+</span><span class="se"></span>        --quiet <span class="se">\
+</span><span class="se"></span>        --pidfile <span class="s2">&#34;</span><span class="nv">$PIDFILE</span><span class="s2">&#34;</span>
+<span class="o">}</span>
+
+restart<span class="o">()</span> <span class="o">{</span>
+  stop
+  sleep <span class="m">1</span>
+  start
+<span class="o">}</span>
+
+<span class="k">case</span> <span class="s2">&#34;</span><span class="nv">$1</span><span class="s2">&#34;</span> in
+  start<span class="o">)</span>
+    start
+    <span class="p">;;</span>
+  stop<span class="o">)</span>
+    stop
+    <span class="p">;;</span>
+  restart<span class="p">|</span>reload<span class="o">)</span>
+    restart
+    <span class="p">;;</span>
+  *<span class="o">)</span>
+    <span class="nb">echo</span> <span class="s2">&#34;Usage: </span><span class="nv">$0</span><span class="s2"> {start|stop|restart}&#34;</span>
+    <span class="nb">exit</span> <span class="m">1</span>
+<span class="k">esac</span>
+
+<span class="nb">exit</span> <span class="nv">$?</span>
+</code></pre></div><p>Then make the init script executable:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">chmod +x /etc/init.d/S60pkt_forwarder
+</code></pre></div><p>To enable it immediately, execute <code>/etc/init.d/S60pkt_forwarder start</code>.
+This script will be called at every startup of the container.</p>
+<blockquote>
+<p>📜 If you are using another network than <code>router.eu.thethings.network</code> replace it with the name of your network after <code>nslookup</code>.</p>
+</blockquote>
+<h3 id="exit-container-shell">Exit container shell</h3>
+<p>If you are done with configuration, you can now safely remove the serial cable between your computer.</p>
+
+        </div>
+      
+      <div class="is-clearfix">
+</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="footer"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ttn-components.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/promise-polyfill@7/dist/polyfill.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-navbar.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-footer.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ga.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/vendor/basicLightbox.min.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/theme.min.00ace5d667ca108a93b8a0d385569f7c7bb9f46ed32eefe3f5fb39105763cccd.js" integrity="sha256-AKzl1mfKEIqTuKDThVaffHu59G7TLu/j9fs5EFdjzM0=" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

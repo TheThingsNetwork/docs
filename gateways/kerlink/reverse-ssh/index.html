@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+
+<html lang="en-us" class="has-ttn-navbar-top">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <meta name="generator" content="Hugo 0.79.0" />
+
+  <title>Reverse SSH | The Things Network</title>
+  <link rel="canonical" href="https://www.thethingsnetwork.org/docs/gateways/kerlink/reverse-ssh/" />
+  
+
+  <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
+
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+  <meta name="msapplication-TileImage" content="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png">
+
+  <meta name="application-name" content="The Things Network">
+  <meta name="msapplication-tooltip" content="Tooltip">
+  <meta name="msapplication-config" content="https://ttnweb.azureedge.net/static/common/favicon/ieconfig.54334a5ee30c.xml">
+
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-32.61b30f85680a.png" sizes="32x32">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-57.83b86c64dc82.png" sizes="57x57">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-76.7dcf8fa36dfc.png" sizes="76x76">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-96.27ac17adaa8b.png" sizes="96x96">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-120.e1526731335e.png" sizes="120x120">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-128.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png" sizes="144x144">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png" sizes="152x152">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-180.fcd414307ca3.png" sizes="180x180">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-195.c55ce09d66da.png" sizes="195x195">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-228.bea53ec4b10b.png" sizes="228x228">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/smalltile.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/mediumtile.3d42f7faac82.png" sizes="270x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
+  <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+
+  <meta property="og:title" content="Reverse SSH" />
+<meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/gateways/kerlink/reverse-ssh/" />
+<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
+<meta property="og:site_name" content="The Things Network" />
+
+
+  <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
+
+<meta name="twitter:title" content="Reverse SSH"/>
+<meta name="twitter:description" content="We are building a global open free crowdsourced long range low power IoT data network"/>
+
+
+</head>
+
+
+<body>
+
+<div id="header"></div>
+<section class="section">
+  <div class="container">
+    <nav class="breadcrumb has-dot-separator" aria-label="breadcrumbs">
+      <ul>
+        <li><a href="https://www.thethingsnetwork.org/docs">Learn</a></li>
+        
+        
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/lorawan/">LoRaWAN</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/quick-start/">Quick Start</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/applications-and-integrations/">Applications &amp; Integrations</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/">Devices &amp; Gateways</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/the-things-stack/">The Things Stack</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/v2-docs/">V2 Docs (Outdated)</a>
+            </li>
+          
+        
+      </ul>
+    </nav>
+  </div>
+</section>
+<div class="container" role="document">
+  <div class="columns my-0 is-desktop">
+    <div class="column is-3-desktop sidebar-left">
+      
+
+
+<nav class="side-navigation" aria-label="Main navigation">
+
+<h2 class="title is-size-5">Gateways</h2>
+
+<div class="menu">
+  <ul class="menu-list">
+  <a href="https://www.thethingsnetwork.org/docs/gateways/" class="">Overview</a>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/gateways/basics-station/" class="">LoRa Basics™ Station</a>
+    </li>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/gateways/certificates/" class="">Root Certificates</a>
+    </li>
+  
+    <p class="menu-label">
+      SDKs
+    </p>
+    
+  
+    <p class="menu-label">
+      Running a gateway
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/troubleshooting/" class="">Troubleshooting</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/lightning-protection/" class="">Lightning Protection</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/packet-forwarder/" class="">Packet Forwarders</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/registration/" class="">Gateway Registration</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/start/" class="">Where to start</a>
+</li>
+
+  
+    <p class="menu-label">
+      Hardware
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/pisupply-hat/" class="">Pi Supply Gateway HAT</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/multitech/" class="">MultiTech Conduit</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/rak2245/" class="">RAK2245 Pi Hat Edition - LoRaWAN® Gateway Concentrator Module</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/rak7243c/" class="">RAK7243C Pilot Gateway</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/rak831/" class="">RAK831</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/gateway/" class="">The Things Gateway</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/thethingsindoor/" class="">The Things Indoor Gateway</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/thethingsoutdoor/" class="">The Things Outdoor Gateway</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/aaeon/" class="">AAEON</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/cisco/" class="">Cisco LoRaWAN Gateway</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/kerlink/" class="">Kerlink</a>
+  
+
+
+<ul class="menu-list">
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/gateways/kerlink/reverse-ssh/" class="is-active">Reverse SSH</a>
+    
+    
+
+
+
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/gateways/kerlink/keros/" class="">KerOS installation and configuration</a>
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/gateways/kerlink/ibts/" class="">Wirnet iBTS</a>
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/gateways/kerlink/ifemtocell/" class="">Wirnet iFemtoCell</a>
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/gateways/kerlink/ifemtocell-evolution/" class="">Wirnet iFemtoCell Evolution</a>
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/gateways/kerlink/istation/" class="">Wirnet iStation</a>
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/gateways/kerlink/station/" class="">Wirnet Station</a>
+    
+  </li>
+
+</ul>
+
+
+  
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/laird/" class="">Laird RG1xx</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/lorrier/" class="">Lorrier LR2</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/mikrotik/" class="">MikroTik Routerboard</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/st/" class="">P-NUCLEO-LRWAN2</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/tektelic/" class="">Tektelic</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/ursalink/" class="">Ursalink</a>
+</li>
+
+  
+  </ul>
+</div>
+
+
+
+
+
+</nav>
+
+    </div>
+    <div class="column is-9-desktop sidebar-middle">
+      <div class="docs-content">
+        <h1 class="title is-size-2">
+          Reverse SSH
+        </h1>
+        <div class="content">
+          <p>SSH is a secure connection between a client and server over which commands can be executed on the server. As long as the two devices can see each other on the internet the SSH connection can also be made from the server to the client. This is however often blocked by firewalls and NATs.</p>
+<p>SSH also has the ability of forwarding ports over this secure connection, creating in essense a simple VPN. This can be used to dial another SSH connection from the server to the client via an existing SSH connection from the client to the server. This is called reverse SSH.</p>
+<p><a href="http://www.pc-freak.net/blog/reverse-ssh-tunnel/">http://www.pc-freak.net/blog/reverse-ssh-tunnel/</a></p>
+<h2 id="setup-your-ssh-server">Setup your SSH server</h2>
+<p>You will need a server or other computer running Linux or any other operating system which can be accessed via SSH. This server needs to be accesible via a public IP address on the internet. You should create a hostname to point to this server and use the hostname to ssh to the server. This will allow you to connect to the server even when the IP address changes.</p>
+<p>For the next step you will need to know the hostname of this server. As an example let&rsquo;s say the hostname is <code>sshgateway.example.com</code>. We will also need to know the username you use to log into this server. We&rsquo;ll use <code>serveruser</code> as example.</p>
+<h2 id="setup-the-gateway-to-dial-ssh-on-startup">Setup the gateway to dial SSH on startup</h2>
+<p>Log into your gateway using either SSH or the Wirgrid.</p>
+<p>Run the following commands:</p>
+<pre><code>[root@Wirnet_080E0xxx ~]# cd ~
+[root@Wirnet_080E0xxx ~]# mkdir .ssh
+[root@Wirnet_080E0xxx ~]# dropbearkey -t rsa -f ~/.ssh/id_rsa
+</code></pre><p>After the last command you will see an output like this:</p>
+<pre><code>Generating key, this may take a while...
+Public key portion is:
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCbsZlO+eEHPicyOvY5hQd9p0MclysfIC1hZ3CEyCfgQNP3RqTRtQePIWCcAGFheSjTOzJvcfhHcU9DuGALehkA0h+v4FgfPmDuq4p0JuyK12LWp/gca1eYfqNs9mMQdwunXlrEvgnS+y+ldZoBaDQUOM56PNuVnlnIsk9rNbC35DMKbtlCuxjPIVXcY9Dozen2t3YbaqG8g/Rx0PH0+EwaR0nw5i64lQJlDyCM4tVWgkfPkTQ8i1uf7Oww69zHibUPMfkWupz3Qweqc4tpBEDZ7BoZhnc5SpVZNmYLYvHOEdaoLT/GWjx0CP9MBVk9V1FIw0AjbJ2Iu0QMbhiH9mAb root@Wirnet_080E0xxx
+Fingerprint: md5 25:51:e4:04:06:3b:2e:b8:be:eb:df:26:9d:d2:58:8b
+</code></pre><p>Copy the entire line starting with <code>ssh-rsa</code> and ending with <code>root@Wirnet_080E0xxx</code>. This is called the public key. Save this to a file as a backup. We will need this later. You might also want to make a backup of the <code>~/.ssh/id_rsa</code> file. You can use SCP to copy the file from the gateway: <code>scp root@kerlink-ip-address:/root/.ssh/id_rsa .</code></p>
+<p>On the gateway create a file called <code>startSshTunnel.sh</code> by running:</p>
+<p><code>[root@Wirnet_080E0xxx ~]# vi startReverseSshTunnel.sh</code></p>
+<p>Press <code>i</code> and then paste the following code.</p>
+<pre><code>#!/bin/sh
+
+# Put &quot;/root/startReverseSshTunnel.sh &amp;&quot; at bottom of /etc/rc.d/rc.local
+
+while true
+do
+  # loop infinitely
+  /sbin/start-stop-daemon -x \
+  ssh -p /var/run/rev-ssh-1.pid -m -S \
+  -- -i /root/.ssh/id_rsa -K 10 -y \
+  -o UseSyslog=yes -o ExitOnForwardFailure=yes -N \
+  -R sshgateway.example.com:20022:localhost:22 \
+  serveruser@sshgateway.example.com
+
+  sleep 1
+done
+</code></pre><p>In two instances replace <code>sshgateway.example.com</code> by your hostname and replace in one instance <code>serveruser</code> by your server&rsquo;s username.</p>
+<p>Press the escape key on your keyboard, then type <code>:w</code>, press enter, then type <code>:q</code> and enter again. The file should be saved now.</p>
+<p>Run the following command to allow this file to execute as a program.</p>
+<p><code>[root@Wirnet_080E0xxx ~]# chmod +x startSshTunnel.sh</code></p>
+<p>Now add this file to the end of /etc/rcd/rc.local by doing the following.</p>
+<p><code>[root@Wirnet_080E0xxx ~]# vi /etc/rc.d/rc.local</code></p>
+<p>Press <code>i</code> to start typing. Go down to the end and paste <code>/root/startReverseSshTunnel.sh &amp;</code>. Press escape, then <code>:w</code>, enter, <code>:q</code>, enter.</p>
+<p><code>/etc/rc.d/rc.local</code> should look like this:</p>
+<pre><code>#!/bin/sh
+#
+# This script will be executed *after* all the other init scripts.
+# You can put your own initialization stuff in here
+
+# reset rescue counter
+fw_setenv bootfail 0
+
+# Stop watchdog if debug or prod mode
+RUNLEVEL=`runlevel | awk '{print $NF}'`
+case ${RUNLEVEL} in
+        2|4)
+           wirma2hw wd down
+           ;;
+        *)
+           ;;
+esac
+
+/root/startReverseSshTunnel.sh &amp;
+</code></pre><h2 id="disable-the-kerlink-firewall">Disable the Kerlink firewall</h2>
+<p>By default the firewall on the Kerlink blocks outgoing SSH connections. You can either add a rule to allow this, or you can disable the firewall. Edit <code>/etc/sysconfig/network</code> by using <code>vi</code> like before. Change <code>FIREWALL=yes</code> to <code>FIREWALL=no</code>.</p>
+<p>Restart the network to apply the firewall change:</p>
+<p><code>[root@Wirnet_080E0188 ~]# /etc/init.d/network restart</code></p>
+<h2 id="copy-your-public-key-to-the-server">Copy your public key to the server</h2>
+<p>Copy-paste the public key you saved earlier and add it to the <code>~/.ssh/authorized_keys</code> on the server.</p>
+<p>Execute the following on the gateway</p>
+<pre><code>[root@Wirnet_080E0xxx ~]# ssh -i /root/.ssh/id_rsa serveruser@sshgateway.example.com
+</code></pre><p>If you do not get a password prompt or an error, and you are logged into the server, your key exchange has been done correctly.</p>
+<h2 id="reverse-ssh-into-the-gateway-from-your-server">Reverse SSH into the gateway from your server</h2>
+<p>Restart the gateway and wait two minutes. Log into your server and try to SSH into the gateway via the reverse SSH tunnel:</p>
+<p><code>ssh root@localhost -p 20022</code></p>
+<p>If everything has been done correctly you should be asked for the password and then logged into the gateway.</p>
+
+        </div>
+      
+      <div class="is-clearfix">
+</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="footer"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ttn-components.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/promise-polyfill@7/dist/polyfill.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-navbar.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-footer.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ga.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/vendor/basicLightbox.min.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/theme.min.00ace5d667ca108a93b8a0d385569f7c7bb9f46ed32eefe3f5fb39105763cccd.js" integrity="sha256-AKzl1mfKEIqTuKDThVaffHu59G7TLu/j9fs5EFdjzM0=" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

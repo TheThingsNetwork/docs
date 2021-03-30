@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+
+<html lang="en-us" class="has-ttn-navbar-top">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <meta name="generator" content="Hugo 0.79.0" />
+
+  <title>API Reference | The Things Network</title>
+  <link rel="canonical" href="https://www.thethingsnetwork.org/docs/devices/node/api/" />
+  
+
+  <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
+
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+  <meta name="msapplication-TileImage" content="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png">
+
+  <meta name="application-name" content="The Things Network">
+  <meta name="msapplication-tooltip" content="Tooltip">
+  <meta name="msapplication-config" content="https://ttnweb.azureedge.net/static/common/favicon/ieconfig.54334a5ee30c.xml">
+
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-32.61b30f85680a.png" sizes="32x32">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-57.83b86c64dc82.png" sizes="57x57">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-76.7dcf8fa36dfc.png" sizes="76x76">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-96.27ac17adaa8b.png" sizes="96x96">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-120.e1526731335e.png" sizes="120x120">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-128.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png" sizes="144x144">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png" sizes="152x152">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-180.fcd414307ca3.png" sizes="180x180">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-195.c55ce09d66da.png" sizes="195x195">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-228.bea53ec4b10b.png" sizes="228x228">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/smalltile.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/mediumtile.3d42f7faac82.png" sizes="270x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
+  <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+
+  <meta property="og:title" content="API Reference" />
+<meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/devices/node/api/" />
+<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
+<meta property="og:site_name" content="The Things Network" />
+
+
+  <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
+
+<meta name="twitter:title" content="API Reference"/>
+<meta name="twitter:description" content="We are building a global open free crowdsourced long range low power IoT data network"/>
+
+
+</head>
+
+
+<body>
+
+<div id="header"></div>
+<section class="section">
+  <div class="container">
+    <nav class="breadcrumb has-dot-separator" aria-label="breadcrumbs">
+      <ul>
+        <li><a href="https://www.thethingsnetwork.org/docs">Learn</a></li>
+        
+        
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/lorawan/">LoRaWAN</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/quick-start/">Quick Start</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/applications-and-integrations/">Applications &amp; Integrations</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/">Devices &amp; Gateways</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/the-things-stack/">The Things Stack</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/v2-docs/">V2 Docs (Outdated)</a>
+            </li>
+          
+        
+      </ul>
+    </nav>
+  </div>
+</section>
+<div class="container" role="document">
+  <div class="columns my-0 is-desktop">
+    <div class="column is-3-desktop sidebar-left">
+      
+
+
+<nav class="side-navigation" aria-label="Main navigation">
+
+<h2 class="title is-size-5">Devices</h2>
+
+<div class="menu">
+  <ul class="menu-list">
+  <a href="https://www.thethingsnetwork.org/docs/devices/" class="">Overview</a>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/devices/bestpractices/" class="">Best Practices</a>
+    </li>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/devices/registration/" class="">Device Registration</a>
+    </li>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/devices/bytes/" class="">Working with Bytes</a>
+    </li>
+  
+    <p class="menu-label">
+      SDKs &amp; Libraries
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/devices/arduino/" class="">Arduino</a>
+</li>
+
+  
+    <p class="menu-label">
+      Hardware
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/devices/rak5205-wistrio-lora-tracker/" class="">RAK5205 WisTrio LoRa® Tracker</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/devices/rak7200-lora-tracker/" class="">RAK7200 LoRa® Tracker</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/devices/rak811-lora-module-breakout-board/" class="">RAK811 LoRa® Breakout Module</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/devices/rak811-lora-evaluation-board/" class="">RAK811 LoRa® Evaluation Board</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/devices/rak811-wisnode-lora-module/" class="">RAK811 WisNode LoRa Module</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/devices/node/" class="">The Things Node</a>
+  
+
+
+<ul class="menu-list">
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/devices/node/troubleshooting/" class="">Troubleshooting</a>
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/devices/node/api/" class="is-active">API Reference</a>
+    
+    
+
+
+
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/devices/node/map/" class="">Map your Device!</a>
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/devices/node/quick-start/" class="">Quick Start</a>
+    
+  </li>
+
+</ul>
+
+
+  
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/devices/uno/" class="">The Things Uno</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/devices/lopy/" class="">LoPy</a>
+</li>
+
+  
+  </ul>
+</div>
+
+
+
+
+
+</nav>
+
+    </div>
+    <div class="column is-9-desktop sidebar-middle">
+      <div class="docs-content">
+        <h1 class="title is-size-2">
+          API Reference
+        </h1>
+        <div class="content">
+          <h2 id="class-thethingsnode">Class: TheThingsNode</h2>
+<p>Include TheThingsNode class and create a pointer to the singleton instance like this:</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="cp">#include</span> <span class="cpf">&lt;TheThingsNode.h&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="n">TheThingsNode</span> <span class="o">*</span><span class="n">node</span><span class="p">;</span>
+</code></pre></div><h2 id="method-setup">Method: setup</h2>
+<p>Use the static <code>setup()</code> method in your sketch&rsquo;s <code>setup()</code> function to create or get the class singleton.</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">node</span> <span class="o">=</span> <span class="n">TheThingsNode</span><span class="o">::</span><span class="n">setup</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div><h2 id="method-loop">Method: loop</h2>
+<p>In your <code>loop()</code> function, call the singleton&rsquo;s <code>loop()</code> method.</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">node</span><span class="o">-&gt;</span><span class="n">loop</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div><p>This will:</p>
+<ol>
+<li>Restore USB communication, if the Node has a USB data connection.</li>
+<li>Call the function set via <a href="/docs/devices/node/#method-onwake"><code>onWake()</code></a>.</li>
+<li>Find out why the device woke up and call the function set via the related <code>on*()</code> method.</li>
+<li>Call the function set via <a href="/docs/devices/node/#method-onsleep"><code>onSleep()</code></a>.</li>
+<li>Sleep the Node, unless the Node has a USB data connection and hasn&rsquo;t been configured to also sleep in that case.</li>
+</ol>
+<blockquote>
+<p>Don&rsquo;t add any other code in your <code>loop()</code> function, but use <a href="/docs/devices/node/#method-onwake"><code>onWake()</code></a>, <a href="/docs/devices/node/#method-oninterval"><code>onInterval()</code></a> and <a href="/docs/devices/node/#method-onsleep"><code>onSleep()</code></a> instead, to prevent unpredictable behavior.</p>
+</blockquote>
+<h2 id="method-onwake">Method: onWake</h2>
+<p>Set a callback that will run first thing every time the Node wakes up, which is when an interrupt changes because of interaction with the button, motion sensor or temperature sensor. The device also wakes up every 8 seconds, which is the longest we can make it sleep.</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">onWake</span><span class="p">(</span><span class="kt">void</span><span class="p">(</span><span class="o">*</span><span class="n">callback</span><span class="p">)(</span><span class="kt">void</span><span class="p">));</span>
+</code></pre></div><p>Usage:</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">node</span> <span class="o">=</span> <span class="n">TheThingsNode</span><span class="o">::</span><span class="n">setup</span><span class="p">();</span>
+
+    <span class="n">node</span><span class="o">-&gt;</span><span class="n">onWake</span><span class="p">(</span><span class="n">wake</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">wake</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">node</span><span class="o">-&gt;</span><span class="n">setColor</span><span class="p">(</span><span class="n">TTN_GREEN</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div><h2 id="method-onsleep">Method: onSleep</h2>
+<p>Set a callback that will run last thing before the Node goes back to sleep for 8 seconds or until an interrupt changes because of interaction with the button, motion sensor or temperature sensor.</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">onSleep</span><span class="p">(</span><span class="kt">void</span><span class="p">(</span><span class="o">*</span><span class="n">callback</span><span class="p">)(</span><span class="kt">void</span><span class="p">));</span>
+</code></pre></div><ul>
+<li><code>void(*callback)(void)</code>: Function to be called, with no arguments nor return value.</li>
+</ul>
+<p>Usage:</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">node</span> <span class="o">=</span> <span class="n">TheThingsNode</span><span class="o">::</span><span class="n">setup</span><span class="p">();</span>
+
+    <span class="n">node</span><span class="o">-&gt;</span><span class="n">onSleep</span><span class="p">(</span><span class="n">sleep</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">sleep</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">node</span><span class="o">-&gt;</span><span class="n">setColor</span><span class="p">(</span><span class="n">TTN_BLACK</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div><p>Pay attention, this internal sleep method of the library does not put the LoRa module (RN2483 or RN2903) into sleep mode and thus your node may consume 3mA even in sleep mode. You need to manually set the LoRa module to sleep and wake.
+Check the example <a href="https://github.com/TheThingsNetwork/arduino-node-lib/blob/master/examples/BatteryMonitorLPP/BatteryMonitorLPP.ino">BatteryMonitorLPP</a>.</p>
+<h2 id="interval">Interval</h2>
+<p>Instead of using your <code>loop()</code> function, use <code>configInterval()</code> and <code>onInterval()</code> to set a function to be called on a certain interval:</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">node</span> <span class="o">=</span> <span class="n">TheThingsNode</span><span class="o">::</span><span class="n">setup</span><span class="p">();</span>
+
+    <span class="c1">// Call every 30s instead of the default 60
+</span><span class="c1"></span>    <span class="n">node</span><span class="o">-&gt;</span><span class="n">configInterval</span><span class="p">(</span><span class="nb">true</span><span class="p">,</span> <span class="mi">30000</span><span class="p">);</span>
+
+    <span class="n">node</span><span class="o">-&gt;</span><span class="n">onInterval</span><span class="p">(</span><span class="n">interval</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">interval</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">node</span><span class="o">-&gt;</span><span class="n">showStatus</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div><h3 id="method-oninterval">Method: onInterval</h3>
+<p>Set a callback that will run on a certain interval. This will automatically enable the interval.</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">onInterval</span><span class="p">(</span><span class="kt">void</span><span class="p">(</span><span class="o">*</span><span class="n">callback</span><span class="p">)(</span><span class="kt">void</span><span class="p">));</span>
+</code></pre></div><ul>
+<li><code>void(*callback)(void)</code>: Function to be called, with no arguments nor return value.</li>
+</ul>
+<h3 id="method-configinterval">Method: configInterval</h3>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">configInterval</span><span class="p">(</span><span class="kt">bool</span> <span class="n">enabled</span><span class="p">,</span> <span class="n">uint32_t</span> <span class="n">ms</span><span class="p">);</span>
+<span class="kt">void</span> <span class="nf">configInterval</span><span class="p">(</span><span class="kt">bool</span> <span class="n">enabled</span><span class="p">);</span>
+</code></pre></div><ul>
+<li><code>bool enabled</code>: Enable or disable the interval callback. Enabled automatically by <code>onInterval()</code>, but you can use this method to temporarily disable it. Defaults to <code>false</code>.</li>
+<li><code>uint32_t ms</code>: Minimal time between calling the interval callback. Defaults to <code>60000</code> or 60 seconds.</li>
+</ul>
+<blockquote>
+<p>If the Node has no USB data connection or is configured to also sleep in that case, it will only wake up every 8 seconds to check if the interval callback should run. This means setting <code>ms</code> to less than <code>8000</code> makes no sense. It also means that the maximum time between calls can be up to 8 seconds longer than <code>ms</code> if it wakes up to handle button or sensor interaction in between.</p>
+</blockquote>
+<h2 id="method-showstatus">Method: showStatus</h2>
+<p>Writes information about the device and sensors to <code>Serial</code>.</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">showStatus</span><span class="p">();</span>
+</code></pre></div><p>Will write something like:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">Light: <span class="m">25</span>
+Temperature: 23.16 C
+Temperature alert: No
+Moving: No
+Button pressed: No
+Color: Yellow
+USB connected: Yes
+Battery voltage: <span class="m">4704</span> MV
+</code></pre></div><h2 id="light">Light</h2>
+<p>Configure and read the light sensor.</p>
+<h3 id="method-configlight">Method: configLight</h3>
+<p>Configure the light sensor.</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">configLight</span><span class="p">(</span><span class="kt">bool</span> <span class="n">enabled</span><span class="p">,</span> <span class="n">uint8_t</span> <span class="n">gain</span><span class="p">);</span>
+<span class="kt">void</span> <span class="nf">configLight</span><span class="p">(</span><span class="kt">bool</span> <span class="n">enabled</span><span class="p">);</span>
+</code></pre></div><ul>
+<li><code>bool enabled</code>: Enable or disable the light sensor. Defaults to <code>false</code>.</li>
+<li><code>uint8_t gain</code>: <strong>TODO</strong>. Value between <code>0</code> and <code>3</code>. Defaults to <code>1</code>.</li>
+</ul>
+<h3 id="method-getlight">Method: getLight</h3>
+<p>Get the current value of the light sensor as an unsigned integer of 2 bytes.</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="n">uint16_t</span> <span class="nf">getLight</span><span class="p">();</span>
+</code></pre></div><blockquote>
+<p>Make sure you have enabled the light sensor or the value will be <code>0</code>.</p>
+</blockquote>
+<h2 id="temperature">Temperature</h2>
+<p>Use and configure the temperature sensor.</p>
+<h3 id="method-gettemperatureasint">Method: getTemperatureAsInt</h3>
+<p>Get the current value of the temperature sensor in Celsius, rounded to a signed integer of 1 byte.</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="n">int8_t</span> <span class="nf">getTemperatureAsInt</span><span class="p">();</span>
+</code></pre></div><blockquote>
+<p>You can call this method even if the temperature alert has been disabled. The sensor will be woken up shortly to get the current temperature.</p>
+</blockquote>
+<h3 id="method-gettemperatureasfloat">Method: getTemperatureAsFloat</h3>
+<p>Get the current value of the temperature sensor in Celsius as signed float of 4 bytes.</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">float</span> <span class="nf">getTemperatureAsFloat</span><span class="p">();</span>
+</code></pre></div><blockquote>
+<p>You can call this method even if the temperature alert has been disabled. The sensor will be woken up shortly to get the current temperature.</p>
+</blockquote>
+<h3 id="method-configtemperature">Method: configTemperature</h3>
+<p>Configure the temperature sensor.</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">configTemperature</span><span class="p">(</span><span class="kt">bool</span> <span class="n">enabled</span><span class="p">,</span> <span class="n">MCP9804_Resolution</span> <span class="n">resolution</span><span class="p">,</span> <span class="n">int8_t</span> <span class="n">lower</span><span class="p">,</span> <span class="n">int8_t</span> <span class="n">upper</span><span class="p">,</span> <span class="n">int8_t</span> <span class="n">critical</span><span class="p">,</span> <span class="n">MCP9804_Hysteresis</span> <span class="n">hysteresis</span><span class="p">);</span>
+<span class="kt">void</span> <span class="nf">configTemperature</span><span class="p">(</span><span class="kt">bool</span> <span class="n">enabled</span><span class="p">,</span> <span class="n">MCP9804_Resolution</span> <span class="n">resolution</span><span class="p">);</span>
+<span class="kt">void</span> <span class="nf">configTemperature</span><span class="p">(</span><span class="kt">bool</span> <span class="n">enabled</span><span class="p">);</span>
+</code></pre></div><ul>
+<li>
+<p><code>bool enabled </code>: Enable or disable the temperature sensor. Enabled automatically by <code>onTemperature()</code>, but you can use this method to temporarily disable the sensor and therefore the alerts. Defaults to <code>false</code>.</p>
+</li>
+<li>
+<p><code>MCP9804_Resolution resolution = R_DEGREES_0_0625 </code>: Set the resolution (precision) of the sensor. One of:</p>
+<ul>
+<li><code>R_DEGREES_0_5000</code>: +0.5 C</li>
+<li><code>R_DEGREES_0_2500</code>: +0.25 C</li>
+<li><code>R_DEGREES_0_1250</code>: +0.125 C</li>
+<li><code>R_DEGREES_0_0625</code>: +0.0625 (default)</li>
+</ul>
+<p>See the sensor&rsquo;s <a href="http://ww1.microchip.com/downloads/en/DeviceDoc/22203C.pdf">data sheet, section 5.2.4</a> for more details.</p>
+</li>
+<li>
+<p><code>int8_t lower</code>: Alert when temperature in Celsius is lower. Defaults to <code>0</code>.</p>
+</li>
+<li>
+<p><code>int8_t upper</code>: Alert when temperature in Celsius is higher. Defaults to <code>30</code>.</p>
+</li>
+<li>
+<p><code>int8_t critical = 55</code>: Alert when temperature in Celsius is higher. Defaults to <code>55</code>, above which you run the risk of battery failure.</p>
+</li>
+<li>
+<p><code>MCP9804_Hysteresis hysteresis = H_DEGREES_0_0</code>: Set the margin for the bounds, before an alert is triggered. One of:</p>
+<ul>
+<li><code>H_DEGREES_0_0</code>: 0 C (default)</li>
+<li><code>H_DEGREES_1_5</code>: +1.5 C</li>
+<li><code>H_DEGREES_3_0</code>: +3 C</li>
+<li><code>H_DEGREES_6_0</code>: +6 C</li>
+</ul>
+<p>See the sensor&rsquo;s <a href="http://ww1.microchip.com/downloads/en/DeviceDoc/22203C.pdf">data sheet, section 5.2.2</a> for more details.</p>
+</li>
+</ul>
+<h3 id="method-ontemperaturealert">Method: onTemperatureAlert</h3>
+<p>Register a function to be called when temperature exceeds the configured bounds. This will automatically enable the temperature alerts.</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">onTemperature</span><span class="p">(</span><span class="kt">void</span><span class="p">(</span><span class="o">*</span><span class="n">callback</span><span class="p">)(</span><span class="kt">void</span><span class="p">));</span>
+</code></pre></div><ul>
+<li><code>void(*callback)(void)</code>: Function to be called, with no arguments nor return value.</li>
+</ul>
+<h3 id="method-hastemperaturealert">Method: hasTemperatureAlert</h3>
+<p>Returns <code>true</code> if the current temperature exceeds the configured bounds for the alert. This also works if the alert itself is temporarily disabled.</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">bool</span> <span class="nf">hasTemperatureAlert</span><span class="p">();</span>
+</code></pre></div><h2 id="motion">Motion</h2>
+<p>Use and configure the motion sensor.</p>
+<h3 id="method-onmotionstart">Method: onMotionStart</h3>
+<p>Set a function to be called when motion starts. This will automatically enable the motion sensor.</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">onMotionStart</span><span class="p">(</span><span class="kt">void</span><span class="p">(</span><span class="o">*</span><span class="n">callback</span><span class="p">)(</span><span class="kt">void</span><span class="p">));</span>
+</code></pre></div><ul>
+<li><code>void(*callback)(void)</code>: Function to be called, with no arguments nor return value.</li>
+</ul>
+<h3 id="method-onmotionstop">Method: onMotionStop</h3>
+<p>Set a function to be called when motions stops. This will automatically enable the motion sensor.</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">onMotionStop</span><span class="p">(</span><span class="kt">void</span><span class="p">(</span><span class="o">*</span><span class="n">callback</span><span class="p">)(</span><span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">duration</span><span class="p">));</span>
+</code></pre></div><ul>
+<li><code>void(*callback)</code>: Function to be called.
+<ul>
+<li><code>unsigned long duration</code>: Time since the motion began, in ms.</li>
+</ul>
+</li>
+</ul>
+<h3 id="method-ismoving">Method: isMoving</h3>
+<p>Returns <code>true</code> if the device is currently moving. Requires the sensor to be enabled via <code>onMotionStart()</code>, <code>onMotionStop()</code> or <code>setMotion()</code>.</p>
+<h3 id="method-getacceleration">Method: getAcceleration</h3>
+<p>Returns the acceleration measured by the motion sensor in <a href="https://en.wikipedia.org/wiki/G-force">units of g-force</a>. Each of the values x, y and z falls in the range -2g to +2g. This function is useful to determine the orientation of the sensor relative to the earth, as gravity causes a 1g acceleration towards the centre of the earth. Requires the sensor to be enabled via <code>onMotionStart()</code>, <code>onMotionStop()</code> or <code>setMotion()</code>.</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">getAcceleration</span><span class="p">(</span><span class="kt">float</span> <span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="kt">float</span> <span class="o">*</span><span class="n">y</span><span class="p">,</span> <span class="kt">float</span> <span class="o">*</span><span class="n">z</span><span class="p">);</span>
+</code></pre></div><ul>
+<li><code>float *x</code>: Float to store the acceleration along the x-axis.</li>
+<li><code>float *y</code>: Float to store the acceleration along the y-axis.</li>
+<li><code>float *z</code>: Float to store the acceleration along the z-axis.</li>
+</ul>
+<h3 id="method-configmotion">Method: configMotion</h3>
+<p>Enable or disable the motion sensor. The sensor will be enabled automatically by <code>onMotionStart()</code> and <code>onMotionStop()</code>, but you can use this method to temporarily disable the sensor.</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">configMotion</span><span class="p">(</span><span class="kt">bool</span> <span class="n">enabled</span><span class="p">);</span>
+</code></pre></div><ul>
+<li><code>bool enabled</code>: Enable or disable the sensor.</li>
+</ul>
+<h2 id="button">Button</h2>
+<p>Respond to interaction with the button.</p>
+<h3 id="method-onbuttonpress">Method: onButtonPress</h3>
+<p>Set a function to be called when the button is pressed down.</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">onButtonPress</span><span class="p">(</span><span class="kt">void</span><span class="p">(</span><span class="o">*</span><span class="n">callback</span><span class="p">)(</span><span class="kt">void</span><span class="p">));</span>
+</code></pre></div><ul>
+<li><code>void(*callback)(void)</code>: Function to be called, with no arguments nor return value.</li>
+</ul>
+<h3 id="method-onbuttonrelease">Method: onButtonRelease</h3>
+<p>Set a function to be called when the button is released.</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">onButtonRelease</span><span class="p">(</span><span class="kt">void</span><span class="p">(</span><span class="o">*</span><span class="n">callback</span><span class="p">)(</span><span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">duration</span><span class="p">));</span>
+</code></pre></div><ul>
+<li><code>void(*callback)</code>: Function to be called.
+<ul>
+<li><code>unsigned long duration</code>: Time since the button was pressed, in ms.</li>
+</ul>
+</li>
+</ul>
+<h3 id="method-isbuttonpressed">Method: isButtonPressed</h3>
+<p>Returns <code>true</code> if the button is currently pressed.</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">bool</span> <span class="nf">isButtonPressed</span><span class="p">();</span>
+</code></pre></div><h3 id="method-configbutton">Method: configButton</h3>
+<p>Enable or disable the button callback. Will be enabled automatically by <code>onButtonPress()</code> and <code>onButtonRelease()</code>, but you can use this method to temporarily disable it.</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">configButton</span><span class="p">(</span><span class="kt">bool</span> <span class="n">enabled</span><span class="p">);</span>
+</code></pre></div><ul>
+<li><code>bool enabled</code>: Enable or disable the button callback.</li>
+</ul>
+<h2 id="led">LED</h2>
+<p>Configure the LED.</p>
+<h3 id="method-setcolor">Method: setColor</h3>
+<p>Combine one or more LEDs to get a primary or <a href="https://en.wikipedia.org/wiki/RGB_color_model#Additive_primary_colors">additive color</a>.</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="n">setColor</span><span class="p">(</span><span class="n">ttn_color</span> <span class="n">color</span><span class="p">);</span>
+</code></pre></div><ul>
+<li><code>ttn_color color</code>: Set to one of:
+<ul>
+<li><code>TTN_RED</code></li>
+<li><code>TTN_GREEN</code></li>
+<li><code>TTN_BLUE</code></li>
+<li><code>TTN_YELLOW</code>: Red and green</li>
+<li><code>TTN_CYAN</code>: Green and blue</li>
+<li><code>TTN_MAGENTA</code>: Red and blue</li>
+<li><code>TTN_WHITE</code>: Red, green and blue</li>
+<li><code>TTN_BLACK</code>: None</li>
+</ul>
+</li>
+</ul>
+<h3 id="method-setrgb">Method: setRGB</h3>
+<p>Turn one or more LEDs on or off.</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">setRGB</span><span class="p">(</span><span class="kt">bool</span> <span class="n">red</span> <span class="o">=</span> <span class="nb">false</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">green</span> <span class="o">=</span> <span class="nb">false</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">blue</span> <span class="o">=</span> <span class="nb">false</span><span class="p">);</span>
+</code></pre></div><ul>
+<li><code>bool red = false</code>: Set to <code>true</code> to turn the red LED on. Defaults to <code>false</code>.</li>
+<li><code>bool green = false</code>: Set to <code>true</code> to turn the green LED on. Defaults to <code>false</code>.</li>
+<li><code>bool blue = false</code>: Set to <code>true</code> to turn the blue LED on. Defaults to <code>false</code>.</li>
+</ul>
+<blockquote>
+<p>Combine colors to <a href="https://en.wikipedia.org/wiki/RGB_color_model#Additive_primary_colors">create additives</a>, e.g. red plus green makes yellow.</p>
+</blockquote>
+<h3 id="method-setred">Method: setRed</h3>
+<p>Turn the red LED on or off.</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">setRed</span><span class="p">(</span><span class="kt">bool</span> <span class="n">on</span> <span class="o">=</span> <span class="nb">true</span><span class="p">);</span>
+</code></pre></div><ul>
+<li><code>bool on = true</code>: Set to <code>true</code> to turn the red LED on. Defaults to <code>true</code>.</li>
+</ul>
+<h3 id="method-setgreen">Method: setGreen</h3>
+<p>Turn the red LED on or off.</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">setGreen</span><span class="p">(</span><span class="kt">bool</span> <span class="n">on</span> <span class="o">=</span> <span class="nb">true</span><span class="p">);</span>
+</code></pre></div><ul>
+<li><code>bool on = true</code>: Set to <code>true</code> to turn the green LED on. Defaults to <code>true</code>.</li>
+</ul>
+<h3 id="method-setblue">Method: setBlue</h3>
+<p>Turn the red LED on or off.</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">setBlue</span><span class="p">(</span><span class="kt">bool</span> <span class="n">on</span> <span class="o">=</span> <span class="nb">true</span><span class="p">);</span>
+</code></pre></div><ul>
+<li><code>bool on = true</code>: Set to <code>true</code> to turn the blue LED on. Defaults to <code>true</code>.</li>
+</ul>
+<h3 id="method-getcolor">Method: getColor</h3>
+<p>Returns the current color of the LED.</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="n">ttn_color</span> <span class="nf">getColor</span><span class="p">();</span>
+</code></pre></div><p>Returns one of:</p>
+<ul>
+<li><code>TTN_RED</code></li>
+<li><code>TTN_GREEN</code></li>
+<li><code>TTN_BLUE</code></li>
+<li><code>TTN_YELLOW</code>: Red and green</li>
+<li><code>TTN_CYAN</code>: Green and blue</li>
+<li><code>TTN_MAGENTA</code>: Red and blue</li>
+<li><code>TTN_WHITE</code>: Red, green and blue</li>
+<li><code>TTN_BLACK</code>: None</li>
+</ul>
+<h3 id="method-colortostring">Method: colorToString</h3>
+<p>Returns a string for the color passed to it.</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="n">String</span> <span class="nf">colorToString</span><span class="p">(</span><span class="n">ttn_color</span> <span class="n">color</span><span class="p">);</span>
+</code></pre></div><ul>
+<li><code>ttn_color color</code>: Color to return a string for.</li>
+</ul>
+<p>Returns one of:</p>
+<ul>
+<li><code>&quot;Red&quot;</code>: <code>TTN_RED</code></li>
+<li><code>&quot;Green&quot;</code>: <code>TTN_GREEN</code></li>
+<li><code>&quot;Blue&quot;</code>: <code>TTN_BLUE</code></li>
+<li><code>&quot;Yellow&quot;</code>: <code>TTN_YELLOW</code></li>
+<li><code>&quot;Cyan&quot;</code>: <code>TTN_CYAN</code></li>
+<li><code>&quot;Magenta&quot;</code>: <code>TTN_MAGENTA</code></li>
+<li><code>&quot;White&quot;</code>: <code>TTN_WHITE</code></li>
+<li><code>&quot;Black&quot;</code>: <code>TTN_BLACK</code></li>
+</ul>
+<h3 id="method-getred">Method: getRed</h3>
+<p>Returns <code>true</code> if the red LED is currently on.</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">bool</span> <span class="nf">getRed</span><span class="p">();</span>
+</code></pre></div><h3 id="method-getgreen">Method: getGreen</h3>
+<p>Returns <code>true</code> if the green LED is currently on.</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">bool</span> <span class="nf">getGreen</span><span class="p">();</span>
+</code></pre></div><h3 id="method-getblue">Method: getBlue</h3>
+<p>Returns `true if the blue LED is currently on.</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">bool</span> <span class="nf">getBlue</span><span class="p">();</span>
+</code></pre></div><h2 id="usb">USB</h2>
+<p>Monitor the USB data connection.</p>
+<h3 id="method-isusbconnected">Method: isUSBConnected</h3>
+<p>Returns <code>true</code> if the Node has a data connection over USB.</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">bool</span> <span class="nf">isUSBConnected</span><span class="p">();</span>
+</code></pre></div><h3 id="method-configusb">Method:: configUSB</h3>
+<p>Enable or disable deep sleep when a USB data connection is active.</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">configUSB</span><span class="p">(</span><span class="kt">bool</span> <span class="n">deepSleep</span><span class="p">);</span>
+</code></pre></div><ul>
+<li><code>bool deepSleep</code>: Set to <code>true</code> to sleep the Node even if a USB data connection is active. Defaults to <code>false</code>.</li>
+</ul>
+<p>When disabled, the <a href="/docs/devices/node/#method-loop"><code>loop()</code></a> method will delay 100ms until an interrupt has changed or configured interval has been reached. When enabled, it will sleep until woken up by an interrupt change or every 8s.</p>
+<blockquote>
+<p>When the Node goes into sleep, the Serial Monitor will loose its connection. The Node will try to reopen the connection when it wakes up, but Serial Monitor might not always be able to pick it up.</p>
+</blockquote>
+<h2 id="method-getbattery">Method: getBattery</h2>
+<p>Returns the battery level in millivolt (mV) as a unsigned integer of 2 bytes.</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="n">uint16_t</span> <span class="nf">getBattery</span><span class="p">();</span>
+</code></pre></div>
+        </div>
+      
+      <div class="is-clearfix">
+</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="footer"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ttn-components.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/promise-polyfill@7/dist/polyfill.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-navbar.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-footer.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ga.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/vendor/basicLightbox.min.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/theme.min.00ace5d667ca108a93b8a0d385569f7c7bb9f46ed32eefe3f5fb39105763cccd.js" integrity="sha256-AKzl1mfKEIqTuKDThVaffHu59G7TLu/j9fs5EFdjzM0=" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

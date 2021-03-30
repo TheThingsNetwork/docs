@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+
+<html lang="en-us" class="has-ttn-navbar-top">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <meta name="generator" content="Hugo 0.79.0" />
+
+  <title>Working with Bytes | The Things Network</title>
+  <link rel="canonical" href="https://www.thethingsnetwork.org/docs/devices/bytes/" />
+  
+
+  <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
+
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+  <meta name="msapplication-TileImage" content="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png">
+
+  <meta name="application-name" content="The Things Network">
+  <meta name="msapplication-tooltip" content="Tooltip">
+  <meta name="msapplication-config" content="https://ttnweb.azureedge.net/static/common/favicon/ieconfig.54334a5ee30c.xml">
+
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-32.61b30f85680a.png" sizes="32x32">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-57.83b86c64dc82.png" sizes="57x57">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-76.7dcf8fa36dfc.png" sizes="76x76">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-96.27ac17adaa8b.png" sizes="96x96">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-120.e1526731335e.png" sizes="120x120">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-128.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png" sizes="144x144">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png" sizes="152x152">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-180.fcd414307ca3.png" sizes="180x180">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-195.c55ce09d66da.png" sizes="195x195">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-228.bea53ec4b10b.png" sizes="228x228">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/smalltile.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/mediumtile.3d42f7faac82.png" sizes="270x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
+  <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+
+  <meta property="og:title" content="Working with Bytes" />
+<meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/devices/bytes/" />
+<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
+<meta property="og:site_name" content="The Things Network" />
+
+
+  <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
+
+<meta name="twitter:title" content="Working with Bytes"/>
+<meta name="twitter:description" content="We are building a global open free crowdsourced long range low power IoT data network"/>
+
+
+</head>
+
+
+<body>
+
+<div id="header"></div>
+<section class="section">
+  <div class="container">
+    <nav class="breadcrumb has-dot-separator" aria-label="breadcrumbs">
+      <ul>
+        <li><a href="https://www.thethingsnetwork.org/docs">Learn</a></li>
+        
+        
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/lorawan/">LoRaWAN</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/quick-start/">Quick Start</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/applications-and-integrations/">Applications &amp; Integrations</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/">Devices &amp; Gateways</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/the-things-stack/">The Things Stack</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/v2-docs/">V2 Docs (Outdated)</a>
+            </li>
+          
+        
+      </ul>
+    </nav>
+  </div>
+</section>
+<div class="container" role="document">
+  <div class="columns my-0 is-desktop">
+    <div class="column is-3-desktop sidebar-left">
+      
+
+
+<nav class="side-navigation" aria-label="Main navigation">
+
+<h2 class="title is-size-5">Devices</h2>
+
+<div class="menu">
+  <ul class="menu-list">
+  <a href="https://www.thethingsnetwork.org/docs/devices/" class="">Overview</a>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/devices/bestpractices/" class="">Best Practices</a>
+    </li>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/devices/registration/" class="">Device Registration</a>
+    </li>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/devices/bytes/" class="is-active">Working with Bytes</a>
+      
+
+
+
+      
+    </li>
+  
+    <p class="menu-label">
+      SDKs &amp; Libraries
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/devices/arduino/" class="">Arduino</a>
+</li>
+
+  
+    <p class="menu-label">
+      Hardware
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/devices/rak5205-wistrio-lora-tracker/" class="">RAK5205 WisTrio LoRa® Tracker</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/devices/rak7200-lora-tracker/" class="">RAK7200 LoRa® Tracker</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/devices/rak811-lora-module-breakout-board/" class="">RAK811 LoRa® Breakout Module</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/devices/rak811-lora-evaluation-board/" class="">RAK811 LoRa® Evaluation Board</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/devices/rak811-wisnode-lora-module/" class="">RAK811 WisNode LoRa Module</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/devices/node/" class="">The Things Node</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/devices/uno/" class="">The Things Uno</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/devices/lopy/" class="">LoPy</a>
+</li>
+
+  
+  </ul>
+</div>
+
+
+
+
+
+</nav>
+
+    </div>
+    <div class="column is-9-desktop sidebar-middle">
+      <div class="docs-content">
+        <h1 class="title is-size-2">
+          Working with Bytes
+        </h1>
+        <div class="content">
+          <p>To send data back and forth over The Things Network you&rsquo;ll need to use bytes. This guide will help you encode different types of data in as little bytes possible.</p>
+<blockquote>
+<p>The unprecedented range of the LoRaWAN technology we build on comes at the cost of low bandwidth and limited airtime (the number times size of packages you send). Fortunately, you don&rsquo;t need a picture of that smart garage bin that needs to emptied. Even a single bit <code>1</code> would do!</p>
+</blockquote>
+<h2 id="what-is-a-byte">What is a byte?</h2>
+<p>A <a href="https://simple.wikipedia.org/wiki/Byte">byte</a> is a group of 8 bits. A bit is the most basic unit and can be either 1 or 0. A byte is not just 8 values between 0 and 1, but 256 (2<sup>8</sup>) different combinations (rather <a href="https://www.mathsisfun.com/combinatorics/combinations-permutations.html">permutations</a>) ranging from <code>00000000</code> via e.g. <code>01010101</code> to <code>11111111</code>. Thus, one byte can represent a <a href="https://simple.wikipedia.org/wiki/Decimal">decimal</a> number between 0(00) and 255.</p>
+<blockquote>
+<p>Puzzled? Remember that 3 decimal numbers also don&rsquo;t just stand for 3 values between 0 and 9, but 1000 (10<sup>3</sup>) permutations from 0(00) to 999.</p>
+</blockquote>
+<p>Learn more on <a href="http://computer.howstuffworks.com/bytes.htm">How Stuff Works: How Bits and Bytes Work</a> and the <a href="http://playground.arduino.cc/Code/BitMath">Arduino Bit Math Tutorial</a> to learn more about it.</p>
+<h2 id="what-is-a-buffer-of-bytes">What is a buffer of bytes?</h2>
+<p>Think of <em>buffer</em> as just another word for an <em>array</em>, <em>list</em>, whatever resonates with your programming experience. Like a byte is a group of 8 bits, a <a href="https://en.wikipedia.org/wiki/Data_buffer">buffer</a> is a group of a pre-defined number of bytes. If we have a group of 3 bytes, this could either represent 3 values between 0 and 255, but also one single value between 0 and 16777216 (256<sup>3</sup>).</p>
+<blockquote>
+<p>See the pattern? The number of choices per position (n) to the power of the number of positions (r) is the number of permutations: n<sup>r</sup>. Learn more on <a href="https://www.mathsisfun.com/combinatorics/combinations-permutations.html">MathIsFun.com</a>.</p>
+</blockquote>
+<h2 id="what-the-hex">What the hex?</h2>
+<p>Often, you&rsquo;ll see a group of bytes displayed as:</p>
+<pre><code>FF F0 0F 11
+</code></pre><p>Wasn&rsquo;t a byte a group of 8 <code>0</code>s and <code>1</code>s? 🤔 You&rsquo;re totally right, but just like we already saw <code>11111111</code> translates to 255 in the good old decimal system, we can also translate it to FF in the <a href="https://simple.wikipedia.org/wiki/Hexadecimal_numeral_system">hexadecimal system</a> where each position has 16 (0-9 A-F) possible values. The advantage is that it is shorter and explicit about the maximum value (257 is not an option).</p>
+<p>The above example <a href="https://www.mathsisfun.com/binary-decimal-hexadecimal-converter.html">translated</a> to the decimal system and padded for readability would be:</p>
+<pre><code>255 240 015 017
+</code></pre><p>To indicate that you mean <code>11</code> in hex and not two bits or the number eleven, you prefix it with the <code>0x</code> formatter. To tell it you mean binary use <code>B</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Byte value</th>
+<th>Decimal value</th>
+<th>Hexadecimal value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>11</code></td>
+<td>00001011</td>
+<td>11</td>
+<td>B</td>
+</tr>
+<tr>
+<td><code>0x11</code></td>
+<td>00010001</td>
+<td>17</td>
+<td>11</td>
+</tr>
+<tr>
+<td><code>B11</code></td>
+<td>00000011</td>
+<td>3</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<p>An example for Arduino:</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="n">byte</span> <span class="n">data</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span> <span class="mh">0xFF</span><span class="p">,</span> <span class="mh">0xF0</span><span class="p">,</span> <span class="mh">0x0F</span><span class="p">,</span> <span class="mh">0x11</span> <span class="p">};</span>
+<span class="c1">// identical: { 255, 240, 15, 17 };
+</span><span class="c1">// identical: { B11111111, B11110000, B00001111, B00010001 };
+</span><span class="c1"></span><span class="n">ttn</span><span class="p">.</span><span class="n">sendBytes</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">data</span><span class="p">));</span>
+</code></pre></div><p>Yeah, I know&hellip; <code>0x</code> kind of blows the shorter-to-write advantage of hex. 🙃</p>
+<h2 id="how-many-bytes-can-i-send">How many bytes can I send?</h2>
+<p>Technically, you can send 51 bytes. But, the more bytes you&rsquo;ll send, the more airtime the package will cost you and the sooner you&rsquo;ll hit your maximum allotted time. So, don&rsquo;t ask yourself how many you can possibly send but rather ask how few could do the job.</p>
+<h2 id="how-to-send-big-numbers">How to send big numbers?</h2>
+<p>A better question would be how to send ranges bigger than 255.</p>
+<h3 id="1-index">1. Index</h3>
+<p>If the possible values you&rsquo;d need to support don&rsquo;t start at 0 and you know the minimum value, start by indexing on that number.</p>
+<p>For example, imagine we&rsquo;d expect values between 3400 and 3600.</p>
+<p>On the device we&rsquo;d encode this as:</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">int</span> <span class="n">myVal</span> <span class="o">=</span> <span class="mi">3450</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="n">myBase</span> <span class="o">=</span> <span class="mi">3400</span><span class="p">;</span>
+<span class="n">byte</span> <span class="n">payload</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span> <span class="n">myVal</span> <span class="o">-</span> <span class="n">myBase</span> <span class="p">};</span>
+</code></pre></div><p>And in the application payload functions do:</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">myBase</span> <span class="o">=</span> <span class="mi">3400</span><span class="p">;</span>
+<span class="nx">decoded</span><span class="p">.</span><span class="nx">myVal</span> <span class="o">=</span> <span class="nx">bytes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="nx">myBase</span><span class="p">;</span>
+</code></pre></div><p>The other way around, in the application encoder payload function we would have:</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">myVal</span> <span class="o">=</span> <span class="mi">3450</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">myBase</span> <span class="o">=</span> <span class="mi">3400</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">bytes</span> <span class="o">=</span> <span class="p">[</span><span class="nx">myVal</span> <span class="o">-</span> <span class="nx">myBase</span><span class="p">];</span>
+</code></pre></div><p>And on the device decode this with:</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">int</span> <span class="n">myBase</span> <span class="o">=</span> <span class="mi">3400</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">myVal</span> <span class="o">=</span> <span class="n">payload</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">myBase</span><span class="p">;</span>
+</code></pre></div><p>As you can see as long as the minimum value is known and the range of our value is 256 or less, we can still use a single byte without breaking a sweat. Be sure to check your value is not bigger than 3655 to prevent nasty bugs.😅</p>
+<h3 id="2-round">2. Round</h3>
+<p>Now what if the range is bigger than 256? The next question would be if you need to know the exact value. If your sensor has a range of 400 and an error margin of 2, you wouldn&rsquo;t lose any meaning by rounding the value. Both 299 and 300 would round to 150, which is fine.</p>
+<p>On the device we&rsquo;d encode this as:</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">int</span> <span class="n">myVal</span> <span class="o">=</span> <span class="mi">300</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">errorMargin</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">byte</span> <span class="n">payload</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span> <span class="n">round</span><span class="p">(</span><span class="n">myVal</span> <span class="o">/</span> <span class="n">errorMargin</span><span class="p">)</span> <span class="p">};</span>
+</code></pre></div><p>And in the application payload functions do:</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">errorMargin</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="nx">decoded</span><span class="p">.</span><span class="nx">myVal</span> <span class="o">=</span> <span class="nx">bytes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="nx">errorMargin</span><span class="p">;</span>
+</code></pre></div><p>You&rsquo;ll get the idea for the other way around.</p>
+<h3 id="3-use-words">3. Use words</h3>
+<p>A <a href="https://www.arduino.cc/en/Reference/Word">word</a> is 2 bytes (except on Due, Zero and similar boards where it is 4 bytes), which already gets you a huge range of 65536 (256<sup>2</sup>). The <a href="https://www.arduino.cc/en/Reference/Int">int</a> data type is a word and Arduino comes with <a href="https://www.arduino.cc/en/Reference/HighByte"><code>highByte()</code></a> and <a href="https://www.arduino.cc/en/Reference/LowByte"><code>lowByte()</code></a> to extract the left and right byte from a word. This makes it really easy to encode and decode.</p>
+<p>Encode (Arduino):</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">int</span> <span class="n">myVal</span> <span class="o">=</span> <span class="mi">20000</span><span class="p">;</span>
+<span class="n">byte</span> <span class="n">payload</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+<span class="n">payload</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">highByte</span><span class="p">(</span><span class="n">myVal</span><span class="p">);</span>
+<span class="n">payload</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">lowByte</span><span class="p">(</span><span class="n">myVal</span><span class="p">);</span>
+</code></pre></div><p>Decode (payload functions):</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">decoded</span><span class="p">.</span><span class="nx">myVal</span> <span class="o">=</span> <span class="p">(</span><span class="nx">bytes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="mi">8</span><span class="p">)</span>
+              <span class="o">+</span> <span class="nx">bytes</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+</code></pre></div><blockquote>
+<p>Wondering what the <code>&lt;&lt;</code> is about? This <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Left_shift">Left shifts</a> the 8 bits of the first byte 8 positions to the left. Confused? Think about how we could encode the number 11 as two 1&rsquo;s and decode by shifting the first 1 up one position (making it 10) before adding the other. We&rsquo;ll talk more about bit shifting next.</p>
+</blockquote>
+<p>Encode (payload functions):</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">myVal</span> <span class="o">=</span> <span class="mi">20000</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">bytes</span> <span class="o">=</span> <span class="p">[];</span>
+<span class="nx">bytes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="nx">myVal</span> <span class="o">&amp;</span> <span class="mh">0xFF00</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">8</span><span class="p">;</span>
+<span class="nx">bytes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="nx">myVal</span> <span class="o">&amp;</span> <span class="mh">0x00FF</span><span class="p">);</span>
+</code></pre></div><blockquote>
+<p>Never seen <code>&amp;</code> used this way before? This is a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Bitwise_AND">Bitwise AND</a>. Used this way the right side of the expression will act as a <a href="https://en.wikipedia.org/wiki/Mask_(computing)">mask</a> to zero out one byte so we can work with just the other one.</p>
+</blockquote>
+<p>Decode (Arduino):</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">int</span> <span class="n">myVal</span> <span class="o">=</span> <span class="p">((</span><span class="kt">int</span><span class="p">)(</span><span class="n">payload</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">&lt;&lt;</span> <span class="mi">8</span><span class="p">)</span>
+          <span class="o">+</span> <span class="n">payload</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+</code></pre></div><h3 id="4-shift-bits">4. Shift bits</h3>
+<p>If the range of expected values is bigger than 65536 we can use the same trick. The only difference is that we have to manually shift bits when we encode on Arduino, just like we did in the payload function.</p>
+<p>Let&rsquo;s say we need to encode a <a href="https://www.arduino.cc/en/Reference/Long">long</a> which uses 4 bytes for a range up to 4294967296.</p>
+<p>Encode (Arduino):</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">long</span> <span class="n">lng</span> <span class="o">=</span> <span class="mi">200000L</span><span class="p">;</span>
+<span class="n">byte</span> <span class="n">payload</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span>
+<span class="n">payload</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">byte</span><span class="p">)</span> <span class="p">((</span><span class="n">lng</span> <span class="o">&amp;</span> <span class="mh">0xFF000000</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">24</span> <span class="p">);</span>
+<span class="n">payload</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">byte</span><span class="p">)</span> <span class="p">((</span><span class="n">lng</span> <span class="o">&amp;</span> <span class="mh">0x00FF0000</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">16</span> <span class="p">);</span>
+<span class="n">payload</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">byte</span><span class="p">)</span> <span class="p">((</span><span class="n">lng</span> <span class="o">&amp;</span> <span class="mh">0x0000FF00</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">8</span>  <span class="p">);</span>
+<span class="n">payload</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">byte</span><span class="p">)</span> <span class="p">((</span><span class="n">lng</span> <span class="o">&amp;</span> <span class="mi">0</span><span class="n">X000000FF</span><span class="p">)</span>       <span class="p">);</span>
+</code></pre></div><p>Decode (payload functions):</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">decoded</span><span class="p">.</span><span class="nx">myVal</span> <span class="o">=</span> <span class="p">((</span><span class="kr">long</span><span class="p">)(</span><span class="nx">bytes</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">&lt;&lt;</span> <span class="mi">24</span><span class="p">)</span>
+              <span class="o">+</span> <span class="p">((</span><span class="kr">long</span><span class="p">)(</span><span class="nx">bytes</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">&lt;&lt;</span> <span class="mi">16</span><span class="p">)</span>
+              <span class="o">+</span> <span class="p">((</span><span class="kr">long</span><span class="p">)(</span><span class="nx">bytes</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="o">&lt;&lt;</span> <span class="mi">8</span><span class="p">)</span>
+              <span class="o">+</span> <span class="p">((</span><span class="kr">long</span><span class="p">)(</span><span class="nx">bytes</span><span class="p">[</span><span class="mi">3</span><span class="p">]));</span>
+</code></pre></div><h2 id="how-to-send-negative-numbers">How to send negative numbers?</h2>
+<p>To tell the difference between -100 and 100 you will need a <a href="https://en.wikipedia.org/wiki/Signed_number_representations">signed</a> data type. These set the highest (left-most) bit to <code>1</code> to indicate it&rsquo;s a negative number. This does mean that for example in a word only 15 of the 16 bits are available for the actual number, limiting the range from 65536 to 32768.</p>
+<h3 id="index-round-and-shift">Index, round and shift</h3>
+<p>The data types we used so far are all signed, which means all of the tricks work just as well for negative values. Just be aware of the maximum value.</p>
+<h3 id="unsigned-data-types">Unsigned data types</h3>
+<p>If you don&rsquo;t expect negative numbers and need a bigger range, explicitly use <a href="https://www.arduino.cc/en/Reference/UnsignedInt"><code>unsigned int</code></a> or <a href="https://www.arduino.cc/en/Reference/UnsignedLong"><code>unsigned long</code></a>.</p>
+<h2 id="how-to-send-decimals">How to send decimals?</h2>
+<p>So far we have only dealt with rounded numbers. What if you need more precision? The answer very similar to how we indexed or rounded big numbers. Simply multiple and divide the value as you encode and decode it.</p>
+<p>Encode (Arduino):</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">float</span> <span class="n">myVal</span> <span class="o">=</span> <span class="mf">1.22</span><span class="p">;</span>
+<span class="n">byte</span> <span class="n">payload</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+<span class="n">payload</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">round</span><span class="p">(</span><span class="n">myVal</span> <span class="o">*</span> <span class="mi">100</span><span class="p">);</span>
+</code></pre></div><p>Decode (payload functions):</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">decoded</span><span class="p">.</span><span class="nx">myVal</span> <span class="o">=</span> <span class="nx">bytes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="mi">100</span><span class="p">;</span>
+</code></pre></div><p>Encode (payload functions):</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">bytes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="mf">1.22</span> <span class="o">*</span> <span class="mi">100</span><span class="p">);</span>
+</code></pre></div><p>Decode (Arduino):</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">float</span> <span class="n">myVal</span> <span class="o">=</span> <span class="n">payload</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="mf">100.00</span><span class="p">;</span>
+</code></pre></div><blockquote>
+<p>Note that it uses <code>100.00</code>, not <code>100</code>. If both are integers, Arduino/C/C++ will do the math using integers as well, resulting in 1 instead of 1.22.</p>
+</blockquote>
+<h2 id="how-to-send-multiple-numbers">How to send multiple numbers?</h2>
+<p>In a lot of cases you&rsquo;ll want to send multiple values in a single message. Start off by encoding each individual number to a buffer of bytes and then combine them into a single buffer.</p>
+<p>Encode (Arduino):</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="n">byte</span> <span class="n">payloadA</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span> <span class="mh">0xF0</span> <span class="p">};</span>
+<span class="n">byte</span> <span class="n">payloadB</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span> <span class="mh">0xF0</span><span class="p">,</span> <span class="mh">0x0F</span> <span class="p">};</span>
+<span class="n">byte</span> <span class="n">payloadC</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span> <span class="mh">0xF0</span><span class="p">,</span> <span class="mh">0x0F</span><span class="p">,</span> <span class="mh">0xFF</span> <span class="p">};</span>
+    
+<span class="kt">int</span> <span class="n">sizeofPayloadA</span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">payloadA</span><span class="p">);</span>
+<span class="kt">int</span> <span class="n">sizeofPayloadB</span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">payloadB</span><span class="p">);</span>
+<span class="kt">int</span> <span class="n">sizeofPayloadC</span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">payloadC</span><span class="p">);</span>
+    
+<span class="n">byte</span> <span class="n">payload</span><span class="p">[</span><span class="n">sizeofPayloadA</span> <span class="o">+</span> <span class="n">sizeofPayloadB</span> <span class="o">+</span> <span class="n">sizeofPayloadC</span><span class="p">];</span>
+    
+<span class="n">memcpy</span><span class="p">(</span><span class="n">payload</span><span class="p">,</span> <span class="n">payloadA</span><span class="p">,</span> <span class="n">sizeofPayloadA</span><span class="p">);</span>
+<span class="n">memcpy</span><span class="p">(</span><span class="n">payload</span> <span class="o">+</span> <span class="n">sizeofPayloadA</span><span class="p">,</span> <span class="n">payloadB</span><span class="p">,</span> <span class="n">sizeofPayloadB</span><span class="p">);</span>
+<span class="n">memcpy</span><span class="p">(</span><span class="n">payload</span> <span class="o">+</span> <span class="n">sizeofPayloadA</span> <span class="o">+</span> <span class="n">sizeofPayloadB</span><span class="p">,</span> <span class="n">payloadC</span><span class="p">,</span> <span class="n">sizeofPayloadC</span><span class="p">);</span>
+</code></pre></div><blockquote>
+<p>You might wonder why <a href="http://en.cppreference.com/w/c/string/byte/memcpy"><code>memcpy()</code></a> accepts <code>payload + sizeOfPayloadA</code> as they seem 🍏 and 🍊. Think of it as an instruction to copy to the <code>payload</code> buffer, but after moving the point it will copy to, with the length of the payloads we added so far.</p>
+</blockquote>
+<p>Decode (payload functions)</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">decoded</span><span class="p">.</span><span class="nx">myValA</span> <span class="o">=</span> <span class="nx">bytes</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+<span class="nx">decoded</span><span class="p">.</span><span class="nx">myValB</span> <span class="o">=</span> <span class="nx">bytes</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
+
+<span class="c1">// Decode both byte arrays as we did before
+</span></code></pre></div><p>Encode (payload function)</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// Encode both values as we did before
+</span><span class="c1"></span>
+<span class="kd">var</span> <span class="nx">bytes</span> <span class="o">=</span> <span class="nx">bytesA</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">bytesB</span><span class="p">);</span>
+</code></pre></div><p>Decode (Arduino):</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="n">var</span> <span class="n">payloadA</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+<span class="n">var</span> <span class="n">payloadB</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span>
+
+<span class="n">memcpy</span><span class="p">(</span><span class="n">payloadA</span><span class="p">,</span> 
+</code></pre></div><h2 id="how-to-send-text">How to send text?</h2>
+<p>The short answer is: <strong>don&rsquo;t</strong>. Text uses a lot of bytes. <a href="https://en.wikipedia.org/wiki/Unicode">Unicode</a> defines more than 128000 characters, so that would take 3 bytes per character! There are rarely good reasons to use text instead of numbers, apart from maybe transmitting some user input. Most of the time only the Alpha-numeric characters suffice, in that case you can get away by using <a href="https://en.wikipedia.org/wiki/ASCII#Printable_characters">ASCII characters</a> that only use a single byte per character. Every string must be terminated with a NULL (0x00, &lsquo;\0&rsquo;) character to indicate the string has ended.</p>
+<p>You didn&rsquo;t hear it from me, but here&rsquo;s how you&rsquo;d encode a string:</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="n">var</span> <span class="n">myVal</span> <span class="o">=</span> <span class="s">&#34;Hello&#34;</span><span class="p">;</span>
+<span class="n">var</span> <span class="n">l</span> <span class="o">=</span> <span class="n">myVal</span><span class="p">.</span><span class="n">length</span><span class="p">();</span>
+<span class="n">byte</span> <span class="n">payload</span><span class="p">[</span><span class="n">l</span> <span class="o">+</span> <span class="mi">1</span><span class="p">];</span> <span class="c1">//1 is added for the NULL character at the end of the string
+</span><span class="c1"></span><span class="n">myVal</span><span class="p">.</span><span class="n">getBytes</span><span class="p">(</span><span class="n">payload</span><span class="p">,</span> <span class="n">l</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+</code></pre></div><p>Which you would decode with:</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">decoded</span><span class="p">.</span><span class="nx">myVal</span> <span class="o">=</span> <span class="nb">String</span><span class="p">.</span><span class="nx">fromCharCode</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="nx">bytes</span><span class="p">);</span>
+</code></pre></div>
+        </div>
+      
+      <div class="is-clearfix">
+</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="footer"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ttn-components.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/promise-polyfill@7/dist/polyfill.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-navbar.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-footer.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ga.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/vendor/basicLightbox.min.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/theme.min.00ace5d667ca108a93b8a0d385569f7c7bb9f46ed32eefe3f5fb39105763cccd.js" integrity="sha256-AKzl1mfKEIqTuKDThVaffHu59G7TLu/j9fs5EFdjzM0=" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

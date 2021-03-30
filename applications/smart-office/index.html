@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+
+<html lang="en-us" class="has-ttn-navbar-top">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <meta name="generator" content="Hugo 0.79.0" />
+
+  <title>Smart Office Kit | The Things Network</title>
+  <link rel="canonical" href="https://www.thethingsnetwork.org/docs/applications/smart-office/" />
+  
+
+  <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
+
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+  <meta name="msapplication-TileImage" content="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png">
+
+  <meta name="application-name" content="The Things Network">
+  <meta name="msapplication-tooltip" content="Tooltip">
+  <meta name="msapplication-config" content="https://ttnweb.azureedge.net/static/common/favicon/ieconfig.54334a5ee30c.xml">
+
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-32.61b30f85680a.png" sizes="32x32">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-57.83b86c64dc82.png" sizes="57x57">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-76.7dcf8fa36dfc.png" sizes="76x76">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-96.27ac17adaa8b.png" sizes="96x96">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-120.e1526731335e.png" sizes="120x120">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-128.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png" sizes="144x144">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png" sizes="152x152">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-180.fcd414307ca3.png" sizes="180x180">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-195.c55ce09d66da.png" sizes="195x195">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-228.bea53ec4b10b.png" sizes="228x228">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/smalltile.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/mediumtile.3d42f7faac82.png" sizes="270x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
+  <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+
+  <meta property="og:title" content="Smart Office Kit" />
+<meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/applications/smart-office/" />
+<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
+<meta property="og:site_name" content="The Things Network" />
+
+
+  <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
+
+<meta name="twitter:title" content="Smart Office Kit"/>
+<meta name="twitter:description" content="We are building a global open free crowdsourced long range low power IoT data network"/>
+
+
+</head>
+
+
+<body>
+
+<div id="header"></div>
+<section class="section">
+  <div class="container">
+    <nav class="breadcrumb has-dot-separator" aria-label="breadcrumbs">
+      <ul>
+        <li><a href="https://www.thethingsnetwork.org/docs">Learn</a></li>
+        
+        
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/lorawan/">LoRaWAN</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/quick-start/">Quick Start</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/applications-and-integrations/">Applications &amp; Integrations</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/">Devices &amp; Gateways</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/the-things-stack/">The Things Stack</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/v2-docs/">V2 Docs (Outdated)</a>
+            </li>
+          
+        
+      </ul>
+    </nav>
+  </div>
+</section>
+<div class="container" role="document">
+  <div class="columns my-0 is-desktop">
+    <div class="column is-3-desktop sidebar-left">
+      
+
+
+<nav class="side-navigation" aria-label="Main navigation">
+
+<h2 class="title is-size-5">Applications</h2>
+
+<div class="menu">
+  <ul class="menu-list">
+  <a href="https://www.thethingsnetwork.org/docs/applications/" class="">Overview</a>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/applications/add/" class="">Add an Application</a>
+    </li>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/applications/options/" class="">Build an Application</a>
+    </li>
+  
+    <p class="menu-label">
+      APIs
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/apis/" class="">Overview</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/manager/" class="">Application Manager API</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/mqtt/" class="">Data API (MQTT)</a>
+</li>
+
+  
+    <p class="menu-label">
+      SDKs &amp; Libraries
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/sdks/" class="">Overview</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/golang/" class="">Go</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/java/" class="">Java</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/nodered/" class="">Node-RED</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/nodejs/" class="">Node.js</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/python/" class="">Python</a>
+</li>
+
+  
+    <p class="menu-label">
+      Integrations
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/evrythng/" class="">EVRYTHNG</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/integrations/" class="">Overview</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/att/" class="">AllThingsTalk</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/aws/" class="">AWS IoT</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/cayenne/" class="">Cayenne</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/collos/" class="">Collos</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/http/" class="">HTTP</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/opensensors/" class="">OpenSensors</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/smart-office/" class="is-active">Smart Office Kit</a>
+  
+
+
+
+  
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/storage/" class="">Storage</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/tago/" class="">Tago</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/thingspeak/" class="">ThingSpeak</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/ttnmapper/" class="">TTN Mapper</a>
+</li>
+
+  
+  </ul>
+</div>
+
+
+
+
+
+</nav>
+
+    </div>
+    <div class="column is-9-desktop sidebar-middle">
+      <div class="docs-content">
+        <h1 class="title is-size-2">
+          Smart Office Kit
+        </h1>
+        <div class="content">
+          <p>Connect your office and optimize the work performance.</p>
+<p>The smart building package enables the transformation of any building or facility into a smart connected asset, that can be remotely managed and controlled. The sensors included in the kit provide the means of monitoring the most important indicators in a smart building solution.</p>
+<p>The easy-to-install package contains:</p>
+<ul>
+<li>Environment sensors</li>
+<li>Occupancy sensors</li>
+<li>Easy to integrate data storage and visualization tool</li>
+<li>Getting started guide</li>
+<li>1 month support</li>
+</ul>
+<p><img src="smart-building-1.jpg" alt="smart-building"></p>
+<h2 id="connecting-devices">Connecting Devices</h2>
+<ul>
+<li><a href="https://account.thethingsnetwork.org/">Create an account</a> at The Things Network</li>
+<li>(If applicable) Connect your pre-configured gateway</li>
+<li>Install the Android app <a href="https://play.google.com/store/apps/details?id=se.elsys.nfc.elsysnfc">Elsys Sensor Settings</a></li>
+<li>Visit <a href="https://console.thethingsnetwork.org/">The Things Network Console</a>, create a new application and register all devices using the Device EUIs which you can find on the back of the sensors. The devices can be provisioned through NFC via the Elsys app. For more information you can walk through the Elsys' <a href="https://www.elsys.se/en/wp-content/uploads/sites/3/2016/09/OPERATING-MANUAL-ERS_A5_V3.pdf">Operating Manual</a> or check out Elsys’ <a href="https://www.elsys.se/en/lora-videos/">Video tutorials</a></li>
+</ul>
+<h2 id="decode-data">Decode data</h2>
+<p>To make sense out of the raw payload, the data need to be decoded. Select the <em>Payload Formats</em>, make sure the <em>Decoder</em> is selected and copy-paste the Javascript code below.</p>
+<p>This will change the payload which might look like this: <code>01 00 EA 02 36 04 03 30 05 01 07 0E 32 15 43 24</code> to this:</p>
+<pre><code>{
+  &quot;humidity&quot;: 54,
+  &quot;light&quot;: 816,
+  &quot;motion&quot;: 1,
+  &quot;soundAvg&quot;: 36,
+  &quot;soundPeak&quot;: 67,
+  &quot;temperature&quot;: 23.4,
+  &quot;vdd&quot;: 3634
+}
+</code></pre><h3 id="decoder">Decoder</h3>
+<pre><code>function Decoder(bytes, port) {
+  if (port === 0) {
+    return;
+  }
+  var TYPE_TEMP = 0x01; //temp 2 bytes -3276.8°C --&gt;3276.7°C
+  var TYPE_RH = 0x02; //Humidity 1 byte 0-100%
+  var TYPE_ACC = 0x03; //acceleration 3 bytes X,Y,Z -128 --&gt; 127 +/-63=1G
+  var TYPE_LIGHT = 0x04; //Light 2 bytes 0--&gt;65535 Lux
+  var TYPE_MOTION = 0x05; //No of motion 1 byte 0-255
+  var TYPE_CO2 = 0x06; //Co2 2 bytes 0-65535 ppm
+  var TYPE_VDD = 0x07; //VDD 2byte 0-65535mV
+  var TYPE_ANALOG1 = 0x08; //VDD 2byte 0-65535mV
+  var TYPE_GPS = 0x09; //3bytes lat 3bytes long binary
+  var TYPE_PULSE1 = 0x0A; //2bytes relative pulse count
+  var TYPE_PULSE1_ABS = 0x0B; //4bytes no 0-&gt;0xFFFFFFFF
+  var TYPE_EXT_TEMP1 = 0x0C; //2bytes -3276.5C--&gt;3276.5C
+  var TYPE_EXT_DIGITAL = 0x0D; //1bytes value 1 or 0
+  var TYPE_EXT_DISTANCE = 0x0E; //2bytes distance in mm
+  var TYPE_ACC_MOTION = 0x0F; //1byte number of vibration/motion
+  var TYPE_IR_TEMP = 0x10; //2bytes internal temp 2bytes external temp -3276.5C--&gt;3276.5C
+  var TYPE_OCCUPANCY = 0x11; //1byte data
+  var TYPE_WATERLEAK = 0x12; //1byte data 0-255
+  var TYPE_GRIDEYE = 0x13;  //65byte temperature data 1byte ref+64byte external temp
+  var TYPE_PRESSURE = 0x14; //4byte pressure data (hPa)
+  var TYPE_SOUND = 0x15; //2byte sound data (peak/avg)
+  var TYPE_PULSE2 = 0x16; //2bytes 0--&gt;0xFFFF
+  var TYPE_PULSE2_ABS = 0x17; //4bytes no 0-&gt;0xFFFFFFFF
+  var TYPE_ANALOG2 = 0x18; //2bytes voltage in mV
+  var TYPE_EXT_TEMP2 = 0x19; //2bytes -3276.5C--&gt;3276.5C
+
+  var bin16dec = function(bin) {
+      var num=bin&amp;0xFFFF;
+      if (0x8000 &amp; num)
+          num = - (0x010000 - num);
+      return num;
+  }
+
+  var bin8dec = function(bin) {
+      var num=bin&amp;0xFF;
+      if (0x80 &amp; num)
+          num = - (0x0100 - num);
+      return num;
+  }
+
+  var hexToBytes = function(hex) {
+      for (var bytes = [], c = 0; c &lt; hex.length; c += 2)
+          bytes.push(parseInt(hex.substr(c, 2), 16));
+      return bytes;
+  }
+
+  var decoded = {};
+  for(i=0;i&lt;bytes.length;i++){
+        switch(bytes[i]){
+            case TYPE_TEMP: //Temperature
+                var temp=(bytes[i+1]&lt;&lt;8)|(bytes[i+2]);
+                temp=bin16dec(temp);
+                decoded.temperature=temp / 10;
+                i+=2;
+            break;
+            case TYPE_RH: //Humidity
+                var rh=(bytes[i+1]);
+                decoded.humidity=rh;
+                i+=1;
+            break;
+            case TYPE_ACC: //Acceleration
+                decoded.x=bin8dec([i+1]);
+                decoded.y=bin8dec(bytes[i+2]);
+                decoded.z=bin8dec(bytes[i+3]);
+                i+=3;
+            break;
+            case TYPE_LIGHT: //Light
+                var light=(bytes[i+1]&lt;&lt;8)|(bytes[i+2]);
+                decoded.light=light;
+                i+=2;
+            break;
+            case TYPE_MOTION: //Motion sensor(PIR)
+                var motion=(bytes[i+1]);
+                decoded.motion=motion;
+                i+=1;
+            break;
+            case TYPE_CO2: //CO2
+                var co2=(bytes[i+1]&lt;&lt;8)|(bytes[i+2]);
+                decoded.co2=co2;
+                i+=2;
+            break;
+            case TYPE_VDD: //Battery level
+                var vdd=(bytes[i+1]&lt;&lt;8)|(bytes[i+2]);
+                decoded.vdd=vdd;
+                i+=2;
+            break;
+            case TYPE_ANALOG1: //Analog input 1
+                var analog1=(bytes[i+1]&lt;&lt;8)|(bytes[i+2]);
+                decoded.analog1=analog1;
+                i+=2;
+            break;
+            case TYPE_GPS: //gps
+                decoded.lat=(bytes[i+1]&lt;&lt;16)|(bytes[i+2]&lt;&lt;8)|(bytes[i+3]);
+                decoded.long=(bytes[i+4]&lt;&lt;16)|(bytes[i+5]&lt;&lt;8)|(bytes[i+6]);
+                i+=6;
+            break;
+            case TYPE_PULSE1: //Pulse input 1
+                var pulse1=(bytes[i+1]&lt;&lt;8)|(bytes[i+2]);
+                decoded.pulse1=pulse1;
+                i+=2;
+            break;
+
+            case TYPE_EXT_TEMP1: //External temp
+            var temp=(data[i+1]&lt;&lt;8)|(data[i+2]);
+            temp=bin16dec(temp);
+            decoded.externalTemperature=temp/10;
+            i+=2;
+            break
+            case TYPE_EXT_DIGITAL: //Digital input
+            decoded.digital=(data[i+1]);
+            i+=1;
+            break
+            case TYPE_EXT_DISTANCE: //Distance sensor input
+            decoded.distance=(data[i+1]&lt;&lt;8)|(data[i+2]);
+            i+=2;
+            break
+            case TYPE_ACC_MOTION: //Acc motion
+            decoded.accMotion=(data[i+1]);
+            i+=1;
+            break
+            case TYPE_IR_TEMP: //IR temperature
+            var iTemp=(data[i+1]&lt;&lt;8)|(data[i+2]);
+            iTemp=bin16dec(iTemp);
+            var eTemp=(data[i+3]&lt;&lt;8)|(data[i+4]);
+            eTemp=bin16dec(eTemp);
+            decoded.irInternalTemperature=iTemp/10;
+            decoded.irExternalTemperature=eTemp/10;
+            i+=4;
+            break
+            case TYPE_OCCUPANCY: //Body occupancy
+            decoded.occupancy=(data[i+1]);
+            i+=1;
+            break
+            case TYPE_WATERLEAK: //Water leak
+            decoded.waterleak=(data[i+1]);
+            i+=1;
+            break
+            case TYPE_GRIDEYE: //Grideye data
+            i+=65;
+            break
+            case TYPE_PRESSURE: //External Pressure
+            var temp=(data[i+1]&lt;&lt;24)|(data[i+2]&lt;&lt;16)|(data[i+3]&lt;&lt;8)|(data[i+4]);
+            decoded.pressure=temp/1000;
+            i+=4;
+            break
+            case TYPE_SOUND: //Sound
+            decoded.soundPeak=(bytes[i+1]);
+            decoded.soundAvg=(bytes[i+2]);
+            i+=2;
+            break
+            case TYPE_PULSE2: //Pulse 2
+            decoded.pulse2=(data[i+1]&lt;&lt;8)|(data[i+2]);
+            i+=2;
+            break
+            case TYPE_PULSE2_ABS: //Pulse input 2 absolute value
+            decoded.pulseAbs2=(data[i+1]&lt;&lt;24)|(data[i+2]&lt;&lt;16)|(data[i+3]&lt;&lt;8)|(data[i+4]);
+            i+=4;
+            break
+            case TYPE_ANALOG2: //Analog input 2
+            decoded.analog2=(data[i+1]&lt;&lt;8)|(data[i+2]);
+            i+=2;
+            break
+            case TYPE_EXT_TEMP2: //External temp 2
+            var temp=(data[i+1]&lt;&lt;8)|(data[i+2]);
+            temp=bin16dec(temp);
+            decoded.externalTemperature2=temp/10;
+            i+=2;
+            break
+            default: //somthing is wrong with data
+            i=data.length;
+            break;
+        }
+    }
+  return decoded;
+}
+</code></pre><h2 id="data-storage--visualization-using-mydevices-cayenne">Data storage &amp; visualization using myDevices Cayenne</h2>
+<ul>
+<li>Create an account on <a href="https://mydevices.com/">myDevices</a></li>
+<li>Add the Cayenne integration to The Things Network Console</li>
+<li>Register all devices on myDevices Cayenne</li>
+<li>Create a public dashboard with all devices combined and share the public dashboard</li>
+</ul>
+<blockquote>
+<p>Having difficulties with creating this dashboard? Have a look at the detailed documentation on <a href="https://www.thethingsnetwork.org/docs/applications/cayenne/">myDevices Cayenne</a></p>
+</blockquote>
+
+        </div>
+      
+      <div class="is-clearfix">
+</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="footer"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ttn-components.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/promise-polyfill@7/dist/polyfill.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-navbar.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-footer.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ga.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/vendor/basicLightbox.min.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/theme.min.00ace5d667ca108a93b8a0d385569f7c7bb9f46ed32eefe3f5fb39105763cccd.js" integrity="sha256-AKzl1mfKEIqTuKDThVaffHu59G7TLu/j9fs5EFdjzM0=" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

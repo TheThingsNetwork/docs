@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+<html lang="en-us" class="has-ttn-navbar-top">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <meta name="generator" content="Hugo 0.79.0" />
+
+  <title>Troubleshooting | The Things Network</title>
+  <link rel="canonical" href="https://www.thethingsnetwork.org/docs/network/troubleshooting/" />
+  
+
+  <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
+
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+  <meta name="msapplication-TileImage" content="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png">
+
+  <meta name="application-name" content="The Things Network">
+  <meta name="msapplication-tooltip" content="Tooltip">
+  <meta name="msapplication-config" content="https://ttnweb.azureedge.net/static/common/favicon/ieconfig.54334a5ee30c.xml">
+
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-32.61b30f85680a.png" sizes="32x32">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-57.83b86c64dc82.png" sizes="57x57">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-76.7dcf8fa36dfc.png" sizes="76x76">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-96.27ac17adaa8b.png" sizes="96x96">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-120.e1526731335e.png" sizes="120x120">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-128.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png" sizes="144x144">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png" sizes="152x152">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-180.fcd414307ca3.png" sizes="180x180">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-195.c55ce09d66da.png" sizes="195x195">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-228.bea53ec4b10b.png" sizes="228x228">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/smalltile.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/mediumtile.3d42f7faac82.png" sizes="270x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
+  <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+
+  <meta property="og:title" content="Troubleshooting" />
+<meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/network/troubleshooting/" />
+<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
+<meta property="og:site_name" content="The Things Network" />
+
+
+  <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
+
+<meta name="twitter:title" content="Troubleshooting"/>
+<meta name="twitter:description" content="We are building a global open free crowdsourced long range low power IoT data network"/>
+
+
+</head>
+
+
+<body>
+
+<div id="header"></div>
+<section class="section">
+  <div class="container">
+    <nav class="breadcrumb has-dot-separator" aria-label="breadcrumbs">
+      <ul>
+        <li><a href="https://www.thethingsnetwork.org/docs">Learn</a></li>
+        
+        
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/lorawan/">LoRaWAN</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/quick-start/">Quick Start</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/applications-and-integrations/">Applications &amp; Integrations</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/">Devices &amp; Gateways</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/the-things-stack/">The Things Stack</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/v2-docs/">V2 Docs (Outdated)</a>
+            </li>
+          
+        
+      </ul>
+    </nav>
+  </div>
+</section>
+<div class="container" role="document">
+  <div class="columns my-0 is-desktop">
+    <div class="column is-3-desktop sidebar-left">
+      
+
+
+<nav class="side-navigation" aria-label="Main navigation">
+
+<h2 class="title is-size-5">Network</h2>
+
+<div class="menu">
+  <ul class="menu-list">
+  <a href="https://www.thethingsnetwork.org/docs/network/" class="">Overview</a>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/network/troubleshooting/" class="is-active">Troubleshooting</a>
+      
+
+
+
+      
+    </li>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/network/architecture/" class="">Network Architecture</a>
+    </li>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/network/security/" class="">Network Security</a>
+    </li>
+  
+    <p class="menu-label">
+      Manage
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/network/console/" class="">The Things Network Console</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/network/cli/" class="">The Things Network CLI</a>
+</li>
+
+  
+    <p class="menu-label">
+      Components
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/network/account/" class="">Account Server</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/network/discovery/" class="">Discovery Server</a>
+</li>
+
+  
+  </ul>
+</div>
+
+
+
+
+
+</nav>
+
+    </div>
+    <div class="column is-9-desktop sidebar-middle">
+      <div class="docs-content">
+        <h1 class="title is-size-2">
+          Troubleshooting
+        </h1>
+        <div class="content">
+          <p>Is something not working like it should? This section is here to help you find out the issue might come from.</p>
+<blockquote>
+<p>If you have issues specifically with a gateway, see <a href="/docs/gateways/troubleshooting/">Gateway Troubleshooting</a>.</p>
+</blockquote>
+<h2 id="check-the-status-page">Check the Status page</h2>
+<p>Did everything work before? Before going through a list of possible causes, please check <a href="https://status.thethings.network">The Things Network Status</a> to see if all services are operational.</p>
+<h2 id="application-is-not-receiving-data">Application is not receiving data</h2>
+<p>If your application is not receiving data anymore, please check the following:</p>
+<ol>
+<li>Make sure the application authenticates correctly, with a valid App ID and App Access Key. See the <strong>Application overview</strong> of your application in The Things Network Console</li>
+<li>Check if you see data flowing in the Console, see the <strong>Data</strong> tab</li>
+<li>Check if your device has been seen at all. Go to <strong>Devices</strong>, select a device, and check the <strong>Last seen</strong> (see also below)</li>
+<li>Check one or more gateways covering your device are online, see the <a href="https://www.thethingsnetwork.org/map">community map</a>, or the <strong>Gateways</strong> section in the Console. For issues specifically with gateways, see <a href="/docs/gateways/troubleshooting/">Gateway Troubleshooting</a></li>
+</ol>
+<h2 id="network-is-not-receiving-device-data">Network is not receiving device data</h2>
+<p>If the network does not receive data from your device, i.e. the <strong>Last seen</strong> date and time of a device is longer ago than expected, please check the following:</p>
+<ol>
+<li>If your device is configured as ABP, the <a href="https://www.thethingsnetwork.org/docs/lorawan/security.html#frame-counters">frame counters</a> may be reset because of a power cycle, leading to blocked messages. Please program devices as OTAA as soon as you can. In the meantime, you can go to a device in the Console, and click <strong>reset frame counters</strong> next to the device&rsquo;s frame counters</li>
+<li>Check one or more gateways covering your device are online, see the <a href="https://www.thethingsnetwork.org/map">community map</a>, or the <strong>Gateways</strong> section in the Console. For issues specifically with gateways, see <a href="/docs/gateways/troubleshooting/">Gateway Troubleshooting</a></li>
+</ol>
+<h2 id="other-issues">Other issues</h2>
+<p>Our public community network is run by the community. The best way to reach out to the community for questions and issues is through <a href="https://www.thethingsnetwork.org/forum">The THings Network Forum</a> and Slack (<a href="https://account.thethingsnetwork.org">request invite in your account</a>): the <strong>#support</strong> and <strong>#ops</strong> channel.</p>
+<h1 id="commercial-support">Commercial support</h1>
+<p>The Things Industries offers hosted solutions and commercial support. See <a href="https://www.thethingsindustries.com/technology/pricing">Pricing</a> for plans and pricing.</p>
+
+        </div>
+      
+      <div class="is-clearfix">
+</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="footer"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ttn-components.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/promise-polyfill@7/dist/polyfill.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-navbar.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-footer.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ga.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/vendor/basicLightbox.min.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/theme.min.00ace5d667ca108a93b8a0d385569f7c7bb9f46ed32eefe3f5fb39105763cccd.js" integrity="sha256-AKzl1mfKEIqTuKDThVaffHu59G7TLu/j9fs5EFdjzM0=" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

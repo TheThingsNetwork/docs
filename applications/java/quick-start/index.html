@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+
+<html lang="en-us" class="has-ttn-navbar-top">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <meta name="generator" content="Hugo 0.79.0" />
+
+  <title>Quick Start | The Things Network</title>
+  <link rel="canonical" href="https://www.thethingsnetwork.org/docs/applications/java/quick-start/" />
+  
+
+  <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
+
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+  <meta name="msapplication-TileImage" content="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png">
+
+  <meta name="application-name" content="The Things Network">
+  <meta name="msapplication-tooltip" content="Tooltip">
+  <meta name="msapplication-config" content="https://ttnweb.azureedge.net/static/common/favicon/ieconfig.54334a5ee30c.xml">
+
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-32.61b30f85680a.png" sizes="32x32">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-57.83b86c64dc82.png" sizes="57x57">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-76.7dcf8fa36dfc.png" sizes="76x76">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-96.27ac17adaa8b.png" sizes="96x96">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-120.e1526731335e.png" sizes="120x120">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-128.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png" sizes="144x144">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png" sizes="152x152">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-180.fcd414307ca3.png" sizes="180x180">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-195.c55ce09d66da.png" sizes="195x195">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-228.bea53ec4b10b.png" sizes="228x228">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/smalltile.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/mediumtile.3d42f7faac82.png" sizes="270x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
+  <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+
+  <meta property="og:title" content="Quick Start" />
+<meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/applications/java/quick-start/" />
+<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
+<meta property="og:site_name" content="The Things Network" />
+
+
+  <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
+
+<meta name="twitter:title" content="Quick Start"/>
+<meta name="twitter:description" content="We are building a global open free crowdsourced long range low power IoT data network"/>
+
+
+</head>
+
+
+<body>
+
+<div id="header"></div>
+<section class="section">
+  <div class="container">
+    <nav class="breadcrumb has-dot-separator" aria-label="breadcrumbs">
+      <ul>
+        <li><a href="https://www.thethingsnetwork.org/docs">Learn</a></li>
+        
+        
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/lorawan/">LoRaWAN</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/quick-start/">Quick Start</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/applications-and-integrations/">Applications &amp; Integrations</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/">Devices &amp; Gateways</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/the-things-stack/">The Things Stack</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/v2-docs/">V2 Docs (Outdated)</a>
+            </li>
+          
+        
+      </ul>
+    </nav>
+  </div>
+</section>
+<div class="container" role="document">
+  <div class="columns my-0 is-desktop">
+    <div class="column is-3-desktop sidebar-left">
+      
+
+
+<nav class="side-navigation" aria-label="Main navigation">
+
+<h2 class="title is-size-5">Applications</h2>
+
+<div class="menu">
+  <ul class="menu-list">
+  <a href="https://www.thethingsnetwork.org/docs/applications/" class="">Overview</a>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/applications/add/" class="">Add an Application</a>
+    </li>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/applications/options/" class="">Build an Application</a>
+    </li>
+  
+    <p class="menu-label">
+      APIs
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/apis/" class="">Overview</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/manager/" class="">Application Manager API</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/mqtt/" class="">Data API (MQTT)</a>
+</li>
+
+  
+    <p class="menu-label">
+      SDKs &amp; Libraries
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/sdks/" class="">Overview</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/golang/" class="">Go</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/java/" class="">Java</a>
+  
+
+
+<ul class="menu-list">
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/applications/java/javadoc/" class="">Javadoc</a>
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/applications/java/api/" class="">API Reference</a>
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/applications/java/quick-start/" class="is-active">Quick Start</a>
+    
+    
+
+
+
+    
+  </li>
+
+</ul>
+
+
+  
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/nodered/" class="">Node-RED</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/nodejs/" class="">Node.js</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/python/" class="">Python</a>
+</li>
+
+  
+    <p class="menu-label">
+      Integrations
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/evrythng/" class="">EVRYTHNG</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/integrations/" class="">Overview</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/att/" class="">AllThingsTalk</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/aws/" class="">AWS IoT</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/cayenne/" class="">Cayenne</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/collos/" class="">Collos</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/http/" class="">HTTP</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/opensensors/" class="">OpenSensors</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/smart-office/" class="">Smart Office Kit</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/storage/" class="">Storage</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/tago/" class="">Tago</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/thingspeak/" class="">ThingSpeak</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/ttnmapper/" class="">TTN Mapper</a>
+</li>
+
+  
+  </ul>
+</div>
+
+
+
+
+
+</nav>
+
+    </div>
+    <div class="column is-9-desktop sidebar-middle">
+      <div class="docs-content">
+        <h1 class="title is-size-2">
+          Quick Start
+        </h1>
+        <div class="content">
+          <p>This guide will walk you through setting up a Java project that listens to device activations and messages and responds to every 3rd message.</p>
+<blockquote>
+<p>This guide assumes the sketch and payload functions of <a href="/docs/devices/uno/quick-start/">The Things Uno / Quick Start</a>, but can be easily applied to any other.</p>
+</blockquote>
+<p>The full script that we will build is also included as <a href="https://github.com/TheThingsNetwork/java-app-sdk/blob/master/samples/mqtt/src/main/java/org/thethingsnetwork/samples/mqtt/App.java">example</a> in the Java SDK.</p>
+<h2 id="setup">Setup</h2>
+<p>Let&rsquo;s install Java, create a Java project and require the TTN Client.</p>
+<ol>
+<li>
+<p><a href="https://www.java.com/">Download</a> and install Java (at least version 8).</p>
+<p>Under debian-based systems, use :</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sudo apt-get install openjdk-8-jdk
+</code></pre></div><p>For Mac and Windows users, download it here: <a href="https://www.java.com/download/">java</a></p>
+</li>
+<li>
+<p><a href="https://maven.apache.org/download.cgi">Download</a> and install maven.</p>
+<p>Under debian-based systems, use :</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sudo apt-get install maven
+</code></pre></div><p>For Mac users:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">brew install maven
+</code></pre></div><p>For Windows users, see this <a href="https://www.mkyong.com/maven/how-to-install-maven-in-windows/">link</a></p>
+</li>
+<li>
+<p>Create a new Java project:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> <span class="nv">$HOME</span>
+mvn archetype:generate <span class="se">\
+</span><span class="se"></span>-DgroupId<span class="o">=</span>org.thethingsnetwork.samples.mqtt <span class="se">\
+</span><span class="se"></span>-DartifactId<span class="o">=</span>mqtt <span class="se">\
+</span><span class="se"></span>-DarchetypeArtifactId<span class="o">=</span>maven-archetype-quickstart <span class="se">\
+</span><span class="se"></span>-DinteractiveMode<span class="o">=</span><span class="nb">false</span>
+<span class="nb">cd</span> mqtt
+</code></pre></div></li>
+<li>
+<p>Require the <a href="https://github.com/TheThingsNetwork/java-app-sdk/tree/master/data/data-mqtt">TTN Client</a> as dependency:</p>
+<div class="highlight"><pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;dependency&gt;</span>
+  <span class="nt">&lt;groupId&gt;</span>org.thethingsnetwork<span class="nt">&lt;/groupId&gt;</span>
+  <span class="nt">&lt;artifactId&gt;</span>data-mqtt<span class="nt">&lt;/artifactId&gt;</span>
+  <span class="nt">&lt;version&gt;</span>2.1.0<span class="nt">&lt;/version&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+</code></pre></div></li>
+<li>
+<p>Test your configuration:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">mvn clean compile
+</code></pre></div></li>
+</ol>
+<h2 id="connect">Connect</h2>
+<p>Next, we will write the script that requires the TTN Client module and uses it to connect.</p>
+<ol>
+<li>
+<p>Create the main script and open it in your favorite editor:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">open src/main/java/org/thethingsnetwork/samples/mqtt/App.java
+</code></pre></div></li>
+<li>
+<p>Import all required classes :</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">org.thethingsnetwork.samples.mqtt</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.json.JSONObject</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.thethingsnetwork.data.common.Connection</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.thethingsnetwork.data.mqtt.Client</span><span class="o">;</span>
+</code></pre></div></li>
+<li>
+<p>In the <a href="https://console.thethingsnetwork.org/applications">console</a>, navigate to the application you&rsquo;d like to connect to.</p>
+</li>
+<li>
+<p>In the editor, create an instance of the client:</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">String</span> <span class="n">region</span> <span class="o">=</span> <span class="s">&#34;eu&#34;</span><span class="o">;</span>
+<span class="n">String</span> <span class="n">appId</span> <span class="o">=</span> <span class="s">&#34;hello-world&#34;</span><span class="o">;</span>
+<span class="n">String</span> <span class="n">accessKey</span> <span class="o">=</span> <span class="s">&#34;2Z+MU0T5xZCaqsD0bPqOhzA6iygGFoi4FAgMFgBfXSo=&#34;</span><span class="o">;</span>
+
+<span class="n">Client</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Client</span><span class="o">(</span><span class="n">region</span><span class="o">,</span> <span class="n">appId</span><span class="o">,</span> <span class="n">accessKey</span><span class="o">);</span>
+    
+<span class="n">client</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+</code></pre></div><p>Here&rsquo;s where you can find the values in the console:</p>
+<ul>
+<li>For <code>region</code>, copy the part following <code>ttn-handler-</code> for <strong>Handler Status</strong> in the <strong>Application Overview</strong> box.</li>
+<li>For <code>appId</code>, copy the value for <strong>Application ID</strong> in the <strong>Application Overview</strong> box.</li>
+<li>For <code>accessKey</code>, scroll down and copy the value for <strong>default key</strong> in the <strong>Access Key</strong> box.</li>
+</ul>
+</li>
+<li>
+<p>Add a listener for the <code>connected</code> and <code>error</code> events to test the connection:</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">client</span><span class="o">.</span><span class="na">onError</span><span class="o">((</span><span class="n">Throwable</span> <span class="n">_error</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">err</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;error: &#34;</span> <span class="o">+</span> <span class="n">_error</span><span class="o">.</span><span class="na">getMessage</span><span class="o">()));</span>
+
+<span class="n">client</span><span class="o">.</span><span class="na">onConnected</span><span class="o">((</span><span class="n">Connection</span> <span class="n">_client</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;connected !&#34;</span><span class="o">));</span>
+</code></pre></div></li>
+<li>
+<p>Run the script to test the connection:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">mvn clean compile exec:java <span class="se">\
+</span><span class="se"></span>-Dexec.mainClass<span class="o">=</span><span class="s2">&#34;org.thethingsnetwork.samples.mqtt.App&#34;</span>
+</code></pre></div><p>You should see something like:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>INFO<span class="o">]</span> Scanning <span class="k">for</span> projects...
+<span class="o">[</span>INFO<span class="o">]</span> 
+<span class="o">[</span>INFO<span class="o">]</span> -----------------------------------------------------------
+<span class="o">[</span>INFO<span class="o">]</span> Building mqtt 1.0.0
+<span class="o">[</span>INFO<span class="o">]</span> -----------------------------------------------------------
+<span class="o">[</span>INFO<span class="o">]</span> 
+<span class="o">[</span>INFO<span class="o">]</span> --- exec-maven-plugin:1.2.1:exec <span class="o">(</span>default-cli<span class="o">)</span> @ sample ---
+connected !
+</code></pre></div><p>Use <code>Ctrl C</code> to terminate the script.</p>
+<p>If you get an error it should say what is wrong:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">Connection refused: Not authorized
+</code></pre></div></li>
+</ol>
+<h2 id="receive-activations">Receive Activations</h2>
+<p>Now that we are connected, let&rsquo;s listen for new device activations.</p>
+<blockquote>
+<p>Be aware that you will only receive <code>activation</code> events since the moment the script connects.</p>
+</blockquote>
+<ol>
+<li>
+<p>Add a listener for the <code>activation</code> event:</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">client</span><span class="o">.</span><span class="na">onActivation</span><span class="o">((</span><span class="n">String</span> <span class="n">_devId</span><span class="o">,</span> <span class="n">JSONObject</span> <span class="n">_data</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Activation: &#34;</span> <span class="o">+</span> <span class="n">_devId</span> <span class="o">+</span> <span class="s">&#34;, data: &#34;</span> <span class="o">+</span> <span class="n">_data</span><span class="o">));</span>
+</code></pre></div></li>
+<li>
+<p>Run the script again:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">mvn clean compile exec:java <span class="se">\
+</span><span class="se"></span>-Dexec.mainClass<span class="o">=</span><span class="s2">&#34;org.thethingsnetwork.samples.mqtt.App&#34;</span>
+</code></pre></div></li>
+<li>
+<p>Power up, reset or upload a new sketch to a device to force it to activate and you should see something like:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">Activation: my-uno <span class="o">{</span>
+  app_eui: <span class="s1">&#39;70B3D57EF000001C&#39;</span>,
+  dev_eui: <span class="s1">&#39;0004A30B001B7AD2&#39;</span>,
+  dev_addr: <span class="s1">&#39;2601205D&#39;</span>,
+  metadata:
+  <span class="o">{</span> time: <span class="s1">&#39;2016-09-08T13:57:03.415027706Z&#39;</span>,
+    frequency: 868.1,
+    modulation: <span class="s1">&#39;LORA&#39;</span>,
+    data_rate: <span class="s1">&#39;SF7BW125&#39;</span>,
+    coding_rate: <span class="s1">&#39;4/5&#39;</span>,
+    gateways: <span class="o">[</span> <span class="o">[</span>Object<span class="o">]</span> <span class="o">]</span> <span class="o">}</span> <span class="o">}</span>
+</code></pre></div><p>Use <code>Ctrl C</code> to terminate the script.</p>
+</li>
+</ol>
+<h2 id="receive-messages">Receive Messages</h2>
+<p>Now let&rsquo;s listen for actual messages coming in from devices.</p>
+<ol>
+<li>
+<p>Add a listener for the <code>message</code> event:</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">client</span><span class="o">.</span><span class="na">onMessage</span><span class="o">((</span><span class="n">String</span> <span class="n">devId</span><span class="o">,</span> <span class="n">Object</span> <span class="n">data</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Message: &#34;</span> <span class="o">+</span> <span class="n">devId</span> <span class="o">+</span> <span class="s">&#34; &#34;</span> <span class="o">+</span> <span class="n">data</span><span class="o">));</span>
+</code></pre></div></li>
+<li>
+<p>Run the script again:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">mvn clean compile exec:java <span class="se">\
+</span><span class="se"></span>-Dexec.mainClass<span class="o">=</span><span class="s2">&#34;org.thethingsnetwork.samples.mqtt.App&#34;</span>
+</code></pre></div><p>You should see messages come in like:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">Message: my-uno <span class="o">{</span>
+  <span class="s2">&#34;port&#34;</span>: 1,
+  <span class="s2">&#34;counter&#34;</span>: 0,
+  <span class="s2">&#34;payload_raw&#34;</span>: <span class="s2">&#34;AQ==&#34;</span>,
+  <span class="s2">&#34;payload_fields&#34;</span>: <span class="o">{</span>
+    <span class="s2">&#34;led&#34;</span>: <span class="nb">true</span>
+  <span class="o">}</span>,
+  <span class="s2">&#34;metadata&#34;</span>: <span class="o">{</span>
+    <span class="s2">&#34;time&#34;</span>: <span class="s2">&#34;2016-09-08T13:57:08.685529132Z&#34;</span>,
+    <span class="s2">&#34;frequency&#34;</span>: 868.3,
+    <span class="s2">&#34;modulation&#34;</span>: <span class="s2">&#34;LORA&#34;</span>,
+    <span class="s2">&#34;data_rate&#34;</span>: <span class="s2">&#34;SF7BW125&#34;</span>,
+    <span class="s2">&#34;coding_rate&#34;</span>: <span class="s2">&#34;4/5&#34;</span>,
+    <span class="s2">&#34;gateways&#34;</span>: <span class="o">[</span>
+      <span class="o">{</span>
+        <span class="s2">&#34;gtw_id&#34;</span>: <span class="s2">&#34;B827EBFFFE87BD22&#34;</span>,
+        <span class="s2">&#34;timestamp&#34;</span>: 1064899219,
+        <span class="s2">&#34;time&#34;</span>: <span class="s2">&#34;2016-09-08T13:57:08.673927Z&#34;</span>,
+        <span class="s2">&#34;channel&#34;</span>: 1,
+        <span class="s2">&#34;rssi&#34;</span>: -54,
+        <span class="s2">&#34;snr&#34;</span>: 8.2,
+        <span class="s2">&#34;rf_chain&#34;</span>: <span class="m">1</span>
+      <span class="o">}</span>
+    <span class="o">]</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></li>
+</ol>
+<h2 id="send-messages">Send Messages</h2>
+<p>The most common <a href="https://www.lora-alliance.org/What-Is-LoRa/Technology">Class A</a> LoRaWAN devices - including The Things Node and Uno - can only receive the last scheduled message in response to a message they send.</p>
+<ol>
+<li>
+<p>In the Arduino IDE, select <strong>Tools &gt; Serial Monitor</strong> <code>Ctrl/⌘ Shift M</code>.</p>
+</li>
+<li>
+<p>In the editor for the script, add another listener for the <code>message</code> event:</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">client</span><span class="o">.</span><span class="na">onMessage</span><span class="o">(</span><span class="kc">null</span><span class="o">,</span> <span class="s">&#34;led&#34;</span><span class="o">,</span> <span class="o">(</span><span class="n">String</span> <span class="n">_devId</span><span class="o">,</span> <span class="n">Object</span> <span class="n">_data</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="o">{</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="c1">// Toggle the LED
+</span><span class="c1"></span>            <span class="n">JSONObject</span> <span class="n">response</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JSONObject</span><span class="o">().</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;led&#34;</span><span class="o">,</span> <span class="o">!</span><span class="n">_data</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">&#34;true&#34;</span><span class="o">));</span>
+
+            <span class="cm">/**
+</span><span class="cm">            * If you don&#39;t have an encoder payload function:
+</span><span class="cm">            * client.send(_devId, _data.equals(&#34;true&#34;) ? new byte[]{0x00} : new byte[]{0x01}, 0);
+</span><span class="cm">            */</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Sending: &#34;</span> <span class="o">+</span> <span class="n">response</span><span class="o">);</span>
+            <span class="n">client</span><span class="o">.</span><span class="na">send</span><span class="o">(</span><span class="n">_devId</span><span class="o">,</span> <span class="n">response</span><span class="o">,</span> <span class="n">0</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">ex</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Response failed: &#34;</span> <span class="o">+</span> <span class="n">ex</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
+        <span class="o">}</span>
+    <span class="o">});</span>
+</code></pre></div><p>This is what it will do:</p>
+<ul>
+<li>Subscribe to any device, but only the <code>led</code> field.</li>
+<li>Create a new payload to toggle the current <code>led</code> value.</li>
+<li>Send it off to the device we received the message of.</li>
+</ul>
+</li>
+<li>
+<p>Run the script again:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">mvn clean compile exec:java <span class="se">\
+</span><span class="se"></span>-Dexec.mainClass<span class="o">=</span><span class="s2">&#34;org.thethingsnetwork.samples.mqtt.App&#34;</span>
+</code></pre></div><p>After every message the script should output:</p>
+<pre><code>Sending: {&quot;led&quot;:true}
+</code></pre><p>Via the Serial Monitor you should see the message coming in:</p>
+<pre><code>-- LOOP
+Sending: mac tx uncnf 1 with 1 bytes
+Successful transmission. Received 1 bytes
+LED: on
+</code></pre></li>
+</ol>
+<p>🎉 Congratulations! Now you know how to process and send messages from a Java app. Go build something!</p>
+
+        </div>
+      
+      <div class="is-clearfix">
+</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="footer"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ttn-components.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/promise-polyfill@7/dist/polyfill.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-navbar.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-footer.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ga.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/vendor/basicLightbox.min.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/theme.min.00ace5d667ca108a93b8a0d385569f7c7bb9f46ed32eefe3f5fb39105763cccd.js" integrity="sha256-AKzl1mfKEIqTuKDThVaffHu59G7TLu/j9fs5EFdjzM0=" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

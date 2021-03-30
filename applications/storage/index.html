@@ -1,208 +1,335 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <link rel="stylesheet" href="/docs/assets/css/main.css" />
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    <script>
-    (function(canonical) {
-      if (!document.location.href.substr(0, document.location.href.length - document.location.hash.length).startsWith(canonical)) {
-        window.location.replace(canonical);
-      }
-    })('https://www.thethingsnetwork.org/docs/applications/storage/');
-    </script>
-    <!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Storage | The Things Network</title>
-<meta name="generator" content="Jekyll v3.4.5" />
-<meta property="og:title" content="Storage" />
-<meta property="og:locale" content="en_US" />
-<meta name="description" content="Storage Integration" />
-<meta property="og:description" content="Storage Integration" />
-<link rel="canonical" href="https://www.thethingsnetwork.org/docs/applications/storage/" />
+
+<html lang="en-us" class="has-ttn-navbar-top">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <meta name="generator" content="Hugo 0.79.0" />
+
+  <title>Storage | The Things Network</title>
+  <link rel="canonical" href="https://www.thethingsnetwork.org/docs/applications/storage/" />
+  
+
+  <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
+
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+  <meta name="msapplication-TileImage" content="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png">
+
+  <meta name="application-name" content="The Things Network">
+  <meta name="msapplication-tooltip" content="Tooltip">
+  <meta name="msapplication-config" content="https://ttnweb.azureedge.net/static/common/favicon/ieconfig.54334a5ee30c.xml">
+
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-32.61b30f85680a.png" sizes="32x32">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-57.83b86c64dc82.png" sizes="57x57">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-76.7dcf8fa36dfc.png" sizes="76x76">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-96.27ac17adaa8b.png" sizes="96x96">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-120.e1526731335e.png" sizes="120x120">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-128.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png" sizes="144x144">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png" sizes="152x152">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-180.fcd414307ca3.png" sizes="180x180">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-195.c55ce09d66da.png" sizes="195x195">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-228.bea53ec4b10b.png" sizes="228x228">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/smalltile.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/mediumtile.3d42f7faac82.png" sizes="270x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
+  <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+
+  <meta property="og:title" content="Storage" />
+<meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
+<meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.thethingsnetwork.org/docs/applications/storage/" />
+<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
 <meta property="og:site_name" content="The Things Network" />
-<meta property="og:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
-<meta property="og:type" content="article" />
-<meta property="article:published_time" content="2021-03-23T12:55:33+00:00" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta property="twitter:image" content="https://www.thethingsnetwork.org/docs/assets/images/og-image.png" />
-<meta property="twitter:title" content="Storage" />
-<meta name="twitter:site" content="@thethingsnetwrk" />
-<meta property="article:publisher" content="https://www.facebook.com/thethingsnetwork" />
-<script type="application/ld+json">
-{"headline":"Storage","dateModified":"2021-03-23T12:55:33+00:00","datePublished":"2021-03-23T12:55:33+00:00","description":"Storage Integration","url":"https://www.thethingsnetwork.org/docs/applications/storage/","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.thethingsnetwork.org/docs/applications/storage/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ttnstaticfile.blob.core.windows.net/static/common/favicon/largetile.png"}},"image":"https://www.thethingsnetwork.org/docs/assets/images/og-image.png","@context":"https://schema.org"}</script>
-<!-- End Jekyll SEO tag -->
-    <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
-    <meta name="msapplication-TileColor" content="#FFFFFF">
-    <meta name="msapplication-TileImage" content="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png">
-    <meta name="application-name" content="The Things Network">
-    <meta name="msapplication-tooltip" content="Tooltip">
-    <meta name="msapplication-config" content="https://ttnweb.azureedge.net/static/common/favicon/ieconfig.54334a5ee30c.xml">
-    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-32.61b30f85680a.png" sizes="32x32">
-    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-57.83b86c64dc82.png" sizes="57x57">
-    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-76.7dcf8fa36dfc.png" sizes="76x76">
-    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-96.27ac17adaa8b.png" sizes="96x96">
-    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-120.e1526731335e.png" sizes="120x120">
-    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-128.fabea041224c.png" sizes="128x128">
-    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png" sizes="144x144">
-    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png" sizes="152x152">
-    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-180.fcd414307ca3.png" sizes="180x180">
-    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-195.c55ce09d66da.png" sizes="195x195">
-    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-228.bea53ec4b10b.png" sizes="228x228">
-    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/smalltile.fabea041224c.png" sizes="128x128">
-    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/mediumtile.3d42f7faac82.png" sizes="270x270">
-    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
-    <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
-    <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-    <script src="/docs/assets/js/main.js"></script>
-  </head>
-  <body>
-    <div id="header"></div>
-    <div id="content">
-<div class="layout-page">
-  <!-- <div class="ttn-header ttn-header-small">
-    <div class="ttn-container container-fluid">
-      <h1>
-        <img src="/docs/assets/images/the-things-white.png" alt="⛅ The Things Network" />
-        <span>Learn</span>
-      </h1>
+
+
+  <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
+
+<meta name="twitter:title" content="Storage"/>
+<meta name="twitter:description" content="We are building a global open free crowdsourced long range low power IoT data network"/>
+
+
+</head>
+
+
+<body>
+
+<div id="header"></div>
+<section class="section">
+  <div class="container">
+    <nav class="breadcrumb has-dot-separator" aria-label="breadcrumbs">
+      <ul>
+        <li><a href="https://www.thethingsnetwork.org/docs">Learn</a></li>
+        
+        
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/lorawan/">LoRaWAN</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/quick-start/">Quick Start</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/applications-and-integrations/">Applications &amp; Integrations</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/">Devices &amp; Gateways</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/the-things-stack/">The Things Stack</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/v2-docs/">V2 Docs (Outdated)</a>
+            </li>
+          
+        
+      </ul>
+    </nav>
+  </div>
+</section>
+<div class="container" role="document">
+  <div class="columns my-0 is-desktop">
+    <div class="column is-3-desktop sidebar-left">
+      
+
+
+<nav class="side-navigation" aria-label="Main navigation">
+
+<h2 class="title is-size-5">Applications</h2>
+
+<div class="menu">
+  <ul class="menu-list">
+  <a href="https://www.thethingsnetwork.org/docs/applications/" class="">Overview</a>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/applications/add/" class="">Add an Application</a>
+    </li>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/applications/options/" class="">Build an Application</a>
+    </li>
+  
+    <p class="menu-label">
+      APIs
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/apis/" class="">Overview</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/manager/" class="">Application Manager API</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/mqtt/" class="">Data API (MQTT)</a>
+</li>
+
+  
+    <p class="menu-label">
+      SDKs &amp; Libraries
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/sdks/" class="">Overview</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/golang/" class="">Go</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/java/" class="">Java</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/nodered/" class="">Node-RED</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/nodejs/" class="">Node.js</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/python/" class="">Python</a>
+</li>
+
+  
+    <p class="menu-label">
+      Integrations
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/evrythng/" class="">EVRYTHNG</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/integrations/" class="">Overview</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/att/" class="">AllThingsTalk</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/aws/" class="">AWS IoT</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/cayenne/" class="">Cayenne</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/collos/" class="">Collos</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/http/" class="">HTTP</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/opensensors/" class="">OpenSensors</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/smart-office/" class="">Smart Office Kit</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/storage/" class="is-active">Storage</a>
+  
+
+
+<ul class="menu-list">
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/applications/storage/api/" class="">API Reference</a>
+    
+  </li>
+
+</ul>
+
+
+  
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/tago/" class="">Tago</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/thingspeak/" class="">ThingSpeak</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/ttnmapper/" class="">TTN Mapper</a>
+</li>
+
+  
+  </ul>
+</div>
+
+
+
+
+
+</nav>
+
     </div>
-  </div> -->
-  <div class="container-fluid ttn-container">
-    <div class="row page-top-nav">
-      <div class="col-sm-9">
-        <ul>
-          <!--<li class="page-top-nav-crumb"><a href="http://www.thethingsnetwork.org/">Home</a></li>-->
-          <li class="page-top-nav-crumb"><a href="/docs/">Learn</a></li>
-                <li class=""><a href="/docs/quick-start/">Quick Start</a></li>
-                <li class=""><a href="/docs/lorawan/">LoRaWAN</a></li>
-                <li class=""><a href="/docs/devices-and-gateways/">Devices & Gateways</a></li>
-                <li class=""><a href="/docs/applications-and-integrations/">Applications</a></li>
-                <li class=""><a href="/docs/the-things-stack/">The Things Stack</a></li>
-                <li class=""><a href="/docs/v2-docs/">V2 docs</a></li>
-        </ul>
-      </div>
-      <div class="hidden-xs col-sm-3 text-right">
-        <a href="https://github.com/TheThingsNetwork/docs/edit/master/_content/applications/storage/index.md" class="page-edit" data-proofer-ignore><i class="fa fa-github"></i> Edit <strong>index.md</strong></a>
-      </div>
-    </div>
-    <div class="row wrapper">
-      <div class="col-sm-3 side-nav">
-        <div class="panel page-side-nav">
-          <div class="panel-body">
-            <ul>
-              <li class=""><a href="/docs/applications/index.html"><h5>Applications</h5></a>
-            <ul>
-                <li class=""><a href="/docs/applications/add.html">Add an Application</a>
-                </li>
-                <li class=""><a href="/docs/applications/options.html">Build an Application</a>
-                </li>
-            </ul>
-              </li>
-            <li class="page-side-nav-section"><span>APIs</span>
-            <ul>
-                <li class=""><a href="/docs/applications/apis.html">Overview</a>
-                </li>
-                <li class=""><a href="/docs/applications/manager/">Application Manager API</a>
-                </li>
-                <li class=""><a href="/docs/applications/mqtt/">Data API (MQTT)</a>
-                </li>
-            </ul>
-            </li>
-            <li class="page-side-nav-section"><span>SDKs & Libraries</span>
-            <ul>
-                <li class=""><a href="/docs/applications/sdks.html">Overview</a>
-                </li>
-                <li class=""><a href="/docs/applications/golang/">Go</a>
-                </li>
-                <li class=""><a href="/docs/applications/java/">Java</a>
-                </li>
-                <li class=""><a href="/docs/applications/nodered/">Node-RED</a>
-                </li>
-                <li class=""><a href="/docs/applications/nodejs/">Node.js</a>
-                </li>
-                <li class=""><a href="/docs/applications/python/">Python</a>
-                </li>
-            </ul>
-            </li>
-            <li class="page-side-nav-section"><span>Integrations</span>
-            <ul>
-                <li class=""><a href="/docs/applications/integrations.html">Overview</a>
-                </li>
-                <li class=""><a href="/docs/applications/aws/">AWS IoT</a>
-                </li>
-                <li class=""><a href="/docs/applications/att/">AllThingsTalk</a>
-                </li>
-                <li class=""><a href="/docs/applications/cayenne/">Cayenne</a>
-                </li>
-                <li class=""><a href="/docs/applications/collos/">Collos</a>
-                </li>
-                <li class=""><a href="/docs/applications/http/">HTTP</a>
-                </li>
-                <li class=""><a href="/docs/applications/opensensors/">OpenSensors</a>
-                </li>
-                <li class="active"><a href="/docs/applications/storage/">Storage</a>
-            <ul>
-                <li class=""><a href="/docs/applications/storage/api.html">API Reference</a>
-                </li>
-            </ul>
-                </li>
-                <li class=""><a href="/docs/applications/ttnmapper/">TTN Mapper</a>
-                </li>
-                <li class=""><a href="/docs/applications/tago/">Tago</a>
-                </li>
-                <li class=""><a href="/docs/applications/thingspeak/">ThingSpeak</a>
-                </li>
-                <li class=""><a href="/docs/applications/evrythng/">EVRYTHNG</a>
-                </li>
-            </ul>
-            </li>
-            </ul>
-            <!-- <li class="hidden-xs col-sm-2 page-toc page-affix"></li> --> 
-          </div>
-        </div> 
-      </div>
-      <div class="col-sm-9 page-body">
-        <div class="panel">
-          <div class="panel-body page-content">
-            <h1 id="storage-integration">Storage Integration</h1>
-<p>The Storage Integration allows you to persist data in a database. The data is stored for seven days. You can then use the <a href="api.html">API</a> to retrieve this data. Retrieving data will work as soon as the first data traffic happened after adding the integration.</p>
+    <div class="column is-9-desktop sidebar-middle">
+      <div class="docs-content">
+        <h1 class="title is-size-2">
+          Storage
+        </h1>
+        <div class="content">
+          <p>The Storage Integration allows you to persist data in a database. The data is stored for seven days. You can then use the <a href="/docs/applications/storage/api/">API</a> to retrieve this data. Retrieving data will work as soon as the first data traffic happened after adding the integration.</p>
 <ul>
-  <li><a href="../integrations.html#add-an-integration">Add the Integration</a></li>
-  <li><a href="api.html">Use the Integration</a></li>
+<li><a href="/docs/applications/integrations/#add-an-integration">Add the Integration</a></li>
+<li><a href="/docs/applications/storage/api/">Use the Integration</a></li>
 </ul>
 <h2 id="getting-started-video">Getting started video</h2>
-<p><a href="https://www.youtube.com/watch?v=kVf8GmCbOuE&amp;index=3&amp;list=PLM8eOeiKY7JVwrBYRHxsf9p0VM_dVapXl" target="_blank"><img src="https://www.thethingsnetwork.org/docs/applications/Storage-Integration.png" alt="Getting started with the storage integration" width="480" /></a></p>
-          </div>  
+<p><a href="https://www.youtube.com/watch?v=kVf8GmCbOuE&index=3&list=PLM8eOeiKY7JVwrBYRHxsf9p0VM_dVapXl" target="_blank"><img src="https://www.thethingsnetwork.org/docs/applications/Storage-Integration.png" 
+alt="Getting started with the storage integration" width="480" /></a></p>
+
         </div>
-        <div>
-        </div>
+      
+      <div class="is-clearfix">
+</div>
+
       </div>
     </div>
   </div>
 </div>
-<div class="modal fade" id="lightbox" tabindex="-1" role="dialog">
-  <div class="modal-dialog text-center" role="document" style="width:auto;padding:20px;">
-    <a href="https://ttnstaticfile.blob.core.windows.net/static/ttn/media/logo/ttn-logo.png"><img class="modal-content modal-body" src="https://ttnstaticfile.blob.core.windows.net/static/ttn/media/logo/ttn-logo.png" alt="Zoom" /></a>
-  </div>
-</div>
-<script src="/docs/assets/js/page.js"></script>
-    </div>
-    <div id="footer"></div>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.min.js"></script>
-    <script src="https://ttnweb.azureedge.net/static/common/js/ttn-components.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill@7/dist/polyfill.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
-    <script src="https://ttnweb.azureedge.net/static/common/js/vue-navbar.js"></script>
-    <script src="https://ttnweb.azureedge.net/static/common/js/vue-footer.js"></script>
-    <script src="https://ttnweb.azureedge.net/static/common/js/ga.js"></script>
-  </body>
+
+
+<div id="footer"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ttn-components.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/promise-polyfill@7/dist/polyfill.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-navbar.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-footer.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ga.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/vendor/basicLightbox.min.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/theme.min.00ace5d667ca108a93b8a0d385569f7c7bb9f46ed32eefe3f5fb39105763cccd.js" integrity="sha256-AKzl1mfKEIqTuKDThVaffHu59G7TLu/j9fs5EFdjzM0=" crossorigin="anonymous"></script>
+
+</body>
+
 </html>

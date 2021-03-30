@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+
+<html lang="en-us" class="has-ttn-navbar-top">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <meta name="generator" content="Hugo 0.79.0" />
+
+  <title>API Reference | The Things Network</title>
+  <link rel="canonical" href="https://www.thethingsnetwork.org/docs/applications/manager/api/" />
+  
+
+  <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
+
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+  <meta name="msapplication-TileImage" content="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png">
+
+  <meta name="application-name" content="The Things Network">
+  <meta name="msapplication-tooltip" content="Tooltip">
+  <meta name="msapplication-config" content="https://ttnweb.azureedge.net/static/common/favicon/ieconfig.54334a5ee30c.xml">
+
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-32.61b30f85680a.png" sizes="32x32">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-57.83b86c64dc82.png" sizes="57x57">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-76.7dcf8fa36dfc.png" sizes="76x76">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-96.27ac17adaa8b.png" sizes="96x96">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-120.e1526731335e.png" sizes="120x120">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-128.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png" sizes="144x144">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png" sizes="152x152">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-180.fcd414307ca3.png" sizes="180x180">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-195.c55ce09d66da.png" sizes="195x195">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-228.bea53ec4b10b.png" sizes="228x228">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/smalltile.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/mediumtile.3d42f7faac82.png" sizes="270x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
+  <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+
+  <meta property="og:title" content="API Reference" />
+<meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/applications/manager/api/" />
+<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
+<meta property="og:site_name" content="The Things Network" />
+
+
+  <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
+
+<meta name="twitter:title" content="API Reference"/>
+<meta name="twitter:description" content="We are building a global open free crowdsourced long range low power IoT data network"/>
+
+
+</head>
+
+
+<body>
+
+<div id="header"></div>
+<section class="section">
+  <div class="container">
+    <nav class="breadcrumb has-dot-separator" aria-label="breadcrumbs">
+      <ul>
+        <li><a href="https://www.thethingsnetwork.org/docs">Learn</a></li>
+        
+        
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/lorawan/">LoRaWAN</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/quick-start/">Quick Start</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/applications-and-integrations/">Applications &amp; Integrations</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/">Devices &amp; Gateways</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/the-things-stack/">The Things Stack</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/v2-docs/">V2 Docs (Outdated)</a>
+            </li>
+          
+        
+      </ul>
+    </nav>
+  </div>
+</section>
+<div class="container" role="document">
+  <div class="columns my-0 is-desktop">
+    <div class="column is-3-desktop sidebar-left">
+      
+
+
+<nav class="side-navigation" aria-label="Main navigation">
+
+<h2 class="title is-size-5">Applications</h2>
+
+<div class="menu">
+  <ul class="menu-list">
+  <a href="https://www.thethingsnetwork.org/docs/applications/" class="">Overview</a>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/applications/add/" class="">Add an Application</a>
+    </li>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/applications/options/" class="">Build an Application</a>
+    </li>
+  
+    <p class="menu-label">
+      APIs
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/apis/" class="">Overview</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/manager/" class="">Application Manager API</a>
+  
+
+
+<ul class="menu-list">
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/applications/manager/api/" class="is-active">API Reference</a>
+    
+    
+
+
+
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/applications/manager/authentication/" class="">Authentication</a>
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/applications/manager/usage/" class="">Usage</a>
+    
+  </li>
+
+</ul>
+
+
+  
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/mqtt/" class="">Data API (MQTT)</a>
+</li>
+
+  
+    <p class="menu-label">
+      SDKs &amp; Libraries
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/sdks/" class="">Overview</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/golang/" class="">Go</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/java/" class="">Java</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/nodered/" class="">Node-RED</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/nodejs/" class="">Node.js</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/python/" class="">Python</a>
+</li>
+
+  
+    <p class="menu-label">
+      Integrations
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/evrythng/" class="">EVRYTHNG</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/integrations/" class="">Overview</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/att/" class="">AllThingsTalk</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/aws/" class="">AWS IoT</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/cayenne/" class="">Cayenne</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/collos/" class="">Collos</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/http/" class="">HTTP</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/opensensors/" class="">OpenSensors</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/smart-office/" class="">Smart Office Kit</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/storage/" class="">Storage</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/tago/" class="">Tago</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/thingspeak/" class="">ThingSpeak</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/ttnmapper/" class="">TTN Mapper</a>
+</li>
+
+  
+  </ul>
+</div>
+
+
+
+
+
+</nav>
+
+    </div>
+    <div class="column is-9-desktop sidebar-middle">
+      <div class="docs-content">
+        <h1 class="title is-size-2">
+          API Reference
+        </h1>
+        <div class="content">
+          <h2 id="handlerapplicationmanager">.handler.ApplicationManager</h2>
+<p>ApplicationManager manages application and device registrations on the Handler</p>
+<p>To protect our quality of service, you can make up to 5000 calls to the
+ApplicationManager API per hour. Once you go over the rate limit, you will
+receive an error response.</p>
+<h3 id="methods">Methods</h3>
+<h4 id="deleteapplication"><code>DeleteApplication</code></h4>
+<p>DeleteApplication deletes the application with the given identifier (app_id)</p>
+<ul>
+<li>Request: <a href="/docs/applications/manager/#handlerapplicationidentifier"><code>ApplicationIdentifier</code></a></li>
+<li>Response: <a href="/docs/applications/manager/#googleprotobufempty"><code>Empty</code></a></li>
+</ul>
+<p>Available HTTP Endpoints:</p>
+<ul>
+<li><code>DELETE</code> <code>/applications/{app_id}</code></li>
+</ul>
+<p>Input:</p>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&#34;app_id&#34;</span><span class="p">:</span> <span class="s2">&#34;some-app-id&#34;</span>
+<span class="p">}</span>
+</code></pre></div><p>Output:</p>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{}</span>
+</code></pre></div><h4 id="deletedevice"><code>DeleteDevice</code></h4>
+<p>DeleteDevice deletes the device with the given identifier (app_id and dev_id)</p>
+<ul>
+<li>Request: <a href="/docs/applications/manager/#handlerdeviceidentifier"><code>DeviceIdentifier</code></a></li>
+<li>Response: <a href="/docs/applications/manager/#googleprotobufempty"><code>Empty</code></a></li>
+</ul>
+<p>Available HTTP Endpoints:</p>
+<ul>
+<li><code>DELETE</code> <code>/applications/{app_id}/devices/{dev_id}</code></li>
+</ul>
+<p>Input:</p>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&#34;app_id&#34;</span><span class="p">:</span> <span class="s2">&#34;some-app-id&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;dev_id&#34;</span><span class="p">:</span> <span class="s2">&#34;some-dev-id&#34;</span>
+<span class="p">}</span>
+</code></pre></div><p>Output:</p>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{}</span>
+</code></pre></div><h4 id="drydownlink"><code>DryDownlink</code></h4>
+<p>DryUplink simulates processing a downlink message and returns the result</p>
+<ul>
+<li>Request: <a href="/docs/applications/manager/#handlerdrydownlinkmessage"><code>DryDownlinkMessage</code></a></li>
+<li>Response: <a href="/docs/applications/manager/#handlerdrydownlinkresult"><code>DryDownlinkResult</code></a></li>
+</ul>
+<h4 id="dryuplink"><code>DryUplink</code></h4>
+<p>DryUplink simulates processing an uplink message and returns the result</p>
+<ul>
+<li>Request: <a href="/docs/applications/manager/#handlerdryuplinkmessage"><code>DryUplinkMessage</code></a></li>
+<li>Response: <a href="/docs/applications/manager/#handlerdryuplinkresult"><code>DryUplinkResult</code></a></li>
+</ul>
+<h4 id="getapplication"><code>GetApplication</code></h4>
+<p>GetApplication returns the application with the given identifier (app_id)</p>
+<ul>
+<li>Request: <a href="/docs/applications/manager/#handlerapplicationidentifier"><code>ApplicationIdentifier</code></a></li>
+<li>Response: <a href="/docs/applications/manager/#handlerapplication"><code>Application</code></a></li>
+</ul>
+<p>Available HTTP Endpoints:</p>
+<ul>
+<li><code>GET</code> <code>/applications/{app_id}</code></li>
+</ul>
+<p>Input:</p>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&#34;app_id&#34;</span><span class="p">:</span> <span class="s2">&#34;some-app-id&#34;</span>
+<span class="p">}</span>
+</code></pre></div><p>Output:</p>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&#34;app_id&#34;</span><span class="p">:</span> <span class="s2">&#34;some-app-id&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;converter&#34;</span><span class="p">:</span> <span class="s2">&#34;function Converter(decoded, port) {...&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;decoder&#34;</span><span class="p">:</span> <span class="s2">&#34;function Decoder(bytes, port) {...&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;encoder&#34;</span><span class="p">:</span> <span class="s2">&#34;Encoder(object, port) {...&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;payload_format&#34;</span><span class="p">:</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;register_on_join_access_key&#34;</span><span class="p">:</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;validator&#34;</span><span class="p">:</span> <span class="s2">&#34;Validator(converted, port) {...&#34;</span>
+<span class="p">}</span>
+</code></pre></div><h4 id="getdevice"><code>GetDevice</code></h4>
+<p>GetDevice returns the device with the given identifier (app_id and dev_id)</p>
+<ul>
+<li>Request: <a href="/docs/applications/manager/#handlerdeviceidentifier"><code>DeviceIdentifier</code></a></li>
+<li>Response: <a href="/docs/applications/manager/#handlerdevice"><code>Device</code></a></li>
+</ul>
+<p>Available HTTP Endpoints:</p>
+<ul>
+<li><code>GET</code> <code>/applications/{app_id}/devices/{dev_id}</code></li>
+</ul>
+<p>Input:</p>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&#34;app_id&#34;</span><span class="p">:</span> <span class="s2">&#34;some-app-id&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;dev_id&#34;</span><span class="p">:</span> <span class="s2">&#34;some-dev-id&#34;</span>
+<span class="p">}</span>
+</code></pre></div><p>Output:</p>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&#34;altitude&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="nt">&#34;app_id&#34;</span><span class="p">:</span> <span class="s2">&#34;some-app-id&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;attributes&#34;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&#34;key&#34;</span><span class="p">:</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;value&#34;</span><span class="p">:</span> <span class="s2">&#34;&#34;</span>
+  <span class="p">},</span>
+  <span class="nt">&#34;description&#34;</span><span class="p">:</span> <span class="s2">&#34;Some description of the device&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;dev_id&#34;</span><span class="p">:</span> <span class="s2">&#34;some-dev-id&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;latitude&#34;</span><span class="p">:</span> <span class="mf">52.375</span><span class="p">,</span>
+  <span class="nt">&#34;longitude&#34;</span><span class="p">:</span> <span class="mf">4.887</span><span class="p">,</span>
+  <span class="nt">&#34;lorawan_device&#34;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&#34;activation_constraints&#34;</span><span class="p">:</span> <span class="s2">&#34;local&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;app_eui&#34;</span><span class="p">:</span> <span class="s2">&#34;0102030405060708&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;app_id&#34;</span><span class="p">:</span> <span class="s2">&#34;some-app-id&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;app_key&#34;</span><span class="p">:</span> <span class="s2">&#34;01020304050607080102030405060708&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;app_s_key&#34;</span><span class="p">:</span> <span class="s2">&#34;01020304050607080102030405060708&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;dev_addr&#34;</span><span class="p">:</span> <span class="s2">&#34;01020304&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;dev_eui&#34;</span><span class="p">:</span> <span class="s2">&#34;0102030405060708&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;dev_id&#34;</span><span class="p">:</span> <span class="s2">&#34;some-dev-id&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;disable_f_cnt_check&#34;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nt">&#34;f_cnt_down&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nt">&#34;f_cnt_up&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nt">&#34;last_seen&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nt">&#34;nwk_s_key&#34;</span><span class="p">:</span> <span class="s2">&#34;01020304050607080102030405060708&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;uses32_bit_f_cnt&#34;</span><span class="p">:</span> <span class="kc">true</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div><h4 id="getdevicesforapplication"><code>GetDevicesForApplication</code></h4>
+<p>GetDevicesForApplication returns all devices that belong to the application with the given identifier (app_id)</p>
+<ul>
+<li>Request: <a href="/docs/applications/manager/#handlerapplicationidentifier"><code>ApplicationIdentifier</code></a></li>
+<li>Response: <a href="/docs/applications/manager/#handlerdevicelist"><code>DeviceList</code></a></li>
+</ul>
+<p>Available HTTP Endpoints:</p>
+<ul>
+<li><code>GET</code> <code>/applications/{app_id}/devices</code></li>
+</ul>
+<p>Input:</p>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&#34;app_id&#34;</span><span class="p">:</span> <span class="s2">&#34;some-app-id&#34;</span>
+<span class="p">}</span>
+</code></pre></div><p>Output:</p>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&#34;devices&#34;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&#34;altitude&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nt">&#34;app_id&#34;</span><span class="p">:</span> <span class="s2">&#34;some-app-id&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;attributes&#34;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&#34;key&#34;</span><span class="p">:</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
+      <span class="nt">&#34;value&#34;</span><span class="p">:</span> <span class="s2">&#34;&#34;</span>
+    <span class="p">},</span>
+    <span class="nt">&#34;description&#34;</span><span class="p">:</span> <span class="s2">&#34;Some description of the device&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;dev_id&#34;</span><span class="p">:</span> <span class="s2">&#34;some-dev-id&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;latitude&#34;</span><span class="p">:</span> <span class="mf">52.375</span><span class="p">,</span>
+    <span class="nt">&#34;longitude&#34;</span><span class="p">:</span> <span class="mf">4.887</span><span class="p">,</span>
+    <span class="nt">&#34;lorawan_device&#34;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&#34;activation_constraints&#34;</span><span class="p">:</span> <span class="s2">&#34;local&#34;</span><span class="p">,</span>
+      <span class="nt">&#34;app_eui&#34;</span><span class="p">:</span> <span class="s2">&#34;0102030405060708&#34;</span><span class="p">,</span>
+      <span class="nt">&#34;app_id&#34;</span><span class="p">:</span> <span class="s2">&#34;some-app-id&#34;</span><span class="p">,</span>
+      <span class="nt">&#34;app_key&#34;</span><span class="p">:</span> <span class="s2">&#34;01020304050607080102030405060708&#34;</span><span class="p">,</span>
+      <span class="nt">&#34;app_s_key&#34;</span><span class="p">:</span> <span class="s2">&#34;01020304050607080102030405060708&#34;</span><span class="p">,</span>
+      <span class="nt">&#34;dev_addr&#34;</span><span class="p">:</span> <span class="s2">&#34;01020304&#34;</span><span class="p">,</span>
+      <span class="nt">&#34;dev_eui&#34;</span><span class="p">:</span> <span class="s2">&#34;0102030405060708&#34;</span><span class="p">,</span>
+      <span class="nt">&#34;dev_id&#34;</span><span class="p">:</span> <span class="s2">&#34;some-dev-id&#34;</span><span class="p">,</span>
+      <span class="nt">&#34;disable_f_cnt_check&#34;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&#34;f_cnt_down&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nt">&#34;f_cnt_up&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nt">&#34;last_seen&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nt">&#34;nwk_s_key&#34;</span><span class="p">:</span> <span class="s2">&#34;01020304050607080102030405060708&#34;</span><span class="p">,</span>
+      <span class="nt">&#34;uses32_bit_f_cnt&#34;</span><span class="p">:</span> <span class="kc">true</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div><h4 id="registerapplication"><code>RegisterApplication</code></h4>
+<p>Applications should first be registered to the Handler with the <code>RegisterApplication</code> method</p>
+<ul>
+<li>Request: <a href="/docs/applications/manager/#handlerapplicationidentifier"><code>ApplicationIdentifier</code></a></li>
+<li>Response: <a href="/docs/applications/manager/#googleprotobufempty"><code>Empty</code></a></li>
+</ul>
+<p>Available HTTP Endpoints:</p>
+<ul>
+<li><code>POST</code> <code>/applications</code></li>
+</ul>
+<p>Input:</p>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&#34;app_id&#34;</span><span class="p">:</span> <span class="s2">&#34;some-app-id&#34;</span>
+<span class="p">}</span>
+</code></pre></div><p>Output:</p>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{}</span>
+</code></pre></div><h4 id="setapplication"><code>SetApplication</code></h4>
+<p>SetApplication updates the settings for the application. All fields must be supplied.</p>
+<ul>
+<li>Request: <a href="/docs/applications/manager/#handlerapplication"><code>Application</code></a></li>
+<li>Response: <a href="/docs/applications/manager/#googleprotobufempty"><code>Empty</code></a></li>
+</ul>
+<p>Available HTTP Endpoints:</p>
+<ul>
+<li><code>PUT</code> <code>/applications/{app_id}</code></li>
+<li><code>POST</code> <code>/applications/{app_id}</code></li>
+</ul>
+<p>Input:</p>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&#34;app_id&#34;</span><span class="p">:</span> <span class="s2">&#34;some-app-id&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;converter&#34;</span><span class="p">:</span> <span class="s2">&#34;function Converter(decoded, port) {...&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;decoder&#34;</span><span class="p">:</span> <span class="s2">&#34;function Decoder(bytes, port) {...&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;encoder&#34;</span><span class="p">:</span> <span class="s2">&#34;Encoder(object, port) {...&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;payload_format&#34;</span><span class="p">:</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;register_on_join_access_key&#34;</span><span class="p">:</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;validator&#34;</span><span class="p">:</span> <span class="s2">&#34;Validator(converted, port) {...&#34;</span>
+<span class="p">}</span>
+</code></pre></div><p>Output:</p>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{}</span>
+</code></pre></div><h4 id="setdevice"><code>SetDevice</code></h4>
+<p>SetDevice creates or updates a device. All fields must be supplied.</p>
+<ul>
+<li>Request: <a href="/docs/applications/manager/#handlerdevice"><code>Device</code></a></li>
+<li>Response: <a href="/docs/applications/manager/#googleprotobufempty"><code>Empty</code></a></li>
+</ul>
+<p>Available HTTP Endpoints:</p>
+<ul>
+<li><code>PUT</code> <code>/applications/{app_id}/devices/{dev_id}</code></li>
+<li><code>POST</code> <code>/applications/{app_id}/devices</code></li>
+<li><code>PUT</code> <code>/applications/{app_id}/devices</code></li>
+<li><code>POST</code> <code>/applications/{app_id}/devices/{dev_id}</code></li>
+</ul>
+<p>Input:</p>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&#34;altitude&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="nt">&#34;app_id&#34;</span><span class="p">:</span> <span class="s2">&#34;some-app-id&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;attributes&#34;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&#34;key&#34;</span><span class="p">:</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;value&#34;</span><span class="p">:</span> <span class="s2">&#34;&#34;</span>
+  <span class="p">},</span>
+  <span class="nt">&#34;description&#34;</span><span class="p">:</span> <span class="s2">&#34;Some description of the device&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;dev_id&#34;</span><span class="p">:</span> <span class="s2">&#34;some-dev-id&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;latitude&#34;</span><span class="p">:</span> <span class="mf">52.375</span><span class="p">,</span>
+  <span class="nt">&#34;longitude&#34;</span><span class="p">:</span> <span class="mf">4.887</span><span class="p">,</span>
+  <span class="nt">&#34;lorawan_device&#34;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&#34;activation_constraints&#34;</span><span class="p">:</span> <span class="s2">&#34;local&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;app_eui&#34;</span><span class="p">:</span> <span class="s2">&#34;0102030405060708&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;app_id&#34;</span><span class="p">:</span> <span class="s2">&#34;some-app-id&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;app_key&#34;</span><span class="p">:</span> <span class="s2">&#34;01020304050607080102030405060708&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;app_s_key&#34;</span><span class="p">:</span> <span class="s2">&#34;01020304050607080102030405060708&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;dev_addr&#34;</span><span class="p">:</span> <span class="s2">&#34;01020304&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;dev_eui&#34;</span><span class="p">:</span> <span class="s2">&#34;0102030405060708&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;dev_id&#34;</span><span class="p">:</span> <span class="s2">&#34;some-dev-id&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;disable_f_cnt_check&#34;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nt">&#34;f_cnt_down&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nt">&#34;f_cnt_up&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nt">&#34;last_seen&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nt">&#34;nwk_s_key&#34;</span><span class="p">:</span> <span class="s2">&#34;01020304050607080102030405060708&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;uses32_bit_f_cnt&#34;</span><span class="p">:</span> <span class="kc">true</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div><p>Output:</p>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{}</span>
+</code></pre></div><h4 id="simulateuplink"><code>SimulateUplink</code></h4>
+<p>SimulateUplink simulates an uplink message</p>
+<ul>
+<li>Request: <a href="/docs/applications/manager/#handlersimulateduplinkmessage"><code>SimulatedUplinkMessage</code></a></li>
+<li>Response: <a href="/docs/applications/manager/#googleprotobufempty"><code>Empty</code></a></li>
+</ul>
+<h2 id="messages">Messages</h2>
+<h3 id="googleprotobufempty"><code>.google.protobuf.Empty</code></h3>
+<p>A generic empty message that you can re-use to avoid defining duplicated
+empty messages in your APIs.</p>
+<h3 id="handlerapplication"><code>.handler.Application</code></h3>
+<p>The Application settings</p>
+<table>
+<thead>
+<tr>
+<th><strong>Name</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>app_id</code></td>
+<td><code>string</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>converter</code></td>
+<td><code>string</code></td>
+<td>The converter is a JavaScript function that can be used to convert values in the object returned from the decoder. This can for example be useful to convert a voltage to a temperature. This function is used when the payload format is set to custom.</td>
+</tr>
+<tr>
+<td><code>decoder</code></td>
+<td><code>string</code></td>
+<td>The decoder is a JavaScript function that decodes a byte array to an object. This function is used when the payload format is set to custom.</td>
+</tr>
+<tr>
+<td><code>encoder</code></td>
+<td><code>string</code></td>
+<td>The encoder is a JavaScript function that encodes an object to a byte array. This function is used when the payload format is set to custom.</td>
+</tr>
+<tr>
+<td><code>payload_format</code></td>
+<td><code>string</code></td>
+<td>The payload format indicates how payload is formatted.</td>
+</tr>
+<tr>
+<td><code>register_on_join_access_key</code></td>
+<td><code>string</code></td>
+<td>The &ldquo;register on join&rdquo; access key should only be set if devices need to be registered on join</td>
+</tr>
+<tr>
+<td><code>validator</code></td>
+<td><code>string</code></td>
+<td>The validator is a JavaScript function that checks the validity of the object returned by the decoder or converter. If validation fails, the message is dropped. This function is used when the payload format is set to custom.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="handlerapplicationidentifier"><code>.handler.ApplicationIdentifier</code></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Name</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>app_id</code></td>
+<td><code>string</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="handlerdevice"><code>.handler.Device</code></h3>
+<p>The Device settings</p>
+<table>
+<thead>
+<tr>
+<th><strong>Name</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>altitude</code></td>
+<td><code>int32</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>app_id</code></td>
+<td><code>string</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>attributes</code></td>
+<td><em>repeated</em> <a href="/docs/applications/manager/#handlerdeviceattributesentry"><code>AttributesEntry</code></a></td>
+<td></td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><code>string</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>dev_id</code></td>
+<td><code>string</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>latitude</code></td>
+<td><code>float</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>longitude</code></td>
+<td><code>float</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>lorawan_device</code></td>
+<td><a href="/docs/applications/manager/#lorawandevice"><code>Device</code></a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="handlerdeviceattributesentry"><code>.handler.Device.AttributesEntry</code></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Name</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>key</code></td>
+<td><code>string</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>value</code></td>
+<td><code>string</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="handlerdeviceidentifier"><code>.handler.DeviceIdentifier</code></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Name</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>app_id</code></td>
+<td><code>string</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>dev_id</code></td>
+<td><code>string</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="handlerdevicelist"><code>.handler.DeviceList</code></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Name</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>devices</code></td>
+<td><em>repeated</em> <a href="/docs/applications/manager/#handlerdevice"><code>Device</code></a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="handlerdrydownlinkmessage"><code>.handler.DryDownlinkMessage</code></h3>
+<p>DryDownlinkMessage is a simulated message to test downlink processing</p>
+<table>
+<thead>
+<tr>
+<th><strong>Name</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>app</code></td>
+<td><a href="/docs/applications/manager/#handlerapplication"><code>Application</code></a></td>
+<td>The Application containing the payload functions that should be executed</td>
+</tr>
+<tr>
+<td><code>fields</code></td>
+<td><code>string</code></td>
+<td>JSON-encoded object with fields to encode</td>
+</tr>
+<tr>
+<td><code>payload</code></td>
+<td><code>bytes</code></td>
+<td>The binary payload to use</td>
+</tr>
+<tr>
+<td><code>port</code></td>
+<td><code>uint32</code></td>
+<td>The port number that should be passed to the payload function</td>
+</tr>
+</tbody>
+</table>
+<h3 id="handlerdrydownlinkresult"><code>.handler.DryDownlinkResult</code></h3>
+<p>DryDownlinkResult is the result from a downlink simulation</p>
+<table>
+<thead>
+<tr>
+<th><strong>Name</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>logs</code></td>
+<td><em>repeated</em> <a href="/docs/applications/manager/#handlerlogentry"><code>LogEntry</code></a></td>
+<td>Logs that have been generated while processing</td>
+</tr>
+<tr>
+<td><code>payload</code></td>
+<td><code>bytes</code></td>
+<td>The payload that was encoded</td>
+</tr>
+</tbody>
+</table>
+<h3 id="handlerdryuplinkmessage"><code>.handler.DryUplinkMessage</code></h3>
+<p>DryUplinkMessage is a simulated message to test uplink processing</p>
+<table>
+<thead>
+<tr>
+<th><strong>Name</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>app</code></td>
+<td><a href="/docs/applications/manager/#handlerapplication"><code>Application</code></a></td>
+<td>The Application containing the payload functions that should be executed</td>
+</tr>
+<tr>
+<td><code>payload</code></td>
+<td><code>bytes</code></td>
+<td>The binary payload to use</td>
+</tr>
+<tr>
+<td><code>port</code></td>
+<td><code>uint32</code></td>
+<td>The port number that should be passed to the payload function</td>
+</tr>
+</tbody>
+</table>
+<h3 id="handlerdryuplinkresult"><code>.handler.DryUplinkResult</code></h3>
+<p>DryUplinkResult is the result from an uplink simulation</p>
+<table>
+<thead>
+<tr>
+<th><strong>Name</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>fields</code></td>
+<td><code>string</code></td>
+<td>The decoded fields</td>
+</tr>
+<tr>
+<td><code>logs</code></td>
+<td><em>repeated</em> <a href="/docs/applications/manager/#handlerlogentry"><code>LogEntry</code></a></td>
+<td>Logs that have been generated while processing</td>
+</tr>
+<tr>
+<td><code>payload</code></td>
+<td><code>bytes</code></td>
+<td>The binary payload</td>
+</tr>
+<tr>
+<td><code>valid</code></td>
+<td><code>bool</code></td>
+<td>Was validation of the message successful</td>
+</tr>
+</tbody>
+</table>
+<h3 id="handlerlogentry"><code>.handler.LogEntry</code></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Name</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>fields</code></td>
+<td><em>repeated</em> <code>string</code></td>
+<td>A list of JSON-encoded fields that were logged</td>
+</tr>
+<tr>
+<td><code>function</code></td>
+<td><code>string</code></td>
+<td>The location where the log was created (what payload function)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="handlersimulateduplinkmessage"><code>.handler.SimulatedUplinkMessage</code></h3>
+<p>SimulatedUplinkMessage is a simulated uplink message</p>
+<table>
+<thead>
+<tr>
+<th><strong>Name</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>app_id</code></td>
+<td><code>string</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>dev_id</code></td>
+<td><code>string</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>payload</code></td>
+<td><code>bytes</code></td>
+<td>The binary payload to use</td>
+</tr>
+<tr>
+<td><code>port</code></td>
+<td><code>uint32</code></td>
+<td>The port number</td>
+</tr>
+</tbody>
+</table>
+<h3 id="lorawandevice"><code>.lorawan.Device</code></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Name</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>activation_constraints</code></td>
+<td><code>string</code></td>
+<td>The ActivationContstraints are used to allocate a device address for a device (comma-separated). There are different prefixes for <code>otaa</code>, <code>abp</code>, <code>world</code>, <code>local</code>, <code>private</code>, <code>testing</code>.</td>
+</tr>
+<tr>
+<td><code>app_eui</code></td>
+<td><code>bytes</code></td>
+<td>The AppEUI is a unique, 8 byte identifier for the application a device belongs to.</td>
+</tr>
+<tr>
+<td><code>app_id</code></td>
+<td><code>string</code></td>
+<td>The AppID is a unique identifier for the application a device belongs to. It can contain lowercase letters, numbers, - and _.</td>
+</tr>
+<tr>
+<td><code>app_key</code></td>
+<td><code>bytes</code></td>
+<td>The AppKey is a 16 byte static key that is known by the device and the application. It is used for negotiating session keys (OTAA).</td>
+</tr>
+<tr>
+<td><code>app_s_key</code></td>
+<td><code>bytes</code></td>
+<td>The AppSKey is a 16 byte session key that is known by the device and the application. It is used for payload encryption. This key is negotiated during the OTAA join procedure, or statically configured using ABP.</td>
+</tr>
+<tr>
+<td><code>dev_addr</code></td>
+<td><code>bytes</code></td>
+<td>The DevAddr is a dynamic, 4 byte session address for the device.</td>
+</tr>
+<tr>
+<td><code>dev_eui</code></td>
+<td><code>bytes</code></td>
+<td>The DevEUI is a unique, 8 byte identifier for the device.</td>
+</tr>
+<tr>
+<td><code>dev_id</code></td>
+<td><code>string</code></td>
+<td>The DevID is a unique identifier for the device. It can contain lowercase letters, numbers, - and _.</td>
+</tr>
+<tr>
+<td><code>disable_f_cnt_check</code></td>
+<td><code>bool</code></td>
+<td>The DisableFCntCheck option disables the frame counter check. Disabling this makes the device vulnerable to replay attacks, but makes ABP slightly easier.</td>
+</tr>
+<tr>
+<td><code>f_cnt_down</code></td>
+<td><code>uint32</code></td>
+<td>FCntDown is the downlink frame counter for a device session.</td>
+</tr>
+<tr>
+<td><code>f_cnt_up</code></td>
+<td><code>uint32</code></td>
+<td>FCntUp is the uplink frame counter for a device session.</td>
+</tr>
+<tr>
+<td><code>last_seen</code></td>
+<td><code>int64</code></td>
+<td>When the device was last seen (Unix nanoseconds)</td>
+</tr>
+<tr>
+<td><code>nwk_s_key</code></td>
+<td><code>bytes</code></td>
+<td>The NwkSKey is a 16 byte session key that is known by the device and the network. It is used for routing and MAC related functionality. This key is negotiated during the OTAA join procedure, or statically configured using ABP.</td>
+</tr>
+<tr>
+<td><code>uses32_bit_f_cnt</code></td>
+<td><code>bool</code></td>
+<td>The Uses32BitFCnt option indicates that the device keeps track of full 32 bit frame counters. As only the 16 lsb are actually transmitted, the 16 msb will have to be inferred.</td>
+</tr>
+</tbody>
+</table>
+
+        </div>
+      
+      <div class="is-clearfix">
+</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="footer"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ttn-components.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/promise-polyfill@7/dist/polyfill.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-navbar.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-footer.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ga.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/vendor/basicLightbox.min.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/theme.min.00ace5d667ca108a93b8a0d385569f7c7bb9f46ed32eefe3f5fb39105763cccd.js" integrity="sha256-AKzl1mfKEIqTuKDThVaffHu59G7TLu/j9fs5EFdjzM0=" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

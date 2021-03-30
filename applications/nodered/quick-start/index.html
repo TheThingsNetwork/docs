@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+
+<html lang="en-us" class="has-ttn-navbar-top">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <meta name="generator" content="Hugo 0.79.0" />
+
+  <title>Quick Start | The Things Network</title>
+  <link rel="canonical" href="https://www.thethingsnetwork.org/docs/applications/nodered/quick-start/" />
+  
+
+  <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
+
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+  <meta name="msapplication-TileImage" content="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png">
+
+  <meta name="application-name" content="The Things Network">
+  <meta name="msapplication-tooltip" content="Tooltip">
+  <meta name="msapplication-config" content="https://ttnweb.azureedge.net/static/common/favicon/ieconfig.54334a5ee30c.xml">
+
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-32.61b30f85680a.png" sizes="32x32">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-57.83b86c64dc82.png" sizes="57x57">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-76.7dcf8fa36dfc.png" sizes="76x76">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-96.27ac17adaa8b.png" sizes="96x96">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-120.e1526731335e.png" sizes="120x120">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-128.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png" sizes="144x144">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png" sizes="152x152">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-180.fcd414307ca3.png" sizes="180x180">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-195.c55ce09d66da.png" sizes="195x195">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-228.bea53ec4b10b.png" sizes="228x228">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/smalltile.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/mediumtile.3d42f7faac82.png" sizes="270x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
+  <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+
+  <meta property="og:title" content="Quick Start" />
+<meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/applications/nodered/quick-start/" />
+<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
+<meta property="og:site_name" content="The Things Network" />
+
+
+  <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
+
+<meta name="twitter:title" content="Quick Start"/>
+<meta name="twitter:description" content="We are building a global open free crowdsourced long range low power IoT data network"/>
+
+
+</head>
+
+
+<body>
+
+<div id="header"></div>
+<section class="section">
+  <div class="container">
+    <nav class="breadcrumb has-dot-separator" aria-label="breadcrumbs">
+      <ul>
+        <li><a href="https://www.thethingsnetwork.org/docs">Learn</a></li>
+        
+        
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/lorawan/">LoRaWAN</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/quick-start/">Quick Start</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/applications-and-integrations/">Applications &amp; Integrations</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/">Devices &amp; Gateways</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/the-things-stack/">The Things Stack</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/v2-docs/">V2 Docs (Outdated)</a>
+            </li>
+          
+        
+      </ul>
+    </nav>
+  </div>
+</section>
+<div class="container" role="document">
+  <div class="columns my-0 is-desktop">
+    <div class="column is-3-desktop sidebar-left">
+      
+
+
+<nav class="side-navigation" aria-label="Main navigation">
+
+<h2 class="title is-size-5">Applications</h2>
+
+<div class="menu">
+  <ul class="menu-list">
+  <a href="https://www.thethingsnetwork.org/docs/applications/" class="">Overview</a>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/applications/add/" class="">Add an Application</a>
+    </li>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/applications/options/" class="">Build an Application</a>
+    </li>
+  
+    <p class="menu-label">
+      APIs
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/apis/" class="">Overview</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/manager/" class="">Application Manager API</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/mqtt/" class="">Data API (MQTT)</a>
+</li>
+
+  
+    <p class="menu-label">
+      SDKs &amp; Libraries
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/sdks/" class="">Overview</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/golang/" class="">Go</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/java/" class="">Java</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/nodered/" class="">Node-RED</a>
+  
+
+
+<ul class="menu-list">
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/applications/nodered/quick-start/" class="is-active">Quick Start</a>
+    
+    
+
+
+
+    
+  </li>
+
+</ul>
+
+
+  
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/nodejs/" class="">Node.js</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/python/" class="">Python</a>
+</li>
+
+  
+    <p class="menu-label">
+      Integrations
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/evrythng/" class="">EVRYTHNG</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/integrations/" class="">Overview</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/att/" class="">AllThingsTalk</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/aws/" class="">AWS IoT</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/cayenne/" class="">Cayenne</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/collos/" class="">Collos</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/http/" class="">HTTP</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/opensensors/" class="">OpenSensors</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/smart-office/" class="">Smart Office Kit</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/storage/" class="">Storage</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/tago/" class="">Tago</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/thingspeak/" class="">ThingSpeak</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/applications/ttnmapper/" class="">TTN Mapper</a>
+</li>
+
+  
+  </ul>
+</div>
+
+
+
+
+
+</nav>
+
+    </div>
+    <div class="column is-9-desktop sidebar-middle">
+      <div class="docs-content">
+        <h1 class="title is-size-2">
+          Quick Start
+        </h1>
+        <div class="content">
+          <p>This guide will walk you through setting up a Node-RED flow that listens to device activations and messages and responds with a message in return.</p>
+<blockquote>
+<p>This guide assumes the sketch and payload functions of <a href="/docs/devices/uno/quick-start/">The Things Uno / Quick Start</a>, but can be easily applied to any other.</p>
+</blockquote>
+<p>The full flow that we will build is also included as <a href="https://github.com/TheThingsNetwork/nodered-app-node/blob/master/examples/quickstart.json">example</a> in the Node-RED library.</p>
+<h2 id="setup">Setup</h2>
+<p>To get started you need to install Node-RED and add the TTN node, both via <a href="https://www.npmjs.com/">NPM</a>.</p>
+<h3 id="node-red">Node-RED</h3>
+<ol>
+<li>Make sure you have <a href="https://nodejs.org/">Node.js</a> and then install Node-RED:</li>
+</ol>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sudo npm install -g --unsafe-perm node-red
+</code></pre></div><p>See Node-RED&rsquo;s <a href="http://nodered.org/docs/getting-started/installation">Getting Started / Installation</a> for details.</p>
+<ol start="2">
+<li>Run Node-RED:</li>
+</ol>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">node-red
+</code></pre></div><p>See Node-RED&rsquo;s <a href="http://nodered.org/docs/getting-started/running">Getting Started / Running</a> for details.</p>
+<ol start="3">
+<li>Spot a line like this to know what URL to open in your browser:</li>
+</ol>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="m">29</span> Aug 11:13:01 - <span class="o">[</span>info<span class="o">]</span> Server now running at http://127.0.0.1:1880/
+</code></pre></div><p>You should see something like:</p>
+<p><img src="../node-red.png" alt="Node-RED"></p>
+<h3 id="the-things-network-nodes">The Things Network nodes</h3>
+<ol>
+<li>Add The Things Network nodes:</li>
+</ol>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> <span class="nv">$HOME</span>/.node-red
+npm install node-red-contrib-ttn
+</code></pre></div><p>See Node-RED&rsquo;s <a href="http://nodered.org/docs/getting-started/adding-nodes">Getting Started / Adding Nodes</a> for details.</p>
+<ol start="2">
+<li>Restart (<code>Ctrl+C</code> to stop) Node-RED and refresh your browser.</li>
+</ol>
+<p>You should now see several <strong>ttn</strong> nodes in the sidebar:</p>
+<p><img src="../node-red-ttn.png" alt="Node-RED with ttn node"></p>
+<h2 id="configure">Configure</h2>
+<p>All The Things Network nodes can share the same app configuration.</p>
+<ol>
+<li>Drag the <strong>ttn device</strong> node to the flow and double-click it to edit.</li>
+</ol>
+<p><img src="../edit-ttn-device-node.png" alt="Edit ttn device node"></p>
+<ol start="2">
+<li>Now for <strong>App</strong> either select an existing configuration or select <strong>Add new ttn app&hellip;</strong> selected and click the <code>✏️</code> button.</li>
+</ol>
+<p><img src="../add-new-ttn-app-config-node.png" alt="Add new ttn app config node"></p>
+<p>Copy-paste the following information from your application in your console:</p>
+<ul>
+<li>For <strong>App ID</strong>, copy <strong>Application ID</strong> from the <strong>Application Overview</strong> box.</li>
+<li>For <strong>Access Key</strong>, scroll down to the <strong>Access Keys</strong>. For the key you&rsquo;d like to use, click <i class="ion-eye"></i> to show the key and then <i class="ion-clipboard"></i> to copy it.</li>
+<li>For <strong>Region or Broker</strong>, scroll back again to use <strong>Handler Status</strong> from the <strong>Application Overview</strong> box. Only copy the last bit following <code>ttn-handler-</code>.</li>
+</ul>
+<ol start="3">
+<li>Click <strong>Add</strong> to save the configuration.</li>
+</ol>
+<h2 id="receive-events">Receive Events</h2>
+<p><a href="/docs/applications/mqtt/api/#device-activations">Activations</a> and other <a href="/docs/applications/mqtt/api/#device-events">devices events</a> can be received via the <strong>ttn device</strong> node.</p>
+<ol>
+<li>Still editing the <strong>ttn device</strong> node, enter <code>activations</code> in the <strong>Event</strong> field.</li>
+<li>Click <strong>Add</strong> to create the node.</li>
+<li>Drag a <strong>debug</strong> node from the output category of the toolbox.</li>
+<li>Drag the output of the <strong>ttn device</strong> node to the input of the <strong>debug</strong> node.</li>
+</ol>
+<p><img src="../ttn-device-flow.png" alt="TTN Device"></p>
+<ol start="5">
+<li>Click <strong>Deploy</strong> to deploy the flow.</li>
+<li>In the right sidebar select the <strong>debug</strong> tab.</li>
+<li>Restart a device by briefly disconnecting power or upload a sketch.</li>
+<li>Soon, you should see the activation message coming in like:</li>
+</ol>
+<pre><code>my-uno
+</code></pre><p>By default the debug node only shows <code>msg.payload</code>, which in the case of the <code>activations</code> event is just the Device ID.</p>
+<ol start="9">
+<li>
+<p>Double click the <strong>debug</strong> node to edit it.</p>
+</li>
+<li>
+<p>Click the gray part of the <strong>Output</strong> value, select <strong>complete msg object</strong> and click <strong>Done</strong>:</p>
+<p><img src="../node-red-debug-edit.png" alt="Output complete msg object"></p>
+</li>
+<li>
+<p>Click <strong>Deploy</strong> to see the next message in full:</p>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&#34;app_eui&#34;</span><span class="p">:</span> <span class="s2">&#34;70B3D57EF000001C&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;dev_eui&#34;</span><span class="p">:</span> <span class="s2">&#34;0004A30B001B7AD2&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;dev_addr&#34;</span><span class="p">:</span> <span class="s2">&#34;26012084&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;metadata&#34;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&#34;time&#34;</span><span class="p">:</span> <span class="s2">&#34;2016-09-08T14:04:52.755064047Z&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;frequency&#34;</span><span class="p">:</span> <span class="mf">868.5</span><span class="p">,</span>
+    <span class="nt">&#34;modulation&#34;</span><span class="p">:</span> <span class="s2">&#34;LORA&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;data_rate&#34;</span><span class="p">:</span> <span class="s2">&#34;SF7BW125&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;coding_rate&#34;</span><span class="p">:</span> <span class="s2">&#34;4/5&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;gateways&#34;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="nt">&#34;eui&#34;</span><span class="p">:</span> <span class="s2">&#34;B827EBFFFE87BD22&#34;</span><span class="p">,</span>
+        <span class="nt">&#34;timestamp&#34;</span><span class="p">:</span> <span class="mi">1528942955</span><span class="p">,</span>
+        <span class="nt">&#34;time&#34;</span><span class="p">:</span> <span class="s2">&#34;2016-09-08T14:04:52.716713Z&#34;</span><span class="p">,</span>
+        <span class="nt">&#34;channel&#34;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="nt">&#34;rssi&#34;</span><span class="p">:</span> <span class="mi">-57</span><span class="p">,</span>
+        <span class="nt">&#34;snr&#34;</span><span class="p">:</span> <span class="mf">7.5</span><span class="p">,</span>
+        <span class="nt">&#34;rf_chain&#34;</span><span class="p">:</span> <span class="mi">1</span>
+      <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="nt">&#34;dev_id&#34;</span><span class="p">:</span> <span class="s2">&#34;my-uno&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;payload&#34;</span><span class="p">:</span> <span class="s2">&#34;my-uno&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;_msgid&#34;</span><span class="p">:</span> <span class="s2">&#34;10d6a2ba.ef295d&#34;</span>
+<span class="p">}</span>
+</code></pre></div></li>
+</ol>
+<h2 id="receive-messages">Receive Messages</h2>
+<p>Messages sent by devices on the application can be received via the <strong>ttn message</strong> node.</p>
+<ol>
+<li>Drag a <strong>ttn message</strong> node from the input category of the toolbox.</li>
+<li>Double click the node to <a href="/docs/applications/nodered/#configure">configure</a> it.</li>
+<li>Drag a <strong>debug</strong> node from the output category of the toolbox.</li>
+<li>Drag the output of the <strong>ttn message</strong> node to the input of the <strong>debug</strong> node.</li>
+</ol>
+<p><img src="../ttn-message-flow.png" alt="TTN Message"></p>
+<ol start="5">
+<li>
+<p>Click <strong>Deploy</strong>.</p>
+</li>
+<li>
+<p>In the right sidebar select the <strong>debug</strong> tab.</p>
+</li>
+<li>
+<p>Soon after a device sends a message to your application you should see it come in like this:</p>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&#34;led&#34;</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">}</span>
+</code></pre></div><p>By default the debug node only shows <code>msg.payload</code>, which does not include the ID of the device that sent the message.</p>
+</li>
+<li>
+<p>Double click the <strong>debug</strong> node to edit it.</p>
+</li>
+<li>
+<p>Click the gray part of the <strong>Output</strong> value, select <strong>complete msg object</strong> and click <strong>Done</strong>:</p>
+</li>
+</ol>
+<p><img src="../node-red-debug-edit.png" alt="Output complete msg object"></p>
+<ol start="10">
+<li>
+<p>Click <strong>Deploy</strong> to see the next message in full, including <code>dev_id</code>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&#34;port&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="nt">&#34;counter&#34;</span><span class="p">:</span> <span class="mi">31</span><span class="p">,</span>
+  <span class="nt">&#34;payload_raw&#34;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;Buffer&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;data&#34;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+  <span class="p">},</span>
+  <span class="nt">&#34;payload_fields&#34;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&#34;led&#34;</span><span class="p">:</span> <span class="kc">false</span>
+  <span class="p">},</span>
+  <span class="nt">&#34;metadata&#34;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&#34;time&#34;</span><span class="p">:</span> <span class="s2">&#34;2016-09-27T12:35:46.8640105Z&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;frequency&#34;</span><span class="p">:</span> <span class="mf">867.1</span><span class="p">,</span>
+    <span class="nt">&#34;modulation&#34;</span><span class="p">:</span> <span class="s2">&#34;LORA&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;data_rate&#34;</span><span class="p">:</span> <span class="s2">&#34;SF7BW125&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;coding_rate&#34;</span><span class="p">:</span> <span class="s2">&#34;4/5&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;gateways&#34;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="nt">&#34;gtw_id&#34;</span><span class="p">:</span> <span class="s2">&#34;eui-b827ebfffe87bd22&#34;</span><span class="p">,</span>
+        <span class="nt">&#34;timestamp&#34;</span><span class="p">:</span> <span class="mi">1329587859</span><span class="p">,</span>
+        <span class="nt">&#34;time&#34;</span><span class="p">:</span> <span class="s2">&#34;2016-09-27T12:35:46.842692Z&#34;</span><span class="p">,</span>
+        <span class="nt">&#34;channel&#34;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+        <span class="nt">&#34;rssi&#34;</span><span class="p">:</span> <span class="mi">-111</span><span class="p">,</span>
+        <span class="nt">&#34;snr&#34;</span><span class="p">:</span> <span class="mf">6.2</span>
+      <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="nt">&#34;dev_id&#34;</span><span class="p">:</span> <span class="s2">&#34;my-uno&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;payload&#34;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&#34;led&#34;</span><span class="p">:</span> <span class="kc">false</span>
+  <span class="p">},</span>
+  <span class="nt">&#34;_msgid&#34;</span><span class="p">:</span> <span class="s2">&#34;426db946.bd9248&#34;</span>
+<span class="p">}</span>
+</code></pre></div></li>
+</ol>
+<h2 id="send-messages">Send Messages</h2>
+<p>Use the <strong>ttn send</strong> node to send messages to devices.</p>
+<ol>
+<li>Drag a <strong>ttn send</strong> node from the output category of the toolbox.</li>
+<li>Double click the node to <a href="/docs/applications/nodered/#configure">configure</a> it.</li>
+</ol>
+<blockquote>
+<p>We could specify a device and port to address here, but instead we&rsquo;ll do this via the message that we&rsquo;ll send to the node.</p>
+</blockquote>
+<ol start="3">
+<li>Drag a <strong>function</strong> node from the function category of the toolbox and double click to configure it.</li>
+</ol>
+<p>Use the following code for the function:</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="k">return</span> <span class="p">{</span>
+  <span class="nx">dev_id</span><span class="o">:</span> <span class="nx">msg</span><span class="p">.</span><span class="nx">dev_id</span><span class="p">,</span>
+  <span class="nx">port</span><span class="o">:</span> <span class="nx">msg</span><span class="p">.</span><span class="nx">port</span><span class="p">,</span>
+  <span class="nx">payload</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">led</span><span class="o">:</span> <span class="o">!</span><span class="nx">msg</span><span class="p">.</span><span class="nx">payload</span><span class="p">.</span><span class="nx">led</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div><ol start="4">
+<li>Drag the output of the <strong>ttn message</strong> node to the input of the <strong>function</strong> node.</li>
+<li>Drag the output of the <strong>function</strong> node to the input of the <strong>ttn send</strong> node.</li>
+<li>Drag a <strong>debug</strong> node from the output category of the toolbox.</li>
+<li>Drag the output of the <strong>function</strong> node to the input of the <strong>debug</strong> node.</li>
+</ol>
+<p><img src="../ttn-send-flow.png" alt="TTN Send"></p>
+<ol start="8">
+<li>Click <strong>Deploy</strong>.</li>
+</ol>
+<p>The next time your device sends a message, a message will be send in response to toggle the LED. You can use the last <strong>debug</strong> node we added to verify the message we use as input for the <strong>ttn send</strong> node is correct.</p>
+<p>👏 You now know how to receive events and messages in Node-RED as well as how to trigger actions on that, for example by sending a message in response. Now go build something awesome and share it on <a href="https://www.thethingsnetwork.org/labs/">labs</a>!</p>
+
+        </div>
+      
+      <div class="is-clearfix">
+</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="footer"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ttn-components.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/promise-polyfill@7/dist/polyfill.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-navbar.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-footer.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ga.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/vendor/basicLightbox.min.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/theme.min.00ace5d667ca108a93b8a0d385569f7c7bb9f46ed32eefe3f5fb39105763cccd.js" integrity="sha256-AKzl1mfKEIqTuKDThVaffHu59G7TLu/j9fs5EFdjzM0=" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

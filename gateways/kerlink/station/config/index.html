@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+
+<html lang="en-us" class="has-ttn-navbar-top">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <meta name="generator" content="Hugo 0.79.0" />
+
+  <title>Configuration | The Things Network</title>
+  <link rel="canonical" href="https://www.thethingsnetwork.org/docs/gateways/kerlink/station/config/" />
+  
+
+  <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
+
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+  <meta name="msapplication-TileImage" content="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png">
+
+  <meta name="application-name" content="The Things Network">
+  <meta name="msapplication-tooltip" content="Tooltip">
+  <meta name="msapplication-config" content="https://ttnweb.azureedge.net/static/common/favicon/ieconfig.54334a5ee30c.xml">
+
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-32.61b30f85680a.png" sizes="32x32">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-57.83b86c64dc82.png" sizes="57x57">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-76.7dcf8fa36dfc.png" sizes="76x76">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-96.27ac17adaa8b.png" sizes="96x96">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-120.e1526731335e.png" sizes="120x120">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-128.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png" sizes="144x144">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png" sizes="152x152">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-180.fcd414307ca3.png" sizes="180x180">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-195.c55ce09d66da.png" sizes="195x195">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-228.bea53ec4b10b.png" sizes="228x228">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/smalltile.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/mediumtile.3d42f7faac82.png" sizes="270x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
+  <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+
+  <meta property="og:title" content="Configuration" />
+<meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/gateways/kerlink/station/config/" />
+<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
+<meta property="og:site_name" content="The Things Network" />
+
+
+  <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
+
+<meta name="twitter:title" content="Configuration"/>
+<meta name="twitter:description" content="We are building a global open free crowdsourced long range low power IoT data network"/>
+
+
+</head>
+
+
+<body>
+
+<div id="header"></div>
+<section class="section">
+  <div class="container">
+    <nav class="breadcrumb has-dot-separator" aria-label="breadcrumbs">
+      <ul>
+        <li><a href="https://www.thethingsnetwork.org/docs">Learn</a></li>
+        
+        
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/lorawan/">LoRaWAN</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/quick-start/">Quick Start</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/applications-and-integrations/">Applications &amp; Integrations</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/">Devices &amp; Gateways</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/the-things-stack/">The Things Stack</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/v2-docs/">V2 Docs (Outdated)</a>
+            </li>
+          
+        
+      </ul>
+    </nav>
+  </div>
+</section>
+<div class="container" role="document">
+  <div class="columns my-0 is-desktop">
+    <div class="column is-3-desktop sidebar-left">
+      
+
+
+<nav class="side-navigation" aria-label="Main navigation">
+
+<h2 class="title is-size-5">Gateways</h2>
+
+<div class="menu">
+  <ul class="menu-list">
+  <a href="https://www.thethingsnetwork.org/docs/gateways/" class="">Overview</a>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/gateways/basics-station/" class="">LoRa Basics™ Station</a>
+    </li>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/gateways/certificates/" class="">Root Certificates</a>
+    </li>
+  
+    <p class="menu-label">
+      SDKs
+    </p>
+    
+  
+    <p class="menu-label">
+      Running a gateway
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/troubleshooting/" class="">Troubleshooting</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/lightning-protection/" class="">Lightning Protection</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/packet-forwarder/" class="">Packet Forwarders</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/registration/" class="">Gateway Registration</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/start/" class="">Where to start</a>
+</li>
+
+  
+    <p class="menu-label">
+      Hardware
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/pisupply-hat/" class="">Pi Supply Gateway HAT</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/multitech/" class="">MultiTech Conduit</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/rak2245/" class="">RAK2245 Pi Hat Edition - LoRaWAN® Gateway Concentrator Module</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/rak7243c/" class="">RAK7243C Pilot Gateway</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/rak831/" class="">RAK831</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/gateway/" class="">The Things Gateway</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/thethingsindoor/" class="">The Things Indoor Gateway</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/thethingsoutdoor/" class="">The Things Outdoor Gateway</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/aaeon/" class="">AAEON</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/cisco/" class="">Cisco LoRaWAN Gateway</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/kerlink/" class="">Kerlink</a>
+  
+
+
+<ul class="menu-list">
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/gateways/kerlink/reverse-ssh/" class="">Reverse SSH</a>
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/gateways/kerlink/keros/" class="">KerOS installation and configuration</a>
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/gateways/kerlink/ibts/" class="">Wirnet iBTS</a>
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/gateways/kerlink/ifemtocell/" class="">Wirnet iFemtoCell</a>
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/gateways/kerlink/ifemtocell-evolution/" class="">Wirnet iFemtoCell Evolution</a>
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/gateways/kerlink/istation/" class="">Wirnet iStation</a>
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/gateways/kerlink/station/" class="">Wirnet Station</a>
+    
+    
+
+
+<ul class="menu-list">
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/gateways/kerlink/station/mount/" class="">Mount</a>
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/gateways/kerlink/station/cellular/" class="">Cellular Connection</a>
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/gateways/kerlink/station/firmware-updates/" class="">Firmware Updates</a>
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/gateways/kerlink/station/config/" class="is-active">Configuration</a>
+    
+    
+
+
+
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/gateways/kerlink/station/setup/" class="">Setup</a>
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/gateways/kerlink/station/specs/" class="">Specifications</a>
+    
+  </li>
+
+</ul>
+
+
+    
+  </li>
+
+</ul>
+
+
+  
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/laird/" class="">Laird RG1xx</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/lorrier/" class="">Lorrier LR2</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/mikrotik/" class="">MikroTik Routerboard</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/st/" class="">P-NUCLEO-LRWAN2</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/tektelic/" class="">Tektelic</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/gateways/ursalink/" class="">Ursalink</a>
+</li>
+
+  
+  </ul>
+</div>
+
+
+
+
+
+</nav>
+
+    </div>
+    <div class="column is-9-desktop sidebar-middle">
+      <div class="docs-content">
+        <h1 class="title is-size-2">
+          Configuration
+        </h1>
+        <div class="content">
+          <blockquote>
+<p>If you bought one of these gateways directly from Kerlink, you can apply for access to the <a href="http://wikikerlink.fr/lora-station">Kerlink Wiki</a> by sending an email to <a href="mailto:support@kerlink.fr">support@kerlink.fr</a> mentioning the serial number of your gateway.</p>
+<p>If you have access to the Kerlink wiki it is recommended to follow the firmware upgrade and packet forwarder installation steps from there. This will ensure you are running the latest and most reliable version.</p>
+</blockquote>
+<h2 id="packet-forwarders">Packet forwarders</h2>
+<p>Multiple packet forwarders are supported by the Kerlink gateway to forward data to TTN:</p>
+<ul>
+<li><a href="https://github.com/TheThingsNetwork/kerlink-wirnet-firmware/tree/legacy/dota">Kerlink Semtech Packet Forwarder (SPF)</a> - uses UDP to forward data to a single LoRaWAN network server</li>
+<li><a href="https://github.com/TheThingsNetwork/kerlink-wirnet-firmware/blob/legacy/dota/dota_thethingsnetwork_v1.3_EU.tar.gz">Poly Packet Forwarder</a> - can forward to multiple LoRaWAN network servers using UDP</li>
+<li><a href="https://github.com/kersing/packet_forwarder">Multi-protocol Packet Forwarder</a> - can forward to multiple LoRaWAN network servers using either UDP or MQTT</li>
+<li>Kerlink Common Packet Forwarder - uses UDP to forward packets to the LoRaWAN network server, but stores a buffer of packets on the gateway when the internet connection to the network server is unavailable. It sends these buffered packets when the connection is restored. This can cause downlink messages from the network server to be late and confuse application layer algorithms as well as Adaptive Data Rate.</li>
+</ul>
+<p>The recommended packet forwarder is the Kerlink SPF one as this is the most widely used and supported by Kerlink. The rest of this tutorial will assume you are installing the SPF, but the same steps should work for the other packet forwarders too.</p>
+<h2 id="install-spf">Install SPF</h2>
+<p>You must be running Kerlink firmware v3.1 or later. If you are unsure, follow the steps to upgrade the firmware.</p>
+<ul>
+<li>Format a USB flash drive as FAT32.</li>
+<li>Download <code>produsb_wirnet_v3.6.zip</code> from <a href="https://raw.githubusercontent.com/TheThingsNetwork/kerlink-station-firmware/legacy/dota/produsb_wirnet_v3.6.zip">here</a>.</li>
+<li>Extract <code>produsb_wirnet_v3.6.zip</code> to the flash drive, making sure the only files on the flash drive is <code>produsb.sh</code> and <code>produsb_wirnet_v3.6.md5</code>.</li>
+<li>Download <code>dota_spf_3.1.0-klk16_4.1.3-klk8_wirnet_ttn.tar.gz</code> from <a href="https://raw.githubusercontent.com/TheThingsNetwork/kerlink-station-firmware/legacy/dota/dota_spf_3.1.0-klk16_4.1.3-klk8_wirnet_ttn.tar.gz">here</a>.</li>
+<li>Copy <code>dota_spf_3.1.0-klk16_4.1.3-klk8_wirnet_ttn.tar.gz</code> to the flash drive without extracting it.</li>
+<li>Safely remove the USB flash drive from your computer.</li>
+<li>Make sure your Kerlink gateway is booted up. The safest is to wait two minutes after you powered it up.</li>
+<li>Plug the USB flash drive into the USB port on the Kerlink gateway. If the flash drive has a light it will start flashing.</li>
+<li>If you press the Test button on the gateway you will see the MOD1 and MOD2 lights flashing. When they stop the installation is complete. This will take a minute or two.</li>
+<li>When the installation is done, or after a couple of minutes, you can remove the USB flash drive.</li>
+<li>On the flash drive there should now be a file called produsb.log containing the serial number of your gateway.</li>
+</ul>
+<p>The <code>dota_spf_3.1.0-klk16_4.1.3-klk8_wirnet_ttn.tar.gz</code> file is preconfigured with the frequency plan for TTN. There is therefore no need to further configure your gateway. It should already be forwarding data to TTN.</p>
+<h2 id="register-the-gateway-on-the-ttn-console">Register the gateway on the TTN Console</h2>
+<p>To register the gateway on the console you should choose <strong>I&rsquo;m using the legacy packet forwarder</strong>. In the Gateway EUI field fill in <code>7276ff000</code> followed by the 7 digits of the gateway&rsquo;s serial number. For example <code>7276ff00080E0000</code>.</p>
+<p>When the packet forwarder is running it reports at least every 30 seconds to TTN. The activity of all your gateways can be checked on <a href="https://console.thethingsnetwork.org/gateways/">the Console</a>.</p>
+<h1 id="connect-with-the-gateway">Connect with the Gateway</h1>
+<p>If you want to manually modify the configuration files on the gateway you need to log into it. Normally this is not necessary.</p>
+<h2 id="ssh-serial">SSH-Serial</h2>
+<p>You will need to know the IP address of the gateway. You can obtain this from your network&rsquo;s router (home network) or your DHCP server. Logon to the gateway by using the SSH protocol, on a Mac or Linux system just use the Terminal and run <code>ssh root@10.1.0.117</code> (substitute by the correct IP-address). On a Windows PC you can use <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html">Putty</a>.</p>
+<p>One option to have better control of the IP address which the gateway uses is by doing Internet Connection Sharing on your computer. Or use a WiFi router to which both the gateway and your computer connects.</p>
+<h2 id="wirgrid">WIRGRID</h2>
+<p>The serial interface (linux console) of the gateway can also be accessed by using the WIRGRID debug tool. This tool connects to your PC by a USB (type B &gt; A) cable.</p>
+<p><img src="../config-wirgrid.jpg" alt="WIRGRID"></p>
+<p>To build your own Wirgrid see <a href="https://www.thethingsnetwork.org/forum/t/diy-kerlink-wirgrid-debug-probe/24001">this forum topic</a>.</p>
+<ol>
+<li>Connect the WIRGRID tool to your gateway and PC</li>
+<li>Look up to which port the WIRGRID is assigned to</li>
+<li>Open a serial connection with the following settings:
+<ul>
+<li><strong>Baudrate:</strong> 115200</li>
+<li><strong>Data length:</strong> 8</li>
+<li><strong>Parity:</strong> none</li>
+<li><strong>Stop bit:</strong> 1</li>
+<li><strong>Flow control:</strong> none</li>
+</ul>
+</li>
+<li>When the connection opens up, log in with the following credentials
+<ul>
+<li><strong>Login:</strong> <code>root</code></li>
+<li><strong>Password:</strong> <code>root</code> (if using 2.x firmware) or <code>pdmk-0</code> followed by the last 7 characters of the gateway serial number (if using 3.x firmware)</li>
+</ul>
+</li>
+</ol>
+<p>On Linux you can connect to the debug console with the command <code>screen /dev/tty.usbXXXX 115200</code> (where XXXX is the actual port).</p>
+<h2 id="gateway-username-and-password">Gateway username and password</h2>
+<p>Firmware version 2.x:</p>
+<ul>
+<li>Username: <code>root</code></li>
+<li>Password: <code>root</code></li>
+</ul>
+<p>Firmware v3.1, v3.3:</p>
+<ul>
+<li>Username: <code>root</code></li>
+<li>Password: <code>pdmk-0</code> followed by the last 7 characters of the gateway&rsquo;s serial number in lower case. Ex: <code>pdmk-080e0000</code>.</li>
+</ul>
+<p>Firmware v3.6:</p>
+<ul>
+<li>Username: <code>root</code></li>
+<li>Password: <code>pdmk-0</code> followed by the last 7 characters of the gateway&rsquo;s serial number in upper case. Ex: <code>pdmk-080E0000</code>.</li>
+</ul>
+<blockquote>
+<p><strong>Change root password</strong></p>
+<p>You can change the root password using the following command.<br>
+<code>passwd</code></p>
+<p>If you ever forget the new password you will need to perform a factory reset to reset the password to the default one.</p>
+</blockquote>
+<h2 id="check-if-the-packet-forwarder-is-running">Check if the Packet forwarder is running</h2>
+<p>Use the following command on the gateway to check whether data is being sent and received:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">tcpdump -AUq port <span class="m">1700</span>
+</code></pre></div><p>The output must be somewhat similar to the following. Check if both inbound as well as outbound traffic are shown:</p>
+<pre><code>listening on eth0, link-type EN10MB (Ethernet), capture size 65535 bytes
+10:40:51.571795 IP 10.10.1.84.59170 &gt; 52.169.76.203.1700: UDP, length 202
+E.....@.@...
+
+.T4.L..“....*=.a.....K....{“rxpk”:[{“tmst”:214104396,“chan”:7,“rfch”:0,“freq”:867.900000,“stat”:1,“modu”:“LORA”,“datr”:“SF7BW125&quot;,“codr”:“4/5&quot;,“lsnr”:10.0,“rssi”:-67,“size”:19,“data”:“QJYnASYAMR4BWQCbBgrDXzkRoQ==“}]}
+10:40:51.592416 IP 52.169.76.203.1700 &gt; 10.10.1.84.59170: UDP, length 4
+E.. ..@.4...4.L.
+
+.T...“.....a................@R.Y
+10:40:52.646562 IP 10.10.1.84.55114 &gt; 52.169.76.203.1700: UDP, length 12
+E..(..@.@...
+
+.T4.L..J....9%..@....K....
+10:40:52.666952 IP 52.169.76.203.1700 &gt; 10.10.1.84.55114: UDP, length 4
+E.. .k@.4...4.L.
+
+.T...J..S...@................:lX
+10:41:02.011529 IP 10.10.1.84.59170 &gt; 52.169.76.203.1700: UDP, length 113
+E....“@.@..k
+
+.T4.L..“...y.c.......K....{“stat”:{“time”:“2017-04-24 08:41:02 GMT”,“rxnb”:7,“rxok”:6,“rxfw”:6,“ackr”:100.0,“dwnb”:0,“txnb”:0}}
+10:41:02.032521 IP 52.169.76.203.1700 &gt; 10.10.1.84.59170: UDP, length 4
+E.. ..@.4...4.L.
+
+.T...“...)......................
+</code></pre><h2 id="firewall-configuration">Firewall configuration</h2>
+<p>When using the wirnet_v3.1 firmware, the firewall is activated by default. In some cases the firewall might interfere with downlinks or SSH access. We can simply disable the firewall:</p>
+<ul>
+<li>Open the file <code>/etc/sysconfig/network</code></li>
+<li>Change <code>FIREWALL=yes</code> to <code>FIREWALL=no</code></li>
+<li>reboot the gateway</li>
+</ul>
+<h2 id="configure-the-packet-forwarder">Configure the packet forwarder</h2>
+<p>The SPF config files are located in <code>/mnt/fsuser-1/spf/etc</code>. The <code>local_conf.json</code> file is read only, so you can not change the settings in there. The <code>global_conf.json</code> should contain the LoRaWAN network server address and ports, as well as the TTN frequency plan for your region. This file should be similar to the ones available <a href="https://github.com/TheThingsNetwork/gateway-conf">here</a>.</p>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<p>If you still encounter problems with the packet forwarder, head to the <a href="/docs/gateways/troubleshooting/semtech-udp/">Troubleshooting page</a> of the packet forwarder. You can also try the TTN Forum and the Kerlink Wiki.</p>
+
+        </div>
+      
+      <div class="is-clearfix">
+</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="footer"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ttn-components.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/promise-polyfill@7/dist/polyfill.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-navbar.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-footer.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ga.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/vendor/basicLightbox.min.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/theme.min.00ace5d667ca108a93b8a0d385569f7c7bb9f46ed32eefe3f5fb39105763cccd.js" integrity="sha256-AKzl1mfKEIqTuKDThVaffHu59G7TLu/j9fs5EFdjzM0=" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
