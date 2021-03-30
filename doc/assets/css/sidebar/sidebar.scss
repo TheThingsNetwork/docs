@@ -1,0 +1,45 @@
+.sidebar-left {
+  @media (min-width: $desktop) {
+  order: 0;
+  border-right: 1px solid #e9ecef;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 2 * $content-padding-top;
+  align-self: flex-start; // Fix for sticky in flex
+  }
+}
+
+.sidebar-right {
+  display: none;
+  order: 2;
+  @media (min-width: $widescreen) {
+  display: block;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 2 * $content-padding-top;
+  align-self: flex-start; // Fix for sticky in flex
+  }
+}
+
+.sidebar-middle {
+  order: 1;
+}
+
+.docs-content {
+  @media (min-width: $desktop) {
+    padding-left: $content-padding-side;
+    padding-right: $content-padding-side;
+    max-width: $content-max-width;
+  }
+}
+
+.toc, .side-navigation {
+  @media (min-width: $desktop) {
+    max-height: calc(100vh - 9rem);
+    overflow-y: auto;
+  }
+}
+
+.toc, .docs-content, .side-navigation {
+  padding-top: $content-padding-top;
+}

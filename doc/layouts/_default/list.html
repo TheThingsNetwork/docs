@@ -1,0 +1,26 @@
+{{ define "main" }}
+
+{{- partial "header/breadcrumb-container.html" . -}}
+
+<div class="container" role="document">
+  <div class="columns my-0 is-desktop">
+    <div class="column is-3-desktop sidebar-left">
+      {{ partial "sidebar/side-navigation.html" . }}
+    </div>
+    <div class="column is-9-desktop sidebar-middle">
+      <div class="docs-content">
+        <h1 class="title is-size-2">
+          {{ .Title }}
+        </h1>
+        <div class="content">
+          {{ .Content }}
+        </div>
+      {{ if and .Pages (not (eq .Parent .FirstSection)) }}
+      {{ partial "pages-cards.html" . }}
+      {{ end }}
+      {{ partial "prev-next-in-section" . }}
+      </div>
+    </div>
+  </div>
+</div>
+{{ end }}

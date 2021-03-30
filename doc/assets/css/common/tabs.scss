@@ -1,0 +1,24 @@
+.tabs.is-boxed li.is-active a {
+  background-color: $blue-alt !important;
+  border-color: transparent !important;
+  border-bottom-color: $blue !important;
+}
+
+.tabs.is-boxed a {
+  color: lighten($blue, 24%);
+  background-color: lighten($blue-alt, 4%);
+  border-bottom-color: $blue !important;
+  margin-right: 4px;
+}
+
+.tabs.is-boxed a:hover {
+  background-color: $blue-bg;
+}
+
+.tab-content section {
+  display: none;
+}
+
+.tab-content section.is-active {
+  display: block;
+}
