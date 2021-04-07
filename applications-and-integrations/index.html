@@ -41,7 +41,7 @@
   <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
 
   <meta property="og:title" content="Applications &amp; Integrations" />
-<meta property="og:description" content="Create applications and use The Things Network integrations to build an end-to-end IoT solution" />
+<meta property="og:description" content="Create applications and use integrations to build an end-to-end IoT solution" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.thethingsnetwork.org/docs/applications-and-integrations/" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
@@ -52,7 +52,7 @@
 <meta name="twitter:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
 
 <meta name="twitter:title" content="Applications &amp; Integrations"/>
-<meta name="twitter:description" content="Create applications and use The Things Network integrations to build an end-to-end IoT solution"/>
+<meta name="twitter:description" content="Create applications and use integrations to build an end-to-end IoT solution"/>
 
 
 </head>
@@ -110,7 +110,7 @@
           
         
             <li class="">
-              <a href="https://www.thethingsnetwork.org/docs/the-things-stack/">The Things Stack</a>
+              <a href="https://www.thethingsnetwork.org/docs/the-things-stack/">Migrating to The Things Stack Community Edition</a>
             </li>
           
         
@@ -157,16 +157,21 @@
 <p>To establish the communication with a LoRaWAN device, you need to <a href="/docs/devices-and-gateways/adding-devices/">add the device</a> within an application.</p>
 <p>An application can be created via the <a href="https://www.thethingsindustries.com/docs/getting-started/console/" target="_blank">Console</a> or via the <a href="https://www.thethingsindustries.com/docs/getting-started/cli/" target="_blank">CLI</a>. You create an application in no-time by providing an <strong>Application ID</strong> and setting its <strong>Owner</strong>. <a href="https://www.thethingsindustries.com/docs/integrations/adding-applications/" target="_blank">See details about creating an application using the Console or commands for using the CLI</a>.</p>
 <h2 id="integrations">Integrations</h2>
-<p>Within your application, you can also create integrations to help you with processing data and acting on it by triggering events. This way, you can implement a solution e.g. to monitor or visualize your sensor data using some cloud IoT platform, to schedule commands to be sent to your end device, etc. Integrations are added within applications.</p>
-<p>The Things Network offers a number of <a href="https://www.thethingsindustries.com/docs/integrations/" target="_blank">integrations</a>:</p>
+<p>Within your application, you can also create integrations to help you with processing data and acting on it by triggering events. This way, you can implement a solution e.g. to monitor or visualize your sensor data using some cloud IoT platform, to schedule commands to be sent to your end device, etc.</p>
+<blockquote>
+<p>Integrations are added within applications.</p>
+</blockquote>
+<p>The Things Stack Community Edition offers a number of <a href="https://www.thethingsindustries.com/docs/integrations/" target="_blank">integrations</a>:</p>
 <ul>
-<li><a href="https://www.thethingsindustries.com/docs/integrations/mqtt/" target="_blank">MQTT</a> - The Things Stack exposes an MQTT Server, so you can use <a href="https://www.thethingsindustries.com/docs/integrations/mqtt-clients/" target="_blank">MQTT clients</a>  to subscribe to uplink messages coming from your device, or to publish downlink messages to be sent to your device.</li>
-<li><a href="https://www.thethingsindustries.com/docs/integrations/webhooks/" target="_blank">Webhooks</a> - The HTTP Webhooks feature allows to send application-related messages to specific HTTP(S) endpoints. You can even contribute to our <a href="https://github.com/TheThingsNetwork/lorawan-webhook-templates/" target="_blank">Webhook templates</a> open source repository if you want to add a <a href="https://www.thethingsindustries.com/docs/integrations/webhooks/webhook-templates/" target="_blank">Webhook integration template</a> to The Things Stack by yourself.</li>
+<li><a href="https://www.thethingsindustries.com/docs/integrations/mqtt/" target="_blank">MQTT</a> - The Things Stack Community Edition exposes an MQTT Server, so you can use <a href="https://www.thethingsindustries.com/docs/integrations/mqtt-clients/" target="_blank">MQTT clients</a>  to subscribe to uplink messages coming from your device, or to publish downlink messages to be sent to your device.</li>
+<li><a href="https://www.thethingsindustries.com/docs/integrations/webhooks/" target="_blank">Webhooks</a> - The HTTP Webhooks feature allows to send application-related messages to specific HTTP(S) endpoints. You can even contribute to our <a href="https://github.com/TheThingsNetwork/lorawan-webhook-templates/" target="_blank">Webhook templates</a> open source repository if you want to add a new <a href="https://www.thethingsindustries.com/docs/integrations/webhooks/webhook-templates/" target="_blank">Webhook integration template</a> by yourself.</li>
 <li><a href="https://www.thethingsindustries.com/docs/integrations/storage" target="_blank">Storage Integration</a> - Storage Integration allows you to store upstream messages in a persistent database, so you can retrieve them at a later time.</li>
-<li><a href="https://www.thethingsindustries.com/docs/integrations/aws-iot/" target="_blank">AWS IoT</a> - The Things Stack allows you to integrate with AWS IoT and publish application telemetry to the IoT Core endpoint.</li>
+<li><a href="https://www.thethingsindustries.com/docs/integrations/aws-iot/" target="_blank">AWS IoT</a> - The Things Stack Community Edition allows you to integrate with AWS IoT and publish application telemetry to the IoT Core endpoint.</li>
 <li><a href="https://www.thethingsindustries.com/docs/reference/application-packages/lora-cloud-device-and-application-services/" target="_blank">LoRa Cloud</a> - LoRa Cloud integration takes advantage of the <a href="https://www.loracloud.com/documentation/device_management" target="_blank">Device &amp; Application Services protocol</a> to allow you to manage common functionalities at the application layer and geolocation for modem-based devices.</li>
 </ul>
-<p>Check the official The Things Stack V3 documentation page for more step-by-step <a href="https://www.thethingsindustries.com/docs/integrations/" target="_blank">integration guides</a>, such as for <a href="https://www.thethingsindustries.com/docs/integrations/node-red/" target="_blank">Node-RED</a>, <a href="https://www.thethingsindustries.com/docs/integrations/ifttt/" target="_blank">IFTTT</a>, <a href="https://www.thethingsindustries.com/docs/integrations/cloud-integrations/" target="_blank">popular cloud platforms</a>, etc.</p>
+<blockquote>
+<p>Check the official The Things Stack documentation page for more step-by-step <a href="https://www.thethingsindustries.com/docs/integrations/" target="_blank">integration guides</a>, such as for <a href="https://www.thethingsindustries.com/docs/integrations/node-red/" target="_blank">Node-RED</a>, <a href="https://www.thethingsindustries.com/docs/integrations/ifttt/" target="_blank">IFTTT</a>, <a href="https://www.thethingsindustries.com/docs/integrations/cloud-integrations/" target="_blank">popular cloud platforms</a>, etc.</p>
+</blockquote>
 
         </div>
       

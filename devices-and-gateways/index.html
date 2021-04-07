@@ -41,7 +41,7 @@
   <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
 
   <meta property="og:title" content="Devices &amp; Gateways" />
-<meta property="og:description" content="Learn to connect your devices and gateways to The Things Network" />
+<meta property="og:description" content="Learn to connect your devices and gateways to The Things Stack Community Edition" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.thethingsnetwork.org/docs/devices-and-gateways/" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
@@ -52,7 +52,7 @@
 <meta name="twitter:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
 
 <meta name="twitter:title" content="Devices &amp; Gateways"/>
-<meta name="twitter:description" content="Learn to connect your devices and gateways to The Things Network"/>
+<meta name="twitter:description" content="Learn to connect your devices and gateways to The Things Stack Community Edition"/>
 
 
 </head>
@@ -110,7 +110,7 @@
           
         
             <li class="">
-              <a href="https://www.thethingsnetwork.org/docs/the-things-stack/">The Things Stack</a>
+              <a href="https://www.thethingsnetwork.org/docs/the-things-stack/">Migrating to The Things Stack Community Edition</a>
             </li>
           
         
@@ -180,20 +180,27 @@
         <div class="content">
           <p>A LoRaWAN-enabled end device is a sensor or an actuator that can be connected to a LoRaWAN network through a LoRaWAN-enabled gateway.</p>
 <p>End-devices are often battery-operated. However, some end devices operate with mains power. These end-devices transmit small data packets (e.g. sensor data) over very long distances and consume low power. They often use compact antennas (e.g. wire antennas, coil antennas, etc).</p>
-<p>The Things Network supports <strong>any LoRaWAN compliant device</strong>. We highly recommend using <strong>certified</strong> LoRaWAN devices.</p>
-<p>Start by <a href="/docs/devices-and-gateways/adding-devices/">adding your device</a> to The Things Network! When operating these end devices, make sure you are following the <a href="/docs/devices-and-gateways/best-practices/">best practices</a> recommended by The Things Network.</p>
-<p>If you would like to enhance the security in your LoRaWAN network, one way is to use Hardware Secure Elements. Learn more about the <a href="https://www.thethingsindustries.com/docs/devices/claim-atecc608a/" target="_blank">ATECC608A security solution</a> developed by <a href="https://www.microchip.com/" target="_blank">Microchip</a> and The Things Industries.</p>
+<blockquote>
+<p>The Things Stack Community Edition supports <strong>any LoRaWAN compliant device</strong>. We highly recommend using <strong>certified</strong> LoRaWAN devices.</p>
+</blockquote>
+<p>Start by <a href="/docs/devices-and-gateways/adding-devices/">adding your device</a> to The Things Stack Community Edition! When operating these end devices, make sure you are following the <a href="/docs/devices-and-gateways/best-practices/">best practices</a> recommended by The Things Network community.</p>
+<blockquote>
+<p>If you would like to enhance the security in your LoRaWAN network, one way is to use Hardware Secure Elements. Learn more about the <a href="https://www.thethingsindustries.com/docs/devices/atecc608a/" target="_blank">ATECC608A security solution</a> developed by <a href="https://www.microchip.com/" target="_blank">Microchip</a> and The Things Industries.</p>
+</blockquote>
 <h1 id="gateways">Gateways</h1>
-<p>A LoRaWAN gateway is an intermediary that allows LoRaWAN end devices to transmit data to The Things Network.</p>
+<p>A LoRaWAN gateway is an intermediary that allows LoRaWAN end devices to transmit data to The Things Stack Community Edition.</p>
 <p>Gateways are often mains-powered and some can have backup batteries or solar panels. A gateway can be indoor or outdoor, and they have various antenna options.</p>
-<p>The communication between devices and gateways is done via LoRaWAN protocol, while gateways use high bandwidth (WiFi, Ethernet, cellular, satellite) backhauls to connect to The Things Network.</p>
-<p>A single gateway is capable of serving thousands of devices. When an end device transmits a message, all gateways in the range will receive that message and forward it to The Things Network. The network is in charge of deduplicating those messages and selecting the best gateway for downlink communication.</p>
-<p>Gateways can connect to The Things Network in two ways:</p>
+<p>The communication between devices and gateways is done via LoRaWAN protocol, while gateways use high bandwidth (WiFi, Ethernet, cellular, satellite) backhauls to connect to The Things Stack Community Edition.</p>
+<p>A single gateway is capable of serving thousands of devices. When an end device transmits a message, all gateways in the range will receive that message and forward it to The Things Stack Community Edition. The network is in charge of deduplicating those messages and selecting the best gateway for downlink communication.</p>
+<p>Gateways can connect to The Things Stack Community Edition in two ways:</p>
 <ul>
 <li>Using the <a href="https://www.thethingsindustries.com/docs/gateways/semtech-udp-packet-forwarder/" target="_blank"><strong>Semtech UDP Packet Forwarder</strong></a></li>
 <li>Using <a href="https://www.thethingsindustries.com/docs/gateways/lora-basics-station/" target="_blank"><strong>LoRa Basics Station</strong></a></li>
 </ul>
-<p>Start by <a href="/docs/devices-and-gateways/adding-gateways/">adding your gateway</a> to The Things Network! Check <a href="https://www.thethingsindustries.com/docs/gateways/">how to configure the most popular gateways to connect to The Things Network</a>.</p>
+<p>Start by <a href="/docs/devices-and-gateways/adding-gateways/">adding your gateway</a> to The Things Stack Community Edition!</p>
+<blockquote>
+<p>Check <a href="https://www.thethingsindustries.com/docs/gateways/">how to configure the most popular gateways</a> to connect them to The Things Stack Community Edition network.</p>
+</blockquote>
 <h3 id="connecting-gateways-and-devices">Connecting Gateways and Devices</h3>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/rK8oJHZ9Q7U" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
