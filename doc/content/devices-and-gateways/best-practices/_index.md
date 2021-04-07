@@ -3,7 +3,7 @@ title: Best Practices
 section: Devices
 ---
 
-The goal of defining best practices for LoRaWAN devices which use The Things Network is to optimize their performance, as well as performance of the whole LoRaWAN network. Optimization means reducing energy consumption and increasing number of devices that are being reliably and efficiently served, while keeping the same number of gateways. 
+The goal of defining best practices for LoRaWAN devices which use The Things Stack Community Edition is to optimize their performance, as well as performance of the whole LoRaWAN network. Optimization means reducing energy consumption and increasing number of devices that are being reliably and efficiently served, while keeping the same number of gateways. 
 
 To make sure you are exploiting device's capabilities in the most efficient way, follow these recommendations:
 
@@ -21,4 +21,4 @@ To make sure you are exploiting device's capabilities in the most efficient way,
 - Use 32 bit frame counters that increment after each uplink/downlink to prevent replay attacks.
 - Do not assume link loss if at least 3 ACKs are not missed. 
 
-<a href="https://www.thethingsindustries.com/docs/devices/best-practices/" target="_blank">Follow this link to read more details about best practices</a>.
+> <a href="https://www.thethingsindustries.com/docs/devices/best-practices/" target="_blank">Follow this link to read more details about best practices</a>.
