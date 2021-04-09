@@ -13,7 +13,7 @@ menu:
 
 As mentioned in the [Quick Start](../quick-start), **The Things Network V2 software has been upgraded to The Things Stack Community Edition (also known as V3)**. The existing users of The Things Network V2 will need to migrate their gateways and devices to The Things Stack Community Edition as **The Things Network V2 clusters will be shut down near the end of 2021**.
 
-> <a href="https://eu1.cloud.thethings.network/console/" target="_blank">Click here to visit The Things Stack Community Edition Console</a>
+> <a href="https://console.cloud.thethings.network/" target="_blank">Click here to visit The Things Stack Community Edition Console</a>
 
 {{< note >}} 
 The Things Stack Community Edition is a LoRaWAN Network Server which is free to use for The Things Network community members. The Community Edition is designed for testing and evaluating LoRaWAN projects and is managed by <a href="https://www.thethingsindustries.com/" target="_blank">The Things Industries</a>. The Community Edition comes without guarantees and only includes community support, hence is not suitable for commercial usage. Join The Things Network [Forum](https://www.thethingsnetwork.org/forum/) or <a href="https://thethingsnetwork.slack.com/" target="_blank">Slack</a> for community support.
