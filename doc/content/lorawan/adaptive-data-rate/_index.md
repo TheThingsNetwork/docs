@@ -27,13 +27,11 @@ The algorithm used in The Things Network is based on Semtech's recommended algor
 
 ## Adaptive Data Rate (ADR)
 
-In this chapter, we will briefly look at the Adaptive Data Rate mechanism used in LoRaWAN networks. Adaptive Data Rate (ADR) allows for easy **scaling of **a LoRaWAN network, simply by adding **gateways **and **end nodes**.
+In this chapter, we will briefly look at the **Adaptive Data Rate (ADR)** mechanism used in LoRaWAN networks. Adaptive Data Rate allows for easy **scaling of** a LoRaWAN network, simply by adding **gateways** and **end nodes**.
 
 The data rate impacts the device radio power consumption and Time-on-Air (TOA). LoRaWAN features a built-in mechanism for the adaptive management of the end device data rate. The Adaptive Data Rate (ADR) helps to minimize the Time-On-Air (TOA) and to reduce the transmission energy.
 
 The ADR mechanism controls the following transmission parameters of an end device.
-
-
 
 *   Spreading factor
 *   Bandwidth
@@ -56,153 +54,38 @@ An end device will decide when to use ADR (although the network server can also 
 
 The following table presents SNR and demodulation margin for each data rate.
 
-
-<table>
-  <tr>
-   <td><strong>Data rate / SF</strong>
-   </td>
-   <td><strong>SNR (dB)</strong>
-   </td>
-   <td><strong>Demodulation margin (dB)</strong>
-   </td>
-   <td><strong>Notes</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>DR0 / SF12
-   </td>
-   <td>-20
-   </td>
-   <td>6
-   </td>
-   <td>
-   </td>
-  </tr>
-  <tr>
-   <td>DR1 / SF11
-   </td>
-   <td>-17.5
-   </td>
-   <td>3.5
-   </td>
-   <td><strong>The average SNR for 20 messages at DR1 is -14dB</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>DR2 / SF10
-   </td>
-   <td>-15
-   </td>
-   <td>1
-   </td>
-   <td>
-   </td>
-  </tr>
-  <tr>
-   <td>DR3 / SF9
-   </td>
-   <td>-12.5
-   </td>
-   <td>-1.5
-   </td>
-   <td>
-   </td>
-  </tr>
-  <tr>
-   <td>DR4 / SF8
-   </td>
-   <td>-10
-   </td>
-   <td>-4
-   </td>
-   <td>
-   </td>
-  </tr>
-  <tr>
-   <td>DR5 / SF7
-   </td>
-   <td>-7.5
-   </td>
-   <td>0
-   </td>
-   <td>
-   </td>
-  </tr>
-  <tr>
-   <td>DR6 / SF7
-   </td>
-   <td>-7.5
-   </td>
-   <td>0
-   </td>
-   <td>
-   </td>
-  </tr>
-</table>
-
+![](../adr-table1.png)
 
 For example, the calculated average SNR for 20 uplink messages with DR1 is -14dB. This is the best fit for DR2 because the SNR of DR2 is -15dB and its demodulation margin is 1 dB. So we have enough margin for demodulating the signal with DR2.
 
-
-<table>
-  <tr>
-   <td rowspan="2" >DR1
-<p>
-SNR = -17.5 dB
-   </td>
-   <td>DR2
-<p>
-SNR = -15 dB
-   </td>
-   <td>
-
-
-
-<pre class="prettyprint">Average SNR for 20 uplinks with DR1 = -14 dB
-
-Best fit with DR2</pre>
-
-
-   </td>
-  </tr>
-  <tr>
-   <td>Demodulation margin = 1 dB
-   </td>
-   <td>
-   </td>
-  </tr>
-  <tr>
-   <td>
-   </td>
-   <td>Demodulation margin = 3.5 dB
-   </td>
-   <td>
-   </td>
-  </tr>
-</table>
-
+![](../adr-table2.png)
 
 The network server would then schedule a downlink with a MAC command for the end device to increase its data rate to DR2.
 
-
 ## Questions
 
-
-
-1. _The Adaptive Data Rate is suitable for,_
-    1. **_<span style="text-decoration:underline;">Static end devices</span>_**
-    2. _Mobile end devices_
-2. _The end devices located close to a gateway should use a,_
-    3. _Lower data rate_
-    4. **_<span style="text-decoration:underline;">Higher data rate</span>_**
-3. _The end devices located several kilometers from a gateway should use a,_
-    5. **_<span style="text-decoration:underline;">Lower data rate</span>_**
-    6. _Higher data rate_
-4. _A higher data rate means,_
-    7. **_<span style="text-decoration:underline;">A lower spreading factor</span>_**
-    8. _A higher spreading factor_
-5. _Which of the following end devices should not implement ADR?_
-    9. _Environmental sensor_
-    10. _Water leakage detector_
-    11. **_<span style="text-decoration:underline;">Pet tracker</span>_**
-    12. _Gas detector_
+1. The Adaptive Data Rate is suitable for
+   - <span style="text-decoration:underline;">Static end devices</span>
+   - Mobile end devices
+    
+    
+2. The end devices located close to a gateway should use a
+   - Lower data rate
+   - <span style="text-decoration:underline;">Higher data rate</span>
+   
+   
+3. The end devices located several kilometers from a gateway should use a
+   - <span style="text-decoration:underline;">Lower data rate</span>
+   - Higher data rate
+    
+    
+4. A higher data rate means,
+   - <span style="text-decoration:underline;">A lower spreading factor</span>
+   - A higher spreading factor
+   
+   
+5. Which of the following end devices should not implement ADR?
+   - Environmental sensor
+   - Water leakage detector
+   - <span style="text-decoration:underline;">Pet tracker</span>
+   - Gas detector
