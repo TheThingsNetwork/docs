@@ -3,24 +3,19 @@ title: End Device Activation
 section: Fundamental
 ---
 
-## End Device Activation
+Every end device must be registered with a network before sending and receiving messages. This procedure is known as **activation**. There are two activation methods available:
 
-In this chapter, you will learn how to activate and personalize an end device with a LoRaWAN network. Every end device should be registered with a network before sending and receiving messages. This registering procedure is known as **activation**. Currently, there are two activation methods available:
-
-
-
-* **Over-The-Air-Activation (OTAA)** - Over-The-Air-Activation is the most secure activation method for end devices. This is also known as the **JOIN PROCEDURE**.
-* **Activation By Personalization (ABP)** - Less secure than the OTAA and bypasses the join procedure. The end device is preprogrammed with keys and tied to a specific network.
+* **Over-The-Air-Activation (OTAA)** - OTAA is the most secure activation method for end devices. Devices perform a join-procedure with the network, during which a dynamic Device Address is assigned and security keys are negotiated with the device.
+* **Activation By Personalization (ABP)** - Requires hardcoding the Device Address as well as the security keys in the device. ABP is less secure than and also has the downside that devices can not switch network providers without manually changing keys in the device. 
 
 The **join procedure** for **LoRaWAN 1.0.x** and **1.1** is slightly different. The following two sections describe the **join procedure** for **LoRaWAN 1.0.x** and **1.1** separately.
 
-
 ## Over The Air Activation in LoRaWAN 1.0.x
 
-In **LoRaWAN 1.0.x**, the join procedure involves **two** **MAC messages** exchanged between the **end device** and the **network server**. They are,
+In **LoRaWAN 1.0.x**, the join procedure involves **two** **MAC messages** exchanged between the **end device** and the **network server**:
 
-*   Join-request.
-*   Join-accept.
+*   Join-request
+*   Join-accept
 
 ### Before Activation
 
@@ -52,23 +47,49 @@ The **Join-request** message is always **initiated** and transmitted by the **en
 
 The structure of the **Join-request** message is shown below.
 
-![alt_text](../join-request-1-0.png "LoRaWAN 1.0 Join-request message")
+<table>
+  <tr>
+   <td><strong>8 bytes</strong>
+   </td>
+   <td><strong>8 bytes</strong>
+   </td>
+   <td><strong>2 bytes</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>AppEUI
+   </td>
+   <td>DevEUI
+   </td>
+   <td>DevNonce
+   </td>
+  </tr>
+</table>
 
+The **Message Integrity Code (MIC)** is calculated using all the fields of the Join-request message and the **AppKey** to ensure integrity of the message, and then added to the end:
 
-_Figure: Join-request message in LoRaWAN 1.0.x_
-
-
-The **Message Integrity Code (MIC)** is calculated over all the fields of the Join-request message using the **AppKey**.
-
-_cmac = aes128_cmac(**AppKey**, MHDR | AppEUI | DevEUI | DevNonce)_
-
-_MIC<sub>1</sub> = cmac[0…3]_
-
-The calculated **Message Integrity Code (MIC)** is added to the end of the message. 
-
-![alt_text](../join-request-1-0-phypayload.png "LoRaWAN 1.0 Join-request message PHYPayload")
-
-_Figure: PHYPayload structure of the Join-request message_
+<table>
+  <tr>
+   <td><strong>8 bytes</strong>
+   </td>
+   <td><strong>8 bytes</strong>
+   </td>
+   <td><strong>2 bytes</strong>
+   </td>
+   <td><strong>4 bytes</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>AppEUI
+   </td>
+   <td>DevEUI
+   </td>
+   <td>DevNonce
+   </td>
+   <td>MIC
+   </td>
+  </tr>
+</table>
 
 ---
 **NOTE** 
@@ -102,34 +123,40 @@ The **Join-accept** message consists of the following fields.
 
 The following figure shows the **Join-accept** message with all the above-generated values.
 
-![alt_text](../join-accept-1-0.png "LoRaWAN 1.0 Join-accept message")
+<table>
+  <tr>
+   <td><strong>3 bytes</strong>
+   </td>
+   <td><strong>3 bytes</strong>
+   </td>
+   <td><strong>4 bytes</strong>
+   </td>
+   <td><strong>1 bytes</strong>
+   </td>
+   <td><strong>1 bytes</strong>
+   </td>
+   <td><strong>16 bytes</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>AppNonce
+   </td>
+   <td>NetID
+   </td>
+   <td>DevAddr
+   </td>
+   <td>DLSettings
+   </td>
+   <td>RXDelay
+   </td>
+   <td>CFList
+   </td>
+  </tr>
+</table>
 
-_Figure: Structure of the Join-accept message._
+The **Message Integrity Code (MIC)** is calculated using the **AppKey** over all the fields of the **Join-accept** message and added to the frame.
 
-
-The **Message Integrity Code (MIC)** is calculated using the **AppKey** over all the fields of the **Join-accept** message as follows.
-
----
-**NOTE** 
-
-The **MAC Header (MHDR)** is added before calculating the **MIC**.
-
----
-
-_cmac = aes128_cmac(**AppKey**, MHDR | AppNonce | NetID | DevAddr | DLSettings | RxDelay | CFList)_
-
-_MIC = cmac[0…3]_
-
-The calculated **MIC** is added to the end of the Join-accept message itself. The resulting frame is shown below.
-
-![alt_text](../join-accept-1-0-phypayload.png "LoRaWAN 1.0 OTAA Steps")
-
-The **Network Server** uses an **AES decrypt** operation in **ECB** mode to encrypt the **Join-accept** message so that the **end-device** can use an **AES encrypt** operation to decrypt the message. 
-
-The **Join-accept** message itself is encrypted with the **AppKey** as follows.
-
-_aes128_decrypt(**AppKey**, AppNonce | NetID | DevAddr | DLSettings | RxDelay | CFList | MIC)_
-
+The **Join-accept** message itself is then encrypted with the **AppKey**.
 
 ##### Step 3
 
@@ -143,17 +170,11 @@ The **Network Server** sends the encrypted **Join-accept** message back to the *
 
 The **Network Server** sends the **AppSKey** to the **Application Server**.
 
-
 ##### Step 5
 
-The end device uses the **AppKey** to derive the two session keys **Network Session Key (NwkSKey)** and the **Application Session Key (AppSKey)**. The keys are calculated as follows by **decrypting** the **Join-accept** using the **AES encrypt** operation. 
+The end device uses the **AppKey** to derive the two session keys **Network Session Key (NwkSKey)** and the **Application Session Key (AppSKey)**.
 
-_NwkSKey = aes128_encrypt(**AppKey**, 0x01 | AppNonce | NetID | DevNonce | pad_16 )_
-
-_AppSKey = aes128_encrypt(**AppKey**, 0x02 | AppNonce | NetID | DevNonce | pad_16 )_
-
-
-**<span style="text-decoration:underline;">After Activation:</span>**
+##### After Activation
 
 After activation, the following additional information is stored in the end device.
 
@@ -164,14 +185,14 @@ After activation, the following additional information is stored in the end devi
 
 ## Over-The-Air-Activation in LoRaWAN 1.1
 
-In **LoRaWAN 1.1**, the join procedure involves **two MAC messages** exchanged between the **end device** and the **Join Server**. They are,
+In **LoRaWAN 1.1**, the join procedure involves **two** **MAC messages** exchanged between the **end device** and the **Join Server**:
 
-*   Join-request.
-*   Join-accept.
+*   Join-request
+*   Join-accept
 
-**<span style="text-decoration:underline;">Before the activation:</span>**
+##### Before Activation
 
-Before the activation, **JoinEUI**, **DevEUI**, **AppKey**, and **NwkKey** should be stored in the end device. The **AppKey** and **NwkKey** are AES-128 bit secret keys known as **root keys**. The matching **AppKey**, **NwkKey**, and **DevEUI** should be **provisioned** onto the **Join Server** that can assist in the processing of the **Join procedure** and the session keys derivation. **JoinEUI** and **DevEUI** are **not secret** and visible to everyone.
+Before activation, the **JoinEUI**, **DevEUI**, **AppKey**, and **NwkKey** should be stored in the end device. The **AppKey** and **NwkKey** are AES-128 bit secret keys known as **root keys**. The matching **AppKey**, **NwkKey**, and **DevEUI** should be **provisioned** onto the **Join Server** that can assist in the processing of the **Join procedure** and the session keys derivation. **JoinEUI** and **DevEUI** are **not secret** and visible to everyone.
 
 ---
 **NOTE** 
@@ -192,12 +213,10 @@ _Figure: Message flow for Over-The-Air-Activation (OTAA) in LoRaWAN 1.1_
 
 ##### Step 1
 
-The **Join-request** message is always **initiated **and transmitted by the **end device**. The **Join-request** message consists of the following three fields.
+The **Join-request** message is transmitted by the **end device**. It consists of the following three fields:
 
-
-
-*   **DevEUI** – is a 64-bit (8-bytes) global **end-device ID** in IEEE EUI64 address space that uniquely identifies the **end-device**.
-*   **JoinEUI** – is a 64-bit (8-bytes) global** application ID** in IEEE EUI64 address space that uniquely identifies the **Join Server** that can assist in the processing of the Join procedure and the session keys derivation.
+*   **DevEUI** – is a 64-bit (8-bytes) global end-device ID in IEEE EUI64 address space that uniquely identifies the end-device.
+*   **JoinEUI** – is a 64-bit (8-bytes) global application ID in IEEE EUI64 address space that uniquely identifies the **Join Server** that can assist in the processing of the Join procedure and the session keys derivation.
 *   **DevNonce** – this is a 2-bytes counter, starting at 0 when the device is initially powered up and incremented with every **Join-request**. The DevNonce value is used to prevent **replay attacks**.
 
 ---
@@ -210,23 +229,34 @@ The **Join-request** message is always **initiated **and transmitted by the **en
 
 ---
 
-The structure of the **Join-request** message is shown in the following figure.
+The structure of the **Join-request** message is shown in the following figure. The **Message Integrity Code (MIC)** is calculated over all the fields of the **Join-request** frame using the **NwkKey**. The calculated **Message Integrity Code (MIC)** is added to the end of the **Join-request** message. The resulting frame is known as the **PHYPayload**:
 
-![alt_text](../lw-1-1-join-request.png "LoRaWAN 1.1 Join-request message")
-
-_Figure: Fields of the join-request message in LoRaWAN 1.1_
-
-The **Message Integrity Code (MIC)** is calculated over all the fields of the **Join-request** frame using the **NwkKey**.
-
-_cmac = aes128_cmac(**NwkKey**, MHDR | JoinEUI | DevEUI | DevNonce)_
-
-_MIC<sub>1</sub> = cmac[0…3]_
-
-The calculated **Message Integrity Code (MIC)** is added to the end of the **Join-request** message. The resulting frame is known as the **PHYPayload**. 
-
-![alt_text](../lw-1-1-join-request-phypayload.png "LoRaWAN 1.1 Join-request message PHYPayload")
-
-_Figure: PHYPayload of the join-request message_
+<table>
+  <tr>
+    <td><strong>1 byte</strong>
+   </td>
+   <td><strong>8 bytes</strong>
+   </td>
+   <td><strong>8 bytes</strong>
+   </td>
+   <td><strong>2 bytes</strong>
+   </td>
+   <td><strong>4 bytes</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>MHDR
+   </td>
+   <td>JoinEUI
+   </td>
+   <td>DevEUI
+   </td>
+   <td>DevNonce
+   </td>
+   <td>MIC
+   </td>
+  </tr>
+</table>
 
 ---
 **NOTE**
@@ -274,21 +304,38 @@ The **Join Server** processes the **Join-request** message and sends the **JoinA
 
 The **Network Server** prepares the **Join-accept** message based on the above information.
 
-![alt_text](../lw-1-1-join-accept.png "LoRaWAN 1.1 Join-accept message")
+<table>
+  <tr>
+   <td><strong>1 byte</strong>
+   </td>
+   <td><strong>3 bytes</strong>
+   </td>
+   <td><strong>4 bytes</strong>
+   </td>
+   <td><strong>1 bytes</strong>
+   </td>
+   <td><strong>1 bytes</strong>
+   </td>
+   <td><strong>16 bytes</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>JoinNonce
+   </td>
+   <td>NetID
+   </td>
+   <td>DevAddr
+   </td>
+   <td>DLSettings
+   </td>
+   <td>RXDelay
+   </td>
+   <td>CFList
+   </td>
+  </tr>
+</table>
 
-_Figure: PHYPayload of the Join-accept message_
-
-The **Join-accept** message is encrypted with the **NwkKey** as follows: 
-
-_aes128_decrypt(**NwkKey**, JoinNonce | NetID | DevAddr | DLSettings | 1623 RxDelay | CFList | MIC)._
-
-
----
-
-**NOTE**
-The **Join-accept** message itself is encrypted with the **NwkKey.** The **Join Server** uses an AES decrypt operation in ECB mode to encrypt the **join-accept** message so that the **end-device** can use an AES encrypt operation to decrypt the message. This way an end-device only has to implement AES encrypt but not AES decrypt.
-
----
+The **Join-accept** message is encrypted with the **NwkKey**.
 
 ##### Step 5
 
@@ -298,27 +345,9 @@ The **Network Server** forwards the received PHYPayload with the **Join-accept**
 * JOIN_ACCEPT_DELAY1 - default value is 5 seconds
 * JOIN_ACCEPT_DELAY2 - default value is 6 seconds
 
-The **end-device** calculates the **MIC** as follows:
+The **end-device** calculates the **MIC**, and generates the **network session keys** and **AppSKey**.
 
-_cmac = aes128_cmac(**JSIntKey**, 0xFF | JoinEUI | DevNonce | MHDR | JoinNonce | NetID | DevAddr | DLSettings | RxDelay | CFList )_
-
-_MIC = cmac[0..3]_
-
-The **end-device** generates the **network session keys** and **AppSKey** as follows.
-
-
-The **AppSKey** is derived from the **AppKey**:
-
-* _AppSKey = aes128_encrypt(**AppKey**, 0x02 | JoinNonce | JoinEUI| DevNonce | pad_16)_
-
-
-The **FNwkSIntKey**, **SNwkSIntKey**, and **NwkSEncKey** are derived from the **NwkKey**:
-
-* _FNwkSIntKey = aes128_encrypt(**NwkKey**, 0x01 | JoinNonce | JoinEUI | DevNonce | pad_16 )_
-
-* _SNwkSIntKey = aes128_encrypt(**NwkKey**, 0x03 | JoinNonce | JoinEUI | DevNonce | pad_16)_
-
-* _NwkSEncKey = aes128_encrypt(**NwkKey**, 0x04 | JoinNonce | JoinEUI | DevNonce | pad_16_
+The **FNwkSIntKey**, **SNwkSIntKey**, and **NwkSEncKey** are derived from the **NwkKey**.
 
 ##### Step 6
 
@@ -332,11 +361,9 @@ When the **Application Server** receives the encrypted **AppSKey** along with th
 
 In this alternative step, the **Application Server** requests the **AppSKey** directly from the **Join Server**. The **Application Server** will request the **AppSKey** identified by the **DevEUI** of the end device from the **Join Server** by sending an **AppSKeyReq** message (backend message). The **AppSKey** is encrypted using a shared secret between the **Join Server** and the **Application Server**. The **Join Server** sends the encrypted **AppSKey**, and **DevEUI** to the Application Server in an **AppSKeyAns** message (backend message). The **Application Server** decrypts the encrypted **AppSKey**, then uses the **AppSKey** to encrypt and decrypt the application payload.
 
-**<span style="text-decoration:underline;">After Activation:</span>**
+##### After Activation
 
 After activation, the following additional information is stored in the end device.
-
-
 
 * **DevAddr** - The DevAddr is allocated by the Network Server of the end-device. It is a 32-bit device address that identifies the end-device within the current network. 
 * **FNwkSIntKey** - This is a network session key that is used by the end device to calculate the MIC or part of the MIC of all uplink data messages to ensure data integrity.
@@ -347,12 +374,11 @@ After activation, the following additional information is stored in the end devi
 
 ## Activation By Personalization
 
-**Activation By Personalization (ABP)** directly ties an **end-device** to a pre-selected network **by-passing** the **JOIN PROCEDURE**. Compared with the OTAA, ABP is the less secure activation method. A join server is not involved in the ABP process.
+Activation By Personalization (ABP) directly ties an end-device to a pre-selected network, bypassing the JOIN PROCEDURE. ABP is the less secure activation method, and also has the downside that devices can not switch network providers without manually changing keys in the device. A join server is not involved in the ABP process.
 
 An end device activated using the ABP method can only work with a single network and keeps the same security session for its entire lifetime.
 
-
-### LoRaWAN 1.0.x
+### Activation By Personalisation in LoRaWAN 1.0.x
 
 In **LoRaWAN 1.0.x**, the **DevAddr** and the two session keys **NwkSKey** and **AppSKey** are directly stored into the end-device instead of the DevEUI, AppEUI, and the AppKey. The same **DevAddr** should be stored in the **network server**. Each end device should have a unique set of **NwkSKey** and **AppSkey**. The same **NwkSKey** and **AppSKey** should be stored in the **network server** and the **application server**, respectively (see the figure below). 
 
@@ -362,14 +388,13 @@ In **LoRaWAN 1.0.x**, the **DevAddr** and the two session keys **NwkSKey** and *
 _Figure: Pre-sharing DevAddr and session keys for ABP in LoRaWAN 1.0_
 
 
-### LoRaWAN 1.1
+### Activation By Personalisation in LoRaWAN 1.1
 
 In **LoRaWAN 1.1**, the **DevAddr** and the four-session keys **FNwkSIntKey**, **SNwkSIntKey**, **NwkSEncKey**, and **AppSKey** are directly stored into the end-device instead of the DevEUI, JoinEUI, AppKey, and NwkKey. The same **FNwkSIntKey**, **SNwkSIntKey**, and **NwkSEncKey** should be stored in the **network server** and the and **AppSKey** should be stored in the **application server**. The same **DevAddr** should be stored in the **network server**. 
 
 ![alt_text](../lw-1-1-abp.png "LoRaWAN 1.1 ABP")
 
 _Figure: Pre-sharing DevAddr and session keys for ABP in LoRaWAN 1.1_
-
 
 ## Questions
 

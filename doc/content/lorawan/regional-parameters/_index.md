@@ -4,6 +4,8 @@ section: Fundamental
 weight: 3
 ---
 
+The LoRaWAN® Regional Parameters document describes the approved frequency channel plans around the world, following regulatory constraints in those regions. This chapter is based on the latest LoRaWAN regional parameters document, which is **RP002-1.0.2** at the time of this writing.
+
 LoRaWAN operates in unlicensed radio spectrum. This means that anyone can use the radio frequencies without having to pay million dollar fees for transmission rights. It is similar to WiFi, which uses the 2.4GHz and 5GHz ISM bands worldwide. Anyone is allowed to set up WiFi routers and transmit WiFi signals without the need for a license or permit.
 
 LoRaWAN uses lower radio frequencies with a longer range. The fact that frequencies have a longer range also comes with more restrictions that are often country-specific. This poses a challenge for LoRaWAN, that tries to be as uniform as possible in all different regions of the world. As a result, LoRaWAN is specified for a number of bands for these regions. These bands are similar enough to support a region-agnostic protocol, but have a number of consequences for the implementation of the backend systems.
@@ -12,31 +14,13 @@ LoRaWAN uses lower radio frequencies with a longer range. The fact that frequenc
 
 + These LoRaWAN regional specifications do not specify everything either. They only cover a region by specifying the common denominator. For example, the LoRaWAN regional parameters for Asia only specify a common subset of channels - but there are variations between regulations in Asian countries. Furthermore, each network server operator is free to select additional parameters, such as additional emission channels. We call these parameters **Other**. For The Things Network, they are defined in [this GitHub repository](https://github.com/TheThingsNetwork/gateway-conf).
 
-More informations can be found here:
++ In some countries, more than one channel plan may be used. For example, in the **Netherlands**, both **EU868-870** and **EU433** can be used.
 
-* [Frequency Plans]({{< relref ".././frequency-plans" >}})
-* [Frequency Plan by Country]({{< relref ".././frequencies-by-country" >}})
-
-## Regional Parameters
-
-The LoRaWAN® Regional Parameters document describes the approved frequency channel plans around the world, following regulatory constraints in those regions. 
-
-The LoRaWAN regional parameters vary slightly from region to region based on different regional spectrum allocations and regulatory requirements. These regional parameters are defined by the technical committee of the LoRa Alliance.
-
-This chapter is based on the latest LoRaWAN regional parameters document, which is **RP002-1.0.2** at the time of this writing.
-
-In some countries, more than one channel plan may be used. For example, in the **Netherlands**, both **EU868-870** and **EU433** can be used.
-
-Apart from the regulatory requirements defined by the LoRa Alliance for each channel plan, the local regulatory authorities and the network operators can also impose additional restrictions.
-
-The regional parameters include physical layer parameters such as frequency plans (channel plans), mandatory channel frequencies and data rates for join-request messages, uplink and downlink data rates, Tx output power, dwell time and power control.
-
-The Regional Parameters also include LoRaWAN layer parameters such as maximum payload size.
++ The regional parameters include physical layer parameters such as frequency plans (channel plans), mandatory channel frequencies and data rates for join-request messages, uplink and downlink data rates, Tx output power, dwell time and power control. The Regional Parameters also include LoRaWAN layer parameters such as maximum payload size.
 
 In this chapter you will learn in detail about the **EU863-870** band and **US902-928** ISM band. This chapter also presents some important parameters involved in other channel plans.
 
-
-## Channel Plans
+## Common Frequency Plans
 
 LoRaWAN operates in the Unlicensed ISM (Industrial, Scientific, and Medical) band. The table below lists the latest channel plans and their common names.
 
@@ -110,6 +94,11 @@ LoRaWAN operates in the Unlicensed ISM (Industrial, Scientific, and Medical) ban
   </tr>
 </table>
 
+Information about specific countries and frequency plans can be found here:
+
+* [Frequency Plans]({{< relref ".././frequency-plans" >}})
+* [Frequency Plan by Country]({{< relref ".././frequencies-by-country" >}})
+
 ---
  **NOTE**
  
@@ -119,7 +108,7 @@ The Things Fundamentals certification expects detailed knowledge about the **EU8
 
 ## EU863-870 Band
 
-The **EU863-870** band can be applied to any region where the radio spectrum use is defined by the **ETSI [EN300.220]** standard. The **EU863-870** band is used in all the **European** countries, and some countries _**outside Europe**_, for example, **Bahrain(BH)** located in the **Middle East**. The **EU863-870** band implies the frequency band ranges from **863 MHz – 870 MHz** but some countries use slightly different frequency ranges. For example, **Albania (AL)** uses **863-873 MHz**.
+The **EU863-870** band can be applied to any region where the radio spectrum use is defined by the **ETSI [EN300.220]** standard. The **EU863-870** band is used in all the **European** countries, and some countries _**outside Europe**_, for example, **Bahrain (BH)**, located in the **Middle East**. The **EU863-870** band implies the frequency band ranges from **863 MHz – 870 MHz** but some countries use slightly different frequency ranges. For example, **Albania (AL)** uses **863-873 MHz**.
 
 ### EU863-870 default channels
 
@@ -135,8 +124,6 @@ The following three default channels **shall** be implemented in every end devic
    </td>
    <td><strong>Bit rate</strong>
    </td>
-   <td><strong>Duty cycle</strong>
-   </td>
   </tr>
   <tr>
    <td>868.10
@@ -146,8 +133,6 @@ The following three default channels **shall** be implemented in every end devic
    <td>DR0 – DR5
    </td>
    <td>0.3 – 5 kbps
-   </td>
-   <td>&lt; 1%
    </td>
   </tr>
   <tr>
@@ -159,8 +144,6 @@ The following three default channels **shall** be implemented in every end devic
    </td>
    <td>0.3 – 5 kbps
    </td>
-   <td>&lt; 1%
-   </td>
   </tr>
   <tr>
    <td>868.50
@@ -171,19 +154,12 @@ The following three default channels **shall** be implemented in every end devic
    </td>
    <td>0.3 – 5 kbps
    </td>
-   <td>&lt; 1%
-   </td>
   </tr>
 </table>
 
+For devices compliant with **LoRaWAN version 1.0.x**, these three default channels **shall not** be modified, but for devices compliant with **LoRaWAN version 1.1** and beyond, these channels **may** be modified through the **NewChannelReq** command.
 
-The **duty cycle** limitation of **&lt;1%** for these three default channels is imposed by the **European Telecommunications Standards Institute (ETSI)** regulations.
-
-By default, the **RX1** receive window uses the same channel as the preceding uplink, for example, if the **Join-request** is sent at **868.10 MHz**, the **RX1** receive window uses **868.10 MHz** to listen for the **Join-accept** message.
-
-For devices compliant with **LoRaWAN version 1.0.x**, these three default channels **shall not** be modified. For devices compliant with **LoRaWAN version 1.1** and beyond, these channels **may** be modified through the **NewChannelReq** command. All these channels are usable for **DR0 – DR5** with **125 kHz** bandwidth **LoRa modulation** and the **bit rate** ranges from **0.3 – 5 kbps**.
-
-The **EU863-870** band supports a maximum of **16 channels** (ch0 – ch15). During end device activation it may receive an optional channel list in the **CFlist** field of the join-accept message that contains **5 frequencies** (ch3 – ch7) in the join-accept message. These are the center frequency of the channels. For example, TTN uses the following 5 additional frequencies.
+The **EU863-870** band supports a maximum of **16 channels**. During end device activation additional channels may be specified. For example, TTN uses the following 5 additional frequencies.
 
 *   867.1 MHz
 *   867.3 MHz
@@ -193,22 +169,17 @@ The **EU863-870** band supports a maximum of **16 channels** (ch0 – ch15). Dur
 
 These **8 channels** are used for **uplink**. For  **downlink**, the **same 8 channels** are used for the **RX1** receive slot, and one fixed frequency and data rate is used for the **RX2** receive slot which is **869.525 MHz** at **DR0 (SF12 / 125 kHz)**. The Things Network uses the same frequency as mentioned in the regional parameters document but uses a different data rate which is **DR3 (SF9 / 125 kHz)**.
 
-However, all 16 channels (ch0 – ch15) **can be modified** (existing channels) **or populated** (initially blank channels) through the **NewChannelReq** command under some conditions as mentioned above.
-
 The following table shows how the **16 channels** are populated/modified. Some end devices only use **8 channels** for **uplink**.
 
 ![alt_text](../eu868-all-channels.png "image_tooltip")
 
 ### EU863-870 Sub-bands and duty cycles
 
-**European Telecommunications Standards Institute (ETSI)** divides the **863-870 MHz** band into **5 sub-bands**, **G**, **G1**, **G2**, **G3**, and **G4**. The regulations for each of these sub-bands can be found in the **Short Range Devices (SRD) operating in the frequency range 25 MHz to 1 000 MHz; Part 2: Harmonised Standard for access to radio spectrum for non specific radio equipment - ETSI EN 300 220-2 V3.2.1 (2018-06)** and this document can be downloaded by using the following link.
-
-[https://www.etsi.org/deliver/etsi_en/300200_300299/30022002/03.02.01_60/en_30022002v030201p.pdf](https://www.etsi.org/deliver/etsi_en/300200_300299/30022002/03.02.01_60/en_30022002v030201p.pdf)
-
-The following figure is the screen capture of the frequency allocation table provided in the **ETSI EN 300 220-2 V3.2.1 (2018-06)**.
+The **European Telecommunications Standards Institute (ETSI)** divides the **863-870 MHz** band into **5 sub-bands**, **G**, **G1**, **G2**, **G3**, and **G4**, summarised below:
 
 ![alt_text](../eu868-etsi-subbands.png "image_tooltip")
 
+The complete document is available [here](https://www.etsi.org/deliver/etsi_en/300200_300299/30022002/03.02.01_60/en_30022002v030201p.pdf)
 
 The following table shows the frequency range, maximum ERP, and the duty cycle for each sub-band extracted from the above table.
 
@@ -338,7 +309,7 @@ Some network operators (like TTN) reduced the duty cycle further than ESTI recom
 
 ### EU863-870 Data Rates
 
-**Data rate** is the number of bits that are transmitted per unit of time. With the LoRa modulation, the data rate depends on a few factors like **spreading factor, **bandwidth**, and the **coding rate**. By default, the LoRa modulation uses the **Coding Rate = 4/5**.
+**Data rate** is the number of bits that are transmitted per unit of time. With the LoRa modulation, the data rate depends on a few factors like **spreading factor**, **bandwidth**, and the **coding rate**. By default, LoRa modulation uses the **Coding Rate 4/5**.
 
 The following table shows the bit rate for each **data rate** (DR0 - DR6) configured with the spreading factor and the bandwidth.
 
@@ -422,7 +393,7 @@ The following table shows the bit rate for each **data rate** (DR0 - DR6) config
    </td>
 </table>
 
-As you can see the **higher spreading factors** use **lower bit rates** and the **lower spreading factors** use **higher bit rates**. However for the **same spreading factor**, if the **bandwidth doubles** the **data rate** also gets **doubled**. You will learn more about the **Spreading Factors** in the Spreading Factors chapter.
+As you can see the **higher spreading factors** use **lower bit rates** and the **lower spreading factors** use **higher bit rates**. However for the **same spreading factor**, if the **bandwidth doubles** the **data rate** also gets **doubled**. You will learn more about this in the [Spreading Factors chapter]({{< relref "spreading-factors" >}}).
 
 All **EU868-870** end devices **must** support one of the following **data rate** options.
 
@@ -550,12 +521,9 @@ The maximum allowed antenna gain is **+2.15 dBi** (isotropic antenna) that is eq
 
 ### EU863-870 Maximum Payload Size
 
-The **FRMPayload** field of a data message holds **application data** known as the **application payload**. The maximum application payload size (length) varies by data rate (configured with spreading factor and bandwidth). The following figure shows a data message and the FRMPayload field. The size of the FRMPayload field is **_M-8 bytes_** where **M** is the **MACPayload** size (if the**FOpt** field is absent).
+The maximum application payload size (length) varies by data rate.
 
-![alt_text](../eu868-max-payload-size.png "image_tooltip")
-
-
-The following table shows the **maximum application payload (FRMPayload) size (N)** for different **data rates**.
+The following table shows the **maximum application payload (FRMPayload) size** for different **data rates**.
 
 <table>
   <tr>
@@ -641,7 +609,7 @@ The following table shows the **maximum application payload (FRMPayload) size (N
 
 ### EU863-870 Downlink frequencies and data rates
 
-By default, the **RX1** receive window uses the same channel for downlink as the preceding uplink channel. Also, the data rate is a fraction of the uplink data rate. The **RX2** receive window uses a fixed frequency and data rate which is by default **869.525 MHz / DR0 (SF12, 125 kHz)**. However, the network operator has the freedom to choose another frequency and data rate for **RX2** receive window, for example, The Things Network uses the same frequency but a different data rate which is **DR3 (SF9, 125 kHz)**.
+By default, the **RX1** receive window uses the same channel for downlink as the preceding uplink channel. Also, the data rate is a fraction of the uplink data rate. The **RX2** receive window uses a fixed frequency and data rate which is by default **869.525 MHz / DR0 (SF12, 125 kHz)**. However, the network operator has the freedom to choose another frequency and data rate for **RX2** receive window. For example, The Things Network uses the same frequency but a different data rate which is **DR3 (SF9, 125 kHz)**.
 
 
 ### EU863-870 Summary
@@ -734,14 +702,9 @@ This is the power radiated by the isotropic antenna / half-wave dipole antenna (
   </tr>
 </table>
 
-
- 
-
-
 ## US902-928 ISM Band
 
-This section describes the regional parameters for the **USA**, **Canada**, and **all other countries in ITU Region 2** adopting the entire **FCC 47 CFR Part15 regulations** in the **902-928 ISM** band.
-
+This section describes the regional parameters for the **USA**, **Canada**, and all other countries using the **902-928 ISM** band.
 
 ### US902-928 Channel Plans
 
@@ -1021,15 +984,12 @@ The following table shows the **bit rate** for each data rate configured with th
   </tr>
 </table>
 
-
- 
-
 All **US902-928** end devices shall support one of the following data rate options.
 
 *   DR0 – DR4 and DR8 – DR13 – the minimal data rate set required to obtain LoRaWAN certification.
 *   DR0 – DR13 - all data rates are implemented in the end device
 
-When using **Over-The-Air -Activation (OTAA)**, the end device shall transmit the **Join-request** message on a randomly selected channel as follows.
+When using **Over-The-Air-Activation (OTAA)**, the end device shall transmit the **Join-request** message on a randomly selected channel as follows.
 
 *   64 channels (each have 125kHz bandwith) defined using DR0
 *   8 channels (each have 500kHz bandwidth) defined using DR4
@@ -1038,76 +998,9 @@ The end device shall change channels for every transmission.
 
 The maximum radiated output power allowed in the USA is **EIRP = +30 dBm** but for most devices **+20 dBm** is sufficient. Under the Federal Communications Commission (FCC) there are no duty cycle limitations but there is a **400 ms maximum dwell time** per channel. Dwell time is the amount of time needed for a transmission.
 
-The following table shows how to configure the end-device’s **conducted power** in the US902-928 band. **Conducted power** is the transmission output power (**TxPower**) of the **RF module** (in **dBm**) that is fed into the antenna. This doesn’t include the cable loss or antenna gain. Again, please note that this is **not** the **EIRP** or **ERP**. 
-
-<table>
-  <tr>
-   <td><strong>TXPower</strong>
-   </td>
-   <td><strong>Configuration (conducted power)</strong>
-   </td>
-   <td><strong>Example Calculation for <a href="https://www.microchip.com/wwwproducts/en/RN2903">RN2903 - Wireless Modules (microchip.com)</a> has Output Power = 18.50 dBm</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>0
-   </td>
-   <td>30 dBm – 2*TXPower
-   </td>
-   <td>30 dBm - 2*18.50 = -7 dBm = 0.2 mW
-   </td>
-  </tr>
-  <tr>
-   <td>1
-   </td>
-   <td>28 dBm
-   </td>
-   <td>Not applicable
-   </td>
-  </tr>
-  <tr>
-   <td>2
-   </td>
-   <td>26 dBm
-   </td>
-   <td>Not applicable
-   </td>
-  </tr>
-  <tr>
-   <td>3..13
-   </td>
-   <td>…
-   </td>
-   <td>
-   </td>
-  </tr>
-  <tr>
-   <td>14
-   </td>
-   <td>2 dBm
-   </td>
-   <td>Not applicable
-   </td>
-  </tr>
-  <tr>
-   <td>15
-   </td>
-   <td>Defined in [TS001]
-   </td>
-   <td>
-   </td>
-  </tr>
-</table>
-
-
- 
-
-
 ### US902-928 Maximum Payload Size
 
-The **FRMPayload** field of a data message holds **application data** known as the ‘**application payload**’. The maximum application payload size (length) varies by data rate (configured with spreading factor and bandwidth). The following figure shows a data message and the FRMPayload field. The size of the FRMPayload field is **_M-8 bytes_** where **M** is the **MACPayload** size (if absence of the **FOpt** field).
-
-Insert illustration
+The maximum application payload size (length) varies by data rate (configured with spreading factor and bandwidth).
 
 The following table shows the maximum application payload (FRMPayload) size (N) for different data rates.
 
@@ -1372,156 +1265,14 @@ You should have a basic knowledge about some important parameters that are inclu
 *   **KR920:**  The **South Korea** regulations allow the choice of using either a **duty-cycle limitation** or **Listen Before Talk Adaptive Frequency Agility (LBT AFA)** transmission management.
 *   **IN865**: Applies to **India.** The default maximum **EIRP** allowed is **+30 dBm**. 
 
-
 ## Default Settings for All Regions
 
-There are recommended default settings available that can be applied to all the regions. The following list only includes the most important settings.
+There are a few recommended default settings available that can be applied to all the regions.
 
-* RECEIVE_DELAY1: **1s**
-* RECEIVE_DELAY2: **2s**   (RECEIVE_DELAY1 + 1s)
-* JOIN_ACCEPT_DELAY1: **5s**
-* JOIN_ACCEPT_DELAY2: **6s**
-
-
-## Appendix:
-
-Table: An overview of the ISM frequency bands defined by the ITU-RR
-
-
-<table>
-  <tr>
-   <td><strong>Start freq.</strong>
-   </td>
-   <td><strong>End freq.</strong>
-   </td>
-   <td><strong>Center freq.</strong>
-   </td>
-   <td><strong>Remarks</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>6.765 MHz
-   </td>
-   <td>6.795 MHz
-   </td>
-   <td>6.780 MHz
-   </td>
-   <td> 
-   </td>
-  </tr>
-  <tr>
-   <td>433.05 MHz
-   </td>
-   <td>434.79 MHz
-   </td>
-   <td>433.92 MHz
-   </td>
-   <td>Only in most countries belonging to region 1
-   </td>
-  </tr>
-  <tr>
-   <td>61 GHz
-   </td>
-   <td>61.5 GHz
-   </td>
-   <td>61.25 GHz
-   </td>
-   <td> 
-   </td>
-  </tr>
-  <tr>
-   <td>122 GHz
-   </td>
-   <td>123 GHz
-   </td>
-   <td>122.5 GHz
-   </td>
-   <td> 
-   </td>
-  </tr>
-  <tr>
-   <td>244 GHz
-   </td>
-   <td>246 GHz
-   </td>
-   <td>245 GHz
-   </td>
-   <td> 
-   </td>
-  </tr>
-  <tr>
-   <td>13.553 MHz
-   </td>
-   <td>13.567 MHz
-   </td>
-   <td>13.560 MHz
-   </td>
-   <td> 
-   </td>
-  </tr>
-  <tr>
-   <td>26.957 MHz
-   </td>
-   <td>27.283 MHz
-   </td>
-   <td>27.120 MHz
-   </td>
-   <td> 
-   </td>
-  </tr>
-  <tr>
-   <td>40.66 MHz
-   </td>
-   <td>40.70 MHz
-   </td>
-   <td>40.68 MHz
-   </td>
-   <td> 
-   </td>
-  </tr>
-  <tr>
-   <td>902 MHz
-   </td>
-   <td>928 MHz
-   </td>
-   <td>915 MHz
-   </td>
-   <td>Only in region 2
-   </td>
-  </tr>
-  <tr>
-   <td>2.400 GHz
-   </td>
-   <td>2.500 GHz
-   </td>
-   <td>2.450 GHz
-   </td>
-   <td> 
-   </td>
-  </tr>
-  <tr>
-   <td>5.725 GHz
-   </td>
-   <td>5.875 GHz
-   </td>
-   <td>5.800 GHz
-   </td>
-   <td> 
-   </td>
-  </tr>
-  <tr>
-   <td>24 GHz
-   </td>
-   <td>24.25 GHz
-   </td>
-   <td>24.125 GHz
-   </td>
-   <td> 
-   </td>
-  </tr>
-</table>
-
-
+* RX1 Delay: **1s**
+* RX2 Delay: **2s**   (RX1 Delay + 1s)
+* Join Accept 1 Delay: **5s**
+* Join Accept 2 Delay: **6s**
 
 ## Questions
 
