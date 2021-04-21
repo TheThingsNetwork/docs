@@ -1,58 +1,22 @@
 ---
 title: Spreading Factors
-section: Fundamental
+section: The Things Fundamentals
+weight: 70
 ---
 
-In this chapter, you will learn about Spreading Factors (SF) and their impact on LoRa communication.
+LoRa is based on Chirp Spread Spectrum (CSS) technology, where chirps (also known as symbols) are the carrier of data.
 
-LoRa is a Chirp Spread Spectrum communication protocol, where chirps are the carrier of data. The Spreading Factor controls how many chirps are sent per second, and thus controls the speed of data transmission. Lower spreading factors mean more chirps per second, and a higher data transmission rate. For every increase in spreading factor, the number of chirps per second is halved, and so the data transmission rate is halved.
+The spreading factor controls the chirp rate, and thus controls the speed of data transmission. **Lower spreading factors** mean **faster chirps** and therefore a **higher data transmission rate**. For every increase in spreading factor, the chirp sweep rate is halved, and so the data transmission rate is halved.
 
-Signals modulated with different spreading factors and transmitted on the same frequency channel at the same time do not interfere with each other.
+For a visual explanation, see [this video](https://www.youtube.com/watch?v=dxYY097QNs0) on LoRa chirps.
 
-To understand the behavior of the spreading factor, let’s have a look at a symbol and how the data is encoded by a symbol.
+Lower spreading factors reduce the range of LoRa transmissions, because they reduce the processing gain and increase the bit rate. Changing spreading factor allows the network to increase or decrease data rate for each end device at the cost of range.
 
-### Symbol
-
-A symbol is a group of bits. One bit contains a single binary value — either a 0 or a 1. The Spreading Factor indicates the number of raw bits that can be encoded or transmitted by a symbol.  For example, with Spreading Factor 7, you can encode or transmit 7 bits over one symbol.
-
-The Spreading Factor (SF) defines two fundamental values.
-
-*   The number of raw bits that can be encoded or transmitted by a symbol.
-*   The number of chirps in a symbol is 2<sup>SF</sup>.
-
-The following figure shows 7 raw bits encoded by a symbol, thus the spreading factor is 7.
-
-
-<table>
-  <tr>
-   <td>1
-   </td>
-   <td>1
-   </td>
-   <td>0
-   </td>
-   <td>1
-   </td>
-   <td>1
-   </td>
-   <td>1
-   </td>
-   <td>0
-   </td>
-  </tr>
-</table>
-
-A symbol can have one of the values ranging from 0 to 2<sup>SF  </sup>-1. For example, if the Spreading Factor is 7, a symbol can have one of the values ranging from 0 to 127.
-
-To transmit, the symbol is encoded as a sweep signal, and is divided into 2<sup>SF</sup> steps called chirps. A higher Spreading Factor means more chirps per symbol, and more chirps per second.
-
-For example, if the spreading factor is 7 the sweep signal is divided into 2<sup>7 </sup>= 128 chirps. The following figure shows an unmodulated sweep signal (up-chirp).
-
-![alt_text](../unmodulated-sweep-signal.png "unmodulated sweep signal")
+The network also uses spreading factors to control congestion. Spreading factors are orthogonal, so signals modulated with different spreading factors and transmitted on the same frequency channel at the same time do not interfere with each other.
 
 ### Influence of Spreading Factors
 
-LoRa modulation has a total of 6 spreading factors from SF7 to SF12. Spreading factors influence data rate, time-on-air (TOA), battery life, and receiver sensitivity, as described here.
+LoRa modulation has a total of 6 spreading factors from SF7 to SF12. Spreading factors influence data rate, time-on-air, battery life, and receiver sensitivity, as described here.
 
 #### Data rate
 
@@ -101,11 +65,11 @@ The following table presents bit rates calculated with the SF7 and Coding Rate (
 
 #### Distance
 
-A signal modulated with a larger spreading factor will be able to travel a longer distance. For example, a signal modulated with the SF12 can travel a longer distance than a signal modulated with the SF7.
+Larger spreading factors mean larger processing gain, and so a signal modulated with a larger spreading factor can be received with less errors compared to a signal with a lower spreading factor, and therefore travel a longer distance. For example, a signal modulated with the SF12 can travel a longer distance than a signal modulated with the SF7.
 
 #### Time-On-Air
 
-Compared to a lower spreading factor, sending a fixed amount of data (payload) with a higher Spreading Factor and a fixed bandwidth needs longer time-on-air (TOA).
+Compared to a lower spreading factor, sending a fixed amount of data (payload) with a higher Spreading Factor and a fixed bandwidth needs longer time-on-air.
 
 The Things Network’s LoRaWAN airtime calculator can be used to calculate the time-on-air using input bytes (payload size), bandwidth, and spreading factor. TTN’s LoRaWAN airtime calculator can be accessed here:
 
@@ -169,19 +133,15 @@ The battery life of an end device is highly dependent on the spreading factor us
 
 ## Questions
 
-1. How many values can a symbol hold with SF7?
+1. Which spreading factor provides the highest receiver sensitivity?
 
-- 2<sup>6</sup>
+- SF9
 
-- <span style="text-decoration:underline;">2<sup>7</sup></span>
+- SF10
 
-- 2<sup>8</sup>
+- SF11
 
-- 2<sup>9</sup>
-
-_The number of values a symbol can hold can be calculated as, 2<sup>SF</sup> = 2<sup>7</sup>._
-
-
+- <span style="text-decoration:underline;">SF12</span>
 
 2. Which spreading factor provides the highest bit rate?
 
@@ -193,10 +153,6 @@ _The number of values a symbol can hold can be calculated as, 2<sup>SF</sup> = 2
 
 - SF10
 
-_As the rule of thumb, lower spreading factors provide higher bit rates. By looking at the answer options spreading factor 7 is the lowest spreading factor._
-
-
-
 3. Which spreading factor provides the longest battery life for an end device?
 
 - <span style="text-decoration:underline;">SF7</span>
@@ -207,9 +163,7 @@ _As the rule of thumb, lower spreading factors provide higher bit rates. By look
 
 - SF10
 
-_As a rule of thumb, lower spreading factors provide higher bit rates resulting in shorter time-on-air (TOA). Shorter TOA resulting in longer battery life because the radio transceiver is active for a shorter period._
-
-
+_Lower spreading factors provide higher bit rates resulting in shorter TOA. Shorter TOA results in longer battery life because the radio transceiver is active for a shorter period._
 
 4. For the same amount of data and bandwidth, which spreading factor results in the longest time-on-air?
 
@@ -220,19 +174,3 @@ _As a rule of thumb, lower spreading factors provide higher bit rates resulting 
 - SF9
 
 - <span style="text-decoration:underline;">SF10</span>
-
-_The higher spreading factors resulting in a longer time-on-air._
-
-
-
-5. Which spreading factor provides the highest receiver sensitivity?
-
-- SF9
-
-- SF10
-
-- SF11
-
-- <span style="text-decoration:underline;">SF12</span>
-
-_A signal modulated with a larger spreading factor can be received with less errors by the RF receiver compared to a signal with a lower spreading factor. The higher the SF value is, the more chips used to represent a symbol, which means there will be more processing gain from the receiver side. Therefore, larger spreading factors provide higher receiver sensitivity._

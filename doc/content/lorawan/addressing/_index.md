@@ -1,6 +1,6 @@
 ---
 title: Addressing & Activation
-section: Specifications
+section: Additional Information
 weight: 9
 aliases:
  - /lorawan/address-space

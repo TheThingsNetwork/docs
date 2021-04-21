@@ -3,16 +3,29 @@ title: LoRaWAN
 image: /lorawan/icon.png
 description: "Learn about LoRaWAN: the secure messaging protocol used by The Things Network"
 sections:
- - Fundamental
- - Specifications
+ - The Things Fundamentals
  - Additional Information
 ---
 
-This section covers everything you need to know to get started with LoRaWAN and improve your knowledge of the technology.
+{{< figure width="150px" class="float plain" src="icon.png" >}}
 
-  ![LoRaWAN icon](icon.png)
+Welcome to The Things Fundamentals on LoRaWAN!
+
+This series of chapters was created to prepare you for [The Things Fundamentals certification](https://www.thethingsnetwork.org/achievements/certificates/). You'll learn all about LoRa and LoRaWAN and suitable use cases, and afterwards you'll be ready to start developing your own LoRaWAN applications.
 
 ### Everything you need to know about LoRaWAN in 60 minutes
 
-Video by Johan Stokking, tech lead of The Things Network
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ZsVhYiX4_6o" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+The chapters are designed to be paired with the following video by Johan Stokking, which covers the Fundamentals of LoRaWAN in 60 minutes:
+
+{{< youtube "ZsVhYiX4_6o" >}}
+
+### Chapters
+
+- [What is LoRa and LoRaWAN]({{< relref "what-is-lorawan" >}})
+- [LoRaWAN Architecture]({{< relref "architecture" >}})
+- [Regional Parameters]({{< relref "regional-parameters" >}})
+- [Message Types]({{< relref "message-types" >}})
+- [Classes]({{< relref "classes" >}})
+- [End Device Activation]({{< relref "end-device-activation" >}})
+- [Spreading Factors]({{< relref "spreading-factors" >}})
+- [Limitations]({{< relref "limitations" >}})
