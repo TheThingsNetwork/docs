@@ -1,8 +1,19 @@
+{{ $currentPage := . }}
+{{ $firstSection := .FirstSection }}
+
+{{ $section := where $firstSection.Pages.ByWeight "Params.section" .Params.Section }}
+{{ range $index, $page := $section }}
+  {{ if eq $currentPage $page }}
+    {{ .Scratch.Set "previous" ( index $section (sub $index 1) ) }}
+    {{ .Scratch.Set "next" ( index $section (add $index 1) ) }}
+  {{ end }}
+{{ end }}
+
 <div class="is-clearfix">
-{{- with or (.Scratch.Get "previous") .NextInSection }}
+{{- with .Scratch.Get "previous" }}
 <a class="button is-pulled-left" href="{{ .RelPermalink }}">← {{ .LinkTitle }}</a>
 {{- end }}
-{{- with or (.Scratch.Get "next") .PrevInSection }}
+{{- with .Scratch.Get "next" }}
 <a class="button is-pulled-right" href="{{ .RelPermalink }}">{{ .LinkTitle }} →</a>
 {{- end }}
 </div>
