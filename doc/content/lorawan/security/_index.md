@@ -1,7 +1,7 @@
 ---
 title: Security
-section: Specifications
-weight: 2
+section: The Things Fundamentals
+weight: 51
 ---
 
 ## Security Keys

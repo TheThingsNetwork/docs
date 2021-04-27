@@ -1,6 +1,6 @@
 ---
 title: Duty Cycle
-section: Specifications
+section: Additional Information
 weight: 6
 ---
 

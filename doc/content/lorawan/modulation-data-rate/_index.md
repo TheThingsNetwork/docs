@@ -1,6 +1,6 @@
 ---
 title: Modulation & Data Rate
-section: Specifications
+section: Additional Information
 weight: 8
 ---
 

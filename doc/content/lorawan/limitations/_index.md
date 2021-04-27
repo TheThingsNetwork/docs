@@ -1,6 +1,7 @@
 ---
 title: Limitations
-section: Fundamental
+section: The Things Fundamentals
+weight: 90
 ---
 
 LoRaWAN is not suitable for every use-case, so it is important that you understand the limitations. Here's a quick overview:
