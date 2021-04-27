@@ -138,12 +138,12 @@
   <a href="https://www.thethingsnetwork.org/docs/lorawan/" class="">Overview</a>
   
     <p class="menu-label">
-      Fundamental
+      The Things Fundamentals
     </p>
     
       
 <li>
-  <a href="https://www.thethingsnetwork.org/docs/lorawan/regional-parameters/" class="">Regional Parameters</a>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/what-is-lorawan/" class="">What are LoRa and LoRaWAN</a>
 </li>
 
       
@@ -158,14 +158,14 @@
 
       
 <li>
-  <a href="https://www.thethingsnetwork.org/docs/lorawan/limitations/" class="">Limitations</a>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/regional-parameters/" class="">Regional Parameters</a>
 </li>
 
-  
-    <p class="menu-label">
-      Specifications
-    </p>
-    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/message-types/" class="">Message Types</a>
+</li>
+
       
 <li>
   <a href="https://www.thethingsnetwork.org/docs/lorawan/security/" class="">Security</a>
@@ -173,7 +173,17 @@
 
       
 <li>
-  <a href="https://www.thethingsnetwork.org/docs/lorawan/duty-cycle/" class="">Duty Cycle</a>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/classes/" class="">Device Classes</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/end-device-activation/" class="">End Device Activation</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/spreading-factors/" class="">Spreading Factors</a>
 </li>
 
       
@@ -183,17 +193,7 @@
 
       
 <li>
-  <a href="https://www.thethingsnetwork.org/docs/lorawan/modulation-data-rate/" class="">Modulation &amp; Data Rate</a>
-</li>
-
-      
-<li>
-  <a href="https://www.thethingsnetwork.org/docs/lorawan/addressing/" class="">Addressing &amp; Activation</a>
-</li>
-
-      
-<li>
-  <a href="https://www.thethingsnetwork.org/docs/lorawan/classes/" class="">Classes</a>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/limitations/" class="">Limitations</a>
 </li>
 
   
@@ -209,6 +209,21 @@
       
 <li>
   <a href="https://www.thethingsnetwork.org/docs/lorawan/frequency-plans/" class="">Frequency Plans</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/duty-cycle/" class="">Duty Cycle</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/modulation-data-rate/" class="">Modulation &amp; Data Rate</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/addressing/" class="">Addressing &amp; Activation</a>
 </li>
 
       
@@ -255,10 +270,115 @@
 <p><strong><a href="/docs/applications/">Application</a></strong> - a piece of software, running on a server.</p>
 </li>
 </ul>
+<p>End devices communicate with nearby gateways and each gateway is connected to the network server. LoRaWAN networks use an ALOHA based protocol, so end devices don’t need to peer with specific gateways. Messages sent from end devices travel through all gateways within range. Message deduplication is handled by the network server.</p>
+<p>Let’s examine each element of the LoRaWAN network in detail.</p>
+<h3 id="end-devices">End devices</h3>
+<p>A LoRaWAN end device can be a sensor, an actuator, or both. They are often battery operated. These end devices are wirelessly connected to the LoRaWAN network through gateways using LoRa RF modulation. The following figure shows an example LoRaWAN end device - a water meter.</p>
+<p><img src="../end-node.png" alt="alt_text" title="End-node"></p>
+<h3 id="gateways">Gateways</h3>
+<p>Each gateway is registered to a LoRaWAN network. A gateway receives LoRa messages from end devices and simply forwards them to the LoRaWAN network server. Gateways are connected to the internet through an IP backbone. IP traffic from gateway to the network server can be <strong>backhauled</strong> through Cellular (3G/4G/5G), WiFi, Ethernet, Fiber-optic or 2.4 GHz radio links.</p>
+<h4 id="types-of-lorawan-gateways">Types of LoRaWAN Gateways</h4>
+<p>LoRaWAN gateways can be categorized into indoor (picocell) and outdoor (macrocell) gateways. Indoor gateways provide coverage in difficult-to-reach indoor locations and are therefore suitable for use in homes, businesses and buildings.</p>
+<p><img src="../ttig.jpg" alt="alt_text" title="The Things Indoor Gateway"></p>
+<p><em>Figure: The Things Indoor gateway</em></p>
+<p>Outdoor gateways are suitable for providing coverage in rural, urban, and dense urban areas. This type of gateway is intended for deployment places like cellular towers, the rooftops of very tall buildings, metal pipes (masts) etc. The following figure shows a LoRaWAN gateway attached to a tall metal pipe (mast).</p>
+<p><img src="../kerlink-outdoor.jpeg" alt="alt_text" title="Kerlink outdoor gateway"></p>
+<p><em>Figure: A Kerlink outdoor gateway is installed at the port of Amsterdam.</em></p>
+<p>Usually, the receiver sensitivity of an outdoor gateway is higher than the receiver sensitivity of an indoor gateway.</p>
+<h3 id="network-server">Network Server</h3>
+<p>The network server manages the entire LoRaWAN network. It receives IP traffic from gateways. The Network Server is responsible for network management functions like:</p>
+<ul>
+<li><strong>Over-The-Air-Activation</strong> - see chapter <a href="../end-device-activation">End Device Activation</a></li>
+<li><strong>Message deduplication</strong> - eliminating duplicate messages received by multiple gateways</li>
+<li><strong>Message routing</strong> - forwarding uplink application payloads to the appropriate application server, forwarding downlink messages coming from any application server to the end device, forwarding Join-request and Join-accept messages between the devices and the join server (in v1.1 and 1.0.4).</li>
+<li><strong>Adaptive data rate control</strong> - see chapter <a href="../adaptive-data-rate">Adaptive Data Rate</a></li>
+<li><strong>Acknowledgement of messages</strong> - providing acknowledgement of confirmed data messages and some MAC commands.</li>
+</ul>
+<h3 id="application-server">Application Server</h3>
+<p>The application server processes application-specific data messages received from end devices. It also generates all the application-layer downlink payloads and sends them to the connected end devices through the network server. A LoRaWAN network can have more than one application server. The collected data can be interpreted by applying techniques like machine learning and artificial intelligence to solve business problems.</p>
+<h3 id="join-server">Join Server</h3>
+<p>The Join Server processes join-request messages sent by end devices. It stores root keys, generates session keys, and transfers those session keys to the network server and the application server. The Join Server is introduced in LoRaWAN 1.1 and 1.0.4. You will learn how the Join Server processes the join-request message in the chapter <a href="../end-device-activation">End Device Activation</a>.</p>
+<h2 id="questions">Questions</h2>
+<ol>
+<li>
+<p>Who initiates uplink messages?</p>
+<ul>
+<li>Network server</li>
+<li><span style="text-decoration:underline;">End devices</span></li>
+<li>Application server</li>
+<li>Join server</li>
+</ul>
+</li>
+<li>
+<p>What is not a role of the Network Server?</p>
+<ul>
+<li>Data deduplication</li>
+<li><span style="text-decoration:underline;">Initiate uplink messages</span></li>
+<li>Adaptive data rate control</li>
+<li>Message routing</li>
+</ul>
+</li>
+<li>
+<p>Which is not a backhaul for gateways?</p>
+<ul>
+<li>Cellular</li>
+<li>WiFi</li>
+<li>Ethernet</li>
+<li><span style="text-decoration:underline;">Grounding wire with a lightning arrestor</span></li>
+</ul>
+</li>
+<li>
+<p>The Application server processes:</p>
+<ul>
+<li>MAC commands</li>
+<li><span style="text-decoration:underline;">Application-specific data messages</span></li>
+<li>Join-request messages</li>
+</ul>
+</li>
+<li>
+<p>The Join Server processes:</p>
+<ul>
+<li><span style="text-decoration:underline;">Join-request messages</span></li>
+<li>MAC commands</li>
+<li>Application-specific data messages</li>
+</ul>
+</li>
+</ol>
 
         </div>
       
-      <div class="is-clearfix">
+      
+
+
+
+
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+<div class="is-clearfix">
+<a class="button is-pulled-left" href="/docs/lorawan/what-is-lorawan/">← What are LoRa and LoRaWAN</a>
+<a class="button is-pulled-right" href="/docs/lorawan/regional-parameters/">Regional Parameters →</a>
 </div>
 
       </div>

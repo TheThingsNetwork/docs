@@ -138,12 +138,12 @@
   <a href="https://www.thethingsnetwork.org/docs/lorawan/" class="">Overview</a>
   
     <p class="menu-label">
-      Fundamental
+      The Things Fundamentals
     </p>
     
       
 <li>
-  <a href="https://www.thethingsnetwork.org/docs/lorawan/regional-parameters/" class="">Regional Parameters</a>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/what-is-lorawan/" class="">What are LoRa and LoRaWAN</a>
 </li>
 
       
@@ -153,14 +153,14 @@
 
       
 <li>
-  <a href="https://www.thethingsnetwork.org/docs/lorawan/limitations/" class="">Limitations</a>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/regional-parameters/" class="">Regional Parameters</a>
 </li>
 
-  
-    <p class="menu-label">
-      Specifications
-    </p>
-    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/message-types/" class="">Message Types</a>
+</li>
+
       
 <li>
   <a href="https://www.thethingsnetwork.org/docs/lorawan/security/" class="">Security</a>
@@ -168,7 +168,17 @@
 
       
 <li>
-  <a href="https://www.thethingsnetwork.org/docs/lorawan/duty-cycle/" class="">Duty Cycle</a>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/classes/" class="">Device Classes</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/end-device-activation/" class="">End Device Activation</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/spreading-factors/" class="">Spreading Factors</a>
 </li>
 
       
@@ -183,17 +193,7 @@
 
       
 <li>
-  <a href="https://www.thethingsnetwork.org/docs/lorawan/modulation-data-rate/" class="">Modulation &amp; Data Rate</a>
-</li>
-
-      
-<li>
-  <a href="https://www.thethingsnetwork.org/docs/lorawan/addressing/" class="">Addressing &amp; Activation</a>
-</li>
-
-      
-<li>
-  <a href="https://www.thethingsnetwork.org/docs/lorawan/classes/" class="">Classes</a>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/limitations/" class="">Limitations</a>
 </li>
 
   
@@ -209,6 +209,21 @@
       
 <li>
   <a href="https://www.thethingsnetwork.org/docs/lorawan/frequency-plans/" class="">Frequency Plans</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/duty-cycle/" class="">Duty Cycle</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/modulation-data-rate/" class="">Modulation &amp; Data Rate</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/addressing/" class="">Addressing &amp; Activation</a>
 </li>
 
       
@@ -238,8 +253,18 @@
           Adaptive Data Rate
         </h1>
         <div class="content">
-          <p>Adaptive Data Rate (ADR) is a mechanism for optimizing data rates, airtime and energy consumption in the network. ADR should be enabled whenever an end device has sufficiently stable RF conditions. This means that it can generally be enabled for static devices. If the static end device can determine that RF conditions are unstable (for example, when a car is parked on top of a parking sensor), ADR should (temporarily) be disabled. Mobile end devices should be able to detect when they are stationary for a longer times, and enable ADR during those times. End devices decide if ADR should be used or not, not the application or the network.</p>
-<p>To determine the optimal data rate, the network needs some measurements (uplink messages). Currently TTN takes the 20 most recent uplinks, starting at the moment the ADR bit is set. These measurements contains the frame counter, signal-to-noise ratio (SNR) and number of gateways that received each uplink. When a device unsets the ADR bit (because it knows it is moving or it knows RF conditions are unstable), previous measurements are discarded. As soon as the ADR bit is set again, the network starts measuring again.</p>
+          <p>Adaptive Data Rate (ADR) is a mechanism for optimizing data rates, airtime and energy consumption in the network.</p>
+<p>The ADR mechanism controls the following transmission parameters of an end device.</p>
+<ul>
+<li>Spreading factor</li>
+<li>Bandwidth</li>
+<li>Transmission power</li>
+</ul>
+<p>ADR can optimize device power consumption while ensuring that messages are still received at gateways. When ADR is in use, the network server will indicate to the end device that it should reduce transmission power or increase data rate. End devices which are close to gateways should use a lower spreading factor and higher data rate, while devices further away should use a high spreading factor because they need a higher link budget.</p>
+<p>ADR should be enabled whenever an end device has sufficiently stable RF conditions. This means that it can generally be enabled for static devices. If the static end device can determine that RF conditions are unstable (for example, when a car is parked on top of a parking sensor), ADR should (temporarily) be disabled.</p>
+<p>Mobile end devices should be able to detect when they are stationary for a longer times, and enable ADR during those times. End devices decide if ADR should be used or not, not the application or the network.</p>
+<h2 id="adr-in-the-things-stack">ADR in The Things Stack</h2>
+<p>To determine the optimal data rate, the network needs some measurements (uplink messages). Currently The Things Stack takes the 20 most recent uplinks, starting at the moment the ADR bit is set. These measurements contains the frame counter, signal-to-noise ratio (SNR) and number of gateways that received each uplink. When a device unsets the ADR bit (because it knows it is moving or it knows RF conditions are unstable), previous measurements are discarded. As soon as the ADR bit is set again, the network starts measuring again.</p>
 <p>For each of these measurements, we take the SNR of the best gateway, and we calculate the so-called &ldquo;margin&rdquo;, which is the measured SNR minus the required SNR to demodulate a message given the data rate. This margin is used to determine how much we can increase the data rate or lower the transmit power. For example, when the network receives a message with data rate <code>SF12BW125</code> and SNR <code>5.0</code>, that message has a margin of 25 dB. This is a waste of valuable airtime and energy. If we would increase the data rate to <code>SF7BW125</code> we would still have a margin of 12.5 dB, but that would be many times more airtime- and energy efficient. We could even lower the transmit power to save even more energy and cause less interference.</p>
 <p>There are a several moments when an ADR request is scheduled or sent:</p>
 <ol>
@@ -249,12 +274,83 @@
 <li>An ADR request is sent when the device sets the ADRAckReq bit. By default this happens after sending 64 uplinks without receiving a downlink, but as that depends on the device implementation we can&rsquo;t give you an exact number here.</li>
 </ol>
 <p>ADR requests are no longer scheduled or sent if the device refused several ADR requests. This could either mean a bad implementation of the device, or a version mismatch between the device and the server.</p>
-<p>The algorithm used in The Things Network is based on Semtech&rsquo;s recommended algorithm for rate adaptation. The following diagram outlines the ADR flow as implemented in The Things Network&rsquo;s NetworkServer:</p>
-<p><img src="../adr.png" alt="ADR Overview"></p>
+<p>The algorithm used in The Things Network is based on Semtech&rsquo;s recommended algorithm for rate adaptation. The following diagram outlines the ADR flow as implemented in The Things Stack:</p>
+<p><img src="adr.png" alt="ADR Overview"></p>
+<h2 id="questions">Questions</h2>
+<ol>
+<li>
+<p>The Adaptive Data Rate is suitable for</p>
+<ul>
+<li><span style="text-decoration:underline;">Static end devices</span></li>
+<li>Mobile end devices</li>
+</ul>
+</li>
+<li>
+<p>The end devices located close to a gateway should use a</p>
+<ul>
+<li>Lower data rate</li>
+<li><span style="text-decoration:underline;">Higher data rate</span></li>
+</ul>
+</li>
+<li>
+<p>The end devices located several kilometers from a gateway should use a</p>
+<ul>
+<li><span style="text-decoration:underline;">Lower data rate</span></li>
+<li>Higher data rate</li>
+</ul>
+</li>
+<li>
+<p>A higher data rate means,</p>
+<ul>
+<li><span style="text-decoration:underline;">A lower spreading factor</span></li>
+<li>A higher spreading factor</li>
+</ul>
+</li>
+<li>
+<p>Which of the following end devices should not implement ADR?</p>
+<ul>
+<li>Environmental sensor</li>
+<li>Water leakage detector</li>
+<li><span style="text-decoration:underline;">Pet tracker</span></li>
+<li>Gas detector</li>
+</ul>
+</li>
+</ol>
 
         </div>
       
-      <div class="is-clearfix">
+      
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+  
+
+  
+
+
+<div class="is-clearfix">
+<a class="button is-pulled-left" href="/docs/lorawan/spreading-factors/">← Spreading Factors</a>
+<a class="button is-pulled-right" href="/docs/lorawan/limitations/">Limitations →</a>
 </div>
 
       </div>

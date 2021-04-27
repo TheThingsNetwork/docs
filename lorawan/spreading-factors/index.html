@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+
+<html lang="en-us" class="has-ttn-navbar-top">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <meta name="generator" content="Hugo 0.79.0" />
+
+  <title>Spreading Factors | The Things Network</title>
+  <link rel="canonical" href="https://www.thethingsnetwork.org/docs/lorawan/spreading-factors/" />
+  
+
+  <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
+
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+  <meta name="msapplication-TileImage" content="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png">
+
+  <meta name="application-name" content="The Things Network">
+  <meta name="msapplication-tooltip" content="Tooltip">
+  <meta name="msapplication-config" content="https://ttnweb.azureedge.net/static/common/favicon/ieconfig.54334a5ee30c.xml">
+
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-32.61b30f85680a.png" sizes="32x32">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-57.83b86c64dc82.png" sizes="57x57">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-76.7dcf8fa36dfc.png" sizes="76x76">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-96.27ac17adaa8b.png" sizes="96x96">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-120.e1526731335e.png" sizes="120x120">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-128.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png" sizes="144x144">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png" sizes="152x152">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-180.fcd414307ca3.png" sizes="180x180">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-195.c55ce09d66da.png" sizes="195x195">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-228.bea53ec4b10b.png" sizes="228x228">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/smalltile.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/mediumtile.3d42f7faac82.png" sizes="270x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
+  <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+
+  <meta property="og:title" content="Spreading Factors" />
+<meta property="og:description" content="LoRa is based on Chirp Spread Spectrum (CSS) technology, where chirps (also known as symbols) are the carrier of data.
+The spreading factor controls the chirp rate, and thus controls the speed of data transmission. Lower spreading factors mean faster chirps and therefore a higher data transmission rate. For every increase in spreading factor, the chirp sweep rate is halved, and so the data transmission rate is halved.
+For a visual explanation, see this video on LoRa chirps." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/lorawan/spreading-factors/" />
+<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
+<meta property="article:modified_time" content="2021-04-21T13:42:27+05:45" /><meta property="og:site_name" content="The Things Network" />
+
+
+  <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
+
+<meta name="twitter:title" content="Spreading Factors"/>
+<meta name="twitter:description" content="LoRa is based on Chirp Spread Spectrum (CSS) technology, where chirps (also known as symbols) are the carrier of data.
+The spreading factor controls the chirp rate, and thus controls the speed of data transmission. Lower spreading factors mean faster chirps and therefore a higher data transmission rate. For every increase in spreading factor, the chirp sweep rate is halved, and so the data transmission rate is halved.
+For a visual explanation, see this video on LoRa chirps."/>
+
+
+</head>
+
+
+<body>
+
+<div id="header"></div>
+<section class="section">
+  <div class="container">
+    <nav class="breadcrumb has-dot-separator" aria-label="breadcrumbs">
+      <ul>
+        <li><a href="https://www.thethingsnetwork.org/docs">Learn</a></li>
+        
+        
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+            <li class="is-active">
+              <a href="https://www.thethingsnetwork.org/docs/lorawan/">LoRaWAN</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/quick-start/">Quick Start</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/applications-and-integrations/">Applications &amp; Integrations</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/">Devices &amp; Gateways</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/the-things-stack/">Migrating to The Things Stack Community Edition</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/v2-docs/">V2 Docs (Outdated)</a>
+            </li>
+          
+        
+      </ul>
+    </nav>
+  </div>
+</section>
+<div class="container" role="document">
+  <div class="columns my-0 is-desktop">
+    <div class="column is-3-desktop sidebar-left">
+      
+
+
+<nav class="side-navigation" aria-label="Main navigation">
+
+<h2 class="title is-size-5">LoRaWAN</h2>
+
+<div class="menu">
+  <ul class="menu-list">
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/" class="">Overview</a>
+  
+    <p class="menu-label">
+      The Things Fundamentals
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/what-is-lorawan/" class="">What are LoRa and LoRaWAN</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/architecture/" class="">LoRaWAN Architecture</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/regional-parameters/" class="">Regional Parameters</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/message-types/" class="">Message Types</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/security/" class="">Security</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/classes/" class="">Device Classes</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/end-device-activation/" class="">End Device Activation</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/spreading-factors/" class="is-active">Spreading Factors</a>
+  
+
+
+
+  
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/adaptive-data-rate/" class="">Adaptive Data Rate</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/limitations/" class="">Limitations</a>
+</li>
+
+  
+    <p class="menu-label">
+      Additional Information
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/frequencies-by-country/" class="">Frequency Plans by Country</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/frequency-plans/" class="">Frequency Plans</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/duty-cycle/" class="">Duty Cycle</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/modulation-data-rate/" class="">Modulation &amp; Data Rate</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/addressing/" class="">Addressing &amp; Activation</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/academic/" class="">Academic Research</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/prefix-assignments/" class="">NetID and DevAddr Prefix Assignments</a>
+</li>
+
+  
+  </ul>
+</div>
+
+
+
+
+
+</nav>
+
+    </div>
+    <div class="column is-9-desktop sidebar-middle">
+      <div class="docs-content">
+        <h1 class="title is-size-2">
+          Spreading Factors
+        </h1>
+
+        <div class="content">
+          <p>LoRa is based on Chirp Spread Spectrum (CSS) technology, where chirps (also known as symbols) are the carrier of data.</p>
+<p>The spreading factor controls the chirp rate, and thus controls the speed of data transmission. <strong>Lower spreading factors</strong> mean <strong>faster chirps</strong> and therefore a <strong>higher data transmission rate</strong>. For every increase in spreading factor, the chirp sweep rate is halved, and so the data transmission rate is halved.</p>
+<p>For a visual explanation, see <a href="https://www.youtube.com/watch?v=dxYY097QNs0">this video</a> on LoRa chirps.</p>
+<p>Lower spreading factors reduce the range of LoRa transmissions, because they reduce the processing gain and increase the bit rate. Changing spreading factor allows the network to increase or decrease data rate for each end device at the cost of range.</p>
+<p>The network also uses spreading factors to control congestion. Spreading factors are orthogonal, so signals modulated with different spreading factors and transmitted on the same frequency channel at the same time do not interfere with each other.</p>
+<h3 id="influence-of-spreading-factors">Influence of Spreading Factors</h3>
+<p>LoRa modulation has a total of 6 spreading factors from SF7 to SF12. Spreading factors influence data rate, time-on-air, battery life, and receiver sensitivity, as described here.</p>
+<h4 id="data-rate">Data rate</h4>
+<p>Compared to a higher spreading factor, a lower spreading factor provides a higher bit rate for a fixed bandwidth and coding rate. For example, SF7 provides a higher bit rate than SF12.</p>
+<p>Doubling the bandwidth also doubles the bit rate for a fixed spreading factor and coding rate.</p>
+<p>The following table presents bit rates calculated with the SF7 and Coding Rate (CR) = 1 for bandwidths, 125, 250, and 500 kHz.</p>
+<table>
+  <tr>
+   <td>
+<strong>Spreading Factor</strong>
+   </td>
+   <td><strong>Bandwidth</strong>
+   </td>
+   <td><strong>Bit rate (kbits/s)</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>7
+   </td>
+   <td>125
+   </td>
+   <td>5.5
+   </td>
+  </tr>
+  <tr>
+   <td>7
+   </td>
+   <td>250
+   </td>
+   <td>10.9
+   </td>
+  </tr>
+  <tr>
+   <td>7
+   </td>
+   <td>500
+   </td>
+   <td>21.9
+   </td>
+  </tr>
+</table>
+<h4 id="distance">Distance</h4>
+<p>Larger spreading factors mean larger processing gain, and so a signal modulated with a larger spreading factor can be received with less errors compared to a signal with a lower spreading factor, and therefore travel a longer distance. For example, a signal modulated with the SF12 can travel a longer distance than a signal modulated with the SF7.</p>
+<h4 id="time-on-air">Time-On-Air</h4>
+<p>Compared to a lower spreading factor, sending a fixed amount of data (payload) with a higher Spreading Factor and a fixed bandwidth needs longer time-on-air.</p>
+<p>The Things Network’s LoRaWAN airtime calculator can be used to calculate the time-on-air using input bytes (payload size), bandwidth, and spreading factor. TTN’s LoRaWAN airtime calculator can be accessed here:</p>
+<p><span style="text-decoration:underline;"><a href="https://www.thethingsnetwork.org/airtime-calculator">https://www.thethingsnetwork.org/airtime-calculator</a></span></p>
+<h4 id="receiver-sensitivity">Receiver Sensitivity</h4>
+<p>Higher spreading factors provide higher receiver sensitivity. Usually, LoRa uses higher spreading factors when the signal is weak.</p>
+<p>The following table shows how spreading factors impact the receiver sensitivity.</p>
+<table>
+  <tr>
+   <td>
+<strong>Spreading factor</strong>
+   </td>
+   <td><strong>Receiver sensitivity for bandwidth fixed at 125 kHz</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>SF7
+   </td>
+   <td>-123 dBm
+   </td>
+  </tr>
+  <tr>
+   <td>SF8
+   </td>
+   <td>-126 dBm
+   </td>
+  </tr>
+  <tr>
+   <td>SF9
+   </td>
+   <td>-129 dBm
+   </td>
+  </tr>
+  <tr>
+   <td>SF10
+   </td>
+   <td>-132 dBm
+   </td>
+  </tr>
+  <tr>
+   <td>SF11
+   </td>
+   <td>-134.5 dBm
+   </td>
+  </tr>
+  <tr>
+   <td>SF12
+   </td>
+   <td>-137 dBm
+   </td>
+  </tr>
+</table>
+<h4 id="battery-life">Battery Life</h4>
+<p>The battery life of an end device is highly dependent on the spreading factor used. Higher spreading factors result in longer active times for the radio transceivers and shorter battery life.</p>
+<h2 id="questions">Questions</h2>
+<ol>
+<li>Which spreading factor provides the highest receiver sensitivity?</li>
+</ol>
+<ul>
+<li>
+<p>SF9</p>
+</li>
+<li>
+<p>SF10</p>
+</li>
+<li>
+<p>SF11</p>
+</li>
+<li>
+<p><span style="text-decoration:underline;">SF12</span></p>
+</li>
+</ul>
+<ol start="2">
+<li>Which spreading factor provides the highest bit rate?</li>
+</ol>
+<ul>
+<li>
+<p><span style="text-decoration:underline;">SF7</span></p>
+</li>
+<li>
+<p>SF8</p>
+</li>
+<li>
+<p>SF9</p>
+</li>
+<li>
+<p>SF10</p>
+</li>
+</ul>
+<ol start="3">
+<li>Which spreading factor provides the longest battery life for an end device?</li>
+</ol>
+<ul>
+<li>
+<p><span style="text-decoration:underline;">SF7</span></p>
+</li>
+<li>
+<p>SF8</p>
+</li>
+<li>
+<p>SF9</p>
+</li>
+<li>
+<p>SF10</p>
+</li>
+</ul>
+<p><em>Lower spreading factors provide higher bit rates resulting in shorter TOA. Shorter TOA results in longer battery life because the radio transceiver is active for a shorter period.</em></p>
+<ol start="4">
+<li>For the same amount of data and bandwidth, which spreading factor results in the longest time-on-air?</li>
+</ol>
+<ul>
+<li>
+<p>SF7</p>
+</li>
+<li>
+<p>SF8</p>
+</li>
+<li>
+<p>SF9</p>
+</li>
+<li>
+<p><span style="text-decoration:underline;">SF10</span></p>
+</li>
+</ul>
+
+        </div>
+
+        
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+
+<div class="is-clearfix">
+<a class="button is-pulled-left" href="/docs/lorawan/end-device-activation/">← End Device Activation</a>
+<a class="button is-pulled-right" href="/docs/lorawan/adaptive-data-rate/">Adaptive Data Rate →</a>
+</div>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<div id="footer"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ttn-components.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/promise-polyfill@7/dist/polyfill.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-navbar.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-footer.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ga.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/vendor/basicLightbox.min.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/theme.min.00ace5d667ca108a93b8a0d385569f7c7bb9f46ed32eefe3f5fb39105763cccd.js" integrity="sha256-AKzl1mfKEIqTuKDThVaffHu59G7TLu/j9fs5EFdjzM0=" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

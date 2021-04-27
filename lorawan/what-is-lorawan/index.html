@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+
+<html lang="en-us" class="has-ttn-navbar-top">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <meta name="generator" content="Hugo 0.79.0" />
+
+  <title>What are LoRa and LoRaWAN | The Things Network</title>
+  <link rel="canonical" href="https://www.thethingsnetwork.org/docs/lorawan/what-is-lorawan/" />
+  
+
+  <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
+
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+  <meta name="msapplication-TileImage" content="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png">
+
+  <meta name="application-name" content="The Things Network">
+  <meta name="msapplication-tooltip" content="Tooltip">
+  <meta name="msapplication-config" content="https://ttnweb.azureedge.net/static/common/favicon/ieconfig.54334a5ee30c.xml">
+
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-32.61b30f85680a.png" sizes="32x32">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-57.83b86c64dc82.png" sizes="57x57">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-76.7dcf8fa36dfc.png" sizes="76x76">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-96.27ac17adaa8b.png" sizes="96x96">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-120.e1526731335e.png" sizes="120x120">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-128.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png" sizes="144x144">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png" sizes="152x152">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-180.fcd414307ca3.png" sizes="180x180">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-195.c55ce09d66da.png" sizes="195x195">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-228.bea53ec4b10b.png" sizes="228x228">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/smalltile.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/mediumtile.3d42f7faac82.png" sizes="270x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
+  <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+
+  <meta property="og:title" content="What are LoRa and LoRaWAN" />
+<meta property="og:description" content="Welcome to the first chapter of The Things Fundamentals on LoRaWAN. In this section, you&rsquo;ll learn why LoRaWAN is so awesome, hear about some great LoRaWAN use cases, and learn the difference between LoRa and LoRaWAN.
+LoRa LoRa is a wireless modulation technique derived from Chirp Spread Spectrum (CSS) technology. It encodes information on radio waves using chirp pulses - similar to the way dolphins and bats communicate! LoRa modulated transmission is robust against disturbances and can be received across great distances." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/lorawan/what-is-lorawan/" />
+<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
+<meta property="article:modified_time" content="2021-04-21T13:42:27+05:45" /><meta property="og:site_name" content="The Things Network" />
+
+
+  <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
+
+<meta name="twitter:title" content="What are LoRa and LoRaWAN"/>
+<meta name="twitter:description" content="Welcome to the first chapter of The Things Fundamentals on LoRaWAN. In this section, you&rsquo;ll learn why LoRaWAN is so awesome, hear about some great LoRaWAN use cases, and learn the difference between LoRa and LoRaWAN.
+LoRa LoRa is a wireless modulation technique derived from Chirp Spread Spectrum (CSS) technology. It encodes information on radio waves using chirp pulses - similar to the way dolphins and bats communicate! LoRa modulated transmission is robust against disturbances and can be received across great distances."/>
+
+
+</head>
+
+
+<body>
+
+<div id="header"></div>
+<section class="section">
+  <div class="container">
+    <nav class="breadcrumb has-dot-separator" aria-label="breadcrumbs">
+      <ul>
+        <li><a href="https://www.thethingsnetwork.org/docs">Learn</a></li>
+        
+        
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+            <li class="is-active">
+              <a href="https://www.thethingsnetwork.org/docs/lorawan/">LoRaWAN</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/quick-start/">Quick Start</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/applications-and-integrations/">Applications &amp; Integrations</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/">Devices &amp; Gateways</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/the-things-stack/">Migrating to The Things Stack Community Edition</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/v2-docs/">V2 Docs (Outdated)</a>
+            </li>
+          
+        
+      </ul>
+    </nav>
+  </div>
+</section>
+<div class="container" role="document">
+  <div class="columns my-0 is-desktop">
+    <div class="column is-3-desktop sidebar-left">
+      
+
+
+<nav class="side-navigation" aria-label="Main navigation">
+
+<h2 class="title is-size-5">LoRaWAN</h2>
+
+<div class="menu">
+  <ul class="menu-list">
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/" class="">Overview</a>
+  
+    <p class="menu-label">
+      The Things Fundamentals
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/what-is-lorawan/" class="is-active">What are LoRa and LoRaWAN</a>
+  
+
+
+
+  
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/architecture/" class="">LoRaWAN Architecture</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/regional-parameters/" class="">Regional Parameters</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/message-types/" class="">Message Types</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/security/" class="">Security</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/classes/" class="">Device Classes</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/end-device-activation/" class="">End Device Activation</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/spreading-factors/" class="">Spreading Factors</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/adaptive-data-rate/" class="">Adaptive Data Rate</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/limitations/" class="">Limitations</a>
+</li>
+
+  
+    <p class="menu-label">
+      Additional Information
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/frequencies-by-country/" class="">Frequency Plans by Country</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/frequency-plans/" class="">Frequency Plans</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/duty-cycle/" class="">Duty Cycle</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/modulation-data-rate/" class="">Modulation &amp; Data Rate</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/addressing/" class="">Addressing &amp; Activation</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/academic/" class="">Academic Research</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/prefix-assignments/" class="">NetID and DevAddr Prefix Assignments</a>
+</li>
+
+  
+  </ul>
+</div>
+
+
+
+
+
+</nav>
+
+    </div>
+    <div class="column is-9-desktop sidebar-middle">
+      <div class="docs-content">
+        <h1 class="title is-size-2">
+          What are LoRa and LoRaWAN
+        </h1>
+
+        <div class="content">
+          <p>Welcome to the first chapter of The Things Fundamentals on LoRaWAN. In this section, you&rsquo;ll learn why LoRaWAN is so awesome, hear about some great LoRaWAN use cases, and learn the difference between LoRa and LoRaWAN.</p>
+<h3 id="lora">LoRa</h3>
+<p>LoRa is a wireless modulation technique derived from <strong>Chirp Spread Spectrum (CSS)</strong> technology. It encodes information on radio waves using chirp pulses - similar to the way dolphins and bats communicate! LoRa modulated transmission is robust against disturbances and can be received across great distances.</p>
+<p>Don’t be alarmed about the complex terms; <strong>LoRa modulation</strong> and <strong>Chirp Spread Spectrum technology</strong> are simple to understand in practice. In case you are curious, in this video, <strong>Richard Wenner</strong> explains how <strong>Chirp Spread Spectrum technology</strong> works:</p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/dxYY097QNs0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<p>LoRa is ideal for applications that transmit small chunks of data with low bit rates. Data can be transmitted at a longer range compared to technologies like WiFi, Bluetooth or ZigBee. These features make LoRa well suited for sensors and actuators that operate in low power mode.</p>
+<p>LoRa can be operated on the license free <strong>sub-gigahertz</strong> bands, for example, 915 MHz, 868 MHz, and 433 MHz. It also can be operated on <strong>2.4 GHz</strong> to achieve higher data rates compared to sub-gigahertz bands, at the cost of range. These frequencies fall into ISM bands that are reserved internationally for industrial, scientific, and medical purposes.</p>
+<h3 id="lorawan">LoRaWAN</h3>
+<p>LoRaWAN is a Media Access Control (MAC) layer protocol built on top of LoRa modulation. It is a software layer which defines how devices use the LoRa hardware, for example when they transmit, and the format of messages.</p>
+<p>The LoRaWAN protocol is developed and maintained by the <a href="https://lora-alliance.org/">LoRa Alliance</a>. The first LoRaWAN specification was released in January 2015. The table below shows the version history of the LoRaWAN specifications. At the time of this writing the latest specifications are 1.0.4 (in 1.0 series) and 1.1 (1.1 series).</p>
+<table>
+  <tr>
+   <td><strong>Version</strong>
+   </td>
+   <td><strong>Release date</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>1.0
+   </td>
+   <td>January 2015
+   </td>
+  </tr>
+  <tr>
+   <td>1.0.1
+   </td>
+   <td>February 2016
+   </td>
+  </tr>
+  <tr>
+   <td>1.0.2
+   </td>
+   <td>July 2016
+   </td>
+  </tr>
+  <tr>
+   <td>1.1
+   </td>
+   <td>October 2017
+   </td>
+  </tr>
+  <tr>
+   <td>1.0.3
+   </td>
+   <td>July 2018
+   </td>
+  </tr>
+  <tr>
+   <td>1.0.4
+   </td>
+   <td>October 2020
+   </td>
+  </tr>
+</table>
+<h2 id="bandwidth-vs-range">Bandwidth vs. Range</h2>
+<p>LoRaWAN is suitable for transmitting small size payloads (like sensor data) over long distances. LoRa modulation provides a significantly greater communication range with low bandwidths than other competing wireless data transmission technologies. The following figure shows some access technologies that can be used for wireless data transmission and their expected transmission ranges vs. bandwidth.</p>
+<p><img src="../bandwidth-vs-range.png" alt="alt_text" title="Bandwidth Vs Range"></p>
+<h2 id="why-is-lorawan-so-awesome">Why is LoRaWAN so awesome?</h2>
+<ul>
+<li><strong>Ultra low power</strong> - LoRaWAN end devices are optimized to operate in low power mode and can last up to 10 years on a single coin cell battery.</li>
+<li><strong>Long range</strong> - LoRaWAN gateways can transmit and receive signals over a distance of over 10 kilometers in rural areas and up to 3 kilometers in dense urban areas.</li>
+<li><strong>Deep indoor penetration</strong> - LoRaWAN networks can provide deep indoor coverage, and easily cover multi floor buildings.</li>
+<li><strong>License free spectrum</strong> - You don&rsquo;t have to pay expensive frequency spectrum license fees to deploy a LoRaWAN network.</li>
+<li><strong>Geolocation</strong>- A LoRaWAN network can determine the location of end devices using triangulation without the need for GPS. A LoRa end device can be located if at least three gateways pick up its signal.</li>
+<li><strong>High capacity</strong> - LoRaWAN Network Servers handle millions of messages from thousands of gateways.</li>
+<li><strong>Public and private deployments</strong> - It is easy to deploy public and private LoRaWAN networks using the same hardware (gateways, end devices, antennas) and software (UDP packet forwarders, Basic Station software, LoRaWAN stacks for end devices).</li>
+<li><strong>End-to-end security</strong>- LoRaWAN ensures secure communication between the end device and the application server using AES-128 encryption.</li>
+<li><strong>Firmware updates over the air</strong> - You can remotely update firmware (applications and the LoRaWAN stack) for a single end device or group of end devices.</li>
+<li><strong>Roaming</strong>- LoRaWAN end devices can perform seamless handovers from one network to another.</li>
+<li><strong>Low cost</strong> - Minimal infrastructure, low-cost end nodes and open source software.</li>
+<li><strong>Certification program</strong>- The LoRa Alliance certification program certifies end devices and provides end-users with confidence that the devices are reliable and compliant with the LoRaWAN specification.</li>
+<li><strong>Ecosystem</strong>- LoRaWAN has a very large ecosystem of device makers, gateway makers, antenna makers, network service providers, and application developers.</li>
+</ul>
+<h2 id="lorawan-use-cases">LoRaWAN use cases</h2>
+<p>Here are a few great LoRaWAN use cases provided by <a href="https://info.semtech.com/lora-everywhere">Semtech</a>, to give you some insight into how LoRaWAN can be applied:</p>
+<ul>
+<li><strong>Vaccine cold chain monitoring</strong> - LoRaWAN sensors are used to ensure vaccines are kept at appropriate temperatures in transit.</li>
+<li><strong>Animal conservation</strong> - Tracking sensors manage endangered species such as Black Rhinos and Amur Leopards.</li>
+<li><strong>Dementia patients</strong> - Wristband sensors provide fall detection and medication tracking.</li>
+<li><strong>Smart farms</strong>- Real time insights into crop soil moisture and optimized irrigation schedule reduce water use up to 30%.</li>
+<li><strong>Water conservation</strong>- Identification and faster repair of leaks in a city&rsquo;s water network.</li>
+<li><strong>Food safety</strong>- Temperature monitoring ensures food quality maintenance.</li>
+<li><strong>Smart waste bins</strong> - Waste bin level alerts sent to staff optimize the pickup schedule.</li>
+<li><strong>Smart bikes</strong>- Bike trackers track bikes in remote areas and dense buildings.</li>
+<li><strong>Airport tracking</strong> - GPS-free tracking monitors vehicles, personnel, and luggage.</li>
+<li><strong>Efficient workspaces</strong> - Room occupancy, temperature, energy usage and parking availability monitoring.</li>
+<li><strong>Cattle health</strong> - Sensors monitor cattle health, detect diseases and forecast calves delivery time.</li>
+<li><strong>LoRa in space</strong> - Satellites to provide LoRaWAN-based coverage worldwide.</li>
+</ul>
+<h2 id="lora-alliance">LoRa Alliance</h2>
+<p>The LoRa Alliance is an open, non-profit association established in 2015. It supports development of the LoRaWAN protocol and ensures interoperability of all LoRaWAN products and technologies. Today, the LoRa Alliance has over <a href="https://lora-alliance.org/member-directory/">500 members around the globe</a>.</p>
+<p>The LoRa Alliance provides LoRaWAN certification for end devices. Certified end devices provide users with confidence that the end device is reliable and compliant with the LoRaWAN specification. You can learn more about LoRaWAN certification by visiting the <a href="https://lora-alliance.org/lorawan-certification/">LoRa Alliance website</a>. Certification is only available for device manufacturers that are members of the LoRa Alliance. Once certified, the manufacturer can use the LoRaWAN Certified mark with the product.</p>
+<h2 id="questions">Questions</h2>
+<ol>
+<li>
+<p>Who provides the LoRaWAN certification?</p>
+<ul>
+<li><span style="text-decoration:underline;">LoRa Alliance</span></li>
+<li>The Things Network</li>
+<li>IEEE</li>
+<li>Semtech</li>
+</ul>
+</li>
+<li>
+<p>LoRa is a:</p>
+<ul>
+<li>MAC layer protocol_</li>
+<li><span style="text-decoration:underline;">Physical layer implementation</span></li>
+</ul>
+</li>
+<li>
+<p>LoRaWAN is a:</p>
+<ul>
+<li><span style="text-decoration:underline;">MAC layer protocol</span></li>
+<li>Physical layer implementation</li>
+</ul>
+</li>
+<li>
+<p>LoRaWAN can be operated on:</p>
+<ul>
+<li>License free spectrum</li>
+<li>ISM bands</li>
+<li>2.4 GHz</li>
+<li><span style="text-decoration:underline;">All of the above</span></li>
+</ul>
+</li>
+<li>
+<p>Which is not a use case of LoRaWAN?</p>
+<ul>
+<li>Animal conservation</li>
+<li><span style="text-decoration:underline;">Credit card payments</span></li>
+<li>Smart waste bins</li>
+<li>Cattle health</li>
+</ul>
+</li>
+</ol>
+
+        </div>
+
+        
+
+
+
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+<div class="is-clearfix">
+<a class="button is-pulled-right" href="/docs/lorawan/architecture/">LoRaWAN Architecture →</a>
+</div>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<div id="footer"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ttn-components.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/promise-polyfill@7/dist/polyfill.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-navbar.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-footer.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ga.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/vendor/basicLightbox.min.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/theme.min.00ace5d667ca108a93b8a0d385569f7c7bb9f46ed32eefe3f5fb39105763cccd.js" integrity="sha256-AKzl1mfKEIqTuKDThVaffHu59G7TLu/j9fs5EFdjzM0=" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

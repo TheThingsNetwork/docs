@@ -138,9 +138,19 @@
   <a href="https://www.thethingsnetwork.org/docs/lorawan/" class="">Overview</a>
   
     <p class="menu-label">
-      Fundamental
+      The Things Fundamentals
     </p>
     
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/what-is-lorawan/" class="">What are LoRa and LoRaWAN</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/architecture/" class="">LoRaWAN Architecture</a>
+</li>
+
       
 <li>
   <a href="https://www.thethingsnetwork.org/docs/lorawan/regional-parameters/" class="is-active">Regional Parameters</a>
@@ -153,19 +163,9 @@
 
       
 <li>
-  <a href="https://www.thethingsnetwork.org/docs/lorawan/architecture/" class="">LoRaWAN Architecture</a>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/message-types/" class="">Message Types</a>
 </li>
 
-      
-<li>
-  <a href="https://www.thethingsnetwork.org/docs/lorawan/limitations/" class="">Limitations</a>
-</li>
-
-  
-    <p class="menu-label">
-      Specifications
-    </p>
-    
       
 <li>
   <a href="https://www.thethingsnetwork.org/docs/lorawan/security/" class="">Security</a>
@@ -173,7 +173,17 @@
 
       
 <li>
-  <a href="https://www.thethingsnetwork.org/docs/lorawan/duty-cycle/" class="">Duty Cycle</a>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/classes/" class="">Device Classes</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/end-device-activation/" class="">End Device Activation</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/spreading-factors/" class="">Spreading Factors</a>
 </li>
 
       
@@ -183,17 +193,7 @@
 
       
 <li>
-  <a href="https://www.thethingsnetwork.org/docs/lorawan/modulation-data-rate/" class="">Modulation &amp; Data Rate</a>
-</li>
-
-      
-<li>
-  <a href="https://www.thethingsnetwork.org/docs/lorawan/addressing/" class="">Addressing &amp; Activation</a>
-</li>
-
-      
-<li>
-  <a href="https://www.thethingsnetwork.org/docs/lorawan/classes/" class="">Classes</a>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/limitations/" class="">Limitations</a>
 </li>
 
   
@@ -209,6 +209,21 @@
       
 <li>
   <a href="https://www.thethingsnetwork.org/docs/lorawan/frequency-plans/" class="">Frequency Plans</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/duty-cycle/" class="">Duty Cycle</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/modulation-data-rate/" class="">Modulation &amp; Data Rate</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/addressing/" class="">Addressing &amp; Activation</a>
 </li>
 
       
@@ -247,16 +262,1124 @@
 <li>
 <p>These LoRaWAN regional specifications do not specify everything either. They only cover a region by specifying the common denominator. For example, the LoRaWAN regional parameters for Asia only specify a common subset of channels - but there are variations between regulations in Asian countries. Furthermore, each network server operator is free to select additional parameters, such as additional emission channels. We call these parameters <strong>Other</strong>. For The Things Network, they are defined in <a href="https://github.com/TheThingsNetwork/gateway-conf">this GitHub repository</a>.</p>
 </li>
+<li>
+<p>In some countries, more than one frequency plan may be used. For example, in the <strong>Netherlands</strong>, both <strong>EU868-870</strong> and <strong>EU433</strong> can be used.</p>
+</li>
+<li>
+<p>The regional parameters include physical layer parameters such as frequency plans (channel plans), mandatory channel frequencies and data rates for join-request messages. The Regional Parameters also include LoRaWAN layer parameters such as maximum payload size.</p>
+</li>
 </ul>
-<p>More informations can be found here:</p>
+<p>In this chapter you will learn in detail about the <strong>EU863-870</strong> band and <strong>US902-928</strong> ISM band. This chapter also presents some important parameters involved in other frequency plans.</p>
+<h2 id="common-frequency-plans">Common Frequency Plans</h2>
+<p>LoRaWAN operates in the unlicensed ISM (Industrial, Scientific, and Medical) bands. The table below lists the latest frequency plans and their common names.</p>
+<table>
+  <tr>
+   <td><strong>Channel Plan</strong>
+   </td>
+   <td><strong>Common Name</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>EU863-870
+   </td>
+   <td>EU868
+   </td>
+  </tr>
+  <tr>
+   <td>US902-928
+   </td>
+   <td>US915
+   </td>
+  </tr>
+  <tr>
+   <td>CN779-787
+   </td>
+   <td>CN779
+   </td>
+  </tr>
+  <tr>
+   <td>EU433
+   </td>
+   <td>EU433
+   </td>
+  </tr>
+  <tr>
+   <td>AU915-928
+   </td>
+   <td>AU915
+   </td>
+  </tr>
+  <tr>
+   <td>CN470-510
+   </td>
+   <td>CN470
+   </td>
+  </tr>
+  <tr>
+   <td>AS923
+   </td>
+   <td>AS923
+   </td>
+  </tr>
+  <tr>
+   <td>KR920-923
+   </td>
+   <td>KR920
+   </td>
+  </tr>
+  <tr>
+   <td>IN865-867
+   </td>
+   <td>IN865
+   </td>
+  </tr>
+  <tr>
+   <td>RU864-870
+   </td>
+   <td>RU864
+   </td>
+  </tr>
+</table>
+<p>Information about specific countries and frequency plans can be found here:</p>
 <ul>
 <li><a href="/docs/lorawan/frequency-plans/">Frequency Plans</a></li>
 <li><a href="/docs/lorawan/frequencies-by-country/">Frequency Plan by Country</a></li>
 </ul>
+<div class="notification is-info is-light has-text-dark">
+  <h5 class="title is-family-sans-serif has-text-dark mb-1">Note:</h5>
+  The Things Fundamentals certification expects detailed knowledge about the EU863-870 and US902-928 frequency plans. However, having a basic understanding of other frequency plans is sufficient; for example, you should know that Listen Before Talk (LBT) is used in <strong>Japan</strong>.
+</div>
+
+<h2 id="eu863-870-band">EU863-870 Band</h2>
+<p>The EU863-870 band can be applied to any region where the radio spectrum use is defined by the ETSI [EN300.220] standard. The EU863-870 band is used in all the European countries, and some countries <em>outside Europe</em>, for example, Bahrain (BH), located in the Middle East. The EU863-870 band implies the frequency band ranges from 863 MHz – 870 MHz but some countries use slightly different frequency ranges. For example, Albania (AL) uses 863-873 MHz.</p>
+<h3 id="eu863-870-default-channels">EU863-870 default channels</h3>
+<p>The following three default channels <strong>must</strong> be implemented in every end device that supports the EU863-870 band. These channels are used by the end device to broadcast the <strong>Join-request</strong> message. The end device <strong>randomly</strong> selects one of the default channels to send the <strong>Join-request</strong> message.</p>
+<table>
+  <tr>
+   <td><strong>Channel Frequency (MHz)</strong>
+   </td>
+   <td><strong>Bandwidth (kHz)</strong>
+   </td>
+   <td><strong>LoRa data rate</strong>
+   </td>
+   <td><strong>Bit rate</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>868.10
+   </td>
+   <td>125
+   </td>
+   <td>DR0 – DR5
+   </td>
+   <td>0.3 – 5 kbps
+   </td>
+  </tr>
+  <tr>
+   <td>868.30
+   </td>
+   <td>125
+   </td>
+   <td>DR0 – DR5
+   </td>
+   <td>0.3 – 5 kbps
+   </td>
+  </tr>
+  <tr>
+   <td>868.50
+   </td>
+   <td>125
+   </td>
+   <td>DR0 – DR5
+   </td>
+   <td>0.3 – 5 kbps
+   </td>
+  </tr>
+</table>
+<p>For devices compliant with LoRaWAN version 1.0.x, these three default channels <strong>shall not</strong> be modified, but for devices compliant with LoRaWAN version 1.1 and beyond, these channels <strong>may</strong> be modified through the NewChannelReq command.</p>
+<p>The EU863-870 band supports a maximum of 16 channels. During end device activation additional channels may be specified. For example, The Things Network uses the following 5 additional frequencies for uplink.</p>
+<ul>
+<li>867.1 MHz</li>
+<li>867.3 MHz</li>
+<li>867.5 MHz</li>
+<li>867.7 MHz</li>
+<li>867.9 MHz</li>
+</ul>
+<p>For  <strong>downlink</strong>, The Things Network uses one additional fixed frequency for the RX2 receive slot:</p>
+<ul>
+<li><strong>869.525 MHz</strong> at <strong>DR0 (SF12 / 125 kHz)</strong>.</li>
+</ul>
+<h3 id="eu863-870-duty-cycle">EU863-870 Duty Cycle</h3>
+<p>The European Telecommunications Standards Institute (ETSI) sets the maximum duty cycle for the EU863-870 frequency at 1%, which is the maximum amount of time a device may spend communicating.</p>
+<p>Let’s have a look at how to calculate the time-on-air allowed per day (24 hours), per end device for some common duty cycles.</p>
+<table>
+  <tr>
+   <td><strong>Duty cycle (take the maximum)</strong>
+   </td>
+   <td><strong>Equation: Time-On-Air = number of seconds per day </strong>X<strong> duty cycle</strong>
+   </td>
+   <td><strong>Maximum allowed Time-On-Air per day, per device</strong>
+   </td>
+  </tr>
+    <tr>
+   <td>0.1%
+   </td>
+   <td>86400 x 0.1%
+   </td>
+   <td>86 seconds per day
+   </td>
+  </tr>
+  <tr>
+  <tr>
+   <td>1%
+   </td>
+   <td>86400 x 1%
+   </td>
+   <td>864 seconds per day
+   </td>
+  </tr>
+   <td>10%
+   </td>
+   <td>86400 x 10%
+   </td>
+   <td>8640 seconds per day
+   </td>
+  </tr>
+</table>
+<div class="notification is-info is-light has-text-dark">
+  <h5 class="title is-family-sans-serif has-text-dark mb-1">Note:</h5>
+  Some network operators (like The Things Network) reduce the duty cycle further than ESTI recommends. These types of restrictions are called ‘Fair Access Policy’. For example, The Things Network’s fair access policy limits the uplink airtime to 30 seconds per day per node and the downlink messages to 10 messages per day per node.
+</div>
+
+<h3 id="eu863-870-data-rates">EU863-870 Data Rates</h3>
+<p>Data rate is the number of bits that are transmitted per unit of time. With LoRa modulation, the data rate depends on a few factors like <strong>spreading factor</strong>, <strong>bandwidth</strong>, and the <strong>coding rate</strong>.</p>
+<p>The following table shows the bit rate for each data rate (DR0 - DR6) configured with the spreading factor and the bandwidth.</p>
+<table>
+  <tr>
+   <td><strong>Data Rate</strong>
+   </td>
+   <td><strong>Configuration (SF + BW)</strong>
+   </td>
+   <td><strong>Bit rate (bit/s)</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>0
+   </td>
+   <td>LoRa: SF12 / 125 kHz
+   </td>
+   <td><p style="text-align: right">
+250</p>
+   </td>
+  </tr>
+  <tr>
+   <td>1
+   </td>
+   <td>LoRa: SF11 / 125 kHz
+   </td>
+   <td><p style="text-align: right">
+440</p>
+   </td>
+  </tr>
+  <tr>
+   <td>2
+   </td>
+   <td>LoRa: SF10 / 125 kHz
+   </td>
+   <td><p style="text-align: right">
+980</p>
+   </td>
+  </tr>
+  <tr>
+   <td>3
+   </td>
+   <td>LoRa: SF9 / 125 kHz
+   </td>
+   <td><p style="text-align: right">
+1760</p>
+   </td>
+  </tr>
+  <tr>
+   <td>4
+   </td>
+   <td>LoRa: SF8 / 125 kHz
+   </td>
+   <td><p style="text-align: right">
+3125</p>
+   </td>
+  </tr>
+  <tr>
+   <td>5
+   </td>
+   <td>LoRa: SF7 / 125 kHz
+   </td>
+   <td><p style="text-align: right">
+5470</p>
+   </td>
+  </tr>
+  <tr>
+   <td>6
+   </td>
+   <td>LoRa: SF7 / 250 kHz
+   </td>
+   <td><p style="text-align: right">
+11000</p>
+   </td>
+</table>
+<p>As you can see, higher spreading factors cause lower bit rates and lower spreading factors cause higher bit rates. However for the same spreading factor, if the <strong>bandwidth doubles</strong> the <strong>data rate</strong> also gets <strong>doubled</strong>. You will learn more about this in the <a href="/docs/lorawan/spreading-factors/">Spreading Factors chapter</a>.</p>
+<p>All EU868-870 end devices <strong>must</strong> support one of the following data rate options.</p>
+<ul>
+<li>DR0 – DR5 – the minimal data rate set supported to obtain the LoRaWAN certification.</li>
+<li>DR0 – DR7</li>
+<li>DR0 – DR11 – all data rates are implemented in the end device</li>
+</ul>
+<h3 id="eu863-870-maximum-eirp--erp">EU863-870 Maximum EIRP / ERP</h3>
+<p>The Effective Isotropic Radiated Power (EIRP) is the total power radiated by an isotropic antenna in a single direction. The antenna gain is expressed in dBi for isotropic antennas.</p>
+<p>The following table shows the list of EIRP values that can be used to transmit data.</p>
+<table>
+  <tr>
+   <td><strong>TX Power</strong>
+   </td>
+   <td><strong>EIRP</strong>
+   </td>
+   <td><strong>Calculated value</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>0
+   </td>
+   <td>Max EIRP
+   </td>
+   <td>+16 dBm
+   </td>
+  </tr>
+  <tr>
+   <td>1
+   </td>
+   <td>Max EIRP - 2 dB 
+   </td>
+   <td>+16 dBm - 2 dB = +14 dBm
+   </td>
+  </tr>
+  <tr>
+   <td>2
+   </td>
+   <td>Max EIRP - 4 dB
+   </td>
+   <td>+16 dBm - 4 dB = +12 dBm
+   </td>
+  </tr>
+  <tr>
+   <td>3
+   </td>
+   <td>Max EIRP - 6 dB
+   </td>
+   <td>+16 dBm - 6 dB = +10 dBm
+   </td>
+  </tr>
+  <tr>
+   <td>4
+   </td>
+   <td>Max EIRP - 8 dB
+   </td>
+   <td>+16 dBm - 8 dB = +8 dBm
+   </td>
+  </tr>
+  <tr>
+   <td>5
+   </td>
+   <td>Max EIRP - 10 dB
+   </td>
+   <td>+16 dBm - 10 dB = +6 dBm
+   </td>
+  </tr>
+  <tr>
+   <td>6
+   </td>
+   <td>Max EIRP - 12 dB
+   </td>
+   <td>+16 dBm - 12 dB = +4 dBm
+   </td>
+  </tr>
+  <tr>
+   <td>7
+   </td>
+   <td>Max EIRP - 14 dB
+   </td>
+   <td>+16 dBm - 14 dB = +2 dBm
+   </td>
+  </tr>
+</table>
+<p>The Max EIRP for EU863-870 is +16dBm.</p>
+<p>The above mentioned EIRP and ERP values can also be expressed in milliwatts (mW). For example:</p>
+<ul>
+<li>+16 dBm = 40 mW</li>
+<li>+14 dBm = 25 mW</li>
+<li>+27 dBm = 500 mW</li>
+</ul>
+<h3 id="eu863-870-maximum-payload-size">EU863-870 Maximum Payload Size</h3>
+<p>The maximum application payload size (length) varies by data rate.</p>
+<p>The following table shows the <strong>maximum application payload (FRMPayload) size</strong> for different data rates.</p>
+<table>
+  <tr>
+   <td><strong>Data Rate</strong>
+   </td>
+   <td><strong>Configuration (SF+BW)</strong>
+   </td>
+   <td><strong>Maximum application payload size (bytes)</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>0
+   </td>
+   <td>LoRa: SF12 / 125 kHz
+   </td>
+   <td><p style="text-align: right">
+51</p>
+   </td>
+  </tr>
+  <tr>
+   <td>1
+   </td>
+   <td>LoRa: SF11 / 125 kHz
+   </td>
+   <td><p style="text-align: right">
+51</p>
+   </td>
+  </tr>
+  <tr>
+   <td>2
+   </td>
+   <td>LoRa: SF10 / 125 kHz
+   </td>
+   <td><p style="text-align: right">
+51</p>
+   </td>
+  </tr>
+  <tr>
+   <td>3
+   </td>
+   <td>LoRa: SF9 / 125 kHz
+   </td>
+   <td><p style="text-align: right">
+115</p>
+   </td>
+  </tr>
+  <tr>
+   <td>4
+   </td>
+   <td>LoRa: SF8 / 125 kHz
+   </td>
+   <td><p style="text-align: right">
+242</p>
+   </td>
+  </tr>
+  <tr>
+   <td>5
+   </td>
+   <td>LoRa: SF7 / 125 kHz
+   </td>
+   <td><p style="text-align: right">
+242</p>
+   </td>
+  </tr>
+  <tr>
+   <td>6
+   </td>
+   <td>LoRa: SF7 / 250 kHz
+   </td>
+   <td><p style="text-align: right">
+242</p>
+   </td>
+  </tr>
+</table>
+<h3 id="eu863-870-summary">EU863-870 Summary</h3>
+<p>The following table summarizes all the important parameters we have discussed in this section for EU863-870 band.</p>
+<table>
+  <tr>
+   <td>Default frequency band
+   </td>
+   <td>863-870 MHz
+   </td>
+  </tr>
+  <tr>
+   <td>Mandatory channel frequencies (join-request)
+   </td>
+   <td>868.10
+<p>
+868.30
+<p>
+868.50
+   </td>
+  </tr>
+  <tr>
+   <td>Mandatory data rates
+   </td>
+   <td>0-5 (minimum set supported for certification)
+   </td>
+  </tr>
+  <tr>
+   <td>Optional data rates
+   </td>
+   <td>6-7 or 6-11
+   </td>
+  </tr>
+  <tr>
+   <td>Number of channels
+   </td>
+   <td>16
+<p>
+3 default + 5 optional by CFlist
+<p>
+These 5 optional channels and the remaining 8 channels can be modified /populated by NewChannelReq command
+   </td>
+  </tr>
+  <tr>
+   <td>Default channels
+   </td>
+   <td>0, 1, 2
+   </td>
+  </tr>
+  <tr>
+   <td>Duty cycle
+   </td>
+   <td>&lt; 1%
+   </td>
+  </tr>
+  <tr>
+   <td>Dwell time limitation
+   </td>
+   <td>No
+   </td>
+  </tr>
+  <tr>
+   <td>Max EIRP / ERP
+   </td>
+   <td>+16 dBm  (40 mW) / +14 dBm (25 mW)
+<p>
+This is the power radiated by the isotropic antenna / half-wave dipole antenna (not the transmitter power)
+   </td>
+  </tr>
+  <tr>
+   <td>Max antenna gain
+   </td>
+   <td>2.15 dBi or 0 dBd
+   </td>
+  </tr>
+  <tr>
+   <td>Default RX2 data rate
+   </td>
+   <td>DR0 (SF12 / 125 kHz)
+   </td>
+  </tr>
+  <tr>
+   <td>Default RX2 frequency
+   </td>
+   <td>869.525 MHz
+   </td>
+  </tr>
+</table>
+<h2 id="us902-928-ism-band">US902-928 ISM Band</h2>
+<p>This section describes the regional parameters for the <strong>USA</strong>, <strong>Canada</strong>, and all other countries using the <strong>902-928 ISM</strong> band.</p>
+<h3 id="us902-928-frequency-plans">US902-928 Frequency Plans</h3>
+<p>The US902-928 ISM band is divided into the following frequency plans as shown in the table below.</p>
+<table>
+  <tr>
+   <td><strong>Uplink/Downlink</strong>
+   </td>
+   <td><strong>Channels</strong>
+   </td>
+   <td><strong>range</strong>
+   </td>
+   <td><strong>Frequency range</strong>
+   </td>
+   <td><strong>BW</strong>
+   </td>
+   <td><strong>Data rate</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Uplink
+   </td>
+   <td>64
+   </td>
+   <td>0 - 63
+   </td>
+   <td>902.3 – 914.9 MHz in 200 kHz increments
+   </td>
+   <td>125 kHz
+   </td>
+   <td>DR0 – DR3
+   </td>
+  </tr>
+  <tr>
+   <td>Uplink
+   </td>
+   <td>8
+   </td>
+   <td>64 - 71
+   </td>
+   <td>903.0 – 914.2 MHz in 1.6 MHz increments
+   </td>
+   <td>500 kHz
+   </td>
+   <td>DR4
+   </td>
+  </tr>
+  <tr>
+   <td>Downlink
+   </td>
+   <td>8
+   </td>
+   <td>0 - 7
+   </td>
+   <td>923.3 – 927.5 MHz in 600 kHz increments
+   </td>
+   <td>500 kHz
+   </td>
+   <td>DR8 - DR13
+   </td>
+  </tr>
+</table>
+<h3 id="us902-928-data-rates">US902-928 Data Rates</h3>
+<p>The following table shows the <strong>bit rate</strong> for each data rate configured with the spreading factor and the bandwidth.</p>
+<ul>
+<li>DR0 - DR4 and DR8 - DR13 are used for LoRa modulation.</li>
+<li>DR4 is identical to DR12.</li>
+<li>DR8 - DR13 are only used for downlink messages.</li>
+</ul>
+<table>
+  <tr>
+   <td><strong>Data Rate</strong>
+   </td>
+   <td><strong>Configuration (SF + BW)</strong>
+   </td>
+   <td><strong>Bit rate (bit/s)</strong>
+   </td>
+   <td><strong>Uplink/Downlink?</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>0
+   </td>
+   <td>LoRa: SF10 / 125 kHz
+   </td>
+   <td><p style="text-align: right">
+980</p>
+   </td>
+   <td>Uplink
+   </td>
+  </tr>
+  <tr>
+   <td>1
+   </td>
+   <td>LoRa: SF9 / 125 kHz
+   </td>
+   <td><p style="text-align: right">
+1760</p>
+   </td>
+   <td>Uplink
+   </td>
+  </tr>
+  <tr>
+   <td>2
+   </td>
+   <td>LoRa: SF8 / 125 kHz
+   </td>
+   <td><p style="text-align: right">
+3125</p>
+   </td>
+   <td>Uplink
+   </td>
+  </tr>
+  <tr>
+   <td>3
+   </td>
+   <td>LoRa: SF7 / 125 kHz
+   </td>
+   <td><p style="text-align: right">
+5470</p>
+   </td>
+   <td>Uplink
+   </td>
+  </tr>
+  <tr>
+   <td>4
+   </td>
+   <td>LoRa: SF8 / 500 kHz
+   </td>
+   <td><p style="text-align: right">
+12500</p>
+   </td>
+   <td>Uplink
+   </td>
+  </tr>
+  <tr>
+   <td>5
+   </td>
+   <td> 
+   </td>
+   <td><p style="text-align: right">
+ </p>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>6
+   </td>
+   <td> 
+   </td>
+   <td><p style="text-align: right">
+ </p>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>7
+   </td>
+   <td> 
+   </td>
+   <td><p style="text-align: right">
+ </p>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>8
+   </td>
+   <td>LoRa: SF12 / 500 kHz
+   </td>
+   <td><p style="text-align: right">
+980</p>
+   </td>
+   <td>Downlink
+   </td>
+  </tr>
+  <tr>
+   <td>9
+   </td>
+   <td>LoRa: SF11 / 500 kHz
+   </td>
+   <td><p style="text-align: right">
+1760</p>
+   </td>
+   <td>Downlink
+   </td>
+  </tr>
+  <tr>
+   <td>10
+   </td>
+   <td>LoRa: SF10 / 500 kHz
+   </td>
+   <td><p style="text-align: right">
+3900</p>
+   </td>
+   <td>Downlink
+   </td>
+  </tr>
+  <tr>
+   <td>11
+   </td>
+   <td>LoRa: SF9 / 500 kHz
+   </td>
+   <td><p style="text-align: right">
+7000</p>
+   </td>
+   <td>Downlink
+   </td>
+  </tr>
+  <tr>
+   <td>12
+   </td>
+   <td>LoRa: SF8 / 500 kHz
+   </td>
+   <td><p style="text-align: right">
+12500</p>
+   </td>
+   <td>Downlink
+   </td>
+  </tr>
+  <tr>
+   <td>13
+   </td>
+   <td>LoRa: SF7 / 500 kHz
+   </td>
+   <td><p style="text-align: right">
+21900</p>
+   </td>
+   <td>Downlink
+   </td>
+  </tr>
+  <tr>
+   <td>14
+   </td>
+   <td> 
+   </td>
+   <td><p style="text-align: right">
+ </p>
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>15
+   </td>
+   <td> 
+   </td>
+   <td><p style="text-align: right">
+ </p>
+   </td>
+   <td>
+   </td>
+  </tr>
+</table>
+<p>All US902-928 end devices shall support one of the following data rate options.</p>
+<ul>
+<li>DR0 – DR4 and DR8 – DR13 – the minimal data rate set required to obtain LoRaWAN certification.</li>
+<li>DR0 – DR13 - all data rates are implemented in the end device</li>
+</ul>
+<p>When using Over-The-Air-Activation (OTAA), the end device shall transmit the <strong>Join-request</strong> message on a randomly selected channel as follows.</p>
+<ul>
+<li>64 channels (each have 125kHz bandwith) defined using DR0</li>
+<li>8 channels (each have 500kHz bandwidth) defined using DR4</li>
+</ul>
+<p>The end device shall change channels for every transmission.</p>
+<p>The maximum radiated output power allowed in the USA is <strong>EIRP = +30 dBm</strong> but for most devices <strong>+20 dBm</strong> is sufficient. Under the Federal Communications Commission (FCC) there are no duty cycle limitations but there is a <strong>400 ms maximum dwell time</strong> per channel. Dwell time is the amount of time needed for a transmission.</p>
+<h3 id="us902-928-maximum-payload-size">US902-928 Maximum Payload Size</h3>
+<p>The maximum application payload size (length) varies by data rate (configured with spreading factor and bandwidth).</p>
+<p>The following table shows the maximum application payload (FRMPayload) size (N) for different data rates.</p>
+<table>
+  <tr>
+   <td><strong>Data rate</strong>
+   </td>
+   <td><strong>Configuration</strong>
+   </td>
+   <td><strong>Maximum application payload size (bytes)</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>0
+   </td>
+   <td>LoRa: SF10 / 125 kHz
+   </td>
+   <td><p style="text-align: right">
+11</p>
+   </td>
+  </tr>
+  <tr>
+   <td>1
+   </td>
+   <td>LoRa: SF9 / 125 kHz
+   </td>
+   <td><p style="text-align: right">
+53</p>
+   </td>
+  </tr>
+  <tr>
+   <td>2
+   </td>
+   <td>LoRa: SF8 / 125 kHz
+   </td>
+   <td><p style="text-align: right">
+125</p>
+   </td>
+  </tr>
+  <tr>
+   <td>3
+   </td>
+   <td>LoRa: SF7 / 125 kHz
+   </td>
+   <td><p style="text-align: right">
+242</p>
+   </td>
+  </tr>
+  <tr>
+   <td>4
+   </td>
+   <td>LoRa: SF8 / 500 kHz
+   </td>
+   <td><p style="text-align: right">
+242</p>
+   </td>
+  </tr>
+  <tr>
+   <td>5
+   </td>
+   <td> 
+   </td>
+   <td><p style="text-align: right">
+ </p>
+   </td>
+  </tr>
+  <tr>
+   <td>6
+   </td>
+   <td> 
+   </td>
+   <td><p style="text-align: right">
+ </p>
+   </td>
+  </tr>
+  <tr>
+   <td>7
+   </td>
+   <td> 
+   </td>
+   <td><p style="text-align: right">
+ </p>
+   </td>
+  </tr>
+  <tr>
+   <td>8
+   </td>
+   <td>LoRa: SF12 / 500 kHz
+   </td>
+   <td><p style="text-align: right">
+53</p>
+   </td>
+  </tr>
+  <tr>
+   <td>9
+   </td>
+   <td>LoRa: SF11 / 500 kHz
+   </td>
+   <td><p style="text-align: right">
+129</p>
+   </td>
+  </tr>
+  <tr>
+   <td>10
+   </td>
+   <td>LoRa: SF10 / 500 kHz
+   </td>
+   <td><p style="text-align: right">
+242</p>
+   </td>
+  </tr>
+  <tr>
+   <td>11
+   </td>
+   <td>LoRa: SF9 / 500 kHz
+   </td>
+   <td><p style="text-align: right">
+242</p>
+   </td>
+  </tr>
+  <tr>
+   <td>12
+   </td>
+   <td>LoRa: SF8 / 500 kHz
+   </td>
+   <td><p style="text-align: right">
+242</p>
+   </td>
+  </tr>
+  <tr>
+   <td>13
+   </td>
+   <td>LoRa: SF7 / 500 kHz
+   </td>
+   <td><p style="text-align: right">
+242</p>
+   </td>
+  </tr>
+  <tr>
+   <td>14..15
+   </td>
+   <td> 
+   </td>
+   <td><p style="text-align: right">
+ </p>
+   </td>
+  </tr>
+</table>
+<h3 id="us902-928-summary">US902-928 Summary</h3>
+<p>The following table summarizes all the important parameters we have discussed in this section for US902-928 band.</p>
+<table>
+  <tr>
+   <td>Default frequency band
+   </td>
+   <td>902-928 MHz
+   </td>
+  </tr>
+  <tr>
+   <td>Mandatory channel frequencies for join-request
+   </td>
+   <td>Upstream: 64 channels - 902.3 – 914.9 MHz in 200 kHz increments)
+<p>
+Upstream: 8 channels - 903.0 – 914.2 MHz in 1.6 MHz increments
+<p>
+Downstream: 8 channels - 923.3 – 927.5 MHz in 600 kHz increment
+   </td>
+  </tr>
+  <tr>
+   <td>Mandatory data rates for join-request
+   </td>
+   <td>64 (125kHz channels) using DR0 and 8 (500kHz channels) using DR4
+   </td>
+  </tr>
+  <tr>
+   <td>Optional data rates
+   </td>
+   <td>5-6
+   </td>
+  </tr>
+  <tr>
+   <td>Number of channels
+   </td>
+   <td>Upstream: 64 (125kHz) + 8 (500 kHz)
+<p>
+Downstream: 8 (500 kHz)
+   </td>
+  </tr>
+  <tr>
+   <td>Default channels
+   </td>
+   <td>Ch0 - Ch71
+   </td>
+  </tr>
+  <tr>
+   <td>Duty cycle
+   </td>
+   <td>No limit
+   </td>
+  </tr>
+  <tr>
+   <td>Dwell time limitation
+   </td>
+   <td>Ch0-Ch63: 400 ms
+<p>
+Ch64-Ch71: No
+   </td>
+  </tr>
+  <tr>
+   <td>Max EIRP (default) - TXPower 0
+   </td>
+   <td>+30 dBm
+   </td>
+  </tr>
+  <tr>
+   <td>Default RX2 data rate
+   </td>
+   <td>DR8
+   </td>
+  </tr>
+  <tr>
+   <td>Default RX2 frequency
+   </td>
+   <td>923.3 MHz
+   </td>
+  </tr>
+</table>
+<h2 id="other-frequency-plans">Other frequency plans</h2>
+<p>You should have a basic knowledge about some important parameters that are included in other frequency plans.</p>
+<ul>
+<li><strong>CN779-787</strong>: Applies to <strong>China</strong>. The duty cycle is <strong>&lt;1%</strong> and there is no dwell time limitation. The default maximum <strong>EIRP</strong> allowed is <strong>+12.15 dBm</strong>.</li>
+<li><strong>AU915-928</strong>: Applies to <strong>Australia</strong> and all other countries whose band extends from <strong>915 to 928MHz</strong>. There is no duty cycle limitation applicable and the <strong>dwell time</strong> limitation is <strong>400ms</strong>. The default maximum <strong>EIRP</strong> allowed is <strong>+30 dBm</strong>.</li>
+<li><strong>AS923</strong>: Applied for <strong>multiple regions</strong> (some countries in <strong>Asia</strong> and <strong>Oceania</strong>). All end-devices operated in <strong>Japan</strong> must perform <strong>Listen Before Talk (LBT)</strong> based on <strong>ARIB STD-T108</strong> regulations.</li>
+<li><strong>KR920:</strong>  The regulations in <strong>South Korea</strong> allow the choice of using either a <strong>duty-cycle limitation</strong> or <strong>Listen Before Talk Adaptive Frequency Agility (LBT AFA)</strong> transmission management.</li>
+<li><strong>IN865</strong>: Applies to <strong>India.</strong> The default maximum <strong>EIRP</strong> allowed is <strong>+30 dBm</strong>.</li>
+</ul>
+<h2 id="default-settings-for-all-regions">Default Settings for All Regions</h2>
+<p>There are a few recommended default settings available that can be applied to all the regions.</p>
+<ul>
+<li>RX1 Delay: <strong>1s</strong></li>
+<li>RX2 Delay: <strong>2s</strong>   (RX1 Delay + 1s)</li>
+<li>Join Accept 1 Delay: <strong>5s</strong></li>
+<li>Join Accept 2 Delay: <strong>6s</strong></li>
+</ul>
+<h2 id="questions">Questions</h2>
+<ol>
+<li>Which frequency plan is used in Europe?</li>
+</ol>
+<ul>
+<li><span style="text-decoration:underline;">EU863-870</span></li>
+<li>US902-928</li>
+<li>IN865-867</li>
+<li>CN470-510</li>
+</ul>
+<ol start="2">
+<li>Which bit rate can be achieved with the configuration, SF12 / 125 kHz?</li>
+</ol>
+<ul>
+<li><span style="text-decoration:underline;">250 bit/s</span></li>
+<li>440 bit/s</li>
+<li>980 bit/s</li>
+<li>1760 bit/s</li>
+</ul>
+<ol start="3">
+<li>Which country allows the choice of using Listen Before Talk Adaptive Frequency Agility (LBT AFA)?</li>
+</ol>
+<ul>
+<li>Japan</li>
+<li><span style="text-decoration:underline;">South Korea</span></li>
+<li>Australia</li>
+<li>United States of America</li>
+</ul>
+<ol start="4">
+<li>Which country uses Listen Before Talk (LBT) instead of using duty cycle limitations?</li>
+</ol>
+<ul>
+<li><span style="text-decoration:underline;">Japan</span></li>
+<li>South Korea</li>
+<li>China</li>
+<li>The Neatherlands</li>
+</ul>
+<ol start="5">
+<li>How many sub-bands does the EU863-870 frequency plan include for LoRaWAN?</li>
+</ol>
+<ul>
+<li>2</li>
+<li>3</li>
+<li>4</li>
+<li><span style="text-decoration:underline;">5</span></li>
+</ul>
+<ol start="6">
+<li>What is the maximum application payload size allowed for LoRa: SF12 / 125 kHz in Europe?</li>
+</ol>
+<ul>
+<li><span style="text-decoration:underline;">51 bytes</span></li>
+<li>115 bytes</li>
+<li>242 bytes</li>
+</ul>
 
         </div>
       
-      <div class="is-clearfix">
+      
+
+
+
+
+  
+
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+<div class="is-clearfix">
+<a class="button is-pulled-left" href="/docs/lorawan/architecture/">← LoRaWAN Architecture</a>
+<a class="button is-pulled-right" href="/docs/lorawan/message-types/">Message Types →</a>
 </div>
 
       </div>

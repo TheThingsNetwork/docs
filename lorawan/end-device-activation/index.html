@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+
+<html lang="en-us" class="has-ttn-navbar-top">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <meta name="generator" content="Hugo 0.79.0" />
+
+  <title>End Device Activation | The Things Network</title>
+  <link rel="canonical" href="https://www.thethingsnetwork.org/docs/lorawan/end-device-activation/" />
+  
+
+  <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
+
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+  <meta name="msapplication-TileImage" content="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png">
+
+  <meta name="application-name" content="The Things Network">
+  <meta name="msapplication-tooltip" content="Tooltip">
+  <meta name="msapplication-config" content="https://ttnweb.azureedge.net/static/common/favicon/ieconfig.54334a5ee30c.xml">
+
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-32.61b30f85680a.png" sizes="32x32">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-57.83b86c64dc82.png" sizes="57x57">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-76.7dcf8fa36dfc.png" sizes="76x76">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-96.27ac17adaa8b.png" sizes="96x96">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-120.e1526731335e.png" sizes="120x120">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-128.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png" sizes="144x144">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png" sizes="152x152">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-180.fcd414307ca3.png" sizes="180x180">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-195.c55ce09d66da.png" sizes="195x195">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-228.bea53ec4b10b.png" sizes="228x228">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/smalltile.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/mediumtile.3d42f7faac82.png" sizes="270x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
+  <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+
+  <meta property="og:title" content="End Device Activation" />
+<meta property="og:description" content="Every end device must be registered with a network before sending and receiving messages. This procedure is known as activation. There are two activation methods available:
+ Over-The-Air-Activation (OTAA) - the most secure activation method for end devices. Devices perform a join procedure with the network, during which a dynamic device address is assigned and security keys are negotiated with the device. Activation By Personalization (ABP) - requires hardcoding the device address as well as the security keys in the device." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/lorawan/end-device-activation/" />
+<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
+<meta property="article:modified_time" content="2021-04-21T13:42:27+05:45" /><meta property="og:site_name" content="The Things Network" />
+
+
+  <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
+
+<meta name="twitter:title" content="End Device Activation"/>
+<meta name="twitter:description" content="Every end device must be registered with a network before sending and receiving messages. This procedure is known as activation. There are two activation methods available:
+ Over-The-Air-Activation (OTAA) - the most secure activation method for end devices. Devices perform a join procedure with the network, during which a dynamic device address is assigned and security keys are negotiated with the device. Activation By Personalization (ABP) - requires hardcoding the device address as well as the security keys in the device."/>
+
+
+</head>
+
+
+<body>
+
+<div id="header"></div>
+<section class="section">
+  <div class="container">
+    <nav class="breadcrumb has-dot-separator" aria-label="breadcrumbs">
+      <ul>
+        <li><a href="https://www.thethingsnetwork.org/docs">Learn</a></li>
+        
+        
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+            <li class="is-active">
+              <a href="https://www.thethingsnetwork.org/docs/lorawan/">LoRaWAN</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/quick-start/">Quick Start</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/applications-and-integrations/">Applications &amp; Integrations</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/">Devices &amp; Gateways</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/the-things-stack/">Migrating to The Things Stack Community Edition</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/v2-docs/">V2 Docs (Outdated)</a>
+            </li>
+          
+        
+      </ul>
+    </nav>
+  </div>
+</section>
+<div class="container" role="document">
+  <div class="columns my-0 is-desktop">
+    <div class="column is-3-desktop sidebar-left">
+      
+
+
+<nav class="side-navigation" aria-label="Main navigation">
+
+<h2 class="title is-size-5">LoRaWAN</h2>
+
+<div class="menu">
+  <ul class="menu-list">
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/" class="">Overview</a>
+  
+    <p class="menu-label">
+      The Things Fundamentals
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/what-is-lorawan/" class="">What are LoRa and LoRaWAN</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/architecture/" class="">LoRaWAN Architecture</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/regional-parameters/" class="">Regional Parameters</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/message-types/" class="">Message Types</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/security/" class="">Security</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/classes/" class="">Device Classes</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/end-device-activation/" class="is-active">End Device Activation</a>
+  
+
+
+
+  
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/spreading-factors/" class="">Spreading Factors</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/adaptive-data-rate/" class="">Adaptive Data Rate</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/limitations/" class="">Limitations</a>
+</li>
+
+  
+    <p class="menu-label">
+      Additional Information
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/frequencies-by-country/" class="">Frequency Plans by Country</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/frequency-plans/" class="">Frequency Plans</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/duty-cycle/" class="">Duty Cycle</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/modulation-data-rate/" class="">Modulation &amp; Data Rate</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/addressing/" class="">Addressing &amp; Activation</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/academic/" class="">Academic Research</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/prefix-assignments/" class="">NetID and DevAddr Prefix Assignments</a>
+</li>
+
+  
+  </ul>
+</div>
+
+
+
+
+
+</nav>
+
+    </div>
+    <div class="column is-9-desktop sidebar-middle">
+      <div class="docs-content">
+        <h1 class="title is-size-2">
+          End Device Activation
+        </h1>
+
+        <div class="content">
+          <p>Every end device must be registered with a network before sending and receiving messages. This procedure is known as <strong>activation</strong>. There are two activation methods available:</p>
+<ul>
+<li><strong>Over-The-Air-Activation (OTAA)</strong> - the most secure activation method for end devices. Devices perform a join procedure with the network, during which a dynamic device address is assigned and security keys are negotiated with the device.</li>
+<li><strong>Activation By Personalization (ABP)</strong> - requires hardcoding the device address as well as the security keys in the device. ABP is <strong>less secure</strong> than OTAA and also has the downside that devices can not switch network providers without manually changing keys in the device.</li>
+</ul>
+<p>The join procedure for LoRaWAN 1.0.x and 1.1 is slightly different. The following two sections describe the join procedure for LoRaWAN 1.0.x and 1.1 separately.</p>
+<h2 id="over-the-air-activation-in-lorawan-10x">Over The Air Activation in LoRaWAN 1.0.x</h2>
+<p>In LoRaWAN 1.0.x, the join procedure involves two MAC messages exchanged between the end device and the network server:</p>
+<ul>
+<li>Join-request</li>
+<li>Join-accept</li>
+</ul>
+<h3 id="before-activation">Before Activation</h3>
+<p>Before activation, the <strong>AppEUI</strong>, <strong>DevEUI</strong>, and <strong>AppKey</strong> should be stored in the end device. The <strong>AppKey</strong> is an AES-128 bit secret key known as the <strong>root key</strong>. The same <strong>AppKey</strong> should be provisioned onto the network where the end device is going to register. The <strong>AppEUI</strong> and <strong>DevEUI</strong> are not secret and are visible to everyone.</p>
+<div class="notification is-info is-light has-text-dark">
+  <h5 class="title is-family-sans-serif has-text-dark mb-1">Note:</h5>
+  The <strong>AppKey</strong> is <strong>never sent</strong> over the network.
+</div>
+
+<h4 id="otaa-message-flow">OTAA Message Flow</h4>
+<p>The steps below describe the message flow of the Over-The-Air-Activation (OTAA).</p>
+<p><img src="otaa-1.0.png" alt="alt_text" title="LoRaWAN 1.0 OTAA Steps"></p>
+<p><em>Figure: Message flow for Over-The-Air-Activation (OTAA) in LoRaWAN 1.0</em></p>
+<h5 id="step-1">Step 1</h5>
+<p>The <strong>Join-request</strong> message is always sent by the <strong>end device</strong>. The <strong>Join-request</strong> message consists of the following three fields.</p>
+<ul>
+<li><strong>DevEUI</strong> – 64-bit globally unique end-device identifier in IEEE EUI64 address space.</li>
+<li><strong>AppEUI</strong> – 64-bit globally unique identifier in IEEE EUI64 address space that uniquely identifies the entity able to process the Join-request frame. This is also known as the application identifier.</li>
+<li><strong>DevNonce</strong> – this is a unique, random, 2-byte value generated by the end device. The network server uses the DevNonce to keep track of each end-device. The DevNonce value is used to prevent replay attacks. If the end device sends a Join-request with a previously used DevNonce, the network server <strong>rejects</strong> the Join-request and does not allow the end device to register with the network.</li>
+</ul>
+<p>The structure of the <strong>Join-request</strong> message is shown below. The <strong>Message Integrity Code (MIC)</strong> is calculated using all the fields of the Join-request message and the <strong>AppKey</strong> to ensure integrity of the message, and then added to the end:</p>
+<table>
+  <tr>
+   <td><strong>8 bytes</strong>
+   </td>
+   <td><strong>8 bytes</strong>
+   </td>
+   <td><strong>2 bytes</strong>
+   </td>
+   <td><strong>4 bytes</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>AppEUI
+   </td>
+   <td>DevEUI
+   </td>
+   <td>DevNonce
+   </td>
+   <td>MIC
+   </td>
+  </tr>
+</table>
+<div class="notification is-info is-light has-text-dark">
+  <h5 class="title is-family-sans-serif has-text-dark mb-1">Note:</h5>
+  <ul>
+<li>The <strong>AppKey</strong> is not sent with the <strong>Join-request</strong> message. It is used to calculate the <strong>MIC</strong> only.</li>
+<li>The <strong>Join-request</strong> message is <strong>not encrypted</strong>.</li>
+</ul>
+
+</div>
+
+<p>The <strong>Join-request</strong> message can be transmitted using any data rate and using one of the specified join channels. These join channels are region-specific. For example, in Europe an end device can transmit the join-request message by randomly choosing among 868.10 MHz, 868.30 MHz, or 868.50 MHz. The <strong>Join-request</strong> message travels through one or more gateways that simply relay the message back to the network server.</p>
+<div class="notification is-info is-light has-text-dark">
+  <h5 class="title is-family-sans-serif has-text-dark mb-1">Note:</h5>
+  No response is given to the end-device if the Join-request is not accepted.
+</div>
+
+<h5 id="step-2">Step 2</h5>
+<p>Now the <strong>Join-request</strong> message has been received by the Network Server. If the end device is permitted to join with the network the network server will respond to the end device message with the <strong>Join-accept</strong> message.</p>
+<p>The <strong>Join-accept</strong> message consists of the following fields.</p>
+<ul>
+<li><strong>AppNonce</strong> – this is a random value or some form of unique ID provided by the network server. The AppNonce is used by the end device to derive the two session keys, <strong>AppSKey</strong> and <strong>NwkSKey</strong>.</li>
+<li><strong>NetID</strong> – consists of the network ID (the 7 least significant bits) and the remaining 17 most significant bits are chosen by the network operator.</li>
+<li><strong>DevAddr</strong> – this is the 32-bit device address assigned by the network server. Consists of NwkID and NwkAddress. The device address is unique within the current network.</li>
+<li><strong>DLSettings</strong> – this is a 1-byte sized field consisting of downlink settings which the end device should use.</li>
+<li><strong>RxDelay</strong> – the delay between TX and RX</li>
+<li><strong>CFList</strong> – contains the optional list of channel frequencies to be used for the end device</li>
+</ul>
+<p>The following figure shows the <strong>Join-accept</strong> message with all the above-generated values. The MIC is calculated using the <strong>AppKey</strong> and added to the frame.</p>
+<table>
+  <tr>
+   <td><strong>3 bytes</strong>
+   </td>
+   <td><strong>3 bytes</strong>
+   </td>
+   <td><strong>4 bytes</strong>
+   </td>
+   <td><strong>1 bytes</strong>
+   </td>
+   <td><strong>1 bytes</strong>
+   </td>
+   <td><strong>16 bytes</strong>
+   </td>
+   <td><strong>4 bytes</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>AppNonce
+   </td>
+   <td>NetID
+   </td>
+   <td>DevAddr
+   </td>
+   <td>DLSettings
+   </td>
+   <td>RXDelay
+   </td>
+   <td>CFList
+   </td>
+   <td>MIC
+   </td>
+  </tr>
+</table>
+<p>The <strong>Join-accept</strong> message itself is then encrypted with the <strong>AppKey</strong>.</p>
+<h5 id="step-3">Step 3</h5>
+<p>The Network Server sends the encrypted <strong>Join-accept</strong> message back to the end device. The <strong>Join-accept</strong> message is sent as a normal downlink.</p>
+<h5 id="step-4">Step 4</h5>
+<p>The Network Server sends the <strong>AppSKey</strong> to the <strong>Application Server</strong>.</p>
+<h5 id="step-5">Step 5</h5>
+<p>The end device uses the <strong>AppKey</strong> to derive the two session keys: the <strong>Network Session Key (NwkSKey)</strong> and the <strong>Application Session Key (AppSKey)</strong>.</p>
+<h5 id="after-activation">After Activation</h5>
+<p>After activation, the following additional information is stored in the end device.</p>
+<ul>
+<li><strong>DevAddr</strong> - The DevAddr is allocated by the Network Server of the end-device. It is a 32-bit device address that identifies the end-device within the current network.</li>
+<li><strong>NwkSKey</strong> - The NwkSKey is used by the end device and network server to calculate and verify the Message Integrity Code (MIC) of all data messages to ensure data integrity. The NwkSKey is also used to encrypt and decrypt payloads with MAC commands.</li>
+<li><strong>AppSKey</strong> - The AppSKey is used to secure end-to-end communications between the end device and the application server by encrypting payloads with application-specific data.</li>
+</ul>
+<h2 id="over-the-air-activation-in-lorawan-11">Over-The-Air-Activation in LoRaWAN 1.1</h2>
+<p>In LoRaWAN 1.1, the join procedure involves two MAC messages exchanged between the end device and the Join Server:</p>
+<ul>
+<li>Join-request</li>
+<li>Join-accept</li>
+</ul>
+<h5 id="before-activation-1">Before Activation</h5>
+<p>Before activation, the <strong>JoinEUI</strong>, <strong>DevEUI</strong>, <strong>AppKey</strong>, and <strong>NwkKey</strong> should be stored in the end device. The <strong>AppKey</strong> and <strong>NwkKey</strong> are AES-128 bit secret keys known as <strong>root keys</strong>. The matching <strong>AppKey</strong>, <strong>NwkKey</strong>, and <strong>DevEUI</strong> should be provisioned onto the Join Server that will assist in the processing of the join procedure and session key derivation. The <strong>JoinEUI</strong> and <strong>DevEUI</strong> are <strong>not secret</strong> and visible to everyone.</p>
+<div class="notification is-info is-light has-text-dark">
+  <h5 class="title is-family-sans-serif has-text-dark mb-1">Note:</h5>
+  The <strong>AppKey</strong> and <strong>NwkKey</strong> are never sent over the network.
+</div>
+
+<p><strong><span style="text-decoration:underline;">OTAA Message Flow:</span></strong></p>
+<p>The steps below describe the message flow of the Over-The-Air-Activation (OTAA).</p>
+<p><img src="otaa-1.1.png" alt="alt_text" title="LoRaWAN 1.1 OTAA steps"></p>
+<p><em>Figure: Message flow for Over-The-Air-Activation (OTAA) in LoRaWAN 1.1</em></p>
+<h5 id="step-1-1">Step 1</h5>
+<p>The <strong>Join-request</strong> message is transmitted by the <strong>end device</strong>. It consists of the following three fields:</p>
+<ul>
+<li><strong>DevEUI</strong> – 64-bit global end-device ID in IEEE EUI64 address space that uniquely identifies the end-device.</li>
+<li><strong>JoinEUI</strong> – 64-bit global application ID in IEEE EUI64 address space that uniquely identifies the <strong>Join Server</strong> that can assist in the processing of the Join procedure and session keys derivation.</li>
+<li><strong>DevNonce</strong> – this is a 2-byte counter, starting at 0 when the device is initially powered up and incremented with every <strong>Join-request</strong>. The DevNonce value is used to prevent <strong>replay attacks</strong>.</li>
+</ul>
+<div class="notification is-info is-light has-text-dark">
+  <h5 class="title is-family-sans-serif has-text-dark mb-1">Note:</h5>
+  <ul>
+<li>Learning about replay attacks is beyond the scope of The Things Fundamentals certification.</li>
+<li>In LoRaWAN 1.1 <strong>AppEUI</strong> is replaced with the <strong>JoinEUI</strong>.</li>
+<li>The procedure for joining a LoRaWAN 1.0 end device with the LoRaWAN 1.1 network is also beyond the scope of The Things Fundamentals certification.</li>
+<li>Rejoin-request messages will be covered in The Things Advanced certification.</li>
+</ul>
+
+</div>
+
+<p>The structure of the <strong>Join-request</strong> message is shown in the following figure. The MIC is calculated using the <strong>NwkKey</strong>. The calculated MIC is added to the end of the <strong>Join-request</strong> message. The resulting frame is known as the <strong>PHYPayload</strong>:</p>
+<table>
+  <tr>
+    <td><strong>1 byte</strong>
+   </td>
+   <td><strong>8 bytes</strong>
+   </td>
+   <td><strong>8 bytes</strong>
+   </td>
+   <td><strong>2 bytes</strong>
+   </td>
+   <td><strong>4 bytes</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>MHDR
+   </td>
+   <td>JoinEUI
+   </td>
+   <td>DevEUI
+   </td>
+   <td>DevNonce
+   </td>
+   <td>MIC
+   </td>
+  </tr>
+</table>
+<div class="notification is-info is-light has-text-dark">
+  <h5 class="title is-family-sans-serif has-text-dark mb-1">Note:</h5>
+  <ul>
+<li>The <strong>NwkKey</strong> is not sent with the <strong>Join-request</strong> message. It is used to calculate the MIC only.</li>
+<li>The <strong>Join-request</strong> message is not encrypted and sent as plain text.</li>
+</ul>
+
+</div>
+
+<p>Finally, the end-device transmits the <strong>Join-request</strong> message. The Join-request message can be transmitted using any data rate and using one of the specified join channels. These join channels are region-specific, for example, in Europe an end device can transmit the join-request message by randomly choosing among 868.10 MHz, 868.30 MHz, or 868.50 MHz. The <strong>Join-request</strong> message travels through one or more gateways that simply relay the message back to the network server.</p>
+<div class="notification is-info is-light has-text-dark">
+  <h5 class="title is-family-sans-serif has-text-dark mb-1">Note:</h5>
+  No response is given to the end-device if the Join-request is not accepted.
+</div>
+
+<h5 id="step-2-1">Step 2</h5>
+<p>The Network Server uses DNS to look up the IP address of the Join Server based on the <strong>JoinEUI</strong> in the received <strong>Join-request</strong> message.</p>
+<h5 id="step-3-1">Step 3</h5>
+<p>If DNS lookup succeeds, the Network Server sends a <strong>JoinReq</strong> message (backend message) to the <strong>Join Server</strong>. This message contains the following:</p>
+<ul>
+<li>PHYPayload of the join-request message</li>
+<li>MAC version</li>
+<li>DevEUI</li>
+<li>DevAddr</li>
+<li>DLSettings</li>
+<li>RxDelay</li>
+<li>CFList</li>
+</ul>
+<h5 id="step-4-1">Step 4</h5>
+<p>The Join Server processes the <strong>Join-request</strong> message and sends the <strong>JoinAns</strong> message (this is also a backend message) to the Network Server. If successful the <strong>JoinAns</strong> message contains the following:</p>
+<ul>
+<li>PHYPayload with Join-accept message</li>
+<li>Network session keys</li>
+<li>Serving Network session integrity key (SNwkSIntKey)</li>
+<li>Forwarding Network session integrity key (FNwkSIntKey)</li>
+<li>Network session encryption key (NwkSEncKey)</li>
+<li>Encrypted AppSKey (network server can&rsquo;t read this)</li>
+</ul>
+<p>The Network Server prepares the <strong>Join-accept</strong> message based on the above information.</p>
+<table>
+  <tr>
+   <td><strong>1 byte</strong>
+   </td>
+   <td><strong>3 bytes</strong>
+   </td>
+   <td><strong>4 bytes</strong>
+   </td>
+   <td><strong>1 bytes</strong>
+   </td>
+   <td><strong>1 bytes</strong>
+   </td>
+   <td><strong>16 bytes</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>JoinNonce
+   </td>
+   <td>NetID
+   </td>
+   <td>DevAddr
+   </td>
+   <td>DLSettings
+   </td>
+   <td>RXDelay
+   </td>
+   <td>CFList
+   </td>
+  </tr>
+</table>
+<p>The <strong>Join-accept</strong> message is encrypted with the <strong>NwkKey</strong>.</p>
+<h5 id="step-5-1">Step 5</h5>
+<p>The Network Server forwards the received PHYPayload with the <strong>Join-accept</strong> message to the end-device if the received <strong>JoinAns</strong> message indicates success. The <strong>Join-accept</strong> message is sent as a normal downlink.</p>
+<p>The end-device calculates the MIC, and generates the <strong>network session keys</strong> and <strong>AppSKey</strong>.</p>
+<p>The <strong>FNwkSIntKey</strong>, <strong>SNwkSIntKey</strong>, and <strong>NwkSEncKey</strong> are derived from the <strong>NwkKey</strong>.</p>
+<h5 id="step-6">Step 6</h5>
+<p>When the Network receives an uplink packet from the end-device, the Network Server will send the <strong>DevEUI</strong> and encrypted <strong>AppSKey</strong> along with the application payload to the <strong>Application Server</strong>.</p>
+<h5 id="step-7">Step 7</h5>
+<p>When the Application Server receives the encrypted <strong>AppSKey</strong> along with the application payload, it will decrypt the <strong>AppSKey</strong> using a secret key shared between the <strong>Join Server</strong> and the <strong>Application Server</strong>, and use the <strong>AppSKey</strong> to decrypt the received payload. If the encrypted <strong>AppSKey</strong> is not made available by the Network Server, then the Application Server will proceed to <strong>Step 8</strong>.</p>
+<h5 id="step-8">Step 8</h5>
+<p>In this alternative step, the Application Server requests the <strong>AppSKey</strong> directly from the <strong>Join Server</strong>. The Application Server will request the <strong>AppSKey</strong> identified by the <strong>DevEUI</strong> of the end device from the <strong>Join Server</strong> by sending an <strong>AppSKeyReq</strong> message (backend message). The <strong>AppSKey</strong> is encrypted using a shared secret between the <strong>Join Server</strong> and the <strong>Application Server</strong>. The <strong>Join Server</strong> sends the encrypted <strong>AppSKey</strong>, and <strong>DevEUI</strong> to the Application Server in an <strong>AppSKeyAns</strong> message (backend message). The Application Server decrypts the encrypted <strong>AppSKey</strong>, then uses the <strong>AppSKey</strong> to encrypt and decrypt the application payload.</p>
+<h5 id="after-activation-1">After Activation</h5>
+<p>After activation, the following additional information is stored in the end device.</p>
+<ul>
+<li><strong>DevAddr</strong> - The DevAddr is allocated by the Network Server of the end-device. It is a 32-bit device address that identifies the end-device within the current network.</li>
+<li><strong>FNwkSIntKey</strong> - This is a network session key that is used by the end device to calculate the MIC or part of the MIC of all uplink data messages to ensure data integrity.</li>
+<li><strong>SNwkSIntKey</strong> - This is a network session key specific to the end device. It is used by the end device to verify the MIC of all downlink data messages to ensure data integrity and to compute half of the uplink messages MIC.</li>
+<li><strong>NwkSEncKey</strong> - This is a network session key specific to the end device. It is used to encrypt and decrypt uplink and downlink MAC commands transmitted as payload on port 0 or in the FOpt field.</li>
+<li><strong>AppSKey</strong> - This is an application-specific session key used by both the application server and the end device to encrypt and decrypt the payload field of application specific data messages.</li>
+</ul>
+<h2 id="activation-by-personalization">Activation By Personalization</h2>
+<p>Activation By Personalization (ABP) directly ties an end-device to a pre-selected network, bypassing the join procedure. Activation by Personalization is the less secure activation method, and also has the downside that devices can not switch network providers without manually changing keys in the device. A join server is not involved in the ABP process.</p>
+<p>An end device activated using the ABP method can only work with a single network and keeps the same security session for its entire lifetime.</p>
+<h3 id="activation-by-personalisation-in-lorawan-10x">Activation By Personalisation in LoRaWAN 1.0.x</h3>
+<p>In LoRaWAN 1.0.x, the <strong>DevAddr</strong> and the two session keys <strong>NwkSKey</strong> and <strong>AppSKey</strong> are directly stored into the end-device instead of the DevEUI, AppEUI, and the AppKey. The same <strong>DevAddr</strong> should be stored in the Network Server. Each end device should have a unique set of <strong>NwkSKey</strong> and <strong>AppSkey</strong>. The same <strong>NwkSKey</strong> and <strong>AppSKey</strong> should be stored in the Network Server and the Application Server, respectively (see the figure below).</p>
+<p><img src="abp-1.0.png" alt="alt_text" title="LoRaWAN 1.0 ABP"></p>
+<p><em>Figure: Pre-sharing DevAddr and session keys for ABP in LoRaWAN 1.0</em></p>
+<h3 id="activation-by-personalisation-in-lorawan-11">Activation By Personalisation in LoRaWAN 1.1</h3>
+<p>In LoRaWAN 1.1, the <strong>DevAddr</strong> and the four-session keys <strong>FNwkSIntKey</strong>, <strong>SNwkSIntKey</strong>, <strong>NwkSEncKey</strong>, and <strong>AppSKey</strong> are directly stored into the end device instead of the DevEUI, JoinEUI, AppKey, and NwkKey. The same <strong>FNwkSIntKey</strong>, <strong>SNwkSIntKey</strong>, and <strong>NwkSEncKey</strong> should be stored in the Network Server and the and <strong>AppSKey</strong> should be stored in the Application Server. The same <strong>DevAddr</strong> should be stored in the Network Server.</p>
+<p><img src="abp-1.1.png" alt="alt_text" title="LoRaWAN 1.1 ABP"></p>
+<p><em>Figure: Pre-sharing DevAddr and session keys for ABP in LoRaWAN 1.1</em></p>
+<h2 id="questions">Questions</h2>
+<ol>
+<li>
+<p>What is not a secure activation method?</p>
+<ul>
+<li>Over The Air Activation (OTAA)</li>
+<li><span style="text-decoration:underline;">Activation By Personalization (ABP)</span></li>
+</ul>
+</li>
+<li>
+<p>What is the most secure activation method?</p>
+<ul>
+<li><span style="text-decoration:underline;">Over The Air Activation (OTAA)</span></li>
+<li>Activation By Personalization (ABP)</li>
+</ul>
+</li>
+<li>
+<p>What security keys should be stored in an end-device for ABP in LoRaWAN 1.1?</p>
+<ul>
+<li><span style="text-decoration:underline;">FNwkSIntKey, SNwkSIntKey, NwkSEncKey, AppSKey</span></li>
+<li>NwkSKey, AppSKey</li>
+<li>JSIntKey, JSEncKey</li>
+</ul>
+</li>
+<li>
+<p>What security keys should be stored in an end-device for ABP in LoRaWAN 1.0.x?</p>
+<ul>
+<li>FNwkSIntKey, SNwkSIntKey, NwkSEncKey, AppSKey</li>
+<li><span style="text-decoration:underline;">NwkSKey, AppSKey</span></li>
+<li>JSIntKey, JSEncKey</li>
+</ul>
+</li>
+</ol>
+
+        </div>
+
+        
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+
+<div class="is-clearfix">
+<a class="button is-pulled-left" href="/docs/lorawan/classes/">← Device Classes</a>
+<a class="button is-pulled-right" href="/docs/lorawan/spreading-factors/">Spreading Factors →</a>
+</div>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<div id="footer"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ttn-components.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/promise-polyfill@7/dist/polyfill.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-navbar.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-footer.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ga.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/vendor/basicLightbox.min.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/theme.min.00ace5d667ca108a93b8a0d385569f7c7bb9f46ed32eefe3f5fb39105763cccd.js" integrity="sha256-AKzl1mfKEIqTuKDThVaffHu59G7TLu/j9fs5EFdjzM0=" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
