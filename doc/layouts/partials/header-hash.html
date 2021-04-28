@@ -1,0 +1,2 @@
+<!-- https://github.com/kaushalmodi/hugo-onyx-theme/blob/master/layouts/partials/headline-hash.html -->
+{{ . | replaceRE "(<h[2-6] id=\"([^\"]+)\".+)(</h[2-9]+>)" "${1}&nbsp;<a class=\"header-hash\" href=\"#${2}\">#</a> ${3}" | safeHTML }}
