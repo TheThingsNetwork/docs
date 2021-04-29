@@ -38,7 +38,7 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.63e25b5c651bd53d7906c0aea044f525dd20de132fd123ea1927e46490c71ca9.css" integrity="sha256-Y&#43;JbXGUb1T15BsCuoET1Jd0g3hMv0SPqGSfkZJDHHKk=" crossorigin="anonymous">
 
   <meta property="og:title" content="Device Registration" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
@@ -222,7 +222,8 @@
           Device Registration
         </h1>
         <div class="content">
-          <p>Before a device can communicate via The Things Network you need to register it with an application.</p>
+          
+<p>Before a device can communicate via The Things Network you need to register it with an application.</p>
 <p>To use the default <strong>Over The Air Activation</strong> (OTAA) you will need to register your device with its Device EUI. See the documentation of your device for instructions, as for example that of <a href="/docs/devices/uno/quick-start/#get-your-device-eui">The Things Uno</a>.</p>
 <ol>
 <li>
@@ -257,7 +258,7 @@
 <p>You will be redirected to the newly registered device where you can find the generated <strong>App Key</strong> needed to activate the device.</p>
 </li>
 </ol>
-<h2 id="personalize-device-for-abp">Personalize device for ABP</h2>
+<h2 id="personalize-device-for-abp">Personalize device for ABP&nbsp;<a class="header-hash" href="#personalize-device-for-abp">#</a> </h2>
 <p>Normally, you&rsquo;d use Over The Air Activation (OTAA) to negotiate session keys for further communication. You have the option to personalize a device, which means you will generate or assign session keys manually and use hard code them on the device.</p>
 <blockquote>
 <p>In production, you&rsquo;ll want to use OTAA. This is more reliable because the activation will be confirmed and more secure because the session keys will be negotiated with every activation. ABP is useful for workshops because you don&rsquo;t have to wait for a downlink window to become available to confirm the activation.</p>
@@ -281,6 +282,7 @@
 <p>You will be redirected back to the device, where you will find the <strong>Device Address</strong> and session keys needed to activate the device.</p>
 </li>
 </ol>
+
 
         </div>
       

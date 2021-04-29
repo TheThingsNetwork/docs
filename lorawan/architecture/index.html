@@ -38,7 +38,7 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.63e25b5c651bd53d7906c0aea044f525dd20de132fd123ea1927e46490c71ca9.css" integrity="sha256-Y&#43;JbXGUb1T15BsCuoET1Jd0g3hMv0SPqGSfkZJDHHKk=" crossorigin="anonymous">
 
   <meta property="og:title" content="LoRaWAN Architecture" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
@@ -253,7 +253,8 @@
           LoRaWAN Architecture
         </h1>
         <div class="content">
-          <p>LoRaWAN is a media access control (MAC) protocol for wide area networks. It is designed to allow low-powered devices to communicate with Internet-connected applications over long range wireless connections. LoRaWAN can be mapped to the second and third layer of the OSI model. It is implemented on top of LoRa or FSK modulation in industrial, scientific and medical (ISM) radio bands. The LoRaWAN protocols are defined by the LoRa Alliance and formalized in the LoRaWAN Specification which can be downloaded on the LoRa Alliance website.</p>
+          
+<p>LoRaWAN is a media access control (MAC) protocol for wide area networks. It is designed to allow low-powered devices to communicate with Internet-connected applications over long range wireless connections. LoRaWAN can be mapped to the second and third layer of the OSI model. It is implemented on top of LoRa or FSK modulation in industrial, scientific and medical (ISM) radio bands. The LoRaWAN protocols are defined by the LoRa Alliance and formalized in the LoRaWAN Specification which can be downloaded on the LoRa Alliance website.</p>
 <p><img src="architecture.png" alt="LoRaWAN Overview">
 <em>Image: LoRaWAN Architecture</em></p>
 <ul>
@@ -272,12 +273,12 @@
 </ul>
 <p>End devices communicate with nearby gateways and each gateway is connected to the network server. LoRaWAN networks use an ALOHA based protocol, so end devices don’t need to peer with specific gateways. Messages sent from end devices travel through all gateways within range. Message deduplication is handled by the network server.</p>
 <p>Let’s examine each element of the LoRaWAN network in detail.</p>
-<h3 id="end-devices">End devices</h3>
+<h3 id="end-devices">End devices&nbsp;<a class="header-hash" href="#end-devices">#</a> </h3>
 <p>A LoRaWAN end device can be a sensor, an actuator, or both. They are often battery operated. These end devices are wirelessly connected to the LoRaWAN network through gateways using LoRa RF modulation. The following figure shows an example LoRaWAN end device - a water meter.</p>
 <p><img src="end-node.png" alt="alt_text" title="End-node"></p>
-<h3 id="gateways">Gateways</h3>
+<h3 id="gateways">Gateways&nbsp;<a class="header-hash" href="#gateways">#</a> </h3>
 <p>Each gateway is registered to a LoRaWAN network. A gateway receives LoRa messages from end devices and simply forwards them to the LoRaWAN network server. Gateways are connected to the internet through an IP backbone. IP traffic from gateway to the network server can be <strong>backhauled</strong> through Cellular (3G/4G/5G), WiFi, Ethernet, Fiber-optic or 2.4 GHz radio links.</p>
-<h4 id="types-of-lorawan-gateways">Types of LoRaWAN Gateways</h4>
+<h4 id="types-of-lorawan-gateways">Types of LoRaWAN Gateways&nbsp;<a class="header-hash" href="#types-of-lorawan-gateways">#</a> </h4>
 <p>LoRaWAN gateways can be categorized into indoor (picocell) and outdoor (macrocell) gateways. Indoor gateways provide coverage in difficult-to-reach indoor locations and are therefore suitable for use in homes, businesses and buildings.</p>
 <p><img src="ttig.jpg" alt="alt_text" title="The Things Indoor Gateway"></p>
 <p><em>Figure: The Things Indoor gateway</em></p>
@@ -285,7 +286,7 @@
 <p><img src="kerlink-outdoor.jpeg" alt="alt_text" title="Kerlink outdoor gateway"></p>
 <p><em>Figure: A Kerlink outdoor gateway is installed at the port of Amsterdam.</em></p>
 <p>Usually, the receiver sensitivity of an outdoor gateway is higher than the receiver sensitivity of an indoor gateway.</p>
-<h3 id="network-server">Network Server</h3>
+<h3 id="network-server">Network Server&nbsp;<a class="header-hash" href="#network-server">#</a> </h3>
 <p>The network server manages the entire LoRaWAN network. It receives IP traffic from gateways. The Network Server is responsible for network management functions like:</p>
 <ul>
 <li><strong>Over-The-Air-Activation</strong> - see chapter <a href="../end-device-activation">End Device Activation</a></li>
@@ -294,11 +295,11 @@
 <li><strong>Adaptive data rate control</strong> - see chapter <a href="../adaptive-data-rate">Adaptive Data Rate</a></li>
 <li><strong>Acknowledgement of messages</strong> - providing acknowledgement of confirmed data messages and some MAC commands.</li>
 </ul>
-<h3 id="application-server">Application Server</h3>
+<h3 id="application-server">Application Server&nbsp;<a class="header-hash" href="#application-server">#</a> </h3>
 <p>The application server processes application-specific data messages received from end devices. It also generates all the application-layer downlink payloads and sends them to the connected end devices through the network server. A LoRaWAN network can have more than one application server. The collected data can be interpreted by applying techniques like machine learning and artificial intelligence to solve business problems.</p>
-<h3 id="join-server">Join Server</h3>
+<h3 id="join-server">Join Server&nbsp;<a class="header-hash" href="#join-server">#</a> </h3>
 <p>The Join Server processes join-request messages sent by end devices. It stores root keys, generates session keys, and transfers those session keys to the network server and the application server. The Join Server is introduced in LoRaWAN 1.1 and 1.0.4. You will learn how the Join Server processes the join-request message in the chapter <a href="../end-device-activation">End Device Activation</a>.</p>
-<h2 id="questions">Questions</h2>
+<h2 id="questions">Questions&nbsp;<a class="header-hash" href="#questions">#</a> </h2>
 <ol>
 <li>
 <p>Who initiates uplink messages?</p>
@@ -344,6 +345,7 @@
 </ul>
 </li>
 </ol>
+
 
         </div>
       

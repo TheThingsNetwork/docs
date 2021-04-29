@@ -38,7 +38,7 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.63e25b5c651bd53d7906c0aea044f525dd20de132fd123ea1927e46490c71ca9.css" integrity="sha256-Y&#43;JbXGUb1T15BsCuoET1Jd0g3hMv0SPqGSfkZJDHHKk=" crossorigin="anonymous">
 
   <meta property="og:title" content="Configuring Your Gateway" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
@@ -318,7 +318,8 @@
           Configuring Your Gateway
         </h1>
         <div class="content">
-          <h2 id="configuring-the-gateway">Configuring the Gateway</h2>
+          
+<h2 id="configuring-the-gateway">Configuring the Gateway&nbsp;<a class="header-hash" href="#configuring-the-gateway">#</a> </h2>
 <p>Assuming you have successfully logged into your LoRa Gateway using SSH. Enter the following command in the command line:</p>
 <pre><code>sudo gateway-config
 </code></pre><p>You will now then see a page like the following picture below</p>
@@ -338,11 +339,11 @@
 <p>There is also another way to get your &ldquo;Gateway ID&rdquo;, just enter the command below in the command line:</p>
 <pre><code>gateway-version
 </code></pre><p><img src="../images/gateway-id-cmd.png" alt="Figure 3: Gateway ID using the command line"></p>
-<h3 id="set-a-new-password-for-the-lora-gateway">Set a new password for the LoRa Gateway</h3>
+<h3 id="set-a-new-password-for-the-lora-gateway">Set a new password for the LoRa Gateway&nbsp;<a class="header-hash" href="#set-a-new-password-for-the-lora-gateway">#</a> </h3>
 <p>It is a good security practice to change the default password <strong>&ldquo;raspberry&rdquo;</strong> which is the same on all Raspberry Pi devices.</p>
 <p><img src="../images/passwd.png" alt="Figure 4: Changing the default password"></p>
 <p>You will be asked to enter your new password twice then press &ldquo;Enter&rdquo;.</p>
-<h3 id="set-up-rak-gateway-lora-concentrator">Set up RAK Gateway LoRa concentrator</h3>
+<h3 id="set-up-rak-gateway-lora-concentrator">Set up RAK Gateway LoRa concentrator&nbsp;<a class="header-hash" href="#set-up-rak-gateway-lora-concentrator">#</a> </h3>
 <p>This menu allows you to select your LoRa frequency band and one of the two available Networks Server options:</p>
 <ul>
 <li><strong>TTN (The Things Network).</strong> If you choose TTN as the LoRa Server, you will see the following page. Visit this <a href="https://www.thethingsnetwork.org/docs/lorawan/frequencies-by-country.html">article</a> for more information on your local TTN frequency plan. This will allow you to choose the correct plan.</li>
@@ -355,9 +356,9 @@
 <p>Just like with TTN, choose the appropriate frequency for your country. Next, you need to set the IP Address of the LoRaServer, which you want your LoRa Gateway to work with.</p>
 <p><img src="../images/loraserver-ip.png" alt="Figure 7: Default LoRaServer IP Address"></p>
 <p>The default IP Address is <code>127.0.0.1</code>. If you want to use an external LoRaServer, you need to set it to its IP Address.</p>
-<h2 id="connect-the-lora-gateway-to-a-router">Connect the LoRa Gateway to a Router</h2>
+<h2 id="connect-the-lora-gateway-to-a-router">Connect the LoRa Gateway to a Router&nbsp;<a class="header-hash" href="#connect-the-lora-gateway-to-a-router">#</a> </h2>
 <p>If you want to use TTN or an independent LoRaServer which may be deployed in Local area network or Internet, you need to connect your LoRa Gateway to a router first.</p>
-<h3 id="connect-through-wi-fi">Connect through Wi-Fi</h3>
+<h3 id="connect-through-wi-fi">Connect through Wi-Fi&nbsp;<a class="header-hash" href="#connect-through-wi-fi">#</a> </h3>
 <p>If you want to connect through Wi-Fi, it can easily be done with the Wireless capabilities of the Raspberry Pi.</p>
 <p><img src="../images/wifi.png" alt="Figure 8: Configuration options for WIFI"></p>
 <p>There are 4 options to choose from in the Wi-Fi configuration menu:</p>
@@ -367,7 +368,7 @@
 <li><strong>Modify SSID and pwd for AP Mode</strong> - used to modify the SSID and password of the Wi-Fi AP. Only works if the Wi-Fi AP Mode is enabled.</li>
 <li><strong>Add New SSID for Client</strong> - this is used if you want to connect to a new Wi-Fi Network. Only works in Wi-Fi Client mode.</li>
 </ol>
-<h3 id="connect-through-ethernet">Connect through Ethernet</h3>
+<h3 id="connect-through-ethernet">Connect through Ethernet&nbsp;<a class="header-hash" href="#connect-through-ethernet">#</a> </h3>
 <p>If you want to connect to router through Ethernet Cable, do the following steps:</p>
 <ul>
 <li>Just fill a static IP Address according to the IP address of the router you want to connect. Please note that the LoRa gateway and the router must be in the same network segment, otherwise the connection will fail.</li>
@@ -381,7 +382,7 @@
 <ul>
 <li>Press OK then reboot the LoRa Gateway using the command <code>sudo reboot now</code> in the command line and it will connect to the router successfully through Ethernet.</li>
 </ul>
-<h2 id="connect-the-lte-only-for-the-cellular-version">Connect the LTE (Only for the Cellular Version)</h2>
+<h2 id="connect-the-lte-only-for-the-cellular-version">Connect the LTE (Only for the Cellular Version)&nbsp;<a class="header-hash" href="#connect-the-lte-only-for-the-cellular-version">#</a> </h2>
 <p>If you want to deploy your LoRa Gateway to a place where there is no option of connecting to the internet through Wi-Fi or Ethernet, you can still do this through LTE.</p>
 <ul>
 <li>
@@ -440,7 +441,7 @@ disable it, choose &ldquo;Disable LTE Automatic Dial-up&rdquo;</p>
 <p>If it returns &ldquo;<strong>OK</strong>&rdquo; then you have set it successfully!</p>
 </li>
 </ul>
-<h2 id="configure-apn-name">Configure APN Name</h2>
+<h2 id="configure-apn-name">Configure APN Name&nbsp;<a class="header-hash" href="#configure-apn-name">#</a> </h2>
 <p>Now, you should set the APN name for the pppd process too. Go back to configuration options and choose &ldquo;<strong>7 Configure APN name</strong>&quot;:</p>
 <p><img src="../images/APN.png" alt="Figure 15: Configure APN Name"></p>
 <p>The default APN Name is &ldquo;HOLOGRAM&rdquo;. If you want to modify it, please note that the value must be a true and valid APN Name.Then, set the appropriate baud rate, its default value is 115200.</p>
@@ -457,6 +458,7 @@ disable it, choose &ldquo;Disable LTE Automatic Dial-up&rdquo;</p>
 <p>The last thing you should not forget to do, is to enable the LTE Connecting automatically when it starts.</p>
 </li>
 </ul>
+
 
         </div>
       

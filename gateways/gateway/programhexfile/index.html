@@ -38,7 +38,7 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.63e25b5c651bd53d7906c0aea044f525dd20de132fd123ea1927e46490c71ca9.css" integrity="sha256-Y&#43;JbXGUb1T15BsCuoET1Jd0g3hMv0SPqGSfkZJDHHKk=" crossorigin="anonymous">
 
   <meta property="og:title" content="Programming hex files" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
@@ -318,37 +318,39 @@
           Programming hex files
         </h1>
         <div class="content">
-          <p>In this section, we briefly walk through the process of Programming <a href="/docs/gateways/gateway/">The Things Gateway</a> using the <a href="http://microchipdeveloper.com/ipe:start">MPLAB IPE</a> integrated programming environment</p>
-<h4 id="1-connecting-the-programmer">1. Connecting the Programmer</h4>
+          
+<p>In this section, we briefly walk through the process of Programming <a href="/docs/gateways/gateway/">The Things Gateway</a> using the <a href="http://microchipdeveloper.com/ipe:start">MPLAB IPE</a> integrated programming environment</p>
+<h4 id="1-connecting-the-programmer">1. Connecting the Programmer&nbsp;<a class="header-hash" href="#1-connecting-the-programmer">#</a> </h4>
 <p>Connect the programmer to the <code>MCU_PROG</code> port of the gateway as shown below</p>
 <p><strong>Programmer&lt;&ndash;&gt;Gateway</strong>
 <img src="../programmer.jpg" alt="Programmer"></p>
-<h4 id="2-selection">2. Selection</h4>
+<h4 id="2-selection">2. Selection&nbsp;<a class="header-hash" href="#2-selection">#</a> </h4>
 <p>Once connected, open the MPLAB IPE on your computer and select the device <code>PIC32MZ2048EFM144</code>.</p>
 <p><strong>Selection</strong>
 <img src="../ipe_1_selected.png" alt="Selection"></p>
-<h4 id="3-connection">3. Connection</h4>
+<h4 id="3-connection">3. Connection&nbsp;<a class="header-hash" href="#3-connection">#</a> </h4>
 <p>Click the <code>connect</code> button next to the Tool to allow the IPE to connect to the Programmer. This allows the IPE to read existing firmware information.</p>
 <p><strong>Connection</strong>
 <img src="../ipe_2_connected.png" alt="Connection"></p>
-<h4 id="4-load-hex-file">4. Load Hex File</h4>
+<h4 id="4-load-hex-file">4. Load Hex File&nbsp;<a class="header-hash" href="#4-load-hex-file">#</a> </h4>
 <p>Now load the hex file from your PC. The IPE checks it for validity.</p>
 <p><strong>Load Hex File</strong>
 <img src="../ipe_3_selected_hex.png" alt="loadhex"></p>
 <blockquote>
 <p>In case you encounter a warning <code>hexfile contains code that is located at addresses that do not exist on the device</code>, you should still be able to continue with programming.</p>
 </blockquote>
-<h4 id="5-start-programming">5. Start Programming</h4>
+<h4 id="5-start-programming">5. Start Programming&nbsp;<a class="header-hash" href="#5-start-programming">#</a> </h4>
 <p>Now click <code>Program</code> to start the reprogramming of the gateway.</p>
 <p><strong>Start Programming</strong>
 <img src="../ipe_4_start_progging.png" alt="startprog"></p>
-<h4 id="6-verification">6. Verification</h4>
+<h4 id="6-verification">6. Verification&nbsp;<a class="header-hash" href="#6-verification">#</a> </h4>
 <p>Once the program is complete, the checksums are verified.</p>
 <p><strong>Verification</strong>
 <img src="../ipe_5_progging_complete.png" alt="verification"></p>
 <blockquote>
 <p>Issues with the reprogramming? Please check <a href="/docs/gateways/gateway/faq/">The Things Gateway FAQ</a> or reach out to us via <a href="https://www.thethingsnetwork.org/forum">The Things Network community forum</a></p>
 </blockquote>
+
 
         </div>
       

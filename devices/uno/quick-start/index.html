@@ -38,7 +38,7 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.63e25b5c651bd53d7906c0aea044f525dd20de132fd123ea1927e46490c71ca9.css" integrity="sha256-Y&#43;JbXGUb1T15BsCuoET1Jd0g3hMv0SPqGSfkZJDHHKk=" crossorigin="anonymous">
 
   <meta property="og:title" content="Quick Start" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
@@ -241,9 +241,10 @@
           Quick Start
         </h1>
         <div class="content">
-          <p>This guide will walk you through programming The Things Uno to send and receive your first message via The Things Network. We&rsquo;ll use the <a href="https://en.wikipedia.org/wiki/%22Hello,_World!%22_program">Hello, World!</a> of Arduino: <a href="https://www.arduino.cc/en/Reference/Constants"><code>LED_BUILTIN</code></a>. 💡</p>
+          
+<p>This guide will walk you through programming The Things Uno to send and receive your first message via The Things Network. We&rsquo;ll use the <a href="https://en.wikipedia.org/wiki/%22Hello,_World!%22_program">Hello, World!</a> of Arduino: <a href="https://www.arduino.cc/en/Reference/Constants"><code>LED_BUILTIN</code></a>. 💡</p>
 <p>The full sketch of this Quick Start is also included in TheThingsNetwork library for the Arduino IDE. You can find it under <strong>File &gt; Examples &gt; TheThingsNetwork &gt; <a href="https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/QuickStart/QuickStart.ino">QuickStart</a></strong>.</p>
-<h2 id="setup-arduino-ide">Setup Arduino IDE</h2>
+<h2 id="setup-arduino-ide">Setup Arduino IDE&nbsp;<a class="header-hash" href="#setup-arduino-ide">#</a> </h2>
 <p>Let&rsquo;s start by setting up the software we&rsquo;ll need to program your device.</p>
 <ol>
 <li><a href="https://www.arduino.cc/en/Main/Software">Download</a> and install the latest Arduino Software (IDE).</li>
@@ -256,7 +257,7 @@
 <blockquote>
 <p>See the <a href="/docs/devices/arduino/">Arduino Guide</a> for more details.</p>
 </blockquote>
-<h2 id="connect-your-device">Connect your Device</h2>
+<h2 id="connect-your-device">Connect your Device&nbsp;<a class="header-hash" href="#connect-your-device">#</a> </h2>
 <p>Next, connect your device to the IDE over USB.</p>
 <ol>
 <li>
@@ -271,7 +272,7 @@
 </li>
 </ol>
 <p>If you don&rsquo;t see a port that identifies as <strong>Arduino Leonardo</strong> make sure The Things Uno&rsquo;s power LED is on and check the cable and USB port you have used. On Windows, you might need to <a href="https://www.arduino.cc/en/Guide/ArduinoLeonardoMicro#toc2">install drivers</a>. See <a href="https://www.arduino.cc/en/Guide/Troubleshooting#toc16">Arduino Troubleshooting</a> for more suggestions.</p>
-<h2 id="create-a-sketch">Create a Sketch</h2>
+<h2 id="create-a-sketch">Create a Sketch&nbsp;<a class="header-hash" href="#create-a-sketch">#</a> </h2>
 <p>Let&rsquo;s program your device with a so-called sketch.</p>
 <ol>
 <li>
@@ -343,7 +344,7 @@
 </ol>
 </li>
 </ol>
-<h2 id="get-your-device-eui">Get your Device EUI</h2>
+<h2 id="get-your-device-eui">Get your Device EUI&nbsp;<a class="header-hash" href="#get-your-device-eui">#</a> </h2>
 <p>To communicate via The Things Network, you need to register your device. For this, we&rsquo;ll need its unique <strong>Device EUI</strong>. This is a unique address, hard coded into the LoRa module. The <code>ttn.showStatus()</code> method we added in the previous step will get us this and other information about our device.</p>
 <ol>
 <li>
@@ -372,7 +373,7 @@ Total airtime: 0.00 s
 <p>Next time you need the Device EUI of a device, simply select <strong>File &gt; Examples &gt; TheThingsNetwork &gt; <a href="https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/DeviceInfo/DeviceInfo.ino">DeviceInfo</a></strong>, only set the frequency plan and upload this sketch which will call <code>ttn.showStatus()</code> every 10 seconds.</p>
 </blockquote>
 <p>🎉 You have connected your device, written your first sketch, uploaded it to your device and monitored your device logs to retrieve its Device EUI.</p>
-<h2 id="create-an-account">Create an Account</h2>
+<h2 id="create-an-account">Create an Account&nbsp;<a class="header-hash" href="#create-an-account">#</a> </h2>
 <p>To register your device you&rsquo;ll need a The Things Network account.</p>
 <ol>
 <li>
@@ -389,7 +390,7 @@ Total airtime: 0.00 s
 <p>From the top right menu, select your name and then <a href="https://console.thethingsnetwork.org/settings">Settings</a> from the dropdown menu to change the default Handler if the one currently selected is not where you&rsquo;ll be deploying most of your devices.</p>
 </li>
 </ol>
-<h2 id="add-an-application">Add an Application</h2>
+<h2 id="add-an-application">Add an Application&nbsp;<a class="header-hash" href="#add-an-application">#</a> </h2>
 <p>Devices need to be registered with an application to communicate with. Let&rsquo;s add one.</p>
 <ol>
 <li>On <a href="https://console.thethingsnetwork.org/">console.thethingsnetwork.org</a>, click <a href="https://console.thethingsnetwork.org/applications/add">add application</a>.</li>
@@ -406,7 +407,7 @@ Total airtime: 0.00 s
 <p>You will be redirected to the newly added application.</p>
 </li>
 </ol>
-<h2 id="register-your-device">Register your Device</h2>
+<h2 id="register-your-device">Register your Device&nbsp;<a class="header-hash" href="#register-your-device">#</a> </h2>
 <p>You are now ready to register your device to the application.</p>
 <ol>
 <li>
@@ -427,7 +428,7 @@ Total airtime: 0.00 s
 <p>You will be redirected to the newly registered device, where you can find the generated <strong>App Key</strong> which we&rsquo;ll need next.</p>
 </li>
 </ol>
-<h2 id="activate-your-device">Activate your Device</h2>
+<h2 id="activate-your-device">Activate your Device&nbsp;<a class="header-hash" href="#activate-your-device">#</a> </h2>
 <p>Now that we have registered the device, we can activate the connection from our device itself.</p>
 <blockquote>
 <p>Activation means that the device will use the generated App Key to negotiate session keys for further communication. This is also known as Over The Air Activation or OTAA. There&rsquo;s also <a href="/docs/devices/registration/#personalize-device-for-abp">Activation By Personalization</a> (ABP) where you set or generate the session keys via the console and hard-code them on your device.</p>
@@ -470,7 +471,7 @@ DevAddr: 26012E93
 </code></pre></li>
 </ol>
 <p>🎉 Your device is now activated and connected to The Things Network!</p>
-<h2 id="message-the-application">Message the application</h2>
+<h2 id="message-the-application">Message the application&nbsp;<a class="header-hash" href="#message-the-application">#</a> </h2>
 <p>Let&rsquo;s say hello! Most Arduino boards have an on-board LED and the constant <a href="https://www.arduino.cc/en/Reference/Constants"><code>LED_BUILTIN</code></a> (scroll all the way down) will tell us which pin it is connected to. We are going send a message to tell us if it&rsquo;s on or not. Exciting! 💡</p>
 <ol>
 <li>
@@ -517,7 +518,7 @@ Sending: mac tx uncnf 1 with 1 bytes
 Successful transmission
 </code></pre></li>
 </ol>
-<h2 id="monitor--decode-messages">Monitor &amp; Decode Messages</h2>
+<h2 id="monitor--decode-messages">Monitor &amp; Decode Messages&nbsp;<a class="header-hash" href="#monitor--decode-messages">#</a> </h2>
 <p>Let&rsquo;s see the messages come in.</p>
 <ol>
 <li>
@@ -606,7 +607,7 @@ Successful transmission
 <blockquote>
 <p>Would you like to learn how to receive and further process these messages? Head over to the <a href="/docs/applications/mqtt/">MQTT</a> guide!</p>
 </blockquote>
-<h2 id="message-your-device">Message your device</h2>
+<h2 id="message-your-device">Message your device&nbsp;<a class="header-hash" href="#message-your-device">#</a> </h2>
 <p>Now let&rsquo;s send a message to your device in return.</p>
 <blockquote>
 <p>There are different <a href="https://www.lora-alliance.org/What-Is-LoRa/Technology">classes of LoRa devices</a>. Like most devices, The Things Uno and Node can only receive the single last message queued for them in response to a message they send themselves.</p>
@@ -667,7 +668,7 @@ LED: on
 </li>
 </ol>
 <p>🎉 Congrats! You just closed the circle and can communicate via The Things Network in both ways.</p>
-<h2 id="encode-messages">Encode Messages</h2>
+<h2 id="encode-messages">Encode Messages&nbsp;<a class="header-hash" href="#encode-messages">#</a> </h2>
 <p>What would be cooler than turning a LED on by sending <code>00</code>? Sending <code>{ &quot;led&quot;: true }</code> of course! Just like we decode message on arrival on The Things Network we can also encode messages to devices before they will be delivered.</p>
 <ol>
 <li>
@@ -708,7 +709,7 @@ LED: on
 </li>
 </ol>
 <p>🙌 You have now completed the Quick Start and are able to send messages, decode, convert and validate them and respond with encoded messages. Go build something!</p>
-<h2 id="whats-next">What&rsquo;s next?</h2>
+<h2 id="whats-next">What&rsquo;s next?&nbsp;<a class="header-hash" href="#whats-next">#</a> </h2>
 <p>Next, you&rsquo;ll want to:</p>
 <ol>
 <li>
@@ -722,6 +723,7 @@ LED: on
 </blockquote>
 </li>
 </ol>
+
 
         </div>
       

@@ -38,7 +38,7 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.63e25b5c651bd53d7906c0aea044f525dd20de132fd123ea1927e46490c71ca9.css" integrity="sha256-Y&#43;JbXGUb1T15BsCuoET1Jd0g3hMv0SPqGSfkZJDHHKk=" crossorigin="anonymous">
 
   <meta property="og:title" content="Quick Start" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
@@ -251,14 +251,15 @@
           Quick Start
         </h1>
         <div class="content">
-          <p>This guide will walk you through programming your The Things Node with your first sketch to send its measurements over The Things Network.</p>
-<h2 id="setup-arduino-ide">Setup Arduino IDE</h2>
+          
+<p>This guide will walk you through programming your The Things Node with your first sketch to send its measurements over The Things Network.</p>
+<h2 id="setup-arduino-ide">Setup Arduino IDE&nbsp;<a class="header-hash" href="#setup-arduino-ide">#</a> </h2>
 <ol>
 <li>Follow <a href="/docs/devices/arduino/ide/">Arduino / IDE Setup &amp; Usage</a> to setup the IDE.</li>
 <li>Download the <code>TheThingsNetwork</code> and <code>TheThingsNode</code> libraries via <strong>Sketch &gt; Include Library v Manage Libraries&hellip;</strong>. Search for <code>TheThings</code> in the search bar. Install the latest versions of both <code>TheThingsNetwork</code> and <code>TheThingsNode</code>.</li>
 <li>Follow SparkFun&rsquo;s <a href="https://github.com/sparkfun/Arduino_Boards#installation-instructions">Installation Instructions</a> to add the additional board manager and install the <strong>SparkFun AVR Boards</strong>.</li>
 </ol>
-<h2 id="connect-your-device">Connect your Device</h2>
+<h2 id="connect-your-device">Connect your Device&nbsp;<a class="header-hash" href="#connect-your-device">#</a> </h2>
 <ol>
 <li>
 <p>Open the case using a Phillips (cross) screw driver.</p>
@@ -292,7 +293,7 @@
 </blockquote>
 </li>
 </ol>
-<h2 id="get-your-device-eui">Get your Device EUI</h2>
+<h2 id="get-your-device-eui">Get your Device EUI&nbsp;<a class="header-hash" href="#get-your-device-eui">#</a> </h2>
 <p>To communicate via The Things Network, you need to register your device. For this, we&rsquo;ll need its unique <strong>Device EUI</strong>. This is a unique address, hard coded into the LoRa module.</p>
 <ol>
 <li>
@@ -324,7 +325,7 @@ Total airtime: 0.00 s
 </li>
 </ol>
 <p>🎉 You have connected your device, written your first sketch, uploaded it to your device and monitored your device logs to retrieve its Device EUI.</p>
-<h2 id="create-an-account">Create an Account</h2>
+<h2 id="create-an-account">Create an Account&nbsp;<a class="header-hash" href="#create-an-account">#</a> </h2>
 <p>To register your device you&rsquo;ll need a The Things Network account.</p>
 <ol>
 <li>
@@ -341,7 +342,7 @@ Total airtime: 0.00 s
 <p>From the top right menu, select your name and then <a href="https://console.thethingsnetwork.org/settings">Settings</a>. Then change the default Handler if the one currently selected is not where you&rsquo;ll be deploying most of your devices.</p>
 </li>
 </ol>
-<h2 id="add-an-application">Add an Application</h2>
+<h2 id="add-an-application">Add an Application&nbsp;<a class="header-hash" href="#add-an-application">#</a> </h2>
 <p>Devices need to be registered with an application to communicate with. Let&rsquo;s add one.</p>
 <ol>
 <li>On <a href="https://console.thethingsnetwork.org/">console.thethingsnetwork.org</a>, click <a href="https://console.thethingsnetwork.org/applications/add">add application</a>.</li>
@@ -358,7 +359,7 @@ Total airtime: 0.00 s
 <p>You will be redirected to the newly added application.</p>
 </li>
 </ol>
-<h2 id="register-your-device">Register your Device</h2>
+<h2 id="register-your-device">Register your Device&nbsp;<a class="header-hash" href="#register-your-device">#</a> </h2>
 <p>You are now ready to register your device to the application.</p>
 <ol>
 <li>
@@ -379,7 +380,7 @@ Total airtime: 0.00 s
 <p>You will be redirected to the newly registered device, where you can find the generated <strong>Example Code</strong> which we&rsquo;ll need next.</p>
 </li>
 </ol>
-<h2 id="the-things-node-example">The Things Node example</h2>
+<h2 id="the-things-node-example">The Things Node example&nbsp;<a class="header-hash" href="#the-things-node-example">#</a> </h2>
 <p>The The Things Network <a href="/docs/devices/arduino/">Arduino Library</a> comes with a class dedicated to The Things Node. It wraps the commands to work with the various sensors in simple APIs.</p>
 <p>The library also comes with an example demonstrating most of these APIs. Let&rsquo;s get started by uploading the basic example.</p>
 <ol>
@@ -403,21 +404,21 @@ Total airtime: 0.00 s
 </li>
 </ol>
 <p>Let&rsquo;s run through the Sketch together to understand what it does.</p>
-<h3 id="setup">Setup</h3>
+<h3 id="setup">Setup&nbsp;<a class="header-hash" href="#setup">#</a> </h3>
 <p>In <code>setup()</code>, after the part where we initialize TheThingsNetwork class to communicate with The Things Network, we get the singleton of TheThingsNode class. Here, we can configure the sensors and register callback functions that should be run when a sensor is triggered.</p>
-<h3 id="loop">Loop</h3>
+<h3 id="loop">Loop&nbsp;<a class="header-hash" href="#loop">#</a> </h3>
 <p>The only code you should have in <code>loop()</code> is a call to <code>node-&gt;loop()</code>.</p>
 <p>TheThingsNode will optimize the battery efficiency of the device by putting it into sleep. It will wake up every 8 seconds or when a sensor triggers it. In both scenarios, the <code>loop()</code> function will run. What <code>node-&gt;loop()</code> will do is figure out why it woke up and call the relevant handler registered in <code>setup()</code>.</p>
-<h3 id="interval">Interval</h3>
+<h3 id="interval">Interval&nbsp;<a class="header-hash" href="#interval">#</a> </h3>
 <p>Any code you want to run regularly should be put in a function registered using <code>node-&gt;onInterval()</code>. You can use <code>node-&gt;configInterval(bool enabled, uint32_t ms)</code> to set an interval in milliseconds when <code>ttn-&gt;loop()</code> should call this function.</p>
 <blockquote>
 <p>Since the device only wakes up every 8 seconds or when a sensor triggers it, it makes no sense to set the interval to less than 8000ms.</p>
 </blockquote>
-<h3 id="callbacks">Callbacks</h3>
+<h3 id="callbacks">Callbacks&nbsp;<a class="header-hash" href="#callbacks">#</a> </h3>
 <p>In the callbacks you can use the <a href="/docs/devices/node/api/">API</a>&rsquo;s getters and setters to read sensors, change the LED&rsquo;s color, reconfigure or temporarily disable sensors etc. And of course you can use TheThingsNetwork class to send the sensor data over The Things Network.</p>
-<h3 id="send-data">Send Data</h3>
+<h3 id="send-data">Send Data&nbsp;<a class="header-hash" href="#send-data">#</a> </h3>
 <p>As you can see, the example sends all sensor data from the <code>interval()</code> callback, which is configured to run every 20 seconds. In addition, it will send the temperature when it exceeds the configured limits as well as the duration of any detected motion or the press of a button.</p>
-<h2 id="monitor--decode-messages">Monitor &amp; Decode Messages</h2>
+<h2 id="monitor--decode-messages">Monitor &amp; Decode Messages&nbsp;<a class="header-hash" href="#monitor--decode-messages">#</a> </h2>
 <p>Let&rsquo;s see the messages come in.</p>
 <ol>
 <li>
@@ -472,6 +473,7 @@ Total airtime: 0.00 s
 <blockquote>
 <p>Would you like to learn how to receive and further process these messages? Head over to the <a href="/docs/applications/mqtt/">MQTT</a> guide!</p>
 </blockquote>
+
 
         </div>
       

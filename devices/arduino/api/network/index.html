@@ -38,7 +38,7 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.63e25b5c651bd53d7906c0aea044f525dd20de132fd123ea1927e46490c71ca9.css" integrity="sha256-Y&#43;JbXGUb1T15BsCuoET1Jd0g3hMv0SPqGSfkZJDHHKk=" crossorigin="anonymous">
 
   <meta property="og:title" content="TheThingsNetwork" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
@@ -275,8 +275,9 @@
           TheThingsNetwork
         </h1>
         <div class="content">
-          <p>The <code>TheThingsNetwork</code> class enables Arduino devices with supported LoRaWAN modules to communicate via The Things Network. Currently supported LoRaWAN modules are the Microchip RN2483 and the RN2903.</p>
-<h2 id="class-thethingsnetwork">Class: <code>TheThingsNetwork</code></h2>
+          
+<p>The <code>TheThingsNetwork</code> class enables Arduino devices with supported LoRaWAN modules to communicate via The Things Network. Currently supported LoRaWAN modules are the Microchip RN2483 and the RN2903.</p>
+<h2 id="class-thethingsnetwork">Class: <code>TheThingsNetwork</code>&nbsp;<a class="header-hash" href="#class-thethingsnetwork">#</a> </h2>
 <p>Include and instantiate the TheThingsNetwork class. The constructor initialize the library with the Streams it should communicate with. It also sets the value of the spreading factor, the frequency plan and the frequency sub-band.</p>
 <div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="cp">#include</span> <span class="cpf">&lt;TheThingsNetwork.h&gt;</span><span class="cp">
 </span><span class="cp"></span>
@@ -288,19 +289,19 @@
 <li><code>uint8_t sf = 7</code>: Optional custom spreading factor. Can be <code>7</code> to <code>10</code> for <code>TTN_FP_US915</code> and <code>7</code> to <code>12</code> for other frequency plans. Defaults to <code>7</code>.</li>
 <li><code>uint8_t fsb = 2</code>: Optional custom frequency subband. Can be <code>1</code> to <code>8</code>. Defaults to <code>2</code> (for US915).</li>
 </ul>
-<h2 id="method-reset">Method: <code>reset</code></h2>
+<h2 id="method-reset">Method: <code>reset</code>&nbsp;<a class="header-hash" href="#method-reset">#</a> </h2>
 <p>Performs a software reset of the RN module. This does not clear saved state, e.g. provisioned keys.</p>
 <div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">reset</span><span class="p">(</span><span class="kt">bool</span> <span class="n">adr</span><span class="p">);</span>
 </code></pre></div><ul>
 <li><code>bool adr</code>: Enable/disable Adaptive Data Rate.</li>
 </ul>
-<h2 id="method-gethardwareeui">Method: <code>getHardwareEui</code></h2>
+<h2 id="method-gethardwareeui">Method: <code>getHardwareEui</code>&nbsp;<a class="header-hash" href="#method-gethardwareeui">#</a> </h2>
 <p>Gets the unique hardware EUI, often used as the DevEUI.</p>
 <div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="n">size_t</span> <span class="nf">getHardwareEui</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">buffer</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">size</span><span class="p">);</span>
-</code></pre></div><h2 id="method-getappeui">Method: <code>getAppEui</code></h2>
+</code></pre></div><h2 id="method-getappeui">Method: <code>getAppEui</code>&nbsp;<a class="header-hash" href="#method-getappeui">#</a> </h2>
 <p>Gets the provisioned AppEUI. The AppEUI is set using <code>provision()</code> or <code>join()</code>.</p>
 <div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="n">size_t</span> <span class="nf">getAppEui</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">buffer</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">size</span><span class="p">);</span>
-</code></pre></div><h2 id="method-showstatus">Method: <code>showStatus</code></h2>
+</code></pre></div><h2 id="method-showstatus">Method: <code>showStatus</code>&nbsp;<a class="header-hash" href="#method-showstatus">#</a> </h2>
 <p>Writes information about the device and LoRa module to <code>debugStream</code>.</p>
 <div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">showStatus</span><span class="p">();</span>
 </code></pre></div><p>Will write something like:</p>
@@ -312,7 +313,7 @@ Data Rate: <span class="m">5</span>
 RX Delay 1: <span class="m">1000</span>
 RX Delay 2: <span class="m">2000</span>
 </code></pre></div><p>See the <a href="https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/DeviceInfo/DeviceInfo.ino">DeviceInfo</a> example.</p>
-<h2 id="method-onmessage">Method: <code>onMessage</code></h2>
+<h2 id="method-onmessage">Method: <code>onMessage</code>&nbsp;<a class="header-hash" href="#method-onmessage">#</a> </h2>
 <p>Sets a function which will be called to process incoming messages. You&rsquo;ll want to do this in your <code>setup()</code> function and then define a <code>void (*cb)(const byte* payload, size_t length, port_t port)</code> function somewhere else in your sketch.</p>
 <div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">onMessage</span><span class="p">(</span><span class="kt">void</span> <span class="p">(</span><span class="o">*</span><span class="n">cb</span><span class="p">)(</span><span class="k">const</span> <span class="n">byte</span><span class="o">*</span> <span class="n">payload</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">length</span><span class="p">,</span> <span class="n">port_t</span> <span class="n">port</span><span class="p">));</span>
 </code></pre></div><ul>
@@ -321,7 +322,7 @@ RX Delay 2: <span class="m">2000</span>
 <li><code>port_t port</code>: The port addressed.</li>
 </ul>
 <p>See the <a href="https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/Receive/Receive.ino">Receive</a> example.</p>
-<h2 id="method-join">Method: <code>join</code></h2>
+<h2 id="method-join">Method: <code>join</code>&nbsp;<a class="header-hash" href="#method-join">#</a> </h2>
 <p>Activate the device via OTAA (default).</p>
 <div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">bool</span> <span class="nf">join</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">appEui</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">appKey</span><span class="p">,</span> <span class="n">int8_t</span> <span class="n">retries</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">uint32_t</span> <span class="n">retryDelay</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">);</span>
 <span class="kt">bool</span> <span class="nf">join</span><span class="p">(</span><span class="n">int8_t</span> <span class="n">retries</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">uint32_t</span> <span class="n">retryDelay</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">);</span>
@@ -333,7 +334,7 @@ RX Delay 2: <span class="m">2000</span>
 </ul>
 <p>Returns <code>true</code> or <code>false</code> depending on whether it received confirmation that the activation was successful before the maximum number of attempts.</p>
 <p>Call the method without the first two arguments if the device&rsquo;s LoRa module comes with pre-flashed values.</p>
-<h2 id="method-personalize">Method: <code>personalize</code></h2>
+<h2 id="method-personalize">Method: <code>personalize</code>&nbsp;<a class="header-hash" href="#method-personalize">#</a> </h2>
 <p>Activate the device via ABP.</p>
 <div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">bool</span> <span class="nf">personalize</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">devAddr</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">nwkSKey</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">appSKey</span><span class="p">);</span>
 <span class="kt">bool</span> <span class="nf">personalize</span><span class="p">();</span>
@@ -345,7 +346,7 @@ RX Delay 2: <span class="m">2000</span>
 <p>Returns <code>true</code> or <code>false</code> depending on whether the activation was successful.</p>
 <p>Call the method with no arguments if the device&rsquo;s LoRa module comes with pre-flashed values.</p>
 <p>See the <a href="https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/SendABP/SendABP.ino">SendABP</a> example.</p>
-<h2 id="method-sendbytes">Method: <code>sendBytes</code></h2>
+<h2 id="method-sendbytes">Method: <code>sendBytes</code>&nbsp;<a class="header-hash" href="#method-sendbytes">#</a> </h2>
 <p>Send a message to the application using raw bytes.</p>
 <div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="n">ttn_response_t</span> <span class="nf">sendBytes</span><span class="p">(</span><span class="k">const</span> <span class="n">byte</span><span class="o">*</span> <span class="n">payload</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">length</span><span class="p">,</span> <span class="n">port_t</span> <span class="n">port</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">confirm</span> <span class="o">=</span> <span class="nb">false</span><span class="p">,</span> <span class="n">uint8_t</span> <span class="n">sf</span> <span class="o">=</span> <span class="mi">0</span><span class="p">);</span>
 </code></pre></div><ul>
@@ -363,7 +364,7 @@ RX Delay 2: <span class="m">2000</span>
 <li><code>TTN_ERROR_UNEXPECTED_RESPONSE</code>: Unexpected response: &lt;Response&gt;</li>
 </ul>
 <p>See the <a href="https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/SendOTAA/SendOTAA.ino">SendOTAA</a> example.</p>
-<h2 id="method-poll">Method: <code>poll</code></h2>
+<h2 id="method-poll">Method: <code>poll</code>&nbsp;<a class="header-hash" href="#method-poll">#</a> </h2>
 <p>Calls <code>sendBytes()</code> with <code>{ 0x00 }</code> as payload to poll for incoming messages.</p>
 <div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="n">int8_t</span> <span class="nf">poll</span><span class="p">(</span><span class="n">port_t</span> <span class="n">port</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">confirm</span> <span class="o">=</span> <span class="nb">false</span><span class="p">);</span>
 </code></pre></div><ul>
@@ -372,38 +373,39 @@ RX Delay 2: <span class="m">2000</span>
 </ul>
 <p>Returns the result of <code>sendBytes()</code>.</p>
 <p>See the <a href="https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/Receive/Receive.ino">Receive</a> example.</p>
-<h2 id="method-provision">Method: <code>provision</code></h2>
+<h2 id="method-provision">Method: <code>provision</code>&nbsp;<a class="header-hash" href="#method-provision">#</a> </h2>
 <p>Sets the information needed to activate the device via OTAA, without actually activating. Call join() without the first 2 arguments to activate.</p>
 <div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">bool</span> <span class="nf">provision</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">appEui</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">appKey</span><span class="p">);</span>
 </code></pre></div><ul>
 <li><code>const char *appEui</code>: Application Identifier for the device.</li>
 <li><code>const char *appKey</code>: Application Key assigned to the device.</li>
 </ul>
-<h2 id="method-sleep">Method: <code>sleep</code></h2>
+<h2 id="method-sleep">Method: <code>sleep</code>&nbsp;<a class="header-hash" href="#method-sleep">#</a> </h2>
 <p>Sleep the LoRa module for a specified number of milliseconds.</p>
 <div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">sleep</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">mseconds</span><span class="p">);</span>
 </code></pre></div><ul>
 <li><code>unsigned long mseconds</code>: number of milliseconds to sleep.</li>
 </ul>
-<h2 id="method-wake">Method: <code>wake</code></h2>
+<h2 id="method-wake">Method: <code>wake</code>&nbsp;<a class="header-hash" href="#method-wake">#</a> </h2>
 <p>Wake up the LoRa module from sleep before the expiration of the defined time.</p>
 <div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">wake</span><span class="p">();</span>
-</code></pre></div><h2 id="method-linkcheck">Method: <code>linkCheck</code></h2>
+</code></pre></div><h2 id="method-linkcheck">Method: <code>linkCheck</code>&nbsp;<a class="header-hash" href="#method-linkcheck">#</a> </h2>
 <p>Sets the time interval for the link check process to be triggered. When the interval expires, the next uplink will include a Link Check Request MAC command. When using this method, it should be called after joining has completed.</p>
 <div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">linkCheck</span><span class="p">(</span><span class="n">uint16_t</span> <span class="n">seconds</span><span class="p">);</span>
 </code></pre></div><ul>
 <li><code>uint16_t seconds</code>: the time interval in seconds. A value of 0 will disable the link check process.</li>
 </ul>
-<h2 id="method-getlinkcheckgateways">Method: <code>getLinkCheckGateways</code></h2>
+<h2 id="method-getlinkcheckgateways">Method: <code>getLinkCheckGateways</code>&nbsp;<a class="header-hash" href="#method-getlinkcheckgateways">#</a> </h2>
 <p>Gets the number of gateways that successfully received the last Link Check Request frame.</p>
 <div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="n">uint8_t</span> <span class="nf">getLinkCheckGateways</span><span class="p">();</span>
-</code></pre></div><h2 id="method-getlinkcheckmargin">Method: <code>getLinkCheckMargin</code></h2>
+</code></pre></div><h2 id="method-getlinkcheckmargin">Method: <code>getLinkCheckMargin</code>&nbsp;<a class="header-hash" href="#method-getlinkcheckmargin">#</a> </h2>
 <p>Gets the demodulation margin as received in the last Link Check Answer frame.</p>
 <div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="n">uint8_t</span> <span class="nf">getLinkCheckMargin</span><span class="p">();</span>
-</code></pre></div><h2 id="method-getvdd">Method: <code>getVDD</code></h2>
+</code></pre></div><h2 id="method-getvdd">Method: <code>getVDD</code>&nbsp;<a class="header-hash" href="#method-getvdd">#</a> </h2>
 <p>Returns the voltage in millivolt (mV) measured by the RN2xxx LoRa module. It&rsquo;s for information only since we don&rsquo;t know how it&rsquo;s measured but looks like accurate.</p>
 <div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="n">uint16_t</span> <span class="nf">getVDD</span><span class="p">();</span>
 </code></pre></div>
+
         </div>
       
       

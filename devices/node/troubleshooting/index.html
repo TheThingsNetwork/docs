@@ -38,7 +38,7 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.63e25b5c651bd53d7906c0aea044f525dd20de132fd123ea1927e46490c71ca9.css" integrity="sha256-Y&#43;JbXGUb1T15BsCuoET1Jd0g3hMv0SPqGSfkZJDHHKk=" crossorigin="anonymous">
 
   <meta property="og:title" content="Troubleshooting" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
@@ -251,12 +251,13 @@
           Troubleshooting
         </h1>
         <div class="content">
-          <p>The Things Node is based on the <a href="https://www.sparkfun.com/products/12587">SparkFun Pro Micro - 3.3V/8Mhz</a>. A lot of their resources apply to our board as well. In this section we&rsquo;ll discuss some common issues and link to relevant resources from SparkFun.</p>
-<h2 id="serial-port-not-showing-up-mac-os">Serial Port not showing up (Mac OS)</h2>
+          
+<p>The Things Node is based on the <a href="https://www.sparkfun.com/products/12587">SparkFun Pro Micro - 3.3V/8Mhz</a>. A lot of their resources apply to our board as well. In this section we&rsquo;ll discuss some common issues and link to relevant resources from SparkFun.</p>
+<h2 id="serial-port-not-showing-up-mac-os">Serial Port not showing up (Mac OS)&nbsp;<a class="header-hash" href="#serial-port-not-showing-up-mac-os">#</a> </h2>
 <p>Since Mac OS El Capitan, there have been <a href="https://www.google.com/search?q=arduino+usb+el+capitan+unstable">many reports</a> with all kinds of Arduino devices where the serial port does not show up. Both <a href="https://learn.sparkfun.com/tutorials/how-to-install-ftdi-drivers/all#yosemite">SparkFun</a> and the Google search we linked give all kinds of suggestions for possible fixes. However, the simplest solution that always seems to work is to connect the Arduino via a USB hub.</p>
-<h2 id="serial-port-shows-up-but-uploading-code-fails-linux">Serial Port shows up, but uploading code fails (Linux)</h2>
+<h2 id="serial-port-shows-up-but-uploading-code-fails-linux">Serial Port shows up, but uploading code fails (Linux)&nbsp;<a class="header-hash" href="#serial-port-shows-up-but-uploading-code-fails-linux">#</a> </h2>
 <p>Try the <a href="https://www.arduino.cc/en/Guide/Linux#toc6">steps documented on the Arduino Website</a>. Normally the problem is another program also trying to access the serial port. <strong>modemmanager</strong> and <strong>usb_modeswitch</strong> are common culprits of this.</p>
-<h2 id="bricked">Bricked</h2>
+<h2 id="bricked">Bricked&nbsp;<a class="header-hash" href="#bricked">#</a> </h2>
 <p>When your Things Node or Things Uno is bricked, the serial port is also not showing up. Following the common steps as laid out above does not work when the device is bricked. &ldquo;Bricked&rdquo; basically means that the USB-serial-port on the board is not active, meaning that you do not have a way to program it.</p>
 <p>The most common cause of &ldquo;bricking&rdquo; is uploading code to the device that was verified and uploaded while an incorrectly board was chosen in the Arduino IDE. This is such an easy mistake which happens to the best of us, especially if you are switching between working on your The Things Uno and The Things Node.</p>
 <p>SparkFun has a <a href="https://learn.sparkfun.com/tutorials/pro-micro--fio-v3-hookup-guide/troubleshooting-and-faq#ts-revive">guide</a> explaining how to fix this. These steps are also valid for The Things Node and The Things Uno. We will however continue with a summary of how to unbrick a Things Node.</p>
@@ -291,6 +292,7 @@
 <ol start="8">
 <li>After you have programmed the device with a blank sketch, or erased it, you should be able to program it normally.</li>
 </ol>
+
 
         </div>
       

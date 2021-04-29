@@ -38,7 +38,7 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.63e25b5c651bd53d7906c0aea044f525dd20de132fd123ea1927e46490c71ca9.css" integrity="sha256-Y&#43;JbXGUb1T15BsCuoET1Jd0g3hMv0SPqGSfkZJDHHKk=" crossorigin="anonymous">
 
   <meta property="og:title" content="Build an Application" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
@@ -289,23 +289,24 @@
           Build an Application
         </h1>
         <div class="content">
-          <p>An application can connect to The Things Network in different ways:</p>
-<h2 id="1-apishahahugoshortcode-s0-hbhb">1. <a href="/docs/applications/apis/">APIs</a></h2>
+          
+<p>An application can connect to The Things Network in different ways:</p>
+<h2 id="1-apishahahugoshortcode-s0-hbhb">1. <a href="/docs/applications/apis/">APIs</a>&nbsp;<a class="header-hash" href="#1-apishahahugoshortcode-s0-hbhb">#</a> </h2>
 <p>In the most low-level scenario, the application uses standard protocol libraries to connect directly to The Things Network&rsquo;s Handler APIs:</p>
 <p><img src="../options-apis.png" alt="APIs"></p>
-<h3 id="data-api">Data API</h3>
+<h3 id="data-api">Data API&nbsp;<a class="header-hash" href="#data-api">#</a> </h3>
 <p>The Data API allow you to receive events and messages from devices as well as send messages to devices. You can use the Data API via:</p>
 <ul>
 <li><a href="/docs/applications/mqtt/">MQTT</a></li>
 <li>AMQP (coming)</li>
 </ul>
-<h3 id="application-manager-api">Application Manager API</h3>
+<h3 id="application-manager-api">Application Manager API&nbsp;<a class="header-hash" href="#application-manager-api">#</a> </h3>
 <p>The Application Manager API let you manage applications and devices registered to it. You can use the Application Manager API via:</p>
 <ul>
 <li>gRPC (to be documented)</li>
 <li><a href="/docs/applications/manager/">HTTP</a></li>
 </ul>
-<h2 id="2-sdkshahahugoshortcode-s3-hbhb">2. <a href="/docs/applications/sdks/">SDKs</a></h2>
+<h2 id="2-sdkshahahugoshortcode-s3-hbhb">2. <a href="/docs/applications/sdks/">SDKs</a>&nbsp;<a class="header-hash" href="#2-sdkshahahugoshortcode-s3-hbhb">#</a> </h2>
 <p>We intend to publish SDKs for popular platforms such as <a href="/docs/applications/golang/">Go</a>, <a href="/docs/applications/java/">Java</a> and <a href="/docs/applications/nodejs/">Node.js</a>. These SDKs provide a layer of abstraction to make it easier to interact with the APIs:</p>
 <blockquote>
 <p>If you&rsquo;d like to contribute to a SDK, contact <a href="mailto:community@thethingsnetwork.org">us</a>.</p>
@@ -314,14 +315,15 @@
 <blockquote>
 <p>SDKs may not always wrap all available APIs.</p>
 </blockquote>
-<h2 id="3-integrationshahahugoshortcode-s7-hbhb">3. <a href="/docs/applications/integrations/">Integrations</a></h2>
+<h2 id="3-integrationshahahugoshortcode-s7-hbhb">3. <a href="/docs/applications/integrations/">Integrations</a>&nbsp;<a class="header-hash" href="#3-integrationshahahugoshortcode-s7-hbhb">#</a> </h2>
 <p>Integrations are the easiest way to connect your devices to an applications. An integration uses the same APIs or SDKs an application could use directly. Together with the private or public APIs of the platform it ties up the application running on the platform with The Things Network:</p>
 <p><img src="../options-integration.png" alt="Platform Integration"></p>
 <p>Platform Integrations completely frees you from any code and even The Things Network Console or CLI. A good example is an integration for Azure IoT Hub or AWS IoT, where the user could manage his application and devices from there, while the integration takes care of synchronizing with The Things Network.</p>
-<h3 id="messaging-integration">Messaging Integration</h3>
+<h3 id="messaging-integration">Messaging Integration&nbsp;<a class="header-hash" href="#messaging-integration">#</a> </h3>
 <p>A common integration is to forward messages to some webhook or other messaging endpoint (uplink messages). For these situations we provide a set of messaging integrations which act as a bridge between the Handler Data API and any endpoint you configure. It also provides you with an endpoint to send messages back to devices (downlink messages). Easy to configure and use is the <a href="http/index.md">HTTP Integration</a>.</p>
 <p><img src="../options-http.png" alt="HTTP Integration"></p>
 <p>For some messaging integrations we provide a configuration template. Instead of manually configuring the HTTP Integration, we ask you only for variables like a platform key and generate the configuration for you.</p>
+
 
         </div>
       

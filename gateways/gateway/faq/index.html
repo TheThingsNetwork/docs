@@ -38,7 +38,7 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.63e25b5c651bd53d7906c0aea044f525dd20de132fd123ea1927e46490c71ca9.css" integrity="sha256-Y&#43;JbXGUb1T15BsCuoET1Jd0g3hMv0SPqGSfkZJDHHKk=" crossorigin="anonymous">
 
   <meta property="og:title" content="FAQ" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
@@ -318,32 +318,33 @@
           FAQ
         </h1>
         <div class="content">
-          <p>This page consolidates some of the most frequently asked questions on <a href="/docs/gateways/gateway/">The Things Gateway</a>.</p>
+          
+<p>This page consolidates some of the most frequently asked questions on <a href="/docs/gateways/gateway/">The Things Gateway</a>.</p>
 <blockquote>
 <p>This section contains the most frequent issues and queries pertaining to the The Things Gateway. If you find issues that are not covered in this page, feel free to reach out to <a href="https://www.thethingsnetwork.org/forum">The Things Network community forum</a>.</p>
 </blockquote>
-<h4 id="q-how-do-i-get-started-with-the-things-gateway">Q. How do I get started with The Things Gateway?</h4>
+<h4 id="q-how-do-i-get-started-with-the-things-gateway">Q. How do I get started with The Things Gateway?&nbsp;<a class="header-hash" href="#q-how-do-i-get-started-with-the-things-gateway">#</a> </h4>
 <p>Getting started with The Things Gateway is a 3 step process:</p>
 <ul>
 <li>First step - Connect the antenna and plug the gateway into a power outlet</li>
 <li>Second step - Go to the website (<a href="https://ttn.fyi/activate">https://ttn.fyi/activate</a>)</li>
 <li>Third step - Follow the instructions on the website</li>
 </ul>
-<h4 id="q-how-can-i-open-or-close-the-things-gateway">Q. How can I open or close The Things Gateway?</h4>
+<h4 id="q-how-can-i-open-or-close-the-things-gateway">Q. How can I open or close The Things Gateway?&nbsp;<a class="header-hash" href="#q-how-can-i-open-or-close-the-things-gateway">#</a> </h4>
 <p>To open the gateway, put it down with the antenna socket at the top and (gently) lift the left and right sides of the white shield, right like <a href="https://youtu.be/cJNK4y1is2Q?t=45s">in the video instruction</a>.</p>
 <p>To close the gateway, align the lid and push firmly at the sides only you hear it snap in place.</p>
-<h4 id="q-how-can-i-reset-my-gateway">Q. How can I reset my gateway?</h4>
+<h4 id="q-how-can-i-reset-my-gateway">Q. How can I reset my gateway?&nbsp;<a class="header-hash" href="#q-how-can-i-reset-my-gateway">#</a> </h4>
 <ul>
 <li>Pressing the button shortly while powered on restarts the gateway.</li>
 <li>Holding the button for 2 seconds while powered on it erases the WiFi settings.</li>
 <li>Holding the button for 5 seconds while powered on it erases the WiFi settings and activation settings.</li>
 <li>Holding the button while powering on it will erase the full serial flash.</li>
 </ul>
-<h4 id="q-the-second-time-i-power-my-gateway-it-takes-time-to-start-up-why">Q. The second time I power my gateway, it takes time to start up. why?</h4>
+<h4 id="q-the-second-time-i-power-my-gateway-it-takes-time-to-start-up-why">Q. The second time I power my gateway, it takes time to start up. why?&nbsp;<a class="header-hash" href="#q-the-second-time-i-power-my-gateway-it-takes-time-to-start-up-why">#</a> </h4>
 <p>Upon every power cycle and every 24 hours, the gateway checks for new firmware. If the latest firmware is not downloaded yet, it will download the new image and perform a reboot in order to install the image. This will take a few minutes. The process is indicated by a flashing power LED. Power cycling during this process is not dangerous, but this process will be restarted on the next start-up. So, please be patient.</p>
-<h4 id="q-my-gateway-stays-in-ap-mode-what-do-i-do">Q. My gateway stays in AP mode. What do I do?</h4>
+<h4 id="q-my-gateway-stays-in-ap-mode-what-do-i-do">Q. My gateway stays in AP mode. What do I do?&nbsp;<a class="header-hash" href="#q-my-gateway-stays-in-ap-mode-what-do-i-do">#</a> </h4>
 <p>This behaviour occurs when there is a glitch in the wifi connection of the gateway. When this happens, your gateway will turn into an AP(Access Point) and devices you used to set up the gateway can connect to it (your laptop or phone). To avoid this issue, you should remove the gateway from the list of APs from your laptop/phone(Network Settings-&gt; Things-Gateway-XXXX -&gt; forget this network).</p>
-<h4 id="q-i-want-to-get-in-depth-insightread-debug-messages-of-my-gateway-is-that-possible">Q. I want to get in-depth insight/read debug messages of my gateway. Is that possible?</h4>
+<h4 id="q-i-want-to-get-in-depth-insightread-debug-messages-of-my-gateway-is-that-possible">Q. I want to get in-depth insight/read debug messages of my gateway. Is that possible?&nbsp;<a class="header-hash" href="#q-i-want-to-get-in-depth-insightread-debug-messages-of-my-gateway-is-that-possible">#</a> </h4>
 <p>The gateway has a UART port on which it prints debug messages. To see these messages you need to connect a device between the gateway and your computer that can read out a UART (e.g. an FTDI cable/board).</p>
 <ul>
 <li>
@@ -361,23 +362,24 @@
 <img src="../screen-macos.png" alt="Sample output on &ldquo;screen&rdquo;"></p>
 </li>
 </ul>
-<h4 id="q-what-do-the-led-lights-on-the-gateway-indicate">Q. What do the LED lights on the gateway indicate?</h4>
+<h4 id="q-what-do-the-led-lights-on-the-gateway-indicate">Q. What do the LED lights on the gateway indicate?&nbsp;<a class="header-hash" href="#q-what-do-the-led-lights-on-the-gateway-indicate">#</a> </h4>
 <p>The LED lights are a great way of understanding the current state of the gateway. Click <a href="/docs/gateways/gateway/ledstatus/">here</a> for the complete list.</p>
-<h4 id="q-what-steps-do-i-need-to-take-if-i-want-to-relocate-my-gateway">Q. What steps do I need to take if I want to relocate my gateway?</h4>
+<h4 id="q-what-steps-do-i-need-to-take-if-i-want-to-relocate-my-gateway">Q. What steps do I need to take if I want to relocate my gateway?&nbsp;<a class="header-hash" href="#q-what-steps-do-i-need-to-take-if-i-want-to-relocate-my-gateway">#</a> </h4>
 <p>There is no need to re-configure it in this case. However, for better accuracy, it is recommended to update the location settings in the Console (Settings-&gt;Location).</p>
-<h4 id="q-how-do-i-connect-to-the-wifi-access-point-of-the-gateway">Q. How do I connect to the WiFi access point of the gateway?</h4>
+<h4 id="q-how-do-i-connect-to-the-wifi-access-point-of-the-gateway">Q. How do I connect to the WiFi access point of the gateway?&nbsp;<a class="header-hash" href="#q-how-do-i-connect-to-the-wifi-access-point-of-the-gateway">#</a> </h4>
 <p>After going to  (<a href="https://ttn.fyi/activate">https://ttn.fyi/activate</a>) and registering your gateway, you will have to connect to the WiFi of the gateway and then connect to your home/office network.</p>
 <p>Connect to the gateways WiFi access point <code>Things-Gateway-XXXX</code> using the password thethings.</p>
-<h4 id="q-how-can-i-check-if-the-gateway-is-working-or-not">Q. How can I check if the gateway is working or not?</h4>
+<h4 id="q-how-can-i-check-if-the-gateway-is-working-or-not">Q. How can I check if the gateway is working or not?&nbsp;<a class="header-hash" href="#q-how-can-i-check-if-the-gateway-is-working-or-not">#</a> </h4>
 <p>To check the status of the gateway, go to the console as directed afterwards in the activation process. Under the gateway section (<a href="https://console.thethingsnetwork.org/gateways),">https://console.thethingsnetwork.org/gateways),</a> you can see the status. If any device sends data through your gateway, you can check it under the ‘traffic’ section.</p>
 <p>When connected to the same network, some information can be seen at <a href="http://things-gateway.local/info">http://things-gateway.local/info</a>.</p>
-<h4 id="q-my-gateway-is-in-a-reboot-loop-how-can-i-fix-it">Q. My gateway is in a reboot loop. How can I fix it?</h4>
+<h4 id="q-my-gateway-is-in-a-reboot-loop-how-can-i-fix-it">Q. My gateway is in a reboot loop. How can I fix it?&nbsp;<a class="header-hash" href="#q-my-gateway-is-in-a-reboot-loop-how-can-i-fix-it">#</a> </h4>
 <ul>
 <li>Symptom: After booting the gateway, 2 LEDs are on and the 3rd LED is blinking. After ~1 minute without progress, the gateway suddenly reboots and the whole thing repeats.</li>
 <li>Possible cause: The LoRa board is not fully pushed in in the socket.</li>
 <li>Fix: Open the lid and push the LoRa board in the socket. See also: <a href="https://github.com/TheThingsProducts/gateway/issues/1#issuecomment-405523207">https://github.com/TheThingsProducts/gateway/issues/1#issuecomment-405523207</a></li>
 <li>Remark: If this fix does not work for you, the right place to look for other solutions is: <a href="https://github.com/TheThingsProducts/gateway/issues">https://github.com/TheThingsProducts/gateway/issues</a></li>
 </ul>
+
 
         </div>
       

@@ -38,7 +38,7 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.63e25b5c651bd53d7906c0aea044f525dd20de132fd123ea1927e46490c71ca9.css" integrity="sha256-Y&#43;JbXGUb1T15BsCuoET1Jd0g3hMv0SPqGSfkZJDHHKk=" crossorigin="anonymous">
 
   <meta property="og:title" content="Duty Cycle" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
@@ -253,14 +253,15 @@
           Duty Cycle
         </h1>
         <div class="content">
-          <p><strong>Duty Cycle indicates the fraction of time a resource is busy.</strong><br>
+          
+<p><strong>Duty Cycle indicates the fraction of time a resource is busy.</strong><br>
 When a single device transmits on a channel for 2 <em>time units</em> every 10 <em>time units</em>, this device has a duty cycle of 20%.<br>
 <img src="duty-cycle-single-channel.png" alt="Single Channel Duty Cycle"></p>
 <p>However, if we also consider <em>channels</em>, things get a bit more complicated. When we have a device that transmits on 3 channels instead of one, each individual <em>channel</em> is still occupied for 2 <em>time units</em> every 10 <em>time units</em> (so 20%). However, the <em>device</em> is now transmitting for 6 <em>time units</em> every 10 <em>time units</em>, giving it a duty cycle of 60%.<br>
 <img src="duty-cycle-multi-channel.png" alt="Multiple Channel Duty Cycle"></p>
 <p>In our European frequency plan, we have channels in different <em>sub-bands</em>, so when considering the duty cycle, we also have to consider these. Let&rsquo;s say the 3 channels we used before, are in 2 different <em>sub-bands</em>. Each separate <em>channel</em> still has a duty cycle of 20%, the <em>device</em> still has a duty cycle of 60%, but we now see that <em>Band 1</em> is in use for 2 <em>time units</em> every 10 <em>time units</em> (20%), while <em>Band 2</em> is in use for 4 <em>time units</em> every 10 <em>time units</em> (40%).<br>
 <img src="duty-cycle-multi-band.png" alt="Multiple Band Duty Cycle"></p>
-<h2 id="maximum-duty-cycle">Maximum Duty Cycle</h2>
+<h2 id="maximum-duty-cycle">Maximum Duty Cycle&nbsp;<a class="header-hash" href="#maximum-duty-cycle">#</a> </h2>
 <p>The duty cycle of radio devices is often regulated by government. If this is the case, the duty cycle is commonly set to 1%, but make sure to check the regulations of your local government to be sure.</p>
 <p>In Europe, duty cycles are regulated by section 7.2.3 of the ETSI EN300.220 standard. This standard defines the following sub-bands and their duty cycles:</p>
 <ul>
@@ -271,9 +272,9 @@ When a single device transmits on a channel for 2 <em>time units</em> every 10 <
 <li><strong>g4</strong> (869.7 – 870.0 MHz): 1%</li>
 </ul>
 <p>Additionally, the LoRaWAN specification dictates duty cycles for the <em>join frequencies</em>, the frequencies devices of all LoRaWAN-compliant networks use for over-the-air activations (OTAA) of devices. In most regions this duty cycle is set to <strong>1%</strong>.</p>
-<h4 id="fair-use-policy">Fair Use Policy</h4>
+<h4 id="fair-use-policy">Fair Use Policy&nbsp;<a class="header-hash" href="#fair-use-policy">#</a> </h4>
 <p>On The Things Network&rsquo;s public community network a <strong>Fair Use Policy</strong> applies which limits the <strong>uplink airtime</strong> to <strong>30 seconds per day (24 hours) per node</strong> and the <strong>downlink messages</strong> to <strong>10 messages per day (24 hours) per node</strong>. If you use a private network, these limits do not apply, but you still have to be compliant with the governmental and LoRaWAN limits.</p>
-<h2 id="compliance">Compliance</h2>
+<h2 id="compliance">Compliance&nbsp;<a class="header-hash" href="#compliance">#</a> </h2>
 <p>Every radio device must be compliant with the regulated duty cycle limits. This applies to <strong>both nodes and gateways</strong>.</p>
 <p>In practice, this means that you should program your nodes in such a way, that they stay within the limits. The easiest way to do this, is to calculate how much <em>airtime</em> each message consumes using one of the many <a href="https://avbentem.github.io/airtime-calculator/ttn/eu868">airtime calculators</a> and use that information to choose a good transmit interval.</p>
 <p>Some radio modules (such as the RN2483) also enforce the duty cycle limits. If you exceed the limits, the module will complain with a message <code>no_free_ch</code>. Specifically, the RN2483 limits the duty cycle on a per-channel basis. This means that if you only have 1 channel configured, the module will start enforcing the duty cycle after the first message.</p>
@@ -287,6 +288,7 @@ When a single device transmits on a channel for 2 <em>time units</em> every 10 <
 <p><em>The figure below shows enforcement on those same two bands, but enforced per channel</em><br>
 <img src="duty-cycle-multi-channel-off-air-2.png" alt="Multiple Band Off-air"></p>
 <p><em>(note: channel 3 is blocked until slot 11)</em></p>
+
 
         </div>
       

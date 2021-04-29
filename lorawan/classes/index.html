@@ -38,7 +38,7 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.63e25b5c651bd53d7906c0aea044f525dd20de132fd123ea1927e46490c71ca9.css" integrity="sha256-Y&#43;JbXGUb1T15BsCuoET1Jd0g3hMv0SPqGSfkZJDHHKk=" crossorigin="anonymous">
 
   <meta property="og:title" content="Device Classes" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
@@ -253,8 +253,9 @@
           Device Classes
         </h1>
         <div class="content">
-          <p>The LoRaWAN specification defines three device types: <strong>Class A</strong>, <strong>Class B</strong>, and <strong>Class C</strong>. All LoRaWAN devices <strong>must</strong> implement Class A, whereas Class B and Class C are extensions to the specification of Class A devices.</p>
-<h2 id="class-a">Class A</h2>
+          
+<p>The LoRaWAN specification defines three device types: <strong>Class A</strong>, <strong>Class B</strong>, and <strong>Class C</strong>. All LoRaWAN devices <strong>must</strong> implement Class A, whereas Class B and Class C are extensions to the specification of Class A devices.</p>
+<h2 id="class-a">Class A&nbsp;<a class="header-hash" href="#class-a">#</a> </h2>
 <p><strong>Class A</strong> devices support bi-directional communication between a device and a gateway. Uplink messages (from the device to the server) can be sent at any time. The device then opens two receive windows at specified times (RX1 Delay and RX2 Delay) after an uplink transmission. If the server does not respond in either of these receive windows, the next opportunity will be after the next uplink transmission from the device.</p>
 <p><img src="class-a.png" alt="Class A Receive Windows"></p>
 <p><em>Figure: Class A Receive Window Diagram</em></p>
@@ -279,7 +280,7 @@
 <li>Earthquake early detection</li>
 <li>Location tracking</li>
 </ul>
-<h2 id="class-b">Class B</h2>
+<h2 id="class-b">Class B&nbsp;<a class="header-hash" href="#class-b">#</a> </h2>
 <p><strong>Class B</strong> devices extend Class A by adding scheduled receive windows for downlink messages from the server. Using time-synchronized beacons transmitted by the gateway, the devices periodically open receive windows. The time between beacons is known as the beacon period, and the time during which the device is available to receive downlinks is a &ldquo;ping slot.&rdquo; Class B devices also open receive windows after sending an uplink, as you can see below:</p>
 <p><img src="class-b.png" alt="Class B Receive Windows"></p>
 <p><em>Figure: Class B Receive Window Diagram</em></p>
@@ -289,7 +290,7 @@
 <li>Smart metering</li>
 <li>Temperature reporting</li>
 </ul>
-<h2 id="class-c">Class C</h2>
+<h2 id="class-c">Class C&nbsp;<a class="header-hash" href="#class-c">#</a> </h2>
 <p><strong>Class C</strong> devices extend Class A by keeping the receive windows open unless they are transmitting, as shown in the figure below. This allows for low-latency communication but is many times more energy consuming than Class A devices.</p>
 <p><img src="class-c.png" alt="Class C Receive Windows"></p>
 <p>Class C end devices:</p>
@@ -302,7 +303,7 @@
 <li>Utility meters</li>
 <li>Streetlights</li>
 </ul>
-<h2 id="questions">Questions</h2>
+<h2 id="questions">Questions&nbsp;<a class="header-hash" href="#questions">#</a> </h2>
 <ol>
 <li>
 <p>Which end device class consumes the lowest power?</p>
@@ -370,6 +371,7 @@
 </ul>
 </li>
 </ol>
+
 
         </div>
       

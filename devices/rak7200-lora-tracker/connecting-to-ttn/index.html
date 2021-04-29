@@ -38,7 +38,7 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.63e25b5c651bd53d7906c0aea044f525dd20de132fd123ea1927e46490c71ca9.css" integrity="sha256-Y&#43;JbXGUb1T15BsCuoET1Jd0g3hMv0SPqGSfkZJDHHKk=" crossorigin="anonymous">
 
   <meta property="og:title" content="Connecting to The Things Network (TTN)" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
@@ -251,11 +251,12 @@
           Connecting to The Things Network (TTN)
         </h1>
         <div class="content">
-          <p>The Things Network is about enabling low power devices to be used in long range gateways that connect to an open-source, decentralized network and exchange data with Applications. Learn more about the Things Network <a href="https://www.thethingsnetwork.org/docs/"><strong>here</strong></a>. In this section, we’ll show how to connect the RAK7200 Lora® Tracker to The Things Network (TTN).</p>
+          
+<p>The Things Network is about enabling low power devices to be used in long range gateways that connect to an open-source, decentralized network and exchange data with Applications. Learn more about the Things Network <a href="https://www.thethingsnetwork.org/docs/"><strong>here</strong></a>. In this section, we’ll show how to connect the RAK7200 Lora® Tracker to The Things Network (TTN).</p>
 <p><strong>1</strong>.First, connect the RAK7200 Lora® Tracker to your PC and open the <strong>RAK Serial Port Tool</strong>.</p>
 <p><strong>2</strong>.&quot;<strong>Select</strong>&quot; the appropriate COM port and click &ldquo;<strong>OPEN</strong>&rdquo; button same with the image shown below. Read more on how to interface your RAK7200 Lora® Tracker with your computer in this <a href="https://doc.rakwireless.com/rak7200-lora---tracker/interfacing-with-rak7200-lora---tracker">document</a>.</p>
 <p><img src="../images/rak7200serialport.jpg" alt="Figure 1: RAK7200 Serial Port Tool"></p>
-<h3 id="registering-device">Registering Device</h3>
+<h3 id="registering-device">Registering Device&nbsp;<a class="header-hash" href="#registering-device">#</a> </h3>
 <blockquote>
 <p><strong>Note</strong> In this section, it is assumed that you have already successfully connected your RAK LoRa® Gateways to The Things Network (TTN). If not, refer to the individual documentation of all the RAK LoRAWAN™ Gateways through <a href="https://doc.rakwireless.com/">here</a>.</p>
 </blockquote>
@@ -287,7 +288,7 @@
 <p><strong>10</strong>.Then press the “<strong>Register</strong>” button at the bottom of this page to finish.</p>
 <p><img src="../images/ttndeviceoverview.png" alt="Figure 9: Device Overview in TTN"></p>
 <p>When you connect the RAK7200 Lora® Tracker to a LoRaWAN Gateway, we need some amount of security and trust to be established amongst them. There are two connection modes, and we distinguish between them using the criteria of security and ease of implementation. These are the <strong>Over-The-Air Activation (OTAA)</strong> and <strong>Activation By Personalization (ABP)</strong>.</p>
-<h3 id="otaa-mode">OTAA Mode</h3>
+<h3 id="otaa-mode">OTAA Mode&nbsp;<a class="header-hash" href="#otaa-mode">#</a> </h3>
 <p>According to The Things Network (TTN), <strong>Over-the-Air Activation (OTAA)</strong> is the preferred and most secure way to connect with The Things Network (TTN). Thus, it is chosen as the default method when registering a device. For configuring it you need the following three parameters: <strong>Device EUI, Application EUI and App Key</strong>. You can get them all from the <strong>Overview page</strong>.</p>
 <p><img src="../images/ttnotaaparam.png" alt="Figure 10: Device OTAA Parameters"></p>
 <p>Now, let us configure the RAK7200 Lora® Tracker to work in OTAA mode in the EU868 band, as an example.</p>
@@ -313,7 +314,7 @@
 <p><strong>5</strong>.If you get a response in your TTN live data feed as in the figure below, then you are all set!</p>
 <p><img src="../images/otaadatatransmitted.png" alt="Figure 15: View Transmitted Data through TTN"></p>
 <p>Great! That’s all about OTAA mode.</p>
-<h3 id="abp-mode">ABP Mode</h3>
+<h3 id="abp-mode">ABP Mode&nbsp;<a class="header-hash" href="#abp-mode">#</a> </h3>
 <p><strong>Authentication By Personalisation (ABP)</strong> is a LoRaWAN™ activation mode that enables manual configuration of encryption keys on the device and is capable of sending frames to RAK gateways without needing a &lsquo;handshake&rsquo; procedure in exchanging keys unlike OTAA.</p>
 <p>This is a mode best used for testing environments.However, it is not recommended for production, as it is less secure. In this section, we will go through the steps in connecting to TTN using ABP mode.</p>
 <p><strong>1</strong>.To start with, join the ABP mode by going to device settings then switch the activation method to ABP.</p>
@@ -339,12 +340,13 @@
 </code></pre><p><img src="../images/ttnabpsenddata.png" alt="Figure 21: Sending an Uplink Frame"></p>
 <p>Great! Your node should now work in ABP mode.</p>
 <p><img src="../images/ttnabpreceivedata.png" alt="Figure 22: Sending Data to TTN from RAK7200 Lora® Tracker"></p>
-<h3 id="optional-configurations">Optional Configurations</h3>
+<h3 id="optional-configurations">Optional Configurations&nbsp;<a class="header-hash" href="#optional-configurations">#</a> </h3>
 <p>You can also try other configurations which is supported in RAK7200 LoRa Tracker. Click through the guides provided below to learn more. Enjoy!</p>
 <ul>
 <li>Connecting to <a href="https://doc.rakwireless.com/rak7200-lora---tracker/connect-to-chirpstack">Chirpstack</a></li>
 <li><a href="https://doc.rakwireless.com/rak7200-lora---tracker/analyzing-the-data-from-rak7200">RAK7200 Data Analyzing</a></li>
 </ul>
+
 
         </div>
       

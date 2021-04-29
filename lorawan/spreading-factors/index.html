@@ -38,7 +38,7 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.63e25b5c651bd53d7906c0aea044f525dd20de132fd123ea1927e46490c71ca9.css" integrity="sha256-Y&#43;JbXGUb1T15BsCuoET1Jd0g3hMv0SPqGSfkZJDHHKk=" crossorigin="anonymous">
 
   <meta property="og:title" content="Spreading Factors" />
 <meta property="og:description" content="LoRa is based on Chirp Spread Spectrum (CSS) technology, where chirps (also known as symbols) are the carrier of data.
@@ -258,14 +258,15 @@ For a visual explanation, see this video on LoRa chirps."/>
         </h1>
 
         <div class="content">
-          <p>LoRa is based on Chirp Spread Spectrum (CSS) technology, where chirps (also known as symbols) are the carrier of data.</p>
+          
+<p>LoRa is based on Chirp Spread Spectrum (CSS) technology, where chirps (also known as symbols) are the carrier of data.</p>
 <p>The spreading factor controls the chirp rate, and thus controls the speed of data transmission. <strong>Lower spreading factors</strong> mean <strong>faster chirps</strong> and therefore a <strong>higher data transmission rate</strong>. For every increase in spreading factor, the chirp sweep rate is halved, and so the data transmission rate is halved.</p>
 <p>For a visual explanation, see <a href="https://www.youtube.com/watch?v=dxYY097QNs0">this video</a> on LoRa chirps.</p>
 <p>Lower spreading factors reduce the range of LoRa transmissions, because they reduce the processing gain and increase the bit rate. Changing spreading factor allows the network to increase or decrease data rate for each end device at the cost of range.</p>
 <p>The network also uses spreading factors to control congestion. Spreading factors are orthogonal, so signals modulated with different spreading factors and transmitted on the same frequency channel at the same time do not interfere with each other.</p>
-<h3 id="influence-of-spreading-factors">Influence of Spreading Factors</h3>
+<h3 id="influence-of-spreading-factors">Influence of Spreading Factors&nbsp;<a class="header-hash" href="#influence-of-spreading-factors">#</a> </h3>
 <p>LoRa modulation has a total of 6 spreading factors from SF7 to SF12. Spreading factors influence data rate, time-on-air, battery life, and receiver sensitivity, as described here.</p>
-<h4 id="data-rate">Data rate</h4>
+<h4 id="data-rate">Data rate&nbsp;<a class="header-hash" href="#data-rate">#</a> </h4>
 <p>Compared to a higher spreading factor, a lower spreading factor provides a higher bit rate for a fixed bandwidth and coding rate. For example, SF7 provides a higher bit rate than SF12.</p>
 <p>Doubling the bandwidth also doubles the bit rate for a fixed spreading factor and coding rate.</p>
 <p>The following table presents bit rates calculated with the SF7 and Coding Rate (CR) = 1 for bandwidths, 125, 250, and 500 kHz.</p>
@@ -304,13 +305,13 @@ For a visual explanation, see this video on LoRa chirps."/>
    </td>
   </tr>
 </table>
-<h4 id="distance">Distance</h4>
+<h4 id="distance">Distance&nbsp;<a class="header-hash" href="#distance">#</a> </h4>
 <p>Larger spreading factors mean larger processing gain, and so a signal modulated with a larger spreading factor can be received with less errors compared to a signal with a lower spreading factor, and therefore travel a longer distance. For example, a signal modulated with the SF12 can travel a longer distance than a signal modulated with the SF7.</p>
-<h4 id="time-on-air">Time-On-Air</h4>
+<h4 id="time-on-air">Time-On-Air&nbsp;<a class="header-hash" href="#time-on-air">#</a> </h4>
 <p>Compared to a lower spreading factor, sending a fixed amount of data (payload) with a higher Spreading Factor and a fixed bandwidth needs longer time-on-air.</p>
 <p>The Things Network’s LoRaWAN airtime calculator can be used to calculate the time-on-air using input bytes (payload size), bandwidth, and spreading factor. TTN’s LoRaWAN airtime calculator can be accessed here:</p>
 <p><span style="text-decoration:underline;"><a href="https://www.thethingsnetwork.org/airtime-calculator">https://www.thethingsnetwork.org/airtime-calculator</a></span></p>
-<h4 id="receiver-sensitivity">Receiver Sensitivity</h4>
+<h4 id="receiver-sensitivity">Receiver Sensitivity&nbsp;<a class="header-hash" href="#receiver-sensitivity">#</a> </h4>
 <p>Higher spreading factors provide higher receiver sensitivity. Usually, LoRa uses higher spreading factors when the signal is weak.</p>
 <p>The following table shows how spreading factors impact the receiver sensitivity.</p>
 <table>
@@ -358,9 +359,9 @@ For a visual explanation, see this video on LoRa chirps."/>
    </td>
   </tr>
 </table>
-<h4 id="battery-life">Battery Life</h4>
+<h4 id="battery-life">Battery Life&nbsp;<a class="header-hash" href="#battery-life">#</a> </h4>
 <p>The battery life of an end device is highly dependent on the spreading factor used. Higher spreading factors result in longer active times for the radio transceivers and shorter battery life.</p>
-<h2 id="questions">Questions</h2>
+<h2 id="questions">Questions&nbsp;<a class="header-hash" href="#questions">#</a> </h2>
 <ol>
 <li>Which spreading factor provides the highest receiver sensitivity?</li>
 </ol>
@@ -430,6 +431,7 @@ For a visual explanation, see this video on LoRa chirps."/>
 <p><span style="text-decoration:underline;">SF10</span></p>
 </li>
 </ul>
+
 
         </div>
 

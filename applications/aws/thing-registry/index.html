@@ -38,7 +38,7 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.63e25b5c651bd53d7906c0aea044f525dd20de132fd123ea1927e46490c71ca9.css" integrity="sha256-Y&#43;JbXGUb1T15BsCuoET1Jd0g3hMv0SPqGSfkZJDHHKk=" crossorigin="anonymous">
 
   <meta property="og:title" content="Thing Registry" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
@@ -338,12 +338,13 @@
           Thing Registry
         </h1>
         <div class="content">
-          <p>A key feature of the integration is synchronizing the thing registries of AWS IoT and The Things Network.</p>
+          
+<p>A key feature of the integration is synchronizing the thing registries of AWS IoT and The Things Network.</p>
 <p>Synchronization happens in two ways: devices on The Things Network are created as things on AWS IoT, and things on AWS IoT are created as devices on The Things Network. In addition, changes to AWS IoT things are applied to The Things Network devices.</p>
 <blockquote>
 <p>The integration process synchronizes the thing registry by default every 10 minutes, see the AWS CloudFormation stack parameters in the <a href="/docs/applications/aws/quick-start/">Quick Start</a>.</p>
 </blockquote>
-<h2 id="manage-things">Manage Things</h2>
+<h2 id="manage-things">Manage Things&nbsp;<a class="header-hash" href="#manage-things">#</a> </h2>
 <ol>
 <li>Log in to the <a href="http://console.aws.amazon.com">AWS Management Console</a></li>
 <li>In <strong>Services</strong> under <strong>Internet Of Things</strong>, go to <strong>AWS IoT</strong></li>
@@ -352,7 +353,7 @@
 <li>Click on one device to see its attributes:</li>
 </ol>
 <p><img src="../device-attributes.png" alt="Device Attributes"></p>
-<h2 id="create-thing-in-aws-iot">Create Thing in AWS IoT</h2>
+<h2 id="create-thing-in-aws-iot">Create Thing in AWS IoT&nbsp;<a class="header-hash" href="#create-thing-in-aws-iot">#</a> </h2>
 <ol>
 <li>In <strong>AWS IoT</strong>, under <strong>Manage</strong>, go to <strong>Things</strong></li>
 <li>Click <strong>Create</strong></li>
@@ -388,6 +389,7 @@
 <blockquote>
 <p>Managing devices manually in The Things Network Console is typically easier and less error prone than in AWS IoT. However, thing registry synchronization with AWS IoT allows you and your applications to work with LoRaWAN things like any other things in AWS IoT.</p>
 </blockquote>
+
 
         </div>
       

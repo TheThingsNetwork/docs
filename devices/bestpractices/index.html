@@ -38,7 +38,7 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.63e25b5c651bd53d7906c0aea044f525dd20de132fd123ea1927e46490c71ca9.css" integrity="sha256-Y&#43;JbXGUb1T15BsCuoET1Jd0g3hMv0SPqGSfkZJDHHKk=" crossorigin="anonymous">
 
   <meta property="og:title" content="Best Practices" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
@@ -222,9 +222,10 @@
           Best Practices
         </h1>
         <div class="content">
-          <p>If you&rsquo;ve been using development devices, you might want at some point to transition to production-grade device development. Here are best practices for you to build devices that will last in the long-term, and that will help you achieve <a href="https://www.lora-alliance.org/lorawan-for-developers">LoRaWAN compliancy</a>.</p>
-<h2 id="device-activation">Device activation</h2>
-<h3 id="otaa-and-abp">OTAA and ABP</h3>
+          
+<p>If you&rsquo;ve been using development devices, you might want at some point to transition to production-grade device development. Here are best practices for you to build devices that will last in the long-term, and that will help you achieve <a href="https://www.lora-alliance.org/lorawan-for-developers">LoRaWAN compliancy</a>.</p>
+<h2 id="device-activation">Device activation&nbsp;<a class="header-hash" href="#device-activation">#</a> </h2>
+<h3 id="otaa-and-abp">OTAA and ABP&nbsp;<a class="header-hash" href="#otaa-and-abp">#</a> </h3>
 <p>LoRaWAN offers two methods of device activation: <strong>OTAA</strong> (Over The Air) and <strong>ABP</strong> (Activation by Personalization). OTAA is the <strong>preferred method</strong> to join any LoRaWAN network, including the Things Network: it offers more security, more flexibility, as well as scalability.</p>
 <ul>
 <li>
@@ -238,11 +239,11 @@
 <p><strong>Scalability</strong>: On select regional bands, when a device performs activation, the network server answers with a list of additional frequencies the device can use to exchange messages. This means the device doesn&rsquo;t have to use only the default regional bands, but also the ones defined by the network server operators.</p>
 </li>
 </ul>
-<h3 id="otaa-best-practices">OTAA best practices</h3>
+<h3 id="otaa-best-practices">OTAA best practices&nbsp;<a class="header-hash" href="#otaa-best-practices">#</a> </h3>
 <p>When a device performs a network join, a <code>DevAddr</code> is attributed and sent to the device. <code>DevAddr</code> are designed to be kept in the long-term, from days to years - The Things Network is designed to keep activations in memory for years, even in the event of an outage.</p>
 <p>For this reason, the LoRaWAN documentation specifies clearly that <strong>devices should perform join operations the less possible in their lifetime</strong>. The LoRaWAN specifications warn especially against systematic rejoin in case of network failure. A device should keep the result of an activation in permanent storage if the device is expected to be turned off during its lifetime.</p>
 <p>A device not receiving messages from the network can be due to many reasons: if the network server is suffering from an outage, if gateways are suffering a power or network outage, if there&rsquo;s no coverage in the area&hellip; Whenever a device rejoins, it consumes the closest gateway&rsquo;s airtime to emit the downlink - and if many devices in an area are rejoining at the same time (e.g. in case of a temporary gateway outage), this leads to a network bloating in the area.</p>
-<h4 id="examples">Examples</h4>
+<h4 id="examples">Examples&nbsp;<a class="header-hash" href="#examples">#</a> </h4>
 <p>A device equipped with a temperature sensor sends data upstream every hour. To ensure that the data is received upstream, the device has a confirmation system - if no confirmation is received, the data is re-sent.</p>
 <ul>
 <li>
@@ -261,6 +262,7 @@
 <p>A <strong>good practice</strong> would be to have the device join as part of the manufacturing process, and have the device use the same session for its whole lifetime.</p>
 </li>
 </ul>
+
 
         </div>
       

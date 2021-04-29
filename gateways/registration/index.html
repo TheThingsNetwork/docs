@@ -38,7 +38,7 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.63e25b5c651bd53d7906c0aea044f525dd20de132fd123ea1927e46490c71ca9.css" integrity="sha256-Y&#43;JbXGUb1T15BsCuoET1Jd0g3hMv0SPqGSfkZJDHHKk=" crossorigin="anonymous">
 
   <meta property="og:title" content="Gateway Registration" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
@@ -289,7 +289,8 @@
           Gateway Registration
         </h1>
         <div class="content">
-          <p>The main packet forwarders used in the LoRaWAN market, is Semtech&rsquo;s UDP Packet Forwarder (also referred to as the Legacy Forwarder).</p>
+          
+<p>The main packet forwarders used in the LoRaWAN market, is Semtech&rsquo;s UDP Packet Forwarder (also referred to as the Legacy Forwarder).</p>
 <ul>
 <li>Packet forwarders that connect using the Semtech UDP protocol (such as the <a href="/docs/gateways/packet-forwarder/semtech-udp/">Semtech UDP Packet Forwarder</a>). This protocol is not encrypted, but its simplicity makes it work on a large number of gateways.</li>
 </ul>
@@ -297,16 +298,16 @@
 <blockquote>
 <p>If you have an off-the-shelf gateway with the default software, it most likely uses the Semtech UDP protocol. Follow the steps for connecting using the <a href="/docs/gateways/#via-udp-packet-forwarder">UDP Packet Forwarder</a>.</p>
 </blockquote>
-<h2 id="via-semtech-udp-packet-forwarder">Via Semtech UDP Packet Forwarder</h2>
-<h3 id="start-with-configuration">Start with Configuration</h3>
+<h2 id="via-semtech-udp-packet-forwarder">Via Semtech UDP Packet Forwarder&nbsp;<a class="header-hash" href="#via-semtech-udp-packet-forwarder">#</a> </h2>
+<h3 id="start-with-configuration">Start with Configuration&nbsp;<a class="header-hash" href="#start-with-configuration">#</a> </h3>
 <p>Follow your gateway&rsquo;s manual to configure it to forward packets to The Things Network. Configure it to forward to the correct <a href="/docs/gateways/packet-forwarder/semtech-udp/">router address for your region</a>. The guide should also help you set or retrieve the gateway&rsquo;s EUI, likely the MAC address of the LoRa module which looks like <code>B827EBFFFE87BD11</code>.</p>
 <p>You will likely also need the <code>global_conf.json</code> file for the frequency plan used in your region. You can find it on <a href="https://github.com/TheThingsNetwork/gateway-conf">our github repo</a>.</p>
 <blockquote>
 <p>If your gateway does not have a GPS module we advise you not to configure a manual location in the gateway. Do this in the Console instead so that you can change it without accessing the gateway.</p>
 </blockquote>
-<h3 id="packet-forwarder-bridge">Packet Forwarder Bridge</h3>
+<h3 id="packet-forwarder-bridge">Packet Forwarder Bridge&nbsp;<a class="header-hash" href="#packet-forwarder-bridge">#</a> </h3>
 <p>We have a special bridge in place that will continue to accept packages from gateways using the UDP Packet Forwarder. It will lowercase the EUI and prefix it with <code>eui-</code>. So a gateway with EUI <code>B827EBFFFE87BD11</code> will appear in meta data and APIs as <code>eui-b827ebfffe87bd11</code>.</p>
-<h3 id="register">Register</h3>
+<h3 id="register">Register&nbsp;<a class="header-hash" href="#register">#</a> </h3>
 <p><a href="https://console.thethingsnetwork.org/gateways/register">Register your gateway</a> via the console. This will link it to your account so that you can manage it.</p>
 <p><img src="../registration-bridge.png" alt="Registration for Packet Forwarder Bridge"></p>
 <ul>
@@ -318,13 +319,14 @@
 <blockquote>
 <p>After registering the gateway, select <strong>Settings</strong> from the top right menu on the Gateway screen so set the gateway description, location altitude, privacy settings and other information.</p>
 </blockquote>
-<h3 id="unregistered-gateways">Unregistered Gateways</h3>
+<h3 id="unregistered-gateways">Unregistered Gateways&nbsp;<a class="header-hash" href="#unregistered-gateways">#</a> </h3>
 <p>If you don&rsquo;t register your gateway, The Things Network will still accept packets it forwards, but mark them as <strong>untrusted</strong>. The gateway will appear on the <a href="https://www.thethingsnetwork.org/map">map</a> as <strong>Unregistered</strong>. You will not be able to manage its configuration (e.g. location) from the Console.</p>
-<h2 id="troubleshooting--faq">Troubleshooting &amp; FAQ</h2>
-<h3 id="could-not-register-gateway">Could not register gateway</h3>
+<h2 id="troubleshooting--faq">Troubleshooting &amp; FAQ&nbsp;<a class="header-hash" href="#troubleshooting--faq">#</a> </h2>
+<h3 id="could-not-register-gateway">Could not register gateway&nbsp;<a class="header-hash" href="#could-not-register-gateway">#</a> </h3>
 <p>If you return to the Gateways screen without seeing the newly registered gateway you will probably also see the following error on the top right:</p>
 <p><img src="../registration-error.png" alt="Registration Error"></p>
 <p>This means someone else already registered this Gateway ID or EUI. If you registered to use the UDP Packet Forwarder, check the manual of your gateway to see if you can configure it with a <a href="https://www.randomlists.com/string?length=16">different (random) EUI</a>.</p>
+
 
         </div>
       

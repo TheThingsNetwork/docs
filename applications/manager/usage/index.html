@@ -38,7 +38,7 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.63e25b5c651bd53d7906c0aea044f525dd20de132fd123ea1927e46490c71ca9.css" integrity="sha256-Y&#43;JbXGUb1T15BsCuoET1Jd0g3hMv0SPqGSfkZJDHHKk=" crossorigin="anonymous">
 
   <meta property="og:title" content="Usage" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
@@ -313,17 +313,19 @@
           Usage
         </h1>
         <div class="content">
-          <h2 id="get-an-access-token">Get an Access Token</h2>
+          
+<h2 id="get-an-access-token">Get an Access Token&nbsp;<a class="header-hash" href="#get-an-access-token">#</a> </h2>
 <p>To use these APIs you need a JSON Web Access Token with a proper scope. Alternatively, you can use an Application Access Key. The APIs will then exchange this for a token.</p>
 <p>Because this exchange happens on every request it is better to do this yourself and re-use the token. This will improve the performance and you will continue to be able to use the Application Manager API even if for some reason the Account Server is down.</p>
 <p>To exchange the key for a token, see the <a href="/docs/network/account/authentication/#exchanging-an-access-key-for-an-access-token">Account Server API Reference</a>.</p>
 <p>See <a href="/docs/applications/manager/authentication/">Authentication</a> on how to use the key or token to authenticate.</p>
-<h2 id="grpc-or-http">gRPC or HTTP</h2>
+<h2 id="grpc-or-http">gRPC or HTTP&nbsp;<a class="header-hash" href="#grpc-or-http">#</a> </h2>
 <p>The primary interface for the Handler Management API is <a href="http://www.grpc.io/">gRPC</a>. To learn about gRPC follow the <a href="http://www.grpc.io/docs/quickstart/">gRPC Quick Start</a> in your favorite language.  The service is defined in <a href="https://github.com/TheThingsNetwork/api/blob/master/handler/handler.proto">handler.proto</a>.</p>
 <p>The HTTP API is a wrapper around the gRPC API. We recommend to use gRPC if possible because the performance is better.</p>
 <p>See <a href="/docs/applications/manager/api/">API Reference</a> for the available methods for both the gRPC and HTTP API.</p>
-<h2 id="find-a-handler">Find a Handler</h2>
+<h2 id="find-a-handler">Find a Handler&nbsp;<a class="header-hash" href="#find-a-handler">#</a> </h2>
 <p>To find a Handler to connect to you need to use the <a href="/docs/network/discovery/">Discovery API</a>. This is where all Handlers announce themselves. See the <a href="/docs/network/discovery/">documentation</a> on how to get hold of an handler.</p>
+
 
         </div>
       

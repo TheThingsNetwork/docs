@@ -38,7 +38,7 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.63e25b5c651bd53d7906c0aea044f525dd20de132fd123ea1927e46490c71ca9.css" integrity="sha256-Y&#43;JbXGUb1T15BsCuoET1Jd0g3hMv0SPqGSfkZJDHHKk=" crossorigin="anonymous">
 
   <meta property="og:title" content="Quick Start" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
@@ -313,12 +313,13 @@
           Quick Start
         </h1>
         <div class="content">
-          <p>This guide will walk you through setting up a Java project that listens to device activations and messages and responds to every 3rd message.</p>
+          
+<p>This guide will walk you through setting up a Java project that listens to device activations and messages and responds to every 3rd message.</p>
 <blockquote>
 <p>This guide assumes the sketch and payload functions of <a href="/docs/devices/uno/quick-start/">The Things Uno / Quick Start</a>, but can be easily applied to any other.</p>
 </blockquote>
 <p>The full script that we will build is also included as <a href="https://github.com/TheThingsNetwork/java-app-sdk/blob/master/samples/mqtt/src/main/java/org/thethingsnetwork/samples/mqtt/App.java">example</a> in the Java SDK.</p>
-<h2 id="setup">Setup</h2>
+<h2 id="setup">Setup&nbsp;<a class="header-hash" href="#setup">#</a> </h2>
 <p>Let&rsquo;s install Java, create a Java project and require the TTN Client.</p>
 <ol>
 <li>
@@ -358,7 +359,7 @@ mvn archetype:generate <span class="se">\
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">mvn clean compile
 </code></pre></div></li>
 </ol>
-<h2 id="connect">Connect</h2>
+<h2 id="connect">Connect&nbsp;<a class="header-hash" href="#connect">#</a> </h2>
 <p>Next, we will write the script that requires the TTN Client module and uses it to connect.</p>
 <ol>
 <li>
@@ -416,7 +417,7 @@ connected !
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">Connection refused: Not authorized
 </code></pre></div></li>
 </ol>
-<h2 id="receive-activations">Receive Activations</h2>
+<h2 id="receive-activations">Receive Activations&nbsp;<a class="header-hash" href="#receive-activations">#</a> </h2>
 <p>Now that we are connected, let&rsquo;s listen for new device activations.</p>
 <blockquote>
 <p>Be aware that you will only receive <code>activation</code> events since the moment the script connects.</p>
@@ -447,7 +448,7 @@ connected !
 </code></pre></div><p>Use <code>Ctrl C</code> to terminate the script.</p>
 </li>
 </ol>
-<h2 id="receive-messages">Receive Messages</h2>
+<h2 id="receive-messages">Receive Messages&nbsp;<a class="header-hash" href="#receive-messages">#</a> </h2>
 <p>Now let&rsquo;s listen for actual messages coming in from devices.</p>
 <ol>
 <li>
@@ -487,7 +488,7 @@ connected !
 <span class="o">}</span>
 </code></pre></div></li>
 </ol>
-<h2 id="send-messages">Send Messages</h2>
+<h2 id="send-messages">Send Messages&nbsp;<a class="header-hash" href="#send-messages">#</a> </h2>
 <p>The most common <a href="https://www.lora-alliance.org/What-Is-LoRa/Technology">Class A</a> LoRaWAN devices - including The Things Node and Uno - can only receive the last scheduled message in response to a message they send.</p>
 <ol>
 <li>
@@ -531,6 +532,7 @@ LED: on
 </code></pre></li>
 </ol>
 <p>🎉 Congratulations! Now you know how to process and send messages from a Java app. Go build something!</p>
+
 
         </div>
       

@@ -38,7 +38,7 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.63e25b5c651bd53d7906c0aea044f525dd20de132fd123ea1927e46490c71ca9.css" integrity="sha256-Y&#43;JbXGUb1T15BsCuoET1Jd0g3hMv0SPqGSfkZJDHHKk=" crossorigin="anonymous">
 
   <meta property="og:title" content="Regional Parameters" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
@@ -253,7 +253,8 @@
           Regional Parameters
         </h1>
         <div class="content">
-          <p>LoRaWAN operates in unlicensed radio spectrum. This means that anyone can use the radio frequencies without having to pay million dollar fees for transmission rights. It is similar to WiFi, which uses the 2.4GHz and 5GHz ISM bands worldwide. Anyone is allowed to set up WiFi routers and transmit WiFi signals without the need for a license or permit.</p>
+          
+<p>LoRaWAN operates in unlicensed radio spectrum. This means that anyone can use the radio frequencies without having to pay million dollar fees for transmission rights. It is similar to WiFi, which uses the 2.4GHz and 5GHz ISM bands worldwide. Anyone is allowed to set up WiFi routers and transmit WiFi signals without the need for a license or permit.</p>
 <p>LoRaWAN uses lower radio frequencies with a longer range. The fact that frequencies have a longer range also comes with more restrictions that are often country-specific. This poses a challenge for LoRaWAN, that tries to be as uniform as possible in all different regions of the world. As a result, LoRaWAN is specified for a number of bands for these regions. These bands are similar enough to support a region-agnostic protocol, but have a number of consequences for the implementation of the backend systems.</p>
 <ul>
 <li>
@@ -270,7 +271,7 @@
 </li>
 </ul>
 <p>In this chapter you will learn in detail about the <strong>EU863-870</strong> band and <strong>US902-928</strong> ISM band. This chapter also presents some important parameters involved in other frequency plans.</p>
-<h2 id="common-frequency-plans">Common Frequency Plans</h2>
+<h2 id="common-frequency-plans">Common Frequency Plans&nbsp;<a class="header-hash" href="#common-frequency-plans">#</a> </h2>
 <p>LoRaWAN operates in the unlicensed ISM (Industrial, Scientific, and Medical) bands. The table below lists the latest frequency plans and their common names.</p>
 <table>
   <tr>
@@ -350,9 +351,9 @@
   The Things Fundamentals certification expects detailed knowledge about the EU863-870 and US902-928 frequency plans. However, having a basic understanding of other frequency plans is sufficient; for example, you should know that Listen Before Talk (LBT) is used in <strong>Japan</strong>.
 </div>
 
-<h2 id="eu863-870-band">EU863-870 Band</h2>
+<h2 id="eu863-870-band">EU863-870 Band&nbsp;<a class="header-hash" href="#eu863-870-band">#</a> </h2>
 <p>The EU863-870 band can be applied to any region where the radio spectrum use is defined by the ETSI [EN300.220] standard. The EU863-870 band is used in all the European countries, and some countries <em>outside Europe</em>, for example, Bahrain (BH), located in the Middle East. The EU863-870 band implies the frequency band ranges from 863 MHz – 870 MHz but some countries use slightly different frequency ranges. For example, Albania (AL) uses 863-873 MHz.</p>
-<h3 id="eu863-870-default-channels">EU863-870 default channels</h3>
+<h3 id="eu863-870-default-channels">EU863-870 default channels&nbsp;<a class="header-hash" href="#eu863-870-default-channels">#</a> </h3>
 <p>The following three default channels <strong>must</strong> be implemented in every end device that supports the EU863-870 band. These channels are used by the end device to broadcast the <strong>Join-request</strong> message. The end device <strong>randomly</strong> selects one of the default channels to send the <strong>Join-request</strong> message.</p>
 <table>
   <tr>
@@ -409,7 +410,7 @@
 <ul>
 <li><strong>869.525 MHz</strong> at <strong>DR0 (SF12 / 125 kHz)</strong>.</li>
 </ul>
-<h3 id="eu863-870-duty-cycle">EU863-870 Duty Cycle</h3>
+<h3 id="eu863-870-duty-cycle">EU863-870 Duty Cycle&nbsp;<a class="header-hash" href="#eu863-870-duty-cycle">#</a> </h3>
 <p>The European Telecommunications Standards Institute (ETSI) sets the maximum duty cycle for the EU863-870 frequency at 1%, which is the maximum amount of time a device may spend communicating.</p>
 <p>Let’s have a look at how to calculate the time-on-air allowed per day (24 hours), per end device for some common duty cycles.</p>
 <table>
@@ -451,7 +452,7 @@
   Some network operators (like The Things Network) reduce the duty cycle further than ESTI recommends. These types of restrictions are called ‘Fair Access Policy’. For example, The Things Network’s fair access policy limits the uplink airtime to 30 seconds per day per node and the downlink messages to 10 messages per day per node.
 </div>
 
-<h3 id="eu863-870-data-rates">EU863-870 Data Rates</h3>
+<h3 id="eu863-870-data-rates">EU863-870 Data Rates&nbsp;<a class="header-hash" href="#eu863-870-data-rates">#</a> </h3>
 <p>Data rate is the number of bits that are transmitted per unit of time. With LoRa modulation, the data rate depends on a few factors like <strong>spreading factor</strong>, <strong>bandwidth</strong>, and the <strong>coding rate</strong>.</p>
 <p>The following table shows the bit rate for each data rate (DR0 - DR6) configured with the spreading factor and the bandwidth.</p>
 <table>
@@ -533,7 +534,7 @@
 <li>DR0 – DR7</li>
 <li>DR0 – DR11 – all data rates are implemented in the end device</li>
 </ul>
-<h3 id="eu863-870-maximum-eirp--erp">EU863-870 Maximum EIRP / ERP</h3>
+<h3 id="eu863-870-maximum-eirp--erp">EU863-870 Maximum EIRP / ERP&nbsp;<a class="header-hash" href="#eu863-870-maximum-eirp--erp">#</a> </h3>
 <p>The Effective Isotropic Radiated Power (EIRP) is the total power radiated by an isotropic antenna in a single direction. The antenna gain is expressed in dBi for isotropic antennas.</p>
 <p>The following table shows the list of EIRP values that can be used to transmit data.</p>
 <table>
@@ -617,7 +618,7 @@
 <li>+14 dBm = 25 mW</li>
 <li>+27 dBm = 500 mW</li>
 </ul>
-<h3 id="eu863-870-maximum-payload-size">EU863-870 Maximum Payload Size</h3>
+<h3 id="eu863-870-maximum-payload-size">EU863-870 Maximum Payload Size&nbsp;<a class="header-hash" href="#eu863-870-maximum-payload-size">#</a> </h3>
 <p>The maximum application payload size (length) varies by data rate.</p>
 <p>The following table shows the <strong>maximum application payload (FRMPayload) size</strong> for different data rates.</p>
 <table>
@@ -693,7 +694,7 @@
    </td>
   </tr>
 </table>
-<h3 id="eu863-870-summary">EU863-870 Summary</h3>
+<h3 id="eu863-870-summary">EU863-870 Summary&nbsp;<a class="header-hash" href="#eu863-870-summary">#</a> </h3>
 <p>The following table summarizes all the important parameters we have discussed in this section for EU863-870 band.</p>
 <table>
   <tr>
@@ -779,9 +780,9 @@ This is the power radiated by the isotropic antenna / half-wave dipole antenna (
    </td>
   </tr>
 </table>
-<h2 id="us902-928-ism-band">US902-928 ISM Band</h2>
+<h2 id="us902-928-ism-band">US902-928 ISM Band&nbsp;<a class="header-hash" href="#us902-928-ism-band">#</a> </h2>
 <p>This section describes the regional parameters for the <strong>USA</strong>, <strong>Canada</strong>, and all other countries using the <strong>902-928 ISM</strong> band.</p>
-<h3 id="us902-928-frequency-plans">US902-928 Frequency Plans</h3>
+<h3 id="us902-928-frequency-plans">US902-928 Frequency Plans&nbsp;<a class="header-hash" href="#us902-928-frequency-plans">#</a> </h3>
 <p>The US902-928 ISM band is divided into the following frequency plans as shown in the table below.</p>
 <table>
   <tr>
@@ -841,7 +842,7 @@ This is the power radiated by the isotropic antenna / half-wave dipole antenna (
    </td>
   </tr>
 </table>
-<h3 id="us902-928-data-rates">US902-928 Data Rates</h3>
+<h3 id="us902-928-data-rates">US902-928 Data Rates&nbsp;<a class="header-hash" href="#us902-928-data-rates">#</a> </h3>
 <p>The following table shows the <strong>bit rate</strong> for each data rate configured with the spreading factor and the bandwidth.</p>
 <ul>
 <li>DR0 - DR4 and DR8 - DR13 are used for LoRa modulation.</li>
@@ -1048,7 +1049,7 @@ This is the power radiated by the isotropic antenna / half-wave dipole antenna (
 </ul>
 <p>The end device shall change channels for every transmission.</p>
 <p>The maximum radiated output power allowed in the USA is <strong>EIRP = +30 dBm</strong> but for most devices <strong>+20 dBm</strong> is sufficient. Under the Federal Communications Commission (FCC) there are no duty cycle limitations but there is a <strong>400 ms maximum dwell time</strong> per channel. Dwell time is the amount of time needed for a transmission.</p>
-<h3 id="us902-928-maximum-payload-size">US902-928 Maximum Payload Size</h3>
+<h3 id="us902-928-maximum-payload-size">US902-928 Maximum Payload Size&nbsp;<a class="header-hash" href="#us902-928-maximum-payload-size">#</a> </h3>
 <p>The maximum application payload size (length) varies by data rate (configured with spreading factor and bandwidth).</p>
 <p>The following table shows the maximum application payload (FRMPayload) size (N) for different data rates.</p>
 <table>
@@ -1196,7 +1197,7 @@ This is the power radiated by the isotropic antenna / half-wave dipole antenna (
    </td>
   </tr>
 </table>
-<h3 id="us902-928-summary">US902-928 Summary</h3>
+<h3 id="us902-928-summary">US902-928 Summary&nbsp;<a class="header-hash" href="#us902-928-summary">#</a> </h3>
 <p>The following table summarizes all the important parameters we have discussed in this section for US902-928 band.</p>
 <table>
   <tr>
@@ -1274,7 +1275,7 @@ Ch64-Ch71: No
    </td>
   </tr>
 </table>
-<h2 id="other-frequency-plans">Other frequency plans</h2>
+<h2 id="other-frequency-plans">Other frequency plans&nbsp;<a class="header-hash" href="#other-frequency-plans">#</a> </h2>
 <p>You should have a basic knowledge about some important parameters that are included in other frequency plans.</p>
 <ul>
 <li><strong>CN779-787</strong>: Applies to <strong>China</strong>. The duty cycle is <strong>&lt;1%</strong> and there is no dwell time limitation. The default maximum <strong>EIRP</strong> allowed is <strong>+12.15 dBm</strong>.</li>
@@ -1283,7 +1284,7 @@ Ch64-Ch71: No
 <li><strong>KR920:</strong>  The regulations in <strong>South Korea</strong> allow the choice of using either a <strong>duty-cycle limitation</strong> or <strong>Listen Before Talk Adaptive Frequency Agility (LBT AFA)</strong> transmission management.</li>
 <li><strong>IN865</strong>: Applies to <strong>India.</strong> The default maximum <strong>EIRP</strong> allowed is <strong>+30 dBm</strong>.</li>
 </ul>
-<h2 id="default-settings-for-all-regions">Default Settings for All Regions</h2>
+<h2 id="default-settings-for-all-regions">Default Settings for All Regions&nbsp;<a class="header-hash" href="#default-settings-for-all-regions">#</a> </h2>
 <p>There are a few recommended default settings available that can be applied to all the regions.</p>
 <ul>
 <li>RX1 Delay: <strong>1s</strong></li>
@@ -1291,7 +1292,7 @@ Ch64-Ch71: No
 <li>Join Accept 1 Delay: <strong>5s</strong></li>
 <li>Join Accept 2 Delay: <strong>6s</strong></li>
 </ul>
-<h2 id="questions">Questions</h2>
+<h2 id="questions">Questions&nbsp;<a class="header-hash" href="#questions">#</a> </h2>
 <ol>
 <li>Which frequency plan is used in Europe?</li>
 </ol>
@@ -1345,6 +1346,7 @@ Ch64-Ch71: No
 <li>115 bytes</li>
 <li>242 bytes</li>
 </ul>
+
 
         </div>
       

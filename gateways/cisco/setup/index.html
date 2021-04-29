@@ -38,7 +38,7 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.63e25b5c651bd53d7906c0aea044f525dd20de132fd123ea1927e46490c71ca9.css" integrity="sha256-Y&#43;JbXGUb1T15BsCuoET1Jd0g3hMv0SPqGSfkZJDHHKk=" crossorigin="anonymous">
 
   <meta property="og:title" content="Setup" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
@@ -303,8 +303,9 @@
           Setup
         </h1>
         <div class="content">
-          <p>Before starting the gateway, you&rsquo;ll need to set it up. If you&rsquo;ve never used Cisco equipment before, we&rsquo;re providing you with basic instructions to set up the gateway, and basic system and network configuration.</p>
-<h2 id="gateway-setup">Gateway setup</h2>
+          
+<p>Before starting the gateway, you&rsquo;ll need to set it up. If you&rsquo;ve never used Cisco equipment before, we&rsquo;re providing you with basic instructions to set up the gateway, and basic system and network configuration.</p>
+<h2 id="gateway-setup">Gateway setup&nbsp;<a class="header-hash" href="#gateway-setup">#</a> </h2>
 <ul>
 <li>
 <p>Attach the <strong>antennas</strong> that you have for the gateway. If you have 2 antennas, plug in the both of them.</p>
@@ -335,8 +336,8 @@
 </li>
 </ul>
 <p>Your gateway is now up and running, and connected to your computer!</p>
-<h2 id="configuration">Configuration</h2>
-<h3 id="connect-to-the-cisco-gateway-console">Connect to the Cisco gateway console</h3>
+<h2 id="configuration">Configuration&nbsp;<a class="header-hash" href="#configuration">#</a> </h2>
+<h3 id="connect-to-the-cisco-gateway-console">Connect to the Cisco gateway console&nbsp;<a class="header-hash" href="#connect-to-the-cisco-gateway-console">#</a> </h3>
 <p>You now have a serial connection to the Cisco gateway&rsquo;s console.</p>
 <p>To open up a terminal, you have several approaches available:</p>
 <ul>
@@ -350,11 +351,11 @@
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">screen &lt;device&gt; <span class="m">115200</span> <span class="c1"># e.g. screen /dev/tty.usbserial-AO001X6M 115200</span>
 </code></pre></div></li>
 </ul>
-<h3 id="system-setup">System setup</h3>
+<h3 id="system-setup">System setup&nbsp;<a class="header-hash" href="#system-setup">#</a> </h3>
 <p>This part covers <strong>setting up basic system and network parameters</strong>: updating it, connecting it to a local network, setting up <code>ntp</code> and the GPS. If you have specific network constraints, check with your system or network administrator how to set up the system for your network.</p>
 <p>You&rsquo;ll notice that the user shell is quite different from Unix-based shells. This shell is called <strong>standalone mode</strong>, and is meant for a basic usage of the gateway. In many cases, the standalone mode shell won&rsquo;t let you input unexpected characters and entries. In any shell, you can use the <code>?</code> command to show the list of available commands.</p>
 <p>First, type <code>root</code> to login as the privileged user, and enter <code>enable</code> to turn on privileged commands. To verify that privileged commands are enabled, check that the prompt is <code>Gateway#</code> and not <code>Gateway&gt;</code>.</p>
-<h4 id="update">Update</h4>
+<h4 id="update">Update&nbsp;<a class="header-hash" href="#update">#</a> </h4>
 <p>To update your Cisco gateway, you can download the latest <a href="https://software.cisco.com/download/home/286311296/type/286311234/release/2.0.30?imageguid=A74F81D27FD3C1DF311D59849D054C10468D338E">firmware update here</a> - at least version 2.0.30. You will need a Cisco account with the right permissions to download the update file. If your account does not have those permissions, get in touch with your Cisco representative or with Cisco support.</p>
 <p>Once you&rsquo;ve retrieved the update file, you can update your gateway by several ways: USB, FTP or TFTP. We&rsquo;ll cover in this guide how to update over USB. You will need for this a USB stick formatted in FAT. The USB port of the Cisco IXM being tiny, you&rsquo;ll want to use the tiniest USB stick that you own.</p>
 <ol>
@@ -371,7 +372,7 @@ archive download-sw firmware /normal /save-reload usb:cisco_update.tar.gz
 </code></pre></div></li>
 </ol>
 <p>This will update your Cisco firmware. After the operation, you can verify the installed version with <code>show version</code>.</p>
-<h4 id="network-setup">Network setup</h4>
+<h4 id="network-setup">Network setup&nbsp;<a class="header-hash" href="#network-setup">#</a> </h4>
 <p>To configure your Cisco Gateway to your network, type the following commands:</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">configure terminal <span class="c1"># Enter global configuration mode</span>
 interface FastEthernet 0/1 <span class="c1"># Enter Ethernet configuration</span>
@@ -387,7 +388,7 @@ copy running-config startup-config <span class="c1"># Save the configuration</sp
 </code></pre></div><p>You can test your Internet configuration with the <code>ping</code> command, for example:</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">ping ip 8.8.8.8 <span class="c1"># Ping Google&#39;s DNS server</span>
 </code></pre></div><p>To see more information about the gateway&rsquo;s IP and the network, you can use <code>show interfaces FastEthernet 0/1</code>, <code>show ip interfaces FastEthernet 0/1</code> or <code>show ip route</code>.</p>
-<h4 id="date-and-time">Date and time</h4>
+<h4 id="date-and-time">Date and time&nbsp;<a class="header-hash" href="#date-and-time">#</a> </h4>
 <p>To configure your system&rsquo;s date and time, you can use <code>ntp</code>:</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">configure terminal <span class="c1"># Enter global configuration mode</span>
 ntp server address &lt;NTP server address&gt; <span class="c1"># Configure ntp on an ntp address</span>
@@ -396,12 +397,12 @@ ntp server ip &lt;NTP server IP&gt; <span class="c1"># Configure ntp on an IP</s
 
 <span class="nb">exit</span> <span class="c1"># Exit global configuration mode</span>
 </code></pre></div><p>If you don&rsquo;t have production-grade <code>ntp</code> servers available, you can use <a href="http://www.pool.ntp.org/en/use.html"><code>pool.ntp.org</code></a>&rsquo;s servers.</p>
-<h4 id="fpga">FPGA</h4>
+<h4 id="fpga">FPGA&nbsp;<a class="header-hash" href="#fpga">#</a> </h4>
 <p>If you needed to update your gateway firmware previously, your FPGA will need ~20 minutes to update once the new firmware is installed. The packet forwarder will not work until then, so we recommend at this point waiting until the FPGA is upgraded.</p>
 <p>To show the status of the FPGA, you can use the following command:</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">show inventory
 </code></pre></div><p>When the <code>FPGAStatus</code> line indicates <code>Ready</code>, this means you can go forward with this guide.</p>
-<h4 id="gps">GPS</h4>
+<h4 id="gps">GPS&nbsp;<a class="header-hash" href="#gps">#</a> </h4>
 <p>If you have a GPS connected to your Cisco gateway, enable it with the following commands:</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">configure terminal <span class="c1"># Enter global configuration mode</span>
 gps ubx <span class="nb">enable</span> <span class="c1"># Enable GPS</span>
@@ -409,7 +410,7 @@ gps ubx <span class="nb">enable</span> <span class="c1"># Enable GPS</span>
 </code></pre></div><blockquote>
 <p>📜 This command may return the message <code>packet-forwarder firmware is not installed</code>, this message can be ignored.</p>
 </blockquote>
-<h4 id="enable-radio">Enable radio</h4>
+<h4 id="enable-radio">Enable radio&nbsp;<a class="header-hash" href="#enable-radio">#</a> </h4>
 <p>As a final step before setting up the packet forwarder software, we&rsquo;re going to <strong>enable the radio</strong>. You can see radio information with the <code>show radio</code> command:</p>
 <pre><code>Gateway#show radio 
 LORA_SN: FOC21028R8S
@@ -428,7 +429,7 @@ on
 <blockquote>
 <p>📜 The <code>show radio</code> command also shows you more information about the LoRa concentrator powering the gateway. For example, <code>LORA_SKU</code> indicates the base frequency of the concentrator.</p>
 </blockquote>
-<h3 id="enable-authentication">Enable authentication</h3>
+<h3 id="enable-authentication">Enable authentication&nbsp;<a class="header-hash" href="#enable-authentication">#</a> </h3>
 <p>To prevent unauthorized access to the gateway, you&rsquo;ll want to set up user authentication. The Cisco gateway has a <strong>secret</strong> system, that requires users to enter a secret to access privileged commands.</p>
 <p>To enable this secret system, you can use the following commands:</p>
 <ul>
@@ -443,7 +444,7 @@ on
 <li><code>exit</code> to exit global configuration mode.</li>
 <li><code>copy running-config startup-config</code> to save the configuration.</li>
 </ul>
-<h3 id="verifications">Verifications</h3>
+<h3 id="verifications">Verifications&nbsp;<a class="header-hash" href="#verifications">#</a> </h3>
 <p>Before we install the packet forwarder, let&rsquo;s run verifications to ensure that the gateway is ready.</p>
 <ul>
 <li>Type <code>show radio</code> to verify that the <strong>radio is enabled</strong>. The result should indicate <code>radio status: on</code>.</li>
@@ -452,12 +453,12 @@ on
 <li>Verify that the <strong>network connection is working</strong>. You can test this by pinging common ping servers with <code>ping ip &lt;IP&gt;</code>, if your local network does not block ping commands. For example, you can ping Google&rsquo;s servers with <code>ping ip 8.8.8.8</code>.</li>
 </ul>
 <p>If some of those checks fail, go back to the appropriate section earlier in order to fix it.</p>
-<h2 id="installing-the-packet-forwarder">Installing the packet forwarder</h2>
+<h2 id="installing-the-packet-forwarder">Installing the packet forwarder&nbsp;<a class="header-hash" href="#installing-the-packet-forwarder">#</a> </h2>
 <blockquote>
 <p>⚠️ Keep in mind that the pre-installed packet forwarder is not supported by Cisco for production purposes.</p>
 </blockquote>
 <p>To run the packet forwarder, we&rsquo;ll make use of the <strong>container</strong> that is running on the gateway at all times.</p>
-<h3 id="packet-forwarder-configuration">Packet forwarder configuration</h3>
+<h3 id="packet-forwarder-configuration">Packet forwarder configuration&nbsp;<a class="header-hash" href="#packet-forwarder-configuration">#</a> </h3>
 <p>When in standalone mode, enter the container:</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">request shell container-console
 </code></pre></div><p>You will be requested to enter the System Password. By default this is <code>admin</code>.</p>
@@ -500,19 +501,19 @@ To derive it insert <code>FFFE</code> after the first 6 characters to make it a 
 </li>
 </ul>
 <p>Write down the value written for <code>gateway_ID</code>. Save the file, and exit your text editor.</p>
-<h3 id="gateway-registration">Gateway registration</h3>
+<h3 id="gateway-registration">Gateway registration&nbsp;<a class="header-hash" href="#gateway-registration">#</a> </h3>
 <p>Don&rsquo;t close the shell yet, but open a Web browser and head to your the Things Network console.<br>
 Click on <strong>Gateways</strong> &gt; <strong>Register gateway</strong>.<br>
 Check the <em>I&rsquo;m using legacy packet forwarder</em> box, and enter the <code>gateway_EUI</code> that was indicated as <code>gateway_ID</code> in the configuration.<br>
 Fill in the rest of the form, and click on <strong>Register gateway</strong>.</p>
-<h3 id="testing-the-packet-forwarder">Testing the packet forwarder</h3>
+<h3 id="testing-the-packet-forwarder">Testing the packet forwarder&nbsp;<a class="header-hash" href="#testing-the-packet-forwarder">#</a> </h3>
 <p>You can now test the packet forwarder by executing:</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">/etc/pktfwd/pkt_forwarder -c /etc/pktfwd/config.json -g /dev/ttyS1
 </code></pre></div><p>You should now see packets flowing in the logs of the packet forwarder - and see gateway activity on the gateway&rsquo;s package on the console!</p>
 <blockquote>
 <p>Having issues making the packet forwarder run? Head over to our <a href="/docs/gateways/troubleshooting/semtech-udp/">packet forwarder troubleshooting section</a>.</p>
 </blockquote>
-<h3 id="installing-the-packet-forwarder-1">Installing the packet forwarder</h3>
+<h3 id="installing-the-packet-forwarder-1">Installing the packet forwarder&nbsp;<a class="header-hash" href="#installing-the-packet-forwarder-1">#</a> </h3>
 <p>Now that we know the packet forwarder is running, let&rsquo;s make it run permanently.</p>
 <p>Save the following script as <code>/etc/init.d/S60pkt_forwarder</code>:</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="cp">#!/bin/sh
@@ -577,8 +578,9 @@ This script will be called at every startup of the container.</p>
 <blockquote>
 <p>📜 If you are using another network than <code>router.eu.thethings.network</code> replace it with the name of your network after <code>nslookup</code>.</p>
 </blockquote>
-<h3 id="exit-container-shell">Exit container shell</h3>
+<h3 id="exit-container-shell">Exit container shell&nbsp;<a class="header-hash" href="#exit-container-shell">#</a> </h3>
 <p>If you are done with configuration, you can now safely remove the serial cable between your computer.</p>
+
 
         </div>
       

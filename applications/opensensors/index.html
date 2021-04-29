@@ -38,7 +38,7 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.63e25b5c651bd53d7906c0aea044f525dd20de132fd123ea1927e46490c71ca9.css" integrity="sha256-Y&#43;JbXGUb1T15BsCuoET1Jd0g3hMv0SPqGSfkZJDHHKk=" crossorigin="anonymous">
 
   <meta property="og:title" content="OpenSensors" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
@@ -289,16 +289,17 @@
           OpenSensors
         </h1>
         <div class="content">
-          <p>The OpenSensors integration allows you to publish uplink data to the OpenSensors broker.</p>
+          
+<p>The OpenSensors integration allows you to publish uplink data to the OpenSensors broker.</p>
 <p>OpenSensors is a real time data exchange for the internet of things, called ‘Twitter for Sensors’ by wired.com. Their mission is to make data generated from IoT useful and accessible.</p>
 <p>Go to <a href="https://www.opensensors.io">www.opensensors.io</a> for more information.</p>
 <p><img src="example.png" alt="OpenSensors Example"></p>
-<h2 id="how-to-setup-opensensors">How to Setup OpenSensors</h2>
+<h2 id="how-to-setup-opensensors">How to Setup OpenSensors&nbsp;<a class="header-hash" href="#how-to-setup-opensensors">#</a> </h2>
 <ol>
 <li>Find your <a href="https://opensensorsio.helpscoutdocs.com/article/42-where-is-my-api-key">API key</a></li>
 <li>Create a new <a href="https://opensensorsio.helpscoutdocs.com/article/36-how-do-i-create-a-new-device">device</a> and get the device&rsquo;s <strong>Client ID</strong> and <strong>password</strong>. This will serve as a proxy for all devices in your The Things Network application. The <strong>Client ID</strong> is a numeric value. Note that the password will be shown only once, although you can easily reset it by clicking <strong>Reset password</strong>.</li>
 </ol>
-<h2 id="create-the-integration">Create the Integration</h2>
+<h2 id="create-the-integration">Create the Integration&nbsp;<a class="header-hash" href="#create-the-integration">#</a> </h2>
 <p>In the The Things Network Console you will be asked to enter the four following settings:</p>
 <ol>
 <li>Your OpenSensors.io username</li>
@@ -306,7 +307,7 @@
 <li>The Client ID of the proxy device</li>
 <li>The device password of the proxy device</li>
 </ol>
-<h2 id="uplink">Uplink</h2>
+<h2 id="uplink">Uplink&nbsp;<a class="header-hash" href="#uplink">#</a> </h2>
 <p>Device uplinks will be published to topics in the form <code>users/&lt;opensensors-username&gt;/&lt;ttn-device-id&gt;</code>. The topics will be created automatically. The payload contains the decoded payload and the <code>raw</code> field with the base64 encoded raw payload. Note that this may overwrite an existing <code>raw</code> field that is output of your decoder or converter payload function.</p>
 <p>Example published payload:</p>
 <pre><code>{
@@ -316,6 +317,7 @@
   &quot;sound&quot;: 473
 }
 </code></pre>
+
         </div>
       
       

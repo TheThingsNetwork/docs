@@ -38,7 +38,7 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.63e25b5c651bd53d7906c0aea044f525dd20de132fd123ea1927e46490c71ca9.css" integrity="sha256-Y&#43;JbXGUb1T15BsCuoET1Jd0g3hMv0SPqGSfkZJDHHKk=" crossorigin="anonymous">
 
   <meta property="og:title" content="Authentication" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
@@ -226,9 +226,10 @@
           Authentication
         </h1>
         <div class="content">
-          <p>This document describes the various aspects of authentication using this
+          
+<p>This document describes the various aspects of authentication using this
 authentication server.</p>
-<h2 id="scopes">Scopes</h2>
+<h2 id="scopes">Scopes&nbsp;<a class="header-hash" href="#scopes">#</a> </h2>
 <p>Different endpoints require different client scopes.  These scopes
 restrict the clients to only be able to do certain types of actions.
 Currently these scopes are defined:</p>
@@ -248,7 +249,7 @@ scope for that id. For instance <code>GET /applications/foo</code> will require 
 <code>apps:foo</code> scope, <code>apps</code> is not enough. On the other hand to perform more
 general actions (like listing or creating apps) you will need the more general
 scope (eg. <code>apps</code>).</p>
-<h2 id="rights">Rights</h2>
+<h2 id="rights">Rights&nbsp;<a class="header-hash" href="#rights">#</a> </h2>
 <p>Most actions a user wants to perform on the account server require he has the
 correct rights for the resource she is trying to access.</p>
 <p>Currently there are 3 main categories of rights:</p>
@@ -257,7 +258,7 @@ correct rights for the resource she is trying to access.</p>
 <li><code>gateways</code></li>
 <li><code>components</code></li>
 </ul>
-<h3 id="application-rights">Application rights</h3>
+<h3 id="application-rights">Application rights&nbsp;<a class="header-hash" href="#application-rights">#</a> </h3>
 <p>To view and manage an application, a user needs rights to the application.
 Currently the following rights on applications are defined:</p>
 <ul>
@@ -272,7 +273,7 @@ application</li>
 application</li>
 <li><code>devices</code>: List, view, add, edit and remove the devices for the application on a handler</li>
 </ul>
-<h3 id="gateway-rights">Gateway rights</h3>
+<h3 id="gateway-rights">Gateway rights&nbsp;<a class="header-hash" href="#gateway-rights">#</a> </h3>
 <p>To view and manage a gateway, a user needs rights to the gateway.
 Currently the following rights on gateways are defined:</p>
 <ul>
@@ -284,27 +285,27 @@ Currently the following rights on gateways are defined:</p>
 present, a scrambled location will be available</li>
 <li><code>gateway:owner</code>: view the owener of the gateway</li>
 </ul>
-<h3 id="component-rights">Component rights</h3>
+<h3 id="component-rights">Component rights&nbsp;<a class="header-hash" href="#component-rights">#</a> </h3>
 <p>To view and manage a network component, a user needs rights to the component.
 Currently the following rights on network components are defined:</p>
 <ul>
 <li><code>component:settings</code>: read and write access to the settings and access key of a network component</li>
 <li><code>component:delete</code>: the right to delete the network component</li>
 </ul>
-<h2 id="authentication-methods">Authentication methods</h2>
+<h2 id="authentication-methods">Authentication methods&nbsp;<a class="header-hash" href="#authentication-methods">#</a> </h2>
 <p>Currently, there are 3 different methods of authenticating:</p>
 <ul>
 <li>session: sessions on account server, held by encrypted cookies,</li>
 <li>bearer token: OAuth 2.0 bearer json web tokens,</li>
 <li>access key: application access keys.</li>
 </ul>
-<h3 id="session">Session</h3>
+<h3 id="session">Session&nbsp;<a class="header-hash" href="#session">#</a> </h3>
 <p>This authentication method is only used on the account server website itself to
 keep the login status of a user. It automatically grants the <code>profile</code>
 scope, and no other scope.</p>
 <p>The method is checked for by looking at each requests <code>session</code> cookie.
 The cookies are HTTP-only and secure, to prevent hijacking.</p>
-<h3 id="bearer-token">Bearer Token</h3>
+<h3 id="bearer-token">Bearer Token&nbsp;<a class="header-hash" href="#bearer-token">#</a> </h3>
 <p>This authentication method is the main method of authenticating.  It checks
 the <code>Authorization</code> header to be in the following format:</p>
 <div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">Authorization: Bearer &lt;token&gt;
@@ -352,12 +353,12 @@ find the public decryprtion key using  <code>GET /key</code> endpoint.</p>
   name,
   valid,
 }
-</code></pre></div><h3 id="access-key">Access Key</h3>
+</code></pre></div><h3 id="access-key">Access Key&nbsp;<a class="header-hash" href="#access-key">#</a> </h3>
 <p>You can access certain application endpoints by setting the <code>Authorization</code>
 header like:</p>
 <div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">Authorization: Key &lt;access key&gt;
 </code></pre></div><p>where <code>&lt;access key&gt;</code> is an application access key.</p>
-<h3 id="requesting-the-access-token">Requesting the access token</h3>
+<h3 id="requesting-the-access-token">Requesting the access token&nbsp;<a class="header-hash" href="#requesting-the-access-token">#</a> </h3>
 <p>To request an access token, initiate an OAuth 2.0 flow at <code>/users/token</code>.
 There&rsquo;s support for both the <code>password</code> flow and the <code>authorization_code</code> flow,
 based on the grants of the client you are using.</p>
@@ -382,7 +383,7 @@ gateway <code>gateway_id</code> and the component <code>component_id</code>, oth
 elided.</p>
 <p>If the client does not have access to a certain scope (for instance it does not
 have the <code>apps</code> scope), this request would result in a <code>400 Bad Request</code>.</p>
-<h3 id="restricted-access-keys">Restricted access keys</h3>
+<h3 id="restricted-access-keys">Restricted access keys&nbsp;<a class="header-hash" href="#restricted-access-keys">#</a> </h3>
 <p>While having a lot of advantages, using jwt for access tokens has one problem:
 the token can become really big. For instance, a user with 20 apps and 30
 gateways will have a bigger token than a user with only 4 apps. This is a
@@ -408,7 +409,7 @@ it, yet it does not have to as big.</p>
 <p>Some tokens should not have this ability though, that is why there is a field on
 the token claims: <code>interchangeable</code>. Only when this is <code>true</code>, the token will be
 interchangeable like this.</p>
-<h3 id="exchanging-an-access-key-for-an-access-token">Exchanging an Access Key for an Access Token</h3>
+<h3 id="exchanging-an-access-key-for-an-access-token">Exchanging an Access Key for an Access Token&nbsp;<a class="header-hash" href="#exchanging-an-access-key-for-an-access-token">#</a> </h3>
 <p>When you are building an integration, you will need an application access token,
 (which can be validated offline), to start the integration process.  However,
 users can only provide you with an application access key (which cannot be
@@ -458,7 +459,7 @@ Assuming you have a registered client with these properties:</p>
 client_secret: secret
 redirect_uri: http://www.example.com/oauth/callback
 scope: [ 'apps' ]
-</code></pre><h2 id="1-make-an-authorization-request">1. Make an authorization request</h2>
+</code></pre><h2 id="1-make-an-authorization-request">1. Make an authorization request&nbsp;<a class="header-hash" href="#1-make-an-authorization-request">#</a> </h2>
 <p>To be able to use your client, a user will have to authorize it first on the
 account server.  You can tell the user to do so by redirecting to:</p>
 <pre><code>https://account.thethingsnetwork.org/users/authorize?client_id=foo-client&amp;redirect_uri=http://www.example.com/oauth/callback&amp;response_type=code
@@ -469,7 +470,7 @@ client.  If the user authorizes your client, she will be redirected to:</p>
 <p>The preference of the user will be stored so this authorization step will
 redirect immediatly (without showing the form) the next time you do this for the
 same user.</p>
-<h2 id="2-get-the-access-token">2. Get the access token</h2>
+<h2 id="2-get-the-access-token">2. Get the access token&nbsp;<a class="header-hash" href="#2-get-the-access-token">#</a> </h2>
 <p>To get the access token perform the following request:</p>
 <div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">HTTP/1.1 POST /users/token
 Content-Type: application/json
@@ -482,6 +483,7 @@ Authorization: Basic &lt;basic_auth&gt;
 }
 </code></pre></div><p>Where <code>&lt;basic_auth&gt;</code> is the basic auth digest for your client (<code>client_id</code> and
 <code>client_secret</code>) and <code>&lt;auth_code&gt;</code> is the authorization code received from step 1.</p>
+
 
         </div>
       

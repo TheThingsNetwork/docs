@@ -38,7 +38,7 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.63e25b5c651bd53d7906c0aea044f525dd20de132fd123ea1927e46490c71ca9.css" integrity="sha256-Y&#43;JbXGUb1T15BsCuoET1Jd0g3hMv0SPqGSfkZJDHHKk=" crossorigin="anonymous">
 
   <meta property="og:title" content="Gateway connection to TTN" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
@@ -323,8 +323,9 @@
           Gateway connection to TTN
         </h1>
         <div class="content">
-          <p>This page explains <strong>how packet forwarders exchange data with TTN</strong>. You don&rsquo;t need to understand all of this to make a gateway work, but if you&rsquo;re curious of how packet forwarders work, this can help you!</p>
-<h2 id="the-things-network-router">The Things Network Router</h2>
+          
+<p>This page explains <strong>how packet forwarders exchange data with TTN</strong>. You don&rsquo;t need to understand all of this to make a gateway work, but if you&rsquo;re curious of how packet forwarders work, this can help you!</p>
+<h2 id="the-things-network-router">The Things Network Router&nbsp;<a class="header-hash" href="#the-things-network-router">#</a> </h2>
 <p>Packet forwarders connect to The Things Network through the <strong>router</strong> component. This component is tasked with <a href="https://github.com/TheThingsNetwork/ttn/tree/develop/core/router">handling gateway data and status</a>, and to transfer data to the rest of the network.</p>
 <p><img src="../connectors.png" alt="TTN Router"></p>
 <ul>
@@ -338,13 +339,13 @@
 <p>For <strong>downlinks</strong>: the router receives a downlink from upstream, waits for a gateway to be available near the device, builds downlink options from the gateway options, and transmits it.</p>
 </li>
 </ul>
-<h2 id="protocols">Protocols</h2>
+<h2 id="protocols">Protocols&nbsp;<a class="header-hash" href="#protocols">#</a> </h2>
 <p>Messages can be transmitted from a gateway to TTN through two protocols: the legacy Semtech UDP protocol, and our new Gateway Connector protocol.</p>
-<h3 id="semtech-udp-protocol">Semtech UDP protocol</h3>
+<h3 id="semtech-udp-protocol">Semtech UDP protocol&nbsp;<a class="header-hash" href="#semtech-udp-protocol">#</a> </h3>
 <p>The Semtech UDP protocol is, historically, the first gateway protocol that was developed for LoRaWAN. It was built by Semtech, who <a href="https://github.com/Lora-net/packet_forwarder">still maintain</a> it.</p>
 <p>With this protocol, uplinks, statuses and downlinks are exchanged in a pseudo-JSON format, through UDP, between the gateway and the network server. Because of the simplicity of the messages and of the protocol, it is easy to reproduce this protocol, for testing purposes or for bootstrapping.</p>
 <p>Because this protocol was implemented in the first packet forwarder publicly available, most gateways include a basic packet forwarder running this protocol.</p>
-<h4 id="example">Example</h4>
+<h4 id="example">Example&nbsp;<a class="header-hash" href="#example">#</a> </h4>
 <div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
   <span class="nt">&#34;rxpk&#34;</span><span class="p">:</span> <span class="p">{</span>
     <span class="nt">&#34;tmst&#34;</span><span class="p">:</span><span class="mi">20900514000</span><span class="p">,</span>
@@ -362,7 +363,7 @@
   <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div><p><em>Excerpt of a Semtech UDP message, with an uplink message - for example, <code>data</code> holds the payload, <code>tmst</code> the gateway time of reception, <code>rssi</code> the RSSI value&hellip;</em></p>
-<h4 id="drawbacks-of-the-udp-protocol">Drawbacks of the UDP protocol</h4>
+<h4 id="drawbacks-of-the-udp-protocol">Drawbacks of the UDP protocol&nbsp;<a class="header-hash" href="#drawbacks-of-the-udp-protocol">#</a> </h4>
 <p>However, this protocol lacks features for production-ready networks:</p>
 <ul>
 <li>
@@ -378,7 +379,7 @@
 <p>The UDP protocol is based on a format close to JSON, but not fully compliant ; for example, the specs specify that an object can hold multiple properties with the same index. This makes it easy to write by hand for testing purposes, but difficult to parse in some situations.</p>
 </li>
 </ul>
-<h3 id="gateway-connector-protocol">Gateway connector protocol</h3>
+<h3 id="gateway-connector-protocol">Gateway connector protocol&nbsp;<a class="header-hash" href="#gateway-connector-protocol">#</a> </h3>
 <p>Because of the reasons above, we&rsquo;ve developed a new protocol, solving these issues: the <strong>gateway connector protocol</strong>. With this protocol:</p>
 <ul>
 <li>
@@ -397,7 +398,7 @@
 <p>Otherwise, protocol buffer-encoded messages can be sent through MQTT. MQTTS, a variant of MQTT, enforces TLS encryption.</p>
 </li>
 </ul>
-<h4 id="using-the-gateway-connector-protocol">Using the gateway connector protocol</h4>
+<h4 id="using-the-gateway-connector-protocol">Using the gateway connector protocol&nbsp;<a class="header-hash" href="#using-the-gateway-connector-protocol">#</a> </h4>
 <p>Using the gateway connector protocol to send messages happens in two steps:</p>
 <ul>
 <li>
@@ -407,7 +408,7 @@
 <p>The second step is sending them over to The Things Network. You&rsquo;ll need to identify yourself (using the gateway ID and gateway key) to the account server to obtain a token, then send messages to the router with this token.</p>
 </li>
 </ul>
-<h4 id="example-using-grpc">Example using gRPC</h4>
+<h4 id="example-using-grpc">Example using gRPC&nbsp;<a class="header-hash" href="#example-using-grpc">#</a> </h4>
 <p>In this example built in the Go language, we&rsquo;ll show two functions:</p>
 <ul>
 <li>The first one, <code>createUplinkMessage</code>, <strong>builds an uplink message</strong> in the protocol-buffer generated types ;</li>
@@ -484,6 +485,7 @@
 </span><span class="c1"></span>  <span class="k">return</span> <span class="kc">nil</span>
 <span class="p">}</span>
 </code></pre></div>
+
         </div>
       
       

@@ -38,7 +38,7 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.63e25b5c651bd53d7906c0aea044f525dd20de132fd123ea1927e46490c71ca9.css" integrity="sha256-Y&#43;JbXGUb1T15BsCuoET1Jd0g3hMv0SPqGSfkZJDHHKk=" crossorigin="anonymous">
 
   <meta property="og:title" content="Quick Start" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
@@ -303,14 +303,15 @@
           Quick Start
         </h1>
         <div class="content">
-          <p>This guide will walk you through setting up a Node-RED flow that listens to device activations and messages and responds with a message in return.</p>
+          
+<p>This guide will walk you through setting up a Node-RED flow that listens to device activations and messages and responds with a message in return.</p>
 <blockquote>
 <p>This guide assumes the sketch and payload functions of <a href="/docs/devices/uno/quick-start/">The Things Uno / Quick Start</a>, but can be easily applied to any other.</p>
 </blockquote>
 <p>The full flow that we will build is also included as <a href="https://github.com/TheThingsNetwork/nodered-app-node/blob/master/examples/quickstart.json">example</a> in the Node-RED library.</p>
-<h2 id="setup">Setup</h2>
+<h2 id="setup">Setup&nbsp;<a class="header-hash" href="#setup">#</a> </h2>
 <p>To get started you need to install Node-RED and add the TTN node, both via <a href="https://www.npmjs.com/">NPM</a>.</p>
-<h3 id="node-red">Node-RED</h3>
+<h3 id="node-red">Node-RED&nbsp;<a class="header-hash" href="#node-red">#</a> </h3>
 <ol>
 <li>Make sure you have <a href="https://nodejs.org/">Node.js</a> and then install Node-RED:</li>
 </ol>
@@ -327,7 +328,7 @@
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="m">29</span> Aug 11:13:01 - <span class="o">[</span>info<span class="o">]</span> Server now running at http://127.0.0.1:1880/
 </code></pre></div><p>You should see something like:</p>
 <p><img src="../node-red.png" alt="Node-RED"></p>
-<h3 id="the-things-network-nodes">The Things Network nodes</h3>
+<h3 id="the-things-network-nodes">The Things Network nodes&nbsp;<a class="header-hash" href="#the-things-network-nodes">#</a> </h3>
 <ol>
 <li>Add The Things Network nodes:</li>
 </ol>
@@ -339,7 +340,7 @@ npm install node-red-contrib-ttn
 </ol>
 <p>You should now see several <strong>ttn</strong> nodes in the sidebar:</p>
 <p><img src="../node-red-ttn.png" alt="Node-RED with ttn node"></p>
-<h2 id="configure">Configure</h2>
+<h2 id="configure">Configure&nbsp;<a class="header-hash" href="#configure">#</a> </h2>
 <p>All The Things Network nodes can share the same app configuration.</p>
 <ol>
 <li>Drag the <strong>ttn device</strong> node to the flow and double-click it to edit.</li>
@@ -358,7 +359,7 @@ npm install node-red-contrib-ttn
 <ol start="3">
 <li>Click <strong>Add</strong> to save the configuration.</li>
 </ol>
-<h2 id="receive-events">Receive Events</h2>
+<h2 id="receive-events">Receive Events&nbsp;<a class="header-hash" href="#receive-events">#</a> </h2>
 <p><a href="/docs/applications/mqtt/api/#device-activations">Activations</a> and other <a href="/docs/applications/mqtt/api/#device-events">devices events</a> can be received via the <strong>ttn device</strong> node.</p>
 <ol>
 <li>Still editing the <strong>ttn device</strong> node, enter <code>activations</code> in the <strong>Event</strong> field.</li>
@@ -413,7 +414,7 @@ npm install node-red-contrib-ttn
 <span class="p">}</span>
 </code></pre></div></li>
 </ol>
-<h2 id="receive-messages">Receive Messages</h2>
+<h2 id="receive-messages">Receive Messages&nbsp;<a class="header-hash" href="#receive-messages">#</a> </h2>
 <p>Messages sent by devices on the application can be received via the <strong>ttn message</strong> node.</p>
 <ol>
 <li>Drag a <strong>ttn message</strong> node from the input category of the toolbox.</li>
@@ -482,7 +483,7 @@ npm install node-red-contrib-ttn
 <span class="p">}</span>
 </code></pre></div></li>
 </ol>
-<h2 id="send-messages">Send Messages</h2>
+<h2 id="send-messages">Send Messages&nbsp;<a class="header-hash" href="#send-messages">#</a> </h2>
 <p>Use the <strong>ttn send</strong> node to send messages to devices.</p>
 <ol>
 <li>Drag a <strong>ttn send</strong> node from the output category of the toolbox.</li>
@@ -514,6 +515,7 @@ npm install node-red-contrib-ttn
 </ol>
 <p>The next time your device sends a message, a message will be send in response to toggle the LED. You can use the last <strong>debug</strong> node we added to verify the message we use as input for the <strong>ttn send</strong> node is correct.</p>
 <p>👏 You now know how to receive events and messages in Node-RED as well as how to trigger actions on that, for example by sending a message in response. Now go build something awesome and share it on <a href="https://www.thethingsnetwork.org/labs/">labs</a>!</p>
+
 
         </div>
       

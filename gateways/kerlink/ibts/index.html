@@ -38,7 +38,7 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.63e25b5c651bd53d7906c0aea044f525dd20de132fd123ea1927e46490c71ca9.css" integrity="sha256-Y&#43;JbXGUb1T15BsCuoET1Jd0g3hMv0SPqGSfkZJDHHKk=" crossorigin="anonymous">
 
   <meta property="og:title" content="Wirnet iBTS" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
@@ -333,7 +333,8 @@
           Wirnet iBTS
         </h1>
         <div class="content">
-          <img src="ibts-gw.png" alt="Kerlink iBTS" width="200"/>
+          
+<img src="ibts-gw.png" alt="Kerlink iBTS" width="200"/>
 <p>The Wirnet iBTS is the carrier-grade, high capacity gateway. It is based on Semtech&rsquo;s gateway reference design v2 and can be used for GPS-free geolocalization services.</p>
 <p>The Wirnet iBTS has a modular architecture allowing you to configure and upgrade the gateway to according to your needs. Thanks to the modularity you are able to choose:</p>
 <ul>
@@ -345,23 +346,23 @@
 <p><a href="https://wikikerlink.fr/wirnet-productline/doku.php?id=wiki:ibts:hardware_arch_ibts">Source &amp; further info</a></p>
 <p>or <a href="http://wikikerlink.fr/wirnet-ibts/doku.php">Legacy documentation</a> (for the legacy 3.x branch of the KerOS firmware)
 <em>You do need to request a login and password from Kerlink by providing your gateway serial number</em></p>
-<h2 id="1-connecting-to-the-gateway">1. Connecting to the gateway</h2>
+<h2 id="1-connecting-to-the-gateway">1. Connecting to the gateway&nbsp;<a class="header-hash" href="#1-connecting-to-the-gateway">#</a> </h2>
 <p>You can either connect to the gateways via SSH, or via the Wirma2 Debug Tool. <a href="https://wikikerlink.fr/wirnet-productline/doku.php?id=wiki:ibts:connect_ibts">More info</a>.</p>
 <p>Once you are connected to the gateway, log in with <code>root</code> / <code>pdmk-$serialno</code> as credentials. The <code>$serialno</code> equals the 6 last characters of its serial number (CPU module, starts with <code>***AT</code>).</p>
 <blockquote>
 <p>For security reasons, it is highly recommended to change the password. You can do so with the command: <code>passwd</code>. <a href="https://wikikerlink.fr/wirnet-productline/doku.php?id=wiki:systeme_mana:connection_credentials#how_to_change_the_passwords">More info</a>.</p>
 </blockquote>
-<h3 id="connect-via-ssh">Connect via SSH</h3>
+<h3 id="connect-via-ssh">Connect via SSH&nbsp;<a class="header-hash" href="#connect-via-ssh">#</a> </h3>
 <ul>
 <li>
-<h5 id="remote-lan-connection">Remote LAN connection</h5>
+<h5 id="remote-lan-connection">Remote LAN connection&nbsp;<a class="header-hash" href="#remote-lan-connection">#</a> </h5>
 <ul>
 <li><strong>Using SSH:</strong> Start an SSH client (typically Putty on Windows) using port 22 and the gateway’s IP address obtained from the DHCP server.</li>
 <li><strong>Using SFTP:</strong> Start a SFTP client (typically WinSCP on Windows) using the gateway’s IP address obtained from the DHCP server.</li>
 </ul>
 </li>
 <li>
-<h5 id="local-connection">Local connection</h5>
+<h5 id="local-connection">Local connection&nbsp;<a class="header-hash" href="#local-connection">#</a> </h5>
 <p>You can connect you laptop directly to the gateway via the LOCAL port.</p>
 <ul>
 <li>If you have an DHCP server: Start an ssh client on port 22 and use the gateway’s IP address obtained from the DHCP server.</li>
@@ -369,8 +370,9 @@
 </ul>
 </li>
 </ul>
-<h3 id="install-and-configure-the-gateway">Install and configure the gateway</h3>
+<h3 id="install-and-configure-the-gateway">Install and configure the gateway&nbsp;<a class="header-hash" href="#install-and-configure-the-gateway">#</a> </h3>
 <p>Follow the <a href="/docs/gateways/kerlink/keros/">unified generic KerOS guide</a> to install and configure your gateway.</p>
+
 
         </div>
       

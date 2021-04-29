@@ -38,7 +38,7 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.63e25b5c651bd53d7906c0aea044f525dd20de132fd123ea1927e46490c71ca9.css" integrity="sha256-Y&#43;JbXGUb1T15BsCuoET1Jd0g3hMv0SPqGSfkZJDHHKk=" crossorigin="anonymous">
 
   <meta property="og:title" content="Cellular Connection" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
@@ -372,8 +372,9 @@
           Cellular Connection
         </h1>
         <div class="content">
-          <p>It is possible to connect the Kerlink to a GPRS/3G connection. This may be useful in locations where there is no ethernet network access, or where access to the local/company network is not allowed.</p>
-<h2 id="configure-using-a-dota-file-and-usb-flash-drive">Configure using a dota file and USB flash drive</h2>
+          
+<p>It is possible to connect the Kerlink to a GPRS/3G connection. This may be useful in locations where there is no ethernet network access, or where access to the local/company network is not allowed.</p>
+<h2 id="configure-using-a-dota-file-and-usb-flash-drive">Configure using a dota file and USB flash drive&nbsp;<a class="header-hash" href="#configure-using-a-dota-file-and-usb-flash-drive">#</a> </h2>
 <p>It is possible to configure the GPRS/3G connection without logging into the gateway. This can be done in the same way as the packet forwarder was installed. An example dota file which should be copied to a flash drive is provided here. This dota will configure the gateway to use the <code>internet</code> APN and use a blank username and a blank password. This dota also applies the fix to allow blank login details for gprs.</p>
 <ul>
 <li>Download <a href="https://raw.githubusercontent.com/TheThingsNetwork/kerlink-station-firmware/legacy/dota/dota_gprs_apn_internet_nopw.tar.gz">dota_gprs_apn_internet_nopw.tar.gz</a> and copy it to a USB flash drive without extracting it.</li>
@@ -381,7 +382,7 @@
 <li>Plug the USB flash drive into the gateway and wait for the dota to be installed.</li>
 </ul>
 <p>The configuration files needed to get gprs/3G to work are inside the dota archive. You can modify them with your settings before installing the dota on the gateway.</p>
-<h2 id="configure-by-manually-editing-config-files">Configure by manually editing config files</h2>
+<h2 id="configure-by-manually-editing-config-files">Configure by manually editing config files&nbsp;<a class="header-hash" href="#configure-by-manually-editing-config-files">#</a> </h2>
 <p>Log into the gateway using SSH or a Wirgrid device.</p>
 <p>Set your APN settings in <code>/etc/sysconfig/network</code> (see <a href="/docs/gateways/kerlink/station/#provider-settings">Provider Settings</a>):</p>
 <blockquote>
@@ -411,8 +412,8 @@ BEARERS_PRIORITY=&#34;eth0,ppp0&#34;
 <span class="nt">&lt;/AREA&gt;</span>  
 </code></pre></div><p><strong>Warning:</strong> There is a bug in the software. When <code>GPRSUSER</code> and <code>GPRSPASSWORD</code> needs to stay empty the Kerlink does funny things and no connection is made. To resolve this problem, please apply <a href="https://github.com/TheThingsNetwork/kerlink-station-firmware/blob/master/dota/dota_update_gprs_script.tar.gz?raw=true">this patch</a>.</p>
 <p><strong>Troubleshooting:</strong> If you are using the Kerlink SPF packet forwarder it will automatically restart when the internet connection changes. For other packet forwarders it might be necessary to restart the packet forwarder when this occurs. You can do so by adding the line: <code>/usr/bin/killall poly_pkt_fwd</code> at the bottom of the files <code>/etc/ppp/ip-up</code> and <code>/etc/ppp/ip-down</code>.</p>
-<h2 id="provider-settings">Provider Settings</h2>
-<h3 id="kpn">KPN</h3>
+<h2 id="provider-settings">Provider Settings&nbsp;<a class="header-hash" href="#provider-settings">#</a> </h2>
+<h3 id="kpn">KPN&nbsp;<a class="header-hash" href="#kpn">#</a> </h3>
 <div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext"># Selector operator APN
 GPRSAPN=portalmmm.nl
 # Enter pin code if activated
@@ -422,7 +423,7 @@ GPSDNS=yes
 # PAP authentication
 GPRSUSER=internet
 GPRSPASSWORD=internet
-</code></pre></div><h3 id="vodafone">Vodafone</h3>
+</code></pre></div><h3 id="vodafone">Vodafone&nbsp;<a class="header-hash" href="#vodafone">#</a> </h3>
 <div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext"># Selector operator APN
 GPRSAPN=live.vodafone.com
 # Enter pin code if activated
@@ -432,7 +433,7 @@ GPSDNS=yes
 # PAP authentication
 GPRSUSER=vodafone
 GPRSPASSWORD=vodafone
-</code></pre></div><h3 id="ben">Ben</h3>
+</code></pre></div><h3 id="ben">Ben&nbsp;<a class="header-hash" href="#ben">#</a> </h3>
 <div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext"># Selector operator APN
 GPRSAPN=internet.ben
 # Enter pin code if activated
@@ -443,6 +444,7 @@ GPSDNS=yes
 GPRSUSER=
 GPRSPASSWORD=
 </code></pre></div>
+
         </div>
       
       

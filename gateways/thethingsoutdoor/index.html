@@ -38,7 +38,7 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.63e25b5c651bd53d7906c0aea044f525dd20de132fd123ea1927e46490c71ca9.css" integrity="sha256-Y&#43;JbXGUb1T15BsCuoET1Jd0g3hMv0SPqGSfkZJDHHKk=" crossorigin="anonymous">
 
   <meta property="og:title" content="The Things Outdoor Gateway" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
@@ -289,7 +289,8 @@
           The Things Outdoor Gateway
         </h1>
         <div class="content">
-          <p>The Things Outdoor Gateway (TTOG) is an industrial, outdoor and fully compliant gateway at a very low cost.</p>
+          
+<p>The Things Outdoor Gateway (TTOG) is an industrial, outdoor and fully compliant gateway at a very low cost.</p>
 <p><img src="TTOG.png" alt="TTOG"></p>
 <p><strong>Salient Features:</strong></p>
 <ul>
@@ -304,7 +305,7 @@
 <li>Power voltage: 55VDC/0.6A via included PoE adapter</li>
 </ul>
 <p>The outdoor gateway is currently available from <a href="https://connectedthings.store">Connected Things Store</a> in both EU and US versions.</p>
-<h2 id="set-up-your-gateway">Set up your gateway</h2>
+<h2 id="set-up-your-gateway">Set up your gateway&nbsp;<a class="header-hash" href="#set-up-your-gateway">#</a> </h2>
 <ol>
 <li>Connect all antennas:</li>
 </ol>
@@ -317,7 +318,7 @@
 <ol start="2">
 <li>Connect the PoE injector output cable to the Gateway Ethernet connector. Connect the PoE input cable to your network.</li>
 </ol>
-<h2 id="activate-your-gateway">Activate your gateway</h2>
+<h2 id="activate-your-gateway">Activate your gateway&nbsp;<a class="header-hash" href="#activate-your-gateway">#</a> </h2>
 <p>The ODU GUI is a web interface to configure all network settings. The ODU GUI uses the IP address assigned by the Gateway to enter the network setting page.</p>
 <ol>
 <li>Connect and power the gateway as above. The gateway will use DHCP to request an IP address from the network. Find this IP address from your router and enter the IP address assigned to the Gateway into the web browser to access the ODU GUI interface. The configuration page should look like this:
@@ -348,7 +349,7 @@ IP address: <code>192.168.11.100</code>
 Subnet Mask: <code>255.255.255.0</code>
 Router: <code>192.168.11.10</code></p>
 </blockquote>
-<h2 id="connecting-to-the-the-things-network-backend">Connecting to the The Things Network Backend</h2>
+<h2 id="connecting-to-the-the-things-network-backend">Connecting to the The Things Network Backend&nbsp;<a class="header-hash" href="#connecting-to-the-the-things-network-backend">#</a> </h2>
 <ol>
 <li>To connect this gateway to the <a href="https://console.thethingsnetwork.org/">The Things Network console</a>, register the gateway using the <strong>I&rsquo;m using the Legacy Packet Forwarder</strong> option.</li>
 <li>The EUI of the gateway can be derived from the Gateway ID which can be found in the ODE GUI, under <strong>Packet Forward</strong> &gt; <strong>Module 1 Settings</strong>. Add <code>0000</code> at the beginning of the Gateway ID to get the Gateway EUI. For example <code>80029c10xxxx</code> becomes <code>000080029c10xxxx</code>.</li>
@@ -356,7 +357,7 @@ Router: <code>192.168.11.10</code></p>
 <li>Enter the other details such as location, frequency plan and router.</li>
 <li>If your configuration was successful, you should start receiving packets (if there are LoRaWAN nodes transmitting nearby).</li>
 </ol>
-<h2 id="troubleshooting">Troubleshooting</h2>
+<h2 id="troubleshooting">Troubleshooting&nbsp;<a class="header-hash" href="#troubleshooting">#</a> </h2>
 <ul>
 <li>When you cannot find a way to change the LoRaWAN settings, you might need to update the System Firmware. You can do so via:</li>
 <li><strong>System</strong> &gt; <strong>System Firmware</strong></li>
@@ -365,6 +366,7 @@ Router: <code>192.168.11.10</code></p>
 <img src="upgrade_1.png" alt="Upgrade-page"></li>
 <li>The gateway will automatically reboot with the upgraded firmware</li>
 </ul>
+
 
         </div>
       

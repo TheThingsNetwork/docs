@@ -38,7 +38,7 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.63e25b5c651bd53d7906c0aea044f525dd20de132fd123ea1927e46490c71ca9.css" integrity="sha256-Y&#43;JbXGUb1T15BsCuoET1Jd0g3hMv0SPqGSfkZJDHHKk=" crossorigin="anonymous">
 
   <meta property="og:title" content="Reverse SSH" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
@@ -333,13 +333,14 @@
           Reverse SSH
         </h1>
         <div class="content">
-          <p>SSH is a secure connection between a client and server over which commands can be executed on the server. As long as the two devices can see each other on the internet the SSH connection can also be made from the server to the client. This is however often blocked by firewalls and NATs.</p>
+          
+<p>SSH is a secure connection between a client and server over which commands can be executed on the server. As long as the two devices can see each other on the internet the SSH connection can also be made from the server to the client. This is however often blocked by firewalls and NATs.</p>
 <p>SSH also has the ability of forwarding ports over this secure connection, creating in essense a simple VPN. This can be used to dial another SSH connection from the server to the client via an existing SSH connection from the client to the server. This is called reverse SSH.</p>
 <p><a href="http://www.pc-freak.net/blog/reverse-ssh-tunnel/">http://www.pc-freak.net/blog/reverse-ssh-tunnel/</a></p>
-<h2 id="setup-your-ssh-server">Setup your SSH server</h2>
+<h2 id="setup-your-ssh-server">Setup your SSH server&nbsp;<a class="header-hash" href="#setup-your-ssh-server">#</a> </h2>
 <p>You will need a server or other computer running Linux or any other operating system which can be accessed via SSH. This server needs to be accesible via a public IP address on the internet. You should create a hostname to point to this server and use the hostname to ssh to the server. This will allow you to connect to the server even when the IP address changes.</p>
 <p>For the next step you will need to know the hostname of this server. As an example let&rsquo;s say the hostname is <code>sshgateway.example.com</code>. We will also need to know the username you use to log into this server. We&rsquo;ll use <code>serveruser</code> as example.</p>
-<h2 id="setup-the-gateway-to-dial-ssh-on-startup">Setup the gateway to dial SSH on startup</h2>
+<h2 id="setup-the-gateway-to-dial-ssh-on-startup">Setup the gateway to dial SSH on startup&nbsp;<a class="header-hash" href="#setup-the-gateway-to-dial-ssh-on-startup">#</a> </h2>
 <p>Log into your gateway using either SSH or the Wirgrid.</p>
 <p>Run the following commands:</p>
 <pre><code>[root@Wirnet_080E0xxx ~]# cd ~
@@ -397,19 +398,20 @@ case ${RUNLEVEL} in
 esac
 
 /root/startReverseSshTunnel.sh &amp;
-</code></pre><h2 id="disable-the-kerlink-firewall">Disable the Kerlink firewall</h2>
+</code></pre><h2 id="disable-the-kerlink-firewall">Disable the Kerlink firewall&nbsp;<a class="header-hash" href="#disable-the-kerlink-firewall">#</a> </h2>
 <p>By default the firewall on the Kerlink blocks outgoing SSH connections. You can either add a rule to allow this, or you can disable the firewall. Edit <code>/etc/sysconfig/network</code> by using <code>vi</code> like before. Change <code>FIREWALL=yes</code> to <code>FIREWALL=no</code>.</p>
 <p>Restart the network to apply the firewall change:</p>
 <p><code>[root@Wirnet_080E0188 ~]# /etc/init.d/network restart</code></p>
-<h2 id="copy-your-public-key-to-the-server">Copy your public key to the server</h2>
+<h2 id="copy-your-public-key-to-the-server">Copy your public key to the server&nbsp;<a class="header-hash" href="#copy-your-public-key-to-the-server">#</a> </h2>
 <p>Copy-paste the public key you saved earlier and add it to the <code>~/.ssh/authorized_keys</code> on the server.</p>
 <p>Execute the following on the gateway</p>
 <pre><code>[root@Wirnet_080E0xxx ~]# ssh -i /root/.ssh/id_rsa serveruser@sshgateway.example.com
 </code></pre><p>If you do not get a password prompt or an error, and you are logged into the server, your key exchange has been done correctly.</p>
-<h2 id="reverse-ssh-into-the-gateway-from-your-server">Reverse SSH into the gateway from your server</h2>
+<h2 id="reverse-ssh-into-the-gateway-from-your-server">Reverse SSH into the gateway from your server&nbsp;<a class="header-hash" href="#reverse-ssh-into-the-gateway-from-your-server">#</a> </h2>
 <p>Restart the gateway and wait two minutes. Log into your server and try to SSH into the gateway via the reverse SSH tunnel:</p>
 <p><code>ssh root@localhost -p 20022</code></p>
 <p>If everything has been done correctly you should be asked for the password and then logged into the gateway.</p>
+
 
         </div>
       

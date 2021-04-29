@@ -38,7 +38,7 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.63e25b5c651bd53d7906c0aea044f525dd20de132fd123ea1927e46490c71ca9.css" integrity="sha256-Y&#43;JbXGUb1T15BsCuoET1Jd0g3hMv0SPqGSfkZJDHHKk=" crossorigin="anonymous">
 
   <meta property="og:title" content="Wirnet iStation" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
@@ -333,21 +333,22 @@
           Wirnet iStation
         </h1>
         <div class="content">
-          <p>The wirnet iStation is the replacement of the legacy Wirnet Station gateway. It is an outdoor LoRaWAN nano gateway that can be easily connected through Ethernet or cellular, with a built-in LoRa 2.6 dBi antenna..</p>
+          
+<p>The wirnet iStation is the replacement of the legacy Wirnet Station gateway. It is an outdoor LoRaWAN nano gateway that can be easily connected through Ethernet or cellular, with a built-in LoRa 2.6 dBi antenna..</p>
 <p><img src="istation.jpg" alt="Kerlink iStation"></p>
 <p><a href="https://wikikerlink.fr/wirnet-productline/doku.php?id=wiki:istation:hardware_arch_case_accessories_istation">Source &amp; further info</a>
 <em>You do need to request a login and password from Kerlink</em></p>
-<h2 id="powering-the-istation">Powering the iStation</h2>
+<h2 id="powering-the-istation">Powering the iStation&nbsp;<a class="header-hash" href="#powering-the-istation">#</a> </h2>
 <p>Use a POE-enabled switch, or use a POE injector, then connect the RJ45 cable to the iStation.</p>
 <p>Alternatively, it is also possible to supply DC power. The input voltage range is 42 to 57VDC and power supply is isolated.</p>
-<h2 id="connecting-to-the-istation">Connecting to the iStation</h2>
+<h2 id="connecting-to-the-istation">Connecting to the iStation&nbsp;<a class="header-hash" href="#connecting-to-the-istation">#</a> </h2>
 <p>iStations are named after their serial number and are called <code>klk-wiis-XXXXXX</code>. You can replace the <code>XXXXXX</code> by the six hexadecimal digits from the serial number which are also the last six hexadecimal digits of the <strong>Board ID</strong> (printed on the bottom of the gateway).</p>
 <blockquote>
 <p>For example, if an iStation has <code>921CHa010001</code> as board ID, the host name will be: <code>klk-wiis-010001</code></p>
 </blockquote>
-<h3 id="ethernet-or-cellular">Ethernet or cellular</h3>
+<h3 id="ethernet-or-cellular">Ethernet or cellular&nbsp;<a class="header-hash" href="#ethernet-or-cellular">#</a> </h3>
 <p>Both ethernet and cellular can be used, though for setup Ethernet is preferred.</p>
-<h3 id="istation-loginpassword">iStation login/password</h3>
+<h3 id="istation-loginpassword">iStation login/password&nbsp;<a class="header-hash" href="#istation-loginpassword">#</a> </h3>
 <p>To prevent Web robots from attacking the gateway with standard login/password “root/root”, default password is built using the last 6 characters of the board ID: <code>pdmk-XXXXXX</code>.</p>
 <p>For example, if an iStation has <code>921CHa010001</code> as board ID, then the root password will be <code>pdmk-010001</code> (case sensitive).</p>
 <pre><code>klk-wiis-010001 login: root
@@ -355,8 +356,9 @@ Password: pdmk-010001
 </code></pre><blockquote>
 <p>For security reasons, it is highly recommended to change the password. You can do so with the command: <code>passwd</code></p>
 </blockquote>
-<h3 id="install-and-configure-the-gateway">Install and configure the gateway</h3>
+<h3 id="install-and-configure-the-gateway">Install and configure the gateway&nbsp;<a class="header-hash" href="#install-and-configure-the-gateway">#</a> </h3>
 <p>Follow the <a href="/docs/gateways/kerlink/keros/">unified generic KerOS guide</a> to install and configure your gateway.</p>
+
 
         </div>
       

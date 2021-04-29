@@ -38,7 +38,7 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.63e25b5c651bd53d7906c0aea044f525dd20de132fd123ea1927e46490c71ca9.css" integrity="sha256-Y&#43;JbXGUb1T15BsCuoET1Jd0g3hMv0SPqGSfkZJDHHKk=" crossorigin="anonymous">
 
   <meta property="og:title" content="KerOS installation and configuration" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
@@ -333,9 +333,10 @@
           KerOS installation and configuration
         </h1>
         <div class="content">
-          <p>The Kerlink Wirnet product family share the same firmware and software architecture (for Wirnet iBTS, Wirnet iFemtoCell, Wirnet iFemtoCell-Evolution, Wirnet iStation).</p>
+          
+<p>The Kerlink Wirnet product family share the same firmware and software architecture (for Wirnet iBTS, Wirnet iFemtoCell, Wirnet iFemtoCell-Evolution, Wirnet iStation).</p>
 <p>This page describes how to install and configure any of these gateways.</p>
-<h2 id="1-update-the-firmware">1. Update the firmware</h2>
+<h2 id="1-update-the-firmware">1. Update the firmware&nbsp;<a class="header-hash" href="#1-update-the-firmware">#</a> </h2>
 <p>Check the firmware version using the command:</p>
 <pre><code>cat /tmp/sys_startup_status.json
 
@@ -347,7 +348,7 @@
         &quot;serial_number&quot;: &quot;0x2e040353&quot;,
         &quot;start_time&quot;: &quot;15:19:04 2018-07-09&quot;,
         &quot;sw_version&quot;: &quot;4.1.6_20190829151113&quot;
-</code></pre><h4 id="update-with-the-last-firmware-version">Update with the last firmware version:</h4>
+</code></pre><h4 id="update-with-the-last-firmware-version">Update with the last firmware version:&nbsp;<a class="header-hash" href="#update-with-the-last-firmware-version">#</a> </h4>
 <p>To update the gateway firmware with the last <strong>Wirnet KerOS</strong> firmware, go to Kerlink&rsquo;s <a href="https://wikikerlink.fr/wirnet-productline/doku.php?id=wiki:resources:resources#keros_firmware_and_toolchain">Resources page</a>. The firmware can be updated via a USB key or over the Network.</p>
 <blockquote>
 <p>You can also use the file <strong>Liveburner IPK</strong> for updating this Kerlink firmware, to perform a factory reset. This will however erase the whole partition and resets the default password.</p>
@@ -397,7 +398,7 @@
 </code></pre><ol start="6">
 <li>Check the firmware version in the file <code>/tmp/sys_startup_status.json</code> under the field <code>sw_version</code>.</li>
 </ol>
-<h2 id="2-connect-to-the-things-network">2. Connect to The Things Network</h2>
+<h2 id="2-connect-to-the-things-network">2. Connect to The Things Network&nbsp;<a class="header-hash" href="#2-connect-to-the-things-network">#</a> </h2>
 <p>To use the gateway, you need to install the packet forwarder.</p>
 <ol>
 <li>
@@ -460,6 +461,7 @@ Install the packet forwarder over the network or USB and reboot the gateway. <a 
 <li>Register the gateway in the <a href="https://console.thethingsnetwork.org/">Developer Console</a>. You can find more information on how to register your gateway in the Console <a href="https://www.thethingsnetwork.org/docs/gateways/registration.html">here</a>. If all went well, you should see something like this:</li>
 </ol>
 <p><img src="ibts.png" alt="Kerlink iBTS Console"></p>
+
 
         </div>
       

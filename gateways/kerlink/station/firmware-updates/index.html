@@ -38,7 +38,7 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.63e25b5c651bd53d7906c0aea044f525dd20de132fd123ea1927e46490c71ca9.css" integrity="sha256-Y&#43;JbXGUb1T15BsCuoET1Jd0g3hMv0SPqGSfkZJDHHKk=" crossorigin="anonymous">
 
   <meta property="og:title" content="Firmware Updates" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
@@ -372,8 +372,9 @@
           Firmware Updates
         </h1>
         <div class="content">
-          <p>Please read through this entire document before performing the firmware update. If the procedure is not done correctly you stand a chance to brick your gateway. A firmware upgrade will most likely result in a factory reset of the gateway.</p>
-<h2 id="firmware-update-procedure-summary">Firmware update procedure summary</h2>
+          
+<p>Please read through this entire document before performing the firmware update. If the procedure is not done correctly you stand a chance to brick your gateway. A firmware upgrade will most likely result in a factory reset of the gateway.</p>
+<h2 id="firmware-update-procedure-summary">Firmware update procedure summary&nbsp;<a class="header-hash" href="#firmware-update-procedure-summary">#</a> </h2>
 <ul>
 <li>Format a USB flash drive as FAT32.</li>
 <li>Download produsb_wirnet_v3.6.zip from <a href="https://raw.githubusercontent.com/TheThingsNetwork/kerlink-station-firmware/master/dota/produsb_wirnet_v3.6.zip">here</a>.</li>
@@ -384,7 +385,7 @@
 <li>Your Kerlink gateway should already be switched on and booted up. The safest is to power up the gateway and to wait two minutes for it to fully boot up.</li>
 <li>Plug the flash drive into the USB port on the Kerlink. If the flash drive has a light it will start blinking. The gateway will detect the firmware file on the flash drive and start installing it. If you press the Test button on the gateway you will see the MOD1 and MOD2 lights flashing. When they stop flashing the firmware update is completeted and you can remove the flash drive from the USB port.</li>
 </ul>
-<h2 id="about-the-firmware">About the firmware</h2>
+<h2 id="about-the-firmware">About the firmware&nbsp;<a class="header-hash" href="#about-the-firmware">#</a> </h2>
 <p>Kerlink Wirnet Station firmware updates are installed from a USB drive. This needs to be a USB 1.1 compatible device formatted as FAT32.
 The firmware consists of two parts:</p>
 <ul>
@@ -406,7 +407,7 @@ The firmware consists of two parts:</p>
 <li>Wait for 5 minutes</li>
 <li>A log file is written back to USB drive (<code>produsb.log</code>)</li>
 </ul>
-<h2 id="system-firmware-v31-and-above">System Firmware (v3.1 and above)</h2>
+<h2 id="system-firmware-v31-and-above">System Firmware (v3.1 and above)&nbsp;<a class="header-hash" href="#system-firmware-v31-and-above">#</a> </h2>
 <blockquote>
 <p>⚠️ WARNING: After installation of this firmware you will not be able to revert to v2.3.3 - an attempt will brick your gateway. Refer Kerlink Wiki.</p>
 </blockquote>
@@ -421,11 +422,11 @@ The firmware consists of two parts:</p>
 <li><code>rootfs.tar.gz</code> - the root filesystem, will be extracted to <code>/</code> (<code>/dev/mtdblock5</code>)</li>
 <li><code>userfs.tar</code> - the user filesystem, will be extracted to <code>/mnt/fsuser-1</code> (<code>/dev/mtdblock6</code>)</li>
 </ul>
-<h2 id="recovery-andor-factory-reset">Recovery and/or factory reset</h2>
+<h2 id="recovery-andor-factory-reset">Recovery and/or factory reset&nbsp;<a class="header-hash" href="#recovery-andor-factory-reset">#</a> </h2>
 <p>A factory reset can be performed by doing a firmware upgrade using a USB flash drive. This will only work if the currently running firmware is working. If it does not work, try the next option.</p>
 <p>The gateway automatically restores the &ldquo;stock system firmware&rdquo; from the rescue FS if it detects that it is unstable. The gateway is considered unstable if the u-boot <code>bootfail</code> variable is greater than <code>max_bootfail</code>. This <code>max_bootfail</code> is 20 by default. The <code>bootfail</code> variable is incremented on each boot and reset when the gateway successfully starts. Both <code>bootfail</code> and <code>max_bootfail</code> can be set with the <code>fw_setenv</code> tool (or with <code>setenv</code> and <code>saveenv</code> in the u-boot console). Forcing the recovery process can be done by pressing the reset button for at least <code>max_bootfail</code> times with intervals of 4-10 seconds. This does not overwrite the user filesystem <code>/mnt/fsuser-1</code> (<code>/dev/mtdblock6</code>).</p>
 <p>If pressing the reset button multiple times does not reset the gateway, you can try using the Wirgrid device to log into the gateway&rsquo;s boot loader and perform a reset from there. See <a href="https://www.thethingsnetwork.org/forum/t/convert-actility-kerlink-gateway-to-ttn/24026">this forum topic</a>.</p>
-<h2 id="user-firmware-and-system-firmware-customizations">User Firmware and System Firmware Customizations</h2>
+<h2 id="user-firmware-and-system-firmware-customizations">User Firmware and System Firmware Customizations&nbsp;<a class="header-hash" href="#user-firmware-and-system-firmware-customizations">#</a> </h2>
 <p>The Gateway is usually shipped without or with outdated user firmware. The user firmware can be updated with <code>dota_XXXX.tar.gz</code> and <code>custo_XXXX.tar.gz</code> files.</p>
 <p>Contents of USB drive:</p>
 <ul>
@@ -447,19 +448,20 @@ The firmware consists of two parts:</p>
 </li>
 </ul>
 <p>After editing the contents of the <code>dota_XXXX.tar.gz</code> file, compress with <code>tar -cvzf dota_upgrade.tar.gz --owner root --group root mnt usr</code> (use <code>gtar</code> on macOS).</p>
-<h2 id="usb-firmware-update-security">USB Firmware update security</h2>
+<h2 id="usb-firmware-update-security">USB Firmware update security&nbsp;<a class="header-hash" href="#usb-firmware-update-security">#</a> </h2>
 <ul>
 <li>Set a password in <code>/etc/usbkey.txt</code> on the gateway</li>
 <li>The same password must be in <code>usbkey.txt</code> on the USB drive</li>
 </ul>
-<h2 id="i-still-have-problems-or-i-am-still-unsure-about-the-firmware-update">I still have problems or I am still unsure about the firmware update</h2>
+<h2 id="i-still-have-problems-or-i-am-still-unsure-about-the-firmware-update">I still have problems or I am still unsure about the firmware update&nbsp;<a class="header-hash" href="#i-still-have-problems-or-i-am-still-unsure-about-the-firmware-update">#</a> </h2>
 <p>Have a look on the Kerlink Wiki: <a href="http://wikikerlink.fr/lora-station">http://wikikerlink.fr/lora-station</a></p>
-<h2 id="resources">Resources</h2>
+<h2 id="resources">Resources&nbsp;<a class="header-hash" href="#resources">#</a> </h2>
 <ul>
 <li>v3.6 produsb:<br>
 <a href="https://raw.githubusercontent.com/TheThingsNetwork/kerlink-station-firmware/legacy/dota/produsb_wirnet_v3.6.zip">produsb_wirnet_v3.6.zip</a></li>
 <li>v3.6 firmware: <a href="https://raw.githubusercontent.com/TheThingsNetwork/kerlink-station-firmware/legacy/dota/usbflashdrive_wirmav2_wirnet_v3.6.zip">usbflashdrive_wirmav2_wirnet_v3.6.zip</a></li>
 </ul>
+
 
         </div>
       

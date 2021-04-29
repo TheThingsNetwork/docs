@@ -38,7 +38,7 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.63e25b5c651bd53d7906c0aea044f525dd20de132fd123ea1927e46490c71ca9.css" integrity="sha256-Y&#43;JbXGUb1T15BsCuoET1Jd0g3hMv0SPqGSfkZJDHHKk=" crossorigin="anonymous">
 
   <meta property="og:title" content="TTN Mapper" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
@@ -289,10 +289,11 @@
           TTN Mapper
         </h1>
         <div class="content">
-          <p>The TTN Mapper integration allows you to upload coverage information (location, rssi and snr) to TTN Mapper directly from the TTN backend.</p>
+          
+<p>The TTN Mapper integration allows you to upload coverage information (location, rssi and snr) to TTN Mapper directly from the TTN backend.</p>
 <p>The goal of TTN Mapper is to provide a map of the actual coverage of the TTN gateways. Contributors to TTN Mapper measure the performance of gateways in their vicinity and upload this information to the TTN Mapper website. Here the information is aggregated and shared with the TTN community.</p>
 <p>Go to <a href="https://ttnmapper.org">https://ttnmapper.org</a> for the global coverage map.</p>
-<h2 id="prerequisites">Prerequisites</h2>
+<h2 id="prerequisites">Prerequisites&nbsp;<a class="header-hash" href="#prerequisites">#</a> </h2>
 <p>In order to use the TTN Mapper integration a LoRaWAN device with a GPS, capable of transmitting its GPS coordinates, is required. The minimal location information that needs to be sent by the device is its latitude and longitude. Preferably it should also send its altitude and HDOP values. If HDOP is not available, the end device should provide the accuracy of the GPS fix (in meters). As a last resort, if no accuracy can be provided, the satellite count can be sent.</p>
 <p><em>Note</em>: If you don&rsquo;t have a GPS enabled LoRa device, you can still contribute to TTN Mapper using your smartphone (Android or iOS) and any LoRaWAN device. See the &ldquo;<a href="https://www.thethingsnetwork.org/labs/story/using-ttnmapper-on-android">Using TTN Mapper on Android</a>&rdquo; lab. If you want to use the Things Node for mapping check out the &ldquo;<a href="https://www.thethingsnetwork.org/labs/story/mapping-gateway-coverage-using-a-things-node">Mapping gateway coverage using a Things Node</a>&rdquo; lab.</p>
 <p>Once the integration is enabled any message sent by the end device will also be published to the TTN Mapper website. In order for TTN Mapper to correctly interpret the incoming messages, the message payload should be structured according to one of following formats:</p>
@@ -301,7 +302,7 @@
 <li>The Cayenne LPP data format. When using the Cayenne LPP data format, the GPS coordinates will be decoded into a different JSON format which is also supported. Cayenne LPP does not contain the GPS accuracy, and therefore this data will be considered as inferior and will carry less weight in calculation of coverage, and will be deleted first during data cleanup.</li>
 </ol>
 <p>If you are developing your own GPS enabled LoRa device please check the following <a href="https://github.com/ttnmapper/gps-node-examples">Github repository</a> for example end-device software and decoder functions to be used with them.</p>
-<h2 id="create-the-integration">Create the integration</h2>
+<h2 id="create-the-integration">Create the integration&nbsp;<a class="header-hash" href="#create-the-integration">#</a> </h2>
 <p>On the <a href="https://console.thethingsnetwork.org/">The Things Console</a>, open your application and then click on the <em>Integrations</em> tab. Search for the TTN Mapper integration and click on it. In the configuration page for the integration fill in the following:</p>
 <ul>
 <li><strong>Process ID</strong>: a unique string describing this integration. This is mainly for you to make a distinction between (possibly) multiple integrations you have configured. The value does not have an influence on how the integration works.</li>
@@ -310,9 +311,10 @@
 <li><strong>Experiment name</strong>: the name of the experimental dataset stored on the TTN Mapper website. This is an optional field that should be left empty in most cases. If you are measuring coverage that is out of the ordinary, like taking a GPS tracker on an aeroplane, strapping it to a balloon or drone, or climbing a high mast or tower that is not publicly accessible, your data should be logged to an experiment to keep it separated from the main TTN Mapper global coverage map.</li>
 </ul>
 <p>Click on &ldquo;Add integration&rdquo; and your application is now ready to contribute to TTN Mapper.</p>
-<h2 id="verify-the-integration-is-working-correctly">Verify the integration is working correctly</h2>
+<h2 id="verify-the-integration-is-working-correctly">Verify the integration is working correctly&nbsp;<a class="header-hash" href="#verify-the-integration-is-working-correctly">#</a> </h2>
 <p>In order to verify whether the integration has been configured correctly, go to the Data tab for your device on the TTN Console. Switch on your device and make sure you see data appearing on the Data tab. Now go to the TTN Mapper website and in the menu select &ldquo;<a href="https://ttnmapper.org/advanced-maps/">Advanced map options</a>&rdquo;. In the &ldquo;Specific node&rdquo; section fill in the Device ID in the &ldquo;Node address&rdquo; field. Leave the &ldquo;Date&rdquo; field as is - it is automatically set to today. Click on &ldquo;View map&rdquo; and you should see the data points sent by your end device.</p>
 <p>For troubleshooting please post your question in the #ttn-mapper channel on Slack.</p>
+
 
         </div>
       

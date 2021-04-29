@@ -38,7 +38,7 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.63e25b5c651bd53d7906c0aea044f525dd20de132fd123ea1927e46490c71ca9.css" integrity="sha256-Y&#43;JbXGUb1T15BsCuoET1Jd0g3hMv0SPqGSfkZJDHHKk=" crossorigin="anonymous">
 
   <meta property="og:title" content="Quick Start" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
@@ -313,7 +313,8 @@
           Quick Start
         </h1>
         <div class="content">
-          <h2 id="setup">Setup</h2>
+          
+<h2 id="setup">Setup&nbsp;<a class="header-hash" href="#setup">#</a> </h2>
 <p>Let&rsquo;s install Go, create a new project and install the TTN Client.</p>
 <ol>
 <li>
@@ -332,7 +333,7 @@
 <p>Install <a href="https://github.com/kardianos/govendor">Govendor</a> and then run <code>govendor sync</code> inside <code>$GOPATH/src/github.com/TheThingsNetwork/go-app-sdk</code>.</p>
 </li>
 </ol>
-<h2 id="maingo"><code>main.go</code></h2>
+<h2 id="maingo"><code>main.go</code>&nbsp;<a class="header-hash" href="#maingo">#</a> </h2>
 <p>We declare the package <code>main</code> and import a number of dependencies that we&rsquo;ll use later on:</p>
 <div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
 
@@ -447,6 +448,7 @@
   <span class="nx">log</span><span class="p">.</span><span class="nf">WithError</span><span class="p">(</span><span class="nx">err</span><span class="p">).</span><span class="nf">Fatalf</span><span class="p">(</span><span class="s">&#34;%s: could not schedule downlink message&#34;</span><span class="p">,</span> <span class="nx">sdkClientName</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div><p>🎉 Congratulations! Now you know how to get started with our Go SDK for Application Developers. Go build something!</p>
+
 
         </div>
       

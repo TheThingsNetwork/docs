@@ -38,7 +38,7 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.63e25b5c651bd53d7906c0aea044f525dd20de132fd123ea1927e46490c71ca9.css" integrity="sha256-Y&#43;JbXGUb1T15BsCuoET1Jd0g3hMv0SPqGSfkZJDHHKk=" crossorigin="anonymous">
 
   <meta property="og:title" content="API Reference" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
@@ -211,16 +211,17 @@
           API Reference
         </h1>
         <div class="content">
-          <h2 id="discoverydiscovery">.discovery.Discovery</h2>
+          
+<h2 id="discoverydiscovery">.discovery.Discovery&nbsp;<a class="header-hash" href="#discoverydiscovery">#</a> </h2>
 <p>The Discovery service is used to discover services within The Things Network.</p>
-<h3 id="methods">Methods</h3>
-<h4 id="addmetadata"><code>AddMetadata</code></h4>
+<h3 id="methods">Methods&nbsp;<a class="header-hash" href="#methods">#</a> </h3>
+<h4 id="addmetadata"><code>AddMetadata</code>&nbsp;<a class="header-hash" href="#addmetadata">#</a> </h4>
 <p>Add metadata to an announement</p>
 <ul>
 <li>Request: <a href="/docs/network/discovery/#discoverymetadatarequest"><code>MetadataRequest</code></a></li>
 <li>Response: <a href="/docs/network/discovery/#googleprotobufempty"><code>Empty</code></a></li>
 </ul>
-<h4 id="announce"><code>Announce</code></h4>
+<h4 id="announce"><code>Announce</code>&nbsp;<a class="header-hash" href="#announce">#</a> </h4>
 <p>Announce a component to the Discovery server.
 A call to <code>Announce</code> does not processes the <code>metadata</code> field, so you can safely leave this field empty.
 Adding or removing Metadata should be done with the <code>AddMetadata</code> and <code>DeleteMetadata</code> methods.</p>
@@ -228,13 +229,13 @@ Adding or removing Metadata should be done with the <code>AddMetadata</code> and
 <li>Request: <a href="/docs/network/discovery/#discoveryannouncement"><code>Announcement</code></a></li>
 <li>Response: <a href="/docs/network/discovery/#googleprotobufempty"><code>Empty</code></a></li>
 </ul>
-<h4 id="deletemetadata"><code>DeleteMetadata</code></h4>
+<h4 id="deletemetadata"><code>DeleteMetadata</code>&nbsp;<a class="header-hash" href="#deletemetadata">#</a> </h4>
 <p>Delete metadata from an announcement</p>
 <ul>
 <li>Request: <a href="/docs/network/discovery/#discoverymetadatarequest"><code>MetadataRequest</code></a></li>
 <li>Response: <a href="/docs/network/discovery/#googleprotobufempty"><code>Empty</code></a></li>
 </ul>
-<h4 id="get"><code>Get</code></h4>
+<h4 id="get"><code>Get</code>&nbsp;<a class="header-hash" href="#get">#</a> </h4>
 <p>Get a specific announcement</p>
 <ul>
 <li>Request: <a href="/docs/network/discovery/#discoverygetrequest"><code>GetRequest</code></a></li>
@@ -270,7 +271,7 @@ Adding or removing Metadata should be done with the <code>AddMetadata</code> and
   <span class="nt">&#34;service_version&#34;</span><span class="p">:</span> <span class="s2">&#34;2.0.0-abcdef...&#34;</span><span class="p">,</span>
   <span class="nt">&#34;url&#34;</span><span class="p">:</span> <span class="s2">&#34;&#34;</span>
 <span class="p">}</span>
-</code></pre></div><h4 id="getall"><code>GetAll</code></h4>
+</code></pre></div><h4 id="getall"><code>GetAll</code>&nbsp;<a class="header-hash" href="#getall">#</a> </h4>
 <p>Get all announcements for a specific service type</p>
 <ul>
 <li>Request: <a href="/docs/network/discovery/#discoverygetservicerequest"><code>GetServiceRequest</code></a></li>
@@ -307,23 +308,23 @@ Adding or removing Metadata should be done with the <code>AddMetadata</code> and
     <span class="nt">&#34;url&#34;</span><span class="p">:</span> <span class="s2">&#34;&#34;</span>
   <span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div><h4 id="getbyappeui"><code>GetByAppEUI</code></h4>
+</code></pre></div><h4 id="getbyappeui"><code>GetByAppEUI</code>&nbsp;<a class="header-hash" href="#getbyappeui">#</a> </h4>
 <ul>
 <li>Request: <a href="/docs/network/discovery/#discoverygetbyappeuirequest"><code>GetByAppEUIRequest</code></a></li>
 <li>Response: <a href="/docs/network/discovery/#discoveryannouncement"><code>Announcement</code></a></li>
 </ul>
-<h4 id="getbyappid"><code>GetByAppID</code></h4>
+<h4 id="getbyappid"><code>GetByAppID</code>&nbsp;<a class="header-hash" href="#getbyappid">#</a> </h4>
 <ul>
 <li>Request: <a href="/docs/network/discovery/#discoverygetbyappidrequest"><code>GetByAppIDRequest</code></a></li>
 <li>Response: <a href="/docs/network/discovery/#discoveryannouncement"><code>Announcement</code></a></li>
 </ul>
-<h4 id="getbygatewayid"><code>GetByGatewayID</code></h4>
+<h4 id="getbygatewayid"><code>GetByGatewayID</code>&nbsp;<a class="header-hash" href="#getbygatewayid">#</a> </h4>
 <ul>
 <li>Request: <a href="/docs/network/discovery/#discoverygetbygatewayidrequest"><code>GetByGatewayIDRequest</code></a></li>
 <li>Response: <a href="/docs/network/discovery/#discoveryannouncement"><code>Announcement</code></a></li>
 </ul>
-<h2 id="messages">Messages</h2>
-<h3 id="discoveryannouncement"><code>.discovery.Announcement</code></h3>
+<h2 id="messages">Messages&nbsp;<a class="header-hash" href="#messages">#</a> </h2>
+<h3 id="discoveryannouncement"><code>.discovery.Announcement</code>&nbsp;<a class="header-hash" href="#discoveryannouncement">#</a> </h3>
 <p>The Announcement of a service (also called component)</p>
 <table>
 <thead>
@@ -401,7 +402,7 @@ Adding or removing Metadata should be done with the <code>AddMetadata</code> and
 </tr>
 </tbody>
 </table>
-<h3 id="discoveryannouncementsresponse"><code>.discovery.AnnouncementsResponse</code></h3>
+<h3 id="discoveryannouncementsresponse"><code>.discovery.AnnouncementsResponse</code>&nbsp;<a class="header-hash" href="#discoveryannouncementsresponse">#</a> </h3>
 <p>A list of announcements</p>
 <table>
 <thead>
@@ -419,7 +420,7 @@ Adding or removing Metadata should be done with the <code>AddMetadata</code> and
 </tr>
 </tbody>
 </table>
-<h3 id="discoverygetbyappeuirequest"><code>.discovery.GetByAppEUIRequest</code></h3>
+<h3 id="discoverygetbyappeuirequest"><code>.discovery.GetByAppEUIRequest</code>&nbsp;<a class="header-hash" href="#discoverygetbyappeuirequest">#</a> </h3>
 <table>
 <thead>
 <tr>
@@ -436,7 +437,7 @@ Adding or removing Metadata should be done with the <code>AddMetadata</code> and
 </tr>
 </tbody>
 </table>
-<h3 id="discoverygetbyappidrequest"><code>.discovery.GetByAppIDRequest</code></h3>
+<h3 id="discoverygetbyappidrequest"><code>.discovery.GetByAppIDRequest</code>&nbsp;<a class="header-hash" href="#discoverygetbyappidrequest">#</a> </h3>
 <table>
 <thead>
 <tr>
@@ -453,7 +454,7 @@ Adding or removing Metadata should be done with the <code>AddMetadata</code> and
 </tr>
 </tbody>
 </table>
-<h3 id="discoverygetbygatewayidrequest"><code>.discovery.GetByGatewayIDRequest</code></h3>
+<h3 id="discoverygetbygatewayidrequest"><code>.discovery.GetByGatewayIDRequest</code>&nbsp;<a class="header-hash" href="#discoverygetbygatewayidrequest">#</a> </h3>
 <table>
 <thead>
 <tr>
@@ -470,7 +471,7 @@ Adding or removing Metadata should be done with the <code>AddMetadata</code> and
 </tr>
 </tbody>
 </table>
-<h3 id="discoverygetrequest"><code>.discovery.GetRequest</code></h3>
+<h3 id="discoverygetrequest"><code>.discovery.GetRequest</code>&nbsp;<a class="header-hash" href="#discoverygetrequest">#</a> </h3>
 <p>The identifier of the service that should be returned</p>
 <table>
 <thead>
@@ -493,7 +494,7 @@ Adding or removing Metadata should be done with the <code>AddMetadata</code> and
 </tr>
 </tbody>
 </table>
-<h3 id="discoverygetservicerequest"><code>.discovery.GetServiceRequest</code></h3>
+<h3 id="discoverygetservicerequest"><code>.discovery.GetServiceRequest</code>&nbsp;<a class="header-hash" href="#discoverygetservicerequest">#</a> </h3>
 <table>
 <thead>
 <tr>
@@ -510,7 +511,7 @@ Adding or removing Metadata should be done with the <code>AddMetadata</code> and
 </tr>
 </tbody>
 </table>
-<h3 id="discoverymetadata"><code>.discovery.Metadata</code></h3>
+<h3 id="discoverymetadata"><code>.discovery.Metadata</code>&nbsp;<a class="header-hash" href="#discoverymetadata">#</a> </h3>
 <table>
 <thead>
 <tr>
@@ -542,7 +543,7 @@ Adding or removing Metadata should be done with the <code>AddMetadata</code> and
 </tr>
 </tbody>
 </table>
-<h3 id="discoverymetadatarequest"><code>.discovery.MetadataRequest</code></h3>
+<h3 id="discoverymetadatarequest"><code>.discovery.MetadataRequest</code>&nbsp;<a class="header-hash" href="#discoverymetadatarequest">#</a> </h3>
 <p>The metadata to add or remove from an announement</p>
 <table>
 <thead>
@@ -570,9 +571,10 @@ Adding or removing Metadata should be done with the <code>AddMetadata</code> and
 </tr>
 </tbody>
 </table>
-<h3 id="googleprotobufempty"><code>.google.protobuf.Empty</code></h3>
+<h3 id="googleprotobufempty"><code>.google.protobuf.Empty</code>&nbsp;<a class="header-hash" href="#googleprotobufempty">#</a> </h3>
 <p>A generic empty message that you can re-use to avoid defining duplicated
 empty messages in your APIs.</p>
+
 
         </div>
       

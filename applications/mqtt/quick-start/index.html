@@ -38,7 +38,7 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.63e25b5c651bd53d7906c0aea044f525dd20de132fd123ea1927e46490c71ca9.css" integrity="sha256-Y&#43;JbXGUb1T15BsCuoET1Jd0g3hMv0SPqGSfkZJDHHKk=" crossorigin="anonymous">
 
   <meta property="og:title" content="Quick Start" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
@@ -308,20 +308,21 @@
           Quick Start
         </h1>
         <div class="content">
-          <p>This guide will walk you through subscribing to an application&rsquo;s activations and messages as well as send a response to a specific device, using <a href="https://mosquitto.org">Eclipse Mosquitto</a>&rsquo;s CLIs to <a href="https://mosquitto.org/man/mosquitto_sub-1.html">subscribe</a> and to <a href="https://mosquitto.org/man/mosquitto_pub-1.html">publish</a> messages.</p>
+          
+<p>This guide will walk you through subscribing to an application&rsquo;s activations and messages as well as send a response to a specific device, using <a href="https://mosquitto.org">Eclipse Mosquitto</a>&rsquo;s CLIs to <a href="https://mosquitto.org/man/mosquitto_sub-1.html">subscribe</a> and to <a href="https://mosquitto.org/man/mosquitto_pub-1.html">publish</a> messages.</p>
 <blockquote>
 <p>This guide assumes the sketch and payload functions of <a href="https://www.thethingsnetwork.org/docs/devices/uno/quick-start/">The Things Uno / Quick Start</a>, but can be easily applied to any other.</p>
 </blockquote>
-<h2 id="setup">Setup</h2>
+<h2 id="setup">Setup&nbsp;<a class="header-hash" href="#setup">#</a> </h2>
 <ul>
 <li>Install or <a href="https://mosquitto.org/download/">download</a> Mosquitto.</li>
 <li>Download and save the <a href="https://console.thethingsnetwork.org/mqtt-ca.pem">PEM encoded CA certificate</a> if you&rsquo;d like to use TLS.</li>
 </ul>
-<h2 id="credentials">Credentials</h2>
+<h2 id="credentials">Credentials&nbsp;<a class="header-hash" href="#credentials">#</a> </h2>
 <p>On <a href="https://console.thethingsnetwork.org/">console.thethingsnetwork.org</a>, navigate to the application you&rsquo;d like to use. Here you can find the <strong>Application ID</strong> and an <strong>Access Key</strong> needed to authenticate over MQTT. Under <strong>Handler</strong> you will also find the region the application is registered to. You will need the part that follows <code>ttn-handler-</code>, e.g. <code>eu</code>.</p>
-<h2 id="single-or-double-quotes">Single or double quotes</h2>
+<h2 id="single-or-double-quotes">Single or double quotes&nbsp;<a class="header-hash" href="#single-or-double-quotes">#</a> </h2>
 <p>On many systems, including Linux and macOS, quotes might not be needed or single quotes are used. On Windows, use double quotes.</p>
-<h2 id="receive-activations">Receive Activations</h2>
+<h2 id="receive-activations">Receive Activations&nbsp;<a class="header-hash" href="#receive-activations">#</a> </h2>
 <p>Let&rsquo;s listen for new device activations first.</p>
 <ol>
 <li>
@@ -346,7 +347,7 @@
 </code></pre></div><p>Use <code>Ctrl C</code> to exit.</p>
 </li>
 </ol>
-<h2 id="receive-messages-up">Receive Messages (up)</h2>
+<h2 id="receive-messages-up">Receive Messages (up)&nbsp;<a class="header-hash" href="#receive-messages-up">#</a> </h2>
 <p>Now let&rsquo;s listen for actual messages coming in from devices.</p>
 <ol>
 <li>
@@ -361,7 +362,7 @@
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">hello-world/devices/my-uno/up <span class="o">{</span><span class="s2">&#34;port&#34;</span>:1,<span class="s2">&#34;counter&#34;</span>:5,<span class="s2">&#34;payload_raw&#34;</span>:<span class="s2">&#34;AQ==&#34;</span>,<span class="s2">&#34;payload_fields&#34;</span>:<span class="o">{</span><span class="s2">&#34;led&#34;</span>:true<span class="o">}</span>,<span class="s2">&#34;metadata&#34;</span>:<span class="o">{</span><span class="s2">&#34;time&#34;</span>:<span class="s2">&#34;2016-09-14T14:19:20.272552952Z&#34;</span>,<span class="s2">&#34;frequency&#34;</span>:868.1,<span class="s2">&#34;modulation&#34;</span>:<span class="s2">&#34;LORA&#34;</span>,<span class="s2">&#34;data_rate&#34;</span>:<span class="s2">&#34;SF7BW125&#34;</span>,<span class="s2">&#34;coding_rate&#34;</span>:<span class="s2">&#34;4/5&#34;</span>,<span class="s2">&#34;gateways&#34;</span>:<span class="o">[{</span><span class="s2">&#34;eui&#34;</span>:<span class="s2">&#34;B827EBFFFE87BD22&#34;</span>,<span class="s2">&#34;timestamp&#34;</span>:1960494347,<span class="s2">&#34;time&#34;</span>:<span class="s2">&#34;2016-09-14T14:19:20.258723Z&#34;</span>,<span class="s2">&#34;rssi&#34;</span>:-49,<span class="s2">&#34;snr&#34;</span>:9.5,<span class="s2">&#34;rf_chain&#34;</span>:1<span class="o">}]}}</span>
 </code></pre></div></li>
 </ol>
-<h3 id="subscribe-to-a-specific-field">Subscribe to a specific field</h3>
+<h3 id="subscribe-to-a-specific-field">Subscribe to a specific field&nbsp;<a class="header-hash" href="#subscribe-to-a-specific-field">#</a> </h3>
 <blockquote>
 <p><strong>Warning</strong>: not every cluster publishes uplink fields to individual topics. See <a href="https://status.thethings.network">status.thethings.network</a> for details.</p>
 </blockquote>
@@ -369,7 +370,7 @@
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">mosquitto_sub -h &lt;Region&gt;.thethings.network -t <span class="s1">&#39;+/devices/+/up/led&#39;</span> -u <span class="s1">&#39;&lt;AppID&gt;&#39;</span> -P <span class="s1">&#39;&lt;AppKey&gt;&#39;</span> -v
 
 hello-world/devices/my-uno/up/led <span class="nb">true</span>
-</code></pre></div><h2 id="send-messages-down">Send Messages (down)</h2>
+</code></pre></div><h2 id="send-messages-down">Send Messages (down)&nbsp;<a class="header-hash" href="#send-messages-down">#</a> </h2>
 <p>To send a message you will have to address a specific device by its <strong>Device ID</strong>. Let&rsquo;s send the same message used in the <a href="https://www.thethingsnetwork.org/docs/devices/uno/quick-start/#message-your-device">The Things Uno / Quick Start</a>:</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">{</span>
   <span class="s2">&#34;led&#34;</span>: <span class="nb">true</span>
@@ -400,6 +401,7 @@ LED: on
 </code></pre></li>
 </ol>
 <p>🎉 Congratulations! Now you know how to monitor and send messages via MQTT. Go build something awesome!</p>
+
 
         </div>
       

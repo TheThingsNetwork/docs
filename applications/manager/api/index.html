@@ -38,7 +38,7 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.63e25b5c651bd53d7906c0aea044f525dd20de132fd123ea1927e46490c71ca9.css" integrity="sha256-Y&#43;JbXGUb1T15BsCuoET1Jd0g3hMv0SPqGSfkZJDHHKk=" crossorigin="anonymous">
 
   <meta property="og:title" content="API Reference" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
@@ -313,13 +313,14 @@
           API Reference
         </h1>
         <div class="content">
-          <h2 id="handlerapplicationmanager">.handler.ApplicationManager</h2>
+          
+<h2 id="handlerapplicationmanager">.handler.ApplicationManager&nbsp;<a class="header-hash" href="#handlerapplicationmanager">#</a> </h2>
 <p>ApplicationManager manages application and device registrations on the Handler</p>
 <p>To protect our quality of service, you can make up to 5000 calls to the
 ApplicationManager API per hour. Once you go over the rate limit, you will
 receive an error response.</p>
-<h3 id="methods">Methods</h3>
-<h4 id="deleteapplication"><code>DeleteApplication</code></h4>
+<h3 id="methods">Methods&nbsp;<a class="header-hash" href="#methods">#</a> </h3>
+<h4 id="deleteapplication"><code>DeleteApplication</code>&nbsp;<a class="header-hash" href="#deleteapplication">#</a> </h4>
 <p>DeleteApplication deletes the application with the given identifier (app_id)</p>
 <ul>
 <li>Request: <a href="/docs/applications/manager/#handlerapplicationidentifier"><code>ApplicationIdentifier</code></a></li>
@@ -335,7 +336,7 @@ receive an error response.</p>
 <span class="p">}</span>
 </code></pre></div><p>Output:</p>
 <div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{}</span>
-</code></pre></div><h4 id="deletedevice"><code>DeleteDevice</code></h4>
+</code></pre></div><h4 id="deletedevice"><code>DeleteDevice</code>&nbsp;<a class="header-hash" href="#deletedevice">#</a> </h4>
 <p>DeleteDevice deletes the device with the given identifier (app_id and dev_id)</p>
 <ul>
 <li>Request: <a href="/docs/applications/manager/#handlerdeviceidentifier"><code>DeviceIdentifier</code></a></li>
@@ -352,19 +353,19 @@ receive an error response.</p>
 <span class="p">}</span>
 </code></pre></div><p>Output:</p>
 <div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{}</span>
-</code></pre></div><h4 id="drydownlink"><code>DryDownlink</code></h4>
+</code></pre></div><h4 id="drydownlink"><code>DryDownlink</code>&nbsp;<a class="header-hash" href="#drydownlink">#</a> </h4>
 <p>DryUplink simulates processing a downlink message and returns the result</p>
 <ul>
 <li>Request: <a href="/docs/applications/manager/#handlerdrydownlinkmessage"><code>DryDownlinkMessage</code></a></li>
 <li>Response: <a href="/docs/applications/manager/#handlerdrydownlinkresult"><code>DryDownlinkResult</code></a></li>
 </ul>
-<h4 id="dryuplink"><code>DryUplink</code></h4>
+<h4 id="dryuplink"><code>DryUplink</code>&nbsp;<a class="header-hash" href="#dryuplink">#</a> </h4>
 <p>DryUplink simulates processing an uplink message and returns the result</p>
 <ul>
 <li>Request: <a href="/docs/applications/manager/#handlerdryuplinkmessage"><code>DryUplinkMessage</code></a></li>
 <li>Response: <a href="/docs/applications/manager/#handlerdryuplinkresult"><code>DryUplinkResult</code></a></li>
 </ul>
-<h4 id="getapplication"><code>GetApplication</code></h4>
+<h4 id="getapplication"><code>GetApplication</code>&nbsp;<a class="header-hash" href="#getapplication">#</a> </h4>
 <p>GetApplication returns the application with the given identifier (app_id)</p>
 <ul>
 <li>Request: <a href="/docs/applications/manager/#handlerapplicationidentifier"><code>ApplicationIdentifier</code></a></li>
@@ -388,7 +389,7 @@ receive an error response.</p>
   <span class="nt">&#34;register_on_join_access_key&#34;</span><span class="p">:</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
   <span class="nt">&#34;validator&#34;</span><span class="p">:</span> <span class="s2">&#34;Validator(converted, port) {...&#34;</span>
 <span class="p">}</span>
-</code></pre></div><h4 id="getdevice"><code>GetDevice</code></h4>
+</code></pre></div><h4 id="getdevice"><code>GetDevice</code>&nbsp;<a class="header-hash" href="#getdevice">#</a> </h4>
 <p>GetDevice returns the device with the given identifier (app_id and dev_id)</p>
 <ul>
 <li>Request: <a href="/docs/applications/manager/#handlerdeviceidentifier"><code>DeviceIdentifier</code></a></li>
@@ -432,7 +433,7 @@ receive an error response.</p>
     <span class="nt">&#34;uses32_bit_f_cnt&#34;</span><span class="p">:</span> <span class="kc">true</span>
   <span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div><h4 id="getdevicesforapplication"><code>GetDevicesForApplication</code></h4>
+</code></pre></div><h4 id="getdevicesforapplication"><code>GetDevicesForApplication</code>&nbsp;<a class="header-hash" href="#getdevicesforapplication">#</a> </h4>
 <p>GetDevicesForApplication returns all devices that belong to the application with the given identifier (app_id)</p>
 <ul>
 <li>Request: <a href="/docs/applications/manager/#handlerapplicationidentifier"><code>ApplicationIdentifier</code></a></li>
@@ -477,7 +478,7 @@ receive an error response.</p>
     <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div><h4 id="registerapplication"><code>RegisterApplication</code></h4>
+</code></pre></div><h4 id="registerapplication"><code>RegisterApplication</code>&nbsp;<a class="header-hash" href="#registerapplication">#</a> </h4>
 <p>Applications should first be registered to the Handler with the <code>RegisterApplication</code> method</p>
 <ul>
 <li>Request: <a href="/docs/applications/manager/#handlerapplicationidentifier"><code>ApplicationIdentifier</code></a></li>
@@ -493,7 +494,7 @@ receive an error response.</p>
 <span class="p">}</span>
 </code></pre></div><p>Output:</p>
 <div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{}</span>
-</code></pre></div><h4 id="setapplication"><code>SetApplication</code></h4>
+</code></pre></div><h4 id="setapplication"><code>SetApplication</code>&nbsp;<a class="header-hash" href="#setapplication">#</a> </h4>
 <p>SetApplication updates the settings for the application. All fields must be supplied.</p>
 <ul>
 <li>Request: <a href="/docs/applications/manager/#handlerapplication"><code>Application</code></a></li>
@@ -516,7 +517,7 @@ receive an error response.</p>
 <span class="p">}</span>
 </code></pre></div><p>Output:</p>
 <div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{}</span>
-</code></pre></div><h4 id="setdevice"><code>SetDevice</code></h4>
+</code></pre></div><h4 id="setdevice"><code>SetDevice</code>&nbsp;<a class="header-hash" href="#setdevice">#</a> </h4>
 <p>SetDevice creates or updates a device. All fields must be supplied.</p>
 <ul>
 <li>Request: <a href="/docs/applications/manager/#handlerdevice"><code>Device</code></a></li>
@@ -560,17 +561,17 @@ receive an error response.</p>
 <span class="p">}</span>
 </code></pre></div><p>Output:</p>
 <div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{}</span>
-</code></pre></div><h4 id="simulateuplink"><code>SimulateUplink</code></h4>
+</code></pre></div><h4 id="simulateuplink"><code>SimulateUplink</code>&nbsp;<a class="header-hash" href="#simulateuplink">#</a> </h4>
 <p>SimulateUplink simulates an uplink message</p>
 <ul>
 <li>Request: <a href="/docs/applications/manager/#handlersimulateduplinkmessage"><code>SimulatedUplinkMessage</code></a></li>
 <li>Response: <a href="/docs/applications/manager/#googleprotobufempty"><code>Empty</code></a></li>
 </ul>
-<h2 id="messages">Messages</h2>
-<h3 id="googleprotobufempty"><code>.google.protobuf.Empty</code></h3>
+<h2 id="messages">Messages&nbsp;<a class="header-hash" href="#messages">#</a> </h2>
+<h3 id="googleprotobufempty"><code>.google.protobuf.Empty</code>&nbsp;<a class="header-hash" href="#googleprotobufempty">#</a> </h3>
 <p>A generic empty message that you can re-use to avoid defining duplicated
 empty messages in your APIs.</p>
-<h3 id="handlerapplication"><code>.handler.Application</code></h3>
+<h3 id="handlerapplication"><code>.handler.Application</code>&nbsp;<a class="header-hash" href="#handlerapplication">#</a> </h3>
 <p>The Application settings</p>
 <table>
 <thead>
@@ -618,7 +619,7 @@ empty messages in your APIs.</p>
 </tr>
 </tbody>
 </table>
-<h3 id="handlerapplicationidentifier"><code>.handler.ApplicationIdentifier</code></h3>
+<h3 id="handlerapplicationidentifier"><code>.handler.ApplicationIdentifier</code>&nbsp;<a class="header-hash" href="#handlerapplicationidentifier">#</a> </h3>
 <table>
 <thead>
 <tr>
@@ -635,7 +636,7 @@ empty messages in your APIs.</p>
 </tr>
 </tbody>
 </table>
-<h3 id="handlerdevice"><code>.handler.Device</code></h3>
+<h3 id="handlerdevice"><code>.handler.Device</code>&nbsp;<a class="header-hash" href="#handlerdevice">#</a> </h3>
 <p>The Device settings</p>
 <table>
 <thead>
@@ -688,7 +689,7 @@ empty messages in your APIs.</p>
 </tr>
 </tbody>
 </table>
-<h3 id="handlerdeviceattributesentry"><code>.handler.Device.AttributesEntry</code></h3>
+<h3 id="handlerdeviceattributesentry"><code>.handler.Device.AttributesEntry</code>&nbsp;<a class="header-hash" href="#handlerdeviceattributesentry">#</a> </h3>
 <table>
 <thead>
 <tr>
@@ -710,7 +711,7 @@ empty messages in your APIs.</p>
 </tr>
 </tbody>
 </table>
-<h3 id="handlerdeviceidentifier"><code>.handler.DeviceIdentifier</code></h3>
+<h3 id="handlerdeviceidentifier"><code>.handler.DeviceIdentifier</code>&nbsp;<a class="header-hash" href="#handlerdeviceidentifier">#</a> </h3>
 <table>
 <thead>
 <tr>
@@ -732,7 +733,7 @@ empty messages in your APIs.</p>
 </tr>
 </tbody>
 </table>
-<h3 id="handlerdevicelist"><code>.handler.DeviceList</code></h3>
+<h3 id="handlerdevicelist"><code>.handler.DeviceList</code>&nbsp;<a class="header-hash" href="#handlerdevicelist">#</a> </h3>
 <table>
 <thead>
 <tr>
@@ -749,7 +750,7 @@ empty messages in your APIs.</p>
 </tr>
 </tbody>
 </table>
-<h3 id="handlerdrydownlinkmessage"><code>.handler.DryDownlinkMessage</code></h3>
+<h3 id="handlerdrydownlinkmessage"><code>.handler.DryDownlinkMessage</code>&nbsp;<a class="header-hash" href="#handlerdrydownlinkmessage">#</a> </h3>
 <p>DryDownlinkMessage is a simulated message to test downlink processing</p>
 <table>
 <thead>
@@ -782,7 +783,7 @@ empty messages in your APIs.</p>
 </tr>
 </tbody>
 </table>
-<h3 id="handlerdrydownlinkresult"><code>.handler.DryDownlinkResult</code></h3>
+<h3 id="handlerdrydownlinkresult"><code>.handler.DryDownlinkResult</code>&nbsp;<a class="header-hash" href="#handlerdrydownlinkresult">#</a> </h3>
 <p>DryDownlinkResult is the result from a downlink simulation</p>
 <table>
 <thead>
@@ -805,7 +806,7 @@ empty messages in your APIs.</p>
 </tr>
 </tbody>
 </table>
-<h3 id="handlerdryuplinkmessage"><code>.handler.DryUplinkMessage</code></h3>
+<h3 id="handlerdryuplinkmessage"><code>.handler.DryUplinkMessage</code>&nbsp;<a class="header-hash" href="#handlerdryuplinkmessage">#</a> </h3>
 <p>DryUplinkMessage is a simulated message to test uplink processing</p>
 <table>
 <thead>
@@ -833,7 +834,7 @@ empty messages in your APIs.</p>
 </tr>
 </tbody>
 </table>
-<h3 id="handlerdryuplinkresult"><code>.handler.DryUplinkResult</code></h3>
+<h3 id="handlerdryuplinkresult"><code>.handler.DryUplinkResult</code>&nbsp;<a class="header-hash" href="#handlerdryuplinkresult">#</a> </h3>
 <p>DryUplinkResult is the result from an uplink simulation</p>
 <table>
 <thead>
@@ -866,7 +867,7 @@ empty messages in your APIs.</p>
 </tr>
 </tbody>
 </table>
-<h3 id="handlerlogentry"><code>.handler.LogEntry</code></h3>
+<h3 id="handlerlogentry"><code>.handler.LogEntry</code>&nbsp;<a class="header-hash" href="#handlerlogentry">#</a> </h3>
 <table>
 <thead>
 <tr>
@@ -888,7 +889,7 @@ empty messages in your APIs.</p>
 </tr>
 </tbody>
 </table>
-<h3 id="handlersimulateduplinkmessage"><code>.handler.SimulatedUplinkMessage</code></h3>
+<h3 id="handlersimulateduplinkmessage"><code>.handler.SimulatedUplinkMessage</code>&nbsp;<a class="header-hash" href="#handlersimulateduplinkmessage">#</a> </h3>
 <p>SimulatedUplinkMessage is a simulated uplink message</p>
 <table>
 <thead>
@@ -921,7 +922,7 @@ empty messages in your APIs.</p>
 </tr>
 </tbody>
 </table>
-<h3 id="lorawandevice"><code>.lorawan.Device</code></h3>
+<h3 id="lorawandevice"><code>.lorawan.Device</code>&nbsp;<a class="header-hash" href="#lorawandevice">#</a> </h3>
 <table>
 <thead>
 <tr>
@@ -1003,6 +1004,7 @@ empty messages in your APIs.</p>
 </tr>
 </tbody>
 </table>
+
 
         </div>
       

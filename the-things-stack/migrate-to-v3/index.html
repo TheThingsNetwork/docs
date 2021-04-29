@@ -38,7 +38,7 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.63e25b5c651bd53d7906c0aea044f525dd20de132fd123ea1927e46490c71ca9.css" integrity="sha256-Y&#43;JbXGUb1T15BsCuoET1Jd0g3hMv0SPqGSfkZJDHHKk=" crossorigin="anonymous">
 
   <meta property="og:title" content="Migrate your Gateways and Devices" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
@@ -161,7 +161,8 @@
           Migrate your Gateways and Devices
         </h1>
         <div class="content">
-          <p>This guide was written to explain the overall migration process of migrating from The Things Network V2 to The Things Stack Community Edition in a several easy-to-follow steps.</p>
+          
+<p>This guide was written to explain the overall migration process of migrating from The Things Network V2 to The Things Stack Community Edition in a several easy-to-follow steps.</p>
 <div class="notification is-info is-light has-text-dark">
   <h5 class="title is-family-sans-serif has-text-dark mb-1">Note:</h5>
   <p>The Things Stack Community Edition is a LoRaWAN Network Server which is free to use for The Things Network community members. The Community Edition is designed for testing and evaluating LoRaWAN projects and is managed by <a href="https://www.thethingsindustries.com/" target="_blank">The Things Industries</a>. The Community Edition comes without guarantees and only includes community support, hence is not suitable for commercial usage. Join The Things Network <a href="https://www.thethingsnetwork.org/forum/">Forum</a> or <a href="https://thethingsnetwork.slack.com/" target="_blank">Slack</a> for community support.</p>
@@ -177,21 +178,21 @@
 <blockquote>
 <p>Migrating a single end device can be easily done through The Things Stack Community Edition Console. Migrating end devices in bulk can be performed with the <code>ttn-lw-migrate</code> tool.</p>
 </blockquote>
-<h4 id="video-migrate-from-the-things-network-v2-to-the-things-stack">Video Migrate from The Things Network V2 to The Things Stack</h4>
+<h4 id="video-migrate-from-the-things-network-v2-to-the-things-stack">Video Migrate from The Things Network V2 to The Things Stack&nbsp;<a class="header-hash" href="#video-migrate-from-the-things-network-v2-to-the-things-stack">#</a> </h4>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/JUEJ_9LdnuI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<h2 id="log-in-to-the-things-stack-community-edition">Log in to The Things Stack Community Edition</h2>
+<h2 id="log-in-to-the-things-stack-community-edition">Log in to The Things Stack Community Edition&nbsp;<a class="header-hash" href="#log-in-to-the-things-stack-community-edition">#</a> </h2>
 <p>To be able to continue following steps below, you first need to log in to The Things Stack Community Edition Console by first <a href="https://console.cloud.thethings.network/" target="_blank">selecting a cluster</a> that is closest to you geographically. You can then log in with your The Things Network credentials via The Things ID.</p>
-<h2 id="add-an-application-in-the-things-stack-community-edition">Add an application in The Things Stack Community Edition</h2>
+<h2 id="add-an-application-in-the-things-stack-community-edition">Add an application in The Things Stack Community Edition&nbsp;<a class="header-hash" href="#add-an-application-in-the-things-stack-community-edition">#</a> </h2>
 <p>To migrate your end device, you first need to <a href="https://www.thethingsindustries.com/docs/integrations/adding-applications/" target="_blank">add an application</a> on the The Things Stack Community Edition. The <code>Application ID</code> does not neccessarily have to be the same as the one in The Things Network V2.</p>
-<h2 id="add-your-payload-formatters-and-integrations">Add your payload formatters and integrations</h2>
+<h2 id="add-your-payload-formatters-and-integrations">Add your payload formatters and integrations&nbsp;<a class="header-hash" href="#add-your-payload-formatters-and-integrations">#</a> </h2>
 <p>After adding an application in The Things Stack Community Edition, you also need to re-add the associated elements, like payload formatters (known as coders and decoders in The Things Network V2) and integrations. The concept remained the same as in The Things Network V2, with slight improvements.</p>
 <blockquote>
 <p>The format of payload coders and decoders from the The Things Network V2 is still supported in The Things Stack Community Edition.</p>
 </blockquote>
 <p>See more info on how to <a href="https://www.thethingsindustries.com/docs/integrations/payload-formatters/" target="_blank">write payload formatters</a> and <a href="https://www.thethingsindustries.com/docs/integrations/adding-integrations/" target="_blank">add integrations</a> in The Things Stack Community Edition.</p>
 <p>Next, you need to migrate your end device(s). Depending on if it is one or more devices, choose the right method for migration.</p>
-<h2 id="method-1-migrate-an-end-device-using-the-things-stack-community-edition-console">Method 1: Migrate an end device using The Things Stack Community Edition Console</h2>
-<h3 id="add-an-end-device-in-the-things-stack-community-edition">Add an end device in The Things Stack Community Edition</h3>
+<h2 id="method-1-migrate-an-end-device-using-the-things-stack-community-edition-console">Method 1: Migrate an end device using The Things Stack Community Edition Console&nbsp;<a class="header-hash" href="#method-1-migrate-an-end-device-using-the-things-stack-community-edition-console">#</a> </h2>
+<h3 id="add-an-end-device-in-the-things-stack-community-edition">Add an end device in The Things Stack Community Edition&nbsp;<a class="header-hash" href="#add-an-end-device-in-the-things-stack-community-edition">#</a> </h3>
 <p>First, <a href="https://www.thethingsindustries.com/docs/devices/adding-devices/" target="_blank">add a device</a> in The Things Stack Community Edition. You can do it manually for both ABP and OTAA devices. For OTAA devices, you can also do it by submitting the type of your device if it is available in the <a href="https://thethingsindustries.com/docs/integrations/payload-formatters/device-repo/" target="_blank">Device Repository</a>.</p>
 <p>When manually adding an OTAA device, make sure you follow these steps correctly:</p>
 <ul>
@@ -230,14 +231,14 @@
 </ul>
 </li>
 </ul>
-<h3 id="prevent-your-end-device-from-performing-a-join-to-the-things-network-v2">Prevent your end device from performing a join to The Things Network V2</h3>
+<h3 id="prevent-your-end-device-from-performing-a-join-to-the-things-network-v2">Prevent your end device from performing a join to The Things Network V2&nbsp;<a class="header-hash" href="#prevent-your-end-device-from-performing-a-join-to-the-things-network-v2">#</a> </h3>
 <p>When you have registered your device in The Things Stack Community Edition, you should prevent your device from joining The Things Network V2.</p>
 <p>For OTAA device, you can simply do it by deleting your device from The Things Network V2, however, this is <strong>not recommended</strong> - you might lose some data. The recommended practice is to change the <code>AppKey</code> in The Things Network V2. This way, your existing session would not be terminated yet, but new Join requests sent by your end device would not be accepted by The Things Network V2 cluster.</p>
 <blockquote>
 <p>If the migration process does not go as expected, you can return the old value of your <code>AppKey</code> and reconnect it to The Things Network V2.</p>
 </blockquote>
 <p>For ABP device, you will have to delete it from The Things Network V2, since these devices can establish only one session during their lifetime. Having the same session in two places would introduce serious conflicts.</p>
-<h3 id="force-your-otaa-end-device-to-perform-a-join-to-the-things-stack-community-edition-network">Force your OTAA end device to perform a join to The Things Stack Community Edition network</h3>
+<h3 id="force-your-otaa-end-device-to-perform-a-join-to-the-things-stack-community-edition-network">Force your OTAA end device to perform a join to The Things Stack Community Edition network&nbsp;<a class="header-hash" href="#force-your-otaa-end-device-to-perform-a-join-to-the-things-stack-community-edition-network">#</a> </h3>
 <p>Your OTAA end device will now need to perform a new join to The Things Stack Community Edition.</p>
 <p>How to do this is largely depends on your device&rsquo;s firmware:</p>
 <ul>
@@ -248,12 +249,12 @@
 </ul>
 <p>Since you have not migrated your gateway from The Things Network V2 yet, the new Join request sent by your end device will be received by The Things Network V2 cluster. This request will not be accepted if you changed your end device&rsquo;s <code>AppKey</code> (as recommended above) or if you have deleted it.</p>
 <p>Interesting thing is that your end device&rsquo;s new Join request will be received by The Things Stack Community Edition cluster too! You can thank for this to <a href="https://www.thethingsindustries.com/docs/reference/peering/#packet-broker" target="_blank">Packet Broker</a> (you can verify this by observing the uplinks metadata in The Things Stack Community Edition Console). Now, The Things Stack Community Edition cluster will accept this Join request, so your end device will get a new <code>DevAddr</code>, channel settings and other MAC parameters. Based on a newly assigned <code>DevAddr</code>, Packet Broker will route the traffic to The Things Stack Community Edition network.</p>
-<h3 id="what-to-do-with-abp-end-device">What to do with ABP end device?</h3>
+<h3 id="what-to-do-with-abp-end-device">What to do with ABP end device?&nbsp;<a class="header-hash" href="#what-to-do-with-abp-end-device">#</a> </h3>
 <p>If you are using an ABP device, that means your end device is still associated with the The Things Network V2 <code>DevAddr</code>, so the Packet Broker will not be able to route its traffic to The Things Stack Community Edition cluster if you have not connected your gateway to The Things Stack Community Edition. In order to route this traffic correctly, follow the steps in <strong>Migrate your gateway</strong> section at the end of this page.</p>
-<h2 id="method-2-migrate-end-devices-using-the-migration-tool">Method 2: Migrate end devices using the migration tool</h2>
+<h2 id="method-2-migrate-end-devices-using-the-migration-tool">Method 2: Migrate end devices using the migration tool&nbsp;<a class="header-hash" href="#method-2-migrate-end-devices-using-the-migration-tool">#</a> </h2>
 <p>To complete the migration this way, you need to have  <a href="https://github.com/TheThingsNetwork/lorawan-stack-migrate" target="_blank"><code>ttn-lw-migrate</code> tool</a>.</p>
 <p><code>ttn-lw-migrate</code> is used to export end devices and applications from The Things Network V2 cluster to a <a href="https://www.thethingsindustries.com/docs/getting-started/migrating/device-json/" target="_blank">JSON file</a>. This JSON file can later be <a href="https://www.thethingsindustries.com/docs/getting-started/migrating/import-devices/" target="_blank">imported</a> in The Things Stack Community Edition via Console or via CLI.</p>
-<h3 id="devices-have-to-rejoin-the-things-stack-community-edition">Devices have to rejoin The Things Stack Community Edition</h3>
+<h3 id="devices-have-to-rejoin-the-things-stack-community-edition">Devices have to rejoin The Things Stack Community Edition&nbsp;<a class="header-hash" href="#devices-have-to-rejoin-the-things-stack-community-edition">#</a> </h3>
 <p>Before you start migrating your devices, it is good to know a few things about migrating active sessions.</p>
 <p>Starting from The Things Stack version <code>v3.12.0</code>, for certain deployments it is possible to migrate active sessions as well. Migrating an active session means that OTAA devices will not have to perform a new join on the The Things Stack network.</p>
 <div class="notification is-warning is-light has-text-dark">
@@ -263,7 +264,7 @@
 
 </div>
 
-<h3 id="configure-the-environment">Configure the environment</h3>
+<h3 id="configure-the-environment">Configure the environment&nbsp;<a class="header-hash" href="#configure-the-environment">#</a> </h3>
 <p>After installing the migration tool, you need to configure the environmental variables:</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ <span class="nb">export</span> <span class="nv">TTNV2_APP_ID</span><span class="o">=</span><span class="s2">&#34;ttn-v2-application-ID&#34;</span>
 $ <span class="nb">export</span> <span class="nv">TTNV2_APP_ACCESS_KEY</span><span class="o">=</span><span class="s2">&#34;access-key-of-your-ttn-v2-application&#34;</span> 
@@ -276,12 +277,12 @@ $ <span class="nb">export</span> <span class="nv">FREQUENCY_PLAN_ID</span><span 
 </code></pre></div><blockquote>
 <p>If the Discovery Server of your private The Things Industries V2 cluster does not use TLS, you will need to use the <code>ttnv2.discovery-server-insecure</code> flag when running the <code>ttn-lw-migrate</code> tool.</p>
 </blockquote>
-<h3 id="export-a-single-end-device-from-the-things-network-v2">Export a single end device from The Things Network V2</h3>
+<h3 id="export-a-single-end-device-from-the-things-network-v2">Export a single end device from The Things Network V2&nbsp;<a class="header-hash" href="#export-a-single-end-device-from-the-things-network-v2">#</a> </h3>
 <p>Before exporting an end device from The Things Network V2, test the export with:</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ ttn-lw-migrate devices --dry-run --verbose --source ttnv2 <span class="s2">&#34;v2-end-device-ID&#34;</span> &gt; devices.json
 </code></pre></div><p>If this goes without errors, use the following command in order to export the end device for real and clear the security keys:</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ ttn-lw-migrate device --source ttnv2 <span class="s2">&#34;v2-end-device-ID&#34;</span> &gt; devices.json
-</code></pre></div><h3 id="export-more-than-one-end-device-from-the-things-network-v2">Export more than one end device from The Things Network V2</h3>
+</code></pre></div><h3 id="export-more-than-one-end-device-from-the-things-network-v2">Export more than one end device from The Things Network V2&nbsp;<a class="header-hash" href="#export-more-than-one-end-device-from-the-things-network-v2">#</a> </h3>
 <p>To export more than one device, create a file named <code>device_ids.txt</code> that will contain one <code>Device ID</code> per line:</p>
 <pre><code>dev1
 dev2
@@ -290,11 +291,11 @@ dev3
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ ttn-lw-migrate devices --dry-run --verbose --source ttnv2 &lt; device_ids.txt &gt; devices.json
 </code></pre></div><p>If this goes without errors, use the following command in order to export end devices:</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ ttn-lw-migrate device --source ttnv2 &lt; device_ids.txt &gt; devices.json
-</code></pre></div><h3 id="export-all-end-devices-associated-with-your-the-things-network-v2-application">Export all end devices associated with your The Things Network V2 application</h3>
+</code></pre></div><h3 id="export-all-end-devices-associated-with-your-the-things-network-v2-application">Export all end devices associated with your The Things Network V2 application&nbsp;<a class="header-hash" href="#export-all-end-devices-associated-with-your-the-things-network-v2-application">#</a> </h3>
 <p>To export all devices that your The Things Network V2 application contains to a file named <code>all-devices.json</code>, use the following commands:</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ ttn-lw-migrate application --verbose --dry-run --source ttnv2 <span class="s2">&#34;ttn-v2-application-ID&#34;</span> &gt; all-devices.json <span class="c1"># testing export - make sure it goes without errors</span>
 $ ttn-lw-migrate application --source ttnv2 <span class="s2">&#34;ttn-v2-application-ID&#34;</span> &gt; all-devices.json
-</code></pre></div><h3 id="import-end-devices-in-the-the-things-stack-community-edition-application">Import end device(s) in the The Things Stack Community Edition application</h3>
+</code></pre></div><h3 id="import-end-devices-in-the-the-things-stack-community-edition-application">Import end device(s) in the The Things Stack Community Edition application&nbsp;<a class="header-hash" href="#import-end-devices-in-the-the-things-stack-community-edition-application">#</a> </h3>
 <p>When you have exported your end devices to a JSON file (let&rsquo;s use <code>devices.json</code>), you can import those devices in The Things Stack Community Edition application via Console or via CLI.</p>
 <p>If you want to import via Console, just head over to your The Things Stack Community Edition application and click the <strong>Import end devices</strong> button available under <strong>End devices</strong>. Choose <strong>The Things Stack JSON</strong> format and upload the <code>devices.json</code> under <strong>File</strong>. Hit the <strong>Create end devices</strong> button, et voilà!</p>
 <p>If you want to use the CLI to import end devices, just run the following command:</p>
@@ -302,12 +303,12 @@ $ ttn-lw-migrate application --source ttnv2 <span class="s2">&#34;ttn-v2-applica
 </code></pre></div><blockquote>
 <p>Which ever method you are using for importing end devices, in case of any failure you will see a relevant error message.</p>
 </blockquote>
-<h3 id="adjust-mac-settings-for-imported-devices-in-the-things-stack-community-edition">Adjust MAC settings for imported devices in The Things Stack Community Edition</h3>
+<h3 id="adjust-mac-settings-for-imported-devices-in-the-things-stack-community-edition">Adjust MAC settings for imported devices in The Things Stack Community Edition&nbsp;<a class="header-hash" href="#adjust-mac-settings-for-imported-devices-in-the-things-stack-community-edition">#</a> </h3>
 <p>If you have migrated an OTAA end device and your device performed a new join to the The Things Stack Community Edition, the MAC settings will be automatically configured correctly by the Network Server.</p>
 <p>Hovewer, if you have migrated an ABP device, you will have to configure the MAC settings manually.</p>
 <p>This is needed because some recommended settings used by The Things Network V2 and The Things Stack Community Edition Network Server are different. For example, <code>RxDelay</code> parameter used by the The Things Network V2 is 1 second by default, while the recommended value for The Things Stack Community Edition is 5 seconds. The Things Stack Community Edition Network Server will try to automatically change this for you, but it might take some time until the MAC command reaches the end device.</p>
 <p>See the official The Things Stack documentation to learn how to <a href="https://www.thethingsindustries.com/docs/devices/mac-settings/" target="_blank">configure MAC settings</a>.</p>
-<h2 id="migrate-your-gateway">Migrate your gateway</h2>
+<h2 id="migrate-your-gateway">Migrate your gateway&nbsp;<a class="header-hash" href="#migrate-your-gateway">#</a> </h2>
 <p><a href="https://www.thethingsindustries.com/docs/getting-started/migrating/gateway-migration/" target="_blank">Migrating your gateway</a> from The Things Network V2 to The Things Stack Community Edition cluster is a really easy process.</p>
 <p>First, you need to <a href="https://www.thethingsindustries.com/docs/gateways/adding-gateways/" target="_blank">add a gateway to The Things Stack Community Edition</a>.</p>
 <p>Then, you need to change the address of The Things Stack Community Edition cluster you are using - this will depend on which type of gateway you are using, <a href="https://www.thethingsindustries.com/docs/gateways/semtech-udp-packet-forwarder/" target="_blank">Semtech UDP Packet Forwarder</a> or <a href="https://www.thethingsindustries.com/docs/gateways/lora-basics-station/" target="_blank">LoRa Basics Station</a>. Let us assume you are using <code>eu1.cloud.thethings.network</code>.</p>
@@ -317,6 +318,7 @@ $ ttn-lw-migrate application --source ttnv2 <span class="s2">&#34;ttn-v2-applica
 <li>If you are using LoRa Basics Station with CUPS subprotocol, change the CUPS server address to <code>https://eu1.cloud.thethings.network:443</code></li>
 </ul>
 <p>Once you update the cluster address, the data that reaches your gateway will be routed to your The Things Stack V3 cluster.</p>
+
 
         </div>
       

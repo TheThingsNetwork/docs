@@ -38,7 +38,7 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.63e25b5c651bd53d7906c0aea044f525dd20de132fd123ea1927e46490c71ca9.css" integrity="sha256-Y&#43;JbXGUb1T15BsCuoET1Jd0g3hMv0SPqGSfkZJDHHKk=" crossorigin="anonymous">
 
   <meta property="og:title" content="Cayenne" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
@@ -289,14 +289,15 @@
           Cayenne
         </h1>
         <div class="content">
-          <p><a href="https://mydevices.com/">myDevices Cayenne</a> allows you to quickly design, prototype, and visualize IoT solutions. You can use Cayenne as a tool to visualize real-time and historical data, sent over The Things Network.</p>
-<h2 id="change-the-payload-to-cayenne-lpp">Change the payload to Cayenne LPP</h2>
+          
+<p><a href="https://mydevices.com/">myDevices Cayenne</a> allows you to quickly design, prototype, and visualize IoT solutions. You can use Cayenne as a tool to visualize real-time and historical data, sent over The Things Network.</p>
+<h2 id="change-the-payload-to-cayenne-lpp">Change the payload to Cayenne LPP&nbsp;<a class="header-hash" href="#change-the-payload-to-cayenne-lpp">#</a> </h2>
 <p>In order to display your content in the Cayenne dashboard, the payload has to be encoded with the Cayenne Low Power Payload (Cayenne LPP).</p>
 <blockquote>
 <p>CayenneLPP contains metadata for Cayenne to understand what data comes into their dashboard. As part of each data value, we need to define the identifier and what type of data it is. The first byte is the identifier, the <code>Channel ID</code>. The second byte is the data type <code>Data Type</code>.
 Please have a look <a href="https://mydevices.com/cayenne/docs/#lora-cayenne-low-power-payload"><strong>here</strong></a> to find more information on the Cayenne LPP.</p>
 </blockquote>
-<h3 id="sending-uplink">Sending uplink</h3>
+<h3 id="sending-uplink">Sending uplink&nbsp;<a class="header-hash" href="#sending-uplink">#</a> </h3>
 <p>Documentation about altering your Arduino Sketch to encode data with <code>CayenneLPP</code> can be found <a href="https://www.thethingsnetwork.org/docs/devices/arduino/api/cayennelpp.html">here</a>.</p>
 <p><em>Example code:</em></p>
 <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">TheThingsNetwork</span> <span class="nf">ttn</span><span class="p">(</span><span class="n">loraSerial</span><span class="p">,</span> <span class="n">debugSerial</span><span class="p">,</span> <span class="n">freqPlan</span><span class="p">);</span>
@@ -308,18 +309,18 @@ Please have a look <a href="https://mydevices.com/cayenne/docs/#lora-cayenne-low
 </span><span class="c1"></span><span class="n">lpp</span><span class="p">.</span><span class="n">addGPS</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mf">52.37365</span><span class="p">,</span> <span class="mf">4.88650</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>   <span class="c1">// channel 3, coordinates
 </span><span class="c1"></span>
 <span class="n">ttn</span><span class="p">.</span><span class="n">sendBytes</span><span class="p">(</span><span class="n">lpp</span><span class="p">.</span><span class="n">getBuffer</span><span class="p">(),</span> <span class="n">lpp</span><span class="p">.</span><span class="n">getSize</span><span class="p">());</span>
-</code></pre></div><h3 id="receiving-downlink">Receiving downlink</h3>
+</code></pre></div><h3 id="receiving-downlink">Receiving downlink&nbsp;<a class="header-hash" href="#receiving-downlink">#</a> </h3>
 <p>In order to send data to your device as downlink message, you need to make an output channel available as part of an uplink message. You only need to do that once. Both digital and analog are available.</p>
 <div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">lpp</span><span class="p">.</span><span class="n">addDigitalOutput</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>    <span class="c1">// channel 4, set digital output high
 </span><span class="c1"></span><span class="n">lpp</span><span class="p">.</span><span class="n">addAnalogOutput</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mf">120.0</span><span class="p">);</span> <span class="c1">// channel 5, set analog output to 120
 </span></code></pre></div><p>For digital outputs, a switch will appear to set the output high or low. For analog outputs, you get a slider to set the analog value. Changes in these controls trigger a downlink message.</p>
-<h3 id="set-the-payload-format-in-the-console">Set the Payload Format in the Console</h3>
+<h3 id="set-the-payload-format-in-the-console">Set the Payload Format in the Console&nbsp;<a class="header-hash" href="#set-the-payload-format-in-the-console">#</a> </h3>
 <p>After encoding data with CayenneLPP, have a look at the console to change the <strong>Payload Formats</strong></p>
 <ul>
 <li>Go to your Application in <a href="https://console.thethingsnetwork.org/"><strong>The Things Network Console</strong></a> and click <strong>Payload Formats</strong></li>
 <li>In the dropdown menu select <strong>Cayenne LPP</strong> instead of <strong>Custom</strong></li>
 </ul>
-<h2 id="set-up-your-mydevices-account">Set up your myDevices account</h2>
+<h2 id="set-up-your-mydevices-account">Set up your myDevices account&nbsp;<a class="header-hash" href="#set-up-your-mydevices-account">#</a> </h2>
 <ol>
 <li>Create an account on <a href="https://mydevices.com/">myDevices</a></li>
 <li>Log-in and click on <strong>LoRa</strong></li>
@@ -329,7 +330,7 @@ Please have a look <a href="https://mydevices.com/cayenne/docs/#lora-cayenne-low
 <li>Select <strong>The Things Network</strong> at the bottom of the left menu bar, click on <strong>Cayenne LPP</strong> and fill in your <strong>DevEUI</strong> of your device (which you can find in the <a href="https://console.thethingsnetwork.org/applications"><strong>Console</strong></a>)
 <img src="cayenne-add-device.png" alt="add-device"></li>
 </ol>
-<h2 id="add-the-mydevices-cayenne-integration-in-the-console">Add the myDevices Cayenne integration in the Console</h2>
+<h2 id="add-the-mydevices-cayenne-integration-in-the-console">Add the myDevices Cayenne integration in the Console&nbsp;<a class="header-hash" href="#add-the-mydevices-cayenne-integration-in-the-console">#</a> </h2>
 <ol>
 <li>
 <p>Go to your application in the <a href="https://console.thethingsnetwork.org/applications"><strong>Console</strong></a> and add the MyDevices integration via <strong>Add Integration</strong>
@@ -342,10 +343,11 @@ Please have a look <a href="https://mydevices.com/cayenne/docs/#lora-cayenne-low
 <p>Add the integration</p>
 </li>
 </ol>
-<h2 id="build-your-cayenne-dashboard">Build your Cayenne dashboard</h2>
+<h2 id="build-your-cayenne-dashboard">Build your Cayenne dashboard&nbsp;<a class="header-hash" href="#build-your-cayenne-dashboard">#</a> </h2>
 <p>Click the device on the left side of your dashboard in Cayenne and your data as well as the actions buttons are shown right away. After a bit of editing you can make quite some fancy stuff.</p>
 <p><img src="mydevices-data.png" alt="myDevices-dashboard"></p>
 <p>🎉 Now impress some folks with this amazing dashboard you built on Twitter, using <em>@thethingsntwrk @CayenneIoT</em></p>
+
 
         </div>
       

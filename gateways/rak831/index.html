@@ -38,7 +38,7 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.63e25b5c651bd53d7906c0aea044f525dd20de132fd123ea1927e46490c71ca9.css" integrity="sha256-Y&#43;JbXGUb1T15BsCuoET1Jd0g3hMv0SPqGSfkZJDHHKk=" crossorigin="anonymous">
 
   <meta property="og:title" content="RAK831" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
@@ -318,12 +318,13 @@
           RAK831
         </h1>
         <div class="content">
-          <p>This document is based on a workshop held during The Things Network Conference 2018.</p>
+          
+<p>This document is based on a workshop held during The Things Network Conference 2018.</p>
 <p><a href="TheThingsNetworkConference2018GatewayWorkshop.pdf">The slides used during that workshop.</a></p>
 <p>In this workshop we will build a gateway based on the RAK831 and a Raspberry Pi model 3.
 <img src="images/rak831-gateway.png" alt="rak gateway"></p>
 <p><span style="color:red"><strong>NOTE:</strong> Never power on the gateway without the antenna connected as shown in the picture</span></p>
-<h2 id="preparations">Preparations</h2>
+<h2 id="preparations">Preparations&nbsp;<a class="header-hash" href="#preparations">#</a> </h2>
 <p>The workshop requires some tools to be available on you system. Check the list below and
 follow the link to the installation instructions if you do not have the tool installed.</p>
 <ul>
@@ -331,7 +332,7 @@ follow the link to the installation instructions if you do not have the tool ins
 <li>For Windows and OSX: Etcher, SDcard writing software. <a href="/docs/gateways/rak831/etcher-windows/">windows</a>, <a href="/docs/gateways/rak831/etcher-osx/">OSX</a></li>
 </ul>
 <p>You will also need a SSH public/private key pair, <a href="/docs/gateways/rak831/ssh/">generate a key pair</a> if you do not have it.</p>
-<h2 id="create-resinio-account">Create resin.io account</h2>
+<h2 id="create-resinio-account">Create resin.io account&nbsp;<a class="header-hash" href="#create-resinio-account">#</a> </h2>
 <p>If you do not have a resin.io account, now is the time to create it. Go to <a href="https://dashboard.resin.io/signup">signup</a> to create it. (If you have an account skip to the next step)</p>
 <p>On the first screen enter your e-mail address and a (secure) password.
 <img src="images/image00066.png" alt=""></p>
@@ -346,12 +347,12 @@ In the upper right of the page click on the down arrow next to your name and sel
 Use your favorite editor to open the file and copy the contents to the form.</p>
 <p><img src="images/image00072.png" alt=""></p>
 <p>Save with &ldquo;Add SSH key&rdquo;. Go back to the main page by clickin the resin.io logo in the top left of the page.</p>
-<h2 id="existing-resinio-users">Existing resin.io users</h2>
+<h2 id="existing-resinio-users">Existing resin.io users&nbsp;<a class="header-hash" href="#existing-resinio-users">#</a> </h2>
 <p>Go to <a href="http://resin.io">http://resin.io</a> and log in.</p>
-<h2 id="create-a-new-application">Create a new application</h2>
+<h2 id="create-a-new-application">Create a new application&nbsp;<a class="header-hash" href="#create-a-new-application">#</a> </h2>
 <p>On the resin.io main screen you are able to create a new application. The device type conveniantly defaults to Rapsberry Pi 3, which we will be using. Enter &lsquo;lorawangw&rsquo; for the application name and proceed with &lsquo;CREATE NEW APPLICATION&rsquo;</p>
 <p><img src="images/image00069.png" alt=""></p>
-<h2 id="set-fleet-configuration">Set Fleet configuration</h2>
+<h2 id="set-fleet-configuration">Set Fleet configuration&nbsp;<a class="header-hash" href="#set-fleet-configuration">#</a> </h2>
 <p>The Raspberry Pi model 3 requires some settings to correct the timing and switch serial ports (not used in this setup, but would be required to access a GPS if it had been mounted)</p>
 <ol>
 <li>In your browser go to &lsquo;FLEET&rsquo;</li>
@@ -366,14 +367,14 @@ Use your favorite editor to open the file and copy the contents to the form.</p>
 <tr><td>RESIN_HOST_CONFIG_dtoverlay</td><td>pi3-miniuart-bt</td></tr>
 </table>
 <p><img src="images/image00081.png" alt=""></p>
-<h2 id="add-device">Add device</h2>
+<h2 id="add-device">Add device&nbsp;<a class="header-hash" href="#add-device">#</a> </h2>
 <p>In the application select &ldquo;Add device&rdquo;</p>
 <p><img src="images/image00073.png" alt=""></p>
 <p>Leave all settings set to the default and click &ldquo;Download resinOS&rdquo;.</p>
 <p><img src="images/image00074.png" alt=""></p>
 <p>Save the download to disk. (Remember where you save it!)</p>
 <p>Once the download is finished, extract the contents of the zip file to disk (keep in mind the extracted file will be almost 2GB in size). In the next step we will write this file to SDcard.</p>
-<h2 id="write-image-to-sdcard">Write image to SDcard</h2>
+<h2 id="write-image-to-sdcard">Write image to SDcard&nbsp;<a class="header-hash" href="#write-image-to-sdcard">#</a> </h2>
 <p>Get the micro SDcard from the Raspberry Pi</p>
 <p><img src="images/sdcard.png" alt="sdcard"></p>
 <p>Insert it into the SDcard writer (use a full size SDcard adapter if required).</p>
@@ -388,7 +389,7 @@ Write the image to SDcard with dd.</p>
 <pre><code>sudo dd if=/tmp/resin-lorawangw-&lt;revision&gt;.img of=/dev/sdX bs=4M conv=sync
 </code></pre><p><strong>NOTE:</strong> Take care to select the right device, dd will quite hapily overwrite any disk, including your linux installation!</p>
 <p>Proceed to the next step while dd is writing to the sdcard</p>
-<h2 id="add-software-to-your-application">Add software to your application</h2>
+<h2 id="add-software-to-your-application">Add software to your application&nbsp;<a class="header-hash" href="#add-software-to-your-application">#</a> </h2>
 <p>Earlier we have created the resin.io application. Now we need to add the application code that should be run on the Raspberry Pi. For this we will use a prepared LoRaWAN gateway application available on github.</p>
 <ol>
 <li>Open (OSX/Linux) Terminal or (Windows) Git Bash</li>
@@ -447,7 +448,7 @@ Total 27 (delta 4), reused 0 (delta 0)
 </code></pre><p>This will take a few minutes. When the build is finished a unicorn will be shown.
 Proceed with the next step while the build is running.</p>
 <p><img src="images/image00089.png" alt=""></p>
-<h2 id="boot-the-gateway-hardware">Boot the gateway hardware</h2>
+<h2 id="boot-the-gateway-hardware">Boot the gateway hardware&nbsp;<a class="header-hash" href="#boot-the-gateway-hardware">#</a> </h2>
 <p>Eject the micro SDcard from your write and insert it into the Rapberry Pi SDcard slot. (Metal contacts at PCB side)</p>
 <p>Make sure the antenna is connected to the RAK831 card (see pciture at the top), connect ethernet cable and power adaptor to the Raspberry Pi. Now plug the power adaptor into power socket.</p>
 <p>The red LED on the Raspberry Pi should light and (after a few seconds) a green LED should start flashing.</p>
@@ -457,7 +458,7 @@ Proceed with the next step while the build is running.</p>
 <p>Click on the device name to open the device details</p>
 <p><img src="images/image00082.png" alt=""></p>
 <p>The top window on the right shows the output from the device. In this case it shows an error because the software attemped to start but is missing configuration parameters</p>
-<h2 id="add-the-gateway-to-the-ttn-console">Add the gateway to the TTN console</h2>
+<h2 id="add-the-gateway-to-the-ttn-console">Add the gateway to the TTN console&nbsp;<a class="header-hash" href="#add-the-gateway-to-the-ttn-console">#</a> </h2>
 <p>To configure our gateway we need to add it in the TTN console.</p>
 <ol>
 <li>Use your TTN credentials to log in to <a href="https://console.thethingsnetwork.org/">https://console.thethingsnetwork.org/</a></li>
@@ -486,7 +487,7 @@ switch-router is based in Switzerland and meshed-router is Australian.</li>
 <p>The result should look like:</p>
 <p><img src="images/image00086.png" alt=""></p>
 <p>Keep this window open, you need it to copy-and-paste information</p>
-<h2 id="configure-your-device">Configure your device</h2>
+<h2 id="configure-your-device">Configure your device&nbsp;<a class="header-hash" href="#configure-your-device">#</a> </h2>
 <p>Switch to your resin.io page. If you do not have the device summary page open, open it now.</p>
 <p><img src="images/image00082.png" alt=""></p>
 <p>Click on &ldquo;ENVIRONMENT VARIABLES&rdquo;.</p>
@@ -508,6 +509,7 @@ switch-router is based in Switzerland and meshed-router is Australian.</li>
 <p>In the TTN console switch to &ldquo;Traffic&rdquo;. If there are any nodes nearby sending data (should be the case during the conference), packets will show</p>
 <p><img src="images/image00092.png" alt=""></p>
 <p>Congratulations, the gateway is now operational!</p>
+
 
         </div>
       

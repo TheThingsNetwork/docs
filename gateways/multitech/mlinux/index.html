@@ -38,7 +38,7 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.63e25b5c651bd53d7906c0aea044f525dd20de132fd123ea1927e46490c71ca9.css" integrity="sha256-Y&#43;JbXGUb1T15BsCuoET1Jd0g3hMv0SPqGSfkZJDHHKk=" crossorigin="anonymous">
 
   <meta property="og:title" content="Configure mLinux model" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
@@ -323,30 +323,31 @@
           Configure mLinux model
         </h1>
         <div class="content">
-          <p>mLinux is an open source embedded Linux distribution for the MultiConnect Conduit and is the next generation version of CoreCDP.</p>
-<h2 id="prepare-usb-stick">Prepare USB stick</h2>
+          
+<p>mLinux is an open source embedded Linux distribution for the MultiConnect Conduit and is the next generation version of CoreCDP.</p>
+<h2 id="prepare-usb-stick">Prepare USB stick&nbsp;<a class="header-hash" href="#prepare-usb-stick">#</a> </h2>
 <p>Find a USB stick and add the file <a href="https://github.com/kersing/multitech-installer/raw/master/installer.sh">installer.sh</a> to it.
 <em>If the USB is not recognized by the Conduit, please check whether it is FAT or FAT32 formatted</em></p>
-<h2 id="connect">Connect</h2>
+<h2 id="connect">Connect&nbsp;<a class="header-hash" href="#connect">#</a> </h2>
 <p>Wait to connect the power of the Conduit until we say so. ☝️</p>
 <ol>
 <li>Remove the panel with the MultiTech logo from the front of the Conduit by remove the single screw to the left of the logo.</li>
 <li>Use a Micro-USB cable between the connector you just uncovered and your computer.</li>
 <li>Insert the USB stick to USB port on the back of the conduit.</li>
 </ol>
-<h3 id="windows">Windows</h3>
+<h3 id="windows">Windows&nbsp;<a class="header-hash" href="#windows">#</a> </h3>
 <p>Use Windows Device Manager to look up the <code>COM*</code> for the Conduit, identified by <code>* USB UART</code>:</p>
 <p><img src="../uart.png" alt="USB UART"></p>
 <p>Start PuTTY, set the <strong>Connection type</strong> to: <strong>Serial</strong>, enter the COM port you found and set the <strong>Speed</strong> to <code>115200</code>:</p>
 <p><img src="../putty-mlinux.png" alt="PuTTY Configuration"></p>
-<h3 id="mac-os--linux">Mac OS / Linux</h3>
+<h3 id="mac-os--linux">Mac OS / Linux&nbsp;<a class="header-hash" href="#mac-os--linux">#</a> </h3>
 <p>Run the following command in terminal to look up the USB connection:</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">ls /dev/tty.usb*
 </code></pre></div><p>If that doesn&rsquo;t work, try this instead and look for the value of <code>IOSerialCalloutDevice</code>.</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">ioreg -c IOSerialBSDClient  <span class="p">|</span> grep usb
 </code></pre></div><p>Now connect to the USB device using <code>115200</code> for speed. For example:</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">screen /dev/cu.usbserial <span class="m">115200</span>
-</code></pre></div><h2 id="login-via-terminal">Login via terminal</h2>
+</code></pre></div><h2 id="login-via-terminal">Login via terminal&nbsp;<a class="header-hash" href="#login-via-terminal">#</a> </h2>
 <p>Connect the Conduit&rsquo;s power cable. You will now see its boot messages. Wait for the login prompt to appear:</p>
 <p><img src="../login-mlinux.png" alt="login"></p>
 <p>The default credentials are:</p>
@@ -354,7 +355,7 @@
 <li><strong>Username</strong>: <code>root</code></li>
 <li><strong>Password</strong>: <code>root </code></li>
 </ul>
-<h2 id="copy-installer">Copy installer</h2>
+<h2 id="copy-installer">Copy installer&nbsp;<a class="header-hash" href="#copy-installer">#</a> </h2>
 <p>To get the installer we need mount the USB drive:</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">mount /dev/sda1 /mnt
 </code></pre></div><p>Copy the installer to the conduit:</p>
@@ -364,7 +365,7 @@
 </code></pre></div><blockquote>
 <p>During the download to the USB stick the <code>installer.sh</code> file might have been renamed to <code>installer.txt</code> or <code>installer.sh.txt</code>. If that happened, just use <code>installer.txt</code> or <code>installer.sh.txt</code> whenever the instructions say <code>installer.sh</code>.</p>
 </blockquote>
-<h2 id="network-setup">Network Setup</h2>
+<h2 id="network-setup">Network Setup&nbsp;<a class="header-hash" href="#network-setup">#</a> </h2>
 <p>Start the installer:</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sh installer.sh
 </code></pre></div><p>The installer will prompt you for information it requires to configure the Conduit:</p>
@@ -375,7 +376,7 @@
 </ul>
 <p><img src="../installer-mlinux.png" alt="installer"></p>
 <p>Once it is done, hit the enter button to shutdown and wait for the led to stop blinking.</p>
-<h2 id="reconnect">Reconnect</h2>
+<h2 id="reconnect">Reconnect&nbsp;<a class="header-hash" href="#reconnect">#</a> </h2>
 <p>Once the led has stopped blinking you can remove the power cable, USB drive, the Micro-USB cable and replace the front panel.</p>
 <p>Now use an ethernet cable to connect the Conduit to the target network and reconnect the power cable. Wait for the conduit to finish booting (the heartbeat led starts blinking), connect a computer to the same network and login to the Conduit.</p>
 <blockquote>
@@ -395,7 +396,7 @@ You can also find the IP address by reconnecting the Conduit with the Micro-USB 
 </ul>
 <p>Login as user <code>root</code> with the password you set via the installer.</p>
 <p><img src="../login-root.png" alt="login as: root"></p>
-<h2 id="ttn-configuration-mlinux">TTN Configuration</h2>
+<h2 id="ttn-configuration-mlinux">TTN Configuration&nbsp;<a class="header-hash" href="#ttn-configuration-mlinux">#</a> </h2>
 <p>Now restart the installer and provide the required answers when prompted:</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sh installer.sh
 </code></pre></div><p><img src="../installer-mlinux-2nd-no-gps.png" alt="installer"></p>
@@ -419,6 +420,7 @@ You can also find the IP address by reconnecting the Conduit with the Micro-USB 
 INFO: [up] PUSH_ACK for server router.eu.thethings.network received in 13 ms
 INFO: [down] for server router.eu.thethings.network PULL_ACK received in 13 ms
 </code></pre>
+
         </div>
       
       

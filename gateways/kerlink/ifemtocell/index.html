@@ -38,7 +38,7 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.63e25b5c651bd53d7906c0aea044f525dd20de132fd123ea1927e46490c71ca9.css" integrity="sha256-Y&#43;JbXGUb1T15BsCuoET1Jd0g3hMv0SPqGSfkZJDHHKk=" crossorigin="anonymous">
 
   <meta property="og:title" content="Wirnet iFemtoCell" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
@@ -333,24 +333,25 @@
           Wirnet iFemtoCell
         </h1>
         <div class="content">
-          <p>The wirnet iFemtoCell is a low-cost, indoor LoRaWAN nano gateway that can be easily connected through WiFi or ethernet.</p>
+          
+<p>The wirnet iFemtoCell is a low-cost, indoor LoRaWAN nano gateway that can be easily connected through WiFi or ethernet.</p>
 <p><img src="image.png" alt="Kerlink iFemtoCell"></p>
 <p><a href="https://wikikerlink.fr/wirnet-productline/doku.php?id=wiki:ifemtocell:hardware_arch_ifemto">Source &amp; further info</a>
 <em>You do need to request a login and password from Kerlink</em></p>
-<h2 id="powering-the-ifemtocell">Powering the iFemtoCell</h2>
+<h2 id="powering-the-ifemtocell">Powering the iFemtoCell&nbsp;<a class="header-hash" href="#powering-the-ifemtocell">#</a> </h2>
 <p>Connect the 12V adapter.</p>
-<h2 id="connecting-to-the-ifemtocell">Connecting to the iFemtoCell</h2>
+<h2 id="connecting-to-the-ifemtocell">Connecting to the iFemtoCell&nbsp;<a class="header-hash" href="#connecting-to-the-ifemtocell">#</a> </h2>
 <p>iFemtoCells are named after their serial number and are called <code>klk-wifc-XXXXXX</code>. You can replace the <code>XXXXXX</code> by the six hexadecimal digits from the serial number which are also the last six hexadecimal digits of the <strong>Board ID</strong> (printed on the bottom of the gateway).</p>
 <blockquote>
 <p>For example, if an iFemtoCell has <code>704BEc1234AB</code> as board ID, the host name will be: <code>klk-wifc-1234AB</code></p>
 </blockquote>
-<h3 id="ethernet-or-wifi">Ethernet or WiFi</h3>
+<h3 id="ethernet-or-wifi">Ethernet or WiFi&nbsp;<a class="header-hash" href="#ethernet-or-wifi">#</a> </h3>
 <p>Both ethernet and WiFi can be used (for WiFi, make sure to use the firmware 3.3.3. or later). A WiFi access point is available at boot time on each iFemtoCell for one hour, broadcasting an SSID named after its serial number (<code>klk-wifc-XXXXXX</code>). It can only be used to access the iFemtoCell itself as it does not route traffic to anywhere and does not serve as an Internet wireless access point.</p>
 <p>The passphrase to connect to this WiFi network is the Ethernet MAC address (it can be found on the Wirnet iFemtoCell label), in uppercase, without spaces between the digits, e.g. <code>7076FFYYYYYY</code>.</p>
 <blockquote>
 <p>Note that this interface does not come with a DHCP server, it is only meant to be used for the iFemtoCell&rsquo;s configuration. Your computer may take some time to get the “connected” status, and the interface will have a “limited connectivity”, which is normal.</p>
 </blockquote>
-<h3 id="ifemtocell-loginpassword">iFemtoCell login/password</h3>
+<h3 id="ifemtocell-loginpassword">iFemtoCell login/password&nbsp;<a class="header-hash" href="#ifemtocell-loginpassword">#</a> </h3>
 <p>To prevent Web robots from attacking the gateway with standard login/password “root/root”, default password is built using the last 6 characters of the board ID: <code>pdmk-XXXXXX</code>.</p>
 <p>For example, if an iFemtoCell has <code>704BEc1234AB</code> as board ID, then the root password will be <code>pdmk-1234AB</code> (case sensitive).</p>
 <pre><code>klk-wifc-1234AB login: root
@@ -358,8 +359,9 @@ Password: pdmk-1234AB
 </code></pre><blockquote>
 <p>For security reasons, it is highly recommended to change the password. You can do so with the command: <code>passwd</code></p>
 </blockquote>
-<h3 id="install-and-configure-the-gateway">Install and configure the gateway</h3>
+<h3 id="install-and-configure-the-gateway">Install and configure the gateway&nbsp;<a class="header-hash" href="#install-and-configure-the-gateway">#</a> </h3>
 <p>Follow the <a href="/docs/gateways/kerlink/keros/">unified generic KerOS guide</a> to install and configure your gateway.</p>
+
 
         </div>
       

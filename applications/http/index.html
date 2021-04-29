@@ -38,7 +38,7 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.63e25b5c651bd53d7906c0aea044f525dd20de132fd123ea1927e46490c71ca9.css" integrity="sha256-Y&#43;JbXGUb1T15BsCuoET1Jd0g3hMv0SPqGSfkZJDHHKk=" crossorigin="anonymous">
 
   <meta property="og:title" content="HTTP" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
@@ -289,11 +289,12 @@
           HTTP
         </h1>
         <div class="content">
-          <p>The HTTP Integration allows you to send uplink data to an endpoint and receive downlink data over HTTP.</p>
-<h2 id="getting-started-video">Getting started video</h2>
+          
+<p>The HTTP Integration allows you to send uplink data to an endpoint and receive downlink data over HTTP.</p>
+<h2 id="getting-started-video">Getting started video&nbsp;<a class="header-hash" href="#getting-started-video">#</a> </h2>
 <p><a href="https://www.youtube.com/watch?v=Uebcq7xmI1M&index=2&list=PLM8eOeiKY7JVwrBYRHxsf9p0VM_dVapXl" target="_blank"><img src="https://www.thethingsnetwork.org/docs/applications/HTTP-Integration.png" 
 alt="Getting started with the HTTP Integration" width="480" /></a></p>
-<h2 id="uplink">Uplink</h2>
+<h2 id="uplink">Uplink&nbsp;<a class="header-hash" href="#uplink">#</a> </h2>
 <p>You can configure the URL, the HTTP method (e.g. <code>POST</code>) and optionally the HTTP Authorization header of your endpoint but also a custom HTTP header of your choice.</p>
 <p>The integration will post data in the following format:</p>
 <div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="p">{</span>
@@ -335,12 +336,12 @@ alt="Getting started with the HTTP Integration" width="480" /></a></p>
   <span class="s2">&#34;downlink_url&#34;</span><span class="o">:</span> <span class="s2">&#34;https://integrations.thethingsnetwork.org/ttn-eu/api/v2/down/my-app-id/my-process-id?key=ttn-account-v2.secret&#34;</span>
 <span class="p">}</span>
 </code></pre></div><p><em>Note: Some values may be omitted if they are <code>null</code>, <code>false</code>, <code>&quot;&quot;</code> or <code>0</code>.</em></p>
-<h2 id="downlink">Downlink</h2>
+<h2 id="downlink">Downlink&nbsp;<a class="header-hash" href="#downlink">#</a> </h2>
 <p>Your application can schedule a downlink message to a URL for your application in a region, process name and app access key:</p>
 <pre><code>https://integrations.thethingsnetwork.org/ttn-eu/api/v2/down/my-app-id/my-process-id?key=ttn-account-v2.secret
 </code></pre><p>This URL is also provided in each uplink message for convenience. However, you can call this URL any time to schedule a downlink. Note that <code>ttn-eu</code> refers to the region; other valid regions are <code>ttn-us-west</code>, <code>ttn-brazil</code> and <code>ttn-asia-se</code>.</p>
 <p>Your application should <code>POST</code> or <code>PUT</code> a downlink message.</p>
-<h3 id="with-raw-payload">With raw payload</h3>
+<h3 id="with-raw-payload">With raw payload&nbsp;<a class="header-hash" href="#with-raw-payload">#</a> </h3>
 <p>You can schedule a message with raw payload using this format:</p>
 <div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="p">{</span>
   <span class="s2">&#34;dev_id&#34;</span><span class="o">:</span> <span class="s2">&#34;my-dev-id&#34;</span><span class="p">,</span>    <span class="c1">// The device ID
@@ -348,7 +349,7 @@ alt="Getting started with the HTTP Integration" width="480" /></a></p>
 </span><span class="c1"></span>  <span class="s2">&#34;confirmed&#34;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>       <span class="c1">// Whether the downlink should be confirmed by the device
 </span><span class="c1"></span>  <span class="s2">&#34;payload_raw&#34;</span><span class="o">:</span> <span class="s2">&#34;AQIDBA==&#34;</span> <span class="c1">// Base64 encoded payload: [0x01, 0x02, 0x03, 0x04]
 </span><span class="c1"></span><span class="p">}</span>
-</code></pre></div><h3 id="with-payload-fields">With payload fields</h3>
+</code></pre></div><h3 id="with-payload-fields">With payload fields&nbsp;<a class="header-hash" href="#with-payload-fields">#</a> </h3>
 <p>You can also use payload fields if your application has an encoder payload function declared to encode JSON to binary:</p>
 <div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="p">{</span>
   <span class="s2">&#34;dev_id&#34;</span><span class="o">:</span> <span class="s2">&#34;my-dev-id&#34;</span><span class="p">,</span> <span class="c1">// The device ID
@@ -359,7 +360,7 @@ alt="Getting started with the HTTP Integration" width="480" /></a></p>
     <span class="s2">&#34;color&#34;</span><span class="o">:</span> <span class="s2">&#34;blue&#34;</span>
   <span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div><h3 id="downlink-scheduling">Downlink scheduling</h3>
+</code></pre></div><h3 id="downlink-scheduling">Downlink scheduling&nbsp;<a class="header-hash" href="#downlink-scheduling">#</a> </h3>
 <p>By default, the downlink will <em>replace</em> the currently scheduled downlink, if any. It is also possible to schedule the
 downlink as the <em>first</em> or <em>last</em> item in the downlink queue.</p>
 <div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="p">{</span>
@@ -370,6 +371,7 @@ downlink as the <em>first</em> or <em>last</em> item in the downlink queue.</p>
 </span><span class="c1"></span>  <span class="s2">&#34;schedule&#34;</span><span class="o">:</span> <span class="s2">&#34;replace&#34;</span>  <span class="c1">// Allowed values: &#34;replace&#34; (default), &#34;first&#34;, &#34;last&#34;
 </span><span class="c1"></span><span class="p">}</span>
 </code></pre></div>
+
         </div>
       
       

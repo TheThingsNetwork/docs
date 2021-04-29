@@ -38,7 +38,7 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.63e25b5c651bd53d7906c0aea044f525dd20de132fd123ea1927e46490c71ca9.css" integrity="sha256-Y&#43;JbXGUb1T15BsCuoET1Jd0g3hMv0SPqGSfkZJDHHKk=" crossorigin="anonymous">
 
   <meta property="og:title" content="WiFi Localization" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
@@ -308,7 +308,8 @@
           WiFi Localization
         </h1>
         <div class="content">
-          <p>To use the <strong>LoRa TDOA + WiFi</strong> lookup, you must pass WiFi access points in a specific format from your decoder payload function:</p>
+          
+<p>To use the <strong>LoRa TDOA + WiFi</strong> lookup, you must pass WiFi access points in a specific format from your decoder payload function:</p>
 <div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
   <span class="nt">&#34;access_points&#34;</span><span class="p">:</span> <span class="p">[</span>
     <span class="p">{</span>
@@ -326,7 +327,7 @@
   <span class="p">]</span>
 <span class="p">}</span>
 </code></pre></div><p>You can return any other payload fields too; only <code>access_points</code> is used for the Collos integration.</p>
-<h2 id="example">Example</h2>
+<h2 id="example">Example&nbsp;<a class="header-hash" href="#example">#</a> </h2>
 <p>Say your device scans WiFi access points and sends them over LoRaWAN FPort <code>2</code>, with six bytes per BSSID and one byte indicating the RSSI:</p>
 <pre><code>01 02 03 04 05 06 D3 AA BB CC DD EE FF C1 06 05 04 03 02 01 C8
 </code></pre><p>You can decode this using the following payload function:</p>
@@ -363,6 +364,7 @@
   <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
+
         </div>
       
       

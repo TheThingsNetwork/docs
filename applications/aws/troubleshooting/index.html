@@ -38,7 +38,7 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.63e25b5c651bd53d7906c0aea044f525dd20de132fd123ea1927e46490c71ca9.css" integrity="sha256-Y&#43;JbXGUb1T15BsCuoET1Jd0g3hMv0SPqGSfkZJDHHKk=" crossorigin="anonymous">
 
   <meta property="og:title" content="Troubleshooting" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
@@ -338,8 +338,9 @@
           Troubleshooting
         </h1>
         <div class="content">
-          <p>Are you encountering issues with the AWS IoT integration? This guide walks you through viewing health and getting log files of the integration that may help resolving issues.</p>
-<h2 id="check-health">Check Health</h2>
+          
+<p>Are you encountering issues with the AWS IoT integration? This guide walks you through viewing health and getting log files of the integration that may help resolving issues.</p>
+<h2 id="check-health">Check Health&nbsp;<a class="header-hash" href="#check-health">#</a> </h2>
 <ol>
 <li><a href="/docs/applications/aws/update/">Update the integration</a> to the latest version</li>
 <li>Log in to the <a href="http://console.aws.amazon.com">AWS Management Console</a></li>
@@ -351,7 +352,7 @@
 <li>Click the tile of your environment</li>
 <li>You may see degraded health here. Click the <strong>Causes</strong> button for diagnosis</li>
 </ol>
-<h2 id="get-log-files">Get Log Files</h2>
+<h2 id="get-log-files">Get Log Files&nbsp;<a class="header-hash" href="#get-log-files">#</a> </h2>
 <ol>
 <li>Go to the Elastic Beanstalk environment of your application (see <a href="/docs/applications/aws/#check-health">above</a>)</li>
 <li>Click <strong>Logs</strong> in the menu on the left</li>
@@ -380,6 +381,7 @@
   INFO Updated shadow reported state            DevID=node
   ...
 </code></pre><p>Any <code>WARN</code>, <code>ERROR</code> or <code>FATAL</code> should provide enough context to resolve the issue, e.g. wrong authentication parameters (app ID or access key), wrong thing attributes, etc.</p>
+
 
         </div>
       

@@ -38,7 +38,7 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.63e25b5c651bd53d7906c0aea044f525dd20de132fd123ea1927e46490c71ca9.css" integrity="sha256-Y&#43;JbXGUb1T15BsCuoET1Jd0g3hMv0SPqGSfkZJDHHKk=" crossorigin="anonymous">
 
   <meta property="og:title" content="API Reference" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
@@ -308,14 +308,15 @@
           API Reference
         </h1>
         <div class="content">
-          <ul>
+          
+<ul>
 <li>Host: <code>&lt;Region&gt;.thethings.network</code>, where <code>&lt;Region&gt;</code> is last part of the handler you registered your application to, e.g. <code>eu</code>.</li>
 <li>Port: <code>1883</code>, or <code>8883</code> for TLS</li>
 <li>For TLS, the server uses a Let&rsquo;s Encrypt certificate. If your server does not trust that yet, you might want to include the <a href="https://letsencrypt.org/certificates/">Let&rsquo;s Encrypt Roots</a> in your certificate chain. Alternatively you can use our PEM-encoded CA certificate, which includes those roots as well: <a href="https://console.thethingsnetwork.org/mqtt-ca.pem">mqtt-ca.pem</a></li>
 <li>Username: Application ID</li>
 <li>Password: Application Access Key</li>
 </ul>
-<h2 id="uplink-messages">Uplink Messages</h2>
+<h2 id="uplink-messages">Uplink Messages&nbsp;<a class="header-hash" href="#uplink-messages">#</a> </h2>
 <p><strong>Topic:</strong> <code>&lt;AppID&gt;/devices/&lt;DevID&gt;/up</code></p>
 <p><strong>Message:</strong></p>
 <div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="p">{</span>
@@ -382,7 +383,7 @@
     <span class="nx">ctx</span><span class="p">.</span><span class="nf">WithError</span><span class="p">(</span><span class="nx">err</span><span class="p">).</span><span class="nf">Fatal</span><span class="p">(</span><span class="s">&#34;Could not subscribe&#34;</span><span class="p">)</span>
   <span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div><h3 id="uplink-fields">Uplink Fields</h3>
+</code></pre></div><h3 id="uplink-fields">Uplink Fields&nbsp;<a class="header-hash" href="#uplink-fields">#</a> </h3>
 <blockquote>
 <p><strong>Warning</strong>: not every cluster publishes uplink fields to individual topics. See <a href="https://status.thethings.network">status.thethings.network</a> for details.</p>
 </blockquote>
@@ -406,7 +407,7 @@
 <li><code>my-app-id/devices/my-dev-id/up/gps/lon</code>: <code>4.886663</code></li>
 <li><code>my-app-id/devices/my-dev-id/up/text</code>: <code>&quot;why are you using text?&quot;</code></li>
 </ul>
-<h2 id="downlink-messages">Downlink Messages</h2>
+<h2 id="downlink-messages">Downlink Messages&nbsp;<a class="header-hash" href="#downlink-messages">#</a> </h2>
 <p><strong>Topic:</strong> <code>&lt;AppID&gt;/devices/&lt;DevID&gt;/down</code></p>
 <p><strong>Message:</strong></p>
 <div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="p">{</span>
@@ -427,7 +428,7 @@
 <span class="k">if</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">token</span><span class="p">.</span><span class="nf">Error</span><span class="p">();</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
   <span class="nx">ctx</span><span class="p">.</span><span class="nf">WithError</span><span class="p">(</span><span class="nx">err</span><span class="p">).</span><span class="nf">Fatal</span><span class="p">(</span><span class="s">&#34;Could not publish&#34;</span><span class="p">)</span>
 <span class="p">}</span>
-</code></pre></div><h3 id="downlink-fields">Downlink Fields</h3>
+</code></pre></div><h3 id="downlink-fields">Downlink Fields&nbsp;<a class="header-hash" href="#downlink-fields">#</a> </h3>
 <p>Instead of <code>payload_raw</code> you can also use <code>payload_fields</code> with an object of fields. This requires the application to be configured with an Encoder Payload Function which encodes the fields into a Buffer.</p>
 <p><strong>Message:</strong></p>
 <div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="p">{</span>
@@ -452,7 +453,7 @@
 <span class="k">if</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">token</span><span class="p">.</span><span class="nf">Error</span><span class="p">();</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
   <span class="nx">ctx</span><span class="p">.</span><span class="nf">WithError</span><span class="p">(</span><span class="nx">err</span><span class="p">).</span><span class="nf">Fatal</span><span class="p">(</span><span class="s">&#34;Could not publish&#34;</span><span class="p">)</span>
 <span class="p">}</span>
-</code></pre></div><h3 id="downlink-scheduling">Downlink Scheduling</h3>
+</code></pre></div><h3 id="downlink-scheduling">Downlink Scheduling&nbsp;<a class="header-hash" href="#downlink-scheduling">#</a> </h3>
 <p>By default, the downlink will <em>replace</em> the currently scheduled downlink, if any. It is also possible to schedule the
 downlink as the <em>first</em> or <em>last</em> item in a the downlink queue.</p>
 <div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="p">{</span>
@@ -461,7 +462,7 @@ downlink as the <em>first</em> or <em>last</em> item in a the downlink queue.</p
   <span class="c1">// payload_raw or payload_fields
 </span><span class="c1"></span>  <span class="s2">&#34;schedule&#34;</span><span class="o">:</span> <span class="s2">&#34;replace&#34;</span><span class="p">,</span> <span class="c1">// allowed values: &#34;replace&#34; (default), &#34;first&#34;, &#34;last&#34;
 </span><span class="c1"></span><span class="p">}</span>
-</code></pre></div><h2 id="device-activations">Device Activations</h2>
+</code></pre></div><h2 id="device-activations">Device Activations&nbsp;<a class="header-hash" href="#device-activations">#</a> </h2>
 <p><strong>Topic:</strong> <code>&lt;AppID&gt;/devices/&lt;DevID&gt;/events/activations</code></p>
 <p><strong>Message:</strong></p>
 <div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="p">{</span>
@@ -482,12 +483,12 @@ downlink as the <em>first</em> or <em>last</em> item in a the downlink queue.</p
 <span class="k">if</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">token</span><span class="p">.</span><span class="nf">Error</span><span class="p">();</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
   <span class="nx">ctx</span><span class="p">.</span><span class="nf">WithError</span><span class="p">(</span><span class="nx">err</span><span class="p">).</span><span class="nf">Fatal</span><span class="p">(</span><span class="s">&#34;Could not subscribe&#34;</span><span class="p">)</span>
 <span class="p">}</span>
-</code></pre></div><h2 id="device-events">Device Events</h2>
-<h3 id="management-events">Management Events</h3>
+</code></pre></div><h2 id="device-events">Device Events&nbsp;<a class="header-hash" href="#device-events">#</a> </h2>
+<h3 id="management-events">Management Events&nbsp;<a class="header-hash" href="#management-events">#</a> </h3>
 <p><strong>Created:</strong> <code>&lt;AppID&gt;/devices/&lt;DevID&gt;/events/create</code>
 <strong>Updated:</strong> <code>&lt;AppID&gt;/devices/&lt;DevID&gt;/events/update</code>
 <strong>Deleted:</strong> <code>&lt;AppID&gt;/devices/&lt;DevID&gt;/events/delete</code></p>
-<h3 id="downlink-events">Downlink Events</h3>
+<h3 id="downlink-events">Downlink Events&nbsp;<a class="header-hash" href="#downlink-events">#</a> </h3>
 <p><strong>Downlink Scheduled:</strong> <code>&lt;AppID&gt;/devices/&lt;DevID&gt;/events/down/scheduled</code><br>
 payload: <em>null</em></p>
 <p><strong>Downlink Sent:</strong> <code>&lt;AppID&gt;/devices/&lt;DevID&gt;/events/down/sent</code></p>
@@ -505,12 +506,13 @@ payload: <em>null</em></p>
 <span class="p">}</span>
 </code></pre></div><p><strong>Downlink Acknowledgements:</strong> <code>&lt;AppID&gt;/devices/&lt;DevID&gt;/events/down/acks</code><br>
 payload: <em>null</em></p>
-<h3 id="error-events">Error Events</h3>
+<h3 id="error-events">Error Events&nbsp;<a class="header-hash" href="#error-events">#</a> </h3>
 <p>The payload of error events is a JSON object with the error&rsquo;s description.</p>
 <p><strong>Uplink Errors:</strong> <code>&lt;AppID&gt;/devices/&lt;DevID&gt;/events/up/errors</code><br>
 <strong>Downlink Errors:</strong> <code>&lt;AppID&gt;/devices/&lt;DevID&gt;/events/down/errors</code><br>
 <strong>Activation Errors:</strong> <code>&lt;AppID&gt;/devices/&lt;DevID&gt;/events/activations/errors</code></p>
 <p>Example: <code>{&quot;error&quot;:&quot;Activation DevNonce not valid: already used&quot;}</code></p>
+
 
         </div>
       

@@ -38,7 +38,7 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.45446407f5f5aad68e1e41e0dc61b71ab899cdd2a0391e5944f01626e5f2697a.css" integrity="sha256-RURkB/X1qtaOHkHg3GG3GriZzdKgOR5ZRPAWJuXyaXo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.63e25b5c651bd53d7906c0aea044f525dd20de132fd123ea1927e46490c71ca9.css" integrity="sha256-Y&#43;JbXGUb1T15BsCuoET1Jd0g3hMv0SPqGSfkZJDHHKk=" crossorigin="anonymous">
 
   <meta property="og:title" content="Device Firmware Upgrading" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
@@ -251,7 +251,8 @@
           Device Firmware Upgrading
         </h1>
         <div class="content">
-          <p>If the firmware version of your RAK5205 WisTrio LoRa Tracker is newer than V3.0.0.0 or you have just burned the bootloader into RAK5205 WisTrio LoRa Tracker according to the Burning Bootloader into the Device section, you just need to burn the upgraded firmware according to the following steps now:</p>
+          
+<p>If the firmware version of your RAK5205 WisTrio LoRa Tracker is newer than V3.0.0.0 or you have just burned the bootloader into RAK5205 WisTrio LoRa Tracker according to the Burning Bootloader into the Device section, you just need to burn the upgraded firmware according to the following steps now:</p>
 <p><strong>1</strong>.First, type the command to let the RAK5205 WisTrio LoRa Tracker work in boot mode.</p>
 <pre><code>at+set_config=device:boot
 </code></pre><blockquote>
@@ -264,7 +265,7 @@
 <p><img src="../images/firmwarechoosing.jpg" alt="Figure 3: Choosing the Correct Firmware file"></p>
 <p><strong>4</strong>.Click <strong>“Start”</strong> to upload the Firmware and wait for a confirmation as shown in the image below. Uploading may take minutes.</p>
 <p><img src="../images/success.jpg" alt="Figure 4: Successfully Upgraded Firmware"></p>
-<h2 id="testing-the-installed-firmware">Testing the Installed Firmware</h2>
+<h2 id="testing-the-installed-firmware">Testing the Installed Firmware&nbsp;<a class="header-hash" href="#testing-the-installed-firmware">#</a> </h2>
 <p><strong>1</strong>.Now, close the upgrade tool and open a serial port tool.</p>
 <ul>
 <li>We recommend you to use RAK Serial Port Tool, because there are some ready AT commands in this tool and this will be very useful for you. You can get it from RAK website available for free at this <a href="https://downloads.rakwireless.com/en/LoRa/Tools/"><strong>RAK directory</strong></a>.</li>
@@ -273,11 +274,12 @@
 <pre><code>at+set_config=device:restart
 </code></pre><p><img src="../images/serialrestart.jpg" alt="Figure 5: Restarting your Firmware"></p>
 <p>Congrats! This information means that you have upgraded successfully the new firmware.</p>
-<h3 id="optional-configurations">Optional Configurations</h3>
+<h3 id="optional-configurations">Optional Configurations&nbsp;<a class="header-hash" href="#optional-configurations">#</a> </h3>
 <p>Aside from all the default processes done in the Device Firmware Setup and Device Firmware Upgrading, you can have the full liberty in customizing your own firmware by following the steps in the document linked below:</p>
 <ul>
 <li><a href="https://doc.rakwireless.com/rak5205-rak7205-wistrio-lora-tracker/customizing-firmware">Firmware Customizing</a></li>
 </ul>
+
 
         </div>
       
