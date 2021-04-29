@@ -8,11 +8,19 @@ The LoRaWAN specification defines three device types: **Class A**, **Class B**, 
 
 ## Class A
 
-**Class A** devices support bi-directional communication between a device and a gateway. Uplink messages (from the device to the server) can be sent at any time. The device then opens two receive windows at specified times (RX1 Delay and RX2 Delay) after an uplink transmission. If the server does not respond in either of these receive windows, the next opportunity will be after the next uplink transmission from the device. The server can respond either in the first receive window, or in the second receive window, but should not use both windows.
+**Class A** devices support bi-directional communication between a device and a gateway. Uplink messages (from the device to the server) can be sent at any time. The device then opens two receive windows at specified times (RX1 Delay and RX2 Delay) after an uplink transmission. If the server does not respond in either of these receive windows, the next opportunity will be after the next uplink transmission from the device.
 
 ![Class A Receive Windows](class-a.png)
 
 _Figure: Class A Receive Window Diagram_
+
+The server can respond either in the first receive window, or in the second receive window, but should not use both windows. If the device receives an uplink in the first receive window, it will not open the second receive window. Below, Case 1 shows the end device opening both receive windows. In Case 2, it receives a downlink in the first window and does not opoen the second. In Case 3, it receives a downlink in the second receive window.
+
+![Class A Receive Windows](class-a-alt.png)
+
+_Figure: Class A Receive Window Diagram with Downlinks_
+
+_1: Device Receives No Uplink and Opens Both Receive Windows_
 
 Class A end devices:
 
@@ -39,7 +47,7 @@ Some common use cases for Class A end-devices:
 
 _Figure: Class B Receive Window Diagram_
 
-Class B end devices have lower latency than the Class A end devices, because they are reachable at preconfigured times and do not need to send an uplink to receive a downlink. The battery life is shorter in Class B than Class A. 
+Class B end devices have lower latency than the Class A end devices, because they are reachable at preconfigured times and do not need to send an uplink to receive a downlink. The battery life is shorter in Class B than Class A, because the device spends more time in active mode, during beacons and ping slots. 
 
 Some common use cases for Class B end-devices:
 
