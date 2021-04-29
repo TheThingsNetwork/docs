@@ -157,3 +157,15 @@ table.fixed td { overflow: auto; }
   margin-top: -6rem;
   }
 }
+
+.header-hash {
+  font-size: 100%;
+  visibility: hidden;
+  color: silver;
+}
+
+h2, h3, h4, h5, h6 {
+  &:hover a.header-hash {
+    visibility: visible
+  }
+}
