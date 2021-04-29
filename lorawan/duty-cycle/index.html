@@ -143,7 +143,7 @@
     
       
 <li>
-  <a href="https://www.thethingsnetwork.org/docs/lorawan/what-is-lorawan/" class="">What are LoRa and LoRaWAN</a>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/what-is-lorawan/" class="">What are LoRa and LoRaWAN?</a>
 </li>
 
       
@@ -255,11 +255,11 @@
         <div class="content">
           <p><strong>Duty Cycle indicates the fraction of time a resource is busy.</strong><br>
 When a single device transmits on a channel for 2 <em>time units</em> every 10 <em>time units</em>, this device has a duty cycle of 20%.<br>
-<img src="../duty-cycle-single-channel.png" alt="Single Channel Duty Cycle"></p>
+<img src="duty-cycle-single-channel.png" alt="Single Channel Duty Cycle"></p>
 <p>However, if we also consider <em>channels</em>, things get a bit more complicated. When we have a device that transmits on 3 channels instead of one, each individual <em>channel</em> is still occupied for 2 <em>time units</em> every 10 <em>time units</em> (so 20%). However, the <em>device</em> is now transmitting for 6 <em>time units</em> every 10 <em>time units</em>, giving it a duty cycle of 60%.<br>
-<img src="../duty-cycle-multi-channel.png" alt="Multiple Channel Duty Cycle"></p>
+<img src="duty-cycle-multi-channel.png" alt="Multiple Channel Duty Cycle"></p>
 <p>In our European frequency plan, we have channels in different <em>sub-bands</em>, so when considering the duty cycle, we also have to consider these. Let&rsquo;s say the 3 channels we used before, are in 2 different <em>sub-bands</em>. Each separate <em>channel</em> still has a duty cycle of 20%, the <em>device</em> still has a duty cycle of 60%, but we now see that <em>Band 1</em> is in use for 2 <em>time units</em> every 10 <em>time units</em> (20%), while <em>Band 2</em> is in use for 4 <em>time units</em> every 10 <em>time units</em> (40%).<br>
-<img src="../duty-cycle-multi-band.png" alt="Multiple Band Duty Cycle"></p>
+<img src="duty-cycle-multi-band.png" alt="Multiple Band Duty Cycle"></p>
 <h2 id="maximum-duty-cycle">Maximum Duty Cycle</h2>
 <p>The duty cycle of radio devices is often regulated by government. If this is the case, the duty cycle is commonly set to 1%, but make sure to check the regulations of your local government to be sure.</p>
 <p>In Europe, duty cycles are regulated by section 7.2.3 of the ETSI EN300.220 standard. This standard defines the following sub-bands and their duty cycles:</p>
@@ -278,14 +278,14 @@ When a single device transmits on a channel for 2 <em>time units</em> every 10 <
 <p>In practice, this means that you should program your nodes in such a way, that they stay within the limits. The easiest way to do this, is to calculate how much <em>airtime</em> each message consumes using one of the many <a href="https://avbentem.github.io/airtime-calculator/ttn/eu868">airtime calculators</a> and use that information to choose a good transmit interval.</p>
 <p>Some radio modules (such as the RN2483) also enforce the duty cycle limits. If you exceed the limits, the module will complain with a message <code>no_free_ch</code>. Specifically, the RN2483 limits the duty cycle on a per-channel basis. This means that if you only have 1 channel configured, the module will start enforcing the duty cycle after the first message.</p>
 <p><em>The figure below shows enforcement on a resource with a 20% duty cycle limit</em><br>
-<img src="../duty-cycle-single-channel-off-air.png" alt="Single Channel Off-air"></p>
+<img src="duty-cycle-single-channel-off-air.png" alt="Single Channel Off-air"></p>
 <p>In the European band, a transmission on a channel within a frequency band, also influences the other frequencies in that band.</p>
 <p><em>The figure below shows enforcement on two bands, each with a 20% duty cycle limit</em><br>
-<img src="../duty-cycle-multi-band-off-air.png" alt="Multiple Band Off-air"></p>
+<img src="duty-cycle-multi-band-off-air.png" alt="Multiple Band Off-air"></p>
 <p>As a per-channel duty cycle limit is easier to implement, you can also divide the sub-band duty cycle over the number of channels in that sub-band. So for example, in a sub-band with 8 channels and a duty cycle of 1%, each channel has a duty cycle of 1/8% (that&rsquo;s 0.125%).</p>
 <p>This method is also implemented by the RN2483 module, and as a result, instead of seeing the <code>no_free_ch</code> when you send too quickly after the first message you can send multiple messages before all 8 channels are &ldquo;blocked&rdquo; and the duty cycle is enforced.</p>
 <p><em>The figure below shows enforcement on those same two bands, but enforced per channel</em><br>
-<img src="../duty-cycle-multi-channel-off-air-2.png" alt="Multiple Band Off-air"></p>
+<img src="duty-cycle-multi-channel-off-air-2.png" alt="Multiple Band Off-air"></p>
 <p><em>(note: channel 3 is blocked until slot 11)</em></p>
 
         </div>
