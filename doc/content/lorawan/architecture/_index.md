@@ -6,7 +6,7 @@ weight: 30
 
 LoRaWAN is a media access control (MAC) protocol for wide area networks. It is designed to allow low-powered devices to communicate with Internet-connected applications over long range wireless connections. LoRaWAN can be mapped to the second and third layer of the OSI model. It is implemented on top of LoRa or FSK modulation in industrial, scientific and medical (ISM) radio bands. The LoRaWAN protocols are defined by the LoRa Alliance and formalized in the LoRaWAN Specification which can be downloaded on the LoRa Alliance website.
 
-![LoRaWAN Overview](../LoRaWAN-Overview.png)
+![LoRaWAN Overview](architecture.png)
 *Image: LoRaWAN Architecture*
 
 * **[End Device, Node, Mote]({{< relref "../../devices" >}})** - an object with an embedded low-power communication device.
@@ -25,7 +25,7 @@ Let’s examine each element of the LoRaWAN network in detail.
 
 A LoRaWAN end device can be a sensor, an actuator, or both. They are often battery operated. These end devices are wirelessly connected to the LoRaWAN network through gateways using LoRa RF modulation. The following figure shows an example LoRaWAN end device - a water meter.
 
-![alt_text](../end-node.png "End-node")
+![alt_text](end-node.png "End-node")
 
 ### Gateways
 
@@ -35,14 +35,13 @@ Each gateway is registered to a LoRaWAN network. A gateway receives LoRa message
 
 LoRaWAN gateways can be categorized into indoor (picocell) and outdoor (macrocell) gateways. Indoor gateways provide coverage in difficult-to-reach indoor locations and are therefore suitable for use in homes, businesses and buildings. 
 
-![alt_text](../ttig.jpg "The Things Indoor Gateway")
-
+![alt_text](ttig.jpg "The Things Indoor Gateway")
 
 _Figure: The Things Indoor gateway_
 
 Outdoor gateways are suitable for providing coverage in rural, urban, and dense urban areas. This type of gateway is intended for deployment places like cellular towers, the rooftops of very tall buildings, metal pipes (masts) etc. The following figure shows a LoRaWAN gateway attached to a tall metal pipe (mast).
 
-![alt_text](../kerlink-outdoor.jpeg "Kerlink outdoor gateway")
+![alt_text](kerlink-outdoor.jpeg "Kerlink outdoor gateway")
 
 
 _Figure: A Kerlink outdoor gateway is installed at the port of Amsterdam._

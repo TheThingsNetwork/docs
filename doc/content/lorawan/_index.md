@@ -21,11 +21,13 @@ The chapters are designed to be paired with the following video by Johan Stokkin
 
 ### Chapters
 
-- [What is LoRa and LoRaWAN]({{< relref "what-is-lorawan" >}})
+- [What are LoRa and LoRaWAN]({{< relref "what-is-lorawan" >}})
 - [LoRaWAN Architecture]({{< relref "architecture" >}})
 - [Regional Parameters]({{< relref "regional-parameters" >}})
 - [Message Types]({{< relref "message-types" >}})
+- [Security]({{< relref "security" >}})
 - [Classes]({{< relref "classes" >}})
 - [End Device Activation]({{< relref "end-device-activation" >}})
 - [Spreading Factors]({{< relref "spreading-factors" >}})
+- [Adaptive Data Rate]({{< relref "adaptive-data-rate" >}})
 - [Limitations]({{< relref "limitations" >}})

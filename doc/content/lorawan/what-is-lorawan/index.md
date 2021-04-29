@@ -1,5 +1,5 @@
 ---
-title: What are LoRa and LoRaWAN
+title: What are LoRa and LoRaWAN?
 section: The Things Fundamentals
 weight: 20
 ---
@@ -73,7 +73,7 @@ The LoRaWAN protocol is developed and maintained by the [LoRa Alliance](https://
 
 LoRaWAN is suitable for transmitting small size payloads (like sensor data) over long distances. LoRa modulation provides a significantly greater communication range with low bandwidths than other competing wireless data transmission technologies. The following figure shows some access technologies that can be used for wireless data transmission and their expected transmission ranges vs. bandwidth.
 
-![alt_text](../bandwidth-vs-range.png "Bandwidth Vs Range")
+![alt_text](bandwidth-vs-range.png "Bandwidth Vs Range")
 
 ## Why is LoRaWAN so awesome?
 
