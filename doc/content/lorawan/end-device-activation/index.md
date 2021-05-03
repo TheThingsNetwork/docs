@@ -2,6 +2,8 @@
 title: End Device Activation
 section: The Things Fundamentals
 weight: 60
+images: 
+- otaa-1.1.png
 ---
 
 Every end device must be registered with a network before sending and receiving messages. This procedure is known as **activation**. There are two activation methods available:

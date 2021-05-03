@@ -2,6 +2,8 @@
 title: Adaptive Data Rate
 section: The Things Fundamentals
 weight: 80
+images:
+- adr.png
 aliases:
  - /lorawan/adr
 ---
