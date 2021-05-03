@@ -114,16 +114,14 @@ table.fixed { table-layout:fixed; }
 table.fixed td { overflow: auto; }
 
 // Fix for anchor link headbutting https://css-tricks.com/hash-tag-links-padding/
-.content {
-  h2::before, h3::before, h4::before {
+[id]::before {
     display: block;
     content: " ";
-    margin-top: -$navbar-height - 1rem;
-    height: $navbar-height + 1rem;
+    margin-top: $anchor-offset * -1;
+    height: $anchor-offset;
     visibility: hidden;
     pointer-events: none;
     z-index: -1;
-  }
 }
 
 .has-ttn-navbar-top {
