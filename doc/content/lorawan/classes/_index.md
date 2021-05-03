@@ -2,6 +2,8 @@
 title: Device Classes
 section: The Things Fundamentals
 weight: 55
+images:
+- class-a.png
 ---
 
 The LoRaWAN specification defines three device types: **Class A**, **Class B**, and **Class C**. All LoRaWAN devices **must** implement Class A, whereas Class B and Class C are extensions to the specification of Class A devices.

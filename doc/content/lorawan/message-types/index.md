@@ -2,6 +2,8 @@
 title: Message Types
 section: The Things Fundamentals
 weight: 50
+images:
+- payload.png
 ---
 
 In this chapter, you will learn about different message types used in LoRaWAN. These message types are used to transport application-specific data and MAC commands. The Things Fundamentals Certification Exam expects you should have basic knowledge on the following topics with regards to the message types:
