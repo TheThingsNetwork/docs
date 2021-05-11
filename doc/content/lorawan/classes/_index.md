@@ -23,6 +23,9 @@ The server can respond either in the first receive window, or in the second rece
 _Figure: Class A Receive Window Diagram with Downlinks_
 
 _1: Device Receives No Uplink and Opens Both Receive Windows_
+_2: Device Receives Uplink in First Receive Window and Doesn't Open Second_
+
+_3: Device Receives Uplink in Second Receive Window_
 
 Class A end devices:
 
