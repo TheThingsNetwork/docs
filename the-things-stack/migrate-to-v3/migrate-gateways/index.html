@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+<html lang="en-us" class="has-ttn-navbar-top">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <meta name="generator" content="Hugo 0.79.0" />
+
+  <title>Migrate Gateways | The Things Network</title>
+  <link rel="canonical" href="https://www.thethingsnetwork.org/docs/the-things-stack/migrate-to-v3/migrate-gateways/" />
+  
+
+  <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
+
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+  <meta name="msapplication-TileImage" content="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png">
+
+  <meta name="application-name" content="The Things Network">
+  <meta name="msapplication-tooltip" content="Tooltip">
+  <meta name="msapplication-config" content="https://ttnweb.azureedge.net/static/common/favicon/ieconfig.54334a5ee30c.xml">
+
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-32.61b30f85680a.png" sizes="32x32">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-57.83b86c64dc82.png" sizes="57x57">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-76.7dcf8fa36dfc.png" sizes="76x76">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-96.27ac17adaa8b.png" sizes="96x96">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-120.e1526731335e.png" sizes="120x120">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-128.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png" sizes="144x144">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png" sizes="152x152">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-180.fcd414307ca3.png" sizes="180x180">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-195.c55ce09d66da.png" sizes="195x195">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-228.bea53ec4b10b.png" sizes="228x228">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/smalltile.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/mediumtile.3d42f7faac82.png" sizes="270x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
+  <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.443b06e52042e0c3cd68f9c6ad9afacd7a7397f8072e1a9d15514ea703d9505a.css" integrity="sha256-RDsG5SBC4MPNaPnGrZr6zXpzl/gHLhqdFVFOpwPZUFo=" crossorigin="anonymous">
+
+  <meta property="og:title" content="Migrate Gateways" />
+<meta property="og:description" content="This section shortly describes steps to be taken to migrate your gateway from The Things Network V2 to The Things Stack Community Edition.
+Warning: We strongly recommend The Things Network community members to keep their gateways registered on The Things Network V2 for as long as possible, or to agree on performing coordinated migration to The Things Stack, as this will ensure the community does not loose their LoRaWAN coverage.  Migrating your gateway from The Things Network V2 to The Things Stack Community Edition cluster is a really easy process." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/the-things-stack/migrate-to-v3/migrate-gateways/" />
+<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
+<meta property="article:modified_time" content="2021-04-29T14:52:58+02:00" /><meta property="og:site_name" content="The Things Network" />
+
+
+  <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
+
+<meta name="twitter:title" content="Migrate Gateways"/>
+<meta name="twitter:description" content="This section shortly describes steps to be taken to migrate your gateway from The Things Network V2 to The Things Stack Community Edition.
+Warning: We strongly recommend The Things Network community members to keep their gateways registered on The Things Network V2 for as long as possible, or to agree on performing coordinated migration to The Things Stack, as this will ensure the community does not loose their LoRaWAN coverage.  Migrating your gateway from The Things Network V2 to The Things Stack Community Edition cluster is a really easy process."/>
+
+
+</head>
+
+
+<body>
+
+<div id="header"></div>
+<section class="section">
+  <div class="container">
+    <nav class="breadcrumb has-dot-separator" aria-label="breadcrumbs">
+      <ul>
+        <li><a href="https://www.thethingsnetwork.org/docs">Learn</a></li>
+        
+        
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/lorawan/">LoRaWAN</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/quick-start/">Quick Start</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/applications-and-integrations/">Applications &amp; Integrations</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/">Devices &amp; Gateways</a>
+            </li>
+          
+        
+            <li class="is-active">
+              <a href="https://www.thethingsnetwork.org/docs/the-things-stack/">Migrating to The Things Stack Community Edition</a>
+            </li>
+          
+        
+            <li class="">
+              <a href="https://www.thethingsnetwork.org/docs/v2-docs/">V2 Docs (Outdated)</a>
+            </li>
+          
+        
+      </ul>
+    </nav>
+  </div>
+</section>
+<div class="container" role="document">
+  <div class="columns my-0 is-desktop">
+    <div class="column is-3-desktop sidebar-left">
+      
+
+
+<nav class="side-navigation" aria-label="Main navigation">
+
+<h2 class="title is-size-5">Migrating to The Things Stack Community Edition</h2>
+
+<div class="menu">
+  <ul class="menu-list">
+  <a href="https://www.thethingsnetwork.org/docs/the-things-stack/" class="">Overview</a>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/the-things-stack/migrate-to-v3/" class="">Migrate your Gateways and Devices</a>
+      
+
+
+<ul class="menu-list">
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/the-things-stack/migrate-to-v3/migrate-using-console/" class="">Migrate End Devices using The Things Stack Community Edition Console</a>
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/the-things-stack/migrate-to-v3/migrate-using-migration-tool/" class="">Migrate End Devices using the Migration Tool</a>
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/the-things-stack/migrate-to-v3/migrate-gateways/" class="is-active">Migrate Gateways</a>
+    
+    
+
+
+
+    
+  </li>
+
+</ul>
+
+
+      
+    </li>
+  
+  </ul>
+</div>
+
+
+
+
+
+</nav>
+
+    </div>
+    <div class="column is-9-desktop sidebar-middle">
+      <div class="docs-content">
+        <h1 class="title is-size-2">
+          Migrate Gateways
+        </h1>
+
+        <div class="content">
+          
+<p>This section shortly describes steps to be taken to migrate your gateway from The Things Network V2 to The Things Stack Community Edition.</p>
+<div class="notification is-warning is-light has-text-dark">
+  <h5 class="title is-family-sans-serif has-text-dark mb-1">Warning:</h5>
+  We strongly recommend The Things Network community members to keep their gateways registered on The Things Network V2 for as long as possible, or to agree on performing coordinated migration to The Things Stack, as this will ensure the community does not loose their LoRaWAN coverage.
+</div>
+
+<p><a href="https://www.thethingsindustries.com/docs/getting-started/migrating/gateway-migration/" target="_blank">Migrating your gateway</a> from The Things Network V2 to The Things Stack Community Edition cluster is a really easy process.</p>
+<p>First, you need to <a href="https://www.thethingsindustries.com/docs/gateways/adding-gateways/" target="_blank">add a gateway to The Things Stack Community Edition</a>.</p>
+<p>Then, you need to change the address of The Things Stack Community Edition cluster you are using - this will depend on which type of gateway you are using, <a href="https://www.thethingsindustries.com/docs/gateways/semtech-udp-packet-forwarder/" target="_blank">Semtech UDP Packet Forwarder</a> or <a href="https://www.thethingsindustries.com/docs/gateways/lora-basics-station/" target="_blank">LoRa Basics Station</a>. Let us assume you are using <code>eu1.cloud.thethings.network</code>.</p>
+<ul>
+<li>If you are using a Semtech UDP Packet Forwarder, change the <code>server_address</code> in your <code>global_conf.json</code> to <code>eu1.cloud.thethings.network</code></li>
+<li>If you are using LoRa Basics Station with LNS subprotocol, change the LNS server address to <code>wss://eu1.cloud.thethings.network:8887</code></li>
+<li>If you are using LoRa Basics Station with CUPS subprotocol, change the CUPS server address to <code>https://eu1.cloud.thethings.network:443</code></li>
+</ul>
+<p>Once you update the cluster address, the data that reaches your gateway will be routed to your The Things Stack V3 cluster.</p>
+
+
+        </div>
+
+        
+
+
+
+
+  
+
+
+<div class="is-clearfix">
+</div>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<div id="footer"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ttn-components.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/promise-polyfill@7/dist/polyfill.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-navbar.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/vue-footer.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ga.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/vendor/basicLightbox.min.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/theme.min.00ace5d667ca108a93b8a0d385569f7c7bb9f46ed32eefe3f5fb39105763cccd.js" integrity="sha256-AKzl1mfKEIqTuKDThVaffHu59G7TLu/j9fs5EFdjzM0=" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
