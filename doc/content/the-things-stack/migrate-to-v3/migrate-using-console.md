@@ -5,7 +5,8 @@ weight: 100
 
 This section explains steps for migrating end devices from The Things Network V2 to The Things Stack Community Edition using <a href="https://www.thethingsindustries.com/docs/getting-started/console/" target="_blank">The Things Stack Community Edition Console</a>.
 
-{{< warning >}} Migrating active sessions using The Things Stack Community Edition Console is not available. {{</ warning >}}
+{{< note >}} Migrating active sessions using The Things Stack Community Edition Console is available since the latest update to V3.12. <a href="https://www.thethingsindustries.com/docs/getting-started/migrating/migrating-from-v2/" target="_blank">click here</a>.{{</ note >}}
+
 
 ## Add an end device in The Things Stack Community Edition
 
