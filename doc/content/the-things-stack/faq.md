@@ -36,7 +36,7 @@ For The Things Industries V2 (SaaS) users, migrating active device sessions to T
 <a href="https://www.thethingsindustries.com/docs/getting-started/migrating/migrating-from-v2/migrate-using-migration-tool/migrate-active-session/" target="_blank">Read the full The Things Stack documentation on migrating active sessions</a>
 
 {{< note >}}
-It is highly recommended to initiate a new session when migrating your devices.
+It is highly recommended to avoid active session migration, i.e. to initiate a new session when migrating your devices.
 {{</ note >}}
 
 ## Q: What is Packet Broker?
@@ -73,8 +73,8 @@ When moving gateways from TTN V2 to The Things Stack Community Edition, data wil
 2. **September 30** - Deadline for migrating gateways and devices
 3. **December 31** - The Things Network V2 End of Life 
 
-## Q: What to do when I cannot remotely update my gateways?
-End devices connected to The Things Network V2 can be migrated to **The Things Stack Community Edition** and **The Things Stack Cloud**   without the need for migrating a gateway, thanks to the default connection with Packet Broker. The traffic will be routed to The Things Stack after migrating your device(s). Important note: devices need to initiate a new session for this to work (meaning, get a new devices address and session keys).
+## Q: Q: What to do when I cannot update my gateways remotely?
+End devices connected to The Things Network V2 can be migrated to The Things Stack without the need for migrating a gateway, if The Things Stack deployment is connected to Packet Broker. **The Things Stack Community Edition** is already connected to Packet Broker, so you can migrate your device(s) from **The Things Network V2** to **The Things Stack Community Edition** without migrating your gateway.
 
 Unfortunately, it is important to find a way for gateway owners to update their gateways before the end of 2021 as the V2 environment will go down. 
 
