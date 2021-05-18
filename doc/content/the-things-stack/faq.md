@@ -10,7 +10,6 @@ The Things Stack comes in different flavors, designed for different purposes. **
 
 For commercial deployments, The Things Industries offers **The Things Stack Cloud** (among others), an SLA-backed hosted service with 24/7 professional support. For more information, see <a href="https://www.thethingsindustries.com/deployment/" target="_blank">The Things Stack deployment options page</a>
 
-
 ## Q: How can I start using The Things Stack?
 For non-commercial use, you can use **The Things Stack Community Edition**, free of charge. To start with the Community Edition, visit <a href="https://console.cloud.thethings.network/" target="_blank">The Things Stack Community Edition Console</a>.
 
