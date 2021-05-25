@@ -64,4 +64,6 @@ Depending on your use case, you might want to:
 - Keep your gateway connected to The Things Network V2 and route your traffic via Packet Broker to The Things Stack Community Edition - if this is the case, we recommend to read the <a href="https://www.thethingsindustries.com/docs/getting-started/migrating/migrating-from-v2/packet-broker-requirements/" target="_blank">Packet Broker Requirements</a>
 - Migrate your gateway to The Things Stack Community Edition - see [Migrate Gateways]({{< ref "/the-things-stack/migrate-to-v3/migrate-gateways" >}})
 
-{{< warning >}} We strongly recommend The Things Network community members to keep their gateways registered on The Things Network V2 for as long as possible, or to coordinate with the local community members to perform a migration to The Things Stack, as this will ensure that the community members who are still using The Things Network V2 do not lose their LoRaWAN coverage. {{</ warning >}}
+{{< note >}} Since version 3.13 (released in May, 2021), The Things Network V2 routes traffic back and forth to The Things Stack Community Edition. When migrating your gateways to The Things Stack Community Edition, the coverage of the public community network won't be impacted. {{</ note >}}
+
+
