@@ -48,7 +48,7 @@ ttn-lw-migrate is used to export end devices and applications from The Things Ne
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.thethingsnetwork.org/docs/the-things-stack/migrate-to-v3/migrate-using-migration-tool/" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
-<meta property="article:modified_time" content="2021-04-29T14:52:58+02:00" /><meta property="og:site_name" content="The Things Network" />
+<meta property="article:modified_time" content="2021-05-25T18:34:02+02:00" /><meta property="og:site_name" content="The Things Network" />
 
 
   <meta name="twitter:card" content="summary_large_image"/>
@@ -214,7 +214,7 @@ ttn-lw-migrate is used to export end devices and applications from The Things Ne
 
 <div class="notification is-info is-light has-text-dark">
   <h5 class="title is-family-sans-serif has-text-dark mb-1">Note:</h5>
-  Since migrating active sessions from The Things Network V2 to The Things Stack Community Edition is not a recommended practice in general, and not achievable via Packet Broker, we continue this guide with the steps for migrating your end devices without active sessions using <code>ttn-lw-migrate</code> tool.
+  Since migrating active sessions from The Things Network V2 to The Things Stack Community Edition is not a recommended practice in general, and not achievable via Packet Broker, we continue this guide with the steps for migrating your end devices without active sessions using <code>ttn-lw-migrate</code> tool. For more information on migration with existing session, <a href="https://www.thethingsindustries.com/docs/getting-started/migrating/migrating-from-v2/" target="_blank">click here</a>.
 </div>
 
 <p>For OTAA devices, migrating without an active session simply means that the device will establish a new session with The Things Stack Community Edition Network Server. The device will be assigned with a new <strong>DevAddr</strong> and an <strong>RX1 Delay</strong> of 5 seconds, which will ensure that the traffic can be properly routed via Packet Broker and that it will reach The Things Stack Community Edition in time.</p>
@@ -295,13 +295,6 @@ $ ttn-lw-migrate application --source ttnv2 <span class="s2">&#34;ttn-v2-applica
 </ul>
 <p>Since you have not migrated your gateway from The Things Network V2 yet, the new Join request sent by your end device will be received by The Things Network V2 cluster. However, this request will not be accepted if you changed your end device&rsquo;s <code>AppKey</code> (as recommended above) or if you have deleted it.</p>
 <p>An interesting thing is that your OTAA end device&rsquo;s new Join request will be received by The Things Stack Community Edition cluster too! You can verify this by observing the uplinks metadata in The Things Stack Community Edition Console. You can thank for this to <a href="https://www.thethingsindustries.com/docs/reference/peering/#packet-broker" target="_blank">Packet Broker</a>, which routes your device&rsquo;s traffic from The Things Network V2 to The Things Stack Community Edition. Now, The Things Stack Community Edition cluster will accept this Join request, so your end device will get a new <code>DevAddr</code>, channel settings and other MAC parameters. Based on a newly assigned <code>DevAddr</code>, Packet Broker will from now on route the traffic to The Things Stack Community Edition network.</p>
-<div class="notification is-info is-light has-text-dark">
-  <h5 class="title is-family-sans-serif has-text-dark mb-1">Note:</h5>
-  <p>Even if you manage to get your OTAA end device traffic routed to The Things Stack Community Edition via Packet Broker, we still recommend you get in touch with your local The Things Network community and agree on coordinating the migration of gateways, so you do not lose the LoRaWAN network coverage.</p>
-<p>See <a href="https://www.thethingsnetwork.org/docs/the-things-stack/migrate-to-v3/migrate-gateways/">Migrate Gateways</a> for more info.</p>
-
-</div>
-
 <h2 id="what-to-do-with-abp-end-device">What to do with ABP end device?&nbsp;<a class="header-hash" href="#what-to-do-with-abp-end-device">#</a> </h2>
 <p>If you are following this guide, your ABP device is using the <strong>DevAddr</strong> and the <strong>RX1 Delay</strong> from The Things Network V2, so you will have to migrate your gateway to The Things Stack Community Edition too, because Packet Broker will not be able to route your device&rsquo;s traffic properly.</p>
 <blockquote>

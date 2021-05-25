@@ -42,11 +42,11 @@
 
   <meta property="og:title" content="Migrate End Devices using The Things Stack Community Edition Console" />
 <meta property="og:description" content="This section explains steps for migrating end devices from The Things Network V2 to The Things Stack Community Edition using The Things Stack Community Edition Console.
-Note: Migrating active sessions using The Things Stack Community Edition Console is available since the latest update to V3.12. click here.  Add an end device in The Things Stack Community Edition First, add a device in The Things Stack Community Edition. This can be done manually, but also by submitting the type of your device if it is available in the Device Repository." />
+Note: Migrating active sessions using The Things Stack Community Edition Console is available since the latest update to V3.12. click here.  Note: Since version 3.13 (released in May, 2021), The Things Network V2 routes traffic back and forth to The Things Stack Community Edition." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.thethingsnetwork.org/docs/the-things-stack/migrate-to-v3/migrate-using-console/" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
-<meta property="article:modified_time" content="2021-05-19T19:07:51+02:00" /><meta property="og:site_name" content="The Things Network" />
+<meta property="article:modified_time" content="2021-05-25T18:34:02+02:00" /><meta property="og:site_name" content="The Things Network" />
 
 
   <meta name="twitter:card" content="summary_large_image"/>
@@ -54,7 +54,7 @@ Note: Migrating active sessions using The Things Stack Community Edition Console
 
 <meta name="twitter:title" content="Migrate End Devices using The Things Stack Community Edition Console"/>
 <meta name="twitter:description" content="This section explains steps for migrating end devices from The Things Network V2 to The Things Stack Community Edition using The Things Stack Community Edition Console.
-Note: Migrating active sessions using The Things Stack Community Edition Console is available since the latest update to V3.12. click here.  Add an end device in The Things Stack Community Edition First, add a device in The Things Stack Community Edition. This can be done manually, but also by submitting the type of your device if it is available in the Device Repository."/>
+Note: Migrating active sessions using The Things Stack Community Edition Console is available since the latest update to V3.12. click here.  Note: Since version 3.13 (released in May, 2021), The Things Network V2 routes traffic back and forth to The Things Stack Community Edition."/>
 
 
 </head>
@@ -198,6 +198,11 @@ Note: Migrating active sessions using The Things Stack Community Edition Console
   Migrating active sessions using The Things Stack Community Edition Console is available since the latest update to V3.12. <a href="https://www.thethingsindustries.com/docs/getting-started/migrating/migrating-from-v2/" target="_blank">click here</a>.
 </div>
 
+<div class="notification is-info is-light has-text-dark">
+  <h5 class="title is-family-sans-serif has-text-dark mb-1">Note:</h5>
+  Since version 3.13 (released in May, 2021), The Things Network V2 routes traffic back and forth to The Things Stack Community Edition. When migrating your gateways to The Things Stack Community Edition, the coverage of the public community network won&rsquo;t be impacted.
+</div>
+
 <h2 id="add-an-end-device-in-the-things-stack-community-edition">Add an end device in The Things Stack Community Edition&nbsp;<a class="header-hash" href="#add-an-end-device-in-the-things-stack-community-edition">#</a> </h2>
 <p>First, <a href="https://www.thethingsindustries.com/docs/devices/adding-devices/" target="_blank">add a device</a> in The Things Stack Community Edition. This can be done manually, but also by submitting the type of your device if it is available in the <a href="https://thethingsindustries.com/docs/integrations/payload-formatters/device-repo/" target="_blank">Device Repository</a>.</p>
 <p>The process of adding your device in the Console depends on the type of your device - OTAA or ABP.</p>
@@ -271,21 +276,9 @@ Note: Migrating active sessions using The Things Stack Community Edition Console
 </ul>
 <p>Since you have not migrated your gateway from The Things Network V2 yet, the new Join request sent by your end device will be received by The Things Network V2 cluster. However, this request will not be accepted if you changed your end device&rsquo;s <code>AppKey</code> (as recommended above) or if you have deleted it.</p>
 <p>An interesting thing is that your OTAA end device&rsquo;s new Join request will be received by The Things Stack Community Edition cluster too! You can verify this by observing the uplinks metadata in The Things Stack Community Edition Console. You can thank for this to <a href="https://www.thethingsindustries.com/docs/reference/peering/#packet-broker" target="_blank">Packet Broker</a>, which routes your device&rsquo;s traffic from The Things Network V2 to The Things Stack Community Edition. Now, The Things Stack Community Edition cluster will accept this Join request, so your end device will get a new <code>DevAddr</code>, channel settings and other MAC parameters. Based on a newly assigned <code>DevAddr</code>, Packet Broker will from now on route the traffic to The Things Stack Community Edition network.</p>
-<div class="notification is-info is-light has-text-dark">
-  <h5 class="title is-family-sans-serif has-text-dark mb-1">Note:</h5>
-  <p>Even if you manage to get your OTAA end device traffic routed to The Things Stack Community Edition via Packet Broker, we still recommend you get in touch with your local The Things Network community and agree on coordinating the migration of gateways, so you do not lose the LoRaWAN network coverage.</p>
-<p>See <a href="https://www.thethingsnetwork.org/docs/the-things-stack/migrate-to-v3/migrate-gateways/">Migrate Gateways</a> for more info.</p>
-
-</div>
-
 <h2 id="what-to-do-with-abp-end-device">What to do with ABP end device?&nbsp;<a class="header-hash" href="#what-to-do-with-abp-end-device">#</a> </h2>
 <p>The next step for ABP devices depends on your use case, which was previously discussed in the <a href="https://www.thethingsnetwork.org/docs/the-things-stack/migrate-to-v3/migrate-using-console/#add-an-end-device-in-the-things-stack-community-edition">Add an end device in The Things Stack Community Edition</a> section.</p>
 <p>If you re-programmed your ABP end device with a <strong>DevAddr</strong> issued by The Things Stack Community Edition and an <strong>RX1 Delay</strong> of 5 seconds, Packet Broker will be able to route your device&rsquo;s traffic to The Things Stack Community Edition, i.e. you will not have to migrate your gateway to receive the traffic in The Things Stack Community Edition. If this is the case, at this point you should already start seeing your device&rsquo;s traffic in The Things Stack Community Edition Console.</p>
-<div class="notification is-info is-light has-text-dark">
-  <h5 class="title is-family-sans-serif has-text-dark mb-1">Note:</h5>
-  Even if you manage to get your ABP end device traffic routed to The Things Stack Community Edition via Packet Broker, we still recommend you get in touch with your local The Things Network community and agree on coordinating the migration of gateways, so you do not lose the LoRaWAN network coverage.
-</div>
-
 <p>If you have not re-programmed your device, i.e. it is using the <strong>DevAddr</strong> and the <strong>RX1 Delay</strong> from The Things Network V2, you will have to migrate your gateway to The Things Stack Community Edition, because Packet Broker will not be able to route its traffic properly.</p>
 <blockquote>
 <p>See <a href="https://www.thethingsnetwork.org/docs/the-things-stack/migrate-to-v3/migrate-gateways/">Migrate Gateways</a> for more info.</p>
