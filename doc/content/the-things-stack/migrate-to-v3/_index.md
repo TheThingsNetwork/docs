@@ -7,6 +7,8 @@ aliases:
 
 This guide was written to explain the overall migration process of migrating from The Things Network V2 to The Things Stack Community Edition in a several easy-to-follow steps.
 
+{{< note >}} Since version 3.13 (released in May, 2021), The Things Network V2 routes traffic back and forth to The Things Stack Community Edition. When migrating your gateways to The Things Stack Community Edition, the coverage of the public community network won't be impacted. {{</ note >}}
+
 {{< info >}} 
 The Things Stack Community Edition is a LoRaWAN Network Server which is free to use for The Things Network community members. The Community Edition is designed for testing and evaluating LoRaWAN projects and is managed by <a href="https://www.thethingsindustries.com/" target="_blank">The Things Industries</a>. The Community Edition comes without guarantees and only includes community support, hence is not suitable for commercial usage. Join The Things Network [Forum](https://www.thethingsnetwork.org/forum/) or <a href="https://thethingsnetwork.slack.com/" target="_blank">Slack</a> for community support.
 
@@ -63,7 +65,4 @@ Depending on your use case, you might want to:
 
 - Keep your gateway connected to The Things Network V2 and route your traffic via Packet Broker to The Things Stack Community Edition - if this is the case, we recommend to read the <a href="https://www.thethingsindustries.com/docs/getting-started/migrating/migrating-from-v2/packet-broker-requirements/" target="_blank">Packet Broker Requirements</a>
 - Migrate your gateway to The Things Stack Community Edition - see [Migrate Gateways]({{< ref "/the-things-stack/migrate-to-v3/migrate-gateways" >}})
-
-{{< note >}} Since version 3.13 (released in May, 2021), The Things Network V2 routes traffic back and forth to The Things Stack Community Edition. When migrating your gateways to The Things Stack Community Edition, the coverage of the public community network won't be impacted. {{</ note >}}
-
 
