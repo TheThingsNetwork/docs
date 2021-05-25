@@ -7,6 +7,8 @@ This section explains steps for migrating end devices from The Things Network V2
 
 {{< note >}} Migrating active sessions using The Things Stack Community Edition Console is available since the latest update to V3.12. <a href="https://www.thethingsindustries.com/docs/getting-started/migrating/migrating-from-v2/" target="_blank">click here</a>.{{</ note >}}
 
+{{< note >}} Since version 3.13 (released in May, 2021), The Things Network V2 routes traffic back and forth to The Things Stack Community Edition. When migrating your gateways to The Things Stack Community Edition, the coverage of the public community network won't be impacted. {{</ note >}}
+
 ## Add an end device in The Things Stack Community Edition
 
 First, <a href="https://www.thethingsindustries.com/docs/devices/adding-devices/" target="_blank">add a device</a> in The Things Stack Community Edition. This can be done manually, but also by submitting the type of your device if it is available in the <a href="https://thethingsindustries.com/docs/integrations/payload-formatters/device-repo/" target="_blank">Device Repository</a>.
@@ -87,17 +89,11 @@ Since you have not migrated your gateway from The Things Network V2 yet, the new
 
 An interesting thing is that your OTAA end device's new Join request will be received by The Things Stack Community Edition cluster too! You can verify this by observing the uplinks metadata in The Things Stack Community Edition Console. You can thank for this to <a href="https://www.thethingsindustries.com/docs/reference/peering/#packet-broker" target="_blank">Packet Broker</a>, which routes your device's traffic from The Things Network V2 to The Things Stack Community Edition. Now, The Things Stack Community Edition cluster will accept this Join request, so your end device will get a new `DevAddr`, channel settings and other MAC parameters. Based on a newly assigned `DevAddr`, Packet Broker will from now on route the traffic to The Things Stack Community Edition network.
 
-{{< note >}} Even if you manage to get your OTAA end device traffic routed to The Things Stack Community Edition via Packet Broker, we still recommend you get in touch with your local The Things Network community and agree on coordinating the migration of gateways, so you do not lose the LoRaWAN network coverage. 
-
-See [Migrate Gateways]({{< ref "/the-things-stack/migrate-to-v3/migrate-gateways" >}}) for more info. {{</ note >}}
-
 ## What to do with ABP end device?
 
 The next step for ABP devices depends on your use case, which was previously discussed in the [Add an end device in The Things Stack Community Edition]({{< ref "/the-things-stack/migrate-to-v3/migrate-using-console#add-an-end-device-in-the-things-stack-community-edition" >}}) section. 
 
 If you re-programmed your ABP end device with a **DevAddr** issued by The Things Stack Community Edition and an **RX1 Delay** of 5 seconds, Packet Broker will be able to route your device's traffic to The Things Stack Community Edition, i.e. you will not have to migrate your gateway to receive the traffic in The Things Stack Community Edition. If this is the case, at this point you should already start seeing your device's traffic in The Things Stack Community Edition Console. 
-
-{{< note >}} Even if you manage to get your ABP end device traffic routed to The Things Stack Community Edition via Packet Broker, we still recommend you get in touch with your local The Things Network community and agree on coordinating the migration of gateways, so you do not lose the LoRaWAN network coverage. {{</ note >}}
 
 If you have not re-programmed your device, i.e. it is using the **DevAddr** and the **RX1 Delay** from The Things Network V2, you will have to migrate your gateway to The Things Stack Community Edition, because Packet Broker will not be able to route its traffic properly. 
 
