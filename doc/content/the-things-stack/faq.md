@@ -64,7 +64,7 @@ Packet Broker can be used to route uplinks, downlinks and device joins.
 | TTS Community Edition | TTS Cloud | Uplinks only by default. Downlinks & joins can be enabled by TTS Cloud users. <a href="https://www.thethingsindustries.com/docs/reference/packet-broker/configure/" target="_blank">More info</a> |
 | TTS Cloud | TTS Community Edition | Disabled by default, can be enabled manually. <a href="https://www.thethingsindustries.com/docs/reference/packet-broker/configure/" target="_blank">More info</a>|
 | TTS Community Edition | TTN V2 | Uplinks, downlink & joins|
-| TTS Cloud | TTN V2 | Disabled by default, can be enabled manually. <a href="https://www.thethingsindustries.com/docs/reference/packet-broker/configure/" target="_blank">More info</a>|
+| TTS Cloud | TTN V2 | Not available|
 
 
 ## Q: When is The Things Network V2 going down?
