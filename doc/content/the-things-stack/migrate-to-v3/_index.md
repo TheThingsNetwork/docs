@@ -24,14 +24,14 @@ Generally, the process of migrating from The Things Network V2 to The Things Sta
 
 Let us assume that your gateway and device are connected to The Things Network V2. 
 
-> <a href="https://console.thethingsnetwork.org/" target="_blank">Link to The Things Network V2 Console</a>
+> <a href="https://v2console.thethingsnetwork.org/" target="_blank">Link to The Things Network V2 Console</a>
 
 In this section, we will first consider migrating your end device, then your gateway to The Things Stack Community Edition. Along the way, we will highlight differences between the aforementioned use cases and recommend some best practices. You will also need to add your applications, integrations and payload formatters in The Things Stack Community Edition. 
 
 > <a href="https://www.thethingsindustries.com/deployment/" target="_blank">Link to The Things Stack Community Edition Console</a>
 
 #### Video Migrate from The Things Network V2 to The Things Stack
-<iframe width="560" height="315" src="https://www.youtube.com/embed/JUEJ_9LdnuI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/DL87O5zNE_4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Log in to The Things Stack Community Edition
 
