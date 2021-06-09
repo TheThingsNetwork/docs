@@ -5,7 +5,7 @@ weight: 100
 
 This section explains steps for migrating end devices from The Things Network V2 to The Things Stack Community Edition using <a href="https://www.thethingsindustries.com/docs/getting-started/console/" target="_blank">The Things Stack Community Edition Console</a>.
 
-{{< note >}} Migrating active sessions using The Things Stack Community Edition Console is available since the latest update to V3.12. <a href="https://www.thethingsindustries.com/docs/getting-started/migrating/migrating-from-v2/" target="_blank">click here</a>.{{</ note >}}
+{{< note >}} Migrating active sessions using The Things Stack Community Edition Console is available since the latest update to 3.12. <a href="https://www.thethingsindustries.com/docs/getting-started/migrating/migrating-from-v2/" target="_blank">See here for more details</a>.{{</ note >}}
 
 {{< note >}} Since version 3.13 (released in May, 2021), The Things Network V2 routes traffic back and forth to The Things Stack Community Edition. When migrating your gateways to The Things Stack Community Edition, the coverage of the public community network won't be impacted. {{</ note >}}
 

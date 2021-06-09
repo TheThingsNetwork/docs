@@ -7,13 +7,13 @@ aliases:
 
 This guide was written to explain the overall migration process of migrating from The Things Network V2 to The Things Stack Community Edition in a several easy-to-follow steps.
 
-{{< note >}} Since version 3.13 (released in May, 2021), The Things Network V2 routes traffic back and forth to The Things Stack Community Edition. When migrating your gateways to The Things Stack Community Edition, the coverage of the public community network won't be impacted. {{</ note >}}
+{{< note >}} Since version 3.13 of The Things Stack (released in May, 2021), The Things Network V2 routes traffic back and forth to The Things Stack Community Edition. When migrating your gateways to The Things Stack Community Edition, the coverage of the public community network will not be impacted. {{</ note >}}
 
-{{< info >}} 
+{{< note >}} 
 The Things Stack Community Edition is a LoRaWAN Network Server which is free to use for The Things Network community members. The Community Edition is designed for testing and evaluating LoRaWAN projects and is managed by <a href="https://www.thethingsindustries.com/" target="_blank">The Things Industries</a>. The Community Edition comes without guarantees and only includes community support, hence is not suitable for commercial usage. Join The Things Network [Forum](https://www.thethingsnetwork.org/forum/) or <a href="https://thethingsnetwork.slack.com/" target="_blank">Slack</a> for community support.
 
 For commercial LoRaWAN projects, it is recommended to use an SLA-backed version of The Things Stack, as it includes professional support. <a href="https://www.thethingsindustries.com/deployment/" target="_blank">Click here to learn more.</a>
-{{</ info >}} 
+{{</ note >}} 
 
 Generally, the process of migrating from The Things Network V2 to The Things Stack Community Edition depends on few things:
 
@@ -43,21 +43,47 @@ To migrate your end device, you first need to <a href="https://www.thethingsindu
 
 ## Add your payload formatters and integrations
 
-After adding an application in The Things Stack Community Edition, you also need to re-add the associated elements, like payload formatters (known as coders and decoders in The Things Network V2) and integrations. The concept remained the same as in The Things Network V2, with slight improvements. 
+After adding an application in The Things Stack Community Edition, you also need to re-add the associated elements, like payload formatters (known as coders and decoders in The Things Network V2) and integrations.
 
-> The format of payload coders and decoders from the The Things Network V2 is still supported in The Things Stack Community Edition.
+{{< note >}} The format of {{% ttnv2 %}} payload coders and decoders is still supported in The Things Stack. You only need to add one additional line to the function code used in {{% ttnv2 %}} to make it fully compatible with The Things Stack.
+
+For example, if your payload decoder function in {{% ttnv2 %}} was:
+
+```js
+function Decoder(bytes) {
+    var temperature = bytes[0] | bytes[2];  
+    return {
+        temperature: temperature;
+    }
+}
+```
+
+then your uplink payload formatter function in The Things Stack should be:
+
+```js
+function decodeUplink(input) {
+    var bytes = input.bytes;
+    var temperature = bytes[0] | bytes[2];
+    return {
+        temperature: temperature;
+    }
+}
+```
+
+{{</ note >}}
 
 See more info on how to <a href="https://www.thethingsindustries.com/docs/integrations/payload-formatters/" target="_blank">write payload formatters</a> and <a href="https://www.thethingsindustries.com/docs/integrations/adding-integrations/" target="_blank">add integrations</a> in The Things Stack Community Edition. 
 
 ## Ready for Migration
 
-Next, you need to migrate your end device(s) to The Things Stack Community Edition. Depending on the number of devices you want to migrate, choose the right method for the migration.
+Next, you need to migrate your end device(s) to The Things Stack Community Edition.
 
 {{< info >}} This guide refers only to The Things Network V2 and The Things Stack Community Edition deployments. The full migration process that covers all V2 and The Things Stack deployments is described <a href="https://www.thethingsindustries.com/docs/getting-started/migrating/migrating-from-v2/" target="_blank">here</a>. {{</ info >}}
 
-Migrating a single end device can be easily done through The Things Stack Community Edition <a href="https://www.thethingsindustries.com/docs/getting-started/console/" target="_blank">Console</a>. This is convenient if you have a small number of devices, so you can migrate them one by one. See [Migrate End Devices using The Things Stack Community Edition Console]({{< ref "/the-things-stack/migrate-to-v3/migrate-using-console">}}) guide for details.
+Migrating end devices can be easily done using:
 
-Migrating end devices in bulk can only be performed with the `ttn-lw-migrate` tool. See [Migrate End Devices using the Migration Tool]({{< ref "/the-things-stack/migrate-to-v3/migrate-using-migration-tool">}}) guide for details.
+- The Things Stack Community Edition Console. See [Migrate End Devices using The Things Stack Community Edition Console]({{< ref "/the-things-stack/migrate-to-v3/migrate-using-console">}}).
+- `ttn-lw-migrate` tool. See [Migrate End Devices using the Migration Tool]({{< ref "/the-things-stack/migrate-to-v3/migrate-using-migration-tool">}}).
 
 {{< note >}} We highly recommend to test the migration on a single end device or a small batch of end devices first, just to make sure the migration process is succesful and that you are getting an expected result. {{</ note >}}
 

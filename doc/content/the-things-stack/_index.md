@@ -11,7 +11,11 @@ menu:
 ---
 
 
-As mentioned in the [Quick Start](../quick-start), **The Things Network V2 software has been upgraded to The Things Stack Community Edition (also known as V3)**. The existing users of The Things Network V2 will need to migrate their gateways and devices to The Things Stack Community Edition as **The Things Network V2 clusters will be shut down near the end of 2021**.
+As mentioned in the [Quick Start](../quick-start), **The Things Network V2 software has been upgraded to The Things Stack Community Edition (also known as V3)**.
+
+{{< warning >}} On **July 1, 2021** V2 deployments are becoming **read-only**, which means users will no longer be able to add new applications, end devices and gateways. Since V2 deployments are planned to be completely shut down at the end of 2021, we recommend users to migrate their gateways and devices to The Things Stack as soon as possible. {{</ warning >}}
+
+This guide can help you with the process of migrating your gateways and devices.
 
 > <a href="https://console.cloud.thethings.network/" target="_blank">Click here to visit The Things Stack Community Edition Console</a>
 
