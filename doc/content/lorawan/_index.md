@@ -16,7 +16,7 @@ sections:
 This series of chapters was created to prepare you for [**The Things Fundamentals certification**](https://www.thethingsnetwork.org/achievements/certificates/). You'll learn all about LoRa® and LoRaWAN and suitable use cases, and afterwards you'll be ready to start developing your own LoRaWAN applications.
 
 {{< info >}}
-The LoRaWAN Fundamentals course can also be followed on Udemy. [<a href="https://www.udemy.com/course/lorawan-fundamentals/" target="_blank">Sign up for the online course today!</a>.
+The LoRaWAN Fundamentals course can also be followed on Udemy. <a href="https://www.udemy.com/course/lorawan-fundamentals/" target="_blank">Sign up for the online course today!</a>
 {{</ info >}}
 
 
