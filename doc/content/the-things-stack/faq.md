@@ -19,7 +19,7 @@ For commercial use, we recommend **The Things Stack Cloud**. <a href="https://ac
 The Things Stack (also known as V3) is more scalable, more secure and supports all the latest LoRaWAN developments like Class C and the latest LoRaWAN versions 1.1 and 1.0.4. The V2 environment will be shut down near the end of 2021.
 
 ## Q: When can I start using my TTIG (The Things Indoor Gateway) with The Things Stack?
-The Things Industries team is currently working on enabling the TTIGs on The Things Stack and expects to have this ready by the end of Q2 2021.
+Migrating TTIGs from V2 to The Things Stack via CLI and Console is now fully supported! [Read more](https://www.thethingsindustries.com/docs/gateways/thethingsindoorgateway/)
 
 ## Q: When to migrate my devices?
 Start migrating your devices as soon as possible. Documentation and migration tooling is available to support you in the process. [Click here](/the-things-stack/migrate-to-v3/) to read more.
