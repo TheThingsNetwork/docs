@@ -1,7 +1,0 @@
-<!-- https://discourse.gohugo.io/t/breadcrumb-navigation-for-highly-nested-content/27359/6 -->
-{{ with .Parent }}
-    {{ partial "header/breadcrumb.html" . }}
-    <li aria-current="page">
-      <a href="{{ .Permalink }}">{{ .Title }}</a>
-    </li>
-{{ end }}
