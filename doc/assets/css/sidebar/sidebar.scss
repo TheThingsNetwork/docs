@@ -1,7 +1,7 @@
 .sidebar-left {
   @media (min-width: $desktop) {
   order: 0;
-  border-right: 1px solid #e9ecef;
+  border-right: 1px solid $border;
   position: -webkit-sticky;
   position: sticky;
   top: 2 * $content-padding-top;
