@@ -2,7 +2,6 @@
 title: Gateways
 description: Extend The Things Network by installing a Gateway.
 sections:
- - SDKs
  - Running a gateway
  - Hardware
 image: /gateways/icon.png
