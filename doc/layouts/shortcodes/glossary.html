@@ -1,0 +1,9 @@
+{{- range sort (index .Site.Data "glossary") "term" }}
+<div class="glossary">
+<h2 class="is-title">{{- .term -}}</h2>
+<h3 class="is-title">Definition:</h3>
+<p>{{ .definition | markdownify }}</p>
+<h3 class="is-title">The Opportunity:</h3>
+<p>{{ .opportunity | markdownify }}</p>
+</div>
+{{- end }}
