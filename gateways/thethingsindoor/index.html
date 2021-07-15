@@ -218,15 +218,6 @@
   
 
 
-<ul class="menu-list">
-
-  <li>
-    <a href="https://www.thethingsnetwork.org/docs/gateways/thethingsindoor/faq/" class="">FAQ</a>
-    
-  </li>
-
-</ul>
-
 
   
 </li>
@@ -299,7 +290,6 @@
         </h1>
         <div class="content">
           
-<h3 id="note---please-refer-to-the-updated-docs-for-connecting-this-gateway-to-the-things-stack---linkhttpswwwthethingsindustriescomdocsgatewaysthethingsindoorgateway"><strong>Note</strong> - Please refer to the updated docs for connecting this gateway to The Things Stack - <a href="https://www.thethingsindustries.com/docs/gateways/thethingsindoorgateway/">link</a>&nbsp;<a class="header-hash" href="#note---please-refer-to-the-updated-docs-for-connecting-this-gateway-to-the-things-stack---linkhttpswwwthethingsindustriescomdocsgatewaysthethingsindoorgateway">#</a> </h3>
 <p>The Things Indoor Gateway(TTIG) is designed to be a fully compliant, ultra low-cost LoRaWAN gateway, with WiFi as the backhaul. The gateway comes with a wall plug, and can be powered over USB-C on 900mA, making the gateway even suitable for applications that require dynamic coverage.</p>
 <p><img src="TTIG2.jpg" alt="TTIG"></p>
 <p><strong>Salient Features:</strong></p>
@@ -329,113 +319,9 @@
 </ul>
 <p>Need help or more info? Drop us a <a href="mailto:hardware@thethingsindustries.com">line</a>.</p>
 <h2 id="activate-your-gateway-in-under-5-min">Activate your gateway in under 5 min&nbsp;<a class="header-hash" href="#activate-your-gateway-in-under-5-min">#</a> </h2>
-<ol>
-<li>Press the reset button (small button at the back of the gateway next to the USB-C port) for 5 seconds until the LED blinks rapidly GREEN&lt;-&gt;RED for a couple of times.</li>
-<li>Hold the SETUP (button at the top of the gateway, next to the LED) for 10 seconds until the LED blinks rapidly in RED.</li>
-<li>The gateway now exposes a WiFi AP whose SSID is <em>MINIHUB-xxxxxx</em> where xxxxxx is the last 6 digits of the gateway ID.</li>
-<li>The password for this network is printed on the back panel of the device under <em>WiFi PW</em>.</li>
-<li>After connecting to this network go to <em>192.168.4.1</em> using a web browser to access the WiFi config page.
-<img src="TTIG_WiFiSetup.jpg" alt="TTIG_WiFiSetup"></li>
-<li>Select the WiFi network and enter the password if it&rsquo;s a closed network.</li>
-<li>Select the &ldquo;Save and Reboot&rdquo; option.</li>
-<li>If your config is right,</li>
-</ol>
-<ul>
-<li>The gateway will blink GREEN for a few seconds while it connects to this network.</li>
-<li>Then, it will blink GREEN&lt;-&gt;RED for a few seconds while it connects to the <a href="https://doc.sm.tc/station/cupsproto.html">CUPS</a> endpoint and fetches the necessary information to connect to the <a href="https://doc.sm.tc/station/tcproto.html">LNS</a> traffic endpoint.</li>
-</ul>
-<ol start="9">
-<li>If your configuration was successful, the LED will be solid GREEN which means that the gateway is connected to the LoRaWAN network and is ready to handle packets.</li>
-</ol>
-<h2 id="connection-to-the-the-things-network-backend">Connection to the The Things Network Backend&nbsp;<a class="header-hash" href="#connection-to-the-the-things-network-backend">#</a> </h2>
-<ol>
-<li>To connect this gateway to the The Things Network console, register the gateway using the <em>I&rsquo;m using the Legacy Packet Forwarder</em> option.</li>
-<li>The EUI of the gateway is NOT the WiFi MAC address printed on the back of the gateway but is derived from the first number on the top of the sticker below the QR code.</li>
-</ol>
-<ul>
-<li>This number can also be obtained from the WiFi Setup Page
-<img src="TTIG_EUI.jpg" alt="TTIG_EUI"></li>
-</ul>
-<ol start="3">
-<li>To derive this take the code for example <em>5BA0CB80042B</em> and insert <em>FFFE</em> to after the first 6 characters to make it a 64bit EUI such as <em>5BA0CBFFFE80042B</em></li>
-<li>This is the value to be entered in the Gateway ID field on the <a href="https://console.thethingsnetwork.org">console</a>.</li>
-<li>Enter in other details such as location, frequency plan and router.</li>
-<li>If your configuration was successful, you should start receiving packets (if there are LoRaWAN nodes transmitting nearby).</li>
-</ol>
-<h2 id="operating-modes">Operating Modes&nbsp;<a class="header-hash" href="#operating-modes">#</a> </h2>
-<h3 id="configuration-mode-conf">Configuration Mode (CONF)&nbsp;<a class="header-hash" href="#configuration-mode-conf">#</a> </h3>
-<ul>
-<li>In this mode, the device acts as a WiFi AP to which users can connect and configure a WiFi network(s) to which the gateway will connect to during normal operation. The device cannot route LoRaWAN packets in this mode.</li>
-</ul>
-<h3 id="gateway-mode-gw">Gateway Mode (GW)&nbsp;<a class="header-hash" href="#gateway-mode-gw">#</a> </h3>
-<ul>
-<li>In this mode, the device acts as a gateway to route traffic between the LoRaWAN Device and the Network. The WiFi AP for configuration is not available in this mode.</li>
-</ul>
-<h2 id="led-states">LED states&nbsp;<a class="header-hash" href="#led-states">#</a> </h2>
-<table>
-<thead>
-<tr>
-<th>Color(s)</th>
-<th>Illumination Pattern</th>
-<th>Operating Mode</th>
-<th>Meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>GREEN</td>
-<td>Blinking (freq 1 sec)</td>
-<td>GW</td>
-<td>WiFi not connected (or trying to connect)</td>
-</tr>
-<tr>
-<td>GREEN</td>
-<td>Blinking (freq 1/4 sec)</td>
-<td>GW</td>
-<td>Connected to WiFi, establishing connection to LNS/Configuring radio</td>
-</tr>
-<tr>
-<td>GREEN</td>
-<td>Solid</td>
-<td>GW</td>
-<td>Connected to WiFi, connected to LNS backend, listening for Packets</td>
-</tr>
-<tr>
-<td>GREEN/RED</td>
-<td>Alternate Blinking (freq 1/4 sec)</td>
-<td>CONF</td>
-<td>Scanning WiFi networks, setting up Config AP</td>
-</tr>
-<tr>
-<td>RED</td>
-<td>Blinking (freq 1/4 sec)</td>
-<td>CONF</td>
-<td>Config AP Active</td>
-</tr>
-</tbody>
-</table>
-<h2 id="button-actions">Button Actions&nbsp;<a class="header-hash" href="#button-actions">#</a> </h2>
-<p>There are three possible button actions on the TTIG</p>
-<ul>
-<li>SETUP Button pressed for 10s:
-<ul>
-<li>Switch to CONF mode if in GW mode.</li>
-</ul>
-</li>
-<li>SETUP Button pressed for 5s:
-<ul>
-<li>Reboot if in CONF mode, do nothing in GW mode.</li>
-</ul>
-</li>
-<li>RESET Button pressed for 5s:
-<ul>
-<li>Factory reset (wipe out WiFi and LNS credentials, though CUPS credentials are retained).</li>
-</ul>
-</li>
-</ul>
-<p>Find the getting started in PDF <a href="Getting_Started_TTIG.pdf">here</a></p>
+<p>Please refer to the updated docs for connecting this gateway to The Things Stack - <a href="https://www.thethingsindustries.com/docs/gateways/thethingsindoorgateway/">link</a></p>
+<h2 id="resources">Resources&nbsp;<a class="header-hash" href="#resources">#</a> </h2>
 <p>Find the datasheet in PDF <a href="TTIG_datasheet.pdf">here</a></p>
-<p>Find the getting started in PDF for AWS <a href="Getting_Started_TTIG_AWS.pdf">here</a></p>
 
 
         </div>
