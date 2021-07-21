@@ -39,6 +39,7 @@
 
   {{- $style := resources.Get "css/theme.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
   <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/static/common/css/ui.css" crossorigin="anonymous">
 
   {{- if .Site.Params.search.enabled -}}
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
