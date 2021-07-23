@@ -6,18 +6,16 @@
 
 <body>
 
-<div id="header"></div>
+<ttn-header class="theme-ttn"></ttn-header>
 
 {{- block "main" . }}{{- end }}
 
-<div id="footer"></div>
+<div class="ttn-footer"><ttn-footer class="theme-ttn"></ttn-footer></div>
 
-<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.min.js"></script>
-<script src="https://ttnweb.azureedge.net/static/common/js/ttn-components.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/promise-polyfill@7/dist/polyfill.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
-<script src="https://ttnweb.azureedge.net/static/common/js/vue-navbar.js"></script>
-<script src="https://ttnweb.azureedge.net/static/common/js/vue-footer.js"></script>
+<script src="https://www.thethingsnetwork.org/static/common/js/ttn-header/index.js"></script>
+<script src="https://www.thethingsnetwork.org/static/common/js/ttn-footer/index.js"></script>
 <script src="https://ttnweb.azureedge.net/static/common/js/ga.js"></script>
 
 {{- $script := resources.Get "js/vendor/basicLightbox.min.js" }}
