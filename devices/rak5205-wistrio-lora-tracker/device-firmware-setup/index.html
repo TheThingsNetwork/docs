@@ -38,7 +38,8 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.7047a2a8fdcd94c48f09f651aad7aee6c0398471b678d5f32bdf9c1ba1342555.css" integrity="sha256-cEeiqP3NlMSPCfZRqteu5sA5hHG2eNXzK9&#43;cG6E0JVU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.5f16158ee56d6ec8c5d251c083d6f0b30d3f37873c267b17930f33ae570d69fe.css" integrity="sha256-XxYVjuVtbsjF0lHAg9bwsw0/N4c8JnsXkw8zrlcNaf4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/static/common/css/ui.css" crossorigin="anonymous">
 
   <meta property="og:title" content="Device Firmware Setup" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
@@ -60,7 +61,7 @@
 
 <body>
 
-<div id="header"></div><section class="section">
+<ttn-header class="theme-ttn"></ttn-header><section class="section">
   <div class="container">
     <nav class="breadcrumb has-dot-separator" aria-label="breadcrumbs">
       <ul>
@@ -290,14 +291,12 @@
 </div>
 
 
-<div id="footer"></div>
+<div class="ttn-footer"><ttn-footer class="theme-ttn"></ttn-footer></div>
 
-<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.min.js"></script>
-<script src="https://ttnweb.azureedge.net/static/common/js/ttn-components.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/promise-polyfill@7/dist/polyfill.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
-<script src="https://ttnweb.azureedge.net/static/common/js/vue-navbar.js"></script>
-<script src="https://ttnweb.azureedge.net/static/common/js/vue-footer.js"></script>
+<script src="https://www.thethingsnetwork.org/static/common/js/ttn-header/index.js"></script>
+<script src="https://www.thethingsnetwork.org/static/common/js/ttn-footer/index.js"></script>
 <script src="https://ttnweb.azureedge.net/static/common/js/ga.js"></script>
 <script src="https://www.thethingsnetwork.org/docs/js/vendor/basicLightbox.min.js"></script>
 <script src="https://www.thethingsnetwork.org/docs/js/theme.min.00ace5d667ca108a93b8a0d385569f7c7bb9f46ed32eefe3f5fb39105763cccd.js" integrity="sha256-AKzl1mfKEIqTuKDThVaffHu59G7TLu/j9fs5EFdjzM0=" crossorigin="anonymous"></script>
