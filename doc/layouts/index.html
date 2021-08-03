@@ -51,11 +51,9 @@
                 </h3>
                 <div class="content has-text-centered has-text-grey">
                   {{ with .Params.image }}
-                    <div class="is-flex is-justify-content-center">
-                      <figure class="image plain is-size-1">
-                        <img src="{{ . | relURL }}">
-                      </figure>
-                    </div>
+                    <figure class="image plain mb-3">
+                      <img style="height:10rem;" src="{{ . | relURL }}">
+                    </figure>
                   {{ end }}
                   {{ .Description | plainify }}
                 </div>
