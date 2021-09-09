@@ -12,31 +12,54 @@
   </div>
 </section>
 
-{{ with .Site.GetPage "/lorawan" }}
 <section class="section section-lorawan">
   <div class="container">
-    <div class="card has-radius is-fullwidth">
-      <div class="card-content">
-        <a href="{{ .Permalink }}" class="is-flex is-justify-content-center">
-        {{ with .Params.image }}
-        <div class="lorawan-image">
-          <figure class="image plain">
-            <img src="{{ . | relURL }}">
-          </figure>
+    <div class="columns is-desktop is-multiline">
+      {{ with .Site.GetPage "/lorawan" }}
+      <div class="column is-one-half-desktop is-flex">
+        <div class="card has-radius is-fullwidth">
+          <div class="card-content">
+            <a href="{{ .Permalink }}" class="is-flex is-justify-content-center">
+            {{ with .Params.image }}
+            <div class="lorawan-image">
+              <figure class="image plain">
+                <img src="{{ . | relURL }}">
+              </figure>
+            </div>
+            {{ end }}
+            </a>
+            <div class="content has-text-centered has-text-grey">
+              {{ .Description | plainify }}
+            </div>
+            <div class="has-text-centered">
+              <a href="{{ .Permalink }}" class="button is-primary is-outlined">Read</a>
+            </div>
+          </div>
         </div>
-        {{ end }}
-        </a>
-        <div class="content has-text-centered has-text-grey">
-          {{ .Description | plainify }}
-        </div>
-        <div class="has-text-centered">
-          <a href="{{ .Permalink }}" class="button is-primary is-outlined">Read</a>
+      </div>
+      {{ end }}
+      <div class="column is-one-half-desktop is-flex">
+        <div class="card has-radius is-fullwidth">
+          <div class="card-content">
+            <a href="https://www.thethingsnetwork.org/achievements/certificates/" class="is-flex is-justify-content-center">
+            <div class="certifications-image">
+              <figure class="image plain">
+                <img src="{{ "img/badge-fundamental.png" | relURL }}">
+              </figure>
+            </div>
+            </a>
+            <div class="content has-text-centered has-text-grey">
+              Show off your LoRaWAN knowledge! Get a The Things Certification badge.
+            </div>
+            <div class="has-text-centered">
+              <a href="https://www.thethingsnetwork.org/achievements/certificates" class="button is-primary is-outlined">Read</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-{{ end }}
 
 <section class="section">
   <div class="container">
