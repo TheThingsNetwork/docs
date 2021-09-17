@@ -16,7 +16,7 @@ For non-commercial use, you can use **The Things Stack Community Edition**, free
 For commercial use, we recommend **The Things Stack Cloud**. <a href="https://accounts.thethingsindustries.com/fee-calculator" target="_blank">Click here</a> to start using The Things Stack Cloud.
 
 ## Q: Why should I migrate my devices and gateways?
-The Things Stack (also known as V3) is more scalable, more secure and supports all the latest LoRaWAN developments like Class C and the latest LoRaWAN versions 1.1 and 1.0.4. The V2 environment will be shut down near the end of 2021.
+The Things Stack (also known as V3) is more scalable, more secure and supports all the latest LoRaWAN developments like Class C and the latest LoRaWAN versions 1.1 and 1.0.4. The V2 environment will be shut down on 1 December 2021.
 
 ## Q: When can I start using my TTIG (The Things Indoor Gateway) with The Things Stack?
 Migrating TTIGs from V2 to The Things Stack via CLI and Console is now fully supported! [Read more](https://www.thethingsindustries.com/docs/gateways/thethingsindoorgateway/)
@@ -28,7 +28,7 @@ Start migrating your devices as soon as possible. Documentation and migration to
 Start migrating your gateways as soon as possible. Documentation is available to support you in the process. [Click here](/the-things-stack/migrate-to-v3/) to read more. 
 
 {{< note >}}
-Since version 3.13 (released in May, 2021), The Things Network V2 routes traffic back and forth to The Things Stack Community Edition. When migrating your gateways to The Things Stack Community Edition, the coverage of the public community network won't be impacted.
+The Things Network V2 routes traffic back and forth to The Things Stack Community Edition. When migrating your gateways to The Things Stack Community Edition, the coverage of the V2 network won't be impacted.
 {{</ note >}}
 
 ## Q: Can I migrate my devices with sessions?
@@ -70,7 +70,7 @@ Packet Broker can be used to route uplinks, downlinks and device joins.
 ## Q: When is The Things Network V2 going down?
 1. **July 1** - The Things Network V2 becomes read only, meaning that no applications, devices and gateway can be added. Users will still be able to access the resources created prior to this deadline.
 2. **September 30** - Deadline for migrating gateways and devices
-3. **December 31** - The Things Network V2 End of Life 
+3. **December 1** - The Things Network V2 End of Life
 
 ## Q: What to do when I cannot update my gateways remotely?
 End devices connected to The Things Network V2 can be migrated to The Things Stack without the need for migrating a gateway, if The Things Stack deployment is connected to Packet Broker. **The Things Stack Community Edition** is already connected to Packet Broker, so you can migrate your device(s) from **The Things Network V2** to **The Things Stack Community Edition** without migrating your gateway.
