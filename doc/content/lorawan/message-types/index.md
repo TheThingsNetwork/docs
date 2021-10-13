@@ -6,26 +6,27 @@ images:
 - payload.png
 ---
 
-In this chapter, you will learn about different message types used in LoRaWAN. These message types are used to transport application-specific data and MAC commands. The Things Fundamentals Certification Exam expects you should have basic knowledge on the following topics with regards to the message types:
+In this chapter, you will learn about different message types used in LoRaWAN 1.0.x and 1.1. These message types are used to transport MAC commands and application data. The Things Fundamentals Certification exam expects you should have basic knowledge on the following topics with regards to the message types:
 
+*   Uplink and downlink messages.
 *   MAC Message types and their uses.
-*   Transporting MAC commands in the FOpts field.
-*   Transporting MAC commands and application payloads in FRMPayload the field.
-*   Keys used to encrypt each message field that carries MAC Commands and application payloads.
-*   Keys used to calculate the MIC of each message.
+*   Sending MAC commands in the FOpts field.
+*   Sending MAC commands and application data in the FRMPayload field.
+*   Keys used to encrypt each field that carries MAC Commands and application data.
+*   Keys used to calculate the Message Integrity Code (MIC) of each message.
 
+## Uplink and Downlink Messages
+LoRa messages can be divided into uplink and downlink messages based on the direction they travel.
+
+**Uplink messages** - Uplink messages are sent by end devices to the Network Server relayed by one or many gateways. If the uplink message belongs to the Application Server or the Join Server, the Network server forwards it to the correct receiver.
+
+**Downlink messages** - Each downlink message is sent by the Network Server to only one end device and is relayed by a single gateway. This includes some messages initiated by the Application Server and the Join Server too.
 
 ## MAC Message Types
 
-LoRaWAN defines several MAC message types. 
-
-*   LoRaWAN 1.0.x uses 7 MAC message types.
-*   LoRaWAN 1.1 uses 8 MAC message types. 
+LoRaWAN defines several MAC message types.
 
 The following table presents MAC message types that can be found in LoRaWAN 1.0.x and 1.1. 
-
-Table: MAC message types in LoRaWAN 1.0.x and 1.1
-
 
 <table>
   <tr>
@@ -41,7 +42,7 @@ Table: MAC message types in LoRaWAN 1.0.x and 1.1
    </td>
    <td>Join-request
    </td>
-   <td>Uplink OTAA join-request
+   <td>An uplink message, used by the over-the-air activation (OTAA) procedure
    </td>
   </tr>
   <tr>
@@ -49,7 +50,7 @@ Table: MAC message types in LoRaWAN 1.0.x and 1.1
    </td>
    <td>Join-accept
    </td>
-   <td>Downlink OTAA join-accept
+   <td>A downlink message, used by the over-the-air activation (OTAA) procedure
    </td>
   </tr>
   <tr>
@@ -57,7 +58,7 @@ Table: MAC message types in LoRaWAN 1.0.x and 1.1
    </td>
    <td>Unconfirmed Data Up
    </td>
-   <td>Uplink data frame, confirmation not required
+   <td>An uplink data frame, confirmation is not required
    </td>
   </tr>
   <tr>
@@ -65,7 +66,7 @@ Table: MAC message types in LoRaWAN 1.0.x and 1.1
    </td>
    <td>Unconfirmed Data Down
    </td>
-   <td>Downlink data frame, confirmation not required
+   <td>A downlink data frame, confirmation is not required
    </td>
   </tr>
   <tr>
@@ -73,7 +74,7 @@ Table: MAC message types in LoRaWAN 1.0.x and 1.1
    </td>
    <td>Confirmed Data Up
    </td>
-   <td>Uplink data frame, confirmation requested
+   <td>An uplink data frame, confirmation is requested
    </td>
   </tr>
   <tr>
@@ -81,7 +82,7 @@ Table: MAC message types in LoRaWAN 1.0.x and 1.1
    </td>
    <td>Confirmed Data Down
    </td>
-   <td>Downlink data frame, confirmation requested
+   <td>A downlink data frame, confirmation is requested
    </td>
   </tr>
   <tr>
@@ -89,9 +90,9 @@ Table: MAC message types in LoRaWAN 1.0.x and 1.1
    </td>
    <td>Rejoin-request
    </td>
-   <td>1.0.x - Reserved for Future usage
+   <td>1.0.x - Reserved for Future Usage
 <p>
-1.1 - Uplink OTAA rejoin request
+1.1 - Uplink over-the-air activation (OTAA) Rejoin-request
    </td>
   </tr>
   <tr>
@@ -121,21 +122,21 @@ In LoRaWAN 1.1, **three** MAC message types are used by the Over-The-Air-Activat
 
 #### Join-request
 
-The Join-request message is always initiated by an end device and sent to the network server. In LoRaWAN versions **earlier** than 1.0.4 the Join-request message is forwarded by the Network Server to the Application Server. In LoRaWAN 1.1 and 1.0.4+,  the network server forwards the Join-request message to the device’s Join Server. The Join-request message is not encrypted.
+The Join-request message is always initiated by an end device and sent to the Network Server. In LoRaWAN versions **earlier** than 1.0.4 the Join-request message is forwarded by the Network Server to the Application Server. In LoRaWAN 1.1 and 1.0.4+,  the Network Server forwards the Join-request message to the device’s Join Server. The Join-request message is not encrypted.
 
 #### Join-accept
 
-In LoRaWAN versions **earlier** than 1.0.4 the Join-accept message is generated by the application server. In LoRaWAN 1.1 and 1.0.4+ the Join-accept message is generated by the Join Server. In both cases the message passes through the Network Server. Then the Network Server routes the Join-accept message to the correct end-device. The Join-accept message is encrypted as follows.
+In LoRaWAN versions **earlier** than 1.0.4 the Join-accept message is generated by the Application Server. In LoRaWAN 1.1 and 1.0.4+ the Join-accept message is generated by the Join Server. In both cases the message passes through the Network Server. Then the Network Server routes the Join-accept message to the correct end-device. The Join-accept message is encrypted as follows.
 
 *   In LoRaWAN 1.0, the Join-accept message is encrypted with the AppKey.
-*   In LoRaWAN 1.1, the Join-accept message is encrypted depending on the Join-request or Rejoin-request as shown in the table below.
+*   In LoRaWAN 1.1, the Join-accept message is encrypted with different keys as shown in the table below.
 
 <table>
   <tr>
    <td>
-<strong>Triggered by</strong>
+<strong>If triggered by</strong>
    </td>
-   <td><strong>Join-accept message is encrypted by</strong>
+   <td><strong>Encryption Key</strong>
    </td>
   </tr>
   <tr>
@@ -145,7 +146,7 @@ In LoRaWAN versions **earlier** than 1.0.4 the Join-accept message is generated 
    </td>
   </tr>
   <tr>
-   <td>Rejoin-request (for all types)
+   <td>Rejoin-request type 0, 1, and 2
    </td>
    <td>JSEncKey
    </td>
@@ -154,7 +155,7 @@ In LoRaWAN versions **earlier** than 1.0.4 the Join-accept message is generated 
 
 #### Rejoin-request
 
-The Rejoin-request message is always initiated by an end device and sent to the network server. There are three types of Rejoin-request messages: Type 0, 1, and 2. These message types are used to initialize the new session context for the end device. For the Rejoin-request message, the network replies with a Join-accept message.
+The Rejoin-request message is always initiated by an end device and sent to the Network Server. There are three types of Rejoin-request messages: Type 0, 1, and 2. These message types are used to initialize the new session context for the end device. For the Rejoin-request message, the network replies with a Join-accept message.
 
 ### Data Messages
 
@@ -164,7 +165,7 @@ A data message is constructed as shown below:
 
 ![alt_text](payload.png "Constructing a data message")
 
-The MAC payload of the data messages consists of a Frame Header (FHDR) followed by an optional Port Field (FPort) and an optional Frame Payload (FRMPayload).
+MAC payload of the data messages consists of a frame header (FHDR) followed by an optional port field (FPort) and an optional frame payload (FRMPayload).
 
 <table>
   <tr>
@@ -213,24 +214,31 @@ The frame header (FHDR) of the MAC payload consists of the following fields.
 </table>
 
 
-The maximum length of the MAC Payload field is region and data rate specific and can be found in the [Regional Parameters chapter]({{< relref "regional-parameters" >}}). 
+The maximum length of the MAC Payload field is region and data rate-specific and can be found in the [Regional Parameters chapter]({{< relref "regional-parameters" >}}). 
 
 ## Sending MAC Commands and Application-Specific Data
 
-The MAC commands can be sent either in the FOpts field or FRMPayload field of a data message, but not both simultaneously.
+A data message can contain any sequence of MAC commands. A data message can carry both MAC commands and application data simultaneously in separate fields.
 
-### Transporting MAC Commands in FOpts Field
+MAC commands can be sent either in the frame options field (FOpts) field or frame payload field (FRMPayload) field of a data message, but not both simultaneously.
 
-The FOpts field can be used to transport MAC commands that are piggybacked onto the data frame. 
+Application data can be sent in the frame payload (FRMPayload) field of a data message. The FRMPayload field CAN NOT contain MAC commands and application data simultaneously.
+
+### Sending MAC Commands in FOpts Field
+
+MAC commands can be piggybacked in the FOpts field of a data message for sending. The total length of the MAC commands MUST NOT exceed 15 bytes.
 
 * In LoRaWAN 1.0.x, these piggybacked MAC commands are always sent unencrypted. 
-* In LoRaWAN 1.1, these piggybacked MAC commands are always sent encrypted with the FOpts field using the NwkSEncKey.
+* In LoRaWAN 1.1, these piggybacked MAC commands are always sent encrypted using the NwkSEncKey.
 
-### Transporting MAC Commands and Application-specific data in FRMPayload field
+### Sending MAC Commands and Application-specific data in the FRMPayload field
 
-The FRMPayload field can contain Application payload or MAC Commands. If the FRMPayload field is not empty, the FPort must be present. If the FPort is present, FPort value `0` indicates that the FRMPayload contains MAC commands only and FPort value `1` indicates that the FRMPayload field contains an Application payload. 
+The FRMPayload field can contain MAC Commands or application data. If the FRMPayload field is not empty, the FPort field must be present. If the FPort field is present, 
 
-The following are the possible values for the FPort field:
+* FPort value `0` indicates that the FRMPayload field contains only MAC commands. The total length of the MAC commands MUST NOT exceed the maximum FRMPayload length (region-specific).
+* FPort value `1-223` indicates that the FRMPayload field contains application data. 
+
+The following table shows the possible values for the FPort field depending on what it carries.
 
 
 <table>
@@ -249,7 +257,7 @@ The following are the possible values for the FPort field:
   <tr>
    <td>1 to 223
    </td>
-   <td>Application-specific message
+   <td>Application-specific data
    </td>
   </tr>
   <tr>
@@ -261,19 +269,19 @@ The following are the possible values for the FPort field:
   <tr>
    <td>255
    </td>
-   <td>Reserved for future use
+   <td>Reserved for Future Use (RFU)
    </td>
   </tr>
 </table>
 
 
-If the FRMPaylod field contains MAC commands or application data, the FRMPayload must be encrypted before the Message Integrity Code (MIC) is calculated. The following table shows which key is used to encrypt the FRMPayload field in different LoRaWAN versions. This ensures message confidentiality.
-
-FRMPayload encryption keys:
+If the FRMPaylod field contains MAC commands or application data, the FRMPayload field must be encrypted before the Message Integrity Code (MIC) is calculated. This ensures message confidentiality. The following table shows which key is used to encrypt the FRMPayload field in different LoRaWAN versions. 
 
 <table>
   <tr>
    <td><strong>FRMPayload</strong>
+   </td>
+   <td><strong>Direction</strong>
    </td>
    <td><strong>FPort</strong>
    </td>
@@ -285,6 +293,8 @@ FRMPayload encryption keys:
   <tr>
    <td>MAC Commands
    </td>
+   <td>Uplink/Downlink
+   </td>
    <td>0
    </td>
    <td>NwkSKey
@@ -294,6 +304,8 @@ FRMPayload encryption keys:
   </tr>
   <tr>
    <td>Application-specific data
+   </td>
+   <td>Uplink/Downlink
    </td>
    <td>1 to 223
    </td>
@@ -306,17 +318,86 @@ FRMPayload encryption keys:
 
 
 
-## Calculating the Message Integrity Code
+## Calculating the Message Integrity Code (MIC)
 
-The Message Integrity Code (MIC) ensures the integrity and authenticity of a message. The message integrity code is calculated over all the fields in the message and then added to the message. The following list shows what fields are used to calculate the MIC for each message type.
+The Message Integrity Code (MIC) ensures the integrity and authenticity of a message. The message integrity code is calculated over all the fields in the message and then added to the message itself. The following list shows what fields are used to calculate the MIC for each message type in LoRaWAN 1.0.x and 1.1.
 
-* Data messages: MHDR | FHDR | FPort | FRMPayload
-* Join-request messages: MHDR | JoinEUI | DevEUI | DevNonce
-* Join-accept messages: MHDR | JoinNonce | NetID | DevAddr | DLSettings | RxDelay | CFList
-* Rejoin-request Type 0 and 2 messages: MHDR | Rejoin Type | NetID | DevEUI | RJcount0
-* Rejoin-request Type 1 messages:  MHDR | Rejoin Type | JoinEUI | DevEUI | RJcount1
+<table>
+  <tr>
+   <td><strong>LoRaWAN version</strong>
+   </td>
+   <td><strong>Message Type</strong>
+   </td>
+   <td><strong>Fields</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>1.0.x
+   </td>
+   <td>Join-request
+   </td>
+   <td>MHDR | AppEUI | DevEUI | DevNonce
+   </td>
+  </tr>
+  <tr>
+   <td>1.0.x
+   </td>
+   <td>Join-accept
+   </td>
+   <td>MHDR | AppNonce | NetID | DevAddr | DLSettings | RxDelay | CFList
+   </td>
+  </tr>
+  <tr>
+   <td>1.0.x
+   </td>
+   <td>Data messages (up and down)
+   </td>
+   <td>MHDR | FHDR | FPort | FRMPayload
+   </td>
+  </tr>
+  <tr>
+   <td>1.1
+   </td>
+   <td>Join-request
+   </td>
+   <td>MHDR | JoinEUI | DevEUI | DevNonce
+   </td>
+  </tr>
+  <tr>
+   <td>1.1
+   </td>
+   <td>Join-accept
+   </td>
+   <td>MHDR | JoinNonce | NetID | DevAddr | DLSettings | RxDelay | CFList
+   </td>
+  </tr>
+  <tr>
+   <td>1.1
+   </td>
+   <td>Rejoin-request Type 0 and 2
+   </td>
+   <td>MHDR | Rejoin Type | NetID | DevEUI | RJcount0
+   </td>
+  </tr>
+  <tr>
+   <td>1.1
+   </td>
+   <td>Rejoin-request Type 1
+   </td>
+   <td>MHDR | Rejoin Type | JoinEUI | DevEUI | RJcount1
+   </td>
+  </tr>
+  <tr>
+   <td>1.1
+   </td>
+   <td>Data messages (up and down)
+   </td>
+   <td>MHDR | FHDR | FPort | FRMPayload
+   </td>
+  </tr>
+</table>
 
-The following table presents which key is used to calculate the MIC of each data message type.
+The following table presents which key is used to calculate the MIC of each message type in LoRaWAN 1.0.x and 1.1.
 
 
 <table>
@@ -325,13 +406,13 @@ The following table presents which key is used to calculate the MIC of each data
    </td>
    <td><strong>Message Type</strong>
    </td>
-   <td><strong>MIC is calculated using</strong>
+   <td><strong>Key</strong>
    </td>
   </tr>
   <tr>
    <td>1.0.x
    </td>
-   <td>Join request
+   <td>Join-request
    </td>
    <td>AppKey
    </td>
@@ -339,7 +420,7 @@ The following table presents which key is used to calculate the MIC of each data
   <tr>
    <td>1.0.x
    </td>
-   <td>Join accept
+   <td>Join-accept
    </td>
    <td>AppKey
    </td>
@@ -363,11 +444,33 @@ The following table presents which key is used to calculate the MIC of each data
   <tr>
    <td>1.1
    </td>
-   <td>Join accept
+   <td>Join-request
    </td>
-   <td>If triggered by join request -> NwkKey
-<p>
-If triggered by rejoin request -> JSIntKey
+   <td>NwkSKey
+   </td>
+  </tr>
+  <tr>
+   <td>1.1
+   </td>
+   <td>Join-accept
+   </td>
+   <td>JSIntKey
+   </td>
+  </tr>
+  <tr>
+   <td>1.1
+   </td>
+   <td>Rejoin-request Type 0 and 2
+   </td>
+   <td>SNwkSIntKey
+   </td>
+  </tr>
+  <tr>
+   <td>1.1
+   </td>
+   <td>Rejoin-request Type 1
+   </td>
+   <td>JSIntKey
    </td>
   </tr>
   <tr>
@@ -375,9 +478,7 @@ If triggered by rejoin request -> JSIntKey
    </td>
    <td>Uplink data messages
    </td>
-   <td>If the end device is connected to a LoRaWAN 1.0 network server then, FNwkSIntKey
-<p>
-If the end device is connected to a LoRaWAN 1.1 network server then, SNwkSIntKey
+   <td>FNwkSIntKey and SNwkSIntKey
    </td>
   </tr>
   <tr>
@@ -390,19 +491,50 @@ If the end device is connected to a LoRaWAN 1.1 network server then, SNwkSIntKey
   </tr>
 </table>
 
+When a LoRaWAN 1.1 device is provisioned with a LoRaWAN 1.0.x Network Server, the MIC of each message is calculated as shown in the following table.
 
+<table>
+  <tr>
+   <td><strong>Message Type</strong>
+   </td>
+   <td><strong>Key</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Join-request
+   </td>
+   <td>NwkKey
+   </td>
+  </tr>
+   <tr>
+   <td>Join-accept
+   </td>
+   <td>NwkKey
+   </td>
+  </tr>
+  <tr>
+   <td>Uplink data messages
+   </td>
+   <td>FNwkSIntKey
+   </td>
+  </tr>
+  <tr>
+   <td>Downlink data messages
+   </td>
+   <td>FNwkSIntKey
+   </td>
+  </tr>
+</table>
 
-## Questions
+## Practice Questions
 
-
-
-1. The MAC commands can be transported in:
+1. MAC commands can be transported in:
     - <span style="text-decoration:underline;">FOpts</span>
     - FCtrl
     - FCnt
     - FPort
 
-2. The application payload can be transported in:
+2. Application data can be transported in:
     - <span style="text-decoration:underline;">FRMPayload</span>
     - FOpts
     - FPort
@@ -414,28 +546,28 @@ If the end device is connected to a LoRaWAN 1.1 network server then, SNwkSIntKey
     - FPort
     - FCtrl
     
-4. If the FRMPayload transports MAC commands in LoRaWAN 1.0.x, it must be encrypted using the:
+4. If the FRMPayload field transports MAC commands in LoRaWAN 1.0.x, it must be encrypted using the:
     - <span style="text-decoration:underline;">NwkSKey</span>
     - AppSKey
     - NwkSEncKey
     
-5. If the FRMPayload transports application data in LoRaWAN 1.0.x, it must be encrypted using the:
+5. If the FRMPayload field transports application data in LoRaWAN 1.0.x, it must be encrypted using the:
     - NwkSKey
     - <span style="text-decoration:underline;">AppSKey</span>
     - NwkSEncKey
     
-6. If the FRMPayload transports MAC commands in LoRaWAN 1.1, it must be encrypted using the:
+6. If the FRMPayload field transports MAC commands in LoRaWAN 1.1, it must be encrypted using the:
     - NwkSKey
     - AppSKey
     - <span style="text-decoration:underline;">NwkSEncKey</span>
     
-7. If the FRMPayload transports application-specific data in LoRaWAN 1.1, it must be encrypted using the:
+7. If the FRMPayload field transports application-specific data in LoRaWAN 1.1, it must be encrypted using the:
     - NwkSKey
     - <span style="text-decoration:underline;">AppSKey</span>
     - NwkSEncKey
     
-8. Which message initiates the OTAA procedure?
+8. Which message initiates the over-the-air-activation (OTAA) procedure?
     - <span style="text-decoration:underline;">Join-request message</span>
     - Join-accept message
-    - Rejoin-request message
     - Uplink data message
+    - Downlink data message
