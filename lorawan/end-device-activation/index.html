@@ -43,11 +43,11 @@
 
   <meta property="og:title" content="End Device Activation" />
 <meta property="og:description" content="Every end device must be registered with a network before sending and receiving messages. This procedure is known as activation. There are two activation methods available:
- Over-The-Air-Activation (OTAA) - the most secure activation method for end devices. Devices perform a join procedure with the network, during which a dynamic device address is assigned and security keys are negotiated with the device. Activation By Personalization (ABP) - requires hardcoding the device address as well as the security keys in the device." />
+ Over-The-Air-Activation (OTAA) - the most secure and recommended activation method for end devices. Devices perform a join procedure with the network, during which a dynamic device address is assigned and security keys are negotiated with the device. Activation By Personalization (ABP) - requires hardcoding the device address as well as the security keys in the device." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.thethingsnetwork.org/docs/lorawan/end-device-activation/" />
 <meta property="og:image" content="https://www.thethingsnetwork.org/docs/otaa-1.1.png" />
-<meta property="article:modified_time" content="2021-05-03T17:05:08+03:00" /><meta property="og:site_name" content="The Things Network" />
+<meta property="article:modified_time" content="2021-10-18T10:03:17+05:30" /><meta property="og:site_name" content="The Things Network" />
 
 
   <meta name="twitter:card" content="summary_large_image"/>
@@ -55,7 +55,7 @@
 
 <meta name="twitter:title" content="End Device Activation"/>
 <meta name="twitter:description" content="Every end device must be registered with a network before sending and receiving messages. This procedure is known as activation. There are two activation methods available:
- Over-The-Air-Activation (OTAA) - the most secure activation method for end devices. Devices perform a join procedure with the network, during which a dynamic device address is assigned and security keys are negotiated with the device. Activation By Personalization (ABP) - requires hardcoding the device address as well as the security keys in the device."/>
+ Over-The-Air-Activation (OTAA) - the most secure and recommended activation method for end devices. Devices perform a join procedure with the network, during which a dynamic device address is assigned and security keys are negotiated with the device. Activation By Personalization (ABP) - requires hardcoding the device address as well as the security keys in the device."/>
 
 
 </head>
@@ -268,35 +268,27 @@
           
 <p>Every end device must be registered with a network before sending and receiving messages. This procedure is known as <strong>activation</strong>. There are two activation methods available:</p>
 <ul>
-<li><strong>Over-The-Air-Activation (OTAA)</strong> - the most secure activation method for end devices. Devices perform a join procedure with the network, during which a dynamic device address is assigned and security keys are negotiated with the device.</li>
+<li><strong>Over-The-Air-Activation (OTAA)</strong> - the most secure and recommended activation method for end devices. Devices perform a join procedure with the network, during which a dynamic device address is assigned and security keys are negotiated with the device.</li>
 <li><strong>Activation By Personalization (ABP)</strong> - requires hardcoding the device address as well as the security keys in the device. ABP is <strong>less secure</strong> than OTAA and also has the downside that devices can not switch network providers without manually changing keys in the device.</li>
 </ul>
 <p>The join procedure for LoRaWAN 1.0.x and 1.1 is slightly different. The following two sections describe the join procedure for LoRaWAN 1.0.x and 1.1 separately.</p>
 <h2 id="over-the-air-activation-in-lorawan-10x">Over The Air Activation in LoRaWAN 1.0.x&nbsp;<a class="header-hash" href="#over-the-air-activation-in-lorawan-10x">#</a> </h2>
-<p>In LoRaWAN 1.0.x, the join procedure involves two MAC messages exchanged between the end device and the network server:</p>
+<p>In LoRaWAN 1.0.x, the join procedure requires two MAC messages to be exchanged between the end device and the Network Server:</p>
 <ul>
-<li>Join-request</li>
-<li>Join-accept</li>
+<li>Join-request - from end device to the Network Server</li>
+<li>Join-accept - from Network Server to the end device</li>
 </ul>
-<h3 id="before-activation">Before Activation&nbsp;<a class="header-hash" href="#before-activation">#</a> </h3>
 <p>Before activation, the <strong>AppEUI</strong>, <strong>DevEUI</strong>, and <strong>AppKey</strong> should be stored in the end device. The <strong>AppKey</strong> is an AES-128 bit secret key known as the <strong>root key</strong>. The same <strong>AppKey</strong> should be provisioned onto the network where the end device is going to register. The <strong>AppEUI</strong> and <strong>DevEUI</strong> are not secret and are visible to everyone.</p>
 <div class="notification is-info is-light has-text-dark">
   <h5 class="title is-family-sans-serif has-text-dark mb-1">Note:</h5>
   The <strong>AppKey</strong> is <strong>never sent</strong> over the network.
 </div>
 
-<h4 id="otaa-message-flow">OTAA Message Flow&nbsp;<a class="header-hash" href="#otaa-message-flow">#</a> </h4>
-<p>The steps below describe the message flow of the Over-The-Air-Activation (OTAA).</p>
+<p>The following steps describe the Over-The-Air-Activation (OTAA) procedure.</p>
 <p><img src="otaa-1.0.png" alt="alt_text" title="LoRaWAN 1.0 OTAA Steps"></p>
-<p><em>Figure: Message flow for Over-The-Air-Activation (OTAA) in LoRaWAN 1.0</em></p>
+<p><em>Figure: OTAA message flow in LoRaWAN 1.0</em></p>
 <h5 id="step-1">Step 1&nbsp;<a class="header-hash" href="#step-1">#</a> </h5>
-<p>The <strong>Join-request</strong> message is always sent by the <strong>end device</strong>. The <strong>Join-request</strong> message consists of the following three fields.</p>
-<ul>
-<li><strong>DevEUI</strong> – 64-bit globally unique end-device identifier in IEEE EUI64 address space.</li>
-<li><strong>AppEUI</strong> – 64-bit globally unique identifier in IEEE EUI64 address space that uniquely identifies the entity able to process the Join-request frame. This is also known as the application identifier.</li>
-<li><strong>DevNonce</strong> – this is a unique, random, 2-byte value generated by the end device. The network server uses the DevNonce to keep track of each end-device. The DevNonce value is used to prevent replay attacks. If the end device sends a Join-request with a previously used DevNonce, the network server <strong>rejects</strong> the Join-request and does not allow the end device to register with the network.</li>
-</ul>
-<p>The structure of the <strong>Join-request</strong> message is shown below. The <strong>Message Integrity Code (MIC)</strong> is calculated using all the fields of the Join-request message and the <strong>AppKey</strong> to ensure integrity of the message, and then added to the end:</p>
+<p>The join procedure is always initiated by the end device. The end device sends the <strong>Join-request</strong> message to the network that is going to be joined. The <strong>Join-request</strong> message consists of the following fields.</p>
 <table>
   <tr>
    <td><strong>8 bytes</strong>
@@ -305,8 +297,6 @@
    </td>
    <td><strong>2 bytes</strong>
    </td>
-   <td><strong>4 bytes</strong>
-   </td>
   </tr>
   <tr>
    <td>AppEUI
@@ -314,38 +304,27 @@
    <td>DevEUI
    </td>
    <td>DevNonce
-   </td>
-   <td>MIC
-   </td>
   </tr>
 </table>
+<ul>
+<li><strong>AppEUI</strong> – a 64-bit globally unique application identifier in IEEE EUI64 address space that uniquely identifies the entity able to process the Join-req frame.</li>
+<li><strong>DevEUI</strong> – a 64-bit globally unique device identifier in IEEE EUI64 address space that uniquely identifies the end-device.</li>
+<li><strong>DevNonce</strong> – a unique, random, 2-byte value generated by the end device. The Network Server uses the DevNonce of each end-device to keep track of their join requests. If an end device sends a Join-request with a previously used DevNonce (this situation is known as a replay attack), the Network Server <strong>rejects</strong> the Join-request and does not allow that end device to register with the network.</li>
+</ul>
+<p>The <strong>Message Integrity Code (MIC)</strong> is calculated over all the fields in the Join-request message using the <strong>AppKey</strong>. The calculated MIC is then added to the Join-request message.</p>
 <div class="notification is-info is-light has-text-dark">
   <h5 class="title is-family-sans-serif has-text-dark mb-1">Note:</h5>
   <ul>
-<li>The <strong>AppKey</strong> is not sent with the <strong>Join-request</strong> message. It is used to calculate the <strong>MIC</strong> only.</li>
+<li>The <strong>AppKey</strong> is not sent with the <strong>Join-request</strong> message.</li>
 <li>The <strong>Join-request</strong> message is <strong>not encrypted</strong>.</li>
 </ul>
 
 </div>
 
-<p>The <strong>Join-request</strong> message can be transmitted using any data rate and using one of the specified join channels. These join channels are region-specific. For example, in Europe an end device can transmit the join-request message by randomly choosing among 868.10 MHz, 868.30 MHz, or 868.50 MHz. The <strong>Join-request</strong> message travels through one or more gateways that simply relay the message back to the network server.</p>
-<div class="notification is-info is-light has-text-dark">
-  <h5 class="title is-family-sans-serif has-text-dark mb-1">Note:</h5>
-  No response is given to the end-device if the Join-request is not accepted.
-</div>
-
+<p>The <strong>Join-request</strong> message can be transmitted using any data rate and using one of the region-specific join channels. For example, in Europe an end device can transmit the Join-request message by randomly choosing among 868.10 MHz, 868.30 MHz, or 868.50 MHz. The Join-request message travels through one or more gateways to the Network Server.</p>
 <h5 id="step-2">Step 2&nbsp;<a class="header-hash" href="#step-2">#</a> </h5>
-<p>Now the <strong>Join-request</strong> message has been received by the Network Server. If the end device is permitted to join with the network the network server will respond to the end device message with the <strong>Join-accept</strong> message.</p>
+<p>The Network Server processes the Join-request message. The Network Server will generate two <strong>session keys</strong> (NwkSKey and AppSKey) and the <strong>Join-accept</strong> message if the end-device is permitted to join a network.</p>
 <p>The <strong>Join-accept</strong> message consists of the following fields.</p>
-<ul>
-<li><strong>AppNonce</strong> – this is a random value or some form of unique ID provided by the network server. The AppNonce is used by the end device to derive the two session keys, <strong>AppSKey</strong> and <strong>NwkSKey</strong>.</li>
-<li><strong>NetID</strong> – consists of the network ID (the 7 least significant bits) and the remaining 17 most significant bits are chosen by the network operator.</li>
-<li><strong>DevAddr</strong> – this is the 32-bit device address assigned by the network server. Consists of NwkID and NwkAddress. The device address is unique within the current network.</li>
-<li><strong>DLSettings</strong> – this is a 1-byte sized field consisting of downlink settings which the end device should use.</li>
-<li><strong>RxDelay</strong> – the delay between TX and RX</li>
-<li><strong>CFList</strong> – contains the optional list of channel frequencies to be used for the end device</li>
-</ul>
-<p>The following figure shows the <strong>Join-accept</strong> message with all the above-generated values. The MIC is calculated using the <strong>AppKey</strong> and added to the frame.</p>
 <table>
   <tr>
    <td><strong>3 bytes</strong>
@@ -358,10 +337,7 @@
    </td>
    <td><strong>1 bytes</strong>
    </td>
-   <td><strong>16 bytes</strong>
-   </td>
-   <td><strong>4 bytes</strong>
-   </td>
+   <td><strong>16 bytes (optional)</strong>
   </tr>
   <tr>
    <td>AppNonce
@@ -376,125 +352,106 @@
    </td>
    <td>CFList
    </td>
-   <td>MIC
-   </td>
   </tr>
 </table>
-<p>The <strong>Join-accept</strong> message itself is then encrypted with the <strong>AppKey</strong>.</p>
+<ul>
+<li><strong>AppNonce</strong> – a random value or unique ID provided by the Network Server. The AppNonce is used by the end device to derive the two session keys, <strong>AppSKey</strong> and <strong>NwkSKey</strong>.</li>
+<li><strong>NetID</strong> – consists of the network identifier (NwkID), the most significant 7 bits.</li>
+<li><strong>DevAddr</strong> – a 32-bit device address assigned by the Network Server to identify the end device within the current network.</li>
+<li><strong>DLSettings</strong> – a 1-byte field consisting of downlink settings which the end device should use.</li>
+<li><strong>RxDelay</strong> – contains the delay between TX and RX.</li>
+<li><strong>CFList</strong> – an optional list of channel frequencies for the network the end-device is joining. These frequencies are region-specific.</li>
+</ul>
+<p>The <strong>Message Integrity Code (MIC)</strong> is calculated over all the fields in the Join-accept message using the <strong>AppKey</strong>. The calculated MIC is then added to the Join-accept message.</p>
+<p>The <strong>Join-accept</strong> message itself is then encrypted with the <strong>AppKey</strong>. The Network Server uses an AES decrypt operation in ECB mode to encrypt the Join-accept message.</p>
 <h5 id="step-3">Step 3&nbsp;<a class="header-hash" href="#step-3">#</a> </h5>
-<p>The Network Server sends the encrypted <strong>Join-accept</strong> message back to the end device. The <strong>Join-accept</strong> message is sent as a normal downlink.</p>
+<p>The Network Server sends the encrypted <strong>Join-accept</strong> message back to the end device as a normal downlink.</p>
+<div class="notification is-info is-light has-text-dark">
+  <h5 class="title is-family-sans-serif has-text-dark mb-1">Note:</h5>
+  No response is given to the end-device if the Join-request message is not accepted by the Network Server.
+</div>
+
 <h5 id="step-4">Step 4&nbsp;<a class="header-hash" href="#step-4">#</a> </h5>
-<p>The Network Server sends the <strong>AppSKey</strong> to the <strong>Application Server</strong>.</p>
+<p>The Network Server keeps the <strong>NwkSKey</strong> and distributes the <strong>AppSKey</strong> to the Application Server.</p>
 <h5 id="step-5">Step 5&nbsp;<a class="header-hash" href="#step-5">#</a> </h5>
-<p>The end device uses the <strong>AppKey</strong> to derive the two session keys: the <strong>Network Session Key (NwkSKey)</strong> and the <strong>Application Session Key (AppSKey)</strong>.</p>
-<h5 id="after-activation">After Activation&nbsp;<a class="header-hash" href="#after-activation">#</a> </h5>
+<p>The end device decrypts the Join-accept message using AES encrypt operation. The end device uses the <strong>AppKey</strong> and  <strong>AppNonce</strong> to derive the two session keys, the <strong>Network Session Key (NwkSKey)</strong> and the <strong>Application Session Key (AppSKey)</strong>.</p>
+<p>The end device is now activated on the Network.</p>
 <p>After activation, the following additional information is stored in the end device.</p>
 <ul>
-<li><strong>DevAddr</strong> - The DevAddr is allocated by the Network Server of the end-device. It is a 32-bit device address that identifies the end-device within the current network.</li>
-<li><strong>NwkSKey</strong> - The NwkSKey is used by the end device and network server to calculate and verify the Message Integrity Code (MIC) of all data messages to ensure data integrity. The NwkSKey is also used to encrypt and decrypt payloads with MAC commands.</li>
-<li><strong>AppSKey</strong> - The AppSKey is used to secure end-to-end communications between the end device and the application server by encrypting payloads with application-specific data.</li>
+<li><strong>DevAddr</strong> - a 32-bit device address assigned by the Network Server to identify the end device within the current network.</li>
+<li><strong>NwkSKey</strong> - the network session key is used by the end device and Network Server to calculate and verify the Message Integrity Code (MIC) of all data messages for ensuring message integrity. The NwkSKey is also used to encrypt and decrypt payloads with MAC commands.</li>
+<li><strong>AppSKey</strong> - the application session key is used to encrypt and decrypt application payloads in data messages for ensuring message confidentiality.</li>
 </ul>
 <h2 id="over-the-air-activation-in-lorawan-11">Over-The-Air-Activation in LoRaWAN 1.1&nbsp;<a class="header-hash" href="#over-the-air-activation-in-lorawan-11">#</a> </h2>
-<p>In LoRaWAN 1.1, the join procedure involves two MAC messages exchanged between the end device and the Join Server:</p>
+<p>In LoRaWAN 1.0.x, the join procedure requires two MAC messages to be exchanged between the end device and the Join Server:</p>
 <ul>
-<li>Join-request</li>
-<li>Join-accept</li>
+<li>Join-request - from end device to the Join Server</li>
+<li>Join-accept - from Join Server to the end device</li>
 </ul>
-<h5 id="before-activation-1">Before Activation&nbsp;<a class="header-hash" href="#before-activation-1">#</a> </h5>
 <p>Before activation, the <strong>JoinEUI</strong>, <strong>DevEUI</strong>, <strong>AppKey</strong>, and <strong>NwkKey</strong> should be stored in the end device. The <strong>AppKey</strong> and <strong>NwkKey</strong> are AES-128 bit secret keys known as <strong>root keys</strong>. The matching <strong>AppKey</strong>, <strong>NwkKey</strong>, and <strong>DevEUI</strong> should be provisioned onto the Join Server that will assist in the processing of the join procedure and session key derivation. The <strong>JoinEUI</strong> and <strong>DevEUI</strong> are <strong>not secret</strong> and visible to everyone.</p>
 <div class="notification is-info is-light has-text-dark">
   <h5 class="title is-family-sans-serif has-text-dark mb-1">Note:</h5>
   The <strong>AppKey</strong> and <strong>NwkKey</strong> are never sent over the network.
 </div>
 
-<p><strong><span style="text-decoration:underline;">OTAA Message Flow:</span></strong></p>
-<p>The steps below describe the message flow of the Over-The-Air-Activation (OTAA).</p>
+<p>The following steps describe the Over-The-Air-Activation (OTAA) procedure.</p>
 <p><img src="otaa-1.1.png" alt="alt_text" title="LoRaWAN 1.1 OTAA steps"></p>
-<p><em>Figure: Message flow for Over-The-Air-Activation (OTAA) in LoRaWAN 1.1</em></p>
+<p><em>Figure: OTAA message flow in LoRaWAN 1.1</em></p>
 <h5 id="step-1-1">Step 1&nbsp;<a class="header-hash" href="#step-1-1">#</a> </h5>
-<p>The <strong>Join-request</strong> message is transmitted by the <strong>end device</strong>. It consists of the following three fields:</p>
-<ul>
-<li><strong>DevEUI</strong> – 64-bit global end-device ID in IEEE EUI64 address space that uniquely identifies the end-device.</li>
-<li><strong>JoinEUI</strong> – 64-bit global application ID in IEEE EUI64 address space that uniquely identifies the <strong>Join Server</strong> that can assist in the processing of the Join procedure and session keys derivation.</li>
-<li><strong>DevNonce</strong> – this is a 2-byte counter, starting at 0 when the device is initially powered up and incremented with every <strong>Join-request</strong>. The DevNonce value is used to prevent <strong>replay attacks</strong>.</li>
-</ul>
-<div class="notification is-info is-light has-text-dark">
-  <h5 class="title is-family-sans-serif has-text-dark mb-1">Note:</h5>
-  <ul>
-<li>Learning about replay attacks is beyond the scope of The Things Fundamentals certification.</li>
-<li>In LoRaWAN 1.1 <strong>AppEUI</strong> is replaced with the <strong>JoinEUI</strong>.</li>
-<li>The procedure for joining a LoRaWAN 1.0 end device with the LoRaWAN 1.1 network is also beyond the scope of The Things Fundamentals certification.</li>
-<li>Rejoin-request messages will be covered in The Things Advanced certification.</li>
-</ul>
-
-</div>
-
-<p>The structure of the <strong>Join-request</strong> message is shown in the following figure. The MIC is calculated using the <strong>NwkKey</strong>. The calculated MIC is added to the end of the <strong>Join-request</strong> message. The resulting frame is known as the <strong>PHYPayload</strong>:</p>
+<p>The join procedure is always initiated by the end device. The end device sends the <strong>Join-request</strong> message to the network that is going to be joined. The <strong>Join-request</strong> message consists of the following fields.</p>
 <table>
   <tr>
-    <td><strong>1 byte</strong>
-   </td>
    <td><strong>8 bytes</strong>
    </td>
    <td><strong>8 bytes</strong>
    </td>
    <td><strong>2 bytes</strong>
    </td>
-   <td><strong>4 bytes</strong>
-   </td>
   </tr>
   <tr>
-   <td>MHDR
-   </td>
    <td>JoinEUI
    </td>
    <td>DevEUI
    </td>
    <td>DevNonce
    </td>
-   <td>MIC
-   </td>
   </tr>
 </table>
+<ul>
+<li><strong>JoinEUI</strong> – a 64-bit global application identifier in IEEE EUI64 address space that uniquely identifies the <strong>Join Server</strong> that can assist in the processing of the Join-request and derivation of the session keys.</li>
+<li><strong>DevEUI</strong> – a 64-bit global device identifier in IEEE EUI64 address space that uniquely identifies the end-device.</li>
+<li><strong>DevNonce</strong> – a 2-byte counter, starting at 0 when the device is initially powered up and incremented with every <strong>Join-request</strong>. The DevNonce value is used to prevent <strong>replay attacks</strong>.</li>
+</ul>
 <div class="notification is-info is-light has-text-dark">
   <h5 class="title is-family-sans-serif has-text-dark mb-1">Note:</h5>
   <ul>
-<li>The <strong>NwkKey</strong> is not sent with the <strong>Join-request</strong> message. It is used to calculate the MIC only.</li>
+<li>In LoRaWAN 1.1 <strong>AppEUI</strong> is replaced with the <strong>JoinEUI</strong>.</li>
+</ul>
+
+</div>
+
+<p>The MIC is calculated over all the fields in the Join-request message using the <strong>NwkKey</strong>. The calculated MIC is then added to the <strong>Join-request</strong> message.</p>
+<div class="notification is-info is-light has-text-dark">
+  <h5 class="title is-family-sans-serif has-text-dark mb-1">Note:</h5>
+  <ul>
+<li>The <strong>NwkKey</strong> is not sent with the <strong>Join-request</strong> message.</li>
 <li>The <strong>Join-request</strong> message is not encrypted and sent as plain text.</li>
 </ul>
 
 </div>
 
-<p>Finally, the end-device transmits the <strong>Join-request</strong> message. The Join-request message can be transmitted using any data rate and using one of the specified join channels. These join channels are region-specific, for example, in Europe an end device can transmit the join-request message by randomly choosing among 868.10 MHz, 868.30 MHz, or 868.50 MHz. The <strong>Join-request</strong> message travels through one or more gateways that simply relay the message back to the network server.</p>
+<p>The Join-request message can be transmitted using any data rate and using one of the region-specific join channels. For example, in Europe an end device can transmit the Join-request message by randomly choosing among 868.10 MHz, 868.30 MHz, or 868.50 MHz. The <strong>Join-request</strong> message travels through one or more gateways to the Network Server.</p>
 <div class="notification is-info is-light has-text-dark">
   <h5 class="title is-family-sans-serif has-text-dark mb-1">Note:</h5>
   No response is given to the end-device if the Join-request is not accepted.
 </div>
 
 <h5 id="step-2-1">Step 2&nbsp;<a class="header-hash" href="#step-2-1">#</a> </h5>
-<p>The Network Server uses DNS to look up the IP address of the Join Server based on the <strong>JoinEUI</strong> in the received <strong>Join-request</strong> message.</p>
+<p>The Network Server forwards the Join-request message to the corresponding Join Server.</p>
 <h5 id="step-3-1">Step 3&nbsp;<a class="header-hash" href="#step-3-1">#</a> </h5>
-<p>If DNS lookup succeeds, the Network Server sends a <strong>JoinReq</strong> message (backend message) to the <strong>Join Server</strong>. This message contains the following:</p>
-<ul>
-<li>PHYPayload of the join-request message</li>
-<li>MAC version</li>
-<li>DevEUI</li>
-<li>DevAddr</li>
-<li>DLSettings</li>
-<li>RxDelay</li>
-<li>CFList</li>
-</ul>
+<p>The Join Server processes the Join-request message. The Join Server will generate all the session keys (AppSKey, FNwkSIntKey, SNwkSIntKey, and NwkSEncKey) if the end-device is permitted to join the network.</p>
 <h5 id="step-4-1">Step 4&nbsp;<a class="header-hash" href="#step-4-1">#</a> </h5>
-<p>The Join Server processes the <strong>Join-request</strong> message and sends the <strong>JoinAns</strong> message (this is also a backend message) to the Network Server. If successful the <strong>JoinAns</strong> message contains the following:</p>
-<ul>
-<li>PHYPayload with Join-accept message</li>
-<li>Network session keys</li>
-<li>Serving Network session integrity key (SNwkSIntKey)</li>
-<li>Forwarding Network session integrity key (FNwkSIntKey)</li>
-<li>Network session encryption key (NwkSEncKey)</li>
-<li>Encrypted AppSKey (network server can&rsquo;t read this)</li>
-</ul>
-<p>The Network Server prepares the <strong>Join-accept</strong> message based on the above information.</p>
+<p>If the above step gets success, the Network Server generates the <strong>Join-accept</strong> message. The Join-accept message consists of the following fields.</p>
 <table>
   <tr>
    <td><strong>1 byte</strong>
@@ -525,35 +482,55 @@
    </td>
   </tr>
 </table>
-<p>The <strong>Join-accept</strong> message is encrypted with the <strong>NwkKey</strong>.</p>
+<ul>
+<li><strong>JoinNonce</strong> – a device specific counter value provided by the Join Server and used by the end device to derive the session keys, <strong>FNwkSIntKey</strong>, <strong>SNwkSIntKey</strong>, <strong>NwkSEncKey</strong>, and <strong>AppSKey</strong>.</li>
+<li><strong>NetID</strong> – a 24-bit unique network identifier.</li>
+<li><strong>DevAddr</strong> – a 32-bit device address assigned by the Network Server to identify the end device within the current network.</li>
+<li><strong>DLSettings</strong> – a 1-byte field consisting of downlink settings which the end device should use.</li>
+<li><strong>RxDelay</strong> – contains delay between TX and RX</li>
+<li><strong>CFList</strong> – an optional list of channel frequencies for the network the end-device is joining. These frequencies are region-specific.</li>
+</ul>
+<p>The Message Integrity Code (MIC) is calculated over all the fields in the Join-accept message using NwkKey (for LoRaWAN 1.0 devices) or JSIntKey (for LoRaWAN 1.1 devices) . The calculated MIC is then added to the Join-accept message.</p>
+<p>The Join-accept message itself is then encrypted with the NwkKey. The Network Server uses an AES decrypt operation in ECB mode to encrypt the join-accept message.</p>
+<p>The <strong>Join-accept</strong> message is encrypted with the <strong>NwkKey</strong> (if triggered by Join-request) or <strong>JSEncKey</strong> (if triggered by Rejoin-request).</p>
+<p>Then the Network Server sends the encrypted Join-accept message back to the end device as a normal downlink.</p>
+<div class="notification is-info is-light has-text-dark">
+  <h5 class="title is-family-sans-serif has-text-dark mb-1">Note:</h5>
+  No response is given to the end-device if the Join-request message is not accepted by the Network Server.
+</div>
+
 <h5 id="step-5-1">Step 5&nbsp;<a class="header-hash" href="#step-5-1">#</a> </h5>
-<p>The Network Server forwards the received PHYPayload with the <strong>Join-accept</strong> message to the end-device if the received <strong>JoinAns</strong> message indicates success. The <strong>Join-accept</strong> message is sent as a normal downlink.</p>
-<p>The end-device calculates the MIC, and generates the <strong>network session keys</strong> and <strong>AppSKey</strong>.</p>
-<p>The <strong>FNwkSIntKey</strong>, <strong>SNwkSIntKey</strong>, and <strong>NwkSEncKey</strong> are derived from the <strong>NwkKey</strong>.</p>
+<p>The Join Server sends the AppSKey to the Application Server and the three network session keys (FNwkSIntKey, SNwkSIntKey, and NwkSEncKey) to the Network Server.</p>
 <h5 id="step-6">Step 6&nbsp;<a class="header-hash" href="#step-6">#</a> </h5>
-<p>When the Network receives an uplink packet from the end-device, the Network Server will send the <strong>DevEUI</strong> and encrypted <strong>AppSKey</strong> along with the application payload to the <strong>Application Server</strong>.</p>
-<h5 id="step-7">Step 7&nbsp;<a class="header-hash" href="#step-7">#</a> </h5>
-<p>When the Application Server receives the encrypted <strong>AppSKey</strong> along with the application payload, it will decrypt the <strong>AppSKey</strong> using a secret key shared between the <strong>Join Server</strong> and the <strong>Application Server</strong>, and use the <strong>AppSKey</strong> to decrypt the received payload. If the encrypted <strong>AppSKey</strong> is not made available by the Network Server, then the Application Server will proceed to <strong>Step 8</strong>.</p>
-<h5 id="step-8">Step 8&nbsp;<a class="header-hash" href="#step-8">#</a> </h5>
-<p>In this alternative step, the Application Server requests the <strong>AppSKey</strong> directly from the <strong>Join Server</strong>. The Application Server will request the <strong>AppSKey</strong> identified by the <strong>DevEUI</strong> of the end device from the <strong>Join Server</strong> by sending an <strong>AppSKeyReq</strong> message (backend message). The <strong>AppSKey</strong> is encrypted using a shared secret between the <strong>Join Server</strong> and the <strong>Application Server</strong>. The <strong>Join Server</strong> sends the encrypted <strong>AppSKey</strong>, and <strong>DevEUI</strong> to the Application Server in an <strong>AppSKeyAns</strong> message (backend message). The Application Server decrypts the encrypted <strong>AppSKey</strong>, then uses the <strong>AppSKey</strong> to encrypt and decrypt the application payload.</p>
-<h5 id="after-activation-1">After Activation&nbsp;<a class="header-hash" href="#after-activation-1">#</a> </h5>
+<p>The end-device decrypts the Join-accept message using AES encrypt operation. The end device uses AppKey, NwkKey, and JoinNonce to generate session keys.</p>
+<p>For LoRaWAN 1.0.x devices,</p>
+<ul>
+<li>AppSKey is derived from the NwkKey.</li>
+<li>FNwkSIntKey, SNwkSIntKey, and NwkSEncKey are derived from the NwkKey.</li>
+</ul>
+<p>For  LoRaWAN 1.1 devices,</p>
+<ul>
+<li>AppSKey is derived from AppKey.</li>
+<li>FNwkSIntKey, SNwkSIntKey, and NwkSEncKey are derived from the NwkKey.</li>
+</ul>
+<p>The end device is now activated on the Network.</p>
 <p>After activation, the following additional information is stored in the end device.</p>
 <ul>
-<li><strong>DevAddr</strong> - The DevAddr is allocated by the Network Server of the end-device. It is a 32-bit device address that identifies the end-device within the current network.</li>
-<li><strong>FNwkSIntKey</strong> - This is a network session key that is used by the end device to calculate the MIC or part of the MIC of all uplink data messages to ensure data integrity.</li>
-<li><strong>SNwkSIntKey</strong> - This is a network session key specific to the end device. It is used by the end device to verify the MIC of all downlink data messages to ensure data integrity and to compute half of the uplink messages MIC.</li>
-<li><strong>NwkSEncKey</strong> - This is a network session key specific to the end device. It is used to encrypt and decrypt uplink and downlink MAC commands transmitted as payload on port 0 or in the FOpt field.</li>
-<li><strong>AppSKey</strong> - This is an application-specific session key used by both the application server and the end device to encrypt and decrypt the payload field of application specific data messages.</li>
+<li><strong>DevAddr</strong> - a 32-bit device address assigned by the Network Server to identify the end device within the current network.</li>
+<li><strong>FNwkSIntKey</strong> - a network session key that is used by the end device to calculate the MIC (partially) of all uplink data messages for ensuring message integrity.</li>
+<li><strong>SNwkSIntKey</strong> - a network session key that is used by the end device to calculate the MIC (partially) of all uplink data messagse and calculate the MIC of all downlink data messages for ensuring message integrity.</li>
+<li><strong>NwkSEncKey</strong> - a network session key that is used to encrypt and decrypt the payloads with MAC commands of the uplink and downlink data messages for ensuring message confidentiality.</li>
+<li><strong>AppSKey</strong> - a session key used by both the Application Server and the end device to encrypt and decrypt the application data in the data messages for ensuring message confidentiality.</li>
 </ul>
 <h2 id="activation-by-personalization">Activation By Personalization&nbsp;<a class="header-hash" href="#activation-by-personalization">#</a> </h2>
-<p>Activation By Personalization (ABP) directly ties an end-device to a pre-selected network, bypassing the join procedure. Activation by Personalization is the less secure activation method, and also has the downside that devices can not switch network providers without manually changing keys in the device. A join server is not involved in the ABP process.</p>
+<p>Activation By Personalization (ABP) directly ties an end-device to a pre-selected network, bypassing the over-the-air-activation procedure. Activation by Personalization is the less secure activation method, and also has the downside that devices can not switch network providers without manually changing keys in the device. A Join Server is not involved in the ABP process.</p>
 <p>An end device activated using the ABP method can only work with a single network and keeps the same security session for its entire lifetime.</p>
 <h3 id="activation-by-personalisation-in-lorawan-10x">Activation By Personalisation in LoRaWAN 1.0.x&nbsp;<a class="header-hash" href="#activation-by-personalisation-in-lorawan-10x">#</a> </h3>
-<p>In LoRaWAN 1.0.x, the <strong>DevAddr</strong> and the two session keys <strong>NwkSKey</strong> and <strong>AppSKey</strong> are directly stored into the end-device instead of the DevEUI, AppEUI, and the AppKey. The same <strong>DevAddr</strong> should be stored in the Network Server. Each end device should have a unique set of <strong>NwkSKey</strong> and <strong>AppSkey</strong>. The same <strong>NwkSKey</strong> and <strong>AppSKey</strong> should be stored in the Network Server and the Application Server, respectively (see the figure below).</p>
+<p>The <strong>DevAddr</strong> and the two session keys <strong>NwkSKey</strong> and <strong>AppSKey</strong> are directly stored into the end-device instead of the DevEUI, AppEUI, and the AppKey. Each end device should have a unique set of NwkSKey and AppSkey. The same <strong>DevAddr</strong> and <strong>NwkSKey</strong> should be stored in the Network Server and the <strong>AppSKey</strong> should be stored in the Application Server</p>
 <p><img src="abp-1.0.png" alt="alt_text" title="LoRaWAN 1.0 ABP"></p>
 <p><em>Figure: Pre-sharing DevAddr and session keys for ABP in LoRaWAN 1.0</em></p>
 <h3 id="activation-by-personalisation-in-lorawan-11">Activation By Personalisation in LoRaWAN 1.1&nbsp;<a class="header-hash" href="#activation-by-personalisation-in-lorawan-11">#</a> </h3>
-<p>In LoRaWAN 1.1, the <strong>DevAddr</strong> and the four-session keys <strong>FNwkSIntKey</strong>, <strong>SNwkSIntKey</strong>, <strong>NwkSEncKey</strong>, and <strong>AppSKey</strong> are directly stored into the end device instead of the DevEUI, JoinEUI, AppKey, and NwkKey. The same <strong>FNwkSIntKey</strong>, <strong>SNwkSIntKey</strong>, and <strong>NwkSEncKey</strong> should be stored in the Network Server and the and <strong>AppSKey</strong> should be stored in the Application Server. The same <strong>DevAddr</strong> should be stored in the Network Server.</p>
+<p>The <strong>DevAddr</strong> and the four-session keys <strong>FNwkSIntKey</strong>, <strong>SNwkSIntKey</strong>, <strong>NwkSEncKey</strong>, and <strong>AppSKey</strong> are directly stored into the end device instead of the DevEUI, JoinEUI, AppKey, and NwkKey. The same <strong>DevAddr</strong>,  <strong>FNwkSIntKey</strong>, <strong>SNwkSIntKey</strong>, and <strong>NwkSEncKey</strong> should be stored in the Network Server and the and <strong>AppSKey</strong> should be stored in the Application Server.</p>
 <p><img src="abp-1.1.png" alt="alt_text" title="LoRaWAN 1.1 ABP"></p>
 <p><em>Figure: Pre-sharing DevAddr and session keys for ABP in LoRaWAN 1.1</em></p>
 <h2 id="questions">Questions&nbsp;<a class="header-hash" href="#questions">#</a> </h2>
