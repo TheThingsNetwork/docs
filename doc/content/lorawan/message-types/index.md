@@ -446,7 +446,7 @@ The following table presents which key is used to calculate the MIC of each mess
    </td>
    <td>Join-request
    </td>
-   <td>NwkSKey
+   <td>NwkKey
    </td>
   </tr>
   <tr>
