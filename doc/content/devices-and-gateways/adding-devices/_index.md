@@ -3,19 +3,17 @@ title: Adding Devices
 section: Devices
 ---
 
-To perform uplink and/or downlink communication between your end device and The Things Stack Community Edition, you first need to register/add your device on The Things Community Edition. 
+To receive uplinks and send downlinks to your end device, you first need to add your device in The Things Stack Community Edition. Follow instructions at [The Things Stack - Adding Devices](https://www.thethingsindustries.com/docs/devices/adding-devices/)!
 
-> Devices are added within [applications]({{< ref "applications-and-integrations" >}}).
+Devices are added within [applications]({{< ref "applications-and-integrations" >}}). Applications are useful for grouping devices by purpose or location, for example.
 
-Registering your device can be done in two ways, via <a href="https://www.thethingsindustries.com/docs/getting-started/console/" target="_blank">Console</a> or via <a href="https://www.thethingsindustries.com/docs/getting-started/cli/" target="_blank">CLI</a>.
+Registering your device can be done in two ways, via [The Things Stack Console](www.thethingsindustries.com/docs/getting-started/console/) or via the [CLI](https://www.thethingsindustries.com/docs/getting-started/cli/).
 
-Before adding your end device, make sure you know of which type your device is - **ABP** (Activation By Personalization) or **OTAA** (Over-The-Air-Activation). Depending on the type, some steps differ during the registration procedure. 
+Before adding your end device, make sure you know of which type your device is - **ABP** (Activation By Personalization) or **OTAA** (Over-The-Air-Activation). Depending on the type, some steps differ during the registration procedure. [Learn why using OTAA devices is highly recommended](https://www.thethingsindustries.com/docs/devices/abp-vs-otaa/).
 
-> <a href="https://www.thethingsindustries.com/docs/devices/abp-vs-otaa/" target="_blank">Learn why using OTAA devices is highly recommended</a>.
+## Adding a Device Using the Console
 
-## Adding a device using Console
-
-If using the Console, you can add a device manually or using the <a href="https://github.com/TheThingsNetwork/lorawan-devices/tree/master" target="_blank">LoRaWAN Device Repository</a>.
+If using the Console, you can add a device manually or using the [LoRaWAN Device Repository](https://github.com/TheThingsNetwork/lorawan-devices/tree/master).
 
 Manual registration is just a matter of providing some end device information like **MAC Version**, **PHY Version**, **Frequency Plan**, **DevEUI**, **JoinEUI**, etc. The required infomation depends on whether your end device is ABP or OTAA type. <a href="https://www.thethingsindustries.com/docs/devices/adding-devices" target="_blank">See details about adding devices manually using the Console</a>.
 

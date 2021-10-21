@@ -19,6 +19,7 @@ To make sure you are exploiting device's capabilities in the most efficient way,
 - Use a different seed for every device's random number generator to make sure channels are truly being selected randomly, and also to avoid device synchronization.
 - Use Adaptive Data Rate (ADR) mechanism for stationary devices to minimize the power consumption. 
 - Use 32 bit frame counters that increment after each uplink/downlink to prevent replay attacks.
-- Do not assume link loss if at least 3 ACKs are not missed. 
+- Do not assume link loss if at least 3 ACKs are not missed.
+- Use Hardware Secure Elements. Learn more about the [ATECC608A security solution developed by Microchip The Things Industries](https://www.thethingsindustries.com/docs/devices/atecc608a/).
 
-> <a href="https://www.thethingsindustries.com/docs/devices/best-practices/" target="_blank">Follow this link to read more details about best practices</a>.
+Read more best practices at [The Things Stack - Best Practices](https://www.thethingsindustries.com/docs/devices/best-practices/)
