@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <meta name="generator" content="Hugo 0.79.0" />
+  <meta name="generator" content="Hugo 0.88.1" />
 
   <title>Configuration | The Things Network</title>
   <link rel="canonical" href="https://www.thethingsnetwork.org/docs/gateways/kerlink/station/config/" />
@@ -38,15 +38,14 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.504b3e39c2bace42c4e70fc2480bf01ed9bbbbc2831194cfa95412953f38e1d5.css" integrity="sha256-UEs&#43;OcK6zkLE5w/CSAvwHtm7u8KDEZTPqVQSlT844dU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.1a1a30812d4274d8616380644cbf1670d6a3bc91fc7bd1d2c1d89177ea3d75f9.css" integrity="sha256-GhowgS1CdNhhY4BkTL8WcNajvJH8e9HSwdiRd&#43;o9dfk=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://www.thethingsnetwork.org/static/common/css/ui.css" crossorigin="anonymous">
 
   <meta property="og:title" content="Configuration" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.thethingsnetwork.org/docs/gateways/kerlink/station/config/" />
-<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
-<meta property="og:site_name" content="The Things Network" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/gateways/kerlink/station/config/" /><meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/><meta property="og:site_name" content="The Things Network" />
+
 
 
   <meta name="twitter:card" content="summary_large_image"/>
@@ -431,9 +430,9 @@
 </blockquote>
 <h2 id="check-if-the-packet-forwarder-is-running">Check if the Packet forwarder is running&nbsp;<a class="header-hash" href="#check-if-the-packet-forwarder-is-running">#</a> </h2>
 <p>Use the following command on the gateway to check whether data is being sent and received:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">tcpdump -AUq port <span class="m">1700</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">tcpdump -AUq port <span class="m">1700</span>
 </code></pre></div><p>The output must be somewhat similar to the following. Check if both inbound as well as outbound traffic are shown:</p>
-<pre><code>listening on eth0, link-type EN10MB (Ethernet), capture size 65535 bytes
+<pre tabindex="0"><code>listening on eth0, link-type EN10MB (Ethernet), capture size 65535 bytes
 10:40:51.571795 IP 10.10.1.84.59170 &gt; 52.169.76.203.1700: UDP, length 202
 E.....@.@...
 

@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <meta name="generator" content="Hugo 0.79.0" />
+  <meta name="generator" content="Hugo 0.88.1" />
 
   <title>Thing Shadows | The Things Network</title>
   <link rel="canonical" href="https://www.thethingsnetwork.org/docs/applications/aws/thing-shadows/" />
@@ -38,15 +38,14 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.504b3e39c2bace42c4e70fc2480bf01ed9bbbbc2831194cfa95412953f38e1d5.css" integrity="sha256-UEs&#43;OcK6zkLE5w/CSAvwHtm7u8KDEZTPqVQSlT844dU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.1a1a30812d4274d8616380644cbf1670d6a3bc91fc7bd1d2c1d89177ea3d75f9.css" integrity="sha256-GhowgS1CdNhhY4BkTL8WcNajvJH8e9HSwdiRd&#43;o9dfk=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://www.thethingsnetwork.org/static/common/css/ui.css" crossorigin="anonymous">
 
   <meta property="og:title" content="Thing Shadows" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.thethingsnetwork.org/docs/applications/aws/thing-shadows/" />
-<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
-<meta property="og:site_name" content="The Things Network" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/applications/aws/thing-shadows/" /><meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/><meta property="og:site_name" content="The Things Network" />
+
 
 
   <meta name="twitter:card" content="summary_large_image"/>
@@ -321,7 +320,7 @@
 <p>The integration supports reporting shadow state on uplink messages, and send shadow delta updates as downlink messages.</p>
 <h2 id="report-shadow-state">Report Shadow State&nbsp;<a class="header-hash" href="#report-shadow-state">#</a> </h2>
 <p>For reporting shadow state on uplink messages, you need to return the state in a <code>state</code> object as a result of your Decoder or Converter payload function in The Things Network. Do not put telemetry inside the <code>state</code> object. For example:</p>
-<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">Decoder</span><span class="p">(</span><span class="nx">bytes</span><span class="p">,</span> <span class="nx">port</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">Decoder</span><span class="p">(</span><span class="nx">bytes</span><span class="p">,</span> <span class="nx">port</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">var</span> <span class="nx">light</span> <span class="o">=</span> <span class="p">(</span><span class="nx">bytes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="mi">8</span><span class="p">)</span> <span class="o">|</span> <span class="nx">bytes</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
   <span class="kd">var</span> <span class="nx">temperature</span> <span class="o">=</span> <span class="p">((</span><span class="nx">bytes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="mi">8</span><span class="p">)</span> <span class="o">|</span> <span class="nx">bytes</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span> <span class="o">/</span> <span class="mi">100</span><span class="p">;</span>
   <span class="kd">var</span> <span class="nx">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;red&#34;</span><span class="p">,</span> <span class="s2">&#34;green&#34;</span><span class="p">,</span> <span class="s2">&#34;blue&#34;</span><span class="p">];</span>
@@ -345,7 +344,7 @@
 <p><img src="../reported-shadow.png" alt="Reported shadow"></p>
 <h2 id="send-shadow-delta-updates">Send Shadow Delta Updates&nbsp;<a class="header-hash" href="#send-shadow-delta-updates">#</a> </h2>
 <p>Sending shadow delta updates as downlink messages requires you to encode a <code>state</code> object in your encoder payload function to bytes, for example:</p>
-<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">Encoder</span><span class="p">(</span><span class="nx">object</span><span class="p">,</span> <span class="nx">port</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">Encoder</span><span class="p">(</span><span class="nx">object</span><span class="p">,</span> <span class="nx">port</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">var</span> <span class="nx">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;red&#34;</span><span class="p">,</span> <span class="s2">&#34;green&#34;</span><span class="p">,</span> <span class="s2">&#34;blue&#34;</span><span class="p">];</span>
   <span class="kd">var</span> <span class="nx">bytes</span> <span class="o">=</span> <span class="p">[];</span>
   <span class="k">if</span> <span class="p">(</span><span class="nx">object</span><span class="p">.</span><span class="nx">state</span> <span class="o">&amp;&amp;</span> <span class="nx">object</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">color</span><span class="p">)</span> <span class="p">{</span>

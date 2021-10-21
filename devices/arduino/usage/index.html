@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <meta name="generator" content="Hugo 0.79.0" />
+  <meta name="generator" content="Hugo 0.88.1" />
 
   <title>Library Usage | The Things Network</title>
   <link rel="canonical" href="https://www.thethingsnetwork.org/docs/devices/arduino/usage/" />
@@ -38,15 +38,14 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.504b3e39c2bace42c4e70fc2480bf01ed9bbbbc2831194cfa95412953f38e1d5.css" integrity="sha256-UEs&#43;OcK6zkLE5w/CSAvwHtm7u8KDEZTPqVQSlT844dU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.1a1a30812d4274d8616380644cbf1670d6a3bc91fc7bd1d2c1d89177ea3d75f9.css" integrity="sha256-GhowgS1CdNhhY4BkTL8WcNajvJH8e9HSwdiRd&#43;o9dfk=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://www.thethingsnetwork.org/static/common/css/ui.css" crossorigin="anonymous">
 
   <meta property="og:title" content="Library Usage" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.thethingsnetwork.org/docs/devices/arduino/usage/" />
-<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
-<meta property="og:site_name" content="The Things Network" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/devices/arduino/usage/" /><meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/><meta property="og:site_name" content="The Things Network" />
+
 
 
   <meta name="twitter:card" content="summary_large_image"/>
@@ -233,10 +232,10 @@
 <li>Select <strong>Sketch &gt; Include Library &gt; TheThingsNetwork</strong> to include it.</li>
 </ol>
 <p>Or simply copy and paste:</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="cp">#include</span> <span class="cpf">&lt;TheThingsNetwork.h&gt;</span><span class="cp">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="cp">#include</span> <span class="cpf">&lt;TheThingsNetwork.h&gt;</span><span class="cp">
 </span></code></pre></div><h2 id="initialize">Initialize&nbsp;<a class="header-hash" href="#initialize">#</a> </h2>
 <p>A typical sketch has the following structure:</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="cp">#include</span> <span class="cpf">&lt;TheThingsNetwork.h&gt;</span><span class="cp">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="cp">#include</span> <span class="cpf">&lt;TheThingsNetwork.h&gt;</span><span class="cp">
 </span><span class="cp"></span>
 <span class="c1">// OTAA or ABP keys
 </span><span class="c1">// ..
@@ -282,7 +281,7 @@
 <ol>
 <li>
 <p>Right after the include for the library create constants to hold the keys:</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">appEui</span> <span class="o">=</span> <span class="s">&#34;0000000000000000&#34;</span><span class="p">;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">appEui</span> <span class="o">=</span> <span class="s">&#34;0000000000000000&#34;</span><span class="p">;</span>
 <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">appKey</span> <span class="o">=</span> <span class="s">&#34;00000000000000000000000000000000&#34;</span><span class="p">;</span>
 </code></pre></div><ul>
 <li>For <code>appEui</code> use the <strong>Application EUI</strong> found on the device&rsquo;s page in the console. Click <i class="ion-clipboard"></i> to copy.</li>
@@ -293,7 +292,7 @@
 </li>
 <li>
 <p>In your <code>setup()</code> function, call <code>ttn.join()</code> with the constants you just created:</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="n">ttn</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">appEui</span><span class="p">,</span> <span class="n">appKey</span><span class="p">);</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="n">ttn</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">appEui</span><span class="p">,</span> <span class="n">appKey</span><span class="p">);</span>
 </code></pre></div></li>
 </ol>
 <p>Your device will now try to get a confirmed activation via OTAA every 10 seconds until it succeeds.</p>
@@ -302,7 +301,7 @@
 <ol>
 <li>
 <p>Right after the include for the library create constants to hold the keys:</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">devAddr</span> <span class="o">=</span> <span class="s">&#34;00000000&#34;</span><span class="p">;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">devAddr</span> <span class="o">=</span> <span class="s">&#34;00000000&#34;</span><span class="p">;</span>
 <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">nwkSKey</span> <span class="o">=</span> <span class="s">&#34;00000000000000000000000000000000&#34;</span><span class="p">;</span>
 <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">appSKey</span> <span class="o">=</span> <span class="s">&#34;00000000000000000000000000000000&#34;</span><span class="p">;</span>
 </code></pre></div><ul>
@@ -315,14 +314,14 @@
 </li>
 <li>
 <p>In your <code>setup()</code> function, call <code>ttn.personalize()</code> with the constants you just created:</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="n">ttn</span><span class="p">.</span><span class="n">personalize</span><span class="p">(</span><span class="n">devAddr</span><span class="p">,</span> <span class="n">nwkSKey</span><span class="p">,</span> <span class="n">appSKey</span><span class="p">);</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="n">ttn</span><span class="p">.</span><span class="n">personalize</span><span class="p">(</span><span class="n">devAddr</span><span class="p">,</span> <span class="n">nwkSKey</span><span class="p">,</span> <span class="n">appSKey</span><span class="p">);</span>
 </code></pre></div></li>
 </ol>
 <p>Your device will now communicate with the network using these keys.</p>
 <p>Also see <strong>File &gt; Examples &gt; TheThingsNetwork &gt; <a href="https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/ABP/ABP.ino">ABP</a></strong>.</p>
 <h2 id="send">Send&nbsp;<a class="header-hash" href="#send">#</a> </h2>
 <p>To send messages call <code>ttn.sendBytes()</code> with an array of bytes and its size. Here&rsquo;s an example of a <code>loop()</code> function that sends the current state of <a href="https://www.arduino.cc/en/Reference/Constants"><code>LED_BUILTIN</code></a> every 10 seconds:</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
   <span class="n">byte</span> <span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
   <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">digitalRead</span><span class="p">(</span><span class="n">LED_BUILTIN</span><span class="p">)</span> <span class="o">==</span> <span class="n">HIGH</span><span class="p">)</span> <span class="o">?</span> <span class="mi">1</span> <span class="o">:</span> <span class="mi">0</span><span class="p">;</span>
     
@@ -341,20 +340,20 @@
 <ol>
 <li>
 <p>Add the following function to your sketch:</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">message</span><span class="p">(</span><span class="k">const</span> <span class="n">byte</span><span class="o">*</span> <span class="n">payload</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">length</span><span class="p">,</span> <span class="n">port_t</span> <span class="n">port</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">message</span><span class="p">(</span><span class="k">const</span> <span class="n">byte</span><span class="o">*</span> <span class="n">payload</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">length</span><span class="p">,</span> <span class="n">port_t</span> <span class="n">port</span><span class="p">)</span> <span class="p">{</span>
   <span class="n">debugSerial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&#34;-- MESSAGE&#34;</span><span class="p">);</span>
   <span class="n">debugSerial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&#34;Received &#34;</span> <span class="o">+</span> <span class="n">String</span><span class="p">(</span><span class="n">length</span><span class="p">)</span> <span class="o">+</span> <span class="s">&#34; bytes on port &#34;</span> <span class="o">+</span> <span class="n">String</span><span class="p">(</span><span class="n">port</span><span class="p">)</span> <span class="o">+</span> <span class="s">&#34;:&#34;</span><span class="p">);</span>
-    
+
   <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">debugSerial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&#34; &#34;</span> <span class="o">+</span> <span class="n">String</span><span class="p">(</span><span class="n">payload</span><span class="p">[</span><span class="n">i</span><span class="p">]));</span>
   <span class="p">}</span>
-    
+
   <span class="n">debugSerial</span><span class="p">.</span><span class="n">println</span><span class="p">();</span>
 <span class="p">}</span>
 </code></pre></div></li>
 <li>
 <p>Register the function in your <code>setup()</code> function:</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="n">ttn</span><span class="p">.</span><span class="n">onMessage</span><span class="p">(</span><span class="n">message</span><span class="p">);</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="n">ttn</span><span class="p">.</span><span class="n">onMessage</span><span class="p">(</span><span class="n">message</span><span class="p">);</span>
 </code></pre></div></li>
 </ol>
 <p>Also see <strong>File &gt; Examples &gt; TheThingsNetwork &gt; <a href="https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/Receive/Receive.ino">Receive</a></strong>.</p>
@@ -366,15 +365,15 @@
 <h3 id="stream-objects">Stream objects&nbsp;<a class="header-hash" href="#stream-objects">#</a> </h3>
 <p>In the Arduino world serial ports are abstracted as stream objects. All stream objects have the same functions, even if lower down they use different physical connections (UART, SoftwareSerial, AltSoftSerial). This library does not care what you use, as long as it extends the Stream object.</p>
 <p>The Stream objects need to be initialized at the correct baud rates at the start of your <code>setup()</code> function. See <a href="https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples">our examples</a> for more details. For example:</p>
-<pre><code>  loraSerial.begin(57600);
+<pre tabindex="0"><code>  loraSerial.begin(57600);
   debugSerial.begin(9600);
 </code></pre><h3 id="thethingsuno">TheThingsUno&nbsp;<a class="header-hash" href="#thethingsuno">#</a> </h3>
 <p>TheThingsUno is basically the same as an Arduino Leonardo with Serial1 connected to the RN2483/RN2903. Therefore if you use an Arduino Leonardo, and connect your RN2483/RN2903 to the Serial1 pins, you can use the same configuration than for TheThingsUno.</p>
 <p>At the top of your sketch use</p>
-<pre><code>#define loraSerial Serial1
+<pre tabindex="0"><code>#define loraSerial Serial1
 #define debugSerial Serial
 </code></pre><p>And in your <code>setup()</code> function use</p>
-<pre><code>void setup()
+<pre tabindex="0"><code>void setup()
 {
   loraSerial.begin(57600);
   debugSerial.begin(9600);
@@ -382,10 +381,10 @@
 }
 </code></pre><h3 id="sodaq-one">SODAQ One&nbsp;<a class="header-hash" href="#sodaq-one">#</a> </h3>
 <p>At the top of your sketch use</p>
-<pre><code>#define loraSerial Serial1
+<pre tabindex="0"><code>#define loraSerial Serial1
 #define debugSerial SerialUSB
 </code></pre><p>And in your <code>setup()</code> function use</p>
-<pre><code>void setup()
+<pre tabindex="0"><code>void setup()
 {
   loraSerial.begin(57600);
   debugSerial.begin(9600);
@@ -394,13 +393,13 @@
 </code></pre><h3 id="arduino-uno-arduino-nano-or-other-devices-using-softwareserial">Arduino Uno, Arduino Nano or other devices using SoftwareSerial&nbsp;<a class="header-hash" href="#arduino-uno-arduino-nano-or-other-devices-using-softwareserial">#</a> </h3>
 <p>The Arduino Uno only has one hardware serial port which is used to communicate over USB to the computer. When connecting an RN2483/RN2903 to the Arduino Uno, one has to make use of SoftwareSerial. If you connected the RN2483/RN2903 to the Arduino using the same pinout as <a href="https://www.thethingsnetwork.org/forum/t/how-to-build-your-first-ttn-node-arduino-rn2483/1574">described on the forum</a>, you can make use of the following code.</p>
 <p>At the top of your sketch use</p>
-<pre><code>#include &lt;SoftwareSerial.h&gt;
+<pre tabindex="0"><code>#include &lt;SoftwareSerial.h&gt;
 
 #define debugSerial Serial
 
 SoftwareSerial loraSerial(10, 11); // RX, TX
 </code></pre><p>And in your <code>setup()</code> function use</p>
-<pre><code>void setup()
+<pre tabindex="0"><code>void setup()
 {
   loraSerial.begin(9600);
   debugSerial.begin(9600);

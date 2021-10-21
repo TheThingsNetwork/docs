@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <meta name="generator" content="Hugo 0.79.0" />
+  <meta name="generator" content="Hugo 0.88.1" />
 
   <title>Quick Start | The Things Network</title>
   <link rel="canonical" href="https://www.thethingsnetwork.org/docs/applications/nodered/quick-start/" />
@@ -38,15 +38,14 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.504b3e39c2bace42c4e70fc2480bf01ed9bbbbc2831194cfa95412953f38e1d5.css" integrity="sha256-UEs&#43;OcK6zkLE5w/CSAvwHtm7u8KDEZTPqVQSlT844dU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.1a1a30812d4274d8616380644cbf1670d6a3bc91fc7bd1d2c1d89177ea3d75f9.css" integrity="sha256-GhowgS1CdNhhY4BkTL8WcNajvJH8e9HSwdiRd&#43;o9dfk=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://www.thethingsnetwork.org/static/common/css/ui.css" crossorigin="anonymous">
 
   <meta property="og:title" content="Quick Start" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.thethingsnetwork.org/docs/applications/nodered/quick-start/" />
-<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
-<meta property="og:site_name" content="The Things Network" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/applications/nodered/quick-start/" /><meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/><meta property="og:site_name" content="The Things Network" />
+
 
 
   <meta name="twitter:card" content="summary_large_image"/>
@@ -293,24 +292,24 @@
 <ol>
 <li>Make sure you have <a href="https://nodejs.org/">Node.js</a> and then install Node-RED:</li>
 </ol>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sudo npm install -g --unsafe-perm node-red
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">sudo npm install -g --unsafe-perm node-red
 </code></pre></div><p>See Node-RED&rsquo;s <a href="http://nodered.org/docs/getting-started/installation">Getting Started / Installation</a> for details.</p>
 <ol start="2">
 <li>Run Node-RED:</li>
 </ol>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">node-red
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">node-red
 </code></pre></div><p>See Node-RED&rsquo;s <a href="http://nodered.org/docs/getting-started/running">Getting Started / Running</a> for details.</p>
 <ol start="3">
 <li>Spot a line like this to know what URL to open in your browser:</li>
 </ol>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="m">29</span> Aug 11:13:01 - <span class="o">[</span>info<span class="o">]</span> Server now running at http://127.0.0.1:1880/
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="m">29</span> Aug 11:13:01 - <span class="o">[</span>info<span class="o">]</span> Server now running at http://127.0.0.1:1880/
 </code></pre></div><p>You should see something like:</p>
 <p><img src="../node-red.png" alt="Node-RED"></p>
 <h3 id="the-things-network-nodes">The Things Network nodes&nbsp;<a class="header-hash" href="#the-things-network-nodes">#</a> </h3>
 <ol>
 <li>Add The Things Network nodes:</li>
 </ol>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> <span class="nv">$HOME</span>/.node-red
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> <span class="nv">$HOME</span>/.node-red
 npm install node-red-contrib-ttn
 </code></pre></div><p>See Node-RED&rsquo;s <a href="http://nodered.org/docs/getting-started/adding-nodes">Getting Started / Adding Nodes</a> for details.</p>
 <ol start="2">
@@ -352,7 +351,7 @@ npm install node-red-contrib-ttn
 <li>Restart a device by briefly disconnecting power or upload a sketch.</li>
 <li>Soon, you should see the activation message coming in like:</li>
 </ol>
-<pre><code>my-uno
+<pre tabindex="0"><code>my-uno
 </code></pre><p>By default the debug node only shows <code>msg.payload</code>, which in the case of the <code>activations</code> event is just the Device ID.</p>
 <ol start="9">
 <li>
@@ -364,7 +363,7 @@ npm install node-red-contrib-ttn
 </li>
 <li>
 <p>Click <strong>Deploy</strong> to see the next message in full:</p>
-<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
   <span class="nt">&#34;app_eui&#34;</span><span class="p">:</span> <span class="s2">&#34;70B3D57EF000001C&#34;</span><span class="p">,</span>
   <span class="nt">&#34;dev_eui&#34;</span><span class="p">:</span> <span class="s2">&#34;0004A30B001B7AD2&#34;</span><span class="p">,</span>
   <span class="nt">&#34;dev_addr&#34;</span><span class="p">:</span> <span class="s2">&#34;26012084&#34;</span><span class="p">,</span>
@@ -410,7 +409,7 @@ npm install node-red-contrib-ttn
 </li>
 <li>
 <p>Soon after a device sends a message to your application you should see it come in like this:</p>
-<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
   <span class="nt">&#34;led&#34;</span><span class="p">:</span> <span class="kc">false</span>
 <span class="p">}</span>
 </code></pre></div><p>By default the debug node only shows <code>msg.payload</code>, which does not include the ID of the device that sent the message.</p>
@@ -426,7 +425,7 @@ npm install node-red-contrib-ttn
 <ol start="10">
 <li>
 <p>Click <strong>Deploy</strong> to see the next message in full, including <code>dev_id</code>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
   <span class="nt">&#34;port&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
   <span class="nt">&#34;counter&#34;</span><span class="p">:</span> <span class="mi">31</span><span class="p">,</span>
   <span class="nt">&#34;payload_raw&#34;</span><span class="p">:</span> <span class="p">{</span>
@@ -474,7 +473,7 @@ npm install node-red-contrib-ttn
 <li>Drag a <strong>function</strong> node from the function category of the toolbox and double click to configure it.</li>
 </ol>
 <p>Use the following code for the function:</p>
-<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="k">return</span> <span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="k">return</span> <span class="p">{</span>
   <span class="nx">dev_id</span><span class="o">:</span> <span class="nx">msg</span><span class="p">.</span><span class="nx">dev_id</span><span class="p">,</span>
   <span class="nx">port</span><span class="o">:</span> <span class="nx">msg</span><span class="p">.</span><span class="nx">port</span><span class="p">,</span>
   <span class="nx">payload</span><span class="o">:</span> <span class="p">{</span>

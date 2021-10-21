@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <meta name="generator" content="Hugo 0.79.0" />
+  <meta name="generator" content="Hugo 0.88.1" />
 
   <title>Smart Office Kit | The Things Network</title>
   <link rel="canonical" href="https://www.thethingsnetwork.org/docs/applications/smart-office/" />
@@ -38,15 +38,14 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.504b3e39c2bace42c4e70fc2480bf01ed9bbbbc2831194cfa95412953f38e1d5.css" integrity="sha256-UEs&#43;OcK6zkLE5w/CSAvwHtm7u8KDEZTPqVQSlT844dU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.1a1a30812d4274d8616380644cbf1670d6a3bc91fc7bd1d2c1d89177ea3d75f9.css" integrity="sha256-GhowgS1CdNhhY4BkTL8WcNajvJH8e9HSwdiRd&#43;o9dfk=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://www.thethingsnetwork.org/static/common/css/ui.css" crossorigin="anonymous">
 
   <meta property="og:title" content="Smart Office Kit" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.thethingsnetwork.org/docs/applications/smart-office/" />
-<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
-<meta property="og:site_name" content="The Things Network" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/applications/smart-office/" /><meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/><meta property="og:site_name" content="The Things Network" />
+
 
 
   <meta name="twitter:card" content="summary_large_image"/>
@@ -289,7 +288,7 @@
 <h2 id="decode-data">Decode data&nbsp;<a class="header-hash" href="#decode-data">#</a> </h2>
 <p>To make sense out of the raw payload, the data need to be decoded. Select the <em>Payload Formats</em>, make sure the <em>Decoder</em> is selected and copy-paste the Javascript code below.</p>
 <p>This will change the payload which might look like this: <code>01 00 EA 02 36 04 03 30 05 01 07 0E 32 15 43 24</code> to this:</p>
-<pre><code>{
+<pre tabindex="0"><code>{
   &quot;humidity&quot;: 54,
   &quot;light&quot;: 816,
   &quot;motion&quot;: 1,
@@ -299,7 +298,7 @@
   &quot;vdd&quot;: 3634
 }
 </code></pre><h3 id="decoder">Decoder&nbsp;<a class="header-hash" href="#decoder">#</a> </h3>
-<pre><code>function Decoder(bytes, port) {
+<pre tabindex="0"><code>function Decoder(bytes, port) {
   if (port === 0) {
     return;
   }

@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <meta name="generator" content="Hugo 0.79.0" />
+  <meta name="generator" content="Hugo 0.88.1" />
 
   <title>Implementing Your Own | The Things Network</title>
   <link rel="canonical" href="https://www.thethingsnetwork.org/docs/network/account/implement/" />
@@ -38,15 +38,14 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.504b3e39c2bace42c4e70fc2480bf01ed9bbbbc2831194cfa95412953f38e1d5.css" integrity="sha256-UEs&#43;OcK6zkLE5w/CSAvwHtm7u8KDEZTPqVQSlT844dU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.1a1a30812d4274d8616380644cbf1670d6a3bc91fc7bd1d2c1d89177ea3d75f9.css" integrity="sha256-GhowgS1CdNhhY4BkTL8WcNajvJH8e9HSwdiRd&#43;o9dfk=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://www.thethingsnetwork.org/static/common/css/ui.css" crossorigin="anonymous">
 
   <meta property="og:title" content="Implementing Your Own" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.thethingsnetwork.org/docs/network/account/implement/" />
-<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
-<meta property="og:site_name" content="The Things Network" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/network/account/implement/" /><meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/><meta property="og:site_name" content="The Things Network" />
+
 
 
   <meta name="twitter:card" content="summary_large_image"/>
@@ -213,11 +212,11 @@
 <h1 id="1-access-key-validation">1. Access Key validation</h1>
 <p>To validate access keys, MQTT needs to know what rights the access key provides.
 Since the access keys are opaque, it consults an endpoint to fetch those rights:</p>
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">GET /api/v2/applications/{app_id}/rights
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">GET /api/v2/applications/{app_id}/rights
 Authorization: Key {app_access_key}
 </code></pre></div><p>If the app id or access key is invalid, it should return <code>401</code>.</p>
 <p>When successful, the enpoint should return:</p>
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">200 OK
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">200 OK
 Content-Type: application/json
 
 [
@@ -247,9 +246,9 @@ server.  To implement these, you need a couple of things:</p>
 the correct schema.</li>
 </ol>
 <p>The handler fetches the public key on startup by performing the HTTP request:</p>
-<pre><code>GET /key
+<pre tabindex="0"><code>GET /key
 </code></pre><p>which should return:</p>
-<pre><code>200 OK
+<pre tabindex="0"><code>200 OK
 Content-Type: application/json
 
 {
@@ -257,7 +256,7 @@ Content-Type: application/json
   &quot;key&quot;: &quot;------- BEGIN PUBLIC KEY ------ ....&quot;
 }
 </code></pre><p>The schema of the token claims should be:</p>
-<pre><code>{
+<pre tabindex="0"><code>{
   &quot;iss&quot;    : string                  issuer ID of your account server
   &quot;iat&quot;    : number                  seconds since unix epoch from when the token should be considered valid
   &quot;exp&quot;    : number                  seconds since unix epoch till when the token will be considered valid
@@ -266,7 +265,7 @@ Content-Type: application/json
   &quot;apps&quot;   : { string: [ string ] }  an object that maps app id to the respective rights this token has for that app
 }
 </code></pre><p>So for instance, the following token:</p>
-<pre><code>{
+<pre tabindex="0"><code>{
   &quot;iss&quot;: &quot;my-account-server&quot;,
   &quot;iat&quot;: 1489678139,
   &quot;exp&quot;: 1489688139,

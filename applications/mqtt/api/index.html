@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <meta name="generator" content="Hugo 0.79.0" />
+  <meta name="generator" content="Hugo 0.88.1" />
 
   <title>API Reference | The Things Network</title>
   <link rel="canonical" href="https://www.thethingsnetwork.org/docs/applications/mqtt/api/" />
@@ -38,15 +38,14 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.504b3e39c2bace42c4e70fc2480bf01ed9bbbbc2831194cfa95412953f38e1d5.css" integrity="sha256-UEs&#43;OcK6zkLE5w/CSAvwHtm7u8KDEZTPqVQSlT844dU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.1a1a30812d4274d8616380644cbf1670d6a3bc91fc7bd1d2c1d89177ea3d75f9.css" integrity="sha256-GhowgS1CdNhhY4BkTL8WcNajvJH8e9HSwdiRd&#43;o9dfk=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://www.thethingsnetwork.org/static/common/css/ui.css" crossorigin="anonymous">
 
   <meta property="og:title" content="API Reference" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.thethingsnetwork.org/docs/applications/mqtt/api/" />
-<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
-<meta property="og:site_name" content="The Things Network" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/applications/mqtt/api/" /><meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/><meta property="og:site_name" content="The Things Network" />
+
 
 
   <meta name="twitter:card" content="summary_large_image"/>
@@ -297,7 +296,7 @@
 <h2 id="uplink-messages">Uplink Messages&nbsp;<a class="header-hash" href="#uplink-messages">#</a> </h2>
 <p><strong>Topic:</strong> <code>&lt;AppID&gt;/devices/&lt;DevID&gt;/up</code></p>
 <p><strong>Message:</strong></p>
-<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="p">{</span>
   <span class="s2">&#34;app_id&#34;</span><span class="o">:</span> <span class="s2">&#34;my-app-id&#34;</span><span class="p">,</span>              <span class="c1">// Same as in the topic
 </span><span class="c1"></span>  <span class="s2">&#34;dev_id&#34;</span><span class="o">:</span> <span class="s2">&#34;my-dev-id&#34;</span><span class="p">,</span>              <span class="c1">// Same as in the topic
 </span><span class="c1"></span>  <span class="s2">&#34;hardware_serial&#34;</span><span class="o">:</span> <span class="s2">&#34;0102030405060708&#34;</span><span class="p">,</span> <span class="c1">// In case of LoRaWAN: the DevEUI
@@ -338,7 +337,7 @@
 </code></pre></div><p>Note: Some values may be omitted if they are <code>null</code>, <code>false</code>, <code>&quot;&quot;</code> or <code>0</code>.</p>
 <p><strong>Usage (Mosquitto):</strong> <code>mosquitto_sub -h &lt;Region&gt;.thethings.network -d -t 'my-app-id/devices/my-dev-id/up'</code></p>
 <p><strong>Usage (Go client):</strong></p>
-<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">import</span> <span class="p">(</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="kn">import</span> <span class="p">(</span>
   <span class="s">&#34;github.com/TheThingsNetwork/go-utils/log&#34;</span>
   <span class="s">&#34;github.com/TheThingsNetwork/go-utils/log/apex&#34;</span>
   <span class="s">&#34;github.com/TheThingsNetwork/ttn/core/types&#34;</span>
@@ -367,7 +366,7 @@
 </blockquote>
 <p>Each uplink field will be published to its own topic <code>my-app-id/devices/my-dev-id/up/&lt;field&gt;</code>. The payload will be a string with the value in a JSON-style encoding.</p>
 <p>If your fields look like the following:</p>
-<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="p">{</span>
   <span class="s2">&#34;water&#34;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">&#34;analog&#34;</span><span class="o">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">1000</span><span class="p">],</span>
   <span class="s2">&#34;gps&#34;</span><span class="o">:</span> <span class="p">{</span>
@@ -388,7 +387,7 @@
 <h2 id="downlink-messages">Downlink Messages&nbsp;<a class="header-hash" href="#downlink-messages">#</a> </h2>
 <p><strong>Topic:</strong> <code>&lt;AppID&gt;/devices/&lt;DevID&gt;/down</code></p>
 <p><strong>Message:</strong></p>
-<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="p">{</span>
   <span class="s2">&#34;port&#34;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>                 <span class="c1">// LoRaWAN FPort
 </span><span class="c1"></span>  <span class="s2">&#34;confirmed&#34;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>        <span class="c1">// Whether the downlink should be confirmed by the device
 </span><span class="c1"></span>  <span class="s2">&#34;payload_raw&#34;</span><span class="o">:</span> <span class="s2">&#34;AQIDBA==&#34;</span><span class="p">,</span> <span class="c1">// Base64 encoded payload: [0x01, 0x02, 0x03, 0x04]
@@ -396,7 +395,7 @@
 </code></pre></div><p><strong>Usage (Mosquitto):</strong> <code>mosquitto_pub -h &lt;Region&gt;.thethings.network -d -t 'my-app-id/devices/my-dev-id/down' -m '{&quot;port&quot;:1,&quot;payload_raw&quot;:&quot;AQIDBA==&quot;}'</code></p>
 <p><strong>Usage (Go client):</strong></p>
 <p><em>for setup, see <strong>Uplink Messages</strong></em></p>
-<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">token</span> <span class="o">:=</span> <span class="nx">client</span><span class="p">.</span><span class="nf">PublishDownlink</span><span class="p">(</span><span class="nx">types</span><span class="p">.</span><span class="nx">DownlinkMessage</span><span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="nx">token</span> <span class="o">:=</span> <span class="nx">client</span><span class="p">.</span><span class="nf">PublishDownlink</span><span class="p">(</span><span class="nx">types</span><span class="p">.</span><span class="nx">DownlinkMessage</span><span class="p">{</span>
   <span class="nx">AppID</span><span class="p">:</span>   <span class="s">&#34;my-app-id&#34;</span><span class="p">,</span>
   <span class="nx">DevID</span><span class="p">:</span>   <span class="s">&#34;my-dev-id&#34;</span><span class="p">,</span>
   <span class="nx">FPort</span><span class="p">:</span>   <span class="mi">1</span><span class="p">,</span>
@@ -409,7 +408,7 @@
 </code></pre></div><h3 id="downlink-fields">Downlink Fields&nbsp;<a class="header-hash" href="#downlink-fields">#</a> </h3>
 <p>Instead of <code>payload_raw</code> you can also use <code>payload_fields</code> with an object of fields. This requires the application to be configured with an Encoder Payload Function which encodes the fields into a Buffer.</p>
 <p><strong>Message:</strong></p>
-<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="p">{</span>
   <span class="s2">&#34;port&#34;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>                 <span class="c1">// LoRaWAN FPort
 </span><span class="c1"></span>  <span class="s2">&#34;confirmed&#34;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>        <span class="c1">// Whether the downlink should be confirmed by the device
 </span><span class="c1"></span>  <span class="s2">&#34;payload_fields&#34;</span><span class="o">:</span> <span class="p">{</span>
@@ -419,7 +418,7 @@
 </code></pre></div><p><strong>Usage (Mosquitto):</strong> <code>mosquitto_pub -h &lt;Region&gt;.thethings.network -d -t 'my-app-id/devices/my-dev-id/down' -m '{&quot;port&quot;:1,&quot;payload_fields&quot;:{&quot;led&quot;:true}}'</code></p>
 <p><strong>Usage (Go client):</strong></p>
 <p><em>for setup, see <strong>Uplink Messages</strong></em></p>
-<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">token</span> <span class="o">:=</span> <span class="nx">client</span><span class="p">.</span><span class="nf">PublishDownlink</span><span class="p">(</span><span class="nx">types</span><span class="p">.</span><span class="nx">DownlinkMessage</span><span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="nx">token</span> <span class="o">:=</span> <span class="nx">client</span><span class="p">.</span><span class="nf">PublishDownlink</span><span class="p">(</span><span class="nx">types</span><span class="p">.</span><span class="nx">DownlinkMessage</span><span class="p">{</span>
   <span class="nx">AppID</span><span class="p">:</span>   <span class="s">&#34;my-app-id&#34;</span><span class="p">,</span>
   <span class="nx">DevID</span><span class="p">:</span>   <span class="s">&#34;my-dev-id&#34;</span><span class="p">,</span>
   <span class="nx">FPort</span><span class="p">:</span>   <span class="mi">1</span><span class="p">,</span>
@@ -434,7 +433,7 @@
 </code></pre></div><h3 id="downlink-scheduling">Downlink Scheduling&nbsp;<a class="header-hash" href="#downlink-scheduling">#</a> </h3>
 <p>By default, the downlink will <em>replace</em> the currently scheduled downlink, if any. It is also possible to schedule the
 downlink as the <em>first</em> or <em>last</em> item in a the downlink queue.</p>
-<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="p">{</span>
   <span class="s2">&#34;port&#34;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
   <span class="s2">&#34;confirmed&#34;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
   <span class="c1">// payload_raw or payload_fields
@@ -443,7 +442,7 @@ downlink as the <em>first</em> or <em>last</em> item in a the downlink queue.</p
 </code></pre></div><h2 id="device-activations">Device Activations&nbsp;<a class="header-hash" href="#device-activations">#</a> </h2>
 <p><strong>Topic:</strong> <code>&lt;AppID&gt;/devices/&lt;DevID&gt;/events/activations</code></p>
 <p><strong>Message:</strong></p>
-<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="p">{</span>
   <span class="s2">&#34;app_eui&#34;</span><span class="o">:</span> <span class="s2">&#34;0102030405060708&#34;</span><span class="p">,</span> <span class="c1">// EUI of the application
 </span><span class="c1"></span>  <span class="s2">&#34;dev_eui&#34;</span><span class="o">:</span> <span class="s2">&#34;0102030405060708&#34;</span><span class="p">,</span> <span class="c1">// EUI of the device
 </span><span class="c1"></span>  <span class="s2">&#34;dev_addr&#34;</span><span class="o">:</span> <span class="s2">&#34;26001716&#34;</span><span class="p">,</span>        <span class="c1">// Assigned address of the device
@@ -454,7 +453,7 @@ downlink as the <em>first</em> or <em>last</em> item in a the downlink queue.</p
 </code></pre></div><p><strong>Usage (Mosquitto):</strong> <code>mosquitto_sub -h &lt;Region&gt;.thethings.network -d -t 'my-app-id/devices/my-dev-id/events/activations'</code></p>
 <p><strong>Usage (Go client):</strong></p>
 <p><em>for setup, see <strong>Uplink Messages</strong></em></p>
-<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">token</span> <span class="o">:=</span> <span class="nx">client</span><span class="p">.</span><span class="nf">SubscribeDeviceActivations</span><span class="p">(</span><span class="s">&#34;my-app-id&#34;</span><span class="p">,</span> <span class="s">&#34;my-dev-id&#34;</span><span class="p">,</span> <span class="kd">func</span><span class="p">(</span><span class="nx">client</span> <span class="nx">Client</span><span class="p">,</span> <span class="nx">appID</span> <span class="kt">string</span><span class="p">,</span> <span class="nx">devID</span> <span class="kt">string</span><span class="p">,</span> <span class="nx">req</span> <span class="nx">Activation</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="nx">token</span> <span class="o">:=</span> <span class="nx">client</span><span class="p">.</span><span class="nf">SubscribeDeviceActivations</span><span class="p">(</span><span class="s">&#34;my-app-id&#34;</span><span class="p">,</span> <span class="s">&#34;my-dev-id&#34;</span><span class="p">,</span> <span class="kd">func</span><span class="p">(</span><span class="nx">client</span> <span class="nx">Client</span><span class="p">,</span> <span class="nx">appID</span> <span class="kt">string</span><span class="p">,</span> <span class="nx">devID</span> <span class="kt">string</span><span class="p">,</span> <span class="nx">req</span> <span class="nx">Activation</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// Do something with the activation
 </span><span class="c1"></span><span class="p">})</span>
 <span class="nx">token</span><span class="p">.</span><span class="nf">Wait</span><span class="p">()</span>
@@ -470,7 +469,7 @@ downlink as the <em>first</em> or <em>last</em> item in a the downlink queue.</p
 <p><strong>Downlink Scheduled:</strong> <code>&lt;AppID&gt;/devices/&lt;DevID&gt;/events/down/scheduled</code><br>
 payload: <em>null</em></p>
 <p><strong>Downlink Sent:</strong> <code>&lt;AppID&gt;/devices/&lt;DevID&gt;/events/down/sent</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="p">{</span>
   <span class="s2">&#34;payload&#34;</span><span class="o">:</span> <span class="s2">&#34;Base64 encoded LoRaWAN packet&#34;</span><span class="p">,</span>
   <span class="s2">&#34;gateway_id&#34;</span><span class="o">:</span> <span class="s2">&#34;some-gateway&#34;</span><span class="p">,</span>
   <span class="s2">&#34;config&#34;</span><span class="o">:</span> <span class="p">{</span>

@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <meta name="generator" content="Hugo 0.79.0" />
+  <meta name="generator" content="Hugo 0.88.1" />
 
   <title>KerOS installation and configuration | The Things Network</title>
   <link rel="canonical" href="https://www.thethingsnetwork.org/docs/gateways/kerlink/keros/" />
@@ -38,15 +38,14 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.504b3e39c2bace42c4e70fc2480bf01ed9bbbbc2831194cfa95412953f38e1d5.css" integrity="sha256-UEs&#43;OcK6zkLE5w/CSAvwHtm7u8KDEZTPqVQSlT844dU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.1a1a30812d4274d8616380644cbf1670d6a3bc91fc7bd1d2c1d89177ea3d75f9.css" integrity="sha256-GhowgS1CdNhhY4BkTL8WcNajvJH8e9HSwdiRd&#43;o9dfk=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://www.thethingsnetwork.org/static/common/css/ui.css" crossorigin="anonymous">
 
   <meta property="og:title" content="KerOS installation and configuration" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.thethingsnetwork.org/docs/gateways/kerlink/keros/" />
-<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
-<meta property="og:site_name" content="The Things Network" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/gateways/kerlink/keros/" /><meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/><meta property="og:site_name" content="The Things Network" />
+
 
 
   <meta name="twitter:card" content="summary_large_image"/>
@@ -311,10 +310,10 @@
 <p>This page describes how to install and configure any of these gateways.</p>
 <h2 id="1-update-the-firmware">1. Update the firmware&nbsp;<a class="header-hash" href="#1-update-the-firmware">#</a> </h2>
 <p>Check the firmware version using the command:</p>
-<pre><code>cat /tmp/sys_startup_status.json
+<pre tabindex="0"><code>cat /tmp/sys_startup_status.json
 
 </code></pre><p>The response should look something like:</p>
-<pre><code>{
+<pre tabindex="0"><code>{
     &quot;cpu&quot;: {
         ...
         },
@@ -351,23 +350,23 @@
 <ol>
 <li>Create the directory <code>.updates</code> under <code>/user</code> (if it doesn&rsquo;t already exist):</li>
 </ol>
-<pre><code>mkdir -p /user/.updates
+<pre tabindex="0"><code>mkdir -p /user/.updates
 </code></pre><ol start="2">
 <li>Transfer the KerOS package corresponding to the new firmware in this directory (replace with <code>liveburner_x.y.z</code> for a factory reset):</li>
 </ol>
-<pre><code>scp keros_4.1.6.ipk root@&lt;ip_address&gt;:/user/.updates/
+<pre tabindex="0"><code>scp keros_4.1.6.ipk root@&lt;ip_address&gt;:/user/.updates/
 </code></pre><ol start="3">
 <li>Ensure file is correctly written:</li>
 </ol>
-<pre><code>sync
+<pre tabindex="0"><code>sync
 </code></pre><ol start="4">
 <li>Trigger Update for next reboot:</li>
 </ol>
-<pre><code>kerosd -u
+<pre tabindex="0"><code>kerosd -u
 </code></pre><ol start="5">
 <li>Restart:</li>
 </ol>
-<pre><code>reboot
+<pre tabindex="0"><code>reboot
 </code></pre><ol start="6">
 <li>Check the firmware version in the file <code>/tmp/sys_startup_status.json</code> under the field <code>sw_version</code>.</li>
 </ol>
@@ -387,7 +386,7 @@ Install the packet forwarder over the network or USB and reboot the gateway. <a 
 <li>
 <p>Configure the LoRa forwarder: see the location of your configuration file from <code>/etc/default/lorafwd</code>. Edit that file (for example <code>/user/etc/lorafwd/lorafwd.toml</code>), and scroll to the <code>[ gwmp ]</code> section (around line 81) and configure the server address and ports:</p>
 <pre><code> [ gwmp ]
-    
+
  # The internet host where the gateway should connect. The node can be either a
  # fully qualified domain name or an IP address (IPv4 or IPv6).
  #
@@ -396,10 +395,10 @@ Install the packet forwarder over the network or USB and reboot the gateway. <a 
  # Default: &quot;localhost&quot;
  #
  node = &quot;router.eu.thethings.network&quot;
-    
+
  # The GWMP services can be a service name (see services(5)) or an integer and,
  # in this case, refers to a network port.
-    
+
  # The service where the gateway should push uplink messages.
  #
  # Type:    string or integer
@@ -407,7 +406,7 @@ Install the packet forwarder over the network or USB and reboot the gateway. <a 
  # Default: 0
  #
  service.uplink = 1700
-    
+
  # The service where the gateway should pull downlink messages.
  #
  # Type:    string or integer

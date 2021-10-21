@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <meta name="generator" content="Hugo 0.79.0" />
+  <meta name="generator" content="Hugo 0.88.1" />
 
   <title>Quick Start | The Things Network</title>
   <link rel="canonical" href="https://www.thethingsnetwork.org/docs/network/cli/quick-start/" />
@@ -38,15 +38,14 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.504b3e39c2bace42c4e70fc2480bf01ed9bbbbc2831194cfa95412953f38e1d5.css" integrity="sha256-UEs&#43;OcK6zkLE5w/CSAvwHtm7u8KDEZTPqVQSlT844dU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.1a1a30812d4274d8616380644cbf1670d6a3bc91fc7bd1d2c1d89177ea3d75f9.css" integrity="sha256-GhowgS1CdNhhY4BkTL8WcNajvJH8e9HSwdiRd&#43;o9dfk=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://www.thethingsnetwork.org/static/common/css/ui.css" crossorigin="anonymous">
 
   <meta property="og:title" content="Quick Start" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.thethingsnetwork.org/docs/network/cli/quick-start/" />
-<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
-<meta property="og:site_name" content="The Things Network" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/network/cli/quick-start/" /><meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/><meta property="og:site_name" content="The Things Network" />
+
 
 
   <meta name="twitter:card" content="summary_large_image"/>
@@ -231,7 +230,7 @@
 <ol>
 <li>
 <p>To register as a new user, use the command <a href="/docs/network/cli/api/#ttnctl-user-register"><code>ttnctl user register</code></a>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">❯ ttnctl user register yourname your@email.org
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">❯ ttnctl user register yourname your@email.org
 Password: &lt;entering password&gt;
 INFO Registered user
 </code></pre></div></li>
@@ -240,23 +239,23 @@ INFO Registered user
 </li>
 <li>
 <p>You now have 5 minutes to use this code to login with <a href="/docs/network/cli/api/#ttnctl-user-login"><code>ttnctl user login</code></a>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">❯ ttnctl user login LzWtldT-VGvN56I3u3oJiU8apRJGaWJAJKbYvALJoP3
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">❯ ttnctl user login LzWtldT-VGvN56I3u3oJiU8apRJGaWJAJKbYvALJoP3
 Password: &lt;enter password&gt;
 INFO Successfully logged in as yourname <span class="o">(</span>your@email.org<span class="o">)</span>
 </code></pre></div></li>
 </ol>
 <h2 id="application-management">Application Management&nbsp;<a class="header-hash" href="#application-management">#</a> </h2>
 <p>Now create a new application with <a href="/docs/network/cli/api/#ttnctl-applications-add"><code>ttnctl applications add</code></a>. In this example we will create an application with the ID <code>hello-world</code> and title <code>Hello World App</code>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">❯ ttnctl applications add hello-world <span class="s2">&#34;Hello World App&#34;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">❯ ttnctl applications add hello-world <span class="s2">&#34;Hello World App&#34;</span>
   INFO Added Application
   INFO Selected Current Application
 </code></pre></div><p>Show your applications with <a href="/docs/network/cli/api/#ttnctl-applications-list"><code>ttnctl applications list</code></a> command:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">❯ ttnctl applications list
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">❯ ttnctl applications list
   INFO Found <span class="m">1</span> application<span class="o">(</span>s<span class="o">)</span>
   ID           Description      EUIs  Access Keys  Collaborators
 <span class="m">1</span>  hello-world  Hello World App  <span class="m">1</span>     <span class="m">1</span>            <span class="m">1</span>
 </code></pre></div><p>After an application is created, you&rsquo;ll need to <strong>register it</strong> on a handler before you can start registering devices:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">❯ ttnctl applications register
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">❯ ttnctl applications register
   INFO Discovering Handler...                   <span class="nv">Handler</span><span class="o">=</span>ttn-handler-eu
   INFO Connecting with Handler...               <span class="nv">Handler</span><span class="o">=</span>eu.thethings.network:1904
   INFO Registered application                   <span class="nv">AppID</span><span class="o">=</span>hello-world
@@ -265,7 +264,7 @@ INFO Successfully logged in as yourname <span class="o">(</span>your@email.org<s
 </blockquote>
 <h2 id="selecting-an-application">Selecting an application&nbsp;<a class="header-hash" href="#selecting-an-application">#</a> </h2>
 <p>The newly added application has been selected for further commands automatically. To select a different app call <a href="/docs/network/cli/api/#ttnctl-applications-select"><code>ttnctl applications select</code></a>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">❯ ttnctl applications <span class="k">select</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">❯ ttnctl applications <span class="k">select</span>
   INFO Found <span class="m">2</span> applications:
 
     ID                  	Description
@@ -281,7 +280,7 @@ Enter the number <span class="o">(</span><span class="m">1</span> - 2<span class
 </blockquote>
 <h2 id="device-management">Device Management&nbsp;<a class="header-hash" href="#device-management">#</a> </h2>
 <p>To register a device you can use the <a href="/docs/network/cli/api/#ttnctl-devices-register"><code>ttnctl devices register</code></a> command. In the following example we register a device with ID <code>my-device</code>. A Device EUI and AppKey will be generated by <code>ttnctl</code>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">❯ ttnctl devices register my-device
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">❯ ttnctl devices register my-device
   INFO Using Application                        <span class="nv">AppEUI</span><span class="o">=</span>70B3D57EF000002E <span class="nv">AppID</span><span class="o">=</span>bye-world
   INFO Generating random DevEUI...
   INFO Generating random AppKey...
@@ -289,7 +288,7 @@ Enter the number <span class="o">(</span><span class="m">1</span> - 2<span class
   INFO Connecting with Handler...               <span class="nv">Handler</span><span class="o">=</span>eu.thethings.network:1904
   INFO Registered device                        <span class="nv">AppEUI</span><span class="o">=</span>70B3D57EF000002E <span class="nv">AppID</span><span class="o">=</span>bye-world <span class="nv">AppKey</span><span class="o">=</span>2593946DADA09D86E36E4A4DD3AC632D <span class="nv">DevEUI</span><span class="o">=</span>00995D884BEBBAB9 <span class="nv">DevID</span><span class="o">=</span>my-device
 </code></pre></div><p>To personalize a device for Activation-by-Personalization (ABP) we have the command <a href="/docs/network/cli/api/#ttnctl-devices-personalize"><code>ttnctl devices personalize</code></a>. In the following example we personalize the just registered device. The AppSKey and NwkSKey will be generated by <code>ttnctl</code>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">❯ ttnctl devices personalize my-device
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">❯ ttnctl devices personalize my-device
   INFO Using Application                        <span class="nv">AppEUI</span><span class="o">=</span>70B3D57EF000002E <span class="nv">AppID</span><span class="o">=</span>bye-world
   INFO Generating random NwkSKey...
   INFO Generating random AppSKey...
@@ -298,7 +297,7 @@ Enter the number <span class="o">(</span><span class="m">1</span> - 2<span class
   INFO Requesting DevAddr <span class="k">for</span> device...
   INFO Personalized device                      <span class="nv">AppID</span><span class="o">=</span>bye-world <span class="nv">AppSKey</span><span class="o">=</span>48F41F0491B23C804AEB9826162EB9AD <span class="nv">DevAddr</span><span class="o">=</span>160115EB <span class="nv">DevID</span><span class="o">=</span>my-device <span class="nv">NwkSKey</span><span class="o">=</span>D7A883537558946974B8DE31D4671617
 </code></pre></div><p>You can see a list of registered devices with <a href="/docs/network/cli/api/#ttnctl-devices-list"><code>ttnctl devices list</code></a>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">❯ ttnctl devices list
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">❯ ttnctl devices list
   INFO Using Application                        <span class="nv">AppEUI</span><span class="o">=</span>70B3D57EF000002E <span class="nv">AppID</span><span class="o">=</span>bye-world
   INFO Discovering Handler...                   <span class="nv">Handler</span><span class="o">=</span>ttn-handler-eu
   INFO Connecting with Handler...               <span class="nv">Handler</span><span class="o">=</span>eu.thethings.network:1904
@@ -308,7 +307,7 @@ my-device       	70B3D57EF000002E	00995D884BEBBAB9	160115EB
 
   INFO Listed <span class="m">1</span> device                          bye-world
 </code></pre></div><p>You can also get information about a specific device with <a href="/docs/network/cli/api/#ttnctl-devices-info"><code>ttnctl devices info</code></a>, for example for the personalized device:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">❯ ttnctl devices info my-device
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">❯ ttnctl devices info my-device
   INFO Using Application                        <span class="nv">AppEUI</span><span class="o">=</span>70B3D57EF000002E <span class="nv">AppID</span><span class="o">=</span>bye-world
   INFO Discovering Handler...                   <span class="nv">Handler</span><span class="o">=</span>ttn-handler-eu
   INFO Connecting with Handler...               <span class="nv">Handler</span><span class="o">=</span>eu.thethings.network:1904
@@ -331,7 +330,7 @@ my-device       	70B3D57EF000002E	00995D884BEBBAB9	160115EB
     Options: FCntCheckEnabled, 32BitFCnt
 </code></pre></div><h2 id="receiving-uplink-messages">Receiving Uplink Messages&nbsp;<a class="header-hash" href="#receiving-uplink-messages">#</a> </h2>
 <p>The <a href="/docs/network/cli/api/#ttnctl-subscribe"><code>ttnctl subscribe</code></a> command subscribes to all uplink messages that are sent to your application:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">❯ ttnctl subscribe
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">❯ ttnctl subscribe
   INFO Connecting to MQTT...                    MQTT <span class="nv">Broker</span><span class="o">=</span>tcp://eu.thethings.network:1883 <span class="nv">Username</span><span class="o">=</span>fokkezb-playground
   INFO Connected to MQTT
   INFO Subscribed to activations
@@ -339,12 +338,12 @@ my-device       	70B3D57EF000002E	00995D884BEBBAB9	160115EB
 </code></pre></div><p>You can also subscribe to uplink messages using <a href="/docs/applications/mqtt/">MQTT</a>.</p>
 <h2 id="scheduling-downlink-messages">Scheduling Downlink Messages&nbsp;<a class="header-hash" href="#scheduling-downlink-messages">#</a> </h2>
 <p>Scheduling downlink messages is done with the <a href="/docs/network/cli/api/#ttnctl-downlink"><code>ttnctl downlink</code></a> command. In the following example we plan a downlink message of 3 bytes for the device we just registered:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">❯ ttnctl downlink my-device <span class="m">010203</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">❯ ttnctl downlink my-device <span class="m">010203</span>
   INFO Connecting to MQTT...                    MQTT <span class="nv">Broker</span><span class="o">=</span>tcp://eu.thethings.network:1883 <span class="nv">Username</span><span class="o">=</span>bye-world
   INFO Connected to MQTT
   INFO Enqueued downlink                        <span class="nv">AppID</span><span class="o">=</span>bye-world <span class="nv">DevID</span><span class="o">=</span>my-device
 </code></pre></div><p>Or if you have configured an <a href="/docs/network/cli/api/#ttnctl-applications-pf">encoder</a> for JSON payloads:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ ttnctl downlink my-device --json <span class="s1">&#39;{&#34;led&#34;:&#34;on&#34;}&#39;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ ttnctl downlink my-device --json <span class="s1">&#39;{&#34;led&#34;:&#34;on&#34;}&#39;</span>
   INFO Connecting to MQTT...                    MQTT <span class="nv">Broker</span><span class="o">=</span>tcp://eu.thethings.network:1883 <span class="nv">Username</span><span class="o">=</span>bye-world
   INFO Connected to MQTT
   INFO Enqueued downlink                        <span class="nv">AppID</span><span class="o">=</span>bye-world <span class="nv">DevID</span><span class="o">=</span>my-device

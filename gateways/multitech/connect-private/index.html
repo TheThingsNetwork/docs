@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <meta name="generator" content="Hugo 0.79.0" />
+  <meta name="generator" content="Hugo 0.88.1" />
 
   <title>Connect to a private back-end | The Things Network</title>
   <link rel="canonical" href="https://www.thethingsnetwork.org/docs/gateways/multitech/connect-private/" />
@@ -38,15 +38,14 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.504b3e39c2bace42c4e70fc2480bf01ed9bbbbc2831194cfa95412953f38e1d5.css" integrity="sha256-UEs&#43;OcK6zkLE5w/CSAvwHtm7u8KDEZTPqVQSlT844dU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.1a1a30812d4274d8616380644cbf1670d6a3bc91fc7bd1d2c1d89177ea3d75f9.css" integrity="sha256-GhowgS1CdNhhY4BkTL8WcNajvJH8e9HSwdiRd&#43;o9dfk=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://www.thethingsnetwork.org/static/common/css/ui.css" crossorigin="anonymous">
 
   <meta property="og:title" content="Connect to a private back-end" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.thethingsnetwork.org/docs/gateways/multitech/connect-private/" />
-<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
-<meta property="og:site_name" content="The Things Network" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/gateways/multitech/connect-private/" /><meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/><meta property="og:site_name" content="The Things Network" />
+
 
 
   <meta name="twitter:card" content="summary_large_image"/>
@@ -299,7 +298,7 @@
           
 <p>If you&rsquo;ve followed the <a href="https://github.com/kersing/multitech-installer">installer</a>, you&rsquo;ve configured your gateway to connect to The Things Network. What if you want to connect your gateway to a private back-end, or to a specific router?</p>
 <p>Alternatively you can download the <a href="https://github.com/egourlao/multitech-installer">private network installer</a> and execute it like this:</p>
-<pre><code>export ACCOUNT_SERVER_DOMAIN=myaccount.domain
+<pre tabindex="0"><code>export ACCOUNT_SERVER_DOMAIN=myaccount.domain
 export ROUTER_MQTT_ADDRESS=mymqtt.domain:port
 https://raw.githubusercontent.com/egourlao/multitech-installer/master/installer.sh | bash
 </code></pre><h3 id="find-the-mqtt-address-of-the-bridge">Find the MQTT address of the bridge&nbsp;<a class="header-hash" href="#find-the-mqtt-address-of-the-bridge">#</a> </h3>
@@ -314,7 +313,7 @@ https://raw.githubusercontent.com/egourlao/multitech-installer/master/installer.
 </ul>
 <h3 id="change-the-bridge-configuration">Change the bridge configuration&nbsp;<a class="header-hash" href="#change-the-bridge-configuration">#</a> </h3>
 <p>Open with <code>vi</code> the <code>/var/config/lora/local_conf.json</code> file:</p>
-<pre><code>$ vi /var/config/lora/local_conf.json
+<pre tabindex="0"><code>$ vi /var/config/lora/local_conf.json
 </code></pre><p>You should then edit those values:</p>
 <ul>
 <li>
@@ -329,7 +328,7 @@ https://raw.githubusercontent.com/egourlao/multitech-installer/master/installer.
 </ul>
 <h3 id="apply-the-configuration">Apply the configuration&nbsp;<a class="header-hash" href="#apply-the-configuration">#</a> </h3>
 <p>Restart the packet forwarder to apply those changes:</p>
-<pre><code>$ /etc/init.d/ttn-packet-forwarder restart
+<pre tabindex="0"><code>$ /etc/init.d/ttn-packet-forwarder restart
 </code></pre>
 
         </div>

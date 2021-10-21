@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <meta name="generator" content="Hugo 0.79.0" />
+  <meta name="generator" content="Hugo 0.88.1" />
 
   <title>Configure mLinux model | The Things Network</title>
   <link rel="canonical" href="https://www.thethingsnetwork.org/docs/gateways/multitech/mlinux/" />
@@ -38,15 +38,14 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.504b3e39c2bace42c4e70fc2480bf01ed9bbbbc2831194cfa95412953f38e1d5.css" integrity="sha256-UEs&#43;OcK6zkLE5w/CSAvwHtm7u8KDEZTPqVQSlT844dU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.1a1a30812d4274d8616380644cbf1670d6a3bc91fc7bd1d2c1d89177ea3d75f9.css" integrity="sha256-GhowgS1CdNhhY4BkTL8WcNajvJH8e9HSwdiRd&#43;o9dfk=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://www.thethingsnetwork.org/static/common/css/ui.css" crossorigin="anonymous">
 
   <meta property="og:title" content="Configure mLinux model" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.thethingsnetwork.org/docs/gateways/multitech/mlinux/" />
-<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
-<meta property="og:site_name" content="The Things Network" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/gateways/multitech/mlinux/" /><meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/><meta property="og:site_name" content="The Things Network" />
+
 
 
   <meta name="twitter:card" content="summary_large_image"/>
@@ -315,11 +314,11 @@
 <p><img src="../putty-mlinux.png" alt="PuTTY Configuration"></p>
 <h3 id="mac-os--linux">Mac OS / Linux&nbsp;<a class="header-hash" href="#mac-os--linux">#</a> </h3>
 <p>Run the following command in terminal to look up the USB connection:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">ls /dev/tty.usb*
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">ls /dev/tty.usb*
 </code></pre></div><p>If that doesn&rsquo;t work, try this instead and look for the value of <code>IOSerialCalloutDevice</code>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">ioreg -c IOSerialBSDClient  <span class="p">|</span> grep usb
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">ioreg -c IOSerialBSDClient  <span class="p">|</span> grep usb
 </code></pre></div><p>Now connect to the USB device using <code>115200</code> for speed. For example:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">screen /dev/cu.usbserial <span class="m">115200</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">screen /dev/cu.usbserial <span class="m">115200</span>
 </code></pre></div><h2 id="login-via-terminal">Login via terminal&nbsp;<a class="header-hash" href="#login-via-terminal">#</a> </h2>
 <p>Connect the Conduit&rsquo;s power cable. You will now see its boot messages. Wait for the login prompt to appear:</p>
 <p><img src="../login-mlinux.png" alt="login"></p>
@@ -330,17 +329,17 @@
 </ul>
 <h2 id="copy-installer">Copy installer&nbsp;<a class="header-hash" href="#copy-installer">#</a> </h2>
 <p>To get the installer we need mount the USB drive:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">mount /dev/sda1 /mnt
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">mount /dev/sda1 /mnt
 </code></pre></div><p>Copy the installer to the conduit:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">cp /mnt/installer* /home/root
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">cp /mnt/installer* /home/root
 </code></pre></div><p>Tell Linux to release the USB drive:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">umount /mnt
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">umount /mnt
 </code></pre></div><blockquote>
 <p>During the download to the USB stick the <code>installer.sh</code> file might have been renamed to <code>installer.txt</code> or <code>installer.sh.txt</code>. If that happened, just use <code>installer.txt</code> or <code>installer.sh.txt</code> whenever the instructions say <code>installer.sh</code>.</p>
 </blockquote>
 <h2 id="network-setup">Network Setup&nbsp;<a class="header-hash" href="#network-setup">#</a> </h2>
 <p>Start the installer:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sh installer.sh
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">sh installer.sh
 </code></pre></div><p>The installer will prompt you for information it requires to configure the Conduit:</p>
 <ul>
 <li>A new password to secure access to the conduit.</li>
@@ -371,13 +370,13 @@ You can also find the IP address by reconnecting the Conduit with the Micro-USB 
 <p><img src="../login-root.png" alt="login as: root"></p>
 <h2 id="ttn-configuration-mlinux">TTN Configuration&nbsp;<a class="header-hash" href="#ttn-configuration-mlinux">#</a> </h2>
 <p>Now restart the installer and provide the required answers when prompted:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sh installer.sh
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">sh installer.sh
 </code></pre></div><p><img src="../installer-mlinux-2nd-no-gps.png" alt="installer"></p>
 <p>The installation is complete once the <code>Starting ttn-packet-forwarder: OK</code> message appears.</p>
 <p>Check the output of the packet forwarder for any errors:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">tail /var/log/lora-pkt-fwd.log
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">tail /var/log/lora-pkt-fwd.log
 </code></pre></div><p>The installation was successful if the output looks something like:</p>
-<pre><code>##### 2016-08-06 23:19:11 GMT #####
+<pre tabindex="0"><code>##### 2016-08-06 23:19:11 GMT #####
 ### [UPSTREAM] ###
 # RF packets received by concentrator: 1
 # CRC_OK: 100.00%, CRC_FAIL: 0.00%, NO_CRC: 0.00%

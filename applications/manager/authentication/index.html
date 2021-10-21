@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <meta name="generator" content="Hugo 0.79.0" />
+  <meta name="generator" content="Hugo 0.88.1" />
 
   <title>Authentication | The Things Network</title>
   <link rel="canonical" href="https://www.thethingsnetwork.org/docs/applications/manager/authentication/" />
@@ -38,15 +38,14 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.504b3e39c2bace42c4e70fc2480bf01ed9bbbbc2831194cfa95412953f38e1d5.css" integrity="sha256-UEs&#43;OcK6zkLE5w/CSAvwHtm7u8KDEZTPqVQSlT844dU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.1a1a30812d4274d8616380644cbf1670d6a3bc91fc7bd1d2c1d89177ea3d75f9.css" integrity="sha256-GhowgS1CdNhhY4BkTL8WcNajvJH8e9HSwdiRd&#43;o9dfk=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://www.thethingsnetwork.org/static/common/css/ui.css" crossorigin="anonymous">
 
   <meta property="og:title" content="Authentication" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.thethingsnetwork.org/docs/applications/manager/authentication/" />
-<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
-<meta property="og:site_name" content="The Things Network" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/applications/manager/authentication/" /><meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/><meta property="og:site_name" content="The Things Network" />
+
 
 
   <meta name="twitter:card" content="summary_large_image"/>
@@ -302,27 +301,27 @@
 <h3 id="grpc">gRPC&nbsp;<a class="header-hash" href="#grpc">#</a> </h3>
 <p>You can authenticate to the gRPC endpoint by supplying a <code>token</code> field in the Metadata. The value of this field should be the JSON Web Token.</p>
 <p><strong>Example (Go):</strong></p>
-<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">md</span> <span class="o">:=</span> <span class="nx">metadata</span><span class="p">.</span><span class="nf">Pairs</span><span class="p">(</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="nx">md</span> <span class="o">:=</span> <span class="nx">metadata</span><span class="p">.</span><span class="nf">Pairs</span><span class="p">(</span>
   <span class="s">&#34;token&#34;</span><span class="p">,</span> <span class="s">&#34;eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhcHBzIjp7InRlc3QiOlsic2V0dGluZ3MiXX19.VGhpcyBpcyB0aGUgc2lnbmF0dXJl&#34;</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="nx">ctx</span> <span class="o">:=</span> <span class="nx">metadata</span><span class="p">.</span><span class="nf">NewOutgoingContext</span><span class="p">(</span><span class="nx">context</span><span class="p">.</span><span class="nf">Background</span><span class="p">(),</span> <span class="nx">md</span><span class="p">)</span>
 </code></pre></div><h3 id="http">HTTP&nbsp;<a class="header-hash" href="#http">#</a> </h3>
 <p>For HTTP Endpoints, you should supply the <code>Authorization</code> header: <code>Authorization: Bearer &lt;token&gt;</code>.</p>
 <p><strong>Example:</strong></p>
-<pre><code>Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhcHBzIjp7InRlc3QiOlsic2V0dGluZ3MiXX19.VGhpcyBpcyB0aGUgc2lnbmF0dXJl
+<pre tabindex="0"><code>Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhcHBzIjp7InRlc3QiOlsic2V0dGluZ3MiXX19.VGhpcyBpcyB0aGUgc2lnbmF0dXJl
 </code></pre><h2 id="access-key">Access Key&nbsp;<a class="header-hash" href="#access-key">#</a> </h2>
 <p>With this authentication method, the server will exchange an Access Key for a Bearer Token internally.</p>
 <h3 id="grpc-1">gRPC&nbsp;<a class="header-hash" href="#grpc-1">#</a> </h3>
 <p>You can authenticate to the gRPC endpoint by supplying a <code>key</code> field in the Metadata. The value of this field should be the Application access key.</p>
 <p><strong>Example (Go):</strong></p>
-<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">md</span> <span class="o">:=</span> <span class="nx">metadata</span><span class="p">.</span><span class="nf">Pairs</span><span class="p">(</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="nx">md</span> <span class="o">:=</span> <span class="nx">metadata</span><span class="p">.</span><span class="nf">Pairs</span><span class="p">(</span>
   <span class="s">&#34;key&#34;</span><span class="p">,</span> <span class="s">&#34;ttn-account-v2.n4BAoKOGuK2hj7MXg_OVtpLO0BTJI8lLzt66UsvTlUvZPsi6FADOptnmSH3e3PuQzbLLEUhXxYhkxr34xyUqBQ&#34;</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="nx">ctx</span> <span class="o">:=</span> <span class="nx">metadata</span><span class="p">.</span><span class="nf">NewOutgoingContext</span><span class="p">(</span><span class="nx">context</span><span class="p">.</span><span class="nf">Background</span><span class="p">(),</span> <span class="nx">md</span><span class="p">)</span>
 </code></pre></div><h3 id="http-1">HTTP&nbsp;<a class="header-hash" href="#http-1">#</a> </h3>
 <p>For HTTP Endpoints, you should supply the <code>Authorization</code> header: <code>Authorization: Key &lt;key&gt;</code>.</p>
 <p><strong>Example:</strong></p>
-<pre><code>Authorization: Key ttn-account-v2.n4BAoKOGuK2hj7MXg_OVtpLO0BTJI8lLzt66UsvTlUvZPsi6FADOptnmSH3e3PuQzbLLEUhXxYhkxr34xyUqBQ
+<pre tabindex="0"><code>Authorization: Key ttn-account-v2.n4BAoKOGuK2hj7MXg_OVtpLO0BTJI8lLzt66UsvTlUvZPsi6FADOptnmSH3e3PuQzbLLEUhXxYhkxr34xyUqBQ
 </code></pre>
 
         </div>

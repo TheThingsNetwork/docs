@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <meta name="generator" content="Hugo 0.79.0" />
+  <meta name="generator" content="Hugo 0.88.1" />
 
   <title>Quick Start | The Things Network</title>
   <link rel="canonical" href="https://www.thethingsnetwork.org/docs/applications/mqtt/quick-start/" />
@@ -38,15 +38,14 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.504b3e39c2bace42c4e70fc2480bf01ed9bbbbc2831194cfa95412953f38e1d5.css" integrity="sha256-UEs&#43;OcK6zkLE5w/CSAvwHtm7u8KDEZTPqVQSlT844dU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.1a1a30812d4274d8616380644cbf1670d6a3bc91fc7bd1d2c1d89177ea3d75f9.css" integrity="sha256-GhowgS1CdNhhY4BkTL8WcNajvJH8e9HSwdiRd&#43;o9dfk=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://www.thethingsnetwork.org/static/common/css/ui.css" crossorigin="anonymous">
 
   <meta property="og:title" content="Quick Start" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.thethingsnetwork.org/docs/applications/mqtt/quick-start/" />
-<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
-<meta property="og:site_name" content="The Things Network" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/applications/mqtt/quick-start/" /><meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/><meta property="og:site_name" content="The Things Network" />
+
 
 
   <meta name="twitter:card" content="summary_large_image"/>
@@ -305,9 +304,9 @@
 <ol>
 <li>
 <p>Open a terminal window and execute the following command:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">mosquitto_sub -h &lt;Region&gt;.thethings.network -t <span class="s1">&#39;+/devices/+/events/activations&#39;</span> -u <span class="s1">&#39;&lt;AppID&gt;&#39;</span> -P <span class="s1">&#39;&lt;AppKey&gt;&#39;</span> -v
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">mosquitto_sub -h &lt;Region&gt;.thethings.network -t <span class="s1">&#39;+/devices/+/events/activations&#39;</span> -u <span class="s1">&#39;&lt;AppID&gt;&#39;</span> -P <span class="s1">&#39;&lt;AppKey&gt;&#39;</span> -v
 </code></pre></div><p>When using Windows, use double quotes to make the above code work:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">mosquitto_sub -h &lt;Region&gt;.thethings.network -t <span class="s2">&#34;+/devices/+/events/activations&#34;</span> -u <span class="s2">&#34;&lt;AppID&gt;&#34;</span> -P <span class="s2">&#34;&lt;AppKey&gt;&#34;</span> -v
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">mosquitto_sub -h &lt;Region&gt;.thethings.network -t <span class="s2">&#34;+/devices/+/events/activations&#34;</span> -u <span class="s2">&#34;&lt;AppID&gt;&#34;</span> -P <span class="s2">&#34;&lt;AppKey&gt;&#34;</span> -v
 </code></pre></div><ul>
 <li>Replace <code>&lt;Region&gt;</code> with the region you looked up.</li>
 <li>Replace <code>&lt;AppID&gt;</code> with your <strong>Application ID</strong>.</li>
@@ -317,11 +316,11 @@
 <p>We add <code>-v</code> to also see the topics of the incoming messages.</p>
 </blockquote>
 <p>For TLS - assuming <a href="https://console.thethingsnetwork.org/mqtt-ca.pem">mqtt-ca.pem</a> is in the same folder - append:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">--cafile mqtt-ca.pem -p <span class="m">8883</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">--cafile mqtt-ca.pem -p <span class="m">8883</span>
 </code></pre></div></li>
 <li>
 <p>Power up, reset or upload a new sketch to a device to force it to activate and you should see something like:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">hello-world/devices/my-uno/events/activations <span class="o">{</span><span class="s2">&#34;app_eui&#34;</span>:<span class="s2">&#34;70B3D57EF000001C&#34;</span>,<span class="s2">&#34;dev_eui&#34;</span>:<span class="s2">&#34;0004A30B001B7AD2&#34;</span>,<span class="s2">&#34;dev_addr&#34;</span>:<span class="s2">&#34;26012723&#34;</span>,<span class="s2">&#34;metadata&#34;</span>:<span class="o">{</span><span class="s2">&#34;time&#34;</span>:<span class="s2">&#34;2016-09-13T09:59:02.90329585Z&#34;</span>,<span class="s2">&#34;frequency&#34;</span>:868.5,<span class="s2">&#34;modulation&#34;</span>:<span class="s2">&#34;LORA&#34;</span>,<span class="s2">&#34;data_rate&#34;</span>:<span class="s2">&#34;SF7BW125&#34;</span>,<span class="s2">&#34;coding_rate&#34;</span>:<span class="s2">&#34;4/5&#34;</span>,<span class="s2">&#34;gateways&#34;</span>:<span class="o">[{</span><span class="s2">&#34;eui&#34;</span>:<span class="s2">&#34;B827EBFFFE87BD22&#34;</span>,<span class="s2">&#34;timestamp&#34;</span>:1484146403,<span class="s2">&#34;time&#34;</span>:<span class="s2">&#34;2016-09-13T09:59:02.867283Z&#34;</span>,<span class="s2">&#34;channel&#34;</span>:2,<span class="s2">&#34;rssi&#34;</span>:-49,<span class="s2">&#34;snr&#34;</span>:7,<span class="s2">&#34;rf_chain&#34;</span>:1<span class="o">}]}}</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">hello-world/devices/my-uno/events/activations <span class="o">{</span><span class="s2">&#34;app_eui&#34;</span>:<span class="s2">&#34;70B3D57EF000001C&#34;</span>,<span class="s2">&#34;dev_eui&#34;</span>:<span class="s2">&#34;0004A30B001B7AD2&#34;</span>,<span class="s2">&#34;dev_addr&#34;</span>:<span class="s2">&#34;26012723&#34;</span>,<span class="s2">&#34;metadata&#34;</span>:<span class="o">{</span><span class="s2">&#34;time&#34;</span>:<span class="s2">&#34;2016-09-13T09:59:02.90329585Z&#34;</span>,<span class="s2">&#34;frequency&#34;</span>:868.5,<span class="s2">&#34;modulation&#34;</span>:<span class="s2">&#34;LORA&#34;</span>,<span class="s2">&#34;data_rate&#34;</span>:<span class="s2">&#34;SF7BW125&#34;</span>,<span class="s2">&#34;coding_rate&#34;</span>:<span class="s2">&#34;4/5&#34;</span>,<span class="s2">&#34;gateways&#34;</span>:<span class="o">[{</span><span class="s2">&#34;eui&#34;</span>:<span class="s2">&#34;B827EBFFFE87BD22&#34;</span>,<span class="s2">&#34;timestamp&#34;</span>:1484146403,<span class="s2">&#34;time&#34;</span>:<span class="s2">&#34;2016-09-13T09:59:02.867283Z&#34;</span>,<span class="s2">&#34;channel&#34;</span>:2,<span class="s2">&#34;rssi&#34;</span>:-49,<span class="s2">&#34;snr&#34;</span>:7,<span class="s2">&#34;rf_chain&#34;</span>:1<span class="o">}]}}</span>
 </code></pre></div><p>Use <code>Ctrl C</code> to exit.</p>
 </li>
 </ol>
@@ -330,14 +329,14 @@
 <ol>
 <li>
 <p>Open another terminal window and execute the following command:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">mosquitto_sub -h &lt;Region&gt;.thethings.network -t <span class="s1">&#39;+/devices/+/up&#39;</span> -u <span class="s1">&#39;&lt;AppID&gt;&#39;</span> -P <span class="s1">&#39;&lt;AppKey&gt;&#39;</span> -v
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">mosquitto_sub -h &lt;Region&gt;.thethings.network -t <span class="s1">&#39;+/devices/+/up&#39;</span> -u <span class="s1">&#39;&lt;AppID&gt;&#39;</span> -P <span class="s1">&#39;&lt;AppKey&gt;&#39;</span> -v
 </code></pre></div><blockquote>
 <p>Don&rsquo;t forget to replace <code>&lt;Region&gt;</code>, <code>&lt;AppID&gt;</code>, <code>&lt;AppKey&gt;</code> and append the options for TLS if you used that.</p>
 </blockquote>
 </li>
 <li>
 <p>If you uploaded the <a href="https://www.thethingsnetwork.org/docs/devices/uno/quick-start/">The Things Uno / Quick Start</a> sketch you should see something like:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">hello-world/devices/my-uno/up <span class="o">{</span><span class="s2">&#34;port&#34;</span>:1,<span class="s2">&#34;counter&#34;</span>:5,<span class="s2">&#34;payload_raw&#34;</span>:<span class="s2">&#34;AQ==&#34;</span>,<span class="s2">&#34;payload_fields&#34;</span>:<span class="o">{</span><span class="s2">&#34;led&#34;</span>:true<span class="o">}</span>,<span class="s2">&#34;metadata&#34;</span>:<span class="o">{</span><span class="s2">&#34;time&#34;</span>:<span class="s2">&#34;2016-09-14T14:19:20.272552952Z&#34;</span>,<span class="s2">&#34;frequency&#34;</span>:868.1,<span class="s2">&#34;modulation&#34;</span>:<span class="s2">&#34;LORA&#34;</span>,<span class="s2">&#34;data_rate&#34;</span>:<span class="s2">&#34;SF7BW125&#34;</span>,<span class="s2">&#34;coding_rate&#34;</span>:<span class="s2">&#34;4/5&#34;</span>,<span class="s2">&#34;gateways&#34;</span>:<span class="o">[{</span><span class="s2">&#34;eui&#34;</span>:<span class="s2">&#34;B827EBFFFE87BD22&#34;</span>,<span class="s2">&#34;timestamp&#34;</span>:1960494347,<span class="s2">&#34;time&#34;</span>:<span class="s2">&#34;2016-09-14T14:19:20.258723Z&#34;</span>,<span class="s2">&#34;rssi&#34;</span>:-49,<span class="s2">&#34;snr&#34;</span>:9.5,<span class="s2">&#34;rf_chain&#34;</span>:1<span class="o">}]}}</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">hello-world/devices/my-uno/up <span class="o">{</span><span class="s2">&#34;port&#34;</span>:1,<span class="s2">&#34;counter&#34;</span>:5,<span class="s2">&#34;payload_raw&#34;</span>:<span class="s2">&#34;AQ==&#34;</span>,<span class="s2">&#34;payload_fields&#34;</span>:<span class="o">{</span><span class="s2">&#34;led&#34;</span>:true<span class="o">}</span>,<span class="s2">&#34;metadata&#34;</span>:<span class="o">{</span><span class="s2">&#34;time&#34;</span>:<span class="s2">&#34;2016-09-14T14:19:20.272552952Z&#34;</span>,<span class="s2">&#34;frequency&#34;</span>:868.1,<span class="s2">&#34;modulation&#34;</span>:<span class="s2">&#34;LORA&#34;</span>,<span class="s2">&#34;data_rate&#34;</span>:<span class="s2">&#34;SF7BW125&#34;</span>,<span class="s2">&#34;coding_rate&#34;</span>:<span class="s2">&#34;4/5&#34;</span>,<span class="s2">&#34;gateways&#34;</span>:<span class="o">[{</span><span class="s2">&#34;eui&#34;</span>:<span class="s2">&#34;B827EBFFFE87BD22&#34;</span>,<span class="s2">&#34;timestamp&#34;</span>:1960494347,<span class="s2">&#34;time&#34;</span>:<span class="s2">&#34;2016-09-14T14:19:20.258723Z&#34;</span>,<span class="s2">&#34;rssi&#34;</span>:-49,<span class="s2">&#34;snr&#34;</span>:9.5,<span class="s2">&#34;rf_chain&#34;</span>:1<span class="o">}]}}</span>
 </code></pre></div></li>
 </ol>
 <h3 id="subscribe-to-a-specific-field">Subscribe to a specific field&nbsp;<a class="header-hash" href="#subscribe-to-a-specific-field">#</a> </h3>
@@ -345,34 +344,34 @@
 <p><strong>Warning</strong>: not every cluster publishes uplink fields to individual topics. See <a href="https://status.thethings.network">status.thethings.network</a> for details.</p>
 </blockquote>
 <p>You can also subscribe to a specific field. Building on <a href="https://www.thethingsnetwork.org/docs/devices/uno/quick-start/">The Things Uno / Quick Start</a> you could subscribe to get just the <code>led</code> field:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">mosquitto_sub -h &lt;Region&gt;.thethings.network -t <span class="s1">&#39;+/devices/+/up/led&#39;</span> -u <span class="s1">&#39;&lt;AppID&gt;&#39;</span> -P <span class="s1">&#39;&lt;AppKey&gt;&#39;</span> -v
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">mosquitto_sub -h &lt;Region&gt;.thethings.network -t <span class="s1">&#39;+/devices/+/up/led&#39;</span> -u <span class="s1">&#39;&lt;AppID&gt;&#39;</span> -P <span class="s1">&#39;&lt;AppKey&gt;&#39;</span> -v
 
 hello-world/devices/my-uno/up/led <span class="nb">true</span>
 </code></pre></div><h2 id="send-messages-down">Send Messages (down)&nbsp;<a class="header-hash" href="#send-messages-down">#</a> </h2>
 <p>To send a message you will have to address a specific device by its <strong>Device ID</strong>. Let&rsquo;s send the same message used in the <a href="https://www.thethingsnetwork.org/docs/devices/uno/quick-start/#message-your-device">The Things Uno / Quick Start</a>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">{</span>
   <span class="s2">&#34;led&#34;</span>: <span class="nb">true</span>
 <span class="o">}</span>
 </code></pre></div><p>If you have followed <a href="https://www.thethingsnetwork.org/docs/devices/uno/quick-start/#encode-messages">The Things Uno / Quick Start / Encode Messages</a> you can send this as is using the <code>payload_fields</code> key:</p>
-<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
   <span class="nt">&#34;payload_fields&#34;</span><span class="p">:</span> <span class="p">{</span>
     <span class="nt">&#34;led&#34;</span><span class="p">:</span> <span class="kc">true</span>
   <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div><p>Otherwise, you&rsquo;ll have to use <code>payload_raw</code> and send a base64 encoded array of bytes, e.g.:</p>
-<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
   <span class="nt">&#34;payload_raw&#34;</span><span class="p">:</span> <span class="s2">&#34;AQ==&#34;</span>
 <span class="p">}</span>
 </code></pre></div><ol>
 <li>
 <p>Open another terminal window and execute the following command:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">mosquitto_pub -h &lt;Region&gt;.thethings.network -t <span class="s1">&#39;&lt;AppID&gt;/devices/&lt;DevID&gt;/down&#39;</span> -u <span class="s1">&#39;&lt;AppID&gt;&#39;</span> -P <span class="s1">&#39;&lt;AppKey&gt;&#39;</span> -m <span class="s1">&#39;{&#34;payload_fields&#34;:{&#34;led&#34;:true}}&#39;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">mosquitto_pub -h &lt;Region&gt;.thethings.network -t <span class="s1">&#39;&lt;AppID&gt;/devices/&lt;DevID&gt;/down&#39;</span> -u <span class="s1">&#39;&lt;AppID&gt;&#39;</span> -P <span class="s1">&#39;&lt;AppKey&gt;&#39;</span> -m <span class="s1">&#39;{&#34;payload_fields&#34;:{&#34;led&#34;:true}}&#39;</span>
 </code></pre></div><p>When using Windows, extra quotation marks have to be added to make the above code work:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">mosquitto_pub -h &lt;Region&gt;.thethings.network -t <span class="s2">&#34;&lt;AppID&gt;/devices/&lt;DevID&gt;/down&#34;</span> -u <span class="s2">&#34;&lt;AppID&gt;&#34;</span> -P <span class="s2">&#34;&lt;AppKey&gt;&#34;</span> -m <span class="s2">&#34;{&#34;&#34;payload_fields&#34;&#34;:{&#34;&#34;led&#34;&#34;:true}}&#34;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">mosquitto_pub -h &lt;Region&gt;.thethings.network -t <span class="s2">&#34;&lt;AppID&gt;/devices/&lt;DevID&gt;/down&#34;</span> -u <span class="s2">&#34;&lt;AppID&gt;&#34;</span> -P <span class="s2">&#34;&lt;AppKey&gt;&#34;</span> -m <span class="s2">&#34;{&#34;&#34;payload_fields&#34;&#34;:{&#34;&#34;led&#34;&#34;:true}}&#34;</span>
 </code></pre></div></li>
 <li>
 <p>If you are running <a href="https://www.thethingsnetwork.org/docs/devices/uno/quick-start/">The Things Uno / Quick Start</a> sketch you should see something like:</p>
-<pre><code>-- LOOP
+<pre tabindex="0"><code>-- LOOP
 Sending: mac tx uncnf 1 with 1 bytes
 Successful transmission. Received 1 bytes
 LED: on

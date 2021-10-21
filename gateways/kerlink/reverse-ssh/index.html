@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <meta name="generator" content="Hugo 0.79.0" />
+  <meta name="generator" content="Hugo 0.88.1" />
 
   <title>Reverse SSH | The Things Network</title>
   <link rel="canonical" href="https://www.thethingsnetwork.org/docs/gateways/kerlink/reverse-ssh/" />
@@ -38,15 +38,14 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.504b3e39c2bace42c4e70fc2480bf01ed9bbbbc2831194cfa95412953f38e1d5.css" integrity="sha256-UEs&#43;OcK6zkLE5w/CSAvwHtm7u8KDEZTPqVQSlT844dU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.1a1a30812d4274d8616380644cbf1670d6a3bc91fc7bd1d2c1d89177ea3d75f9.css" integrity="sha256-GhowgS1CdNhhY4BkTL8WcNajvJH8e9HSwdiRd&#43;o9dfk=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://www.thethingsnetwork.org/static/common/css/ui.css" crossorigin="anonymous">
 
   <meta property="og:title" content="Reverse SSH" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.thethingsnetwork.org/docs/gateways/kerlink/reverse-ssh/" />
-<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
-<meta property="og:site_name" content="The Things Network" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/gateways/kerlink/reverse-ssh/" /><meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/><meta property="og:site_name" content="The Things Network" />
+
 
 
   <meta name="twitter:card" content="summary_large_image"/>
@@ -316,11 +315,11 @@
 <h2 id="setup-the-gateway-to-dial-ssh-on-startup">Setup the gateway to dial SSH on startup&nbsp;<a class="header-hash" href="#setup-the-gateway-to-dial-ssh-on-startup">#</a> </h2>
 <p>Log into your gateway using either SSH or the Wirgrid.</p>
 <p>Run the following commands:</p>
-<pre><code>[root@Wirnet_080E0xxx ~]# cd ~
+<pre tabindex="0"><code>[root@Wirnet_080E0xxx ~]# cd ~
 [root@Wirnet_080E0xxx ~]# mkdir .ssh
 [root@Wirnet_080E0xxx ~]# dropbearkey -t rsa -f ~/.ssh/id_rsa
 </code></pre><p>After the last command you will see an output like this:</p>
-<pre><code>Generating key, this may take a while...
+<pre tabindex="0"><code>Generating key, this may take a while...
 Public key portion is:
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCbsZlO+eEHPicyOvY5hQd9p0MclysfIC1hZ3CEyCfgQNP3RqTRtQePIWCcAGFheSjTOzJvcfhHcU9DuGALehkA0h+v4FgfPmDuq4p0JuyK12LWp/gca1eYfqNs9mMQdwunXlrEvgnS+y+ldZoBaDQUOM56PNuVnlnIsk9rNbC35DMKbtlCuxjPIVXcY9Dozen2t3YbaqG8g/Rx0PH0+EwaR0nw5i64lQJlDyCM4tVWgkfPkTQ8i1uf7Oww69zHibUPMfkWupz3Qweqc4tpBEDZ7BoZhnc5SpVZNmYLYvHOEdaoLT/GWjx0CP9MBVk9V1FIw0AjbJ2Iu0QMbhiH9mAb root@Wirnet_080E0xxx
 Fingerprint: md5 25:51:e4:04:06:3b:2e:b8:be:eb:df:26:9d:d2:58:8b
@@ -328,7 +327,7 @@ Fingerprint: md5 25:51:e4:04:06:3b:2e:b8:be:eb:df:26:9d:d2:58:8b
 <p>On the gateway create a file called <code>startSshTunnel.sh</code> by running:</p>
 <p><code>[root@Wirnet_080E0xxx ~]# vi startReverseSshTunnel.sh</code></p>
 <p>Press <code>i</code> and then paste the following code.</p>
-<pre><code>#!/bin/sh
+<pre tabindex="0"><code>#!/bin/sh
 
 # Put &quot;/root/startReverseSshTunnel.sh &amp;&quot; at bottom of /etc/rc.d/rc.local
 
@@ -352,7 +351,7 @@ done
 <p><code>[root@Wirnet_080E0xxx ~]# vi /etc/rc.d/rc.local</code></p>
 <p>Press <code>i</code> to start typing. Go down to the end and paste <code>/root/startReverseSshTunnel.sh &amp;</code>. Press escape, then <code>:w</code>, enter, <code>:q</code>, enter.</p>
 <p><code>/etc/rc.d/rc.local</code> should look like this:</p>
-<pre><code>#!/bin/sh
+<pre tabindex="0"><code>#!/bin/sh
 #
 # This script will be executed *after* all the other init scripts.
 # You can put your own initialization stuff in here
@@ -378,7 +377,7 @@ esac
 <h2 id="copy-your-public-key-to-the-server">Copy your public key to the server&nbsp;<a class="header-hash" href="#copy-your-public-key-to-the-server">#</a> </h2>
 <p>Copy-paste the public key you saved earlier and add it to the <code>~/.ssh/authorized_keys</code> on the server.</p>
 <p>Execute the following on the gateway</p>
-<pre><code>[root@Wirnet_080E0xxx ~]# ssh -i /root/.ssh/id_rsa serveruser@sshgateway.example.com
+<pre tabindex="0"><code>[root@Wirnet_080E0xxx ~]# ssh -i /root/.ssh/id_rsa serveruser@sshgateway.example.com
 </code></pre><p>If you do not get a password prompt or an error, and you are logged into the server, your key exchange has been done correctly.</p>
 <h2 id="reverse-ssh-into-the-gateway-from-your-server">Reverse SSH into the gateway from your server&nbsp;<a class="header-hash" href="#reverse-ssh-into-the-gateway-from-your-server">#</a> </h2>
 <p>Restart the gateway and wait two minutes. Log into your server and try to SSH into the gateway via the reverse SSH tunnel:</p>

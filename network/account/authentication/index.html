@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <meta name="generator" content="Hugo 0.79.0" />
+  <meta name="generator" content="Hugo 0.88.1" />
 
   <title>Authentication | The Things Network</title>
   <link rel="canonical" href="https://www.thethingsnetwork.org/docs/network/account/authentication/" />
@@ -38,15 +38,14 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.504b3e39c2bace42c4e70fc2480bf01ed9bbbbc2831194cfa95412953f38e1d5.css" integrity="sha256-UEs&#43;OcK6zkLE5w/CSAvwHtm7u8KDEZTPqVQSlT844dU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.1a1a30812d4274d8616380644cbf1670d6a3bc91fc7bd1d2c1d89177ea3d75f9.css" integrity="sha256-GhowgS1CdNhhY4BkTL8WcNajvJH8e9HSwdiRd&#43;o9dfk=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://www.thethingsnetwork.org/static/common/css/ui.css" crossorigin="anonymous">
 
   <meta property="og:title" content="Authentication" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.thethingsnetwork.org/docs/network/account/authentication/" />
-<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
-<meta property="og:site_name" content="The Things Network" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/network/account/authentication/" /><meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/><meta property="og:site_name" content="The Things Network" />
+
 
 
   <meta name="twitter:card" content="summary_large_image"/>
@@ -286,12 +285,12 @@ The cookies are HTTP-only and secure, to prevent hijacking.</p>
 <h3 id="bearer-token">Bearer Token&nbsp;<a class="header-hash" href="#bearer-token">#</a> </h3>
 <p>This authentication method is the main method of authenticating.  It checks
 the <code>Authorization</code> header to be in the following format:</p>
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">Authorization: Bearer &lt;token&gt;
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">Authorization: Bearer &lt;token&gt;
 </code></pre></div><p>where <code>&lt;token&gt;</code> is the <a href="https://jwt.io">jwt</a> <code>access token</code> containing information about the user.
 This token is singed by a secret key that is kept by the account server. You can
 find the public decryprtion key using  <code>GET /key</code> endpoint.</p>
 <p>The <code>access token</code> is structured like this:</p>
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">{
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">{
   sub: &lt;user id&gt;,         // the immutable user ID
   client: &lt;client id&gt;,    // the ID of the client that requested the token
   scope: [ &lt;scope...&gt; ],  // array of scopes this token grants
@@ -334,7 +333,7 @@ find the public decryprtion key using  <code>GET /key</code> endpoint.</p>
 </code></pre></div><h3 id="access-key">Access Key&nbsp;<a class="header-hash" href="#access-key">#</a> </h3>
 <p>You can access certain application endpoints by setting the <code>Authorization</code>
 header like:</p>
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">Authorization: Key &lt;access key&gt;
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">Authorization: Key &lt;access key&gt;
 </code></pre></div><p>where <code>&lt;access key&gt;</code> is an application access key.</p>
 <h3 id="requesting-the-access-token">Requesting the access token&nbsp;<a class="header-hash" href="#requesting-the-access-token">#</a> </h3>
 <p>To request an access token, initiate an OAuth 2.0 flow at <code>/users/token</code>.
@@ -346,7 +345,7 @@ token. By default the scope is not restricted and all entities are encoded in
 the token.</p>
 <p>To restrict the scope, a client should pass the optional <code>scope</code> parameter and
 select the entities it wants to be included in the token:</p>
-<pre><code class="language-jsonnet" data-lang="jsonnet">{
+<pre tabindex="0"><code class="language-jsonnet" data-lang="jsonnet">{
   grant_type: 'password',
   username: 'username',
   password: 'secret',
@@ -375,11 +374,11 @@ exchanged for access tokens with similar scope but different specific entities.<
 another token that has the restricted scope <code>[ 'apps:an_app_id' ]</code> posting the
 following request to <code>/users/restrict-token</code>,  with your access token in the
 <code>Authorization: Bearer &lt;token&gt;</code> header:</p>
-<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
   <span class="nt">&#34;scope&#34;</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&#34;apps:another_app_id&#34;</span> <span class="p">]</span>
 <span class="p">}</span>
 </code></pre></div><p>The result of which would be:</p>
-<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
   <span class="nt">&#34;access_token&#34;</span><span class="p">:</span> <span class="s2">&#34;&lt;new token for another_app_id&gt;&#34;</span>
 <span class="p">}</span>
 </code></pre></div><p>This way, in effect every token has the same power as a token with all <code>apps</code> on
@@ -395,7 +394,7 @@ validated offline).  Therefore, you need to exchange the access key for an
 access token.  This can be done using the <code>/api/v2/applications/token</code> endpoint.</p>
 <p>It works exactly like a standard OAuth 2.0 password flow. The client initiates a
 request:</p>
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">HTTP/1.1  POST /api/v2/applications/token
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">HTTP/1.1  POST /api/v2/applications/token
 Content-Type: application/json
 Authorization: Basic &lt;basic_auth&gt;
 
@@ -407,13 +406,13 @@ Authorization: Basic &lt;basic_auth&gt;
 </code></pre></div><p>Where <code>&lt;app_id&gt;</code> is the application id you are requesting the access token for
 and <code>&lt;access_key&gt;</code> is the application access key you are exchanging.</p>
 <p><code>&lt;basic auth&gt;</code> is constructed following the <a href="https://en.wikipedia.org/wiki/Basic_access_authentication">standard basic auth</a> way:</p>
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext"># pseudo code
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"># pseudo code
 basic_auth = base64(&#34;&lt;client_id&gt;:&lt;client_secret&gt;&#34;)
 </code></pre></div><p>Where <code>client_id</code> is the client ID for your integration and <code>&lt;client_secret&gt;</code> is
 the client secret for you integration. For now, these need to be requested
 manually with TTN.</p>
 <p>If successful, you will receive a response like:</p>
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">200 Success
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">200 Success
 Content-Type: application/json
 
 {
@@ -424,7 +423,7 @@ Content-Type: application/json
 exchange (eg. it has the <code>[ &quot;app:&lt;app_id&gt;&quot; ]</code>) scope and has the same rights as
 the access key you used to in the exchange.</p>
 <p>If the exchange fails for whatever reason, you will get a response like this:</p>
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">401 Unauthorized
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">401 Unauthorized
 
 {
   &#34;code&#34;: 401,
@@ -433,24 +432,24 @@ the access key you used to in the exchange.</p>
 </code></pre></div><h1 id="oauth-20-authorization-flow">OAuth 2.0 Authorization flow</h1>
 <p>In this section we describe a sample <code>authorization_code</code> code flow.
 Assuming you have a registered client with these properties:</p>
-<pre><code>client_id: foo-client 
+<pre tabindex="0"><code>client_id: foo-client 
 client_secret: secret
 redirect_uri: http://www.example.com/oauth/callback
 scope: [ 'apps' ]
 </code></pre><h2 id="1-make-an-authorization-request">1. Make an authorization request&nbsp;<a class="header-hash" href="#1-make-an-authorization-request">#</a> </h2>
 <p>To be able to use your client, a user will have to authorize it first on the
 account server.  You can tell the user to do so by redirecting to:</p>
-<pre><code>https://account.thethingsnetwork.org/users/authorize?client_id=foo-client&amp;redirect_uri=http://www.example.com/oauth/callback&amp;response_type=code
+<pre tabindex="0"><code>https://account.thethingsnetwork.org/users/authorize?client_id=foo-client&amp;redirect_uri=http://www.example.com/oauth/callback&amp;response_type=code
 </code></pre><p>This will ask the user to log in and presents her with a form to authorize your
 client.  If the user authorizes your client, she will be redirected to:</p>
-<pre><code>http://www.example.com/oauth/callback?code=&lt;auth code&gt;
+<pre tabindex="0"><code>http://www.example.com/oauth/callback?code=&lt;auth code&gt;
 </code></pre><p>You need the <code>&lt;auth code&gt;</code> from this redirect to go to step 2.</p>
 <p>The preference of the user will be stored so this authorization step will
 redirect immediatly (without showing the form) the next time you do this for the
 same user.</p>
 <h2 id="2-get-the-access-token">2. Get the access token&nbsp;<a class="header-hash" href="#2-get-the-access-token">#</a> </h2>
 <p>To get the access token perform the following request:</p>
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext">HTTP/1.1 POST /users/token
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext">HTTP/1.1 POST /users/token
 Content-Type: application/json
 Authorization: Basic &lt;basic_auth&gt;
 

@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <meta name="generator" content="Hugo 0.79.0" />
+  <meta name="generator" content="Hugo 0.88.1" />
 
   <title>Connecting to The Things Network (TTN) | The Things Network</title>
   <link rel="canonical" href="https://www.thethingsnetwork.org/docs/devices/rak811-lora-module-breakout-board/connecting-to-ttn/" />
@@ -38,15 +38,14 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.504b3e39c2bace42c4e70fc2480bf01ed9bbbbc2831194cfa95412953f38e1d5.css" integrity="sha256-UEs&#43;OcK6zkLE5w/CSAvwHtm7u8KDEZTPqVQSlT844dU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.1a1a30812d4274d8616380644cbf1670d6a3bc91fc7bd1d2c1d89177ea3d75f9.css" integrity="sha256-GhowgS1CdNhhY4BkTL8WcNajvJH8e9HSwdiRd&#43;o9dfk=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://www.thethingsnetwork.org/static/common/css/ui.css" crossorigin="anonymous">
 
   <meta property="og:title" content="Connecting to The Things Network (TTN)" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.thethingsnetwork.org/docs/devices/rak811-lora-module-breakout-board/connecting-to-ttn/" />
-<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
-<meta property="og:site_name" content="The Things Network" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/devices/rak811-lora-module-breakout-board/connecting-to-ttn/" /><meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/><meta property="og:site_name" content="The Things Network" />
+
 
 
   <meta name="twitter:card" content="summary_large_image"/>
@@ -256,11 +255,11 @@
 <ul>
 <li>You can get the “<strong>Device EUI</strong>” of your RAK811 LoRa Breakout Module with the following command, which will display all node parameters:</li>
 </ul>
-<pre><code>at+get_config=lora:status
+<pre tabindex="0"><code>at+get_config=lora:status
 </code></pre><ul>
 <li>In case you have had The Things Network (TTN) generate a new “<strong>Device EUI</strong>”, you can use the command below to import it into the RAK811 LoRa Breakout Module configuration parameters (XXXX is the Device_EUI you want to update):</li>
 </ul>
-<pre><code>at+set_config=lora:dev eui:XXXX
+<pre tabindex="0"><code>at+set_config=lora:dev eui:XXXX
 </code></pre><p><img src="../images/deviceEUI.png" alt="Figure 6: TTN DeviceEUI"></p>
 <p><strong>10</strong>.Then press the “<strong>Register</strong>” button at the bottom of this page to finish.</p>
 <p><img src="../images/deviceoverview.png" alt="Figure 7: Device Overview"></p>
@@ -272,20 +271,20 @@
 <p><strong>Note:</strong> The default LoRa work mode is LoRaWAN 1.0.2, while the default LoRa join mode is OOTA, and the default LoRa Class is A.</p>
 </blockquote>
 <p><strong>1</strong>.Using the RAK Serial Port Tool, set mode to <strong>OTAA</strong>, device class to <strong>Class A</strong> and your <strong>LoRaWAN™ Region</strong> to your correct frequency band, with the following set of commands below. Remember to replace <strong>XXX</strong> with the your LoRaWAN™ region, see this <a href="https://www.thethingsnetwork.org/docs/lorawan/frequencies-by-country.html">link</a> for your frequency plan.</p>
-<pre><code>at+set_config=lora:join_mode:0
-</code></pre><pre><code>at+set_config=lora:class:0
-</code></pre><pre><code>at+set_config=lora:region:XXX
+<pre tabindex="0"><code>at+set_config=lora:join_mode:0
+</code></pre><pre tabindex="0"><code>at+set_config=lora:class:0
+</code></pre><pre tabindex="0"><code>at+set_config=lora:region:XXX
 </code></pre><p><img src="../images/otaamodeclassfreq.png" alt="Figure 9 : OOTA Mode, Class and Frequency"></p>
 <p><strong>2</strong>.Now that the modes are set, enter the parameters: : <strong>Device EUI, Application EUI and App Key</strong>. Use the commands below. Remember to replace the “<strong>XXXX</strong>” with the corresponding parameter value for your particular case:</p>
-<pre><code>at+set_config=lora:dev_eui:XXXX
-</code></pre><pre><code>at+set_config=lora:app_eui:XXXX
-</code></pre><pre><code>at+set_config=lora:app_key:XXXX
+<pre tabindex="0"><code>at+set_config=lora:dev_eui:XXXX
+</code></pre><pre tabindex="0"><code>at+set_config=lora:app_eui:XXXX
+</code></pre><pre tabindex="0"><code>at+set_config=lora:app_key:XXXX
 </code></pre><p><img src="../images/otaadeveuiappeuiappkey.png" alt="Figure 10: OOTA Dev EUI, App EUI and App Key"></p>
 <p><strong>3</strong>.Finally, execute the join command:</p>
-<pre><code>at+join
+<pre tabindex="0"><code>at+join
 </code></pre><p><img src="../images/otaajoinmode.png" alt="Figure 11: Join OOTA"></p>
 <p><strong>4</strong>.Test the connection by sending an uplink frame. Use the following as an example:</p>
-<pre><code>at+send=lora:1:12345678
+<pre tabindex="0"><code>at+send=lora:1:12345678
 </code></pre><p><img src="../images/otaasenddata.png" alt="Figure 12: OOTA Sending Data"></p>
 <p><strong>5</strong>.If you get a response in your TTN live data feed as in the figure below, then you are all set!</p>
 <p><img src="../images/ootadataviewing.png" alt="Figure 13: OOTA Data Viewing"></p>
@@ -297,22 +296,22 @@
 <p><strong>2</strong>.The <strong>Device Address, Network Session Key</strong> and <strong>App Session Key</strong> will be generated automatically by default.Save the mode change and return to the <strong>Device Overview page</strong>. You can copy the keys by pressing the button after the value fields marked in red in the image below:</p>
 <p><img src="../images/abpparameters.png" alt="Figure 15: ABP Parameters"></p>
 <p><strong>3</strong>.Now, we need to update the RAK811 LoRa Breakout Module configuration. Open the RAK Serial Port Tool and type the command below to set these parameters: <strong>Activation Mode</strong> to <strong>ABP, Device Address, Network Session Key</strong> and <strong>Applicatio Session Key</strong> and your <strong>LoRaWAN™ Region</strong> to your correct frequency band. Remember to replace XXX with the your LoRaWAN™ region, see this <a href="https://www.thethingsnetwork.org/docs/lorawan/frequencies-by-country.html">link</a> for your frequency plan.</p>
-<pre><code>at+set_config=lora:region:XXX
-</code></pre><pre><code>at+set_config=lora:join_mode:1
+<pre tabindex="0"><code>at+set_config=lora:region:XXX
+</code></pre><pre tabindex="0"><code>at+set_config=lora:join_mode:1
 </code></pre><p><img src="../images/ttnabpfreqmode.png" alt="Figure 16: Setting of Region LoRa® Mode"></p>
-<pre><code>at+set_config=lora:dev_addr:XXXX
-</code></pre><pre><code>at+set_config=lora:nwks_key:XXXX
-</code></pre><pre><code>at+set_config=lora:apps_key:XXXX
+<pre tabindex="0"><code>at+set_config=lora:dev_addr:XXXX
+</code></pre><pre tabindex="0"><code>at+set_config=lora:nwks_key:XXXX
+</code></pre><pre tabindex="0"><code>at+set_config=lora:apps_key:XXXX
 </code></pre><p><img src="../images/ttnabpdevaddrnwkskeyappskey.png" alt="Figure 17: Setting of Network and Application Key">
 Type the following AT command to set the: <strong>Frequency/Region to EU868, Device Address, Network Session Key and App Session Key</strong>:
 <strong>4</strong>.Then, join in ABP mode.</p>
-<pre><code>at+join
+<pre tabindex="0"><code>at+join
 </code></pre><p><img src="../images/tnnabpjoin.png" alt="Figure 18: Joining in ABP Mode"></p>
 <blockquote>
 <p><strong>Note:</strong> It is actually unnecessary to join in ABP mode. But, it is a good practice to set this AT Command to validate the parameters set for ABP Mode.</p>
 </blockquote>
 <p><strong>5</strong>.You can test the connection by sending an uplink frame. Use the following as an example:</p>
-<pre><code>at+send=lora:1:12345678
+<pre tabindex="0"><code>at+send=lora:1:12345678
 </code></pre><p><img src="../images/ttnabpsenddata.png" alt="Figure 19: Sending an Uplink Frame"></p>
 <p>Great! Your node should now work in ABP mode.</p>
 <p><img src="../images/ttnabpreceivedata.png" alt="Figure 20: Sending Data to TTN from RAK811"></p>

@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <meta name="generator" content="Hugo 0.79.0" />
+  <meta name="generator" content="Hugo 0.88.1" />
 
   <title>TTN Packet Forwarder | The Things Network</title>
   <link rel="canonical" href="https://www.thethingsnetwork.org/docs/gateways/packet-forwarder/ttn/" />
@@ -38,15 +38,14 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.504b3e39c2bace42c4e70fc2480bf01ed9bbbbc2831194cfa95412953f38e1d5.css" integrity="sha256-UEs&#43;OcK6zkLE5w/CSAvwHtm7u8KDEZTPqVQSlT844dU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.1a1a30812d4274d8616380644cbf1670d6a3bc91fc7bd1d2c1d89177ea3d75f9.css" integrity="sha256-GhowgS1CdNhhY4BkTL8WcNajvJH8e9HSwdiRd&#43;o9dfk=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://www.thethingsnetwork.org/static/common/css/ui.css" crossorigin="anonymous">
 
   <meta property="og:title" content="TTN Packet Forwarder" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.thethingsnetwork.org/docs/gateways/packet-forwarder/ttn/" />
-<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
-<meta property="og:site_name" content="The Things Network" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/gateways/packet-forwarder/ttn/" /><meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/><meta property="og:site_name" content="The Things Network" />
+
 
 
   <meta name="twitter:card" content="summary_large_image"/>
@@ -316,22 +315,22 @@
 <p>For in-depth configuration, all the paths are available <a href="https://github.com/TheThingsNetwork/packet_forwarder#run">in the GitHub documentation</a>.</p>
 <h3 id="change-gateway-id-and-key">Change Gateway ID and key&nbsp;<a class="header-hash" href="#change-gateway-id-and-key">#</a> </h3>
 <p>To change the gateway&rsquo;s ID and key, edit the configuration file, and set those values:</p>
-<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l">&lt;New gateway ID&gt;</span><span class="w">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l">&lt;New gateway ID&gt;</span><span class="w">
 </span><span class="w"></span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l">&lt;New gateway key&gt;</span><span class="w">
 </span></code></pre></div><h3 id="configure-on-a-private-network">Configure on a private network&nbsp;<a class="header-hash" href="#configure-on-a-private-network">#</a> </h3>
 <p>To configure the gateway to connect on a network that is <strong>not</strong> the public community network, set those values in the configuration:</p>
-<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">discovery-server</span><span class="p">:</span><span class="w"> </span><span class="l">&lt;Hostname of the private network&gt;:&lt;Port of the discovery server&gt;</span><span class="w">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">discovery-server</span><span class="p">:</span><span class="w"> </span><span class="l">&lt;Hostname of the private network&gt;:&lt;Port of the discovery server&gt;</span><span class="w">
 </span><span class="w"></span><span class="nt">auth-server</span><span class="p">:</span><span class="w"> </span><span class="l">&lt;URL of the account server&gt;</span><span class="w">
 </span></code></pre></div><p>For example, if you have a private network at <code>&lt;privatenetwork&gt;.thethings.industries</code> with a default configuration, you will configure the packet forwarder on:</p>
-<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">discovery-server</span><span class="p">:</span><span class="w"> </span><span class="l">&lt;privatenetwork&gt;.thethings.industries:1900</span><span class="w">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">discovery-server</span><span class="p">:</span><span class="w"> </span><span class="l">&lt;privatenetwork&gt;.thethings.industries:1900</span><span class="w">
 </span><span class="w"></span><span class="nt">auth-server</span><span class="p">:</span><span class="w"> </span><span class="l">https://account.&lt;privatenetwork&gt;.thethings.industries</span><span class="w">
 </span></code></pre></div><h3 id="configure-on-a-specific-router">Configure on a specific router&nbsp;<a class="header-hash" href="#configure-on-a-specific-router">#</a> </h3>
 <p>If you want your packet forwarder to connect to a specific router, you can specify it in the packet forwarder&rsquo;s configuration:</p>
-<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">router</span><span class="p">:</span><span class="w"> </span><span class="l">&lt;ID of the router&gt;</span><span class="w">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">router</span><span class="p">:</span><span class="w"> </span><span class="l">&lt;ID of the router&gt;</span><span class="w">
 </span></code></pre></div><h2 id="troubleshooting">Troubleshooting&nbsp;<a class="header-hash" href="#troubleshooting">#</a> </h2>
 <p>Here are some common errors that can happen with the TTN Packet Forwarder, and tips on how to solve them:</p>
 <h3 id="dial-tcp-lookup-error"><code>dial tcp: lookup</code> error&nbsp;<a class="header-hash" href="#dial-tcp-lookup-error">#</a> </h3>
-<pre><code>FATAL Couldn't read configuration              error=Get https://account.thethingsnetwork.org/api/v2/gateways/test-gateway: dial tcp: lookup account.thethingsnetwork.org on [::1]:53: read udp [::1]:46876-&gt;[::1]:53: read: connection refused
+<pre tabindex="0"><code>FATAL Couldn't read configuration              error=Get https://account.thethingsnetwork.org/api/v2/gateways/test-gateway: dial tcp: lookup account.thethingsnetwork.org on [::1]:53: read udp [::1]:46876-&gt;[::1]:53: read: connection refused
 </code></pre><p><em>Example of this error happening</em></p>
 <p>This error happens when the gateway fails to complete a DNS lookup for the account server. It can happen for these reasons:</p>
 <ul>
@@ -342,7 +341,7 @@
 <p>There is <strong>no DNS server configured</strong> on the gateway. The resolution method for this issue varies from gateway to gateway - for most Linux-based gateways, it can be resolved by configuring Google&rsquo;s DNS servers. Edit the <code>/etc/resolv.conf</code> file, and fill it with this:</p>
 </li>
 </ul>
-<pre><code>nameserver 8.8.8.8
+<pre tabindex="0"><code>nameserver 8.8.8.8
 nameserver 8.8.4.4
 </code></pre><h3 id="failed-to-load-system-roots-and-no-roots-provided">Failed to load system roots and no roots provided&nbsp;<a class="header-hash" href="#failed-to-load-system-roots-and-no-roots-provided">#</a> </h3>
 <p>This error can happen to gateways that <strong>aren&rsquo;t provisioned with any <a href="https://www.globalsign.com/en/ssl-information-center/what-are-certification-authorities-trust-hierarchies/">root SSL certificates</a></strong>. Root certificates are used by the system to verify the identity of websites and servers that use SSL certificates to identify themselves. If your system doesn&rsquo;t have any root certificate, the packet forwarder <strong>cannot verify the identity of the servers</strong> you&rsquo;re communicating with, and fails as a <strong>security measure</strong>.</p>

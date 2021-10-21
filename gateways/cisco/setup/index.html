@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <meta name="generator" content="Hugo 0.79.0" />
+  <meta name="generator" content="Hugo 0.88.1" />
 
   <title>Setup | The Things Network</title>
   <link rel="canonical" href="https://www.thethingsnetwork.org/docs/gateways/cisco/setup/" />
@@ -38,15 +38,14 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.504b3e39c2bace42c4e70fc2480bf01ed9bbbbc2831194cfa95412953f38e1d5.css" integrity="sha256-UEs&#43;OcK6zkLE5w/CSAvwHtm7u8KDEZTPqVQSlT844dU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.1a1a30812d4274d8616380644cbf1670d6a3bc91fc7bd1d2c1d89177ea3d75f9.css" integrity="sha256-GhowgS1CdNhhY4BkTL8WcNajvJH8e9HSwdiRd&#43;o9dfk=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://www.thethingsnetwork.org/static/common/css/ui.css" crossorigin="anonymous">
 
   <meta property="og:title" content="Setup" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.thethingsnetwork.org/docs/gateways/cisco/setup/" />
-<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
-<meta property="og:site_name" content="The Things Network" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/gateways/cisco/setup/" /><meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/><meta property="og:site_name" content="The Things Network" />
+
 
 
   <meta name="twitter:card" content="summary_large_image"/>
@@ -319,9 +318,9 @@
 </li>
 <li>
 <p>Either use your operating system&rsquo;s native serial connection software. For example, on macOS and Linux, open a Terminal, and type the following commands:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">ls /dev/tty.usb*
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">ls /dev/tty.usb*
 </code></pre></div><p>You&rsquo;ll see the list of available USB serial devices. Once you&rsquo;ve found the once matching the Cisco console, connect using the following command:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">screen &lt;device&gt; <span class="m">115200</span> <span class="c1"># e.g. screen /dev/tty.usbserial-AO001X6M 115200</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">screen &lt;device&gt; <span class="m">115200</span> <span class="c1"># e.g. screen /dev/tty.usbserial-AO001X6M 115200</span>
 </code></pre></div></li>
 </ul>
 <h3 id="system-setup">System setup&nbsp;<a class="header-hash" href="#system-setup">#</a> </h3>
@@ -340,30 +339,30 @@
 </li>
 <li>
 <p>Execute the following commands:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">usb <span class="nb">enable</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">usb <span class="nb">enable</span>
 archive download-sw firmware /normal /save-reload usb:cisco_update.tar.gz
 </code></pre></div></li>
 </ol>
 <p>This will update your Cisco firmware. After the operation, you can verify the installed version with <code>show version</code>.</p>
 <h4 id="network-setup">Network setup&nbsp;<a class="header-hash" href="#network-setup">#</a> </h4>
 <p>To configure your Cisco Gateway to your network, type the following commands:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">configure terminal <span class="c1"># Enter global configuration mode</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">configure terminal <span class="c1"># Enter global configuration mode</span>
 interface FastEthernet 0/1 <span class="c1"># Enter Ethernet configuration</span>
 </code></pre></div><p>If your local network has a <strong>DHCP server</strong> attributing IPs:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">ip address dhcp
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">ip address dhcp
 </code></pre></div><p>Otherwise, if you know the <strong>static IP address</strong> of your gateway:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">ip address &lt;ip-address&gt; &lt;subnet-mask&gt;
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">ip address &lt;ip-address&gt; &lt;subnet-mask&gt;
 </code></pre></div><p>Next, type the following to save the network configuration of your gateway:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">description Ethernet <span class="c1"># Replace &#34;Ethernet&#34; by any description you want</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">description Ethernet <span class="c1"># Replace &#34;Ethernet&#34; by any description you want</span>
 <span class="nb">exit</span> <span class="c1"># Exit Ethernet configuration</span>
 <span class="nb">exit</span> <span class="c1"># Exit global configuration mode</span>
 copy running-config startup-config <span class="c1"># Save the configuration</span>
 </code></pre></div><p>You can test your Internet configuration with the <code>ping</code> command, for example:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">ping ip 8.8.8.8 <span class="c1"># Ping Google&#39;s DNS server</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">ping ip 8.8.8.8 <span class="c1"># Ping Google&#39;s DNS server</span>
 </code></pre></div><p>To see more information about the gateway&rsquo;s IP and the network, you can use <code>show interfaces FastEthernet 0/1</code>, <code>show ip interfaces FastEthernet 0/1</code> or <code>show ip route</code>.</p>
 <h4 id="date-and-time">Date and time&nbsp;<a class="header-hash" href="#date-and-time">#</a> </h4>
 <p>To configure your system&rsquo;s date and time, you can use <code>ntp</code>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">configure terminal <span class="c1"># Enter global configuration mode</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">configure terminal <span class="c1"># Enter global configuration mode</span>
 ntp server address &lt;NTP server address&gt; <span class="c1"># Configure ntp on an ntp address</span>
 <span class="c1"># OR</span>
 ntp server ip &lt;NTP server IP&gt; <span class="c1"># Configure ntp on an IP</span>
@@ -373,11 +372,11 @@ ntp server ip &lt;NTP server IP&gt; <span class="c1"># Configure ntp on an IP</s
 <h4 id="fpga">FPGA&nbsp;<a class="header-hash" href="#fpga">#</a> </h4>
 <p>If you needed to update your gateway firmware previously, your FPGA will need ~20 minutes to update once the new firmware is installed. The packet forwarder will not work until then, so we recommend at this point waiting until the FPGA is upgraded.</p>
 <p>To show the status of the FPGA, you can use the following command:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">show inventory
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">show inventory
 </code></pre></div><p>When the <code>FPGAStatus</code> line indicates <code>Ready</code>, this means you can go forward with this guide.</p>
 <h4 id="gps">GPS&nbsp;<a class="header-hash" href="#gps">#</a> </h4>
 <p>If you have a GPS connected to your Cisco gateway, enable it with the following commands:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">configure terminal <span class="c1"># Enter global configuration mode</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">configure terminal <span class="c1"># Enter global configuration mode</span>
 gps ubx <span class="nb">enable</span> <span class="c1"># Enable GPS</span>
 <span class="nb">exit</span> <span class="c1"># Exit global configuration mode</span>
 </code></pre></div><blockquote>
@@ -385,7 +384,7 @@ gps ubx <span class="nb">enable</span> <span class="c1"># Enable GPS</span>
 </blockquote>
 <h4 id="enable-radio">Enable radio&nbsp;<a class="header-hash" href="#enable-radio">#</a> </h4>
 <p>As a final step before setting up the packet forwarder software, we&rsquo;re going to <strong>enable the radio</strong>. You can see radio information with the <code>show radio</code> command:</p>
-<pre><code>Gateway#show radio 
+<pre tabindex="0"><code>Gateway#show radio 
 LORA_SN: FOC21028R8S
 LORA_PN: 95.1602T01
 LORA_SKU: 915
@@ -433,14 +432,14 @@ on
 <p>To run the packet forwarder, we&rsquo;ll make use of the <strong>container</strong> that is running on the gateway at all times.</p>
 <h3 id="packet-forwarder-configuration">Packet forwarder configuration&nbsp;<a class="header-hash" href="#packet-forwarder-configuration">#</a> </h3>
 <p>When in standalone mode, enter the container:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">request shell container-console
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">request shell container-console
 </code></pre></div><p>You will be requested to enter the System Password. By default this is <code>admin</code>.</p>
 <p>Create the directory to store the Packet Forwarder configuration:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">mkdir /etc/pktfwd
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">mkdir /etc/pktfwd
 </code></pre></div><p>Copy the packet forwarder to <code>/etc/pktfwd</code>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">cp /tools/pkt_forwarder /etc/pktfwd/pkt_forwarder
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">cp /tools/pkt_forwarder /etc/pktfwd/pkt_forwarder
 </code></pre></div><p>Cisco provides a list of configuration templates. To list the available templates:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">ls -l /tools/templates
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">ls -l /tools/templates
 total <span class="m">136</span>
 -rwxr-xr-x    <span class="m">1</span> <span class="m">65534</span>    <span class="m">65534</span>        <span class="m">11323</span> Oct  <span class="m">8</span> 13:30 config_loc_dual_antenna_8ch_full_diversity_EU868.json
 -rwxr-xr-x    <span class="m">1</span> <span class="m">65534</span>    <span class="m">65534</span>        <span class="m">11248</span> Oct  <span class="m">8</span> 13:30 config_loc_dual_antenna_8ch_full_diversity_JP920.json
@@ -453,10 +452,10 @@ total <span class="m">136</span>
 -rwxr-xr-x    <span class="m">1</span> <span class="m">65534</span>    <span class="m">65534</span>        <span class="m">14148</span> Oct  <span class="m">8</span> 13:30 config_test_single_antenna_64ch_64x1_EU868.json
 -rwxr-xr-x    <span class="m">1</span> <span class="m">65534</span>    <span class="m">65534</span>        <span class="m">14148</span> Oct  <span class="m">8</span> 13:30 config_test_single_antenna_64ch_8x8_EU868.json
 </code></pre></div><p>Copy the configuration template <code>config_loc_dual_antenna_8ch_full_diversity_EU868.json</code> as <code>config.json</code> to <code>/etc/pktfwd</code>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">cp /tools/templates/config_loc_dual_antenna_8ch_full_diversity_EU868.json /etc/pktfwd/config.json
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">cp /tools/templates/config_loc_dual_antenna_8ch_full_diversity_EU868.json /etc/pktfwd/config.json
 </code></pre></div><p>We&rsquo;re now going to modify the configuration to point the packet forwarder to The Things Network. Select the <a href="/docs/gateways/packet-forwarder/semtech-udp/#router-addresses">router address</a> the most appropriate for your location.</p>
 <p>Edit the configuration using a text editor, such as <code>vi</code>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">vi /etc/pktfwd/config.json
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vi /etc/pktfwd/config.json
 </code></pre></div><p>You&rsquo;ll need to change the following settings:</p>
 <ul>
 <li>
@@ -481,7 +480,7 @@ Check the <em>I&rsquo;m using legacy packet forwarder</em> box, and enter the <c
 Fill in the rest of the form, and click on <strong>Register gateway</strong>.</p>
 <h3 id="testing-the-packet-forwarder">Testing the packet forwarder&nbsp;<a class="header-hash" href="#testing-the-packet-forwarder">#</a> </h3>
 <p>You can now test the packet forwarder by executing:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">/etc/pktfwd/pkt_forwarder -c /etc/pktfwd/config.json -g /dev/ttyS1
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">/etc/pktfwd/pkt_forwarder -c /etc/pktfwd/config.json -g /dev/ttyS1
 </code></pre></div><p>You should now see packets flowing in the logs of the packet forwarder - and see gateway activity on the gateway&rsquo;s package on the console!</p>
 <blockquote>
 <p>Having issues making the packet forwarder run? Head over to our <a href="/docs/gateways/troubleshooting/semtech-udp/">packet forwarder troubleshooting section</a>.</p>
@@ -489,7 +488,7 @@ Fill in the rest of the form, and click on <strong>Register gateway</strong>.</p
 <h3 id="installing-the-packet-forwarder-1">Installing the packet forwarder&nbsp;<a class="header-hash" href="#installing-the-packet-forwarder-1">#</a> </h3>
 <p>Now that we know the packet forwarder is running, let&rsquo;s make it run permanently.</p>
 <p>Save the following script as <code>/etc/init.d/S60pkt_forwarder</code>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="cp">#!/bin/sh
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="cp">#!/bin/sh
 </span><span class="cp"></span>
 <span class="nv">SCRIPT_DIR</span><span class="o">=</span>/etc/pktfwd
 <span class="nv">SCRIPT</span><span class="o">=</span><span class="nv">$SCRIPT_DIR</span>/pkt_forwarder
@@ -545,7 +544,7 @@ restart<span class="o">()</span> <span class="o">{</span>
 
 <span class="nb">exit</span> <span class="nv">$?</span>
 </code></pre></div><p>Then make the init script executable:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">chmod +x /etc/init.d/S60pkt_forwarder
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">chmod +x /etc/init.d/S60pkt_forwarder
 </code></pre></div><p>To enable it immediately, execute <code>/etc/init.d/S60pkt_forwarder start</code>.
 This script will be called at every startup of the container.</p>
 <blockquote>

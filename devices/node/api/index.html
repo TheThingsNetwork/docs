@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <meta name="generator" content="Hugo 0.79.0" />
+  <meta name="generator" content="Hugo 0.88.1" />
 
   <title>API Reference | The Things Network</title>
   <link rel="canonical" href="https://www.thethingsnetwork.org/docs/devices/node/api/" />
@@ -38,15 +38,14 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.504b3e39c2bace42c4e70fc2480bf01ed9bbbbc2831194cfa95412953f38e1d5.css" integrity="sha256-UEs&#43;OcK6zkLE5w/CSAvwHtm7u8KDEZTPqVQSlT844dU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.1a1a30812d4274d8616380644cbf1670d6a3bc91fc7bd1d2c1d89177ea3d75f9.css" integrity="sha256-GhowgS1CdNhhY4BkTL8WcNajvJH8e9HSwdiRd&#43;o9dfk=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://www.thethingsnetwork.org/static/common/css/ui.css" crossorigin="anonymous">
 
   <meta property="og:title" content="API Reference" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.thethingsnetwork.org/docs/devices/node/api/" />
-<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
-<meta property="og:site_name" content="The Things Network" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/devices/node/api/" /><meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/><meta property="og:site_name" content="The Things Network" />
+
 
 
   <meta name="twitter:card" content="summary_large_image"/>
@@ -232,17 +231,17 @@
           
 <h2 id="class-thethingsnode">Class: TheThingsNode&nbsp;<a class="header-hash" href="#class-thethingsnode">#</a> </h2>
 <p>Include TheThingsNode class and create a pointer to the singleton instance like this:</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="cp">#include</span> <span class="cpf">&lt;TheThingsNode.h&gt;</span><span class="cp">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="cp">#include</span> <span class="cpf">&lt;TheThingsNode.h&gt;</span><span class="cp">
 </span><span class="cp"></span>
 <span class="n">TheThingsNode</span> <span class="o">*</span><span class="n">node</span><span class="p">;</span>
 </code></pre></div><h2 id="method-setup">Method: setup&nbsp;<a class="header-hash" href="#method-setup">#</a> </h2>
 <p>Use the static <code>setup()</code> method in your sketch&rsquo;s <code>setup()</code> function to create or get the class singleton.</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
     <span class="n">node</span> <span class="o">=</span> <span class="n">TheThingsNode</span><span class="o">::</span><span class="n">setup</span><span class="p">();</span>
 <span class="p">}</span>
 </code></pre></div><h2 id="method-loop">Method: loop&nbsp;<a class="header-hash" href="#method-loop">#</a> </h2>
 <p>In your <code>loop()</code> function, call the singleton&rsquo;s <code>loop()</code> method.</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
     <span class="n">node</span><span class="o">-&gt;</span><span class="n">loop</span><span class="p">();</span>
 <span class="p">}</span>
 </code></pre></div><p>This will:</p>
@@ -258,9 +257,9 @@
 </blockquote>
 <h2 id="method-onwake">Method: onWake&nbsp;<a class="header-hash" href="#method-onwake">#</a> </h2>
 <p>Set a callback that will run first thing every time the Node wakes up, which is when an interrupt changes because of interaction with the button, motion sensor or temperature sensor. The device also wakes up every 8 seconds, which is the longest we can make it sleep.</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">onWake</span><span class="p">(</span><span class="kt">void</span><span class="p">(</span><span class="o">*</span><span class="n">callback</span><span class="p">)(</span><span class="kt">void</span><span class="p">));</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">onWake</span><span class="p">(</span><span class="kt">void</span><span class="p">(</span><span class="o">*</span><span class="n">callback</span><span class="p">)(</span><span class="kt">void</span><span class="p">));</span>
 </code></pre></div><p>Usage:</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
     <span class="n">node</span> <span class="o">=</span> <span class="n">TheThingsNode</span><span class="o">::</span><span class="n">setup</span><span class="p">();</span>
 
     <span class="n">node</span><span class="o">-&gt;</span><span class="n">onWake</span><span class="p">(</span><span class="n">wake</span><span class="p">);</span>
@@ -271,12 +270,12 @@
 <span class="p">}</span>
 </code></pre></div><h2 id="method-onsleep">Method: onSleep&nbsp;<a class="header-hash" href="#method-onsleep">#</a> </h2>
 <p>Set a callback that will run last thing before the Node goes back to sleep for 8 seconds or until an interrupt changes because of interaction with the button, motion sensor or temperature sensor.</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">onSleep</span><span class="p">(</span><span class="kt">void</span><span class="p">(</span><span class="o">*</span><span class="n">callback</span><span class="p">)(</span><span class="kt">void</span><span class="p">));</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">onSleep</span><span class="p">(</span><span class="kt">void</span><span class="p">(</span><span class="o">*</span><span class="n">callback</span><span class="p">)(</span><span class="kt">void</span><span class="p">));</span>
 </code></pre></div><ul>
 <li><code>void(*callback)(void)</code>: Function to be called, with no arguments nor return value.</li>
 </ul>
 <p>Usage:</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
     <span class="n">node</span> <span class="o">=</span> <span class="n">TheThingsNode</span><span class="o">::</span><span class="n">setup</span><span class="p">();</span>
 
     <span class="n">node</span><span class="o">-&gt;</span><span class="n">onSleep</span><span class="p">(</span><span class="n">sleep</span><span class="p">);</span>
@@ -289,7 +288,7 @@
 Check the example <a href="https://github.com/TheThingsNetwork/arduino-node-lib/blob/master/examples/BatteryMonitorLPP/BatteryMonitorLPP.ino">BatteryMonitorLPP</a>.</p>
 <h2 id="interval">Interval&nbsp;<a class="header-hash" href="#interval">#</a> </h2>
 <p>Instead of using your <code>loop()</code> function, use <code>configInterval()</code> and <code>onInterval()</code> to set a function to be called on a certain interval:</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
     <span class="n">node</span> <span class="o">=</span> <span class="n">TheThingsNode</span><span class="o">::</span><span class="n">setup</span><span class="p">();</span>
 
     <span class="c1">// Call every 30s instead of the default 60
@@ -303,12 +302,12 @@ Check the example <a href="https://github.com/TheThingsNetwork/arduino-node-lib/
 <span class="p">}</span>
 </code></pre></div><h3 id="method-oninterval">Method: onInterval&nbsp;<a class="header-hash" href="#method-oninterval">#</a> </h3>
 <p>Set a callback that will run on a certain interval. This will automatically enable the interval.</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">onInterval</span><span class="p">(</span><span class="kt">void</span><span class="p">(</span><span class="o">*</span><span class="n">callback</span><span class="p">)(</span><span class="kt">void</span><span class="p">));</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">onInterval</span><span class="p">(</span><span class="kt">void</span><span class="p">(</span><span class="o">*</span><span class="n">callback</span><span class="p">)(</span><span class="kt">void</span><span class="p">));</span>
 </code></pre></div><ul>
 <li><code>void(*callback)(void)</code>: Function to be called, with no arguments nor return value.</li>
 </ul>
 <h3 id="method-configinterval">Method: configInterval&nbsp;<a class="header-hash" href="#method-configinterval">#</a> </h3>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">configInterval</span><span class="p">(</span><span class="kt">bool</span> <span class="n">enabled</span><span class="p">,</span> <span class="n">uint32_t</span> <span class="n">ms</span><span class="p">);</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">configInterval</span><span class="p">(</span><span class="kt">bool</span> <span class="n">enabled</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">ms</span><span class="p">);</span>
 <span class="kt">void</span> <span class="nf">configInterval</span><span class="p">(</span><span class="kt">bool</span> <span class="n">enabled</span><span class="p">);</span>
 </code></pre></div><ul>
 <li><code>bool enabled</code>: Enable or disable the interval callback. Enabled automatically by <code>onInterval()</code>, but you can use this method to temporarily disable it. Defaults to <code>false</code>.</li>
@@ -319,9 +318,9 @@ Check the example <a href="https://github.com/TheThingsNetwork/arduino-node-lib/
 </blockquote>
 <h2 id="method-showstatus">Method: showStatus&nbsp;<a class="header-hash" href="#method-showstatus">#</a> </h2>
 <p>Writes information about the device and sensors to <code>Serial</code>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">showStatus</span><span class="p">();</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">showStatus</span><span class="p">();</span>
 </code></pre></div><p>Will write something like:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">Light: <span class="m">25</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">Light: <span class="m">25</span>
 Temperature: 23.16 C
 Temperature alert: No
 Moving: No
@@ -333,7 +332,7 @@ Battery voltage: <span class="m">4704</span> MV
 <p>Configure and read the light sensor.</p>
 <h3 id="method-configlight">Method: configLight&nbsp;<a class="header-hash" href="#method-configlight">#</a> </h3>
 <p>Configure the light sensor.</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">configLight</span><span class="p">(</span><span class="kt">bool</span> <span class="n">enabled</span><span class="p">,</span> <span class="n">uint8_t</span> <span class="n">gain</span><span class="p">);</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">configLight</span><span class="p">(</span><span class="kt">bool</span> <span class="n">enabled</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">gain</span><span class="p">);</span>
 <span class="kt">void</span> <span class="nf">configLight</span><span class="p">(</span><span class="kt">bool</span> <span class="n">enabled</span><span class="p">);</span>
 </code></pre></div><ul>
 <li><code>bool enabled</code>: Enable or disable the light sensor. Defaults to <code>false</code>.</li>
@@ -341,7 +340,7 @@ Battery voltage: <span class="m">4704</span> MV
 </ul>
 <h3 id="method-getlight">Method: getLight&nbsp;<a class="header-hash" href="#method-getlight">#</a> </h3>
 <p>Get the current value of the light sensor as an unsigned integer of 2 bytes.</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="n">uint16_t</span> <span class="nf">getLight</span><span class="p">();</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">uint16_t</span> <span class="nf">getLight</span><span class="p">();</span>
 </code></pre></div><blockquote>
 <p>Make sure you have enabled the light sensor or the value will be <code>0</code>.</p>
 </blockquote>
@@ -349,19 +348,19 @@ Battery voltage: <span class="m">4704</span> MV
 <p>Use and configure the temperature sensor.</p>
 <h3 id="method-gettemperatureasint">Method: getTemperatureAsInt&nbsp;<a class="header-hash" href="#method-gettemperatureasint">#</a> </h3>
 <p>Get the current value of the temperature sensor in Celsius, rounded to a signed integer of 1 byte.</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="n">int8_t</span> <span class="nf">getTemperatureAsInt</span><span class="p">();</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">int8_t</span> <span class="nf">getTemperatureAsInt</span><span class="p">();</span>
 </code></pre></div><blockquote>
 <p>You can call this method even if the temperature alert has been disabled. The sensor will be woken up shortly to get the current temperature.</p>
 </blockquote>
 <h3 id="method-gettemperatureasfloat">Method: getTemperatureAsFloat&nbsp;<a class="header-hash" href="#method-gettemperatureasfloat">#</a> </h3>
 <p>Get the current value of the temperature sensor in Celsius as signed float of 4 bytes.</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">float</span> <span class="nf">getTemperatureAsFloat</span><span class="p">();</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">float</span> <span class="nf">getTemperatureAsFloat</span><span class="p">();</span>
 </code></pre></div><blockquote>
 <p>You can call this method even if the temperature alert has been disabled. The sensor will be woken up shortly to get the current temperature.</p>
 </blockquote>
 <h3 id="method-configtemperature">Method: configTemperature&nbsp;<a class="header-hash" href="#method-configtemperature">#</a> </h3>
 <p>Configure the temperature sensor.</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">configTemperature</span><span class="p">(</span><span class="kt">bool</span> <span class="n">enabled</span><span class="p">,</span> <span class="n">MCP9804_Resolution</span> <span class="n">resolution</span><span class="p">,</span> <span class="n">int8_t</span> <span class="n">lower</span><span class="p">,</span> <span class="n">int8_t</span> <span class="n">upper</span><span class="p">,</span> <span class="n">int8_t</span> <span class="n">critical</span><span class="p">,</span> <span class="n">MCP9804_Hysteresis</span> <span class="n">hysteresis</span><span class="p">);</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">configTemperature</span><span class="p">(</span><span class="kt">bool</span> <span class="n">enabled</span><span class="p">,</span> <span class="n">MCP9804_Resolution</span> <span class="n">resolution</span><span class="p">,</span> <span class="kt">int8_t</span> <span class="n">lower</span><span class="p">,</span> <span class="kt">int8_t</span> <span class="n">upper</span><span class="p">,</span> <span class="kt">int8_t</span> <span class="n">critical</span><span class="p">,</span> <span class="n">MCP9804_Hysteresis</span> <span class="n">hysteresis</span><span class="p">);</span>
 <span class="kt">void</span> <span class="nf">configTemperature</span><span class="p">(</span><span class="kt">bool</span> <span class="n">enabled</span><span class="p">,</span> <span class="n">MCP9804_Resolution</span> <span class="n">resolution</span><span class="p">);</span>
 <span class="kt">void</span> <span class="nf">configTemperature</span><span class="p">(</span><span class="kt">bool</span> <span class="n">enabled</span><span class="p">);</span>
 </code></pre></div><ul>
@@ -400,24 +399,24 @@ Battery voltage: <span class="m">4704</span> MV
 </ul>
 <h3 id="method-ontemperaturealert">Method: onTemperatureAlert&nbsp;<a class="header-hash" href="#method-ontemperaturealert">#</a> </h3>
 <p>Register a function to be called when temperature exceeds the configured bounds. This will automatically enable the temperature alerts.</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">onTemperature</span><span class="p">(</span><span class="kt">void</span><span class="p">(</span><span class="o">*</span><span class="n">callback</span><span class="p">)(</span><span class="kt">void</span><span class="p">));</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">onTemperature</span><span class="p">(</span><span class="kt">void</span><span class="p">(</span><span class="o">*</span><span class="n">callback</span><span class="p">)(</span><span class="kt">void</span><span class="p">));</span>
 </code></pre></div><ul>
 <li><code>void(*callback)(void)</code>: Function to be called, with no arguments nor return value.</li>
 </ul>
 <h3 id="method-hastemperaturealert">Method: hasTemperatureAlert&nbsp;<a class="header-hash" href="#method-hastemperaturealert">#</a> </h3>
 <p>Returns <code>true</code> if the current temperature exceeds the configured bounds for the alert. This also works if the alert itself is temporarily disabled.</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">bool</span> <span class="nf">hasTemperatureAlert</span><span class="p">();</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">bool</span> <span class="nf">hasTemperatureAlert</span><span class="p">();</span>
 </code></pre></div><h2 id="motion">Motion&nbsp;<a class="header-hash" href="#motion">#</a> </h2>
 <p>Use and configure the motion sensor.</p>
 <h3 id="method-onmotionstart">Method: onMotionStart&nbsp;<a class="header-hash" href="#method-onmotionstart">#</a> </h3>
 <p>Set a function to be called when motion starts. This will automatically enable the motion sensor.</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">onMotionStart</span><span class="p">(</span><span class="kt">void</span><span class="p">(</span><span class="o">*</span><span class="n">callback</span><span class="p">)(</span><span class="kt">void</span><span class="p">));</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">onMotionStart</span><span class="p">(</span><span class="kt">void</span><span class="p">(</span><span class="o">*</span><span class="n">callback</span><span class="p">)(</span><span class="kt">void</span><span class="p">));</span>
 </code></pre></div><ul>
 <li><code>void(*callback)(void)</code>: Function to be called, with no arguments nor return value.</li>
 </ul>
 <h3 id="method-onmotionstop">Method: onMotionStop&nbsp;<a class="header-hash" href="#method-onmotionstop">#</a> </h3>
 <p>Set a function to be called when motions stops. This will automatically enable the motion sensor.</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">onMotionStop</span><span class="p">(</span><span class="kt">void</span><span class="p">(</span><span class="o">*</span><span class="n">callback</span><span class="p">)(</span><span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">duration</span><span class="p">));</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">onMotionStop</span><span class="p">(</span><span class="kt">void</span><span class="p">(</span><span class="o">*</span><span class="n">callback</span><span class="p">)(</span><span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">duration</span><span class="p">));</span>
 </code></pre></div><ul>
 <li><code>void(*callback)</code>: Function to be called.
 <ul>
@@ -429,7 +428,7 @@ Battery voltage: <span class="m">4704</span> MV
 <p>Returns <code>true</code> if the device is currently moving. Requires the sensor to be enabled via <code>onMotionStart()</code>, <code>onMotionStop()</code> or <code>setMotion()</code>.</p>
 <h3 id="method-getacceleration">Method: getAcceleration&nbsp;<a class="header-hash" href="#method-getacceleration">#</a> </h3>
 <p>Returns the acceleration measured by the motion sensor in <a href="https://en.wikipedia.org/wiki/G-force">units of g-force</a>. Each of the values x, y and z falls in the range -2g to +2g. This function is useful to determine the orientation of the sensor relative to the earth, as gravity causes a 1g acceleration towards the centre of the earth. Requires the sensor to be enabled via <code>onMotionStart()</code>, <code>onMotionStop()</code> or <code>setMotion()</code>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">getAcceleration</span><span class="p">(</span><span class="kt">float</span> <span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="kt">float</span> <span class="o">*</span><span class="n">y</span><span class="p">,</span> <span class="kt">float</span> <span class="o">*</span><span class="n">z</span><span class="p">);</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">getAcceleration</span><span class="p">(</span><span class="kt">float</span> <span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="kt">float</span> <span class="o">*</span><span class="n">y</span><span class="p">,</span> <span class="kt">float</span> <span class="o">*</span><span class="n">z</span><span class="p">);</span>
 </code></pre></div><ul>
 <li><code>float *x</code>: Float to store the acceleration along the x-axis.</li>
 <li><code>float *y</code>: Float to store the acceleration along the y-axis.</li>
@@ -437,7 +436,7 @@ Battery voltage: <span class="m">4704</span> MV
 </ul>
 <h3 id="method-configmotion">Method: configMotion&nbsp;<a class="header-hash" href="#method-configmotion">#</a> </h3>
 <p>Enable or disable the motion sensor. The sensor will be enabled automatically by <code>onMotionStart()</code> and <code>onMotionStop()</code>, but you can use this method to temporarily disable the sensor.</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">configMotion</span><span class="p">(</span><span class="kt">bool</span> <span class="n">enabled</span><span class="p">);</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">configMotion</span><span class="p">(</span><span class="kt">bool</span> <span class="n">enabled</span><span class="p">);</span>
 </code></pre></div><ul>
 <li><code>bool enabled</code>: Enable or disable the sensor.</li>
 </ul>
@@ -445,13 +444,13 @@ Battery voltage: <span class="m">4704</span> MV
 <p>Respond to interaction with the button.</p>
 <h3 id="method-onbuttonpress">Method: onButtonPress&nbsp;<a class="header-hash" href="#method-onbuttonpress">#</a> </h3>
 <p>Set a function to be called when the button is pressed down.</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">onButtonPress</span><span class="p">(</span><span class="kt">void</span><span class="p">(</span><span class="o">*</span><span class="n">callback</span><span class="p">)(</span><span class="kt">void</span><span class="p">));</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">onButtonPress</span><span class="p">(</span><span class="kt">void</span><span class="p">(</span><span class="o">*</span><span class="n">callback</span><span class="p">)(</span><span class="kt">void</span><span class="p">));</span>
 </code></pre></div><ul>
 <li><code>void(*callback)(void)</code>: Function to be called, with no arguments nor return value.</li>
 </ul>
 <h3 id="method-onbuttonrelease">Method: onButtonRelease&nbsp;<a class="header-hash" href="#method-onbuttonrelease">#</a> </h3>
 <p>Set a function to be called when the button is released.</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">onButtonRelease</span><span class="p">(</span><span class="kt">void</span><span class="p">(</span><span class="o">*</span><span class="n">callback</span><span class="p">)(</span><span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">duration</span><span class="p">));</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">onButtonRelease</span><span class="p">(</span><span class="kt">void</span><span class="p">(</span><span class="o">*</span><span class="n">callback</span><span class="p">)(</span><span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">duration</span><span class="p">));</span>
 </code></pre></div><ul>
 <li><code>void(*callback)</code>: Function to be called.
 <ul>
@@ -461,10 +460,10 @@ Battery voltage: <span class="m">4704</span> MV
 </ul>
 <h3 id="method-isbuttonpressed">Method: isButtonPressed&nbsp;<a class="header-hash" href="#method-isbuttonpressed">#</a> </h3>
 <p>Returns <code>true</code> if the button is currently pressed.</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">bool</span> <span class="nf">isButtonPressed</span><span class="p">();</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">bool</span> <span class="nf">isButtonPressed</span><span class="p">();</span>
 </code></pre></div><h3 id="method-configbutton">Method: configButton&nbsp;<a class="header-hash" href="#method-configbutton">#</a> </h3>
 <p>Enable or disable the button callback. Will be enabled automatically by <code>onButtonPress()</code> and <code>onButtonRelease()</code>, but you can use this method to temporarily disable it.</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">configButton</span><span class="p">(</span><span class="kt">bool</span> <span class="n">enabled</span><span class="p">);</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">configButton</span><span class="p">(</span><span class="kt">bool</span> <span class="n">enabled</span><span class="p">);</span>
 </code></pre></div><ul>
 <li><code>bool enabled</code>: Enable or disable the button callback.</li>
 </ul>
@@ -472,7 +471,7 @@ Battery voltage: <span class="m">4704</span> MV
 <p>Configure the LED.</p>
 <h3 id="method-setcolor">Method: setColor&nbsp;<a class="header-hash" href="#method-setcolor">#</a> </h3>
 <p>Combine one or more LEDs to get a primary or <a href="https://en.wikipedia.org/wiki/RGB_color_model#Additive_primary_colors">additive color</a>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="n">setColor</span><span class="p">(</span><span class="n">ttn_color</span> <span class="n">color</span><span class="p">);</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="n">setColor</span><span class="p">(</span><span class="n">ttn_color</span> <span class="n">color</span><span class="p">);</span>
 </code></pre></div><ul>
 <li><code>ttn_color color</code>: Set to one of:
 <ul>
@@ -489,7 +488,7 @@ Battery voltage: <span class="m">4704</span> MV
 </ul>
 <h3 id="method-setrgb">Method: setRGB&nbsp;<a class="header-hash" href="#method-setrgb">#</a> </h3>
 <p>Turn one or more LEDs on or off.</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">setRGB</span><span class="p">(</span><span class="kt">bool</span> <span class="n">red</span> <span class="o">=</span> <span class="nb">false</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">green</span> <span class="o">=</span> <span class="nb">false</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">blue</span> <span class="o">=</span> <span class="nb">false</span><span class="p">);</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">setRGB</span><span class="p">(</span><span class="kt">bool</span> <span class="n">red</span> <span class="o">=</span> <span class="nb">false</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">green</span> <span class="o">=</span> <span class="nb">false</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">blue</span> <span class="o">=</span> <span class="nb">false</span><span class="p">);</span>
 </code></pre></div><ul>
 <li><code>bool red = false</code>: Set to <code>true</code> to turn the red LED on. Defaults to <code>false</code>.</li>
 <li><code>bool green = false</code>: Set to <code>true</code> to turn the green LED on. Defaults to <code>false</code>.</li>
@@ -500,25 +499,25 @@ Battery voltage: <span class="m">4704</span> MV
 </blockquote>
 <h3 id="method-setred">Method: setRed&nbsp;<a class="header-hash" href="#method-setred">#</a> </h3>
 <p>Turn the red LED on or off.</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">setRed</span><span class="p">(</span><span class="kt">bool</span> <span class="n">on</span> <span class="o">=</span> <span class="nb">true</span><span class="p">);</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">setRed</span><span class="p">(</span><span class="kt">bool</span> <span class="n">on</span> <span class="o">=</span> <span class="nb">true</span><span class="p">);</span>
 </code></pre></div><ul>
 <li><code>bool on = true</code>: Set to <code>true</code> to turn the red LED on. Defaults to <code>true</code>.</li>
 </ul>
 <h3 id="method-setgreen">Method: setGreen&nbsp;<a class="header-hash" href="#method-setgreen">#</a> </h3>
 <p>Turn the red LED on or off.</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">setGreen</span><span class="p">(</span><span class="kt">bool</span> <span class="n">on</span> <span class="o">=</span> <span class="nb">true</span><span class="p">);</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">setGreen</span><span class="p">(</span><span class="kt">bool</span> <span class="n">on</span> <span class="o">=</span> <span class="nb">true</span><span class="p">);</span>
 </code></pre></div><ul>
 <li><code>bool on = true</code>: Set to <code>true</code> to turn the green LED on. Defaults to <code>true</code>.</li>
 </ul>
 <h3 id="method-setblue">Method: setBlue&nbsp;<a class="header-hash" href="#method-setblue">#</a> </h3>
 <p>Turn the red LED on or off.</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">setBlue</span><span class="p">(</span><span class="kt">bool</span> <span class="n">on</span> <span class="o">=</span> <span class="nb">true</span><span class="p">);</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">setBlue</span><span class="p">(</span><span class="kt">bool</span> <span class="n">on</span> <span class="o">=</span> <span class="nb">true</span><span class="p">);</span>
 </code></pre></div><ul>
 <li><code>bool on = true</code>: Set to <code>true</code> to turn the blue LED on. Defaults to <code>true</code>.</li>
 </ul>
 <h3 id="method-getcolor">Method: getColor&nbsp;<a class="header-hash" href="#method-getcolor">#</a> </h3>
 <p>Returns the current color of the LED.</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="n">ttn_color</span> <span class="nf">getColor</span><span class="p">();</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="n">ttn_color</span> <span class="nf">getColor</span><span class="p">();</span>
 </code></pre></div><p>Returns one of:</p>
 <ul>
 <li><code>TTN_RED</code></li>
@@ -532,7 +531,7 @@ Battery voltage: <span class="m">4704</span> MV
 </ul>
 <h3 id="method-colortostring">Method: colorToString&nbsp;<a class="header-hash" href="#method-colortostring">#</a> </h3>
 <p>Returns a string for the color passed to it.</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="n">String</span> <span class="nf">colorToString</span><span class="p">(</span><span class="n">ttn_color</span> <span class="n">color</span><span class="p">);</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="n">String</span> <span class="nf">colorToString</span><span class="p">(</span><span class="n">ttn_color</span> <span class="n">color</span><span class="p">);</span>
 </code></pre></div><ul>
 <li><code>ttn_color color</code>: Color to return a string for.</li>
 </ul>
@@ -549,21 +548,21 @@ Battery voltage: <span class="m">4704</span> MV
 </ul>
 <h3 id="method-getred">Method: getRed&nbsp;<a class="header-hash" href="#method-getred">#</a> </h3>
 <p>Returns <code>true</code> if the red LED is currently on.</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">bool</span> <span class="nf">getRed</span><span class="p">();</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">bool</span> <span class="nf">getRed</span><span class="p">();</span>
 </code></pre></div><h3 id="method-getgreen">Method: getGreen&nbsp;<a class="header-hash" href="#method-getgreen">#</a> </h3>
 <p>Returns <code>true</code> if the green LED is currently on.</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">bool</span> <span class="nf">getGreen</span><span class="p">();</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">bool</span> <span class="nf">getGreen</span><span class="p">();</span>
 </code></pre></div><h3 id="method-getblue">Method: getBlue&nbsp;<a class="header-hash" href="#method-getblue">#</a> </h3>
 <p>Returns `true if the blue LED is currently on.</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">bool</span> <span class="nf">getBlue</span><span class="p">();</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">bool</span> <span class="nf">getBlue</span><span class="p">();</span>
 </code></pre></div><h2 id="usb">USB&nbsp;<a class="header-hash" href="#usb">#</a> </h2>
 <p>Monitor the USB data connection.</p>
 <h3 id="method-isusbconnected">Method: isUSBConnected&nbsp;<a class="header-hash" href="#method-isusbconnected">#</a> </h3>
 <p>Returns <code>true</code> if the Node has a data connection over USB.</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">bool</span> <span class="nf">isUSBConnected</span><span class="p">();</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">bool</span> <span class="nf">isUSBConnected</span><span class="p">();</span>
 </code></pre></div><h3 id="method-configusb">Method:: configUSB&nbsp;<a class="header-hash" href="#method-configusb">#</a> </h3>
 <p>Enable or disable deep sleep when a USB data connection is active.</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">configUSB</span><span class="p">(</span><span class="kt">bool</span> <span class="n">deepSleep</span><span class="p">);</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">configUSB</span><span class="p">(</span><span class="kt">bool</span> <span class="n">deepSleep</span><span class="p">);</span>
 </code></pre></div><ul>
 <li><code>bool deepSleep</code>: Set to <code>true</code> to sleep the Node even if a USB data connection is active. Defaults to <code>false</code>.</li>
 </ul>
@@ -573,7 +572,7 @@ Battery voltage: <span class="m">4704</span> MV
 </blockquote>
 <h2 id="method-getbattery">Method: getBattery&nbsp;<a class="header-hash" href="#method-getbattery">#</a> </h2>
 <p>Returns the battery level in millivolt (mV) as a unsigned integer of 2 bytes.</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="n">uint16_t</span> <span class="nf">getBattery</span><span class="p">();</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">uint16_t</span> <span class="nf">getBattery</span><span class="p">();</span>
 </code></pre></div>
 
         </div>

@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <meta name="generator" content="Hugo 0.79.0" />
+  <meta name="generator" content="Hugo 0.88.1" />
 
   <title>Device Firmware Upgrading | The Things Network</title>
   <link rel="canonical" href="https://www.thethingsnetwork.org/docs/devices/rak5205-wistrio-lora-tracker/device-firmware-upgrading/" />
@@ -38,15 +38,14 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.504b3e39c2bace42c4e70fc2480bf01ed9bbbbc2831194cfa95412953f38e1d5.css" integrity="sha256-UEs&#43;OcK6zkLE5w/CSAvwHtm7u8KDEZTPqVQSlT844dU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.1a1a30812d4274d8616380644cbf1670d6a3bc91fc7bd1d2c1d89177ea3d75f9.css" integrity="sha256-GhowgS1CdNhhY4BkTL8WcNajvJH8e9HSwdiRd&#43;o9dfk=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://www.thethingsnetwork.org/static/common/css/ui.css" crossorigin="anonymous">
 
   <meta property="og:title" content="Device Firmware Upgrading" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.thethingsnetwork.org/docs/devices/rak5205-wistrio-lora-tracker/device-firmware-upgrading/" />
-<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
-<meta property="og:site_name" content="The Things Network" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/devices/rak5205-wistrio-lora-tracker/device-firmware-upgrading/" /><meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/><meta property="og:site_name" content="The Things Network" />
+
 
 
   <meta name="twitter:card" content="summary_large_image"/>
@@ -232,7 +231,7 @@
           
 <p>If the firmware version of your RAK5205 WisTrio LoRa Tracker is newer than V3.0.0.0 or you have just burned the bootloader into RAK5205 WisTrio LoRa Tracker according to the Burning Bootloader into the Device section, you just need to burn the upgraded firmware according to the following steps now:</p>
 <p><strong>1</strong>.First, type the command to let the RAK5205 WisTrio LoRa Tracker work in boot mode.</p>
-<pre><code>at+set_config=device:boot
+<pre tabindex="0"><code>at+set_config=device:boot
 </code></pre><blockquote>
 <p><strong>Note</strong> If you have just burned the bootloader by yourself according to the section 2, it works in boot mode now. If the current version of the RAK5205’s firmware is newer than V3.0.0.0, you need to set an AT command &lt;at+set_config=device:boot&gt; to let it work in boot mode</p>
 </blockquote>
@@ -249,7 +248,7 @@
 <li>We recommend you to use RAK Serial Port Tool, because there are some ready AT commands in this tool and this will be very useful for you. You can get it from RAK website available for free at this <a href="https://downloads.rakwireless.com/en/LoRa/Tools/"><strong>RAK directory</strong></a>.</li>
 </ul>
 <p><strong>2</strong>.Choose the correct COM port and set the baud rate to 115200. Then open the serial port and enter the AT command &lt;at+set_config=device:restart&gt; to restart.</p>
-<pre><code>at+set_config=device:restart
+<pre tabindex="0"><code>at+set_config=device:restart
 </code></pre><p><img src="../images/serialrestart.jpg" alt="Figure 5: Restarting your Firmware"></p>
 <p>Congrats! This information means that you have upgraded successfully the new firmware.</p>
 <h3 id="optional-configurations">Optional Configurations&nbsp;<a class="header-hash" href="#optional-configurations">#</a> </h3>

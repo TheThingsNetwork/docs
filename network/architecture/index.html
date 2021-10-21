@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <meta name="generator" content="Hugo 0.79.0" />
+  <meta name="generator" content="Hugo 0.88.1" />
 
   <title>Network Architecture | The Things Network</title>
   <link rel="canonical" href="https://www.thethingsnetwork.org/docs/network/architecture/" />
@@ -38,15 +38,14 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.504b3e39c2bace42c4e70fc2480bf01ed9bbbbc2831194cfa95412953f38e1d5.css" integrity="sha256-UEs&#43;OcK6zkLE5w/CSAvwHtm7u8KDEZTPqVQSlT844dU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.1a1a30812d4274d8616380644cbf1670d6a3bc91fc7bd1d2c1d89177ea3d75f9.css" integrity="sha256-GhowgS1CdNhhY4BkTL8WcNajvJH8e9HSwdiRd&#43;o9dfk=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://www.thethingsnetwork.org/static/common/css/ui.css" crossorigin="anonymous">
 
   <meta property="og:title" content="Network Architecture" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.thethingsnetwork.org/docs/network/architecture/" />
-<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
-<meta property="og:site_name" content="The Things Network" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/network/architecture/" /><meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/><meta property="og:site_name" content="The Things Network" />
+
 
 
   <meta name="twitter:card" content="summary_large_image"/>
@@ -210,7 +209,7 @@
 <h4 id="de-duplication-broker">De-Duplication (Broker)&nbsp;<a class="header-hash" href="#de-duplication-broker">#</a> </h4>
 <p>LoRaWAN is a long-range radio protocol, making it likely that the message is received by more than one gateway. This means that the backend has to perform some kind of de-duplication in order to deliver a message only once to the application. This does not mean that the duplicates are unimportant. The metadata of these messages might be valuable as well. For example, when combining the locations of the gateways that received the message with the reception time and the signal strength, it might be possible to determine the location of the device that sent the message.</p>
 <p>De-duplication is not easy to do in a distributed system, but can be very simple when there is only one server. Therefore, we decided to make a an abstraction on top of the de-duplication implementation. This makes it easy to replace the actual implementation with one that is most suitable for the use-case, while still keeping the same interface:</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="n">type</span> <span class="n">Deduplicator</span> <span class="n">interface</span> <span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="n">type</span> <span class="n">Deduplicator</span> <span class="n">interface</span> <span class="p">{</span>
  <span class="c1">// Deduplicate a value based on a given key
 </span><span class="c1"></span> <span class="n">Deduplicate</span><span class="p">(</span><span class="n">key</span> <span class="n">string</span><span class="p">,</span> <span class="n">value</span> <span class="n">interface</span><span class="p">{})</span> <span class="p">[]</span><span class="n">interface</span><span class="p">{}</span>
 <span class="p">}</span>
@@ -233,7 +232,7 @@
 <p>After decrypting the message payload, the Handler can pass the message up to the application. However, for many applications, some simple decoding and conversion is required.</p>
 <h4 id="payload-conversion-handler">Payload Conversion (Handler)&nbsp;<a class="header-hash" href="#payload-conversion-handler">#</a> </h4>
 <p>After decryption, the Handler is able to decode and convert the payload into a format that is easily accessible by the application. The implementation of the default Handler therefore includes so-called <em>payload functions</em>. These functions are simple JavaScript functions that can be used to decode, convert and validate data. The <em>decoder</em> is used to decode the binary payload into a format that is more appropriate. For example, the following function decodes a temperature value sent as two bytes to a JSON object:</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="n">function</span> <span class="p">(</span><span class="n">bytes</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="n">function</span> <span class="p">(</span><span class="n">bytes</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">var</span> <span class="n">data</span> <span class="o">=</span> <span class="p">(</span><span class="n">bytes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="mi">8</span><span class="p">)</span> <span class="o">|</span> <span class="n">bytes</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
     <span class="k">return</span> <span class="p">{</span> <span class="nl">temperature</span><span class="p">:</span> <span class="n">data</span> <span class="o">/</span> <span class="mf">100.0</span> <span class="p">};</span>
 <span class="p">}</span>    

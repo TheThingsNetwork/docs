@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <meta name="generator" content="Hugo 0.79.0" />
+  <meta name="generator" content="Hugo 0.88.1" />
 
   <title>Quick Start | The Things Network</title>
   <link rel="canonical" href="https://www.thethingsnetwork.org/docs/devices/uno/quick-start/" />
@@ -38,15 +38,14 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.504b3e39c2bace42c4e70fc2480bf01ed9bbbbc2831194cfa95412953f38e1d5.css" integrity="sha256-UEs&#43;OcK6zkLE5w/CSAvwHtm7u8KDEZTPqVQSlT844dU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.1a1a30812d4274d8616380644cbf1670d6a3bc91fc7bd1d2c1d89177ea3d75f9.css" integrity="sha256-GhowgS1CdNhhY4BkTL8WcNajvJH8e9HSwdiRd&#43;o9dfk=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://www.thethingsnetwork.org/static/common/css/ui.css" crossorigin="anonymous">
 
   <meta property="og:title" content="Quick Start" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.thethingsnetwork.org/docs/devices/uno/quick-start/" />
-<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
-<meta property="og:site_name" content="The Things Network" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/devices/uno/quick-start/" /><meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/><meta property="og:site_name" content="The Things Network" />
+
 
 
   <meta name="twitter:card" content="summary_large_image"/>
@@ -256,43 +255,43 @@
 <li>
 <p>In the Arduino IDE, select <strong>File &gt; New</strong> <code>Ctrl/⌘ N</code>.</p>
 <p>This should get you the basic structure with <a href="https://www.arduino.cc/en/Reference/Setup"><code>setup()</code></a> and <a href="https://www.arduino.cc/en/Reference/Loop"><code>loop()</code></a>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
   <span class="c1">// put your setup code here, to run once:
-</span><span class="c1"></span>    	
+</span><span class="c1"></span>
 <span class="p">}</span>
-    	
+
 <span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
   <span class="c1">// put your main code here, to run repeatedly:
-</span><span class="c1"></span>    	
+</span><span class="c1"></span>
 <span class="p">}</span>
 </code></pre></div></li>
 <li>
 <p>Select <strong>Sketch &gt; Include Library &gt; TheThingsNetwork</strong>.</p>
 <p>This should prepend an <a href="https://www.arduino.cc/en/Reference/Include"><code>#include</code></a> for TheThingsNetwork library:</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="cp">#include</span> <span class="cpf">&lt;TheThingsNetwork.h&gt;</span><span class="cp">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="cp">#include</span> <span class="cpf">&lt;TheThingsNetwork.h&gt;</span><span class="cp">
 </span></code></pre></div></li>
 <li>
 <p>Let&rsquo;s leave <code>loop()</code> for what it is and replace all code above it with the following:</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="cp">#include</span> <span class="cpf">&lt;TheThingsNetwork.h&gt;</span><span class="cp">
-</span><span class="cp"></span>    
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="cp">#include</span> <span class="cpf">&lt;TheThingsNetwork.h&gt;</span><span class="cp">
+</span><span class="cp"></span>
 <span class="cp">#define loraSerial Serial1
 </span><span class="cp">#define debugSerial Serial
 </span><span class="cp"></span>
 <span class="c1">// Replace REPLACE_ME with TTN_FP_EU868 or TTN_FP_US915
 </span><span class="c1"></span><span class="cp">#define freqPlan REPLACE_ME
-</span><span class="cp"></span>    
+</span><span class="cp"></span>
 <span class="n">TheThingsNetwork</span> <span class="nf">ttn</span><span class="p">(</span><span class="n">loraSerial</span><span class="p">,</span> <span class="n">debugSerial</span><span class="p">,</span> <span class="n">freqPlan</span><span class="p">);</span>
-    
+
 <span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
   <span class="n">loraSerial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">57600</span><span class="p">);</span>
   <span class="n">debugSerial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
-      
+
   <span class="c1">// Initialize LED output pin
 </span><span class="c1"></span>  <span class="n">pinMode</span><span class="p">(</span><span class="n">LED_BUILTIN</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>
-    
+
   <span class="c1">// Wait a maximum of 10s for Serial Monitor
 </span><span class="c1"></span>  <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">debugSerial</span> <span class="o">&amp;&amp;</span> <span class="n">millis</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mi">10000</span><span class="p">);</span>
-    
+
   <span class="n">debugSerial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&#34;-- STATUS&#34;</span><span class="p">);</span>
   <span class="n">ttn</span><span class="p">.</span><span class="n">showStatus</span><span class="p">();</span>
 <span class="p">}</span>
@@ -334,7 +333,7 @@
 <li>
 <p>Within 10 seconds, select <strong>Tools &gt; Serial Monitor</strong> <code>Ctrl/⌘ Shift M</code> to open the <a href="https://www.arduino.cc/en/Guide/Environment#toc12">Serial Monitor</a>.</p>
 <p>Soon, it should print a list of information:</p>
-<pre><code>-- STATUS
+<pre tabindex="0"><code>-- STATUS
 EUI: 0004A30B001B7AD2
 Battery: 3223
 AppEUI: 70B3D57EF000001C
@@ -421,13 +420,13 @@ Total airtime: 0.00 s
 </li>
 <li>
 <p>In the <code>setup()</code> function, copy the following code just after <code>ttn.showStatus()</code>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="n">debugSerial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&#34;-- JOIN&#34;</span><span class="p">);</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="n">debugSerial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&#34;-- JOIN&#34;</span><span class="p">);</span>
 <span class="n">ttn</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">appEui</span><span class="p">,</span> <span class="n">appKey</span><span class="p">);</span>
 </code></pre></div></li>
 <li>
 <p>Select <strong>Sketch &gt; Upload</strong> <code>Ctrl/⌘ U</code> to upload the sketch and then <strong>Tools &gt; Serial Monitor</strong> <code>Ctrl/⌘ Shift M</code> to open the Serial Monitor.</p>
 <p>You should see something like:</p>
-<pre><code>-- STATUS
+<pre tabindex="0"><code>-- STATUS
 EUI: 0004A30B001B7AD2
 Battery: 3223
 AppEUI: 70B3D57EF000001C
@@ -454,16 +453,16 @@ DevAddr: 26012E93
 <ol>
 <li>
 <p>In the Arduino IDE, go back to your sketch and replace the <code>loop()</code> function with:</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
   <span class="n">debugSerial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&#34;-- LOOP&#34;</span><span class="p">);</span>
-    
+
   <span class="c1">// Prepare array of 1 byte to indicate LED status
 </span><span class="c1"></span>  <span class="n">byte</span> <span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
   <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">digitalRead</span><span class="p">(</span><span class="n">LED_BUILTIN</span><span class="p">)</span> <span class="o">==</span> <span class="n">HIGH</span><span class="p">)</span> <span class="o">?</span> <span class="mi">1</span> <span class="o">:</span> <span class="mi">0</span><span class="p">;</span>
-    
+
   <span class="c1">// Send it off
 </span><span class="c1"></span>  <span class="n">ttn</span><span class="p">.</span><span class="n">sendBytes</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">data</span><span class="p">));</span>
-      
+
   <span class="n">delay</span><span class="p">(</span><span class="mi">10000</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div><p>This will do a few things:</p>
@@ -491,7 +490,7 @@ DevAddr: 26012E93
 <li>
 <p>Select <strong>Sketch &gt; Upload</strong> <code>Ctrl/⌘ U</code> to upload the sketch and then <strong>Tools &gt; Serial Monitor</strong> <code>Ctrl/⌘ Shift M</code> to open the Serial Monitor.</p>
 <p>You should see something like:</p>
-<pre><code>-- LOOP
+<pre tabindex="0"><code>-- LOOP
 Sending: mac tx uncnf 1 with 1 bytes
 Successful transmission
 </code></pre></li>
@@ -510,13 +509,13 @@ Successful transmission
 </li>
 <li>
 <p>Leave <strong>decoder</strong> selected and copy-paste <a href="https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/QuickStart/Decoder.js">the following JavaScript code</a>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">Decoder</span><span class="p">(</span><span class="nx">bytes</span><span class="p">,</span> <span class="nx">port</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">Decoder</span><span class="p">(</span><span class="nx">bytes</span><span class="p">,</span> <span class="nx">port</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// Decode an uplink message from a buffer
 </span><span class="c1"></span>  <span class="c1">// (array) of bytes to an object of fields.
 </span><span class="c1"></span>  <span class="kd">var</span> <span class="nx">decoded</span> <span class="o">=</span> <span class="p">{};</span>
-        
+
   <span class="k">if</span> <span class="p">(</span><span class="nx">port</span> <span class="o">===</span> <span class="mi">1</span><span class="p">)</span> <span class="nx">decoded</span><span class="p">.</span><span class="nx">led</span> <span class="o">=</span> <span class="nx">bytes</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
-        
+
   <span class="k">return</span> <span class="nx">decoded</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></li>
@@ -531,15 +530,15 @@ Successful transmission
 </li>
 <li>
 <p>Now select <strong>converter</strong> and copy-paste <a href="https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/QuickStart/Converter.js">the following code</a>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">Converter</span><span class="p">(</span><span class="nx">decoded</span><span class="p">,</span> <span class="nx">port</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">Converter</span><span class="p">(</span><span class="nx">decoded</span><span class="p">,</span> <span class="nx">port</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// Merge, split or otherwise
 </span><span class="c1"></span>  <span class="c1">// mutate decoded fields.
 </span><span class="c1"></span>  <span class="kd">var</span> <span class="nx">converted</span> <span class="o">=</span> <span class="nx">decoded</span><span class="p">;</span>
-        
+
   <span class="k">if</span> <span class="p">(</span><span class="nx">port</span> <span class="o">===</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">converted</span><span class="p">.</span><span class="nx">led</span> <span class="o">===</span> <span class="mi">0</span> <span class="o">||</span> <span class="nx">converted</span><span class="p">.</span><span class="nx">led</span> <span class="o">===</span> <span class="mi">1</span><span class="p">))</span> <span class="p">{</span>
     <span class="nx">converted</span><span class="p">.</span><span class="nx">led</span> <span class="o">=</span> <span class="nb">Boolean</span><span class="p">(</span><span class="nx">converted</span><span class="p">.</span><span class="nx">led</span><span class="p">);</span>
   <span class="p">}</span>
-        
+
   <span class="k">return</span> <span class="nx">converted</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></li>
@@ -554,14 +553,14 @@ Successful transmission
 </li>
 <li>
 <p>Next, select <strong>validator</strong> and paste <a href="https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/QuickStart/Validator.js">this code</a>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">Validator</span><span class="p">(</span><span class="nx">converted</span><span class="p">,</span> <span class="nx">port</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">Validator</span><span class="p">(</span><span class="nx">converted</span><span class="p">,</span> <span class="nx">port</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// Return false if the decoded, converted
 </span><span class="c1"></span>  <span class="c1">// message is invalid and should be dropped.
-</span><span class="c1"></span>        
+</span><span class="c1"></span>
   <span class="k">if</span> <span class="p">(</span><span class="nx">port</span> <span class="o">===</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="k">typeof</span> <span class="nx">converted</span><span class="p">.</span><span class="nx">led</span> <span class="o">!==</span> <span class="s1">&#39;boolean&#39;</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
   <span class="p">}</span>
-        
+
   <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></li>
@@ -594,23 +593,23 @@ Successful transmission
 <ol>
 <li>
 <p>In the Arduino IDE, add the following line to <code>setup()</code> function to let it know what function to call when a message comes in:</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="c1">// Set callback for incoming messages
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="c1">// Set callback for incoming messages
 </span><span class="c1"></span><span class="n">ttn</span><span class="p">.</span><span class="n">onMessage</span><span class="p">(</span><span class="n">message</span><span class="p">);</span>
 </code></pre></div></li>
 <li>
 <p>Then copy paste the actual function to the end of the sketch:</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">message</span><span class="p">(</span><span class="k">const</span> <span class="n">byte</span><span class="o">*</span> <span class="n">payload</span><span class="p">,</span> <span class="kt">int</span> <span class="n">length</span><span class="p">,</span> <span class="kt">int</span> <span class="n">port</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">message</span><span class="p">(</span><span class="k">const</span> <span class="n">byte</span><span class="o">*</span> <span class="n">payload</span><span class="p">,</span> <span class="kt">int</span> <span class="n">length</span><span class="p">,</span> <span class="kt">int</span> <span class="n">port</span><span class="p">)</span> <span class="p">{</span>
   <span class="n">debugSerial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&#34;-- MESSAGE&#34;</span><span class="p">);</span>
-    
+
   <span class="c1">// Only handle messages of a single byte
 </span><span class="c1"></span>  <span class="k">if</span> <span class="p">(</span><span class="n">length</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span><span class="p">;</span>
   <span class="p">}</span>
-    
+
   <span class="k">if</span> <span class="p">(</span><span class="n">payload</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">debugSerial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&#34;LED: off&#34;</span><span class="p">);</span>
     <span class="n">digitalWrite</span><span class="p">(</span><span class="n">LED_BUILTIN</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
-          
+
   <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">payload</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">debugSerial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&#34;LED: on&#34;</span><span class="p">);</span>
     <span class="n">digitalWrite</span><span class="p">(</span><span class="n">LED_BUILTIN</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
@@ -627,7 +626,7 @@ Successful transmission
 <li>
 <p>With the serial monitor still open, enter <code>01</code> in the input field of the <strong>Downlink</strong> box and click <strong>Send</strong>.</p>
 <p>The next time your device sends a message it should display something like:</p>
-<pre><code>-- LOOP
+<pre tabindex="0"><code>-- LOOP
 Sending: mac tx uncnf 1 with 1 bytes
 Successful transmission. Received 1 bytes
 LED: on
@@ -654,13 +653,13 @@ LED: on
 </li>
 <li>
 <p>Select <strong>encoder</strong> and use <a href="https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/QuickStart/Encoder.js">the following code</a>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">Encoder</span><span class="p">(</span><span class="nx">object</span><span class="p">,</span> <span class="nx">port</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">Encoder</span><span class="p">(</span><span class="nx">object</span><span class="p">,</span> <span class="nx">port</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// Encode downlink messages sent as
 </span><span class="c1"></span>  <span class="c1">// object to an array or buffer of bytes.
 </span><span class="c1"></span>  <span class="kd">var</span> <span class="nx">bytes</span> <span class="o">=</span> <span class="p">[];</span>
-        
+
   <span class="k">if</span> <span class="p">(</span><span class="nx">port</span> <span class="o">===</span> <span class="mi">1</span><span class="p">)</span> <span class="nx">bytes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="nx">object</span><span class="p">.</span><span class="nx">led</span> <span class="o">?</span> <span class="mi">1</span> <span class="o">:</span> <span class="mi">0</span><span class="p">;</span>
-        
+
   <span class="k">return</span> <span class="nx">bytes</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></li>

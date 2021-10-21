@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <meta name="generator" content="Hugo 0.79.0" />
+  <meta name="generator" content="Hugo 0.88.1" />
 
   <title>CayenneLPP | The Things Network</title>
   <link rel="canonical" href="https://www.thethingsnetwork.org/docs/devices/arduino/api/cayennelpp/" />
@@ -38,15 +38,14 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.504b3e39c2bace42c4e70fc2480bf01ed9bbbbc2831194cfa95412953f38e1d5.css" integrity="sha256-UEs&#43;OcK6zkLE5w/CSAvwHtm7u8KDEZTPqVQSlT844dU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.1a1a30812d4274d8616380644cbf1670d6a3bc91fc7bd1d2c1d89177ea3d75f9.css" integrity="sha256-GhowgS1CdNhhY4BkTL8WcNajvJH8e9HSwdiRd&#43;o9dfk=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://www.thethingsnetwork.org/static/common/css/ui.css" crossorigin="anonymous">
 
   <meta property="og:title" content="CayenneLPP" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.thethingsnetwork.org/docs/devices/arduino/api/cayennelpp/" />
-<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
-<meta property="og:site_name" content="The Things Network" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/devices/arduino/api/cayennelpp/" /><meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/><meta property="og:site_name" content="The Things Network" />
+
 
 
   <meta name="twitter:card" content="summary_large_image"/>
@@ -257,14 +256,14 @@
 <p>The <code>CayenneLPP</code> class enables Arduino devices to encode data with the Cayenne Low Power Payload (LPP). <a href="https://mydevices.com/cayenne/docs/lora/#lora-cayenne-low-power-payload">Read more about Cayenne LPP</a></p>
 <h2 id="class-cayennelpp">Class: <code>CayenneLPP</code>&nbsp;<a class="header-hash" href="#class-cayennelpp">#</a> </h2>
 <p>Include and instantiate the CayenneLPP class. The constructor takes the size of the allocated buffer. Depending on the LoRa frequency plan and data rate used, the maximum payload varies. It&rsquo;s safe to send up to 51 bytes of payload.</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="cp">#include</span> <span class="cpf">&lt;CayenneLPP.h&gt;</span><span class="cp">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="cp">#include</span> <span class="cpf">&lt;CayenneLPP.h&gt;</span><span class="cp">
 </span><span class="cp"></span>
-<span class="n">CayenneLPP</span> <span class="nf">lpp</span><span class="p">(</span><span class="n">uint8_t</span> <span class="n">size</span><span class="p">);</span>
+<span class="n">CayenneLPP</span> <span class="nf">lpp</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">size</span><span class="p">);</span>
 </code></pre></div><ul>
 <li><code>uint8_t size</code>: The maximum payload size to send, e.g. <code>51</code>.</li>
 </ul>
 <h2 id="example">Example&nbsp;<a class="header-hash" href="#example">#</a> </h2>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="n">TheThingsNetwork</span> <span class="nf">ttn</span><span class="p">(</span><span class="n">loraSerial</span><span class="p">,</span> <span class="n">debugSerial</span><span class="p">,</span> <span class="n">freqPlan</span><span class="p">);</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="n">TheThingsNetwork</span> <span class="nf">ttn</span><span class="p">(</span><span class="n">loraSerial</span><span class="p">,</span> <span class="n">debugSerial</span><span class="p">,</span> <span class="n">freqPlan</span><span class="p">);</span>
 <span class="n">CayenneLPP</span> <span class="nf">lpp</span><span class="p">(</span><span class="mi">51</span><span class="p">);</span>
 
 <span class="n">lpp</span><span class="p">.</span><span class="n">reset</span><span class="p">();</span>
@@ -276,32 +275,32 @@
 </code></pre></div><p>See the <a href="https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/CayenneLPP/CayenneLPP.ino">CayenneLPP</a> example.</p>
 <h2 id="method-reset">Method: <code>reset</code>&nbsp;<a class="header-hash" href="#method-reset">#</a> </h2>
 <p>Resets the buffer.</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">reset</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">reset</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
 </code></pre></div><h2 id="method-getsize">Method: <code>getSize</code>&nbsp;<a class="header-hash" href="#method-getsize">#</a> </h2>
 <p>Returns the size of the buffer.</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="n">uint8_t</span> <span class="nf">getSize</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">uint8_t</span> <span class="nf">getSize</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
 </code></pre></div><h2 id="method-getbuffer">Method: <code>getBuffer</code>&nbsp;<a class="header-hash" href="#method-getbuffer">#</a> </h2>
 <p>Returns a pointer to the buffer.</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="n">uint8_t</span> <span class="o">*</span><span class="nf">getBuffer</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">uint8_t</span> <span class="o">*</span><span class="nf">getBuffer</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
 </code></pre></div><h2 id="method-copy">Method: <code>copy</code>&nbsp;<a class="header-hash" href="#method-copy">#</a> </h2>
 <p>Copies the internal buffer to a specified buffer and returns the copied size.</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="n">uint8_t</span> <span class="nf">copy</span><span class="p">(</span><span class="n">uint8_t</span> <span class="o">*</span><span class="n">buffer</span><span class="p">);</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">uint8_t</span> <span class="nf">copy</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="o">*</span><span class="n">buffer</span><span class="p">);</span>
 </code></pre></div><h2 id="methods-add">Methods: <code>add...</code>&nbsp;<a class="header-hash" href="#methods-add">#</a> </h2>
 <p>Add data to the buffer. The <code>channel</code> parameter acts as a key for the data field. The data fields you send are dynamic; you can selectively send data as long as the channel matches.</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="n">uint8_t</span> <span class="nf">addDigitalInput</span><span class="p">(</span><span class="n">uint8_t</span> <span class="n">channel</span><span class="p">,</span> <span class="n">uint8_t</span> <span class="n">value</span><span class="p">);</span>
-<span class="n">uint8_t</span> <span class="nf">addDigitalOutput</span><span class="p">(</span><span class="n">uint8_t</span> <span class="n">channel</span><span class="p">,</span> <span class="n">uint8_t</span> <span class="n">value</span><span class="p">);</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">uint8_t</span> <span class="nf">addDigitalInput</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">channel</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">value</span><span class="p">);</span>
+<span class="kt">uint8_t</span> <span class="nf">addDigitalOutput</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">channel</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">value</span><span class="p">);</span>
 
-<span class="n">uint8_t</span> <span class="nf">addAnalogInput</span><span class="p">(</span><span class="n">uint8_t</span> <span class="n">channel</span><span class="p">,</span> <span class="kt">float</span> <span class="n">value</span><span class="p">);</span>
-<span class="n">uint8_t</span> <span class="nf">addAnalogOutput</span><span class="p">(</span><span class="n">uint8_t</span> <span class="n">channel</span><span class="p">,</span> <span class="kt">float</span> <span class="n">value</span><span class="p">);</span>
+<span class="kt">uint8_t</span> <span class="nf">addAnalogInput</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">channel</span><span class="p">,</span> <span class="kt">float</span> <span class="n">value</span><span class="p">);</span>
+<span class="kt">uint8_t</span> <span class="nf">addAnalogOutput</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">channel</span><span class="p">,</span> <span class="kt">float</span> <span class="n">value</span><span class="p">);</span>
 
-<span class="n">uint8_t</span> <span class="nf">addLuminosity</span><span class="p">(</span><span class="n">uint8_t</span> <span class="n">channel</span><span class="p">,</span> <span class="n">uint16_t</span> <span class="n">lux</span><span class="p">);</span>
-<span class="n">uint8_t</span> <span class="nf">addPresence</span><span class="p">(</span><span class="n">uint8_t</span> <span class="n">channel</span><span class="p">,</span> <span class="n">uint8_t</span> <span class="n">value</span><span class="p">);</span>
-<span class="n">uint8_t</span> <span class="nf">addTemperature</span><span class="p">(</span><span class="n">uint8_t</span> <span class="n">channel</span><span class="p">,</span> <span class="kt">float</span> <span class="n">celsius</span><span class="p">);</span>
-<span class="n">uint8_t</span> <span class="nf">addRelativeHumidity</span><span class="p">(</span><span class="n">uint8_t</span> <span class="n">channel</span><span class="p">,</span> <span class="kt">float</span> <span class="n">rh</span><span class="p">);</span>
-<span class="n">uint8_t</span> <span class="nf">addAccelerometer</span><span class="p">(</span><span class="n">uint8_t</span> <span class="n">channel</span><span class="p">,</span> <span class="kt">float</span> <span class="n">x</span><span class="p">,</span> <span class="kt">float</span> <span class="n">y</span><span class="p">,</span> <span class="kt">float</span> <span class="n">z</span><span class="p">);</span>
-<span class="n">uint8_t</span> <span class="nf">addBarometricPressure</span><span class="p">(</span><span class="n">uint8_t</span> <span class="n">channel</span><span class="p">,</span> <span class="kt">float</span> <span class="n">hpa</span><span class="p">);</span>
-<span class="n">uint8_t</span> <span class="nf">addGyrometer</span><span class="p">(</span><span class="n">uint8_t</span> <span class="n">channel</span><span class="p">,</span> <span class="kt">float</span> <span class="n">x</span><span class="p">,</span> <span class="kt">float</span> <span class="n">y</span><span class="p">,</span> <span class="kt">float</span> <span class="n">z</span><span class="p">);</span>
-<span class="n">uint8_t</span> <span class="nf">addGPS</span><span class="p">(</span><span class="n">uint8_t</span> <span class="n">channel</span><span class="p">,</span> <span class="kt">float</span> <span class="n">latitude</span><span class="p">,</span> <span class="kt">float</span> <span class="n">longitude</span><span class="p">,</span> <span class="kt">float</span> <span class="n">meters</span><span class="p">);</span>
+<span class="kt">uint8_t</span> <span class="nf">addLuminosity</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">channel</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">lux</span><span class="p">);</span>
+<span class="kt">uint8_t</span> <span class="nf">addPresence</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">channel</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">value</span><span class="p">);</span>
+<span class="kt">uint8_t</span> <span class="nf">addTemperature</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">channel</span><span class="p">,</span> <span class="kt">float</span> <span class="n">celsius</span><span class="p">);</span>
+<span class="kt">uint8_t</span> <span class="nf">addRelativeHumidity</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">channel</span><span class="p">,</span> <span class="kt">float</span> <span class="n">rh</span><span class="p">);</span>
+<span class="kt">uint8_t</span> <span class="nf">addAccelerometer</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">channel</span><span class="p">,</span> <span class="kt">float</span> <span class="n">x</span><span class="p">,</span> <span class="kt">float</span> <span class="n">y</span><span class="p">,</span> <span class="kt">float</span> <span class="n">z</span><span class="p">);</span>
+<span class="kt">uint8_t</span> <span class="nf">addBarometricPressure</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">channel</span><span class="p">,</span> <span class="kt">float</span> <span class="n">hpa</span><span class="p">);</span>
+<span class="kt">uint8_t</span> <span class="nf">addGyrometer</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">channel</span><span class="p">,</span> <span class="kt">float</span> <span class="n">x</span><span class="p">,</span> <span class="kt">float</span> <span class="n">y</span><span class="p">,</span> <span class="kt">float</span> <span class="n">z</span><span class="p">);</span>
+<span class="kt">uint8_t</span> <span class="nf">addGPS</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">channel</span><span class="p">,</span> <span class="kt">float</span> <span class="n">latitude</span><span class="p">,</span> <span class="kt">float</span> <span class="n">longitude</span><span class="p">,</span> <span class="kt">float</span> <span class="n">meters</span><span class="p">);</span>
 </code></pre></div>
 
         </div>

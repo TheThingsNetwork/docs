@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <meta name="generator" content="Hugo 0.79.0" />
+  <meta name="generator" content="Hugo 0.88.1" />
 
   <title>Semtech UDP Packet Forwarder | The Things Network</title>
   <link rel="canonical" href="https://www.thethingsnetwork.org/docs/gateways/troubleshooting/semtech-udp/" />
@@ -38,15 +38,14 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.504b3e39c2bace42c4e70fc2480bf01ed9bbbbc2831194cfa95412953f38e1d5.css" integrity="sha256-UEs&#43;OcK6zkLE5w/CSAvwHtm7u8KDEZTPqVQSlT844dU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.1a1a30812d4274d8616380644cbf1670d6a3bc91fc7bd1d2c1d89177ea3d75f9.css" integrity="sha256-GhowgS1CdNhhY4BkTL8WcNajvJH8e9HSwdiRd&#43;o9dfk=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://www.thethingsnetwork.org/static/common/css/ui.css" crossorigin="anonymous">
 
   <meta property="og:title" content="Semtech UDP Packet Forwarder" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.thethingsnetwork.org/docs/gateways/troubleshooting/semtech-udp/" />
-<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
-<meta property="og:site_name" content="The Things Network" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/gateways/troubleshooting/semtech-udp/" /><meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/><meta property="og:site_name" content="The Things Network" />
+
 
 
   <meta name="twitter:card" content="summary_large_image"/>
@@ -288,7 +287,7 @@
 </blockquote>
 <h2 id="ensure-the-packet-forwarder-is-running">Ensure the packet forwarder is running&nbsp;<a class="header-hash" href="#ensure-the-packet-forwarder-is-running">#</a> </h2>
 <p>You will first want to ensure that the process is correctly running. Depending on your system, you can use <code>ps</code>, <code>ps -a</code> or <code>ps -A</code> to display all the running processes. It will return a list of processes, with their PIDs:</p>
-<pre><code>admin@gateway:/# ps -A
+<pre tabindex="0"><code>admin@gateway:/# ps -A
   PID TTY          TIME CMD
     1 ??       00:00:00 init
     6 ??       00:00:00 poly_pkt_fwd
@@ -353,7 +352,7 @@
 <p>The packet forwarder is running, however you are still having issues with it - it does not show up in the Console, or it seems that your specific gateway has an unexpected behavior.</p>
 <h3 id="network-issue">Network issue&nbsp;<a class="header-hash" href="#network-issue">#</a> </h3>
 <p>It could be that your gateway is not connected to the network server. To check this, look at this line of the <a href="/docs/gateways/troubleshooting/#logs">status logs</a>:</p>
-<pre><code>##### 2016-01-05 18:17:08 GMT #####
+<pre tabindex="0"><code>##### 2016-01-05 18:17:08 GMT #####
 [...]
 ### [DOWNSTREAM] ###
 # PULL_DATA sent: 3 (100.00% acknowledged)
@@ -386,7 +385,7 @@
 <h2 id="uplink-issues">Uplink issues&nbsp;<a class="header-hash" href="#uplink-issues">#</a> </h2>
 <h3 id="crc-issues">CRC issues&nbsp;<a class="header-hash" href="#crc-issues">#</a> </h3>
 <p>In the <a href="/docs/gateways/troubleshooting/#logs">logs</a>, you can see statistics regarding CRC checks of the packets received by the gateway:</p>
-<pre><code>[...]
+<pre tabindex="0"><code>[...]
 ### [UPSTREAM] ###
 # RF packets received by concentrator: 4
 # CRC_OK: 100.00%, CRC_FAIL: 0.00%, NO_CRC: 0.00%
@@ -425,7 +424,7 @@
 <h3 id="downlinks-are-not-transmitted-by-the-gateway">Downlinks are not transmitted by the gateway&nbsp;<a class="header-hash" href="#downlinks-are-not-transmitted-by-the-gateway">#</a> </h3>
 <p>It can happen that a gateway is indicated as connected in the Console, transmits uplinks, but does not transmit any of the downlinks it receives from the Things Network. This is usually due to latency issues between the gateway and the network server.</p>
 <p>If you have isolated the issue, and are confident that the issue comes from the gateway, check in the <a href="/docs/gateways/troubleshooting/#logs">logs</a> the time in which <code>PULL_ACK</code> messages are being received by the network server:</p>
-<pre><code>INFO: [down] for server 54.72.145.119 PULL_ACK received in 105 ms
+<pre tabindex="0"><code>INFO: [down] for server 54.72.145.119 PULL_ACK received in 105 ms
 INFO: [down] for server 54.72.145.119 PULL_ACK received in 104 ms
 </code></pre><p>If the delay in which <code>PULL_ACK</code> messages are received is too long (e.g. &gt;300ms), it means that there&rsquo;s a high latency between the gateway and the network server - it can then happen that the downlink is received too late by the gateway.</p>
 <p>You can detect downlinks being received too late in two places in the logs: either if <code>TOO_LATE</code> messages appear in the logs, or if there is a line in the status logs indicating <code>TX rejected (too late)</code> messages.</p>

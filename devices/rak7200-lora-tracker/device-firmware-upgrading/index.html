@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <meta name="generator" content="Hugo 0.79.0" />
+  <meta name="generator" content="Hugo 0.88.1" />
 
   <title>Device Firmware Upgrading | The Things Network</title>
   <link rel="canonical" href="https://www.thethingsnetwork.org/docs/devices/rak7200-lora-tracker/device-firmware-upgrading/" />
@@ -38,15 +38,14 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.504b3e39c2bace42c4e70fc2480bf01ed9bbbbc2831194cfa95412953f38e1d5.css" integrity="sha256-UEs&#43;OcK6zkLE5w/CSAvwHtm7u8KDEZTPqVQSlT844dU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.1a1a30812d4274d8616380644cbf1670d6a3bc91fc7bd1d2c1d89177ea3d75f9.css" integrity="sha256-GhowgS1CdNhhY4BkTL8WcNajvJH8e9HSwdiRd&#43;o9dfk=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://www.thethingsnetwork.org/static/common/css/ui.css" crossorigin="anonymous">
 
   <meta property="og:title" content="Device Firmware Upgrading" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.thethingsnetwork.org/docs/devices/rak7200-lora-tracker/device-firmware-upgrading/" />
-<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
-<meta property="og:site_name" content="The Things Network" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/devices/rak7200-lora-tracker/device-firmware-upgrading/" /><meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/><meta property="og:site_name" content="The Things Network" />
+
 
 
   <meta name="twitter:card" content="summary_large_image"/>
@@ -232,7 +231,7 @@
           
 <p>If the firmware version of your RAK7200 LoRa® Tracker is newer than V3.0.0.0 or you have just burned the bootloader into the board according to the Burning the Bootloader section, proceed to Step 2.</p>
 <p><strong>1</strong>.In case you have not just burned the bootloader, as instructed in the previous section you need to manually go into boot mode. Open and download the RAK Serial Port Tool Here. Connect your board via the USB interface and enter the following AT command:</p>
-<pre><code>at+set_config=device:boot
+<pre tabindex="0"><code>at+set_config=device:boot
 </code></pre><p><img src="../images/bootmode.jpg" alt="Figure 1: Entering Boot Mode"></p>
 <p><strong>2</strong>.Download the RAK Upgrade Tool from the RAKwireless website <a href="https://downloads.rakwireless.com/en/LoRa/RAK612-LoRaButton/Tools/RAK%20LoRaButton%20Upgrade%20Tool%20V1.0.zip"><strong>here</strong></a> then, open the tool and connect using the appropriate COM Port. You can read this <a href="https://doc.rakwireless.com/rak7200-lora---tracker/interfacing-with-rak7200-lora---tracker">document</a> to learn on how to properly interface you RAK7200 LoRa® Tracker with your Computer.</p>
 <p><img src="../images/upgradetool.jpg" alt="Figure 2: RAK Upgrade Tool"></p>
@@ -242,7 +241,7 @@
 <p><img src="../images/success.jpg" alt="Figure 4: Successfully Upgraded Firmware"></p>
 <h2 id="testing-the-installed-firmware">Testing the Installed Firmware&nbsp;<a class="header-hash" href="#testing-the-installed-firmware">#</a> </h2>
 <p><strong>1</strong>.In order for you to check if you have successfully installed the firmware on your RAK7200 LoRa® Tracker, open the RAK Serial Port tool again. Press the &ldquo;<strong>Reset Button</strong>&rdquo; or type the command below. If everything works perfectly, you should see the following message below:</p>
-<pre><code>at+set_config=device:restart
+<pre tabindex="0"><code>at+set_config=device:restart
 </code></pre><p><img src="../images/restart.jpg" alt="Figure 5: Restarting your Device"></p>
 <p>This information means that you have uploaded the Firmware successfully!</p>
 

@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <meta name="generator" content="Hugo 0.79.0" />
+  <meta name="generator" content="Hugo 0.88.1" />
 
   <title>Connecting to The Things Network (TTN) | The Things Network</title>
   <link rel="canonical" href="https://www.thethingsnetwork.org/docs/devices/rak811-wisnode-lora-module/connecting-to-ttn/" />
@@ -38,15 +38,14 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.504b3e39c2bace42c4e70fc2480bf01ed9bbbbc2831194cfa95412953f38e1d5.css" integrity="sha256-UEs&#43;OcK6zkLE5w/CSAvwHtm7u8KDEZTPqVQSlT844dU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.1a1a30812d4274d8616380644cbf1670d6a3bc91fc7bd1d2c1d89177ea3d75f9.css" integrity="sha256-GhowgS1CdNhhY4BkTL8WcNajvJH8e9HSwdiRd&#43;o9dfk=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://www.thethingsnetwork.org/static/common/css/ui.css" crossorigin="anonymous">
 
   <meta property="og:title" content="Connecting to The Things Network (TTN)" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.thethingsnetwork.org/docs/devices/rak811-wisnode-lora-module/connecting-to-ttn/" />
-<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
-<meta property="og:site_name" content="The Things Network" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/devices/rak811-wisnode-lora-module/connecting-to-ttn/" /><meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/><meta property="og:site_name" content="The Things Network" />
+
 
 
   <meta name="twitter:card" content="summary_large_image"/>
@@ -252,9 +251,9 @@
 <p><img src="../images/register.jpg" alt="Figure 6: Registering Device in TTN"></p>
 <p>8 . Fill in the &ldquo;<strong>Device ID</strong>&rdquo; . Click the icon in the “<strong>Device EUI</strong>”, then a code is generated automatically.</p>
 <p>You can get the “Device EUI” of your RAK811 with the following command, which will display all node parameters:</p>
-<pre><code>at+get_config=lora:status
+<pre tabindex="0"><code>at+get_config=lora:status
 </code></pre><p>In case you have had TTN generate a new “Device EUI” you can use the command below to import it into the RAK811 configuration parameters (X is the Device_EUI you want to update):</p>
-<pre><code>at+set_config=lora:dev eui:XXXX
+<pre tabindex="0"><code>at+set_config=lora:dev eui:XXXX
 </code></pre><p><img src="../images/ttnparamaters.jpg" alt="Figure 7: Filling in the Device Information"></p>
 <p>9 .Then press the “<strong>Register</strong>” button at the bottom of this page to finish.</p>
 <p><img src="../images/deviceEUI.jpg" alt="Figure 8: Device Overview in TTN"></p>

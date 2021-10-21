@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <meta name="generator" content="Hugo 0.79.0" />
+  <meta name="generator" content="Hugo 0.88.1" />
 
   <title>API Reference | The Things Network</title>
   <link rel="canonical" href="https://www.thethingsnetwork.org/docs/applications/java/api/" />
@@ -38,15 +38,14 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.504b3e39c2bace42c4e70fc2480bf01ed9bbbbc2831194cfa95412953f38e1d5.css" integrity="sha256-UEs&#43;OcK6zkLE5w/CSAvwHtm7u8KDEZTPqVQSlT844dU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.1a1a30812d4274d8616380644cbf1670d6a3bc91fc7bd1d2c1d89177ea3d75f9.css" integrity="sha256-GhowgS1CdNhhY4BkTL8WcNajvJH8e9HSwdiRd&#43;o9dfk=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://www.thethingsnetwork.org/static/common/css/ui.css" crossorigin="anonymous">
 
   <meta property="og:title" content="API Reference" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.thethingsnetwork.org/docs/applications/java/api/" />
-<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
-<meta property="og:site_name" content="The Things Network" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/applications/java/api/" /><meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/><meta property="og:site_name" content="The Things Network" />
+
 
 
   <meta name="twitter:card" content="summary_large_image"/>
@@ -293,10 +292,10 @@
         <div class="content">
           
 <p>Require the TTN Client module:</p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">org.thethingsnetwork.data.mqtt.Client</span><span class="o">;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">org.thethingsnetwork.data.mqtt.Client</span><span class="o">;</span>
 </code></pre></div><h2 id="class-client">Class: Client&nbsp;<a class="header-hash" href="#class-client">#</a> </h2>
 <p>Creates an instance of the client:</p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Client</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Client</span><span class="o">(</span><span class="n">region</span><span class="o">,</span> <span class="n">appId</span><span class="o">,</span> <span class="n">accessKey</span> <span class="o">[,</span> <span class="n">connOpts</span><span class="o">]);</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">Client</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Client</span><span class="o">(</span><span class="n">region</span><span class="o">,</span> <span class="n">appId</span><span class="o">,</span> <span class="n">accessKey</span> <span class="o">[,</span> <span class="n">connOpts</span><span class="o">]);</span>
 </code></pre></div><ul>
 <li><code>region [String]</code>: The region (e.g. <code>eu</code>) or full hostname (e.g. <code>eu.thethings.network</code>) of the handler to connect to.</li>
 <li><code>appId [String]</code>: The ID of the application to connect to (e.g. <code>hello-world</code>).</li>
@@ -305,26 +304,26 @@
 </ul>
 <h2 id="event-connect">Event: connect&nbsp;<a class="header-hash" href="#event-connect">#</a> </h2>
 <p>Emitted on successful connection.</p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">client</span><span class="o">.</span><span class="na">onConnected</span><span class="o">((</span><span class="n">Connection</span> <span class="n">_client</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;connected !&#34;</span><span class="o">));</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">client</span><span class="o">.</span><span class="na">onConnected</span><span class="o">((</span><span class="n">Connection</span> <span class="n">_client</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;connected !&#34;</span><span class="o">));</span>
 </code></pre></div><ul>
 <li><code>cb.client [Connection]</code>: MQTT connection wrapper. See <a href="http://www.eclipse.org/paho/files/javadoc/org/eclipse/paho/client/mqttv3/MqttClient.html">MQTT</a>.</li>
 </ul>
 <h2 id="event-error">Event: error&nbsp;<a class="header-hash" href="#event-error">#</a> </h2>
 <p>Emitted when the client cannot connect or when a parsing error occurs.</p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">client</span><span class="o">.</span><span class="na">onError</span><span class="o">((</span><span class="n">Throwable</span> <span class="n">_error</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">err</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;error: &#34;</span> <span class="o">+</span> <span class="n">_error</span><span class="o">.</span><span class="na">getMessage</span><span class="o">()));</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">client</span><span class="o">.</span><span class="na">onError</span><span class="o">((</span><span class="n">Throwable</span> <span class="n">_error</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">err</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;error: &#34;</span> <span class="o">+</span> <span class="n">_error</span><span class="o">.</span><span class="na">getMessage</span><span class="o">()));</span>
 </code></pre></div><ul>
 <li><code>cb.error [Throwable]</code>: Error object. See <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Exception.html">MQTT</a>.</li>
 </ul>
 <h2 id="event-message">Event: message&nbsp;<a class="header-hash" href="#event-message">#</a> </h2>
 <p>Emitted when TTN forwards a message addressed to your application.</p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">client</span><span class="o">.</span><span class="na">onMessage</span><span class="o">((</span><span class="n">String</span> <span class="n">devId</span><span class="o">,</span> <span class="n">Object</span> <span class="n">data</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Message: &#34;</span> <span class="o">+</span> <span class="n">devId</span> <span class="o">+</span> <span class="s">&#34; &#34;</span> <span class="o">+</span> <span class="n">data</span><span class="o">));</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">client</span><span class="o">.</span><span class="na">onMessage</span><span class="o">((</span><span class="n">String</span> <span class="n">devId</span><span class="o">,</span> <span class="n">Object</span> <span class="n">data</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Message: &#34;</span> <span class="o">+</span> <span class="n">devId</span> <span class="o">+</span> <span class="s">&#34; &#34;</span> <span class="o">+</span> <span class="n">data</span><span class="o">));</span>
 </code></pre></div><ul>
 <li>
 <p><code>cb.devId [String]</code>: Device ID, e.g.: <code>my-uno</code>.</p>
 </li>
 <li>
 <p><code>cb.data [Object]</code>: Message data, e.g.:</p>
-<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
   <span class="nt">&#34;port&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
   <span class="nt">&#34;counter&#34;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
   <span class="nt">&#34;payload_raw&#34;</span><span class="p">:</span> <span class="s2">&#34;MQ==&#34;</span><span class="p">,</span>
@@ -351,29 +350,29 @@
 </code></pre></div></li>
 </ul>
 <p>When no field is specified, <code>cb.data</code> holds a <code>Message</code>. It&rsquo;s a <code>JsonObject</code> with an additional method: <code>getBinary(String key)</code>, base64-decoding the requested field:</p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">client</span><span class="o">.</span><span class="na">onMessage</span><span class="o">((</span><span class="n">String</span> <span class="n">devId</span><span class="o">,</span> <span class="n">Object</span> <span class="n">data</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="o">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">client</span><span class="o">.</span><span class="na">onMessage</span><span class="o">((</span><span class="n">String</span> <span class="n">devId</span><span class="o">,</span> <span class="n">Object</span> <span class="n">data</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="o">{</span>
     <span class="kt">byte</span><span class="o">[]</span> <span class="n">payload</span> <span class="o">=</span> <span class="o">((</span><span class="n">Message</span><span class="o">)</span> <span class="n">data</span><span class="o">).</span><span class="na">getBinary</span><span class="o">(</span><span class="s">&#34;payload_raw&#34;</span><span class="o">);</span>
     <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Message: &#34;</span> <span class="o">+</span> <span class="n">devId</span> <span class="o">+</span> <span class="s">&#34; &#34;</span> <span class="o">+</span> <span class="n">payload</span><span class="o">[</span><span class="n">0</span><span class="o">]);</span>
 <span class="o">});</span>
 </code></pre></div><p>Should give you:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">Message: my-uno <span class="m">0</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">Message: my-uno <span class="m">0</span>
 </code></pre></div><h3 id="listen-for-a-specific-device">Listen for a specific device&nbsp;<a class="header-hash" href="#listen-for-a-specific-device">#</a> </h3>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">client</span><span class="o">.</span><span class="na">onMessage</span><span class="o">(</span><span class="s">&#34;my-uno&#34;</span><span class="o">,</span> <span class="o">(</span><span class="n">String</span> <span class="n">devId</span><span class="o">,</span> <span class="n">Object</span> <span class="n">data</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Message: &#34;</span> <span class="o">+</span> <span class="n">devId</span> <span class="o">+</span> <span class="s">&#34; &#34;</span> <span class="o">+</span> <span class="n">data</span><span class="o">));</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">client</span><span class="o">.</span><span class="na">onMessage</span><span class="o">(</span><span class="s">&#34;my-uno&#34;</span><span class="o">,</span> <span class="o">(</span><span class="n">String</span> <span class="n">devId</span><span class="o">,</span> <span class="n">Object</span> <span class="n">data</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Message: &#34;</span> <span class="o">+</span> <span class="n">devId</span> <span class="o">+</span> <span class="s">&#34; &#34;</span> <span class="o">+</span> <span class="n">data</span><span class="o">));</span>
 </code></pre></div><h3 id="listen-for-a-specific-field-and-device">Listen for a specific field (and device)&nbsp;<a class="header-hash" href="#listen-for-a-specific-field-and-device">#</a> </h3>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">client</span><span class="o">.</span><span class="na">onMessage</span><span class="o">(</span><span class="s">&#34;my-uno&#34;</span><span class="o">,</span> <span class="s">&#34;led&#34;</span><span class="o">,</span> <span class="o">(</span><span class="n">String</span> <span class="n">devId</span><span class="o">,</span> <span class="n">Object</span> <span class="n">data</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Message: &#34;</span> <span class="o">+</span> <span class="n">devId</span> <span class="o">+</span> <span class="s">&#34; &#34;</span> <span class="o">+</span> <span class="n">data</span><span class="o">));</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">client</span><span class="o">.</span><span class="na">onMessage</span><span class="o">(</span><span class="s">&#34;my-uno&#34;</span><span class="o">,</span> <span class="s">&#34;led&#34;</span><span class="o">,</span> <span class="o">(</span><span class="n">String</span> <span class="n">devId</span><span class="o">,</span> <span class="n">Object</span> <span class="n">data</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Message: &#34;</span> <span class="o">+</span> <span class="n">devId</span> <span class="o">+</span> <span class="s">&#34; &#34;</span> <span class="o">+</span> <span class="n">data</span><span class="o">));</span>
 </code></pre></div><blockquote>
 <p>When a field is specified, <code>cb.data</code> holds the <code>String</code> representation of the field value.</p>
 </blockquote>
 <h2 id="event-activation">Event: activation&nbsp;<a class="header-hash" href="#event-activation">#</a> </h2>
 <p>Emitted when a device registered to the application activates.</p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">client</span><span class="o">.</span><span class="na">onActivation</span><span class="o">((</span><span class="n">String</span> <span class="n">_devId</span><span class="o">,</span> <span class="n">JSONObject</span> <span class="n">_data</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Activation: &#34;</span> <span class="o">+</span> <span class="n">_devId</span> <span class="o">+</span> <span class="s">&#34;, data: &#34;</span> <span class="o">+</span> <span class="n">_data</span><span class="o">));</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">client</span><span class="o">.</span><span class="na">onActivation</span><span class="o">((</span><span class="n">String</span> <span class="n">_devId</span><span class="o">,</span> <span class="n">JSONObject</span> <span class="n">_data</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Activation: &#34;</span> <span class="o">+</span> <span class="n">_devId</span> <span class="o">+</span> <span class="s">&#34;, data: &#34;</span> <span class="o">+</span> <span class="n">_data</span><span class="o">));</span>
 </code></pre></div><ul>
 <li>
 <p><code>cb.devId [String]</code>: Device ID, e.g.: <code>my-uno</code>.</p>
 </li>
 <li>
 <p><code>cb.data [Object]</code>: Activation data, e.g.:</p>
-<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
   <span class="nt">&#34;app_eui&#34;</span><span class="p">:</span> <span class="s2">&#34;70B3D57ED0000AFB&#34;</span><span class="p">,</span>
   <span class="nt">&#34;dev_eui&#34;</span><span class="p">:</span> <span class="s2">&#34;0004A30B001B7AD2&#34;</span><span class="p">,</span>
   <span class="nt">&#34;dev_addr&#34;</span><span class="p">:</span> <span class="s2">&#34;260023BB&#34;</span><span class="p">,</span>
@@ -397,7 +396,7 @@
 </ul>
 <h2 id="event-device">Event: device&nbsp;<a class="header-hash" href="#event-device">#</a> </h2>
 <p>Emitted when a device event is published.</p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">client</span><span class="o">.</span><span class="na">onDevice</span><span class="o">(</span><span class="kc">null</span><span class="o">,</span> <span class="s">&#34;down/scheduled&#34;</span><span class="o">,</span> <span class="o">(</span><span class="n">String</span> <span class="n">devId</span><span class="o">,</span> <span class="n">String</span> <span class="n">event</span><span class="o">,</span> <span class="n">JSONObject</span> <span class="n">data</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Received event &#34;</span> <span class="o">+</span> <span class="n">event</span> <span class="o">+</span> <span class="s">&#34;for device &#34;</span> <span class="o">+</span> <span class="n">devId</span><span class="o">));</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">client</span><span class="o">.</span><span class="na">onDevice</span><span class="o">(</span><span class="kc">null</span><span class="o">,</span> <span class="s">&#34;down/scheduled&#34;</span><span class="o">,</span> <span class="o">(</span><span class="n">String</span> <span class="n">devId</span><span class="o">,</span> <span class="n">String</span> <span class="n">event</span><span class="o">,</span> <span class="n">JSONObject</span> <span class="n">data</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Received event &#34;</span> <span class="o">+</span> <span class="n">event</span> <span class="o">+</span> <span class="s">&#34;for device &#34;</span> <span class="o">+</span> <span class="n">devId</span><span class="o">));</span>
 </code></pre></div><ul>
 <li>
 <p><code>cb.devId [String]</code>: Device ID, e.g.: <code>my-uno</code>.</p>
@@ -407,7 +406,7 @@
 </li>
 <li>
 <p><code>cb.data [Object]</code>: Event data, e.g. for <code>down/scheduled</code>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
   <span class="nt">&#34;port&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
   <span class="nt">&#34;payload_raw&#34;</span><span class="p">:</span> <span class="s2">&#34;MQ==&#34;</span><span class="p">,</span>
 <span class="p">}</span>
@@ -415,7 +414,7 @@
 </ul>
 <h2 id="method-send">Method: send&nbsp;<a class="header-hash" href="#method-send">#</a> </h2>
 <p>Send a message to a specific device.</p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">client</span><span class="o">.</span><span class="na">send</span><span class="o">(</span><span class="n">devId</span><span class="o">,</span> <span class="n">payload</span><span class="o">,</span> <span class="n">port</span><span class="o">);</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">client</span><span class="o">.</span><span class="na">send</span><span class="o">(</span><span class="n">devId</span><span class="o">,</span> <span class="n">payload</span><span class="o">,</span> <span class="n">port</span><span class="o">);</span>
 </code></pre></div><ul>
 <li>
 <p><code>deviceId [String]</code>: The ID of the device to address, e.g. <code>my-uno</code></p>
@@ -446,7 +445,7 @@
 </blockquote>
 <h2 id="method-end">Method: end&nbsp;<a class="header-hash" href="#method-end">#</a> </h2>
 <p>Close the client via <a href="http://www.eclipse.org/paho/files/javadoc/org/eclipse/paho/client/mqttv3/MqttClient.html#close--"><code>client.close()</code></a>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">client</span><span class="o">.</span><span class="na">end</span><span class="o">([</span><span class="n">timeout</span><span class="o">]);</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">client</span><span class="o">.</span><span class="na">end</span><span class="o">([</span><span class="n">timeout</span><span class="o">]);</span>
 </code></pre></div><ul>
 <li><code>timeout [Integer]</code>: The time you give to the client to close the connection. This parameter is optional. Default is 5000 ms.</li>
 </ul>

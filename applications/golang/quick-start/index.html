@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <meta name="generator" content="Hugo 0.79.0" />
+  <meta name="generator" content="Hugo 0.88.1" />
 
   <title>Quick Start | The Things Network</title>
   <link rel="canonical" href="https://www.thethingsnetwork.org/docs/applications/golang/quick-start/" />
@@ -38,15 +38,14 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.504b3e39c2bace42c4e70fc2480bf01ed9bbbbc2831194cfa95412953f38e1d5.css" integrity="sha256-UEs&#43;OcK6zkLE5w/CSAvwHtm7u8KDEZTPqVQSlT844dU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.1a1a30812d4274d8616380644cbf1670d6a3bc91fc7bd1d2c1d89177ea3d75f9.css" integrity="sha256-GhowgS1CdNhhY4BkTL8WcNajvJH8e9HSwdiRd&#43;o9dfk=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://www.thethingsnetwork.org/static/common/css/ui.css" crossorigin="anonymous">
 
   <meta property="og:title" content="Quick Start" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.thethingsnetwork.org/docs/applications/golang/quick-start/" />
-<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
-<meta property="og:site_name" content="The Things Network" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/applications/golang/quick-start/" /><meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/><meta property="og:site_name" content="The Things Network" />
+
 
 
   <meta name="twitter:card" content="summary_large_image"/>
@@ -300,12 +299,12 @@
 </li>
 <li>
 <p>Create a new Go project:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">mkdir -p <span class="nv">$GOPATH</span>/src/github.com/YOUR_USERNAME/ttn-app
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">mkdir -p <span class="nv">$GOPATH</span>/src/github.com/YOUR_USERNAME/ttn-app
 <span class="nb">cd</span> <span class="nv">$GOPATH</span>/src/github.com/YOUR_USERNAME/ttn-app
 </code></pre></div></li>
 <li>
 <p>Install the <a href="https://github.com/TheThingsNetwork/go-app-sdk">TTN Client</a>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">go get -u github.com/TheThingsNetwork/go-app-sdk/...
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">go get -u github.com/TheThingsNetwork/go-app-sdk/...
 </code></pre></div></li>
 <li>
 <p>Install <a href="https://github.com/kardianos/govendor">Govendor</a> and then run <code>govendor sync</code> inside <code>$GOPATH/src/github.com/TheThingsNetwork/go-app-sdk</code>.</p>
@@ -313,7 +312,7 @@
 </ol>
 <h2 id="maingo"><code>main.go</code>&nbsp;<a class="header-hash" href="#maingo">#</a> </h2>
 <p>We declare the package <code>main</code> and import a number of dependencies that we&rsquo;ll use later on:</p>
-<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
 
 <span class="kn">import</span> <span class="p">(</span>
   <span class="s">&#34;encoding/hex&#34;</span>
@@ -329,33 +328,33 @@
   <span class="s">&#34;github.com/TheThingsNetwork/ttn/core/types&#34;</span>
 <span class="p">)</span>
 </code></pre></div><p>Next, we declare the name of our application as a constant:</p>
-<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">const</span> <span class="p">(</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="kd">const</span> <span class="p">(</span>
   <span class="nx">sdkClientName</span> <span class="p">=</span> <span class="s">&#34;my-amazing-app&#34;</span>
 <span class="p">)</span>
 </code></pre></div><p>We will write everything inside the <code>main</code> function that will be executed when the application starts:</p>
-<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
 
 <span class="p">}</span>
 </code></pre></div><p>The first part is logging. We will just log to the standard output of the application:</p>
-<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">log</span> <span class="o">:=</span> <span class="nx">apex</span><span class="p">.</span><span class="nf">Stdout</span><span class="p">()</span> <span class="c1">// We use a cli logger at Stdout
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="nx">log</span> <span class="o">:=</span> <span class="nx">apex</span><span class="p">.</span><span class="nf">Stdout</span><span class="p">()</span> <span class="c1">// We use a cli logger at Stdout
 </span><span class="c1"></span><span class="nx">ttnlog</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="nx">log</span><span class="p">)</span>      <span class="c1">// Set the logger as default for TTN
 </span></code></pre></div><p>We get the application ID and application access key from the environment variables:</p>
-<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">appID</span> <span class="o">:=</span> <span class="nx">os</span><span class="p">.</span><span class="nf">Getenv</span><span class="p">(</span><span class="s">&#34;TTN_APP_ID&#34;</span><span class="p">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="nx">appID</span> <span class="o">:=</span> <span class="nx">os</span><span class="p">.</span><span class="nf">Getenv</span><span class="p">(</span><span class="s">&#34;TTN_APP_ID&#34;</span><span class="p">)</span>
 <span class="nx">appAccessKey</span> <span class="o">:=</span> <span class="nx">os</span><span class="p">.</span><span class="nf">Getenv</span><span class="p">(</span><span class="s">&#34;TTN_APP_ACCESS_KEY&#34;</span><span class="p">)</span>
 </code></pre></div><p>Next, we create a new <strong>SDK Configuration</strong> to connect to the public community network:</p>
-<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">config</span> <span class="o">:=</span> <span class="nx">ttnsdk</span><span class="p">.</span><span class="nf">NewCommunityConfig</span><span class="p">(</span><span class="nx">sdkClientName</span><span class="p">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="nx">config</span> <span class="o">:=</span> <span class="nx">ttnsdk</span><span class="p">.</span><span class="nf">NewCommunityConfig</span><span class="p">(</span><span class="nx">sdkClientName</span><span class="p">)</span>
 <span class="nx">config</span><span class="p">.</span><span class="nx">ClientVersion</span> <span class="p">=</span> <span class="s">&#34;2.0.5&#34;</span> <span class="c1">// The version of the application
 </span></code></pre></div><p>And we create a new <strong>SDK Client</strong> for the application.</p>
 <p>The second line makes sure the client is cleaned up before the end of the program. You could add more of these <code>defer something.Close()</code> below, as it&rsquo;s good practice to clean up after you no longer need something. The <code>client.Close()</code> will make sure that everything we start after this point, will also be cleaned up, so I left out those other <code>defer something.Close()</code> for simplicity.</p>
-<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">client</span> <span class="o">:=</span> <span class="nx">config</span><span class="p">.</span><span class="nf">NewClient</span><span class="p">(</span><span class="nx">appID</span><span class="p">,</span> <span class="nx">appAccessKey</span><span class="p">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="nx">client</span> <span class="o">:=</span> <span class="nx">config</span><span class="p">.</span><span class="nf">NewClient</span><span class="p">(</span><span class="nx">appID</span><span class="p">,</span> <span class="nx">appAccessKey</span><span class="p">)</span>
 <span class="k">defer</span> <span class="nx">client</span><span class="p">.</span><span class="nf">Close</span><span class="p">()</span>
 </code></pre></div><p>We start by adding a new device. For this we need to get a <strong>Device Manager</strong> from the SDK:</p>
-<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">devices</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">client</span><span class="p">.</span><span class="nf">ManageDevices</span><span class="p">()</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="nx">devices</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">client</span><span class="p">.</span><span class="nf">ManageDevices</span><span class="p">()</span>
 <span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
   <span class="nx">log</span><span class="p">.</span><span class="nf">WithError</span><span class="p">(</span><span class="nx">err</span><span class="p">).</span><span class="nf">Fatalf</span><span class="p">(</span><span class="s">&#34;%s: could not read CA certificate file&#34;</span><span class="p">,</span> <span class="nx">sdkClientName</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div><p>The new device will look as follows:</p>
-<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">dev</span> <span class="o">:=</span> <span class="nb">new</span><span class="p">(</span><span class="nx">ttnsdk</span><span class="p">.</span><span class="nx">Device</span><span class="p">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="nx">dev</span> <span class="o">:=</span> <span class="nb">new</span><span class="p">(</span><span class="nx">ttnsdk</span><span class="p">.</span><span class="nx">Device</span><span class="p">)</span>
 <span class="nx">dev</span><span class="p">.</span><span class="nx">AppID</span> <span class="p">=</span> <span class="nx">appID</span>
 <span class="nx">dev</span><span class="p">.</span><span class="nx">DevID</span> <span class="p">=</span> <span class="s">&#34;my-new-device&#34;</span>
 <span class="nx">dev</span><span class="p">.</span><span class="nx">Description</span> <span class="p">=</span> <span class="s">&#34;A new device in my amazing app&#34;</span>
@@ -363,24 +362,24 @@
 </span><span class="c1"></span><span class="nx">dev</span><span class="p">.</span><span class="nx">DevEUI</span> <span class="p">=</span> <span class="nx">types</span><span class="p">.</span><span class="nx">DevEUI</span><span class="p">{</span><span class="mh">0x01</span><span class="p">,</span> <span class="mh">0x02</span><span class="p">,</span> <span class="mh">0x03</span><span class="p">,</span> <span class="mh">0x04</span><span class="p">,</span> <span class="mh">0x05</span><span class="p">,</span> <span class="mh">0x06</span><span class="p">,</span> <span class="mh">0x07</span><span class="p">,</span> <span class="mh">0x08</span><span class="p">}</span> <span class="c1">// Use the real DevEUI here
 </span><span class="c1"></span><span class="nx">random</span><span class="p">.</span><span class="nf">FillBytes</span><span class="p">(</span><span class="nx">dev</span><span class="p">.</span><span class="nx">AppKey</span><span class="p">[:])</span>                                           <span class="c1">// Generate a random AppKey
 </span></code></pre></div><p>Now we can <code>Set</code> the device on the network server:</p>
-<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">err</span> <span class="p">=</span> <span class="nx">devices</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="nx">dev</span><span class="p">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="nx">err</span> <span class="p">=</span> <span class="nx">devices</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="nx">dev</span><span class="p">)</span>
 <span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
   <span class="nx">log</span><span class="p">.</span><span class="nf">WithError</span><span class="p">(</span><span class="nx">err</span><span class="p">).</span><span class="nf">Fatalf</span><span class="p">(</span><span class="s">&#34;%s: could not create device&#34;</span><span class="p">,</span> <span class="nx">sdkClientName</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div><p>After this, we can also <code>Get</code> the device back from the server</p>
-<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">dev</span><span class="p">,</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">devices</span><span class="p">.</span><span class="nf">Get</span><span class="p">(</span><span class="s">&#34;my-new-device&#34;</span><span class="p">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="nx">dev</span><span class="p">,</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">devices</span><span class="p">.</span><span class="nf">Get</span><span class="p">(</span><span class="s">&#34;my-new-device&#34;</span><span class="p">)</span>
 <span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
   <span class="nx">log</span><span class="p">.</span><span class="nf">WithError</span><span class="p">(</span><span class="nx">err</span><span class="p">).</span><span class="nf">Fatalf</span><span class="p">(</span><span class="s">&#34;%s: could not get device&#34;</span><span class="p">,</span> <span class="nx">sdkClientName</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div><p>Your newly created device is now ready to join the network, so let&rsquo;s subscribe to activations. For this, we first need to start the publish/subscribe (MQTT) client:</p>
-<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">pubsub</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">client</span><span class="p">.</span><span class="nf">PubSub</span><span class="p">()</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="nx">pubsub</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">client</span><span class="p">.</span><span class="nf">PubSub</span><span class="p">()</span>
 <span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
   <span class="nx">log</span><span class="p">.</span><span class="nf">WithError</span><span class="p">(</span><span class="nx">err</span><span class="p">).</span><span class="nf">Fatalf</span><span class="p">(</span><span class="s">&#34;%s: could not get application pub/sub&#34;</span><span class="p">,</span> <span class="nx">sdkClientName</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div><p>We want to receive activations for all devices within our application, so we use the <code>AllDevices()</code> function to select them:</p>
-<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">allDevicesPubSub</span> <span class="o">:=</span> <span class="nx">pubsub</span><span class="p">.</span><span class="nf">AllDevices</span><span class="p">()</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="nx">allDevicesPubSub</span> <span class="o">:=</span> <span class="nx">pubsub</span><span class="p">.</span><span class="nf">AllDevices</span><span class="p">()</span>
 </code></pre></div><p>Now we can subscribe to device activations. This will give us a Go channel (<code>chan</code>) we can <code>range</code> over. As this <code>range</code> loop a blocking, we run this in a separate <code>goroutine</code>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">activations</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">allDevicesPubSub</span><span class="p">.</span><span class="nf">SubscribeActivations</span><span class="p">()</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="nx">activations</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">allDevicesPubSub</span><span class="p">.</span><span class="nf">SubscribeActivations</span><span class="p">()</span>
 <span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
   <span class="nx">log</span><span class="p">.</span><span class="nf">WithError</span><span class="p">(</span><span class="nx">err</span><span class="p">).</span><span class="nf">Fatalf</span><span class="p">(</span><span class="s">&#34;%s: could not subscribe to activations&#34;</span><span class="p">,</span> <span class="nx">sdkClientName</span><span class="p">)</span>
 <span class="p">}</span>
@@ -395,14 +394,14 @@
 <span class="p">}()</span>
 </code></pre></div><p>As soon as the device joins, you&rsquo;ll see a nice line logged to your console.</p>
 <p>If we are no longer interested in activations, we can unsubscribe from them. This will break the <code>range</code> loop and end the <code>goroutine</code> that we created earlier.</p>
-<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">err</span> <span class="p">=</span> <span class="nx">allDevicesPubSub</span><span class="p">.</span><span class="nf">UnsubscribeActivations</span><span class="p">()</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="nx">err</span> <span class="p">=</span> <span class="nx">allDevicesPubSub</span><span class="p">.</span><span class="nf">UnsubscribeActivations</span><span class="p">()</span>
 <span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
   <span class="nx">log</span><span class="p">.</span><span class="nf">WithError</span><span class="p">(</span><span class="nx">err</span><span class="p">).</span><span class="nf">Fatalf</span><span class="p">(</span><span class="s">&#34;%s: could not unsubscribe from activations&#34;</span><span class="p">,</span> <span class="nx">sdkClientName</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div><p>Now let&rsquo;s subscribe to uplink messages from the device we created. This is done similar to how we subscribed to activations. We first select the device we created:</p>
-<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">myNewDevicePubSub</span> <span class="o">:=</span> <span class="nx">pubsub</span><span class="p">.</span><span class="nf">Device</span><span class="p">(</span><span class="s">&#34;my-new-device&#34;</span><span class="p">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="nx">myNewDevicePubSub</span> <span class="o">:=</span> <span class="nx">pubsub</span><span class="p">.</span><span class="nf">Device</span><span class="p">(</span><span class="s">&#34;my-new-device&#34;</span><span class="p">)</span>
 </code></pre></div><p>And then we subscribe to uplink messages, logging them to the console as they arrive:</p>
-<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">uplink</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">myNewDevicePubSub</span><span class="p">.</span><span class="nf">SubscribeUplink</span><span class="p">()</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="nx">uplink</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">myNewDevicePubSub</span><span class="p">.</span><span class="nf">SubscribeUplink</span><span class="p">()</span>
 <span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
   <span class="nx">log</span><span class="p">.</span><span class="nf">WithError</span><span class="p">(</span><span class="nx">err</span><span class="p">).</span><span class="nf">Fatalf</span><span class="p">(</span><span class="s">&#34;%s: could not subscribe to uplink messages&#34;</span><span class="p">,</span> <span class="nx">sdkClientName</span><span class="p">)</span>
 <span class="p">}</span>
@@ -413,12 +412,12 @@
   <span class="p">}</span>
 <span class="p">}()</span>
 </code></pre></div><p>Again, we can unsubscribe when we&rsquo;re no longer interested:</p>
-<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">err</span> <span class="p">=</span> <span class="nx">myNewDevicePubSub</span><span class="p">.</span><span class="nf">UnsubscribeUplink</span><span class="p">()</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="nx">err</span> <span class="p">=</span> <span class="nx">myNewDevicePubSub</span><span class="p">.</span><span class="nf">UnsubscribeUplink</span><span class="p">()</span>
 <span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
   <span class="nx">log</span><span class="p">.</span><span class="nf">WithError</span><span class="p">(</span><span class="nx">err</span><span class="p">).</span><span class="nf">Fatalf</span><span class="p">(</span><span class="s">&#34;%s: could not unsubscribe from uplink&#34;</span><span class="p">,</span> <span class="nx">sdkClientName</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div><p>To finish this example, we&rsquo;ll publish a downlink message to the device. This message will have a payload of <code>AABC</code> and will be sent on port <code>10</code>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">err</span> <span class="p">=</span> <span class="nx">myNewDevicePubSub</span><span class="p">.</span><span class="nf">Publish</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">types</span><span class="p">.</span><span class="nx">DownlinkMessage</span><span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="nx">err</span> <span class="p">=</span> <span class="nx">myNewDevicePubSub</span><span class="p">.</span><span class="nf">Publish</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">types</span><span class="p">.</span><span class="nx">DownlinkMessage</span><span class="p">{</span>
   <span class="nx">PayloadRaw</span><span class="p">:</span> <span class="p">[]</span><span class="kt">byte</span><span class="p">{</span><span class="mh">0xaa</span><span class="p">,</span> <span class="mh">0xbc</span><span class="p">},</span>
   <span class="nx">FPort</span><span class="p">:</span>      <span class="mi">10</span><span class="p">,</span>
 <span class="p">})</span>

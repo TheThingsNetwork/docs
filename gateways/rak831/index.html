@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <meta name="generator" content="Hugo 0.79.0" />
+  <meta name="generator" content="Hugo 0.88.1" />
 
   <title>RAK831 | The Things Network</title>
   <link rel="canonical" href="https://www.thethingsnetwork.org/docs/gateways/rak831/" />
@@ -38,15 +38,14 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.504b3e39c2bace42c4e70fc2480bf01ed9bbbbc2831194cfa95412953f38e1d5.css" integrity="sha256-UEs&#43;OcK6zkLE5w/CSAvwHtm7u8KDEZTPqVQSlT844dU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.1a1a30812d4274d8616380644cbf1670d6a3bc91fc7bd1d2c1d89177ea3d75f9.css" integrity="sha256-GhowgS1CdNhhY4BkTL8WcNajvJH8e9HSwdiRd&#43;o9dfk=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://www.thethingsnetwork.org/static/common/css/ui.css" crossorigin="anonymous">
 
   <meta property="og:title" content="RAK831" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.thethingsnetwork.org/docs/gateways/rak831/" />
-<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
-<meta property="og:site_name" content="The Things Network" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/gateways/rak831/" /><meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/><meta property="og:site_name" content="The Things Network" />
+
 
 
   <meta name="twitter:card" content="summary_large_image"/>
@@ -359,7 +358,7 @@ Open Etcher, click &ldquo;Select image&rdquo; and browse to the ISO file extract
 <p>Linux:
 Use dmesg to check which device is used for you SDcard. Check with mount if any partitions of it are mounted and unmount if this is the case.
 Write the image to SDcard with dd.</p>
-<pre><code>sudo dd if=/tmp/resin-lorawangw-&lt;revision&gt;.img of=/dev/sdX bs=4M conv=sync
+<pre tabindex="0"><code>sudo dd if=/tmp/resin-lorawangw-&lt;revision&gt;.img of=/dev/sdX bs=4M conv=sync
 </code></pre><p><strong>NOTE:</strong> Take care to select the right device, dd will quite hapily overwrite any disk, including your linux installation!</p>
 <p>Proceed to the next step while dd is writing to the sdcard</p>
 <h2 id="add-software-to-your-application">Add software to your application&nbsp;<a class="header-hash" href="#add-software-to-your-application">#</a> </h2>
@@ -368,14 +367,14 @@ Write the image to SDcard with dd.</p>
 <li>Open (OSX/Linux) Terminal or (Windows) Git Bash</li>
 <li>Create a new directory to store the code on you local system go to it</li>
 </ol>
-<pre><code>mkdir lorawan-software
+<pre tabindex="0"><code>mkdir lorawan-software
 cd lorawan-software
 </code></pre><ol start="3">
 <li>Get the code from github</li>
 </ol>
-<pre><code>git clone https://github.com/jpmeijers/ttn-resin-gateway-rpi.git
+<pre tabindex="0"><code>git clone https://github.com/jpmeijers/ttn-resin-gateway-rpi.git
 </code></pre><p>The output should resemble:</p>
-<pre><code>Cloning into 'ttn-resin-gateway-rpi'...
+<pre tabindex="0"><code>Cloning into 'ttn-resin-gateway-rpi'...
 remote: Counting objects: 27, done.
 remote: Compressing objects: 100% (20/20), done.
 remote: Total 27 (delta 4), reused 27 (delta 4), pack-reused 0
@@ -383,7 +382,7 @@ Unpacking objects: 100% (27/27), done.
 </code></pre><ol start="4">
 <li>Go to the newly created directory</li>
 </ol>
-<pre><code>cd ttn-resin-gateway-rpi
+<pre tabindex="0"><code>cd ttn-resin-gateway-rpi
 </code></pre><ol start="5">
 <li>Now we need to couple this reposity to resin.io so we are able to send the code there. For this we need to execute the git command listed on our application page. (Top right)</li>
 </ol>
@@ -391,22 +390,22 @@ Unpacking objects: 100% (27/27), done.
 <ol start="6">
 <li>Copy the text marked in the picture (for your application page) and paste it on the command line of your terminal/git bash.</li>
 </ol>
-<pre><code>git remote add resin &lt;your resin.io account&gt;@git.resin.io:&lt;your resin.io account&gt;/lorawangw.git
+<pre tabindex="0"><code>git remote add resin &lt;your resin.io account&gt;@git.resin.io:&lt;your resin.io account&gt;/lorawangw.git
 </code></pre><p>If the command runs successfully no output will be shown</p>
 <ol start="7">
 <li>Now we will push the code to resin.io, run</li>
 </ol>
-<pre><code>git push resin
+<pre tabindex="0"><code>git push resin
 </code></pre><p>The first time you run this command you will be see a message like</p>
-<pre><code>The authenticity of host 'git.resin.io (54.165.162.194)' can't be established.
+<pre tabindex="0"><code>The authenticity of host 'git.resin.io (54.165.162.194)' can't be established.
 ECDSA key fingerprint is SHA256:NfwmqnKId5cx1RWpebbEuuM87bCJbdyhzRnqFES9Nnw.
 Are you sure you want to continue connecting (yes/no)?
 </code></pre><p>Reply &lsquo;yes&rsquo; to the question.</p>
 <p>Next you will be prompted for the passphrase for your SSH key:</p>
-<pre><code>Enter passphrase for key '/c/Users/kersing/.ssh/id_rsa':
+<pre tabindex="0"><code>Enter passphrase for key '/c/Users/kersing/.ssh/id_rsa':
 </code></pre><p>Enter the passphrase.</p>
 <p>The upload starts and resin starts to build the image:</p>
-<pre><code>Counting objects: 27, done.
+<pre tabindex="0"><code>Counting objects: 27, done.
 Delta compression using up to 4 threads.
 Compressing objects: 100% (24/24), done.
 Writing objects: 100% (27/27), 2.30 MiB | 3.71 MiB/s, done.

@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <meta name="generator" content="Hugo 0.79.0" />
+  <meta name="generator" content="Hugo 0.88.1" />
 
   <title>Cellular Connection | The Things Network</title>
   <link rel="canonical" href="https://www.thethingsnetwork.org/docs/gateways/kerlink/station/cellular/" />
@@ -38,15 +38,14 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.504b3e39c2bace42c4e70fc2480bf01ed9bbbbc2831194cfa95412953f38e1d5.css" integrity="sha256-UEs&#43;OcK6zkLE5w/CSAvwHtm7u8KDEZTPqVQSlT844dU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.1a1a30812d4274d8616380644cbf1670d6a3bc91fc7bd1d2c1d89177ea3d75f9.css" integrity="sha256-GhowgS1CdNhhY4BkTL8WcNajvJH8e9HSwdiRd&#43;o9dfk=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://www.thethingsnetwork.org/static/common/css/ui.css" crossorigin="anonymous">
 
   <meta property="og:title" content="Cellular Connection" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.thethingsnetwork.org/docs/gateways/kerlink/station/cellular/" />
-<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
-<meta property="og:site_name" content="The Things Network" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/gateways/kerlink/station/cellular/" /><meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/><meta property="og:site_name" content="The Things Network" />
+
 
 
   <meta name="twitter:card" content="summary_large_image"/>
@@ -361,7 +360,7 @@
 <blockquote>
 <p><em>You can open the file via the terminal, type: <code>vi /etc/sysconfig/network</code>. Type <code>i</code> to start editing the file, after doing so, save and quit the file: press <code>esc</code> &gt; <code>:w</code> &gt; <code>esc</code> &gt; <code>:q</code></em></p>
 </blockquote>
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext"># Selector operator APN
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"># Selector operator APN
 GPRSAPN=internet
 # Enter pin code if activated
 GPRSPIN=
@@ -374,7 +373,7 @@ GPRSPASSWORD=mypassword
 # Bearers priority order
 BEARERS_PRIORITY=&#34;eth0,ppp0&#34;
 </code></pre></div><p>Configure the autoconnect in <code>/knet/knetd.xml</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-xml" data-lang="xml"><span class="c">&lt;!-- ############## connection parameters ############## --&gt;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="c">&lt;!-- ############## connection parameters ############## --&gt;</span>
 <span class="c">&lt;!-- enable the autoconnect feature (YES/NO) --&gt;</span>
 <span class="nt">&lt;CONNECT</span> <span class="na">auto_connection=</span><span class="s">&#34;YES&#34;</span> <span class="nt">/&gt;</span>
 
@@ -387,7 +386,7 @@ BEARERS_PRIORITY=&#34;eth0,ppp0&#34;
 <p><strong>Troubleshooting:</strong> If you are using the Kerlink SPF packet forwarder it will automatically restart when the internet connection changes. For other packet forwarders it might be necessary to restart the packet forwarder when this occurs. You can do so by adding the line: <code>/usr/bin/killall poly_pkt_fwd</code> at the bottom of the files <code>/etc/ppp/ip-up</code> and <code>/etc/ppp/ip-down</code>.</p>
 <h2 id="provider-settings">Provider Settings&nbsp;<a class="header-hash" href="#provider-settings">#</a> </h2>
 <h3 id="kpn">KPN&nbsp;<a class="header-hash" href="#kpn">#</a> </h3>
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext"># Selector operator APN
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"># Selector operator APN
 GPRSAPN=portalmmm.nl
 # Enter pin code if activated
 GPRSPIN=
@@ -397,7 +396,7 @@ GPSDNS=yes
 GPRSUSER=internet
 GPRSPASSWORD=internet
 </code></pre></div><h3 id="vodafone">Vodafone&nbsp;<a class="header-hash" href="#vodafone">#</a> </h3>
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext"># Selector operator APN
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"># Selector operator APN
 GPRSAPN=live.vodafone.com
 # Enter pin code if activated
 GPRSPIN=
@@ -407,7 +406,7 @@ GPSDNS=yes
 GPRSUSER=vodafone
 GPRSPASSWORD=vodafone
 </code></pre></div><h3 id="ben">Ben&nbsp;<a class="header-hash" href="#ben">#</a> </h3>
-<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext"># Selector operator APN
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"># Selector operator APN
 GPRSAPN=internet.ben
 # Enter pin code if activated
 GPRSPIN=

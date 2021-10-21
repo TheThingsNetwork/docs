@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <meta name="generator" content="Hugo 0.79.0" />
+  <meta name="generator" content="Hugo 0.88.1" />
 
   <title>API Reference | The Things Network</title>
   <link rel="canonical" href="https://www.thethingsnetwork.org/docs/applications/python/api-reference/" />
@@ -38,15 +38,14 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.504b3e39c2bace42c4e70fc2480bf01ed9bbbbc2831194cfa95412953f38e1d5.css" integrity="sha256-UEs&#43;OcK6zkLE5w/CSAvwHtm7u8KDEZTPqVQSlT844dU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.1a1a30812d4274d8616380644cbf1670d6a3bc91fc7bd1d2c1d89177ea3d75f9.css" integrity="sha256-GhowgS1CdNhhY4BkTL8WcNajvJH8e9HSwdiRd&#43;o9dfk=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://www.thethingsnetwork.org/static/common/css/ui.css" crossorigin="anonymous">
 
   <meta property="og:title" content="API Reference" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.thethingsnetwork.org/docs/applications/python/api-reference/" />
-<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
-<meta property="og:site_name" content="The Things Network" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/applications/python/api-reference/" /><meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/><meta property="og:site_name" content="The Things Network" />
+
 
 
   <meta name="twitter:card" content="summary_large_image"/>
@@ -285,7 +284,7 @@
 <p>This package provides you an easy way to exchange traffic with The Things Network via MQTT and manage your applications.</p>
 <h2 id="mqttclient">MQTTClient&nbsp;<a class="header-hash" href="#mqttclient">#</a> </h2>
 <p>The class constructor can be called following this scheme:</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">MQTTClient</span><span class="p">(</span><span class="n">app_id</span><span class="p">,</span> <span class="n">access_key</span><span class="p">,</span> <span class="n">mqtt_address</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">,</span> <span class="n">discovery_address</span><span class="o">=</span><span class="s2">&#34;discovery.thethings.network:1900&#34;</span><span class="p">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">MQTTClient</span><span class="p">(</span><span class="n">app_id</span><span class="p">,</span> <span class="n">access_key</span><span class="p">,</span> <span class="n">mqtt_address</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">,</span> <span class="n">discovery_address</span><span class="o">=</span><span class="s2">&#34;discovery.thethings.network:1900&#34;</span><span class="p">)</span>
 </code></pre></div><ul>
 <li>
 <p><code>app_id</code>: <strong>string</strong> this the name given to the application when it was created.
@@ -306,15 +305,15 @@ The constructor returns an <strong>MQTTClient object</strong> set up with the ap
 </ul>
 <h3 id="connect">connect&nbsp;<a class="header-hash" href="#connect">#</a> </h3>
 <p>Connects and starts the client in the background. This function also re-establishes the client&rsquo;s connection in case it was closed.</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
 </code></pre></div><h3 id="close">close&nbsp;<a class="header-hash" href="#close">#</a> </h3>
 <p>Disconnects and stops the client from which the method is called.</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">client</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">client</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </code></pre></div><h3 id="using-callbacks">Using Callbacks&nbsp;<a class="header-hash" href="#using-callbacks">#</a> </h3>
 <p>The callback functions are functions which are executed when a trigger event happens.</p>
 <h4 id="set_uplink_callback">set_uplink_callback&nbsp;<a class="header-hash" href="#set_uplink_callback">#</a> </h4>
 <p>Add a callback function, to be called when an uplink message is received.</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">client</span><span class="o">.</span><span class="n">set_uplink_callback</span><span class="p">(</span><span class="n">uplink_callback</span><span class="p">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">client</span><span class="o">.</span><span class="n">set_uplink_callback</span><span class="p">(</span><span class="n">uplink_callback</span><span class="p">)</span>
 </code></pre></div><h5 id="uplink_callback">uplink_callback&nbsp;<a class="header-hash" href="#uplink_callback">#</a> </h5>
 <p>The callback function must be declared in the script following this structure:</p>
 <ul>
@@ -327,7 +326,7 @@ The constructor returns an <strong>MQTTClient object</strong> set up with the ap
 </ul>
 <h4 id="set_connect_callback">set_connect_callback&nbsp;<a class="header-hash" href="#set_connect_callback">#</a> </h4>
 <p>Add a connection callback function to be executed when the client connects to the broker.</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">client</span><span class="o">.</span><span class="n">set_connect_callback</span><span class="p">(</span><span class="n">connect_callback</span><span class="p">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">client</span><span class="o">.</span><span class="n">set_connect_callback</span><span class="p">(</span><span class="n">connect_callback</span><span class="p">)</span>
 </code></pre></div><h5 id="connect_callback">connect_callback&nbsp;<a class="header-hash" href="#connect_callback">#</a> </h5>
 <ul>
 <li><code>connect_callback(res, client)</code>: the function which will be executed on connection to the broker.
@@ -339,7 +338,7 @@ The constructor returns an <strong>MQTTClient object</strong> set up with the ap
 </ul>
 <h4 id="set_downlink_callback">set_downlink_callback&nbsp;<a class="header-hash" href="#set_downlink_callback">#</a> </h4>
 <p>Add a downlink callback function, with actions to execute when a downlink message is sent.</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">client</span><span class="o">.</span><span class="n">set_downlink_callback</span><span class="p">(</span><span class="n">downlinkCallback</span><span class="p">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">client</span><span class="o">.</span><span class="n">set_downlink_callback</span><span class="p">(</span><span class="n">downlinkCallback</span><span class="p">)</span>
 </code></pre></div><h5 id="downlink_callback">downlink_callback&nbsp;<a class="header-hash" href="#downlink_callback">#</a> </h5>
 <ul>
 <li><code>downlink_callback(mid, client)</code>: the function which will be a new publish behavior for our MQTT client.
@@ -351,7 +350,7 @@ The constructor returns an <strong>MQTTClient object</strong> set up with the ap
 </ul>
 <h4 id="set_close_callback">set_close_callback&nbsp;<a class="header-hash" href="#set_close_callback">#</a> </h4>
 <p>Add a callback to be executed when the connection to the TTN broker is closed.</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">client</span><span class="o">.</span><span class="n">set_close_callback</span><span class="p">(</span><span class="n">close_callback</span><span class="p">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">client</span><span class="o">.</span><span class="n">set_close_callback</span><span class="p">(</span><span class="n">close_callback</span><span class="p">)</span>
 </code></pre></div><h5 id="close_callback">close_callback&nbsp;<a class="header-hash" href="#close_callback">#</a> </h5>
 <ul>
 <li><code>close_callback(res, client)</code>: the function which will be executed when the connection is closed.
@@ -363,12 +362,12 @@ The constructor returns an <strong>MQTTClient object</strong> set up with the ap
 </ul>
 <h3 id="send">send&nbsp;<a class="header-hash" href="#send">#</a> </h3>
 <p>Sends a downlink to the device.</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">client</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">dev_id</span><span class="p">,</span> <span class="n">payload</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">conf</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">sched</span><span class="o">=</span><span class="s2">&#34;replace&#34;</span><span class="p">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">client</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">dev_id</span><span class="p">,</span> <span class="n">payload</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">conf</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">sched</span><span class="o">=</span><span class="s2">&#34;replace&#34;</span><span class="p">)</span>
 </code></pre></div><ul>
 <li><code>dev_id</code>: <strong>string</strong> the ID of the device which will receive the message.</li>
 <li><code>payload</code>: the payload of the message to be published to the broker. It can be an hexadecimal <strong>string</strong>, a base64 <strong>string</strong> like <code>AQ==</code> (this will send the raw payload <code>01</code> to your device) or a <strong>dictionary</strong> of JSON nature. Here is an example of a <strong>dictionary</strong> argument that could be passed to the method:</li>
 </ul>
-<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span> <span class="nt">&#34;led_state&#34;</span><span class="p">:</span> <span class="s2">&#34;on&#34;</span><span class="p">,</span> <span class="nt">&#34;counter&#34;</span><span class="p">:</span> <span class="mi">1</span> <span class="p">}</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span> <span class="nt">&#34;led_state&#34;</span><span class="p">:</span> <span class="s2">&#34;on&#34;</span><span class="p">,</span> <span class="nt">&#34;counter&#34;</span><span class="p">:</span> <span class="mi">1</span> <span class="p">}</span>
 </code></pre></div><p>In case it&rsquo;s a <strong>dictionary</strong> with fields, please make sure the <strong>encoder</strong> function (Payload Formats section) of the application is set to make sense of the informations transmitted in each field.
 <img src="../3-encoder-function.png" alt="Screenshot of an encoder function in the console"></p>
 <ul>
@@ -387,7 +386,7 @@ The constructor returns an <strong>MQTTClient object</strong> set up with the ap
 </ul>
 <h2 id="applicationclient">ApplicationClient&nbsp;<a class="header-hash" href="#applicationclient">#</a> </h2>
 <p>The class constructor can be called following this scheme:</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">ApplicationClient</span><span class="p">(</span><span class="n">app_id</span><span class="p">,</span> <span class="n">access_key</span><span class="p">,</span> <span class="n">handler_address</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">,</span> <span class="n">cert_content</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">,</span> <span class="n">discovery_address</span><span class="o">=</span><span class="s2">&#34;discovery.thethings.network:1900&#34;</span><span class="p">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">ApplicationClient</span><span class="p">(</span><span class="n">app_id</span><span class="p">,</span> <span class="n">access_key</span><span class="p">,</span> <span class="n">handler_address</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">,</span> <span class="n">cert_content</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">,</span> <span class="n">discovery_address</span><span class="o">=</span><span class="s2">&#34;discovery.thethings.network:1900&#34;</span><span class="p">)</span>
 </code></pre></div><ul>
 <li><code>app_id</code>: <strong>string</strong> this the name given to the application when it was created.
 <img src="../4-app-console.png" alt="Screenshot of the console with app section"></li>
@@ -395,7 +394,7 @@ The constructor returns an <strong>MQTTClient object</strong> set up with the ap
 <li><code>handler_address</code>: <strong>string</strong> this is the address of the handler to which the application was registered, in the <code>{hostname}:{port}</code> format. Example: <code>handler.eu.thethings.network:1904</code>.</li>
 <li><code>cert_content</code>: <strong>string</strong> this is the content of the certificate used to connect in a secure way to the handler. Here is a certificate example:</li>
 </ul>
-<pre><code>-----BEGIN CERTIFICATE-----
+<pre tabindex="0"><code>-----BEGIN CERTIFICATE-----
 MIIBmjCCAUCgAwIBAgIRANKKhUVFRXhyx0gCX2h7EFwwCgYIKoZIzj0EAwIwHTEb
 MBkGA1UEChMSVGhlIFRoaW5ncyBOZXR3b3JrMB4XDTE3MDgwMTA4MzQxMloXDTE4
 MDgwMTA4MzQxMlowHTEbMBkGA1UEChMSVGhlIFRoaW5ncyBOZXR3b3JrMFkwEwYH
@@ -414,17 +413,17 @@ etQ54MyIOWtwYlxG+blnxT4PWCgas5rPiaK6VP/Z
 </ul>
 <h3 id="get">get&nbsp;<a class="header-hash" href="#get">#</a> </h3>
 <p>Gives back the <a href="/docs/applications/python/#application"><strong>Application</strong></a>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
 </code></pre></div><h3 id="set_payload_format">set_payload_format&nbsp;<a class="header-hash" href="#set_payload_format">#</a> </h3>
 <p>Sets the payload format of the application.</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">client</span><span class="o">.</span><span class="n">set_payload_format</span><span class="p">(</span><span class="n">payload_format</span><span class="p">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">client</span><span class="o">.</span><span class="n">set_payload_format</span><span class="p">(</span><span class="n">payload_format</span><span class="p">)</span>
 </code></pre></div><ul>
 <li>payload_format: <strong>string</strong> the new payload format.
 Example: <code>custom</code></li>
 </ul>
 <h3 id="set_custom_payload_functions">set_custom_payload_functions&nbsp;<a class="header-hash" href="#set_custom_payload_functions">#</a> </h3>
 <p>Sets the payload functions of the application.</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">client</span><span class="o">.</span><span class="n">set_custom_payload_functions</span><span class="p">(</span><span class="n">encoder</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">,</span> <span class="n">decoder</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">,</span> <span class="n">validator</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">,</span> <span class="n">converter</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">client</span><span class="o">.</span><span class="n">set_custom_payload_functions</span><span class="p">(</span><span class="n">encoder</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">,</span> <span class="n">decoder</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">,</span> <span class="n">validator</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">,</span> <span class="n">converter</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
 </code></pre></div><ul>
 <li>
 <p><code>decoder</code>: <strong>string</strong> Javascript decoder function.</p>
@@ -441,21 +440,21 @@ Example: <code>custom</code></li>
 Example:</p>
 </li>
 </ul>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">decoder_fn</span> <span class="o">=</span> <span class="s2">&#34;&#34;&#34;function Decoder(payload) {
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">decoder_fn</span> <span class="o">=</span> <span class="s2">&#34;&#34;&#34;function Decoder(payload) {
 </span><span class="s2">  return { led: 1 };
 </span><span class="s2">}&#34;&#34;&#34;</span>
 <span class="n">client</span><span class="o">.</span><span class="n">set_custom_payload_functions</span><span class="p">(</span><span class="n">decoder</span><span class="o">=</span><span class="n">decoder_fn</span><span class="p">)</span>
 </code></pre></div><h3 id="unregister">unregister&nbsp;<a class="header-hash" href="#unregister">#</a> </h3>
 <p>Unregisters the application.</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">client</span><span class="o">.</span><span class="n">unregister</span><span class="p">()</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">client</span><span class="o">.</span><span class="n">unregister</span><span class="p">()</span>
 </code></pre></div><h3 id="register_device">register_device&nbsp;<a class="header-hash" href="#register_device">#</a> </h3>
 <p>Registers a new device to the application.</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">client</span><span class="o">.</span><span class="n">register_device</span><span class="p">(</span><span class="n">dev_id</span><span class="p">,</span> <span class="n">device</span><span class="p">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">client</span><span class="o">.</span><span class="n">register_device</span><span class="p">(</span><span class="n">dev_id</span><span class="p">,</span> <span class="n">device</span><span class="p">)</span>
 </code></pre></div><ul>
 <li><code>dev_id</code>: <strong>string</strong> the id of the device to be registered.</li>
 <li><code>device</code>:</li>
 </ul>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">devicetest</span> <span class="o">=</span> <span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">devicetest</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&#34;description&#34;</span><span class="p">:</span> <span class="s2">&#34;Description&#34;</span><span class="p">,</span>
     <span class="s2">&#34;appEui&#34;</span><span class="p">:</span> <span class="s2">&#34;0011223344556677&#34;</span><span class="p">,</span>
     <span class="s2">&#34;devEui&#34;</span><span class="p">:</span> <span class="s2">&#34;9988776655443322&#34;</span><span class="p">,</span>
@@ -471,28 +470,28 @@ Example:</p>
     <span class="s2">&#34;attributes&#34;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&#34;foo&#34;</span><span class="p">:</span> <span class="s2">&#34;bar&#34;</span><span class="p">,</span>
     <span class="p">},</span>
-    <span class="s2">&#34;disableFCntCheck&#34;</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
-    <span class="s2">&#34;uses32BitFCnt&#34;</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
+    <span class="s2">&#34;disableFCntCheck&#34;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s2">&#34;uses32BitFCnt&#34;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
 <span class="p">}</span>
 </code></pre></div><h3 id="device">device&nbsp;<a class="header-hash" href="#device">#</a> </h3>
 <p>Gives back the <a href="/docs/applications/python/#deviceobject"><strong>Device</strong></a> object of the given id.</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">client</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="n">dev_id</span><span class="p">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">client</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="n">dev_id</span><span class="p">)</span>
 </code></pre></div><ul>
 <li><code>dev_id</code>: <strong>string</strong> the id of the device.</li>
 </ul>
 <h3 id="devices">devices&nbsp;<a class="header-hash" href="#devices">#</a> </h3>
 <p>Gives back the list of all the devices registered to the application.</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">client</span><span class="o">.</span><span class="n">devices</span><span class="p">()</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">client</span><span class="o">.</span><span class="n">devices</span><span class="p">()</span>
 </code></pre></div><h3 id="update_device">update_device&nbsp;<a class="header-hash" href="#update_device">#</a> </h3>
 <p>Updates an already existing device of the application.</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">client</span><span class="o">.</span><span class="n">update_device</span><span class="p">(</span><span class="n">dev_id</span><span class="p">,</span> <span class="n">updates</span><span class="p">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">client</span><span class="o">.</span><span class="n">update_device</span><span class="p">(</span><span class="n">dev_id</span><span class="p">,</span> <span class="n">updates</span><span class="p">)</span>
 </code></pre></div><ul>
 <li><code>dev_id</code>: <strong>string</strong> the id of the device to be updated.</li>
 <li><code>updates</code>: <strong>dictionary</strong> a dictionary with the fields to be updated in the device.</li>
 </ul>
 <h3 id="delete_device">delete_device&nbsp;<a class="header-hash" href="#delete_device">#</a> </h3>
 <p>Deletes the device with the given id.</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">client</span><span class="o">.</span><span class="n">delete_device</span><span class="p">(</span><span class="n">dev_id</span><span class="p">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">client</span><span class="o">.</span><span class="n">delete_device</span><span class="p">(</span><span class="n">dev_id</span><span class="p">)</span>
 </code></pre></div><ul>
 <li><code>dev_id</code>: <strong>string</strong> the id of the device to be deleted.</li>
 </ul>
@@ -534,7 +533,7 @@ Example:</p>
 </ul>
 <h2 id="handlerclient">HandlerClient&nbsp;<a class="header-hash" href="#handlerclient">#</a> </h2>
 <p>The class constructor can be called following this scheme:</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">HandlerClient</span><span class="p">(</span><span class="n">app_id</span><span class="p">,</span> <span class="n">access_key</span><span class="p">,</span> <span class="n">discovery_address</span><span class="o">=</span><span class="s2">&#34;discovery.thethings.network:1900&#34;</span><span class="p">,</span> <span class="n">cert_path</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">HandlerClient</span><span class="p">(</span><span class="n">app_id</span><span class="p">,</span> <span class="n">access_key</span><span class="p">,</span> <span class="n">discovery_address</span><span class="o">=</span><span class="s2">&#34;discovery.thethings.network:1900&#34;</span><span class="p">,</span> <span class="n">cert_path</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
 </code></pre></div><ul>
 <li><code>app_id</code>: <strong>string</strong> this the name given to the application when it was created.
 <img src="../5-app-console.png" alt="Screenshot of the console with app section"></li>
@@ -544,11 +543,11 @@ Example:</p>
 </ul>
 <h3 id="data">data&nbsp;<a class="header-hash" href="#data">#</a> </h3>
 <p>Creates an <a href="/docs/applications/python/#mqttclient"><strong>MQTTClient</strong></a> object.</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">handler</span><span class="o">.</span><span class="n">data</span><span class="p">()</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">handler</span><span class="o">.</span><span class="n">data</span><span class="p">()</span>
 </code></pre></div><p>Returns an <a href="/docs/applications/python/#mqttclient"><strong>MQTTClient</strong></a> object.</p>
 <h3 id="application-1">application&nbsp;<a class="header-hash" href="#application-1">#</a> </h3>
 <p>Creates an <a href="/docs/applications/python/#applicationclient"><strong>ApplicationClient</strong></a> object</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">handler</span><span class="o">.</span><span class="n">application</span><span class="p">()</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">handler</span><span class="o">.</span><span class="n">application</span><span class="p">()</span>
 </code></pre></div><p>Returns an <a href="/docs/applications/python/#applicationclient"><strong>ApplicationClient</strong></a> object.</p>
 <h2 id="troubleshooting">Troubleshooting&nbsp;<a class="header-hash" href="#troubleshooting">#</a> </h2>
 <p>Errors can happen on connection or on some ApplicationClient&rsquo;s methods call, for different reasons:</p>

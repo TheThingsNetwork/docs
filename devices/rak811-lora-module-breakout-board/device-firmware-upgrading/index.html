@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <meta name="generator" content="Hugo 0.79.0" />
+  <meta name="generator" content="Hugo 0.88.1" />
 
   <title>Device Firmware Upgrading | The Things Network</title>
   <link rel="canonical" href="https://www.thethingsnetwork.org/docs/devices/rak811-lora-module-breakout-board/device-firmware-upgrading/" />
@@ -38,15 +38,14 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.504b3e39c2bace42c4e70fc2480bf01ed9bbbbc2831194cfa95412953f38e1d5.css" integrity="sha256-UEs&#43;OcK6zkLE5w/CSAvwHtm7u8KDEZTPqVQSlT844dU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.1a1a30812d4274d8616380644cbf1670d6a3bc91fc7bd1d2c1d89177ea3d75f9.css" integrity="sha256-GhowgS1CdNhhY4BkTL8WcNajvJH8e9HSwdiRd&#43;o9dfk=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://www.thethingsnetwork.org/static/common/css/ui.css" crossorigin="anonymous">
 
   <meta property="og:title" content="Device Firmware Upgrading" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.thethingsnetwork.org/docs/devices/rak811-lora-module-breakout-board/device-firmware-upgrading/" />
-<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
-<meta property="og:site_name" content="The Things Network" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/devices/rak811-lora-module-breakout-board/device-firmware-upgrading/" /><meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/><meta property="og:site_name" content="The Things Network" />
+
 
 
   <meta name="twitter:card" content="summary_large_image"/>
@@ -234,7 +233,7 @@
 <ul>
 <li>Using the RAK Serial Port Tool, type the command below to let the RAK811 LoRa® Breakout Module work in boot mode.</li>
 </ul>
-<pre><code>at+set_config=device:boot
+<pre tabindex="0"><code>at+set_config=device:boot
 </code></pre><p><img src="../images/firmwarebootmode.jpg" alt="Figure 1: Boot Mode"></p>
 <ul>
 <li>Next, close the RAK Serial Port Tool and download the RAK Upgrade Tool from this <a href="https://downloads.rakwireless.com/en/LoRa/RAK612-LoRaButton/Tools/">website</a>. Then, open the tool.</li>
@@ -251,7 +250,7 @@
 <li>We recommend you to use RAK serial port tool, because there are built-in AT commands in this tool and this will be very useful for you. You can get it from RAK website available for free at this RAK <a href="https://downloads.rakwireless.com/en/LoRa/Tools/">directory</a>.</li>
 <li>Choose the correct <strong>COM port</strong> and set the baud rate to <strong>115200</strong>. Then open the serial port and enter the AT command provided below to restart.</li>
 </ul>
-<pre><code>at+set_config=device:restart
+<pre tabindex="0"><code>at+set_config=device:restart
 </code></pre><p>Congrats! This information means that you have upgraded successfully the new firmware.</p>
 
 

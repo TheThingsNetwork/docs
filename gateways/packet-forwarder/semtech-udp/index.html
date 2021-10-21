@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <meta name="generator" content="Hugo 0.79.0" />
+  <meta name="generator" content="Hugo 0.88.1" />
 
   <title>Semtech UDP Packet Forwarder | The Things Network</title>
   <link rel="canonical" href="https://www.thethingsnetwork.org/docs/gateways/packet-forwarder/semtech-udp/" />
@@ -38,15 +38,14 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.504b3e39c2bace42c4e70fc2480bf01ed9bbbbc2831194cfa95412953f38e1d5.css" integrity="sha256-UEs&#43;OcK6zkLE5w/CSAvwHtm7u8KDEZTPqVQSlT844dU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.1a1a30812d4274d8616380644cbf1670d6a3bc91fc7bd1d2c1d89177ea3d75f9.css" integrity="sha256-GhowgS1CdNhhY4BkTL8WcNajvJH8e9HSwdiRd&#43;o9dfk=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://www.thethingsnetwork.org/static/common/css/ui.css" crossorigin="anonymous">
 
   <meta property="og:title" content="Semtech UDP Packet Forwarder" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.thethingsnetwork.org/docs/gateways/packet-forwarder/semtech-udp/" />
-<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
-<meta property="og:site_name" content="The Things Network" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/gateways/packet-forwarder/semtech-udp/" /><meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/><meta property="og:site_name" content="The Things Network" />
+
 
 
   <meta name="twitter:card" content="summary_large_image"/>
@@ -296,7 +295,7 @@
 <p>Before starting the packet forwarder, it is wiser to <a href="/docs/gateways/registration/#via-udp-packet-forwarder">register the gateway in the console</a> first, using its <strong>unique EUI</strong>.</p>
 <h3 id="eui-configuration">EUI configuration&nbsp;<a class="header-hash" href="#eui-configuration">#</a> </h3>
 <p>Once the registration is complete, add the <strong>gateway EUI</strong> in the <code>local_conf.json</code>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
   <span class="nt">&#34;gateway_conf&#34;</span><span class="p">:</span> <span class="p">{</span>
     <span class="nt">&#34;gateway_ID&#34;</span><span class="p">:</span> <span class="s2">&#34;&lt;Gateway EUI&gt;&#34;</span>
   <span class="p">}</span>
@@ -304,7 +303,7 @@
 </code></pre></div><h3 id="router-configuration">Router configuration&nbsp;<a class="header-hash" href="#router-configuration">#</a> </h3>
 <p>After that, edit the <code>global_conf.json</code> file to point to the router. If you&rsquo;re using the public community network, you will need to add the <strong>address of the router region</strong> - for example, for the EU region, it will be <code>router.eu.thethings.network</code>. Otherwise, it will be the hostname of your <strong>router</strong> - most of the time, it is just the hostname of your network.</p>
 <p>Unless you&rsquo;re running the network yourself on specific ports, the <strong>ports</strong> will be 1700 and 1700.</p>
-<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
   <span class="err">[...]</span>
   <span class="nt">&#34;gateway_conf&#34;</span><span class="p">:</span> <span class="p">{</span>
     <span class="nt">&#34;server_address&#34;</span><span class="p">:</span> <span class="s2">&#34;router.eu.thethings.network&#34;</span><span class="p">,</span>

@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <meta name="generator" content="Hugo 0.79.0" />
+  <meta name="generator" content="Hugo 0.88.1" />
 
   <title>Burning the Firmware | The Things Network</title>
   <link rel="canonical" href="https://www.thethingsnetwork.org/docs/devices/rak811-wisnode-lora-module/burning-the-firmware/" />
@@ -38,15 +38,14 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.504b3e39c2bace42c4e70fc2480bf01ed9bbbbc2831194cfa95412953f38e1d5.css" integrity="sha256-UEs&#43;OcK6zkLE5w/CSAvwHtm7u8KDEZTPqVQSlT844dU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.1a1a30812d4274d8616380644cbf1670d6a3bc91fc7bd1d2c1d89177ea3d75f9.css" integrity="sha256-GhowgS1CdNhhY4BkTL8WcNajvJH8e9HSwdiRd&#43;o9dfk=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://www.thethingsnetwork.org/static/common/css/ui.css" crossorigin="anonymous">
 
   <meta property="og:title" content="Burning the Firmware" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.thethingsnetwork.org/docs/devices/rak811-wisnode-lora-module/burning-the-firmware/" />
-<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
-<meta property="og:site_name" content="The Things Network" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/devices/rak811-wisnode-lora-module/burning-the-firmware/" /><meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/><meta property="og:site_name" content="The Things Network" />
+
 
 
   <meta name="twitter:card" content="summary_large_image"/>
@@ -233,7 +232,7 @@
 <p>If the firmware version of your RAK811 WisNode LoRa Module is newer than V3.0.0.0 or you have just burned the bootloader into RAK811 according to the Burning Bootloader into the Device section, you just need to burn the upgrade firmware according to the following steps now:</p>
 <p>1 . First, open and download the RAK Serial Port Tool <a href="https://downloads.rakwireless.com/en/LoRa/RAK811/Tools/RAK_SERIAL_PORT_TOOL_V1.2.1.zip">here</a>.</p>
 <p>In case you have not just burned the bootloader, as instructed in the previous section you need to manually go into boot mode. Connect you board via the USB interface and enter the following AT command after you have connected via the proper COM port:</p>
-<pre><code>at+set_config=device:boot
+<pre tabindex="0"><code>at+set_config=device:boot
 </code></pre><p><img src="../images/turning_bootmod.jpg" alt="Figure 1: Entering Boot Mode"></p>
 <p>2 . Next, download the RAK Upgrade Tool from the RAKwireless website <a href="https://downloads.rakwireless.com/en/LoRa/RAK612-LoRaButton/Tools/RAK%20LoRaButton%20Upgrade%20Tool%20V1.0.zip">here</a> then, open the tool.</p>
 <p><img src="../images/rak_upgrade.jpg" alt="Figure 2: RAK Upgrade Tool"></p>
@@ -253,7 +252,7 @@ Visit this <a href="https://www.thethingsnetwork.org/docs/lorawan/frequencies-by
 <li>We recommend you to use RAK serial port tool with AT command capabilities. You can get it from RAK website available for free at this <a href="http://docs.rakwireless.com/en/LoRa/RAK811/Tools/RAK_SERIAL_PORT_TOOL_V1.%202.1.zip">RAK directory</a>.</li>
 </ul>
 <p>7 . Choose the correct COM port and set the baud rate to 115200. Then open the serial port and enter the AT command below to restart.</p>
-<pre><code>at+set_config=device:restart
+<pre tabindex="0"><code>at+set_config=device:restart
 </code></pre><p><img src="../images/restart_firmware.jpg" alt="Figure 6: Restarting your Firmware"></p>
 <p>Congrats! This information means that you have upgraded successfully the new firmware.</p>
 <p>In the next section, you will know how to configure your RAK811 WisNode LoRa Module using the available AT commands.</p>

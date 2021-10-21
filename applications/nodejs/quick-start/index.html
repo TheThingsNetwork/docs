@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <meta name="generator" content="Hugo 0.79.0" />
+  <meta name="generator" content="Hugo 0.88.1" />
 
   <title>Quick Start | The Things Network</title>
   <link rel="canonical" href="https://www.thethingsnetwork.org/docs/applications/nodejs/quick-start/" />
@@ -38,15 +38,14 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.504b3e39c2bace42c4e70fc2480bf01ed9bbbbc2831194cfa95412953f38e1d5.css" integrity="sha256-UEs&#43;OcK6zkLE5w/CSAvwHtm7u8KDEZTPqVQSlT844dU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.1a1a30812d4274d8616380644cbf1670d6a3bc91fc7bd1d2c1d89177ea3d75f9.css" integrity="sha256-GhowgS1CdNhhY4BkTL8WcNajvJH8e9HSwdiRd&#43;o9dfk=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://www.thethingsnetwork.org/static/common/css/ui.css" crossorigin="anonymous">
 
   <meta property="og:title" content="Quick Start" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.thethingsnetwork.org/docs/applications/nodejs/quick-start/" />
-<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
-<meta property="og:site_name" content="The Things Network" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/applications/nodejs/quick-start/" /><meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/><meta property="og:site_name" content="The Things Network" />
+
 
 
   <meta name="twitter:card" content="summary_large_image"/>
@@ -296,7 +295,7 @@
 </li>
 <li>
 <p>Create a new Node.js project:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> <span class="nv">$HOME</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> <span class="nv">$HOME</span>
 mkdir app
 <span class="nb">cd</span> app
 npm init
@@ -306,7 +305,7 @@ npm init
 </li>
 <li>
 <p>Install and save the <a href="https://www.npmjs.com/package/ttn">Node.js Application SDK</a> as dependency:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">npm install --save ttn
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">npm install --save ttn
 </code></pre></div></li>
 </ol>
 <h2 id="connect">Connect&nbsp;<a class="header-hash" href="#connect">#</a> </h2>
@@ -314,19 +313,19 @@ npm init
 <ol>
 <li>
 <p>Create the main script and open it in your favorite editor:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">touch index.js
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">touch index.js
 open index.js
 </code></pre></div></li>
 <li>
 <p>Import the Node.js Application SDK:</p>
-<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">ttn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&#34;ttn&#34;</span><span class="p">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">ttn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&#34;ttn&#34;</span><span class="p">)</span>
 </code></pre></div></li>
 <li>
 <p>In the <a href="https://console.thethingsnetwork.org/applications">Console</a>, navigate to the application you&rsquo;d like to connect to.</p>
 </li>
 <li>
 <p>In <code>index.js</code>, enter the App ID and App Access Key:</p>
-<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">appID</span> <span class="o">=</span> <span class="s2">&#34;foo&#34;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">appID</span> <span class="o">=</span> <span class="s2">&#34;foo&#34;</span>
 <span class="kd">var</span> <span class="nx">accessKey</span> <span class="o">=</span> <span class="s2">&#34;ttn-account-v2.eiPq8mEeYRL_PNBZsOpPy-O3ABJXYWulODmQGR5PZzg&#34;</span>
 </code></pre></div><p>Here&rsquo;s where you can find the values in the console:</p>
 <ul>
@@ -336,7 +335,7 @@ open index.js
 </li>
 <li>
 <p>Add a listener for the <code>connect</code> and <code>error</code> events to test the connection:</p>
-<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">ttn</span><span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="nx">appID</span><span class="p">,</span> <span class="nx">accessKey</span><span class="p">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">ttn</span><span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="nx">appID</span><span class="p">,</span> <span class="nx">accessKey</span><span class="p">)</span>
   <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">client</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">client</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&#34;uplink&#34;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">devID</span><span class="p">,</span> <span class="nx">payload</span><span class="p">)</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;Received uplink from &#34;</span><span class="p">,</span> <span class="nx">devID</span><span class="p">)</span>
@@ -350,9 +349,9 @@ open index.js
 </code></pre></div></li>
 <li>
 <p>Run the script to test the connection:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">node .
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">node .
 </code></pre></div><p>You should see something like:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">Received uplink from  office-hq
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">Received uplink from  office-hq
 <span class="o">{</span> app_id: <span class="s1">&#39;office-app&#39;</span>,
   dev_id: <span class="s1">&#39;office-hq&#39;</span>,
   hardware_serial: <span class="s1">&#39;0004A30B001B61DE&#39;</span>,
@@ -369,7 +368,7 @@ open index.js
     gateways: <span class="o">[</span> <span class="o">[</span>Object<span class="o">]</span>, <span class="o">[</span>Object<span class="o">]</span>, <span class="o">[</span>Object<span class="o">]</span> <span class="o">]</span> <span class="o">}</span> <span class="o">}</span>
 </code></pre></div><p>Use <code>Ctrl+C</code> to terminate the script.</p>
 <p>If you get an error it should say what is wrong:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">Error: Connection refused: Not authorized
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">Error: Connection refused: Not authorized
 </code></pre></div></li>
 </ol>
 <p>🎉 Congratulations! Now you know how to receive messages in a Node.js script. Go build something! See <a href="/docs/applications/nodejs/api/">API</a> for all the functionality</p>

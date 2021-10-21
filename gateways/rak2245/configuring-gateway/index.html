@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <meta name="generator" content="Hugo 0.79.0" />
+  <meta name="generator" content="Hugo 0.88.1" />
 
   <title>Configuring Your Gateway | The Things Network</title>
   <link rel="canonical" href="https://www.thethingsnetwork.org/docs/gateways/rak2245/configuring-gateway/" />
@@ -38,15 +38,14 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.504b3e39c2bace42c4e70fc2480bf01ed9bbbbc2831194cfa95412953f38e1d5.css" integrity="sha256-UEs&#43;OcK6zkLE5w/CSAvwHtm7u8KDEZTPqVQSlT844dU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.1a1a30812d4274d8616380644cbf1670d6a3bc91fc7bd1d2c1d89177ea3d75f9.css" integrity="sha256-GhowgS1CdNhhY4BkTL8WcNajvJH8e9HSwdiRd&#43;o9dfk=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://www.thethingsnetwork.org/static/common/css/ui.css" crossorigin="anonymous">
 
   <meta property="og:title" content="Configuring Your Gateway" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.thethingsnetwork.org/docs/gateways/rak2245/configuring-gateway/" />
-<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
-<meta property="og:site_name" content="The Things Network" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/gateways/rak2245/configuring-gateway/" /><meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/><meta property="og:site_name" content="The Things Network" />
+
 
 
   <meta name="twitter:card" content="summary_large_image"/>
@@ -298,7 +297,7 @@
         <div class="content">
           
 <p>Assuming you have successfully logged into your LoRa Gateway using SSH. Enter the following command in the command line:</p>
-<pre><code>sudo gateway-config
+<pre tabindex="0"><code>sudo gateway-config
 </code></pre><p>You will now then see a page like the following picture below</p>
 <p><img src="../images/config-options.png" alt="Figure 1: Configuration Options for the Gateway"></p>
 <ol>
@@ -313,7 +312,7 @@
 <p><strong>Note:</strong> A unique ID will be generated in for LoRaWAN® Gateway. This is also called Gateway EUI squared in red in the figure above and is essential for registering the gateway with any LoRa® Network Server (TTN, ChirpStack)</p>
 </blockquote>
 <p>There is also another way to get your &ldquo;Gateway ID&rdquo;, just enter the command below in the command line:</p>
-<pre><code>sudo gateway-version
+<pre tabindex="0"><code>sudo gateway-version
 </code></pre><p><img src="../images/gateway-id-cmd.png" alt="Figure 2: Gateway ID using the command line"></p>
 <h2 id="set-a-new-password-for-the-lora-gateway">Set a new password for the LoRa Gateway&nbsp;<a class="header-hash" href="#set-a-new-password-for-the-lora-gateway">#</a> </h2>
 <p>It is a good security practice to change the default password <strong>&ldquo;raspberry&rdquo;</strong> which is the same on all Raspberry Pi devices.</p>

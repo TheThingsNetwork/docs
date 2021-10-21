@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <meta name="generator" content="Hugo 0.79.0" />
+  <meta name="generator" content="Hugo 0.88.1" />
 
   <title>TheThingsMessage | The Things Network</title>
   <link rel="canonical" href="https://www.thethingsnetwork.org/docs/devices/arduino/api/message/" />
@@ -38,15 +38,14 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.504b3e39c2bace42c4e70fc2480bf01ed9bbbbc2831194cfa95412953f38e1d5.css" integrity="sha256-UEs&#43;OcK6zkLE5w/CSAvwHtm7u8KDEZTPqVQSlT844dU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.1a1a30812d4274d8616380644cbf1670d6a3bc91fc7bd1d2c1d89177ea3d75f9.css" integrity="sha256-GhowgS1CdNhhY4BkTL8WcNajvJH8e9HSwdiRd&#43;o9dfk=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://www.thethingsnetwork.org/static/common/css/ui.css" crossorigin="anonymous">
 
   <meta property="og:title" content="TheThingsMessage" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.thethingsnetwork.org/docs/devices/arduino/api/message/" />
-<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
-<meta property="og:site_name" content="The Things Network" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/devices/arduino/api/message/" /><meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/><meta property="og:site_name" content="The Things Network" />
+
 
 
   <meta name="twitter:card" content="summary_large_image"/>
@@ -256,18 +255,18 @@
           
 <h2 id="class-thethingsmessage">Class: <code>TheThingsMessage</code>&nbsp;<a class="header-hash" href="#class-thethingsmessage">#</a> </h2>
 <p>The <code>TheThingsMessage</code> class provides structs for sensor and application data you can encode and decode as bytes.</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="cp">#include</span> <span class="cpf">&lt;TheThingsMessage.h&gt;</span><span class="cp">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="cp">#include</span> <span class="cpf">&lt;TheThingsMessage.h&gt;</span><span class="cp">
 </span></code></pre></div><h2 id="type-devicedata_t">Type: <code>devicedata_t</code>&nbsp;<a class="header-hash" href="#type-devicedata_t">#</a> </h2>
 <p>Create a struct of this type using <code>api_DeviceData_init_default</code> as defaults.</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="n">devicedata_t</span> <span class="n">data</span> <span class="o">=</span> <span class="n">api_DeviceData_init_default</span><span class="p">;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="n">devicedata_t</span> <span class="n">data</span> <span class="o">=</span> <span class="n">api_DeviceData_init_default</span><span class="p">;</span>
 </code></pre></div><p>Then in your <code>setup()</code> function select what fields of the struct should be included when encoding it as bytes:</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="n">data</span><span class="p">.</span><span class="n">has_motion</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="n">data</span><span class="p">.</span><span class="n">has_motion</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
 <span class="n">data</span><span class="p">.</span><span class="n">has_water</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
 <span class="n">data</span><span class="p">.</span><span class="n">has_temperature_celcius</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
 <span class="n">data</span><span class="p">.</span><span class="n">has_temperature_fahrenheit</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
 <span class="n">data</span><span class="p">.</span><span class="n">has_humidity</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
 </code></pre></div><p>In your <code>loop()</code> function read your sensors and set the fields of the struct:</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="n">data</span><span class="p">.</span><span class="n">motion</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="n">data</span><span class="p">.</span><span class="n">motion</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
 <span class="n">data</span><span class="p">.</span><span class="n">water</span> <span class="o">=</span> <span class="mi">682</span><span class="p">;</span>
 <span class="n">data</span><span class="p">.</span><span class="n">temperature_celcius</span> <span class="o">=</span> <span class="mi">30</span>
 <span class="n">data</span><span class="p">.</span><span class="n">temperature_fahrenheit</span> <span class="o">=</span> <span class="mi">86</span><span class="p">;</span>
@@ -279,26 +278,26 @@
 </blockquote>
 <h2 id="method-encodedevicedata">Method: <code>encodeDeviceData</code>&nbsp;<a class="header-hash" href="#method-encodedevicedata">#</a> </h2>
 <p>Encode the message you want to send.</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="k">static</span> <span class="kt">void</span> <span class="nf">encodeDeviceData</span><span class="p">(</span><span class="n">devicedata_t</span> <span class="o">*</span><span class="n">data</span><span class="p">,</span> <span class="n">byte</span> <span class="o">**</span><span class="n">buffer</span><span class="p">,</span> <span class="n">size_t</span> <span class="o">*</span><span class="n">size</span><span class="p">);</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="k">static</span> <span class="kt">void</span> <span class="nf">encodeDeviceData</span><span class="p">(</span><span class="n">devicedata_t</span> <span class="o">*</span><span class="n">data</span><span class="p">,</span> <span class="n">byte</span> <span class="o">**</span><span class="n">buffer</span><span class="p">,</span> <span class="n">size_t</span> <span class="o">*</span><span class="n">size</span><span class="p">);</span>
 </code></pre></div><ul>
 <li><code>devicedata_t *data</code>: Structure containing typical fields that devices send.</li>
 <li><code>byte **buffer</code>: Bytes to send.</li>
 <li><code>size_t *size</code>: The number of bytes to send.</li>
 </ul>
 <p>Usage:</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="n">byte</span> <span class="o">*</span><span class="n">buffer</span><span class="p">;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="n">byte</span> <span class="o">*</span><span class="n">buffer</span><span class="p">;</span>
 <span class="n">size_t</span> <span class="n">size</span><span class="p">;</span>
 <span class="n">TheThingsMessage</span><span class="o">::</span><span class="n">encodeDeviceData</span><span class="p">(</span><span class="o">&amp;</span><span class="n">data</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">buffer</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">size</span><span class="p">);</span>
 </code></pre></div><h2 id="method-decodeappdata">Method: <code>decodeAppData</code>&nbsp;<a class="header-hash" href="#method-decodeappdata">#</a> </h2>
 <p>Decode the message you received.</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="k">static</span> <span class="kt">bool</span> <span class="nf">decodeAppData</span><span class="p">(</span><span class="n">appdata_t</span> <span class="o">*</span><span class="n">receiveData</span><span class="p">,</span> <span class="k">const</span> <span class="n">byte</span> <span class="o">*</span><span class="n">payload</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">length</span><span class="p">);</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="k">static</span> <span class="kt">bool</span> <span class="nf">decodeAppData</span><span class="p">(</span><span class="n">appdata_t</span> <span class="o">*</span><span class="n">receiveData</span><span class="p">,</span> <span class="k">const</span> <span class="n">byte</span> <span class="o">*</span><span class="n">payload</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">length</span><span class="p">);</span>
 </code></pre></div><ul>
 <li><code>appdata_t *receiveData</code>: Structure containing all the message we can interpret.</li>
 <li><code>const byte *payload</code>: Bytes received.</li>
 <li><code>size_t *length</code>: The number of bytes.</li>
 </ul>
 <p>Usage:</p>
-<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="k">const</span> <span class="n">byte</span> <span class="o">*</span><span class="n">payload</span><span class="p">;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="k">const</span> <span class="n">byte</span> <span class="o">*</span><span class="n">payload</span><span class="p">;</span>
 <span class="n">size_t</span> <span class="n">length</span><span class="p">;</span>
 <span class="n">TheThingsMessage</span><span class="o">::</span><span class="n">decodeAppData</span><span class="p">(</span><span class="o">&amp;</span><span class="n">receiveData</span><span class="p">,</span> <span class="n">payload</span><span class="p">,</span> <span class="n">length</span><span class="p">);</span>
 </code></pre></div>

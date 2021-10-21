@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <meta name="generator" content="Hugo 0.79.0" />
+  <meta name="generator" content="Hugo 0.88.1" />
 
   <title>Configuration | The Things Network</title>
   <link rel="canonical" href="https://www.thethingsnetwork.org/docs/network/cli/configuration/" />
@@ -38,15 +38,14 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.504b3e39c2bace42c4e70fc2480bf01ed9bbbbc2831194cfa95412953f38e1d5.css" integrity="sha256-UEs&#43;OcK6zkLE5w/CSAvwHtm7u8KDEZTPqVQSlT844dU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.1a1a30812d4274d8616380644cbf1670d6a3bc91fc7bd1d2c1d89177ea3d75f9.css" integrity="sha256-GhowgS1CdNhhY4BkTL8WcNajvJH8e9HSwdiRd&#43;o9dfk=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://www.thethingsnetwork.org/static/common/css/ui.css" crossorigin="anonymous">
 
   <meta property="og:title" content="Configuration" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.thethingsnetwork.org/docs/network/cli/configuration/" />
-<meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
-<meta property="og:site_name" content="The Things Network" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/network/cli/configuration/" /><meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/><meta property="og:site_name" content="The Things Network" />
+
 
 
   <meta name="twitter:card" content="summary_large_image"/>
@@ -204,7 +203,7 @@
 <h2 id="environment">Environment&nbsp;<a class="header-hash" href="#environment">#</a> </h2>
 <p><code>ttnctl</code> can be configured using environment variables.
 The format of these variables is the underscored version of the command line options that can be found in the <a href="/docs/network/cli/api/">API Reference</a>, prefixed with <code>TTNCTL_</code>. Environment variables are uppercase. The environment variables shown below are the values needed for <strong>local development</strong>. If you just want to use the default TTN server, you don&rsquo;t have to set any variables.</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">export</span> <span class="nv">TTNCTL_DEBUG</span><span class="o">=</span><span class="nb">true</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">export</span> <span class="nv">TTNCTL_DEBUG</span><span class="o">=</span><span class="nb">true</span>
 <span class="nb">export</span> <span class="nv">TTNCTL_DISCOVERY_ADDRESS</span><span class="o">=</span>localhost:1900
 <span class="nb">export</span> <span class="nv">TTNCTL_AUTH_SERVER</span><span class="o">=</span>https://account.thethingsnetwork.org
 <span class="nb">export</span> <span class="nv">TTNCTL_ROUTER_ID</span><span class="o">=</span>dev
@@ -213,7 +212,7 @@ The format of these variables is the underscored version of the command line opt
 </code></pre></div><h2 id="configuration-file">Configuration File&nbsp;<a class="header-hash" href="#configuration-file">#</a> </h2>
 <p>A configuration file can be specified using the <code>--config</code> option. By default, <code>ttnctl</code> looks for the file <code>~/.ttnctl.yml</code> (in your home directory).
 The configuration file shown below shown below are the values needed for <strong>local development</strong>. If you just want to use the default TTN server, you don&rsquo;t have to do any configuration.</p>
-<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">debug</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">debug</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="w"></span><span class="nt">discovery-address</span><span class="p">:</span><span class="w"> </span><span class="l">localhost:1900</span><span class="w">
 </span><span class="w"></span><span class="nt">auth-server</span><span class="p">:</span><span class="w"> </span><span class="l">https://account.thethingsnetwork.org</span><span class="w">
 </span><span class="w"></span><span class="nt">router-id</span><span class="p">:</span><span class="w"> </span><span class="l">dev</span><span class="w">
