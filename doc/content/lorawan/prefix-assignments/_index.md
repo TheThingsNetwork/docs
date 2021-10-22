@@ -64,7 +64,7 @@ section: Additional Information
 | `000038` | `70000000/7` | `70000000` - `71FFFFFF` | Charter Communicaton | USA |
 | `600000` | `E0000000/15` | `E0000000` - `E001FFFF` | RESERVED |  |
 | `600001` | `E0020000/15` | `E0020000` - `E003FFFF` | Digita | Finland |
-| `600002` | `E0040000/15` | `E0040000` - `E005FFFF` | Netmore | Sweden, Norway |
+| `600002` | `E0040000/15` | `E0040000` - `E005FFFF` | Netmore | Europe |
 | `600003` | `E0060000/15` | `E0060000` - `E007FFFF` | QuaeNet Inc. | World |
 | `600004` | `E0080000/15` | `E0080000` - `E009FFFF` | eleven-x | North and South America |
 | `600005` | `E00A0000/15` | `E00A0000` - `E00BFFFF` | IoT Network AS | World |
@@ -103,6 +103,7 @@ section: Additional Information
 | `600026` | `E04C0000/15` | `E04C0000` - `E04DFFFF` | Acklio | World |
 | `600027` | `E04E0000/15` | `E04E0000` - `E04FFFFF` | Birdz | World |
 | `600028` | `E0500000/15` | `E0500000` - `E051FFFF` | Charter Communication | USA |
+| `600029` | `E0520000/15` | `E0520000` - `E053FFFF` | Machines Talk | Saudi Arabia |
 | `C00000` | `FC000000/22` | `FC000000` - `FC0003FF` | RESERVED |  |
 | `C00001` | `FC000400/22` | `FC000400` - `FC0007FF` | Nordic Automation Systems | World |
 | `C00002` | `FC000800/22` | `FC000800` - `FC000BFF` | ResIOT | World |
@@ -121,7 +122,7 @@ section: Additional Information
 | `C0000F` | `FC003C00/22` | `FC003C00` - `FC003FFF` | Antenna Hungaria Co | Hungary |
 | `C00010` | `FC004000/22` | `FC004000` - `FC0043FF` | Trinity College Dublin | Europe |
 | `C00011` | `FC004400/22` | `FC004400` - `FC0047FF` | Digital Nordix AB (DNX) | World |
-| `C00012` | `FC004800/22` | `FC004800` - `FC004BFF` | Netmore | Sweden, Norway |
+| `C00012` | `FC004800/22` | `FC004800` - `FC004BFF` | Netmore | Europe |
 | `C00013` | `FC004C00/22` | `FC004C00` - `FC004FFF` | Lyse AS | Norway |
 | `C00014` | `FC005000/22` | `FC005000` - `FC0053FF` | VTC Digicom | Vietnam |
 | `C00015` | `FC005400/22` | `FC005400` - `FC0057FF` | Machines Talk | Saudi Arabia |
@@ -173,4 +174,13 @@ section: Additional Information
 | `C00043` | `FC010C00/22` | `FC010C00` - `FC010FFF` | PROESYS S.r.l. | World |
 | `C00044` | `FC011000/22` | `FC011000` - `FC0113FF` | MeWe, Inc | World |
 | `C00045` | `FC011400/22` | `FC011400` - `FC0117FF` | Alpha-Omega Technology GmbH & Co. KG | Europe |
-
+| `C00046` | `FC011800/22` | `FC011800` - `FC011BFF` | SSE Contracting Limted t/a Mayflower Smart Control | UK, Ireland |
+| `C00047` | `FC011C00/22` | `FC011C00` - `FC011FFF` | VEGA Grieshaber KG | World |
+| `C00048` | `FC012000/22` | `FC012000` - `FC0123FF` | Afghan Wireless Communication Company | Afghanistan |
+| `C00049` | `FC012400/22` | `FC012400` - `FC0127FF` | API-K | Europe |
+| `C0004A` | `FC012800/22` | `FC012800` - `FC012BFF` | Decstream LLC | Russian Federation |
+| `C0004B` | `FC012C00/22` | `FC012C00` - `FC012FFF` | Nova Track Ltd | World |
+| `C0004C` | `FC013000/22` | `FC013000` - `FC0133FF` | IMT Atlantique | France |
+| `C0004D` | `FC013400/22` | `FC013400` - `FC0137FF` | Machines Talk | Saudi Arabia |
+| `C0004E` | `FC013800/22` | `FC013800` - `FC013BFF` | Yosensi Sp. z o.o. | World |
+| `C0004F` | `FC013C00/22` | `FC013C00` - `FC013FFF` | The Saira 2.0, LLC dba The IoT Solutions | Guam, USA |
