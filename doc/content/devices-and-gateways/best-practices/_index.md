@@ -1,6 +1,8 @@
 ---
 title: Best Practices
 section: Devices
+aliases:
+  - /devices/bestpractices
 ---
 
 The goal of defining best practices for LoRaWAN devices which use The Things Stack Community Edition is to optimize their performance, as well as performance of the whole LoRaWAN network. Optimization means reducing energy consumption and increasing number of devices that are being reliably and efficiently served, while keeping the same number of gateways. 

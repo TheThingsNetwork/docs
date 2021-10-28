@@ -19,7 +19,7 @@ Manual registration is just a matter of providing some end device information li
 
 If your end device is a part of the [LoRaWAN Device Repository](https://github.com/TheThingsNetwork/lorawan-devices/tree/master), registration of it will be semi-automated. This means that some features of the device are pre-defined, which helps you with the process of onboarding the device. If your end device is not present in this repository, you will have to add it manually.
 
-> See [examples](https://github.com/TheThingsNetwork/lorawan-devices/tree/master/vendor) of end devices added to the LoRaWAN Device Repository. Learn how to [add devices to the LoRaWAN Device Repository](https://www.youtube.com/watch?v=pnwtEgw4f-c).
+You can also see [examples](https://github.com/TheThingsNetwork/lorawan-devices/tree/master/vendor) of end devices added to the LoRaWAN Device Repository, and learn how to [add devices to the LoRaWAN Device Repository](https://www.youtube.com/watch?v=pnwtEgw4f-c).
 
 ## Adding a device using CLI
 
@@ -27,4 +27,4 @@ To add a device using CLI, you need to have the CLI installed on your system. [L
 
 You can add both ABP and OTAA devices by manually providing the end device information through commands in your terminal. [See details about adding devices using the CLI](https://www.thethingsindustries.com/docs/devices/adding-devices).
 
-> If you are experiencing issues while adding devices to The Things Network, see [Troubleshooting](https://www.thethingsindustries.com/docs/devices/adding-devices/troubleshooting/).
+If you are experiencing issues while adding devices to The Things Network, see [Troubleshooting](https://www.thethingsindustries.com/docs/devices/adding-devices/troubleshooting/).
