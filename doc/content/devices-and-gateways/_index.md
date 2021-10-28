@@ -47,8 +47,8 @@ A single gateway is capable of serving thousands of devices. When an end device 
 
 Gateways can connect to The Things Stack Community Edition in two ways:
 
-- Using the <a href="https://www.thethingsindustries.com/docs/gateways/semtech-udp-packet-forwarder/" target="_blank">**Semtech UDP Packet Forwarder**</a>
-- Using <a href="https://www.thethingsindustries.com/docs/gateways/lora-basics-station/" target="_blank">**LoRa Basics Station**</a>
+- Using the [**Semtech UDP Packet Forwarder**](https://www.thethingsindustries.com/docs/gateways/semtech-udp-packet-forwarder/)
+- Using [**LoRa Basics Station**](https://www.thethingsindustries.com/docs/gateways/lora-basics-station/)
 
 Start by [adding your gateway]({{< relref "adding-gateways" >}}) to The Things Stack Community Edition! Instructions for popular gateways are available at [The Things Stack - Gateways](https://www.thethingsindustries.com/docs/gateways/)
 
