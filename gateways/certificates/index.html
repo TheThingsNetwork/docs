@@ -266,14 +266,14 @@
 <p>This section contains links to common root SSL certificates used in TTN, issued by trusted certificate authorities (CAs).</p>
 <h2 id="which-certificate-is-right-for-my-device">Which Certificate Is Right For My Device?&nbsp;<a class="header-hash" href="#which-certificate-is-right-for-my-device">#</a> </h2>
 <p>The <a href="https://curl.haxx.se/ca/cacert.pem">complete certificate list</a> contains all CA certificates trusted by modern browsers, so if your device supports this file, you should be covered by this one.</p>
-<p>The <a href="ca.pem" download>minimal certificate list</a> contains a tailored list of certificates for devices which do not support the larger list due to memory constraints.</p>
+<p>The <a href="ca.pem">minimal certificate list</a> contains a tailored list of certificates for devices which do not support the larger list due to memory constraints.</p>
 <p>Unfortunately, some gateways do not support concatenated certificate lists at all. If your device will not connect using the complete or minimal certificate lists, you must use the specific certificate TTN uses. This is currently the Let&rsquo;s Encrypt DST Root X3, but is transitioning to the ISRG Root X1. See <a href="#lets-encrypt">below</a>.</p>
 <h2 id="complete-certificate-list">Complete Certificate List&nbsp;<a class="header-hash" href="#complete-certificate-list">#</a> </h2>
 <p>This <code>.pem</code> file contains all common CA certificates trusted by Mozilla, and is extracted and hosted by <a href="https://curl.haxx.se/docs/caextract.html">curl</a>.</p>
 <p>Download the complete certificate list from curl <a href="https://curl.haxx.se/ca/cacert.pem">here</a>.</p>
 <h2 id="minimal-certificate-list-for-common-installations">Minimal Certificate List for Common Installations&nbsp;<a class="header-hash" href="#minimal-certificate-list-for-common-installations">#</a> </h2>
 <p>This <code>.pem</code> file contains certificates used in TTN, and is small enough to fit on memory constrained devices such as Gateways.</p>
-<p>Download the minimal certificate list <a href="ca.pem" download>here</a>.</p>
+<p>Download the minimal certificate list <a href="ca.pem">here</a>.</p>
 <h2 id="lets-encrypt">Let&rsquo;s Encrypt&nbsp;<a class="header-hash" href="#lets-encrypt">#</a> </h2>
 <h3 id="isrg-root-x1">ISRG Root X1&nbsp;<a class="header-hash" href="#isrg-root-x1">#</a> </h3>
 <p>TTN is transitioning from DST Root X3 to the Let&rsquo;s Encrypt ISRG Root X1 Trust. Download the ISRG Root X1 Trust file <a href="https://letsencrypt.org/certs/isrgrootx1.pem">here</a>.</p>

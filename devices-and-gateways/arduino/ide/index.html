@@ -9,8 +9,8 @@
 
   <meta name="generator" content="Hugo 0.88.1" />
 
-  <title>Best Practices | The Things Network</title>
-  <link rel="canonical" href="https://www.thethingsnetwork.org/docs/devices-and-gateways/best-practices/" />
+  <title>IDE Setup &amp; Usage | The Things Network</title>
+  <link rel="canonical" href="https://www.thethingsnetwork.org/docs/devices-and-gateways/arduino/ide/" />
   
 
   <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
@@ -41,17 +41,17 @@
   <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.1a1a30812d4274d8616380644cbf1670d6a3bc91fc7bd1d2c1d89177ea3d75f9.css" integrity="sha256-GhowgS1CdNhhY4BkTL8WcNajvJH8e9HSwdiRd&#43;o9dfk=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://www.thethingsnetwork.org/static/common/css/ui.css" crossorigin="anonymous">
 
-  <meta property="og:title" content="Best Practices" />
+  <meta property="og:title" content="IDE Setup &amp; Usage" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.thethingsnetwork.org/docs/devices-and-gateways/best-practices/" /><meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/><meta property="og:site_name" content="The Things Network" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/devices-and-gateways/arduino/ide/" /><meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/><meta property="og:site_name" content="The Things Network" />
 
 
 
   <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
 
-<meta name="twitter:title" content="Best Practices"/>
+<meta name="twitter:title" content="IDE Setup &amp; Usage"/>
 <meta name="twitter:description" content="We are building a global open free crowdsourced long range low power IoT data network"/>
 
 
@@ -154,12 +154,7 @@
 
       
 <li>
-  <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/best-practices/" class="is-active">Best Practices</a>
-  
-
-
-
-  
+  <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/best-practices/" class="">Best Practices</a>
 </li>
 
   
@@ -185,6 +180,35 @@
       
 <li>
   <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/arduino/" class="">Arduino</a>
+  
+
+
+<ul class="menu-list">
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/arduino/api/" class="">API Reference</a>
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/arduino/ide/" class="is-active">IDE Setup &amp; Usage</a>
+    
+    
+
+
+
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/arduino/usage/" class="">Library Usage</a>
+    
+  </li>
+
+</ul>
+
+
+  
 </li>
 
   
@@ -201,29 +225,66 @@
     <div class="column is-9-desktop sidebar-middle">
       <div class="docs-content">
         <h1 class="title is-size-2">
-          Best Practices
+          IDE Setup &amp; Usage
         </h1>
         <div class="content">
           
-<p>The goal of defining best practices for LoRaWAN devices which use The Things Stack Community Edition is to optimize their performance, as well as performance of the whole LoRaWAN network. Optimization means reducing energy consumption and increasing number of devices that are being reliably and efficiently served, while keeping the same number of gateways.</p>
-<p>To make sure you are exploiting device&rsquo;s capabilities in the most efficient way, follow these recommendations:</p>
+<p>We&rsquo;ll not reproduce the <a href="https://www.arduino.cc/en/Guide/Environment#toc1">Arduino Software Guide</a> here, but here&rsquo;s how you install the Arduino IDE, The Things Network library and perform some common tasks.</p>
+<h2 id="setup">Setup&nbsp;<a class="header-hash" href="#setup">#</a> </h2>
+<p>Setup the Arduino IDE and install The Things Network Library.</p>
+<ol>
+<li><a href="https://www.arduino.cc/en/Main/Software">Download</a> and install the latest Arduino Software (IDE).</li>
+<li>Navigate to <strong>Sketch &gt; Include Library &gt; Manage Libraries&hellip;</strong>.</li>
+<li>Search for <strong>TheThingsNetwork</strong> and click the result to select it.</li>
+<li>Click the <strong>Install</strong> button which should appear:</li>
+</ol>
+<p><img src="../arduino_library.png" alt="Library Manager"></p>
+<p>The Arduino IDE will notify you of updates for the IDE and Library automagically. :open_mouth:</p>
+<h2 id="monitor-logs">Monitor logs&nbsp;<a class="header-hash" href="#monitor-logs">#</a> </h2>
+<p>Most sketches write debug logs to the (emulated) Serial Port for the USB connection. You can monitor these logs via the Arduino IDE&rsquo;s Serial Monitor.</p>
+<ol>
+<li>Make sure <strong>Tools &gt; Port &gt; &hellip; (Arduino ..)</strong> is selected.</li>
+<li>Select <strong>Tools &gt; Serial Monitor</strong> <code>Ctrl/⌘ Shift M</code>.</li>
+</ol>
+<blockquote>
+<p>Uploads might fail if you have the monitor open. Close it and try again. Visa versa an upload might break the monitor. Make sure the right port is still selected and re-open the monitor.</p>
+</blockquote>
+<p>You will only see logs from the moment when you opened the Serial Monitor. Use <a href="https://www.arduino.cc/en/Reference/Delay"><code>delay()</code></a> or the following <a href="https://www.arduino.cc/en/Reference/While"><code>while()</code></a> to give yourself some time to open Serial Monitor:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="cp">#define debugSerial Serial
+</span><span class="cp"></span>
+<span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="n">debugSerial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+  
+  <span class="c1">// Wait a maximum of 10s for Serial Monitor
+</span><span class="c1"></span>  <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">debugSerial</span> <span class="o">&amp;&amp;</span> <span class="n">millis</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mi">10000</span><span class="p">);</span>
+  
+  <span class="c1">// Your setup
+</span><span class="c1"></span><span class="p">}</span>
+</code></pre></div><h2 id="upload-sketches">Upload Sketches&nbsp;<a class="header-hash" href="#upload-sketches">#</a> </h2>
+<p>When you upload a sketch to your Arduino it will first compile and fail if your sketch has errors. If there are no errors it will continue to upload.</p>
+<ol>
+<li>
+<p>Make sure <strong>Tools &gt; Port &gt; &hellip; (Arduino ..)</strong> is selected.</p>
+</li>
+<li>
+<p>Select <strong>Sketch &gt; Upload</strong> <code>Ctrl/⌘ U</code> to compile and upload your sketch.</p>
+</li>
+<li>
+<p>The Arduino IDE will give feedback which should look like:</p>
+<pre><code>Sketch uses 9,656 bytes (33%) of program storage space. Maximum is 28,672 bytes.
+Global variables use 1,253 bytes (48%) of dynamic memory, leaving 1,307 bytes for local variables. Maximum is 2,560 bytes.
+</code></pre>
+</li>
+</ol>
+<blockquote>
+<p>Uploads might fail if you have the monitor open. Close it and try again.</p>
+</blockquote>
+<h2 id="verify-sketches">Verify Sketches&nbsp;<a class="header-hash" href="#verify-sketches">#</a> </h2>
+<p>You can also compile your code without uploading to verify it has no errors:</p>
 <ul>
-<li>Your device should be compliant to the <a href="https://lora-alliance.org/about-lorawan/">LoRaWAN specification</a>.</li>
-<li>Prefer using OTAA over ABP. See details about <a href="https://www.thethingsindustries.com/docs/devices/abp-vs-otaa/">why using OTAA is recommended</a>.</li>
-<li>Eliminate unnecessary Join Requests to prevent network bloating in cases of a temporary connection loss.</li>
-<li>Sample your data as rarely as possible.</li>
-<li>Reduce the payload size to the minimum possible.</li>
-<li>Avoid confirmed uplink messages, if your application does not require 100% transmission assurance.</li>
-<li>Check your local government&rsquo;s regulations on the LoRaWAN device duty cycle and make sure you are respecting them.</li>
-<li>Do not be surprised if you are experiencing a packet loss up to 10%. Use Forward Error Correction (FEC) to reduce it further.</li>
-<li>Use jitter and backoff mechanisms to avoid device synchronization.</li>
-<li>Use a different seed for every device&rsquo;s random number generator to make sure channels are truly being selected randomly, and also to avoid device synchronization.</li>
-<li>Use Adaptive Data Rate (ADR) mechanism for stationary devices to minimize the power consumption.</li>
-<li>Use 32 bit frame counters that increment after each uplink/downlink to prevent replay attacks.</li>
-<li>Do not assume link loss if at least 3 ACKs are not missed.</li>
-<li>Use Hardware Secure Elements. Learn more about the <a href="https://www.thethingsindustries.com/docs/devices/atecc608a/">ATECC608A security solution developed by Microchip The Things Industries</a>.</li>
+<li>Select <strong>Sketch &gt; Verify/Compile</strong> <code>Ctrl/⌘ R</code> to check your sketch for errors.</li>
 </ul>
-<p>Read more best practices at <a href="https://www.thethingsindustries.com/docs/devices/best-practices/">The Things Stack - Best Practices</a></p>
 
 
         </div>
@@ -235,14 +296,8 @@
 
   
 
-  
-    
-    
-  
-
 
 <div class="is-clearfix">
-<a class="button is-pulled-left" href="/docs/devices-and-gateways/adding-devices/">← Adding Devices</a>
 </div>
 
       </div>

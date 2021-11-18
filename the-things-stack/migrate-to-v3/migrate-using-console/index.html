@@ -47,7 +47,7 @@ Note: Migrating active sessions using The Things Stack Community Edition Console
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.thethingsnetwork.org/docs/the-things-stack/migrate-to-v3/migrate-using-console/" /><meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/><meta property="article:section" content="the-things-stack" />
 
-<meta property="article:modified_time" content="2021-06-09T14:46:13+02:00" /><meta property="og:site_name" content="The Things Network" />
+<meta property="article:modified_time" content="2021-10-28T14:18:42+02:00" /><meta property="og:site_name" content="The Things Network" />
 
 
 
@@ -197,10 +197,10 @@ Note: Migrating active sessions using The Things Stack Community Edition Console
 
         <div class="content">
           
-<p>This section explains steps for migrating end devices from The Things Network V2 to The Things Stack Community Edition using <a href="https://www.thethingsindustries.com/docs/getting-started/console/" target="_blank">The Things Stack Community Edition Console</a>.</p>
+<p>This section explains steps for migrating end devices from The Things Network V2 to The Things Stack Community Edition using <a href="https://www.thethingsindustries.com/docs/getting-started/console/">The Things Stack Community Edition Console</a>.</p>
 <div class="notification is-info is-light has-text-dark">
   <h5 class="title is-family-sans-serif has-text-dark mb-1">Note:</h5>
-  Migrating active sessions using The Things Stack Community Edition Console is available since the latest update to 3.12. <a href="https://www.thethingsindustries.com/docs/getting-started/migrating/migrating-from-v2/" target="_blank">See here for more details</a>.
+  Migrating active sessions using The Things Stack Community Edition Console is available since the latest update to 3.12. <a href="https://www.thethingsindustries.com/docs/getting-started/migrating/migrating-from-v2/">See here for more details</a>.
 </div>
 
 <div class="notification is-info is-light has-text-dark">
@@ -209,11 +209,11 @@ Note: Migrating active sessions using The Things Stack Community Edition Console
 </div>
 
 <h2 id="add-an-end-device-in-the-things-stack-community-edition">Add an end device in The Things Stack Community Edition&nbsp;<a class="header-hash" href="#add-an-end-device-in-the-things-stack-community-edition">#</a> </h2>
-<p>First, <a href="https://www.thethingsindustries.com/docs/devices/adding-devices/" target="_blank">add a device</a> in The Things Stack Community Edition. This can be done manually, but also by submitting the type of your device if it is available in the <a href="https://thethingsindustries.com/docs/integrations/payload-formatters/device-repo/" target="_blank">Device Repository</a>.</p>
+<p>First, <a href="https://www.thethingsindustries.com/docs/devices/adding-devices/">add a device</a> in The Things Stack Community Edition. This can be done manually, but also by submitting the type of your device if it is available in the <a href="https://thethingsindustries.com/docs/integrations/payload-formatters/device-repo/">Device Repository</a>.</p>
 <p>The process of adding your device in the Console depends on the type of your device - OTAA or ABP.</p>
 <div class="notification is-info is-light has-text-dark">
   <h5 class="title is-family-sans-serif has-text-dark mb-1">Note:</h5>
-  We highly recommend using OTAA over ABP devices. See <a href="https://www.thethingsindustries.com/docs/devices/abp-vs-otaa/" target="_blank">why OTAA is better than ABP</a>.
+  We highly recommend using OTAA over ABP devices. See <a href="https://www.thethingsindustries.com/docs/devices/abp-vs-otaa/">why OTAA is better than ABP</a>.
 </div>
 
 <p>When manually adding an OTAA device to The Things Stack Community Edition, make sure you follow these steps correctly:</p>
@@ -256,7 +256,7 @@ Note: Migrating active sessions using The Things Stack Community Edition Console
 <p><strong>Case 1: You want your ABP device&rsquo;s traffic to be routed to The Things Stack Community Edition by Packet Broker, i.e. you do not want to migrate your gateway to The Things Stack Community Edition at this time.</strong></p>
 <p>In this case, you need to auto-generate a new <strong>DevAddr</strong> and a new <strong>NwkSKey</strong> when adding the ABP device on The Things Stack Community Edition. After that, you will have to re-program your ABP device with new <strong>DevAddr</strong> and <strong>NwkSKey</strong> values, and an <strong>RX1 Delay</strong> of 5 seconds. This will make sure that your device&rsquo;s <strong>DevAddr</strong> can be properly routed by Packet Broker, and that its traffic will reach The Things Stack Community Edition in time.</p>
 <p>Keep in mind that even if you are planning to migrate your gateway right after, it is <strong>recommended</strong> to re-program your device to use the newly generated <strong>DevAddr</strong>, and the <strong>RX1 Delay</strong> of 5 seconds which is a default for The Things Stack Community Edition.</p>
-<p><strong>Tip:</strong> Re-programming your ABP device could be a good time to switch it to OTAA and adopt some <a href="https://www.thethingsindustries.com/docs/devices/best-practices/" target="_blank">Best Practices</a>.</p>
+<p><strong>Tip:</strong> Re-programming your ABP device could be a good time to switch it to OTAA and adopt some <a href="https://www.thethingsindustries.com/docs/devices/best-practices/">Best Practices</a>.</p>
 <p><strong>Case 2: You want to migrate your gateway to The Things Stack Community Edition right after you migrate your device.</strong></p>
 <p>If this is the case, you do not have to re-program your ABP device. You can add the ABP device in The Things Stack Community Edition using the same <strong>DevAddr</strong> and <strong>RX1 Delay</strong> of 1 second as it was on The Things Network V2.</p>
 <p>However, be aware that we recommend to re-program the device. Even if you migrate your gateway to The Things Stack Community Edition, you could be experiencing issues when using the <strong>RX1 Delay</strong> of 1 second if your gateway has a high-latency backhaul.</p>
@@ -280,7 +280,7 @@ Note: Migrating active sessions using The Things Stack Community Edition Console
 <li>If your end device does a new join when it is power cycled - power cycle it</li>
 </ul>
 <p>Since you have not migrated your gateway from The Things Network V2 yet, the new Join request sent by your end device will be received by The Things Network V2 cluster. However, this request will not be accepted if you changed your end device&rsquo;s <code>AppKey</code> (as recommended above) or if you have deleted it.</p>
-<p>An interesting thing is that your OTAA end device&rsquo;s new Join request will be received by The Things Stack Community Edition cluster too! You can verify this by observing the uplinks metadata in The Things Stack Community Edition Console. You can thank for this to <a href="https://www.thethingsindustries.com/docs/reference/peering/#packet-broker" target="_blank">Packet Broker</a>, which routes your device&rsquo;s traffic from The Things Network V2 to The Things Stack Community Edition. Now, The Things Stack Community Edition cluster will accept this Join request, so your end device will get a new <code>DevAddr</code>, channel settings and other MAC parameters. Based on a newly assigned <code>DevAddr</code>, Packet Broker will from now on route the traffic to The Things Stack Community Edition network.</p>
+<p>An interesting thing is that your OTAA end device&rsquo;s new Join request will be received by The Things Stack Community Edition cluster too! You can verify this by observing the uplinks metadata in The Things Stack Community Edition Console. You can thank for this to <a href="https://www.thethingsindustries.com/docs/reference/peering/#packet-broker">Packet Broker</a>, which routes your device&rsquo;s traffic from The Things Network V2 to The Things Stack Community Edition. Now, The Things Stack Community Edition cluster will accept this Join request, so your end device will get a new <code>DevAddr</code>, channel settings and other MAC parameters. Based on a newly assigned <code>DevAddr</code>, Packet Broker will from now on route the traffic to The Things Stack Community Edition network.</p>
 <h2 id="what-to-do-with-abp-end-device">What to do with ABP end device?&nbsp;<a class="header-hash" href="#what-to-do-with-abp-end-device">#</a> </h2>
 <p>The next step for ABP devices depends on your use case, which was previously discussed in the <a href="https://www.thethingsnetwork.org/docs/the-things-stack/migrate-to-v3/migrate-using-console/#add-an-end-device-in-the-things-stack-community-edition">Add an end device in The Things Stack Community Edition</a> section.</p>
 <p>If you re-programmed your ABP end device with a <strong>DevAddr</strong> issued by The Things Stack Community Edition and an <strong>RX1 Delay</strong> of 5 seconds, Packet Broker will be able to route your device&rsquo;s traffic to The Things Stack Community Edition, i.e. you will not have to migrate your gateway to receive the traffic in The Things Stack Community Edition. If this is the case, at this point you should already start seeing your device&rsquo;s traffic in The Things Stack Community Edition Console.</p>

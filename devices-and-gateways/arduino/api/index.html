@@ -9,8 +9,8 @@
 
   <meta name="generator" content="Hugo 0.88.1" />
 
-  <title>Devices &amp; Gateways | The Things Network</title>
-  <link rel="canonical" href="https://www.thethingsnetwork.org/docs/devices-and-gateways/" />
+  <title>API Reference | The Things Network</title>
+  <link rel="canonical" href="https://www.thethingsnetwork.org/docs/devices-and-gateways/arduino/api/" />
   
 
   <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
@@ -41,18 +41,18 @@
   <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.1a1a30812d4274d8616380644cbf1670d6a3bc91fc7bd1d2c1d89177ea3d75f9.css" integrity="sha256-GhowgS1CdNhhY4BkTL8WcNajvJH8e9HSwdiRd&#43;o9dfk=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://www.thethingsnetwork.org/static/common/css/ui.css" crossorigin="anonymous">
 
-  <meta property="og:title" content="Devices &amp; Gateways" />
-<meta property="og:description" content="Learn to connect your devices and gateways to The Things Stack Community Edition" />
+  <meta property="og:title" content="API Reference" />
+<meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.thethingsnetwork.org/docs/devices-and-gateways/" /><meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/><meta property="og:site_name" content="The Things Network" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/devices-and-gateways/arduino/api/" /><meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/><meta property="og:site_name" content="The Things Network" />
 
 
 
   <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
 
-<meta name="twitter:title" content="Devices &amp; Gateways"/>
-<meta name="twitter:description" content="Learn to connect your devices and gateways to The Things Stack Community Edition"/>
+<meta name="twitter:title" content="API Reference"/>
+<meta name="twitter:description" content="We are building a global open free crowdsourced long range low power IoT data network"/>
 
 
 </head>
@@ -138,7 +138,7 @@
 
 <div class="menu">
   <ul class="menu-list">
-  <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/" class="is-active">Overview</a>
+  <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/" class="">Overview</a>
   <li>
       <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/bytes/" class="">Working with Bytes</a>
     </li>
@@ -180,6 +180,59 @@
       
 <li>
   <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/arduino/" class="">Arduino</a>
+  
+
+
+<ul class="menu-list">
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/arduino/api/" class="is-active">API Reference</a>
+    
+    
+
+
+<ul class="menu-list">
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/arduino/api/cayennelpp/" class="">CayenneLPP</a>
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/arduino/api/node/" class="">TheThingsNode</a>
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/arduino/api/message/" class="">TheThingsMessage</a>
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/arduino/api/network/" class="">TheThingsNetwork</a>
+    
+  </li>
+
+</ul>
+
+
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/arduino/ide/" class="">IDE Setup &amp; Usage</a>
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/arduino/usage/" class="">Library Usage</a>
+    
+  </li>
+
+</ul>
+
+
+  
 </li>
 
   
@@ -196,46 +249,10 @@
     <div class="column is-9-desktop sidebar-middle">
       <div class="docs-content">
         <h1 class="title is-size-2">
-          Devices &amp; Gateways
+          API Reference
         </h1>
         <div class="content">
           
-<p>The Things Network runs The Things Stack Community Edition, which is a crowdsourced, open and decentralized LoRaWAN network. This network is a great way to get started testing devices, applications, and integrations, and get familiar with LoRaWAN.</p>
-<p>The Things Stack Community Edition is free for fair use. Learn how to connect your Things in the documentation for <a href="/docs/devices-and-gateways/adding-devices/">Adding Devices</a> and <a href="/docs/devices-and-gateways/adding-gateways/">Adding Gateways</a>!</p>
-<h2 id="what-is-a-lorawan-device">What is a LoRaWAN device?&nbsp;<a class="header-hash" href="#what-is-a-lorawan-device">#</a> </h2>
-<p>A LoRaWAN-enabled end device is a sensor or an actuator that can be connected to a LoRaWAN network through a LoRaWAN-enabled gateway.</p>
-<figure class="plain"><img src="TheThingsUno.png"/>
-</figure>
-
-<p>End-devices are often battery-operated. However, some end devices operate with mains power. These end-devices transmit small data packets (e.g. sensor data) over very long distances and consume low power. They often use compact antennas (e.g. wire antennas, coil antennas, etc).</p>
-<div class="notification is-info is-light has-text-dark">
-  <h5 class="title is-family-sans-serif has-text-dark mb-1">Note:</h5>
-  The Things Stack Community Edition supports <strong>any LoRaWAN compliant device</strong>. We highly recommend using <strong>certified</strong> LoRaWAN devices.
-</div>
-
-<h2 id="adding-devices">Adding Devices&nbsp;<a class="header-hash" href="#adding-devices">#</a> </h2>
-<p>Start by <a href="/docs/devices-and-gateways/adding-devices/">adding your device</a> to The Things Stack Community Edition! When operating these end devices, make sure you are following the <a href="/docs/devices-and-gateways/best-practices/">best practices</a> recommended by The Things Network community.</p>
-<h2 id="gateways">Gateways&nbsp;<a class="header-hash" href="#gateways">#</a> </h2>
-<p>A LoRaWAN gateway is an intermediary that allows LoRaWAN end devices to transmit data to The Things Stack Community Edition.</p>
-<figure class="plain"><img src="TTIG.jpg"/>
-</figure>
-
-<p>Gateways are often mains-powered and some can have backup batteries or solar panels. A gateway can be indoor or outdoor, and they have various antenna options.</p>
-<p>The communication between devices and gateways is done via LoRaWAN protocol, while gateways use high bandwidth (WiFi, Ethernet, cellular, satellite) backhauls to connect to The Things Stack Community Edition.</p>
-<p>A single gateway is capable of serving thousands of devices. When an end device transmits a message, all gateways in the range will receive that message and forward it to The Things Stack Community Edition. The network is in charge of deduplicating those messages and selecting the best gateway for downlink communication.</p>
-<p>Gateways can connect to The Things Stack Community Edition in two ways:</p>
-<ul>
-<li>Using the <a href="https://www.thethingsindustries.com/docs/gateways/semtech-udp-packet-forwarder/"><strong>Semtech UDP Packet Forwarder</strong></a></li>
-<li>Using <a href="https://www.thethingsindustries.com/docs/gateways/lora-basics-station/"><strong>LoRa Basics Station</strong></a></li>
-</ul>
-<p>Start by <a href="/docs/devices-and-gateways/adding-gateways/">adding your gateway</a> to The Things Stack Community Edition! Instructions for popular gateways are available at <a href="https://www.thethingsindustries.com/docs/gateways/">The Things Stack - Gateways</a></p>
-<h2 id="connecting-gateways-and-devices">Connecting Gateways and Devices&nbsp;<a class="header-hash" href="#connecting-gateways-and-devices">#</a> </h2>
-<p>For a video introduction about adding gateways and devices, see this video by Bogdans Afonins, one of the developers of The Things Stack.</p>
-
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="https://www.youtube.com/embed/rK8oJHZ9Q7U" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
-</div>
-
 
 
         </div>
@@ -255,10 +272,10 @@
   <div class="column is-half is-flex">
     <div class="card has-radius is-fullwidth">
       <div class="card-content">
-        <h3 class="title is-size-5 is-uppercase"><a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/adding-devices/">Adding Devices</a>
+        <h3 class="title is-size-5 is-uppercase"><a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/arduino/api/cayennelpp/">CayenneLPP</a>
         </h3>
         <div class="buttons">
-          <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/adding-devices/" class="button is-primary is-outlined">Read</a>
+          <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/arduino/api/cayennelpp/" class="button is-primary is-outlined">Read</a>
         </div>
       </div>
     </div>
@@ -266,10 +283,10 @@
   <div class="column is-half is-flex">
     <div class="card has-radius is-fullwidth">
       <div class="card-content">
-        <h3 class="title is-size-5 is-uppercase"><a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/adding-gateways/">Adding Gateways</a>
+        <h3 class="title is-size-5 is-uppercase"><a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/arduino/api/node/">TheThingsNode</a>
         </h3>
         <div class="buttons">
-          <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/adding-gateways/" class="button is-primary is-outlined">Read</a>
+          <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/arduino/api/node/" class="button is-primary is-outlined">Read</a>
         </div>
       </div>
     </div>
@@ -277,10 +294,10 @@
   <div class="column is-half is-flex">
     <div class="card has-radius is-fullwidth">
       <div class="card-content">
-        <h3 class="title is-size-5 is-uppercase"><a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/arduino/">Arduino</a>
+        <h3 class="title is-size-5 is-uppercase"><a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/arduino/api/message/">TheThingsMessage</a>
         </h3>
         <div class="buttons">
-          <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/arduino/" class="button is-primary is-outlined">Read</a>
+          <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/arduino/api/message/" class="button is-primary is-outlined">Read</a>
         </div>
       </div>
     </div>
@@ -288,32 +305,10 @@
   <div class="column is-half is-flex">
     <div class="card has-radius is-fullwidth">
       <div class="card-content">
-        <h3 class="title is-size-5 is-uppercase"><a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/best-practices/">Best Practices</a>
+        <h3 class="title is-size-5 is-uppercase"><a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/arduino/api/network/">TheThingsNetwork</a>
         </h3>
         <div class="buttons">
-          <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/best-practices/" class="button is-primary is-outlined">Read</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="column is-half is-flex">
-    <div class="card has-radius is-fullwidth">
-      <div class="card-content">
-        <h3 class="title is-size-5 is-uppercase"><a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/basics-station/">LoRa Basics™ Station</a>
-        </h3>
-        <div class="buttons">
-          <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/basics-station/" class="button is-primary is-outlined">Read</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="column is-half is-flex">
-    <div class="card has-radius is-fullwidth">
-      <div class="card-content">
-        <h3 class="title is-size-5 is-uppercase"><a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/bytes/">Working with Bytes</a>
-        </h3>
-        <div class="buttons">
-          <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/bytes/" class="button is-primary is-outlined">Read</a>
+          <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/arduino/api/network/" class="button is-primary is-outlined">Read</a>
         </div>
       </div>
     </div>
@@ -334,8 +329,8 @@
 
 
 <div class="is-clearfix">
-<a class="button is-pulled-left" href="/docs/applications-and-integrations/">← Applications &amp; Integrations</a>
-<a class="button is-pulled-right" href="/docs/devices-and-gateways/adding-devices/">Adding Devices →</a>
+<a class="button is-pulled-left" href="/docs/devices-and-gateways/arduino/">← Arduino</a>
+<a class="button is-pulled-right" href="/docs/devices-and-gateways/arduino/api/cayennelpp/">CayenneLPP →</a>
 </div>
 
       </div>

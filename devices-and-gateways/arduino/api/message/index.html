@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+
+<html lang="en-us" class="has-ttn-navbar-top">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <meta name="generator" content="Hugo 0.88.1" />
+
+  <title>TheThingsMessage | The Things Network</title>
+  <link rel="canonical" href="https://www.thethingsnetwork.org/docs/devices-and-gateways/arduino/api/message/" />
+  
+
+  <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
+
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+  <meta name="msapplication-TileImage" content="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png">
+
+  <meta name="application-name" content="The Things Network">
+  <meta name="msapplication-tooltip" content="Tooltip">
+  <meta name="msapplication-config" content="https://ttnweb.azureedge.net/static/common/favicon/ieconfig.54334a5ee30c.xml">
+
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-32.61b30f85680a.png" sizes="32x32">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-57.83b86c64dc82.png" sizes="57x57">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-76.7dcf8fa36dfc.png" sizes="76x76">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-96.27ac17adaa8b.png" sizes="96x96">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-120.e1526731335e.png" sizes="120x120">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-128.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png" sizes="144x144">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png" sizes="152x152">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-180.fcd414307ca3.png" sizes="180x180">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-195.c55ce09d66da.png" sizes="195x195">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-228.bea53ec4b10b.png" sizes="228x228">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/smalltile.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/mediumtile.3d42f7faac82.png" sizes="270x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
+  <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.1a1a30812d4274d8616380644cbf1670d6a3bc91fc7bd1d2c1d89177ea3d75f9.css" integrity="sha256-GhowgS1CdNhhY4BkTL8WcNajvJH8e9HSwdiRd&#43;o9dfk=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/static/common/css/ui.css" crossorigin="anonymous">
+
+  <meta property="og:title" content="TheThingsMessage" />
+<meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/devices-and-gateways/arduino/api/message/" /><meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/><meta property="og:site_name" content="The Things Network" />
+
+
+
+  <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
+
+<meta name="twitter:title" content="TheThingsMessage"/>
+<meta name="twitter:description" content="We are building a global open free crowdsourced long range low power IoT data network"/>
+
+
+</head>
+
+
+<body>
+
+<ttn-header class="theme-ttn"></ttn-header><section class="section">
+  <div class="container">
+    <nav class="breadcrumb has-dot-separator" aria-label="breadcrumbs">
+      <ul>
+        
+        
+          <li><a href="https://www.thethingsnetwork.org/docs">Learn</a></li>
+          
+          
+          
+            
+              
+            
+          
+            
+              
+            
+          
+            
+              
+            
+          
+            
+              
+            
+          
+            
+              
+            
+          
+              <li class="">
+                <a href="https://www.thethingsnetwork.org/docs/lorawan/">LoRaWAN®</a>
+              </li>
+            
+          
+              <li class="">
+                <a href="https://www.thethingsnetwork.org/docs/quick-start/">Quick Start</a>
+              </li>
+            
+          
+              <li class="">
+                <a href="https://www.thethingsnetwork.org/docs/applications-and-integrations/">Applications &amp; Integrations</a>
+              </li>
+            
+          
+              <li class="is-active">
+                <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/">Devices &amp; Gateways</a>
+              </li>
+            
+          
+              <li class="">
+                <a href="https://www.thethingsnetwork.org/docs/the-things-stack/">Migrating to The Things Stack Community Edition</a>
+              </li>
+            
+          
+              <li class="">
+                <a href="https://www.thethingsnetwork.org/docs/v2-docs/">V2 Docs (Outdated)</a>
+              </li>
+            
+          
+        
+      </ul>
+    </nav>
+    
+  </div>
+</section>
+<div class="container" role="document">
+  <div class="columns my-0 is-desktop">
+    <div class="column is-3-desktop sidebar-left">
+      
+
+
+<nav class="side-navigation" aria-label="Main navigation">
+
+<h2 class="title is-size-5">Devices &amp; Gateways</h2>
+
+<div class="menu">
+  <ul class="menu-list">
+  <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/" class="">Overview</a>
+  <li>
+      <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/bytes/" class="">Working with Bytes</a>
+    </li>
+  
+    <p class="menu-label">
+      Devices
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/adding-devices/" class="">Adding Devices</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/best-practices/" class="">Best Practices</a>
+</li>
+
+  
+    <p class="menu-label">
+      Gateways
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/adding-gateways/" class="">Adding Gateways</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/basics-station/" class="">LoRa Basics™ Station</a>
+</li>
+
+  
+    <p class="menu-label">
+      SDKs &amp; Libraries
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/arduino/" class="">Arduino</a>
+  
+
+
+<ul class="menu-list">
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/arduino/api/" class="">API Reference</a>
+    
+    
+
+
+<ul class="menu-list">
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/arduino/api/cayennelpp/" class="">CayenneLPP</a>
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/arduino/api/node/" class="">TheThingsNode</a>
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/arduino/api/message/" class="is-active">TheThingsMessage</a>
+    
+    
+
+
+
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/arduino/api/network/" class="">TheThingsNetwork</a>
+    
+  </li>
+
+</ul>
+
+
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/arduino/ide/" class="">IDE Setup &amp; Usage</a>
+    
+  </li>
+
+  <li>
+    <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/arduino/usage/" class="">Library Usage</a>
+    
+  </li>
+
+</ul>
+
+
+  
+</li>
+
+  
+  </ul>
+</div>
+
+
+
+
+
+</nav>
+
+    </div>
+    <div class="column is-9-desktop sidebar-middle">
+      <div class="docs-content">
+        <h1 class="title is-size-2">
+          TheThingsMessage
+        </h1>
+        <div class="content">
+          
+<h2 id="class-thethingsmessage">Class: <code>TheThingsMessage</code>&nbsp;<a class="header-hash" href="#class-thethingsmessage">#</a> </h2>
+<p>The <code>TheThingsMessage</code> class provides structs for sensor and application data you can encode and decode as bytes.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="cp">#include</span> <span class="cpf">&lt;TheThingsMessage.h&gt;</span><span class="cp">
+</span></code></pre></div><h2 id="type-devicedata_t">Type: <code>devicedata_t</code>&nbsp;<a class="header-hash" href="#type-devicedata_t">#</a> </h2>
+<p>Create a struct of this type using <code>api_DeviceData_init_default</code> as defaults.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="n">devicedata_t</span> <span class="n">data</span> <span class="o">=</span> <span class="n">api_DeviceData_init_default</span><span class="p">;</span>
+</code></pre></div><p>Then in your <code>setup()</code> function select what fields of the struct should be included when encoding it as bytes:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="n">data</span><span class="p">.</span><span class="n">has_motion</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+<span class="n">data</span><span class="p">.</span><span class="n">has_water</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+<span class="n">data</span><span class="p">.</span><span class="n">has_temperature_celcius</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+<span class="n">data</span><span class="p">.</span><span class="n">has_temperature_fahrenheit</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+<span class="n">data</span><span class="p">.</span><span class="n">has_humidity</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+</code></pre></div><p>In your <code>loop()</code> function read your sensors and set the fields of the struct:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="n">data</span><span class="p">.</span><span class="n">motion</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+<span class="n">data</span><span class="p">.</span><span class="n">water</span> <span class="o">=</span> <span class="mi">682</span><span class="p">;</span>
+<span class="n">data</span><span class="p">.</span><span class="n">temperature_celcius</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="n">data</span><span class="p">.</span><span class="n">temperature_fahrenheit</span> <span class="o">=</span> <span class="mi">86</span><span class="p">;</span>
+<span class="n">data</span><span class="p">.</span><span class="n">humidity</span> <span class="o">=</span> <span class="mi">97</span><span class="p">;</span>
+</code></pre></div><h3 id="additional-analog-readings">Additional analog readings&nbsp;<a class="header-hash" href="#additional-analog-readings">#</a> </h3>
+<p>You can also add other analog readings.</p>
+<blockquote>
+<p><strong>TODO:</strong> Document how this works and include in example.</p>
+</blockquote>
+<h2 id="method-encodedevicedata">Method: <code>encodeDeviceData</code>&nbsp;<a class="header-hash" href="#method-encodedevicedata">#</a> </h2>
+<p>Encode the message you want to send.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="k">static</span> <span class="kt">void</span> <span class="nf">encodeDeviceData</span><span class="p">(</span><span class="n">devicedata_t</span> <span class="o">*</span><span class="n">data</span><span class="p">,</span> <span class="n">byte</span> <span class="o">**</span><span class="n">buffer</span><span class="p">,</span> <span class="n">size_t</span> <span class="o">*</span><span class="n">size</span><span class="p">);</span>
+</code></pre></div><ul>
+<li><code>devicedata_t *data</code>: Structure containing typical fields that devices send.</li>
+<li><code>byte **buffer</code>: Bytes to send.</li>
+<li><code>size_t *size</code>: The number of bytes to send.</li>
+</ul>
+<p>Usage:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="n">byte</span> <span class="o">*</span><span class="n">buffer</span><span class="p">;</span>
+<span class="n">size_t</span> <span class="n">size</span><span class="p">;</span>
+<span class="n">TheThingsMessage</span><span class="o">::</span><span class="n">encodeDeviceData</span><span class="p">(</span><span class="o">&amp;</span><span class="n">data</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">buffer</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">size</span><span class="p">);</span>
+</code></pre></div><h2 id="method-decodeappdata">Method: <code>decodeAppData</code>&nbsp;<a class="header-hash" href="#method-decodeappdata">#</a> </h2>
+<p>Decode the message you received.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="k">static</span> <span class="kt">bool</span> <span class="nf">decodeAppData</span><span class="p">(</span><span class="n">appdata_t</span> <span class="o">*</span><span class="n">receiveData</span><span class="p">,</span> <span class="k">const</span> <span class="n">byte</span> <span class="o">*</span><span class="n">payload</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">length</span><span class="p">);</span>
+</code></pre></div><ul>
+<li><code>appdata_t *receiveData</code>: Structure containing all the message we can interpret.</li>
+<li><code>const byte *payload</code>: Bytes received.</li>
+<li><code>size_t *length</code>: The number of bytes.</li>
+</ul>
+<p>Usage:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="k">const</span> <span class="n">byte</span> <span class="o">*</span><span class="n">payload</span><span class="p">;</span>
+<span class="n">size_t</span> <span class="n">length</span><span class="p">;</span>
+<span class="n">TheThingsMessage</span><span class="o">::</span><span class="n">decodeAppData</span><span class="p">(</span><span class="o">&amp;</span><span class="n">receiveData</span><span class="p">,</span> <span class="n">payload</span><span class="p">,</span> <span class="n">length</span><span class="p">);</span>
+</code></pre></div>
+
+        </div>
+      
+      
+
+
+
+
+  
+
+
+<div class="is-clearfix">
+</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="ttn-footer"><ttn-footer class="theme-ttn"></ttn-footer></div>
+
+<script src="https://cdn.jsdelivr.net/npm/promise-polyfill@7/dist/polyfill.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
+<script src="https://www.thethingsnetwork.org/static/common/js/web-components/ttn-header.js"></script>
+<script src="https://www.thethingsnetwork.org/static/common/js/web-components/ttn-footer.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ga.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/vendor/basicLightbox.min.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/theme.min.00ace5d667ca108a93b8a0d385569f7c7bb9f46ed32eefe3f5fb39105763cccd.js" integrity="sha256-AKzl1mfKEIqTuKDThVaffHu59G7TLu/j9fs5EFdjzM0=" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
