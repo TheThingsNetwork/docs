@@ -195,39 +195,41 @@
 
 <div class="notification is-info is-light has-text-dark">
   <h5 class="title is-family-sans-serif has-text-dark mb-1">Note:</h5>
-  <p>The Things Stack Community Edition is a LoRaWAN Network Server which is free to use for The Things Network community members. The Community Edition is designed for testing and evaluating LoRaWAN projects and is managed by <a href="https://www.thethingsindustries.com/" target="_blank">The Things Industries</a>. The Community Edition comes without guarantees and only includes community support, hence is not suitable for commercial usage. Join The Things Network <a href="https://www.thethingsnetwork.org/forum/">Forum</a> or <a href="https://thethingsnetwork.slack.com/" target="_blank">Slack</a> for community support.</p>
-<p>For commercial LoRaWAN projects, it is recommended to use an SLA-backed version of The Things Stack, as it includes professional support. <a href="https://www.thethingsindustries.com/deployment/" target="_blank">Click here to learn more.</a></p>
+  <p>The Things Stack Community Edition is a LoRaWAN Network Server which is free to use for The Things Network community members. The Community Edition is designed for testing and evaluating LoRaWAN projects and is managed by <a href="https://www.thethingsindustries.com/">The Things Industries</a>. The Community Edition comes without guarantees and only includes community support, hence is not suitable for commercial usage. Join The Things Network <a href="https://www.thethingsnetwork.org/forum/">Forum</a> or <a href="https://thethingsnetwork.slack.com/">Slack</a> for community support.</p>
+<p>For commercial LoRaWAN projects, it is recommended to use an SLA-backed version of The Things Stack, as it includes professional support. <a href="https://www.thethingsindustries.com/deployment/">Click here to learn more.</a></p>
 
 </div>
 
 <p>Generally, the process of migrating from The Things Network V2 to The Things Stack Community Edition depends on few things:</p>
 <ul>
 <li>Type of devices you are using - ABP or OTAA</li>
-<li>If you are able to migrate your gateway at the moment, or you want to use <a href="https://www.thethingsindustries.com/docs/reference/packet-broker/" target="_blank">Packet Broker</a> to route your traffic (and migrate your gateway later)</li>
+<li>If you are able to migrate your gateway at the moment, or you want to use <a href="https://www.thethingsindustries.com/docs/reference/packet-broker/">Packet Broker</a> to route your traffic (and migrate your gateway later)</li>
 <li>How many devices you wish to migrate, i.e. if you want to migrate them one by one or in bulk</li>
 <li>If you wish to migrate your devices with or without an active session from V2</li>
 </ul>
 <p>Let us assume that your gateway and device are connected to The Things Network V2.</p>
 <blockquote>
-<p><a href="https://v2console.thethingsnetwork.org/" target="_blank">Link to The Things Network V2 Console</a></p>
+<p><a href="https://v2console.thethingsnetwork.org/">Link to The Things Network V2 Console</a></p>
 </blockquote>
 <p>In this section, we will first consider migrating your end device, then your gateway to The Things Stack Community Edition. Along the way, we will highlight differences between the aforementioned use cases and recommend some best practices. You will also need to add your applications, integrations and payload formatters in The Things Stack Community Edition.</p>
 <blockquote>
-<p><a href="https://www.thethingsindustries.com/deployment/" target="_blank">Link to The Things Stack Community Edition Console</a></p>
+<p><a href="https://www.thethingsindustries.com/deployment/">Link to The Things Stack Community Edition Console</a></p>
 </blockquote>
 <h4 id="video-migrate-from-the-things-network-v2-to-the-things-stack">Video Migrate from The Things Network V2 to The Things Stack&nbsp;<a class="header-hash" href="#video-migrate-from-the-things-network-v2-to-the-things-stack">#</a> </h4>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/DL87O5zNE_4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <h2 id="log-in-to-the-things-stack-community-edition">Log in to The Things Stack Community Edition&nbsp;<a class="header-hash" href="#log-in-to-the-things-stack-community-edition">#</a> </h2>
-<p>To be able to continue following steps below, you first need to log in to The Things Stack Community Edition Console by first <a href="https://console.cloud.thethings.network/" target="_blank">selecting a cluster</a> that is closest to you geographically. You can then log in with your The Things Network credentials via The Things ID.</p>
+<p>To be able to continue following steps below, you first need to log in to The Things Stack Community Edition Console by first <a href="https://console.cloud.thethings.network/">selecting a cluster</a> that is closest to you geographically. You can then log in with your The Things Network credentials via The Things ID.</p>
 <h2 id="add-an-application-in-the-things-stack-community-edition">Add an application in The Things Stack Community Edition&nbsp;<a class="header-hash" href="#add-an-application-in-the-things-stack-community-edition">#</a> </h2>
-<p>To migrate your end device, you first need to <a href="https://www.thethingsindustries.com/docs/integrations/adding-applications/" target="_blank">add an application</a> on the The Things Stack Community Edition. The <code>Application ID</code> does not neccessarily have to be the same as the one in The Things Network V2.</p>
+<p>To migrate your end device, you first need to <a href="https://www.thethingsindustries.com/docs/integrations/adding-applications/">add an application</a> on the The Things Stack Community Edition. The <code>Application ID</code> does not neccessarily have to be the same as the one in The Things Network V2.</p>
 <h2 id="add-your-payload-formatters-and-integrations">Add your payload formatters and integrations&nbsp;<a class="header-hash" href="#add-your-payload-formatters-and-integrations">#</a> </h2>
 <p>After adding an application in The Things Stack Community Edition, you also need to re-add the associated elements, like payload formatters (known as coders and decoders in The Things Network V2) and integrations.</p>
-<div class="notification is-info is-light has-text-dark">
-  <h5 class="title is-family-sans-serif has-text-dark mb-1">Note:</h5>
-  <p>The format of The Things Network Stack V2
-payload coders and decoders is still supported in The Things Stack. You only need to add one additional line to the function code used in The Things Network Stack V2
-to make it fully compatible with The Things Stack.</p>
+<p>The format of The Things Network Stack V2
+payload coders and decoders is still supported in The Things Stack. You can copy and paste function code used in The Things Network Stack V2
+directly in The Things Stack.</p>
+<p><img src="legacy-payload-formatter.png" alt="Legacy Payload Formatter"></p>
+<p>The Things Stack also supports a new <code>decodeUplink</code> function which is described in <a href="https://www.thethingsindustries.com/docs/integrations/payload-formatters/javascript/">The Things Stack Payload Formatter Documentation</a>.</p>
+<p>While you can simply paste your <code>Decoder</code> function in The Things Stack and it will work, if you wish to take advantage of the additional <code>warnings</code> and <code>errors</code> fields in The Things Stack, you need to convert your <code>Decoder</code> function to a <code>decodeUplink</code> function.</p>
+<p>The <code>decodeUplink</code> function receives an <code>input</code> object, and must return an object containing <code>data</code>.</p>
 <p>For example, if your payload decoder function in The Things Network Stack V2
 was:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">Decoder</span><span class="p">(</span><span class="nx">bytes</span><span class="p">)</span> <span class="p">{</span>
@@ -241,18 +243,36 @@ was:</p>
     <span class="kd">var</span> <span class="nx">bytes</span> <span class="o">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">bytes</span><span class="p">;</span>
     <span class="kd">var</span> <span class="nx">temperature</span> <span class="o">=</span> <span class="nx">bytes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">|</span> <span class="nx">bytes</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
     <span class="k">return</span> <span class="p">{</span>
+      <span class="nx">data</span><span class="o">:</span> <span class="p">{</span>
         <span class="nx">temperature</span><span class="o">:</span> <span class="nx">temperature</span><span class="p">;</span>
+      <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div>
-</div>
-
-<p>See more info on how to <a href="https://www.thethingsindustries.com/docs/integrations/payload-formatters/" target="_blank">write payload formatters</a> and <a href="https://www.thethingsindustries.com/docs/integrations/adding-integrations/" target="_blank">add integrations</a> in The Things Stack Community Edition.</p>
+</code></pre></div><p>And to take advantage of the <code>warnings</code> and <code>errors</code> fields, you could do the following:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">decodeUplink</span><span class="p">(</span><span class="nx">input</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">bytes</span> <span class="o">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">bytes</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">temperature</span> <span class="o">=</span> <span class="nx">bytes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">|</span> <span class="nx">bytes</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+    <span class="kd">var</span> <span class="nx">warnings</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="kd">var</span> <span class="nx">errors</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">temperature</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">warnings</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="s2">&#34;it&#39;s cold!&#34;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">temperature</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mi">273</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">errors</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="s2">&#34;out of bounds&#34;</span><span class="p">);</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="nx">data</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">temperature</span><span class="o">:</span> <span class="nx">temperature</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="nx">warnings</span><span class="o">:</span> <span class="nx">warnings</span><span class="p">;</span>
+      <span class="nx">errors</span><span class="o">:</span> <span class="nx">errors</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div><p>See more info on how to <a href="https://www.thethingsindustries.com/docs/integrations/payload-formatters/">write payload formatters</a> and <a href="https://www.thethingsindustries.com/docs/integrations/adding-integrations/">add integrations</a> in The Things Stack Community Edition.</p>
 <h2 id="ready-for-migration">Ready for Migration&nbsp;<a class="header-hash" href="#ready-for-migration">#</a> </h2>
 <p>Next, you need to migrate your end device(s) to The Things Stack Community Edition.</p>
 <div class="notification is-primary is-light has-text-dark">
   <h5 class="title is-family-sans-serif has-text-dark mb-1">Info:</h5>
-  This guide refers only to The Things Network V2 and The Things Stack Community Edition deployments. The full migration process that covers all V2 and The Things Stack deployments is described <a href="https://www.thethingsindustries.com/docs/getting-started/migrating/migrating-from-v2/" target="_blank">here</a>.
+  This guide refers only to The Things Network V2 and The Things Stack Community Edition deployments. The full migration process that covers all V2 and The Things Stack deployments is described <a href="https://www.thethingsindustries.com/docs/getting-started/migrating/migrating-from-v2/">here</a>.
 </div>
 
 <p>Migrating end devices can be easily done using:</p>
@@ -267,7 +287,7 @@ was:</p>
 
 <p>Depending on your use case, you might want to:</p>
 <ul>
-<li>Keep your gateway connected to The Things Network V2 and route your traffic via Packet Broker to The Things Stack Community Edition - if this is the case, we recommend to read the <a href="https://www.thethingsindustries.com/docs/getting-started/migrating/migrating-from-v2/packet-broker-requirements/" target="_blank">Packet Broker Requirements</a></li>
+<li>Keep your gateway connected to The Things Network V2 and route your traffic via Packet Broker to The Things Stack Community Edition - if this is the case, we recommend to read the <a href="https://www.thethingsindustries.com/docs/getting-started/migrating/migrating-from-v2/packet-broker-requirements/">Packet Broker Requirements</a></li>
 <li>Migrate your gateway to The Things Stack Community Edition - see <a href="https://www.thethingsnetwork.org/docs/the-things-stack/migrate-to-v3/migrate-gateways/">Migrate Gateways</a></li>
 </ul>
 
