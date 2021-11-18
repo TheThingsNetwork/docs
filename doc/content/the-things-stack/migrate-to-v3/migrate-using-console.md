@@ -3,19 +3,19 @@ title: Migrate End Devices using The Things Stack Community Edition Console
 weight: 100
 ---
 
-This section explains steps for migrating end devices from The Things Network V2 to The Things Stack Community Edition using <a href="https://www.thethingsindustries.com/docs/getting-started/console/" target="_blank">The Things Stack Community Edition Console</a>.
+This section explains steps for migrating end devices from The Things Network V2 to The Things Stack Community Edition using [The Things Stack Community Edition Console](https://www.thethingsindustries.com/docs/getting-started/console/).
 
-{{< note >}} Migrating active sessions using The Things Stack Community Edition Console is available since the latest update to 3.12. <a href="https://www.thethingsindustries.com/docs/getting-started/migrating/migrating-from-v2/" target="_blank">See here for more details</a>.{{</ note >}}
+{{< note >}} Migrating active sessions using The Things Stack Community Edition Console is available since the latest update to 3.12. [See here for more details](https://www.thethingsindustries.com/docs/getting-started/migrating/migrating-from-v2/).{{</ note >}}
 
 {{< note >}} Since version 3.13 (released in May, 2021), The Things Network V2 routes traffic back and forth to The Things Stack Community Edition. When migrating your gateways to The Things Stack Community Edition, the coverage of the public community network won't be impacted. {{</ note >}}
 
 ## Add an end device in The Things Stack Community Edition
 
-First, <a href="https://www.thethingsindustries.com/docs/devices/adding-devices/" target="_blank">add a device</a> in The Things Stack Community Edition. This can be done manually, but also by submitting the type of your device if it is available in the <a href="https://thethingsindustries.com/docs/integrations/payload-formatters/device-repo/" target="_blank">Device Repository</a>.
+First, [add a device](https://www.thethingsindustries.com/docs/devices/adding-devices/) in The Things Stack Community Edition. This can be done manually, but also by submitting the type of your device if it is available in the [Device Repository](https://thethingsindustries.com/docs/integrations/payload-formatters/device-repo/).
 
 The process of adding your device in the Console depends on the type of your device - OTAA or ABP.
 
-{{< note >}} We highly recommend using OTAA over ABP devices. See <a href="https://www.thethingsindustries.com/docs/devices/abp-vs-otaa/" target="_blank">why OTAA is better than ABP</a>. {{</ note >}}
+{{< note >}} We highly recommend using OTAA over ABP devices. See [why OTAA is better than ABP](https://www.thethingsindustries.com/docs/devices/abp-vs-otaa/). {{</ note >}}
 
 When manually adding an OTAA device to The Things Stack Community Edition, make sure you follow these steps correctly:
 
@@ -56,7 +56,7 @@ In this case, you need to auto-generate a new **DevAddr** and a new **NwkSKey** 
 
 Keep in mind that even if you are planning to migrate your gateway right after, it is **recommended** to re-program your device to use the newly generated **DevAddr**, and the **RX1 Delay** of 5 seconds which is a default for The Things Stack Community Edition.
 
-**Tip:** Re-programming your ABP device could be a good time to switch it to OTAA and adopt some <a href="https://www.thethingsindustries.com/docs/devices/best-practices/" target="_blank">Best Practices</a>.
+**Tip:** Re-programming your ABP device could be a good time to switch it to OTAA and adopt some [Best Practices](https://www.thethingsindustries.com/docs/devices/best-practices/).
 
 **Case 2: You want to migrate your gateway to The Things Stack Community Edition right after you migrate your device.** 
 
@@ -87,7 +87,7 @@ How to do this largely depends on your device's firmware:
 
 Since you have not migrated your gateway from The Things Network V2 yet, the new Join request sent by your end device will be received by The Things Network V2 cluster. However, this request will not be accepted if you changed your end device's `AppKey` (as recommended above) or if you have deleted it.
 
-An interesting thing is that your OTAA end device's new Join request will be received by The Things Stack Community Edition cluster too! You can verify this by observing the uplinks metadata in The Things Stack Community Edition Console. You can thank for this to <a href="https://www.thethingsindustries.com/docs/reference/peering/#packet-broker" target="_blank">Packet Broker</a>, which routes your device's traffic from The Things Network V2 to The Things Stack Community Edition. Now, The Things Stack Community Edition cluster will accept this Join request, so your end device will get a new `DevAddr`, channel settings and other MAC parameters. Based on a newly assigned `DevAddr`, Packet Broker will from now on route the traffic to The Things Stack Community Edition network.
+An interesting thing is that your OTAA end device's new Join request will be received by The Things Stack Community Edition cluster too! You can verify this by observing the uplinks metadata in The Things Stack Community Edition Console. You can thank for this to [Packet Broker](https://www.thethingsindustries.com/docs/reference/peering/#packet-broker), which routes your device's traffic from The Things Network V2 to The Things Stack Community Edition. Now, The Things Stack Community Edition cluster will accept this Join request, so your end device will get a new `DevAddr`, channel settings and other MAC parameters. Based on a newly assigned `DevAddr`, Packet Broker will from now on route the traffic to The Things Stack Community Edition network.
 
 ## What to do with ABP end device?
 

@@ -13,7 +13,7 @@ This section contains links to common root SSL certificates used in TTN, issued 
 
 The [complete certificate list](https://curl.haxx.se/ca/cacert.pem) contains all CA certificates trusted by modern browsers, so if your device supports this file, you should be covered by this one.
 
-The <a href="ca.pem" download>minimal certificate list</a> contains a tailored list of certificates for devices which do not support the larger list due to memory constraints.
+The [minimal certificate list](ca.pem) contains a tailored list of certificates for devices which do not support the larger list due to memory constraints.
 
 Unfortunately, some gateways do not support concatenated certificate lists at all. If your device will not connect using the complete or minimal certificate lists, you must use the specific certificate TTN uses. This is currently the Let's Encrypt DST Root X3, but is transitioning to the ISRG Root X1. See [below]({{< relref "#lets-encrypt" >}}).
 
@@ -27,7 +27,7 @@ Download the complete certificate list from curl [here](https://curl.haxx.se/ca/
 
 This `.pem` file contains certificates used in TTN, and is small enough to fit on memory constrained devices such as Gateways.
 
-Download the minimal certificate list <a href="ca.pem" download>here</a>.
+Download the minimal certificate list [here](ca.pem).
 
 ## Let's Encrypt
 
