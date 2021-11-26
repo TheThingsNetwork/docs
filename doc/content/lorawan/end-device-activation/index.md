@@ -64,8 +64,7 @@ The **Message Integrity Code (MIC)** is calculated over all the fields in the Jo
 
 {{< note >}}
 
-* The **AppKey** is not sent with the **Join-request** message.
-* The **Join-request** message is **not encrypted**.
+The **AppKey** is not sent with the **Join-request** message, and the **Join-request** message is **not encrypted**.
 
 {{</ note >}}
 
@@ -122,7 +121,7 @@ The **Join-accept** message itself is then encrypted with the **AppKey**. The Ne
 
 The Network Server sends the encrypted **Join-accept** message back to the end device as a normal downlink.
 
-{{< note >}} No response is given to the end-device if the Join-request message is not accepted by the Network Server.{{</ note >}}
+{{< note >}} No response is given to the end-device if the **Join-request** message is not accepted by the Network Server.{{</ note >}}
 
 ##### Step 4
 The Network Server keeps the **NwkSKey** and distributes the **AppSKey** to the Application Server.
@@ -158,9 +157,7 @@ The following steps describe the Over-The-Air-Activation (OTAA) procedure.
 
 ![alt_text](otaa-1.1.png "LoRaWAN 1.1 OTAA steps")
 
-
 _Figure: OTAA message flow in LoRaWAN 1.1_
-
 
 ##### Step 1
 
@@ -191,7 +188,7 @@ The join procedure is always initiated by the end device. The end device sends t
 
 {{< note >}}
 
-* In LoRaWAN 1.1 **AppEUI** is replaced with the **JoinEUI**.
+In LoRaWAN 1.1 **AppEUI** is replaced with the **JoinEUI**.
 
 {{</ note >}}
 
@@ -199,8 +196,7 @@ The MIC is calculated over all the fields in the Join-request message using the 
 
 {{< note >}}
 
-* The **NwkKey** is not sent with the **Join-request** message.
-* The **Join-request** message is not encrypted and sent as plain text.
+The **NwkKey** is not sent with the **Join-request** message, and the **Join-request** message is not encrypted but sent as plain text.
 
 {{</ note >}}
 
@@ -208,7 +204,7 @@ The Join-request message can be transmitted using any data rate and using one of
 
 {{< note >}}
 
-No response is given to the end-device if the Join-request is not accepted.
+No response is given to the end-device if the **Join-request** is not accepted.
 
 {{</ note >}}
 
@@ -269,7 +265,7 @@ The **Join-accept** message is encrypted with the **NwkKey** (if triggered by Jo
 
 Then the Network Server sends the encrypted Join-accept message back to the end device as a normal downlink.
 
-{{< note >}}No response is given to the end-device if the Join-request message is not accepted by the Network Server.{{</ note >}}
+{{< note >}}No response is given to the end-device if the **Join-request** message is not accepted by the Network Server.{{</ note >}}
 
 ##### Step 5
 The Join Server sends the AppSKey to the Application Server and the three network session keys (FNwkSIntKey, SNwkSIntKey, and NwkSEncKey) to the Network Server.

@@ -13,9 +13,9 @@ menu:
       hideOnHome: true
 ---
 
-The Things Network runs The Things Stack Community Edition, which is a crowdsourced, open and decentralized LoRaWAN network. This network is a great way to get started testing devices, applications, and integrations, and get familiar with LoRaWAN.
+The Things Network runs The Things Stack Community Edition, which is a crowdsourced, open and decentralized LoRaWAN network. This network is a great way to get started testing devices, applications, and integrations, and get familiar with LoRaWAN. The Things Stack Community Edition is free for fair use.
 
-The Things Stack Community Edition is free for fair use. Learn how to connect your Things in the documentation for [Adding Devices]({{< relref "adding-devices" >}}) and [Adding Gateways]({{< relref "adding-gateways" >}})!
+Learn how to connect your things in the documentation for [Adding Devices]({{< relref "adding-devices" >}}) and [Adding Gateways]({{< relref "adding-gateways" >}}).
 
 ## What is a LoRaWAN device?
 
@@ -26,12 +26,12 @@ A LoRaWAN-enabled end device is a sensor or an actuator that can be connected to
 End-devices are often battery-operated. However, some end devices operate with mains power. These end-devices transmit small data packets (e.g. sensor data) over very long distances and consume low power. They often use compact antennas (e.g. wire antennas, coil antennas, etc).
 
 {{< note >}}
-The Things Stack Community Edition supports **any LoRaWAN compliant device**. We highly recommend using **certified** LoRaWAN devices.
+The Things Stack Community Edition supports **any LoRaWAN compliant device**, but we highly recommend using **certified LoRaWAN devices**.
 {{</ note >}}
 
 ## Adding Devices
 
-Start by [adding your device]({{< relref "adding-devices" >}}) to The Things Stack Community Edition! When operating these end devices, make sure you are following the [best practices]({{< relref "best-practices" >}}) recommended by The Things Network community.
+Start by [adding your device]({{< relref "adding-devices" >}}) to The Things Stack Community Edition. When operating these end devices, make sure you are following the [best practices]({{< relref "best-practices" >}}) recommended by The Things Network community.
 
 ## Gateways
 
@@ -47,10 +47,10 @@ A single gateway is capable of serving thousands of devices. When an end device 
 
 Gateways can connect to The Things Stack Community Edition in two ways:
 
-- Using the [**Semtech UDP Packet Forwarder**](https://www.thethingsindustries.com/docs/gateways/semtech-udp-packet-forwarder/)
-- Using [**LoRa Basics Station**](https://www.thethingsindustries.com/docs/gateways/lora-basics-station/)
+- Using the [Semtech UDP Packet Forwarder](https://www.thethingsindustries.com/docs/gateways/semtech-udp-packet-forwarder/)
+- Using [LoRa Basics Station](https://www.thethingsindustries.com/docs/gateways/lora-basics-station/)
 
-Start by [adding your gateway]({{< relref "adding-gateways" >}}) to The Things Stack Community Edition! Instructions for popular gateways are available at [The Things Stack - Gateways](https://www.thethingsindustries.com/docs/gateways/)
+Start by [adding your gateway]({{< relref "adding-gateways" >}}) to The Things Stack Community Edition.
 
 ## Connecting Gateways and Devices
 
