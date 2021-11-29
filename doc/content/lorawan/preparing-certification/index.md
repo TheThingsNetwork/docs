@@ -1,13 +1,13 @@
 ---
-title: Preparing for The Things Certification
+title: Preparing for The Things Certified Fundamentals
 section: Additional Information
 ---
 
-In this section, you'll learn how to prepare for LoRaWAN® certification: The Things Certified Fundamentals.
+In this section, you'll learn how to prepare for **The Things Certification: The Things Certified Fundamentals**.
 
 ## What is The Things Certification?
 
-The Things Certification was first announced at The Things Conference 2021. It consists of four exams: The Things Certified Fundamentals, The Things Certified Advanced, The Things Certified Security, and The Things Certified Network Management. The Things Certification is the only certification program currently available for testing your LoRaWAN knowledge.
+The Things Certification was first announced at The Things Conference 2021. It consists of four exams: [The Things Certified Fundamentals](https://www.thethingsnetwork.org/achievements/a/the-things-certified-fundamentals/), [The Things Certified Advanced](https://www.thethingsnetwork.org/achievements/a/the-things-certified-advanced/), [The Things Certified Security](https://www.thethingsnetwork.org/achievements/a/the-things-certified-security/), and [The Things Certified Network Management](https://www.thethingsnetwork.org/achievements/a/the-things-certified-network-management/). The Things Certification is the only certification program currently available for testing your LoRaWAN knowledge.
 
 ## Who Should Take The Things Certified Fundamentals Exam?
 
@@ -17,39 +17,40 @@ The Things Certified Fundamentals exam is intended for everyone who wants  to of
 
 You will be tested on
 
-- LoRaWAN Basics
-- Frequency plans
-- Device classes
-- Message types
-- Spreading factors
-- Adaptive Data Rate (ADR)
-- Activation methods
-- Basic security 
-- Limitations of LoRaWAN
+- [LoRaWAN Basics]({{< ref "lorawan/what-is-lorawan" >}})
+- [LoRaWAN architecture]({{< ref "lorawan/architecture" >}})
+- [Frequency plans]({{< ref "lorawan/regional-parameters" >}})
+- [Device classes]({{< ref "lorawan/classes" >}})
+- [Message types]({{< ref "lorawan/message-types" >}})
+- [Spreading factors]({{< ref "lorawan/spreading-factors" >}})
+- [Adaptive Data Rate (ADR)]({{< ref "lorawan/adaptive-data-rate" >}})
+- [Activation methods]({{< ref "lorawan/end-device-activation" >}})
+- [Basic security]({{< ref "lorawan/security" >}}) 
+- [Limitations of LoRaWAN]({{< ref "lorawan/limitations" >}})
 
 Understanding the exam format and what question types will be coming will make it easier for you to answer them.
 
 ## How Many Questions Are On The Exam And What Are The Question Types? 
 
-Each exam contains 25 questions. These questions fall into two types: multiple-choice and true/false. Multiple-choice questions have only one correct answer and several incorrect answers. True/false questions are only composed of a statement. You should select whether it is true or false.
+The Things Certified Fundamentals exam contains 25 questions. These questions fall into two types: multiple-choice and true/false. Multiple-choice questions have only one correct answer and several incorrect answers. True/false questions are only composed of a statement. You should select whether it is true or false.
 
 ## How Much Time Do I Have to Complete the Exam?
 
-You must answer all the questions within 15 minutes. However, if you don’t know the correct answer for a particular question, you can skip that question and proceed with the next one. You can also go back and answer those questions later within the exam time, or you can submit your exam along with the unanswered questions.
+You must answer all the questions within **15 minutes**. However, if you don’t know the correct answer for a particular question, you can skip that question and proceed with the next one. You can also go back and answer those questions later within the exam time, or you can submit your exam along with the unanswered questions.
 
 ## What Is A Passing Score?
 
-The Things Fundamentals exam is scored out of 100. You need a 70 or higher to pass the exam and gain your Things Fundamentals certificate. 
+The Things Fundamentals exam is scored out of 100. You need a **70 or higher** to pass the exam and gain your Things Fundamentals certificate. 
 
-## How Much Does The Things Certification Cost?
+## How Much Does The Exam Cost?
 
-The exam fee is €25. However, the exam is free for The Things Conference visitors and members of our Developer Success Program.
+The Things Certified Fundamentals exam fee is **25 Euro**. However, the exam is free for The Things Conference visitors and members of our Developer Success Program.
 
 ## Study Materials
 
-Here is a list of study materials you need to prepare for the exam. The Things Certification is based on the LoRaWAN specification 1.0.3, 1.1, and the LoRaWAN® Regional Parameters 1.0.3. You can download these documents from the LoRa Alliance resource hub.
+Here is a list of study materials you need to prepare for the exam. The Things Certification is based on the LoRaWAN® specification [1.0.3](https://lora-alliance.org/resource_hub/lorawan-specification-v1-0-3/), [1.1](https://lora-alliance.org/resource_hub/lorawan-specification-v1-1/), and the [LoRaWAN® Regional Parameters 1.0.3](https://lora-alliance.org/resource_hub/rp2-1-0-3-lorawan-regional-parameters/). You can download these documents from the LoRa Alliance [resource hub](https://lora-alliance.org/resource-hub/).
 
-We highly recommend you follow The Things Network Learn section and follow the LoRaWAN fundamentals course on Udemy - both are free. You can also read the security resources that can be found on the LoRa Alliance website.
+We highly recommend you follow The Things Network [Learn]({{< ref "lorawan/" >}}) section and follow the LoRaWAN fundamentals course on [Udemy](https://www.udemy.com/course/lorawan-fundamentals/) - both are free. You can also read the [security](https://lora-alliance.org/security/) resources that can be found on the LoRa Alliance website.
 
 ## How Do I Register For The Exam?
 
@@ -59,9 +60,7 @@ To get one, visit [thethingsnetwork.org](https://thethingsnetwork.org) and click
 
 On the **Create an account** page, provide a username, your email address, and a password, and click on the **Create account** button. Once created, you will receive an email for activating your account.
 
-To take the exam, go to [The Things Certifications](https://www.thethingsnetwork.org/achievements/certificates/).
-
-Choose your certification and click **Get this certificate**.
+To take the exam, go to [The Things Certifications](https://www.thethingsnetwork.org/achievements/certificates/). Then choose your certification (The Things Certified Fundamentals) and click **Get this certificate**.
 
 You will be redirected to the payment page if you are not a The Things Conference visitor or a member of our Developer Success Program. Here you can enter your payment details and make the payment for the exam.
 
@@ -75,7 +74,7 @@ The certificate shows the certification title, your name, marks, and the date yo
 
 ## Practice Questions
 
-Here are some questions you will likely get in the exam. We occasionally post these questions through polls on our LinkedIn.
+Here are some questions you will likely get in The Things Certified Fundamentals exam. We occasionally post these questions through polls on our LinkedIn.
 
 ### Which end device class is the most energy-efficient and results in the longest battery life?
 
@@ -83,7 +82,7 @@ Here are some questions you will likely get in the exam. We occasionally post th
 - Class B
 - Class C
 
-Skill measured: Device classes. 
+**Skill measured:** _Device classes_
 
 These three device classes open ‘receive windows’ in 3 different ways. 
 
@@ -110,14 +109,16 @@ If you rank the device classes from lowest to the highest energy consumption, th
 - **915 – 928 MHz**
 - 470 – 510 MHz
 
-This question falls into the regional parameters. So, let's look at the given options one by one. The first option is 863-870 MHz. This frequency range is allowed to be used in Europe – the most famous frequency range in LoRaWAN. The second option is 902-928 MHz. This frequency range is allowed to be used in USA. The third option is 915-928 MHz This frequency range is allowed to be used in Australia – yeah. We got the answer. The fourth option is 470-510 MHz, and it is allowed to be used in China. All this information can be found in the LoRaWAN regional parameters document. So, the correct answer for this question is 915 – 928 MHz.
+**Skill measured:** _Regional parameters_
+
+So, let's look at the given options one by one. The first option is 863-870 MHz. This frequency range is allowed to be used in Europe – the most famous frequency range in LoRaWAN. The second option is 902-928 MHz. This frequency range is allowed to be used in USA. The third option is 915-928 MHz This frequency range is allowed to be used in Australia – yeah. We got the answer. The fourth option is 470-510 MHz, and it is allowed to be used in China. All this information can be found in the LoRaWAN regional parameters document. So, the correct answer for this question is 915 – 928 MHz.
 
 ### What activation method is more secure?
 
 - **Over The Air Activation (OTAA)**
 - Activation By Personalisation (ABP)
 
-Skill measured: Device activation. 
+**Skill measured:** _Device activation_
 
 LoRaWAN uses two methods for activating end devices. 
 
@@ -130,10 +131,10 @@ So, the correct answer for this question is Over-the-air-activation (OTAA).
 
 ### LoRaWAN is operated in an unlicensed spectrum
 
-- True
+- **True**
 - False
 
-Skill measured: LoRaWAN basics. 
+**Skill measured:** _LoRaWAN basics_
 
 LoRaWAN operates on both licensed and unlicensed spectrum. If you carefully read the question, it doesn’t say LoRaWAN is operated only in an unlicensed spectrum. So, the correct answer is True.
 
@@ -142,7 +143,7 @@ LoRaWAN operates on both licensed and unlicensed spectrum. If you carefully read
 - **Less time-on-air**
 - More time-on-air
 
-Skills measured: Spreading factors / Data rate. 
+**Skills measured:** _Spreading factors / Data rate_
 
 In LoRaWAN the data rate depends on the spreading factor (SF) used. The lower the spreading factor the higher the data rate, and the higher the spreading factor the lower the data rate.
 With regards to the time-on-air, the higher the data rate the lower the time-on-air, and the lower the data rate the higher the time-on-air.
@@ -156,7 +157,7 @@ Therefore, using a higher data rate results in less time-on-air.
 - Network Server
 - Application Server
 
-Skill measured: LoRaWAN architecture
+**Skill measured:** _LoRaWAN architecture_
 
 Let’s look at what is the role of each network element with regards to the uplink and downlink messages.
 
@@ -172,7 +173,7 @@ So, the correct answer for this question is End-device.
 - **True**
 - False
 
-Skill measured: LoRaWAN security.
+**Skill measured:** _LoRaWAN security_
 
 For example, if an end device sends a data message containing an application payload, the message travels from the end device to the application server. At the end device side, the AppSKey is used to encrypt the application payload. Once encrypted, no one can’t read the payload. At the application server-side the AppSKey is used to decrypt the application payload. The AppSKey also ensures message confidentiality.
 
@@ -183,7 +184,7 @@ So, for this question, the correct answer is True.
 - **True**
 - False
 
-Skills measured: Spreading factors.
+**Skills measured:** _Spreading factors_
 
 The LoRaWAN uses spreading factors (SF) ranging from 7 to 12. If you carefully read the question the lowest spreading factor means the SF7. The SF7 provides the highest data rate while the SF12 provides the lowest data rate. As the lower spreading factors provide a higher data rate, the time-on-air would be less. Less time-on-air means the amount of time the lora radio turned on is also less. 
 Therefore, the lowest spreading factor provides a longer battery life.
@@ -196,7 +197,7 @@ For this question, the correct answer is True.
 - 4
 - 16
 
-Skills measured: Regional parameters
+**Skills measured:** _Regional parameters_
 
 The LoRaWAN regional parameters document clearly states that there are 3 default channels that MUST be implemented in every EU868 end-device. The default channels are 868.10 MHz, 868.30 MHz, and 868.50 MHz. Among these three channels, a randomly chosen channel is used to broadcast the Join-request message. The EU868 gateways always listen on these three default channels. 
 
@@ -209,7 +210,7 @@ So, the correct answer is 3.
 - **End device and the Join Server**
 - End device and the Gateway server
 
-Skills measured: LoRaWAN security
+**Skills measured:** _LoRaWAN security_
 
 In LoRaWAN 1.1 root keys are stored in the end device and also the same set of root keys are stored in the Join server. See the image below:
 
@@ -224,7 +225,7 @@ So, the correct answer for this question is End device and the Join Server.
 - Application Server
 - Join Server
 
-Skills measured: LoRaWAN architecture /message flow
+**Skills measured:** _LoRaWAN architecture /message flow_
 
 A network can have more than one gateway. When a device sends a message, all the gateways within the range can receive that message. Each gateway forwards the message to the network server. Once received, the Network Server keeps only one message and discards all other copies. This is known as the deduplication of messages. 
 
@@ -237,7 +238,7 @@ So, the correct answer is Network Server.
 - 20 byte payload at SF10
 - 20 byte payload at SF12
 
-Skills measured: Spreading factors.
+**Skills measured:** _Spreading factors_
 
 The power consumption of an end device depends on the payload size and the spreading factor used.
 You can see all answers contain the same payload size which is 20 bytes. So, we should consider the spreading factor used in each option. 
@@ -253,7 +254,7 @@ So, the correct answer is 20-byte payload at SF7.
 - DevAddr
 - **NwkSKey**
 
-Skills measured: Message types.
+**Skills measured:** _Message types_
 
 First, let's have a look at the structure of a data message. You can see the frame header consists of the frame counter, port field, and device address. But the NwkSKey is not sent with a data message. It is only used to encrypt the MAC commands.
 
