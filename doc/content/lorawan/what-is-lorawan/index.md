@@ -110,9 +110,15 @@ Here are a few great LoRaWAN use cases provided by [Semtech](https://info.semtec
 
 ## LoRa Alliance
 
-The LoRa Alliance is an open, non-profit association established in 2015. It supports development of the LoRaWAN protocol and ensures interoperability of all LoRaWAN products and technologies. Today, the LoRa Alliance has over [500 members around the globe](https://lora-alliance.org/member-directory/).
+The LoRa Alliance® is an open, non-profit association established in 2015. It supports development of the LoRaWAN protocol and ensures interoperability of all LoRaWAN products and technologies. Today, the LoRa Alliance has over [500 members around the globe](https://lora-alliance.org/member-directory/).
 
 The LoRa Alliance provides LoRaWAN certification for end devices. Certified end devices provide users with confidence that the end device is reliable and compliant with the LoRaWAN specification. You can learn more about LoRaWAN certification by visiting the [LoRa Alliance website](https://lora-alliance.org/lorawan-certification/). Certification is only available for device manufacturers that are members of the LoRa Alliance. Once certified, the manufacturer can use the LoRaWAN Certified mark with the product.
+
+## LoRaWAN is now an ITU standard.
+
+As announced by the LoRa Alliance® on December 7, 2021, LoRaWAN® is officially approved as a standard for Low Power Wide Area Networking (LPWAN) by the [International Telecommunication Union](https://www.itu.int/en/Pages/default.aspx) (ITU).
+
+Read the Lora Alliance® Press Release, [LoRaWAN® Formally Recognized as ITU International Standard for Low Power Wide Area Networking](https://lora-alliance.org/lora-alliance-press-release/lorawan-formally-recognized-as-itu-international-standard-for-low-power-wide-area-networking/) for more information. 
 
 ## Questions
 
@@ -124,7 +130,7 @@ The LoRa Alliance provides LoRaWAN certification for end devices. Certified end 
    
 
 2. LoRa is a:
-   - MAC layer protocol_
+   - MAC layer protocol
    - <span style="text-decoration:underline;">Physical layer implementation</span>
    
    
@@ -140,7 +146,7 @@ The LoRa Alliance provides LoRaWAN certification for end devices. Certified end 
    - <span style="text-decoration:underline;">All of the above</span>
    
    
-5. Which is not a use case of LoRaWAN?
+5. Which is not a suitable use case of LoRaWAN?
    - Animal conservation
    - <span style="text-decoration:underline;">Credit card payments</span>
    - Smart waste bins
