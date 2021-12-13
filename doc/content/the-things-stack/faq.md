@@ -4,16 +4,16 @@ weight: 400
 ---
 
 ## Q: What is The Things Stack?
-The Things Stack (also referred to as V3) is a LoRaWAN® Network Server, developed by <a href="https://www.thethingsindustries.com/" target="_blank">The Things Industries</a>. It replaced the former network server, known as **V2**. The Things Stack is more scalable, more secure and supports all the latest LoRaWAN developments.
+The Things Stack (also referred to as V3) is a LoRaWAN® Network Server, developed by [The Things Industries](https://www.thethingsindustries.com/). It replaced the former network server, known as **V2**. The Things Stack is more scalable, more secure and supports all the latest LoRaWAN developments.
 
-The Things Stack comes in different flavors, designed for different purposes. **The Things Stack Community Edition** is our free-to-use service for The Things Network community members, designed for testing and evaluating LoRaWAN. <a href="https://console.cloud.thethings.network/" target="_blank">Click here to visit The Things Stack Community Edition Console</a>
+The Things Stack comes in different flavors, designed for different purposes. **The Things Stack Community Edition** is our free-to-use service for The Things Network community members, designed for testing and evaluating LoRaWAN. [Click here to visit The Things Stack Community Edition Console](https://console.cloud.thethings.network/)
 
-For commercial deployments, The Things Industries offers **The Things Stack Cloud** (among others), an SLA-backed hosted service with 24/7 professional support. For more information, see <a href="https://www.thethingsindustries.com/deployment/" target="_blank">The Things Stack deployment options page</a>
+For commercial deployments, The Things Industries offers **The Things Stack Cloud** (among others), an SLA-backed hosted service with 24/7 professional support. For more information, see [The Things Stack deployment options page](https://www.thethingsindustries.com/deployment/)
 
 ## Q: How can I start using The Things Stack?
-For non-commercial use, you can use **The Things Stack Community Edition**, free of charge. To start with the Community Edition, visit <a href="https://console.cloud.thethings.network/" target="_blank">The Things Stack Community Edition Console</a>.
+For non-commercial use, you can use **The Things Stack Community Edition**, free of charge. To start with the Community Edition, visit [The Things Stack Community Edition Console](https://console.cloud.thethings.network/).
 
-For commercial use, we recommend **The Things Stack Cloud**. <a href="https://accounts.thethingsindustries.com/fee-calculator" target="_blank">Click here</a> to start using The Things Stack Cloud.
+For commercial use, we recommend **The Things Stack Cloud**. [Click here](https://accounts.thethingsindustries.com/fee-calculator) to start using The Things Stack Cloud.
 
 ## Q: Why should I migrate my devices and gateways?
 The Things Stack (also known as V3) is more scalable, more secure and supports all the latest LoRaWAN developments like Class C and the latest LoRaWAN versions 1.1 and 1.0.4. The V2 environment will be shut down on 1 December 2021.
@@ -36,7 +36,7 @@ Yes, devices can be migrated to The Things Stack with their existing sessions. H
 
 For The Things Industries V2 (SaaS) users, migrating active device sessions to The Things Stack Cloud via Packet Broker is available on a customer request. 
 
-<a href="https://www.thethingsindustries.com/docs/getting-started/migrating/migrating-from-v2/migrate-using-migration-tool/migrate-active-session/" target="_blank">Read the full The Things Stack documentation on migrating active sessions</a>
+[Read the full The Things Stack documentation on migrating active sessions](https://www.thethingsindustries.com/docs/getting-started/migrating/migrating-from-v2/migrate-using-migration-tool/migrate-active-session/)
 
 {{< note >}}
 It is highly recommended to avoid active session migration, i.e. to initiate a new session when migrating your devices.
@@ -46,9 +46,9 @@ It is highly recommended to avoid active session migration, i.e. to initiate a n
 Packet Broker is a neutral and open LoRaWAN packet broker developed by The Things Industries. Packet Broker can be used to exchange traffic with other LoRaWAN networks to share coverage and improve the overall network performance. Packet Broker adopts the Passive Roaming specifications, as defined by the LoRa Alliance. 
 
 ## Q: How to make use of Packet Broker?
-**The Things Network V2**, **The Things Stack Community Edition** and **The Things Stack Cloud** are already connected to Packet Broker. Click <a href="https://www.thethingsindustries.com/docs/reference/packet-broker/configure/" target="_blank">here</a> to see the documentation on configuring Packet Broker.
+**The Things Network V2**, **The Things Stack Community Edition** and **The Things Stack Cloud** are already connected to Packet Broker. Click [here](https://www.thethingsindustries.com/docs/reference/packet-broker/configure/) to see the documentation on configuring Packet Broker.
 
-**The Things Stack Open Source** and **The Things Stack Enterprise** deployments can also be connected to Packet Broker. Click <a href="https://www.thethingsindustries.com/docs/reference/packet-broker/" target="_blank">here</a> to learn how to connect your network to Packet Broker.
+**The Things Stack Open Source** and **The Things Stack Enterprise** deployments can also be connected to Packet Broker. Click [here](https://www.thethingsindustries.com/docs/reference/packet-broker/) to learn how to connect your network to Packet Broker.
 
 For other deployments, please contact [The Things Industries support](mailto:support@thethingsindustries.com).
 
@@ -60,9 +60,9 @@ Packet Broker can be used to route uplinks, downlinks and device joins.
 |From network | To network | Packet Broker details|
 |--|--|--|
 | TTN V2 | TTS Community Edition | Uplinks, downlink & joins|
-| TTN V2 | TTS Cloud | Uplinks only by default. Downlinks & joins can be enabled by TTS Cloud users. <a href="https://www.thethingsindustries.com/docs/reference/packet-broker/configure/" target="_blank">More info</a> |
-| TTS Community Edition | TTS Cloud | Uplinks only by default. Downlinks & joins can be enabled by TTS Cloud users. <a href="https://www.thethingsindustries.com/docs/reference/packet-broker/configure/" target="_blank">More info</a> |
-| TTS Cloud | TTS Community Edition | Disabled by default, can be enabled manually. <a href="https://www.thethingsindustries.com/docs/reference/packet-broker/configure/" target="_blank">More info</a>|
+| TTN V2 | TTS Cloud | Uplinks only by default. Downlinks & joins can be enabled by TTS Cloud users. [More info](https://www.thethingsindustries.com/docs/reference/packet-broker/configure/) |
+| TTS Community Edition | TTS Cloud | Uplinks only by default. Downlinks & joins can be enabled by TTS Cloud users. [More info](https://www.thethingsindustries.com/docs/reference/packet-broker/configure/) |
+| TTS Cloud | TTS Community Edition | Disabled by default, can be enabled manually. [More info](https://www.thethingsindustries.com/docs/reference/packet-broker/configure/)|
 | TTS Community Edition | TTN V2 | Uplinks, downlink & joins|
 | TTS Cloud | TTN V2 | Not available|
 

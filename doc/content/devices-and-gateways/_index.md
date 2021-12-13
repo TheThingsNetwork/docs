@@ -5,6 +5,7 @@ image: /gateways/icon.png
 sections:
  - Devices
  - Gateways
+ - SDKs & Libraries
 menu:
   main:
     weight: 20
@@ -12,19 +13,31 @@ menu:
       hideOnHome: true
 ---
 
+The Things Network runs The Things Stack Community Edition, which is a crowdsourced, open and decentralized LoRaWAN network. This network is a great way to get started testing devices, applications, and integrations, and get familiar with LoRaWAN.
+
+The Things Stack Community Edition is free for fair use. Learn how to connect your Things in the documentation for [Adding Devices]({{< relref "adding-devices" >}}) and [Adding Gateways]({{< relref "adding-gateways" >}})!
+
+## What is a LoRaWAN device?
+
 A LoRaWAN-enabled end device is a sensor or an actuator that can be connected to a LoRaWAN network through a LoRaWAN-enabled gateway.
+
+{{< figure src="TheThingsUno.png" class="plain" >}}
 
 End-devices are often battery-operated. However, some end devices operate with mains power. These end-devices transmit small data packets (e.g. sensor data) over very long distances and consume low power. They often use compact antennas (e.g. wire antennas, coil antennas, etc).
 
-> The Things Stack Community Edition supports **any LoRaWAN compliant device**. We highly recommend using **certified** LoRaWAN devices.
+{{< note >}}
+The Things Stack Community Edition supports **any LoRaWAN compliant device**. We highly recommend using **certified** LoRaWAN devices.
+{{</ note >}}
+
+## Adding Devices
 
 Start by [adding your device]({{< relref "adding-devices" >}}) to The Things Stack Community Edition! When operating these end devices, make sure you are following the [best practices]({{< relref "best-practices" >}}) recommended by The Things Network community.
 
-> If you would like to enhance the security in your LoRaWAN network, one way is to use Hardware Secure Elements. Learn more about the <a href="https://www.thethingsindustries.com/docs/devices/atecc608a/" target="_blank">ATECC608A security solution</a> developed by <a href="https://www.microchip.com/" target="_blank">Microchip</a> and The Things Industries.
+## Gateways
 
-# Gateways
+A LoRaWAN gateway is an intermediary that allows LoRaWAN end devices to transmit data to The Things Stack Community Edition.
 
-A LoRaWAN gateway is an intermediary that allows LoRaWAN end devices to transmit data to The Things Stack Community Edition. 
+{{< figure src="TTIG.jpg" class="plain" >}}
 
 Gateways are often mains-powered and some can have backup batteries or solar panels. A gateway can be indoor or outdoor, and they have various antenna options.
 
@@ -34,12 +47,13 @@ A single gateway is capable of serving thousands of devices. When an end device 
 
 Gateways can connect to The Things Stack Community Edition in two ways:
 
-- Using the <a href="https://www.thethingsindustries.com/docs/gateways/semtech-udp-packet-forwarder/" target="_blank">**Semtech UDP Packet Forwarder**</a>
-- Using <a href="https://www.thethingsindustries.com/docs/gateways/lora-basics-station/" target="_blank">**LoRa Basics Station**</a>
+- Using the [**Semtech UDP Packet Forwarder**](https://www.thethingsindustries.com/docs/gateways/semtech-udp-packet-forwarder/)
+- Using [**LoRa Basics Station**](https://www.thethingsindustries.com/docs/gateways/lora-basics-station/)
 
-Start by [adding your gateway]({{< relref "adding-gateways" >}}) to The Things Stack Community Edition! 
+Start by [adding your gateway]({{< relref "adding-gateways" >}}) to The Things Stack Community Edition! Instructions for popular gateways are available at [The Things Stack - Gateways](https://www.thethingsindustries.com/docs/gateways/)
 
-> Check [how to configure the most popular gateways](https://www.thethingsindustries.com/docs/gateways/) to connect them to The Things Stack Community Edition network.
+## Connecting Gateways and Devices
 
-### Connecting Gateways and Devices
-<iframe width="560" height="315" src="https://www.youtube.com/embed/rK8oJHZ9Q7U" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+For a video introduction about adding gateways and devices, see this video by Bogdans Afonins, one of the developers of The Things Stack.
+
+{{< youtube "rK8oJHZ9Q7U" >}}
