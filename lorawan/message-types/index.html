@@ -47,7 +47,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.thethingsnetwork.org/docs/lorawan/message-types/" /><meta property="og:image" content="https://www.thethingsnetwork.org/docs/payload.png" /><meta property="article:section" content="lorawan" />
 
-<meta property="article:modified_time" content="2021-10-19T08:50:30+05:30" /><meta property="og:site_name" content="The Things Network" />
+<meta property="article:modified_time" content="2021-12-13T21:03:01+05:30" /><meta property="og:site_name" content="The Things Network" />
 
 
 
@@ -408,7 +408,7 @@
 <h4 id="rejoin-request">Rejoin-request&nbsp;<a class="header-hash" href="#rejoin-request">#</a> </h4>
 <p>The Rejoin-request message is always initiated by an end device and sent to the Network Server. There are three types of Rejoin-request messages: Type 0, 1, and 2. These message types are used to initialize the new session context for the end device. For the Rejoin-request message, the network replies with a Join-accept message.</p>
 <h3 id="data-messages">Data Messages&nbsp;<a class="header-hash" href="#data-messages">#</a> </h3>
-<p>There are 4 data message types used in both LoRaWAN 1.0.x and 1.1. These data message types are used to transport both MAC commands and application data which can be combined together in a single message. Data messages can be confirmed or unconfirmed: confirmed data messages must be acknowledged by the receiver whereas unconfirmed data messages do not need to be acknowledged by the receiver.</p>
+<p>There are 4 data message types used in both LoRaWAN 1.0.x and 1.1. These data message types are used to transport both MAC commands and application data which can be combined together in a single message. Data messages can be confirmed or unconfirmed. Confirmed data messages must be acknowledged by the receiver whereas unconfirmed data messages do not need to be acknowledged by the receiver.</p>
 <p>A data message is constructed as shown below:</p>
 <p><img src="payload.png" alt="alt_text" title="Constructing a data message"></p>
 <p>MAC payload of the data messages consists of a frame header (FHDR) followed by an optional port field (FPort) and an optional frame payload (FRMPayload).</p>
