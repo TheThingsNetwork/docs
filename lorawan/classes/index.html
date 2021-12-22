@@ -267,22 +267,31 @@
         </h1>
         <div class="content">
           
-<p>The LoRaWAN specification defines three device types: <strong>Class A</strong>, <strong>Class B</strong>, and <strong>Class C</strong>. All LoRaWAN devices <strong>must</strong> implement Class A, whereas Class B and Class C are extensions to the specification of Class A devices.</p>
+<p>The LoRaWAN specification defines three device types: <strong>Class A</strong>, <strong>Class B</strong>, and <strong>Class C</strong>. All LoRaWAN devices must implement Class A, whereas Class B and Class C are extensions to the specification of Class A devices. All device classes support bi-directional communication (uplink and downlink)</p>
+<div class="notification is-info is-light has-text-dark">
+  <h5 class="title is-family-sans-serif has-text-dark mb-1">Note:</h5>
+  End devices can’t send uplink messages while they receive downlink messages.
+</div>
+
 <h2 id="class-a">Class A&nbsp;<a class="header-hash" href="#class-a">#</a> </h2>
-<p><strong>Class A</strong> devices support bi-directional communication between a device and a gateway. Uplink messages (from the device to the server) can be sent at any time. The device then opens two receive windows at specified times (RX1 Delay and RX2 Delay) after an uplink transmission. If the server does not respond in either of these receive windows, the next opportunity will be after the next uplink transmission from the device.</p>
+<p>All LoRaWAN end-devices must support <strong>Class A</strong> implementation. Class A communication is always initiated by the end-device. A device can send an uplink message at any time. Once the uplink transmission is completed the device opens two short receive (downlink) windows. There is a delay between the end of the uplink transmission and the start of the receive windows (RX1 and RX2 respectively. If the network server does not respond during these two receive windows, the next downlink will be after the next uplink transmission.</p>
 <p><img src="class-a.png" alt="Class A Receive Windows"></p>
-<p><em>Figure: Class A Receive Window Diagram</em></p>
-<p>The server can respond either in the first receive window, or in the second receive window, but should not use both windows. If the device receives an uplink in the first receive window, it will not open the second receive window. Below, Case 1 shows the end device opening both receive windows. In Case 2, it receives a downlink in the first window and does not opoen the second. In Case 3, it receives a downlink in the second receive window.</p>
+<p><em>Figure: Class A receive windows</em></p>
+<p>The server can respond during the first receive window (RX1), or during  the second receive window (RX2), but does not use both windows.  Let’s consider three situations for downlink messages as illustrated below.</p>
 <p><img src="class-a-alt.png" alt="Class A Receive Windows"></p>
-<p><em>Figure: Class A Receive Window Diagram with Downlinks</em></p>
-<p><em>1: Device Receives No Uplink and Opens Both Receive Windows</em></p>
+<p><em>Figure: Behaviour of Class A receive windows</em></p>
+<ul>
+<li><strong>Case 1:</strong> The end device opens both receive windows but it doesn’t receive an downlink message during either receive window.</li>
+<li><strong>Case 2:</strong>  The end device receives a downlink during the first receive window and therefore it does not open the second receive window.</li>
+<li><strong>Case 3:</strong> The end device opens the first receive window but it does not receive a downlink. Therefore it opens the second receive window and it receives a downlink during  the second receive window.</li>
+</ul>
 <p>Class A end devices:</p>
 <ul>
-<li>Are often battery-powered</li>
-<li>Have the lowest energy consumption</li>
-<li>Spend most of the time in sleep mode</li>
-<li>Usually keep long intervals between uplinks</li>
-<li>Have high downlink latency (to receive a downlink, the end device must send an uplink)</li>
+<li>are often battery-powered</li>
+<li>have the lowest energy consumption</li>
+<li>spend most of the time in sleep mode</li>
+<li>usually keep long intervals between uplinks</li>
+<li>have high downlink latency (to receive a downlink, the end device must send an uplink)</li>
 </ul>
 <p>Some common use cases for Class A end-devices:</p>
 <ul>
@@ -294,13 +303,15 @@
 <li>Location tracking</li>
 </ul>
 <h2 id="class-b">Class B&nbsp;<a class="header-hash" href="#class-b">#</a> </h2>
-<p><strong>Class B</strong> devices extend Class A by adding scheduled receive windows for downlink messages from the server. Using time-synchronized beacons transmitted by the gateway, the devices periodically open receive windows. The time between beacons is known as the beacon period, and the time during which the device is available to receive downlinks is a &ldquo;ping slot.&rdquo; Class B devices also open receive windows after sending an uplink, as you can see below:</p>
+<p>In addition to the class A initiated receive windows, <strong>Class B</strong> devices open  scheduled receive windows for receiving downlink messages from the network server. Using time-synchronized beacons transmitted by the gateway, the devices periodically open receive windows. The time between two beacons is known as the beacon period.
+The device opens downlink ‘ping slots’ at scheduled times for receiving downlink messages from the network server.
+Class B devices also open receive windows after sending an uplink, as you can see below:</p>
 <p><img src="class-b.png" alt="Class B Receive Windows"></p>
-<p><em>Figure: Class B Receive Window Diagram</em></p>
+<p><em>Figure: Class B receive windows</em></p>
 <p>Class B end devices have lower latency than the Class A end devices, because they are reachable at preconfigured times and do not need to send an uplink to receive a downlink. The battery life is shorter in Class B than Class A, because the device spends more time in active mode, during beacons and ping slots.</p>
 <p>Some common use cases for Class B end-devices:</p>
 <ul>
-<li>Smart metering</li>
+<li>Utility meters</li>
 <li>Temperature reporting</li>
 </ul>
 <h2 id="class-c">Class C&nbsp;<a class="header-hash" href="#class-c">#</a> </h2>
@@ -308,12 +319,12 @@
 <p><img src="class-c.png" alt="Class C Receive Windows"></p>
 <p>Class C end devices:</p>
 <ul>
-<li>Are often mains powered</li>
-<li>Have no downlink latency - continuous receive window</li>
+<li>are often mains powered</li>
+<li>have no downlink latency - continuous receive window</li>
 </ul>
 <p>The following are some common <strong>Class C</strong> end device <strong>applications</strong>, but there are more:</p>
 <ul>
-<li>Utility meters</li>
+<li>Utility meters with cut-off valves/switches</li>
 <li>Streetlights</li>
 </ul>
 <h2 id="questions">Questions&nbsp;<a class="header-hash" href="#questions">#</a> </h2>
