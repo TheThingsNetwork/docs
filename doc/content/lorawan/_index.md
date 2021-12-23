@@ -19,9 +19,6 @@ This series of chapters was created to prepare you for [**The Things Fundamental
 The LoRaWAN Fundamentals course can also be followed on Udemy. [Sign up for the online course today!](https://www.udemy.com/course/lorawan-fundamentals/)
 {{</ info >}}
 
-
-
-
 ### Everything you need to know about LoRaWAN in 60 minutes
 
 The chapters are designed to be paired with the following video by Johan Stokking, which covers the Fundamentals of LoRaWAN in 60 minutes:

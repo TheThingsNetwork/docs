@@ -71,9 +71,7 @@ Larger spreading factors mean larger processing gain, and so a signal modulated 
 
 Compared to a lower spreading factor, sending a fixed amount of data (payload) with a higher Spreading Factor and a fixed bandwidth needs longer time-on-air.
 
-The Things Network’s LoRaWAN airtime calculator can be used to calculate the time-on-air using input bytes (payload size), bandwidth, and spreading factor. TTN’s LoRaWAN airtime calculator can be accessed here:
-
-<span style="text-decoration:underline;">https://www.thethingsnetwork.org/airtime-calculator</span>
+The Things Network’s LoRaWAN airtime calculator can be used to calculate the time-on-air using input bytes (payload size), bandwidth, and spreading factor. TTN’s LoRaWAN airtime calculator can be accessed [here](https://www.thethingsnetwork.org/airtime-calculator).
 
 #### Receiver Sensitivity
 

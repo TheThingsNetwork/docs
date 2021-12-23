@@ -25,8 +25,7 @@ Downlink:
 - Uplink channels 1-9 (RX1)
 - **869.525** - SF9BW125 (RX2)
 
-> Note that The Things Network uses the non-standard SF9BW125 data rate for RX2 in Europe.
-> If your devices use OTAA, this will be configured automatically when they join. If your devices use ABP, you'll need to program this RX2 data rate into the devices in order to make them work with TTN.
+{{< note >}} The Things Network uses the non-standard SF9BW125 data rate for RX2 in Europe. If your devices use OTAA, this will be configured automatically when they join. If your devices use ABP, you will need to program this RX2 data rate into the devices in order to make them work with TTN. {{</ note >}}
 
 ## EU433
 

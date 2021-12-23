@@ -24,4 +24,4 @@ To make sure you are exploiting device's capabilities in the most efficient way,
 - Do not assume link loss if at least 3 ACKs are not missed.
 - Use Hardware Secure Elements. Learn more about the [ATECC608A security solution developed by Microchip The Things Industries](https://www.thethingsindustries.com/docs/devices/atecc608a/).
 
-Read more best practices at [The Things Stack - Best Practices](https://www.thethingsindustries.com/docs/devices/best-practices/)
+Read more best practices in the official [The Things Stack documentation](https://www.thethingsindustries.com/docs/devices/best-practices/).

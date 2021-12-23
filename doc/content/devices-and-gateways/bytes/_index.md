@@ -3,30 +3,34 @@ title: Working with Bytes
 aliases:
   - /devices/bytes
 ---
-To send data back and forth using The Things Stack Community Edition you'll need to use bytes. This guide will help you encode different types of data in as little bytes possible.
 
-The unprecedented range of the LoRaWAN technology we build on comes at the cost of low bandwidth and limited airtime (the number times size of packages you send). Fortunately, you don't need a picture of that smart garage bin that needs to emptied. Even a single bit `1` would do!
+To send data back and forth using The Things Stack Community Edition you will need to use bytes. This guide will help you encode different types of data in as little bytes as possible.
+
+The unprecedented range of the LoRaWAN technology we build on comes at the cost of low bandwidth and limited airtime (the number times size of packages you send). Fortunately, you do not need a picture of that smart garage bin that needs to emptied. Even a single bit `1` would do!
 
 ## What is a byte?
+
 A [byte](https://simple.wikipedia.org/wiki/Byte) is a group of 8 bits. A bit is the most basic unit and can be either 1 or 0. A byte is not just 8 values between 0 and 1, but 256 (2<sup>8</sup>) different combinations (rather [permutations](https://www.mathsisfun.com/combinatorics/combinations-permutations.html)) ranging from `00000000` via e.g. `01010101` to `11111111`. Thus, one byte can represent a [decimal](https://simple.wikipedia.org/wiki/Decimal) number between 0(00) and 255.
 
-> Puzzled? Remember that 3 decimal numbers also don't just stand for 3 values between 0 and 9, but 1000 (10<sup>3</sup>) permutations from 0(00) to 999.
+> Puzzled? Remember that 3 decimal numbers also do not just stand for 3 values between 0 and 9, but 1000 (10<sup>3</sup>) permutations from 0(00) to 999.
 
 Learn more on [How Stuff Works: How Bits and Bytes Work](http://computer.howstuffworks.com/bytes.htm) and the [Arduino Bit Math Tutorial](http://playground.arduino.cc/Code/BitMath) to learn more about it.
 
 ## What is a buffer of bytes?
-Think of *buffer* as just another word for an *array*, *list*, whatever resonates with your programming experience. Like a byte is a group of 8 bits, a [buffer](https://en.wikipedia.org/wiki/Data_buffer) is a group of a pre-defined number of bytes. If we have a group of 3 bytes, this could either represent 3 values between 0 and 255, but also one single value between 0 and 16777216 (256<sup>3</sup>).
 
-> See the pattern? The number of choices per position (n) to the power of the number of positions (r) is the number of permutations: n<sup>r</sup>. Learn more on [MathIsFun.com](https://www.mathsisfun.com/combinatorics/combinations-permutations.html).
+Think of buffer as just another word for an array, list, whatever resonates with your programming experience. Like a byte is a group of 8 bits, a [buffer](https://en.wikipedia.org/wiki/Data_buffer) is a group of a pre-defined number of bytes. If we have a group of 3 bytes, this could either represent 3 values between 0 and 255, but also one single value between 0 and 16777216 (256<sup>3</sup>).
+
+See the pattern? The number of choices per position (n) to the power of the number of positions (r) is the number of permutations: n<sup>r</sup>. Learn more on [MathIsFun.com](https://www.mathsisfun.com/combinatorics/combinations-permutations.html).
 
 ## What the hex?
-Often, you'll see a group of bytes displayed as:
+
+Often, you will see a group of bytes displayed as:
  
 ```
 FF F0 0F 11
 ```
 
-Wasn't a byte a group of 8 `0`s and `1`s? 🤔 You're totally right, but just like we already saw `11111111` translates to 255 in the good old decimal system, we can also translate it to FF in the [hexadecimal system](https://simple.wikipedia.org/wiki/Hexadecimal_numeral_system) where each position has 16 (0-9 A-F) possible values. The advantage is that it is shorter and explicit about the maximum value (257 is not an option).
+Wasn't a byte a group of 8 `0`s and `1`s? 🤔 You are totally right, but just like we already saw `11111111` translates to 255 in the good old decimal system, we can also translate it to FF in the [hexadecimal system](https://simple.wikipedia.org/wiki/Hexadecimal_numeral_system) where each position has 16 (0-9 A-F) possible values. The advantage is that it is shorter and explicit about the maximum value (257 is not an option).
 
 The above example [translated](https://www.mathsisfun.com/binary-decimal-hexadecimal-converter.html) to the decimal system and padded for readability would be:
 
@@ -54,17 +58,20 @@ ttn.sendBytes(data, sizeof(data));
 Yeah, I know... `0x` kind of blows the shorter-to-write advantage of hex. 🙃
 
 ## How many bytes can I send?
-Technically, you can send 51 bytes. But, the more bytes you'll send, the more airtime the package will cost you and the sooner you'll hit your maximum allotted time. So, don't ask yourself how many you can possibly send but rather ask how few could do the job.
+
+Technically, you can send 51 bytes. But, the more bytes you send, the more airtime the package will cost you and the sooner you will hit your maximum allotted time. So, do not ask yourself how many you can possibly send but rather ask how few could do the job.
 
 ## How to send big numbers?
+
 A better question would be how to send ranges bigger than 255.
 
 ### 1. Index
-If the possible values you'd need to support don't start at 0 and you know the minimum value, start by indexing on that number.
 
-For example, imagine we'd expect values between 3400 and 3600.
+If the possible values you would need to support do not start at 0 and you know the minimum value, start by indexing on that number.
 
-On the device we'd encode this as:
+For example, imagine we expect values between 3400 and 3600.
+
+On the device we would encode this as:
 
 ```c
 int myVal = 3450;
@@ -94,12 +101,13 @@ int myBase = 3400;
 int myVal = payload[0] + myBase;
 ```
 
-As you can see as long as the minimum value is known and the range of our value is 256 or less, we can still use a single byte without breaking a sweat. Be sure to check your value is not bigger than 3655 to prevent nasty bugs.😅
+As you can see as long as the minimum value is known and the range of our value is 256 or less, we can still use a single byte without breaking a sweat. Be sure to check your value is not bigger than 3655 to prevent nasty bugs.
 
 ### 2. Round
-Now what if the range is bigger than 256? The next question would be if you need to know the exact value. If your sensor has a range of 400 and an error margin of 2, you wouldn't lose any meaning by rounding the value. Both 299 and 300 would round to 150, which is fine.
 
-On the device we'd encode this as:
+Now what if the range is bigger than 256? The next question would be if you need to know the exact value. If your sensor has a range of 400 and an error margin of 2, you would not lose any meaning by rounding the value. Both 299 and 300 would round to 150, which is fine.
+
+On the device we would encode this as:
 
 ```c
 int myVal = 300;
@@ -114,7 +122,7 @@ var errorMargin = 2;
 decoded.myVal = bytes[0] * errorMargin;
 ```
 
-You'll get the idea for the other way around.
+You will get the idea for the other way around.
 
 ### 3. Use words
 
@@ -184,7 +192,7 @@ decoded.myVal = ((long)(bytes[0]) << 24)
 
 ## How to send negative numbers?
 
-To tell the difference between -100 and 100 you will need a [signed](https://en.wikipedia.org/wiki/Signed_number_representations) data type. These set the highest (left-most) bit to `1` to indicate it's a negative number. This does mean that for example in a word only 15 of the 16 bits are available for the actual number, limiting the range from 65536 to 32768.
+To tell the difference between -100 and 100 you will need a [signed](https://en.wikipedia.org/wiki/Signed_number_representations) data type. These set the highest (left-most) bit to `1` to indicate it is a negative number. This does mean that for example in a word only 15 of the 16 bits are available for the actual number, limiting the range from 65536 to 32768.
 
 ### Index, round and shift
 
@@ -192,7 +200,7 @@ The data types we used so far are all signed, which means all of the tricks work
 
 ### Unsigned data types
 
-If you don't expect negative numbers and need a bigger range, explicitly use [`unsigned int`](https://www.arduino.cc/en/Reference/UnsignedInt) or [`unsigned long`](https://www.arduino.cc/en/Reference/UnsignedLong).
+If you do not expect negative numbers and need a bigger range, explicitly use [`unsigned int`](https://www.arduino.cc/en/Reference/UnsignedInt) or [`unsigned long`](https://www.arduino.cc/en/Reference/UnsignedLong).
 
 ## How to send decimals?
 
@@ -224,11 +232,11 @@ Decode (Arduino):
 float myVal = payload[0] / 100.00;
 ```
 
-> Note that it uses `100.00`, not `100`. If both are integers, Arduino/C/C++ will do the math using integers as well, resulting in 1 instead of 1.22.
+Note that it uses `100.00`, not `100`. If both are integers, Arduino/C/C++ will do the math using integers as well, resulting in 1 instead of 1.22.
 
 ## How to send multiple numbers?
 
-In a lot of cases you'll want to send multiple values in a single message. Start off by encoding each individual number to a buffer of bytes and then combine them into a single buffer.
+In a lot of cases you will want to send multiple values in a single message. Start off by encoding each individual number to a buffer of bytes and then combine them into a single buffer.
 
 Encode (Arduino):
 
@@ -250,7 +258,7 @@ memcpy(payload + sizeofPayloadA + sizeofPayloadB, payloadC, sizeofPayloadC);
 
 > You might wonder why [`memcpy()`](http://en.cppreference.com/w/c/string/byte/memcpy) accepts `payload + sizeOfPayloadA` as they seem 🍏 and 🍊. Think of it as an instruction to copy to the `payload` buffer, but after moving the point it will copy to, with the length of the payloads we added so far.
 
-Decode (payload functions)
+Decode (payload functions):
 
 ```js
 decoded.myValA = bytes.slice(0, 2);
@@ -259,7 +267,7 @@ decoded.myValB = bytes.slice(2, 5);
 // Decode both byte arrays as we did before
 ```
 
-Encode (payload function)
+Encode (payload function):
 
 ```js
 // Encode both values as we did before
@@ -280,7 +288,7 @@ memcpy(payloadA,
 
 The short answer is: **don't**. Text uses a lot of bytes. [Unicode](https://en.wikipedia.org/wiki/Unicode) defines more than 128000 characters, so that would take 3 bytes per character! There are rarely good reasons to use text instead of numbers, apart from maybe transmitting some user input. Most of the time only the Alpha-numeric characters suffice, in that case you can get away by using [ASCII characters](https://en.wikipedia.org/wiki/ASCII#Printable_characters) that only use a single byte per character. Every string must be terminated with a NULL (0x00, '\0') character to indicate the string has ended.
 
-You didn't hear it from me, but here's how you'd encode a string:
+You didn't hear it from me, but here's how you would encode a string:
 
 ```c
 var myVal = "Hello";
