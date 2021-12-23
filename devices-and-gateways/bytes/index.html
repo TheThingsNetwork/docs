@@ -86,10 +86,6 @@
               
             
           
-            
-              
-            
-          
               <li class="">
                 <a href="https://www.thethingsnetwork.org/docs/lorawan/">LoRaWAN®</a>
               </li>
@@ -107,11 +103,6 @@
           
               <li class="is-active">
                 <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/">Devices &amp; Gateways</a>
-              </li>
-            
-          
-              <li class="">
-                <a href="https://www.thethingsnetwork.org/docs/the-things-stack/">Migrating to The Things Stack Community Edition</a>
               </li>
             
           
@@ -205,23 +196,21 @@
         </h1>
         <div class="content">
           
-<p>To send data back and forth using The Things Stack Community Edition you&rsquo;ll need to use bytes. This guide will help you encode different types of data in as little bytes possible.</p>
-<p>The unprecedented range of the LoRaWAN technology we build on comes at the cost of low bandwidth and limited airtime (the number times size of packages you send). Fortunately, you don&rsquo;t need a picture of that smart garage bin that needs to emptied. Even a single bit <code>1</code> would do!</p>
+<p>To send data back and forth using The Things Stack Community Edition you will need to use bytes. This guide will help you encode different types of data in as little bytes as possible.</p>
+<p>The unprecedented range of the LoRaWAN technology we build on comes at the cost of low bandwidth and limited airtime (the number times size of packages you send). Fortunately, you do not need a picture of that smart garage bin that needs to emptied. Even a single bit <code>1</code> would do!</p>
 <h2 id="what-is-a-byte">What is a byte?&nbsp;<a class="header-hash" href="#what-is-a-byte">#</a> </h2>
 <p>A <a href="https://simple.wikipedia.org/wiki/Byte">byte</a> is a group of 8 bits. A bit is the most basic unit and can be either 1 or 0. A byte is not just 8 values between 0 and 1, but 256 (2<sup>8</sup>) different combinations (rather <a href="https://www.mathsisfun.com/combinatorics/combinations-permutations.html">permutations</a>) ranging from <code>00000000</code> via e.g. <code>01010101</code> to <code>11111111</code>. Thus, one byte can represent a <a href="https://simple.wikipedia.org/wiki/Decimal">decimal</a> number between 0(00) and 255.</p>
 <blockquote>
-<p>Puzzled? Remember that 3 decimal numbers also don&rsquo;t just stand for 3 values between 0 and 9, but 1000 (10<sup>3</sup>) permutations from 0(00) to 999.</p>
+<p>Puzzled? Remember that 3 decimal numbers also do not just stand for 3 values between 0 and 9, but 1000 (10<sup>3</sup>) permutations from 0(00) to 999.</p>
 </blockquote>
 <p>Learn more on <a href="http://computer.howstuffworks.com/bytes.htm">How Stuff Works: How Bits and Bytes Work</a> and the <a href="http://playground.arduino.cc/Code/BitMath">Arduino Bit Math Tutorial</a> to learn more about it.</p>
 <h2 id="what-is-a-buffer-of-bytes">What is a buffer of bytes?&nbsp;<a class="header-hash" href="#what-is-a-buffer-of-bytes">#</a> </h2>
-<p>Think of <em>buffer</em> as just another word for an <em>array</em>, <em>list</em>, whatever resonates with your programming experience. Like a byte is a group of 8 bits, a <a href="https://en.wikipedia.org/wiki/Data_buffer">buffer</a> is a group of a pre-defined number of bytes. If we have a group of 3 bytes, this could either represent 3 values between 0 and 255, but also one single value between 0 and 16777216 (256<sup>3</sup>).</p>
-<blockquote>
+<p>Think of buffer as just another word for an array, list, whatever resonates with your programming experience. Like a byte is a group of 8 bits, a <a href="https://en.wikipedia.org/wiki/Data_buffer">buffer</a> is a group of a pre-defined number of bytes. If we have a group of 3 bytes, this could either represent 3 values between 0 and 255, but also one single value between 0 and 16777216 (256<sup>3</sup>).</p>
 <p>See the pattern? The number of choices per position (n) to the power of the number of positions (r) is the number of permutations: n<sup>r</sup>. Learn more on <a href="https://www.mathsisfun.com/combinatorics/combinations-permutations.html">MathIsFun.com</a>.</p>
-</blockquote>
 <h2 id="what-the-hex">What the hex?&nbsp;<a class="header-hash" href="#what-the-hex">#</a> </h2>
-<p>Often, you&rsquo;ll see a group of bytes displayed as:</p>
+<p>Often, you will see a group of bytes displayed as:</p>
 <pre tabindex="0"><code>FF F0 0F 11
-</code></pre><p>Wasn&rsquo;t a byte a group of 8 <code>0</code>s and <code>1</code>s? 🤔 You&rsquo;re totally right, but just like we already saw <code>11111111</code> translates to 255 in the good old decimal system, we can also translate it to FF in the <a href="https://simple.wikipedia.org/wiki/Hexadecimal_numeral_system">hexadecimal system</a> where each position has 16 (0-9 A-F) possible values. The advantage is that it is shorter and explicit about the maximum value (257 is not an option).</p>
+</code></pre><p>Wasn&rsquo;t a byte a group of 8 <code>0</code>s and <code>1</code>s? 🤔 You are totally right, but just like we already saw <code>11111111</code> translates to 255 in the good old decimal system, we can also translate it to FF in the <a href="https://simple.wikipedia.org/wiki/Hexadecimal_numeral_system">hexadecimal system</a> where each position has 16 (0-9 A-F) possible values. The advantage is that it is shorter and explicit about the maximum value (257 is not an option).</p>
 <p>The above example <a href="https://www.mathsisfun.com/binary-decimal-hexadecimal-converter.html">translated</a> to the decimal system and padded for readability would be:</p>
 <pre tabindex="0"><code>255 240 015 017
 </code></pre><p>To indicate that you mean <code>11</code> in hex and not two bits or the number eleven, you prefix it with the <code>0x</code> formatter. To tell it you mean binary use <code>B</code>.</p>
@@ -262,13 +251,13 @@
 </span><span class="c1"></span><span class="n">ttn</span><span class="p">.</span><span class="n">sendBytes</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">data</span><span class="p">));</span>
 </code></pre></div><p>Yeah, I know&hellip; <code>0x</code> kind of blows the shorter-to-write advantage of hex. 🙃</p>
 <h2 id="how-many-bytes-can-i-send">How many bytes can I send?&nbsp;<a class="header-hash" href="#how-many-bytes-can-i-send">#</a> </h2>
-<p>Technically, you can send 51 bytes. But, the more bytes you&rsquo;ll send, the more airtime the package will cost you and the sooner you&rsquo;ll hit your maximum allotted time. So, don&rsquo;t ask yourself how many you can possibly send but rather ask how few could do the job.</p>
+<p>Technically, you can send 51 bytes. But, the more bytes you send, the more airtime the package will cost you and the sooner you will hit your maximum allotted time. So, do not ask yourself how many you can possibly send but rather ask how few could do the job.</p>
 <h2 id="how-to-send-big-numbers">How to send big numbers?&nbsp;<a class="header-hash" href="#how-to-send-big-numbers">#</a> </h2>
 <p>A better question would be how to send ranges bigger than 255.</p>
 <h3 id="1-index">1. Index&nbsp;<a class="header-hash" href="#1-index">#</a> </h3>
-<p>If the possible values you&rsquo;d need to support don&rsquo;t start at 0 and you know the minimum value, start by indexing on that number.</p>
-<p>For example, imagine we&rsquo;d expect values between 3400 and 3600.</p>
-<p>On the device we&rsquo;d encode this as:</p>
+<p>If the possible values you would need to support do not start at 0 and you know the minimum value, start by indexing on that number.</p>
+<p>For example, imagine we expect values between 3400 and 3600.</p>
+<p>On the device we would encode this as:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">int</span> <span class="n">myVal</span> <span class="o">=</span> <span class="mi">3450</span><span class="p">;</span>
 <span class="k">const</span> <span class="kt">int</span> <span class="n">myBase</span> <span class="o">=</span> <span class="mi">3400</span><span class="p">;</span>
 <span class="n">byte</span> <span class="n">payload</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span> <span class="n">myVal</span> <span class="o">-</span> <span class="n">myBase</span> <span class="p">};</span>
@@ -282,17 +271,17 @@
 </code></pre></div><p>And on the device decode this with:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">int</span> <span class="n">myBase</span> <span class="o">=</span> <span class="mi">3400</span><span class="p">;</span>
 <span class="kt">int</span> <span class="n">myVal</span> <span class="o">=</span> <span class="n">payload</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">myBase</span><span class="p">;</span>
-</code></pre></div><p>As you can see as long as the minimum value is known and the range of our value is 256 or less, we can still use a single byte without breaking a sweat. Be sure to check your value is not bigger than 3655 to prevent nasty bugs.😅</p>
+</code></pre></div><p>As you can see as long as the minimum value is known and the range of our value is 256 or less, we can still use a single byte without breaking a sweat. Be sure to check your value is not bigger than 3655 to prevent nasty bugs.</p>
 <h3 id="2-round">2. Round&nbsp;<a class="header-hash" href="#2-round">#</a> </h3>
-<p>Now what if the range is bigger than 256? The next question would be if you need to know the exact value. If your sensor has a range of 400 and an error margin of 2, you wouldn&rsquo;t lose any meaning by rounding the value. Both 299 and 300 would round to 150, which is fine.</p>
-<p>On the device we&rsquo;d encode this as:</p>
+<p>Now what if the range is bigger than 256? The next question would be if you need to know the exact value. If your sensor has a range of 400 and an error margin of 2, you would not lose any meaning by rounding the value. Both 299 and 300 would round to 150, which is fine.</p>
+<p>On the device we would encode this as:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">int</span> <span class="n">myVal</span> <span class="o">=</span> <span class="mi">300</span><span class="p">;</span>
 <span class="kt">int</span> <span class="n">errorMargin</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="n">byte</span> <span class="n">payload</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span> <span class="n">round</span><span class="p">(</span><span class="n">myVal</span> <span class="o">/</span> <span class="n">errorMargin</span><span class="p">)</span> <span class="p">};</span>
 </code></pre></div><p>And in the application payload functions do:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">errorMargin</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
 <span class="nx">decoded</span><span class="p">.</span><span class="nx">myVal</span> <span class="o">=</span> <span class="nx">bytes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="nx">errorMargin</span><span class="p">;</span>
-</code></pre></div><p>You&rsquo;ll get the idea for the other way around.</p>
+</code></pre></div><p>You will get the idea for the other way around.</p>
 <h3 id="3-use-words">3. Use words&nbsp;<a class="header-hash" href="#3-use-words">#</a> </h3>
 <p>A <a href="https://www.arduino.cc/en/Reference/Word">word</a> is 2 bytes (except on Due, Zero and similar boards where it is 4 bytes), which already gets you a huge range of 65536 (256<sup>2</sup>). The <a href="https://www.arduino.cc/en/Reference/Int">int</a> data type is a word and Arduino comes with <a href="https://www.arduino.cc/en/Reference/HighByte"><code>highByte()</code></a> and <a href="https://www.arduino.cc/en/Reference/LowByte"><code>lowByte()</code></a> to extract the left and right byte from a word. This makes it really easy to encode and decode.</p>
 <p>Encode (Arduino):</p>
@@ -333,11 +322,11 @@
               <span class="o">+</span> <span class="p">((</span><span class="kr">long</span><span class="p">)(</span><span class="nx">bytes</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="o">&lt;&lt;</span> <span class="mi">8</span><span class="p">)</span>
               <span class="o">+</span> <span class="p">((</span><span class="kr">long</span><span class="p">)(</span><span class="nx">bytes</span><span class="p">[</span><span class="mi">3</span><span class="p">]));</span>
 </code></pre></div><h2 id="how-to-send-negative-numbers">How to send negative numbers?&nbsp;<a class="header-hash" href="#how-to-send-negative-numbers">#</a> </h2>
-<p>To tell the difference between -100 and 100 you will need a <a href="https://en.wikipedia.org/wiki/Signed_number_representations">signed</a> data type. These set the highest (left-most) bit to <code>1</code> to indicate it&rsquo;s a negative number. This does mean that for example in a word only 15 of the 16 bits are available for the actual number, limiting the range from 65536 to 32768.</p>
+<p>To tell the difference between -100 and 100 you will need a <a href="https://en.wikipedia.org/wiki/Signed_number_representations">signed</a> data type. These set the highest (left-most) bit to <code>1</code> to indicate it is a negative number. This does mean that for example in a word only 15 of the 16 bits are available for the actual number, limiting the range from 65536 to 32768.</p>
 <h3 id="index-round-and-shift">Index, round and shift&nbsp;<a class="header-hash" href="#index-round-and-shift">#</a> </h3>
 <p>The data types we used so far are all signed, which means all of the tricks work just as well for negative values. Just be aware of the maximum value.</p>
 <h3 id="unsigned-data-types">Unsigned data types&nbsp;<a class="header-hash" href="#unsigned-data-types">#</a> </h3>
-<p>If you don&rsquo;t expect negative numbers and need a bigger range, explicitly use <a href="https://www.arduino.cc/en/Reference/UnsignedInt"><code>unsigned int</code></a> or <a href="https://www.arduino.cc/en/Reference/UnsignedLong"><code>unsigned long</code></a>.</p>
+<p>If you do not expect negative numbers and need a bigger range, explicitly use <a href="https://www.arduino.cc/en/Reference/UnsignedInt"><code>unsigned int</code></a> or <a href="https://www.arduino.cc/en/Reference/UnsignedLong"><code>unsigned long</code></a>.</p>
 <h2 id="how-to-send-decimals">How to send decimals?&nbsp;<a class="header-hash" href="#how-to-send-decimals">#</a> </h2>
 <p>So far we have only dealt with rounded numbers. What if you need more precision? The answer very similar to how we indexed or rounded big numbers. Simply multiple and divide the value as you encode and decode it.</p>
 <p>Encode (Arduino):</p>
@@ -350,11 +339,9 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">bytes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="mf">1.22</span> <span class="o">*</span> <span class="mi">100</span><span class="p">);</span>
 </code></pre></div><p>Decode (Arduino):</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">float</span> <span class="n">myVal</span> <span class="o">=</span> <span class="n">payload</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="mf">100.00</span><span class="p">;</span>
-</code></pre></div><blockquote>
-<p>Note that it uses <code>100.00</code>, not <code>100</code>. If both are integers, Arduino/C/C++ will do the math using integers as well, resulting in 1 instead of 1.22.</p>
-</blockquote>
+</code></pre></div><p>Note that it uses <code>100.00</code>, not <code>100</code>. If both are integers, Arduino/C/C++ will do the math using integers as well, resulting in 1 instead of 1.22.</p>
 <h2 id="how-to-send-multiple-numbers">How to send multiple numbers?&nbsp;<a class="header-hash" href="#how-to-send-multiple-numbers">#</a> </h2>
-<p>In a lot of cases you&rsquo;ll want to send multiple values in a single message. Start off by encoding each individual number to a buffer of bytes and then combine them into a single buffer.</p>
+<p>In a lot of cases you will want to send multiple values in a single message. Start off by encoding each individual number to a buffer of bytes and then combine them into a single buffer.</p>
 <p>Encode (Arduino):</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="n">byte</span> <span class="n">payloadA</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span> <span class="mh">0xF0</span> <span class="p">};</span>
 <span class="n">byte</span> <span class="n">payloadB</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span> <span class="mh">0xF0</span><span class="p">,</span> <span class="mh">0x0F</span> <span class="p">};</span>
@@ -372,12 +359,12 @@
 </code></pre></div><blockquote>
 <p>You might wonder why <a href="http://en.cppreference.com/w/c/string/byte/memcpy"><code>memcpy()</code></a> accepts <code>payload + sizeOfPayloadA</code> as they seem 🍏 and 🍊. Think of it as an instruction to copy to the <code>payload</code> buffer, but after moving the point it will copy to, with the length of the payloads we added so far.</p>
 </blockquote>
-<p>Decode (payload functions)</p>
+<p>Decode (payload functions):</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">decoded</span><span class="p">.</span><span class="nx">myValA</span> <span class="o">=</span> <span class="nx">bytes</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
 <span class="nx">decoded</span><span class="p">.</span><span class="nx">myValB</span> <span class="o">=</span> <span class="nx">bytes</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
 
 <span class="c1">// Decode both byte arrays as we did before
-</span></code></pre></div><p>Encode (payload function)</p>
+</span></code></pre></div><p>Encode (payload function):</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="c1">// Encode both values as we did before
 </span><span class="c1"></span>
 <span class="kd">var</span> <span class="nx">bytes</span> <span class="o">=</span> <span class="nx">bytesA</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">bytesB</span><span class="p">);</span>
@@ -388,7 +375,7 @@
 <span class="n">memcpy</span><span class="p">(</span><span class="n">payloadA</span><span class="p">,</span> 
 </code></pre></div><h2 id="how-to-send-text">How to send text?&nbsp;<a class="header-hash" href="#how-to-send-text">#</a> </h2>
 <p>The short answer is: <strong>don&rsquo;t</strong>. Text uses a lot of bytes. <a href="https://en.wikipedia.org/wiki/Unicode">Unicode</a> defines more than 128000 characters, so that would take 3 bytes per character! There are rarely good reasons to use text instead of numbers, apart from maybe transmitting some user input. Most of the time only the Alpha-numeric characters suffice, in that case you can get away by using <a href="https://en.wikipedia.org/wiki/ASCII#Printable_characters">ASCII characters</a> that only use a single byte per character. Every string must be terminated with a NULL (0x00, &lsquo;\0&rsquo;) character to indicate the string has ended.</p>
-<p>You didn&rsquo;t hear it from me, but here&rsquo;s how you&rsquo;d encode a string:</p>
+<p>You didn&rsquo;t hear it from me, but here&rsquo;s how you would encode a string:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="n">var</span> <span class="n">myVal</span> <span class="o">=</span> <span class="s">&#34;Hello&#34;</span><span class="p">;</span>
 <span class="n">var</span> <span class="n">l</span> <span class="o">=</span> <span class="n">myVal</span><span class="p">.</span><span class="n">length</span><span class="p">();</span>
 <span class="n">byte</span> <span class="n">payload</span><span class="p">[</span><span class="n">l</span> <span class="o">+</span> <span class="mi">1</span><span class="p">];</span> <span class="c1">//1 is added for the NULL character at the end of the string

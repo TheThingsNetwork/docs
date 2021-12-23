@@ -47,7 +47,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.thethingsnetwork.org/docs/lorawan/end-device-activation/" /><meta property="og:image" content="https://www.thethingsnetwork.org/docs/otaa-1.1.png" /><meta property="article:section" content="lorawan" />
 
-<meta property="article:modified_time" content="2021-10-18T10:03:17+05:30" /><meta property="og:site_name" content="The Things Network" />
+<meta property="article:modified_time" content="2021-11-26T12:49:47+01:00" /><meta property="og:site_name" content="The Things Network" />
 
 
 
@@ -90,10 +90,6 @@
               
             
           
-            
-              
-            
-          
               <li class="is-active">
                 <a href="https://www.thethingsnetwork.org/docs/lorawan/">LoRaWAN®</a>
               </li>
@@ -111,11 +107,6 @@
           
               <li class="">
                 <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/">Devices &amp; Gateways</a>
-              </li>
-            
-          
-              <li class="">
-                <a href="https://www.thethingsnetwork.org/docs/the-things-stack/">Migrating to The Things Stack Community Edition</a>
               </li>
             
           
@@ -320,11 +311,7 @@
 <p>The <strong>Message Integrity Code (MIC)</strong> is calculated over all the fields in the Join-request message using the <strong>AppKey</strong>. The calculated MIC is then added to the Join-request message.</p>
 <div class="notification is-info is-light has-text-dark">
   <h5 class="title is-family-sans-serif has-text-dark mb-1">Note:</h5>
-  <ul>
-<li>The <strong>AppKey</strong> is not sent with the <strong>Join-request</strong> message.</li>
-<li>The <strong>Join-request</strong> message is <strong>not encrypted</strong>.</li>
-</ul>
-
+  The <strong>AppKey</strong> is not sent with the <strong>Join-request</strong> message, and the <strong>Join-request</strong> message is <strong>not encrypted</strong>.
 </div>
 
 <p>The <strong>Join-request</strong> message can be transmitted using any data rate and using one of the region-specific join channels. For example, in Europe an end device can transmit the Join-request message by randomly choosing among 868.10 MHz, 868.30 MHz, or 868.50 MHz. The Join-request message travels through one or more gateways to the Network Server.</p>
@@ -374,7 +361,7 @@
 <p>The Network Server sends the encrypted <strong>Join-accept</strong> message back to the end device as a normal downlink.</p>
 <div class="notification is-info is-light has-text-dark">
   <h5 class="title is-family-sans-serif has-text-dark mb-1">Note:</h5>
-  No response is given to the end-device if the Join-request message is not accepted by the Network Server.
+  No response is given to the end-device if the <strong>Join-request</strong> message is not accepted by the Network Server.
 </div>
 
 <h5 id="step-4">Step 4&nbsp;<a class="header-hash" href="#step-4">#</a> </h5>
@@ -430,26 +417,19 @@
 </ul>
 <div class="notification is-info is-light has-text-dark">
   <h5 class="title is-family-sans-serif has-text-dark mb-1">Note:</h5>
-  <ul>
-<li>In LoRaWAN 1.1 <strong>AppEUI</strong> is replaced with the <strong>JoinEUI</strong>.</li>
-</ul>
-
+  In LoRaWAN 1.1 <strong>AppEUI</strong> is replaced with the <strong>JoinEUI</strong>.
 </div>
 
 <p>The MIC is calculated over all the fields in the Join-request message using the <strong>NwkKey</strong>. The calculated MIC is then added to the <strong>Join-request</strong> message.</p>
 <div class="notification is-info is-light has-text-dark">
   <h5 class="title is-family-sans-serif has-text-dark mb-1">Note:</h5>
-  <ul>
-<li>The <strong>NwkKey</strong> is not sent with the <strong>Join-request</strong> message.</li>
-<li>The <strong>Join-request</strong> message is not encrypted and sent as plain text.</li>
-</ul>
-
+  The <strong>NwkKey</strong> is not sent with the <strong>Join-request</strong> message, and the <strong>Join-request</strong> message is not encrypted but sent as plain text.
 </div>
 
 <p>The Join-request message can be transmitted using any data rate and using one of the region-specific join channels. For example, in Europe an end device can transmit the Join-request message by randomly choosing among 868.10 MHz, 868.30 MHz, or 868.50 MHz. The <strong>Join-request</strong> message travels through one or more gateways to the Network Server.</p>
 <div class="notification is-info is-light has-text-dark">
   <h5 class="title is-family-sans-serif has-text-dark mb-1">Note:</h5>
-  No response is given to the end-device if the Join-request is not accepted.
+  No response is given to the end-device if the <strong>Join-request</strong> is not accepted.
 </div>
 
 <h5 id="step-2-1">Step 2&nbsp;<a class="header-hash" href="#step-2-1">#</a> </h5>
@@ -502,7 +482,7 @@
 <p>Then the Network Server sends the encrypted Join-accept message back to the end device as a normal downlink.</p>
 <div class="notification is-info is-light has-text-dark">
   <h5 class="title is-family-sans-serif has-text-dark mb-1">Note:</h5>
-  No response is given to the end-device if the Join-request message is not accepted by the Network Server.
+  No response is given to the end-device if the <strong>Join-request</strong> message is not accepted by the Network Server.
 </div>
 
 <h5 id="step-5-1">Step 5&nbsp;<a class="header-hash" href="#step-5-1">#</a> </h5>

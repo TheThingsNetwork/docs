@@ -85,10 +85,6 @@
               
             
           
-            
-              
-            
-          
               <li class="">
                 <a href="https://www.thethingsnetwork.org/docs/lorawan/">LoRaWAN®</a>
               </li>
@@ -106,11 +102,6 @@
           
               <li class="">
                 <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/">Devices &amp; Gateways</a>
-              </li>
-            
-          
-              <li class="">
-                <a href="https://www.thethingsnetwork.org/docs/the-things-stack/">Migrating to The Things Stack Community Edition</a>
               </li>
             
           
@@ -158,22 +149,15 @@
           
 <p>Since January 2021, <strong>The Things Network V2 software has been upgraded to The Things Stack Community Edition</strong>. This upgrade comes with a set of brand new features, out-of-the-box integrations, extended coverage and improved user experience.</p>
 <p>The Things Stack Community Edition is one of the distributions of The Things Stack, a third version (V3) of the LoRaWAN Network Server that is developed and actively maintaned by The Things Industries.</p>
-<blockquote>
 <p>The Things Stack Community Edition runs on open source code, so if you would like to explore or contribute, visit our <a href="https://github.com/TheThingsNetwork/lorawan-stack">open source LoRaWAN stack repository</a>.</p>
+<blockquote>
 <p>Click <a href="https://www.thethingsindustries.com/docs/download/">here</a> to learn about other distributions of The Things Stack.</p>
 </blockquote>
 <p>The Things Stack Community Edition offers a free and developer-friendly way to get familiar with LoRaWAN technology. It provides a public community LoRaWAN network, initiated by <a href="https://thethingsindustries.com/">The Things Industries</a>, and supported by 100k+ The Things Network community members from more than 100 countries around the world.</p>
-<blockquote>
 <p>Join The Things Network <a href="https://www.thethingsnetwork.org/forum/">Forum</a> or <a href="https://thethingsnetwork.slack.com/">Slack</a> for community support.</p>
-</blockquote>
 <blockquote>
 <p>For commercial solutions, we recommend using an SLA-backed network provided by The Things Industries. Visit <a href="https://thethingsindustries.com/">The Things Industries website</a> to learn more about it.</p>
 </blockquote>
-<div class="notification is-info is-light has-text-dark">
-  <h5 class="title is-family-sans-serif has-text-dark mb-1">Note:</h5>
-  <strong>The Things Network V2 will no longer be actively maintained and all V2 machines are going to be shut down by the end of 2021</strong>. If you have been using The Things Network V2 previously, you will need to <a href="/docs/the-things-stack/">migrate your gateways and devices to The Things Stack Community Edition</a>.
-</div>
-
 <h4 id="useful-links">Useful links:&nbsp;<a class="header-hash" href="#useful-links">#</a> </h4>
 <ul>
 <li><a href="https://console.cloud.thethings.network/">The Things Stack Community Edition development environment</a></li>
@@ -191,14 +175,21 @@
 
 <br>
 <p>Read along to learn how you can implement your end-to-end IoT prototype within a day.</p>
+<h2 id="the-things-stack-features">The Things Stack features&nbsp;<a class="header-hash" href="#the-things-stack-features">#</a> </h2>
+<p>The Things Stack, compared to The Things Network V2, is <strong>more scalable, more secure and supports all the latest LoRaWAN developments</strong> like the latest LoRaWAN versions 1.1 and 1.0.4.</p>
+<p>The Things Stack architecture is based on microservices which allows for <strong>better distribution of services, better scaling and interoperability with other LoRaWAN networks</strong>.</p>
+<p>The Things Stack <strong>supports all LoRaWAN classes (A, B, C) and multicast device groups, all existing LoRaWAN versions (including v1.0.4 and v1.1) and all regional parameters as defined by the LoRa Alliance</strong>. By being standards compliant, The Things Stack <strong>supports passive roaming and will support handover roaming</strong> in the future. <strong>Firmware updates over the air, advanced clustering and load balancing techniques</strong> also come along with this upgrade.</p>
+<p>The advanced APIs offer <strong>gRPC, HTTP and MQTT <a href="https://www.thethingsindustries.com/docs/integrations/">integrations</a></strong>. For debugging purposes, there are <strong>API-based event streams</strong> that can help you trace issues, monitor device behaviour and get useful alerts. <a href="https://www.thethingsindustries.com/docs/reference/data-formats/">Data Formats</a> used by The Things Stack have a different schema and have a much <strong>richer metadata support</strong>. For storing data, a <strong><a href="https://www.thethingsindustries.com/docs/integrations/storage/">Storage Integration</a></strong> is also available.</p>
+<p>Users of The Things Stack have the opportunity to use the <strong>Global Join Server</strong> for storing and issuing security keys, and in that way, improve the security of their sensor deployment. Since this network architecture is standards-compliant, developers can even use a join server operated by a trusted third party.</p>
+<p>One of the most important features is the connection to <strong><a href="https://www.thethingsindustries.com/docs/reference/peering/">Packet Broker</a></strong>, allowing the exchange of traffic between The Things Stack Community Edition and private LoRaWAN networks which increases LoRaWAN network coverage, performance and capacity, and prolongs the end device battery life.</p>
+<p>You will also be able to reuse your username and password from The Things Network V2 to log in, thanks to <strong>The Things ID feature</strong>. Users can use the <a href="https://www.thethingsindustries.com/docs/getting-started/console/">Console</a> with an <strong>improved user interface</strong> or <a href="https://www.thethingsindustries.com/docs/getting-started/cli/">CLI</a>, to manage <a href="https://www.thethingsindustries.com/docs/gateways/">gateways</a>, <a href="https://www.thethingsindustries.com/docs/devices/">devices</a>, <a href="https://www.thethingsindustries.com/docs/integrations/adding-applications/">applications</a>, <a href="https://www.thethingsindustries.com/docs/getting-started/user-management/">users and organizations</a>, as well as to interact with uplink and downlink events in real-time.</p>
+<p>For a more detailed comparison between The Things Network V2 and The Things Stack Community Edition, check out the <a href="https://www.thethingsindustries.com/docs/getting-started/migrating/major-changes/">Major Changes in The Things Stack</a> page.</p>
 <h2 id="start-using-the-things-stack-community-edition">Start using The Things Stack Community Edition&nbsp;<a class="header-hash" href="#start-using-the-things-stack-community-edition">#</a> </h2>
 <p>The Things Stack Community Edition can be accessed via the Console. You can access the Console by <a href="https://console.cloud.thethings.network/">selecting a cluster</a> that is closest to you geographically.</p>
 <p><img src="TTN-V3-console.png" alt="The Things Stack Community Edition Console" title="The Things Network Console"></p>
 <h2 id="set-up-your-lorawan-network">Set up your LoRaWAN network&nbsp;<a class="header-hash" href="#set-up-your-lorawan-network">#</a> </h2>
 <p>The main building blocks of the public community LoRaWAN network are <strong>gateways</strong>. Thousands of gateways across the globe are already connected to The Things Stack Community Edition, making the community LoRaWAN network available for free usage.</p>
-<blockquote>
-<p>See the <a href="https://www.thethingsnetwork.org/map">global coverage map</a></p>
-</blockquote>
+<p>Take a look at the <a href="https://www.thethingsnetwork.org/map">global The Things Network coverage map</a>.</p>
 <p>Although you might already have coverage in your area, we still recommend you get your hands on a gateway to ensure reliable coverage. There are a lot of gateways with extensive features on the market, so make sure you choose the one that fits your needs best. For example, here is a short list of some popular indoor gateways:</p>
 <table>
 <thead>
@@ -232,9 +223,11 @@
 </tbody>
 </table>
 <p>Once you have your hands on a gateway, <a href="/docs/devices-and-gateways/adding-gateways/">learn how to connect your gateway to The Things Stack Community Edition</a>.</p>
-<blockquote>
-<p><strong>Important note:</strong> Different world regions use different <a href="https://www.thethingsindustries.com/docs/reference/frequency-plans/">frequency plans</a>, e.g. 863-870 MHz for Europe, 902-928 MHz for North America, etc. Make sure you double-check that the hardware aligns with your region’s radio frequency before purchasing!</p>
-</blockquote>
+<div class="notification is-info is-light has-text-dark">
+  <h5 class="title is-family-sans-serif has-text-dark mb-1">Note:</h5>
+  Different world regions use different <a href="https://www.thethingsindustries.com/docs/reference/frequency-plans/">frequency plans</a>, e.g. 863-870 MHz for Europe, 902-928 MHz for North America, etc. Make sure you double-check that the hardware aligns with your region’s radio frequency before purchasing!
+</div>
+
 <p>To learn more about gateways, have a look at the review video by Ben Olayinka:</p>
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">

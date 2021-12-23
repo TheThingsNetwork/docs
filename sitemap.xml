@@ -69,10 +69,10 @@
     <lastmod>2021-04-29T15:22:14+04:00</lastmod>
   </url><url>
     <loc>https://www.thethingsnetwork.org/docs/lorawan/frequency-plans/</loc>
-    <lastmod>2021-03-23T18:56:43+01:00</lastmod>
+    <lastmod>2021-11-26T12:49:47+01:00</lastmod>
   </url><url>
     <loc>https://www.thethingsnetwork.org/docs/lorawan/duty-cycle/</loc>
-    <lastmod>2021-04-29T15:22:14+04:00</lastmod>
+    <lastmod>2021-11-26T12:49:47+01:00</lastmod>
   </url><url>
     <loc>https://www.thethingsnetwork.org/docs/lorawan/glossary/</loc>
     <lastmod>2021-07-14T21:06:33+02:00</lastmod>
@@ -108,10 +108,10 @@
     <lastmod>2021-12-15T12:10:12+05:30</lastmod>
   </url><url>
     <loc>https://www.thethingsnetwork.org/docs/lorawan/end-device-activation/</loc>
-    <lastmod>2021-10-18T10:03:17+05:30</lastmod>
+    <lastmod>2021-11-26T12:49:47+01:00</lastmod>
   </url><url>
     <loc>https://www.thethingsnetwork.org/docs/lorawan/spreading-factors/</loc>
-    <lastmod>2021-04-21T13:42:27+05:45</lastmod>
+    <lastmod>2021-11-26T12:49:47+01:00</lastmod>
   </url><url>
     <loc>https://www.thethingsnetwork.org/docs/lorawan/adaptive-data-rate/</loc>
     <lastmod>2021-05-03T17:05:08+03:00</lastmod>
@@ -131,12 +131,6 @@
     <loc>https://www.thethingsnetwork.org/docs/gateways/start/list/</loc>
     <lastmod>2021-03-23T18:56:43+01:00</lastmod>
   </url><url>
-    <loc>https://www.thethingsnetwork.org/docs/the-things-stack/migrate-to-v3/migrate-using-console/</loc>
-    <lastmod>2021-10-28T14:18:42+02:00</lastmod>
-  </url><url>
-    <loc>https://www.thethingsnetwork.org/docs/the-things-stack/migrate-to-v3/</loc>
-    <lastmod>2021-11-15T18:05:53+01:00</lastmod>
-  </url><url>
     <loc>https://www.thethingsnetwork.org/docs/gateways/kerlink/station/mount/</loc>
     <lastmod>2021-03-23T18:56:43+01:00</lastmod>
   </url><url>
@@ -148,9 +142,6 @@
   </url><url>
     <loc>https://www.thethingsnetwork.org/docs/gateways/tektelic/macro/</loc>
     <lastmod>2021-03-23T18:56:43+01:00</lastmod>
-  </url><url>
-    <loc>https://www.thethingsnetwork.org/docs/the-things-stack/migrate-to-v3/migrate-using-migration-tool/</loc>
-    <lastmod>2021-10-28T14:18:42+02:00</lastmod>
   </url><url>
     <loc>https://www.thethingsnetwork.org/docs/gateways/gateway/programhexfile/</loc>
     <lastmod>2021-03-23T18:56:43+01:00</lastmod>
@@ -176,9 +167,6 @@
     <loc>https://www.thethingsnetwork.org/docs/gateways/lightning-protection/</loc>
     <lastmod>2021-03-23T18:56:43+01:00</lastmod>
   </url><url>
-    <loc>https://www.thethingsnetwork.org/docs/the-things-stack/migrate-to-v3/migrate-gateways/</loc>
-    <lastmod>2021-10-28T14:18:42+02:00</lastmod>
-  </url><url>
     <loc>https://www.thethingsnetwork.org/docs/gateways/ursalink/ug85/</loc>
     <lastmod>2021-03-23T18:56:43+01:00</lastmod>
   </url><url>
@@ -190,9 +178,6 @@
   </url><url>
     <loc>https://www.thethingsnetwork.org/docs/applications/aws/act-on-data/</loc>
     <lastmod>2021-03-23T18:56:43+01:00</lastmod>
-  </url><url>
-    <loc>https://www.thethingsnetwork.org/docs/the-things-stack/faq/</loc>
-    <lastmod>2021-10-28T14:18:42+02:00</lastmod>
   </url><url>
     <loc>https://www.thethingsnetwork.org/docs/network/</loc>
     <lastmod>2021-03-23T18:56:43+01:00</lastmod>
@@ -286,9 +271,6 @@
   </url><url>
     <loc>https://www.thethingsnetwork.org/docs/devices/rak7204/rak7204/burning-the-firmware/</loc>
     <lastmod>2021-03-23T18:56:43+01:00</lastmod>
-  </url><url>
-    <loc>https://www.thethingsnetwork.org/docs/the-things-stack/</loc>
-    <lastmod>2021-10-28T14:18:42+02:00</lastmod>
   </url><url>
     <loc>https://www.thethingsnetwork.org/docs/gateways/rak7249/rak7249/solar-panel-battery-kit-installation/</loc>
     <lastmod>2021-03-23T18:56:43+01:00</lastmod>
@@ -516,10 +498,10 @@
     <lastmod>2021-03-23T18:56:43+01:00</lastmod>
   </url><url>
     <loc>https://www.thethingsnetwork.org/docs/devices-and-gateways/adding-devices/</loc>
-    <lastmod>2021-10-28T15:16:00+02:00</lastmod>
+    <lastmod>2021-11-26T12:49:47+01:00</lastmod>
   </url><url>
     <loc>https://www.thethingsnetwork.org/docs/devices-and-gateways/adding-gateways/</loc>
-    <lastmod>2021-10-28T15:16:00+02:00</lastmod>
+    <lastmod>2021-11-26T12:49:47+01:00</lastmod>
   </url><url>
     <loc>https://www.thethingsnetwork.org/docs/applications/att/</loc>
     <lastmod>2021-03-23T18:56:43+01:00</lastmod>
@@ -549,7 +531,7 @@
     <lastmod>2021-03-23T18:56:43+01:00</lastmod>
   </url><url>
     <loc>https://www.thethingsnetwork.org/docs/devices-and-gateways/best-practices/</loc>
-    <lastmod>2021-10-28T15:16:00+02:00</lastmod>
+    <lastmod>2021-11-26T12:49:47+01:00</lastmod>
   </url><url>
     <loc>https://www.thethingsnetwork.org/docs/applications/options/</loc>
     <lastmod>2021-03-23T18:56:43+01:00</lastmod>
@@ -588,7 +570,7 @@
     <lastmod>2021-03-23T18:56:43+01:00</lastmod>
   </url><url>
     <loc>https://www.thethingsnetwork.org/docs/devices-and-gateways/</loc>
-    <lastmod>2021-10-28T14:18:42+02:00</lastmod>
+    <lastmod>2021-11-26T12:49:47+01:00</lastmod>
   </url><url>
     <loc>https://www.thethingsnetwork.org/docs/network/discovery/</loc>
     <lastmod>2021-03-23T18:56:43+01:00</lastmod>
@@ -624,13 +606,13 @@
     <lastmod>2021-03-23T18:56:43+01:00</lastmod>
   </url><url>
     <loc>https://www.thethingsnetwork.org/docs/devices-and-gateways/basics-station/</loc>
-    <lastmod>2021-10-28T15:16:00+02:00</lastmod>
+    <lastmod>2021-11-26T12:49:47+01:00</lastmod>
   </url><url>
     <loc>https://www.thethingsnetwork.org/docs/gateways/basics-station/</loc>
     <lastmod>2021-03-23T18:56:43+01:00</lastmod>
   </url><url>
     <loc>https://www.thethingsnetwork.org/docs/lorawan/</loc>
-    <lastmod>2021-10-28T14:18:42+02:00</lastmod>
+    <lastmod>2021-11-26T12:49:47+01:00</lastmod>
   </url><url>
     <loc>https://www.thethingsnetwork.org/docs/gateways/lorrier/</loc>
     <lastmod>2021-03-23T18:56:43+01:00</lastmod>
@@ -675,7 +657,7 @@
     <lastmod>2021-03-23T18:56:43+01:00</lastmod>
   </url><url>
     <loc>https://www.thethingsnetwork.org/docs/quick-start/</loc>
-    <lastmod>2021-10-28T14:18:42+02:00</lastmod>
+    <lastmod>2021-11-26T12:49:47+01:00</lastmod>
   </url><url>
     <loc>https://www.thethingsnetwork.org/docs/network/account/clientid/</loc>
     <lastmod>2021-03-23T18:56:43+01:00</lastmod>
@@ -723,7 +705,7 @@
     <lastmod>2021-03-23T18:56:43+01:00</lastmod>
   </url><url>
     <loc>https://www.thethingsnetwork.org/docs/v2-docs/</loc>
-    <lastmod>2021-03-26T18:38:37+01:00</lastmod>
+    <lastmod>2021-11-26T12:49:47+01:00</lastmod>
   </url><url>
     <loc>https://www.thethingsnetwork.org/docs/gateways/kerlink/ibts/</loc>
     <lastmod>2021-03-23T18:56:43+01:00</lastmod>
@@ -741,7 +723,7 @@
     <lastmod>2021-03-23T18:56:43+01:00</lastmod>
   </url><url>
     <loc>https://www.thethingsnetwork.org/docs/devices-and-gateways/bytes/</loc>
-    <lastmod>2021-10-28T15:16:00+02:00</lastmod>
+    <lastmod>2021-11-26T12:49:47+01:00</lastmod>
   </url><url>
     <loc>https://www.thethingsnetwork.org/docs/devices/bytes/</loc>
     <lastmod>2021-03-23T18:56:43+01:00</lastmod>
