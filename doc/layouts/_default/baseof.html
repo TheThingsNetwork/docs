@@ -6,7 +6,7 @@
 
 <body>
 
-<ttn-header class="theme-ttn"></ttn-header>
+<ttn-header class="theme-ttn" root-url="https://www.thethingsnetwork.org"></ttn-header>
 
 {{- block "main" . }}{{- end }}
 
@@ -14,7 +14,6 @@
 
 <script src="https://cdn.jsdelivr.net/npm/promise-polyfill@7/dist/polyfill.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
-<script src="https://www.thethingsnetwork.org/static/common/js/web-components/ttn-header.js"></script>
 <script src="https://www.thethingsnetwork.org/static/common/js/web-components/ttn-footer.js"></script>
 <script src="https://ttnweb.azureedge.net/static/common/js/ga.js"></script>
 
@@ -22,6 +21,11 @@
 <script src="{{ $script.Permalink }}"></script>
 {{- $script := resources.Get "js/theme.js" | resources.Minify | resources.Fingerprint }}
 <script src="{{ $script.Permalink }}" integrity="{{ $script.Data.Integrity }}" crossorigin="anonymous"></script>
+{{- $script := resources.Get "ttui/components/ttui-header/index.js" | resources.Fingerprint }}
+<script src="{{ $script.Permalink }}" crossorigin="anonymous"></script>
+{{- $script := resources.Get "ttui/components/ttn-header/index.js" | resources.Fingerprint }}
+<script src="{{ $script.Permalink }}" crossorigin="anonymous"></script>
+
 
 </body>
 
