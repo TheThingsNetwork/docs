@@ -1,7 +1,7 @@
 ---
 title: "Quick Start"
 description: "Get started with The Things Stack Community Edition"
-image: /devices/icon.png
+image: /quick-start/tts-ce.png
 menu:
   main:
     weight: 10
