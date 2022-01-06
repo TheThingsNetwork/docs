@@ -7,40 +7,39 @@ menu:
     weight: 10
 ---
 
-Since January 2021, **The Things Network V2 software has been upgraded to The Things Stack Community Edition**. This upgrade comes with a set of brand new features, out-of-the-box integrations, extended coverage and improved user experience. 
+{{< figure src="TTN-logo.svg" class="float plain" >}}
 
-The Things Stack Community Edition is one of the distributions of The Things Stack, a third version (V3) of the LoRaWAN Network Server that is developed and actively maintaned by The Things Industries. 
+Welcome to The Things Network! Here, you will learn all about LoRaWAN, and how to build IoT solutions with The Things Stack.
 
-The Things Stack Community Edition runs on open source code, so if you would like to explore or contribute, visit our [open source LoRaWAN stack repository](https://github.com/TheThingsNetwork/lorawan-stack).
+## What is LoRaWAN?
 
-> Click [here](https://www.thethingsindustries.com/docs/download/) to learn about other distributions of The Things Stack.
+LoRaWAN is a low-power, wide area networking protocol built on top of the LoRa radio modulation technique. It wirelessly connects devices to the internet. Learn all about it in the [LoRaWAN section]({{< ref "lorawan" >}}).
+
+## What is The Things Stack?
+
+The Things Stack is a LoRaWAN Network Server that is developed and actively maintaned by [The Things Industries](https://thethingsindustries.com). To learn the role of a Network Server and the other components of a LoRaWAN network, see [LoRaWAN Architecture]({{< ref "lorawan/architecture" >}}).
+
+## What is The Things Stack Community Edition?
+
+Since January 2021, The Things Network runs **The Things Stack Community Edition**, a free, community based deployment of The Things Stack.
+
+This is an upgrade from the previous The Things Network V2, which comes with a set of brand new features, out-of-the-box integrations, extended coverage and improved user experience.
+
+Complete documentation for all versions of The Things Stack is available [here](https://www.thethingsindustries.com/docs/).
 
 The Things Stack Community Edition offers a free and developer-friendly way to get familiar with LoRaWAN technology. It provides a public community LoRaWAN network, initiated by [The Things Industries](https://thethingsindustries.com/), and supported by 100k+ The Things Network community members from more than 100 countries around the world.
 
-Join The Things Network [Forum](https://www.thethingsnetwork.org/forum/) or [Slack](https://thethingsnetwork.slack.com/) for community support.
+[Login or create a free account](https://console.cloud.thethings.network/) to get started with The Things Stack Community Edition and start building IoT solutions.
 
-> For commercial solutions, we recommend using an SLA-backed network provided by The Things Industries. Visit [The Things Industries website](https://thethingsindustries.com/) to learn more about it.
+Join The Things Network [Forum](https://www.thethingsnetwork.org/forum/) or [Slack](https://thethingsnetwork.slack.com/) for plenty of great ideas for projects, and to ask or answer questions about The Things Stack.
 
-#### Useful links:
+The Things Stack Community Edition does not come with an uptime guarantee and is not recommended for commercial projects. For commercial projects, we recommend an SLA-backed The Things Stack instance provided by [The Things Industries](https://thethingsindustries.com/).
 
-- [The Things Stack Community Edition development environment](https://console.cloud.thethings.network/)
-- [The Things Stack Introduction video](https://www.youtube.com/watch?v=rK8oJHZ9Q7U)
-- [The Things Stack official documentation page](https://www.thethingsindustries.com/docs)
-- [What is The Things Industries, The Things Network and The Things Stack?](https://www.thethingsindustries.com/docs/getting-started/what-is-tts/)
+## Scale Up
 
-## Learn more about LoRaWAN
+Once you have your LoRaWAN proof of concept project up and running, and you are ready to scale to a commercial level, we recommend using an SLA-backed network provided by The Things Industries. Visit [The Things Industries website](https://thethingsindustries.com/) to learn more about private deployments of The Things Stack.
 
-LoRaWAN is a radio frequency protocol that allows devices to connect to the Internet over a long range with incredibly low power consumption. Visit our documentation to [learn more about LoRaWAN]({{< relref "../lorawan" >}}).
-
-Watch the video below on *Everything you need to know about LoRaWAN in 60 minutes* by Johan Stokking (tech lead of The Things Network):
-
-{{< youtube ZsVhYiX4_6o >}}
-
-<br>
-
-Read along to learn how you can implement your end-to-end IoT prototype within a day.
-
-## The Things Stack features
+## The Things Stack Features
 
 The Things Stack, compared to The Things Network V2, is **more scalable, more secure and supports all the latest LoRaWAN developments** like the latest LoRaWAN versions 1.1 and 1.0.4.
 
@@ -109,9 +108,11 @@ To learn more about getting started with The Things Stack (Community Edition), h
 
 Once you have your LoRaWAN network setup, you can use available integrations to build your end-to-end IoT solution. Integrations allow you to process data and act on it by triggering events. Learn [how to create integrations on The Things Stack Community Edition]({{< relref "../applications-and-integrations/" >}}).
 
-### Other useful links:
+### Useful Links:
 
-- [Official The Things Stack documentation page](https://www.thethingsindustries.com/docs)
+- [The Things Stack Introduction video](https://www.youtube.com/watch?v=rK8oJHZ9Q7U)
+- [The Things Stack official documentation page](https://www.thethingsindustries.com/docs)
 - [What is The Things Industries, The Things Network and The Things Stack?](https://www.thethingsindustries.com/docs/getting-started/what-is-tts/)
+- [The Things Stack Community Edition Console](https://console.cloud.thethings.network/)
 - [The Things Stack Getting Started playlist](https://www.youtube.com/playlist?list=PLM8eOeiKY7JWTf-d4XmRuRjK1ZFaoinwM)
 - [The Things Network Forum](https://www.thethingsnetwork.org/forum/)
