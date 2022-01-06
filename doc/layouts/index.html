@@ -16,7 +16,7 @@
   <div class="container">
     <div class="columns is-desktop is-multiline">
       {{ with .Site.GetPage "/lorawan" }}
-      <div class="column is-one-half-desktop is-flex">
+      <div class="column is-one-third-desktop is-flex">
         <div class="card has-radius is-fullwidth">
           <div class="card-content">
             <a href="{{ .Permalink }}" class="is-flex is-justify-content-center">
@@ -38,7 +38,7 @@
         </div>
       </div>
       {{ end }}
-      <div class="column is-one-half-desktop is-flex">
+      <div class="column is-one-third-desktop is-flex">
         <div class="card has-radius is-fullwidth">
           <div class="card-content">
             <a href="https://www.thethingsnetwork.org/achievements/certificates/" class="is-flex is-justify-content-center">
@@ -57,38 +57,27 @@
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <div class="columns is-desktop is-multiline">
-      {{- range .Site.Menus.main }}
-        {{ if not .Params.hideOnHome }}
-          {{- with .Page }}
-          <div class="column is-one-third-desktop is-flex">
-            <div class="card has-radius is-fullwidth">
-              <div class="card-content">
-                <h3 class="title is-size-5 has-text-centered is-uppercase"><a href="{{ .Permalink }}">{{ .Title }}</a>
-                </h3>
-                <div class="content has-text-centered has-text-grey">
-                  {{ with .Params.image }}
-                    <figure class="image plain mb-3">
-                      <img style="height:10rem;" src="{{ . | relURL }}">
-                    </figure>
-                  {{ end }}
-                  {{ .Description | plainify }}
-                </div>
-                <div class="has-text-centered">
-                  <a href="{{ .Permalink }}" class="button is-primary is-outlined">Read</a>
-                </div>
+      {{ with .Site.GetPage "/quick-start" }}
+      <div class="column is-one-third-desktop is-flex">
+        <div class="card has-radius is-fullwidth">
+          <div class="card-content">
+            <a href="{{ .Permalink }}" class="is-flex is-justify-content-center">
+              <div class="quick-start-image">
+                <figure class="image plain">
+                  <img src="{{ .Params.image | relURL }}">
+                </figure>
               </div>
+            </a>
+            <div class="content has-text-centered has-text-grey">
+              {{ .Description | plainify }}
+            </div>
+            <div class="has-text-centered">
+              <a href="{{ .Permalink }}" class="button is-primary is-outlined">Read</a>
             </div>
           </div>
-          {{- end }}
-        {{- end }}
-      {{- end }}
+        </div>
+      </div>
+      {{ end }}
     </div>
   </div>
 </section>
