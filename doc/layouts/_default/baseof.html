@@ -14,7 +14,6 @@
 
 <script src="https://cdn.jsdelivr.net/npm/promise-polyfill@7/dist/polyfill.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
-<script src="https://www.thethingsnetwork.org/static/common/js/web-components/ttn-footer.js"></script>
 <script src="https://ttnweb.azureedge.net/static/common/js/ga.js"></script>
 
 {{- $script := resources.Get "js/vendor/basicLightbox.min.js" }}
@@ -25,7 +24,31 @@
 <script src="{{ $script.Permalink }}" crossorigin="anonymous"></script>
 {{- $script := resources.Get "ttui/components/ttn-header/index.js" | resources.Fingerprint }}
 <script src="{{ $script.Permalink }}" crossorigin="anonymous"></script>
+{{- $script := resources.Get "ttui/components/cookie-banner/index.js" | resources.Fingerprint }}
+<script src="{{ $script.Permalink }}" crossorigin="anonymous"></script>
+{{- $script := resources.Get "ttui/components/ttn-footer/index.js" | resources.Fingerprint }}
+<script src="{{ $script.Permalink }}" crossorigin="anonymous"></script>
 
+<ttui-cookie class="theme-ttn" id="cookie-banner"></ttui-cookie>
+
+<script>
+  var cookieBanner = document.getElementById("cookie-banner");
+  window.addEventListener("ttuicookieaccept", cookieAccept, { capture: true, once: true } );
+  var cookieAcceptKey = 'ttn-ca'
+  var timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+  if (readCookieAccept() || !timezone.includes("Europe") ) {
+      cookieBanner.setAttribute('accepted', true);
+  }
+
+  function readCookieAccept() {
+      return localStorage.getItem(cookieAcceptKey)
+  }
+
+  function cookieAccept() {
+      localStorage.setItem(cookieAcceptKey, true);
+  }
+</script>
 
 </body>
 
