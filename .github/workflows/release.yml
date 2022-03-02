@@ -8,14 +8,14 @@ on:
 jobs:
   release:
     name: Release docs
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
     steps:
     - name: Check out code
       uses: actions/checkout@v2
       with:
         fetch-depth: 0
     - name: Set up Go
-      uses: actions/setup-go@v2
+      uses: actions/setup-go@v3
       with:
         go-version: '~1.17'
     - name: Get Go module cache directory path
@@ -31,9 +31,9 @@ jobs:
     - name: Download Go dependencies
       run: make go.deps
     - name: Set up Node
-      uses: actions/setup-node@v2-beta
+      uses: actions/setup-node@v3
       with:
-        node-version: '~14'
+        node-version: '~16'
     - name: Get Yarn cache directory path
       id: yarn-cache-dir-path
       run: echo "::set-output name=dir::$(npx yarn cache dir)"
