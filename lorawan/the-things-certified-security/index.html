@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+
+<html lang="en-us" class="has-ttn-navbar-top">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <meta name="generator" content="Hugo 0.88.1" />
+
+  <title>The Things Certified Security | The Things Network</title>
+  <link rel="canonical" href="https://www.thethingsnetwork.org/docs/lorawan/the-things-certified-security/" />
+  
+
+  <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
+
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+  <meta name="msapplication-TileImage" content="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png">
+
+  <meta name="application-name" content="The Things Network">
+  <meta name="msapplication-tooltip" content="Tooltip">
+  <meta name="msapplication-config" content="https://ttnweb.azureedge.net/static/common/favicon/ieconfig.54334a5ee30c.xml">
+
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-32.61b30f85680a.png" sizes="32x32">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-57.83b86c64dc82.png" sizes="57x57">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-76.7dcf8fa36dfc.png" sizes="76x76">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-96.27ac17adaa8b.png" sizes="96x96">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-120.e1526731335e.png" sizes="120x120">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-128.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png" sizes="144x144">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png" sizes="152x152">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-180.fcd414307ca3.png" sizes="180x180">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-195.c55ce09d66da.png" sizes="195x195">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-228.bea53ec4b10b.png" sizes="228x228">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/smalltile.fabea041224c.png" sizes="128x128">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/mediumtile.3d42f7faac82.png" sizes="270x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
+  <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.bba2ad39c997e34e6006de277f36b1e2392e80f631801f8ae2e5c72e23228f6d.css" integrity="sha256-u6KtOcmX405gBt4nfzax4jkugPYxgB&#43;K4uXHLiMij20=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/ttui/main.min.a26da693ec106c40b7bb1453360e9f0029677a596de5ab1e45bccd05a75b9393.css" integrity="sha256-om2mk&#43;wQbEC3uxRTNg6fAClnellt5aseRbzNBadbk5M=" crossorigin="anonymous">
+
+  <meta property="og:title" content="The Things Certified Security" />
+<meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/lorawan/the-things-certified-security/" /><meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/><meta property="og:site_name" content="The Things Network" />
+
+
+
+  <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
+
+<meta name="twitter:title" content="The Things Certified Security"/>
+<meta name="twitter:description" content="We are building a global open free crowdsourced long range low power IoT data network"/>
+
+
+</head>
+
+
+<body>
+
+<ttn-header class="theme-ttn" root-url="https://www.thethingsnetwork.org"></ttn-header><section class="section">
+  <div class="container">
+    <nav class="breadcrumb has-dot-separator" aria-label="breadcrumbs">
+      <ul>
+        
+        
+          <li><a href="https://www.thethingsnetwork.org/docs">Learn</a></li>
+          
+          
+          
+            
+              
+            
+          
+            
+              
+            
+          
+            
+              
+            
+          
+            
+              
+            
+          
+              <li class="is-active">
+                <a href="https://www.thethingsnetwork.org/docs/lorawan/">LoRaWAN®</a>
+              </li>
+            
+          
+              <li class="">
+                <a href="https://www.thethingsnetwork.org/docs/quick-start/">Quick Start</a>
+              </li>
+            
+          
+              <li class="">
+                <a href="https://www.thethingsnetwork.org/docs/applications-and-integrations/">Applications &amp; Integrations</a>
+              </li>
+            
+          
+              <li class="">
+                <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/">Devices &amp; Gateways</a>
+              </li>
+            
+          
+              <li class="">
+                <a href="https://www.thethingsnetwork.org/docs/v2-docs/">V2 Docs (Outdated)</a>
+              </li>
+            
+          
+        
+      </ul>
+    </nav>
+    
+  </div>
+</section>
+<div class="container" role="document">
+  <div class="columns my-0 is-desktop">
+    <div class="column is-3-desktop sidebar-left">
+      
+
+
+<nav class="side-navigation" aria-label="Main navigation">
+
+<h2 class="title is-size-5">LoRaWAN®</h2>
+
+<div class="menu">
+  <ul class="menu-list">
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/" class="">Overview</a>
+  
+    <p class="menu-label">
+      The Things Fundamentals
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/what-is-lorawan/" class="">What are LoRa and LoRaWAN?</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/architecture/" class="">LoRaWAN Architecture</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/regional-parameters/" class="">Regional Parameters</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/message-types/" class="">Message Types</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/security/" class="">Security</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/classes/" class="">Device Classes</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/end-device-activation/" class="">End Device Activation</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/spreading-factors/" class="">Spreading Factors</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/adaptive-data-rate/" class="">Adaptive Data Rate</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/limitations/" class="">Limitations</a>
+</li>
+
+  
+    <p class="menu-label">
+      Additional Information
+    </p>
+    
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/frequencies-by-country/" class="">Frequency Plans by Country</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/frequency-plans/" class="">Frequency Plans</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/duty-cycle/" class="">Duty Cycle</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/glossary/" class="">Glossary</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/modulation-data-rate/" class="">Modulation &amp; Data Rate</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/addressing/" class="">Addressing &amp; Activation</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/academic/" class="">Academic Research</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/concentrators/" class="">LoRaWAN® Concentrators</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/transceivers/" class="">LoRaWAN® Transceivers</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/prefix-assignments/" class="">NetID and DevAddr Prefix Assignments</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/preparing-certification/" class="">Preparing for The Things Certified Fundamentals</a>
+</li>
+
+      
+<li>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/the-things-certified-security/" class="is-active">The Things Certified Security</a>
+  
+
+
+
+  
+</li>
+
+  
+  </ul>
+</div>
+
+
+
+
+
+</nav>
+
+    </div>
+    <div class="column is-9-desktop sidebar-middle">
+      <div class="docs-content">
+        <h1 class="title is-size-2">
+          The Things Certified Security
+        </h1>
+        <div class="content">
+          
+<p>This study guide has been written for students who are planning to take <strong>The Things Certified Security</strong> exam. It explains the following fundamental properties that support LoRaWAN security in detail:</p>
+<ul>
+<li>Mutual authentication</li>
+<li>Integrity protection</li>
+<li>Confidentiality</li>
+<li>End-to-end security</li>
+</ul>
+<p>In addition to that, we briefly discuss the following security mechanisms:</p>
+<ul>
+<li>Replay protection</li>
+<li>Eavesdropping</li>
+<li>Spoofing</li>
+<li>Securing communication between network elements (backend interfaces)</li>
+</ul>
+<p>We hope that you will find this study material useful and that the knowledge you acquire will help you pass The Things Certified Security exam.</p>
+<h2 id="understanding-message-types">Understanding Message Types&nbsp;<a class="header-hash" href="#understanding-message-types">#</a> </h2>
+<p>LoRaWAN networks use several MAC message types for different purposes.</p>
+<p>There are three MAC messages used for the device activation/registration:</p>
+<ul>
+<li>Join-request</li>
+<li>Join-accept</li>
+<li>Rejoin-request</li>
+</ul>
+<p>There are four MAC messages used to carry MAC commands and application data (together or separately), known as <strong>data messages</strong>:</p>
+<ul>
+<li>Unconfirmed data uplink</li>
+<li>Unconfirmed data downlink</li>
+<li>Confirmed data uplink</li>
+<li>Confirmed data downlink</li>
+</ul>
+<p>It is worth knowing the MAC message format before learning how the LoRaWAN security is implemented. A MAC message format breakdown is shown on the image below.</p>
+<figure><img src="mac-message-breakdown.png"
+         alt="MAC Message breakdown"/><figcaption>
+            <p>MAC Message Breakdown</p>
+        </figcaption>
+</figure>
+
+<p>MAC messages carry a payload. The messages used for the join procedure have the following payloads, which consist of several fields:</p>
+<ul>
+<li>Join-request</li>
+<li>Join-accept</li>
+<li>Rejoin-request</li>
+</ul>
+<p>The payload carried by the data message is called <strong>MACPayload</strong> (MAC Payload). The term payload refers to the actual data in a packet, e.g. application data and/or MAC commands. Headers are appended to the payload for transport and then discarded at the message destination.
+The MACPayload consists of <strong>FHDR</strong> (Frame Header), <strong>FPort</strong> (Port Field), and the <strong>FRMPayload</strong> (Frame Payload) fields. Only the <strong>FRMPayload</strong> field and <strong>FOpts</strong> field can carry information. The <strong>PHYPayload</strong> is created by adding <strong>MHDR</strong> (MAC Header) and <strong>MIC</strong> (Message Integrity Code) to the <strong>MACPayload</strong>.</p>
+<h2 id="join-procedure">Join Procedure&nbsp;<a class="header-hash" href="#join-procedure">#</a> </h2>
+<p>LoRaWAN provides two end device activation methods:</p>
+<ul>
+<li>ABP (Activation-by-Personalisation) - has some security vulnerabilities</li>
+<li>OTAA (Over-The-Air-Activation) - highly recommended</li>
+</ul>
+<p>OTAA is the most secure way to activate an end device on a network. It ensures that only authorized end devices can access the LoRaWAN network by proving that both the end device and the network have the knowledge of <strong>root keys</strong>. This concept is also known as <strong>mutual authentication</strong>.</p>
+<p>Root keys used in this procedure are unique 128-bit AES (Advanced Encryption Standard) symmetric keys.</p>
+<p>The following keys and identifiers must be stored in an OTAA end device:</p>
+<ul>
+<li><strong>Root keys</strong> - LoRaWAN v1.0.x uses a single root key called <strong>AppKey</strong>. LoRaWAN v1.1 uses two root keys called <strong>AppKey</strong> and <strong>NwkKey</strong>.</li>
+<li><strong>DevEUI</strong> - a globally unique 64-bit end device identifier, assigned by the device manufacturer or device owner. Root key/s for a given end device are identified by its DevEUI.</li>
+</ul>
+<p>The matching root keys should be stored on the network side. In LoRaWAN v1.0.x AppKey is stored in the Network Server, while in LoRaWAN v1.1 AppKey and NwkKey are stored in the Join Server. The process of storing root keys and identifiers on both ends is known as <strong>provisioning</strong>.</p>
+<p>The join procedure is started by sending a <strong>Join-request</strong> message by an end device. The Join-request message consists of the following fields:</p>
+<ul>
+<li>AppEUI/JoinEUI</li>
+<li>DevEUI</li>
+<li>DevNonce</li>
+</ul>
+<p>Note that LoRaWAN v1.1 and v1.0.4 use term JoinEUI instead of AppEUI.</p>
+<p>The Join-request message is not encrypted, i.e. it is sent in plain text. However, it has its <strong>integrity protected</strong> by computing the <strong>MIC</strong> (Message Integrity Code). The MIC enables the network to check if the AppKey (1.0.x) and NwkKey (1.1) are correct. The MIC is computed over all message fields using <strong><a href="https://datatracker.ietf.org/doc/html/rfc4493">AES-CMAC</a></strong> (AES Cipher-based Message Authentication Code) algorithm together with the root keys. The computed MIC is then added to the message itself. See images explaining this process below:</p>
+<p><strong>LoRaWAN v1.0.x</strong>
+<figure><img src="join-request-mic-10x.png"
+         alt="Join-request MIC in v1.0.x"/>
+</figure>
+</p>
+<p><strong>LoRaWAN v1.1</strong>
+<figure><img src="join-request-mic-11.png"
+         alt="Join-request MIC in v1.1"/>
+</figure>
+</p>
+<p>The following two subsections describe how the network processes the Join-request message.</p>
+<h3 id="in-lorawan-v10x">In LoRaWAN v1.0.x&nbsp;<a class="header-hash" href="#in-lorawan-v10x">#</a> </h3>
+<p>After the Join-request frame is received, the Network Server (assume that the Network Server and the Application Server are co-located) computes the MIC over all message fields (except the MIC field) using AES-CMAC algorithm with the AppKey.</p>
+<p>Then the computed MIC is compared to the MIC field in the Join-request frame. If these MICs are matched, the Network Server will authenticate the Join-request frame, otherwise the Join-request message gets discarded. This ensures that the Join-request message was not altered by any malicious actor during its journey.</p>
+<p>If the end device is allowed to join the network and the MIC is correct, the Network Server prepaires a <strong>Join-accept</strong> message. The Join-accept message consists of the following fields:</p>
+<ul>
+<li><strong>AppNonce</strong> - 3 bytes, random value</li>
+<li><strong>NetID</strong> - 3 bytes, network ID</li>
+<li><strong>DevAddr</strong> - 3 bytes, device address</li>
+<li><strong>DLSettings</strong> - 1 byte, downlink parameters</li>
+<li><strong>RxDelay</strong> - 1 byte, delay between TX and RX</li>
+<li><strong>CFList</strong> - 16 bytes, optional list of channel frequencies</li>
+</ul>
+<p>The MIC is calculated over the following Join-accept message fields using the AES-CMAC algorithm with the AppKey:</p>
+<ul>
+<li><code>cmac = aes128_cmac(AppKey, MHDR | AppNonce | NetID | DevAddr | DLSettings | RxDelay | CFList)</code></li>
+<li><code>MIC = cmac[0..3]</code></li>
+</ul>
+<p>The calculated MIC is then added to the Join-accept message.</p>
+<p>The payload of the Join-accept message is encrypted using <strong>AES decrypt</strong> operation in <strong>ECB</strong> (Electronic Code Book) mode with the AppKey, so that the end device can use the <strong>AES encrypt</strong> operation to decrypt the message:</p>
+<ul>
+<li><code>aes128_decrypt(AppKey, AppNonce | NetID | DevAddr | DLSettings | RxDelay | CFList | MIC)</code></li>
+</ul>
+<p>Finally the Network Server sends the Join-accept message to the end device.</p>
+<p>After the end device receives the Join-accept message, it derives two session keys locally, <strong>NwkSKey</strong> and <strong>AppSKey</strong> using AES encrypt:</p>
+<ul>
+<li><code>NwkSKey = aes128_encrypt(AppKey, 0x01 | AppNonce | NetID | DevNonce | pad16)</code></li>
+<li><code>AppSKey = aes128_encrypt(AppKey, 0x02 | AppNonce | NetID | DevNonce | pad16)</code></li>
+</ul>
+<p>Similarly, the Network Server derives session keys based on the root key and fields in the Join-request and Join-accept messages using AES encrypt:</p>
+<ul>
+<li><code>NwkSKey = aes128_encrypt(AppKey, 0x01 | AppNonce | NetID | DevNonce | pad16)</code></li>
+<li><code>AppSKey = aes128_encrypt(AppKey, 0x02 | AppNonce | NetID | DevNonce | pad16)</code></li>
+</ul>
+<p>Finally, the Network Server keeps the NwkSkey and shares the AppSKey with the Application Server. Note that the AppSKey is not visible to the Network Server, and that the NwkSKey is not visible to the Application Server.</p>
+<h3 id="in-lorawan-v11">In LoRaWAN v1.1&nbsp;<a class="header-hash" href="#in-lorawan-v11">#</a> </h3>
+<p>After the Join-request frame is received, the Join Server computes the MIC over all message fields (except the MIC field) using AES-CMAC algorithm with the NwkKey.</p>
+<p>Then the computed MIC is compared to the MIC field in the Join-request message. If these MICs are matched, the Join Server will authenticate the Join-request message, otherwise the Join-request message gets discarded. This ensures that the Join-request message was not altered by any malicious actor during its journey.</p>
+<p>If the end device is allowed to join the network and the MIC is correct, the network sends a <strong>Join-accept</strong> message. The Join-accept message consists of the following fields.</p>
+<ul>
+<li><strong>JoinNonce</strong> - 3 bytes, device-specific counter value</li>
+<li><strong>NetID</strong> - 3 bytes, network identifier</li>
+<li><strong>DevAddr</strong> - 4 bytes, end device address</li>
+<li><strong>DLSettings</strong> - 1 byte, downlink parameters</li>
+<li><strong>RxDelay</strong> - 1 byte, delay between TX and RX</li>
+<li><strong>CFList</strong> - 16 bytes, optional list of channel frequencies</li>
+</ul>
+<p>The MIC is calculated over the following Join-accept message fields using the AES-CMAC algorithm with the JSIntKey:</p>
+<ul>
+<li><code>cmac = aes128_cmac(JSIntKey, JoinReqType | JoinEUI | DevNonce | MHDR | JoinNonce | NetID | DevAddr | DLSettings | RxDelay | CFList)</code></li>
+<li><code>MIC = cmac[0..3]</code></li>
+</ul>
+<p>If a LoRaWAN v1.1 device is provisioned with a LoRaWAN v1.0.x Network Server, the MIC of the Join-accept message is computed using the NwkKey.</p>
+<ul>
+<li><code>cmac = aes128_cmac(NwkKey, MHDR | JoinNonce | NetID | DevAddr | DLSettings | RxDelay | CFList)</code></li>
+<li><code>MIC = cmac[0..3]</code></li>
+</ul>
+<p>The calculated MIC is then added to the Join-accept message.</p>
+<p>Then the payload of the Join-accept message is encrypted using AES decrypt operation in ECB (Electronic Code Book) mode with the <strong>NwkKey</strong> (if triggered by the Join-request) or  <strong>JSEncKey</strong> (if triggered by the Rejoin-request type 0, 1, and 2) so that the end device can use AES encrypt operation to decrypt the message.</p>
+<ul>
+<li><code>aes128_decrypt(NwkKey or JSEncKey, JoinNonce | NetID | DevAddr | DLSettings | RxDelay | CFList | MIC)</code></li>
+</ul>
+<p>After the end device receives the Join-accept message it derives session keys locally.</p>
+<p>The following 3 network session keys are derived using the NwkKey:</p>
+<ul>
+<li><code>FNwkSIntKey = aes128_encrypt(NwkKey, 0x01 | JoinNonce | JoinEUI | DevNonce | pad16)</code></li>
+<li><code>SNwkSIntKey = aes128_encrypt(NwkKey, 0x03 | JoinNonce | JoinEUI | DevNonce | pad16)</code></li>
+<li><code>NwkSEncKey = aes128_encrypt(NwkKey, 0x04 | JoinNonce | JoinEUI | DevNonce | pad16)</code></li>
+</ul>
+<p>The AppSKey is derived using the AppKey:</p>
+<ul>
+<li><code>AppSKey = aes128_encrypt(AppKey, 0x02 | JoinNonce | JoinEUI | DevNonce | pad16)</code></li>
+</ul>
+<p>The <strong>OptNeg</strong> field (can be found in the <strong>DLSettings</strong> field) is used to indicate whether the network supports LoRaWAN v1.0.x (unset) or v1.1 and later (set).</p>
+<p>If the OptNeg is unset, the device reverts to the LoRaWAN v1.0 and the session keys are derived from the NwkKey as follow:</p>
+<ul>
+<li><code>FNwkSIntKey = SNwkSIntKey = NwkSEncKey = aes128_encrypt(NwkKey, 0x01 | JoinNonce | NetID | DevNonce | pad16)</code></li>
+<li><code>AppSKey = aes128_encrypt(NwkKey, 0x02 | JoinNonce | NetID | DevNonce | pad16)</code></li>
+</ul>
+<p>If the OptNeg is set, the AppSKey is derived from AppKey and the network session keys are derived from the NwkKey as follow:</p>
+<ul>
+<li><code>AppSKey = aes128_encrypt(AppKey, 0x02 | JoinNonce | JoinEUI | DevNonce | pad16)</code></li>
+<li><code>FNwkSIntKey = aes128_encrypt(NwkKey, 0x01 | JoinNonce | JoinEUI | DevNonce | pad16)</code></li>
+<li><code>SNwkSIntKey = aes128_encrypt(NwkKey, 0x03 | JoinNonce | JoinEUI | DevNonce | pad16)</code></li>
+<li><code>NwkSEncKey = aes128_encrypt(NwkKey, 0x04 | JoinNonce | JoinEUI | DevNonce | pad16)</code></li>
+</ul>
+<p>The Join Server also derives session keys based on the root keys and fields in the Join-request and Join-accept messages.</p>
+<ul>
+<li><code>FNwkSIntKey = aes128_encrypt(NwkKey, 0x01 | JoinNonce | JoinEUI | DevNonce | pad16)</code></li>
+<li><code>SNwkSIntKey = aes128_encrypt(NwkKey, 0x03 | JoinNonce | JoinEUI | DevNonce | pad16)</code></li>
+<li><code>NwkSEncKey = aes128_encrypt(NwkKey, 0x04 | JoinNonce | JoinEUI | DevNonce | pad16)</code></li>
+<li><code>AppSKey = aes128_encrypt(AppKey, 0x02 | JoinNonce | JoinEUI | DevNonce | pad16)</code></li>
+</ul>
+<p>Finally, the Join Server shares the network session keys (FNwkSIntKey, SNwkSIntKey, NwkSEncKey) with the Network Server and the AppSKey with the Application Server. Note that the AppSKey is not visible to the Network Server, and that the FNwkSIntKey, SNwkSIntKey, and NwkSEncKey are not visible to the Application Server.</p>
+<p>Since both the end device and the network have session keys, from now all the messages will be encrypted using the AppSKey, and the integrity will be protected with the NwkSKey.</p>
+<h2 id="encrypting-the-frmpayload-field">Encrypting the FRMPayload field&nbsp;<a class="header-hash" href="#encrypting-the-frmpayload-field">#</a> </h2>
+<p>The MACPayload of the data message contains a field called FRMPayload which is capable of carrying either a sequence of MAC commands (between the end device and the Network Server) or application data (between the end device and the Application Server). The FRMPayload field is encrypted using AES encrypt operation in CCM mode (counter with cipher block chaining message authentication code; counter with CBC-MAC). The encryption key used to encrypt the FRMPayload field depends on what it contains. Note that LoRaWAN uses a minor variation of the CCM, named CCM*.</p>
+<figure><img src="frmpayload-encryption.png"/>
+</figure>
+
+<h2 id="encrypting-fopts-field">Encrypting FOpts Field&nbsp;<a class="header-hash" href="#encrypting-fopts-field">#</a> </h2>
+<p>The FOpts (Frame Options) field can carry a series of MAC commands that are piggybacked onto the data frame.</p>
+<p>The FOpts field is encrypted using AES encrypt operation in CCM* mode.</p>
+<p>The following keys are used to encrypt the FOpts field in the MACPayload in different LoRaWAN versions for both uplink and downlink data messages.</p>
+<figure><img src="fopts-encryption.png"/>
+</figure>
+
+<h2 id="computing-mic">Computing MIC&nbsp;<a class="header-hash" href="#computing-mic">#</a> </h2>
+<p>The MIC is calculated after encrypting the payload. The MIC is computed for each packet (entire PHYPayload) using the AES-CMAC.</p>
+<p>The following table presents which key is used to calculate the MIC of each data message type in LoRaWAN 1.0.x and 1.1.</p>
+<figure><img src="mic-compute-keys.png"/>
+</figure>
+
+<p>When a LoRaWAN 1.1 device is provisioned with a LoRaWAN 1.0.x Network Server, the MIC of the uplink and downlink data messages are computed with the FNwkSIntKey.</p>
+<h2 id="end-to-end-security">End-to-end Security&nbsp;<a class="header-hash" href="#end-to-end-security">#</a> </h2>
+<p>LoRaWAN provides end-to-end encryption for application payload exchange between end devices and the Application Server. Application payload refers to the data contained in the FRMPayload field. The Network Server also verifies the DevAddr for authenticating received messages.</p>
+<h2 id="replay-protection">Replay Protection&nbsp;<a class="header-hash" href="#replay-protection">#</a> </h2>
+<p>Replay protection ensures that the receiver does not accept a frame that has already been received.</p>
+<h3 id="join-request-messages">Join-request Messages&nbsp;<a class="header-hash" href="#join-request-messages">#</a> </h3>
+<p>The replay protection of the Join-request messages is protected using DevNonce. The DevNonce field is used when computing the MIC.</p>
+<p>In LoRaWAN 1.0.x, DevNonce is a random value. It is used to keep track of the Join-request messages. The network server keeps track of a certain number of DevNonce values for each end device. It ignores any Join-requests that include a previously recorded DevNonce value.</p>
+<p>In LoRaWAN v1.1, DevNonce is a counter starting at 0. It is used to keep track of the Join-request messages. The DevNonce value is incremented with every Join-request. The Network Server keeps track of the last DevNonce value used by the end device and ignores Join-requests if DevNonce is not incremented.</p>
+<p>Similarly, the replay protection for the ReJoin-request messages is implemented with the RJcount0 (for ReJoin-request Type 0 or 2 messages) or RJcount1 (for ReJoin-request Type 1 messages).</p>
+<h3 id="data-messages">Data Messages&nbsp;<a class="header-hash" href="#data-messages">#</a> </h3>
+<p>The replay protection of the data messages is implemented with the frame counters.</p>
+<p>In LoRaWAN 1.0.x two frame counters are used to keep track of uplink and downlink messages:</p>
+<ul>
+<li><strong>FCntUp</strong> - keeps track of the number of data messages sent from the end device to the Network Server.</li>
+<li><strong>FCntDown</strong> - keeps track of the number of data messages sent from the Network Server to the end device.</li>
+</ul>
+<p>These frame counters are stored in both the end device and the Network Server. Frame counters are initially set to 0 and incremented by the value 1 with each transmission.</p>
+<p>If either the device or the network receives a message with a frame counter that is lower than the last one, the message is discarded.</p>
+<p>In LoRaWAN 1.1 each end device maintains three frame counters to keep track of uplink and downlink data messages:</p>
+<ul>
+<li><strong>Uplink</strong> - The frame counter, <strong>FCntUp</strong> is used to keep track of the data messages sent from the end device to the Network Server.</li>
+<li><strong>Downlink</strong> - two frame counter schemes are available.
+<ul>
+<li><strong>Single counter scheme</strong> - all ports share the same downlink frame counter <strong>FCntDown</strong> when the device operates as a v1.0 device.</li>
+<li><strong>Two-counter scheme</strong> - <strong>NFCntDown</strong> is managed by the Network Server, whereas the <strong>AFCntDown</strong> is managed by the Application Server.
+<ul>
+<li><strong>NFCntDown</strong> is used to keep track of data messages that transports MAC commands on port 0 and when the FPort field is missing (which means no FRMPayload field).</li>
+<li><strong>AFCntDown</strong> is used to keep track of data messages on all other ports (1 - 223) when the device operates as a LoRaWAN 1.1 device.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="eavesdropping">Eavesdropping&nbsp;<a class="header-hash" href="#eavesdropping">#</a> </h2>
+<p>Since LoRaWAN provides two layers of security, the MAC payload is encrypted between the end device and the Network Server whereas the application payload is encrypted between the end device and the Application Server. This ensures only the authorised parties (end device, Network Server, Application Server) that hold the security keys (NwkSKey and AppSKey) can decrypt the payload and read the plain text content.</p>
+<h2 id="spoofing">Spoofing&nbsp;<a class="header-hash" href="#spoofing">#</a> </h2>
+<p>The MACPayload in the data message is origin-authenticated and integrity protected with the MIC. This ensures only the authorised parties (end device, Network Server, Application Server) that hold the security keys (NwkSKey and AppSKey) can generate valid data frames.</p>
+<h2 id="securing-communication-between-network-elements">Securing Communication Between Network Elements&nbsp;<a class="header-hash" href="#securing-communication-between-network-elements">#</a> </h2>
+<p>LoRaWAN uses HTTPS and VPN for securing communication among network elements (backend interfaces) such as the Network Server, Application Servers, and the Join Server.</p>
+<h2 id="secure-elements">Secure Elements&nbsp;<a class="header-hash" href="#secure-elements">#</a> </h2>
+<p>The secure element is a small chip, for example Microchip’s hardware secure element <a href="https://www.thethingsindustries.com/docs/devices/atecc608a/">ATECC608B-TNGLORA</a>, that is used to securely store root keys and for performing cryptographic operations. The root keys are securely stored in the secure elements during the manufacturing process. Once stored, it is extremely difficult to read the root keys from the chip. Simultaneously, the matching root key/s for each secure element are provisioned on the <a href="https://www.thethingsindustries.com/security/">Global Join Server</a>.</p>
+<p>Device manufacturers can easily integrate these secure element chips with their LoRaWAN end devices. During the join procedure, the secure element generates an identical pair of session keys from the root key/s, the same way the Join Server does it.</p>
+<p>The Global Join Server allows the end-user to transfer these root keys anytime to a third-party Join Server. Once transferred, the end device generates new root keys using the rekeying procedure.</p>
+
+
+        </div>
+      
+      
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+  
+
+
+<div class="is-clearfix">
+<a class="button is-pulled-left" href="/docs/lorawan/preparing-certification/">← Preparing for The Things Certified Fundamentals</a>
+</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="ttn-footer"><ttn-footer class="theme-ttn"></ttn-footer></div>
+
+<script src="https://cdn.jsdelivr.net/npm/promise-polyfill@7/dist/polyfill.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
+<script src="https://ttnweb.azureedge.net/static/common/js/ga.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/vendor/basicLightbox.min.js"></script>
+<script src="https://www.thethingsnetwork.org/docs/js/theme.min.00ace5d667ca108a93b8a0d385569f7c7bb9f46ed32eefe3f5fb39105763cccd.js" integrity="sha256-AKzl1mfKEIqTuKDThVaffHu59G7TLu/j9fs5EFdjzM0=" crossorigin="anonymous"></script>
+<script src="https://www.thethingsnetwork.org/docs/ttui/components/ttui-header/index.848969f6777f7c7749096c9a85a7032b8af02127f15ecfbbea082c7bc746e664.js" crossorigin="anonymous"></script>
+<script src="https://www.thethingsnetwork.org/docs/ttui/components/ttn-header/index.3e52b7acba15ce8a0f72b5f74800ad682f5ab30afdb08cce7c897ce9a09e5ce3.js" crossorigin="anonymous"></script>
+<script src="https://www.thethingsnetwork.org/docs/ttui/components/cookie-banner/index.e3805acd3038d581eac150975895a916277f093e979b068c2cdd55303000547d.js" crossorigin="anonymous"></script>
+<script src="https://www.thethingsnetwork.org/docs/ttui/components/ttn-footer/index.ae0354b415f3194319102cda7c8bb4c03b42418d3347a3d057c4ec760ab2a248.js" crossorigin="anonymous"></script>
+
+<ttui-cookie class="theme-ttn" id="cookie-banner"></ttui-cookie>
+
+<script>
+  var cookieBanner = document.getElementById("cookie-banner");
+  window.addEventListener("ttuicookieaccept", cookieAccept, { capture: true, once: true } );
+  var cookieAcceptKey = 'ttn-ca'
+  var timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+  if (readCookieAccept() || !timezone.includes("Europe") ) {
+      cookieBanner.setAttribute('accepted', true);
+  }
+
+  function readCookieAccept() {
+      return localStorage.getItem(cookieAcceptKey)
+  }
+
+  function cookieAccept() {
+      localStorage.setItem(cookieAcceptKey, true);
+  }
+</script>
+
+</body>
+
+</html>
