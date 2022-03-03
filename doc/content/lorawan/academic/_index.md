@@ -13,6 +13,7 @@ A lot of research is conducted on LoRa and LoRaWAN. This page is created to bett
 
 Title | Author | Journal/Proceedings | Year |
 | -------------------- | ---------- | ---------- | ------ |
+[Modeling Communication Reliability in LoRa Networks with Device-level Accuracy](https://ieeexplore.ieee.org/document/9488783) | V. Toro-Betancur; G. Premsankar; M. Slabicki; M. Di Francesco | IEEE INFOCOM | 2021 |
 [A Communication Infrastructure for the Health and Social Care Internet of Things: Proof-of-Concept Study](https://medinform.jmir.org/2020/2/e14583) | V.Della Mea V, M.h. Popescu, D.Gonano, T.Petaros, I.Emili, M.G.Fattori | JMIR Medical Informatics | 2020 |
 [A comparative study of LPWAN technologies for large-scale IoT deployment](http://www.sciencedirect.com/science/article/pii/S2405959517302953) | K.Mekki, E.Bajic, F.Chaxel, F.Meyer | ICT Express | 2019 |
 [City Scale Particulate Matter Monitoring Using LoRaWAN Based Air Quality IoT Devices](https://www.mdpi.com/1424-8220/19/1/209) | S.J.Johnston, P.J.Basford, F.M.Bulot, M.Apetroaie-Cristea, N.H.Easton, C.Davenport C, et al | Sensors (Basel) | 2019 |
