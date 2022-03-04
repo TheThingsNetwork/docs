@@ -9,8 +9,8 @@
 
   <meta name="generator" content="Hugo 0.88.1" />
 
-  <title>Duty Cycle | The Things Network</title>
-  <link rel="canonical" href="https://www.thethingsnetwork.org/docs/lorawan/duty-cycle/" />
+  <title>dB, dBm, dBi and dBd | The Things Network</title>
+  <link rel="canonical" href="https://www.thethingsnetwork.org/docs/lorawan/db-dbm-dbi-dbd/" />
   
 
   <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
@@ -41,17 +41,17 @@
   <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.bba2ad39c997e34e6006de277f36b1e2392e80f631801f8ae2e5c72e23228f6d.css" integrity="sha256-u6KtOcmX405gBt4nfzax4jkugPYxgB&#43;K4uXHLiMij20=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/ttui/main.min.a26da693ec106c40b7bb1453360e9f0029677a596de5ab1e45bccd05a75b9393.css" integrity="sha256-om2mk&#43;wQbEC3uxRTNg6fAClnellt5aseRbzNBadbk5M=" crossorigin="anonymous">
 
-  <meta property="og:title" content="Duty Cycle" />
+  <meta property="og:title" content="dB, dBm, dBi and dBd" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.thethingsnetwork.org/docs/lorawan/duty-cycle/" /><meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/><meta property="og:site_name" content="The Things Network" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/lorawan/db-dbm-dbi-dbd/" /><meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/><meta property="og:site_name" content="The Things Network" />
 
 
 
   <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
 
-<meta name="twitter:title" content="Duty Cycle"/>
+<meta name="twitter:title" content="dB, dBm, dBi and dBd"/>
 <meta name="twitter:description" content="We are building a global open free crowdsourced long range low power IoT data network"/>
 
 
@@ -202,12 +202,7 @@
 
       
 <li>
-  <a href="https://www.thethingsnetwork.org/docs/lorawan/duty-cycle/" class="is-active">Duty Cycle</a>
-  
-
-
-
-  
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/duty-cycle/" class="">Duty Cycle</a>
 </li>
 
       
@@ -232,7 +227,12 @@
 
       
 <li>
-  <a href="https://www.thethingsnetwork.org/docs/lorawan/db-dbm-dbi-dbd/" class="">dB, dBm, dBi and dBd</a>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/db-dbm-dbi-dbd/" class="is-active">dB, dBm, dBi and dBd</a>
+  
+
+
+
+  
 </li>
 
       
@@ -274,44 +274,78 @@
     <div class="column is-9-desktop sidebar-middle">
       <div class="docs-content">
         <h1 class="title is-size-2">
-          Duty Cycle
+          dB, dBm, dBi and dBd
         </h1>
         <div class="content">
           
-<p><strong>Duty Cycle indicates the fraction of time a resource is busy.</strong></p>
-<p>When a single device transmits on a channel for 2 <em>time units</em> every 10 <em>time units</em>, this device has a duty cycle of 20%.<br>
-<img src="duty-cycle-single-channel.png" alt="Single Channel Duty Cycle"></p>
-<p>However, if we also consider <em>channels</em>, things get a bit more complicated. When we have a device that transmits on 3 channels instead of one, each individual <em>channel</em> is still occupied for 2 <em>time units</em> every 10 <em>time units</em> (so 20%). However, the <em>device</em> is now transmitting for 6 <em>time units</em> every 10 <em>time units</em>, giving it a duty cycle of 60%.<br>
-<img src="duty-cycle-multi-channel.png" alt="Multiple Channel Duty Cycle"></p>
-<p>In our European frequency plan, we have channels in different <em>sub-bands</em>, so when considering the duty cycle, we also have to consider these. Let&rsquo;s say the 3 channels we used before, are in 2 different <em>sub-bands</em>. Each separate <em>channel</em> still has a duty cycle of 20%, the <em>device</em> still has a duty cycle of 60%, but we now see that <em>Band 1</em> is in use for 2 <em>time units</em> every 10 <em>time units</em> (20%), while <em>Band 2</em> is in use for 4 <em>time units</em> every 10 <em>time units</em> (40%).<br>
-<img src="duty-cycle-multi-band.png" alt="Multiple Band Duty Cycle"></p>
-<h2 id="maximum-duty-cycle">Maximum Duty Cycle&nbsp;<a class="header-hash" href="#maximum-duty-cycle">#</a> </h2>
-<p>The duty cycle of radio devices is often regulated by government. If this is the case, the duty cycle is commonly set to 1%, but make sure to check the regulations of your local government to be sure.</p>
-<p>In Europe, duty cycles are regulated by section 7.2.3 of the ETSI EN300.220 standard. This standard defines the following sub-bands and their duty cycles:</p>
+<p>In this chapter briefly discuss some units that are used to measure the performance of transceivers (gateways and end devices) and antennas</p>
+<h2 id="db-decibel">dB (decibel)&nbsp;<a class="header-hash" href="#db-decibel">#</a> </h2>
+<p>The decibel can be used to express the ratio of two physical quantities such as power, sound intensity, sound pressure, voltage, and current on a logarithmic scale. In LoRaWAN we use decibel to express the ratio between two power levels usually given in watt (W) or milliwatt (mW).</p>
+<p>The power ratio, <em>N</em> can be expressed in decibel using the formula,</p>
+<p><strong>N = 10 log<sub>10</sub> (P<sub>out</sub>/P<sub>in</sub>) dB</strong></p>
+<p>where P<sub>out</sub> is the output power and P<sub>in</sub> is the input power.</p>
+<div class="notification is-info is-light has-text-dark">
+  <h5 class="title is-family-sans-serif has-text-dark mb-1">Note:</h5>
+  When we are dealing with the power levels we use 10log units.
+</div>
+
+<p>For example, if an amplifier turns a 1 W signal into a 1000 W signal, its power ratio can be expressed as:</p>
+<p>N = 10 log<sub>10</sub> (P<sub>out</sub>/P<sub>in</sub>) = 10 log<sub>10</sub> (1000/1) = 30 dB</p>
+<p>Decibel doesn’t provide an absolute value. By looking at the decibel value you can’t say the input and output power of a device or cable etc, but you can say whether it offers a gain or a loss.</p>
+<p>A power ratio greater than 0 dB is treated as a gain. For example, if an amplifier turns a 2 W signal into a 10 W signal, the power ratio is:</p>
+<p>N = 10 log<sub>10</sub> (P<sub>out</sub>/P<sub>in</sub>)  = 10 log<sub>10</sub> (10/2)   = 10 log<sub>10</sub> (5)  = 6.9 dB (gain)</p>
+<p>A power ratio less than 0 dB is treated as a loss (negative gain or attenuation). For example, if 10 W of power is fed into a cable but only 8 W is measured at the output, the power ratio is:</p>
+<p>N = 10 log<sub>10</sub> (P<sub>out</sub>/P<sub>in</sub>)  = 10 log<sub>10</sub> (8/10) = 10 log<sub>10</sub>(0.8) = -0.9 dB (loss)</p>
+<p>The power ratio of 0 dB means there is no gain or loss.</p>
+<h2 id="dbm-decibel-per-milliwatt">dBm (decibel per milliwatt)&nbsp;<a class="header-hash" href="#dbm-decibel-per-milliwatt">#</a> </h2>
+<p>If you use the reference input power (P<sub>in</sub>) of 1 mW the power ratio, <em>N</em> can be expressed in dBm:</p>
+<p><strong>N = 10 log<sub>10</sub>(P<sub>out</sub> / 1) dBm</strong></p>
+<p>By using the above formula, P<sub>out</sub> can be expressed in mW which is an absolute value.</p>
+<p><strong>P<sub>out</sub>/P<sub>in</sub> = 10<sup>(N/ 10)</sup></strong></p>
+<p><strong>P<sub>out</sub> = 10<sup>(N/ 10)</sup> mW</strong></p>
+<p>For example, if a LoRaWAN gateway has an output power of 22 dBm, how much power does it generate in W?</p>
+<p>P<sub>out</sub> = 10<sup>(N / 10)</sup>  = 10<sup>(22 / 10)</sup>  = 10<sup>(2.2)</sup> = 158.48 mW = 0.158 W</p>
+<h2 id="rule-of-10s-and-3s">Rule of 10s and 3s&nbsp;<a class="header-hash" href="#rule-of-10s-and-3s">#</a> </h2>
+<p>By using only 10s and 3s, one can easily convert a dBm value to its corresponding absolute power value without using the logarithmic scale.</p>
 <ul>
-<li><strong>g</strong> (863.0 – 868.0 MHz): 1%</li>
-<li><strong>g1</strong> (868.0 – 868.6 MHz): 1%</li>
-<li><strong>g2</strong> (868.7 – 869.2 MHz): 0.1%</li>
-<li><strong>g3</strong> (869.4 – 869.65 MHz): 10%</li>
-<li><strong>g4</strong> (869.7 – 870.0 MHz): 1%</li>
+<li>10 dB = x10 (makes output power 10 times as the input power, for example, input=10 W and output=100 W)</li>
+<li>-10 dB = ÷10 (makes output power 1/10 times as the input power, for example, input=100 W and output=10 W)</li>
+<li>3 dB = x2 (doubles the power, for example, input=5 W and output=10 W)</li>
+<li>-3 dB = ÷2 (halves the power, for example, input=10 W and output=5 W)</li>
 </ul>
-<p>Additionally, the LoRaWAN specification dictates duty cycles for the <em>join frequencies</em>, the frequencies devices of all LoRaWAN-compliant networks use for over-the-air activations (OTAA) of devices. In most regions this duty cycle is set to <strong>1%</strong>.</p>
-<h4 id="fair-use-policy">Fair Use Policy&nbsp;<a class="header-hash" href="#fair-use-policy">#</a> </h4>
-<p>On The Things Network&rsquo;s public community network a <strong>Fair Use Policy</strong> applies which limits the <strong>uplink airtime</strong> to <strong>30 seconds per day (24 hours) per node</strong> and the <strong>downlink messages</strong> to <strong>10 messages per day (24 hours) per node</strong>. If you use a private network, these limits do not apply, but you still have to be compliant with the governmental and LoRaWAN limits.</p>
-<h2 id="compliance">Compliance&nbsp;<a class="header-hash" href="#compliance">#</a> </h2>
-<p>Every radio device must be compliant with the regulated duty cycle limits. This applies to <strong>both nodes and gateways</strong>.</p>
-<p>In practice, this means that you should program your nodes in such a way, that they stay within the limits. The easiest way to do this, is to calculate how much <em>airtime</em> each message consumes using one of the many <a href="https://avbentem.github.io/airtime-calculator/ttn/eu868">airtime calculators</a> and use that information to choose a good transmit interval.</p>
-<p>Some radio modules (such as the RN2483) also enforce the duty cycle limits. If you exceed the limits, the module will complain with a message <code>no_free_ch</code>. Specifically, the RN2483 limits the duty cycle on a per-channel basis. This means that if you only have 1 channel configured, the module will start enforcing the duty cycle after the first message.</p>
-<p><em>The figure below shows enforcement on a resource with a 20% duty cycle limit</em><br>
-<img src="duty-cycle-single-channel-off-air.png" alt="Single Channel Off-air"></p>
-<p>In the European band, a transmission on a channel within a frequency band, also influences the other frequencies in that band.</p>
-<p><em>The figure below shows enforcement on two bands, each with a 20% duty cycle limit</em><br>
-<img src="duty-cycle-multi-band-off-air.png" alt="Multiple Band Off-air"></p>
-<p>As a per-channel duty cycle limit is easier to implement, you can also divide the sub-band duty cycle over the number of channels in that sub-band. So for example, in a sub-band with 8 channels and a duty cycle of 1%, each channel has a duty cycle of 1/8% (that&rsquo;s 0.125%).</p>
-<p>This method is also implemented by the RN2483 module, and as a result, instead of seeing the <code>no_free_ch</code> when you send too quickly after the first message you can send multiple messages before all 8 channels are &ldquo;blocked&rdquo; and the duty cycle is enforced.</p>
-<p><em>The figure below shows enforcement on those same two bands, but enforced per channel</em><br>
-<img src="duty-cycle-multi-channel-off-air-2.png" alt="Multiple Band Off-air"></p>
-<p><em>(note: channel 3 is blocked until slot 11)</em></p>
+<p>For example, if you want to convert 1 dBm its corresponding absolute power value, 1 can be written as, 10 -3 -3 -3.</p>
+<p>Then apply the rule:</p>
+<p>1 dB = 10 dB -3 dB -3 dB -3 dB = x10 ÷2 ÷2 ÷2 = 1.25</p>
+<p>Remember P<sub>in</sub> is always 1 mW and &rsquo;m' in dBm stands for milliwatt. So we multiply the above answer by 1 mW.</p>
+<p>1 dBm = 1 mW x 1.25 = 1.25 mW</p>
+<p>When you write any dBm value using 10s and 3s remember,</p>
+<ul>
+<li>If possible avoid using 3s</li>
+<li>Never use more than five 3s</li>
+</ul>
+<p>Let&rsquo;s take another example:</p>
+<p>For example, if a LoRaWAN gateway has an output power of 17 dBm, how much power does it generate in mW?</p>
+<p>17 can be written as, 10 +10 -3</p>
+<p>Then apply the rule:</p>
+<p>17 dB = 10 dB +10 dB -3 dB = x10 x10 ÷2 = 50</p>
+<p>17 dBm = 1 mW x 50 = 50 mW</p>
+<h2 id="antenna-gains">Antenna gains&nbsp;<a class="header-hash" href="#antenna-gains">#</a> </h2>
+<p>The units dBi and dBd are used to express antenna gains.</p>
+<h3 id="dbi-decibel-relative-to-isotropic">dBi (decibel relative to isotropic)&nbsp;<a class="header-hash" href="#dbi-decibel-relative-to-isotropic">#</a> </h3>
+<p>The gain of an antenna can be measured relative to an isotropic antenna and is expressed in dBi. An isotropic antenna is a hypothetical antenna that radiates power uniformly in all directions. The gain of an isotropic antenna is 0 dB which means it has no gain or loss.</p>
+<h3 id="dbd-decibel-relative-to-dipole">dBd (decibel relative to dipole)&nbsp;<a class="header-hash" href="#dbd-decibel-relative-to-dipole">#</a> </h3>
+<p>The gain of an antenna can be measured relative to a reference dipole antenna and is expressed in dBd. A reference dipole antenna offers a fixed 2.15 dB of gain over an isotropic antenna.</p>
+<p>The following equation represents the relationship between dBi and dBd:</p>
+<p><strong>dBi = dBd + 2.15 dB</strong></p>
+<h3 id="questions">Questions:&nbsp;<a class="header-hash" href="#questions">#</a> </h3>
+<ol>
+<li>Convert 5 dBi to dBd.</li>
+</ol>
+<p>X<sub>dBd</sub> = X<sub>dBi</sub> - 2.15  = 5 - 2.15 = 2.85 dBd</p>
+<ol start="2">
+<li>Convert 2 dBd to dBi.</li>
+</ol>
+<p>X<sub>dBi</sub> = X<sub>dBd</sub> + 2.15 = 2 + 2.15 = 4.15 dBi</p>
 
 
         </div>
@@ -326,18 +360,18 @@
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
     
     
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
   
@@ -352,8 +386,8 @@
 
 
 <div class="is-clearfix">
-<a class="button is-pulled-left" href="/docs/lorawan/frequency-plans/">← Frequency Plans</a>
-<a class="button is-pulled-right" href="/docs/lorawan/glossary/">Glossary →</a>
+<a class="button is-pulled-left" href="/docs/lorawan/academic/">← Academic Research</a>
+<a class="button is-pulled-right" href="/docs/lorawan/concentrators/">LoRaWAN® Concentrators →</a>
 </div>
 
       </div>
