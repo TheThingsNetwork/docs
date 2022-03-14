@@ -269,7 +269,7 @@ For discussions about the frequency plans in different countries, see the posts 
 | Slovenia | EU863-870<br />EU433 | CEPT Rec. 70-03 |
 | Solomon Islands
 | Somalia
-| South Africa | EU863-870<br />EU433 | CRASA follows CEPT Rec. 70-03, [The Radio Frequency Spectrum Regulations 2015](http://www.amateurradio.org.za/Government%20Gazzette%2038641_30-3_IcasaCV01%20-%20Radio%20Frequency%20Spectrum%20Regulations%202015%20(2).pdf) | 
+| South Africa | EU863-870<br />EU433 | CRASA follows CEPT Rec. 70-03, [The Radio Frequency Spectrum Regulations 2015](https://www.icasa.org.za/uploads/files/Radio-Frequency-Spectrum-Regulations-2015.pdf), [Amendment December 2021](https://www.gov.za/sites/default/files/gcis_document/202112/45690gen737.pdf) | 
 | South Korea | KR920-923 | |
 | South Sudan
 | Spain | EU863-870<br />EU433 | CEPT Rec. 70-03 |
