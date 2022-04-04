@@ -19,13 +19,6 @@ The EIRP of a unit that consists of a transmitter, an antenna, and a cable can b
 
 where the transmitter power in dBm, antenna gain in dBi, and cable loss in dB.
 
-The maximum EIRP of a gateway or an end device is mentioned for various regions by the respective regulatory authorities. For example, in Europe, it is +16 dBm and regulated by ETSI (European Telecommunications Standards Institute), in America it is +30 dBm and regulated by FCC (The Federal Communications Commission), and in Australia, it is +30 dBm and regulated by ACMA (Australian Communications and Media Authority). Read the [LoRaWAN® Regional Parameters 1.0.3](https://lora-alliance.org/wp-content/uploads/2021/05/RP002-1.0.3-FINAL-1.pdf) to find the maximum allowed EIRP in other regions and their respective regulatory authorities. 
-
-Adjust the following parameters to prevent EIRP thresholds from being exceeded.
-- Transmitter output power
-- Cable and connector attenuation
-- Antenna gain
-
 **Question:** Calculate the EIRP value of the following unit that consists of a LoRaWAN gateway, an antenna cable, and an antenna.
 
 {{< figure src="eirp-q1.png" alt="EIRP-q1" >}}
@@ -59,6 +52,7 @@ ERP = Transmitter output power (dBm) + Antenna gain (dBd) - Cable loss (dB)
 ERP = 20 +0.85 -7 = 13.85 dBm
 
 ## Conversion between EIRP and ERP
+
 You can easily convert EIRP to ERP and vice versa using the following equation:
 
 EIRP (dBm) = ERP (dBm) + 2.15
@@ -69,9 +63,20 @@ ERP (dBm) = EIRP (dBm) - 2.15
 ERP (dBm) = 16 -2.15 = 13.85 dBm
 
 ## dBm to watts conversion
-Read the section **Rule of 10s and 3s** in our guide [dB, dBm, dBi and dBd](../db-dbm-dbi-dbd/) to learn how to convert dBm to watts (W).
 
-If you want to quickly convert dBm to watts without calculating by hand, an online tool is available at [RapidTables](https://www.rapidtables.com/convert/power/dBm_to_Watt.html)
+EIRP or ERP values can be converted to watts (W) or milliwatts (mW), for example,  EIRP 16 dBm is equivalent to 40 mW.
 
+Read the section **Rule of 10s and 3s** in our guide [dB, dBm, dBi and dBd](../db-dbm-dbi-dbd/) to learn how to convert dBm to watts or milliwatts.
 
+If you want to quickly convert dBm to watts or milliwatts without calculating by hand, an online tool is available at [RapidTables](https://www.rapidtables.com/convert/power/dBm_to_Watt.html)
 
+## Regulations
+
+The maximum transmission power of a gateway or an end device is region specific and is regulated by the respective regulatory authorities. For example, in Europe, it is 25 mW ERP (+16 dBm EIRP) and is regulated by ETSI (European Telecommunications Standards Institute).
+
+Read the [LoRaWAN® Regional Parameters 1.0.3](https://lora-alliance.org/wp-content/uploads/2021/05/RP002-1.0.3-FINAL-1.pdf) to find the maximum allowed EIRP in other regions. 
+
+Adjust the following parameters to prevent EIRP/ERP/milliwatts thresholds from being exceeded.
+- Transmitter output power
+- Cable and connector attenuation
+- Antenna gain
