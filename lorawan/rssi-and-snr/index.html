@@ -9,8 +9,8 @@
 
   <meta name="generator" content="Hugo 0.88.1" />
 
-  <title>LoRaWAN® Concentrators | The Things Network</title>
-  <link rel="canonical" href="https://www.thethingsnetwork.org/docs/lorawan/concentrators/" />
+  <title>RSSI and SNR | The Things Network</title>
+  <link rel="canonical" href="https://www.thethingsnetwork.org/docs/lorawan/rssi-and-snr/" />
   
 
   <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
@@ -41,17 +41,17 @@
   <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.bba2ad39c997e34e6006de277f36b1e2392e80f631801f8ae2e5c72e23228f6d.css" integrity="sha256-u6KtOcmX405gBt4nfzax4jkugPYxgB&#43;K4uXHLiMij20=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/ttui/main.min.a26da693ec106c40b7bb1453360e9f0029677a596de5ab1e45bccd05a75b9393.css" integrity="sha256-om2mk&#43;wQbEC3uxRTNg6fAClnellt5aseRbzNBadbk5M=" crossorigin="anonymous">
 
-  <meta property="og:title" content="LoRaWAN® Concentrators" />
+  <meta property="og:title" content="RSSI and SNR" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.thethingsnetwork.org/docs/lorawan/concentrators/" /><meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/><meta property="og:site_name" content="The Things Network" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/lorawan/rssi-and-snr/" /><meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/><meta property="og:site_name" content="The Things Network" />
 
 
 
   <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
 
-<meta name="twitter:title" content="LoRaWAN® Concentrators"/>
+<meta name="twitter:title" content="RSSI and SNR"/>
 <meta name="twitter:description" content="We are building a global open free crowdsourced long range low power IoT data network"/>
 
 
@@ -232,12 +232,7 @@
 
       
 <li>
-  <a href="https://www.thethingsnetwork.org/docs/lorawan/concentrators/" class="is-active">LoRaWAN® Concentrators</a>
-  
-
-
-
-  
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/concentrators/" class="">LoRaWAN® Concentrators</a>
 </li>
 
       
@@ -257,7 +252,12 @@
 
       
 <li>
-  <a href="https://www.thethingsnetwork.org/docs/lorawan/rssi-and-snr/" class="">RSSI and SNR</a>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/rssi-and-snr/" class="is-active">RSSI and SNR</a>
+  
+
+
+
+  
 </li>
 
       
@@ -279,97 +279,50 @@
     <div class="column is-9-desktop sidebar-middle">
       <div class="docs-content">
         <h1 class="title is-size-2">
-          LoRaWAN® Concentrators
+          RSSI and SNR
         </h1>
         <div class="content">
           
-<p><a href="https://www.semtech.com/products/wireless-rf/lora-core">Semtech&rsquo;s LoRa concentrators</a> power all LoRa communication.</p>
-<p>Semtech has produced four LoRa concentrators and all LoRaWAN gateways use one of these devices to receive and transmit LoRa messages.</p>
-<p>Read about all of Semtech&rsquo;s LoRa products on their <a href="https://www.semtech.com/products/wireless-rf/lora-core">LoRa product page</a>.</p>
-<p>Additionally, RAK Wireless provides a great <a href="https://news.rakwireless.com/things-to-consider-when-picking-a-lorawan-gateway/">breakdown of available LoRa hardware</a>.</p>
-<p>This page provides a quick description of each of the LoRa concentrators.</p>
-<h2 id="sx1301">SX1301&nbsp;<a class="header-hash" href="#sx1301">#</a> </h2>
-<figure class="float plain"><img src="SX1301.jpg"/>
+<p>In wireless communication, a receiver needs a good signal strength and a signal-to-noise ratio to separate the original signal from the modulated carrier. This section contains information about two most commonly used signal strength indicators - RSSI and SNR.</p>
+<h2 id="rssi">RSSI&nbsp;<a class="header-hash" href="#rssi">#</a> </h2>
+<p>RSSI (Received Signal Strength Indicator) is a relative measurement that helps you determine if the received signal is strong enough to get a good wireless connection from the transmitter. Since LoRaWAN supports bi-directional communication, RSSI is an important measurement for both gateways and end devices. RSSI is measured in <a href="../db-dbm-dbi-dbd/#dbm-decibel-per-milliwatt">dBm</a> and its value is a negative form. The closer the RSSI value is to zero, the received signal is stronger.</p>
+<p>Apart from the output power of the transmitter, the following factors mainly influence the RSSI:</p>
+<ul>
+<li>Path loss</li>
+<li>Antenna gain</li>
+<li>Cable/connector loss</li>
+</ul>
+<h2 id="snr">SNR&nbsp;<a class="header-hash" href="#snr">#</a> </h2>
+<p>SNR (Signal-to-Noise Ratio), often written as S/N, is the ratio of the received signal power to the noise floor. SNR is commonly used to determine the quality of the received signal.</p>
+<p>SNR can be calculated using the following formula and is often expressed in decibels (dB):</p>
+<p><strong>SNR (dB) = P<sub>received_signal</sub> (dBm) - P<sub>noise</sub> (dBm)</strong></p>
+<p>If the RSSI is above the noise floor the receiver can easily demodulate the signal.</p>
+<p>Here is a good example of a positive SNR:</p>
+<figure><img src="snr-greater-than-zero.png"
+         alt="SNR is greater than zero"/>
 </figure>
 
-<p>The SX1301 is Semtech&rsquo;s first outdoor LoRaWAN concentrator, designed to provide worldwide LoRaWAN gateway capability in ISM bands. It is the first digital baseband chip to integrate Semtech&rsquo;s LoRa Concentrator IP.</p>
-<ul>
-<li>Up to -142.5dBm sensitivity with SX1257 Tx/Rx front-end</li>
-<li>70 dB CW interferer rejection at 1 MHz offset</li>
-<li>Able to operate with negative SNR, CCR up to 9dB</li>
-<li>Emulates 49x LoRa demodulators and 1x (G)FSK demodulator</li>
-<li>Dual digital TX&amp;RX radio front-end interfaces</li>
-<li>10 programmable parallel demodulation paths</li>
-<li>Dynamic data-rate (DDR) adaptation</li>
-<li>True antenna diversity or simultaneous dual-band operation</li>
-</ul>
-<p>The SX1301 is succeeded by the SX1302.</p>
-<p>Read more about the SX1301 on Semtech&rsquo;s SX1301 <a href="https://www.semtech.com/products/wireless-rf/lora-core/sx1301">product page</a>.</p>
-<h2 id="sx1302">SX1302&nbsp;<a class="header-hash" href="#sx1302">#</a> </h2>
-<figure class="float plain"><img src="SX1302.jpg"/>
+<p><em>Image captured from the <a href="https://www.youtube.com/watch?v=QFapH4oADnU">YouTube video</a> by Richard Wenner. The x-axis represents the power level in dBm and the y-axis represents the time.</em></p>
+<p>By looking at the above graph you can see that the RSSI is about -65 dBm and the noise floor is about -90 dBm. By using these values you can calculate the SNR as follows:</p>
+<p>SNR (dB) = P<sub>received_signal</sub> (dBm) - P<sub>noise</sub> (dBm)</p>
+<p>SNR (dB) = -65 dBm -(-90 dBm) = 25 dB</p>
+<p>The positive SNR means that the signal power is greater than the noise power, i.e. the receiver will be able to demodulate the signal.</p>
+<p>If the RSSI is below the noise floor, it is impossible to demodulate the signal. However, LoRa can demodulate signals that are below the noise floor. The minimum SNR required for demodulation at different spreading factors is shown in the table below:</p>
+<p><figure><img src="snr-demodulation-limits.png"
+         alt="SNR demodulation limits"/>
 </figure>
 
-<p>The SX1302 succeeds the SX1301. It reduces current consumption, has better thermal capability, is cheaper, and can handle more traffic than its predecessor.</p>
-<ul>
-<li>Up to -141 dBm sensitivity with SX1250 Tx/Rx front-end</li>
-<li>125 kHz LoRa reception with:
-<ul>
-<li>8 x 8 channels LoRa® packet detectors</li>
-<li>8 x SF5-SF12 LoRa® demodulators</li>
-<li>8 x SF5-SF10 LoRa® demodulators</li>
-</ul>
-</li>
-<li>125 / 250 / 500 kHz LoRa® demodulator</li>
-<li>(G)FSK demodulator</li>
-<li>Direct interface to Semtech transceivers</li>
-<li>SX1255, SX1257 and SX1250</li>
-<li>Single 32 MHz clock</li>
-</ul>
-<p>The SX1302 is succeeded by the SX1303.</p>
-<p>Read more about the SX1302 on Semtech&rsquo;s SX1302 <a href="https://www.semtech.com/products/wireless-rf/lora-core/sx1302">product page</a>.</p>
-<h2 id="sx1303">SX1303&nbsp;<a class="header-hash" href="#sx1303">#</a> </h2>
-<figure class="float plain"><img src="SX1303.jpg"/>
+<em>Image captured from <a href="https://www.semtech.com/products/wireless-rf/lora-core/sx1278">Semtech SX1276-7-8-9 Datasheet</a>.</em></p>
+<p>Here is a good example of a negative SNR:</p>
+<figure><img src="snr-less-than-zero.png"
+         alt="SNR is less than zero"/>
 </figure>
 
-<p>The SX1303 succeeds the SX1302, and is Semtech&rsquo;s most modern LoRa concentrator. It is pin and size compatible to its predecessor, and further reduces current, improves thermal capability, and is cheaper. In addition, it supports Time Difference of Arrival (TDOA) geolocation via a new Fine Timestamp capability.</p>
-<ul>
-<li>Fine Timestamp</li>
-<li>Up to -141dBm sensitivity with SX1250 Tx/Rx front-end</li>
-<li>125kHz LoRa reception with:
-<ul>
-<li>8 x 8 channels LoRa packet detectors</li>
-<li>8 x SF5-SF12 LoRa demodulators</li>
-<li>8 x SF5-SF10 LoRa demodulators</li>
-<li>Up to 8 packets can be received simultaneously when Fine Timestamp is enabled</li>
-</ul>
-</li>
-<li>125/250/500kHz LoRa demodulator</li>
-<li>(G)FSK demodulator</li>
-<li>Direct interface to Semtech transceivers</li>
-<li>SX1255, SX1257 and SX1250</li>
-<li>Single 32MHz clock</li>
-</ul>
-<p>Read more about the SX1303 on Semtech&rsquo;s SX1303 <a href="https://www.semtech.com/products/wireless-rf/lora-core/sx1303">product page</a>.</p>
-<h2 id="sx1308">SX1308&nbsp;<a class="header-hash" href="#sx1308">#</a> </h2>
-<figure class="float plain"><img src="SX1308.jpg"/>
-</figure>
-
-<p>The SX1308 is a less sensitive concentrator than the SX1301/2/3. It is designed for indoor gateways.</p>
-<ul>
-<li>Up to -139dBm sensitivity with SX1257 or SX1255 Tx/Rx front-end</li>
-<li>70dB CW interferer rejection at 1MHz offset</li>
-<li>Able to operate with negative SNR
-<ul>
-<li>CCR up to 9dB</li>
-</ul>
-</li>
-<li>Emulates 49x LoRa demodulators and 1x (G)FSK demodulator</li>
-<li>Dual digital Tx &amp; Rx radio front-end interfaces</li>
-<li>10 programmable parallel demodulation paths</li>
-<li>Dynamic data-rate adaptation (ADR)</li>
-<li>True antenna diversity or simultaneous dual-band operation</li>
-</ul>
-<p>Read more about the SX1308 on Semtech&rsquo;s SX1308 <a href="https://www.semtech.com/products/wireless-rf/lora-core/sx1308">product page</a>.</p>
+<p><em>Image captured from the <a href="https://www.youtube.com/watch?v=QFapH4oADnU">YouTube video</a> by Richard Wenner. The x-axis represents the power level in dBm and the y-axis represents the time.</em></p>
+<p>By looking at the above graph you can see that the RSSI is about -120 dBm and the noise floor is about -90 dBm. Now calculate the SNR as follows:</p>
+<p>SNR (dB) = P<sub>received_signal</sub> (dBm) - P<sub>noise</sub> (dBm)</p>
+<p>SNR (dB) = -120 dBm -(-90 dBm) = -30 dB</p>
+<p>The negative SNR means that the signal power is less than the noise power. The value of -30 dB is below the minimum SNR of -20 dBm @ SF12, so it does not guarantee that the receiver will be able to demodulate the signal.</p>
 
 
         </div>
@@ -396,24 +349,24 @@
   
 
   
+
+  
+
+  
+
+  
+
+  
     
     
-  
-
-  
-
-  
-
-  
-
   
 
   
 
 
 <div class="is-clearfix">
-<a class="button is-pulled-left" href="/docs/lorawan/db-dbm-dbi-dbd/">← dB, dBm, dBi and dBd</a>
-<a class="button is-pulled-right" href="/docs/lorawan/transceivers/">LoRaWAN® Transceivers →</a>
+<a class="button is-pulled-left" href="/docs/lorawan/preparing-certification/">← Preparing for The Things Certified Fundamentals</a>
+<a class="button is-pulled-right" href="/docs/lorawan/the-things-certified-security/">The Things Certified Security →</a>
 </div>
 
       </div>
