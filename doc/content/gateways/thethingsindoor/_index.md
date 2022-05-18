@@ -30,7 +30,7 @@ The Things Indoor Gateway(TTIG) is designed to be a fully compliant, ultra low-c
 
 **Links:**
 * Amazon - US - [link](https://www.amazon.com/dp/B08L6BWNJR)
-* Amazon - EU - [link](https://www.amazon.de/dp/B08KXMMC1P)
+* Amazon - EU - [link](https://www.amazon.de/dp/B09HHGZGJP)
 * RS Components - [link](https://uk.rs-online.com/web/p/radio-frequency-development-kits/1843981/)
 * Connected Things - [link](https://connectedthings.store/gb/lorawan-gateways/the-things-indoor-gateway-868-mhz.html)
 * IoT Shop - DE - [link](https://iot-shop.de/produkt/the-things-indoor-gateway)
