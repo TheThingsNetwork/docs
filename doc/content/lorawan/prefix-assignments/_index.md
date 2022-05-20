@@ -104,6 +104,7 @@ section: Additional Information
 | `600027` | `E04E0000/15` | `E04E0000` - `E04FFFFF` | Birdz | World |
 | `600028` | `E0500000/15` | `E0500000` - `E051FFFF` | Charter Communication | USA |
 | `600029` | `E0520000/15` | `E0520000` - `E053FFFF` | Machines Talk | Saudi Arabia |
+| `60002D` | `E05A0000/15` | `E05A0000` - `E05BFFFF` | Helium |  |
 | `C00000` | `FC000000/22` | `FC000000` - `FC0003FF` | RESERVED |  |
 | `C00001` | `FC000400/22` | `FC000400` - `FC0007FF` | Nordic Automation Systems | World |
 | `C00002` | `FC000800/22` | `FC000800` - `FC000BFF` | ResIOT | World |
@@ -184,3 +185,4 @@ section: Additional Information
 | `C0004D` | `FC013400/22` | `FC013400` - `FC0137FF` | Machines Talk | Saudi Arabia |
 | `C0004E` | `FC013800/22` | `FC013800` - `FC013BFF` | Yosensi Sp. z o.o. | World |
 | `C0004F` | `FC013C00/22` | `FC013C00` - `FC013FFF` | The Saira 2.0, LLC dba The IoT Solutions | Guam, USA |
+| `C00053` | `FC014C00/22` | `FC014C00` - `FC014FFF` | Helium |  |
