@@ -10,7 +10,7 @@
 
 {{- block "main" . }}{{- end }}
 
-<div class="ttn-footer"><ttn-footer class="theme-ttn"></ttn-footer></div>
+<div class="ttn-footer ttui-container"><ttn-footer class="theme-ttn"></ttn-footer></div>
 
 <script src="https://cdn.jsdelivr.net/npm/promise-polyfill@7/dist/polyfill.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
@@ -18,16 +18,8 @@
 
 {{- $script := resources.Get "js/vendor/basicLightbox.min.js" }}
 <script src="{{ $script.Permalink }}"></script>
-{{- $script := resources.Get "js/theme.js" | resources.Minify | resources.Fingerprint }}
+{{- $script := resources.Get "js/theme.js" | js.Build | resources.Minify | resources.Fingerprint }}
 <script src="{{ $script.Permalink }}" integrity="{{ $script.Data.Integrity }}" crossorigin="anonymous"></script>
-{{- $script := resources.Get "ttui/components/ttui-header/index.js" | resources.Fingerprint }}
-<script src="{{ $script.Permalink }}" crossorigin="anonymous"></script>
-{{- $script := resources.Get "ttui/components/ttn-header/index.js" | resources.Fingerprint }}
-<script src="{{ $script.Permalink }}" crossorigin="anonymous"></script>
-{{- $script := resources.Get "ttui/components/cookie-banner/index.js" | resources.Fingerprint }}
-<script src="{{ $script.Permalink }}" crossorigin="anonymous"></script>
-{{- $script := resources.Get "ttui/components/ttn-footer/index.js" | resources.Fingerprint }}
-<script src="{{ $script.Permalink }}" crossorigin="anonymous"></script>
 
 <ttui-cookie class="theme-ttn" id="cookie-banner"></ttui-cookie>
 

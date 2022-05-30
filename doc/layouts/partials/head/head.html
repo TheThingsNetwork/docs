@@ -37,12 +37,9 @@
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
   <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
 
-  {{- $style := resources.Get "css/theme.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+  {{- $options := (dict "includePaths" (slice "node_modules")) -}}
+  {{- $style := resources.Get "css/theme.scss" | resources.ToCSS $options | resources.Minify | resources.Fingerprint  }}
   <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}" crossorigin="anonymous">
-
-  {{- $style := resources.Get "ttui/main.css" | resources.Minify | resources.Fingerprint }}
-  <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}" crossorigin="anonymous">
-
 
   {{- if .Site.Params.search.enabled -}}
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />

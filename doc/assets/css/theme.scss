@@ -3,6 +3,7 @@
 // `node_modules` mounted to css/vendor and js/vendor in config.toml
 
 @import "vendor/bulma/sass/utilities/initial-variables";
+@import '@tti/design/main';
 
 @import "common/fonts";
 @import "common/variables";
