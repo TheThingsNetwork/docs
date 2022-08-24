@@ -36,7 +36,8 @@ After plugging in the power, If the device indicator is green, the system is run
 ![Lite-4.png](./TTN-X1%20Lite-4.png)
 3.Select Gateways , and then select Register Gateway.
 4.Under Gateway ID, enter the 8 byte gateway ID recorded on the bottom of gateway’s label named “ID”.
-5.Under Gateway EUI, enter the 8 byte gateway ID recorded on the bottom of gateway’s label named “ID”
+
+Under **Gateway EUI**, enter the 8 byte gateway ID recorded on the bottom of gateway’s label named `ID`.
 
 Under **Description** add a human readable description of the gateway.
 Select a frequency plan that the gateway supports from the **Frequency Plan** drop-down list.
