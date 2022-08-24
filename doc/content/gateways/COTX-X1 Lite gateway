@@ -40,6 +40,6 @@ After plugging in the power, If the device indicator is green, the system is run
 
 Under **Description** add a human readable description of the gateway.
 7.Select a frequency plan from the dropdown box that corresponds to the frequency band supported by the Gateway.
-8.The default connection of Gateway is Europe1, Gateway Server Address is: eu1.cloud.thethings.network, no additional other configuration. 
+The default connection of gateway is to the `eu1.cloud.thethings.network` server, with no additional other configuration. If you're not in this region, you will have to change the Gateway Server address accordingly.
 ![Lite-5.png](./TTN-X1%20Lite-5.png)
 9.Click Create Gateway. 
