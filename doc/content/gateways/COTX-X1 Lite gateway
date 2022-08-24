@@ -33,8 +33,9 @@ Internet ready
 After powering the gateway, you'll see a green light indicator if the system is running properly. The gateway should now be able to connect to {{% tts %}}.
 
 ## Registering the Gateway on {{% tts %}} 
-1.Create a new {{% tts %}} account or login to your previously created {{% tts %}} account.
-2.Select CONSOLE for Europe1, North America1, or Australia1.
+First, create a new {{% tts %}} account or login to your previously created {{% tts %}} account.
+
+Navigate to {{% tts %}} Console depending on your region.
 ![Lite-4.png](./TTN-X1%20Lite-4.png)
 3.Select Gateways , and then select Register Gateway.
 4.Under Gateway ID, enter the 8 byte gateway ID recorded on the bottom of gateway’s label named “ID”.
