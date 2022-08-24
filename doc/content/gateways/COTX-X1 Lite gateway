@@ -31,7 +31,8 @@ Internet ready
 **Step 4**: Finally Insert the power adapter into the 110~220 V AC mains socket, and connect the power supply into the PWR INPUT of the gateway.
 
 After powering the gateway, you'll see a green light indicator if the system is running properly. The gateway should now be able to connect to {{% tts %}}.
-1.3 Registering the Gateway on TTN 
+
+## Registering the Gateway on {{% tts %}} 
 1.Create a new {{% tts %}} account or login to your previously created {{% tts %}} account.
 2.Select CONSOLE for Europe1, North America1, or Australia1.
 ![Lite-4.png](./TTN-X1%20Lite-4.png)
