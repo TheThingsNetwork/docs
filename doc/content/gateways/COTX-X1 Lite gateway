@@ -23,7 +23,7 @@ Internet ready
 **Step 1**: First  insert the SMA male connector of the antenna feeder into the LoRa®  Antenna port of the device and tighten it.
 ![Lite-3.png](./TTN-X1%20Lite-3.png)
 
-Step 2: Place  your gateway to a suitable location (eg. near a window) to provide the best coverage for devices. 
+**Step 2**: Place  your gateway to a suitable location (e.g. near a window) to provide the best coverage for devices. 
 
 Step 3: If you are using a wired Ethernet connection, connect an Ethernet cable between a router or switch and the Ethernet Port on the gateway，so the gateway can connect to the internet.
 ![Lite-2.png](./TTN-X1%20Lite-2.png)
