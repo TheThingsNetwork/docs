@@ -20,7 +20,7 @@ Power source
 Internet ready
 
 ## Gateway Setup 
-Step 1: First  insert the SMA male connector of the antenna feeder into the LoRa®  Antenna port of the device and tighten it.
+**Step 1**: First  insert the SMA male connector of the antenna feeder into the LoRa®  Antenna port of the device and tighten it.
 ![Lite-3.png](./TTN-X1%20Lite-3.png)
 
 Step 2: Place  your gateway to a suitable location (eg. near a window) to provide the best coverage for devices. 
