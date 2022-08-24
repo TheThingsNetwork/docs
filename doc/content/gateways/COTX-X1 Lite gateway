@@ -6,7 +6,7 @@ description: ""
 COTX X1 Lite is a standard LoRaWAN indoor gateway, with a compact appearance, easy to install and deploy. It is highly compatible and has a user-friendly interface. It is rich in software tools, powerful back office management and technical support.
 ![Lite-1.png](./TTN-X1%20Lite-1.png)
 
-##Key Features 
+## Key Features 
 A complete 8-channel gateway based on the LORAWAN protocol.
 LoRa band support：CN470,EU868,US915,AS923,KR920,AU915.
 LoRa power support up to 27dbm.
