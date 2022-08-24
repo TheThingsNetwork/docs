@@ -19,7 +19,7 @@ COTX X1 Lite Gateway
 Power source
 Internet ready
 
-##1.2 Gateway Setup 
+## Gateway Setup 
 Step 1: First  insert the SMA male connector of the antenna feeder into the LoRa®  Antenna port of the device and tighten it.
 ![Lite-3.png](./TTN-X1%20Lite-3.png)
 
