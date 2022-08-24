@@ -25,7 +25,7 @@ Internet ready
 
 **Step 2**: Place  your gateway to a suitable location (e.g. near a window) to provide the best coverage for devices. 
 
-Step 3: If you are using a wired Ethernet connection, connect an Ethernet cable between a router or switch and the Ethernet Port on the gateway，so the gateway can connect to the internet.
+**Step 3**: If you are using a wired Ethernet connection, connect an Ethernet cable between a router or switch and the Ethernet Port on the gateway，so the gateway can connect to the internet.
 ![Lite-2.png](./TTN-X1%20Lite-2.png)
 
 Step 4: Finally Insert the power adapter into the 110~220VAC mains socket, connect the  power supply into the PWR INPUT on the gateway.
