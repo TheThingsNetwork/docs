@@ -39,7 +39,7 @@ After plugging in the power, If the device indicator is green, the system is run
 5.Under Gateway EUI, enter the 8 byte gateway ID recorded on the bottom of gateway’s label named “ID”
 
 Under **Description** add a human readable description of the gateway.
-7.Select a frequency plan from the dropdown box that corresponds to the frequency band supported by the Gateway.
+Select a frequency plan that the gateway supports from the **Frequency Plan** drop-down list.
 The default connection of gateway is to the `eu1.cloud.thethings.network` server, with no additional other configuration. If you're not in this region, you will have to change the Gateway Server address accordingly.
 ![Lite-5.png](./TTN-X1%20Lite-5.png)
 9.Click Create Gateway. 
