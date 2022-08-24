@@ -38,7 +38,8 @@ First, create a new {{% tts %}} account or login to your previously created {{% 
 Navigate to {{% tts %}} Console depending on your region.
 ![Lite-4.png](./TTN-X1%20Lite-4.png)
 Select **Gateways** and then select **Register gateway**.
-4.Under Gateway ID, enter the 8 byte gateway ID recorded on the bottom of gateway’s label named “ID”.
+
+Under **Gateway ID**, enter the 8 byte gateway ID recorded on the bottom of gateway’s label named `ID`.
 
 Under **Gateway EUI**, enter the 8 byte gateway ID recorded on the bottom of gateway’s label named `ID`.
 
