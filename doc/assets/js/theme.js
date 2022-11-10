@@ -12,8 +12,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import "@tti/design/components/ttui-header/index.js";
-import "@tti/design/components/ttui-footer/index.js";
-import "@tti/design/components/ttn-header/index.js";
-import "@tti/design/components/ttn-footer/index.js";
-import "@tti/design/components/cookie-banner";
+
+import "@tti/design/ui/ttui-vendor.js";
+import "@tti/design/ui/main.js";
+import "@tti/design/ui/components/ttui-header/index.js";
+import "@tti/design/ui/components/ttui-footer/index.js";
+import "@tti/design/ui/components/ttn-header/index.js";
+import "@tti/design/ui/components/ttn-footer/index.js";
+import "@tti/design/ui/components/cookie-banner";
