@@ -3,7 +3,10 @@
 // `node_modules` mounted to css/vendor and js/vendor in config.toml
 
 @import "vendor/bulma/sass/utilities/initial-variables";
-@import '@tti/design/main';
+
+// TTUI cannot be inmported currently because of an issue with the
+// hugo built-in SCSS transpiler with the minified CSS output.
+// @import '@tti/design/ui/main';
 
 @import "common/fonts";
 @import "common/variables";
