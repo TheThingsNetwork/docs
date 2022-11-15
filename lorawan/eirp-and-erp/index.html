@@ -9,8 +9,8 @@
 
   <meta name="generator" content="Hugo 0.88.1" />
 
-  <title>LoRaWAN Architecture | The Things Network</title>
-  <link rel="canonical" href="https://www.thethingsnetwork.org/docs/lorawan/architecture/" />
+  <title>EIRP and ERP | The Things Network</title>
+  <link rel="canonical" href="https://www.thethingsnetwork.org/docs/lorawan/eirp-and-erp/" />
   
 
   <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
@@ -42,17 +42,17 @@
 
   <link rel="stylesheet" href="https://ttui.thethingsindustries.com/release/1.0.0/main.css" />
 
-  <meta property="og:title" content="LoRaWAN Architecture" />
+  <meta property="og:title" content="EIRP and ERP" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.thethingsnetwork.org/docs/lorawan/architecture/" /><meta property="og:image" content="https://www.thethingsnetwork.org/docs/architecture.png" /><meta property="og:site_name" content="The Things Network" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/lorawan/eirp-and-erp/" /><meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/><meta property="og:site_name" content="The Things Network" />
 
 
 
   <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://www.thethingsnetwork.org/docs/architecture.png"/>
+<meta name="twitter:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
 
-<meta name="twitter:title" content="LoRaWAN Architecture"/>
+<meta name="twitter:title" content="EIRP and ERP"/>
 <meta name="twitter:description" content="We are building a global open free crowdsourced long range low power IoT data network"/>
 
 
@@ -143,12 +143,7 @@
 
       
 <li>
-  <a href="https://www.thethingsnetwork.org/docs/lorawan/architecture/" class="is-active">LoRaWAN Architecture</a>
-  
-
-
-
-  
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/architecture/" class="">LoRaWAN Architecture</a>
 </li>
 
       
@@ -238,7 +233,12 @@
 
       
 <li>
-  <a href="https://www.thethingsnetwork.org/docs/lorawan/eirp-and-erp/" class="">EIRP and ERP</a>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/eirp-and-erp/" class="is-active">EIRP and ERP</a>
+  
+
+
+
+  
 </li>
 
       
@@ -290,119 +290,64 @@
     <div class="column is-9-desktop sidebar-middle">
       <div class="docs-content">
         <h1 class="title is-size-2">
-          LoRaWAN Architecture
+          EIRP and ERP
         </h1>
         <div class="content">
           
-<p>LoRaWAN networks are deployed in a <strong>star-of-stars</strong> topology.</p>
-<p>A typical LoRaWAN network consists of the following elements.</p>
-<p><img src="architecture.png" alt="LoRaWAN Overview">
-<em>Figure: A typical LoRaWAN network architecture</em></p>
+<p>LoRaWAN gateways and end devices consist of radios (also called transceivers) that are capable of transmitting and receiving LoRa modulated radio signals. A radio needs an antenna to transmit or receive signals. The connection between the radio and the antenna is usually made by a piece of cable (for some devices it is a PCB trace). When transmitting, radio (transmitter) and antenna provide signal gain while antenna cable and connectors affect signal loss.</p>
+<h2 id="eirp">EIRP&nbsp;<a class="header-hash" href="#eirp">#</a> </h2>
+<p>EIRP (Effective Isotropic Radiated Power) is the total power radiated by an isotropic antenna in a single direction. In this case, the antenna gain must be expressed in dBi.</p>
+<figure><img src="eirp.png"
+         alt="EIRP"/>
+</figure>
+
+<p>The EIRP of a unit that consists of a transmitter, an antenna, and a cable can be calculated using the formula,</p>
+<p><strong>EIRP = Transmitter output power (dBm) + Antenna gain (dBi) - Cable loss (dB)</strong></p>
+<p>where the transmitter power in dBm, antenna gain in dBi, and cable loss in dB.</p>
+<p><strong>Question:</strong> Calculate the EIRP value of the following unit that consists of a LoRaWAN gateway, an antenna cable, and an antenna.</p>
+<figure><img src="eirp-q1.png"
+         alt="EIRP-q1"/>
+</figure>
+
+<p>EIRP = Transmitter output power (dBm) + Antenna gain (dBi) - Cable loss (dB)</p>
+<p>EIRP = 20 +3 -7 = 16 dBm</p>
+<h2 id="erp">ERP&nbsp;<a class="header-hash" href="#erp">#</a> </h2>
+<p>Sometimes, the maximum output power is measured in ERP (Effective Radiated Power) instead of the EIRP.</p>
+<p>ERP is the total power radiated by an actual antenna relative to a half-wave dipole antenna. In this case, the antenna gain must be expressed in dBd.</p>
+<figure><img src="erp.png"
+         alt="ERP"/>
+</figure>
+
+<p>The ERP of a unit that consists of a transmitter, an antenna, and a cable can be calculated using the formula,</p>
+<p><strong>ERP = Transmitter output power (dBm) + Antenna gain (dBd) - Cable loss (dB)</strong></p>
+<p>where the transmitter power in dBm, antenna gain in dBd, and cable loss in dB.</p>
+<p>ERP is also expressed in dBm.</p>
+<p><strong>Question:</strong> Calculate the ERP value of the following unit that consists of an end device, an antenna cable, and an antenna.</p>
+<figure><img src="erp-q1.png"
+         alt="ERP-q1"/>
+</figure>
+
+<p>ERP = Transmitter output power (dBm) + Antenna gain (dBd) - Cable loss (dB)</p>
+<p>ERP = 20 +0.85 -7 = 13.85 dBm</p>
+<h2 id="conversion-between-eirp-and-erp">Conversion between EIRP and ERP&nbsp;<a class="header-hash" href="#conversion-between-eirp-and-erp">#</a> </h2>
+<p>You can easily convert EIRP to ERP and vice versa using the following equation:</p>
+<p>EIRP (dBm) = ERP (dBm) + 2.15</p>
+<p>Question: Convert the EIRP value 16 dBm to ERP.</p>
+<p>ERP (dBm) = EIRP (dBm) - 2.15
+ERP (dBm) = 16 -2.15 = 13.85 dBm</p>
+<h2 id="dbm-to-watts-conversion">dBm to watts conversion&nbsp;<a class="header-hash" href="#dbm-to-watts-conversion">#</a> </h2>
+<p>EIRP or ERP values can be converted to watts (W) or milliwatts (mW), for example,  EIRP 16 dBm is equivalent to 40 mW.</p>
+<p>Read the section <strong>Rule of 10s and 3s</strong> in our guide <a href="../db-dbm-dbi-dbd/">dB, dBm, dBi and dBd</a> to learn how to convert dBm to watts or milliwatts.</p>
+<p>If you want to quickly convert dBm to watts or milliwatts without calculating by hand, an online tool is available at <a href="https://www.rapidtables.com/convert/power/dBm_to_Watt.html">RapidTables</a></p>
+<h2 id="regulations">Regulations&nbsp;<a class="header-hash" href="#regulations">#</a> </h2>
+<p>The maximum transmission power of a gateway or an end device is region specific and is regulated by the respective regulatory authorities. For example, in Europe, it is 25 mW ERP (+16 dBm EIRP) and is regulated by ETSI (European Telecommunications Standards Institute).</p>
+<p>Read the <a href="https://lora-alliance.org/wp-content/uploads/2021/05/RP002-1.0.3-FINAL-1.pdf">LoRaWAN® Regional Parameters 1.0.3</a> to find the maximum allowed EIRP in other regions.</p>
+<p>Adjust the following parameters to prevent EIRP/ERP/milliwatts thresholds from being exceeded.</p>
 <ul>
-<li>
-<p><strong>End Devices</strong> - sensors or actuators send LoRa modulated wireless messages to the gateways or receive messages wirelessly back from the gateways.
-.</p>
-</li>
-<li>
-<p><strong>Gateways</strong> - receive messages from end devices and forward them to the Network Server.</p>
-</li>
-<li>
-<p><strong>Network Server</strong> - a piece of software running on a server that manages the entire network.</p>
-</li>
-<li>
-<p><strong>Application servers</strong> - a piece of software running on a server that is responsible for securely processing application data.</p>
-</li>
-<li>
-<p><strong>Join Server</strong> - a piece of software running on a server that processes join-request messages sent by end devices (The Join Server is not shown in the above figure).</p>
-</li>
+<li>Transmitter output power</li>
+<li>Cable and connector attenuation</li>
+<li>Antenna gain</li>
 </ul>
-<p>End devices communicate with nearby gateways and each gateway is connected to the network server. LoRaWAN networks use an ALOHA based protocol, so end devices don’t need to peer with specific gateways. Messages sent from end devices travel through all gateways within range. These messages are received by the Network Server. If the Network Server has received multiple copies of the same message, it keeps a single copy of the message and discards others. This is known as message deduplication.</p>
-<p>Let’s examine each element of the LoRaWAN network in detail.</p>
-<h3 id="end-devices">End devices&nbsp;<a class="header-hash" href="#end-devices">#</a> </h3>
-<p>A LoRaWAN end device can be a sensor, an actuator, or both. They are often battery operated. These end devices are wirelessly connected to the LoRaWAN network through gateways using LoRa RF modulation. The following figure shows an end device that consists of sensors like temperature, humidity, and fall detection.</p>
-<p><img src="generic-node-sensor-edition.jpg" alt="alt_text" title="End-device">
-<em>Figure: LoRaWAN end device - The Things Industries Generic Node Sensor Edition</em></p>
-<h3 id="gateways">Gateways&nbsp;<a class="header-hash" href="#gateways">#</a> </h3>
-<p>Each gateway is registered (using configuration settings) to a LoRaWAN network server. A gateway receives LoRa messages from end devices and simply forwards them to the LoRaWAN network server. Gateways are connected to the Network Server using a <strong>backhaul</strong> like Cellular (3G/4G/5G), WiFi, Ethernet, fiber-optic or 2.4 GHz radio links.</p>
-<h4 id="types-of-lorawan-gateways">Types of LoRaWAN Gateways&nbsp;<a class="header-hash" href="#types-of-lorawan-gateways">#</a> </h4>
-<p>LoRaWAN gateways can be categorized into indoor (picocell) and outdoor (macrocell) gateways.
-Indoor gateways are cost-effective and suitable for providing coverage in places like deep-indoor locations (spaces covered by multiple walls), basements, and multi-floor buildings. These gateways have internal antennas or external ‘pigtail’ antennas. However depending on the indoor physical environment some indoor gateways can receive messages from sensors located several kilometers away.</p>
-<p>The following figure shows The Things Indoor gateway designed to be directly plugged into an AC power outlet.</p>
-<p><img src="indoor-gateway.png" alt="alt_text" title="The Things Indoor Gateway"></p>
-<p><em>Figure: The Things Indoor gateway</em></p>
-<p>Outdoor gateways provide a larger coverage than the indoor gateways. They are suitable for providing coverage in both rural and urban areas. . These gateways can be mounted on cellular towers, the rooftops of very tall buildings, metal pipes (masts) etc. Usually an outdoor gateway has an external antenna (i.e. Fiberglass antenna) connected using a coaxial cable.
-If you are good at hacking electronic products, you can convert some indoor gateways to outdoor gateways using water/dust proof enclosures and adding external antennas.</p>
-<p>The following figure shows a LoRaWAN outdoor gateway. It has connectors for connecting external LoRaWAN, 3G/4G, and GPS antennas. Can you figure them out?</p>
-<p><img src="outdoor-gateway.png" alt="alt_text" title="Tektelic Enterprise Outdoor Gateway"></p>
-<p><em>Figure: Tektelic Enterprise Outdoor Gateway</em></p>
-<p>Usually, the receiver sensitivity of an outdoor gateway is higher than the receiver sensitivity of an indoor gateway.</p>
-<h3 id="network-server">Network Server&nbsp;<a class="header-hash" href="#network-server">#</a> </h3>
-<p>The Network Server manages gateways, end-devices, applications, and users in the entire LoRaWAN network.</p>
-<p>A typical LoRaWAN Network Server has the following features.</p>
-<ul>
-<li>Establishing secure 128-bit AES connections for the transport of messages between end-devices and the Application Server (end-to-end security).</li>
-<li>Validating the authenticity of end devices and integrity of messages.</li>
-<li>Deduplicating uplink messages.</li>
-<li>Selecting the best gateway for routing downlink messages.</li>
-<li>Sending ADR commands to optimize the data rate of devices.</li>
-<li>Device address checking.</li>
-<li>Providing acknowledgements of confirmed uplink data messages.</li>
-<li>Forwarding uplink application payloads to the appropriate application servers</li>
-<li>Routing uplink application payloads to the appropriate Application Server.</li>
-<li>Forwarding Join-request and Join-accept messages between the devices and the join server</li>
-<li>Responding to all MAC layer commands.</li>
-</ul>
-<h3 id="application-server">Application Server&nbsp;<a class="header-hash" href="#application-server">#</a> </h3>
-<p>The Application Server processes application-specific data messages received from end devices. It also generates all the application-layer downlink payloads and sends them to the connected end devices through the Network Server. A LoRaWAN network can have more than one Application Server. The collected data can be interpreted by applying techniques like machine learning and artificial intelligence to solve business problems.</p>
-<h3 id="join-server">Join Server&nbsp;<a class="header-hash" href="#join-server">#</a> </h3>
-<p>The Join Server assists in secure device activation, root key storage, and session key generation. The join procedure is initiated by the end device by sending the Join-request message to the Join Server through the Network Server. The Join-server processes the Join-request message, generates session keys, and transfers NwkSKey and AppSKey to the Network server and the Application server respectively.
-The Join Server was first introduced with LoRaWAN v1.1. It is also availabe in LoRaWAN v1.0.4.</p>
-<h2 id="questions">Questions&nbsp;<a class="header-hash" href="#questions">#</a> </h2>
-<ol>
-<li>
-<p>Who initiates uplink messages?</p>
-<ul>
-<li>Network server</li>
-<li><span style="text-decoration:underline;">End devices</span></li>
-<li>Application server</li>
-<li>Join server</li>
-</ul>
-</li>
-<li>
-<p>What is not a role of the Network Server?</p>
-<ul>
-<li>Data deduplication</li>
-<li><span style="text-decoration:underline;">Initiate uplink messages</span></li>
-<li>Adaptive data rate control</li>
-<li>Message routing</li>
-</ul>
-</li>
-<li>
-<p>Which is not a backhaul for gateways?</p>
-<ul>
-<li>Cellular</li>
-<li>WiFi</li>
-<li>Ethernet</li>
-<li><span style="text-decoration:underline;">Grounding wire with a lightning arrestor</span></li>
-</ul>
-</li>
-<li>
-<p>The Application server processes:</p>
-<ul>
-<li>MAC commands</li>
-<li><span style="text-decoration:underline;">Application-specific data messages</span></li>
-<li>Join-request messages</li>
-</ul>
-</li>
-<li>
-<p>The Join Server processes:</p>
-<ul>
-<li><span style="text-decoration:underline;">Join-request messages</span></li>
-<li>MAC commands</li>
-<li>Application-specific data messages</li>
-</ul>
-</li>
-</ol>
 
 
         </div>
@@ -415,10 +360,22 @@ The Join Server was first introduced with LoRaWAN v1.1. It is also availabe in L
   
 
   
-    
-    
+
   
 
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
   
 
   
@@ -437,8 +394,8 @@ The Join Server was first introduced with LoRaWAN v1.1. It is also availabe in L
 
 
 <div class="is-clearfix">
-<a class="button is-pulled-left" href="/docs/lorawan/what-is-lorawan/">← What are LoRa and LoRaWAN?</a>
-<a class="button is-pulled-right" href="/docs/lorawan/regional-parameters/">Regional Parameters →</a>
+<a class="button is-pulled-left" href="/docs/lorawan/db-dbm-dbi-dbd/">← dB, dBm, dBi and dBd</a>
+<a class="button is-pulled-right" href="/docs/lorawan/fec-and-code-rate/">Forward Error Correction and Code Rate →</a>
 </div>
 
       </div>
