@@ -74,7 +74,7 @@ N Type connectors are threaded, waterproof, medium-size RF connectors that can b
 
 There are two types:
 
-- **N Type Male** - these connectors have a center pin and inner threads. There is a ferrule exists between the center pin and the inner threads.
+- **N Type Male** - these connectors have a center pin and inner threads. There is a ferrule between the center pin and the inner threads.
 
 {{< figure src="N-male.png" alt="N Type Male" >}}
 
@@ -86,7 +86,7 @@ There are two types:
 
 There are two types:
 
-- **RP-N Male** -  these connectors have a center sleeve and inner threads. There is a ferrule exists between the center pin and the inner threads.
+- **RP-N Male** -  these connectors have a center sleeve and inner threads. There is a ferrule between the center pin and the inner threads.
 
 {{< figure src="RP-N-male.png" alt="RP-N Male" >}}
 
