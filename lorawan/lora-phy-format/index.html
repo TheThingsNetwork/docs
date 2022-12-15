@@ -9,8 +9,8 @@
 
   <meta name="generator" content="Hugo 0.88.1" />
 
-  <title>Addressing &amp; Activation | The Things Network</title>
-  <link rel="canonical" href="https://www.thethingsnetwork.org/docs/lorawan/addressing/" />
+  <title>LoRa Physical Layer Packet Format | The Things Network</title>
+  <link rel="canonical" href="https://www.thethingsnetwork.org/docs/lorawan/lora-phy-format/" />
   
 
   <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
@@ -42,17 +42,17 @@
 
   <link rel="stylesheet" href="https://ttui.thethingsindustries.com/release/1.0.0/main.css" />
 
-  <meta property="og:title" content="Addressing &amp; Activation" />
+  <meta property="og:title" content="LoRa Physical Layer Packet Format" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.thethingsnetwork.org/docs/lorawan/addressing/" /><meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/><meta property="og:site_name" content="The Things Network" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/lorawan/lora-phy-format/" /><meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/><meta property="og:site_name" content="The Things Network" />
 
 
 
   <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
 
-<meta name="twitter:title" content="Addressing &amp; Activation"/>
+<meta name="twitter:title" content="LoRa Physical Layer Packet Format"/>
 <meta name="twitter:description" content="We are building a global open free crowdsourced long range low power IoT data network"/>
 
 
@@ -218,12 +218,7 @@
 
       
 <li>
-  <a href="https://www.thethingsnetwork.org/docs/lorawan/addressing/" class="is-active">Addressing &amp; Activation</a>
-  
-
-
-
-  
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/addressing/" class="">Addressing &amp; Activation</a>
 </li>
 
       
@@ -258,7 +253,12 @@
 
       
 <li>
-  <a href="https://www.thethingsnetwork.org/docs/lorawan/lora-phy-format/" class="">LoRa Physical Layer Packet Format</a>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/lora-phy-format/" class="is-active">LoRa Physical Layer Packet Format</a>
+  
+
+
+
+  
 </li>
 
       
@@ -305,32 +305,52 @@
     <div class="column is-9-desktop sidebar-middle">
       <div class="docs-content">
         <h1 class="title is-size-2">
-          Addressing &amp; Activation
+          LoRa Physical Layer Packet Format
         </h1>
         <div class="content">
           
-<h2 id="addressing">Addressing&nbsp;<a class="header-hash" href="#addressing">#</a> </h2>
-<p>LoRaWAN knows a number of identifiers for devices, applications and gateways.</p>
+<p>LoRa uses two types of packet formats for data transmission: explicit and implicit.</p>
+<p>In <strong>explicit</strong> mode, a LoRa packet includes the following elements:</p>
 <ul>
-<li><code>DevEUI</code> - 64 bit end-device identifier, EUI-64 (unique)</li>
-<li><code>DevAddr</code> - 32 bit device address (non-unique)</li>
-<li><code>AppEUI</code> - 64 bit application identifier, EUI-64 (unique)</li>
-<li><code>GatewayEUI</code> - 64 bit gateway identifier, EUI-64 (unique)</li>
+<li>
+<p><strong>Preamble</strong> is used to synchronize the receiver with the transmitter. It MUST consist of 8 symbols for all regions as mentioned in the LoRaWAN Regional Parameters document. However, the radio transmitter will add another 4.25 symbols resulting in a final preamble length of 8 + 4.25 = 12.25 symbols.</p>
+</li>
+<li>
+<p><strong>PHDR (Physical Header)</strong> is an optional element only present in the explicit mode that contains information about payload size and CRC (Cyclic Redundancy Check).</p>
+</li>
+<li>
+<p><strong>PHDR_CRC (Header CRC)</strong> is an optional field that contains an error detecting code for correcting errors in header.</p>
+</li>
 </ul>
-<h3 id="devices">Devices&nbsp;<a class="header-hash" href="#devices">#</a> </h3>
-<p>The Things Network Foundation has received a 7-bit device address prefix from the LoRa Alliance. This means that all TTN device addresses will start with <code>0x26</code> or <code>0x27</code> (although addresses that start with these might also belong to other networks with the same prefix). Within TTN, we assign device <a href="/docs/lorawan/prefix-assignments/">address prefixes</a> to &ldquo;regions&rdquo; (for example, device addresses in the <code>eu</code> region start with <code>0x2601</code>). Within a region, the NetworkServer is responsible for assigning device addresses. We are using prefixes here too for different device classes (for example, <a href="/docs/lorawan/#activation-by-personalization-abp">ABP</a> devices in the <code>eu</code> region start with <code>0x26011</code>) or to shard devices over different servers, see .</p>
-<p>The NetworkServer assigns device addresses to devices (based on configuration). For <a href="/docs/lorawan/#activation-by-personalization-abp">ABP</a> devices you have to request an address from the NetworkServer (the console or <code>ttnctl</code> will do this for you). For <a href="/docs/lorawan/#over-the-air-activation-otaa">OTAA</a> devices, the NetworkServer will assign an address when the device joins.</p>
-<p>When a device joins the network, it receives a dynamic (non-unique) 32-bit address (<code>DevAddr</code>). It&rsquo;s good to keep in mind that device addresses are not unique. We can (and probably will) give hundreds of devices the same address. Finding the actual device that belongs to that address is done by matching the cryptographic signature (MIC) of the message to a device in the database.</p>
-<h3 id="applications">Applications&nbsp;<a class="header-hash" href="#applications">#</a> </h3>
-<p>Applications in LoRaWAN and The Things Network have a 64 bit unique identifier (<code>AppEUI</code>). When you create an application, The Things Network&rsquo;s account server allocates an <code>AppEUI</code> from the address block of The Things Network Foundation. This means that every application has at least an <code>AppEUI</code> that starts with <code>70B3D57ED</code>. If you have your own <code>AppEUI</code>s, you can also add those to your application.</p>
-<h3 id="gateways">Gateways&nbsp;<a class="header-hash" href="#gateways">#</a> </h3>
-<p>Gateways are manufactured with an embedded EUI, which can then be used to register the gateway on The Things Network. Although the configuration files of some gateways suggest that you can just choose an EUI for the gateway, this is <strong>not true</strong>. If your gateway did not come with an embedded EUI, you can use another EUI that you own, or configure an <code>AppEUI</code> that is registered to your account. You may also use an MQTT-based forwarder, which only needs a <code>GatewayID</code> (that you can choose yourself) instead of a <code>GatewayEUI</code>.</p>
-<h2 id="activation">Activation&nbsp;<a class="header-hash" href="#activation">#</a> </h2>
-<p>LoRaWAN devices have a 64 bit unique identifier (<code>DevEUI</code>) that is assigned to the device by the chip manufacturer. However, all communication is done with a dynamic 32 bit device address (<code>DevAddr</code>) of which 7 bits are fixed for The Things Network, leaving 25 bits that can be assigned to individual devices, a procedure called <strong>Activation</strong>.</p>
-<h3 id="over-the-air-activation-otaa">Over-the-Air Activation (OTAA)&nbsp;<a class="header-hash" href="#over-the-air-activation-otaa">#</a> </h3>
-<p>Over-the-Air Activation (OTAA) is the preferred and most secure way to connect with The Things Network. Devices perform a join-procedure with the network, during which a dynamic <code>DevAddr</code> is assigned and <a href="/docs/lorawan/security/#security-keys">security keys</a> are negotiated with the device.</p>
-<h3 id="activation-by-personalization-abp">Activation by Personalization (ABP)&nbsp;<a class="header-hash" href="#activation-by-personalization-abp">#</a> </h3>
-<p>In some cases you might need to hardcode the <code>DevAddr</code> as well as the <a href="/docs/lorawan/security/#security-keys">security keys</a> in the device. This means activating a device by personalization (ABP). This strategy might seem simpler, because you skip the join procedure, but it has some downsides related to security.</p>
+<p>The PHDR and PHDR_CRC are encoded with the Coding Rate of 4/8.</p>
+<ul>
+<li>
+<p><strong>PHYPayload</strong> contains the complete frame generated by the MAC layer. The maximum payload size varies by DR (Data Rate) and is region-specific.</p>
+</li>
+<li>
+<p><strong>CRC</strong> is an optional field that contains an error detecting code for correcting errors in the payload of uplink messages.</p>
+</li>
+</ul>
+<p>The PHYPayload and CRC are encoded with one of the Coding Rates (4/5, 4/6, 4/7, or 4/8). The complete frame is then sent using one of the Spreading Factors (SF = 7 to 12).</p>
+<p>The following figure shows the physical layer structure of uplink and downlink packets that uses explicit mode.</p>
+<p><figure><img src="phy-uplink.png"
+         alt="PHY uplink"/>
+</figure>
+
+<em>Physical structure of an uplink packet</em></p>
+<p><figure><img src="phy-downlink.png"
+         alt="PHY downlink"/>
+</figure>
+
+<em>Physical structure of a downlink packet</em></p>
+<p>In <strong>implicit</strong> mode, the header is removed from the packet where the payload size and Coding Rate are fixed or known in advance.</p>
+<p>Beacons use LoRa radio packet implicit mode for sending time synchronizing information from gateways to the end devices.</p>
+<p>The following figure shows the structure of a LoRa packet that uses the implicit mode.</p>
+<p><figure><img src="phy-beacon.png"
+         alt="PHY beacon"/>
+</figure>
+
+<em>Physical structure of a beacon</em></p>
 
 
         </div>
@@ -351,22 +371,22 @@
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
   
@@ -383,8 +403,8 @@
 
 
 <div class="is-clearfix">
-<a class="button is-pulled-left" href="/docs/lorawan/modulation-data-rate/">← Modulation &amp; Data Rate</a>
-<a class="button is-pulled-right" href="/docs/lorawan/academic/">Academic Research →</a>
+<a class="button is-pulled-left" href="/docs/lorawan/fec-and-code-rate/">← Forward Error Correction and Code Rate</a>
+<a class="button is-pulled-right" href="/docs/lorawan/concentrators/">LoRaWAN® Concentrators →</a>
 </div>
 
       </div>

@@ -9,8 +9,8 @@
 
   <meta name="generator" content="Hugo 0.88.1" />
 
-  <title>Addressing &amp; Activation | The Things Network</title>
-  <link rel="canonical" href="https://www.thethingsnetwork.org/docs/lorawan/addressing/" />
+  <title>Antenna Connectors | The Things Network</title>
+  <link rel="canonical" href="https://www.thethingsnetwork.org/docs/lorawan/antenna-connectors/" />
   
 
   <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
@@ -42,17 +42,17 @@
 
   <link rel="stylesheet" href="https://ttui.thethingsindustries.com/release/1.0.0/main.css" />
 
-  <meta property="og:title" content="Addressing &amp; Activation" />
+  <meta property="og:title" content="Antenna Connectors" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.thethingsnetwork.org/docs/lorawan/addressing/" /><meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/><meta property="og:site_name" content="The Things Network" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/lorawan/antenna-connectors/" /><meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/><meta property="og:site_name" content="The Things Network" />
 
 
 
   <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
 
-<meta name="twitter:title" content="Addressing &amp; Activation"/>
+<meta name="twitter:title" content="Antenna Connectors"/>
 <meta name="twitter:description" content="We are building a global open free crowdsourced long range low power IoT data network"/>
 
 
@@ -218,12 +218,7 @@
 
       
 <li>
-  <a href="https://www.thethingsnetwork.org/docs/lorawan/addressing/" class="is-active">Addressing &amp; Activation</a>
-  
-
-
-
-  
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/addressing/" class="">Addressing &amp; Activation</a>
 </li>
 
       
@@ -233,7 +228,12 @@
 
       
 <li>
-  <a href="https://www.thethingsnetwork.org/docs/lorawan/antenna-connectors/" class="">Antenna Connectors</a>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/antenna-connectors/" class="is-active">Antenna Connectors</a>
+  
+
+
+
+  
 </li>
 
       
@@ -305,32 +305,199 @@
     <div class="column is-9-desktop sidebar-middle">
       <div class="docs-content">
         <h1 class="title is-size-2">
-          Addressing &amp; Activation
+          Antenna Connectors
         </h1>
         <div class="content">
           
-<h2 id="addressing">Addressing&nbsp;<a class="header-hash" href="#addressing">#</a> </h2>
-<p>LoRaWAN knows a number of identifiers for devices, applications and gateways.</p>
+<p>LoRaWAN gateways and end devices use different types of connectors including U.FL, SMA, RP-SMA, Type-N, and Type-N PR for connecting antennas and interface cables.</p>
+<h2 id="ufl">U.FL&nbsp;<a class="header-hash" href="#ufl">#</a> </h2>
+<p>U.FL (&lsquo;U&rsquo; stands for ultra-small and &lsquo;FL&rsquo; is just a series name assigned by <a href="https://www.hirose.com/">Hirose</a>) connectors are commonly used in gateways and end devices where space is of critical concern (similar: I-PEX, IPX, etc).</p>
+<p>There are two types:</p>
 <ul>
-<li><code>DevEUI</code> - 64 bit end-device identifier, EUI-64 (unique)</li>
-<li><code>DevAddr</code> - 32 bit device address (non-unique)</li>
-<li><code>AppEUI</code> - 64 bit application identifier, EUI-64 (unique)</li>
-<li><code>GatewayEUI</code> - 64 bit gateway identifier, EUI-64 (unique)</li>
+<li>U.FL Male - These connectors are surface-mounted and soldered directly to the printed circuit board.</li>
+<li>U.FL Female - These connectors come as part of a pigtail, usually an ultra-fine coaxial (fluorinated resin insulated) cable.</li>
 </ul>
-<h3 id="devices">Devices&nbsp;<a class="header-hash" href="#devices">#</a> </h3>
-<p>The Things Network Foundation has received a 7-bit device address prefix from the LoRa Alliance. This means that all TTN device addresses will start with <code>0x26</code> or <code>0x27</code> (although addresses that start with these might also belong to other networks with the same prefix). Within TTN, we assign device <a href="/docs/lorawan/prefix-assignments/">address prefixes</a> to &ldquo;regions&rdquo; (for example, device addresses in the <code>eu</code> region start with <code>0x2601</code>). Within a region, the NetworkServer is responsible for assigning device addresses. We are using prefixes here too for different device classes (for example, <a href="/docs/lorawan/#activation-by-personalization-abp">ABP</a> devices in the <code>eu</code> region start with <code>0x26011</code>) or to shard devices over different servers, see .</p>
-<p>The NetworkServer assigns device addresses to devices (based on configuration). For <a href="/docs/lorawan/#activation-by-personalization-abp">ABP</a> devices you have to request an address from the NetworkServer (the console or <code>ttnctl</code> will do this for you). For <a href="/docs/lorawan/#over-the-air-activation-otaa">OTAA</a> devices, the NetworkServer will assign an address when the device joins.</p>
-<p>When a device joins the network, it receives a dynamic (non-unique) 32-bit address (<code>DevAddr</code>). It&rsquo;s good to keep in mind that device addresses are not unique. We can (and probably will) give hundreds of devices the same address. Finding the actual device that belongs to that address is done by matching the cryptographic signature (MIC) of the message to a device in the database.</p>
-<h3 id="applications">Applications&nbsp;<a class="header-hash" href="#applications">#</a> </h3>
-<p>Applications in LoRaWAN and The Things Network have a 64 bit unique identifier (<code>AppEUI</code>). When you create an application, The Things Network&rsquo;s account server allocates an <code>AppEUI</code> from the address block of The Things Network Foundation. This means that every application has at least an <code>AppEUI</code> that starts with <code>70B3D57ED</code>. If you have your own <code>AppEUI</code>s, you can also add those to your application.</p>
-<h3 id="gateways">Gateways&nbsp;<a class="header-hash" href="#gateways">#</a> </h3>
-<p>Gateways are manufactured with an embedded EUI, which can then be used to register the gateway on The Things Network. Although the configuration files of some gateways suggest that you can just choose an EUI for the gateway, this is <strong>not true</strong>. If your gateway did not come with an embedded EUI, you can use another EUI that you own, or configure an <code>AppEUI</code> that is registered to your account. You may also use an MQTT-based forwarder, which only needs a <code>GatewayID</code> (that you can choose yourself) instead of a <code>GatewayEUI</code>.</p>
-<h2 id="activation">Activation&nbsp;<a class="header-hash" href="#activation">#</a> </h2>
-<p>LoRaWAN devices have a 64 bit unique identifier (<code>DevEUI</code>) that is assigned to the device by the chip manufacturer. However, all communication is done with a dynamic 32 bit device address (<code>DevAddr</code>) of which 7 bits are fixed for The Things Network, leaving 25 bits that can be assigned to individual devices, a procedure called <strong>Activation</strong>.</p>
-<h3 id="over-the-air-activation-otaa">Over-the-Air Activation (OTAA)&nbsp;<a class="header-hash" href="#over-the-air-activation-otaa">#</a> </h3>
-<p>Over-the-Air Activation (OTAA) is the preferred and most secure way to connect with The Things Network. Devices perform a join-procedure with the network, during which a dynamic <code>DevAddr</code> is assigned and <a href="/docs/lorawan/security/#security-keys">security keys</a> are negotiated with the device.</p>
-<h3 id="activation-by-personalization-abp">Activation by Personalization (ABP)&nbsp;<a class="header-hash" href="#activation-by-personalization-abp">#</a> </h3>
-<p>In some cases you might need to hardcode the <code>DevAddr</code> as well as the <a href="/docs/lorawan/security/#security-keys">security keys</a> in the device. This means activating a device by personalization (ABP). This strategy might seem simpler, because you skip the join procedure, but it has some downsides related to security.</p>
+<p>U.FL Male and U.FL Female connectors provide a very tight snap-in connection. They are lightweight, require a small mounting area, and feature a very small mated height. When mating, the tactile click sensation confirms the complete electrical and mechanical connection.</p>
+<p><figure><img src="UFL.jpg"
+         alt="UFL Male and Female"/>
+</figure>
+
+<em>U.FL Male (right) and U.FL Female (left). Image courtesy of <a href="https://www.sparkfun.com/">SparkFun Electronics</a></em></p>
+<p>The following table shows some of their applications:</p>
+<table>
+<thead>
+<tr>
+<th>Application</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><figure><img src="09145-01b.jpg"
+         alt="SMA to U.FL"/>
+</figure>
+</td>
+<td>Interface Cable: SMA to U.FL. <em>Image courtesy of <a href="https://www.sparkfun.com/">SparkFun Electronics</a></em></td>
+</tr>
+<tr>
+<td><figure><img src="00662-1.jpg"
+         alt="PR-SMA to U.FL"/>
+</figure>
+</td>
+<td>Interface Cable: RP-SMA to U.FL. <em>Image courtesy of <a href="https://www.sparkfun.com/">SparkFun Electronics</a></em></td>
+</tr>
+<tr>
+<td><figure><img src="half-wave-antenna-ufl.jpg"
+         alt="PR-SMA to U.FL"/>
+</figure>
+</td>
+<td>A half-wave antenna with U.FL termination. <em>Image courtesy of <a href="https://www.sparkfun.com/">SparkFun Electronics</a></em></td>
+</tr>
+<tr>
+<td><figure><img src="generic-node.png"
+         alt="U.FL Male on PCB"/>
+</figure>
+</td>
+<td>U.FL Male connector is soldered onto a PCB</td>
+</tr>
+<tr>
+<td><figure><img src="ipex-to-ntype.webp"
+         alt="I-PEX to N-Type"/>
+</figure>
+</td>
+<td>Interface cable: I-PEX to N-Type cable. <em>Image courtesy of <a href="https://www.rakwireless.com/">RAKwireless Technology Limited</a></em></td>
+</tr>
+<tr>
+<td><figure><img src="wisgate-edge-max.webp"
+         alt="I-PEX to N-Type"/>
+</figure>
+</td>
+<td>I-PEX to N-Type Cables are used to provide an interface for connecting external antennas such as LoRa, WiFi, GPS, and LTE. <em>Image courtesy of <a href="https://www.rakwireless.com/">RAKwireless Technology Limited</a></em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="sma">SMA&nbsp;<a class="header-hash" href="#sma">#</a> </h2>
+<p>SMA connectors use a screw-type coupling mechanism to create strong mechanical connections.</p>
+<p>There are two types:</p>
+<ul>
+<li>SMA Male</li>
+<li>SMA Female</li>
+</ul>
+<p>SMA Male connectors have a center pin and inner threads whereas SMA Female connectors have a center sleeve and outer threads.</p>
+<p><figure><img src="SMA.jpg"
+         alt="SMA Male and Female"/>
+</figure>
+
+<em>SMA Male (right) and SMA Female (left). Image courtesy of <a href="https://www.sparkfun.com/">SparkFun Electronics</a></em></p>
+<p><strong>Variations:</strong> The Reverse Polarity (RP) SMA connectors use the same outer shell, but change the gender of the inner pin. However, the signal polarity is not reversed. These reverse polarity connectors do not mate with SMA connectors.</p>
+<p>There are two types:</p>
+<ul>
+<li>RP-SMA Male</li>
+<li>RP-SMA Female</li>
+</ul>
+<p>RP-SMA Male connectors have a center sleeve and inner threads whereas RP- SMA Female connectors have a center pin and outer threads.</p>
+<p><figure><img src="RPSMA.jpg"
+         alt="RP-SMA Male and Female"/>
+</figure>
+
+<em>RP-SMA Male (right) and RP-SMA Female (left). Image courtesy of <a href="https://www.sparkfun.com/">SparkFun Electronics</a></em></p>
+<p>The following table shows some of their applications.</p>
+<table>
+<thead>
+<tr>
+<th>Application</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><figure><img src="feather-5-SMA-finished.jpg"
+         alt="SMA to U.FL"/>
+</figure>
+</td>
+<td>An SMA Female Edge-Mount connector is soldered onto a PCB. <em>Image courtesy of <a href="https://www.adafruit.com/">Adafruit Industries</a></em></td>
+</tr>
+<tr>
+<td><figure><img src="09145-01b.jpg"
+         alt="SMA to U.FL"/>
+</figure>
+</td>
+<td>Interface Cable: SMA to U.FL. <em>Image courtesy of <a href="https://www.sparkfun.com/">SparkFun Electronics</a></em></td>
+</tr>
+<tr>
+<td><figure><img src="00662-1.jpg"
+         alt="PR-SMA to U.FL"/>
+</figure>
+</td>
+<td>Interface Cable: RP-SMA to U.FL. <em>Image courtesy of <a href="https://www.sparkfun.com/">SparkFun Electronics</a></em></td>
+</tr>
+<tr>
+<td><figure><img src="rubber-ducky-antenna-with-SMA-connector.png"
+         alt="Rubber ducky antenna with SMA"/>
+</figure>
+</td>
+<td>An omni-directional rubber ducky antenna with SMA connector.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="n-type">N Type&nbsp;<a class="header-hash" href="#n-type">#</a> </h2>
+<p>N Type connectors are threaded, waterproof, medium-size RF connectors that can be used to connect antennas (LoRa, LTE, GPS, WiFi, etc) directly or using cables.</p>
+<p>There are two types:</p>
+<ul>
+<li><strong>N Type Male</strong> - these connectors have a center pin and inner threads. There is a ferrule between the center pin and the inner threads.</li>
+</ul>
+<figure><img src="N-male.png"
+         alt="N Type Male"/>
+</figure>
+
+<ul>
+<li><strong>N Type Female</strong> - these connectors have a center sleeve and outer threads.</li>
+</ul>
+<figure><img src="N-type-female.png"
+         alt="N Type Female"/>
+</figure>
+
+<p><strong>Variation:</strong> Like SMA connectors, N Type connectors have reverse polarity variations known as RP-N Type connectors.</p>
+<p>There are two types:</p>
+<ul>
+<li><strong>RP-N Male</strong> -  these connectors have a center sleeve and inner threads. There is a ferrule between the center pin and the inner threads.</li>
+</ul>
+<figure><img src="RP-N-male.png"
+         alt="RP-N Male"/>
+</figure>
+
+<ul>
+<li><strong>RP-N Female</strong> - these connectors have a center pin and outer threads.</li>
+</ul>
+<figure><img src="RP-N-female.png"
+         alt="RP-N Female"/>
+</figure>
+
+<p>The following table shows some of their applications.</p>
+<table>
+<thead>
+<tr>
+<th>Application</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><figure><img src="N-type-female-to-N-type-male.webp"
+         alt="N-type female to N-type male"/>
+</figure>
+</td>
+<td>An antenna feeder line which consists of N Type Male (right) and N Type Female (left) connectors. <em>Image courtesy of <a href="https://www.rakwireless.com/">RAKwireless Technology Limited</a></em></td>
+</tr>
+<tr>
+<td><figure><img src="wisgate-edge-max.webp"
+         alt="I-PEX to N-Type"/>
+</figure>
+</td>
+<td>RAK7249 WisGate Edge Max uses 4 N-Type connectors for connecting LoRa, LTE, GPS, and 2.4G WiFi antennas. <em>Image courtesy of <a href="https://www.rakwireless.com/">RAKwireless Technology Limited</a></em></td>
+</tr>
+</tbody>
+</table>
 
 
         </div>
@@ -351,12 +518,12 @@
   
 
   
-    
-    
-  
 
   
 
+  
+    
+    
   
 
   
@@ -383,8 +550,8 @@
 
 
 <div class="is-clearfix">
-<a class="button is-pulled-left" href="/docs/lorawan/modulation-data-rate/">← Modulation &amp; Data Rate</a>
-<a class="button is-pulled-right" href="/docs/lorawan/academic/">Academic Research →</a>
+<a class="button is-pulled-left" href="/docs/lorawan/academic/">← Academic Research</a>
+<a class="button is-pulled-right" href="/docs/lorawan/antenna-types/">Antenna Types →</a>
 </div>
 
       </div>
