@@ -4,7 +4,7 @@
   "private": true,
   "description": "Hugo Theme for The Things Stack",
   "dependencies": {
-    "@tti/design": "https://ttui.thethingsindustries.com/release/ttui-1.0.0.tar.gz",
+    "@tti/design": "https://ttui.thethingsindustries.com/release/ttui-1.3.1.tar.gz",
     "bulma": "^0.9.1"
   },
   "devDependencies": {}
