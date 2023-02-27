@@ -1,5 +1,5 @@
 ---
-title: "Different Regional Limitations of RF Use in LoRaWAN"
+title: "Regional Limitations of RF Use in LoRaWAN"
 section: Additional Information
 description: ""
 weight:
@@ -9,19 +9,15 @@ The sub-gigahertz ISM (Industrial, Scientific, and Medical) band is a range of r
 
 # Europe (863-870 MHz)
 
-In Europe, LoRaWAN uses a range of **24 to 80 channels** with either 125 kHz or 250 kHz bandwidth, and 250 kHz bandwidth is only applied with DR (Data Rate) 6.
+In Europe, LoRaWAN uses a range of **24 to 80 channels** with either 125 kHz or 250 kHz bandwidth, where 250 kHz bandwidth can be achieved only using DR (Data Rate) 6.
 
-All LoRaWAN end devices are required to operate at least on channels 868.10 MHz, 868.30 MHz, and 868.50 MHz. These channels must also have a bandwidth of 125 kHz at DR0 to DR5 and be restricted to a maximum [duty cycle](/lorawan/duty-cycle/) of 1%. Gateways should listen on these three channels. The same channels are used to send the join-request message and in that case, the duty cycle should be as follows:
-
-- Aggregated during the first hour following power-up or reset: Transmit time < 36Sec
-- Aggregated during the next 10 hours: Transmit time < 36Sec
-- After the first 11 hours, aggregated over 24h: Transmit time < 8.7Sec per 24h
+All LoRaWAN end devices are required to operate at least on channels 868.10 MHz, 868.30 MHz, and 868.50 MHz. These channels must have a bandwidth of 125 kHz at DR0 to DR5, and be restricted to a maximum [duty cycle](/lorawan/duty-cycle/) of 1%. These three channels are used for sending join-requests, so all gateways should listen on these channels too.
 
 The [LoRa Alliance®](https://lora-alliance.org/) recommends a duty cycle limitation of 1% in the European band which means that a device can transmit for no more than 1% of the time while ensuring the maximum EIRP (Effective Isotropic Radiated Power) of +16 dBm. The purpose of the duty cycle limitation is to ensure that devices operating in the ISM band do not cause harmful interference to other devices operating in the same band. 
 
-The EIRP of 16 dBm is equal to 40 mW and is equivalent to an ERP of 14 dBm, which is equal to 25 mW. To learn more about EIRP and ERP, you can refer to the [LoRaWAN®](/lorawan/) section of The Things Network.
+The EIRP of 16 dBm is equal to 40 mW and is equivalent to an ERP of 14 dBm, which is equal to 25 mW. To learn more about EIRP and ERP, you can refer to the [LoRaWAN®](/lorawan/) section.
 
-However, the [ETSI](https://www.etsi.org/) (European Telecommunications Standards Institute) has segmented the European ISM frequency band into 6 sub-bands (K, L, M, N, P, Q) and imposes additional restrictions on the duty cycle and maximum ERP for some sub-bands (Please see pages 21-22 of the [ETSI EN300.220 V3.2.1 (2018-06)](https://www.etsi.org/deliver/etsi_en/300200_300299/30022002/03.02.01_60/en_30022002v030201p.pdf)) document.
+However, [ETSI](https://www.etsi.org/) (European Telecommunications Standards Institute) has segmented the European ISM frequency band into 6 sub-bands (K, L, M, N, P, Q) and imposes additional restrictions on the duty cycle and maximum ERP for some sub-bands (see pages 21-22 of the [ETSI EN300.220 V3.2.1 (2018-06) document](https://www.etsi.org/deliver/etsi_en/300200_300299/30022002/03.02.01_60/en_30022002v030201p.pdf)).
 
 - K (863 MHz - 865 MHz): 0.1%, 25 mW ERP
 - L (865 MHz - 868 MHz): 1%, 25 mW ERP
@@ -32,15 +28,15 @@ However, the [ETSI](https://www.etsi.org/) (European Telecommunications Standard
 
 For example, devices operating in the 869.4-869.65 MHz range, which is sub-band P, have a duty cycle limitation of 10%, which means that a device can transmit for no more than 10% of the time.
 
-Usually, the limitations of sub-band K, L, M, N and Q are applied for uplink transmissions and the limitations of sub-band P are mainly applied for downlink transmissions. There are normally many more end device thatn gateways on a LoRaWAN network. Gateways can therefore run into their duty cycle limit quicker than end devices. LoRaWAN's RX2 channel is normally chose to fall in sub-bad P to benefit from the higher duty cycle limit, and provide 10x more downlinks to gateways than to end devices to combat this imbalance.
+Usually, the limitations of sub-bands K, L, M, N and Q are applied for uplink transmissions and the limitations of sub-band P are mainly applied for downlink transmissions. Usually, a number of end devices in a LoRaWAN network is way higher than a number of gateways. Gateways can therefore run into their duty cycle limit quicker than end devices. LoRaWAN's RX2 channel is normally chosen to fall into sub-bad P in order to benefit from the higher duty cycle limit, and provide 10x more downlinks to gateways instead of end devices.
 
-By default, the RX1 receive window for downlinks uses the same frequency as the preceding uplink, while the RX2 receive window uses a fixed frequency, with the default being 869.525 MHz at DR 0 using SF12 with 125 kHz.
+By default, the RX1 receive window for downlinks uses the same frequency as the preceding uplink, while the RX2 receive window uses a fixed frequency, with the default being 869.525 MHz at DR0 using SF12 with 125 kHz.
 
-The default frequency for beacon broadcasts and ping-slot transmissions for Class B end devices in Europe is 869.525 MHz. For LoRaWAN relays, channel 0 uses 865.1 MHz and 865.5 MHz for WOR (Wake On Radio) transmissions respectively, and channel 1 uses 865.3 MHz and 865.9 MHz for WOR ACK (Wake On Radio Acknowledgement) transmissions respectively.
+In Europe 869.525 MHz is used for [Class B beacon transmissions and ping slots](https://lora-developers.semtech.com/documentation/tech-papers-and-guides/lorawan-class-b-devices/).
 
 # US (902-928 MHz)
 
-The following regulations are applied to the USA, Canada, and all other countries in ITU Region 2 adopting the entire [FCC](https://www.fcc.gov/) (Federal Communications Commission) 47 CFR Part 15 regulations in the 902-928 ISM band.
+The following regulations are applied to the USA, Canada, and all other countries in ITU Region 2 adopting the entire [FCC](https://www.fcc.gov/) (Federal Communications Commission) 47 CFR (Code of Federal Regulations) Part 15 in the 902-928 ISM band.
 
 In the United States, the ISM band is divided into **80 channels**: 72 for uplink and 8 for downlink.
 
@@ -50,14 +46,16 @@ In the United States, the ISM band is divided into **80 channels**: 72 for uplin
 
 The end devices must have the capability to store parameters for the 72 uplink channels mentioned above.
 
-The dwell time for LoRaWAN in the US902-928 band refers to the amount of time that a device spends on a specific channel before switching to the next channel. The dwell time is an important parameter for LoRaWAN devices as it helps to ensure that the devices are able to successfully transmit data while avoiding interference with other devices.
+The [dwell time](https://www.thethingsindustries.com/docs/reference/glossary/) for LoRaWAN in the US902-928 band refers to the amount of time that a device spends on a specific channel before switching to the next channel. The dwell time is an important parameter for LoRaWAN devices as it helps to ensure that devices are able to successfully transmit data while avoiding interference with other devices.
 
-For the US ISM band, the [dwell time](https://www.thethingsindustries.com/docs/reference/glossary/) for transmitting a LoRaWAN message must not exceed 400 ms. It is important to consider this dwell time limitation when designing and operating devices. For example, if a device is transmitting data at a high rate, it may need to use a faster hopping rate in order to comply with the 400 ms dwell time limitation.
+For the US ISM band, the dwell time for transmitting a LoRaWAN message must not exceed 400 ms. It is important to consider this dwell time limitation when designing and operating devices. For example, if a device is transmitting data at a high rate, it may need to use a faster hopping rate in order to comply with the 400 ms dwell time limitation.
 
 Both end devices and gateways are also limited to a maximum EIRP of +30 dBm. The maximum EIRP can be maintained by adjusting the transmitter power, antenna gain, or cable loss. 
 
 The downlink channel for the RX1 receive window is based on the uplink channel that was used to send the preceding uplink. The default downlink channel for the RX2 receive window is 923.3 MHz with a data rate of DR8.
 
-For Class B beacons, the US902-928 band uses 8 frequencies 923.3, 923.9, 924.5, 925.1, 925.7, 926.3, 926.9, 927.5 starting at 923.3 MHz on a rotation basis. For LoRaWAN relays, channel 0 is used for WOR transmissions with a frequency range of 916.7 MHz to 919.9 MHz, while channel 1 is used for WOR ACK transmissions with a frequency range of 918.3 MHz to 921.5 MHz.
+Class B beacon transmissions and ping slots in the US utilize eight frequencies: 923.3, 923.9, 924.5, 925.1, 925.7, 926.3, 926.9, and 927.5 MHz. These frequencies are rotated starting at 923.3 MHz.
 
-It is important to note that there may be additional regulatory requirements and certifications that must be met to legally operate in the ISM band, such as obtaining approval or certification from organizations such as the [FCC, ICASA, RED, R&TTE, etc](https://www.element.com/nucleus/2018/wireless-devices-a-guide-to-compliance-in-the-us-and-eu). Getting your LoRaWAN end device [certified](https://lora-alliance.org/lorawan-certification/) by the LoRa Alliance® before releasing it to the market is also highly recommended.
+
+## Additional Regulatory Requirements and Certifications
+It is important to note that there may be additional regulatory requirements and certifications that must be met to legally operate in the ISM band, such as obtaining approval or certification from organizations such as [FCC, ICASA, RED, R&TTE, etc](https://www.element.com/nucleus/2018/wireless-devices-a-guide-to-compliance-in-the-us-and-eu). Getting your LoRaWAN end device [certified](https://lora-alliance.org/lorawan-certification/) by the LoRa Alliance® before releasing it to the market is also highly recommended.
