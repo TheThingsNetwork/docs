@@ -17,7 +17,15 @@ LoRaWAN is a low-power, wide area networking protocol built on top of the LoRa r
 
 ## What is The Things Stack?
 
-The Things Stack is a LoRaWAN Network Server that is developed and actively maintaned by [The Things Industries](https://thethingsindustries.com). To learn the role of a Network Server and the other components of a LoRaWAN network, see [LoRaWAN Architecture]({{< ref "lorawan/architecture" >}}).
+The Things Stack is a LoRaWAN Network Server that is developed and actively maintaned by [The Things Industries](https://thethingsindustries.com).
+
+The Things Stack comes in different deployments for personal or business use cases, namely:
+
+The Things Stack Cloud: an SLA-backed, production grade The Things Stack instance hosted by The Things Industries. ([Try it for free](https://www.thethingsindustries.com/stack/plans/)).
+
+The Things Stack Community Edition: a free, community based deployment of The Things Stack for development use.
+
+To learn the role of a Network Server and the other components of a LoRaWAN network, see [LoRaWAN Architecture]({{< ref "lorawan/architecture" >}}).
 
 ## What is The Things Stack Community Edition?
 
@@ -33,11 +41,11 @@ The Things Stack Community Edition offers a free and developer-friendly way to g
 
 Join The Things Network [Forum](https://www.thethingsnetwork.org/forum/) or [Slack](https://thethingsnetwork.slack.com/) for plenty of great ideas for projects, and to ask or answer questions about The Things Stack.
 
-The Things Stack Community Edition does not come with an uptime guarantee and is not recommended for commercial projects. For commercial projects, we recommend an SLA-backed The Things Stack instance provided by [The Things Industries](https://thethingsindustries.com/).
+The Things Stack Community Edition does not come with an uptime guarantee and is not recommended for commercial projects. For commercial projects, we recommend an SLA-backed The Things Stack instance provided by The Things Industries. [Try The Things Stack Cloud for free](https://www.thethingsindustries.com/stack/plans/).
 
 ## Scale Up
 
-Once you have your LoRaWAN proof of concept project up and running, and you are ready to scale to a commercial level, we recommend using an SLA-backed network provided by The Things Industries. Visit [The Things Industries website](https://thethingsindustries.com/) to learn more about private deployments of The Things Stack.
+Once you have your LoRaWAN proof of concept project up and running, and you are ready to scale to a commercial level, we recommend using an SLA-backed network provided by The Things Industries. Visit [The Things Stack Plans Page](https://www.thethingsindustries.com/stack/plans/) to learn more about private deployments of The Things Stack.
 
 ## The Things Stack Features
 
