@@ -2,9 +2,9 @@
 # yarn lockfile v1
 
 
-"@tti/design@https://ttui.thethingsindustries.com/release/ttui-1.5.0.tar.gz":
+"@tti/design@https://ttui.thethingsindustries.com/release/ttui-1.6.0.tar.gz":
   version "0.0.0"
-  resolved "https://ttui.thethingsindustries.com/release/ttui-1.5.0.tar.gz#1ccdbe9ce80cf3272c935189a96095676e23b54a"
+  resolved "https://ttui.thethingsindustries.com/release/ttui-1.6.0.tar.gz#7a7312981a44a586863dcbd3f4988298b5a16715"
 
 bulma@^0.9.1:
   version "0.9.4"
