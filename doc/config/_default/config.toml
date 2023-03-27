@@ -65,11 +65,6 @@ pygmentsUseClasses = true
     pre = "Invite yourself to the community chat to talk about The Things Network."
     url = "https://account.thethingsnetwork.org/"
 
-  [[menu.community]]
-    name = "Labs"
-    pre = "Inspire and get inspired by community contributed use cases."
-    url = "https://www.thethingsnetwork.org/labs"
-
 [module]
   [[module.mounts]]
     source = "assets"
