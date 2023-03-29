@@ -35,9 +35,6 @@
     <loc>https://www.thethingsnetwork.org/docs/applications/storage/api/</loc>
     <lastmod>2021-03-23T18:56:43+01:00</lastmod>
   </url><url>
-    <loc>https://www.thethingsnetwork.org/docs/devices-and-gateways/arduino/api/</loc>
-    <lastmod>2021-10-28T15:16:00+02:00</lastmod>
-  </url><url>
     <loc>https://www.thethingsnetwork.org/docs/devices/arduino/api/</loc>
     <lastmod>2021-03-23T18:56:43+01:00</lastmod>
   </url><url>
@@ -287,9 +284,6 @@
     <loc>https://www.thethingsnetwork.org/docs/devices/rak811-wisnode-lora-module/burning-the-bootloader/</loc>
     <lastmod>2021-03-23T18:56:43+01:00</lastmod>
   </url><url>
-    <loc>https://www.thethingsnetwork.org/docs/devices-and-gateways/arduino/api/cayennelpp/</loc>
-    <lastmod>2021-10-28T15:16:00+02:00</lastmod>
-  </url><url>
     <loc>https://www.thethingsnetwork.org/docs/devices/arduino/api/cayennelpp/</loc>
     <lastmod>2021-03-23T18:56:43+01:00</lastmod>
   </url><url>
@@ -328,9 +322,6 @@
   </url><url>
     <loc>https://www.thethingsnetwork.org/docs/gateways/cisco/setup/</loc>
     <lastmod>2021-03-23T18:56:43+01:00</lastmod>
-  </url><url>
-    <loc>https://www.thethingsnetwork.org/docs/devices-and-gateways/arduino/api/node/</loc>
-    <lastmod>2021-10-28T15:16:00+02:00</lastmod>
   </url><url>
     <loc>https://www.thethingsnetwork.org/docs/devices/arduino/api/node/</loc>
     <lastmod>2021-03-23T18:56:43+01:00</lastmod>
@@ -383,9 +374,6 @@
     <loc>https://www.thethingsnetwork.org/docs/devices/node/</loc>
     <lastmod>2021-03-23T18:56:43+01:00</lastmod>
   </url><url>
-    <loc>https://www.thethingsnetwork.org/docs/devices-and-gateways/arduino/api/message/</loc>
-    <lastmod>2021-10-28T15:16:00+02:00</lastmod>
-  </url><url>
     <loc>https://www.thethingsnetwork.org/docs/devices/arduino/api/message/</loc>
     <lastmod>2021-03-23T18:56:43+01:00</lastmod>
   </url><url>
@@ -400,9 +388,6 @@
   </url><url>
     <loc>https://www.thethingsnetwork.org/docs/applications/python/api-reference/</loc>
     <lastmod>2021-03-23T18:56:43+01:00</lastmod>
-  </url><url>
-    <loc>https://www.thethingsnetwork.org/docs/devices-and-gateways/arduino/ide/</loc>
-    <lastmod>2021-10-28T15:16:00+02:00</lastmod>
   </url><url>
     <loc>https://www.thethingsnetwork.org/docs/devices/arduino/ide/</loc>
     <lastmod>2021-03-23T18:56:43+01:00</lastmod>
@@ -455,9 +440,6 @@
     <loc>https://www.thethingsnetwork.org/docs/devices/uno/</loc>
     <lastmod>2021-03-23T18:56:43+01:00</lastmod>
   </url><url>
-    <loc>https://www.thethingsnetwork.org/docs/devices-and-gateways/arduino/api/network/</loc>
-    <lastmod>2021-10-28T15:16:00+02:00</lastmod>
-  </url><url>
     <loc>https://www.thethingsnetwork.org/docs/devices/arduino/api/network/</loc>
     <lastmod>2021-03-23T18:56:43+01:00</lastmod>
   </url><url>
@@ -497,12 +479,6 @@
     <loc>https://www.thethingsnetwork.org/docs/applications/add/</loc>
     <lastmod>2021-03-23T18:56:43+01:00</lastmod>
   </url><url>
-    <loc>https://www.thethingsnetwork.org/docs/devices-and-gateways/adding-devices/</loc>
-    <lastmod>2021-11-26T12:49:47+01:00</lastmod>
-  </url><url>
-    <loc>https://www.thethingsnetwork.org/docs/devices-and-gateways/adding-gateways/</loc>
-    <lastmod>2021-11-26T12:49:47+01:00</lastmod>
-  </url><url>
     <loc>https://www.thethingsnetwork.org/docs/applications/att/</loc>
     <lastmod>2021-03-23T18:56:43+01:00</lastmod>
   </url><url>
@@ -514,12 +490,6 @@
   </url><url>
     <loc>https://www.thethingsnetwork.org/docs/applications/manager/</loc>
     <lastmod>2021-03-23T18:56:43+01:00</lastmod>
-  </url><url>
-    <loc>https://www.thethingsnetwork.org/docs/applications-and-integrations/</loc>
-    <lastmod>2021-10-28T15:15:39+02:00</lastmod>
-  </url><url>
-    <loc>https://www.thethingsnetwork.org/docs/devices-and-gateways/arduino/</loc>
-    <lastmod>2021-10-28T15:16:00+02:00</lastmod>
   </url><url>
     <loc>https://www.thethingsnetwork.org/docs/devices/arduino/</loc>
     <lastmod>2021-03-23T18:56:43+01:00</lastmod>
@@ -535,9 +505,6 @@
   </url><url>
     <loc>https://www.thethingsnetwork.org/docs/gateways/packet-forwarder/basicstation/</loc>
     <lastmod>2021-03-23T18:56:43+01:00</lastmod>
-  </url><url>
-    <loc>https://www.thethingsnetwork.org/docs/devices-and-gateways/best-practices/</loc>
-    <lastmod>2021-11-26T12:49:47+01:00</lastmod>
   </url><url>
     <loc>https://www.thethingsnetwork.org/docs/applications/options/</loc>
     <lastmod>2021-03-23T18:56:43+01:00</lastmod>
@@ -578,9 +545,6 @@
     <loc>https://www.thethingsnetwork.org/docs/devices/registration/</loc>
     <lastmod>2021-03-23T18:56:43+01:00</lastmod>
   </url><url>
-    <loc>https://www.thethingsnetwork.org/docs/devices-and-gateways/</loc>
-    <lastmod>2021-11-26T12:49:47+01:00</lastmod>
-  </url><url>
     <loc>https://www.thethingsnetwork.org/docs/network/discovery/</loc>
     <lastmod>2021-03-23T18:56:43+01:00</lastmod>
   </url><url>
@@ -611,17 +575,11 @@
     <loc>https://www.thethingsnetwork.org/docs/gateways/laird/</loc>
     <lastmod>2021-03-23T18:56:43+01:00</lastmod>
   </url><url>
-    <loc>https://www.thethingsnetwork.org/docs/devices-and-gateways/arduino/usage/</loc>
-    <lastmod>2021-10-28T15:16:00+02:00</lastmod>
-  </url><url>
     <loc>https://www.thethingsnetwork.org/docs/devices/arduino/usage/</loc>
     <lastmod>2021-03-23T18:56:43+01:00</lastmod>
   </url><url>
     <loc>https://www.thethingsnetwork.org/docs/devices/lopy/</loc>
     <lastmod>2021-03-23T18:56:43+01:00</lastmod>
-  </url><url>
-    <loc>https://www.thethingsnetwork.org/docs/devices-and-gateways/basics-station/</loc>
-    <lastmod>2021-11-26T12:49:47+01:00</lastmod>
   </url><url>
     <loc>https://www.thethingsnetwork.org/docs/gateways/basics-station/</loc>
     <lastmod>2021-03-23T18:56:43+01:00</lastmod>
@@ -681,7 +639,7 @@
     <lastmod>2021-03-23T18:56:43+01:00</lastmod>
   </url><url>
     <loc>https://www.thethingsnetwork.org/docs/quick-start/</loc>
-    <lastmod>2023-03-08T13:45:21+01:00</lastmod>
+    <lastmod>2023-03-29T13:55:34+02:00</lastmod>
   </url><url>
     <loc>https://www.thethingsnetwork.org/docs/network/account/clientid/</loc>
     <lastmod>2021-03-23T18:56:43+01:00</lastmod>
@@ -735,7 +693,7 @@
     <lastmod>2021-03-23T18:56:43+01:00</lastmod>
   </url><url>
     <loc>https://www.thethingsnetwork.org/docs/v2-docs/</loc>
-    <lastmod>2021-11-26T12:49:47+01:00</lastmod>
+    <lastmod>2023-03-29T13:55:34+02:00</lastmod>
   </url><url>
     <loc>https://www.thethingsnetwork.org/docs/gateways/kerlink/ibts/</loc>
     <lastmod>2021-03-23T18:56:43+01:00</lastmod>
@@ -751,9 +709,6 @@
   </url><url>
     <loc>https://www.thethingsnetwork.org/docs/gateways/kerlink/station/</loc>
     <lastmod>2021-03-23T18:56:43+01:00</lastmod>
-  </url><url>
-    <loc>https://www.thethingsnetwork.org/docs/devices-and-gateways/bytes/</loc>
-    <lastmod>2021-11-26T12:49:47+01:00</lastmod>
   </url><url>
     <loc>https://www.thethingsnetwork.org/docs/devices/bytes/</loc>
     <lastmod>2021-03-23T18:56:43+01:00</lastmod>

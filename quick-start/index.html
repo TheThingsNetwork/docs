@@ -51,7 +51,7 @@
   <link rel="stylesheet" href="https://ttui.thethingsindustries.com/release/1.6.0/main.css" />
 
   <meta property="og:title" content="Quick Start" />
-<meta property="og:description" content="Get started with The Things Stack Community Edition" />
+<meta property="og:description" content="Get started with The Things Stack" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.thethingsnetwork.org/docs/quick-start/" /><meta property="og:image" content="https://www.thethingsnetwork.org/docs/quick-start/stm32L0-discover-kit.jpg"/><meta property="og:site_name" content="The Things Network" />
 
@@ -60,7 +60,7 @@
   <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://www.thethingsnetwork.org/docs/quick-start/stm32L0-discover-kit.jpg"/>
 <meta name="twitter:title" content="Quick Start"/>
-<meta name="twitter:description" content="Get started with The Things Stack Community Edition"/>
+<meta name="twitter:description" content="Get started with The Things Stack"/>
 
 
 </head>
@@ -87,18 +87,6 @@
               
             
           
-            
-              
-            
-          
-            
-              
-            
-          
-            
-              
-            
-          
               <li class="">
                 <a href="https://www.thethingsnetwork.org/docs/lorawan/">LoRaWAN®</a>
               </li>
@@ -106,21 +94,6 @@
           
               <li class="is-active">
                 <a href="https://www.thethingsnetwork.org/docs/quick-start/">Quick Start</a>
-              </li>
-            
-          
-              <li class="">
-                <a href="https://www.thethingsnetwork.org/docs/applications-and-integrations/">Applications &amp; Integrations</a>
-              </li>
-            
-          
-              <li class="">
-                <a href="https://www.thethingsnetwork.org/docs/devices-and-gateways/">Devices &amp; Gateways</a>
-              </li>
-            
-          
-              <li class="">
-                <a href="https://www.thethingsnetwork.org/docs/v2-docs/">V2 Docs (Outdated)</a>
               </li>
             
           
@@ -170,8 +143,14 @@
 <h2 id="what-is-the-things-stack">What is The Things Stack?&nbsp;<a class="header-hash" href="#what-is-the-things-stack">#</a> </h2>
 <p>The Things Stack is a LoRaWAN Network Server that is developed and actively maintaned by <a href="https://thethingsindustries.com">The Things Industries</a>.</p>
 <p>The Things Stack comes in different deployments for personal or business use cases, namely:</p>
-<p>The Things Stack Cloud: an SLA-backed, production grade The Things Stack instance hosted by The Things Industries. (<a href="https://www.thethingsindustries.com/stack/plans/">Try it for free</a>).</p>
-<p>The Things Stack Community Edition: a free, community based deployment of The Things Stack for development use.</p>
+<figure class="float plain"><img src="tts-cloud.svg"/>
+</figure>
+
+<p><strong>The Things Stack Cloud</strong>: a commercial The Things Stack instance hosted by The Things Industries. You can (<a href="https://www.thethingsindustries.com/stack/plans/">start with The Things Stack Cloud for free</a>) and later easily upgrade to a paid plan if you plan on running your LoRaWAN solution commercially.</p>
+<figure class="float plain"><img src="tts-ce.svg"/>
+</figure>
+
+<p><strong>The Things Stack Community Edition</strong>: a community based deployment of The Things Stack for development use. If you&rsquo;re testing LoRaWAN devices for education purposes, you may use The Things Stack Community Edition. Be aware that it does not come with any uptime guarantees.</p>
 <p>To learn the role of a Network Server and the other components of a LoRaWAN network, see <a href="https://www.thethingsnetwork.org/docs/lorawan/architecture/">LoRaWAN Architecture</a>.</p>
 <h2 id="what-is-the-things-stack-community-edition">What is The Things Stack Community Edition?&nbsp;<a class="header-hash" href="#what-is-the-things-stack-community-edition">#</a> </h2>
 <p>Since January 2021, The Things Network runs <strong>The Things Stack Community Edition</strong>, a free, community based deployment of The Things Stack.</p>
@@ -184,6 +163,9 @@
 <h2 id="scale-up">Scale Up&nbsp;<a class="header-hash" href="#scale-up">#</a> </h2>
 <p>Once you have your LoRaWAN proof of concept project up and running, and you are ready to scale to a commercial level, we recommend using an SLA-backed network provided by The Things Industries. Visit <a href="https://www.thethingsindustries.com/stack/plans/">The Things Stack Plans Page</a> to learn more about private deployments of The Things Stack.</p>
 <h2 id="the-things-stack-features">The Things Stack Features&nbsp;<a class="header-hash" href="#the-things-stack-features">#</a> </h2>
+<figure class="float plain"><img src="tts.svg"/>
+</figure>
+
 <p>The Things Stack, compared to The Things Network V2, is <strong>more scalable, more secure and supports all the latest LoRaWAN developments</strong> like the latest LoRaWAN versions 1.1 and 1.0.4.</p>
 <p>The Things Stack architecture is based on microservices which allows for <strong>better distribution of services, better scaling and interoperability with other LoRaWAN networks</strong>.</p>
 <p>The Things Stack <strong>supports all LoRaWAN classes (A, B, C) and multicast device groups, all existing LoRaWAN versions (including v1.0.4 and v1.1) and all regional parameters as defined by the LoRa Alliance</strong>. By being standards compliant, The Things Stack <strong>supports passive roaming and will support handover roaming</strong> in the future. <strong>Firmware updates over the air, advanced clustering and load balancing techniques</strong> also come along with this upgrade.</p>
@@ -192,8 +174,8 @@
 <p>One of the most important features is the connection to <strong><a href="https://www.thethingsindustries.com/docs/reference/peering/">Packet Broker</a></strong>, allowing the exchange of traffic between The Things Stack Community Edition and private LoRaWAN networks which increases LoRaWAN network coverage, performance and capacity, and prolongs the end device battery life.</p>
 <p>You will also be able to reuse your username and password from The Things Network V2 to log in, thanks to <strong>The Things ID feature</strong>. Users can use the <a href="https://www.thethingsindustries.com/docs/getting-started/console/">Console</a> with an <strong>improved user interface</strong> or <a href="https://www.thethingsindustries.com/docs/getting-started/cli/">CLI</a>, to manage <a href="https://www.thethingsindustries.com/docs/gateways/">gateways</a>, <a href="https://www.thethingsindustries.com/docs/devices/">devices</a>, <a href="https://www.thethingsindustries.com/docs/integrations/adding-applications/">applications</a>, <a href="https://www.thethingsindustries.com/docs/getting-started/user-management/">users and organizations</a>, as well as to interact with uplink and downlink events in real-time.</p>
 <p>For a more detailed comparison between The Things Network V2 and The Things Stack Community Edition, check out the <a href="https://www.thethingsindustries.com/docs/getting-started/migrating/major-changes/">Major Changes in The Things Stack</a> page.</p>
-<h2 id="start-using-the-things-stack-community-edition">Start using The Things Stack Community Edition&nbsp;<a class="header-hash" href="#start-using-the-things-stack-community-edition">#</a> </h2>
-<p>The Things Stack Community Edition can be accessed via the Console. You can access the Console by <a href="https://console.cloud.thethings.network/">selecting a cluster</a> that is closest to you geographically.</p>
+<h2 id="start-using-the-things-stack">Start using The Things Stack&nbsp;<a class="header-hash" href="#start-using-the-things-stack">#</a> </h2>
+<p>The Things Stack can be accessed via the Console. You can access the Console by <a href="https://console.cloud.thethings.network/">selecting a cluster</a> that is closest to you geographically.</p>
 <p><img src="TTN-V3-console.png" alt="The Things Stack Community Edition Console" title="The Things Network Console"></p>
 <h2 id="set-up-your-lorawan-network">Set up your LoRaWAN network&nbsp;<a class="header-hash" href="#set-up-your-lorawan-network">#</a> </h2>
 <p>The main building blocks of the public community LoRaWAN network are <strong>gateways</strong>. Thousands of gateways across the globe are already connected to The Things Stack Community Edition, making the community LoRaWAN network available for free usage.</p>
@@ -230,7 +212,6 @@
 </tr>
 </tbody>
 </table>
-<p>Once you have your hands on a gateway, <a href="/docs/devices-and-gateways/adding-gateways/">learn how to connect your gateway to The Things Stack Community Edition</a>.</p>
 <div class="notification is-info is-light has-text-dark">
   <h5 class="title is-family-sans-serif has-text-dark mb-1">Note:</h5>
   Different world regions use different <a href="https://www.thethingsindustries.com/docs/reference/frequency-plans/">frequency plans</a>, e.g. 863-870 MHz for Europe, 902-928 MHz for North America, etc. Make sure you double-check that the hardware aligns with your region’s radio frequency before purchasing!
@@ -280,7 +261,6 @@
 </tr>
 </tbody>
 </table>
-<p>Did you set up your gateway and created a free account on The Things Stack Community Edition? Great, now it is time to activate your development board! <a href="/docs/devices-and-gateways/adding-devices/">Learn how to connect your device to The Things Stack Community Edition</a>.</p>
 <p>To learn more about getting started with The Things Stack (Community Edition), have a look at the video by Bogdans Afonins:</p>
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
@@ -288,7 +268,7 @@
 </div>
 
 <h2 id="build-your-end-to-end-application">Build your end-to-end application&nbsp;<a class="header-hash" href="#build-your-end-to-end-application">#</a> </h2>
-<p>Once you have your LoRaWAN network setup, you can use available integrations to build your end-to-end IoT solution. Integrations allow you to process data and act on it by triggering events. Learn <a href="/docs/applications-and-integrations/">how to create integrations on The Things Stack Community Edition</a>.</p>
+<p>Once you have your LoRaWAN network setup, you can use available integrations to build your end-to-end IoT solution. For more guides, see <a href="https://www.thethingsindustries.com/docs">The Things Stack official documentation page</a>.</p>
 <h3 id="useful-links">Useful Links:&nbsp;<a class="header-hash" href="#useful-links">#</a> </h3>
 <ul>
 <li><a href="https://www.youtube.com/watch?v=rK8oJHZ9Q7U">The Things Stack Introduction video</a></li>
