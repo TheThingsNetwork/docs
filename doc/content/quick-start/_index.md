@@ -1,7 +1,7 @@
 ---
 title: "Quick Start"
-description: "Get started with The Things Stack Community Edition"
-image: /quick-start/tts-ce.png
+description: "Get started with The Things Stack"
+image: /quick-start/tts.svg
 menu:
   main:
     weight: 10
@@ -21,9 +21,13 @@ The Things Stack is a LoRaWAN Network Server that is developed and actively main
 
 The Things Stack comes in different deployments for personal or business use cases, namely:
 
-The Things Stack Cloud: an SLA-backed, production grade The Things Stack instance hosted by The Things Industries. ([Try it for free](https://www.thethingsindustries.com/stack/plans/)).
+{{< figure src="tts-cloud.svg" class="float plain" >}}
 
-The Things Stack Community Edition: a free, community based deployment of The Things Stack for development use.
+**The Things Stack Cloud**: a commercial The Things Stack instance hosted by The Things Industries. You can ([start with The Things Stack Cloud for free](https://www.thethingsindustries.com/stack/plans/)) and later easily upgrade to a paid plan if you plan on running your LoRaWAN solution commercially.
+
+{{< figure src="tts-ce.svg" class="float plain" >}}
+
+**The Things Stack Community Edition**: a community based deployment of The Things Stack for development use. If you're testing LoRaWAN devices for education purposes, you may use The Things Stack Community Edition. Be aware that it does not come with any uptime guarantees.
 
 To learn the role of a Network Server and the other components of a LoRaWAN network, see [LoRaWAN Architecture]({{< ref "lorawan/architecture" >}}).
 
@@ -49,6 +53,8 @@ Once you have your LoRaWAN proof of concept project up and running, and you are 
 
 ## The Things Stack Features
 
+{{< figure src="tts.svg" class="float plain" >}}
+
 The Things Stack, compared to The Things Network V2, is **more scalable, more secure and supports all the latest LoRaWAN developments** like the latest LoRaWAN versions 1.1 and 1.0.4.
 
 The Things Stack architecture is based on microservices which allows for **better distribution of services, better scaling and interoperability with other LoRaWAN networks**.
@@ -65,9 +71,9 @@ You will also be able to reuse your username and password from The Things Networ
 
 For a more detailed comparison between The Things Network V2 and The Things Stack Community Edition, check out the [Major Changes in The Things Stack](https://www.thethingsindustries.com/docs/getting-started/migrating/major-changes/) page.
 
-## Start using The Things Stack Community Edition
+## Start using The Things Stack
 
-The Things Stack Community Edition can be accessed via the Console. You can access the Console by [selecting a cluster](https://console.cloud.thethings.network/) that is closest to you geographically.
+The Things Stack can be accessed via the Console. You can access the Console by [selecting a cluster](https://console.cloud.thethings.network/) that is closest to you geographically.
 
 ![The Things Stack Community Edition Console](TTN-V3-console.png "The Things Network Console")
 
@@ -85,8 +91,6 @@ Although you might already have coverage in your area, we still recommend you ge
 | <img src="sentrius-rg1xx.png" alt="Laird Sentrius RG1xx" style="width:200px"/> | **Laird Sentrius RG1xx** | [More info](https://www.lairdconnect.com/wireless-modules/lorawan-solutions/sentrius-rg1xx-lorawan-gateway-wi-fi-ethernet-optional-lte-us-only) |
 | <img src="kona-micro-light-gateway.png" alt="Tektelic Kona Micro Lite" style="width:200px"/> | **Tektelic Kona Micro Lite** | [More info](https://tektelic.com/catalog/kona-micro-lite-lorawan-gateway) |
 | <img src="multitech-conduit-ap.png" alt="Multitech Conduit AP" style="width:200px"/> | **Multitech Conduit AP** | [More info](https://www.multitech.com/brands/multiconnect-conduit-ap) |
-
-Once you have your hands on a gateway, [learn how to connect your gateway to The Things Stack Community Edition]({{< relref "../devices-and-gateways/adding-gateways" >}}).
 
 {{< note >}} Different world regions use different [frequency plans](https://www.thethingsindustries.com/docs/reference/frequency-plans/), e.g. 863-870 MHz for Europe, 902-928 MHz for North America, etc. Make sure you double-check that the hardware aligns with your region’s radio frequency before purchasing! {{</ note >}}
 
@@ -106,15 +110,13 @@ To build a prototype of your end-to-end IoT solution, you will need a developmen
 | <img src="stm32L0-discover-kit.jpg" alt="stm32L0 discover kit" style="width:200px"/> | **STM32L0 Discovery Kit** | [Buy](https://www.st.com/en/evaluation-tools/b-l072z-lrwan1.html) |
 | <img src="adafruit-feather.jpg" alt="Adafruit Feather RFM95 LoRa Radio" style="width:200px"/> | **Adafruit Feather RFM95 LoRa Radio** | [Buy](https://www.adafruit.com/product/3078) |
 
-Did you set up your gateway and created a free account on The Things Stack Community Edition? Great, now it is time to activate your development board! [Learn how to connect your device to The Things Stack Community Edition]({{< relref "../devices-and-gateways/adding-devices" >}}).
-
 To learn more about getting started with The Things Stack (Community Edition), have a look at the video by Bogdans Afonins:
 
 {{< youtube rK8oJHZ9Q7U >}}
 
 ## Build your end-to-end application
 
-Once you have your LoRaWAN network setup, you can use available integrations to build your end-to-end IoT solution. Integrations allow you to process data and act on it by triggering events. Learn [how to create integrations on The Things Stack Community Edition]({{< relref "../applications-and-integrations/" >}}).
+Once you have your LoRaWAN network setup, you can use available integrations to build your end-to-end IoT solution. For more guides, see [The Things Stack official documentation page](https://www.thethingsindustries.com/docs).
 
 ### Useful Links:
 

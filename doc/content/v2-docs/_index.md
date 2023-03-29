@@ -2,9 +2,7 @@
 title: V2 Docs (Outdated)
 description: Documentation for The Things Network V2
 image: "applications/icon.png"
-menu:
-  main:
-    weight: 30
+hidden: true
 ---
 
 {{< warning >}} This page contains documentation written for The Things Network V2. The Things Network V2 is no longer maintained and the service has been terminated on December 1, 2021.
