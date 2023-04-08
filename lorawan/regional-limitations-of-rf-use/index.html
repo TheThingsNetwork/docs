@@ -17,8 +17,8 @@
 
   <meta name="generator" content="Hugo 0.88.1" />
 
-  <title>EIRP and ERP | The Things Network</title>
-  <link rel="canonical" href="https://www.thethingsnetwork.org/docs/lorawan/eirp-and-erp/" />
+  <title>Regional Limitations of RF Use in LoRaWAN | The Things Network</title>
+  <link rel="canonical" href="https://www.thethingsnetwork.org/docs/lorawan/regional-limitations-of-rf-use/" />
   
 
   <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
@@ -50,17 +50,17 @@
 
   <link rel="stylesheet" href="https://ttui.thethingsindustries.com/release/1.6.0/main.css" />
 
-  <meta property="og:title" content="EIRP and ERP" />
+  <meta property="og:title" content="Regional Limitations of RF Use in LoRaWAN" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.thethingsnetwork.org/docs/lorawan/eirp-and-erp/" /><meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/><meta property="og:site_name" content="The Things Network" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/lorawan/regional-limitations-of-rf-use/" /><meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/><meta property="og:site_name" content="The Things Network" />
 
 
 
   <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
 
-<meta name="twitter:title" content="EIRP and ERP"/>
+<meta name="twitter:title" content="Regional Limitations of RF Use in LoRaWAN"/>
 <meta name="twitter:description" content="We are building a global open free crowdsourced long range low power IoT data network"/>
 
 
@@ -229,12 +229,7 @@
 
       
 <li>
-  <a href="https://www.thethingsnetwork.org/docs/lorawan/eirp-and-erp/" class="is-active">EIRP and ERP</a>
-  
-
-
-
-  
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/eirp-and-erp/" class="">EIRP and ERP</a>
 </li>
 
       
@@ -269,7 +264,12 @@
 
       
 <li>
-  <a href="https://www.thethingsnetwork.org/docs/lorawan/regional-limitations-of-rf-use/" class="">Regional Limitations of RF Use in LoRaWAN</a>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/regional-limitations-of-rf-use/" class="is-active">Regional Limitations of RF Use in LoRaWAN</a>
+  
+
+
+
+  
 </li>
 
       
@@ -296,64 +296,45 @@
     <div class="column is-9-desktop sidebar-middle">
       <div class="docs-content">
         <h1 class="title is-size-2">
-          EIRP and ERP
+          Regional Limitations of RF Use in LoRaWAN
         </h1>
         <div class="content">
           
-<p>LoRaWAN gateways and end devices consist of radios (also called transceivers) that are capable of transmitting and receiving LoRa modulated radio signals. A radio needs an antenna to transmit or receive signals. The connection between the radio and the antenna is usually made by a piece of cable (for some devices it is a PCB trace). When transmitting, radio (transmitter) and antenna provide signal gain while antenna cable and connectors affect signal loss.</p>
-<h2 id="eirp">EIRP&nbsp;<a class="header-hash" href="#eirp">#</a> </h2>
-<p>EIRP (Effective Isotropic Radiated Power) is the total power radiated by an isotropic antenna in a single direction. In this case, the antenna gain must be expressed in dBi.</p>
-<figure><img src="eirp.png"
-         alt="EIRP"/>
-</figure>
-
-<p>The EIRP of a unit that consists of a transmitter, an antenna, and a cable can be calculated using the formula,</p>
-<p><strong>EIRP = Transmitter output power (dBm) + Antenna gain (dBi) - Cable loss (dB)</strong></p>
-<p>where the transmitter power in dBm, antenna gain in dBi, and cable loss in dB.</p>
-<p><strong>Question:</strong> Calculate the EIRP value of the following unit that consists of a LoRaWAN gateway, an antenna cable, and an antenna.</p>
-<figure><img src="eirp-q1.png"
-         alt="EIRP-q1"/>
-</figure>
-
-<p>EIRP = Transmitter output power (dBm) + Antenna gain (dBi) - Cable loss (dB)</p>
-<p>EIRP = 20 +3 -7 = 16 dBm</p>
-<h2 id="erp">ERP&nbsp;<a class="header-hash" href="#erp">#</a> </h2>
-<p>Sometimes, the maximum output power is measured in ERP (Effective Radiated Power) instead of the EIRP.</p>
-<p>ERP is the total power radiated by an actual antenna relative to a half-wave dipole antenna. In this case, the antenna gain must be expressed in dBd.</p>
-<figure><img src="erp.png"
-         alt="ERP"/>
-</figure>
-
-<p>The ERP of a unit that consists of a transmitter, an antenna, and a cable can be calculated using the formula,</p>
-<p><strong>ERP = Transmitter output power (dBm) + Antenna gain (dBd) - Cable loss (dB)</strong></p>
-<p>where the transmitter power in dBm, antenna gain in dBd, and cable loss in dB.</p>
-<p>ERP is also expressed in dBm.</p>
-<p><strong>Question:</strong> Calculate the ERP value of the following unit that consists of an end device, an antenna cable, and an antenna.</p>
-<figure><img src="erp-q1.png"
-         alt="ERP-q1"/>
-</figure>
-
-<p>ERP = Transmitter output power (dBm) + Antenna gain (dBd) - Cable loss (dB)</p>
-<p>ERP = 20 +0.85 -7 = 13.85 dBm</p>
-<h2 id="conversion-between-eirp-and-erp">Conversion between EIRP and ERP&nbsp;<a class="header-hash" href="#conversion-between-eirp-and-erp">#</a> </h2>
-<p>You can easily convert EIRP to ERP and vice versa using the following equation:</p>
-<p>EIRP (dBm) = ERP (dBm) + 2.15</p>
-<p>Question: Convert the EIRP value 16 dBm to ERP.</p>
-<p>ERP (dBm) = EIRP (dBm) - 2.15
-ERP (dBm) = 16 -2.15 = 13.85 dBm</p>
-<h2 id="dbm-to-watts-conversion">dBm to watts conversion&nbsp;<a class="header-hash" href="#dbm-to-watts-conversion">#</a> </h2>
-<p>EIRP or ERP values can be converted to watts (W) or milliwatts (mW), for example,  EIRP 16 dBm is equivalent to 40 mW.</p>
-<p>Read the section <strong>Rule of 10s and 3s</strong> in our guide <a href="../db-dbm-dbi-dbd/">dB, dBm, dBi and dBd</a> to learn how to convert dBm to watts or milliwatts.</p>
-<p>If you want to quickly convert dBm to watts or milliwatts without calculating by hand, an online tool is available at <a href="https://www.rapidtables.com/convert/power/dBm_to_Watt.html">RapidTables</a></p>
-<h2 id="regulations">Regulations&nbsp;<a class="header-hash" href="#regulations">#</a> </h2>
-<p>The maximum transmission power of a gateway or an end device is region specific and is regulated by the respective regulatory authorities. For example, in Europe, it is 25 mW ERP (+16 dBm EIRP) and is regulated by ETSI (European Telecommunications Standards Institute).</p>
-<p>Read the <a href="https://lora-alliance.org/wp-content/uploads/2021/05/RP002-1.0.3-FINAL-1.pdf">LoRaWAN® Regional Parameters 1.0.3</a> to find the maximum allowed EIRP in other regions.</p>
-<p>Adjust the following parameters to prevent EIRP/ERP/milliwatts thresholds from being exceeded.</p>
+<p>The sub-gigahertz ISM (Industrial, Scientific, and Medical) band is a range of radio frequencies between <strong>902 MHz and 928 MHz</strong> in the <strong>United States</strong>, and between <strong>868 MHz and 870 MHz</strong> in <strong>Europe</strong>, that is available for unlicensed use. The frequencies mentioned are commonly used for wireless communications in industrial, scientific, and medical applications, and are also used in LoRaWAN networks.</p>
+<h1 id="europe-863-870-mhz">Europe (863-870 MHz)</h1>
+<p>In Europe, LoRaWAN uses a range of <strong>24 to 80 channels</strong> with either 125 kHz or 250 kHz bandwidth, where 250 kHz bandwidth can be achieved only using DR (Data Rate) 6.</p>
+<p>All LoRaWAN end devices are required to operate at least on channels 868.10 MHz, 868.30 MHz, and 868.50 MHz. These channels must have a bandwidth of 125 kHz at DR0 to DR5, and be restricted to a maximum <a href="/lorawan/duty-cycle/">duty cycle</a> of 1%. These three channels are used for sending join-requests, so all gateways should listen on these channels too.</p>
+<p>The <a href="https://lora-alliance.org/">LoRa Alliance®</a> recommends a duty cycle limitation of 1% in the European band which means that a device can transmit for no more than 1% of the time while ensuring the maximum EIRP (Effective Isotropic Radiated Power) of +16 dBm. The purpose of the duty cycle limitation is to ensure that devices operating in the ISM band do not cause harmful interference to other devices operating in the same band.</p>
+<p>The EIRP of 16 dBm is equal to 40 mW and is equivalent to an ERP of 14 dBm, which is equal to 25 mW. To learn more about EIRP and ERP, you can refer to the <a href="/lorawan/">LoRaWAN®</a> section.</p>
+<p>However, <a href="https://www.etsi.org/">ETSI</a> (European Telecommunications Standards Institute) has segmented the European ISM frequency band into 6 sub-bands (K, L, M, N, P, Q) and imposes additional restrictions on the duty cycle and maximum ERP for some sub-bands (see pages 21-22 of the <a href="https://www.etsi.org/deliver/etsi_en/300200_300299/30022002/03.02.01_60/en_30022002v030201p.pdf">ETSI EN300.220 V3.2.1 (2018-06) document</a>).</p>
 <ul>
-<li>Transmitter output power</li>
-<li>Cable and connector attenuation</li>
-<li>Antenna gain</li>
+<li>K (863 MHz - 865 MHz): 0.1%, 25 mW ERP</li>
+<li>L (865 MHz - 868 MHz): 1%, 25 mW ERP</li>
+<li>M (868 MHz - 868.6 MHz): 1%, 25 mW ERP</li>
+<li>N (868.7 MHz - 869.2 MHz): 0.1%, 25 mW ERP</li>
+<li>P (869.4 MHz - 869.65 MHz): 10%, 500 mW ERP</li>
+<li>Q (869.7 MHz - 870 MHz): 1%, 25 mW ERP</li>
 </ul>
+<p>For example, devices operating in the 869.4-869.65 MHz range, which is sub-band P, have a duty cycle limitation of 10%, which means that a device can transmit for no more than 10% of the time.</p>
+<p>Usually, the limitations of sub-bands K, L, M, N and Q are applied for uplink transmissions and the limitations of sub-band P are mainly applied for downlink transmissions. Usually, a number of end devices in a LoRaWAN network is way higher than a number of gateways. Gateways can therefore run into their duty cycle limit quicker than end devices. LoRaWAN&rsquo;s RX2 channel is normally chosen to fall into sub-bad P in order to benefit from the higher duty cycle limit, and provide 10x more downlinks to gateways instead of end devices.</p>
+<p>By default, the RX1 receive window for downlinks uses the same frequency as the preceding uplink, while the RX2 receive window uses a fixed frequency, with the default being 869.525 MHz at DR0 using SF12 with 125 kHz.</p>
+<p>In Europe 869.525 MHz is used for <a href="https://lora-developers.semtech.com/documentation/tech-papers-and-guides/lorawan-class-b-devices/">Class B beacon transmissions and ping slots</a>.</p>
+<h1 id="us-902-928-mhz">US (902-928 MHz)</h1>
+<p>The following regulations are applied to the USA, Canada, and all other countries in ITU Region 2 adopting the entire <a href="https://www.fcc.gov/">FCC</a> (Federal Communications Commission) 47 CFR (Code of Federal Regulations) Part 15 in the 902-928 ISM band.</p>
+<p>In the United States, the ISM band is divided into <strong>80 channels</strong>: 72 for uplink and 8 for downlink.</p>
+<ul>
+<li>There are <strong>64 uplink channels</strong>, numbered from 0 to 63, each with a bandwidth of 125 kHz. These channels start at a center frequency at 902.3 MHz and increment linearly by 200 kHz up to 914.9 MHz.</li>
+<li>There are <strong>8 uplink channels</strong>, numbered from 64 to 71, each with a bandwidth of 500 kHz. These channels start at a center frequency at 903.0 MHz and increment linearly by 1.6 MHz up to 914.2 MHz.</li>
+<li>There are <strong>8 downlink channels</strong>, numbered from 0 to 7, each with a bandwidth of 500 kHz. These channels start at a center frequency at 923.3 MHz and increment linearly by 600 kHz up to 927.5 MHz.</li>
+</ul>
+<p>The end devices must have the capability to store parameters for the 72 uplink channels mentioned above.</p>
+<p>The <a href="https://www.thethingsindustries.com/docs/reference/glossary/">dwell time</a> for LoRaWAN in the US902-928 band refers to the amount of time that a device spends on a specific channel before switching to the next channel. The dwell time is an important parameter for LoRaWAN devices as it helps to ensure that devices are able to successfully transmit data while avoiding interference with other devices.</p>
+<p>For the US ISM band, the dwell time for transmitting a LoRaWAN message must not exceed 400 ms. It is important to consider this dwell time limitation when designing and operating devices. For example, if a device is transmitting data at a high rate, it may need to use a faster hopping rate in order to comply with the 400 ms dwell time limitation.</p>
+<p>Both end devices and gateways are also limited to a maximum EIRP of +30 dBm. The maximum EIRP can be maintained by adjusting the transmitter power, antenna gain, or cable loss.</p>
+<p>The downlink channel for the RX1 receive window is based on the uplink channel that was used to send the preceding uplink. The default downlink channel for the RX2 receive window is 923.3 MHz with a data rate of DR8.</p>
+<p>Class B beacon transmissions and ping slots in the US utilize eight frequencies: 923.3, 923.9, 924.5, 925.1, 925.7, 926.3, 926.9, and 927.5 MHz. These frequencies are rotated starting at 923.3 MHz.</p>
+<h2 id="additional-regulatory-requirements-and-certifications">Additional Regulatory Requirements and Certifications&nbsp;<a class="header-hash" href="#additional-regulatory-requirements-and-certifications">#</a> </h2>
+<p>It is important to note that there may be additional regulatory requirements and certifications that must be met to legally operate in the ISM band, such as obtaining approval or certification from organizations such as <a href="https://www.element.com/nucleus/2018/wireless-devices-a-guide-to-compliance-in-the-us-and-eu">FCC, ICASA, RED, R&amp;TTE, etc</a>. Getting your LoRaWAN end device <a href="https://lora-alliance.org/lorawan-certification/">certified</a> by the LoRa Alliance® before releasing it to the market is also highly recommended.</p>
 
 
         </div>
@@ -384,22 +365,22 @@ ERP (dBm) = 16 -2.15 = 13.85 dBm</p>
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
   
@@ -408,8 +389,8 @@ ERP (dBm) = 16 -2.15 = 13.85 dBm</p>
 
 
 <div class="is-clearfix">
-<a class="button is-pulled-left" href="/docs/lorawan/db-dbm-dbi-dbd/">← dB, dBm, dBi and dBd</a>
-<a class="button is-pulled-right" href="/docs/lorawan/fec-and-code-rate/">Forward Error Correction and Code Rate →</a>
+<a class="button is-pulled-left" href="/docs/lorawan/preparing-certification/">← Preparing for The Things Certified Fundamentals</a>
+<a class="button is-pulled-right" href="/docs/lorawan/rssi-and-snr/">RSSI and SNR →</a>
 </div>
 
       </div>
