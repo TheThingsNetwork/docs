@@ -309,15 +309,16 @@
 <img src="duty-cycle-multi-band.png" alt="Multiple Band Duty Cycle"></p>
 <h2 id="maximum-duty-cycle">Maximum Duty Cycle&nbsp;<a class="header-hash" href="#maximum-duty-cycle">#</a> </h2>
 <p>The duty cycle of radio devices is often regulated by government. If this is the case, the duty cycle is commonly set to 1%, but make sure to check the regulations of your local government to be sure.</p>
-<p>In Europe, duty cycles are regulated by section 7.2.3 of the ETSI EN300.220 standard. This standard defines the following sub-bands and their duty cycles:</p>
+<p>In Europe, duty cycles are regulated by section 4.3.3 of the <a href="https://www.etsi.org/deliver/etsi_en/300200_300299/30022002/03.02.01_60/en_30022002v030201p.pdf">ETSI EN300.220-2 V3.2.1 (2018-06)</a> standard. This standard defines the following sub-bands and their duty cycles:</p>
 <ul>
-<li><strong>g</strong> (863.0 – 868.0 MHz): 1%</li>
-<li><strong>g1</strong> (868.0 – 868.6 MHz): 1%</li>
-<li><strong>g2</strong> (868.7 – 869.2 MHz): 0.1%</li>
-<li><strong>g3</strong> (869.4 – 869.65 MHz): 10%</li>
-<li><strong>g4</strong> (869.7 – 870.0 MHz): 1%</li>
+<li><strong>K</strong> (863 MHz - 865 MHz): 0.1%</li>
+<li><strong>L</strong> (865 MHz - 868 MHz): 1%</li>
+<li><strong>M</strong> (868 MHz - 868.6 MHz): 1%</li>
+<li><strong>N</strong> (868.7 MHz - 869.2 MHz): 0.1%</li>
+<li><strong>P</strong> (869.4 MHz - 869.65 MHz): 10%</li>
+<li><strong>Q</strong> (869.7 MHz - 870 MHz): 1%</li>
 </ul>
-<p>Additionally, the LoRaWAN specification dictates duty cycles for the <em>join frequencies</em>, the frequencies devices of all LoRaWAN-compliant networks use for over-the-air activations (OTAA) of devices. In most regions this duty cycle is set to <strong>1%</strong>.</p>
+<p>Additionally, the LoRaWAN specification specifies duty cycles for the join frequencies, which are used for over-the-air activations (OTAA) by every LoRaWAN-compliant end device. In most regions, the duty cycle for these frequencies is set to <strong>1%</strong>.</p>
 <h4 id="fair-use-policy">Fair Use Policy&nbsp;<a class="header-hash" href="#fair-use-policy">#</a> </h4>
 <p>On The Things Network&rsquo;s public community network a <strong>Fair Use Policy</strong> applies which limits the <strong>uplink airtime</strong> to <strong>30 seconds per day (24 hours) per node</strong> and the <strong>downlink messages</strong> to <strong>10 messages per day (24 hours) per node</strong>. If you use a private network, these limits do not apply, but you still have to be compliant with the governmental and LoRaWAN limits.</p>
 <h2 id="compliance">Compliance&nbsp;<a class="header-hash" href="#compliance">#</a> </h2>
