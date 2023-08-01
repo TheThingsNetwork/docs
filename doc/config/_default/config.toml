@@ -63,7 +63,7 @@ pygmentsUseClasses = true
   [[menu.community]]
     name = "Slack"
     pre = "Invite yourself to the community chat to talk about The Things Network."
-    url = "https://join.slack.com/t/thethingsnetwork/shared_invite/zt-1q37x0dnr-t64Z7DGHRuw1okP~7ph4rg"
+    url = "https://ttn.fyi/slack-invite"
 
 [module]
   [[module.mounts]]

@@ -43,7 +43,7 @@ The Things Stack Community Edition offers a free and developer-friendly way to g
 
 [Login or create a free account](https://console.cloud.thethings.network/) to get started with The Things Stack Community Edition and start building IoT solutions.
 
-Join The Things Network [Forum](https://www.thethingsnetwork.org/forum/) or [Slack](https://thethingsnetwork.slack.com/) for plenty of great ideas for projects, and to ask or answer questions about The Things Stack.
+Join The Things Network [Forum](https://www.thethingsnetwork.org/forum/) or [Slack](https://ttn.fyi/slack-invite) for plenty of great ideas for projects, and to ask or answer questions about The Things Stack.
 
 The Things Stack Community Edition does not come with an uptime guarantee and is not recommended for commercial projects. For commercial projects, we recommend an SLA-backed The Things Stack instance provided by The Things Industries. [Try The Things Stack Cloud for free](https://www.thethingsindustries.com/stack/plans/).
 
