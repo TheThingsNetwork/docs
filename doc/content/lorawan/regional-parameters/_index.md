@@ -22,121 +22,21 @@ In this chapter you will learn in detail about the **EU863-870** band and **US90
 
 LoRaWAN operates in the unlicensed ISM (Industrial, Scientific, and Medical) bands. The table below lists all the frequency plans and their common names.
 
-
-<table>
-  <tr>
-  <td><strong>Plan ID</strong>
-   </td>
-   <td><strong>Frequency Plan</strong>
-   </td>
-   <td><strong>Common Name</strong>
-   </td>
-  </tr>
-  <tr>
-  <td>1
-   </td>
-   <td>EU863-870
-   </td>
-   <td>EU868
-   </td>
-  </tr>
-    <tr>
-    <td>2
-   </td>
-   <td>US902-928
-   </td>
-   <td>US915
-   </td>
-  </tr>
-  <tr>
-  <td>3
-   </td>
-   <td>CN779-787
-   </td>
-   <td>CN779
-   </td>
-  </tr>
-  <tr>
-  <td>4
-   </td>
-   <td>EU433
-   </td>
-   <td>EU433
-   </td>
-  </tr>
-  <tr>
-  <td>5
-   </td>
-   <td>AU915-928
-   </td>
-   <td>AU915
-   </td>
-  </tr>
-  <tr>
-  <td>6
-   </td>
-   <td>CN470-510
-   </td>
-   <td>CN470
-   </td>
-  </tr>
-  <tr>
-  <td>7
-   </td>
-   <td>AS923-1
-   </td>
-   <td>AS923
-   </td>
-  </tr>
-  <tr>
-  <td>8
-   </td>
-   <td>AS923-2
-   </td>
-   <td>AS923-2
-   </td>
-  </tr>
-  <tr>
-  <td>9
-   </td>
-   <td>AS923-3
-   </td>
-   <td>AS923-3
-   </td>
-  </tr>
-  <tr>
-  <td>10
-   </td>
-   <td>KR920-923
-   </td>
-   <td>KR920
-   </td>
-  </tr>
-  <tr>
-  <td>11
-   </td>
-   <td>IN865-867
-   </td>
-   <td>IN865
-   </td>
-  </tr>
-  <tr>
-  <td>12
-   </td>
-   <td>RU864-870
-   </td>
-   <td>RU864
-   </td>
-  </tr>
-  <tr>
-  <td>13
-   </td>
-   <td>AS923-4
-   </td>
-   <td>AS923-4
-   </td>
-  </tr>
-</table>
+|   Plan ID  |   Frequency Plan |  Common Name   |
+| ---------- | ---------------- | -------------- |
+| 1  | EU863-870 | EU868   |
+| 2  | US902-928 | US915   |
+| 3  | CN779-787 | CN779   |
+| 4  | EU433     | EU433   |
+| 5  | AU915-928 | AU915   |
+| 6  | CN470-510 | CN470   |
+| 7  | AS923-1   | AS923   |
+| 8  | AS923-2   | AS923-2 |
+| 9  | AS923-3   | AS923-3 |
+| 10 | KR920-923 | KR920   |
+| 11 | IN865-867 | IN865   |
+| 12 | RU864-870 | RU864   |
+| 13 | AS923-4	 | AS923-4 |
 
 Information about specific countries and frequency plans can be found here:
 

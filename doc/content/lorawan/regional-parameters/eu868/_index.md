@@ -11,48 +11,11 @@ The EU863-870 band can be applied to any region where the radio spectrum use is 
 
 The following three default channels **must** be implemented in every end device that supports the EU863-870 MHz band. These channels are used by the end devices to broadcast the **Join-Request** messages. The end device **randomly** selects one of the default channels to send the **Join-Request** message. The gateways should also listen to these channels.
 
-<table>
-  <tr>
-   <td><strong>Channel Frequency (MHz)</strong>
-   </td>
-   <td><strong>Bandwidth (kHz)</strong>
-   </td>
-   <td><strong>LoRa Data Rate (DR)</strong>
-   </td>
-   <td><strong>Bitrate</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>868.10
-   </td>
-   <td>125
-   </td>
-   <td>DR0 – DR5
-   </td>
-   <td>0.3 – 5 kbps
-   </td>
-  </tr>
-  <tr>
-   <td>868.30
-   </td>
-   <td>125
-   </td>
-   <td>DR0 – DR5
-   </td>
-   <td>0.3 – 5 kbps
-   </td>
-  </tr>
-  <tr>
-   <td>868.50
-   </td>
-   <td>125
-   </td>
-   <td>DR0 – DR5
-   </td>
-   <td>0.3 – 5 kbps
-   </td>
-  </tr>
-</table>
+| Channel Frequency (MHz) | Bandwidth (kHz) | LoRa Data Rate (DR) | Bitrate |
+| ----------------------- | --------------- | ------------------- | ------- |
+| 868.10 | 125 | DR0 – DR5 | 0.3 – 5 kbps |
+| 868.30	| 125	| DR0 – DR5	| 0.3 – 5 kbps |
+| 868.50	| 125	| DR0 – DR5	| 0.3 – 5 kbps |
 
 For devices compliant with LoRaWAN version 1.0.x, these three default channels **shall not** be modified using the **NewChannelReq** command. However, for devices compliant with LoRaWAN version 1.1 and above, these channels **may be** modified using the NewChannelReq command.
 
@@ -64,126 +27,22 @@ Data rate is the number of bits that are transmitted per unit of time. With LoRa
 
 The table below presents configurations and bit rates for each Data Rate (DR0 - DR15).
 
-<table>
-  <tr>
-   <td><strong>Data Rate</strong>
-   </td>
-   <td><strong>Configuration</strong>
-   </td>
-   <td><strong>Bit Rate (bit/s)</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>0
-   </td>
-   <td>LoRa: SF12 / 125 kHz
-   </td>
-   <td><p style="text-align: right">
-250</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td>1
-   </td>
-   <td>LoRa: SF11 / 125 kHz
-   </td>
-   <td><p style="text-align: right">
-440</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td>2
-   </td>
-   <td>LoRa: SF10 / 125 kHz
-   </td>
-   <td><p style="text-align: right">
-980</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td>3
-   </td>
-   <td>LoRa: SF9 / 125 kHz
-   </td>
-   <td><p style="text-align: right">
-1760</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td>4
-   </td>
-   <td>LoRa: SF8 / 125 kHz
-   </td>
-   <td><p style="text-align: right">
-3125</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td>5
-   </td>
-   <td>LoRa: SF7 / 125 kHz
-   </td>
-   <td><p style="text-align: right">
-5470</p>
-
-   </td>
-  </tr>
-
-  <tr>
-   <td>6</td>
-   <td>LoRa: SF7 / 250 kHz</td>
-   <td><p style="text-align: right">11000</p></td>
-  </tr>
-
- <tr>
-   <td>7</td>
-   <td>FSK: 50 kbps</td>
-   <td><p style="text-align: right">50000</p></td>
-  </tr>
-
- <tr>
-   <td>8</td>
-   <td>LR-FHSS CR1/3: 137 kHz BW</td>
-   <td><p style="text-align: right">162</p></td>
-  </tr>
-
-<tr>
-   <td>9</td>
-   <td>LR-FHSS CR2/3: 137 kHz BW</td>
-   <td><p style="text-align: right">325</p></td>
-  </tr>
-
-<tr>
-   <td>10</td>
-   <td>LR-FHSS CR1/3: 336 kHz BW</td>
-   <td><p style="text-align: right">162</p></td>
-  </tr>
-
-<tr>
-   <td>11</td>
-   <td>LR-FHSS CR2/3: 336 kHz BW</td>
-   <td><p style="text-align: right">325</p></td>
-  </tr>
-
-<tr>
-   <td>12..14</td>
-   <td>RFU</td>
-   <td><p style="text-align: right">-</p></td>
-  </tr>
-
-<tr>
-   <td>15</td>
-   <td>* Defined in [TS001]
-</td>
-   <td><p style="text-align: right">-</p></td>
-  </tr>
-
-</table>
+| Data Rate | Configuration |	Bit Rate (bit/s) |
+| --------- | ------------- | ---------------- |
+| 0 |	LoRa: SF12 / 125 kHz | 250 |
+| 1 | LoRa: SF11 / 125 kHz	| 440 |
+| 2 |	LoRa: SF10 / 125 kHz	| 980 |
+| 3 | LoRa: SF9 / 125 kHz	| 1760 |
+| 4 |	LoRa: SF8 / 125 kHz	| 3125 |
+| 5 | LoRa: SF7 / 125 kHz	| 5470 |
+| 6 | LoRa: SF7 / 250 kHz	| 11000 |
+| 7 | FSK: 50 kbps | 50000 |
+| 8 | LR-FHSS CR1/3: 137 kHz BW | 162 |
+| 9 | LR-FHSS CR2/3: 137 kHz BW | 325 |
+| 10 | LR-FHSS CR1/3: 336 kHz BW	| 162 |
+| 11 | LR-FHSS CR2/3: 336 kHz BW	| 325 |
+| 12..14	| RFU | - |
+| 15 | * Defined in [TS001] | - |
 
 {{< note "The DR15 is defined in the LinkADRReq MAC command of the LoRaWAN1.0.4 and subsequent specifications and were previously RFU." />}}
 
@@ -201,96 +60,19 @@ The Effective Isotropic Radiated Power (EIRP) is the total power radiated by an 
 
 The table below displays the list of EIRP values that can be used for data transmission.
 
-<table>
-  <tr>
-   <td><strong>TX Power</strong>
-   </td>
-   <td><strong>EIRP</strong>
-   </td>
-   <td><strong>Calculated value</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>0
-   </td>
-   <td>Max EIRP
-   </td>
-   <td>+16 dBm
-   </td>
-  </tr>
-  <tr>
-   <td>1
-   </td>
-   <td>Max EIRP - 2 dB 
-   </td>
-   <td>+16 dBm - 2 dB = +14 dBm
-   </td>
-  </tr>
-  <tr>
-   <td>2
-   </td>
-   <td>Max EIRP - 4 dB
-   </td>
-   <td>+16 dBm - 4 dB = +12 dBm
-   </td>
-  </tr>
-  <tr>
-   <td>3
-   </td>
-   <td>Max EIRP - 6 dB
-   </td>
-   <td>+16 dBm - 6 dB = +10 dBm
-   </td>
-  </tr>
-  <tr>
-   <td>4
-   </td>
-   <td>Max EIRP - 8 dB
-   </td>
-   <td>+16 dBm - 8 dB = +8 dBm
-   </td>
-  </tr>
-  <tr>
-   <td>5
-   </td>
-   <td>Max EIRP - 10 dB
-   </td>
-   <td>+16 dBm - 10 dB = +6 dBm
-   </td>
-  </tr>
-  <tr>
-   <td>6
-   </td>
-   <td>Max EIRP - 12 dB
-   </td>
-   <td>+16 dBm - 12 dB = +4 dBm
-   </td>
-  </tr>
-  <tr>
-   <td>7
-   </td>
-   <td>Max EIRP - 14 dB
-   </td>
-   <td>+16 dBm - 14 dB = +2 dBm
-   </td>
-  </tr>
-  <tr>
-   <td>8..14
-   </td>
-   <td>RFU
-   </td>
-   <td>-
-   </td>
-  </tr>
-  <tr>
-   <td>15
-   </td>
-   <td> * Defined in [TS001]
-   </td>
-   <td>-
-   </td>
-  </tr>
-</table>
+| TX Power | EIRP | Calculated value |
+| -------- | ---- | ---------------- |
+| 0 |	Max EIRP	| +16 dBm |
+| 1 | Max EIRP - 2 dB | +16 dBm - 2 dB = +14 dBm |
+| 2 | Max EIRP - 4 dB | +16 dBm - 4 dB = +12 dBm |
+| 3 | Max EIRP - 6 dB |	+16 dBm - 6 dB = +10 dBm |
+| 4 | Max EIRP - 8 dB |	+16 dBm - 8 dB = +8 dBm |
+| 5 |	Max EIRP - 10 dB | +16 dBm - 10 dB = +6 dBm |
+| 6 | Max EIRP - 12 dB | +16 dBm - 12 dB = +4 dBm |
+| 7 | Max EIRP - 14 dB | +16 dBm - 14 dB = +2 dBm |
+| 8..14 | RFU | - |
+| 15 | * Defined in [TS001] |	- |
+
 
 {{< note "The TXPower15 is defined in the LinkADRReq MAC command of the LoRaWAN1.0.4 and subsequent specifications and were previously RFU." />}}
 
@@ -308,148 +90,21 @@ The maximum MACPayload size (M) and application payload size (N) vary by Data Ra
 
 The table below shows both the maximum MACPayload size and the application payload size for each Data Rate, and it is compatible with repeaters.
 
-<table>
-  <tr>
-   <td><strong>Data Rate</strong>
-   </td>
-   <td><strong>Maximum MAC payload size M (bytes)</strong>
-   </td>
-   <td><strong>Maximum application payload size N (bytes)</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>0
-   </td>
-   <td>59
-   </td>
-   <td><p>
-51</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td>1
-   </td>
-   <td>59
-   </td>
-   <td><p>
-51</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td>2
-   </td>
-   <td>59
-   </td>
-   <td><p>
-51</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td>3
-   </td>
-   <td>123
-   </td>
-   <td><p>
-115</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td>4
-   </td>
-   <td>230
-   </td>
-   <td><p>
-222</p>
-
-   </td>
-  </tr>
-  <tr>
-   <td>5
-   </td>
-   <td>230
-   </td>
-   <td><p>
-222</p>
-
-   </td>
-  </tr>
-
-  <tr>
-   <td>6
-   </td>
-   <td>230
-   </td>
-   <td><p>
-222</p>
-   </td>
-  </tr>
-  
- <tr>
-   <td>7
-   </td>
-   <td>230
-   </td>
-   <td><p>
-222</p>
-   </td>
-  </tr>
-
- <tr>
-   <td>8
-   </td>
-   <td>58
-   </td>
-   <td><p>
-50</p>
-   </td>
-  </tr>
-
- <tr>
-   <td>9
-   </td>
-   <td>123
-   </td>
-   <td><p>
-115</p>
-   </td>
-  </tr>
-
- <tr>
-   <td>10
-   </td>
-   <td>58
-   </td>
-   <td><p>
-50</p>
-   </td>
-  </tr>
-
- <tr>
-   <td>11
-   </td>
-   <td>123
-   </td>
-   <td><p>
-115</p>
-   </td>
-  </tr>
-
-
- <tr>
-   <td>12..15
-   </td>
-   <td>Not defined
-   </td>
-   <td><p>
-Not defined</p>
-   </td>
-  </tr>
-
-</table>
+| Data Rate	| Maximum MAC payload size M (bytes) |	Maximum application payload size N (bytes) |
+| --------- | ---------------------------------- | ------------------------------------------ |
+| 0 |	59 | 51 |
+| 1 | 59	| 51 |
+| 2 | 59	| 51 |
+| 3 | 123 |	115 |
+| 4 | 230 | 222 |
+| 5 | 230 | 222 |
+| 6 | 230 | 222 |
+| 7 | 230 | 222 |
+| 8 | 58	| 50 |
+| 9 | 123 | 115 |
+| 10 | 58 | 50 |
+| 11 | 123 | 115 |
+| 12..15 | Not defined | Not defined |
 
 # Duty Cycle
 
@@ -466,41 +121,11 @@ However, [ETSI](https://www.etsi.org/) (European Telecommunications Standards In
 
 Let’s have a look at how to calculate the time-on-air allowed per day (24 hours), per end device for some common duty cycles.
 
-
-<table>
-  <tr>
-   <td><strong>Duty cycle (take the maximum)</strong>
-   </td>
-   <td><strong>Equation: Time-On-Air = number of seconds per day </strong>X<strong> duty cycle</strong>
-   </td>
-   <td><strong>Maximum allowed Time-On-Air per day, per device</strong>
-   </td>
-  </tr>
-    <tr>
-   <td>0.1%
-   </td>
-   <td>86400 x 0.1%
-   </td>
-   <td>86 seconds per day
-   </td>
-  </tr>
-  <tr>
-  <tr>
-   <td>1%
-   </td>
-   <td>86400 x 1%
-   </td>
-   <td>864 seconds per day
-   </td>
-  </tr>
-   <td>10%
-   </td>
-   <td>86400 x 10%
-   </td>
-   <td>8640 seconds per day
-   </td>
-  </tr>
-</table>
+| Duty cycle (take the maximum) | Equation: Time-On-Air = number of seconds per day X duty cycle | Maximum allowed Time-On-Air per day, per device |
+| ----------------------------- | -------------------------------------------------------------- | ---------------- |
+| 0.1% | 86400 x 0.1% |	86 seconds per day |
+| 1% | 86400 x 1% | 864 seconds per day |
+| 10%	| 86400 x 10% | 8640 seconds per day |
 
 {{< note >}}
 
@@ -512,84 +137,17 @@ Some network operators (like The Things Network) reduce the duty cycle further t
 
 The following table summarizes all the important parameters we have discussed in this section for EU863-870 MHz band.
 
-<table>
-  <tr>
-   <td>Default frequency band
-   </td>
-   <td>863-870 MHz
-   </td>
-  </tr>
-  <tr>
-   <td>Mandatory channel frequencies (for Join-Request)
-   </td>
-   <td>
-<p>868.10 MHz</p>
-<p>868.30 MHz</p>
-<p>868.50 MHz</p>
-   </td>
-  </tr>
-  <tr>
-   <td>Mandatory data rates
-   </td>
-   <td>0, 1, 2, 3, 4, 5
-   </td>
-  </tr>
-  <tr>
-   <td>Optional data rates
-   </td>
-   <td>[6, 7] or [6, 7, 8, 9, 10, 11]
-   </td>
-  </tr>
-  <tr>
-   <td>Number of channels
-   </td>
-   <td>
-<p>Minimum: 24</p>
-<p>Maximum: 80</p>
-   </td>
-  </tr>
-  <tr>
-   <td>Default channels
-   </td>
-   <td>0, 1, 2
-   </td>
-  </tr>
-  <tr>
-   <td>Duty cycle
-   </td>
-   <td>&lt; 1%
-   </td>
-  </tr>
-  <tr>
-   <td>Dwell time limitation
-   </td>
-   <td>No
-   </td>
-  </tr>
-  <tr>
-   <td>Max EIRP / ERP
-   </td>
-   <td>
-   <p>EIRP = +16 dBm  (40 mW) - This is the power radiated by an isotropic antenna</p>
-   <p>ERP = +14 dBm (25 mW) - This is the power radiated by a half-wave dipole antenna</p>
-   </td>
-  </tr>
-  <tr>
-   <td>Max antenna gain
-   </td>
-   <td>2.15 dBi or 0 dBd
-   </td>
-  </tr>
-  <tr>
-   <td>Default RX2 data rate
-   </td>
-   <td>DR0 (SF12 / 125 kHz)
-   </td>
-  </tr>
-  <tr>
-   <td>Default RX2 frequency
-   </td>
-   <td>869.525 MHz
-   </td>
-  </tr>
-</table>
+|                                   |                                         |
+| --------------------------------- | --------------------------------------- |
+| Default frequency band            | 863-870 MHz                             |
+| Mandatory channel frequencies     | 868.10 MHz<br>868.30 MHz<br>868.50 MHz  |
+| Mandatory data rates              | 0, 1, 2, 3, 4, 5                        |
+| Optional data rates               | [6, 7] or [6, 7, 8, 9, 10, 11]          |
+| Number of channels                | Minimum: 24<br>Maximum: 80              |
+| Default channels                  | 0, 1, 2                                 |
+| Duty cycle                        | < 1%                                    |
+| Dwell time limitation             | No                                      |
+| Max EIRP / ERP                    | EIRP = +16 dBm (40 mW)<br>ERP = +14 dBm (25 mW) |
+| Max antenna gain                  | 2.15 dBi or 0 dBd                       |
+| Default RX2 data rate             | DR0 (SF12 / 125 kHz)                    |
+| Default RX2 frequency             | 869.525 MHz         
