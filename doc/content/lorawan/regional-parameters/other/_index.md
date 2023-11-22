@@ -7,7 +7,7 @@ weight:
 
 You should have a basic knowledge about some important parameters that are included in other frequency plans. 
 
-| Frequency Plan | Country/Region | MAX EIRP (dBm)	| Duty Cycle |	Dwell Time Limitation |
+| Frequency plan | Country/Region | MAX EIRP (dBm)	| Duty cycle |	Dwell time limitation |
 | -------------- | -------------- | -------- | ---------- | --------------------- |
 | KR920-923 | South Korea | +14 | Listen Before Talk (LBT)	| No |
 | AS923-1	| Asia	     | +16 | < 1% except Japan, Japan - Listen Before Talk (LBT)	| Yes (400 ms) |

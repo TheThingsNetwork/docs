@@ -11,7 +11,7 @@ The EU863-870 band can be applied to any region where the radio spectrum use is 
 
 The following three default channels **must** be implemented in every end device that supports the EU863-870 MHz band. These channels are used by the end devices to broadcast the **Join-Request** messages. The end device **randomly** selects one of the default channels to send the **Join-Request** message. The gateways should also listen to these channels.
 
-| Channel Frequency (MHz) | Bandwidth (kHz) | LoRa Data Rate (DR) | Bitrate |
+| Channel frequency (MHz) | Bandwidth (kHz) | LoRa data rate (DR) | Bit rate |
 | ----------------------- | --------------- | ------------------- | ------- |
 | 868.10 | 125 | DR0 – DR5 | 0.3 – 5 kbps |
 | 868.30	| 125	| DR0 – DR5	| 0.3 – 5 kbps |
@@ -27,7 +27,7 @@ Data rate is the number of bits that are transmitted per unit of time. With LoRa
 
 The table below presents configurations and bit rates for each Data Rate (DR0 - DR15).
 
-| Data Rate | Configuration |	Bit Rate (bit/s) |
+| Data rate | Configuration |	Bit rate (bit/s) |
 | --------- | ------------- | ---------------- |
 | 0 |	LoRa: SF12 / 125 kHz | 250 |
 | 1 | LoRa: SF11 / 125 kHz	| 440 |
@@ -42,9 +42,9 @@ The table below presents configurations and bit rates for each Data Rate (DR0 - 
 | 10 | LR-FHSS CR1/3: 336 kHz BW	| 162 |
 | 11 | LR-FHSS CR2/3: 336 kHz BW	| 325 |
 | 12..14	| RFU | - |
-| 15 | * Defined in [TS001] | - |
+| 15 | *Defined in [TS001] | - |
 
-{{< note "The DR15 is defined in the LinkADRReq MAC command of the LoRaWAN1.0.4 and subsequent specifications and were previously RFU." />}}
+{{< note "*The DR15 is defined in the LinkADRReq MAC command of the LoRaWAN1.0.4 and subsequent specifications and were previously RFU." />}}
 
 As you can see, higher spreading factors cause lower bit rates and lower spreading factors cause higher bit rates. However for the same spreading factor, if the **bandwidth doubles** the **data rate** also gets **doubled**. You will learn more about this in the [Spreading Factors chapter]({{< relref "spreading-factors" >}}).
 
@@ -60,21 +60,21 @@ The Effective Isotropic Radiated Power (EIRP) is the total power radiated by an 
 
 The table below displays the list of EIRP values that can be used for data transmission.
 
-| TX Power | EIRP | Calculated value |
-| -------- | ---- | ---------------- |
-| 0 |	Max EIRP	| +16 dBm |
-| 1 | Max EIRP - 2 dB | +16 dBm - 2 dB = +14 dBm |
-| 2 | Max EIRP - 4 dB | +16 dBm - 4 dB = +12 dBm |
-| 3 | Max EIRP - 6 dB |	+16 dBm - 6 dB = +10 dBm |
-| 4 | Max EIRP - 8 dB |	+16 dBm - 8 dB = +8 dBm |
-| 5 |	Max EIRP - 10 dB | +16 dBm - 10 dB = +6 dBm |
-| 6 | Max EIRP - 12 dB | +16 dBm - 12 dB = +4 dBm |
-| 7 | Max EIRP - 14 dB | +16 dBm - 14 dB = +2 dBm |
+| TXPower | EIRP |
+| -------- | ---- |
+| 0 | +16 dBm |
+| 1 | +14 dBm |
+| 2 | +12 dBm |
+| 3 | +10 dBm |
+| 4 |  +8 dBm |
+| 5 |  +6 dBm |
+| 6 |  +4 dBm |
+| 7 |  +2 dBm |
 | 8..14 | RFU | - |
-| 15 | * Defined in [TS001] |	- |
+| 15 | *Defined in [TS001] |	- |
 
 
-{{< note "The TXPower15 is defined in the LinkADRReq MAC command of the LoRaWAN1.0.4 and subsequent specifications and were previously RFU." />}}
+{{< note "*The TXPower 15 is defined in the LinkADRReq MAC command of the LoRaWAN1.0.4 and subsequent specifications and were previously RFU." />}}
 
 The Max EIRP for EU863-870 is +16dBm.
 
@@ -92,15 +92,15 @@ The table below shows both the maximum MACPayload size and the application paylo
 
 | Data Rate	| Maximum MAC payload size M (bytes) |	Maximum application payload size N (bytes) |
 | --------- | ---------------------------------- | ------------------------------------------ |
-| 0 |	59 | 51 |
-| 1 | 59	| 51 |
-| 2 | 59	| 51 |
+| 0 | 59 | 51 |
+| 1 | 59 | 51 |
+| 2 | 59 | 51 |
 | 3 | 123 |	115 |
 | 4 | 230 | 222 |
 | 5 | 230 | 222 |
 | 6 | 230 | 222 |
 | 7 | 230 | 222 |
-| 8 | 58	| 50 |
+| 8 | 58 | 50 |
 | 9 | 123 | 115 |
 | 10 | 58 | 50 |
 | 11 | 123 | 115 |
@@ -119,13 +119,15 @@ However, [ETSI](https://www.etsi.org/) (European Telecommunications Standards In
 - P (869.4 MHz - 869.65 MHz): 10%, 500 mW ERP
 - Q (869.7 MHz - 870 MHz): 1%, 25 mW ERP
 
-Let’s have a look at how to calculate the time-on-air allowed per day (24 hours), per end device for some common duty cycles.
+Let’s have a look at how to calculate the Time on Air allowed per day (24 hours), per end device for some common duty cycles.
 
-| Duty cycle (take the maximum) | Equation: Time-On-Air = number of seconds per day X duty cycle | Maximum allowed Time-On-Air per day, per device |
-| ----------------------------- | -------------------------------------------------------------- | ---------------- |
-| 0.1% | 86400 x 0.1% |	86 seconds per day |
-| 1% | 86400 x 1% | 864 seconds per day |
-| 10%	| 86400 x 10% | 8640 seconds per day |
+| Max duty cycle | *Time on Air |
+| -------------- | ----------- |
+| 0.1% | 86 seconds |
+| 1% | 864 seconds |
+| 10% | 8640 seconds |
+
+*Time on Air = Number of seconds per day X Duty cycle %
 
 {{< note >}}
 

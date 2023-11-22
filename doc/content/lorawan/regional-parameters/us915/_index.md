@@ -11,7 +11,7 @@ In this section, the regional parameters for the **USA**, **Canada**, and all ot
 
 The US902-928 MHz band is divided into the following frequency/channel plans as shown in the table below.
 
-| Uplink/Downlink | Channels | Range | Frequency range | BW	| Data Rate |
+| Uplink/Downlink | Channels | Range | Frequency range | BW	| Data rate |
 | --------------- | -------- | ----- | --------------- | -- | --------- |
 | Uplink | 64 | 0 - 63 | 902.3 – 914.9 MHz in 200 kHz increments | 125 kHz | DR0 – DR3 |
 | Uplink	| 8  | 64 - 71	| 903.0 – 914.2 MHz in 1.6 MHz increments	| 500 kHz | DR4 |
@@ -19,19 +19,19 @@ The US902-928 MHz band is divided into the following frequency/channel plans as 
 
 # Data Rates
 
-The following table shows the **Bit Rate (bit/sec)** for each data rate configured with the spreading factor and the bandwidth. 
+The following table shows the **Bit rate (bit/sec)** for each data rate configured with the spreading factor and the bandwidth. 
 
 *   DR0 - DR4 and DR8 - DR13 are used for LoRa modulation. 
 *   DR4 is identical to DR12. 
 *   DR8 - DR13 are only used for downlink messages.
 
-| Data Rate	| Configuration | Bit Rate (bit/s) | Uplink/Downlink? |
+| Data rate	| Configuration | Bit rate (bit/s) | Uplink/Downlink |
 | --------- | ------------- | ---------------- | ---------------- |
-| 0	      | LoRa: SF10 / 125 kHz | 980 | Uplink |
-| 1         | LoRa: SF9 / 125 kHz |	1760 | Uplink |
-| 2	      | LoRa: SF8 / 125 kHz | 3125 | Uplink |
-| 3	      | LoRa: SF7 / 125 kHz | 5470 | Uplink |
-| 4	      | LoRa: SF8 / 500 kHz | 12500 | Uplink |
+| 0	| LoRa: SF10 / 125 kHz | 980 | Uplink |
+| 1 | LoRa: SF9 / 125 kHz |	1760 | Uplink |
+| 2	| LoRa: SF8 / 125 kHz | 3125 | Uplink |
+| 3	| LoRa: SF7 / 125 kHz | 5470 | Uplink |
+| 4	| LoRa: SF8 / 500 kHz | 12500 | Uplink |
 | 5	      | LR-FHSS CR1/3: 1.523 MHz BW	| 162 | - |
 | 6	      | LR-FHSS CR2/3: 1.523 MHz BW	| 325 | - |
 | 7	      | RFU	| - | - |
@@ -42,9 +42,9 @@ The following table shows the **Bit Rate (bit/sec)** for each data rate configur
 | 12      	| LoRa: SF8 / 500 kHz | 12500 | Downlink |
 | 13	      | LoRa: SF7 / 500 kHz | 21900 | Downlink |
 | 14        | RFU	| - | - |
-| 15	      | * Defined in [TS001] | - | - |
+| 15	      | *Defined in [TS001] | - | - |
 
-{{< note "The DR15 is defined in the LinkADRReq MAC command of the LoRaWAN1.0.4 and subsequent specifications and were previously RFU." />}}
+{{< note "*The DR15 is defined in the LinkADRReq MAC command of the LoRaWAN1.0.4 and subsequent specifications and were previously RFU." />}}
 
 All US902-928 end devices shall support one of the following data rate options.
 
