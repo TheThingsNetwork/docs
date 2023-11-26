@@ -17,8 +17,8 @@
 
   <meta name="generator" content="Hugo 0.88.1" />
 
-  <title>Regional Parameters | The Things Network</title>
-  <link rel="canonical" href="https://www.thethingsnetwork.org/docs/lorawan/regional-parameters/" />
+  <title>Other Frequency Plans | The Things Network</title>
+  <link rel="canonical" href="https://www.thethingsnetwork.org/docs/lorawan/regional-parameters/other/" />
   
 
   <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
@@ -50,17 +50,17 @@
 
   <link rel="stylesheet" href="https://ttui.thethingsindustries.com/release/1.7.4/main.css" />
 
-  <meta property="og:title" content="Regional Parameters" />
+  <meta property="og:title" content="Other Frequency Plans" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.thethingsnetwork.org/docs/lorawan/regional-parameters/" /><meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/><meta property="og:site_name" content="The Things Network" />
+<meta property="og:url" content="https://www.thethingsnetwork.org/docs/lorawan/regional-parameters/other/" /><meta property="og:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/><meta property="og:site_name" content="The Things Network" />
 
 
 
   <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://www.thethingsnetwork.org/docs/img/og-image.png"/>
 
-<meta name="twitter:title" content="Regional Parameters"/>
+<meta name="twitter:title" content="Other Frequency Plans"/>
 <meta name="twitter:description" content="We are building a global open free crowdsourced long range low power IoT data network"/>
 
 
@@ -134,7 +134,7 @@
 
       
 <li>
-  <a href="https://www.thethingsnetwork.org/docs/lorawan/regional-parameters/" class="is-active">Regional Parameters</a>
+  <a href="https://www.thethingsnetwork.org/docs/lorawan/regional-parameters/" class="">Regional Parameters</a>
   
 
 
@@ -146,7 +146,12 @@
   </li>
 
   <li>
-    <a href="https://www.thethingsnetwork.org/docs/lorawan/regional-parameters/other/" class="">Other Frequency Plans</a>
+    <a href="https://www.thethingsnetwork.org/docs/lorawan/regional-parameters/other/" class="is-active">Other Frequency Plans</a>
+    
+    
+
+
+
     
   </li>
 
@@ -315,177 +320,101 @@
     <div class="column is-9-desktop sidebar-middle">
       <div class="docs-content">
         <h1 class="title is-size-2">
-          Regional Parameters
+          Other Frequency Plans
         </h1>
         <div class="content">
           
-<p>LoRaWAN operates in unlicensed radio spectrum. This means that anyone can use the radio frequencies without having to pay million dollar fees for transmission rights. It is similar to WiFi, which uses the 2.4GHz and 5GHz ISM bands worldwide. Anyone is allowed to set up WiFi routers and transmit WiFi signals without the need for a license or permit.</p>
-<p>LoRaWAN uses lower radio frequencies with a longer range. The fact that frequencies have a longer range also comes with more restrictions, that are often country-specific. This poses a challenge for LoRaWAN, as it strives to maintain uniformity across various regions of the world. As a result, LoRaWAN is specified for several bands within these regions. These bands are similar enough to support a region-agnostic protocol but entail various consequences for the implementation of backend systems.</p>
-<ul>
-<li>
-<p>LoRaWAN has official regional specifications, called <strong>Regional Parameters</strong>, that you can download from the <a href="https://resources.lora-alliance.org/technical-specifications/rp002-1-0-4-regional-parameters">LoRa Alliance website</a>.</p>
-</li>
-<li>
-<p>These LoRaWAN regional specifications do not specify everything either. They only cover a region by specifying the common denominator. For example, the LoRaWAN regional parameters for Asia only specify a common subset of channels - but there are variations between regulations in Asian countries. Furthermore, each network server operator is free to select additional parameters, such as additional emission channels. We call these parameters <strong>Other</strong>. For The Things Network, they are defined in <a href="https://github.com/TheThingsNetwork/gateway-conf">this GitHub repository</a>.</p>
-</li>
-<li>
-<p>In some countries, more than one frequency plan may be used. For example, in the <strong>Netherlands (NL)</strong>, both <strong>EU868-870</strong> and <strong>EU433</strong> can be used.</p>
-</li>
-<li>
-<p>The regional parameters include physical layer parameters such as frequency plans (channel plans), mandatory channel frequencies and data rates for join-request messages. The Regional Parameters also include LoRaWAN layer parameters such as maximum payload size.</p>
-</li>
-</ul>
-<p>In this chapter you will learn in detail about the <strong>EU863-870</strong> band and <strong>US902-928</strong> ISM band. This chapter also presents some important parameters involved in other frequency plans.</p>
-<h1 id="frequency-plans">Frequency Plans</h1>
-<p>LoRaWAN operates in the unlicensed ISM (Industrial, Scientific, and Medical) bands. The table below lists all the frequency plans and their common names.</p>
+<p>You should have a basic knowledge about some important parameters that are included in other frequency plans.</p>
 <table>
 <thead>
 <tr>
-<th>Plan ID</th>
-<th>Frequency Plan</th>
-<th>Common Name</th>
+<th>Frequency plan</th>
+<th>Country/Region</th>
+<th>MAX EIRP (dBm)</th>
+<th>Duty cycle</th>
+<th>Dwell time limitation</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>1</td>
-<td>EU863-870</td>
-<td>EU868</td>
-</tr>
-<tr>
-<td>2</td>
-<td>US902-928</td>
-<td>US915</td>
-</tr>
-<tr>
-<td>3</td>
-<td>CN779-787</td>
-<td>CN779</td>
-</tr>
-<tr>
-<td>4</td>
-<td>EU433</td>
-<td>EU433</td>
-</tr>
-<tr>
-<td>5</td>
-<td>AU915-928</td>
-<td>AU915</td>
-</tr>
-<tr>
-<td>6</td>
-<td>CN470-510</td>
-<td>CN470</td>
-</tr>
-<tr>
-<td>7</td>
-<td>AS923-1</td>
-<td>AS923</td>
-</tr>
-<tr>
-<td>8</td>
-<td>AS923-2</td>
-<td>AS923-2</td>
-</tr>
-<tr>
-<td>9</td>
-<td>AS923-3</td>
-<td>AS923-3</td>
-</tr>
-<tr>
-<td>10</td>
 <td>KR920-923</td>
-<td>KR920</td>
+<td>South Korea</td>
+<td>+14</td>
+<td>Listen Before Talk (LBT)</td>
+<td>No</td>
 </tr>
 <tr>
-<td>11</td>
-<td>IN865-867</td>
-<td>IN865</td>
+<td>AS923-1</td>
+<td>Asia</td>
+<td>+16</td>
+<td>&lt; 1% except Japan, Japan - Listen Before Talk (LBT)</td>
+<td>Yes (400 ms)</td>
 </tr>
 <tr>
-<td>12</td>
+<td>AS923-2</td>
+<td>Asia</td>
+<td>+16</td>
+<td>&lt; 1%</td>
+<td>Yes (400 ms)</td>
+</tr>
+<tr>
+<td>AS923-3</td>
+<td>Asia</td>
+<td>+16</td>
+<td>&lt; 1%</td>
+<td>Yes (400 ms)</td>
+</tr>
+<tr>
+<td>AS923-4</td>
+<td>Asia</td>
+<td>+16</td>
+<td>&lt; 1%</td>
+<td>Yes (400 ms)</td>
+</tr>
+<tr>
 <td>RU864-870</td>
-<td>RU864</td>
+<td>Russia</td>
+<td>+16</td>
+<td>&lt; 1%</td>
+<td>No</td>
 </tr>
 <tr>
-<td>13</td>
-<td>AS923-4</td>
-<td>AS923-4</td>
+<td>IN865-867</td>
+<td>India</td>
+<td>+30</td>
+<td>N/A</td>
+<td>No</td>
+</tr>
+<tr>
+<td>EU433</td>
+<td>Europe</td>
+<td>+12</td>
+<td>&lt; 10%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>AU915-928</td>
+<td>Australia</td>
+<td>+30</td>
+<td>No Limit</td>
+<td>[0:63] 400 ms (regional dependence)<br>[64:71] No</td>
+</tr>
+<tr>
+<td>CN779-787</td>
+<td>China</td>
+<td>This frequency plan has been deprecated</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>CN470-510</td>
+<td>China</td>
+<td></td>
+<td>Listen Before Talk (LBT) with Adaptive Frequency Agility (AFA) transmission management or other similar mechanisms like channels blacklisting</td>
+<td>No</td>
 </tr>
 </tbody>
 </table>
-<p>Information about specific countries and frequency plans can be found here:</p>
-<ul>
-<li><a href="/docs/lorawan/frequency-plans/">Frequency Plans</a></li>
-<li><a href="/docs/lorawan/frequencies-by-country/">Frequency Plan by Country</a></li>
-</ul>
-<div class="notification is-info is-light has-text-dark">
-  <h5 class="title is-family-sans-serif has-text-dark mb-1">Note:</h5>
-  The Things Fundamentals certification exam expects detailed knowledge about the EU863-870 and US902-928 frequency plans. However, a basic understanding of other frequency plans is sufficient.
-</div>
-
-<h1 id="default-settings-for-all-regions">Default Settings for All Regions</h1>
-<p>There are a few recommended default settings available that can be applied to all the regions.</p>
-<ul>
-<li>RX1 Delay: <strong>1s</strong></li>
-<li>RX2 Delay: <strong>2s</strong>   (RX1 Delay + 1s)</li>
-<li>Join Accept 1 Delay: <strong>5s</strong></li>
-<li>Join Accept 2 Delay: <strong>6s</strong></li>
-</ul>
-<h1 id="questions">Questions</h1>
-<ol>
-<li>Which frequency plan is used in Europe?</li>
-</ol>
-<ul>
-<li><span style="text-decoration:underline;">EU863-870</span></li>
-<li>US902-928</li>
-<li>IN865-867</li>
-<li>CN470-510</li>
-</ul>
-<ol start="2">
-<li>Which bit rate can be achieved with the configuration, SF12 / 125 kHz?</li>
-</ol>
-<ul>
-<li><span style="text-decoration:underline;">250 bit/s</span></li>
-<li>440 bit/s</li>
-<li>980 bit/s</li>
-<li>1760 bit/s</li>
-</ul>
-<ol start="3">
-<li>Which country allows the choice of using Listen Before Talk Adaptive Frequency Agility (LBT AFA)?</li>
-</ol>
-<ul>
-<li>Japan</li>
-<li><span style="text-decoration:underline;">South Korea</span></li>
-<li>Australia</li>
-<li>United States of America</li>
-</ul>
-<ol start="4">
-<li>Which country uses Listen Before Talk (LBT) instead of using duty cycle limitations?</li>
-</ol>
-<ul>
-<li><span style="text-decoration:underline;">Japan</span></li>
-<li>South Korea</li>
-<li>China</li>
-<li>The Neatherlands</li>
-</ul>
-<ol start="5">
-<li>How many sub-bands are included in the EU863-870 frequency plan for LoRaWAN as defined by the ETSI?</li>
-</ol>
-<ul>
-<li>3</li>
-<li>4</li>
-<li>5</li>
-<li><span style="text-decoration:underline;">6</span></li>
-</ul>
-<ol start="6">
-<li>What is the maximum application payload size allowed for LoRa: SF12 / 125 kHz in Europe?</li>
-</ol>
-<ul>
-<li><span style="text-decoration:underline;">51 bytes</span></li>
-<li>115 bytes</li>
-<li>242 bytes</li>
-</ul>
 
 
         </div>
@@ -499,9 +428,6 @@
 
   
 
-  
-    
-    
   
 
   
@@ -520,8 +446,6 @@
 
 
 <div class="is-clearfix">
-<a class="button is-pulled-left" href="/docs/lorawan/architecture/">← LoRaWAN Architecture</a>
-<a class="button is-pulled-right" href="/docs/lorawan/message-types/">Message Types →</a>
 </div>
 
       </div>

@@ -90,7 +90,7 @@
     <lastmod>2021-12-14T10:29:40+05:30</lastmod>
   </url><url>
     <loc>https://www.thethingsnetwork.org/docs/lorawan/regional-parameters/</loc>
-    <lastmod>2021-04-21T13:42:27+05:45</lastmod>
+    <lastmod>2023-11-26T22:38:54+05:30</lastmod>
   </url><url>
     <loc>https://www.thethingsnetwork.org/docs/lorawan/message-types/</loc>
     <lastmod>2021-12-13T21:03:01+05:30</lastmod>
@@ -551,6 +551,9 @@
     <loc>https://www.thethingsnetwork.org/docs/lorawan/eirp-and-erp/</loc>
     <lastmod>2022-11-15T23:08:58+05:30</lastmod>
   </url><url>
+    <loc>https://www.thethingsnetwork.org/docs/lorawan/regional-parameters/eu868/</loc>
+    <lastmod>2023-11-26T22:38:54+05:30</lastmod>
+  </url><url>
     <loc>https://www.thethingsnetwork.org/docs/lorawan/fec-and-code-rate/</loc>
     <lastmod>2022-11-16T00:02:49+05:30</lastmod>
   </url><url>
@@ -620,6 +623,9 @@
     <loc>https://www.thethingsnetwork.org/docs/applications/opensensors/</loc>
     <lastmod>2021-03-23T18:56:43+01:00</lastmod>
   </url><url>
+    <loc>https://www.thethingsnetwork.org/docs/lorawan/regional-parameters/other/</loc>
+    <lastmod>2023-11-26T22:38:54+05:30</lastmod>
+  </url><url>
     <loc>https://www.thethingsnetwork.org/docs/gateways/st/</loc>
     <lastmod>2021-03-23T18:56:43+01:00</lastmod>
   </url><url>
@@ -688,6 +694,9 @@
   </url><url>
     <loc>https://www.thethingsnetwork.org/docs/gateways/ursalink/</loc>
     <lastmod>2021-03-23T18:56:43+01:00</lastmod>
+  </url><url>
+    <loc>https://www.thethingsnetwork.org/docs/lorawan/regional-parameters/us915/</loc>
+    <lastmod>2023-11-26T22:38:54+05:30</lastmod>
   </url><url>
     <loc>https://www.thethingsnetwork.org/docs/applications/manager/usage/</loc>
     <lastmod>2021-03-23T18:56:43+01:00</lastmod>
