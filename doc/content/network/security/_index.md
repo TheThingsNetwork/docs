@@ -8,7 +8,7 @@ LoRaWAN enforces using AES 128-bit message integrity checks and payload encrypti
 
 ## User Accounts
 
-Users need an account to use The Things Network. On the public community network, user accounts are stored in the [account server](https://account.thethingsnetwork.org). These accounts are identified by a username or e-mail address and protected by a password. In private networking setups, users may implement their own means of authentication and authorization.
+Users need an account to use The Things Network. On the The Things Stack Sandbox, user accounts are stored in the [account server](https://account.thethingsnetwork.org). These accounts are identified by a username or e-mail address and protected by a password. In private networking setups, users may implement their own means of authentication and authorization.
 
 ## Applications
 

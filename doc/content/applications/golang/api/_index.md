@@ -1,7 +1,7 @@
 ---
 title: API Reference
 weight: -1000
-source: 'https://github.com/TheThingsNetwork/go-app-sdk/blob/master/API.md'
+source: "https://github.com/TheThingsNetwork/go-app-sdk/blob/master/API.md"
 ---
 
     import ttnsdk "github.com/TheThingsNetwork/go-app-sdk"
@@ -18,6 +18,7 @@ retrieve the addresses of the Handler and MQTT server.
 ```go
 var ClientVersion = "2.x.x"
 ```
+
 ClientVersion to use
 
 ```go
@@ -32,13 +33,15 @@ var DialOptions = []grpc.DialOption{
   grpc.WithBlock(),
 }
 ```
+
 DialOptions to use when connecting to components
 
-## func  MoveDevice
+## func MoveDevice
 
 ```go
 func MoveDevice(devID string, from, to DeviceManager) (err error)
 ```
+
 MoveDevice moves a device to another application
 
 ## type ApplicationManager
@@ -172,19 +175,21 @@ ClientConfig contains the configuration for the API client. Use the NewConfig()
 or NewCommunityConfig() functions to initialize your configuration, otherwise
 NewClient will panic.
 
-## func  NewCommunityConfig
+## func NewCommunityConfig
 
 ```go
 func NewCommunityConfig(clientName string) ClientConfig
 ```
-NewCommunityConfig creates a new configuration for the API client that is
-pre-configured for the Public Community Network.
 
-## func  NewConfig
+NewCommunityConfig creates a new configuration for the API client that is
+pre-configured for the The Things Stack Sandbox.
+
+## func NewConfig
 
 ```go
 func NewConfig(clientName, accountServerAddress, discoveryServerAddress string) ClientConfig
 ```
+
 NewConfig creates a new configuration for the API client.
 
 ## func (ClientConfig) NewClient
@@ -192,6 +197,7 @@ NewConfig creates a new configuration for the API client.
 ```go
 func (c ClientConfig) NewClient(appID, appAccessKey string) Client
 ```
+
 NewClient creates a new API client from the configuration, using the given
 Application ID and Application access key.
 
@@ -211,62 +217,69 @@ type Device struct {
 
 Device in an application
 
-## func (*Device) Delete
+## func (\*Device) Delete
 
 ```go
 func (d *Device) Delete() error
 ```
+
 Delete the device. This function panics if this is a new device.
 
-## func (*Device) IsNew
+## func (\*Device) IsNew
 
 ```go
 func (d *Device) IsNew() bool
 ```
+
 IsNew indicates whether the device is new.
 
-## func (*Device) Personalize
+## func (\*Device) Personalize
 
 ```go
 func (d *Device) Personalize(nwkSKey types.NwkSKey, appSKey types.AppSKey) error
 ```
+
 Personalize a device by requesting a DevAddr from the network, and setting the
 NwkSKey and AppSKey to the given values. This function panics if this is a new
 device, so make sure you Get() the device first.
 
-## func (*Device) PersonalizeFunc
+## func (\*Device) PersonalizeFunc
 
 ```go
 func (d *Device) PersonalizeFunc(personalizeFunc func(types.DevAddr) (types.NwkSKey, types.AppSKey)) error
 ```
+
 PersonalizeFunc personalizes a device by requesting a DevAddr from the network,
 and setting the NwkSKey and AppSKey to the result of the personalizeFunc. This
 function panics if this is a new device, so make sure you Get() the device
 first.
 
-## func (*Device) PersonalizeRandom
+## func (\*Device) PersonalizeRandom
 
 ```go
 func (d *Device) PersonalizeRandom() error
 ```
+
 PersonalizeRandom personalizes a device by requesting a DevAddr from the
 network, and setting the NwkSKey and AppSKey to randomly generated values. This
 function panics if this is a new device, so make sure you Get() the device
 first.
 
-## func (*Device) SetManager
+## func (\*Device) SetManager
 
 ```go
 func (d *Device) SetManager(manager DeviceManager)
 ```
+
 SetManager sets the manager of the device. This function panics if this is not a
 new device.
 
-## func (*Device) Update
+## func (\*Device) Update
 
 ```go
 func (d *Device) Update() error
 ```
+
 Update the device. This function panics if this is a new device.
 
 ## type DeviceList
@@ -275,13 +288,14 @@ Update the device. This function panics if this is a new device.
 type DeviceList []*SparseDevice
 ```
 
-DeviceList is a slice of *SparseDevice.
+DeviceList is a slice of \*SparseDevice.
 
 ## func (DeviceList) AsDevices
 
 ```go
 func (d DeviceList) AsDevices() []*Device
 ```
+
 AsDevices returns the DeviceList as a slice of *Device instead of *SparseDevice
 
 ## type DeviceManager
@@ -377,10 +391,11 @@ type SparseDevice struct {
 SparseDevice contains most, but not all fields of the device. It's returned by
 List operations to save server resources
 
-## func (*SparseDevice) AsDevice
+## func (\*SparseDevice) AsDevice
 
 ```go
 func (d *SparseDevice) AsDevice() *Device
 ```
+
 AsDevice wraps the *SparseDevice and returns a *Device containing that sparse
 device

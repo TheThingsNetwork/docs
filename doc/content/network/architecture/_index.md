@@ -6,17 +6,17 @@ The backend systems of The Things Network are responsible for routing Internet o
 
 ![Network Overview](../overview.png)
 
-The Things Network's vision is to perform all these routing functions in a decentralized and distributed way. Any interested party should be able to set up their own network and their own part of the backend, allowing them to participate in the global community network. In order to decentralize the network, it was split up into a number of components shown in the figure below. To simplify, components are only shown once, even though it is possible to have one-to-many or many-to-many relations between components. 
+The Things Network's vision is to perform all these routing functions in a decentralized and distributed way. Any interested party should be able to set up their own network and their own part of the backend, allowing them to participate in the global community network. In order to decentralize the network, it was split up into a number of components shown in the figure below. To simplify, components are only shown once, even though it is possible to have one-to-many or many-to-many relations between components.
 
 ![Architecture](../architecture.png)
 
 Nodes broadcast LoRaWAN messages over the LoRa radio protocol. These messages are received by a number of Gateways. The Gateway is a piece of hardware that forwards radio transmissions to the backend. It is connected to one Router. The Router is responsible for managing the gateway's status and for scheduling transmissions. Each Router is connected to one or more Brokers. Brokers are the central part of The Things Network. Their responsibility is to map a device to an application, to forward uplink messages to the correct application and to forward downlink messages to the correct Router (which forwards them to a Gateway). The Network Server is responsible for functionality that is specific for LoRaWAN. A Handler is responsible for handling the data of one or more Applications. To do so, it connects to a Broker where it registers applications and devices. The Handler is also the point where data is encrypted or decrypted.
 
-The goal of The Things Network is to be very flexible in terms of deployment options. The preferred option is to connect to the public community network hosted by The Things Network Foundation or its partners. In this case the Application connects to a Public Community Network Handler, usually using the MQTT API.
+The goal of The Things Network is to be very flexible in terms of deployment options. The preferred option is to connect to the The Things Stack Sandbox hosted by The Things Network Foundation or its partners. In this case the Application connects to a The Things Stack Sandbox Handler, usually using the MQTT API.
 
 It is also possible to deploy private networks, by running all these components in a private environment. This way, all data will remain within the private environment, but you can still make use of TTN's hosted Account Server for authentication and authorization.
 
-Hybrid deployments will be possible in the future. The most simple option for this, is for someone to run his own Handler, allowing them to handle the encryption and decryption of messages. A more complicated option is a private network that exchanges data with the public network. For this to work, private Routers will have to connect to public Brokers and vice versa. In this case the private network can offload public traffic to the community network and use the public community network as back-up. The latter is not yet possible with the current implementation of the backend.
+Hybrid deployments will be possible in the future. The most simple option for this, is for someone to run his own Handler, allowing them to handle the encryption and decryption of messages. A more complicated option is a private network that exchanges data with the public network. For this to work, private Routers will have to connect to public Brokers and vice versa. In this case the private network can offload public traffic to the community network and use the The Things Stack Sandbox as back-up. The latter is not yet possible with the current implementation of the backend.
 
 ## Core Functionality
 
@@ -119,14 +119,14 @@ After decryption, the Handler is able to decode and convert the payload into a f
 function (bytes) {
     var data = (bytes[0] << 8) | bytes[1];
     return { temperature: data / 100.0 };
-}    
+}
 ```
 
 The optional _converter_ can convert values in the decoded JSON object. This could for example be a conversion from a voltage to an actual value, or from a temperature in Celsius to a temperature in Fahrenheit. The optional _validator_ can be used to check the validity of the data and drop outliers. In the future these payload functions can adapt their behaviour to the `FPort` field of the message, allowing the community to define standard data encoding formats for each `FPort`. An example could be a standard format for sending weather station data.
 
 #### MQTT (Handler)
 
-The default Handler implementation simply publishes a JSON representation of uplink messages to a topic `<app_id>/devices/<dev_id>/up` on an MQTT broker. This allows applications to simply subscribe to the same MQTT topic and process the data in any way. 
+The default Handler implementation simply publishes a JSON representation of uplink messages to a topic `<app_id>/devices/<dev_id>/up` on an MQTT broker. This allows applications to simply subscribe to the same MQTT topic and process the data in any way.
 
 #### Downlink (Handler)
 

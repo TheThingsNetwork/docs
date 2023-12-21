@@ -2,14 +2,14 @@
 title: Devices
 description: Connect devices to The Things Network.
 sections:
- - SDKs & Libraries
- - Hardware
+  - SDKs & Libraries
+  - Hardware
 image: /devices/icon.png
 weight: 600
 hidden: true
 ---
 
-The Things Network is the first open source, decentralized infrastructure for the Internet of Things. The community edition is free for fair use. Learn how to connect your Things!
+The Things Network is the first open source, decentralized infrastructure for the Internet of Things. [The Things Stack Sandbox](https://console.cloud.thethings.network) is free for fair use. Learn how to connect your Things!
 
 Before your device can communicate via The Things Network, you will need to [register]({{< relref "registration" >}}) it.
 

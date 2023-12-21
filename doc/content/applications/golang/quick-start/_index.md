@@ -76,14 +76,14 @@ appID := os.Getenv("TTN_APP_ID")
 appAccessKey := os.Getenv("TTN_APP_ACCESS_KEY")
 ```
 
-Next, we create a new **SDK Configuration** to connect to the public community network:
+Next, we create a new **SDK Configuration** to connect to the The Things Stack Sandbox:
 
 ```go
 config := ttnsdk.NewCommunityConfig(sdkClientName)
 config.ClientVersion = "2.0.5" // The version of the application
 ```
 
-And we create a new **SDK Client** for the application. 
+And we create a new **SDK Client** for the application.
 
 The second line makes sure the client is cleaned up before the end of the program. You could add more of these `defer something.Close()` below, as it's good practice to clean up after you no longer need something. The `client.Close()` will make sure that everything we start after this point, will also be cleaned up, so I left out those other `defer something.Close()` for simplicity.
 

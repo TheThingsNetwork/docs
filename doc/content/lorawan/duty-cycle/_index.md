@@ -31,7 +31,8 @@ In Europe, duty cycles are regulated by section 4.3.3 of the [ETSI EN300.220-2 V
 Additionally, the LoRaWAN specification specifies duty cycles for the join frequencies, which are used for over-the-air activations (OTAA) by every LoRaWAN-compliant end device. In most regions, the duty cycle for these frequencies is set to **1%**.
 
 #### Fair Use Policy
-On The Things Network's public community network a **Fair Use Policy** applies which limits the **uplink airtime** to **30 seconds per day (24 hours) per node** and the **downlink messages** to **10 messages per day (24 hours) per node**. If you use a private network, these limits do not apply, but you still have to be compliant with the governmental and LoRaWAN limits.
+
+On The Things Network's The Things Stack Sandbox a **Fair Use Policy** applies which limits the **uplink airtime** to **30 seconds per day (24 hours) per node** and the **downlink messages** to **10 messages per day (24 hours) per node**. If you use a private network, these limits do not apply, but you still have to be compliant with the governmental and LoRaWAN limits.
 
 ## Compliance
 
@@ -44,12 +45,12 @@ Some radio modules (such as the RN2483) also enforce the duty cycle limits. If y
 _The figure below shows enforcement on a resource with a 20% duty cycle limit_  
 ![Single Channel Off-air](duty-cycle-single-channel-off-air.png)
 
-In the European band, a transmission on a channel within a frequency band, also influences the other frequencies in that band. 
+In the European band, a transmission on a channel within a frequency band, also influences the other frequencies in that band.
 
 _The figure below shows enforcement on two bands, each with a 20% duty cycle limit_  
 ![Multiple Band Off-air](duty-cycle-multi-band-off-air.png)
 
-As a per-channel duty cycle limit is easier to implement, you can also divide the sub-band duty cycle over the number of channels in that sub-band. So for example, in a sub-band with 8 channels and a duty cycle of 1%, each channel has a duty cycle of 1/8% (that's 0.125%). 
+As a per-channel duty cycle limit is easier to implement, you can also divide the sub-band duty cycle over the number of channels in that sub-band. So for example, in a sub-band with 8 channels and a duty cycle of 1%, each channel has a duty cycle of 1/8% (that's 0.125%).
 
 This method is also implemented by the RN2483 module, and as a result, instead of seeing the `no_free_ch` when you send too quickly after the first message you can send multiple messages before all 8 channels are "blocked" and the duty cycle is enforced.
 
