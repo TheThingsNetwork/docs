@@ -6,11 +6,11 @@ title: TTN Packet Forwarder
 
 The TTN Packet Forwarder is a new packet forwarder, developed by the Things Network Core Team in Go. Builds for a selection of gateways, and documentation on how it is built, is available [on GitHub](https://github.com/TheThingsNetwork/packet_forwarder). Among the features of this packet forwarder:
 
-* Built in [Golang](https://golang.org) and open-source
+- Built in [Golang](https://golang.org) and open-source
 
-* Connects with the [Gateway Connector protocol]({{< relref "../../start/connection/#gateway-connector-protocol" >}}): authentified, reliable and encrypted
+- Connects with the [Gateway Connector protocol]({{< relref "../../start/connection/#gateway-connector-protocol" >}}): authentified, reliable and encrypted
 
-* Pre-built for multiple gateways, and build instructions available for all SPI LoRa gateways
+- Pre-built for multiple gateways, and build instructions available for all SPI LoRa gateways
 
 ## Installation
 
@@ -22,9 +22,9 @@ We will be adding more gateways over time. In the meantime, if you have a differ
 
 The TTN Packet Forwarder is configured through a configuration file. The location file's default location is `$HOME/.pktfwd.yml`, but can be located in different locations in our pre-built packages:
 
-* In the Multitech Conduit package, it is located at the `/usr/cfg/config.yml` path.
+- In the Multitech Conduit package, it is located at the `/usr/cfg/config.yml` path.
 
-* In the Kerlink IoT Station package, it is located at the `/mnt/fsuser-1/ttn-pkt-fwd/config.yml` path.
+- In the Kerlink IoT Station package, it is located at the `/mnt/fsuser-1/ttn-pkt-fwd/config.yml` path.
 
 For in-depth configuration, all the paths are available [in the GitHub documentation](https://github.com/TheThingsNetwork/packet_forwarder#run).
 
@@ -39,7 +39,7 @@ key: <New gateway key>
 
 ### Configure on a private network
 
-To configure the gateway to connect on a network that is **not** the public community network, set those values in the configuration:
+To configure the gateway to connect on a network that is **not** the The Things Stack Sandbox, set those values in the configuration:
 
 ```yaml
 discovery-server: <Hostname of the private network>:<Port of the discovery server>
@@ -75,9 +75,9 @@ _Example of this error happening_
 
 This error happens when the gateway fails to complete a DNS lookup for the account server. It can happen for these reasons:
 
-* Your gateway **doesn't have access to Internet** or to its DNS server. To verify if your gateway has access to Internet, the easiest way is to execute `ping 8.8.8.8`. If there is an answer, your gateway is certainly connected. You'll also want to make sure that if you're behind a firewall, it isn't blocking DNS resolutions.
+- Your gateway **doesn't have access to Internet** or to its DNS server. To verify if your gateway has access to Internet, the easiest way is to execute `ping 8.8.8.8`. If there is an answer, your gateway is certainly connected. You'll also want to make sure that if you're behind a firewall, it isn't blocking DNS resolutions.
 
-* There is **no DNS server configured** on the gateway. The resolution method for this issue varies from gateway to gateway - for most Linux-based gateways, it can be resolved by configuring Google's DNS servers. Edit the `/etc/resolv.conf` file, and fill it with this:
+- There is **no DNS server configured** on the gateway. The resolution method for this issue varies from gateway to gateway - for most Linux-based gateways, it can be resolved by configuring Google's DNS servers. Edit the `/etc/resolv.conf` file, and fill it with this:
 
 ```
 nameserver 8.8.8.8
@@ -100,8 +100,8 @@ This is another SSL certificates error, which can happen if you're setting up yo
 
 A **failed to start concentrator** error means that the **start procedure of the LoRa concentrator has failed**. It can be due to several errors:
 
-* The **communication with the device failed**. This can happen, for example:
-  * if you're using a build for the wrong gateway ;
-  * if you've made your own build, and that the communication interface (SPI-based, or FTDI-based) was not set up properly ;
-  * if some obstacle is preventing communication between the process and the concentrator. For example, if your concentrator needs a [reset before usage](https://github.com/TheThingsNetwork/packet_forwarder/blob/develop/docs/INSTALL_INSTRUCTIONS/IMST_RPI.md#pin-reset), or if the interface needs to be [enabled before usage](https://www.thethingsnetwork.org/forum/t/pause-or-stop-packet-forwarding-on-kerlink/5352/2).
-* The LoRa concentrator is not **configured properly**. For examlpe, some gateways require additional [configuration steps](https://github.com/TheThingsNetwork/packet_forwarder/blob/dd535444e02f5ddd3ca379f2de715d417bde0f0c/pktfwd/configuration.go#L18-L21) - consult your gateway's documentation to know if the packet forwarder needs adaptation steps for this gateway.
+- The **communication with the device failed**. This can happen, for example:
+  - if you're using a build for the wrong gateway ;
+  - if you've made your own build, and that the communication interface (SPI-based, or FTDI-based) was not set up properly ;
+  - if some obstacle is preventing communication between the process and the concentrator. For example, if your concentrator needs a [reset before usage](https://github.com/TheThingsNetwork/packet_forwarder/blob/develop/docs/INSTALL_INSTRUCTIONS/IMST_RPI.md#pin-reset), or if the interface needs to be [enabled before usage](https://www.thethingsnetwork.org/forum/t/pause-or-stop-packet-forwarding-on-kerlink/5352/2).
+- The LoRa concentrator is not **configured properly**. For examlpe, some gateways require additional [configuration steps](https://github.com/TheThingsNetwork/packet_forwarder/blob/dd535444e02f5ddd3ca379f2de715d417bde0f0c/pktfwd/configuration.go#L18-L21) - consult your gateway's documentation to know if the packet forwarder needs adaptation steps for this gateway.

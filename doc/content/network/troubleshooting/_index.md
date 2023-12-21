@@ -5,7 +5,7 @@ weight: 200
 
 Is something not working like it should? This section is here to help you find out the issue might come from.
 
->If you have issues specifically with a gateway, see [Gateway Troubleshooting]({{< relref "../../gateways/troubleshooting" >}}).
+> If you have issues specifically with a gateway, see [Gateway Troubleshooting]({{< relref "../../gateways/troubleshooting" >}}).
 
 ## Check the Status page
 
@@ -29,7 +29,7 @@ If the network does not receive data from your device, i.e. the **Last seen** da
 
 ## Other issues
 
-Our public community network is run by the community. The best way to reach out to the community for questions and issues is through [The THings Network Forum](https://www.thethingsnetwork.org/forum) and Slack ([request invite in your account](https://ttn.fyi/slack-invite)): the **#support** and **#ops** channel.
+The best way to reach out to the community for questions and issues is through [The Things Network Forum](https://www.thethingsnetwork.org/forum) and Slack ([request invite in your account](https://ttn.fyi/slack-invite)): the **#support** and **#ops** channel.
 
 # Commercial support
 
