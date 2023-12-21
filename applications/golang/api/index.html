@@ -326,7 +326,7 @@ retrieve the addresses of the Handler and MQTT server.</p>
   <span class="nx">grpc</span><span class="p">.</span><span class="nf">WithBlock</span><span class="p">(),</span>
 <span class="p">}</span>
 </code></pre></div><p>DialOptions to use when connecting to components</p>
-<h2 id="func--movedevice">func  MoveDevice&nbsp;<a class="header-hash" href="#func--movedevice">#</a> </h2>
+<h2 id="func-movedevice">func MoveDevice&nbsp;<a class="header-hash" href="#func-movedevice">#</a> </h2>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="nf">MoveDevice</span><span class="p">(</span><span class="nx">devID</span> <span class="kt">string</span><span class="p">,</span> <span class="nx">from</span><span class="p">,</span> <span class="nx">to</span> <span class="nx">DeviceManager</span><span class="p">)</span> <span class="p">(</span><span class="nx">err</span> <span class="kt">error</span><span class="p">)</span>
 </code></pre></div><p>MoveDevice moves a device to another application</p>
 <h2 id="type-applicationmanager">type ApplicationManager&nbsp;<a class="header-hash" href="#type-applicationmanager">#</a> </h2>
@@ -440,11 +440,11 @@ application</p>
 </code></pre></div><p>ClientConfig contains the configuration for the API client. Use the NewConfig()
 or NewCommunityConfig() functions to initialize your configuration, otherwise
 NewClient will panic.</p>
-<h2 id="func--newcommunityconfig">func  NewCommunityConfig&nbsp;<a class="header-hash" href="#func--newcommunityconfig">#</a> </h2>
+<h2 id="func-newcommunityconfig">func NewCommunityConfig&nbsp;<a class="header-hash" href="#func-newcommunityconfig">#</a> </h2>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="nf">NewCommunityConfig</span><span class="p">(</span><span class="nx">clientName</span> <span class="kt">string</span><span class="p">)</span> <span class="nx">ClientConfig</span>
 </code></pre></div><p>NewCommunityConfig creates a new configuration for the API client that is
-pre-configured for the Public Community Network.</p>
-<h2 id="func--newconfig">func  NewConfig&nbsp;<a class="header-hash" href="#func--newconfig">#</a> </h2>
+pre-configured for the The Things Stack Sandbox.</p>
+<h2 id="func-newconfig">func NewConfig&nbsp;<a class="header-hash" href="#func-newconfig">#</a> </h2>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="nf">NewConfig</span><span class="p">(</span><span class="nx">clientName</span><span class="p">,</span> <span class="nx">accountServerAddress</span><span class="p">,</span> <span class="nx">discoveryServerAddress</span> <span class="kt">string</span><span class="p">)</span> <span class="nx">ClientConfig</span>
 </code></pre></div><p>NewConfig creates a new configuration for the API client.</p>
 <h2 id="func-clientconfig-newclient">func (ClientConfig) NewClient&nbsp;<a class="header-hash" href="#func-clientconfig-newclient">#</a> </h2>

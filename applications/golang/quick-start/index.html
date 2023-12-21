@@ -355,7 +355,7 @@
 </span></code></pre></div><p>We get the application ID and application access key from the environment variables:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="nx">appID</span> <span class="o">:=</span> <span class="nx">os</span><span class="p">.</span><span class="nf">Getenv</span><span class="p">(</span><span class="s">&#34;TTN_APP_ID&#34;</span><span class="p">)</span>
 <span class="nx">appAccessKey</span> <span class="o">:=</span> <span class="nx">os</span><span class="p">.</span><span class="nf">Getenv</span><span class="p">(</span><span class="s">&#34;TTN_APP_ACCESS_KEY&#34;</span><span class="p">)</span>
-</code></pre></div><p>Next, we create a new <strong>SDK Configuration</strong> to connect to the public community network:</p>
+</code></pre></div><p>Next, we create a new <strong>SDK Configuration</strong> to connect to the The Things Stack Sandbox:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="nx">config</span> <span class="o">:=</span> <span class="nx">ttnsdk</span><span class="p">.</span><span class="nf">NewCommunityConfig</span><span class="p">(</span><span class="nx">sdkClientName</span><span class="p">)</span>
 <span class="nx">config</span><span class="p">.</span><span class="nx">ClientVersion</span> <span class="p">=</span> <span class="s">&#34;2.0.5&#34;</span> <span class="c1">// The version of the application
 </span></code></pre></div><p>And we create a new <strong>SDK Client</strong> for the application.</p>
