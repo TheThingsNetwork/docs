@@ -22,6 +22,8 @@ LoRa can be operated on the license free **sub-gigahertz** bands, for example, 9
 
 LoRaWAN is a Media Access Control (MAC) layer protocol built on top of LoRa modulation. It is a software layer which defines how devices use the LoRa hardware, for example when they transmit, and the format of messages.
 
+The Things Network is powered by The Things Stack, which is a LoRaWAN network server that receives messages from LoRaWAN devices. Try it and get started building for free [here](https://www.thethingsnetwork.org/get-started).
+
 The LoRaWAN protocol is developed and maintained by the [LoRa Alliance](https://lora-alliance.org/). The first LoRaWAN specification was released in January 2015. The table below shows the version history of the LoRaWAN specifications. At the time of this writing the latest specifications are 1.0.4 (in 1.0 series) and 1.1 (1.1 series).
 
 <table>
