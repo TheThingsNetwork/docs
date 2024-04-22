@@ -6,6 +6,10 @@ images:
 - payload.png
 ---
 
+{{< info >}}
+For information on The Things Stack's specific data formats, check [The Things Stack documentation](https://www.thethingsindustries.com/docs/the-things-stack/concepts/data-formats/).
+{{</ info >}}
+
 In this chapter, you will learn about different message types used in LoRaWAN 1.0.x and 1.1. These message types are used to transport MAC commands and application data. The Things Fundamentals Certification exam expects you should have basic knowledge on the following topics with regards to the message types:
 
 *   Uplink and downlink messages.
