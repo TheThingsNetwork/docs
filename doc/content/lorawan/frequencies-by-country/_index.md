@@ -4,9 +4,9 @@ section: Additional Information
 weight: 2
 ---
 
-This document is only a summary of radio regulations, and the appropriate frequency plans that should be used for The Things Network in the respective countries. **This is in no way an official document; gateway owners are still obliged to find, study and adhere to their own country's regulations.** Some countries also expect you to register your gateway, or obtain a license. In that case you are using a "free band", not a "license free band". In some countries it is also necessary that the gateway is certified (CE, FCC, ...) if you allow other people to also communicate via it.
+This document is only a summary of radio regulations, and the appropriate frequency plans that should be used for The Things Network in the respective countries. **This is in no way an official document; gateway owners are still obliged to find, study and adhere to their own country's regulations.** You can also read the LoRa Alliance [**LoRaWAN Regional Parameters**](https://resources.lora-alliance.org/technical-specifications/rp002-1-0-4-regional-parameters). Some countries also expect you to register your gateway, or obtain a license. In that case you are using a "free band", not a "license free band". In some countries it is also necessary that the gateway is certified (CE, FCC, ...) if you allow other people to also communicate via it.
 
-For discussions about the frequency plans in different countries, see the posts on the forum tagged with [Country/Frequency-Plan](https://www.thethingsnetwork.org/forum/c/country/frequency-plan).
+For discussions about the frequency plans in different countries, see the posts on the forum tagged with [**Country/Frequency-Plan**](https://www.thethingsnetwork.org/forum/c/country/frequency-plan).
 
 ![Map of Frequency Plans](frequency-plans-map.svg)
 
@@ -86,7 +86,7 @@ For discussions about the frequency plans in different countries, see the posts 
 
 | Country | Frequency Plan | Regulatory document |
 | --- | --- | --- |
-| Ecuador | US902-928 | |
+| Ecuador | AU915-928 | [Plan Nacional de Frecuencia 2021 (p.59)](https://www.arcotel.gob.ec/wp-content/uploads/2021/10/PNF-V.6.0_14-07-21_v.1.pdf) ARCOTEL |
 | Egypt
 | El Salvador
 | Equatorial Guinea
