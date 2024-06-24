@@ -25,7 +25,7 @@ Mobile end devices should be able to detect when they are stationary for a longe
 ## ADR in The Things Stack
 
 {{< info >}}
-Check [The Things Stack documentation](https://www.thethingsindustries.com/docs/reference/adr/#how-adr-works) for more specifics on how ADR works on the Stack.
+Check [{{% tts %}} documentation](https://www.thethingsindustries.com/docs/reference/adr/#how-adr-works) for more specifics on how ADR works on the {{% tts %}}.
 {{</ info >}}
 
 To determine the optimal data rate, the network needs some measurements (uplink messages). Currently The Things Stack takes the 20 most recent uplinks, starting at the moment the ADR bit is set. These measurements contains the frame counter, signal-to-noise ratio (SNR) and number of gateways that received each uplink. When a device unsets the ADR bit (because it knows it is moving or it knows RF conditions are unstable), previous measurements are discarded. As soon as the ADR bit is set again, the network starts measuring again.

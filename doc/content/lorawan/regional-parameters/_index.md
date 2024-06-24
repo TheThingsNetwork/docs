@@ -5,7 +5,7 @@ weight: 40
 ---
 
 {{< info >}}
-For information on the specific versions of the Regional Parameters check [The Things Stack documentation](https://www.thethingsindustries.com/docs/the-things-stack/concepts/spec-regional-parameters/).
+For information on the specific versions of the Regional Parameters check [{{% tts %}} documentation](https://www.thethingsindustries.com/docs/the-things-stack/concepts/spec-regional-parameters/).
 {{</ info >}}
 
 LoRaWAN operates in unlicensed radio spectrum. This means that anyone can use the radio frequencies without having to pay million dollar fees for transmission rights. It is similar to WiFi, which uses the 2.4GHz and 5GHz ISM bands worldwide. Anyone is allowed to set up WiFi routers and transmit WiFi signals without the need for a license or permit.
