@@ -4,6 +4,10 @@ section: The Things Fundamentals
 weight: 40
 ---
 
+{{< info >}}
+For information on the specific versions of the Regional Parameters check [{{% tts %}} documentation](https://www.thethingsindustries.com/docs/the-things-stack/concepts/spec-regional-parameters/).
+{{</ info >}}
+
 LoRaWAN operates in unlicensed radio spectrum. This means that anyone can use the radio frequencies without having to pay million dollar fees for transmission rights. It is similar to WiFi, which uses the 2.4GHz and 5GHz ISM bands worldwide. Anyone is allowed to set up WiFi routers and transmit WiFi signals without the need for a license or permit.
 
 LoRaWAN uses lower radio frequencies with a longer range. The fact that frequencies have a longer range also comes with more restrictions, that are often country-specific. This poses a challenge for LoRaWAN, as it strives to maintain uniformity across various regions of the world. As a result, LoRaWAN is specified for several bands within these regions. These bands are similar enough to support a region-agnostic protocol but entail various consequences for the implementation of backend systems.

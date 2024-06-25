@@ -13,6 +13,10 @@ Every end device must be registered with a network before sending and receiving 
 
 The join procedure for LoRaWAN 1.0.x and 1.1 is slightly different. The following two sections describe the join procedure for LoRaWAN 1.0.x and 1.1 separately.
 
+{{< info >}}
+For more information on the differences between OTAA and ABP, check the [{{% tts %}} documentation](https://www.thethingsindustries.com/docs/the-things-stack/concepts/data-formats/).
+{{</ info >}}
+
 ## Over The Air Activation in LoRaWAN 1.0.x
 
 In LoRaWAN 1.0.x, the join procedure requires two MAC messages to be exchanged between the end device and the Network Server:
