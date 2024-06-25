@@ -56,7 +56,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.thethingsnetwork.org/docs/lorawan/end-device-activation/" /><meta property="og:image" content="https://www.thethingsnetwork.org/docs/otaa-1.1.png" /><meta property="article:section" content="lorawan" />
 
-<meta property="article:modified_time" content="2021-11-26T12:49:47+01:00" /><meta property="og:site_name" content="The Things Network" />
+<meta property="article:modified_time" content="2024-06-25T19:49:09+02:00" /><meta property="og:site_name" content="The Things Network" />
 
 
 
@@ -307,6 +307,11 @@
 <li><strong>Activation By Personalization (ABP)</strong> - requires hardcoding the device address as well as the security keys in the device. ABP is <strong>less secure</strong> than OTAA and also has the downside that devices can not switch network providers without manually changing keys in the device.</li>
 </ul>
 <p>The join procedure for LoRaWAN 1.0.x and 1.1 is slightly different. The following two sections describe the join procedure for LoRaWAN 1.0.x and 1.1 separately.</p>
+<div class="notification is-primary is-light has-text-dark">
+  <h5 class="title is-family-sans-serif has-text-dark mb-1">Info:</h5>
+  For more information on the differences between OTAA and ABP, check the <a href="https://www.thethingsindustries.com/docs/the-things-stack/concepts/data-formats/">The Things Stack documentation</a>.
+</div>
+
 <h2 id="over-the-air-activation-in-lorawan-10x">Over The Air Activation in LoRaWAN 1.0.x&nbsp;<a class="header-hash" href="#over-the-air-activation-in-lorawan-10x">#</a> </h2>
 <p>In LoRaWAN 1.0.x, the join procedure requires two MAC messages to be exchanged between the end device and the Network Server:</p>
 <ul>
