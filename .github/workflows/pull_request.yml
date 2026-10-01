@@ -25,22 +25,6 @@ jobs:
           ${{ runner.os }}-go-
     - name: Download Go dependencies
       run: make go.deps
-    - name: Set up Node
-      uses: actions/setup-node@v3
-      with:
-        node-version: '~16'
-    - name: Get Yarn cache directory path
-      id: yarn-cache-dir-path
-      run: echo "dir=$(npx yarn cache dir)" >> $GITHUB_OUTPUT
-    - name: Initialize Yarn module cache
-      uses: actions/cache@v3
-      with:
-        path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-        key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-yarn-
-    - name: Download Yarn dependencies
-      run: make js.deps
     - name: Initialize Hugo binary cache
       id: cache-hugo
       uses: actions/cache@v3

@@ -1,0 +1,8 @@
+{{- /* Client-side search index for the header search box (assets/js/docs.js). */ -}}
+{{- $out := slice -}}
+{{- range site.Pages -}}
+  {{- if and (not .IsHome) .Title (ne .Kind "404") -}}
+    {{- $out = $out | append (dict "t" .Title "u" .RelPermalink "s" .FirstSection.Title "d" (.Description | default (.Summary | plainify | htmlUnescape | truncate 140))) -}}
+  {{- end -}}
+{{- end -}}
+{{- $out | jsonify -}}

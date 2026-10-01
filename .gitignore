@@ -107,3 +107,6 @@ $RECYCLE.BIN/
 
 ### Internal docs build
 /internal/
+
+### Hugo build lock
+.hugo_build.lock

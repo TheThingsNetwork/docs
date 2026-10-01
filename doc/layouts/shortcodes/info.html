@@ -1,4 +1,1 @@
-<div class="notification is-primary is-light has-text-dark">
-  <h5 class="title is-family-sans-serif has-text-dark mb-1">Info:</h5>
-  {{ markdownify (or (.Get 0) .Inner) }}
-</div>
+{{- partial "docs/callout.html" (dict "kind" "info" "icon" "info-circle" "label" "Info" "body" (or (.Get 0) .Inner)) -}}

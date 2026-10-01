@@ -1,0 +1,14 @@
+{{- /* Numbered grid of the section's course chapters (the `chapters` front matter of the section). */ -}}
+{{- $section := .Page.FirstSection -}}
+{{- $chapters := partial "docs/chapters.html" $section -}}
+<ol class="dx-chapters">
+  {{- range $i, $c := $chapters }}
+  <li>
+    <a class="dx-chapter" href="{{ $c.RelPermalink }}">
+      <span class="dx-chapter__num">{{ printf "%02d" (add $i 1) }}</span>
+      <span class="dx-chapter__title">{{ $c.LinkTitle }}</span>
+      {{ partial "site/icon.html" (dict "n" "arrow-right" "class" "dx-chapter__arrow") }}
+    </a>
+  </li>
+  {{- end }}
+</ol>

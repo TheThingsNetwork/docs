@@ -1,0 +1,12 @@
+{{- /* Returns the numbered course of a first-level section, in order: the pages named by the
+     section's `chapters` front matter (slugs relative to the section). Empty when not set. */ -}}
+{{- $section := . -}}
+{{- $out := slice -}}
+{{- range $section.Params.chapters -}}
+  {{- with site.GetPage (printf "/%s" (path.Join $section.File.Dir .)) -}}
+    {{- $out = $out | append . -}}
+  {{- else -}}
+    {{- errorf "%s: chapter %q not found" $section.File.Path . -}}
+  {{- end -}}
+{{- end -}}
+{{- return $out -}}

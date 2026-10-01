@@ -1,0 +1,18 @@
+<div class="dx-docs">
+  {{ partial "docs/sidebar.html" . }}
+  <main id="main" class="dx-main">
+    <article class="dx-article">
+      <header class="dx-article__head">
+        {{ partial "docs/breadcrumb.html" . }}
+        <h1 class="dx-title">{{ .Title }}</h1>
+      </header>
+      {{ partial "docs/v2-warning.html" . }}
+      <div class="dx-prose">
+        {{ .Content }}
+      </div>
+      {{ if .IsSection }}{{ partial "docs/subpages.html" . }}{{ end }}
+      {{ partial "docs/prev-next.html" . }}
+    </article>
+    {{ partial "docs/rail.html" . }}
+  </main>
+</div>

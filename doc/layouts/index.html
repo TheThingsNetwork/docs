@@ -1,115 +1,58 @@
 {{ define "main" }}
-<section class="hero is-medium" style="background-image: url({{ "img/header-img-learn.png" | relURL }})">
-  <div class="hero-body">
-    <div class="container has-text-centered">
-      <h1 class="title is-size-1 has-text-white">
-        Learn
-      </h1>
-      <p class="subtitle has-text-white">
-        Learn all about LoRaWAN and The Things Network!
-      </p>
+<main id="main" class="dx-home">
+  <section class="dx-home__hero">
+    <div class="dx-wrap">
+      <h1 class="dx-title">{{ .Title }}</h1>
+      <p class="dx-home__sub">Learn all about LoRaWAN and The Things Network!</p>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="section section-lorawan">
-  <div class="container">
-    <div class="columns is-desktop is-multiline">
-      {{ with .Site.GetPage "/lorawan" }}
-      <div class="column is-one-third-desktop is-flex">
-        <div class="card has-radius is-fullwidth">
-          <div class="card-content">
-            <a href="{{ .Permalink }}" class="is-flex is-justify-content-center">
-            {{ with .Params.image }}
-            <div class="lorawan-image">
-              <figure class="image plain">
-                <img src="{{ . | relURL }}">
-              </figure>
-            </div>
-            {{ end }}
-            </a>
-            <div class="content has-text-centered has-text-grey">
-              {{ .Description | plainify }}
-            </div>
-            <div class="has-text-centered">
-              <a href="{{ .Permalink }}" class="button is-primary is-outlined">Read</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      {{ end }}
-      <div class="column is-one-third-desktop is-flex">
-        <div class="card has-radius is-fullwidth">
-          <div class="card-content">
-            <a href="https://www.thethingsnetwork.org/achievements/certificates/" class="is-flex is-justify-content-center">
-            <div class="certifications-image">
-              <figure class="image plain">
-                <img src="{{ "img/badge-fundamental.png" | relURL }}">
-              </figure>
-            </div>
-            </a>
-            <div class="content has-text-centered has-text-grey">
-              Show off your LoRaWAN knowledge! Complete an official The Things Certification and get a badge.
-            </div>
-            <div class="has-text-centered">
-              <a href="https://www.thethingsnetwork.org/achievements/certificates" class="button is-primary is-outlined">Read</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="column is-one-third-desktop is-flex">
-        <div class="card has-radius is-fullwidth">
-          <div class="card-content">
-            <a href="https://www.thethingsindustries.com/docs" class="is-flex is-justify-content-center">
-              <div class="quick-start-image">
-                <figure class="quick-start-image">
-                  <img src="{{ "img/logo-tts-horizontal.png" | relURL }}">
-                </figure>
-              </div>
-            </a>
-            <div class="content has-text-centered has-text-grey">
-              Get started with The Things Stack, an out-of-the-box LoRaWAN Network Server for monitoring of network components.
-            </div>
-            <div class="has-text-centered">
-              <a href="https://www.thethingsindustries.com/docs" class="button is-primary is-outlined">Read</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <div class="columns is-desktop is-multiline">
-      {{- range .Site.Menus.community }}
-          <div class="column is-one-third-desktop is-flex">
-            <div class="card has-radius is-fullwidth">
-              <div class="card-content">
-                <h3 class="title is-size-5 has-text-centered is-uppercase"><a href="{{ .URL }}">{{ .Name }}</a>
-                </h3>
-                <div class="content has-text-centered has-text-grey">
-                  {{ with .Params.image }}
-                    <div class="is-flex is-justify-content-center">
-                      <figure class="image plain">
-                        <img src="{{ . | relURL }}">
-                      </figure>
-                    </div>
-                  {{ end }}
-                  {{ .Pre | plainify }}
-                </div>
-                <div class="has-text-centered">
-                  <a href="{{ .URL }}" class="button is-primary is-outlined">Learn More</a>
-                </div>
-              </div>
-            </div>
-          </div>
+  <section class="dx-wrap dx-home__section">
+    <ul class="dx-home__grid">
+      {{- with site.GetPage "/lorawan" }}
+      <li>
+        <a class="dx-home__card" href="{{ .RelPermalink }}">
+          {{- with .Params.image }}<img src="{{ . | relURL }}" alt="" class="dx-home__img">{{ end }}
+          <span class="dx-home__card-title">{{ .Title }}</span>
+          <span class="dx-home__card-text">{{ .Description | plainify }}</span>
+          <span class="dx-home__card-cta">Start learning {{ partial "site/icon.html" (dict "n" "arrow-right") }}</span>
+        </a>
+      </li>
       {{- end }}
-    </div>
-  </div>
-</section>
+      <li>
+        <a class="dx-home__card" href="https://www.thethingsnetwork.org/achievements/certificates/">
+          <img src="{{ "img/badge-fundamental.png" | relURL }}" alt="" class="dx-home__img">
+          <span class="dx-home__card-title">The Things Certification</span>
+          <span class="dx-home__card-text">Show off your LoRaWAN knowledge! Complete an official The Things Certification and get a badge.</span>
+          <span class="dx-home__card-cta">Get certified {{ partial "site/icon.html" (dict "n" "arrow-right") }}</span>
+        </a>
+      </li>
+      <li>
+        <a class="dx-home__card" href="https://www.thethingsindustries.com/docs" rel="noopener">
+          <img src="{{ "img/logo-tts-horizontal.png" | relURL }}" alt="" class="dx-home__img dx-home__img--wide">
+          <span class="dx-home__card-title">The Things Stack</span>
+          <span class="dx-home__card-text">Get started with The Things Stack, an out-of-the-box LoRaWAN Network Server for monitoring of network components.</span>
+          <span class="dx-home__card-cta">Read the docs {{ partial "site/icon.html" (dict "n" "arrow-right") }}</span>
+        </a>
+      </li>
+    </ul>
+  </section>
 
-{{ .Content }}
+  <section class="dx-wrap dx-home__section">
+    <h2 class="dx-home__h2">Community</h2>
+    <ul class="dx-home__grid dx-home__grid--community">
+      {{- range site.Menus.community }}
+      <li>
+        <a class="dx-home__card dx-home__card--plain" href="{{ .URL }}" rel="noopener">
+          <span class="dx-home__card-title">{{ .Name }}</span>
+          <span class="dx-home__card-text">{{ .Pre | plainify }}</span>
+          <span class="dx-home__card-cta">Learn more {{ partial "site/icon.html" (dict "n" "arrow-right") }}</span>
+        </a>
+      </li>
+      {{- end }}
+    </ul>
+  </section>
 
+  {{ .Content }}
+</main>
 {{ end }}

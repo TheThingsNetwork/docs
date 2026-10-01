@@ -1,0 +1,16 @@
+{{- /* Dark feature panel with text, a button and an image.
+     Usage: {{< feature title="…" image="pic.png" alt="…" href="https://…" button="Label" >}}markdown{{< /feature >}}
+     title= renders as an h2 (with an id, so it appears in "On this page"). image= is page-relative. */ -}}
+{{- $title := .Get "title" -}}
+<section class="dx-feature"{{ with $title }} aria-labelledby="{{ anchorize . }}"{{ end }}>
+  <div class="dx-feature__text">
+    {{- with $title }}<h2 class="dx-feature__eyebrow" id="{{ anchorize . }}">{{ . }}</h2>{{ end }}
+    {{ .Inner | markdownify }}
+    {{- with .Get "href" }}
+    <a class="dx-btn dx-btn--brand" href="{{ . }}">{{ $.Get "button" | default "Learn more" }}{{ partial "site/icon.html" (dict "n" "arrow-right") }}</a>
+    {{- end }}
+  </div>
+  {{- with .Get "image" }}
+  <div class="dx-feature__media"><img src="{{ . }}" alt="{{ $.Get "alt" | default "" }}" loading="lazy"></div>
+  {{- end }}
+</section>

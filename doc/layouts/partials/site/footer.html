@@ -1,0 +1,27 @@
+{{- $nav := site.Data.site_nav -}}
+<footer class="dx-footer">
+  <div class="dx-wrap dx-footer__inner">
+    <div class="dx-footer__grid">
+      <div class="dx-footer__brand">
+        <img src="{{ "img/ttn-horizontal-white.svg" | relURL }}" alt="The Things Network" width="150" height="34">
+        <p>{{ $nav.tagline }}</p>
+      </div>
+      {{- range $nav.footer }}
+      <div class="dx-footer__col">
+        <div class="dx-footer__title">{{ .title }}</div>
+        {{- range .links }}
+        <a href="{{ partial "site/href.html" .href }}"{{ if .external }} rel="noopener"{{ end }}>{{ .label }}</a>
+        {{- end }}
+      </div>
+      {{- end }}
+    </div>
+    <div class="dx-footer__base">
+      <span>{{ $nav.lorawanNotice }}</span>
+      <div class="dx-footer__social">
+        {{- range $nav.social }}
+        <a href="{{ partial "site/href.html" .href }}" rel="noopener" aria-label="{{ .label }}">{{ partial "site/icon.html" (dict "n" .icon) }}</a>
+        {{- end }}
+      </div>
+    </div>
+  </div>
+</footer>

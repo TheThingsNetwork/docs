@@ -1,0 +1,17 @@
+{{- /* Learn › <first section> › … › <current page>. Hugo 0.88 has no .Ancestors, so walk .Parent. */ -}}
+{{- $chain := slice -}}
+{{- $p := .Parent -}}
+{{- range seq 10 -}}
+  {{- if and $p (not $p.IsHome) -}}
+    {{- $chain = $chain | append $p -}}
+    {{- $p = $p.Parent -}}
+  {{- end -}}
+{{- end -}}
+<nav class="dx-crumbs" aria-label="Breadcrumb">
+  <a href="{{ site.Home.RelPermalink }}">Learn</a>
+  {{- range $i, $_ := $chain }}
+  {{- $c := index $chain (sub (len $chain) (add $i 1)) }}
+  {{ partial "site/icon.html" (dict "n" "chevron-right") }}<a href="{{ $c.RelPermalink }}">{{ $c.LinkTitle }}</a>
+  {{- end }}
+  {{ partial "site/icon.html" (dict "n" "chevron-right") }}<span aria-current="page">{{ .LinkTitle }}</span>
+</nav>

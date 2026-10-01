@@ -1,0 +1,10 @@
+{{- if in (slice "devices" "applications" "gateways" "network") .Section }}
+<div class="dx-callout dx-callout--warning" role="note">
+  {{ partial "site/icon.html" (dict "n" "alert-triangle" "class" "dx-callout__icon") }}
+  <div class="dx-callout__body">
+    <p><strong>Outdated:</strong> this section documents The Things Network V2, which is no longer maintained.
+    See the <a href="https://www.thethingsindustries.com/docs">documentation for The Things Stack V3</a>
+    {{- with site.GetPage "/v2-docs" }}, or browse the <a href="{{ .RelPermalink }}">V2 docs index</a>{{ end }}.</p>
+  </div>
+</div>
+{{- end }}

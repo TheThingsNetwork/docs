@@ -1,11 +1,15 @@
 {{ define "main" }}
-<section class="hero is-medium" style="background-image: url({{ "img/header-img-learn.png" | relURL }})">
-  <div class="hero-body">
-    <div class="container has-text-centered">
-      <h1 class="title is-size-2 has-text-white">{{ .Title }}</h1>
-      <h2 class="title is-size-3 has-text-white"><a class="has-text-white" href="{{ "/" | relURL }}">Go Home</a></h2>
-      <div class="content">{{ .Content }}</div>
+<main id="main" class="dx-home">
+  <section class="dx-home__hero dx-home__hero--404">
+    <div class="dx-wrap">
+      <div class="dx-eyebrow">404</div>
+      <h1 class="dx-title">{{ .Title | default "Page not found" }}</h1>
+      <p class="dx-home__sub">This page does not exist (anymore). Try the search above, or start from the docs home.</p>
+      <div class="dx-actions">
+        <a class="dx-btn dx-btn--primary" href="{{ site.Home.RelPermalink }}">Docs home {{ partial "site/icon.html" (dict "n" "arrow-right") }}</a>
+      </div>
+      {{ with .Content }}<div class="dx-prose">{{ . }}</div>{{ end }}
     </div>
-  </div>
-</section>
+  </section>
+</main>
 {{ end }}

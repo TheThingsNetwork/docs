@@ -1,0 +1,8 @@
+{{- /* Overrides Hugo's built-in youtube shortcode: privacy-enhanced (no-cookie) embed in a 16:9 frame.
+     Usage: {{< youtube "ID" >}} or {{< youtube id="ID" title="…" >}} */ -}}
+{{- $id := .Get "id" | default (.Get 0) -}}
+{{- $title := .Get "title" | default "YouTube video" -}}
+<div class="dx-video">
+  <iframe src="https://www.youtube-nocookie.com/embed/{{ $id }}" title="{{ $title }}" loading="lazy"
+    allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>

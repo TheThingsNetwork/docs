@@ -7,13 +7,29 @@ Data for generated documentation like the glossary is stored in `doc/data`.
 
 ## Development Environment Dependencies
 
-The Things Network Documentation development tooling uses [Go](https://golang.org/doc/install) and [Yarn](https://yarnpkg.com/en/docs/install).
+The Things Network Documentation development tooling uses [Go](https://golang.org/doc/install)
+(Hugo is pinned in `go.mod` and built with `make deps`). The theme has no JavaScript build step.
 
 - Follow [Go's installation guide](https://golang.org/doc/install) to install Go.
-- Follow [Yarn's installation guide](https://yarnpkg.com/en/docs/install) to install Yarn.
 
-In order to build the documentation site with the right theme, you need to run
-`make deps` from time to time. This will install [Yarn](https://yarnpkg.com/) on Mac and Unix systems if it is not already installed.
+## Theme
+
+The theme lives in `doc/layouts` + `doc/assets` (plain CSS and JS, no Bulma/TTUI). The global
+header and footer render from `doc/data/site_nav.json`, and icons from `doc/data/icons.json`. Both
+are **generated** from www.thethingsnetwork.org's single navigation source — do not edit them by
+hand; re-export them from the platform repo instead:
+
+```
+node scripts/export-docs-chrome.mjs <path to this repo>/doc/data
+```
+
+Nav hrefs are root-relative and prefixed with `params.ttnOrigin` (default
+`https://www.thethingsnetwork.org`); for a local all-in-one preview run Hugo with
+`HUGO_PARAMS_TTNORIGIN=http://localhost:3000`.
+
+Section landing pages can use the `lead`, `actions`/`button`, `chapters`, `feature` and `topics`
+shortcodes (see `doc/content/lorawan/_index.md`); a section's numbered course is its `chapters`
+front matter and its topic index the `topics` front matter.
 
 ## Getting Started
 

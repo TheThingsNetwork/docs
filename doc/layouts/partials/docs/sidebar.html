@@ -1,0 +1,62 @@
+{{- $current := . -}}
+{{- $first := .FirstSection -}}
+{{- $chapters := partial "docs/chapters.html" $first -}}
+{{- $chapterLinks := slice -}}
+{{- range $chapters }}{{ $chapterLinks = $chapterLinks | append .RelPermalink }}{{ end -}}
+
+<aside class="dx-side" aria-label="{{ $first.Title }} navigation">
+  <details class="dx-side__toggle" open data-side>
+    <summary class="dx-side__summary">{{ partial "site/icon.html" (dict "n" "list") }} {{ $first.Title }} menu</summary>
+
+    <nav class="dx-side__nav">
+      <div class="dx-side__group">
+        <a href="{{ $first.RelPermalink }}" class="dx-side__link dx-side__link--overview"{{ if eq $current $first }} aria-current="page"{{ end }}>
+          {{ partial "site/icon.html" (dict "n" "layout-grid") }}Overview
+        </a>
+        {{- range where $first.Pages.ByWeight "Params.section" nil }}
+          {{ template "dx-side-item" (dict "page" . "current" $current) }}
+        {{- end }}
+      </div>
+
+      {{- range $first.Params.sections }}
+      {{- $name := . }}
+      {{- $pages := where $first.Pages.ByWeight "Params.section" $name }}
+      {{- if $pages }}
+      <div class="dx-side__group">
+        <div class="dx-side__label">{{ $name }}</div>
+        {{- /* Numbered course chapters first, in course order; the rest of the group by weight. */}}
+        {{- range $i, $c := $chapters }}
+          {{- if eq $c.Params.section $name }}
+          <a href="{{ $c.RelPermalink }}" class="dx-side__link dx-side__link--num"{{ if eq $current $c }} aria-current="page"{{ end }}>
+            <span class="dx-side__num">{{ printf "%02d" (add $i 1) }}</span>{{ $c.LinkTitle }}
+          </a>
+          {{- if and $c.IsSection ($c.IsAncestor $current) }}{{ template "dx-side-tree" (dict "section" $c "current" $current) }}{{ end }}
+          {{- end }}
+        {{- end }}
+        {{- range $pages }}
+          {{- if not (in $chapterLinks .RelPermalink) }}
+          {{ template "dx-side-item" (dict "page" . "current" $current) }}
+          {{- end }}
+        {{- end }}
+      </div>
+      {{- end }}
+      {{- end }}
+    </nav>
+  </details>
+</aside>
+
+{{- define "dx-side-item" }}
+<a href="{{ .page.RelPermalink }}" class="dx-side__link"{{ if eq .current .page }} aria-current="page"{{ end }}>{{ .page.LinkTitle }}</a>
+{{- if and .page.IsSection (.page.IsAncestor .current) }}{{ template "dx-side-tree" (dict "section" .page "current" .current) }}{{ end }}
+{{- end }}
+
+{{- define "dx-side-tree" }}
+{{- $current := .current }}
+{{- with .section.Pages.ByWeight }}
+<div class="dx-side__tree">
+  {{- range . }}
+  {{ template "dx-side-item" (dict "page" . "current" $current) }}
+  {{- end }}
+</div>
+{{- end }}
+{{- end }}
