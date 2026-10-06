@@ -12,7 +12,8 @@
       {{- with site.GetPage "/lorawan" }}
       <li>
         <a class="dx-home__card" href="{{ .RelPermalink }}">
-          {{- with .Params.image }}<img src="{{ . | relURL }}" alt="" class="dx-home__img">{{ end }}
+          {{- /* front matter has "/lorawan/icon.png": relURL keeps a leading slash at the host root, dropping /docs/ */ -}}
+          {{- with .Params.image }}<img src="{{ strings.TrimPrefix "/" . | relURL }}" alt="LoRaWAN" class="dx-home__img">{{ end }}
           <span class="dx-home__card-title">{{ .Title }}</span>
           <span class="dx-home__card-text">{{ .Description | plainify }}</span>
           <span class="dx-home__card-cta">Start learning {{ partial "site/icon.html" (dict "n" "arrow-right") }}</span>
