@@ -16,7 +16,10 @@
       {{- end }}
     </div>
     <div class="dx-footer__base">
-      <span>{{ $nav.lorawanNotice }}</span>
+      <div class="dx-footer__legal">
+        <span>{{ $nav.lorawanNotice }}</span>
+        <button type="button" class="dx-footer__consent" data-ttn-consent-settings>Cookie settings</button>
+      </div>
       <div class="dx-footer__social">
         {{- range $nav.social }}
         <a href="{{ partial "site/href.html" .href }}" rel="noopener" aria-label="{{ .label }}">{{ partial "site/icon.html" (dict "n" .icon) }}</a>

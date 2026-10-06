@@ -63,22 +63,6 @@
       .catch(function () {});
   }
 
-  // ---- Cookie notice (same rules + storage key as the TTUI banner it replaces) ----
-  var cookie = document.querySelector("[data-cookie]");
-  if (cookie) {
-    var KEY = "ttn-ca";
-    var accepted = false;
-    try { accepted = !!localStorage.getItem(KEY); } catch (e) { accepted = true; }
-    var tz = "";
-    try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ""; } catch (e) {}
-    if (!accepted && tz.indexOf("Europe") !== -1) cookie.hidden = false;
-    var btn = cookie.querySelector("[data-cookie-accept]");
-    if (btn) btn.addEventListener("click", function () {
-      try { localStorage.setItem(KEY, "true"); } catch (e) {}
-      cookie.hidden = true;
-    });
-  }
-
   // ---- "On this page": highlight the section being read ----
   var tocLinks = Array.prototype.slice.call(document.querySelectorAll("[data-toc] a"));
   if (tocLinks.length && "IntersectionObserver" in window) {
