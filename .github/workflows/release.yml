@@ -5,24 +5,27 @@ on:
     branches:
       - master
 
+permissions:
+  contents: write
+
 jobs:
   release:
     name: Release docs
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
     - name: Check out code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         fetch-depth: 0
     - name: Set up Go
-      uses: actions/setup-go@v3
+      uses: actions/setup-go@v5
       with:
         go-version: '~1.17'
     - name: Get Go module cache directory path
       id: go-module-cache-dir-path
       run: echo "dir=$(go env GOMODCACHE)" >> $GITHUB_OUTPUT
     - name: Initialize Go module cache
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       with:
         path: ${{ steps.go-module-cache-dir-path.outputs.dir }}
         key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
@@ -32,7 +35,7 @@ jobs:
       run: make go.deps
     - name: Initialize Hugo binary cache
       id: cache-hugo
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       with:
         path: hugo.linux
         key: ${{ runner.os }}-hugo-${{ hashFiles('**/go.sum') }}
@@ -47,8 +50,7 @@ jobs:
         HUGO: ./hugo.linux
         HUGO_BASE_URL: https://www.thethingsnetwork.org/docs
     - name: Deploy documentation to Github pages
-      uses: JamesIves/github-pages-deploy-action@releases/v3
+      uses: JamesIves/github-pages-deploy-action@v4
       with:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        BRANCH: gh-pages
-        FOLDER: public
+        branch: gh-pages
+        folder: public
