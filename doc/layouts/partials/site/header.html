@@ -41,7 +41,9 @@
           </label>
           <div class="dx-search__results" id="dx-search-results" role="listbox" hidden data-search-results></div>
         </div>
-        <div class="dx-header__auth" data-auth>
+        {{- /* data-ttn-auth="dx": www's /site-session.js (thethingsnetwork-v2 platform/app/site-session.js)
+             swaps Log in / Sign up for the signed-in member's account menu, in these dx- classes. */}}
+        <div class="dx-header__auth" data-auth data-ttn-auth="dx">
           <a href="{{ partial "site/href.html" $nav.auth.login }}" class="dx-header__login">Log in</a>
           <a href="{{ partial "site/href.html" $nav.auth.signup }}" class="dx-btn dx-btn--sm">Sign up</a>
         </div>

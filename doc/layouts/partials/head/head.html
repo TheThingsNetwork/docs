@@ -6,6 +6,9 @@
        loads only after the visitor accepts. Root-relative on purpose — it exists only behind the www
        front door, so the raw GitHub Pages origin and local Hugo previews stay untracked. */}}
   <script src="/consent.js" defer></script>
+  {{- /* Signed-in member in the global header (thethingsnetwork-v2 platform/app/site-session.js): asks
+       www's /api/session, so root-relative and only active behind the www front door. */}}
+  <script src="/site-session.js" defer></script>
 
   {{ hugo.Generator }}
 
