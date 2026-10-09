@@ -112,6 +112,13 @@ img { max-width: 100%; height: auto; }
 }
 .dx-drop__item { padding: 8px 12px; border-radius: var(--br-m); color: var(--grey-800); font-size: 14px; white-space: nowrap; }
 .dx-drop__item:hover { background: var(--grey-050); color: var(--grey-900); }
+/* Signed-in account menu, rendered by www's /site-session.js into [data-ttn-auth="dx"]. */
+summary.dx-header__user { list-style: none; cursor: pointer; }
+summary.dx-header__user::-webkit-details-marker { display: none; }
+.dx-drop--end > .dx-drop__menu { left: auto; right: 0; }
+.dx-drop--end .dx-drop__item { display: flex; align-items: center; gap: 8px; }
+.dx-drop--end form { margin: 0; }
+.dx-drop--end button.dx-drop__item { width: 100%; border: 0; background: none; font: inherit; font-size: 14px; text-align: left; cursor: pointer; }
 
 /* Search */
 .dx-search { position: relative; width: min(100%, 240px); }
