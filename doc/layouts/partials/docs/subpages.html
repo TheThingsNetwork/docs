@@ -1,0 +1,16 @@
+{{- /* Cards for a section's pages. Skipped when the page builds its own index (chapters/topics). */ -}}
+{{- if and .Pages (not (.HasShortcode "chapters")) (not (.HasShortcode "topics")) }}
+<ul class="dx-cards">
+  {{- range .Pages.ByWeight }}
+  <li>
+    <a class="dx-card" href="{{ .RelPermalink }}">
+      <span class="dx-card__body">
+        <span class="dx-card__title">{{ .LinkTitle }}</span>
+        {{- with .Description }}<span class="dx-card__desc">{{ . | plainify }}</span>{{ end }}
+      </span>
+      {{ partial "site/icon.html" (dict "n" "arrow-right" "class" "dx-card__arrow") }}
+    </a>
+  </li>
+  {{- end }}
+</ul>
+{{- end }}

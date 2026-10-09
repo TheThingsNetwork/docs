@@ -1,0 +1,11 @@
+{{- /* Pill button. ref= is a page (resolved with relref), href= a URL or #anchor.
+     style= primary (navy, default) | outline | brand. icon= a Tabler icon after the label;
+     icon-before= one before it. Usage: {{< button ref="what-is-lorawan" icon="arrow-right" >}}Start{{< /button >}} */ -}}
+{{- $href := .Get "href" -}}
+{{- with .Get "ref" }}{{ $href = relref $.Page . }}{{ end -}}
+{{- if not $href }}{{ errorf "%s: button needs ref= or href=" .Position }}{{ end -}}
+<a class="dx-btn dx-btn--{{ .Get "style" | default "primary" }}" href="{{ $href }}">
+  {{- with .Get "icon-before" }}{{ partial "site/icon.html" (dict "n" .) }}{{ end -}}
+  {{ .Inner | markdownify }}
+  {{- with .Get "icon" }}{{ partial "site/icon.html" (dict "n" .) }}{{ end -}}
+</a>

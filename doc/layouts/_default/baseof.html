@@ -1,50 +1,20 @@
 <!DOCTYPE html>
-
-<html lang="{{ .Site.LanguageCode | default "en" }}" class="has-ttn-navbar-top">
+<html lang="{{ .Site.LanguageCode | default "en" }}">
 
 {{ partial "head/head.html" . }}
 
 <body>
 
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PP5G5BT"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+<a class="dx-skip" href="#main">Skip to content</a>
 
-<ttn-header class="theme-ttn" root-url="https://www.thethingsnetwork.org"></ttn-header>
+{{ partial "site/header.html" . }}
 
 {{- block "main" . }}{{- end }}
 
-<div class="ttn-footer ttui-container"><ttn-footer class="theme-ttn"></ttn-footer></div>
+{{ partial "site/footer.html" . }}
 
-<script src="https://cdn.jsdelivr.net/npm/promise-polyfill@7/dist/polyfill.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
-
-{{- $script := resources.Get "js/vendor/basicLightbox.min.js" }}
-<script src="{{ $script.Permalink }}"></script>
-{{- $script := resources.Get "js/theme.js" | js.Build | resources.Minify | resources.Fingerprint }}
-<script src="{{ $script.Permalink }}" integrity="{{ $script.Data.Integrity }}" crossorigin="anonymous"></script>
-
-<ttui-cookie class="theme-ttn" id="cookie-banner"></ttui-cookie>
-
-<script>
-  var cookieBanner = document.getElementById("cookie-banner");
-  window.addEventListener("ttuicookieaccept", cookieAccept, { capture: true, once: true } );
-  var cookieAcceptKey = 'ttn-ca'
-  var timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-
-  if (readCookieAccept() || !timezone.includes("Europe") ) {
-      cookieBanner.setAttribute('accepted', true);
-  }
-
-  function readCookieAccept() {
-      return localStorage.getItem(cookieAcceptKey)
-  }
-
-  function cookieAccept() {
-      localStorage.setItem(cookieAcceptKey, true);
-  }
-</script>
+{{- $script := resources.Get "js/docs.js" | resources.Minify | resources.Fingerprint }}
+<script src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}" data-search-index="{{ "index.json" | relURL }}" defer></script>
 
 </body>
 

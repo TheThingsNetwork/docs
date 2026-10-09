@@ -1,0 +1,36 @@
+{{- /* Previous/next within the page's group: a course chapter steps through the course in chapter
+     order; any other page through its sidebar group (`section` front matter) by weight. */ -}}
+{{- $cur := . -}}
+{{- $first := .FirstSection -}}
+{{- $chapters := partial "docs/chapters.html" $first -}}
+{{- $list := slice -}}
+{{- $isChapter := false -}}
+{{- range $chapters }}{{ if eq .RelPermalink $cur.RelPermalink }}{{ $isChapter = true }}{{ end }}{{ end -}}
+{{- if $isChapter -}}
+  {{- $list = $chapters -}}
+{{- else if and .Params.section (eq .Parent $first) -}}
+  {{- $list = where $first.Pages.ByWeight "Params.section" .Params.section -}}
+{{- end -}}
+{{- $prev := false -}}{{- $next := false -}}
+{{- range $i, $p := $list -}}
+  {{- if eq $p.RelPermalink $cur.RelPermalink -}}
+    {{- if gt $i 0 }}{{ $prev = index $list (sub $i 1) }}{{ end -}}
+    {{- if lt (add $i 1) (len $list) }}{{ $next = index $list (add $i 1) }}{{ end -}}
+  {{- end -}}
+{{- end -}}
+{{- if or $prev $next }}
+<nav class="dx-pager" aria-label="{{ if $isChapter }}Chapters{{ else }}Pages{{ end }}">
+  {{- with $prev }}
+  <a class="dx-pager__link" href="{{ .RelPermalink }}" rel="prev">
+    <span class="dx-pager__dir">Previous{{ if $isChapter }} chapter{{ end }}</span>
+    <span class="dx-pager__title">{{ partial "site/icon.html" (dict "n" "arrow-left") }}{{ .LinkTitle }}</span>
+  </a>
+  {{- else }}<span></span>{{ end }}
+  {{- with $next }}
+  <a class="dx-pager__link dx-pager__link--next" href="{{ .RelPermalink }}" rel="next">
+    <span class="dx-pager__dir">Next{{ if $isChapter }} chapter{{ end }}</span>
+    <span class="dx-pager__title">{{ .LinkTitle }}{{ partial "site/icon.html" (dict "n" "arrow-right") }}</span>
+  </a>
+  {{- end }}
+</nav>
+{{- end }}

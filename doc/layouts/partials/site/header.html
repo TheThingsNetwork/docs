@@ -1,0 +1,51 @@
+{{- /* Global header. Links come from data/site_nav.json, exported from the platform's ONE nav source
+     (platform/app/lib/site-nav.ts) — never hardcode a nav link here. */ -}}
+{{- $nav := site.Data.site_nav -}}
+<header class="dx-header" data-header>
+  <div class="dx-header__bar">
+    <a href="{{ partial "site/href.html" "/" }}" class="dx-header__logo" aria-label="The Things Network home">
+      <img src="{{ "img/ttn-horizontal.svg" | relURL }}" alt="The Things Network" width="132" height="30">
+    </a>
+
+    <button type="button" class="dx-header__toggle" aria-expanded="false" aria-controls="dx-header-panel" data-header-toggle>
+      <span class="dx-header__toggle-open">{{ partial "site/icon.html" (dict "n" "menu-2") }}</span>
+      <span class="dx-header__toggle-close">{{ partial "site/icon.html" (dict "n" "x") }}</span>
+      <span class="dx-sr">Menu</span>
+    </button>
+
+    <div class="dx-header__panel" id="dx-header-panel">
+      <nav class="dx-header__nav" aria-label="Main">
+        {{- range $nav.header }}
+          {{- if .children }}
+          <details class="dx-drop">
+            <summary class="dx-header__link">{{ .label }} {{ partial "site/icon.html" (dict "n" "chevron-down" "class" "dx-drop__chev") }}</summary>
+            <div class="dx-drop__menu">
+              {{- range .children }}
+              <a class="dx-drop__item" href="{{ partial "site/href.html" .href }}"{{ if .external }} rel="noopener"{{ end }}>{{ .label }}</a>
+              {{- end }}
+            </div>
+          </details>
+          {{- else }}
+          <a class="dx-header__link" href="{{ partial "site/href.html" .href }}"{{ if eq .key "learn" }} aria-current="page"{{ end }}{{ if .external }} rel="noopener"{{ end }}>{{ .label }}</a>
+          {{- end }}
+        {{- end }}
+      </nav>
+
+      <div class="dx-header__tools">
+        <div class="dx-search" data-search>
+          <label class="dx-search__field">
+            {{ partial "site/icon.html" (dict "n" "search") }}
+            <span class="dx-sr">Search docs</span>
+            <input type="search" placeholder="Search docs" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="dx-search-results" aria-autocomplete="list" data-search-input>
+            <kbd>/</kbd>
+          </label>
+          <div class="dx-search__results" id="dx-search-results" role="listbox" hidden data-search-results></div>
+        </div>
+        <div class="dx-header__auth" data-auth>
+          <a href="{{ partial "site/href.html" $nav.auth.login }}" class="dx-header__login">Log in</a>
+          <a href="{{ partial "site/href.html" $nav.auth.signup }}" class="dx-btn dx-btn--sm">Sign up</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

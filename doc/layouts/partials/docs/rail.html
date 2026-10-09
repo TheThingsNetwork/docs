@@ -1,0 +1,26 @@
+{{- /* "On this page" + page tools. The TOC is read from the rendered HTML (h2/h3 with an id) rather
+     than .TableOfContents, so headings emitted by shortcodes are included too. */ -}}
+{{- $nav := site.Data.site_nav -}}
+{{- $heads := findRE `(?s)<h[23][^>]*\sid="[^"]+"[^>]*>.*?</h[23]>` .Content -}}
+{{- $min := 3 -}}
+{{- range $heads }}{{ if hasPrefix . "<h2" }}{{ $min = 2 }}{{ end }}{{ end -}}
+<aside class="dx-rail" aria-label="On this page">
+  {{- if ge (len $heads) 2 }}
+  <div class="dx-rail__label">On this page</div>
+  <nav class="dx-toc" data-toc>
+    {{- range $heads }}
+    {{- $level := int (substr . 2 1) }}
+    {{- $id := replaceRE `(?s)^<h[23][^>]*\sid="([^"]+)".*$` "$1" . }}
+    {{- $text := trim (replaceRE `(?s)<a class="dx-anchor".*?</a>` "" . | plainify | htmlUnescape) " \n\t\r" }}
+    <a href="#{{ $id }}" class="dx-toc__link{{ if gt $level $min }} dx-toc__link--sub{{ end }}">{{ $text }}</a>
+    {{- end }}
+  </nav>
+  <div class="dx-rail__rule"></div>
+  {{- end }}
+  {{- with .File }}
+  <a class="dx-rail__tool" href="{{ site.Params.github_repository_edit }}/{{ .Path }}" rel="noopener">{{ partial "site/icon.html" (dict "n" "edit") }}Edit this page</a>
+  {{- end }}
+  {{- range where $nav.header "key" "forum" }}
+  <a class="dx-rail__tool" href="{{ partial "site/href.html" .href }}">{{ partial "site/icon.html" (dict "n" "messages") }}Ask on the forum</a>
+  {{- end }}
+</aside>

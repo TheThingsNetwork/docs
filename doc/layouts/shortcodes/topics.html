@@ -1,0 +1,35 @@
+{{- /* Reference index of one sidebar group, organised by topic.
+     Topics come from the section's `topics` front matter ({title, icon, pages: [slugs]}); any page of
+     the group that no topic lists is shown under "More" so nothing silently drops off the index.
+     Usage: {{< topics section="Additional Information" >}} */ -}}
+{{- $section := .Page.FirstSection -}}
+{{- $group := .Get "section" -}}
+{{- $pages := where $section.Pages.ByWeight "Params.section" $group -}}
+{{- $listed := slice -}}
+<div class="dx-topics">
+  {{- range $section.Params.topics }}
+  <div class="dx-topic">
+    <div class="dx-topic__title">{{ partial "site/icon.html" (dict "n" (.icon | default "book")) }}{{ .title }}</div>
+    <div class="dx-topic__links">
+      {{- range .pages }}
+      {{- with site.GetPage (printf "/%s" (path.Join $section.File.Dir .)) }}
+      {{- $listed = $listed | append .RelPermalink }}
+      <a href="{{ .RelPermalink }}">{{ .LinkTitle }}{{ partial "site/icon.html" (dict "n" "chevron-right") }}</a>
+      {{- else }}{{ errorf "%s: topic page %q not found" $section.File.Path . }}{{ end }}
+      {{- end }}
+    </div>
+  </div>
+  {{- end }}
+  {{- $rest := slice }}
+  {{- range $pages }}{{ if not (in $listed .RelPermalink) }}{{ $rest = $rest | append . }}{{ end }}{{ end }}
+  {{- with $rest }}
+  <div class="dx-topic">
+    <div class="dx-topic__title">{{ partial "site/icon.html" (dict "n" "book") }}{{ if $section.Params.topics }}More{{ else }}{{ $group }}{{ end }}</div>
+    <div class="dx-topic__links">
+      {{- range . }}
+      <a href="{{ .RelPermalink }}">{{ .LinkTitle }}{{ partial "site/icon.html" (dict "n" "chevron-right") }}</a>
+      {{- end }}
+    </div>
+  </div>
+  {{- end }}
+</div>

@@ -5,19 +5,19 @@ on: pull_request
 jobs:
   build:
     name: Build docs
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
     - name: Check out code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
     - name: Set up Go
-      uses: actions/setup-go@v3
+      uses: actions/setup-go@v5
       with:
         go-version: '~1.17'
     - name: Get Go module cache directory path
       id: go-module-cache-dir-path
       run: echo "dir=$(go env GOMODCACHE)" >> $GITHUB_OUTPUT
     - name: Initialize Go module cache
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       with:
         path: ${{ steps.go-module-cache-dir-path.outputs.dir }}
         key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
@@ -25,25 +25,9 @@ jobs:
           ${{ runner.os }}-go-
     - name: Download Go dependencies
       run: make go.deps
-    - name: Set up Node
-      uses: actions/setup-node@v3
-      with:
-        node-version: '~16'
-    - name: Get Yarn cache directory path
-      id: yarn-cache-dir-path
-      run: echo "dir=$(npx yarn cache dir)" >> $GITHUB_OUTPUT
-    - name: Initialize Yarn module cache
-      uses: actions/cache@v3
-      with:
-        path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-        key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-yarn-
-    - name: Download Yarn dependencies
-      run: make js.deps
     - name: Initialize Hugo binary cache
       id: cache-hugo
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       with:
         path: hugo.linux
         key: ${{ runner.os }}-hugo-${{ hashFiles('**/go.sum') }}

@@ -1,0 +1,8 @@
+{{- /* Resolves a nav href from data/site_nav.json: root-relative ("/forum") → params.ttnOrigin (default
+     the www origin) + href, so links work from the GitHub Pages origin and in a local preview.
+     Usage: {{ partial "site/href.html" .href }} */ -}}
+{{- $href := . -}}
+{{- if hasPrefix . "/" -}}
+  {{- $href = printf "%s%s" (strings.TrimSuffix "/" (site.Params.ttnOrigin | default site.Data.site_nav.origin)) . -}}
+{{- end -}}
+{{- return $href -}}

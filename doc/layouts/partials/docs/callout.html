@@ -1,0 +1,8 @@
+{{- /* Shared body of the info / note / warning shortcodes. */ -}}
+<div class="dx-callout dx-callout--{{ .kind }}" role="note">
+  {{ partial "site/icon.html" (dict "n" .icon "class" "dx-callout__icon") }}
+  <div class="dx-callout__body">
+    <span class="dx-sr">{{ .label }}:</span>
+    {{ .body | markdownify }}
+  </div>
+</div>

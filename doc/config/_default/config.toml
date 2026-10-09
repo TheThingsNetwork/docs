@@ -13,8 +13,9 @@ enableGitInfo = true
 languageCode = "en-us"
 languageName = "English"
 
-pygmentsCodeFences = true
-pygmentsUseClasses = true
+[outputs]
+  # JSON = the client-side search index behind the header search box (layouts/index.json).
+  home = ["HTML", "JSON"]
 
 [params]
   title = "The Things Network"
@@ -25,6 +26,8 @@ pygmentsUseClasses = true
   tts_github_repository = "https://github.com/TheThingsNetwork/lorawan-stack"
 
 [markup]
+  [markup.highlight]
+    noClasses = false
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
@@ -72,6 +75,3 @@ pygmentsUseClasses = true
   [[module.mounts]]
     source = "static"
     target = "static"
-  [[module.mounts]]
-    source = "node_modules/bulma"
-    target = "assets/css/vendor/bulma"

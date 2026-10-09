@@ -36,7 +36,6 @@ clean.public:
 .PHONY: clean.deps
 clean.deps:
 	rm -rf $(FREQUENCY_PLAN_DEST)
-	rm -rf $(YARN_DEPS)
 
 .PHONY: build.internal
 build.internal:
@@ -57,15 +56,11 @@ new:
 	@:
 
 .PHONY: deps
-deps: hooks | go.deps js.deps
+deps: hooks | go.deps
 
 .PHONY: go.deps
 go.deps:
 	go mod download
-
-.PHONY: js.deps
-js.deps:
-	yarn --cwd $(DOC_ROOT)
 
 hugo.exe: go.mod go.sum
 	GOOS=windows go build -o $@ $(HUGO_BUILD_FLAGS) $(HUGO_MODULE)
