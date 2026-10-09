@@ -1,54 +1,26 @@
 <!DOCTYPE html>
-
-<html lang="en-us" class="has-ttn-navbar-top">
+<html lang="en-us">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-  
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-PP5G5BT');</script>
-  
+  <script src="/consent.js" defer></script>
 
   <meta name="generator" content="Hugo 0.88.1" />
 
   <title>API Reference | The Things Network</title>
+  <meta name="description" content="Control The Things Network from the command line. Options --allow-insecure Allow insecure fallback if TLS unavailable --auth-server string The address of the …">
   <link rel="canonical" href="https://www.thethingsnetwork.org/docs/network/cli/api/" />
-  
-
-  <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
-
-  <meta name="msapplication-TileColor" content="#FFFFFF">
-  <meta name="msapplication-TileImage" content="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png">
-
-  <meta name="application-name" content="The Things Network">
-  <meta name="msapplication-tooltip" content="Tooltip">
-  <meta name="msapplication-config" content="https://ttnweb.azureedge.net/static/common/favicon/ieconfig.54334a5ee30c.xml">
 
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-32.61b30f85680a.png" sizes="32x32">
-  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-57.83b86c64dc82.png" sizes="57x57">
-  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-76.7dcf8fa36dfc.png" sizes="76x76">
-  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-96.27ac17adaa8b.png" sizes="96x96">
-  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-120.e1526731335e.png" sizes="120x120">
-  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-128.fabea041224c.png" sizes="128x128">
-  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png" sizes="144x144">
-  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png" sizes="152x152">
-  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-180.fcd414307ca3.png" sizes="180x180">
-  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-195.c55ce09d66da.png" sizes="195x195">
-  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-228.bea53ec4b10b.png" sizes="228x228">
-  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/smalltile.fabea041224c.png" sizes="128x128">
-  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/mediumtile.3d42f7faac82.png" sizes="270x270">
-  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
-  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
-  <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.58fca61d6003439b384e4126a522c6391c0560a0cbd77a99c73d351bb2018920.css" integrity="sha256-WPymHWADQ5s4TkEmpSLGORwFYKDL13qZxz01G7IBiSA=" crossorigin="anonymous">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png" sizes="196x196">
+  <link rel="apple-touch-icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-180.fcd414307ca3.png">
+  <meta name="application-name" content="The Things Network">
+  <meta name="theme-color" content="#001859">
 
-  <link rel="stylesheet" href="https://ttui.thethingsindustries.com/release/1.7.4/main.css" />
+  <link rel="preload" href="/docs/fonts/inter/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/docs/fonts/inter/Inter-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/docs/css/docs.min.25a2f50fc4f7e29608cf91bca7b8144a8d454e724c3dc6bdf9d0d68476ff9e70.css" integrity="sha256-JaL1D8T34pYIz5G8p7gUSo1FTnJMPca9&#43;dDWhHb/nnA=">
 
   <meta property="og:title" content="API Reference" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
@@ -69,151 +41,121 @@
 
 <body>
 
+<a class="dx-skip" href="#main">Skip to content</a>
 
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PP5G5BT"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<header class="dx-header" data-header>
+  <div class="dx-header__bar">
+    <a href="https://www.thethingsnetwork.org/" class="dx-header__logo" aria-label="The Things Network home">
+      <img src="/docs/img/ttn-horizontal.svg" alt="The Things Network" width="132" height="30">
+    </a>
 
+    <button type="button" class="dx-header__toggle" aria-expanded="false" aria-controls="dx-header-panel" data-header-toggle>
+      <span class="dx-header__toggle-open"><svg class="dx-icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></span>
+      <span class="dx-header__toggle-close"><svg class="dx-icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 6L6 18M6 6l12 12"/></svg></span>
+      <span class="dx-sr">Menu</span>
+    </button>
 
-<ttn-header class="theme-ttn" root-url="https://www.thethingsnetwork.org"></ttn-header><section class="section">
-  <div class="container">
-    <nav class="breadcrumb has-dot-separator" aria-label="breadcrumbs">
-      <ul>
-        
-        
-          <li><a href="https://www.thethingsnetwork.org/docs/v2-docs/">Go Back - V2 Docs (Outdated)</a></li>
-        
-        
-            <li class="">
-              <a href="https://www.thethingsnetwork.org/docs/devices/">Devices (V2)</a>
-            </li>
-          
-        
-            <li class="">
-              <a href="https://www.thethingsnetwork.org/docs/gateways/">Gateways (V2)</a>
-            </li>
-          
-        
-            <li class="">
-              <a href="https://www.thethingsnetwork.org/docs/applications/">Applications (V2)</a>
-            </li>
-          
-        
-            <li class="is-active">
-              <a href="https://www.thethingsnetwork.org/docs/network/">Network (V2)</a>
-            </li>
-          
-        
-      
-      </ul>
-    </nav>
-    
-      <div class="notification is-warning is-light has-text-dark">
-        <h5 class="title is-family-sans-serif has-text-dark mb-1">Warning:</h5>
-        This section contains documentation written for The Things Network V2, which is no longer maintained. See <a href="https://thethingsindustries.com/docs">documentation for The Things Stack V3</a>.
+    <div class="dx-header__panel" id="dx-header-panel">
+      <nav class="dx-header__nav" aria-label="Main">
+          <a class="dx-header__link" href="https://www.thethingsnetwork.org/docs/" aria-current="page">Learn</a>
+          <details class="dx-drop">
+            <summary class="dx-header__link">Hardware <svg class="dx-icon dx-drop__chev" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m6 9l6 6l6-6"/></svg></summary>
+            <div class="dx-drop__menu">
+              <a class="dx-drop__item" href="https://www.thethingsnetwork.org/device-repository/">Device Repository</a>
+              <a class="dx-drop__item" href="https://www.thethingsshop.com/" rel="noopener">The Things Shop</a>
+            </div>
+          </details>
+          <a class="dx-header__link" href="https://www.thethingsnetwork.org/forum">Forum</a>
+          <a class="dx-header__link" href="https://www.thethingsnetwork.org/community">Community</a>
+          <a class="dx-header__link" href="https://www.thethingsconference.com/" rel="noopener">Conference</a>
+          <a class="dx-header__link" href="https://www.thethingsindustries.com/" rel="noopener">Enterprise</a>
+      </nav>
+
+      <div class="dx-header__tools">
+        <div class="dx-search" data-search>
+          <label class="dx-search__field">
+            <svg class="dx-icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10a7 7 0 1 0 14 0a7 7 0 1 0-14 0m18 11l-6-6"/></svg>
+            <span class="dx-sr">Search docs</span>
+            <input type="search" placeholder="Search docs" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="dx-search-results" aria-autocomplete="list" data-search-input>
+            <kbd>/</kbd>
+          </label>
+          <div class="dx-search__results" id="dx-search-results" role="listbox" hidden data-search-results></div>
+        </div>
+        <div class="dx-header__auth" data-auth>
+          <a href="https://www.thethingsnetwork.org/get-started?login" class="dx-header__login">Log in</a>
+          <a href="https://www.thethingsnetwork.org/get-started" class="dx-btn dx-btn--sm">Sign up</a>
+        </div>
       </div>
-    
+    </div>
   </div>
-</section>
-<div class="container" role="document">
-  <div class="columns my-0 is-desktop">
-    <div class="column is-3-desktop sidebar-left">
-      
+</header>
 
+<div class="dx-docs">
+  <aside class="dx-side" aria-label="Network navigation">
+  <details class="dx-side__toggle" open data-side>
+    <summary class="dx-side__summary"><svg class="dx-icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 6h11M9 12h11M9 18h11M5 6v.01M5 12v.01M5 18v.01"/></svg> Network menu</summary>
 
-<nav class="side-navigation" aria-label="Main navigation">
-
-<h2 class="title is-size-5">Network</h2>
-
-<div class="menu">
-  <ul class="menu-list">
-  <a href="https://www.thethingsnetwork.org/docs/network/" class="">Overview</a>
-  <li>
-      <a href="https://www.thethingsnetwork.org/docs/network/troubleshooting/" class="">Troubleshooting</a>
-    </li>
-  <li>
-      <a href="https://www.thethingsnetwork.org/docs/network/architecture/" class="">Network Architecture</a>
-    </li>
-  <li>
-      <a href="https://www.thethingsnetwork.org/docs/network/security/" class="">Network Security</a>
-    </li>
+    <nav class="dx-side__nav">
+      <div class="dx-side__group">
+        <a href="/docs/network/" class="dx-side__link dx-side__link--overview">
+          <svg class="dx-icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1zm10 0a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1zM4 15a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1zm10 0a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1z"/></svg>Overview
+        </a>
+          
+<a href="/docs/network/troubleshooting/" class="dx-side__link">Troubleshooting</a>
+          
+<a href="/docs/network/architecture/" class="dx-side__link">Network Architecture</a>
+          
+<a href="/docs/network/security/" class="dx-side__link">Network Security</a>
+      </div>
+      <div class="dx-side__group">
+        <div class="dx-side__label">Manage</div>
+          
+<a href="/docs/network/console/" class="dx-side__link">The Things Network Console</a>
+          
+<a href="/docs/network/cli/" class="dx-side__link">The Things Network CLI</a>
+<div class="dx-side__tree">
   
-    <p class="menu-label">
-      Manage
-    </p>
-    
-      
-<li>
-  <a href="https://www.thethingsnetwork.org/docs/network/console/" class="">The Things Network Console</a>
-</li>
-
-      
-<li>
-  <a href="https://www.thethingsnetwork.org/docs/network/cli/" class="">The Things Network CLI</a>
+<a href="/docs/network/cli/api/" class="dx-side__link" aria-current="page">API Reference</a>
   
-
-
-<ul class="menu-list">
-
-  <li>
-    <a href="https://www.thethingsnetwork.org/docs/network/cli/api/" class="is-active">API Reference</a>
-    
-    
-
-
-
-    
-  </li>
-
-  <li>
-    <a href="https://www.thethingsnetwork.org/docs/network/cli/quick-start/" class="">Quick Start</a>
-    
-  </li>
-
-  <li>
-    <a href="https://www.thethingsnetwork.org/docs/network/cli/configuration/" class="">Configuration</a>
-    
-  </li>
-
-</ul>
-
-
+<a href="/docs/network/cli/quick-start/" class="dx-side__link">Quick Start</a>
   
-</li>
-
-  
-    <p class="menu-label">
-      Components
-    </p>
-    
-      
-<li>
-  <a href="https://www.thethingsnetwork.org/docs/network/account/" class="">Account Server</a>
-</li>
-
-      
-<li>
-  <a href="https://www.thethingsnetwork.org/docs/network/discovery/" class="">Discovery Server</a>
-</li>
-
-  
-  </ul>
+<a href="/docs/network/cli/configuration/" class="dx-side__link">Configuration</a>
 </div>
+      </div>
+      <div class="dx-side__group">
+        <div class="dx-side__label">Components</div>
+          
+<a href="/docs/network/account/" class="dx-side__link">Account Server</a>
+          
+<a href="/docs/network/discovery/" class="dx-side__link">Discovery Server</a>
+      </div>
+    </nav>
+  </details>
+</aside>
 
-
-
-
-
+  <main id="main" class="dx-main">
+    <article class="dx-article">
+      <header class="dx-article__head">
+        <nav class="dx-crumbs" aria-label="Breadcrumb">
+  <a href="/docs/">Learn</a>
+  <svg class="dx-icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 6l6 6l-6 6"/></svg><a href="/docs/network/">Network</a>
+  <svg class="dx-icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 6l6 6l-6 6"/></svg><a href="/docs/network/cli/">The Things Network CLI</a>
+  <svg class="dx-icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 6l6 6l-6 6"/></svg><span aria-current="page">API Reference</span>
 </nav>
 
-    </div>
-    <div class="column is-9-desktop sidebar-middle">
-      <div class="docs-content">
-        <h1 class="title is-size-2">
-          API Reference
-        </h1>
-        <div class="content">
-          
-<p>Control The Things Network from the command line.</p>
+        <h1 class="dx-title">API Reference</h1>
+      </header>
+      
+<div class="dx-callout dx-callout--warning" role="note">
+  <svg class="dx-icon dx-callout__icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v4m-1.637-9.409L2.257 17.125a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636-2.87L13.637 3.59a1.914 1.914 0 0 0-3.274 0M12 16h.01"/></svg>
+  <div class="dx-callout__body">
+    <p><strong>Outdated:</strong> this section documents The Things Network V2, which is no longer maintained.
+    See the <a href="https://www.thethingsindustries.com/docs">documentation for The Things Stack V3</a>, or browse the <a href="/docs/v2-docs/">V2 docs index</a>.</p>
+  </div>
+</div>
+
+      <div class="dx-prose">
+        <p>Control The Things Network from the command line.</p>
 <p><strong>Options</strong></p>
 <pre tabindex="0"><code>      --allow-insecure             Allow insecure fallback if TLS unavailable
       --auth-server string         The address of the OAuth 2.0 server (default &quot;https://account.thethingsnetwork.org&quot;)
@@ -225,9 +167,9 @@
       --mqtt-password string       The password for the MQTT broker
       --mqtt-username string       The username for the MQTT broker
       --router-id string           The ID of the TTN Router as announced in the Discovery server (default &quot;ttn-router-eu&quot;)
-</code></pre><h2 id="ttnctl-applications">ttnctl applications&nbsp;<a class="header-hash" href="#ttnctl-applications">#</a> </h2>
+</code></pre><h2 id="ttnctl-applications">ttnctl applications <a class="dx-anchor" href="#ttnctl-applications" aria-label="Link to this section">#</a></h2>
 <p>ttnctl applications can be used to manage applications.</p>
-<h3 id="ttnctl-applications-add">ttnctl applications add&nbsp;<a class="header-hash" href="#ttnctl-applications-add">#</a> </h3>
+<h3 id="ttnctl-applications-add">ttnctl applications add <a class="dx-anchor" href="#ttnctl-applications-add" aria-label="Link to this section">#</a></h3>
 <p>ttnctl applications add can be used to add a new application to your account.</p>
 <p><strong>Usage:</strong> <code>ttnctl applications add [AppID] [Description] [flags]</code></p>
 <p><strong>Options</strong></p>
@@ -238,19 +180,19 @@
 <pre tabindex="0"><code>$ ttnctl applications add test &quot;Test application&quot;
   INFO Added Application
   INFO Selected Current Application
-</code></pre><h3 id="ttnctl-applications-collaborators">ttnctl applications collaborators&nbsp;<a class="header-hash" href="#ttnctl-applications-collaborators">#</a> </h3>
+</code></pre><h3 id="ttnctl-applications-collaborators">ttnctl applications collaborators <a class="dx-anchor" href="#ttnctl-applications-collaborators" aria-label="Link to this section">#</a></h3>
 <p>applications collaborators can be used to manage the collaborators of an application.</p>
-<h4 id="ttnctl-applications-collaborators-add">ttnctl applications collaborators add&nbsp;<a class="header-hash" href="#ttnctl-applications-collaborators-add">#</a> </h4>
+<h4 id="ttnctl-applications-collaborators-add">ttnctl applications collaborators add <a class="dx-anchor" href="#ttnctl-applications-collaborators-add" aria-label="Link to this section">#</a></h4>
 <p>applications collaborators add can be used to add a collaborator to an application.
 Available rights are: settings, collaborators, delete, devices</p>
 <p><strong>Usage:</strong> <code>ttnctl applications collaborators add [AppID] [Username] [Rights...]</code></p>
-<h4 id="ttnctl-applications-collaborators-delete">ttnctl applications collaborators delete&nbsp;<a class="header-hash" href="#ttnctl-applications-collaborators-delete">#</a> </h4>
+<h4 id="ttnctl-applications-collaborators-delete">ttnctl applications collaborators delete <a class="dx-anchor" href="#ttnctl-applications-collaborators-delete" aria-label="Link to this section">#</a></h4>
 <p>applications collaborators delete can be used to delete a collaborator from an application.</p>
 <p><strong>Usage:</strong> <code>ttnctl applications collaborators delete [AppID] [Username]</code></p>
-<h3 id="ttnctl-applications-delete">ttnctl applications delete&nbsp;<a class="header-hash" href="#ttnctl-applications-delete">#</a> </h3>
+<h3 id="ttnctl-applications-delete">ttnctl applications delete <a class="dx-anchor" href="#ttnctl-applications-delete" aria-label="Link to this section">#</a></h3>
 <p>ttnctl devices delete can be used to delete an application.</p>
 <p><strong>Usage:</strong> <code>ttnctl applications delete [AppID]</code></p>
-<h3 id="ttnctl-applications-info">ttnctl applications info&nbsp;<a class="header-hash" href="#ttnctl-applications-info">#</a> </h3>
+<h3 id="ttnctl-applications-info">ttnctl applications info <a class="dx-anchor" href="#ttnctl-applications-info" aria-label="Link to this section">#</a></h3>
 <p>ttnctl applications info can be used to info applications.</p>
 <p><strong>Usage:</strong> <code>ttnctl applications info [AppID]</code></p>
 <p><strong>Example</strong></p>
@@ -270,7 +212,7 @@ Access Keys:
 Collaborators:
       - Name: yourname
         Rights: settings, delete, collaborators
-</code></pre><h3 id="ttnctl-applications-list">ttnctl applications list&nbsp;<a class="header-hash" href="#ttnctl-applications-list">#</a> </h3>
+</code></pre><h3 id="ttnctl-applications-list">ttnctl applications list <a class="dx-anchor" href="#ttnctl-applications-list" aria-label="Link to this section">#</a></h3>
 <p>ttnctl applications list can be used to list applications.</p>
 <p><strong>Usage:</strong> <code>ttnctl applications list</code></p>
 <p><strong>Example</strong></p>
@@ -279,7 +221,7 @@ Collaborators:
 
   ID  	Description     	EUIs	Access Keys	Collaborators
 1	test	Test application	1   	1          	1
-</code></pre><h3 id="ttnctl-applications-pf">ttnctl applications pf&nbsp;<a class="header-hash" href="#ttnctl-applications-pf">#</a> </h3>
+</code></pre><h3 id="ttnctl-applications-pf">ttnctl applications pf <a class="dx-anchor" href="#ttnctl-applications-pf" aria-label="Link to this section">#</a></h3>
 <p>ttnctl applications pf shows the payload format to handle
 binary payload.</p>
 <p><strong>Usage:</strong> <code>ttnctl applications pf</code></p>
@@ -299,7 +241,7 @@ function Decoder(bytes, port) {
   INFO No custom converter function
   INFO No custom validator function
   INFO No custom encoder function
-</code></pre><h4 id="ttnctl-applications-pf-set">ttnctl applications pf set&nbsp;<a class="header-hash" href="#ttnctl-applications-pf-set">#</a> </h4>
+</code></pre><h4 id="ttnctl-applications-pf-set">ttnctl applications pf set <a class="dx-anchor" href="#ttnctl-applications-pf-set" aria-label="Link to this section">#</a></h4>
 <p>ttnctl pf set can be used to get or set the payload format and functions of an application.
 When using payload functions, you can load a file or provide them through stdin.</p>
 <p><strong>Usage:</strong> <code>ttnctl applications pf set [decoder/converter/validator/encoder/cayennelpp] [file.js] [flags]</code></p>
@@ -340,7 +282,7 @@ Port: 1
   INFO Function tested successfully
 
   INFO Updated application                      AppID=test
-</code></pre><h3 id="ttnctl-applications-register">ttnctl applications register&nbsp;<a class="header-hash" href="#ttnctl-applications-register">#</a> </h3>
+</code></pre><h3 id="ttnctl-applications-register">ttnctl applications register <a class="dx-anchor" href="#ttnctl-applications-register" aria-label="Link to this section">#</a></h3>
 <p>ttnctl applications register can be used to register this application with the handler.</p>
 <p><strong>Usage:</strong> <code>ttnctl applications register</code></p>
 <p><strong>Example</strong></p>
@@ -348,7 +290,7 @@ Port: 1
   INFO Discovering Handler...
   INFO Connecting with Handler...
   INFO Registered application                   AppID=test
-</code></pre><h3 id="ttnctl-applications-select">ttnctl applications select&nbsp;<a class="header-hash" href="#ttnctl-applications-select">#</a> </h3>
+</code></pre><h3 id="ttnctl-applications-select">ttnctl applications select <a class="dx-anchor" href="#ttnctl-applications-select" aria-label="Link to this section">#</a></h3>
 <p>ttnctl applications select can be used to select the application to use in next commands.</p>
 <p><strong>Usage:</strong> <code>ttnctl applications select [AppID [AppEUI]]</code></p>
 <p><strong>Example</strong></p>
@@ -356,7 +298,7 @@ Port: 1
   INFO Found one application &quot;test&quot;, selecting that one.
   INFO Found one EUI &quot;0000000000000000&quot;, selecting that one.
   INFO Updated configuration
-</code></pre><h3 id="ttnctl-applications-unregister">ttnctl applications unregister&nbsp;<a class="header-hash" href="#ttnctl-applications-unregister">#</a> </h3>
+</code></pre><h3 id="ttnctl-applications-unregister">ttnctl applications unregister <a class="dx-anchor" href="#ttnctl-applications-unregister" aria-label="Link to this section">#</a></h3>
 <p>ttnctl unregister can be used to unregister this application from the handler.</p>
 <p><strong>Usage:</strong> <code>ttnctl applications unregister</code></p>
 <p><strong>Example</strong></p>
@@ -366,15 +308,15 @@ Are you sure you want to unregister application test?
   INFO Discovering Handler...
   INFO Connecting with Handler...
   INFO Unregistered application                 AppID=test
-</code></pre><h2 id="ttnctl-config">ttnctl config&nbsp;<a class="header-hash" href="#ttnctl-config">#</a> </h2>
+</code></pre><h2 id="ttnctl-config">ttnctl config <a class="dx-anchor" href="#ttnctl-config" aria-label="Link to this section">#</a></h2>
 <p>ttnctl config prints the configuration that is used</p>
 <p><strong>Usage:</strong> <code>ttnctl config</code></p>
-<h2 id="ttnctl-devices">ttnctl devices&nbsp;<a class="header-hash" href="#ttnctl-devices">#</a> </h2>
+<h2 id="ttnctl-devices">ttnctl devices <a class="dx-anchor" href="#ttnctl-devices" aria-label="Link to this section">#</a></h2>
 <p>ttnctl devices can be used to manage devices.</p>
 <p><strong>Options</strong></p>
 <pre tabindex="0"><code>      --app-eui string   The app EUI to use
       --app-id string    The app ID to use
-</code></pre><h3 id="ttnctl-devices-delete">ttnctl devices delete&nbsp;<a class="header-hash" href="#ttnctl-devices-delete">#</a> </h3>
+</code></pre><h3 id="ttnctl-devices-delete">ttnctl devices delete <a class="dx-anchor" href="#ttnctl-devices-delete" aria-label="Link to this section">#</a></h3>
 <p>ttnctl devices delete can be used to delete a device.</p>
 <p><strong>Usage:</strong> <code>ttnctl devices delete [Device ID]</code></p>
 <p><strong>Example</strong></p>
@@ -385,7 +327,7 @@ Are you sure you want to delete device test from application test?
   INFO Discovering Handler...
   INFO Connecting with Handler...
   INFO Deleted device                           AppID=test DevID=test
-</code></pre><h3 id="ttnctl-devices-info">ttnctl devices info&nbsp;<a class="header-hash" href="#ttnctl-devices-info">#</a> </h3>
+</code></pre><h3 id="ttnctl-devices-info">ttnctl devices info <a class="dx-anchor" href="#ttnctl-devices-info" aria-label="Link to this section">#</a></h3>
 <p>ttnctl devices info can be used to get information about a device.</p>
 <p><strong>Usage:</strong> <code>ttnctl devices info [Device ID] [flags]</code></p>
 <p><strong>Options</strong></p>
@@ -412,7 +354,7 @@ Are you sure you want to delete device test from application test?
     FCntUp: 0
   FCntDown: 0
     Options:
-</code></pre><h3 id="ttnctl-devices-list">ttnctl devices list&nbsp;<a class="header-hash" href="#ttnctl-devices-list">#</a> </h3>
+</code></pre><h3 id="ttnctl-devices-list">ttnctl devices list <a class="dx-anchor" href="#ttnctl-devices-list" aria-label="Link to this section">#</a></h3>
 <p>ttnctl devices list can be used to list all devices for the current application.</p>
 <p><strong>Usage:</strong> <code>ttnctl devices list</code></p>
 <p><strong>Example</strong></p>
@@ -425,7 +367,7 @@ DevID	AppEUI          	DevEUI          	DevAddr
 test 	70B3D57EF0000024	0001D544B2936FCE	26001ADA
 
   INFO Listed 1 devices                         AppID=test
-</code></pre><h3 id="ttnctl-devices-personalize">ttnctl devices personalize&nbsp;<a class="header-hash" href="#ttnctl-devices-personalize">#</a> </h3>
+</code></pre><h3 id="ttnctl-devices-personalize">ttnctl devices personalize <a class="dx-anchor" href="#ttnctl-devices-personalize" aria-label="Link to this section">#</a></h3>
 <p>ttnctl devices personalize can be used to personalize a device (ABP).</p>
 <p><strong>Usage:</strong> <code>ttnctl devices personalize [Device ID] [NwkSKey] [AppSKey]</code></p>
 <p><strong>Example</strong></p>
@@ -437,7 +379,7 @@ test 	70B3D57EF0000024	0001D544B2936FCE	26001ADA
   INFO Connecting with Handler...               Handler=eu.thethings.network:1904
   INFO Requesting DevAddr for device...
   INFO Personalized device                      AppID=test AppSKey=D8DD37B4B709BA76C6FEC62CAD0CCE51 DevAddr=26001ADA DevID=test NwkSKey=3382A3066850293421ED8D392B9BF4DF
-</code></pre><h3 id="ttnctl-devices-register">ttnctl devices register&nbsp;<a class="header-hash" href="#ttnctl-devices-register">#</a> </h3>
+</code></pre><h3 id="ttnctl-devices-register">ttnctl devices register <a class="dx-anchor" href="#ttnctl-devices-register" aria-label="Link to this section">#</a></h3>
 <p>ttnctl devices register can be used to register a new device.</p>
 <p><strong>Usage:</strong> <code>ttnctl devices register [Device ID] [DevEUI] [AppKey] [Lat,Long]</code></p>
 <p><strong>Example</strong></p>
@@ -448,10 +390,10 @@ test 	70B3D57EF0000024	0001D544B2936FCE	26001ADA
   INFO Discovering Handler...
   INFO Connecting with Handler...
   INFO Registered device                        AppEUI=70B3D57EF0000024 AppID=test AppKey=EBD2E2810A4307263FE5EF78E2EF589D DevEUI=0001D544B2936FCE DevID=test
-</code></pre><h4 id="ttnctl-devices-register-on-join">ttnctl devices register on-join&nbsp;<a class="header-hash" href="#ttnctl-devices-register-on-join">#</a> </h4>
+</code></pre><h4 id="ttnctl-devices-register-on-join">ttnctl devices register on-join <a class="dx-anchor" href="#ttnctl-devices-register-on-join" aria-label="Link to this section">#</a></h4>
 <p>ttnctl devices register on-join can be used to register a device template for on-join registrations.</p>
 <p><strong>Usage:</strong> <code>ttnctl devices register on-join [Device ID Prefix] [AppKey]</code></p>
-<h3 id="ttnctl-devices-set">ttnctl devices set&nbsp;<a class="header-hash" href="#ttnctl-devices-set">#</a> </h3>
+<h3 id="ttnctl-devices-set">ttnctl devices set <a class="dx-anchor" href="#ttnctl-devices-set" aria-label="Link to this section">#</a></h3>
 <p>ttnctl devices set can be used to set properties of a device.</p>
 <p><strong>Usage:</strong> <code>ttnctl devices set [Device ID] [flags]</code></p>
 <p><strong>Options</strong></p>
@@ -479,12 +421,12 @@ test 	70B3D57EF0000024	0001D544B2936FCE	26001ADA
   INFO Discovering Handler...
   INFO Connecting with Handler...
   INFO Updated device                           AppID=test DevID=test
-</code></pre><h3 id="ttnctl-devices-simulate">ttnctl devices simulate&nbsp;<a class="header-hash" href="#ttnctl-devices-simulate">#</a> </h3>
+</code></pre><h3 id="ttnctl-devices-simulate">ttnctl devices simulate <a class="dx-anchor" href="#ttnctl-devices-simulate" aria-label="Link to this section">#</a></h3>
 <p>ttnctl devices simulate can be used to simulate an uplink message for a device.</p>
 <p><strong>Usage:</strong> <code>ttnctl devices simulate [Device ID] [Payload] [flags]</code></p>
 <p><strong>Options</strong></p>
 <pre tabindex="0"><code>      --port uint32   Port number (default 1)
-</code></pre><h2 id="ttnctl-downlink">ttnctl downlink&nbsp;<a class="header-hash" href="#ttnctl-downlink">#</a> </h2>
+</code></pre><h2 id="ttnctl-downlink">ttnctl downlink <a class="dx-anchor" href="#ttnctl-downlink" aria-label="Link to this section">#</a></h2>
 <p>ttnctl downlink can be used to send a downlink message to a device.</p>
 <p><strong>Usage:</strong> <code>ttnctl downlink [DevID] [Payload] [flags]</code></p>
 <p><strong>Options</strong></p>
@@ -502,24 +444,24 @@ $ ttnctl downlink test --json '{&quot;led&quot;:&quot;on&quot;}'
   INFO Connecting to MQTT...
   INFO Connected to MQTT
   INFO Enqueued downlink                        AppID=test DevID=test
-</code></pre><h2 id="ttnctl-gateways">ttnctl gateways&nbsp;<a class="header-hash" href="#ttnctl-gateways">#</a> </h2>
+</code></pre><h2 id="ttnctl-gateways">ttnctl gateways <a class="dx-anchor" href="#ttnctl-gateways" aria-label="Link to this section">#</a></h2>
 <p>ttnctl gateways can be used to manage gateways.</p>
-<h3 id="ttnctl-gateways-collaborators">ttnctl gateways collaborators&nbsp;<a class="header-hash" href="#ttnctl-gateways-collaborators">#</a> </h3>
+<h3 id="ttnctl-gateways-collaborators">ttnctl gateways collaborators <a class="dx-anchor" href="#ttnctl-gateways-collaborators" aria-label="Link to this section">#</a></h3>
 <p>gateways collaborators can be used to manage the collaborators of a gateway.</p>
-<h4 id="ttnctl-gateways-collaborators-add">ttnctl gateways collaborators add&nbsp;<a class="header-hash" href="#ttnctl-gateways-collaborators-add">#</a> </h4>
+<h4 id="ttnctl-gateways-collaborators-add">ttnctl gateways collaborators add <a class="dx-anchor" href="#ttnctl-gateways-collaborators-add" aria-label="Link to this section">#</a></h4>
 <p>gateways collaborators add can be used to add a collaborator to a gateway.
 Available rights are: gateway:settings, gateway:collaborators, gateway:delete, gateway:location, gateway:status, gateway:owner, gateway:messages</p>
 <p><strong>Usage:</strong> <code>ttnctl gateways collaborators add [AppID] [Username] [Rights...]</code></p>
-<h4 id="ttnctl-gateways-collaborators-delete">ttnctl gateways collaborators delete&nbsp;<a class="header-hash" href="#ttnctl-gateways-collaborators-delete">#</a> </h4>
+<h4 id="ttnctl-gateways-collaborators-delete">ttnctl gateways collaborators delete <a class="dx-anchor" href="#ttnctl-gateways-collaborators-delete" aria-label="Link to this section">#</a></h4>
 <p>gateways collaborators delete can be used to delete a collaborator from a gateway.</p>
 <p><strong>Usage:</strong> <code>ttnctl gateways collaborators delete [AppID] [Username]</code></p>
-<h3 id="ttnctl-gateways-delete">ttnctl gateways delete&nbsp;<a class="header-hash" href="#ttnctl-gateways-delete">#</a> </h3>
+<h3 id="ttnctl-gateways-delete">ttnctl gateways delete <a class="dx-anchor" href="#ttnctl-gateways-delete" aria-label="Link to this section">#</a></h3>
 <p>ttnctl gateways delete can be used to delete a gateway</p>
 <p><strong>Usage:</strong> <code>ttnctl gateways delete [GatewayID]</code></p>
 <p><strong>Example</strong></p>
 <pre tabindex="0"><code>$ ttnctl gateways delete test
   INFO Deleted gateway                          Gateway ID=test
-</code></pre><h3 id="ttnctl-gateways-edit">ttnctl gateways edit&nbsp;<a class="header-hash" href="#ttnctl-gateways-edit">#</a> </h3>
+</code></pre><h3 id="ttnctl-gateways-edit">ttnctl gateways edit <a class="dx-anchor" href="#ttnctl-gateways-edit" aria-label="Link to this section">#</a></h3>
 <p>ttnctl gateways edit can be used to edit settings of a gateway</p>
 <p><strong>Usage:</strong> <code>ttnctl gateways edit [GatewayID] [flags]</code></p>
 <p><strong>Options</strong></p>
@@ -541,31 +483,31 @@ Available rights are: gateway:settings, gateway:collaborators, gateway:delete, g
 </code></pre><p><strong>Example</strong></p>
 <pre tabindex="0"><code>$ ttnctl gateways edit test --location 52.37403,4.88968 --frequency-plan EU
   INFO Edited gateway                          Gateway ID=test
-</code></pre><h3 id="ttnctl-gateways-info">ttnctl gateways info&nbsp;<a class="header-hash" href="#ttnctl-gateways-info">#</a> </h3>
+</code></pre><h3 id="ttnctl-gateways-info">ttnctl gateways info <a class="dx-anchor" href="#ttnctl-gateways-info" aria-label="Link to this section">#</a></h3>
 <p>ttnctl gateways info can be used to get information about a gateway</p>
 <p><strong>Usage:</strong> <code>ttnctl gateways info [GatewayID]</code></p>
-<h3 id="ttnctl-gateways-list">ttnctl gateways list&nbsp;<a class="header-hash" href="#ttnctl-gateways-list">#</a> </h3>
+<h3 id="ttnctl-gateways-list">ttnctl gateways list <a class="dx-anchor" href="#ttnctl-gateways-list" aria-label="Link to this section">#</a></h3>
 <p>ttnctl gateways list can be used to list the gateways you have access to</p>
 <p><strong>Usage:</strong> <code>ttnctl gateways list</code></p>
 <p><strong>Example</strong></p>
 <pre tabindex="0"><code>$ ttnctl gateways list
   ID  	Activated	Frequency Plan	Coordinates
 1	test	true		US				(52.3740, 4.8896)
-</code></pre><h3 id="ttnctl-gateways-register">ttnctl gateways register&nbsp;<a class="header-hash" href="#ttnctl-gateways-register">#</a> </h3>
+</code></pre><h3 id="ttnctl-gateways-register">ttnctl gateways register <a class="dx-anchor" href="#ttnctl-gateways-register" aria-label="Link to this section">#</a></h3>
 <p>ttnctl gateways register can be used to register a gateway</p>
 <p><strong>Usage:</strong> <code>ttnctl gateways register [GatewayID] [FrequencyPlan] [Location]</code></p>
 <p><strong>Example</strong></p>
 <pre tabindex="0"><code>$ ttnctl gateways register test US 52.37403,4.88968
   INFO Registered gateway                          Gateway ID=test
-</code></pre><h2 id="ttnctl-selfupdate">ttnctl selfupdate&nbsp;<a class="header-hash" href="#ttnctl-selfupdate">#</a> </h2>
+</code></pre><h2 id="ttnctl-selfupdate">ttnctl selfupdate <a class="dx-anchor" href="#ttnctl-selfupdate" aria-label="Link to this section">#</a></h2>
 <p>ttnctl selfupdate updates the current ttnctl to the latest version</p>
 <p><strong>Usage:</strong> <code>ttnctl selfupdate</code></p>
-<h2 id="ttnctl-subscribe">ttnctl subscribe&nbsp;<a class="header-hash" href="#ttnctl-subscribe">#</a> </h2>
+<h2 id="ttnctl-subscribe">ttnctl subscribe <a class="dx-anchor" href="#ttnctl-subscribe" aria-label="Link to this section">#</a></h2>
 <p>ttnctl subscribe can be used to subscribe to events for this application.</p>
 <p><strong>Usage:</strong> <code>ttnctl subscribe [flags]</code></p>
 <p><strong>Options</strong></p>
 <pre tabindex="0"><code>      --access-key string   The access key to use
-</code></pre><h2 id="ttnctl-user">ttnctl user&nbsp;<a class="header-hash" href="#ttnctl-user">#</a> </h2>
+</code></pre><h2 id="ttnctl-user">ttnctl user <a class="dx-anchor" href="#ttnctl-user" aria-label="Link to this section">#</a></h2>
 <p>ttnctl user shows the current logged on user&rsquo;s profile</p>
 <p><strong>Usage:</strong> <code>ttnctl user</code></p>
 <p><strong>Example</strong></p>
@@ -577,7 +519,7 @@ Available rights are: gateway:settings, gateway:collaborators, gateway:delete, g
               Email: your@email.org
 
   INFO Login credentials valid until Sep 20 09:04:12
-</code></pre><h3 id="ttnctl-user-login">ttnctl user login&nbsp;<a class="header-hash" href="#ttnctl-user-login">#</a> </h3>
+</code></pre><h3 id="ttnctl-user-login">ttnctl user login <a class="dx-anchor" href="#ttnctl-user-login" aria-label="Link to this section">#</a></h3>
 <p>ttnctl user login allows you to log in to your TTN account.</p>
 <p><strong>Usage:</strong> <code>ttnctl user login [access code]</code></p>
 <p><strong>Example</strong></p>
@@ -586,10 +528,10 @@ https://account.thethingsnetwork.org and clicking &quot;ttnctl access code&quot;
 
 $ ttnctl user login [paste the access code you requested above]
   INFO Successfully logged in as yourname (your@email.org)
-</code></pre><h3 id="ttnctl-user-logout">ttnctl user logout&nbsp;<a class="header-hash" href="#ttnctl-user-logout">#</a> </h3>
+</code></pre><h3 id="ttnctl-user-logout">ttnctl user logout <a class="dx-anchor" href="#ttnctl-user-logout" aria-label="Link to this section">#</a></h3>
 <p>ttnctl user logout logs out the current user</p>
 <p><strong>Usage:</strong> <code>ttnctl user logout</code></p>
-<h3 id="ttnctl-user-register">ttnctl user register&nbsp;<a class="header-hash" href="#ttnctl-user-register">#</a> </h3>
+<h3 id="ttnctl-user-register">ttnctl user register <a class="dx-anchor" href="#ttnctl-user-register" aria-label="Link to this section">#</a></h3>
 <p>ttnctl user register allows you to register a new user in the account server</p>
 <p><strong>Usage:</strong> <code>ttnctl user register [username] [e-mail]</code></p>
 <p><strong>Example</strong></p>
@@ -597,61 +539,110 @@ $ ttnctl user login [paste the access code you requested above]
 Password: &lt;entering password&gt;
   INFO Registered user
   WARN You might have to verify your email before you can login
-</code></pre><h2 id="ttnctl-version">ttnctl version&nbsp;<a class="header-hash" href="#ttnctl-version">#</a> </h2>
+</code></pre><h2 id="ttnctl-version">ttnctl version <a class="dx-anchor" href="#ttnctl-version" aria-label="Link to this section">#</a></h2>
 <p>ttnctl version gets the build and version information of ttnctl</p>
 <p><strong>Usage:</strong> <code>ttnctl version</code></p>
 
-
-        </div>
-      
+      </div>
       
 
+      
 
+    </article>
+    <aside class="dx-rail" aria-label="On this page">
+  <div class="dx-rail__label">On this page</div>
+  <nav class="dx-toc" data-toc>
+    <a href="#ttnctl-applications" class="dx-toc__link">ttnctl applications</a>
+    <a href="#ttnctl-applications-add" class="dx-toc__link dx-toc__link--sub">ttnctl applications add</a>
+    <a href="#ttnctl-applications-collaborators" class="dx-toc__link dx-toc__link--sub">ttnctl applications collaborators</a>
+    <a href="#ttnctl-applications-delete" class="dx-toc__link dx-toc__link--sub">ttnctl applications delete</a>
+    <a href="#ttnctl-applications-info" class="dx-toc__link dx-toc__link--sub">ttnctl applications info</a>
+    <a href="#ttnctl-applications-list" class="dx-toc__link dx-toc__link--sub">ttnctl applications list</a>
+    <a href="#ttnctl-applications-pf" class="dx-toc__link dx-toc__link--sub">ttnctl applications pf</a>
+    <a href="#ttnctl-applications-register" class="dx-toc__link dx-toc__link--sub">ttnctl applications register</a>
+    <a href="#ttnctl-applications-select" class="dx-toc__link dx-toc__link--sub">ttnctl applications select</a>
+    <a href="#ttnctl-applications-unregister" class="dx-toc__link dx-toc__link--sub">ttnctl applications unregister</a>
+    <a href="#ttnctl-config" class="dx-toc__link">ttnctl config</a>
+    <a href="#ttnctl-devices" class="dx-toc__link">ttnctl devices</a>
+    <a href="#ttnctl-devices-delete" class="dx-toc__link dx-toc__link--sub">ttnctl devices delete</a>
+    <a href="#ttnctl-devices-info" class="dx-toc__link dx-toc__link--sub">ttnctl devices info</a>
+    <a href="#ttnctl-devices-list" class="dx-toc__link dx-toc__link--sub">ttnctl devices list</a>
+    <a href="#ttnctl-devices-personalize" class="dx-toc__link dx-toc__link--sub">ttnctl devices personalize</a>
+    <a href="#ttnctl-devices-register" class="dx-toc__link dx-toc__link--sub">ttnctl devices register</a>
+    <a href="#ttnctl-devices-set" class="dx-toc__link dx-toc__link--sub">ttnctl devices set</a>
+    <a href="#ttnctl-devices-simulate" class="dx-toc__link dx-toc__link--sub">ttnctl devices simulate</a>
+    <a href="#ttnctl-downlink" class="dx-toc__link">ttnctl downlink</a>
+    <a href="#ttnctl-gateways" class="dx-toc__link">ttnctl gateways</a>
+    <a href="#ttnctl-gateways-collaborators" class="dx-toc__link dx-toc__link--sub">ttnctl gateways collaborators</a>
+    <a href="#ttnctl-gateways-delete" class="dx-toc__link dx-toc__link--sub">ttnctl gateways delete</a>
+    <a href="#ttnctl-gateways-edit" class="dx-toc__link dx-toc__link--sub">ttnctl gateways edit</a>
+    <a href="#ttnctl-gateways-info" class="dx-toc__link dx-toc__link--sub">ttnctl gateways info</a>
+    <a href="#ttnctl-gateways-list" class="dx-toc__link dx-toc__link--sub">ttnctl gateways list</a>
+    <a href="#ttnctl-gateways-register" class="dx-toc__link dx-toc__link--sub">ttnctl gateways register</a>
+    <a href="#ttnctl-selfupdate" class="dx-toc__link">ttnctl selfupdate</a>
+    <a href="#ttnctl-subscribe" class="dx-toc__link">ttnctl subscribe</a>
+    <a href="#ttnctl-user" class="dx-toc__link">ttnctl user</a>
+    <a href="#ttnctl-user-login" class="dx-toc__link dx-toc__link--sub">ttnctl user login</a>
+    <a href="#ttnctl-user-logout" class="dx-toc__link dx-toc__link--sub">ttnctl user logout</a>
+    <a href="#ttnctl-user-register" class="dx-toc__link dx-toc__link--sub">ttnctl user register</a>
+    <a href="#ttnctl-version" class="dx-toc__link">ttnctl version</a>
+  </nav>
+  <div class="dx-rail__rule"></div>
+  <a class="dx-rail__tool" href="https://github.com/TheThingsNetwork/docs/blob/master/doc/content/network/cli/api/_index.md" rel="noopener"><svg class="dx-icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M7 7H6a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2v-1"/><path d="M20.385 6.585a2.1 2.1 0 0 0-2.97-2.97L9 12v3h3zM16 5l3 3"/></g></svg>Edit this page</a>
+  <a class="dx-rail__tool" href="https://www.thethingsnetwork.org/forum"><svg class="dx-icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m21 14l-3-3h-7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1zm-7 1v2a1 1 0 0 1-1 1H6l-3 3V11a1 1 0 0 1 1-1h2"/></svg>Ask on the forum</a>
+</aside>
 
-
-  
-
-  
-
-  
-
-
-<div class="is-clearfix">
+  </main>
 </div>
 
+
+
+<footer class="dx-footer">
+  <div class="dx-wrap dx-footer__inner">
+    <div class="dx-footer__grid">
+      <div class="dx-footer__brand">
+        <img src="/docs/img/ttn-horizontal-white.svg" alt="The Things Network" width="150" height="34">
+        <p>A global collaborative Internet of Things ecosystem, initiated by The Things Industries.</p>
+      </div>
+      <div class="dx-footer__col">
+        <div class="dx-footer__title">Learn</div>
+        <a href="https://www.thethingsnetwork.org/docs/network/">Get started</a>
+        <a href="https://www.thethingsnetwork.org/docs/lorawan/">LoRaWAN® fundamentals</a>
+        <a href="https://www.thethingsnetwork.org/achievements">Certification</a>
+        <a href="https://www.thethingsnetwork.org/achievements/a/the-things-academy/">The Things Academy</a>
+      </div>
+      <div class="dx-footer__col">
+        <div class="dx-footer__title">Community</div>
+        <a href="https://www.thethingsnetwork.org/community">Communities</a>
+        <a href="https://www.thethingsnetwork.org/forum">Forum</a>
+        <a href="https://www.thethingsnetwork.org/start-a-community">Start a community</a>
+        <a href="https://www.thethingsconference.com/" rel="noopener">Conference</a>
+      </div>
+      <div class="dx-footer__col">
+        <div class="dx-footer__title">Resources</div>
+        <a href="https://www.thethingsnetwork.org/docs/">Documentation</a>
+        <a href="https://www.thethingsnetwork.org/device-repository/">Device Repository</a>
+        <a href="https://www.thethingsnetwork.org/help">Help &amp; user guide</a>
+        <a href="https://www.thethingsindustries.com/stack/" rel="noopener">The Things Stack</a>
+        <a href="https://github.com/TheThingsNetwork/lorawan-stack" rel="noopener">Open source</a>
+      </div>
+    </div>
+    <div class="dx-footer__base">
+      <div class="dx-footer__legal">
+        <span>LoRaWAN® is a mark used under license from the LoRa Alliance®.</span>
+        <button type="button" class="dx-footer__consent" data-ttn-consent-settings>Cookie settings</button>
+      </div>
+      <div class="dx-footer__social">
+        <a href="https://github.com/TheThingsNetwork" rel="noopener" aria-label="GitHub"><svg class="dx-icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.6-.6 1.2-.5 2V21"/></svg></a>
+        <a href="https://www.linkedin.com/company/the-things-network/" rel="noopener" aria-label="LinkedIn"><svg class="dx-icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M8 11v5m0-8v.01M12 16v-5m4 5v-3a2 2 0 1 0-4 0"/><path d="M3 7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4z"/></g></svg></a>
+        <a href="https://www.youtube.com/c/TheThingsNetworkCommunity" rel="noopener" aria-label="YouTube"><svg class="dx-icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M2 8a4 4 0 0 1 4-4h12a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4z"/><path d="m10 9l5 3l-5 3z"/></g></svg></a>
+        <a href="https://twitter.com/thethingsntwrk" rel="noopener" aria-label="X"><svg class="dx-icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m4 4l11.733 16H20L8.267 4zm0 16l6.768-6.768m2.46-2.46L20 4"/></svg></a>
       </div>
     </div>
   </div>
-</div>
+</footer>
 
-
-<div class="ttn-footer ttui-container"><ttn-footer class="theme-ttn"></ttn-footer></div>
-
-<script src="https://cdn.jsdelivr.net/npm/promise-polyfill@7/dist/polyfill.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
-<script src="https://www.thethingsnetwork.org/docs/js/vendor/basicLightbox.min.js"></script>
-<script src="https://www.thethingsnetwork.org/docs/js/theme.min.0775735f9c997126c786dc75ee2fafeb1f6465f3c693ad34198334f407e80ff1.js" integrity="sha256-B3VzX5yZcSbHhtx17i&#43;v6x9kZfPGk600GYM09AfoD/E=" crossorigin="anonymous"></script>
-
-<ttui-cookie class="theme-ttn" id="cookie-banner"></ttui-cookie>
-
-<script>
-  var cookieBanner = document.getElementById("cookie-banner");
-  window.addEventListener("ttuicookieaccept", cookieAccept, { capture: true, once: true } );
-  var cookieAcceptKey = 'ttn-ca'
-  var timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-
-  if (readCookieAccept() || !timezone.includes("Europe") ) {
-      cookieBanner.setAttribute('accepted', true);
-  }
-
-  function readCookieAccept() {
-      return localStorage.getItem(cookieAcceptKey)
-  }
-
-  function cookieAccept() {
-      localStorage.setItem(cookieAcceptKey, true);
-  }
-</script>
+<script src="/docs/js/docs.min.aa6a1e0f75a807c1f3ec3be1d83182f2ffd4c3ef648cee8b690d29f8bdbf81e3.js" integrity="sha256-qmoeD3WoB8Hz7Dvh2DGC8v/Uw&#43;9kjO6LaQ0p&#43;L2/geM=" data-search-index="/docs/index.json" defer></script>
 
 </body>
 

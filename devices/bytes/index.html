@@ -1,54 +1,26 @@
 <!DOCTYPE html>
-
-<html lang="en-us" class="has-ttn-navbar-top">
+<html lang="en-us">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-  
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-PP5G5BT');</script>
-  
+  <script src="/consent.js" defer></script>
 
   <meta name="generator" content="Hugo 0.88.1" />
 
   <title>Working with Bytes | The Things Network</title>
+  <meta name="description" content="To send data back and forth over The Things Network you’ll need to use bytes. This guide will help you encode different types of data in as little bytes …">
   <link rel="canonical" href="https://www.thethingsnetwork.org/docs/devices/bytes/" />
-  
-
-  <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
-
-  <meta name="msapplication-TileColor" content="#FFFFFF">
-  <meta name="msapplication-TileImage" content="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png">
-
-  <meta name="application-name" content="The Things Network">
-  <meta name="msapplication-tooltip" content="Tooltip">
-  <meta name="msapplication-config" content="https://ttnweb.azureedge.net/static/common/favicon/ieconfig.54334a5ee30c.xml">
 
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-32.61b30f85680a.png" sizes="32x32">
-  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-57.83b86c64dc82.png" sizes="57x57">
-  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-76.7dcf8fa36dfc.png" sizes="76x76">
-  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-96.27ac17adaa8b.png" sizes="96x96">
-  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-120.e1526731335e.png" sizes="120x120">
-  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-128.fabea041224c.png" sizes="128x128">
-  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png" sizes="144x144">
-  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png" sizes="152x152">
-  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-180.fcd414307ca3.png" sizes="180x180">
-  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-195.c55ce09d66da.png" sizes="195x195">
-  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-228.bea53ec4b10b.png" sizes="228x228">
-  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/smalltile.fabea041224c.png" sizes="128x128">
-  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/mediumtile.3d42f7faac82.png" sizes="270x270">
-  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
-  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
-  <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.58fca61d6003439b384e4126a522c6391c0560a0cbd77a99c73d351bb2018920.css" integrity="sha256-WPymHWADQ5s4TkEmpSLGORwFYKDL13qZxz01G7IBiSA=" crossorigin="anonymous">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png" sizes="196x196">
+  <link rel="apple-touch-icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-180.fcd414307ca3.png">
+  <meta name="application-name" content="The Things Network">
+  <meta name="theme-color" content="#001859">
 
-  <link rel="stylesheet" href="https://ttui.thethingsindustries.com/release/1.7.4/main.css" />
+  <link rel="preload" href="/docs/fonts/inter/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/docs/fonts/inter/Inter-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/docs/css/docs.min.25a2f50fc4f7e29608cf91bca7b8144a8d454e724c3dc6bdf9d0d68476ff9e70.css" integrity="sha256-JaL1D8T34pYIz5G8p7gUSo1FTnJMPca9&#43;dDWhHb/nnA=">
 
   <meta property="og:title" content="Working with Bytes" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
@@ -69,167 +41,137 @@
 
 <body>
 
+<a class="dx-skip" href="#main">Skip to content</a>
 
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PP5G5BT"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<header class="dx-header" data-header>
+  <div class="dx-header__bar">
+    <a href="https://www.thethingsnetwork.org/" class="dx-header__logo" aria-label="The Things Network home">
+      <img src="/docs/img/ttn-horizontal.svg" alt="The Things Network" width="132" height="30">
+    </a>
 
+    <button type="button" class="dx-header__toggle" aria-expanded="false" aria-controls="dx-header-panel" data-header-toggle>
+      <span class="dx-header__toggle-open"><svg class="dx-icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></span>
+      <span class="dx-header__toggle-close"><svg class="dx-icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 6L6 18M6 6l12 12"/></svg></span>
+      <span class="dx-sr">Menu</span>
+    </button>
 
-<ttn-header class="theme-ttn" root-url="https://www.thethingsnetwork.org"></ttn-header><section class="section">
-  <div class="container">
-    <nav class="breadcrumb has-dot-separator" aria-label="breadcrumbs">
-      <ul>
-        
-        
-          <li><a href="https://www.thethingsnetwork.org/docs/v2-docs/">Go Back - V2 Docs (Outdated)</a></li>
-        
-        
-            <li class="is-active">
-              <a href="https://www.thethingsnetwork.org/docs/devices/">Devices (V2)</a>
-            </li>
-          
-        
-            <li class="">
-              <a href="https://www.thethingsnetwork.org/docs/gateways/">Gateways (V2)</a>
-            </li>
-          
-        
-            <li class="">
-              <a href="https://www.thethingsnetwork.org/docs/applications/">Applications (V2)</a>
-            </li>
-          
-        
-            <li class="">
-              <a href="https://www.thethingsnetwork.org/docs/network/">Network (V2)</a>
-            </li>
-          
-        
-      
-      </ul>
-    </nav>
-    
-      <div class="notification is-warning is-light has-text-dark">
-        <h5 class="title is-family-sans-serif has-text-dark mb-1">Warning:</h5>
-        This section contains documentation written for The Things Network V2, which is no longer maintained. See <a href="https://thethingsindustries.com/docs">documentation for The Things Stack V3</a>.
+    <div class="dx-header__panel" id="dx-header-panel">
+      <nav class="dx-header__nav" aria-label="Main">
+          <a class="dx-header__link" href="https://www.thethingsnetwork.org/docs/" aria-current="page">Learn</a>
+          <details class="dx-drop">
+            <summary class="dx-header__link">Hardware <svg class="dx-icon dx-drop__chev" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m6 9l6 6l6-6"/></svg></summary>
+            <div class="dx-drop__menu">
+              <a class="dx-drop__item" href="https://www.thethingsnetwork.org/device-repository/">Device Repository</a>
+              <a class="dx-drop__item" href="https://www.thethingsshop.com/" rel="noopener">The Things Shop</a>
+            </div>
+          </details>
+          <a class="dx-header__link" href="https://www.thethingsnetwork.org/forum">Forum</a>
+          <a class="dx-header__link" href="https://www.thethingsnetwork.org/community">Community</a>
+          <a class="dx-header__link" href="https://www.thethingsconference.com/" rel="noopener">Conference</a>
+          <a class="dx-header__link" href="https://www.thethingsindustries.com/" rel="noopener">Enterprise</a>
+      </nav>
+
+      <div class="dx-header__tools">
+        <div class="dx-search" data-search>
+          <label class="dx-search__field">
+            <svg class="dx-icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10a7 7 0 1 0 14 0a7 7 0 1 0-14 0m18 11l-6-6"/></svg>
+            <span class="dx-sr">Search docs</span>
+            <input type="search" placeholder="Search docs" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="dx-search-results" aria-autocomplete="list" data-search-input>
+            <kbd>/</kbd>
+          </label>
+          <div class="dx-search__results" id="dx-search-results" role="listbox" hidden data-search-results></div>
+        </div>
+        <div class="dx-header__auth" data-auth>
+          <a href="https://www.thethingsnetwork.org/get-started?login" class="dx-header__login">Log in</a>
+          <a href="https://www.thethingsnetwork.org/get-started" class="dx-btn dx-btn--sm">Sign up</a>
+        </div>
       </div>
-    
+    </div>
   </div>
-</section>
-<div class="container" role="document">
-  <div class="columns my-0 is-desktop">
-    <div class="column is-3-desktop sidebar-left">
-      
+</header>
 
+<div class="dx-docs">
+  <aside class="dx-side" aria-label="Devices navigation">
+  <details class="dx-side__toggle" open data-side>
+    <summary class="dx-side__summary"><svg class="dx-icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 6h11M9 12h11M9 18h11M5 6v.01M5 12v.01M5 18v.01"/></svg> Devices menu</summary>
 
-<nav class="side-navigation" aria-label="Main navigation">
+    <nav class="dx-side__nav">
+      <div class="dx-side__group">
+        <a href="/docs/devices/" class="dx-side__link dx-side__link--overview">
+          <svg class="dx-icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1zm10 0a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1zM4 15a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1zm10 0a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1z"/></svg>Overview
+        </a>
+          
+<a href="/docs/devices/bestpractices/" class="dx-side__link">Best Practices</a>
+          
+<a href="/docs/devices/registration/" class="dx-side__link">Device Registration</a>
+          
+<a href="/docs/devices/bytes/" class="dx-side__link" aria-current="page">Working with Bytes</a>
+      </div>
+      <div class="dx-side__group">
+        <div class="dx-side__label">SDKs &amp; Libraries</div>
+          
+<a href="/docs/devices/arduino/" class="dx-side__link">Arduino</a>
+      </div>
+      <div class="dx-side__group">
+        <div class="dx-side__label">Hardware</div>
+          
+<a href="/docs/devices/rak5205-wistrio-lora-tracker/" class="dx-side__link">RAK5205 WisTrio LoRa® Tracker</a>
+          
+<a href="/docs/devices/rak7200-lora-tracker/" class="dx-side__link">RAK7200 LoRa® Tracker</a>
+          
+<a href="/docs/devices/rak811-lora-module-breakout-board/" class="dx-side__link">RAK811 LoRa® Breakout Module</a>
+          
+<a href="/docs/devices/rak811-lora-evaluation-board/" class="dx-side__link">RAK811 LoRa® Evaluation Board</a>
+          
+<a href="/docs/devices/rak811-wisnode-lora-module/" class="dx-side__link">RAK811 WisNode LoRa Module</a>
+          
+<a href="/docs/devices/node/" class="dx-side__link">The Things Node</a>
+          
+<a href="/docs/devices/uno/" class="dx-side__link">The Things Uno</a>
+          
+<a href="/docs/devices/lopy/" class="dx-side__link">LoPy</a>
+      </div>
+    </nav>
+  </details>
+</aside>
 
-<h2 class="title is-size-5">Devices</h2>
-
-<div class="menu">
-  <ul class="menu-list">
-  <a href="https://www.thethingsnetwork.org/docs/devices/" class="">Overview</a>
-  <li>
-      <a href="https://www.thethingsnetwork.org/docs/devices/bestpractices/" class="">Best Practices</a>
-    </li>
-  <li>
-      <a href="https://www.thethingsnetwork.org/docs/devices/registration/" class="">Device Registration</a>
-    </li>
-  <li>
-      <a href="https://www.thethingsnetwork.org/docs/devices/bytes/" class="is-active">Working with Bytes</a>
-      
-
-
-
-      
-    </li>
-  
-    <p class="menu-label">
-      SDKs &amp; Libraries
-    </p>
-    
-      
-<li>
-  <a href="https://www.thethingsnetwork.org/docs/devices/arduino/" class="">Arduino</a>
-</li>
-
-  
-    <p class="menu-label">
-      Hardware
-    </p>
-    
-      
-<li>
-  <a href="https://www.thethingsnetwork.org/docs/devices/rak5205-wistrio-lora-tracker/" class="">RAK5205 WisTrio LoRa® Tracker</a>
-</li>
-
-      
-<li>
-  <a href="https://www.thethingsnetwork.org/docs/devices/rak7200-lora-tracker/" class="">RAK7200 LoRa® Tracker</a>
-</li>
-
-      
-<li>
-  <a href="https://www.thethingsnetwork.org/docs/devices/rak811-lora-module-breakout-board/" class="">RAK811 LoRa® Breakout Module</a>
-</li>
-
-      
-<li>
-  <a href="https://www.thethingsnetwork.org/docs/devices/rak811-lora-evaluation-board/" class="">RAK811 LoRa® Evaluation Board</a>
-</li>
-
-      
-<li>
-  <a href="https://www.thethingsnetwork.org/docs/devices/rak811-wisnode-lora-module/" class="">RAK811 WisNode LoRa Module</a>
-</li>
-
-      
-<li>
-  <a href="https://www.thethingsnetwork.org/docs/devices/node/" class="">The Things Node</a>
-</li>
-
-      
-<li>
-  <a href="https://www.thethingsnetwork.org/docs/devices/uno/" class="">The Things Uno</a>
-</li>
-
-      
-<li>
-  <a href="https://www.thethingsnetwork.org/docs/devices/lopy/" class="">LoPy</a>
-</li>
-
-  
-  </ul>
-</div>
-
-
-
-
-
+  <main id="main" class="dx-main">
+    <article class="dx-article">
+      <header class="dx-article__head">
+        <nav class="dx-crumbs" aria-label="Breadcrumb">
+  <a href="/docs/">Learn</a>
+  <svg class="dx-icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 6l6 6l-6 6"/></svg><a href="/docs/devices/">Devices</a>
+  <svg class="dx-icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 6l6 6l-6 6"/></svg><span aria-current="page">Working with Bytes</span>
 </nav>
 
-    </div>
-    <div class="column is-9-desktop sidebar-middle">
-      <div class="docs-content">
-        <h1 class="title is-size-2">
-          Working with Bytes
-        </h1>
-        <div class="content">
-          
-<p>To send data back and forth over The Things Network you&rsquo;ll need to use bytes. This guide will help you encode different types of data in as little bytes possible.</p>
+        <h1 class="dx-title">Working with Bytes</h1>
+      </header>
+      
+<div class="dx-callout dx-callout--warning" role="note">
+  <svg class="dx-icon dx-callout__icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v4m-1.637-9.409L2.257 17.125a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636-2.87L13.637 3.59a1.914 1.914 0 0 0-3.274 0M12 16h.01"/></svg>
+  <div class="dx-callout__body">
+    <p><strong>Outdated:</strong> this section documents The Things Network V2, which is no longer maintained.
+    See the <a href="https://www.thethingsindustries.com/docs">documentation for The Things Stack V3</a>, or browse the <a href="/docs/v2-docs/">V2 docs index</a>.</p>
+  </div>
+</div>
+
+      <div class="dx-prose">
+        <p>To send data back and forth over The Things Network you&rsquo;ll need to use bytes. This guide will help you encode different types of data in as little bytes possible.</p>
 <blockquote>
 <p>The unprecedented range of the LoRaWAN technology we build on comes at the cost of low bandwidth and limited airtime (the number times size of packages you send). Fortunately, you don&rsquo;t need a picture of that smart garage bin that needs to emptied. Even a single bit <code>1</code> would do!</p>
 </blockquote>
-<h2 id="what-is-a-byte">What is a byte?&nbsp;<a class="header-hash" href="#what-is-a-byte">#</a> </h2>
+<h2 id="what-is-a-byte">What is a byte? <a class="dx-anchor" href="#what-is-a-byte" aria-label="Link to this section">#</a></h2>
 <p>A <a href="https://simple.wikipedia.org/wiki/Byte">byte</a> is a group of 8 bits. A bit is the most basic unit and can be either 1 or 0. A byte is not just 8 values between 0 and 1, but 256 (2<sup>8</sup>) different combinations (rather <a href="https://www.mathsisfun.com/combinatorics/combinations-permutations.html">permutations</a>) ranging from <code>00000000</code> via e.g. <code>01010101</code> to <code>11111111</code>. Thus, one byte can represent a <a href="https://simple.wikipedia.org/wiki/Decimal">decimal</a> number between 0(00) and 255.</p>
 <blockquote>
 <p>Puzzled? Remember that 3 decimal numbers also don&rsquo;t just stand for 3 values between 0 and 9, but 1000 (10<sup>3</sup>) permutations from 0(00) to 999.</p>
 </blockquote>
 <p>Learn more on <a href="http://computer.howstuffworks.com/bytes.htm">How Stuff Works: How Bits and Bytes Work</a> and the <a href="http://playground.arduino.cc/Code/BitMath">Arduino Bit Math Tutorial</a> to learn more about it.</p>
-<h2 id="what-is-a-buffer-of-bytes">What is a buffer of bytes?&nbsp;<a class="header-hash" href="#what-is-a-buffer-of-bytes">#</a> </h2>
+<h2 id="what-is-a-buffer-of-bytes">What is a buffer of bytes? <a class="dx-anchor" href="#what-is-a-buffer-of-bytes" aria-label="Link to this section">#</a></h2>
 <p>Think of <em>buffer</em> as just another word for an <em>array</em>, <em>list</em>, whatever resonates with your programming experience. Like a byte is a group of 8 bits, a <a href="https://en.wikipedia.org/wiki/Data_buffer">buffer</a> is a group of a pre-defined number of bytes. If we have a group of 3 bytes, this could either represent 3 values between 0 and 255, but also one single value between 0 and 16777216 (256<sup>3</sup>).</p>
 <blockquote>
 <p>See the pattern? The number of choices per position (n) to the power of the number of positions (r) is the number of permutations: n<sup>r</sup>. Learn more on <a href="https://www.mathsisfun.com/combinatorics/combinations-permutations.html">MathIsFun.com</a>.</p>
 </blockquote>
-<h2 id="what-the-hex">What the hex?&nbsp;<a class="header-hash" href="#what-the-hex">#</a> </h2>
+<h2 id="what-the-hex">What the hex? <a class="dx-anchor" href="#what-the-hex" aria-label="Link to this section">#</a></h2>
 <p>Often, you&rsquo;ll see a group of bytes displayed as:</p>
 <pre tabindex="0"><code>FF F0 0F 11
 </code></pre><p>Wasn&rsquo;t a byte a group of 8 <code>0</code>s and <code>1</code>s? 🤔 You&rsquo;re totally right, but just like we already saw <code>11111111</code> translates to 255 in the good old decimal system, we can also translate it to FF in the <a href="https://simple.wikipedia.org/wiki/Hexadecimal_numeral_system">hexadecimal system</a> where each position has 16 (0-9 A-F) possible values. The advantage is that it is shorter and explicit about the maximum value (257 is not an option).</p>
@@ -272,11 +214,11 @@
 </span><span class="c1">// identical: { B11111111, B11110000, B00001111, B00010001 };
 </span><span class="c1"></span><span class="n">ttn</span><span class="p">.</span><span class="n">sendBytes</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">data</span><span class="p">));</span>
 </code></pre></div><p>Yeah, I know&hellip; <code>0x</code> kind of blows the shorter-to-write advantage of hex. 🙃</p>
-<h2 id="how-many-bytes-can-i-send">How many bytes can I send?&nbsp;<a class="header-hash" href="#how-many-bytes-can-i-send">#</a> </h2>
+<h2 id="how-many-bytes-can-i-send">How many bytes can I send? <a class="dx-anchor" href="#how-many-bytes-can-i-send" aria-label="Link to this section">#</a></h2>
 <p>Technically, you can send 51 bytes. But, the more bytes you&rsquo;ll send, the more airtime the package will cost you and the sooner you&rsquo;ll hit your maximum allotted time. So, don&rsquo;t ask yourself how many you can possibly send but rather ask how few could do the job.</p>
-<h2 id="how-to-send-big-numbers">How to send big numbers?&nbsp;<a class="header-hash" href="#how-to-send-big-numbers">#</a> </h2>
+<h2 id="how-to-send-big-numbers">How to send big numbers? <a class="dx-anchor" href="#how-to-send-big-numbers" aria-label="Link to this section">#</a></h2>
 <p>A better question would be how to send ranges bigger than 255.</p>
-<h3 id="1-index">1. Index&nbsp;<a class="header-hash" href="#1-index">#</a> </h3>
+<h3 id="1-index">1. Index <a class="dx-anchor" href="#1-index" aria-label="Link to this section">#</a></h3>
 <p>If the possible values you&rsquo;d need to support don&rsquo;t start at 0 and you know the minimum value, start by indexing on that number.</p>
 <p>For example, imagine we&rsquo;d expect values between 3400 and 3600.</p>
 <p>On the device we&rsquo;d encode this as:</p>
@@ -294,7 +236,7 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">int</span> <span class="n">myBase</span> <span class="o">=</span> <span class="mi">3400</span><span class="p">;</span>
 <span class="kt">int</span> <span class="n">myVal</span> <span class="o">=</span> <span class="n">payload</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">myBase</span><span class="p">;</span>
 </code></pre></div><p>As you can see as long as the minimum value is known and the range of our value is 256 or less, we can still use a single byte without breaking a sweat. Be sure to check your value is not bigger than 3655 to prevent nasty bugs.😅</p>
-<h3 id="2-round">2. Round&nbsp;<a class="header-hash" href="#2-round">#</a> </h3>
+<h3 id="2-round">2. Round <a class="dx-anchor" href="#2-round" aria-label="Link to this section">#</a></h3>
 <p>Now what if the range is bigger than 256? The next question would be if you need to know the exact value. If your sensor has a range of 400 and an error margin of 2, you wouldn&rsquo;t lose any meaning by rounding the value. Both 299 and 300 would round to 150, which is fine.</p>
 <p>On the device we&rsquo;d encode this as:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">int</span> <span class="n">myVal</span> <span class="o">=</span> <span class="mi">300</span><span class="p">;</span>
@@ -304,7 +246,7 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">errorMargin</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
 <span class="nx">decoded</span><span class="p">.</span><span class="nx">myVal</span> <span class="o">=</span> <span class="nx">bytes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="nx">errorMargin</span><span class="p">;</span>
 </code></pre></div><p>You&rsquo;ll get the idea for the other way around.</p>
-<h3 id="3-use-words">3. Use words&nbsp;<a class="header-hash" href="#3-use-words">#</a> </h3>
+<h3 id="3-use-words">3. Use words <a class="dx-anchor" href="#3-use-words" aria-label="Link to this section">#</a></h3>
 <p>A <a href="https://www.arduino.cc/en/Reference/Word">word</a> is 2 bytes (except on Due, Zero and similar boards where it is 4 bytes), which already gets you a huge range of 65536 (256<sup>2</sup>). The <a href="https://www.arduino.cc/en/Reference/Int">int</a> data type is a word and Arduino comes with <a href="https://www.arduino.cc/en/Reference/HighByte"><code>highByte()</code></a> and <a href="https://www.arduino.cc/en/Reference/LowByte"><code>lowByte()</code></a> to extract the left and right byte from a word. This makes it really easy to encode and decode.</p>
 <p>Encode (Arduino):</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">int</span> <span class="n">myVal</span> <span class="o">=</span> <span class="mi">20000</span><span class="p">;</span>
@@ -328,7 +270,7 @@
 <p>Decode (Arduino):</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">int</span> <span class="n">myVal</span> <span class="o">=</span> <span class="p">((</span><span class="kt">int</span><span class="p">)(</span><span class="n">payload</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">&lt;&lt;</span> <span class="mi">8</span><span class="p">)</span>
           <span class="o">+</span> <span class="n">payload</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
-</code></pre></div><h3 id="4-shift-bits">4. Shift bits&nbsp;<a class="header-hash" href="#4-shift-bits">#</a> </h3>
+</code></pre></div><h3 id="4-shift-bits">4. Shift bits <a class="dx-anchor" href="#4-shift-bits" aria-label="Link to this section">#</a></h3>
 <p>If the range of expected values is bigger than 65536 we can use the same trick. The only difference is that we have to manually shift bits when we encode on Arduino, just like we did in the payload function.</p>
 <p>Let&rsquo;s say we need to encode a <a href="https://www.arduino.cc/en/Reference/Long">long</a> which uses 4 bytes for a range up to 4294967296.</p>
 <p>Encode (Arduino):</p>
@@ -343,13 +285,13 @@
               <span class="o">+</span> <span class="p">((</span><span class="kr">long</span><span class="p">)(</span><span class="nx">bytes</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">&lt;&lt;</span> <span class="mi">16</span><span class="p">)</span>
               <span class="o">+</span> <span class="p">((</span><span class="kr">long</span><span class="p">)(</span><span class="nx">bytes</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="o">&lt;&lt;</span> <span class="mi">8</span><span class="p">)</span>
               <span class="o">+</span> <span class="p">((</span><span class="kr">long</span><span class="p">)(</span><span class="nx">bytes</span><span class="p">[</span><span class="mi">3</span><span class="p">]));</span>
-</code></pre></div><h2 id="how-to-send-negative-numbers">How to send negative numbers?&nbsp;<a class="header-hash" href="#how-to-send-negative-numbers">#</a> </h2>
+</code></pre></div><h2 id="how-to-send-negative-numbers">How to send negative numbers? <a class="dx-anchor" href="#how-to-send-negative-numbers" aria-label="Link to this section">#</a></h2>
 <p>To tell the difference between -100 and 100 you will need a <a href="https://en.wikipedia.org/wiki/Signed_number_representations">signed</a> data type. These set the highest (left-most) bit to <code>1</code> to indicate it&rsquo;s a negative number. This does mean that for example in a word only 15 of the 16 bits are available for the actual number, limiting the range from 65536 to 32768.</p>
-<h3 id="index-round-and-shift">Index, round and shift&nbsp;<a class="header-hash" href="#index-round-and-shift">#</a> </h3>
+<h3 id="index-round-and-shift">Index, round and shift <a class="dx-anchor" href="#index-round-and-shift" aria-label="Link to this section">#</a></h3>
 <p>The data types we used so far are all signed, which means all of the tricks work just as well for negative values. Just be aware of the maximum value.</p>
-<h3 id="unsigned-data-types">Unsigned data types&nbsp;<a class="header-hash" href="#unsigned-data-types">#</a> </h3>
+<h3 id="unsigned-data-types">Unsigned data types <a class="dx-anchor" href="#unsigned-data-types" aria-label="Link to this section">#</a></h3>
 <p>If you don&rsquo;t expect negative numbers and need a bigger range, explicitly use <a href="https://www.arduino.cc/en/Reference/UnsignedInt"><code>unsigned int</code></a> or <a href="https://www.arduino.cc/en/Reference/UnsignedLong"><code>unsigned long</code></a>.</p>
-<h2 id="how-to-send-decimals">How to send decimals?&nbsp;<a class="header-hash" href="#how-to-send-decimals">#</a> </h2>
+<h2 id="how-to-send-decimals">How to send decimals? <a class="dx-anchor" href="#how-to-send-decimals" aria-label="Link to this section">#</a></h2>
 <p>So far we have only dealt with rounded numbers. What if you need more precision? The answer very similar to how we indexed or rounded big numbers. Simply multiple and divide the value as you encode and decode it.</p>
 <p>Encode (Arduino):</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">float</span> <span class="n">myVal</span> <span class="o">=</span> <span class="mf">1.22</span><span class="p">;</span>
@@ -364,7 +306,7 @@
 </code></pre></div><blockquote>
 <p>Note that it uses <code>100.00</code>, not <code>100</code>. If both are integers, Arduino/C/C++ will do the math using integers as well, resulting in 1 instead of 1.22.</p>
 </blockquote>
-<h2 id="how-to-send-multiple-numbers">How to send multiple numbers?&nbsp;<a class="header-hash" href="#how-to-send-multiple-numbers">#</a> </h2>
+<h2 id="how-to-send-multiple-numbers">How to send multiple numbers? <a class="dx-anchor" href="#how-to-send-multiple-numbers" aria-label="Link to this section">#</a></h2>
 <p>In a lot of cases you&rsquo;ll want to send multiple values in a single message. Start off by encoding each individual number to a buffer of bytes and then combine them into a single buffer.</p>
 <p>Encode (Arduino):</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="n">byte</span> <span class="n">payloadA</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span> <span class="mh">0xF0</span> <span class="p">};</span>
@@ -397,7 +339,7 @@
 <span class="n">var</span> <span class="n">payloadB</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span>
 
 <span class="n">memcpy</span><span class="p">(</span><span class="n">payloadA</span><span class="p">,</span> 
-</code></pre></div><h2 id="how-to-send-text">How to send text?&nbsp;<a class="header-hash" href="#how-to-send-text">#</a> </h2>
+</code></pre></div><h2 id="how-to-send-text">How to send text? <a class="dx-anchor" href="#how-to-send-text" aria-label="Link to this section">#</a></h2>
 <p>The short answer is: <strong>don&rsquo;t</strong>. Text uses a lot of bytes. <a href="https://en.wikipedia.org/wiki/Unicode">Unicode</a> defines more than 128000 characters, so that would take 3 bytes per character! There are rarely good reasons to use text instead of numbers, apart from maybe transmitting some user input. Most of the time only the Alpha-numeric characters suffice, in that case you can get away by using <a href="https://en.wikipedia.org/wiki/ASCII#Printable_characters">ASCII characters</a> that only use a single byte per character. Every string must be terminated with a NULL (0x00, &lsquo;\0&rsquo;) character to indicate the string has ended.</p>
 <p>You didn&rsquo;t hear it from me, but here&rsquo;s how you&rsquo;d encode a string:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="n">var</span> <span class="n">myVal</span> <span class="o">=</span> <span class="s">&#34;Hello&#34;</span><span class="p">;</span>
@@ -407,61 +349,87 @@
 </code></pre></div><p>Which you would decode with:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">decoded</span><span class="p">.</span><span class="nx">myVal</span> <span class="o">=</span> <span class="nb">String</span><span class="p">.</span><span class="nx">fromCharCode</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="nx">bytes</span><span class="p">);</span>
 </code></pre></div>
-
-        </div>
-      
+      </div>
       
 
+      
 
+    </article>
+    <aside class="dx-rail" aria-label="On this page">
+  <div class="dx-rail__label">On this page</div>
+  <nav class="dx-toc" data-toc>
+    <a href="#what-is-a-byte" class="dx-toc__link">What is a byte?</a>
+    <a href="#what-is-a-buffer-of-bytes" class="dx-toc__link">What is a buffer of bytes?</a>
+    <a href="#what-the-hex" class="dx-toc__link">What the hex?</a>
+    <a href="#how-many-bytes-can-i-send" class="dx-toc__link">How many bytes can I send?</a>
+    <a href="#how-to-send-big-numbers" class="dx-toc__link">How to send big numbers?</a>
+    <a href="#1-index" class="dx-toc__link dx-toc__link--sub">1. Index</a>
+    <a href="#2-round" class="dx-toc__link dx-toc__link--sub">2. Round</a>
+    <a href="#3-use-words" class="dx-toc__link dx-toc__link--sub">3. Use words</a>
+    <a href="#4-shift-bits" class="dx-toc__link dx-toc__link--sub">4. Shift bits</a>
+    <a href="#how-to-send-negative-numbers" class="dx-toc__link">How to send negative numbers?</a>
+    <a href="#index-round-and-shift" class="dx-toc__link dx-toc__link--sub">Index, round and shift</a>
+    <a href="#unsigned-data-types" class="dx-toc__link dx-toc__link--sub">Unsigned data types</a>
+    <a href="#how-to-send-decimals" class="dx-toc__link">How to send decimals?</a>
+    <a href="#how-to-send-multiple-numbers" class="dx-toc__link">How to send multiple numbers?</a>
+    <a href="#how-to-send-text" class="dx-toc__link">How to send text?</a>
+  </nav>
+  <div class="dx-rail__rule"></div>
+  <a class="dx-rail__tool" href="https://github.com/TheThingsNetwork/docs/blob/master/doc/content/devices/bytes/_index.md" rel="noopener"><svg class="dx-icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M7 7H6a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2v-1"/><path d="M20.385 6.585a2.1 2.1 0 0 0-2.97-2.97L9 12v3h3zM16 5l3 3"/></g></svg>Edit this page</a>
+  <a class="dx-rail__tool" href="https://www.thethingsnetwork.org/forum"><svg class="dx-icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m21 14l-3-3h-7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1zm-7 1v2a1 1 0 0 1-1 1H6l-3 3V11a1 1 0 0 1 1-1h2"/></svg>Ask on the forum</a>
+</aside>
 
-
-  
-
-  
-
-  
-    
-    
-  
-
-
-<div class="is-clearfix">
-<a class="button is-pulled-left" href="/docs/devices/registration/">← Device Registration</a>
+  </main>
 </div>
 
+
+
+<footer class="dx-footer">
+  <div class="dx-wrap dx-footer__inner">
+    <div class="dx-footer__grid">
+      <div class="dx-footer__brand">
+        <img src="/docs/img/ttn-horizontal-white.svg" alt="The Things Network" width="150" height="34">
+        <p>A global collaborative Internet of Things ecosystem, initiated by The Things Industries.</p>
+      </div>
+      <div class="dx-footer__col">
+        <div class="dx-footer__title">Learn</div>
+        <a href="https://www.thethingsnetwork.org/docs/network/">Get started</a>
+        <a href="https://www.thethingsnetwork.org/docs/lorawan/">LoRaWAN® fundamentals</a>
+        <a href="https://www.thethingsnetwork.org/achievements">Certification</a>
+        <a href="https://www.thethingsnetwork.org/achievements/a/the-things-academy/">The Things Academy</a>
+      </div>
+      <div class="dx-footer__col">
+        <div class="dx-footer__title">Community</div>
+        <a href="https://www.thethingsnetwork.org/community">Communities</a>
+        <a href="https://www.thethingsnetwork.org/forum">Forum</a>
+        <a href="https://www.thethingsnetwork.org/start-a-community">Start a community</a>
+        <a href="https://www.thethingsconference.com/" rel="noopener">Conference</a>
+      </div>
+      <div class="dx-footer__col">
+        <div class="dx-footer__title">Resources</div>
+        <a href="https://www.thethingsnetwork.org/docs/">Documentation</a>
+        <a href="https://www.thethingsnetwork.org/device-repository/">Device Repository</a>
+        <a href="https://www.thethingsnetwork.org/help">Help &amp; user guide</a>
+        <a href="https://www.thethingsindustries.com/stack/" rel="noopener">The Things Stack</a>
+        <a href="https://github.com/TheThingsNetwork/lorawan-stack" rel="noopener">Open source</a>
+      </div>
+    </div>
+    <div class="dx-footer__base">
+      <div class="dx-footer__legal">
+        <span>LoRaWAN® is a mark used under license from the LoRa Alliance®.</span>
+        <button type="button" class="dx-footer__consent" data-ttn-consent-settings>Cookie settings</button>
+      </div>
+      <div class="dx-footer__social">
+        <a href="https://github.com/TheThingsNetwork" rel="noopener" aria-label="GitHub"><svg class="dx-icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.6-.6 1.2-.5 2V21"/></svg></a>
+        <a href="https://www.linkedin.com/company/the-things-network/" rel="noopener" aria-label="LinkedIn"><svg class="dx-icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M8 11v5m0-8v.01M12 16v-5m4 5v-3a2 2 0 1 0-4 0"/><path d="M3 7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4z"/></g></svg></a>
+        <a href="https://www.youtube.com/c/TheThingsNetworkCommunity" rel="noopener" aria-label="YouTube"><svg class="dx-icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M2 8a4 4 0 0 1 4-4h12a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4z"/><path d="m10 9l5 3l-5 3z"/></g></svg></a>
+        <a href="https://twitter.com/thethingsntwrk" rel="noopener" aria-label="X"><svg class="dx-icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m4 4l11.733 16H20L8.267 4zm0 16l6.768-6.768m2.46-2.46L20 4"/></svg></a>
       </div>
     </div>
   </div>
-</div>
+</footer>
 
-
-<div class="ttn-footer ttui-container"><ttn-footer class="theme-ttn"></ttn-footer></div>
-
-<script src="https://cdn.jsdelivr.net/npm/promise-polyfill@7/dist/polyfill.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
-<script src="https://www.thethingsnetwork.org/docs/js/vendor/basicLightbox.min.js"></script>
-<script src="https://www.thethingsnetwork.org/docs/js/theme.min.0775735f9c997126c786dc75ee2fafeb1f6465f3c693ad34198334f407e80ff1.js" integrity="sha256-B3VzX5yZcSbHhtx17i&#43;v6x9kZfPGk600GYM09AfoD/E=" crossorigin="anonymous"></script>
-
-<ttui-cookie class="theme-ttn" id="cookie-banner"></ttui-cookie>
-
-<script>
-  var cookieBanner = document.getElementById("cookie-banner");
-  window.addEventListener("ttuicookieaccept", cookieAccept, { capture: true, once: true } );
-  var cookieAcceptKey = 'ttn-ca'
-  var timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-
-  if (readCookieAccept() || !timezone.includes("Europe") ) {
-      cookieBanner.setAttribute('accepted', true);
-  }
-
-  function readCookieAccept() {
-      return localStorage.getItem(cookieAcceptKey)
-  }
-
-  function cookieAccept() {
-      localStorage.setItem(cookieAcceptKey, true);
-  }
-</script>
+<script src="/docs/js/docs.min.aa6a1e0f75a807c1f3ec3be1d83182f2ffd4c3ef648cee8b690d29f8bdbf81e3.js" integrity="sha256-qmoeD3WoB8Hz7Dvh2DGC8v/Uw&#43;9kjO6LaQ0p&#43;L2/geM=" data-search-index="/docs/index.json" defer></script>
 
 </body>
 

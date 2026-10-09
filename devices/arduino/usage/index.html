@@ -1,54 +1,26 @@
 <!DOCTYPE html>
-
-<html lang="en-us" class="has-ttn-navbar-top">
+<html lang="en-us">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-  
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-PP5G5BT');</script>
-  
+  <script src="/consent.js" defer></script>
 
   <meta name="generator" content="Hugo 0.88.1" />
 
   <title>Library Usage | The Things Network</title>
+  <meta name="description" content="Here’s how you include and use The Things Network library. Also have a look at the examples bundled with the library. You can find them in the Arduino IDE under …">
   <link rel="canonical" href="https://www.thethingsnetwork.org/docs/devices/arduino/usage/" />
-  
-
-  <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
-
-  <meta name="msapplication-TileColor" content="#FFFFFF">
-  <meta name="msapplication-TileImage" content="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png">
-
-  <meta name="application-name" content="The Things Network">
-  <meta name="msapplication-tooltip" content="Tooltip">
-  <meta name="msapplication-config" content="https://ttnweb.azureedge.net/static/common/favicon/ieconfig.54334a5ee30c.xml">
 
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-32.61b30f85680a.png" sizes="32x32">
-  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-57.83b86c64dc82.png" sizes="57x57">
-  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-76.7dcf8fa36dfc.png" sizes="76x76">
-  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-96.27ac17adaa8b.png" sizes="96x96">
-  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-120.e1526731335e.png" sizes="120x120">
-  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-128.fabea041224c.png" sizes="128x128">
-  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png" sizes="144x144">
-  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png" sizes="152x152">
-  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-180.fcd414307ca3.png" sizes="180x180">
-  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-195.c55ce09d66da.png" sizes="195x195">
-  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-228.bea53ec4b10b.png" sizes="228x228">
-  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/smalltile.fabea041224c.png" sizes="128x128">
-  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/mediumtile.3d42f7faac82.png" sizes="270x270">
-  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
-  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
-  <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.58fca61d6003439b384e4126a522c6391c0560a0cbd77a99c73d351bb2018920.css" integrity="sha256-WPymHWADQ5s4TkEmpSLGORwFYKDL13qZxz01G7IBiSA=" crossorigin="anonymous">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png" sizes="196x196">
+  <link rel="apple-touch-icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-180.fcd414307ca3.png">
+  <meta name="application-name" content="The Things Network">
+  <meta name="theme-color" content="#001859">
 
-  <link rel="stylesheet" href="https://ttui.thethingsindustries.com/release/1.7.4/main.css" />
+  <link rel="preload" href="/docs/fonts/inter/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/docs/fonts/inter/Inter-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/docs/css/docs.min.25a2f50fc4f7e29608cf91bca7b8144a8d454e724c3dc6bdf9d0d68476ff9e70.css" integrity="sha256-JaL1D8T34pYIz5G8p7gUSo1FTnJMPca9&#43;dDWhHb/nnA=">
 
   <meta property="og:title" content="Library Usage" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
@@ -69,177 +41,132 @@
 
 <body>
 
+<a class="dx-skip" href="#main">Skip to content</a>
 
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PP5G5BT"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<header class="dx-header" data-header>
+  <div class="dx-header__bar">
+    <a href="https://www.thethingsnetwork.org/" class="dx-header__logo" aria-label="The Things Network home">
+      <img src="/docs/img/ttn-horizontal.svg" alt="The Things Network" width="132" height="30">
+    </a>
 
+    <button type="button" class="dx-header__toggle" aria-expanded="false" aria-controls="dx-header-panel" data-header-toggle>
+      <span class="dx-header__toggle-open"><svg class="dx-icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></span>
+      <span class="dx-header__toggle-close"><svg class="dx-icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 6L6 18M6 6l12 12"/></svg></span>
+      <span class="dx-sr">Menu</span>
+    </button>
 
-<ttn-header class="theme-ttn" root-url="https://www.thethingsnetwork.org"></ttn-header><section class="section">
-  <div class="container">
-    <nav class="breadcrumb has-dot-separator" aria-label="breadcrumbs">
-      <ul>
-        
-        
-          <li><a href="https://www.thethingsnetwork.org/docs/v2-docs/">Go Back - V2 Docs (Outdated)</a></li>
-        
-        
-            <li class="is-active">
-              <a href="https://www.thethingsnetwork.org/docs/devices/">Devices (V2)</a>
-            </li>
-          
-        
-            <li class="">
-              <a href="https://www.thethingsnetwork.org/docs/gateways/">Gateways (V2)</a>
-            </li>
-          
-        
-            <li class="">
-              <a href="https://www.thethingsnetwork.org/docs/applications/">Applications (V2)</a>
-            </li>
-          
-        
-            <li class="">
-              <a href="https://www.thethingsnetwork.org/docs/network/">Network (V2)</a>
-            </li>
-          
-        
-      
-      </ul>
-    </nav>
-    
-      <div class="notification is-warning is-light has-text-dark">
-        <h5 class="title is-family-sans-serif has-text-dark mb-1">Warning:</h5>
-        This section contains documentation written for The Things Network V2, which is no longer maintained. See <a href="https://thethingsindustries.com/docs">documentation for The Things Stack V3</a>.
+    <div class="dx-header__panel" id="dx-header-panel">
+      <nav class="dx-header__nav" aria-label="Main">
+          <a class="dx-header__link" href="https://www.thethingsnetwork.org/docs/" aria-current="page">Learn</a>
+          <details class="dx-drop">
+            <summary class="dx-header__link">Hardware <svg class="dx-icon dx-drop__chev" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m6 9l6 6l6-6"/></svg></summary>
+            <div class="dx-drop__menu">
+              <a class="dx-drop__item" href="https://www.thethingsnetwork.org/device-repository/">Device Repository</a>
+              <a class="dx-drop__item" href="https://www.thethingsshop.com/" rel="noopener">The Things Shop</a>
+            </div>
+          </details>
+          <a class="dx-header__link" href="https://www.thethingsnetwork.org/forum">Forum</a>
+          <a class="dx-header__link" href="https://www.thethingsnetwork.org/community">Community</a>
+          <a class="dx-header__link" href="https://www.thethingsconference.com/" rel="noopener">Conference</a>
+          <a class="dx-header__link" href="https://www.thethingsindustries.com/" rel="noopener">Enterprise</a>
+      </nav>
+
+      <div class="dx-header__tools">
+        <div class="dx-search" data-search>
+          <label class="dx-search__field">
+            <svg class="dx-icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10a7 7 0 1 0 14 0a7 7 0 1 0-14 0m18 11l-6-6"/></svg>
+            <span class="dx-sr">Search docs</span>
+            <input type="search" placeholder="Search docs" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="dx-search-results" aria-autocomplete="list" data-search-input>
+            <kbd>/</kbd>
+          </label>
+          <div class="dx-search__results" id="dx-search-results" role="listbox" hidden data-search-results></div>
+        </div>
+        <div class="dx-header__auth" data-auth>
+          <a href="https://www.thethingsnetwork.org/get-started?login" class="dx-header__login">Log in</a>
+          <a href="https://www.thethingsnetwork.org/get-started" class="dx-btn dx-btn--sm">Sign up</a>
+        </div>
       </div>
-    
+    </div>
   </div>
-</section>
-<div class="container" role="document">
-  <div class="columns my-0 is-desktop">
-    <div class="column is-3-desktop sidebar-left">
-      
+</header>
 
+<div class="dx-docs">
+  <aside class="dx-side" aria-label="Devices navigation">
+  <details class="dx-side__toggle" open data-side>
+    <summary class="dx-side__summary"><svg class="dx-icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 6h11M9 12h11M9 18h11M5 6v.01M5 12v.01M5 18v.01"/></svg> Devices menu</summary>
 
-<nav class="side-navigation" aria-label="Main navigation">
-
-<h2 class="title is-size-5">Devices</h2>
-
-<div class="menu">
-  <ul class="menu-list">
-  <a href="https://www.thethingsnetwork.org/docs/devices/" class="">Overview</a>
-  <li>
-      <a href="https://www.thethingsnetwork.org/docs/devices/bestpractices/" class="">Best Practices</a>
-    </li>
-  <li>
-      <a href="https://www.thethingsnetwork.org/docs/devices/registration/" class="">Device Registration</a>
-    </li>
-  <li>
-      <a href="https://www.thethingsnetwork.org/docs/devices/bytes/" class="">Working with Bytes</a>
-    </li>
+    <nav class="dx-side__nav">
+      <div class="dx-side__group">
+        <a href="/docs/devices/" class="dx-side__link dx-side__link--overview">
+          <svg class="dx-icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1zm10 0a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1zM4 15a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1zm10 0a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1z"/></svg>Overview
+        </a>
+          
+<a href="/docs/devices/bestpractices/" class="dx-side__link">Best Practices</a>
+          
+<a href="/docs/devices/registration/" class="dx-side__link">Device Registration</a>
+          
+<a href="/docs/devices/bytes/" class="dx-side__link">Working with Bytes</a>
+      </div>
+      <div class="dx-side__group">
+        <div class="dx-side__label">SDKs &amp; Libraries</div>
+          
+<a href="/docs/devices/arduino/" class="dx-side__link">Arduino</a>
+<div class="dx-side__tree">
   
-    <p class="menu-label">
-      SDKs &amp; Libraries
-    </p>
-    
-      
-<li>
-  <a href="https://www.thethingsnetwork.org/docs/devices/arduino/" class="">Arduino</a>
+<a href="/docs/devices/arduino/api/" class="dx-side__link">API Reference</a>
   
-
-
-<ul class="menu-list">
-
-  <li>
-    <a href="https://www.thethingsnetwork.org/docs/devices/arduino/api/" class="">API Reference</a>
-    
-  </li>
-
-  <li>
-    <a href="https://www.thethingsnetwork.org/docs/devices/arduino/ide/" class="">IDE Setup &amp; Usage</a>
-    
-  </li>
-
-  <li>
-    <a href="https://www.thethingsnetwork.org/docs/devices/arduino/usage/" class="is-active">Library Usage</a>
-    
-    
-
-
-
-    
-  </li>
-
-</ul>
-
-
+<a href="/docs/devices/arduino/ide/" class="dx-side__link">IDE Setup &amp; Usage</a>
   
-</li>
-
-  
-    <p class="menu-label">
-      Hardware
-    </p>
-    
-      
-<li>
-  <a href="https://www.thethingsnetwork.org/docs/devices/rak5205-wistrio-lora-tracker/" class="">RAK5205 WisTrio LoRa® Tracker</a>
-</li>
-
-      
-<li>
-  <a href="https://www.thethingsnetwork.org/docs/devices/rak7200-lora-tracker/" class="">RAK7200 LoRa® Tracker</a>
-</li>
-
-      
-<li>
-  <a href="https://www.thethingsnetwork.org/docs/devices/rak811-lora-module-breakout-board/" class="">RAK811 LoRa® Breakout Module</a>
-</li>
-
-      
-<li>
-  <a href="https://www.thethingsnetwork.org/docs/devices/rak811-lora-evaluation-board/" class="">RAK811 LoRa® Evaluation Board</a>
-</li>
-
-      
-<li>
-  <a href="https://www.thethingsnetwork.org/docs/devices/rak811-wisnode-lora-module/" class="">RAK811 WisNode LoRa Module</a>
-</li>
-
-      
-<li>
-  <a href="https://www.thethingsnetwork.org/docs/devices/node/" class="">The Things Node</a>
-</li>
-
-      
-<li>
-  <a href="https://www.thethingsnetwork.org/docs/devices/uno/" class="">The Things Uno</a>
-</li>
-
-      
-<li>
-  <a href="https://www.thethingsnetwork.org/docs/devices/lopy/" class="">LoPy</a>
-</li>
-
-  
-  </ul>
+<a href="/docs/devices/arduino/usage/" class="dx-side__link" aria-current="page">Library Usage</a>
 </div>
+      </div>
+      <div class="dx-side__group">
+        <div class="dx-side__label">Hardware</div>
+          
+<a href="/docs/devices/rak5205-wistrio-lora-tracker/" class="dx-side__link">RAK5205 WisTrio LoRa® Tracker</a>
+          
+<a href="/docs/devices/rak7200-lora-tracker/" class="dx-side__link">RAK7200 LoRa® Tracker</a>
+          
+<a href="/docs/devices/rak811-lora-module-breakout-board/" class="dx-side__link">RAK811 LoRa® Breakout Module</a>
+          
+<a href="/docs/devices/rak811-lora-evaluation-board/" class="dx-side__link">RAK811 LoRa® Evaluation Board</a>
+          
+<a href="/docs/devices/rak811-wisnode-lora-module/" class="dx-side__link">RAK811 WisNode LoRa Module</a>
+          
+<a href="/docs/devices/node/" class="dx-side__link">The Things Node</a>
+          
+<a href="/docs/devices/uno/" class="dx-side__link">The Things Uno</a>
+          
+<a href="/docs/devices/lopy/" class="dx-side__link">LoPy</a>
+      </div>
+    </nav>
+  </details>
+</aside>
 
-
-
-
-
+  <main id="main" class="dx-main">
+    <article class="dx-article">
+      <header class="dx-article__head">
+        <nav class="dx-crumbs" aria-label="Breadcrumb">
+  <a href="/docs/">Learn</a>
+  <svg class="dx-icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 6l6 6l-6 6"/></svg><a href="/docs/devices/">Devices</a>
+  <svg class="dx-icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 6l6 6l-6 6"/></svg><a href="/docs/devices/arduino/">Arduino</a>
+  <svg class="dx-icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 6l6 6l-6 6"/></svg><span aria-current="page">Library Usage</span>
 </nav>
 
-    </div>
-    <div class="column is-9-desktop sidebar-middle">
-      <div class="docs-content">
-        <h1 class="title is-size-2">
-          Library Usage
-        </h1>
-        <div class="content">
-          
-<p>Here&rsquo;s how you include and use The Things Network library. Also have a look at the examples bundled with the library. You can find them in the Arduino IDE under <strong>File &gt; Examples &gt; <a href="https://github.com/TheThingsNetwork/arduino-device-lib/tree/master/examples">TheThingsNetwork</a></strong>.</p>
-<h2 id="include">Include&nbsp;<a class="header-hash" href="#include">#</a> </h2>
+        <h1 class="dx-title">Library Usage</h1>
+      </header>
+      
+<div class="dx-callout dx-callout--warning" role="note">
+  <svg class="dx-icon dx-callout__icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v4m-1.637-9.409L2.257 17.125a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636-2.87L13.637 3.59a1.914 1.914 0 0 0-3.274 0M12 16h.01"/></svg>
+  <div class="dx-callout__body">
+    <p><strong>Outdated:</strong> this section documents The Things Network V2, which is no longer maintained.
+    See the <a href="https://www.thethingsindustries.com/docs">documentation for The Things Stack V3</a>, or browse the <a href="/docs/v2-docs/">V2 docs index</a>.</p>
+  </div>
+</div>
+
+      <div class="dx-prose">
+        <p>Here&rsquo;s how you include and use The Things Network library. Also have a look at the examples bundled with the library. You can find them in the Arduino IDE under <strong>File &gt; Examples &gt; <a href="https://github.com/TheThingsNetwork/arduino-device-lib/tree/master/examples">TheThingsNetwork</a></strong>.</p>
+<h2 id="include">Include <a class="dx-anchor" href="#include" aria-label="Link to this section">#</a></h2>
 <p>To use the library:</p>
 <ol>
 <li>Follow <a href="/docs/devices/arduino/ide/#setup">setup</a> to install the library in Arduino IDE.</li>
@@ -247,7 +174,7 @@
 </ol>
 <p>Or simply copy and paste:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="cp">#include</span> <span class="cpf">&lt;TheThingsNetwork.h&gt;</span><span class="cp">
-</span></code></pre></div><h2 id="initialize">Initialize&nbsp;<a class="header-hash" href="#initialize">#</a> </h2>
+</span></code></pre></div><h2 id="initialize">Initialize <a class="dx-anchor" href="#initialize" aria-label="Link to this section">#</a></h2>
 <p>A typical sketch has the following structure:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="cp">#include</span> <span class="cpf">&lt;TheThingsNetwork.h&gt;</span><span class="cp">
 </span><span class="cp"></span>
@@ -276,7 +203,7 @@
 </span><span class="c1"></span>  <span class="c1">// ..
 </span><span class="c1"></span><span class="p">}</span>
 </code></pre></div><p>The actual streams you&rsquo;d pass to the constructor depend on the board you use and the Serial Port you connected a LoRaWAN module to. For The Things Uno and Node use the Serial Ports and baud rates shown here. For other devices see the notes about serial ports at the end of this document.</p>
-<h3 id="set-the-frequency-plan">Set the frequency plan&nbsp;<a class="header-hash" href="#set-the-frequency-plan">#</a> </h3>
+<h3 id="set-the-frequency-plan">Set the frequency plan <a class="dx-anchor" href="#set-the-frequency-plan" aria-label="Link to this section">#</a></h3>
 <p>The third argument for the constructor is a constant to set the frequency plan your device operates on. Replace <code>REPLACE_ME</code> with one of the lines below, depending on the frequency plan of your device and your country. (Click <a href="https://www.thethingsnetwork.org/docs/lorawan/frequencies-by-country.html">here</a> for an overview of all frequency plans per country).</p>
 <ul>
 <li><code>TTN_FP_EU868</code> (Europe, Middle East, Africa)</li>
@@ -287,10 +214,10 @@
 <li><code>TTN_FP_AS920_923</code> (Japan, Singapore, Malaysia)</li>
 <li><code>TTN_FP_AS923_925</code> (Southeast Asia)</li>
 </ul>
-<h2 id="activate">Activate&nbsp;<a class="header-hash" href="#activate">#</a> </h2>
+<h2 id="activate">Activate <a class="dx-anchor" href="#activate" aria-label="Link to this section">#</a></h2>
 <p>In the <a href="https://www.arduino.cc/en/Reference/setup"><code>setup()</code></a> function, after initializing the library, we have to activate the device.</p>
 <p>There are two ways to activate your device. By default your device is registered to use OTAA. You can also personalise a device to use ABP.</p>
-<h3 id="over-the-air-activation-otaa">Over The Air Activation (OTAA)&nbsp;<a class="header-hash" href="#over-the-air-activation-otaa">#</a> </h3>
+<h3 id="over-the-air-activation-otaa">Over The Air Activation (OTAA) <a class="dx-anchor" href="#over-the-air-activation-otaa" aria-label="Link to this section">#</a></h3>
 <p>For OTAA you will use the <code>join()</code> method with the <strong>App EUI</strong> and <strong>App Key</strong> configured for your device.</p>
 <ol>
 <li>
@@ -310,7 +237,7 @@
 </code></pre></div></li>
 </ol>
 <p>Your device will now try to get a confirmed activation via OTAA every 10 seconds until it succeeds.</p>
-<h3 id="activation-by-personalization-abp">Activation By Personalization (ABP)&nbsp;<a class="header-hash" href="#activation-by-personalization-abp">#</a> </h3>
+<h3 id="activation-by-personalization-abp">Activation By Personalization (ABP) <a class="dx-anchor" href="#activation-by-personalization-abp" aria-label="Link to this section">#</a></h3>
 <p>For ABP you will use the <code>personalize()</code> method with the device&rsquo;s <strong>Device EUI</strong>, <strong>Network Session Key</strong> and <strong>App Session Key</strong>.</p>
 <ol>
 <li>
@@ -333,7 +260,7 @@
 </ol>
 <p>Your device will now communicate with the network using these keys.</p>
 <p>Also see <strong>File &gt; Examples &gt; TheThingsNetwork &gt; <a href="https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/ABP/ABP.ino">ABP</a></strong>.</p>
-<h2 id="send">Send&nbsp;<a class="header-hash" href="#send">#</a> </h2>
+<h2 id="send">Send <a class="dx-anchor" href="#send" aria-label="Link to this section">#</a></h2>
 <p>To send messages call <code>ttn.sendBytes()</code> with an array of bytes and its size. Here&rsquo;s an example of a <code>loop()</code> function that sends the current state of <a href="https://www.arduino.cc/en/Reference/Constants"><code>LED_BUILTIN</code></a> every 10 seconds:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
   <span class="n">byte</span> <span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
@@ -345,7 +272,7 @@
 <span class="p">}</span>
 </code></pre></div><p>To minimise your use of the limited daily airtime try to use as little bytes as possible. See <a href="/docs/devices/bytes/">Working with Bytes</a> for more information.</p>
 <p>Also see <strong>File &gt; Examples &gt; TheThingsNetwork &gt; <a href="https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/Send/Send.ino">Send</a></strong>.</p>
-<h2 id="receive">Receive&nbsp;<a class="header-hash" href="#receive">#</a> </h2>
+<h2 id="receive">Receive <a class="dx-anchor" href="#receive" aria-label="Link to this section">#</a></h2>
 <p>The most common <a href="https://www.lora-alliance.org/What-Is-LoRa/Technology">Class A</a> LoRaWAN devices - including The Things Node and Uno - can only receive the last scheduled message in response to a message they send.</p>
 <blockquote>
 <p>For your convenience, the library has a <code>ttn.poll()</code> method which sends a single byte to poll for incoming messages, if you don&rsquo;t have anything particular to send.</p>
@@ -372,16 +299,16 @@
 </ol>
 <p>Also see <strong>File &gt; Examples &gt; TheThingsNetwork &gt; <a href="https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples/Receive/Receive.ino">Receive</a></strong>.</p>
 <h1 id="notes">Notes</h1>
-<h2 id="serial-ports">Serial ports&nbsp;<a class="header-hash" href="#serial-ports">#</a> </h2>
+<h2 id="serial-ports">Serial ports <a class="dx-anchor" href="#serial-ports" aria-label="Link to this section">#</a></h2>
 <p>The RN2483 and RN2903 make use of a serial interface to communicate with your device&rsquo;s main processor. Serial interfaces are similar to the RS232 serial port on older computers. The most microcontrollers have hardware Universal Asynchronous Receiver/Transmitters (UARTs) or also called HardwareSerial ports. Serial communication is offloaded to these UARTs so that the main processor does not have to waste time on this slow task. A UART can only support one serial interface at a time, and most processors only have one or two UARTs. Therefore if you already used the available UARTs to communicate with, for example, your computer and a GPS, you do not have any left for the RN2483/RN2903.</p>
 <p>When you run out of UARTs, you can still use serial communication handled in software. In this case it is not offloaded to dedicated hardware, and the main processor needs to handle the communication. This is called Software Serial. Depending on how the software serial is implemented, you can have as many as you want, as long as you have free GPIO pins on your device. Note that not all GPIO pins support all types of software serial. Examples of software serial is the default Arduino <a href="https://www.arduino.cc/en/Reference/SoftwareSerial">SoftwareSerial</a> library, and the <a href="https://www.pjrc.com/teensy/td_libs_AltSoftSerial.html">AltSoftSerial</a> library.</p>
 <p>Serial communication uses high and low voltages to signal ones and zeros. The RN2483/RN2903 runs on 3.3V, which means a one is represented as a 3.3V level on the communication line, and a 0 is a 0V level on the line. Because the most Arduinos run at 5V, they expect a one to be represented by a 5V level on the line. Therefore when and Arduino sees a 3.3V signal, it causes an ambiguity. If you are lucky it works fine, but it is out of specification. To connect an RN2483/RN2903 to a 5V Arduino, you will need to include a level shifter.</p>
-<h3 id="stream-objects">Stream objects&nbsp;<a class="header-hash" href="#stream-objects">#</a> </h3>
+<h3 id="stream-objects">Stream objects <a class="dx-anchor" href="#stream-objects" aria-label="Link to this section">#</a></h3>
 <p>In the Arduino world serial ports are abstracted as stream objects. All stream objects have the same functions, even if lower down they use different physical connections (UART, SoftwareSerial, AltSoftSerial). This library does not care what you use, as long as it extends the Stream object.</p>
 <p>The Stream objects need to be initialized at the correct baud rates at the start of your <code>setup()</code> function. See <a href="https://github.com/TheThingsNetwork/arduino-device-lib/blob/master/examples">our examples</a> for more details. For example:</p>
 <pre tabindex="0"><code>  loraSerial.begin(57600);
   debugSerial.begin(9600);
-</code></pre><h3 id="thethingsuno">TheThingsUno&nbsp;<a class="header-hash" href="#thethingsuno">#</a> </h3>
+</code></pre><h3 id="thethingsuno">TheThingsUno <a class="dx-anchor" href="#thethingsuno" aria-label="Link to this section">#</a></h3>
 <p>TheThingsUno is basically the same as an Arduino Leonardo with Serial1 connected to the RN2483/RN2903. Therefore if you use an Arduino Leonardo, and connect your RN2483/RN2903 to the Serial1 pins, you can use the same configuration than for TheThingsUno.</p>
 <p>At the top of your sketch use</p>
 <pre tabindex="0"><code>#define loraSerial Serial1
@@ -393,7 +320,7 @@
   debugSerial.begin(9600);
   ...
 }
-</code></pre><h3 id="sodaq-one">SODAQ One&nbsp;<a class="header-hash" href="#sodaq-one">#</a> </h3>
+</code></pre><h3 id="sodaq-one">SODAQ One <a class="dx-anchor" href="#sodaq-one" aria-label="Link to this section">#</a></h3>
 <p>At the top of your sketch use</p>
 <pre tabindex="0"><code>#define loraSerial Serial1
 #define debugSerial SerialUSB
@@ -404,7 +331,7 @@
   debugSerial.begin(9600);
   ...
 }
-</code></pre><h3 id="arduino-uno-arduino-nano-or-other-devices-using-softwareserial">Arduino Uno, Arduino Nano or other devices using SoftwareSerial&nbsp;<a class="header-hash" href="#arduino-uno-arduino-nano-or-other-devices-using-softwareserial">#</a> </h3>
+</code></pre><h3 id="arduino-uno-arduino-nano-or-other-devices-using-softwareserial">Arduino Uno, Arduino Nano or other devices using SoftwareSerial <a class="dx-anchor" href="#arduino-uno-arduino-nano-or-other-devices-using-softwareserial" aria-label="Link to this section">#</a></h3>
 <p>The Arduino Uno only has one hardware serial port which is used to communicate over USB to the computer. When connecting an RN2483/RN2903 to the Arduino Uno, one has to make use of SoftwareSerial. If you connected the RN2483/RN2903 to the Arduino using the same pinout as <a href="https://www.thethingsnetwork.org/forum/t/how-to-build-your-first-ttn-node-arduino-rn2483/1574">described on the forum</a>, you can make use of the following code.</p>
 <p>At the top of your sketch use</p>
 <pre tabindex="0"><code>#include &lt;SoftwareSerial.h&gt;
@@ -423,57 +350,85 @@ SoftwareSerial loraSerial(10, 11); // RX, TX
 <p>If you connected the RN2483/RN2903 to different pins on the Arduino, you can change the line <code>SoftwareSerial loraSerial(10, 11); // RX, TX</code> to specify the correct RX and TX pins (from the Arduino&rsquo;s perspective).</p>
 <p>When using the <a href="https://github.com/PaulStoffregen/AltSoftSerial">AltSoftSerial</a> library the pins you can use for software serial is fixed according to which device you use. You therefore do not have a choice which pins to use, and you may lose some other functionality, but this library seems to be more stable than the default SoftwareSerial library. Both are however usable with TheThingsNetwork library.</p>
 
-
-        </div>
-      
+      </div>
       
 
+      
 
+    </article>
+    <aside class="dx-rail" aria-label="On this page">
+  <div class="dx-rail__label">On this page</div>
+  <nav class="dx-toc" data-toc>
+    <a href="#include" class="dx-toc__link">Include</a>
+    <a href="#initialize" class="dx-toc__link">Initialize</a>
+    <a href="#set-the-frequency-plan" class="dx-toc__link dx-toc__link--sub">Set the frequency plan</a>
+    <a href="#activate" class="dx-toc__link">Activate</a>
+    <a href="#over-the-air-activation-otaa" class="dx-toc__link dx-toc__link--sub">Over The Air Activation (OTAA)</a>
+    <a href="#activation-by-personalization-abp" class="dx-toc__link dx-toc__link--sub">Activation By Personalization (ABP)</a>
+    <a href="#send" class="dx-toc__link">Send</a>
+    <a href="#receive" class="dx-toc__link">Receive</a>
+    <a href="#serial-ports" class="dx-toc__link">Serial ports</a>
+    <a href="#stream-objects" class="dx-toc__link dx-toc__link--sub">Stream objects</a>
+    <a href="#thethingsuno" class="dx-toc__link dx-toc__link--sub">TheThingsUno</a>
+    <a href="#sodaq-one" class="dx-toc__link dx-toc__link--sub">SODAQ One</a>
+    <a href="#arduino-uno-arduino-nano-or-other-devices-using-softwareserial" class="dx-toc__link dx-toc__link--sub">Arduino Uno, Arduino Nano or other devices using SoftwareSerial</a>
+  </nav>
+  <div class="dx-rail__rule"></div>
+  <a class="dx-rail__tool" href="https://github.com/TheThingsNetwork/docs/blob/master/doc/content/devices/arduino/usage/_index.md" rel="noopener"><svg class="dx-icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M7 7H6a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2v-1"/><path d="M20.385 6.585a2.1 2.1 0 0 0-2.97-2.97L9 12v3h3zM16 5l3 3"/></g></svg>Edit this page</a>
+  <a class="dx-rail__tool" href="https://www.thethingsnetwork.org/forum"><svg class="dx-icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m21 14l-3-3h-7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1zm-7 1v2a1 1 0 0 1-1 1H6l-3 3V11a1 1 0 0 1 1-1h2"/></svg>Ask on the forum</a>
+</aside>
 
-
-  
-
-  
-
-  
-
-
-<div class="is-clearfix">
+  </main>
 </div>
 
+
+
+<footer class="dx-footer">
+  <div class="dx-wrap dx-footer__inner">
+    <div class="dx-footer__grid">
+      <div class="dx-footer__brand">
+        <img src="/docs/img/ttn-horizontal-white.svg" alt="The Things Network" width="150" height="34">
+        <p>A global collaborative Internet of Things ecosystem, initiated by The Things Industries.</p>
+      </div>
+      <div class="dx-footer__col">
+        <div class="dx-footer__title">Learn</div>
+        <a href="https://www.thethingsnetwork.org/docs/network/">Get started</a>
+        <a href="https://www.thethingsnetwork.org/docs/lorawan/">LoRaWAN® fundamentals</a>
+        <a href="https://www.thethingsnetwork.org/achievements">Certification</a>
+        <a href="https://www.thethingsnetwork.org/achievements/a/the-things-academy/">The Things Academy</a>
+      </div>
+      <div class="dx-footer__col">
+        <div class="dx-footer__title">Community</div>
+        <a href="https://www.thethingsnetwork.org/community">Communities</a>
+        <a href="https://www.thethingsnetwork.org/forum">Forum</a>
+        <a href="https://www.thethingsnetwork.org/start-a-community">Start a community</a>
+        <a href="https://www.thethingsconference.com/" rel="noopener">Conference</a>
+      </div>
+      <div class="dx-footer__col">
+        <div class="dx-footer__title">Resources</div>
+        <a href="https://www.thethingsnetwork.org/docs/">Documentation</a>
+        <a href="https://www.thethingsnetwork.org/device-repository/">Device Repository</a>
+        <a href="https://www.thethingsnetwork.org/help">Help &amp; user guide</a>
+        <a href="https://www.thethingsindustries.com/stack/" rel="noopener">The Things Stack</a>
+        <a href="https://github.com/TheThingsNetwork/lorawan-stack" rel="noopener">Open source</a>
+      </div>
+    </div>
+    <div class="dx-footer__base">
+      <div class="dx-footer__legal">
+        <span>LoRaWAN® is a mark used under license from the LoRa Alliance®.</span>
+        <button type="button" class="dx-footer__consent" data-ttn-consent-settings>Cookie settings</button>
+      </div>
+      <div class="dx-footer__social">
+        <a href="https://github.com/TheThingsNetwork" rel="noopener" aria-label="GitHub"><svg class="dx-icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.6-.6 1.2-.5 2V21"/></svg></a>
+        <a href="https://www.linkedin.com/company/the-things-network/" rel="noopener" aria-label="LinkedIn"><svg class="dx-icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M8 11v5m0-8v.01M12 16v-5m4 5v-3a2 2 0 1 0-4 0"/><path d="M3 7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4z"/></g></svg></a>
+        <a href="https://www.youtube.com/c/TheThingsNetworkCommunity" rel="noopener" aria-label="YouTube"><svg class="dx-icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M2 8a4 4 0 0 1 4-4h12a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4z"/><path d="m10 9l5 3l-5 3z"/></g></svg></a>
+        <a href="https://twitter.com/thethingsntwrk" rel="noopener" aria-label="X"><svg class="dx-icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m4 4l11.733 16H20L8.267 4zm0 16l6.768-6.768m2.46-2.46L20 4"/></svg></a>
       </div>
     </div>
   </div>
-</div>
+</footer>
 
-
-<div class="ttn-footer ttui-container"><ttn-footer class="theme-ttn"></ttn-footer></div>
-
-<script src="https://cdn.jsdelivr.net/npm/promise-polyfill@7/dist/polyfill.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
-<script src="https://www.thethingsnetwork.org/docs/js/vendor/basicLightbox.min.js"></script>
-<script src="https://www.thethingsnetwork.org/docs/js/theme.min.0775735f9c997126c786dc75ee2fafeb1f6465f3c693ad34198334f407e80ff1.js" integrity="sha256-B3VzX5yZcSbHhtx17i&#43;v6x9kZfPGk600GYM09AfoD/E=" crossorigin="anonymous"></script>
-
-<ttui-cookie class="theme-ttn" id="cookie-banner"></ttui-cookie>
-
-<script>
-  var cookieBanner = document.getElementById("cookie-banner");
-  window.addEventListener("ttuicookieaccept", cookieAccept, { capture: true, once: true } );
-  var cookieAcceptKey = 'ttn-ca'
-  var timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-
-  if (readCookieAccept() || !timezone.includes("Europe") ) {
-      cookieBanner.setAttribute('accepted', true);
-  }
-
-  function readCookieAccept() {
-      return localStorage.getItem(cookieAcceptKey)
-  }
-
-  function cookieAccept() {
-      localStorage.setItem(cookieAcceptKey, true);
-  }
-</script>
+<script src="/docs/js/docs.min.aa6a1e0f75a807c1f3ec3be1d83182f2ffd4c3ef648cee8b690d29f8bdbf81e3.js" integrity="sha256-qmoeD3WoB8Hz7Dvh2DGC8v/Uw&#43;9kjO6LaQ0p&#43;L2/geM=" data-search-index="/docs/index.json" defer></script>
 
 </body>
 

@@ -1,54 +1,26 @@
 <!DOCTYPE html>
-
-<html lang="en-us" class="has-ttn-navbar-top">
+<html lang="en-us">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-  
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-PP5G5BT');</script>
-  
+  <script src="/consent.js" defer></script>
 
   <meta name="generator" content="Hugo 0.88.1" />
 
   <title>Setup | The Things Network</title>
+  <meta name="description" content="Before starting the gateway, you’ll need to set it up. If you’ve never used Cisco equipment before, we’re providing you with basic instructions to set up the …">
   <link rel="canonical" href="https://www.thethingsnetwork.org/docs/gateways/cisco/setup/" />
-  
-
-  <link rel="apple-touch-icon-precomposed" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png">
-
-  <meta name="msapplication-TileColor" content="#FFFFFF">
-  <meta name="msapplication-TileImage" content="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png">
-
-  <meta name="application-name" content="The Things Network">
-  <meta name="msapplication-tooltip" content="Tooltip">
-  <meta name="msapplication-config" content="https://ttnweb.azureedge.net/static/common/favicon/ieconfig.54334a5ee30c.xml">
 
   <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-32.61b30f85680a.png" sizes="32x32">
-  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-57.83b86c64dc82.png" sizes="57x57">
-  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-76.7dcf8fa36dfc.png" sizes="76x76">
-  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-96.27ac17adaa8b.png" sizes="96x96">
-  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-120.e1526731335e.png" sizes="120x120">
-  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-128.fabea041224c.png" sizes="128x128">
-  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-144.61bd01a950fb.png" sizes="144x144">
-  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-152.6c70a98e264d.png" sizes="152x152">
-  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-180.fcd414307ca3.png" sizes="180x180">
-  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-195.c55ce09d66da.png" sizes="195x195">
-  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-228.bea53ec4b10b.png" sizes="228x228">
-  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/smalltile.fabea041224c.png" sizes="128x128">
-  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/mediumtile.3d42f7faac82.png" sizes="270x270">
-  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/widetile.3d42f7faac82.png" sizes="558x270">
-  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/largetile.eb144ebab4d1.png" sizes="558x558">
-  <link rel="shortcut icon" sizes="196x196" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png">
-  <link rel="stylesheet" href="https://www.thethingsnetwork.org/docs/css/theme.min.58fca61d6003439b384e4126a522c6391c0560a0cbd77a99c73d351bb2018920.css" integrity="sha256-WPymHWADQ5s4TkEmpSLGORwFYKDL13qZxz01G7IBiSA=" crossorigin="anonymous">
+  <link rel="icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-196.277278d69ddc.png" sizes="196x196">
+  <link rel="apple-touch-icon" href="https://ttnweb.azureedge.net/static/common/favicon/favicon-180.fcd414307ca3.png">
+  <meta name="application-name" content="The Things Network">
+  <meta name="theme-color" content="#001859">
 
-  <link rel="stylesheet" href="https://ttui.thethingsindustries.com/release/1.7.4/main.css" />
+  <link rel="preload" href="/docs/fonts/inter/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/docs/fonts/inter/Inter-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/docs/css/docs.min.25a2f50fc4f7e29608cf91bca7b8144a8d454e724c3dc6bdf9d0d68476ff9e70.css" integrity="sha256-JaL1D8T34pYIz5G8p7gUSo1FTnJMPca9&#43;dDWhHb/nnA=">
 
   <meta property="og:title" content="Setup" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
@@ -69,229 +41,152 @@
 
 <body>
 
+<a class="dx-skip" href="#main">Skip to content</a>
 
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PP5G5BT"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<header class="dx-header" data-header>
+  <div class="dx-header__bar">
+    <a href="https://www.thethingsnetwork.org/" class="dx-header__logo" aria-label="The Things Network home">
+      <img src="/docs/img/ttn-horizontal.svg" alt="The Things Network" width="132" height="30">
+    </a>
 
+    <button type="button" class="dx-header__toggle" aria-expanded="false" aria-controls="dx-header-panel" data-header-toggle>
+      <span class="dx-header__toggle-open"><svg class="dx-icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></span>
+      <span class="dx-header__toggle-close"><svg class="dx-icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 6L6 18M6 6l12 12"/></svg></span>
+      <span class="dx-sr">Menu</span>
+    </button>
 
-<ttn-header class="theme-ttn" root-url="https://www.thethingsnetwork.org"></ttn-header><section class="section">
-  <div class="container">
-    <nav class="breadcrumb has-dot-separator" aria-label="breadcrumbs">
-      <ul>
-        
-        
-          <li><a href="https://www.thethingsnetwork.org/docs/v2-docs/">Go Back - V2 Docs (Outdated)</a></li>
-        
-        
-            <li class="">
-              <a href="https://www.thethingsnetwork.org/docs/devices/">Devices (V2)</a>
-            </li>
-          
-        
-            <li class="is-active">
-              <a href="https://www.thethingsnetwork.org/docs/gateways/">Gateways (V2)</a>
-            </li>
-          
-        
-            <li class="">
-              <a href="https://www.thethingsnetwork.org/docs/applications/">Applications (V2)</a>
-            </li>
-          
-        
-            <li class="">
-              <a href="https://www.thethingsnetwork.org/docs/network/">Network (V2)</a>
-            </li>
-          
-        
-      
-      </ul>
-    </nav>
-    
-      <div class="notification is-warning is-light has-text-dark">
-        <h5 class="title is-family-sans-serif has-text-dark mb-1">Warning:</h5>
-        This section contains documentation written for The Things Network V2, which is no longer maintained. See <a href="https://thethingsindustries.com/docs">documentation for The Things Stack V3</a>.
+    <div class="dx-header__panel" id="dx-header-panel">
+      <nav class="dx-header__nav" aria-label="Main">
+          <a class="dx-header__link" href="https://www.thethingsnetwork.org/docs/" aria-current="page">Learn</a>
+          <details class="dx-drop">
+            <summary class="dx-header__link">Hardware <svg class="dx-icon dx-drop__chev" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m6 9l6 6l6-6"/></svg></summary>
+            <div class="dx-drop__menu">
+              <a class="dx-drop__item" href="https://www.thethingsnetwork.org/device-repository/">Device Repository</a>
+              <a class="dx-drop__item" href="https://www.thethingsshop.com/" rel="noopener">The Things Shop</a>
+            </div>
+          </details>
+          <a class="dx-header__link" href="https://www.thethingsnetwork.org/forum">Forum</a>
+          <a class="dx-header__link" href="https://www.thethingsnetwork.org/community">Community</a>
+          <a class="dx-header__link" href="https://www.thethingsconference.com/" rel="noopener">Conference</a>
+          <a class="dx-header__link" href="https://www.thethingsindustries.com/" rel="noopener">Enterprise</a>
+      </nav>
+
+      <div class="dx-header__tools">
+        <div class="dx-search" data-search>
+          <label class="dx-search__field">
+            <svg class="dx-icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10a7 7 0 1 0 14 0a7 7 0 1 0-14 0m18 11l-6-6"/></svg>
+            <span class="dx-sr">Search docs</span>
+            <input type="search" placeholder="Search docs" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="dx-search-results" aria-autocomplete="list" data-search-input>
+            <kbd>/</kbd>
+          </label>
+          <div class="dx-search__results" id="dx-search-results" role="listbox" hidden data-search-results></div>
+        </div>
+        <div class="dx-header__auth" data-auth>
+          <a href="https://www.thethingsnetwork.org/get-started?login" class="dx-header__login">Log in</a>
+          <a href="https://www.thethingsnetwork.org/get-started" class="dx-btn dx-btn--sm">Sign up</a>
+        </div>
       </div>
-    
+    </div>
   </div>
-</section>
-<div class="container" role="document">
-  <div class="columns my-0 is-desktop">
-    <div class="column is-3-desktop sidebar-left">
-      
+</header>
 
+<div class="dx-docs">
+  <aside class="dx-side" aria-label="Gateways navigation">
+  <details class="dx-side__toggle" open data-side>
+    <summary class="dx-side__summary"><svg class="dx-icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 6h11M9 12h11M9 18h11M5 6v.01M5 12v.01M5 18v.01"/></svg> Gateways menu</summary>
 
-<nav class="side-navigation" aria-label="Main navigation">
-
-<h2 class="title is-size-5">Gateways</h2>
-
-<div class="menu">
-  <ul class="menu-list">
-  <a href="https://www.thethingsnetwork.org/docs/gateways/" class="">Overview</a>
-  <li>
-      <a href="https://www.thethingsnetwork.org/docs/gateways/basics-station/" class="">LoRa Basics™ Station</a>
-    </li>
-  <li>
-      <a href="https://www.thethingsnetwork.org/docs/gateways/certificates/" class="">Root Certificates</a>
-    </li>
+    <nav class="dx-side__nav">
+      <div class="dx-side__group">
+        <a href="/docs/gateways/" class="dx-side__link dx-side__link--overview">
+          <svg class="dx-icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1zm10 0a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1zM4 15a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1zm10 0a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1z"/></svg>Overview
+        </a>
+          
+<a href="/docs/gateways/basics-station/" class="dx-side__link">LoRa Basics™ Station</a>
+          
+<a href="/docs/gateways/certificates/" class="dx-side__link">Root Certificates</a>
+      </div>
+      <div class="dx-side__group">
+        <div class="dx-side__label">Running a gateway</div>
+          
+<a href="/docs/gateways/troubleshooting/" class="dx-side__link">Troubleshooting</a>
+          
+<a href="/docs/gateways/lightning-protection/" class="dx-side__link">Lightning Protection</a>
+          
+<a href="/docs/gateways/packet-forwarder/" class="dx-side__link">Packet Forwarders</a>
+          
+<a href="/docs/gateways/registration/" class="dx-side__link">Gateway Registration</a>
+          
+<a href="/docs/gateways/start/" class="dx-side__link">Where to start</a>
+      </div>
+      <div class="dx-side__group">
+        <div class="dx-side__label">Hardware</div>
+          
+<a href="/docs/gateways/pisupply-hat/" class="dx-side__link">Pi Supply Gateway HAT</a>
+          
+<a href="/docs/gateways/multitech/" class="dx-side__link">MultiTech Conduit</a>
+          
+<a href="/docs/gateways/rak2245/" class="dx-side__link">RAK2245 Pi Hat Edition - LoRaWAN® Gateway Concentrator Module</a>
+          
+<a href="/docs/gateways/rak7243c/" class="dx-side__link">RAK7243C Pilot Gateway</a>
+          
+<a href="/docs/gateways/rak831/" class="dx-side__link">RAK831</a>
+          
+<a href="/docs/gateways/gateway/" class="dx-side__link">The Things Gateway</a>
+          
+<a href="/docs/gateways/thethingsindoor/" class="dx-side__link">The Things Indoor Gateway</a>
+          
+<a href="/docs/gateways/thethingsoutdoor/" class="dx-side__link">The Things Outdoor Gateway</a>
+          
+<a href="/docs/gateways/aaeon/" class="dx-side__link">AAEON</a>
+          
+<a href="/docs/gateways/cisco/" class="dx-side__link">Cisco LoRaWAN Gateway</a>
+<div class="dx-side__tree">
   
-    <p class="menu-label">
-      Running a gateway
-    </p>
-    
-      
-<li>
-  <a href="https://www.thethingsnetwork.org/docs/gateways/troubleshooting/" class="">Troubleshooting</a>
-</li>
-
-      
-<li>
-  <a href="https://www.thethingsnetwork.org/docs/gateways/lightning-protection/" class="">Lightning Protection</a>
-</li>
-
-      
-<li>
-  <a href="https://www.thethingsnetwork.org/docs/gateways/packet-forwarder/" class="">Packet Forwarders</a>
-</li>
-
-      
-<li>
-  <a href="https://www.thethingsnetwork.org/docs/gateways/registration/" class="">Gateway Registration</a>
-</li>
-
-      
-<li>
-  <a href="https://www.thethingsnetwork.org/docs/gateways/start/" class="">Where to start</a>
-</li>
-
-  
-    <p class="menu-label">
-      Hardware
-    </p>
-    
-      
-<li>
-  <a href="https://www.thethingsnetwork.org/docs/gateways/pisupply-hat/" class="">Pi Supply Gateway HAT</a>
-</li>
-
-      
-<li>
-  <a href="https://www.thethingsnetwork.org/docs/gateways/multitech/" class="">MultiTech Conduit</a>
-</li>
-
-      
-<li>
-  <a href="https://www.thethingsnetwork.org/docs/gateways/rak2245/" class="">RAK2245 Pi Hat Edition - LoRaWAN® Gateway Concentrator Module</a>
-</li>
-
-      
-<li>
-  <a href="https://www.thethingsnetwork.org/docs/gateways/rak7243c/" class="">RAK7243C Pilot Gateway</a>
-</li>
-
-      
-<li>
-  <a href="https://www.thethingsnetwork.org/docs/gateways/rak831/" class="">RAK831</a>
-</li>
-
-      
-<li>
-  <a href="https://www.thethingsnetwork.org/docs/gateways/gateway/" class="">The Things Gateway</a>
-</li>
-
-      
-<li>
-  <a href="https://www.thethingsnetwork.org/docs/gateways/thethingsindoor/" class="">The Things Indoor Gateway</a>
-</li>
-
-      
-<li>
-  <a href="https://www.thethingsnetwork.org/docs/gateways/thethingsoutdoor/" class="">The Things Outdoor Gateway</a>
-</li>
-
-      
-<li>
-  <a href="https://www.thethingsnetwork.org/docs/gateways/aaeon/" class="">AAEON</a>
-</li>
-
-      
-<li>
-  <a href="https://www.thethingsnetwork.org/docs/gateways/cisco/" class="">Cisco LoRaWAN Gateway</a>
-  
-
-
-<ul class="menu-list">
-
-  <li>
-    <a href="https://www.thethingsnetwork.org/docs/gateways/cisco/setup/" class="is-active">Setup</a>
-    
-    
-
-
-
-    
-  </li>
-
-</ul>
-
-
-  
-</li>
-
-      
-<li>
-  <a href="https://www.thethingsnetwork.org/docs/gateways/kerlink/" class="">Kerlink</a>
-</li>
-
-      
-<li>
-  <a href="https://www.thethingsnetwork.org/docs/gateways/laird/" class="">Laird RG1xx</a>
-</li>
-
-      
-<li>
-  <a href="https://www.thethingsnetwork.org/docs/gateways/lorrier/" class="">Lorrier LR2</a>
-</li>
-
-      
-<li>
-  <a href="https://www.thethingsnetwork.org/docs/gateways/mikrotik/" class="">MikroTik Routerboard</a>
-</li>
-
-      
-<li>
-  <a href="https://www.thethingsnetwork.org/docs/gateways/st/" class="">P-NUCLEO-LRWAN2</a>
-</li>
-
-      
-<li>
-  <a href="https://www.thethingsnetwork.org/docs/gateways/tektelic/" class="">Tektelic</a>
-</li>
-
-      
-<li>
-  <a href="https://www.thethingsnetwork.org/docs/gateways/ursalink/" class="">Ursalink</a>
-</li>
-
-  
-  </ul>
+<a href="/docs/gateways/cisco/setup/" class="dx-side__link" aria-current="page">Setup</a>
 </div>
+          
+<a href="/docs/gateways/kerlink/" class="dx-side__link">Kerlink</a>
+          
+<a href="/docs/gateways/laird/" class="dx-side__link">Laird RG1xx</a>
+          
+<a href="/docs/gateways/lorrier/" class="dx-side__link">Lorrier LR2</a>
+          
+<a href="/docs/gateways/mikrotik/" class="dx-side__link">MikroTik Routerboard</a>
+          
+<a href="/docs/gateways/st/" class="dx-side__link">P-NUCLEO-LRWAN2</a>
+          
+<a href="/docs/gateways/tektelic/" class="dx-side__link">Tektelic</a>
+          
+<a href="/docs/gateways/ursalink/" class="dx-side__link">Ursalink</a>
+      </div>
+    </nav>
+  </details>
+</aside>
 
-
-
-
-
+  <main id="main" class="dx-main">
+    <article class="dx-article">
+      <header class="dx-article__head">
+        <nav class="dx-crumbs" aria-label="Breadcrumb">
+  <a href="/docs/">Learn</a>
+  <svg class="dx-icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 6l6 6l-6 6"/></svg><a href="/docs/gateways/">Gateways</a>
+  <svg class="dx-icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 6l6 6l-6 6"/></svg><a href="/docs/gateways/cisco/">Cisco LoRaWAN Gateway</a>
+  <svg class="dx-icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 6l6 6l-6 6"/></svg><span aria-current="page">Setup</span>
 </nav>
 
-    </div>
-    <div class="column is-9-desktop sidebar-middle">
-      <div class="docs-content">
-        <h1 class="title is-size-2">
-          Setup
-        </h1>
-        <div class="content">
-          
-<p>Before starting the gateway, you&rsquo;ll need to set it up. If you&rsquo;ve never used Cisco equipment before, we&rsquo;re providing you with basic instructions to set up the gateway, and basic system and network configuration.</p>
-<h2 id="gateway-setup">Gateway setup&nbsp;<a class="header-hash" href="#gateway-setup">#</a> </h2>
+        <h1 class="dx-title">Setup</h1>
+      </header>
+      
+<div class="dx-callout dx-callout--warning" role="note">
+  <svg class="dx-icon dx-callout__icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v4m-1.637-9.409L2.257 17.125a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636-2.87L13.637 3.59a1.914 1.914 0 0 0-3.274 0M12 16h.01"/></svg>
+  <div class="dx-callout__body">
+    <p><strong>Outdated:</strong> this section documents The Things Network V2, which is no longer maintained.
+    See the <a href="https://www.thethingsindustries.com/docs">documentation for The Things Stack V3</a>, or browse the <a href="/docs/v2-docs/">V2 docs index</a>.</p>
+  </div>
+</div>
+
+      <div class="dx-prose">
+        <p>Before starting the gateway, you&rsquo;ll need to set it up. If you&rsquo;ve never used Cisco equipment before, we&rsquo;re providing you with basic instructions to set up the gateway, and basic system and network configuration.</p>
+<h2 id="gateway-setup">Gateway setup <a class="dx-anchor" href="#gateway-setup" aria-label="Link to this section">#</a></h2>
 <ul>
 <li>
 <p>Attach the <strong>antennas</strong> that you have for the gateway. If you have 2 antennas, plug in the both of them.</p>
@@ -322,8 +217,8 @@
 </li>
 </ul>
 <p>Your gateway is now up and running, and connected to your computer!</p>
-<h2 id="configuration">Configuration&nbsp;<a class="header-hash" href="#configuration">#</a> </h2>
-<h3 id="connect-to-the-cisco-gateway-console">Connect to the Cisco gateway console&nbsp;<a class="header-hash" href="#connect-to-the-cisco-gateway-console">#</a> </h3>
+<h2 id="configuration">Configuration <a class="dx-anchor" href="#configuration" aria-label="Link to this section">#</a></h2>
+<h3 id="connect-to-the-cisco-gateway-console">Connect to the Cisco gateway console <a class="dx-anchor" href="#connect-to-the-cisco-gateway-console" aria-label="Link to this section">#</a></h3>
 <p>You now have a serial connection to the Cisco gateway&rsquo;s console.</p>
 <p>To open up a terminal, you have several approaches available:</p>
 <ul>
@@ -337,11 +232,11 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">screen &lt;device&gt; <span class="m">115200</span> <span class="c1"># e.g. screen /dev/tty.usbserial-AO001X6M 115200</span>
 </code></pre></div></li>
 </ul>
-<h3 id="system-setup">System setup&nbsp;<a class="header-hash" href="#system-setup">#</a> </h3>
+<h3 id="system-setup">System setup <a class="dx-anchor" href="#system-setup" aria-label="Link to this section">#</a></h3>
 <p>This part covers <strong>setting up basic system and network parameters</strong>: updating it, connecting it to a local network, setting up <code>ntp</code> and the GPS. If you have specific network constraints, check with your system or network administrator how to set up the system for your network.</p>
 <p>You&rsquo;ll notice that the user shell is quite different from Unix-based shells. This shell is called <strong>standalone mode</strong>, and is meant for a basic usage of the gateway. In many cases, the standalone mode shell won&rsquo;t let you input unexpected characters and entries. In any shell, you can use the <code>?</code> command to show the list of available commands.</p>
 <p>First, type <code>root</code> to login as the privileged user, and enter <code>enable</code> to turn on privileged commands. To verify that privileged commands are enabled, check that the prompt is <code>Gateway#</code> and not <code>Gateway&gt;</code>.</p>
-<h4 id="update">Update&nbsp;<a class="header-hash" href="#update">#</a> </h4>
+<h4 id="update">Update <a class="dx-anchor" href="#update" aria-label="Link to this section">#</a></h4>
 <p>To update your Cisco gateway, you can download the latest <a href="https://software.cisco.com/download/home/286311296/type/286311234/release/2.0.30?imageguid=A74F81D27FD3C1DF311D59849D054C10468D338E">firmware update here</a> - at least version 2.0.30. You will need a Cisco account with the right permissions to download the update file. If your account does not have those permissions, get in touch with your Cisco representative or with Cisco support.</p>
 <p>Once you&rsquo;ve retrieved the update file, you can update your gateway by several ways: USB, FTP or TFTP. We&rsquo;ll cover in this guide how to update over USB. You will need for this a USB stick formatted in FAT. The USB port of the Cisco IXM being tiny, you&rsquo;ll want to use the tiniest USB stick that you own.</p>
 <ol>
@@ -358,7 +253,7 @@ archive download-sw firmware /normal /save-reload usb:cisco_update.tar.gz
 </code></pre></div></li>
 </ol>
 <p>This will update your Cisco firmware. After the operation, you can verify the installed version with <code>show version</code>.</p>
-<h4 id="network-setup">Network setup&nbsp;<a class="header-hash" href="#network-setup">#</a> </h4>
+<h4 id="network-setup">Network setup <a class="dx-anchor" href="#network-setup" aria-label="Link to this section">#</a></h4>
 <p>To configure your Cisco Gateway to your network, type the following commands:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">configure terminal <span class="c1"># Enter global configuration mode</span>
 interface FastEthernet 0/1 <span class="c1"># Enter Ethernet configuration</span>
@@ -374,7 +269,7 @@ copy running-config startup-config <span class="c1"># Save the configuration</sp
 </code></pre></div><p>You can test your Internet configuration with the <code>ping</code> command, for example:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">ping ip 8.8.8.8 <span class="c1"># Ping Google&#39;s DNS server</span>
 </code></pre></div><p>To see more information about the gateway&rsquo;s IP and the network, you can use <code>show interfaces FastEthernet 0/1</code>, <code>show ip interfaces FastEthernet 0/1</code> or <code>show ip route</code>.</p>
-<h4 id="date-and-time">Date and time&nbsp;<a class="header-hash" href="#date-and-time">#</a> </h4>
+<h4 id="date-and-time">Date and time <a class="dx-anchor" href="#date-and-time" aria-label="Link to this section">#</a></h4>
 <p>To configure your system&rsquo;s date and time, you can use <code>ntp</code>:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">configure terminal <span class="c1"># Enter global configuration mode</span>
 ntp server address &lt;NTP server address&gt; <span class="c1"># Configure ntp on an ntp address</span>
@@ -383,12 +278,12 @@ ntp server ip &lt;NTP server IP&gt; <span class="c1"># Configure ntp on an IP</s
 
 <span class="nb">exit</span> <span class="c1"># Exit global configuration mode</span>
 </code></pre></div><p>If you don&rsquo;t have production-grade <code>ntp</code> servers available, you can use <a href="http://www.pool.ntp.org/en/use.html"><code>pool.ntp.org</code></a>&rsquo;s servers.</p>
-<h4 id="fpga">FPGA&nbsp;<a class="header-hash" href="#fpga">#</a> </h4>
+<h4 id="fpga">FPGA <a class="dx-anchor" href="#fpga" aria-label="Link to this section">#</a></h4>
 <p>If you needed to update your gateway firmware previously, your FPGA will need ~20 minutes to update once the new firmware is installed. The packet forwarder will not work until then, so we recommend at this point waiting until the FPGA is upgraded.</p>
 <p>To show the status of the FPGA, you can use the following command:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">show inventory
 </code></pre></div><p>When the <code>FPGAStatus</code> line indicates <code>Ready</code>, this means you can go forward with this guide.</p>
-<h4 id="gps">GPS&nbsp;<a class="header-hash" href="#gps">#</a> </h4>
+<h4 id="gps">GPS <a class="dx-anchor" href="#gps" aria-label="Link to this section">#</a></h4>
 <p>If you have a GPS connected to your Cisco gateway, enable it with the following commands:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">configure terminal <span class="c1"># Enter global configuration mode</span>
 gps ubx <span class="nb">enable</span> <span class="c1"># Enable GPS</span>
@@ -396,7 +291,7 @@ gps ubx <span class="nb">enable</span> <span class="c1"># Enable GPS</span>
 </code></pre></div><blockquote>
 <p>📜 This command may return the message <code>packet-forwarder firmware is not installed</code>, this message can be ignored.</p>
 </blockquote>
-<h4 id="enable-radio">Enable radio&nbsp;<a class="header-hash" href="#enable-radio">#</a> </h4>
+<h4 id="enable-radio">Enable radio <a class="dx-anchor" href="#enable-radio" aria-label="Link to this section">#</a></h4>
 <p>As a final step before setting up the packet forwarder software, we&rsquo;re going to <strong>enable the radio</strong>. You can see radio information with the <code>show radio</code> command:</p>
 <pre tabindex="0"><code>Gateway#show radio 
 LORA_SN: FOC21028R8S
@@ -415,7 +310,7 @@ on
 <blockquote>
 <p>📜 The <code>show radio</code> command also shows you more information about the LoRa concentrator powering the gateway. For example, <code>LORA_SKU</code> indicates the base frequency of the concentrator.</p>
 </blockquote>
-<h3 id="enable-authentication">Enable authentication&nbsp;<a class="header-hash" href="#enable-authentication">#</a> </h3>
+<h3 id="enable-authentication">Enable authentication <a class="dx-anchor" href="#enable-authentication" aria-label="Link to this section">#</a></h3>
 <p>To prevent unauthorized access to the gateway, you&rsquo;ll want to set up user authentication. The Cisco gateway has a <strong>secret</strong> system, that requires users to enter a secret to access privileged commands.</p>
 <p>To enable this secret system, you can use the following commands:</p>
 <ul>
@@ -430,7 +325,7 @@ on
 <li><code>exit</code> to exit global configuration mode.</li>
 <li><code>copy running-config startup-config</code> to save the configuration.</li>
 </ul>
-<h3 id="verifications">Verifications&nbsp;<a class="header-hash" href="#verifications">#</a> </h3>
+<h3 id="verifications">Verifications <a class="dx-anchor" href="#verifications" aria-label="Link to this section">#</a></h3>
 <p>Before we install the packet forwarder, let&rsquo;s run verifications to ensure that the gateway is ready.</p>
 <ul>
 <li>Type <code>show radio</code> to verify that the <strong>radio is enabled</strong>. The result should indicate <code>radio status: on</code>.</li>
@@ -439,12 +334,12 @@ on
 <li>Verify that the <strong>network connection is working</strong>. You can test this by pinging common ping servers with <code>ping ip &lt;IP&gt;</code>, if your local network does not block ping commands. For example, you can ping Google&rsquo;s servers with <code>ping ip 8.8.8.8</code>.</li>
 </ul>
 <p>If some of those checks fail, go back to the appropriate section earlier in order to fix it.</p>
-<h2 id="installing-the-packet-forwarder">Installing the packet forwarder&nbsp;<a class="header-hash" href="#installing-the-packet-forwarder">#</a> </h2>
+<h2 id="installing-the-packet-forwarder">Installing the packet forwarder <a class="dx-anchor" href="#installing-the-packet-forwarder" aria-label="Link to this section">#</a></h2>
 <blockquote>
 <p>⚠️ Keep in mind that the pre-installed packet forwarder is not supported by Cisco for production purposes.</p>
 </blockquote>
 <p>To run the packet forwarder, we&rsquo;ll make use of the <strong>container</strong> that is running on the gateway at all times.</p>
-<h3 id="packet-forwarder-configuration">Packet forwarder configuration&nbsp;<a class="header-hash" href="#packet-forwarder-configuration">#</a> </h3>
+<h3 id="packet-forwarder-configuration">Packet forwarder configuration <a class="dx-anchor" href="#packet-forwarder-configuration" aria-label="Link to this section">#</a></h3>
 <p>When in standalone mode, enter the container:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">request shell container-console
 </code></pre></div><p>You will be requested to enter the System Password. By default this is <code>admin</code>.</p>
@@ -487,19 +382,19 @@ To derive it insert <code>FFFE</code> after the first 6 characters to make it a 
 </li>
 </ul>
 <p>Write down the value written for <code>gateway_ID</code>. Save the file, and exit your text editor.</p>
-<h3 id="gateway-registration">Gateway registration&nbsp;<a class="header-hash" href="#gateway-registration">#</a> </h3>
+<h3 id="gateway-registration">Gateway registration <a class="dx-anchor" href="#gateway-registration" aria-label="Link to this section">#</a></h3>
 <p>Don&rsquo;t close the shell yet, but open a Web browser and head to your the Things Network console.<br>
 Click on <strong>Gateways</strong> &gt; <strong>Register gateway</strong>.<br>
 Check the <em>I&rsquo;m using legacy packet forwarder</em> box, and enter the <code>gateway_EUI</code> that was indicated as <code>gateway_ID</code> in the configuration.<br>
 Fill in the rest of the form, and click on <strong>Register gateway</strong>.</p>
-<h3 id="testing-the-packet-forwarder">Testing the packet forwarder&nbsp;<a class="header-hash" href="#testing-the-packet-forwarder">#</a> </h3>
+<h3 id="testing-the-packet-forwarder">Testing the packet forwarder <a class="dx-anchor" href="#testing-the-packet-forwarder" aria-label="Link to this section">#</a></h3>
 <p>You can now test the packet forwarder by executing:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">/etc/pktfwd/pkt_forwarder -c /etc/pktfwd/config.json -g /dev/ttyS1
 </code></pre></div><p>You should now see packets flowing in the logs of the packet forwarder - and see gateway activity on the gateway&rsquo;s package on the console!</p>
 <blockquote>
 <p>Having issues making the packet forwarder run? Head over to our <a href="/docs/gateways/troubleshooting/semtech-udp/">packet forwarder troubleshooting section</a>.</p>
 </blockquote>
-<h3 id="installing-the-packet-forwarder-1">Installing the packet forwarder&nbsp;<a class="header-hash" href="#installing-the-packet-forwarder-1">#</a> </h3>
+<h3 id="installing-the-packet-forwarder-1">Installing the packet forwarder <a class="dx-anchor" href="#installing-the-packet-forwarder-1" aria-label="Link to this section">#</a></h3>
 <p>Now that we know the packet forwarder is running, let&rsquo;s make it run permanently.</p>
 <p>Save the following script as <code>/etc/init.d/S60pkt_forwarder</code>:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="cp">#!/bin/sh
@@ -564,58 +459,87 @@ This script will be called at every startup of the container.</p>
 <blockquote>
 <p>📜 If you are using another network than <code>router.eu.thethings.network</code> replace it with the name of your network after <code>nslookup</code>.</p>
 </blockquote>
-<h3 id="exit-container-shell">Exit container shell&nbsp;<a class="header-hash" href="#exit-container-shell">#</a> </h3>
+<h3 id="exit-container-shell">Exit container shell <a class="dx-anchor" href="#exit-container-shell" aria-label="Link to this section">#</a></h3>
 <p>If you are done with configuration, you can now safely remove the serial cable between your computer.</p>
 
-
-        </div>
-      
+      </div>
       
 
+      
 
+    </article>
+    <aside class="dx-rail" aria-label="On this page">
+  <div class="dx-rail__label">On this page</div>
+  <nav class="dx-toc" data-toc>
+    <a href="#gateway-setup" class="dx-toc__link">Gateway setup</a>
+    <a href="#configuration" class="dx-toc__link">Configuration</a>
+    <a href="#connect-to-the-cisco-gateway-console" class="dx-toc__link dx-toc__link--sub">Connect to the Cisco gateway console</a>
+    <a href="#system-setup" class="dx-toc__link dx-toc__link--sub">System setup</a>
+    <a href="#enable-authentication" class="dx-toc__link dx-toc__link--sub">Enable authentication</a>
+    <a href="#verifications" class="dx-toc__link dx-toc__link--sub">Verifications</a>
+    <a href="#installing-the-packet-forwarder" class="dx-toc__link">Installing the packet forwarder</a>
+    <a href="#packet-forwarder-configuration" class="dx-toc__link dx-toc__link--sub">Packet forwarder configuration</a>
+    <a href="#gateway-registration" class="dx-toc__link dx-toc__link--sub">Gateway registration</a>
+    <a href="#testing-the-packet-forwarder" class="dx-toc__link dx-toc__link--sub">Testing the packet forwarder</a>
+    <a href="#installing-the-packet-forwarder-1" class="dx-toc__link dx-toc__link--sub">Installing the packet forwarder</a>
+    <a href="#exit-container-shell" class="dx-toc__link dx-toc__link--sub">Exit container shell</a>
+  </nav>
+  <div class="dx-rail__rule"></div>
+  <a class="dx-rail__tool" href="https://github.com/TheThingsNetwork/docs/blob/master/doc/content/gateways/cisco/setup/_index.md" rel="noopener"><svg class="dx-icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M7 7H6a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2v-1"/><path d="M20.385 6.585a2.1 2.1 0 0 0-2.97-2.97L9 12v3h3zM16 5l3 3"/></g></svg>Edit this page</a>
+  <a class="dx-rail__tool" href="https://www.thethingsnetwork.org/forum"><svg class="dx-icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m21 14l-3-3h-7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1zm-7 1v2a1 1 0 0 1-1 1H6l-3 3V11a1 1 0 0 1 1-1h2"/></svg>Ask on the forum</a>
+</aside>
 
-
-  
-
-  
-
-
-<div class="is-clearfix">
+  </main>
 </div>
 
+
+
+<footer class="dx-footer">
+  <div class="dx-wrap dx-footer__inner">
+    <div class="dx-footer__grid">
+      <div class="dx-footer__brand">
+        <img src="/docs/img/ttn-horizontal-white.svg" alt="The Things Network" width="150" height="34">
+        <p>A global collaborative Internet of Things ecosystem, initiated by The Things Industries.</p>
+      </div>
+      <div class="dx-footer__col">
+        <div class="dx-footer__title">Learn</div>
+        <a href="https://www.thethingsnetwork.org/docs/network/">Get started</a>
+        <a href="https://www.thethingsnetwork.org/docs/lorawan/">LoRaWAN® fundamentals</a>
+        <a href="https://www.thethingsnetwork.org/achievements">Certification</a>
+        <a href="https://www.thethingsnetwork.org/achievements/a/the-things-academy/">The Things Academy</a>
+      </div>
+      <div class="dx-footer__col">
+        <div class="dx-footer__title">Community</div>
+        <a href="https://www.thethingsnetwork.org/community">Communities</a>
+        <a href="https://www.thethingsnetwork.org/forum">Forum</a>
+        <a href="https://www.thethingsnetwork.org/start-a-community">Start a community</a>
+        <a href="https://www.thethingsconference.com/" rel="noopener">Conference</a>
+      </div>
+      <div class="dx-footer__col">
+        <div class="dx-footer__title">Resources</div>
+        <a href="https://www.thethingsnetwork.org/docs/">Documentation</a>
+        <a href="https://www.thethingsnetwork.org/device-repository/">Device Repository</a>
+        <a href="https://www.thethingsnetwork.org/help">Help &amp; user guide</a>
+        <a href="https://www.thethingsindustries.com/stack/" rel="noopener">The Things Stack</a>
+        <a href="https://github.com/TheThingsNetwork/lorawan-stack" rel="noopener">Open source</a>
+      </div>
+    </div>
+    <div class="dx-footer__base">
+      <div class="dx-footer__legal">
+        <span>LoRaWAN® is a mark used under license from the LoRa Alliance®.</span>
+        <button type="button" class="dx-footer__consent" data-ttn-consent-settings>Cookie settings</button>
+      </div>
+      <div class="dx-footer__social">
+        <a href="https://github.com/TheThingsNetwork" rel="noopener" aria-label="GitHub"><svg class="dx-icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.6-.6 1.2-.5 2V21"/></svg></a>
+        <a href="https://www.linkedin.com/company/the-things-network/" rel="noopener" aria-label="LinkedIn"><svg class="dx-icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M8 11v5m0-8v.01M12 16v-5m4 5v-3a2 2 0 1 0-4 0"/><path d="M3 7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4z"/></g></svg></a>
+        <a href="https://www.youtube.com/c/TheThingsNetworkCommunity" rel="noopener" aria-label="YouTube"><svg class="dx-icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M2 8a4 4 0 0 1 4-4h12a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4z"/><path d="m10 9l5 3l-5 3z"/></g></svg></a>
+        <a href="https://twitter.com/thethingsntwrk" rel="noopener" aria-label="X"><svg class="dx-icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m4 4l11.733 16H20L8.267 4zm0 16l6.768-6.768m2.46-2.46L20 4"/></svg></a>
       </div>
     </div>
   </div>
-</div>
+</footer>
 
-
-<div class="ttn-footer ttui-container"><ttn-footer class="theme-ttn"></ttn-footer></div>
-
-<script src="https://cdn.jsdelivr.net/npm/promise-polyfill@7/dist/polyfill.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
-<script src="https://www.thethingsnetwork.org/docs/js/vendor/basicLightbox.min.js"></script>
-<script src="https://www.thethingsnetwork.org/docs/js/theme.min.0775735f9c997126c786dc75ee2fafeb1f6465f3c693ad34198334f407e80ff1.js" integrity="sha256-B3VzX5yZcSbHhtx17i&#43;v6x9kZfPGk600GYM09AfoD/E=" crossorigin="anonymous"></script>
-
-<ttui-cookie class="theme-ttn" id="cookie-banner"></ttui-cookie>
-
-<script>
-  var cookieBanner = document.getElementById("cookie-banner");
-  window.addEventListener("ttuicookieaccept", cookieAccept, { capture: true, once: true } );
-  var cookieAcceptKey = 'ttn-ca'
-  var timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-
-  if (readCookieAccept() || !timezone.includes("Europe") ) {
-      cookieBanner.setAttribute('accepted', true);
-  }
-
-  function readCookieAccept() {
-      return localStorage.getItem(cookieAcceptKey)
-  }
-
-  function cookieAccept() {
-      localStorage.setItem(cookieAcceptKey, true);
-  }
-</script>
+<script src="/docs/js/docs.min.aa6a1e0f75a807c1f3ec3be1d83182f2ffd4c3ef648cee8b690d29f8bdbf81e3.js" integrity="sha256-qmoeD3WoB8Hz7Dvh2DGC8v/Uw&#43;9kjO6LaQ0p&#43;L2/geM=" data-search-index="/docs/index.json" defer></script>
 
 </body>
 
