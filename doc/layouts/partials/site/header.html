@@ -26,12 +26,15 @@
             </div>
           </details>
           {{- else }}
-          <a class="dx-header__link" href="{{ partial "site/href.html" .href }}"{{ if eq .key "learn" }} aria-current="page"{{ end }}{{ if .external }} rel="noopener"{{ end }}>{{ .label }}</a>
+          <a class="dx-header__link{{ if .highlight }} dx-header__link--highlight{{ end }}" href="{{ partial "site/href.html" .href }}"{{ if eq .key "learn" }} aria-current="page"{{ end }}{{ if .external }} rel="noopener"{{ end }}>{{ .label }}</a>
           {{- end }}
         {{- end }}
       </nav>
 
       <div class="dx-header__tools">
+        {{- with $nav.supportCta }}
+        <a class="dx-header__cta" href="{{ partial "site/href.html" .href }}"{{ if .external }} rel="noopener"{{ end }}>{{ .label }}</a>
+        {{- end }}
         <div class="dx-search" data-search>
           <label class="dx-search__field">
             {{ partial "site/icon.html" (dict "n" "search") }}
