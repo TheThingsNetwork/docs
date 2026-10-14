@@ -1,6 +1,6 @@
 ---
 title: LoRaWAN®
-image: /lorawan/icon.png
+image: /lorawan/lorawan-logo-color.svg
 videos:
  - https://youtu.be/ZsVhYiX4_6o
 description: "Learn about LoRaWAN: the secure messaging protocol used by The Things Network"
