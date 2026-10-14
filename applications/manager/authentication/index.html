@@ -18,10 +18,9 @@
   <link rel="apple-touch-icon" href="/apple-icon.png" type="image/png" sizes="180x180">
   <meta name="application-name" content="The Things Network">
   <meta name="theme-color" content="#001859">
-
-  <link rel="preload" href="/docs/fonts/inter/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/docs/fonts/inter/Inter-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/docs/css/docs.min.5d6a1503c85a5dc9a77a534900a8f29324c2a76b1b3c88d8a0f178b0e097ea19.css" integrity="sha256-XWoVA8haXcmnelNJAKjykyTCp2sbPIjYoPF4sOCX6hk=">
+  <link rel="preload" href="/docs/fonts/ttn/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/docs/fonts/ttn/Poppins-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/docs/css/docs.min.80234aef9382f5632e7f2b3a8cf21092e94fa0472a3f26202a702aa3a4996cec.css" integrity="sha256-gCNK75OC9WMufys6jPIQkulPoEcqPyYgKnAqo6SZbOw=">
 
   <meta property="og:title" content="Authentication" />
 <meta property="og:description" content="We are building a global open free crowdsourced long range low power IoT data network" />
@@ -47,7 +46,7 @@
 <header class="dx-header" data-header>
   <div class="dx-header__bar">
     <a href="https://www.thethingsnetwork.org/" class="dx-header__logo" aria-label="The Things Network home">
-      <img src="/docs/img/ttn-horizontal.svg" alt="The Things Network" width="132" height="30">
+      <img src="/docs/img/ttn-horizontal.svg" alt="The Things Network" width="150" height="28">
     </a>
 
     <button type="button" class="dx-header__toggle" aria-expanded="false" aria-controls="dx-header-panel" data-header-toggle>
@@ -69,11 +68,11 @@
           <a class="dx-header__link" href="https://www.thethingsnetwork.org/forum">Forum</a>
           <a class="dx-header__link" href="https://www.thethingsnetwork.org/community">Community</a>
           <a class="dx-header__link" href="https://www.thethingsconference.com/" rel="noopener">Conference</a>
-          <a class="dx-header__link dx-header__link--highlight" href="https://www.thethingsindustries.com/" rel="noopener">Enterprise</a>
+          <a class="dx-header__link dx-header__link--highlight" href="https://www.thethingsindustries.com/?utm_source=thethingsnetwork.org&amp;utm_medium=referral&amp;utm_campaign=ttn-website&amp;utm_content=header-enterprise" rel="noopener">Enterprise</a>
       </nav>
 
       <div class="dx-header__tools">
-        <a class="dx-header__cta" href="https://www.thethingsindustries.com/" rel="noopener">Need professional support?</a>
+        <a class="dx-header__cta" href="https://www.thethingsindustries.com/?utm_source=thethingsnetwork.org&amp;utm_medium=referral&amp;utm_campaign=ttn-website&amp;utm_content=header-support" rel="noopener">Need professional support?</a>
         <div class="dx-search" data-search>
           <label class="dx-search__field">
             <svg class="dx-icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10a7 7 0 1 0 14 0a7 7 0 1 0-14 0m18 11l-6-6"/></svg>
@@ -174,16 +173,26 @@
 
   <main id="main" class="dx-main">
     <article class="dx-article">
-      <header class="dx-article__head">
-        <nav class="dx-crumbs" aria-label="Breadcrumb">
-  <a href="/docs/">Learn</a>
-  <svg class="dx-icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 6l6 6l-6 6"/></svg><a href="/docs/applications/">Applications</a>
-  <svg class="dx-icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 6l6 6l-6 6"/></svg><a href="/docs/applications/manager/">Application Manager API</a>
-  <svg class="dx-icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 6l6 6l-6 6"/></svg><span aria-current="page">Authentication</span>
-</nav>
+      <header class="tn-ph tn-ph--inset">
+  <div class="tn-ph__inner">
+    <nav class="tn-ph__crumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/docs/">Learn</a></li>
+        <li><a href="/docs/applications/">Applications</a></li>
+        <li><a href="/docs/applications/manager/">Application Manager API</a></li>
+        <li aria-current="page">Authentication</li>
+      </ol>
+    </nav>
 
-        <h1 class="dx-title">Authentication</h1>
-      </header>
+    <div class="tn-ph__body">
+      <div class="tn-ph__main">
+        <p class="tn-eyebrow tn-ph__eyebrow">Applications</p>
+        <h1 class="tn-ph__title">Authentication</h1>
+      </div>
+    </div>
+  </div>
+</header>
+
       
 <div class="dx-callout dx-callout--warning" role="note">
   <svg class="dx-icon dx-callout__icon" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v4m-1.637-9.409L2.257 17.125a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636-2.87L13.637 3.59a1.914 1.914 0 0 0-3.274 0M12 16h.01"/></svg>
@@ -253,11 +262,11 @@
 
 
 <footer class="dx-footer">
-  <div class="dx-wrap dx-footer__inner">
+  <div class="tn-wrap dx-footer__inner">
     <div class="dx-footer__grid">
       <div class="dx-footer__brand">
-        <img src="/docs/img/ttn-horizontal-white.svg" alt="The Things Network" width="150" height="34">
-        <p>A global collaborative Internet of Things ecosystem, initiated by The Things Industries.</p>
+        <img src="/docs/img/ttn-horizontal-white.svg" alt="The Things Network" width="150" height="28">
+        <p>A global community of Internet of Things developers, initiated by The Things Industries.</p>
       </div>
       <div class="dx-footer__col">
         <div class="dx-footer__title">Learn</div>
@@ -278,7 +287,7 @@
         <a href="https://www.thethingsnetwork.org/docs/">Documentation</a>
         <a href="https://www.thethingsnetwork.org/device-repository/">Device Repository</a>
         <a href="https://www.thethingsnetwork.org/help">Help &amp; user guide</a>
-        <a href="https://www.thethingsindustries.com/stack/" rel="noopener">The Things Stack</a>
+        <a href="https://www.thethingsindustries.com/stack/?utm_source=thethingsnetwork.org&amp;utm_medium=referral&amp;utm_campaign=ttn-website&amp;utm_content=footer-the-things-stack" rel="noopener">The Things Stack</a>
         <a href="https://github.com/TheThingsNetwork/lorawan-stack" rel="noopener">Open source</a>
       </div>
     </div>
