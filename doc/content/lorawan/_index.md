@@ -1,9 +1,19 @@
 ---
 title: LoRaWAN®
-image: /lorawan/icon.png
+image: /lorawan/lorawan-logo-color.svg
 videos:
  - https://youtu.be/ZsVhYiX4_6o
 description: "Learn about LoRaWAN: the secure messaging protocol used by The Things Network"
+# The page header (layouts/partials/docs/page-header.html): lede and buttons.
+lead: "**Welcome to The Things Fundamentals on LoRaWAN!** This series of chapters was created to prepare you for [**The Things Fundamentals certification**](https://www.thethingsnetwork.org/achievements). You'll learn all about LoRa® and LoRaWAN and suitable use cases, and afterwards you'll be ready to start developing your own LoRaWAN applications."
+actions:
+ - label: Start chapter 1
+   ref: what-is-lorawan
+   icon: arrow-right
+ - label: Watch the 60-minute video
+   href: "#everything-you-need-to-know-about-lorawan-in-60-minutes"
+   style: outline
+   icon_before: player-play
 sections:
  - The Things Fundamentals
  - Additional Information
@@ -34,15 +44,6 @@ topics:
    icon: certificate
    pages: [preparing-certification, the-things-certified-security, academic, glossary]
 ---
-
-{{< lead >}}
-**Welcome to The Things Fundamentals on LoRaWAN!** This series of chapters was created to prepare you for [**The Things Fundamentals certification**](https://www.thethingsnetwork.org/achievements/certificates/). You'll learn all about LoRa® and LoRaWAN and suitable use cases, and afterwards you'll be ready to start developing your own LoRaWAN applications.
-{{< /lead >}}
-
-{{< actions >}}
-{{< button ref="what-is-lorawan" icon="arrow-right" >}}Start chapter 1{{< /button >}}
-{{< button href="#everything-you-need-to-know-about-lorawan-in-60-minutes" style="outline" icon-before="player-play" >}}Watch the 60-minute video{{< /button >}}
-{{< /actions >}}
 
 ## Everything you need to know about LoRaWAN in 60 minutes
 

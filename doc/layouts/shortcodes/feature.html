@@ -4,7 +4,7 @@
 {{- $title := .Get "title" -}}
 <section class="dx-feature"{{ with $title }} aria-labelledby="{{ anchorize . }}"{{ end }}>
   <div class="dx-feature__text">
-    {{- with $title }}<h2 class="dx-feature__eyebrow" id="{{ anchorize . }}">{{ . }}</h2>{{ end }}
+    {{- with $title }}<h2 class="dx-feature__title" id="{{ anchorize . }}">{{ . }}</h2>{{ end }}
     {{ .Inner | markdownify }}
     {{- with .Get "href" }}
     <a class="dx-btn dx-btn--brand" href="{{ . }}">{{ $.Get "button" | default "Learn more" }}{{ partial "site/icon.html" (dict "n" "arrow-right") }}</a>

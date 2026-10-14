@@ -1,19 +1,24 @@
 {{ define "main" }}
 <main id="main" class="dx-home">
-  <section class="dx-home__hero">
-    <div class="dx-wrap">
-      <h1 class="dx-title">{{ .Title }}</h1>
-      <p class="dx-home__sub">Learn all about LoRaWAN and The Things Network!</p>
+  {{- /* The shared page header, default variant (thethingsnetwork-v2 docs/brand-page-header.md). */}}
+  <header class="tn-ph">
+    <div class="tn-wrap tn-ph__inner">
+      <div class="tn-ph__body">
+        <div class="tn-ph__main">
+          <h1 class="tn-ph__title">{{ .Title }}</h1>
+          <p class="tn-ph__lede">Learn all about LoRaWAN and The Things Network!</p>
+        </div>
+      </div>
     </div>
-  </section>
+  </header>
 
-  <section class="dx-wrap dx-home__section">
+  <section class="tn-wrap dx-home__section">
     <ul class="dx-home__grid">
       {{- with site.GetPage "/lorawan" }}
       <li>
         <a class="dx-home__card" href="{{ .RelPermalink }}">
-          {{- /* front matter has "/lorawan/icon.png": relURL keeps a leading slash at the host root, dropping /docs/ */ -}}
-          {{- with .Params.image }}<img src="{{ strings.TrimPrefix "/" . | relURL }}" alt="LoRaWAN" class="dx-home__img">{{ end }}
+          {{- /* front matter has "/lorawan/lorawan-logo-color.svg": relURL keeps a leading slash at the host root, dropping /docs/ */ -}}
+          {{- with .Params.image }}<img src="{{ strings.TrimPrefix "/" . | relURL }}" alt="LoRaWAN" class="dx-home__img dx-home__img--wide">{{ end }}
           <span class="dx-home__card-title">{{ .Title }}</span>
           <span class="dx-home__card-text">{{ .Description | plainify }}</span>
           <span class="dx-home__card-cta">Start learning {{ partial "site/icon.html" (dict "n" "arrow-right") }}</span>
@@ -30,7 +35,7 @@
       </li>
       <li>
         <a class="dx-home__card" href="https://www.thethingsindustries.com/docs" rel="noopener">
-          <img src="{{ "img/logo-tts-horizontal.png" | relURL }}" alt="" class="dx-home__img dx-home__img--wide">
+          <img src="{{ "img/tts-horizontal-standard-color.svg" | relURL }}" alt="" class="dx-home__img dx-home__img--wide" width="150" height="29">
           <span class="dx-home__card-title">The Things Stack</span>
           <span class="dx-home__card-text">Get started with The Things Stack, an out-of-the-box LoRaWAN Network Server for monitoring of network components.</span>
           <span class="dx-home__card-cta">Read the docs {{ partial "site/icon.html" (dict "n" "arrow-right") }}</span>
@@ -39,7 +44,7 @@
     </ul>
   </section>
 
-  <section class="dx-wrap dx-home__section">
+  <section class="tn-wrap dx-home__section">
     <h2 class="dx-home__h2">Community</h2>
     <ul class="dx-home__grid dx-home__grid--community">
       {{- range site.Menus.community }}

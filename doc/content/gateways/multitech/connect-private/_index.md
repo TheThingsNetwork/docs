@@ -12,7 +12,7 @@ export ROUTER_MQTT_ADDRESS=mymqtt.domain:port
 https://raw.githubusercontent.com/egourlao/multitech-installer/master/installer.sh | bash
 ```
 
-### Find the MQTT address of the bridge
+## Find the MQTT address of the bridge
 
 First, you'll need to figure out what's the **MQTT address and port of the bridge**. Here are a few examples:
 
@@ -20,7 +20,7 @@ First, you'll need to figure out what's the **MQTT address and port of the bridg
 
 + If you're using a [The Things Industries installation](https://www.thethingsindustries.com/), your MQTT address will be `<routing services address>:1882`.
 
-### Change the bridge configuration
+## Change the bridge configuration
 
 Open with `vi` the `/var/config/lora/local_conf.json` file:
 
@@ -36,7 +36,7 @@ You should then edit those values:
 
 + **`serv_gw_key`**: the **key of your gateway**.
 
-### Apply the configuration
+## Apply the configuration
 
 Restart the packet forwarder to apply those changes:
 

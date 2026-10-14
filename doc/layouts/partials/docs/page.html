@@ -2,10 +2,7 @@
   {{ partial "docs/sidebar.html" . }}
   <main id="main" class="dx-main">
     <article class="dx-article">
-      <header class="dx-article__head">
-        {{ partial "docs/breadcrumb.html" . }}
-        <h1 class="dx-title">{{ .Title }}</h1>
-      </header>
+      {{ partial "docs/page-header.html" . }}
       {{ partial "docs/v2-warning.html" . }}
       <div class="dx-prose">
         {{ .Content }}
