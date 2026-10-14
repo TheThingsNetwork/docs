@@ -1,15 +1,19 @@
 {{ define "main" }}
 <main id="main" class="dx-home">
-  <section class="dx-home__hero dx-home__hero--404">
-    <div class="dx-wrap">
-      <div class="dx-eyebrow">404</div>
-      <h1 class="dx-title">{{ .Title | default "Page not found" }}</h1>
-      <p class="dx-home__sub">This page does not exist (anymore). Try the search above, or start from the docs home.</p>
-      <div class="dx-actions">
-        <a class="dx-btn dx-btn--primary" href="{{ site.Home.RelPermalink }}">Docs home {{ partial "site/icon.html" (dict "n" "arrow-right") }}</a>
+  {{- /* The shared page header, default variant (thethingsnetwork-v2 docs/brand-page-header.md). */}}
+  <header class="tn-ph">
+    <div class="tn-wrap tn-ph__inner">
+      <div class="tn-ph__body">
+        <div class="tn-ph__main">
+          <h1 class="tn-ph__title">{{ .Title | default "Page not found" }}</h1>
+          <p class="tn-ph__lede">This page does not exist (anymore). Try the search above, or start from the docs home.</p>
+          <div class="tn-ph__actions">
+            <a class="dx-btn dx-btn--primary" href="{{ site.Home.RelPermalink }}">Docs home {{ partial "site/icon.html" (dict "n" "arrow-right") }}</a>
+          </div>
+        </div>
       </div>
-      {{ with .Content }}<div class="dx-prose">{{ . }}</div>{{ end }}
     </div>
-  </section>
+  </header>
+  {{ with .Content }}<section class="tn-wrap dx-home__section"><div class="dx-prose">{{ . }}</div></section>{{ end }}
 </main>
 {{ end }}

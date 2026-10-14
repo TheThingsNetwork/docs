@@ -31,10 +31,14 @@
   <meta name="application-name" content="The Things Network">
   <meta name="theme-color" content="#001859">
 
-  <link rel="preload" href="{{ "fonts/inter/Inter-Regular.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="{{ "fonts/inter/Inter-SemiBold.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
+  {{- /* Fonts are the website's own (self-hosted, no Google Fonts), copied by the platform's
+       scripts/export-brand-tokens.mjs into static/fonts/ttn together with assets/css/ttn-tokens.css. */}}
+  <link rel="preload" href="{{ "fonts/ttn/Inter-Regular.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{{ "fonts/ttn/Poppins-SemiBold.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
 
-  {{- $style := resources.Get "css/docs.css" | resources.Minify | resources.Fingerprint }}
+  {{- /* The shared brand tokens + page header (GENERATED, ttn-tokens.css) load first, then the docs
+       theme, in one file: css/docs.css, so the tokens' ../fonts/ttn/ urls resolve under any baseURL. */}}
+  {{- $style := slice (resources.Get "css/ttn-tokens.css") (resources.Get "css/docs.css") | resources.Concat "css/docs.css" | resources.Minify | resources.Fingerprint }}
   <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}">
 
   {{ template "_internal/opengraph.html" . }}

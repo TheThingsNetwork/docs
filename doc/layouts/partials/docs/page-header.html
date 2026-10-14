@@ -1,0 +1,46 @@
+{{- /* Page header of every docs page with the left navigation: the inset variant of the shared page
+     header (tn-ph tn-ph--inset; markup, CSS and rules: thethingsnetwork-v2 docs/brand-page-header.md,
+     the CSS arrives through assets/css/ttn-tokens.css). Element order is fixed; empty parts are omitted.
+     - crumbs: Learn / <section> / … / <page>
+     - eyebrow (articles only, not a section's own landing page): the page's sidebar group (`section`
+       front matter), else the first-level section's title
+     - lede: `lead` front matter (markdown, one or two sentences), else `description`
+     - actions: `actions` front matter, a list of {label, ref | href, style (primary | outline | brand),
+       icon, icon_before}: the same buttons as the button shortcode */ -}}
+{{- $page := . -}}
+{{- $first := .FirstSection -}}
+{{- $eyebrow := "" -}}
+{{- if ne .RelPermalink $first.RelPermalink -}}
+  {{- $eyebrow = .Params.section | default $first.LinkTitle -}}
+{{- end -}}
+{{- $lede := .Params.lead | default .Description -}}
+<header class="tn-ph tn-ph--inset">
+  <div class="tn-ph__inner">
+    {{ partial "docs/breadcrumb.html" . }}
+    <div class="tn-ph__body">
+      <div class="tn-ph__main">
+        {{- with $eyebrow }}
+        <p class="tn-eyebrow tn-ph__eyebrow">{{ . }}</p>
+        {{- end }}
+        <h1 class="tn-ph__title">{{ .Title }}</h1>
+        {{- with $lede }}
+        <p class="tn-ph__lede">{{ . | markdownify }}</p>
+        {{- end }}
+        {{- with .Params.actions }}
+        <div class="tn-ph__actions">
+          {{- range . }}
+          {{- $href := .href }}
+          {{- with .ref }}{{ $href = relref $page . }}{{ end }}
+          {{- if not $href }}{{ errorf "%s: page header action %q needs ref or href" $page.File.Path .label }}{{ end }}
+          <a class="dx-btn dx-btn--{{ .style | default "primary" }}" href="{{ $href }}">
+            {{- with .icon_before }}{{ partial "site/icon.html" (dict "n" .) }}{{ end -}}
+            {{ .label }}
+            {{- with .icon }}{{ partial "site/icon.html" (dict "n" .) }}{{ end -}}
+          </a>
+          {{- end }}
+        </div>
+        {{- end }}
+      </div>
+    </div>
+  </div>
+</header>

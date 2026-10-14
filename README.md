@@ -27,9 +27,23 @@ Nav hrefs are root-relative and prefixed with `params.ttnOrigin` (default
 `https://www.thethingsnetwork.org`); for a local all-in-one preview run Hugo with
 `HUGO_PARAMS_TTNORIGIN=http://localhost:3000`.
 
-Section landing pages can use the `lead`, `actions`/`button`, `chapters`, `feature` and `topics`
-shortcodes (see `doc/content/lorawan/_index.md`); a section's numbered course is its `chapters`
-front matter and its topic index the `topics` front matter.
+Fonts, brand tokens and the page header (`tn-ph`) come from `doc/assets/css/ttn-tokens.css` and
+`doc/static/fonts/ttn/`, also **generated** by the platform repo (contract: its
+`docs/brand-page-header.md`). Re-export them after a token, font or page-header change there:
+
+```
+node scripts/export-brand-tokens.mjs <path to this repo>/doc/assets/css/ttn-tokens.css <path to this repo>/doc/static/fonts/ttn ../fonts/ttn
+```
+
+`doc/assets/css/docs.css` holds only the docs' own components; it uses the shared tokens and keeps
+the header/footer rules identical to the website's `site.css`.
+
+Every page with the left navigation opens with the page header (`layouts/partials/docs/page-header.html`):
+breadcrumb, an eyebrow (the page's sidebar group), the title, a lede (the `lead` front matter, else
+`description`) and buttons (`actions` front matter: `label`, `ref` or `href`, `style`, `icon`,
+`icon_before`). Section landing pages can also use the `chapters`, `feature` and `topics` shortcodes
+(see `doc/content/lorawan/_index.md`); a section's numbered course is its `chapters` front matter and
+its topic index the `topics` front matter.
 
 ## Getting Started
 

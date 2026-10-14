@@ -1,13 +1,18 @@
 {{ define "main" }}
 <main id="main" class="dx-home">
-  <section class="dx-home__hero">
-    <div class="dx-wrap">
-      <h1 class="dx-title">{{ .Title }}</h1>
-      <p class="dx-home__sub">Learn all about LoRaWAN and The Things Network!</p>
+  {{- /* The shared page header, default variant (thethingsnetwork-v2 docs/brand-page-header.md). */}}
+  <header class="tn-ph">
+    <div class="tn-wrap tn-ph__inner">
+      <div class="tn-ph__body">
+        <div class="tn-ph__main">
+          <h1 class="tn-ph__title">{{ .Title }}</h1>
+          <p class="tn-ph__lede">Learn all about LoRaWAN and The Things Network!</p>
+        </div>
+      </div>
     </div>
-  </section>
+  </header>
 
-  <section class="dx-wrap dx-home__section">
+  <section class="tn-wrap dx-home__section">
     <ul class="dx-home__grid">
       {{- with site.GetPage "/lorawan" }}
       <li>
@@ -39,7 +44,7 @@
     </ul>
   </section>
 
-  <section class="dx-wrap dx-home__section">
+  <section class="tn-wrap dx-home__section">
     <h2 class="dx-home__h2">Community</h2>
     <ul class="dx-home__grid dx-home__grid--community">
       {{- range site.Menus.community }}
