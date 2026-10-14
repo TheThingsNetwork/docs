@@ -11,7 +11,7 @@ The Things Network is about enabling low power devices to be used in long range 
 
 ![Figure 1: RAK5205 Serial Port Tool](../images/rakk5205serialport.jpg)
 
-### Registering Device
+## Registering Device
 
 >**Note** In this section, it is assumed that you have already successfully connected your RAK LoRa® Gateways to The Things Network (TTN). If not, refer to the individual documentation of all the RAK LoRAWAN™ Gateways through [here](https://doc.rakwireless.com/).
 
@@ -59,7 +59,7 @@ at+set_config=lora:dev eui:XXXX
 
 When you connect the RAK5205 Wistrio LoRa® Tracker to a LoRaWAN Gateway, we need some amount of security and trust to be established amongst them. There are two connection modes, and we distinguish between them using the criteria of security and ease of implementation. These are the **Over-The-Air Activation (OTAA)** and **Activation By Personalization (ABP)**.
 
-### OTAA Mode
+## OTAA Mode
 
 According to The Things Network (TTN), **Over-the-Air Activation (OTAA)** is the preferred and most secure way to connect with The Things Network (TTN). Thus, it is chosen as the default method when registering a device. For configuring it you need the following three parameters: **Device EUI, Application EUI and App Key**. You can get them all from the **Overview page**.
 
@@ -113,7 +113,7 @@ at+send=lora:1:12345678
 
 Great! That’s all about OTAA mode.
 
-### ABP Mode
+## ABP Mode
 
 **Authentication By Personalisation (ABP)** is a LoRaWAN™ activation mode that enables manual configuration of encryption keys on the device and is capable of sending frames to RAK gateways without needing a 'handshake' procedure in exchanging keys unlike OTAA.
 
@@ -164,7 +164,7 @@ Great! Your node should now work in ABP mode.
 
 ![Figure 22: Sending Data to TTN from RAK5205](../images/ttnabpreceivedata.png)
 
-### Optional Configurations
+## Optional Configurations
 
 You can also try other configurations which is supported in RAK5205 WisTrio LoRa® Tracker. Click through the guides provided below to learn more. Enjoy!
 * Connecting to [Chirpstack](https://doc.rakwireless.com/rak5205-rak7205-wistrio-lora-tracker/connecting-to-chirpstack)

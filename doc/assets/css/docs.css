@@ -33,7 +33,7 @@ a { color: var(--link); text-decoration: none; }
 a:hover { color: var(--link-hover); }
 b, strong { font-weight: 600; }
 img { max-width: 100%; height: auto; }
-:focus-visible { outline: 3px solid #cce8ff; outline-offset: 2px; border-radius: 4px; }
+:focus-visible { outline: 2px solid var(--tti-500, #0047FF); outline-offset: 2px; border-radius: 4px; }
 
 /* The docs' own interactive parts join the shared state-change transition (ttn-tokens.css §7 covers
    a, button, summary): color, background, border and shadow only, never `all` or layout properties. */
@@ -66,10 +66,16 @@ img { max-width: 100%; height: auto; }
 .dx-btn--primary:hover { background: var(--tn-navy-900); color: #fff; }
 .dx-btn--outline { background: transparent; border-color: var(--grey-300); color: var(--tn-navy); }
 .dx-btn--outline:hover { background: transparent; border-color: var(--grey-500); color: var(--tn-navy); }
+/* Page header actions: the shared button spec (brand-page-header.md, tn-ph__actions = the website's
+   .tn-btn--lg): 48px, 14px 26px, primary = the ttn-500 fill, secondary = white with a grey-200 border. */
+.tn-ph__actions .dx-btn { padding: 14px 26px; }
+.tn-ph__actions .dx-btn--primary { background: var(--tn-blue); }
+.tn-ph__actions .dx-btn--primary:hover { background: var(--tn-blue-600); }
+.tn-ph__actions .dx-btn--outline { background: #fff; border-color: var(--grey-200); }
+.tn-ph__actions .dx-btn--outline:hover { background: #fff; border-color: var(--grey-400); }
 .dx-btn:focus-visible,
 .dx-header__link:focus-visible,
-.dx-header__toggle:focus-visible { outline: none; box-shadow: 0 0 0 3px #cce8ff; }
-.dx-actions { display: flex; flex-wrap: wrap; gap: 16px; margin: 24px 0; }
+.dx-header__toggle:focus-visible { outline: none; box-shadow: var(--focus-ring); }
 
 /* ---------- Header (= site.css Header; docs-only: the search box) ---------- */
 .dx-header {
@@ -92,7 +98,7 @@ img { max-width: 100%; height: auto; }
 .dx-header__link::-webkit-details-marker { display: none; }
 .dx-header__link:hover, .dx-drop[open] > .dx-header__link { background: var(--grey-050); color: var(--grey-900); }
 .dx-header__link[aria-current="page"] { color: var(--tn-navy); font-weight: 600; }
-.dx-header__link--highlight, .dx-header__link--highlight:hover { background: var(--tn-tint); color: var(--tn-blue-700); font-weight: 600; }
+.dx-header__link--highlight, .dx-header__link--highlight:hover { background: var(--tn-tint); color: var(--ttn-700); font-weight: 600; } /* 5.7:1 / 5.1:1 on the hover fill */
 .dx-header__link--highlight:hover { background: #cce8ff; }
 .dx-header__cta { display: inline-flex; align-items: center; justify-content: center; padding: 8px 14px; border-radius: var(--br-m); background: var(--tn-navy); color: #fff; font-size: 14px; font-weight: 600; white-space: nowrap; line-height: 1.2; }
 .dx-header__cta:hover { background: var(--tn-navy-900); color: #fff; }
@@ -144,7 +150,7 @@ summary.dx-header__user::-webkit-details-marker { display: none; }
   border: 1px solid var(--grey-200); border-radius: var(--br-m); background: var(--grey-025); color: var(--grey-700);
   font-size: 16px;
 }
-.dx-search__field:focus-within { border-color: var(--tn-blue); background: #fff; box-shadow: 0 0 0 3px #cce8ff; }
+.dx-search__field:focus-within { border-color: var(--tn-blue); background: #fff; box-shadow: var(--focus-ring); }
 .dx-search__field input { flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; font: inherit; font-size: 14px; color: var(--grey-900); }
 .dx-search__field input::placeholder { color: var(--grey-700); }
 .dx-search__field input::-webkit-search-cancel-button { display: none; }
@@ -273,12 +279,6 @@ summary.dx-header__user::-webkit-details-marker { display: none; }
 .tn-ph--inset + .dx-callout { margin-bottom: 32px; }
 
 /* Landing blocks (shortcodes) */
-/* {{< lead >}}: an intro paragraph in the body. A section's own lede belongs in the page header
-   (`lead` front matter); this keeps the header's Body / XL look for any other use. */
-.dx-lead { max-width: 60ch; font-size: var(--type-body-xl-size); line-height: var(--type-body-xl-lh); color: var(--grey-700); text-wrap: pretty; }
-.dx-lead p { margin: 0; }
-.dx-lead a { font-weight: 600; }
-.dx-prose .dx-actions + .dx-callout { margin-top: 0; }
 .dx-prose .dx-btn, .dx-prose .dx-btn:hover { text-decoration: none; }
 
 .dx-video { aspect-ratio: 16 / 9; margin: 0 0 1.15em; border: 1px solid var(--grey-100); border-radius: var(--br-xl); overflow: hidden; background: var(--tn-navy); }
@@ -297,7 +297,8 @@ summary.dx-header__user::-webkit-details-marker { display: none; }
 .dx-feature { margin: 56px 0 0; padding: 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 32px; align-items: center; border-radius: var(--br-xl); background: var(--tn-navy); color: #fff; }
 .dx-feature__text { display: flex; flex-direction: column; gap: 16px; }
 /* An h2 (so it is in "On this page") styled as the eyebrow: Inter Label / Small, sentence case, tracking 0. */
-.dx-prose .dx-feature__eyebrow { margin: 0; font-family: var(--font-body); font-size: 13px; font-weight: 600; line-height: 16px; letter-spacing: 0; color: var(--tn-blue); }
+/* The panel's title: a heading (it feeds "On this page"), so Poppins 600, H5 (the card-title style), white on navy. */
+.dx-prose .dx-feature__title { margin: 0; font-family: var(--font-display); font-weight: 600; font-size: var(--type-h5-size); line-height: var(--type-h5-lh); letter-spacing: var(--type-h5-track); color: #fff; }
 .dx-feature__text p { margin: 0; font-size: 16px; line-height: 1.5; color: var(--navy-text); }
 .dx-prose .dx-feature__text a:not([class]) { color: var(--link-on-dark); }
 .dx-prose .dx-feature__text a:not([class]):hover { color: var(--link-on-dark-hover); }

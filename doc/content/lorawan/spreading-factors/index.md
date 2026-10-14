@@ -14,11 +14,11 @@ Lower spreading factors reduce the range of LoRa transmissions, because they red
 
 The network also uses spreading factors to control congestion. Spreading factors are orthogonal, so signals modulated with different spreading factors and transmitted on the same frequency channel at the same time do not interfere with each other.
 
-### Influence of Spreading Factors
+## Influence of Spreading Factors
 
 LoRa modulation has a total of 6 spreading factors from SF7 to SF12. Spreading factors influence data rate, time-on-air, battery life, and receiver sensitivity, as described here.
 
-#### Data rate
+### Data rate
 
 Compared to a higher spreading factor, a lower spreading factor provides a higher bit rate for a fixed bandwidth and coding rate. For example, SF7 provides a higher bit rate than SF12.
 
@@ -63,17 +63,17 @@ The following table presents bit rates calculated with the SF7 and Coding Rate (
   </tr>
 </table>
 
-#### Distance
+### Distance
 
 Larger spreading factors mean larger processing gain, and so a signal modulated with a larger spreading factor can be received with less errors compared to a signal with a lower spreading factor, and therefore travel a longer distance. For example, a signal modulated with the SF12 can travel a longer distance than a signal modulated with the SF7.
 
-#### Time-On-Air
+### Time-On-Air
 
 Compared to a lower spreading factor, sending a fixed amount of data (payload) with a higher Spreading Factor and a fixed bandwidth needs longer time-on-air.
 
 The Things Network’s LoRaWAN airtime calculator can be used to calculate the time-on-air using input bytes (payload size), bandwidth, and spreading factor. TTN’s LoRaWAN airtime calculator can be accessed [here](https://www.thethingsnetwork.org/airtime-calculator).
 
-#### Receiver Sensitivity
+### Receiver Sensitivity
 
 Higher spreading factors provide higher receiver sensitivity. Usually, LoRa uses higher spreading factors when the signal is weak.
 
@@ -125,7 +125,7 @@ The following table shows how spreading factors impact the receiver sensitivity.
   </tr>
 </table>
 
-#### Battery Life
+### Battery Life
 
 The battery life of an end device is highly dependent on the spreading factor used. Higher spreading factors result in longer active times for the radio transceivers and shorter battery life.
 

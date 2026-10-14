@@ -5,7 +5,7 @@ videos:
  - https://youtu.be/ZsVhYiX4_6o
 description: "Learn about LoRaWAN: the secure messaging protocol used by The Things Network"
 # The page header (layouts/partials/docs/page-header.html): lede and buttons.
-lead: "Welcome to The Things Fundamentals on LoRaWAN! These chapters prepare you for The Things Fundamentals certification: you'll learn all about LoRa® and LoRaWAN and suitable use cases, and be ready to start developing your own LoRaWAN applications."
+lead: "**Welcome to The Things Fundamentals on LoRaWAN!** This series of chapters was created to prepare you for [**The Things Fundamentals certification**](https://www.thethingsnetwork.org/achievements). You'll learn all about LoRa® and LoRaWAN and suitable use cases, and afterwards you'll be ready to start developing your own LoRaWAN applications."
 actions:
  - label: Start chapter 1
    ref: what-is-lorawan

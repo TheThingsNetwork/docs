@@ -28,18 +28,18 @@ End devices communicate with nearby gateways and each gateway is connected to th
 
 Let’s examine each element of the LoRaWAN network in detail.
 
-### End devices
+## End devices
 
 A LoRaWAN end device can be a sensor, an actuator, or both. They are often battery operated. These end devices are wirelessly connected to the LoRaWAN network through gateways using LoRa RF modulation. The following figure shows an end device that consists of sensors like temperature, humidity, and fall detection.
 
 ![alt_text](generic-node-sensor-edition.jpg "End-device")
 *Figure: LoRaWAN end device - The Things Industries Generic Node Sensor Edition*
 
-### Gateways
+## Gateways
 
 Each gateway is registered (using configuration settings) to a LoRaWAN network server. A gateway receives LoRa messages from end devices and simply forwards them to the LoRaWAN network server. Gateways are connected to the Network Server using a **backhaul** like Cellular (3G/4G/5G), WiFi, Ethernet, fiber-optic or 2.4 GHz radio links.
 
-#### Types of LoRaWAN Gateways
+### Types of LoRaWAN Gateways
 
 LoRaWAN gateways can be categorized into indoor (picocell) and outdoor (macrocell) gateways. 
 Indoor gateways are cost-effective and suitable for providing coverage in places like deep-indoor locations (spaces covered by multiple walls), basements, and multi-floor buildings. These gateways have internal antennas or external ‘pigtail’ antennas. However depending on the indoor physical environment some indoor gateways can receive messages from sensors located several kilometers away.
@@ -61,7 +61,7 @@ The following figure shows a LoRaWAN outdoor gateway. It has connectors for conn
 
 Usually, the receiver sensitivity of an outdoor gateway is higher than the receiver sensitivity of an indoor gateway.
 
-### Network Server
+## Network Server
 
 The Network Server manages gateways, end-devices, applications, and users in the entire LoRaWAN network.
 
@@ -79,11 +79,11 @@ A typical LoRaWAN Network Server has the following features.
 * Forwarding Join-request and Join-accept messages between the devices and the join server
 * Responding to all MAC layer commands.
 
-### Application Server
+## Application Server
 
 The Application Server processes application-specific data messages received from end devices. It also generates all the application-layer downlink payloads and sends them to the connected end devices through the Network Server. A LoRaWAN network can have more than one Application Server. The collected data can be interpreted by applying techniques like machine learning and artificial intelligence to solve business problems.
 
-### Join Server
+## Join Server
 
 The Join Server assists in secure device activation, root key storage, and session key generation. The join procedure is initiated by the end device by sending the Join-request message to the Join Server through the Network Server. The Join-server processes the Join-request message, generates session keys, and transfers NwkSKey and AppSKey to the Network server and the Application server respectively.
 The Join Server was first introduced with LoRaWAN v1.1. It is also availabe in LoRaWAN v1.0.4.  

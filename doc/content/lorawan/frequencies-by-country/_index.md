@@ -10,7 +10,7 @@ For discussions about the frequency plans in different countries, see the posts 
 
 ![Map of Frequency Plans](frequency-plans-map.svg)
 
-### A
+## A
 
 | Country | Frequency Plan | Regulatory document |
 | --- | --- | --- |
@@ -26,7 +26,7 @@ For discussions about the frequency plans in different countries, see the posts 
 | Austria | EU863-870<br />EU433 | CEPT Rec. 70-03 |
 | Azerbaijan | unknown, no CEPT | EN 302 208, CEPT Rec. 70-03 |
 
-### B
+## B
 
 | Country | Frequency Plan | Regulatory document |
 | --- | --- | --- |
@@ -49,7 +49,7 @@ For discussions about the frequency plans in different countries, see the posts 
 | Burundi
 
 
-### C
+## C
 
 | Country | Frequency Plan | Regulatory document |
 | --- | --- | --- |
@@ -73,7 +73,7 @@ For discussions about the frequency plans in different countries, see the posts 
 | Cyprus | EU863-870<br />EU433 | CEPT Rec. 70-03 |
 | Czech Republic | EU863-870<br />EU433 | CEPT Rec. 70-03 |
 
-### D
+## D
 
 | Country | Frequency Plan | Regulatory document |
 | --- | --- | --- |
@@ -82,7 +82,7 @@ For discussions about the frequency plans in different countries, see the posts 
 | Dominica
 | Dominican Republic | US902-928 | |
 
-### E
+## E
 
 | Country | Frequency Plan | Regulatory document |
 | --- | --- | --- |
@@ -95,7 +95,7 @@ For discussions about the frequency plans in different countries, see the posts 
 | Eswatini (formerly Swaziland) | EU863-870<br />EU433 | CRASA follows CEPT Rec. 70-03 |
 | Ethiopia
 
-### F
+## F
 
 | Country | Frequency Plan | Regulatory document |
 | --- | --- | --- |
@@ -103,7 +103,7 @@ For discussions about the frequency plans in different countries, see the posts 
 | Finland | EU863-870<br />EU433 | CEPT Rec. 70-03 |
 | France | EU863-870<br />EU433 | CEPT Rec. 70-03 |
 
-### G
+## G
 
 | Country | Frequency Plan | Regulatory document |
 | --- | --- | --- |
@@ -119,7 +119,7 @@ For discussions about the frequency plans in different countries, see the posts 
 | Guinea-Bissau
 | Guyana | US902-928 | |
 
-### H
+## H
 
 | Country | Frequency Plan | Regulatory document |
 | --- | --- | --- |
@@ -128,7 +128,7 @@ For discussions about the frequency plans in different countries, see the posts 
 | Hong Kong (different than China) | AS923-925 ("AS2") | |
 | Hungary | EU863-870<br />EU433 | CEPT Rec. 70-03 |
 
-### I
+## I
 
 | Country | Frequency Plan | Regulatory document |
 | --- | --- | --- |
@@ -141,7 +141,7 @@ For discussions about the frequency plans in different countries, see the posts 
 | Israel | | EN 302 208 |
 | Italy | EU863-870<br />EU433 | CEPT Rec. 70-03 |
 
-### J
+## J
 
 | Country | Frequency Plan | Regulatory document |
 | --- | --- | --- |
@@ -149,7 +149,7 @@ For discussions about the frequency plans in different countries, see the posts 
 | Japan | AS920-923 ("AS1") | [ARIB STD-T108](https://www.arib.or.jp/english/html/overview/doc/5-STD-T108v1_0-E1.pdf) |
 | Jordan
 
-### K
+## K
 
 | Country | Frequency Plan | Regulatory document |
 | --- | --- | --- |
@@ -160,7 +160,7 @@ For discussions about the frequency plans in different countries, see the posts 
 | Kuwait
 | Kyrgyzstan
 
-### L
+## L
 
 | Country | Frequency Plan | Regulatory document |
 | --- | --- | --- |
@@ -174,7 +174,7 @@ For discussions about the frequency plans in different countries, see the posts 
 | Lithuania | EU863-870<br />EU433 | CEPT Rec. 70-03 |
 | Luxembourg | EU863-870<br />EU433 | CEPT Rec. 70-03 |
 
-### M
+## M
 
 | Country | Frequency Plan | Regulatory document |
 | --- | --- | --- |
@@ -197,7 +197,7 @@ For discussions about the frequency plans in different countries, see the posts 
 | Mozambique | EU863-870<br />EU433 | CRASA follows CEPT Rec. 70-03 |
 | Myanmar (Burma)
 
-### N
+## N
 
 | Country | Frequency Plan | Regulatory document |
 | --- | --- | --- |
@@ -213,13 +213,13 @@ For discussions about the frequency plans in different countries, see the posts 
 | North Korea
 | Norway | unknown, limited CEPT | CEPT Rec. 70-03 |
 
-### O
+## O
 
 | Country | Frequency Plan | Regulatory document |
 | --- | --- | --- |
 | Oman | | EN 302 208 |
 
-### P
+## P
 
 | Country | Frequency Plan | Regulatory document |
 | --- | --- | --- |
@@ -235,13 +235,13 @@ For discussions about the frequency plans in different countries, see the posts 
 | Portugal | EU863-870<br />EU433 | CEPT Rec. 70-03 |
 | Puerto Rico | US902-928 | |
 
-### Q
+## Q
 
 | Country | Frequency Plan | Regulatory document |
 | --- | --- | --- |
 | Qatar
 
-### R
+## R
 
 | Country | Frequency Plan | Regulatory document |
 | --- | --- | --- |
@@ -249,7 +249,7 @@ For discussions about the frequency plans in different countries, see the posts 
 | Russia | EU863-870<br />EU433 | CEPT Rec. 70-03, [Decision ГКРЧ 07-20-03-001](http://minsvyaz.ru/ru/documents/4039/), Appendix 10 |
 | Rwanda
 
-### S
+## S
 
 | Country | Frequency Plan | Regulatory document |
 | --- | --- | --- |
@@ -280,7 +280,7 @@ For discussions about the frequency plans in different countries, see the posts 
 | Switzerland | EU863-870<br />EU433 | CEPT Rec. 70-03 |
 | Syria
 
-### T
+## T
 
 | Country | Frequency Plan | Regulatory document |
 | --- | --- | --- |
@@ -297,7 +297,7 @@ For discussions about the frequency plans in different countries, see the posts 
 | Turkmenistan
 | Tuvalu
 
-### U
+## U
 
 | Country | Frequency Plan | Regulatory document |
 | --- | --- | --- |
@@ -309,7 +309,7 @@ For discussions about the frequency plans in different countries, see the posts 
 | Uruguay | US902-928 | |
 | Uzbekistan
 
-### V
+## V
 
 | Country | Frequency Plan | Regulatory document |
 | --- | --- | --- |
@@ -318,13 +318,13 @@ For discussions about the frequency plans in different countries, see the posts 
 | Venezuela | US902-928 | |
 | Vietnam | AS923-925 ("AS2") | |
 
-### Y
+## Y
 
 | Country | Frequency Plan | Regulatory document |
 | --- | --- | --- |
 | Yemen | | |
 
-### Z
+## Z
 
 | Country | Frequency Plan | Regulatory document |
 | --- | --- | --- |
@@ -333,7 +333,7 @@ For discussions about the frequency plans in different countries, see the posts 
 
 _[Country list source](https://www.countries-ofthe-world.com/all-countries.html)_
 
-### Regulatory Documents
+## Regulatory Documents
 
 **[CEPT/ERC Recommendation 70-03 relating to the use of short range devices (SRD)](http://www.erodocdb.dk/docs/doc98/official/pdf/rec7003e.pdf)**
 

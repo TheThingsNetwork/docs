@@ -6,7 +6,7 @@ weight: 20
 
 Welcome to the first chapter of The Things Fundamentals on LoRaWAN. In this section, you'll learn why LoRaWAN is so awesome, hear about some great LoRaWAN use cases, and learn the difference between LoRa and LoRaWAN.
 
-### LoRa
+## LoRa
 
 LoRa is a wireless modulation technique derived from **Chirp Spread Spectrum (CSS)** technology. It encodes information on radio waves using chirp pulses - similar to the way dolphins and bats communicate! LoRa modulated transmission is robust against disturbances and can be received across great distances.
 
@@ -18,7 +18,7 @@ LoRa is ideal for applications that transmit small chunks of data with low bit r
 
 LoRa can be operated on the license free **sub-gigahertz** bands, for example, 915 MHz, 868 MHz, and 433 MHz. It also can be operated on **2.4 GHz** to achieve higher data rates compared to sub-gigahertz bands, at the cost of range. These frequencies fall into ISM bands that are reserved internationally for industrial, scientific, and medical purposes.
 
-### LoRaWAN
+## LoRaWAN
 
 LoRaWAN is a Media Access Control (MAC) layer protocol built on top of LoRa modulation. It is a software layer which defines how devices use the LoRa hardware, for example when they transmit, and the format of messages.
 

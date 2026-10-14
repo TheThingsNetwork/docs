@@ -55,7 +55,7 @@ at+set_config=lora:dev eui:XXXX
 
 When you connect the RAK811 LoRa® Evaluation Board to a LoRaWAN™ Gateway, we need some amount of security and trust to be established amongst them. There are two connection modes, and we distinguish between them using the criteria of security and ease of implementation. These are the **Over-The-Air Activation (OTAA)** and **Activation By Personalization (ABP)**.
 
-### OTAA Mode
+## OTAA Mode
 
 According to The Things Network (TTN), **Over-the-Air Activation (OTAA)** is the preferred and most secure way to connect with The Things Network (TTN). Thus, it is chosen as the default method when registering a device. For configuring it you need the following three parameters: **Device EUI, Application EUI and App Key**. You can get them all from the **Overview page**.
 
@@ -103,7 +103,7 @@ at+send=lora:1:12345678
 
 ![Figure 13: OOTA Data Viewing](../images/ootadataviewing.png)
 
-### ABP Mode
+## ABP Mode
 
 **Authentication By Personalisation (ABP)** is a LoRaWAN™ activation mode that enables manual configuration of encryption keys on the device and is capable of sending frames to RAK gateways without needing a 'handshake' procedure in exchanging keys unlike OTAA.
 
@@ -155,7 +155,7 @@ Great! Your node should now work in ABP mode.
 ![Figure 20: Sending Data to TTN from RAK811](../images/ttnabpreceivedata.png)
 
 
-### Optional Configurations
+## Optional Configurations
 You can also try other configurations which is supported in RAK811 LoRa® Evaluation Board. Click through the guides provided below to learn more. Enjoy!
 * Connecting to [Chirpstack](https://doc.rakwireless.com/rak811-lora---evaluation-board/connecting-to-chirpstack)
 * LoRa® [P2P Mode](https://doc.rakwireless.com/rak811-lora---evaluation-board/lora-p2p-mode)
